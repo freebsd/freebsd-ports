@@ -10223,6 +10223,8 @@
 %%WWWDIR%%/core/modules/navigation/tests/navigation_test_block/navigation_test_block.info.yml
 %%WWWDIR%%/core/modules/navigation/tests/navigation_test_block/src/Hook/NavigationTestBlockHooks.php
 %%WWWDIR%%/core/modules/navigation/tests/navigation_test_block/src/Plugin/Block/NavigationTestBlock.php
+%%WWWDIR%%/core/modules/navigation/tests/navigation_test_top_bar/navigation_test_top_bar.info.yml
+%%WWWDIR%%/core/modules/navigation/tests/navigation_test_top_bar/src/Plugin/TopBarItem/TopBarItemLinkAttribute.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/GenericTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationContentTopTest.php
 %%WWWDIR%%/core/modules/navigation/tests/src/Functional/NavigationDefaultBlockDefinitionTest.php
@@ -10860,6 +10862,7 @@
 %%WWWDIR%%/core/modules/package_manager/tests/modules/package_manager_test_validation/src/CollectPathsToExcludeFailValidator.php
 %%WWWDIR%%/core/modules/package_manager/tests/modules/package_manager_test_validation/src/EventSubscriber/TestSubscriber.php
 %%WWWDIR%%/core/modules/package_manager/tests/modules/package_manager_test_validation/src/PackageManagerTestValidationServiceProvider.php
+%%WWWDIR%%/core/modules/package_manager/tests/modules/package_manager_test_validation/src/TestExecutableFinder.php
 %%WWWDIR%%/core/modules/package_manager/tests/modules/package_manager_test_validation/src/TestSandboxDatabaseUpdatesValidator.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Build/PackageInstallDirectWriteTest.php
 %%WWWDIR%%/core/modules/package_manager/tests/src/Build/PackageInstallSubmoduleTest.php
@@ -13275,7 +13278,6 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/DependencyTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/DeprecatedTemplateTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/GenericModuleTestBase.php
-%%WWWDIR%%/core/modules/system/tests/src/Functional/Module/GenericTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/HookRequirementsTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/ModuleTestBase.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Module/NonStableModulesTest.php
@@ -13928,8 +13930,11 @@
 %%WWWDIR%%/core/modules/text/src/Plugin/migrate/field/d6/TextField.php
 %%WWWDIR%%/core/modules/text/src/Plugin/migrate/field/d7/TextField.php
 %%WWWDIR%%/core/modules/text/src/TextProcessed.php
+%%WWWDIR%%/core/modules/text/tests/modules/text_test/src/Hook/TextTestHooks.php
+%%WWWDIR%%/core/modules/text/tests/modules/text_test/text_test.info.yml
 %%WWWDIR%%/core/modules/text/tests/src/Functional/GenericTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Functional/TextFieldTest.php
+%%WWWDIR%%/core/modules/text/tests/src/Functional/TextareaWithSummaryTest.php
 %%WWWDIR%%/core/modules/text/tests/src/FunctionalJavascript/TextareaWithSummaryTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/Migrate/MigrateTextConfigsTest.php
 %%WWWDIR%%/core/modules/text/tests/src/Kernel/TextFormatterTest.php
@@ -15757,6 +15762,7 @@
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/EntityTestRevPubWorkspaceHandler.php
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/Form/ActiveWorkspaceTestForm.php
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/Hook/WorkspacesTestHooks.php
+%%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/src/Plugin/Field/FieldType/RevisionTestItem.php
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/workspaces_test.info.yml
 %%WWWDIR%%/core/modules/workspaces/tests/modules/workspaces_test/workspaces_test.routing.yml
 %%WWWDIR%%/core/modules/workspaces/tests/src/Functional/GenericTest.php
@@ -15792,6 +15798,7 @@
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceCRUDTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceContentTranslationTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceEntityDeleteTest.php
+%%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceEntityOperationsTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceEntityRepositoryTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceFormPersistenceTest.php
 %%WWWDIR%%/core/modules/workspaces/tests/src/Kernel/WorkspaceInformationTest.php
@@ -17745,8 +17752,10 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/Fixtures.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/SemVerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/composer-root/composer.json.tmpl
+%%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/merge/composer.merge.json
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/modules/composer-module-a/composer.json
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/modules/composer-module-b/composer.json
+%%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/modules/composer-module-c/composer.json
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/recipes/composer-recipe-a/composer.json
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/recipes/composer-recipe-a/recipe.yml
 %%WWWDIR%%/core/tests/Drupal/Tests/Composer/Plugin/Unpack/fixtures/recipes/composer-recipe-b/composer.json
@@ -17888,6 +17897,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Cache/NullBackendTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Cache/RefinableCacheableDependencyTraitTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Cache/VariationCacheTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/Command/BootableCommandTraitTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Common/AttributesTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Common/DiffArrayTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Common/TagsTest.php
@@ -18275,6 +18285,7 @@
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Theme/Icon/IconExtractorTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Theme/Icon/IconFinderTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Theme/Icon/IconPackExtractorFormTest.php
+%%WWWDIR%%/core/tests/Drupal/Tests/Core/Theme/Icon/IconPackManagerTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Theme/Icon/IconTest.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Theme/Icon/IconTestTrait.php
 %%WWWDIR%%/core/tests/Drupal/Tests/Core/Theme/Icon/IconsTwigExtensionTest.php
@@ -18663,6 +18674,7 @@
 %%WWWDIR%%/core/tests/fixtures/recipes/config_from_module_and_recipe/recipe.yml
 %%WWWDIR%%/core/tests/fixtures/recipes/config_rollback_exception/recipe.yml
 %%WWWDIR%%/core/tests/fixtures/recipes/config_wildcard/recipe.yml
+%%WWWDIR%%/core/tests/fixtures/recipes/create_node_type/recipe.yml
 %%WWWDIR%%/core/tests/fixtures/recipes/input_test/recipe.yml
 %%WWWDIR%%/core/tests/fixtures/recipes/install_node_with_config/config/node.settings.yml
 %%WWWDIR%%/core/tests/fixtures/recipes/install_node_with_config/config/node.type.test.yml
@@ -20859,6 +20871,7 @@
 %%WWWDIR%%/vendor/symfony/console/Helper/TableRows.php
 %%WWWDIR%%/vendor/symfony/console/Helper/TableSeparator.php
 %%WWWDIR%%/vendor/symfony/console/Helper/TableStyle.php
+%%WWWDIR%%/vendor/symfony/console/Helper/TerminalInputHelper.php
 %%WWWDIR%%/vendor/symfony/console/Helper/TreeHelper.php
 %%WWWDIR%%/vendor/symfony/console/Helper/TreeNode.php
 %%WWWDIR%%/vendor/symfony/console/Helper/TreeStyle.php
@@ -21785,7 +21798,9 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php84/Php84.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/README.md
 %%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/Deprecated.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/Resources/stubs/ReflectionConstant.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/bootstrap.php
+%%WWWDIR%%/vendor/symfony/polyfill-php84/bootstrap82.php
 %%WWWDIR%%/vendor/symfony/polyfill-php84/composer.json
 %%WWWDIR%%/vendor/symfony/process/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/process/Exception/ExceptionInterface.php
@@ -22371,7 +22386,6 @@
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Cursor.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Data.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/DumperInterface.php
-%%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Internal/NoDefault.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/Stub.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Cloner/VarCloner.php
 %%WWWDIR%%/vendor/symfony/var-dumper/Command/Descriptor/CliDescriptor.php
