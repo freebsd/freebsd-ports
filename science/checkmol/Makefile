@@ -1,6 +1,6 @@
 PORTNAME=	checkmol
 PORTVERSION=	0.5
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	science
 MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/checkmol/
 DISTFILES=	${PORTNAME}

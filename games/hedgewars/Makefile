@@ -1,6 +1,6 @@
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://www.hedgewars.org/download/releases/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}

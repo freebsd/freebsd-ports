@@ -1,6 +1,6 @@
 PORTNAME=	mol2ps
 PORTVERSION=	0.4c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://homepage.univie.ac.at/norbert.haider/download/chemistry/mol2ps/
 DISTNAME=	${PORTNAME}
