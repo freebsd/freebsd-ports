@@ -11,7 +11,7 @@ bin/textpack
 bin/u7voice2syx
 bin/ucxt
 bin/wuc
-%%GIMP%%libexec/gimp/2.2/plug-ins/u7shp
+%%GIMP%%lib/gimp/3.0/plug-ins/u7shp
 share/applications/info.exult.exult.desktop
 %%STUDIO%%share/applications/info.exult.exult.studio.desktop
 %%STUDIO%%%%DATADIR%%/estudio/new/avatar_data.txt
