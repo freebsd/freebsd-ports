@@ -1,6 +1,6 @@
 PORTNAME=	libretro-core-info
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.21.1
+DISTVERSION=	1.22.0
 CATEGORIES=	games
 
 MAINTAINER=	tilde@ultros.pro

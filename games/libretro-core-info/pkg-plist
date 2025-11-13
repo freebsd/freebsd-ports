@@ -6,9 +6,11 @@ share/libretro/info/DoubleCherryGB_libretro.info
 share/libretro/info/a5200_libretro.info
 share/libretro/info/advanced_tests_libretro.info
 share/libretro/info/anarch_libretro.info
+share/libretro/info/applewin_libretro.info
 share/libretro/info/ardens_libretro.info
 share/libretro/info/arduous_libretro.info
 share/libretro/info/atari800_libretro.info
+share/libretro/info/azahar_libretro.info
 share/libretro/info/b2_libretro.info
 share/libretro/info/bennugd_libretro.info
 share/libretro/info/bk_libretro.info
@@ -36,6 +38,7 @@ share/libretro/info/chimerasnes_libretro.info
 share/libretro/info/citra2018_libretro.info
 share/libretro/info/citra_canary_libretro.info
 share/libretro/info/citra_libretro.info
+share/libretro/info/clownmdemu_libretro.info
 share/libretro/info/craft_libretro.info
 share/libretro/info/crocods_libretro.info
 share/libretro/info/cruzes_libretro.info
@@ -90,6 +93,7 @@ share/libretro/info/gam4980_libretro.info
 share/libretro/info/gambatte_libretro.info
 share/libretro/info/gearboy_libretro.info
 share/libretro/info/gearcoleco_libretro.info
+share/libretro/info/geargrafx_libretro.info
 share/libretro/info/gearsystem_libretro.info
 share/libretro/info/genesis_plus_gx_libretro.info
 share/libretro/info/genesis_plus_gx_wide_libretro.info
@@ -107,6 +111,7 @@ share/libretro/info/holani_libretro.info
 share/libretro/info/imageviewer_libretro.info
 share/libretro/info/ishiiruka_libretro.info
 share/libretro/info/jaxe_libretro.info
+share/libretro/info/jollycv_libretro.info
 share/libretro/info/jumpnbump_libretro.info
 share/libretro/info/kronos_libretro.info
 share/libretro/info/lowresnx_libretro.info
@@ -211,6 +216,7 @@ share/libretro/info/sameduck_libretro.info
 share/libretro/info/scummvm_libretro.info
 share/libretro/info/sdlpal_libretro.info
 share/libretro/info/simcp_libretro.info
+share/libretro/info/skyemu_libretro.info
 share/libretro/info/smsplus_libretro.info
 share/libretro/info/snes9x2002_libretro.info
 share/libretro/info/snes9x2005_libretro.info
@@ -249,6 +255,7 @@ share/libretro/info/tyrquake_libretro.info
 share/libretro/info/uae4arm_libretro.info
 share/libretro/info/ume2015_libretro.info
 share/libretro/info/uw8_libretro.info
+share/libretro/info/uxn_libretro.info
 share/libretro/info/uzem_libretro.info
 share/libretro/info/vaporspec_libretro.info
 share/libretro/info/vba_next_libretro.info
