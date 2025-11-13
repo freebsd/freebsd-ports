@@ -1,3 +1,46 @@
+  <vuln vid="5a1d6309-c04a-11f0-85d8-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.5.0</ge><lt>18.5.2</lt></range>
+	<range><ge>18.4.0</ge><lt>18.4.4</lt></range>
+	<range><ge>13.2.0</ge><lt>18.3.6</lt></range>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/11/12/patch-release-gitlab-18-5-2-released/">
+	  <p>Cross-site scripting issue in k8s proxy impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in workflows impacts GitLab EE</p>
+	  <p>Information Disclosure issue in GraphQL subscriptions impacts GitLab CE/EE</p>
+	  <p>Information Disclosure issue in access control impacts GitLab CE/EE</p>
+	  <p>Prompt Injection issue in GitLab Duo review impacts GitLab EE</p>
+	  <p>Client Side Path Traversal issue in branch names impacts GitLab EE</p>
+	  <p>Information Disclosure issue in packages API endpoint impacts GitLab CE/EE</p>
+	  <p>Improper Access Control issue in GitLab Pages impacts GitLab CE/EE</p>
+	  <p>Denial of service issue in markdown impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11224</cvename>
+      <cvename>CVE-2025-11865</cvename>
+      <cvename>CVE-2025-2615</cvename>
+      <cvename>CVE-2025-7000</cvename>
+      <cvename>CVE-2025-6945</cvename>
+      <cvename>CVE-2025-11990</cvename>
+      <cvename>CVE-2025-6171</cvename>
+      <cvename>CVE-2025-7736</cvename>
+      <cvename>CVE-2025-12983</cvename>
+      <url>https://about.gitlab.com/releases/2025/11/12/patch-release-gitlab-18-5-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-11-12</discovery>
+      <entry>2025-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e1105d8-bfc2-11f0-bb2b-ecf4bbefc954">
     <topic>privatebin XSS</topic>
     <affects>
