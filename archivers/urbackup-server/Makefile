@@ -1,6 +1,5 @@
 PORTNAME=	urbackup-server
-DISTVERSION=	2.5.33
-PORTREVISION=	2
+DISTVERSION=	2.5.34
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Server/${DISTVERSION}/
 
@@ -17,7 +16,7 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 		libzstd.so:archivers/zstd
 
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse libtool \
-		lua:53 localbase pkgconfig sqlite:3
+		localbase lua:53 pkgconfig sqlite:3
 DOS2UNIX_GLOB=	*.am *.c *.cpp *.h
 USE_CXXSTD=	c++14
 USE_RC_SUBR=	urbackup_server
@@ -51,8 +50,6 @@ post-patch:
 		snapshot_helper/main.cpp \
 	)
 	${FIND} ${WRKSRC} -type f -exec ${REINPLACE_CMD} \
-		-e 's|std::char_traits|std::vector|g' \
-		-e 's|std::basic_string|std::vector|g' \
 		-e 's|auto_ptr|unique_ptr|g' {} +
 
 post-install:
