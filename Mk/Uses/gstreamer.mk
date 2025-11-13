@@ -349,7 +349,7 @@ gst-rtsp-server_IMPL=	#
 
 gst-rust_PORT=		multimedia/gstreamer${_GST_VER}-plugins-rust
 gst-rust_IMPL=		#
-gst-rust_GST1_VERSION=	0.14.2
+gst-rust_GST1_VERSION=	0.14.3
 gst-rust_VERSION=	${gst-rust_GST${_GST_VER}_VERSION}
 
 gst-smoothstreaming_PORT=	multimedia/gstreamer${_GST_VER}-plugins-smoothstreaming
