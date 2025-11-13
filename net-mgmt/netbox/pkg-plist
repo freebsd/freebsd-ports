@@ -923,6 +923,7 @@
 %%DATADIR%%/netbox/tests/test_api.py
 %%DATADIR%%/netbox/tests/test_authentication.py
 %%DATADIR%%/netbox/tests/test_config.py
+%%DATADIR%%/netbox/tests/test_forms.py
 %%DATADIR%%/netbox/tests/test_graphql.py
 %%DATADIR%%/netbox/tests/test_import.py
 %%DATADIR%%/netbox/tests/test_jobs.py
