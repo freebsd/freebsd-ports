@@ -61,6 +61,7 @@ lib/libqbscore.so
 lib/libqbscore.so.%%QBS_VER%%
 lib/libqbscore.so.%%QBS_VERSION%%
 lib/qbs/plugins/libclangcompilationdbgenerator.so
+lib/qbs/plugins/libgraphvizgenerator.so
 lib/qbs/plugins/libiarewgenerator.so
 lib/qbs/plugins/libkeiluvgenerator.so
 lib/qbs/plugins/libmakefilegenerator.so
@@ -166,8 +167,14 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-applicationextension.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-autotestrunner-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-autotestrunner.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-configbuild-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-configbuild.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-configinstall-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-configinstall.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppapplication-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppapplication.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppstd-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-cppstd.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-dynamiclibrary-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-dynamiclibrary.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-innosetup-members.html
@@ -182,6 +189,8 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-library.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-loadablemodule-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-loadablemodule.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-plugin-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-plugin.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-qtapplication-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-qtapplication.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsconvenienceitems-qtguiapplication-members.html
@@ -250,6 +259,10 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-capnproto-cpp.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-codesign-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-codesign.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-config-build-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-config-build.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-config-install-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-config-install.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-cpp-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-cpp-obsolete.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-cpp.html
@@ -275,6 +288,8 @@ libexec/qbs/qbs_processlauncher
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-ico.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-innosetup-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-innosetup.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-installpaths-members.html
+%%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-installpaths.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-java-members.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-java.html
 %%PORTDOCS%%%%DOCSDIR%%/html/qml-qbsmodules-lex-yacc-members.html
@@ -574,6 +589,9 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/examples/compiled-qml/main.cpp
 %%DATADIR%%/examples/compiled-qml/main.qml
 %%DATADIR%%/examples/compiled-qml/qml.qrc
+%%DATADIR%%/examples/conan-zlib/conan-zlib.qbs
+%%DATADIR%%/examples/conan-zlib/conanfile.py
+%%DATADIR%%/examples/conan-zlib/main.c
 %%DATADIR%%/examples/cxx-modules/mod0/mod0.cppm
 %%DATADIR%%/examples/cxx-modules/mod0/mod0.qbs
 %%DATADIR%%/examples/cxx-modules/mod0/mod0main.cpp
@@ -640,6 +658,10 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/examples/install-bundle/main.cpp
 %%DATADIR%%/examples/install-bundle/white.iconset/icon_16x16.png
 %%DATADIR%%/examples/install-bundle/white.iconset/icon_16x16@2x.png
+%%DATADIR%%/examples/main-bundle/main-bundle.qbs
+%%DATADIR%%/examples/main-bundle/main.cpp
+%%DATADIR%%/examples/main-bundle/mylib.cpp
+%%DATADIR%%/examples/main-bundle/mylib.h
 %%DATADIR%%/examples/pkgconfig-provider/main.c
 %%DATADIR%%/examples/pkgconfig-provider/pkgconfig-provider.qbs
 %%DATADIR%%/examples/protobuf/addressbook_conan/addressbook_conan.qbs
@@ -722,7 +744,10 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/imports/qbs/base/Application.qbs
 %%DATADIR%%/imports/qbs/base/ApplicationExtension.qbs
 %%DATADIR%%/imports/qbs/base/AutotestRunner.qbs
+%%DATADIR%%/imports/qbs/base/ConfigBuild.qbs
+%%DATADIR%%/imports/qbs/base/ConfigInstall.qbs
 %%DATADIR%%/imports/qbs/base/CppApplication.qbs
+%%DATADIR%%/imports/qbs/base/CppStd.qbs
 %%DATADIR%%/imports/qbs/base/DynamicLibrary.qbs
 %%DATADIR%%/imports/qbs/base/InnoSetup.qbs
 %%DATADIR%%/imports/qbs/base/InstallPackage.qbs
@@ -734,6 +759,7 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/imports/qbs/base/NativeBinary.qbs
 %%DATADIR%%/imports/qbs/base/NetModule.qbs
 %%DATADIR%%/imports/qbs/base/NodeJSApplication.qbs
+%%DATADIR%%/imports/qbs/base/Plugin.qbs
 %%DATADIR%%/imports/qbs/base/QtApplication.qbs
 %%DATADIR%%/imports/qbs/base/QtGuiApplication.qbs
 %%DATADIR%%/imports/qbs/base/QtLupdateRunner.qbs
@@ -766,8 +792,6 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/module-providers/Qt/templates/scxml.qbs
 %%DATADIR%%/module-providers/Qt/templates/shadertools.js
 %%DATADIR%%/module-providers/Qt/templates/shadertools.qbs
-%%DATADIR%%/module-providers/__fallback/fallback.qbs
-%%DATADIR%%/module-providers/__fallback/provider.qbs
 %%DATADIR%%/module-providers/conan.js
 %%DATADIR%%/module-providers/conan.qbs
 %%DATADIR%%/module-providers/qbspkgconfig.qbs
@@ -803,6 +827,8 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/modules/codesign/codesign.js
 %%DATADIR%%/modules/codesign/noop.qbs
 %%DATADIR%%/modules/codesign/signtool.qbs
+%%DATADIR%%/modules/config/build/module.qbs
+%%DATADIR%%/modules/config/install/module.qbs
 %%DATADIR%%/modules/cpp/CppModule.qbs
 %%DATADIR%%/modules/cpp/DarwinGCC.qbs
 %%DATADIR%%/modules/cpp/GenericGCC.qbs
@@ -856,6 +882,9 @@ share/man/man1/qbs.1.gz
 %%DATADIR%%/modules/ico/IcoModule.qbs
 %%DATADIR%%/modules/ico/ico.js
 %%DATADIR%%/modules/innosetup/InnoSetupModule.qbs
+%%DATADIR%%/modules/installpaths/base.qbs
+%%DATADIR%%/modules/installpaths/debian.js
+%%DATADIR%%/modules/installpaths/linux.qbs
 %%DATADIR%%/modules/java/JavaModule.qbs
 %%DATADIR%%/modules/java/io/qt/qbs/Artifact.java
 %%DATADIR%%/modules/java/io/qt/qbs/ArtifactListJsonWriter.java
