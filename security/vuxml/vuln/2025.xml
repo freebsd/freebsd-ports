@@ -1,3 +1,142 @@
+  <vuln vid="bff06006-c0b7-11f0-ab42-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>145.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>145.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/buglist.cgi?bug_id=1987237%2C1990079%2C1991715%2C1994994 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1987237%2C1990079%2C1991715%2C1994994">
+	  <p>Memory safety bugs. Some of these bugs showed evidence of
+	  memory corruption and we presume that with enough effort
+	  some of these could have been exploited to run arbitrary
+	  code. </p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13027</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13027</url>
+    </references>
+    <dates>
+      <discovery>2025-11-11</discovery>
+      <entry>2025-11-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a2a815c8-c0b7-11f0-ab42-b42e991fc52e">
+    <topic>Firefox -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>145.0.0,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1994441 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1994441">
+	  <ul>
+	  <li>Sandbox escape due to incorrect boundary conditions in
+	    the Graphics: WebGPU component.</li>
+	  <li>Incorrect boundary conditions in the Graphics: WebGPU
+	    component.</li>
+	  <li>JIT miscompilation in the JavaScript Engine: JIT component.</li>
+	  <li>Sandbox escape due to incorrect boundary conditions in
+	    the Graphics: WebGPU component.</li>
+	  <li>Incorrect boundary conditions in the Graphics: WebGPU
+	    component.</li>
+	  <li>Incorrect boundary conditions in the Graphics: WebGPU
+	    component.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13026</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13026</url>
+      <cvename>CVE-2025-13025</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13025</url>
+      <cvename>CVE-2025-13024</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13024</url>
+      <cvename>CVE-2025-13023</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13023</url>
+      <cvename>CVE-2025-13022</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13022</url>
+      <cvename>CVE-2025-13021</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13021</url>
+    </references>
+    <dates>
+      <discovery>2025-11-11</discovery>
+      <entry>2025-11-13</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c894635c-c0b6-11f0-ab42-b42e991fc52e">
+    <topic>firefox -- Use-after-free</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>145.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.5</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1995686 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1995686">
+	  <ul>
+	  <li>Use-after-free in the WebRTC: Audio/Video component.</li>
+	  <li>Same-origin policy bypass in the DOM: Workers component.</li>
+	  <li>Mitigation bypass in the DOM: Security component.</li>
+	  <li>Same-origin policy bypass in the DOM: Notifications
+	    component.</li>
+	  <li>Incorrect boundary conditions in the JavaScript:
+	    WebAssembly component.</li>
+	  <li>Spoofing issue in Firefox.</li>
+	  <li>Use-after-free in the Audio/Video component.</li>
+	  <li>Mitigation bypass in the DOM: Core and HTML component.</li>
+	  <li>Race condition in the Graphics component.</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13020</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13020</url>
+      <cvename>CVE-2025-13019</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13019</url>
+      <cvename>CVE-2025-13018</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13018</url>
+      <cvename>CVE-2025-13017</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13017</url>
+      <cvename>CVE-2025-13016</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13016</url>
+      <cvename>CVE-2025-13015</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13015</url>
+      <cvename>CVE-2025-13014</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13014</url>
+      <cvename>CVE-2025-13013</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13013</url>
+      <cvename>CVE-2025-13012</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13012</url>
+    </references>
+    <dates>
+      <discovery>2025-11-11</discovery>
+      <entry>2025-11-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5a1d6309-c04a-11f0-85d8-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
