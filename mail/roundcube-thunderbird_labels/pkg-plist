@@ -5,6 +5,7 @@
 @sample %%PLUGINDIR_REL%%/config.inc.php.sample
 %%PORTDOCS%%%%PLUGINDIR_REL%%/docs/README.md
 %%PORTDOCS%%%%PLUGINDIR_REL%%/docs/screenshot.png
+%%PLUGINDIR_REL%%/localization/ar.inc
 %%PLUGINDIR_REL%%/localization/bg_BG.inc
 %%PLUGINDIR_REL%%/localization/ca_ES.inc
 %%PLUGINDIR_REL%%/localization/cs_CZ.inc
@@ -23,6 +24,7 @@
 %%PLUGINDIR_REL%%/localization/pt_PT.inc
 %%PLUGINDIR_REL%%/localization/ru_RU.inc
 %%PLUGINDIR_REL%%/localization/sk_SK.inc
+%%PLUGINDIR_REL%%/localization/sv_SE.inc
 %%PLUGINDIR_REL%%/localization/uk_UA.inc
 %%PLUGINDIR_REL%%/skins/classic/includes/toolbar.html
 %%PLUGINDIR_REL%%/skins/classic/tb_label.css
