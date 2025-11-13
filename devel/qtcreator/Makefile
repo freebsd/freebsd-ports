@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	17.0.2
+DISTVERSION=	18.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -21,9 +21,9 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 USES=		cmake compiler:c++20-lang desktop-file-utils gl \
 		libarchive llvm:build,run,noexport,min=17 pkgconfig \
 		python qt:6 shebangfix tar:xz
-USE_GL=		gl opengl
+USE_GL=		opengl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
-USE_QT=		5compat base declarative quick3d quicktimeline serialport \
+USE_QT=		base declarative quick3d quicktimeline serialport \
 		shadertools sqldriver-sqlite svg tools translations websockets
 
 SHEBANG_GLOB=	*.pl *.py *.sh
@@ -38,11 +38,16 @@ CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${LLVM_PREFIX};${PREFIX}"
 # - Prevent accidental use of devel/googletest headers, use bundled.
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_elfutils \
 		CMAKE_DISABLE_FIND_PACKAGE_Googletest
-# - Disable precompiled headers for now, they are missing compile flags.
+# - Disable Go cmdbridge. Starting with 18.0.0, configure fails if Go is
+#   not installed and this is not explicitly disabled. Although this is
+#   an upstream regression, this could potentially be an option, but
+#   this functionality has not yet been explored.
 # - Disable the AppStatisticsPlugin for now, not implemented for FreeBSD.
+# - Disable precompiled headers for now, they are missing compile flags.
 # - Suppress installed yaml-cpp, use bundled.
-CMAKE_OFF=	BUILD_WITH_PCH \
+CMAKE_OFF=	BUILD_EXECUTABLE_CMDBRIDGE \
 		BUILD_PLUGIN_APPSTATISTICSMONITOR \
+		BUILD_WITH_PCH \
 		yaml-cpp_FOUND
 
 LDFLAGS+=	-lexecinfo
