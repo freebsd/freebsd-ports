@@ -4861,3 +4861,5 @@ games/openlierox||2025-11-06|Remove broken port
 net/glusterfs||2025-11-06|Remove broken port
 games/pokerth||2025-11-06|Remove broken port
 security/py-openssl|security/py-pyopenssl|2025-11-11|Move security/py-openssl to security/py-pyopenssl
+graphics/converseen@qt6|graphics/converseen|2025-11-14|Unflavorize port, as it is now qt6 only
+
