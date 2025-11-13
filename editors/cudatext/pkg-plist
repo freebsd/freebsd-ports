@@ -399,7 +399,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_addonman/work_tempdir.py
 %%DATADIR%%/py/cuda_comments/__init__.py
 %%DATADIR%%/py/cuda_comments/cd_comments.py
-%%DATADIR%%/py/cuda_comments/cd_plug_lib.py
 %%DATADIR%%/py/cuda_comments/install.inf
 %%DATADIR%%/py/cuda_insert_time/__init__.py
 %%DATADIR%%/py/cuda_insert_time/install.inf
