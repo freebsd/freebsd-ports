@@ -93,15 +93,6 @@ lib/lv2/dynmanifest.lv2/manifest.ttl
 %%EXAMPLES%%lib/lv2/eg-params.lv2/manifest.ttl
 %%EXAMPLES%%lib/lv2/eg-params.lv2/params.so
 %%EXAMPLES%%lib/lv2/eg-params.lv2/params.ttl
-%%EXAMPLES%%lib/lv2/eg-sampler.lv2/click.wav
-%%EXAMPLES%%lib/lv2/eg-sampler.lv2/manifest.ttl
-%%EXAMPLES%%lib/lv2/eg-sampler.lv2/sampler.so
-%%EXAMPLES%%lib/lv2/eg-sampler.lv2/sampler.ttl
-%%EXAMPLES%%lib/lv2/eg-sampler.lv2/sampler_ui.so
-%%EXAMPLES%%lib/lv2/eg-scope.lv2/examploscope.so
-%%EXAMPLES%%lib/lv2/eg-scope.lv2/examploscope.ttl
-%%EXAMPLES%%lib/lv2/eg-scope.lv2/examploscope_ui.so
-%%EXAMPLES%%lib/lv2/eg-scope.lv2/manifest.ttl
 lib/lv2/event.lv2/event.meta.ttl
 lib/lv2/event.lv2/event.ttl
 lib/lv2/event.lv2/manifest.ttl
