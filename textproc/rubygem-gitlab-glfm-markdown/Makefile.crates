@@ -12,7 +12,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		bitflags-2.9.1 \
-		bumpalo-3.19.0 \
 		caseless-0.2.2 \
 		cc-1.2.27 \
 		cexpr-0.6.0 \
@@ -23,10 +22,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		clap_derive-4.4.7 \
 		clap_lex-0.6.0 \
 		colorchoice-1.0.4 \
-		comrak-0.43.0 \
+		comrak-0.46.0 \
 		crc32fast-1.4.2 \
 		deranged-0.4.0 \
-		deunicode-1.6.2 \
 		either-1.15.0 \
 		emojis-0.6.4 \
 		entities-1.0.1 \
@@ -41,14 +39,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.12.1 \
 		itoa-1.0.15 \
+		jetscii-0.5.3 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
 		libc-0.2.174 \
 		libloading-0.8.8 \
 		linked-hash-map-0.5.6 \
-		log-0.4.27 \
-		magnus-0.6.4 \
-		magnus-macros-0.6.0 \
+		magnus-0.8.2 \
+		magnus-macros-0.8.0 \
 		memchr-2.7.5 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
@@ -66,25 +64,23 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro2-1.0.95 \
 		quick-xml-0.37.5 \
 		quote-1.0.40 \
-		rb-sys-0.9.116 \
-		rb-sys-build-0.9.116 \
-		rb-sys-env-0.1.2 \
+		rb-sys-0.9.117 \
+		rb-sys-build-0.9.117 \
+		rb-sys-env-0.2.2 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
 		rustc-hash-1.1.0 \
-		rustversion-1.0.21 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
 		seq-macro-0.3.6 \
 		serde-1.0.219 \
 		serde_derive-1.0.219 \
 		serde_json-1.0.140 \
-		serde_magnus-0.8.1 \
+		serde_magnus-0.10.0 \
 		shell-words-1.1.0 \
 		shlex-1.3.0 \
 		siphasher-1.0.1 \
-		slug-0.1.6 \
 		strsim-0.10.0 \
 		syn-2.0.104 \
 		syntect-5.2.0 \
@@ -102,11 +98,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode_categories-0.1.1 \
 		utf8parse-0.2.2 \
 		walkdir-2.5.0 \
-		wasm-bindgen-0.2.100 \
-		wasm-bindgen-backend-0.2.100 \
-		wasm-bindgen-macro-0.2.100 \
-		wasm-bindgen-macro-support-0.2.100 \
-		wasm-bindgen-shared-0.2.100 \
 		winapi-util-0.1.9 \
 		windows-sys-0.59.0 \
 		windows-targets-0.52.6 \
