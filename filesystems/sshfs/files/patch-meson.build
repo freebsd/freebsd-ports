@@ -1,4 +1,4 @@
---- meson.build.orig	2018-12-22 14:33:52 UTC
+--- meson.build.orig	2025-11-11 19:46:43 UTC
 +++ meson.build
 @@ -19,12 +19,7 @@ int main(void) {
      (void) get_4();
@@ -11,9 +11,9 @@
  
 -
  rst2man = find_program('rst2man', 'rst2man.py', required: false)
-   
+ 
  cfg = configuration_data()
-@@ -62,11 +57,6 @@ if rst2man.found()
+@@ -63,10 +58,5 @@ endif
  else
      message('rst2man not found, not building manual page.')
  endif
@@ -24,4 +24,3 @@
 -
  
  subdir('test')
- 
