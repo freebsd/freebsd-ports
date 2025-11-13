@@ -75,7 +75,8 @@ product_name=""
 product_range=""
 package_list="<package>
 <name></name>
-<range><lt></lt></range>"
+<range><lt></lt></range>
+</package>"
 references="INSERT URL HERE"
 topic=""
 source="SO-AND-SO"
