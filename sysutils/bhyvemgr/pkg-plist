@@ -22,12 +22,17 @@ share/applications/bhyvemgr.desktop
 %%DATADIR%%/images/devices/rnd.png
 %%DATADIR%%/images/devices/sharefolder.png
 %%DATADIR%%/images/devices/usb.png
+%%DATADIR%%/images/dialog/confirmation.png
+%%DATADIR%%/images/dialog/error.png
+%%DATADIR%%/images/dialog/information.png
+%%DATADIR%%/images/dialog/warning.png
 %%DATADIR%%/images/menu/add.png
 %%DATADIR%%/images/menu/com.png
 %%DATADIR%%/images/menu/edit.png
 %%DATADIR%%/images/menu/hide.png
 %%DATADIR%%/images/menu/ip.png
 %%DATADIR%%/images/menu/paste.png
+%%DATADIR%%/images/menu/pf.png
 %%DATADIR%%/images/menu/quit.png
 %%DATADIR%%/images/menu/rdp.png
 %%DATADIR%%/images/menu/remove.png
