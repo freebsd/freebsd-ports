@@ -1,6 +1,5 @@
 PORTNAME=	lightdm-kde-greeter
-PORTVERSION=	6.0.3
-PORTREVISION=	1
+PORTVERSION=	6.0.4
 CATEGORIES=	x11 kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,7 +24,7 @@ USE_KDE=	auth colorscheme config configwidgets coreaddons i18n \
 USE_QT=		5compat base declarative
 USE_XORG=	x11 xcb xext xrandr xrender
 
-KDE_INVENT=	31d29530ad834c1bfb70ed43f9395a549fbace56 plasma
+KDE_INVENT=	v${PORTVERSION} plasma
 
 CMAKE_ARGS=	-DGREETER_IMAGES_DIR="${PREFIX}/var/db/${PORTNAME}/images" \
 		-DLIGHTDM_CONFIG_DIR=${PREFIX}/etc/lightdm \

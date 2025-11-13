@@ -1,3 +1,3 @@
-TIMESTAMP = 1747954785
-SHA256 (plasma-lightdm-kde-greeter-31d29530ad834c1bfb70ed43f9395a549fbace56_GL0.tar.gz) = 5c254699e5bc09dc1443a8034a16c6da50bb98bd368d300092d5f54e89d49cfd
-SIZE (plasma-lightdm-kde-greeter-31d29530ad834c1bfb70ed43f9395a549fbace56_GL0.tar.gz) = 344041
+TIMESTAMP = 1763045932
+SHA256 (lightdm-kde-greeter-v6.0.4.tar.bz2) = b9a47b786103b83276ffa57144408e0cb6e513515692417880ac4878fb0e9f94
+SIZE (lightdm-kde-greeter-v6.0.4.tar.bz2) = 326621
