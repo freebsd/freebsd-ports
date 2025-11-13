@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20251113:
+  AFFECTS: users of deskutils/fet
+  AUTHOR: uzsolt@FreeBSD.org
+
+  Remove Qt flavors, only use Qt6.
+
+  You should uninstall the flavored package and install the unflavored package.
+
 20251105:
   AFFECTS: users of net/unison
   AUTHOR: madpilot@FreeBSD.org

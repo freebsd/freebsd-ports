@@ -1,11 +1,10 @@
 PORTNAME=	fet
-DISTVERSION=	7.5.4
+DISTVERSION=	7.5.6
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
 		https://timetabling.de/download/ \
 		https://timetabling.de/download/old/
-PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	uzsolt@FreeBSD.org
 COMMENT=	Free timetabling software
@@ -14,16 +13,11 @@ WWW=		https://lalescu.ro/liviu/fet/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-FLAVORS=	qt6 qt5
-FLAVOR?=	qt6
-
-USES=		compiler:c++17-lang gl qmake qt:${FLAVOR:S/qt//} tar:bzip2
+USES=		compiler:c++17-lang gl qmake qt:6 tar:bzip2
 USE_GL=		gl
-_USE_QT5=	core gui network printsupport widgets buildtools:build
-_USE_QT6=	base
-USE_QT=		${_USE_QT${FLAVOR:S/qt//}}
+USE_QT=		base
 
-CONFLICTS_INSTALL=	${FLAVORS:@fl@fet-${fl}@}
+CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 
 DESKTOP_ENTRIES=	"FET" \
 			"Free timetable software" \
