@@ -1,6 +1,6 @@
 PORTNAME=	intbitset
 DISTVERSION=	4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,11 @@ WWW=		https://github.com/inveniosoftware/intbitset/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist cython distutils pytest
+USE_PYTHON=	autoplist cython3 pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
