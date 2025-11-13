@@ -10,6 +10,8 @@ WWW=		https://www.meshlab.net/
 
 LICENSE=	GPLv2
 
+BROKEN=		fails to build and can not be update to Qt6
+
 BUILD_DEPENDS=	${LOCALBASE}/include/vcglib/img/img.h:devel/vcglib
 LIB_DEPENDS=	libmpirxx.so:math/mpir
 
