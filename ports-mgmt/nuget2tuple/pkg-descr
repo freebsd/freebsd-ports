@@ -1,0 +1,14 @@
+nuget2tuple is a FreeBSD ports utility that analyzes .NET projects
+(.csproj and .fsproj files) and generates the NUGET_NUPKGS knob that
+lists all NuGet package dependencies.
+
+The tool:
+- Runs dotnet restore with a temporary packages directory
+- Extracts all package names and versions
+- Automatically detects and adds runtime packages for self-contained builds
+  (Microsoft.NETCore.App.Runtime, Microsoft.AspNetCore.App.Runtime,
+   and Microsoft.NETCore.App.Host)
+- Outputs packages in the format required by FreeBSD port Makefiles
+
+This is useful for port maintainers who need to create or update .NET
+application ports that use NuGet packages.
