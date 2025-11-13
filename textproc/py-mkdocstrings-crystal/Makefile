@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings-crystal
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-callouts>=0.1.0:textproc/py-markdow
 # textproc/py-mkdocstrings belongs to RUN_DEPENDS as well but would cause
 # a circular dependency (via py-mkdocstrings' CRYSTAL option)
 
-USES=		python # textproc/py-mkdocs-autorefs requires Python 3.9+
+USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
