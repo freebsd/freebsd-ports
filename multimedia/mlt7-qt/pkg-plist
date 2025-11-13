@@ -7,6 +7,7 @@ lib/mlt-7/libmltqt%%QT_VERSION_SUFFIX%%.so
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_gpstext.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_lightshow.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_qtblend.yml
+%%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_qtblend_mode.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_qtcrop.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_qtext.yml
 %%DATADIR%%/qt%%QT_VERSION_SUFFIX%%/filter_typewriter.yml

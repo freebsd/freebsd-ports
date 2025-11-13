@@ -22,7 +22,7 @@ USE_XORG=	x11
 _USE_GL_qt6=	opengl
 _USE_QT_qt5=	core gui network widgets xml \
 		buildtools:build qmake:build
-_USE_QT_qt6=	base
+_USE_QT_qt6=	5compat base svg
 _CMAKE_ON_qt5=	MOD_GLAXNIMATE
 _CMAKE_ON_qt6=	MOD_GLAXNIMATE_QT6
 _CMAKE_OFF_qt5=	MOD_GLAXNIMATE_QT6

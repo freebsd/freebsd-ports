@@ -1,6 +1,6 @@
 PORTNAME=	${_MLT_PORTNAME}
 DISTVERSION=	${_MLT_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	multimedia
 MASTER_SITES=	https://github.com/mltframework/mlt/releases/download/v${DISTVERSION}/
 DISTFILES=	mlt-${DISTVERSION}${EXTRACT_SUFX}
@@ -135,6 +135,13 @@ VORBIS_CMAKE_BOOL=	MOD_VORBIS
 XINE_DESC=		Enable xine module
 XINE_CMAKE_BOOL=	MOD_XINE
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000
+# FreeBSD 13 does not ship clang-scan-deps
+BUILD_DEPENDS+=	clang-scan-deps${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+.endif
+
 pre-configure:
 	${RM} ${STAGEDIR}${PREFIX}/man/man1/melt.1
 
@@ -161,10 +168,13 @@ USES+=		mlt:7
 PLIST?=		${.CURDIR}/pkg-plist
 
 INSTALL_WRKSRC?=	${BUILD_WRKSRC}
+
+.include <bsd.port.pre.mk>
+
 .endif
 
 post-install: common-post-install
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/* 2>/dev/null || ${TRUE}
 	@${RMDIR} -p ${STAGEDIR}${PREFIX}/lib/${PORTNAME} 2>/dev/null || ${TRUE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
