@@ -1,5 +1,5 @@
 PORTNAME=	lazarus
-DISTVERSION=	4.2
+DISTVERSION=	4.4
 PKGNAMESUFFIX?=  -gtk2
 PORTREVISION?=	0
 CATEGORIES=	editors devel
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_GITLAB=	yes
 GL_ACCOUNT=	freepascal.org/lazarus
 GL_PROJECT=	${PORTNAME}
-GL_COMMIT=	e98683ddc052e8db4d0a046af5e04e365324ee4f
+GL_COMMIT=	98f9c7a7a102139e43b39050ebbb5c48d805f59f
 
 USES=		desktop-file-utils fpc:run gettext gmake iconv shared-mime-info xorg
 USE_XORG=	x11
