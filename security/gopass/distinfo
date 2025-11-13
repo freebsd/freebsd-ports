@@ -1,7 +1,7 @@
-TIMESTAMP = 1758308339
-SHA256 (go/security_gopass/gopass-v1.15.18/v1.15.18.mod) = d896a7e31597dc6cdbf6eececfb7da5c997813ef9739666727c926999b734d62
-SIZE (go/security_gopass/gopass-v1.15.18/v1.15.18.mod) = 4392
-SHA256 (go/security_gopass/gopass-v1.15.18/v1.15.18.zip) = 5c6eaa1f74632a4e8cde7eababe589136c451e9649bac1665df350bfc69db517
-SIZE (go/security_gopass/gopass-v1.15.18/v1.15.18.zip) = 2636855
-SHA256 (go/security_gopass/gopass-v1.15.18/gopasspw-password-store-example-8db75ba3b69c_GH0.tar.gz) = e2866f4749e844ea9f7d31386f971dd8bbf19acab2c0a06fe7c4e99462eda1c5
-SIZE (go/security_gopass/gopass-v1.15.18/gopasspw-password-store-example-8db75ba3b69c_GH0.tar.gz) = 1392
+TIMESTAMP = 1763065093
+SHA256 (go/security_gopass/gopass-v1.16.0/v1.16.0.mod) = 5f041be3279b6b57fec531111be9e5cd6c1ae2959b2174a34cc67d4ed0da7583
+SIZE (go/security_gopass/gopass-v1.16.0/v1.16.0.mod) = 4391
+SHA256 (go/security_gopass/gopass-v1.16.0/v1.16.0.zip) = de4f605cee86ecf4537fbf33e52d18e1e6fff2230b5e8dd57a519275b8e1df83
+SIZE (go/security_gopass/gopass-v1.16.0/v1.16.0.zip) = 3305237
+SHA256 (go/security_gopass/gopass-v1.16.0/gopasspw-password-store-example-8db75ba3b69c_GH0.tar.gz) = e2866f4749e844ea9f7d31386f971dd8bbf19acab2c0a06fe7c4e99462eda1c5
+SIZE (go/security_gopass/gopass-v1.16.0/gopasspw-password-store-example-8db75ba3b69c_GH0.tar.gz) = 1392
