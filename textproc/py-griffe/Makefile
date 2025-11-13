@@ -1,5 +1,5 @@
 PORTNAME=	griffe
-DISTVERSION=	1.14.0
+DISTVERSION=	1.15.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=4.17.3:devel/py-jsonschema@${PY
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
+# These tests require py-griffe-inherited-docstrings which isn't ported, yet.
+PYTEST_IGNORED_TESTS=	test_alias_proxies test_exposed_objects test_load_git \
+			test_no_module_docstrings_in_internal_api \
+			test_single_locations test_unique_names
 
 TEST_ARGS=	-n ${MAKE_JOBS_NUMBER}
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
