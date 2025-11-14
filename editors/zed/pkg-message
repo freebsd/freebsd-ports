@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Realtime collaboration features based on WebRTC are not yet
+supported. In addition, integrated terminal is very laggy (might
+depending on a user's environment).
+
+More information on Zed developments for FreeBSD is available at the
+following URLs:
+
+- https://zed.dev/docs/development/freebsd
+- https://github.com/zed-industries/zed/discussions/29550
+- https://github.com/zed-industries/zed/issues/15309
+EOM
+}
+]
