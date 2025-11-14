@@ -1,5 +1,5 @@
 PORTNAME=	wsproto
-DISTVERSION=	1.3.0
+DISTVERSION=	1.3.1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,6 +21,7 @@ USE_PYTHON=	autoplist pep517 pytest
 NO_ARCH=	yes
 
 post-patch:
-	@${REINPLACE_CMD} '/license-files/d; s|77|63|g' ${WRKSRC}/pyproject.toml
+	@${REINPLACE_CMD} '/license-files/d; s|77|63|g; s|^license = "MIT"|license = { text = "MIT" }|' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
