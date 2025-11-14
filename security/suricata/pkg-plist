@@ -1,51 +1,11 @@
 bin/suricata
 %%PYTHON%%bin/suricata-update
-%%PYTHON%%bin/suricatactl
-%%PYTHON%%bin/suricatasc
-include/htp/bstr.h
-include/htp/bstr_builder.h
-include/htp/htp.h
-include/htp/htp_base64.h
-include/htp/htp_config.h
-include/htp/htp_connection_parser.h
-include/htp/htp_core.h
-include/htp/htp_decompressors.h
-include/htp/htp_hooks.h
-include/htp/htp_list.h
-include/htp/htp_multipart.h
-include/htp/htp_table.h
-include/htp/htp_transaction.h
-include/htp/htp_urlencoded.h
-include/htp/htp_utf8_decoder.h
-include/htp/htp_version.h
-include/htp/lzma/7zTypes.h
-include/htp/lzma/LzmaDec.h
-lib/libhtp.a
-lib/libhtp.so
-lib/libhtp.so.2
-lib/libhtp.so.2.0.0
+bin/suricatactl
+bin/suricatasc
 %%PYTHON%%lib/suricata/python/suricata/__init__.py
 %%PYTHON%%lib/suricata/python/suricata/__pycache__/__init__%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/config/__init__.py
-%%PYTHON%%lib/suricata/python/suricata/config/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON%%lib/suricata/python/suricata/config/__pycache__/defaults%%PYTHON_TAG%%.pyc
 %%PYTHON%%lib/suricata/python/suricata/config/defaults.py
-%%PYTHON%%lib/suricata/python/suricata/ctl/__init__.py
-%%PYTHON%%lib/suricata/python/suricata/ctl/__pycache__/__init__%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/ctl/__pycache__/filestore%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/ctl/__pycache__/loghandler%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/ctl/__pycache__/main%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/ctl/__pycache__/test_filestore%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/ctl/filestore.py
-%%PYTHON%%lib/suricata/python/suricata/ctl/loghandler.py
-%%PYTHON%%lib/suricata/python/suricata/ctl/main.py
-%%PYTHON%%lib/suricata/python/suricata/ctl/test_filestore.py
-%%PYTHON%%lib/suricata/python/suricata/sc/__init__.py
-%%PYTHON%%lib/suricata/python/suricata/sc/__pycache__/__init__%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/sc/__pycache__/specs%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/sc/__pycache__/suricatasc%%PYTHON_TAG%%.pyc
-%%PYTHON%%lib/suricata/python/suricata/sc/specs.py
-%%PYTHON%%lib/suricata/python/suricata/sc/suricatasc.py
 %%PYTHON%%lib/suricata/python/suricata/update/__init__.py
 %%PYTHON%%lib/suricata/python/suricata/update/__pycache__/__init__%%PYTHON_TAG%%.pyc
 %%PYTHON%%lib/suricata/python/suricata/update/__pycache__/config%%PYTHON_TAG%%.pyc
@@ -118,16 +78,12 @@ lib/libhtp.so.2.0.0
 %%PYTHON%%lib/suricata/python/suricata/update/sources.py
 %%PYTHON%%lib/suricata/python/suricata/update/util.py
 %%PYTHON%%lib/suricata/python/suricata/update/version.py
-%%PYTHON%%lib/suricata/python/suricatasc/__init__.py
-%%PYTHON%%lib/suricata/python/suricatasc/__pycache__/__init__%%PYTHON_TAG%%.pyc
-libdata/pkgconfig/htp.pc
 share/man/man1/suricata.1.gz
-%%PYTHON%%share/man/man1/suricatactl-filestore.1.gz
-%%PYTHON%%share/man/man1/suricatactl.1.gz
-%%PYTHON%%share/man/man1/suricatasc.1.gz
+share/man/man1/suricatactl-filestore.1.gz
+share/man/man1/suricatactl.1.gz
+share/man/man1/suricatasc.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/Basic_Setup.txt
-%%DOCSDIR%%/GITGUIDE
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
@@ -139,16 +95,20 @@ share/man/man1/suricata.1.gz
 %%DATADIR%%/rules/dhcp-events.rules
 %%DATADIR%%/rules/dnp3-events.rules
 %%DATADIR%%/rules/dns-events.rules
+%%DATADIR%%/rules/enip-events.rules
 %%DATADIR%%/rules/files.rules
 %%DATADIR%%/rules/ftp-events.rules
 %%DATADIR%%/rules/http-events.rules
 %%DATADIR%%/rules/http2-events.rules
 %%DATADIR%%/rules/ipsec-events.rules
 %%DATADIR%%/rules/kerberos-events.rules
+%%DATADIR%%/rules/mdns-events.rules
 %%DATADIR%%/rules/modbus-events.rules
 %%DATADIR%%/rules/mqtt-events.rules
 %%DATADIR%%/rules/nfs-events.rules
 %%DATADIR%%/rules/ntp-events.rules
+%%DATADIR%%/rules/pgsql-events.rules
+%%DATADIR%%/rules/pop3-events.rules
 %%DATADIR%%/rules/quic-events.rules
 %%DATADIR%%/rules/rfb-events.rules
 %%DATADIR%%/rules/smb-events.rules
@@ -156,6 +116,7 @@ share/man/man1/suricata.1.gz
 %%DATADIR%%/rules/ssh-events.rules
 %%DATADIR%%/rules/stream-events.rules
 %%DATADIR%%/rules/tls-events.rules
+%%DATADIR%%/rules/websocket-events.rules
 @sample %%ETCDIR%%/classification.config.sample
 @sample %%ETCDIR%%/reference.config.sample
 @sample %%ETCDIR%%/suricata.yaml.sample
@@ -163,6 +124,5 @@ share/man/man1/suricata.1.gz
 @dir %%DATADIR%%
 @dir %%DOCSDIR%%
 @dir %%ETCDIR%%
-@dir include/htp
 @dir(root,wheel,0700) /var/log/suricata
 @postunexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, run ``rm -rf ${PKG_PREFIX}/%%ETCDIR%%`` to remove configuration files."; fi
