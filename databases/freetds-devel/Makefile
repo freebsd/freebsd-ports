@@ -1,5 +1,5 @@
 PORTNAME=	freetds
-DISTVERSION=	1.5.142
+DISTVERSION=	1.5.147
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.freetds.org/files/current/
