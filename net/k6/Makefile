@@ -1,6 +1,6 @@
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	net
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -10,12 +10,12 @@ WWW=		https://k6.io/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:1.23,modules
+USES=		go:1.24,modules
 
 NOT_FOR_ARCHS=	armv6 armv7 i386
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	5870e99
+_BUILD_HASH=	a9f9e3b
 
 GO_MODULE=	github.com/grafana/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
