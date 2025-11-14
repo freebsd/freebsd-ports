@@ -476,6 +476,7 @@
     SUBDIR += goaccess
     SUBDIR += goawk
     SUBDIR += gobi_loader
+    SUBDIR += gol
     SUBDIR += gomi
     SUBDIR += gomplate
     SUBDIR += gonzo
