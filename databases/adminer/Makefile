@@ -12,7 +12,7 @@ WWW=		https://www.adminer.org
 LICENSE=	APACHE20
 
 DEPRECATED=     Project's poor security practices
-EXPIRATION_DATE=2026-06-31
+EXPIRATION_DATE=2026-06-30
 
 USES=		cpe php:build,flavors
 USE_GITHUB=	nodefault
