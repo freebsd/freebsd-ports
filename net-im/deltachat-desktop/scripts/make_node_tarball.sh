@@ -58,6 +58,8 @@ rm -rf node_modules/.pnpm/*win32*
 rm -rf node_modules/.pnpm/*android*
 rm -rf node_modules/.pnpm/@tauri-apps*
 rm -rf node_modules/.pnpm/app-builder*
+rm -rf node_modules/.pnpm/7zip-bin*
+find node_modules -type f -name '*.exe' -delete
 
 # Remove duplicates which will make it harder to select the right path by
 # globbing in Makefile during packaging

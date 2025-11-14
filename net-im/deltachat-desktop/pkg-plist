@@ -362,7 +362,6 @@ share/applications/deltachat.desktop
 %%DATADIR%%/html-dist/images/verified.svg
 %%DATADIR%%/html-dist/main.css
 %%DATADIR%%/html-dist/main.html
-%%DATADIR%%/html-dist/message_parser_wasm_bg.wasm
 %%DATADIR%%/html-dist/preload.js
 %%DATADIR%%/html-dist/runtime.js
 %%DATADIR%%/html-dist/runtime.js.map
@@ -375,6 +374,7 @@ share/applications/deltachat.desktop
 %%DATADIR%%/html-dist/webxdc-preload.js
 %%DATADIR%%/html-dist/webxdc_wrapper.html
 %%DATADIR%%/html-dist/xdcs/maps.xdc
+%%DATADIR%%/html-dist/xdcs/version.txt
 %%DATADIR%%/icons/deltachat.svg
 %%DATADIR%%/index.js
 %%DATADIR%%/node_modules/@deltachat/calls-webapp/LICENSE
@@ -576,6 +576,10 @@ share/applications/deltachat.desktop
 %%DATADIR%%/node_modules/detect-libc/bin/detect-libc.js
 %%DATADIR%%/node_modules/detect-libc/lib/detect-libc.js
 %%DATADIR%%/node_modules/detect-libc/package.json
+%%DATADIR%%/node_modules/escape-html/LICENSE
+%%DATADIR%%/node_modules/escape-html/Readme.md
+%%DATADIR%%/node_modules/escape-html/index.js
+%%DATADIR%%/node_modules/escape-html/package.json
 %%DATADIR%%/node_modules/fill-range/LICENSE
 %%DATADIR%%/node_modules/fill-range/README.md
 %%DATADIR%%/node_modules/fill-range/index.js
@@ -833,8 +837,11 @@ share/applications/deltachat.desktop
 %%DATADIR%%/node_modules/source-map-js/lib/binary-search.js
 %%DATADIR%%/node_modules/source-map-js/lib/mapping-list.js
 %%DATADIR%%/node_modules/source-map-js/lib/quick-sort.js
+%%DATADIR%%/node_modules/source-map-js/lib/source-map-consumer.d.ts
 %%DATADIR%%/node_modules/source-map-js/lib/source-map-consumer.js
+%%DATADIR%%/node_modules/source-map-js/lib/source-map-generator.d.ts
 %%DATADIR%%/node_modules/source-map-js/lib/source-map-generator.js
+%%DATADIR%%/node_modules/source-map-js/lib/source-node.d.ts
 %%DATADIR%%/node_modules/source-map-js/lib/source-node.js
 %%DATADIR%%/node_modules/source-map-js/lib/util.js
 %%DATADIR%%/node_modules/source-map-js/package.json

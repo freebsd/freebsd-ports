@@ -1,7 +1,7 @@
 PORTNAME=	deltachat-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.22.0
-PORTREVISION=	2
+DISTVERSION=	2.25.1
+PORTREVISION=	0
 CATEGORIES=	net-im
 MASTER_SITES+=	LOCAL/feld:npmcache
 DISTFILES+=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-node-deps.tgz:npmcache
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ELECTRON_VER=	37
 
 # Important to keep the RPC server core in sync with the Desktop release
-RUN_DEPENDS=	deltachat-rpc-server>2.21<2.23:net/deltachat-rpc-server
+RUN_DEPENDS=	deltachat-rpc-server>=2.25<2.26:net/deltachat-rpc-server
 BUILD_DEPENDS=	electron${ELECTRON_VER}:devel/electron${ELECTRON_VER} \
 		npm:www/npm${NODEJS_SUFFIX}
 USES=		desktop-file-utils nodejs:22,build pkgconfig
