@@ -1,7 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.55.0
-PORTREVISION=	1
+DISTVERSION=	0.58.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -47,11 +46,16 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|0\.0\.0|${DISTVERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/user_agent.rs
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
+		${BUILD_WRKSRC}/cli/src/debug_sandbox/pid_tracker.rs \
 		${BUILD_WRKSRC}/core/src/environment_context.rs \
+		${BUILD_WRKSRC}/core/src/exec.rs \
+		${BUILD_WRKSRC}/core/src/parse_command.rs \
 		${BUILD_WRKSRC}/core/src/shell.rs \
+		${BUILD_WRKSRC}/core/src/tools/handlers/shell.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec.rs \
 		${BUILD_WRKSRC}/core/src/tools/spec.rs \
 		${BUILD_WRKSRC}/core/src/unified_exec/mod.rs \
+		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/shell_serialization.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
@@ -59,11 +63,12 @@ post-patch:
 		${BUILD_WRKSRC}/tui/src/exec_command.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/codex_message_processor_flow.rs \
+		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start.rs \
 		${BUILD_WRKSRC}/core/src/command_safety/is_safe_command.rs \
 		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/seatbelt.rs \
+		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
-		${BUILD_WRKSRC}/core/tests/suite/user_shell_cmd.rs \
 		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
 		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs
 
