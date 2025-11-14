@@ -1,5 +1,5 @@
 PORTNAME=	freedoko
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.1
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
