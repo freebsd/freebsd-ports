@@ -1,3 +1,62 @@
+  <vuln vid="364e5fa4-c178-11f0-b614-b42e991fc52e">
+    <topic>PostgreSQL -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>postgresql13-client</name>
+	<range><lt>13.23</lt></range>
+    </package>
+    <package>
+	<name>postgresql14-client</name>
+	<range><lt>14.20</lt></range>
+    </package>
+    <package>
+	<name>postgresql15-client</name>
+	<range><lt>15.15</lt></range>
+    </package>
+    <package>
+	<name>postgresql16-client</name>
+	<range><lt>16.11</lt></range>
+    </package>
+    <package>
+	<name>postgresql17-client</name>
+	<range><lt>17.7</lt></range>
+    </package>
+    <package>
+	<name>postgresql18-client</name>
+	<range><lt>18.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://www.postgresql.org/support/security/CVE-2025-12818/ reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2025-12818/">
+	  <ul>
+	  <li>Integer wraparound in multiple PostgreSQL libpq client
+	  library functions allows an application input provider or
+	  network peer to cause libpq to undersize an allocation and
+	  write out-of-bounds by hundreds of megabytes.  This results
+	  in a segmentation fault for the application using libpq.</li>
+	  <li>Missing authorization in PostgreSQL CREATE STATISTICS
+	  command allows a table owner to achieve denial of service
+	  against other CREATE STATISTICS users by creating in any
+	  schema.  A later CREATE STATISTICS for the same name, from a
+	  user having the CREATE privilege, would then fail.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12818</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-12818</url>
+      <cvename>CVE-2025-12817</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-12817</url>
+    </references>
+    <dates>
+      <discovery>2025-11-13</discovery>
+      <entry>2025-11-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2063f110-c0b8-11f0-a633-8c164580114f">
     <topic>lightdm-kde-greeter -- Privilege Escalation from lightdm Service User to root</topic>
     <affects>
