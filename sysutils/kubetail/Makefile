@@ -1,5 +1,5 @@
 PORTNAME=	kubetail
-DISTVERSION=	1.6.21
+DISTVERSION=	1.6.22
 CATEGORIES=	sysutils
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -41,11 +41,6 @@ post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/completion/${PORTNAME}.zsh \
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
-
-post-patch:
-	@${ECHO} "Patching...";
-# shebangfix does not help
-	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|g" ${WRKSRC}/${PORTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
