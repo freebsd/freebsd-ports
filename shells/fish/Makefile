@@ -1,6 +1,5 @@
 PORTNAME=	fish
-DISTVERSION=	4.0.6
-PORTREVISION=	2
+DISTVERSION=	4.2.1
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
