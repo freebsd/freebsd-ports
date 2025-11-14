@@ -1,8 +1,7 @@
 PORTNAME=	postgis
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.1
 CATEGORIES=	databases geography
 MASTER_SITES=	https://download.osgeo.org/postgis/source/
-PKGNAMESUFFIX=	36
 
 MAINTAINER=	lbartoletti@FreeBSD.org
 COMMENT=	Geographic objects support for PostgreSQL databases
