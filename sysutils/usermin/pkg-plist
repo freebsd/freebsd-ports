@@ -425,6 +425,7 @@ lib/usermin/authentic-theme/images/modules/at/icon.gif
 lib/usermin/authentic-theme/images/modules/backup-config/icon.gif
 lib/usermin/authentic-theme/images/modules/bandwidth/icon.gif
 lib/usermin/authentic-theme/images/modules/bind8/A.gif
+lib/usermin/authentic-theme/images/modules/bind8/AAAA.gif
 lib/usermin/authentic-theme/images/modules/bind8/ALL.gif
 lib/usermin/authentic-theme/images/modules/bind8/CNAME.gif
 lib/usermin/authentic-theme/images/modules/bind8/HINFO.gif
@@ -1334,6 +1335,10 @@ lib/usermin/authentic-theme/unauthenticated/css/palettes/teal.min.css
 lib/usermin/authentic-theme/unauthenticated/css/palettes/white.min.css
 lib/usermin/authentic-theme/unauthenticated/css/photoswipe.min.css
 lib/usermin/authentic-theme/unauthenticated/css/photoswipe.min.css.gz
+lib/usermin/authentic-theme/unauthenticated/css/rounded-menu.min.css
+lib/usermin/authentic-theme/unauthenticated/css/rounded-menu.min.css.gz
+lib/usermin/authentic-theme/unauthenticated/css/rounded-slider.min.css
+lib/usermin/authentic-theme/unauthenticated/css/rounded-slider.min.css.gz
 lib/usermin/authentic-theme/unauthenticated/fonts/KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2
 lib/usermin/authentic-theme/unauthenticated/fonts/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2
 lib/usermin/authentic-theme/unauthenticated/fonts/KFOkCnqEu92Fr1Mu51xGIzIFKw.woff2
@@ -9450,6 +9455,7 @@ lib/usermin/proc/lang/cs
 lib/usermin/proc/lang/cs.auto
 lib/usermin/proc/lang/da.auto
 lib/usermin/proc/lang/de
+lib/usermin/proc/lang/de.auto
 lib/usermin/proc/lang/el
 lib/usermin/proc/lang/el.auto
 lib/usermin/proc/lang/en
