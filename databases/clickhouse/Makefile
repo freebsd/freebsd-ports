@@ -1,6 +1,6 @@
 PORTNAME=	clickhouse
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.9.1.1854
+DISTVERSION=	24.5.1.1763
 DISTVERSIONSUFFIX=-stable
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
@@ -46,10 +46,10 @@ expect_CMD=	${LOCALBASE}/bin/expect
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=20 \
 		-DNO_WERROR=1 \
 		-DCOMPILER_CACHE=disabled \
-		-DPARALLEL_COMPILE_JOBS=1024 \
-		-DPARALLEL_LINK_JOBS=1024
+		-DPARALLEL_COMPILE_JOBS=${MAKE_JOBS_NUMBER} \
+		-DPARALLEL_LINK_JOBS=${MAKE_JOBS_NUMBER}
 CMAKE_ON=	ENABLE_UTILS
-CMAKE_OFF=	ENABLE_EMBEDDED_COMPILER ENABLE_PARQUET ENABLE_THINLTO
+CMAKE_OFF=	ENABLE_PARQUET ENABLE_THINLTO
 
 .if defined(WITH_DEBUG)
 CMAKE_BUILD_TYPE=Debug
@@ -63,16 +63,17 @@ GROUPS=		clickhouse
 # The version stamp of libclickhouse.so doesn't always match ${PORTVERSION}
 PLIST_SUB=	SOVERSION=${SOVERSION}
 
-OPTIONS_DEFINE=		TEST
+OPTIONS_DEFINE=		LLVM TEST
 OPTIONS_SUB=		yes
 
 TEST_RUN_DEPENDS=	expect>0:lang/expect
-TEST_CMAKE_BOOL=	ENABLE_CLICKHOUSE_TEST ENABLE_TESTS
+TEST_CMAKE_BOOL=	ENABLE_TESTS
+LLVM_CMAKE_BOOL=	ENABLE_DWARF_PARSER ENABLE_EMBEDDED_COMPILER
 
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD
-USES+=	llvm:16
+USES+=	llvm:17
 CFLAGS+=-Wno-error=int-conversion
 .endif
 
@@ -89,12 +90,6 @@ SOVERSION=	${PORTVERSION}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib/clickhouse|/var/db/clickhouse|;s|/var/log/clickhouse-server|/var/log/clickhouse|;s|/etc/clickhouse-server|${PREFIX}/etc/clickhouse-server|' ${WRKSRC}/programs/server/config.xml
 	cd ${WRKSRC}/contrib/openldap-cmake && ${LN} -s freebsd_x86_64 freebsd_aarch64
-
-do-install-TEST-on:
-	${FIND} -s ${STAGEDIR}${PREFIX}/tests -not -type d | ${SORT} | \
-		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
-	${FIND} -s ${STAGEDIR}${PREFIX}/tests -type d -empty | ${SORT} -r | \
-		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/config-processor
