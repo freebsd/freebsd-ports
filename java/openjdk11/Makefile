@@ -171,6 +171,8 @@ CFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}
 CXXFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}
 CONFIGURE_ARGS+=--disable-precompiled-headers
 .else
+# it is up to upstream project to fix these or not
+CFLAGS+=	-Wno-deprecated-builtins -Wno-inline-asm -Wno-unknown-attributes
 MAKE_ENV+=	USE_CLANG=true
 .if ${ARCH:Mpowerpc64*}
 LLVM_VER=	12
