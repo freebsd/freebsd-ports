@@ -1,11 +1,11 @@
 PORTNAME=	filebrowser-quantum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0-beta
-PORTREVISION=	1
+DISTVERSION=	1.0.1
+PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
-DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.frontend${EXTRACT_SUFX} \
-		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}.vendor${EXTRACT_SUFX}
+DISTFILES=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL}.frontend${EXTRACT_SUFX} \
+		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL}.vendor${EXTRACT_SUFX}
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Web File Browser
@@ -18,12 +18,13 @@ USES=		go:1.25,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gtsteffaniak
 GH_PROJECT=	filebrowser
+GH_TAGNAME=	${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL}
 
 USE_RC_SUBR=	${PORTNAME}
 
 GO_TARGET=	./main.go:${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
-			-X 'github.com/gtsteffaniak/filebrowser/backend/common/version.Version=${DISTVERSIONPREFIX}${DISTVERSION}' \
+			-X 'github.com/gtsteffaniak/filebrowser/backend/common/version.Version=${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL}' \
 			-X 'github.com/gtsteffaniak/filebrowser/backend/common/version.CommitSHA=${GITID}'"
 
 SUB_FILES=	${PORTNAME}.yaml
@@ -41,12 +42,13 @@ FFMPEG_DESC=	Enable video thumbnail generation support
 
 FFMPEG_RUN_DEPENDS=	ffmpeg>=0:multimedia/ffmpeg
 
-# Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION} && git rev-parse HEAD'
+# Run 'git checkout ${DISTVERSIONPREFIX}${DISTVERSION}-${FILEBROWSER_QUANTUM_CHANNEL} && git rev-parse HEAD'
 # in the FileBrowser Quantum repository to get the value of GITID.
-GITID=		2a3028e
+GITID=		1d8c74d
 
 FILEBROWSER_QUANTUM_USER=	www
 FILEBROWSER_QUANTUM_GROUP=	${FILEBROWSER_QUANTUM_USER}
+FILEBROWSER_QUANTUM_CHANNEL=	stable
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/vendor
