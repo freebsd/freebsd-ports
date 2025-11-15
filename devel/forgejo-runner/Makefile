@@ -1,7 +1,7 @@
 PORTNAME=	act_runner
 DISTVERSIONPREFIX=	v
 DISTVERSION=	9.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	forgejo-
 
@@ -28,14 +28,18 @@ LD_FLAG_X_PREFIX=	-X ${GO_MODULE}/internal/pkg/ver
 
 DATADIR=	/var/db/${PORTNAME}
 
-USERS=	${ACT_RUNNER_USER}
-GROUPS=	${ACT_RUNNER_GROUP}
-
 ACT_RUNNER_USER?=	${PORTNAME}
 ACT_RUNNER_GROUP?=	${PORTNAME}
+.if ${ACT_RUNNER_USER} == ${PORTNAME}
+USERS=	${ACT_RUNNER_USER}
+.endif
+.if ${ACT_RUNNER_GROUP} == ${PORTNAME}
+GROUPS=	${ACT_RUNNER_GROUP}
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${BUILD_WRKSRC}/internal/pkg/config/config.example.yaml ${STAGEDIR}${ETCDIR}/act_runner.conf.sample
+	${INSTALL_DATA} ${BUILD_WRKSRC}/internal/pkg/config/config.example.yaml \
+		${STAGEDIR}${ETCDIR}/act_runner.conf.sample
 
 .include <bsd.port.mk>
