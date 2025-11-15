@@ -1,6 +1,6 @@
 PORTNAME=	OSCAR
 DISTVERSIONPREFIX=	v
-DISTVERSION=    1.5.1
+DISTVERSION=    1.6.1
 CATEGORIES=	x11
 
 MAINTAINER=	sdalu@sdalu.com
@@ -11,13 +11,13 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake qmake:outsource qt:5 shebangfix xorg gl desktop-file-utils
+USES=		gmake qmake:outsource qt:6 shebangfix xorg gl desktop-file-utils
 USE_XORG=       x11
 USE_GL=         gl glu
-USE_QT=		gui printsupport opengl widgets network xml serialport core linguisttools:build buildtools:build
+USE_QT=		base tools serialport
 
 USE_GITLAB=     yes
-GL_ACCOUNT=     pholy
+GL_ACCOUNT=     CrimsonNape
 GL_PROJECT=     OSCAR-code
 
 WRKSRC_SUBDIR=  oscar
