@@ -51,7 +51,7 @@ lib/libabiword-%%ABIVERSION%%.so
 libdata/pkgconfig/abiword-%%ABIVERSION%%.pc
 share/man/man1/abiword.1.gz
 %%DATADIR%%-%%ABIVERSION%%/Presentation.xml
-%%COLLAB%%%%DATADIR%%-%%ABIVERSION%%/certs/cacert.pem
+%%COLSERVICE%%%%DATADIR%%-%%ABIVERSION%%/certs/cacert.pem
 %%CLIPART%%%%DATADIR%%-%%ABIVERSION%%/clipart/book.png
 %%CLIPART%%%%DATADIR%%-%%ABIVERSION%%/clipart/chip.png
 %%CLIPART%%%%DATADIR%%-%%ABIVERSION%%/clipart/fun.png
@@ -337,8 +337,8 @@ share/man/man1/abiword.1.gz
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_FormatFrame.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_FormatTOC.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_FormatTable.ui
-%%COLLAB%%%%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_GenericInput.ui
-%%COLLAB%%%%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_GenericProgress.ui
+%%COLSERVICE%%%%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_GenericInput.ui
+%%COLSERVICE%%%%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_GenericProgress.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_Goto.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_HdrFtr.ui
 %%DATADIR%%-%%ABIVERSION%%/ui/ap_UnixDialog_InsertTable.ui
