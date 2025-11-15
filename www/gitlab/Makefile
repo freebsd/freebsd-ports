@@ -401,6 +401,9 @@ post-patch:
 	# Remove symlink a create a file with content
 	${RM} ${WRKSRC}/GITLAB_WORKHORSE_VERSION
 	${ECHO} ${PORTVERSION} > ${WRKSRC}/GITLAB_WORKHORSE_VERSION
+	# Correct link for pipeline secret scanning tool
+	${REINPLACE_CMD}  -e 's|/analyzer run|/usr/local/bin/analyzer run|g' \
+		${WRKSRC}/lib/gitlab/ci/templates/Jobs/*.yml
 
 do-install:
 	${CP} ${WRKSRC}/config/database.yml.postgresql ${WRKSRC}/config/database.yml.sample
