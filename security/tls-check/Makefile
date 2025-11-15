@@ -11,6 +11,9 @@ WWW=		https://github.com/tls-check/TLS-Check
 
 LICENSE=	ART20
 
+DEPRECATED=	Obsolete tool and relies on deprecated libraries
+EXPIRATION_DATE=2025-12-31
+
 MY_DEPENDS=	p5-Class-CSV>=1.03:textproc/p5-Class-CSV \
 		p5-File-HomeDir>=1.00:devel/p5-File-HomeDir \
 		p5-File-ShareDir>=1.102:devel/p5-File-ShareDir \
