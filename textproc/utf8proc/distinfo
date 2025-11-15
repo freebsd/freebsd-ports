@@ -1,3 +1,7 @@
-TIMESTAMP = 1742505280
-SHA256 (utf8proc-2.10.0.tar.gz) = 276a37dc4d1dd24d7896826a579f4439d1e5fe33603add786bb083cab802e23e
-SIZE (utf8proc-2.10.0.tar.gz) = 195848
+TIMESTAMP = 1763200320
+SHA256 (utf8proc/2.11.1/utf8proc-2.11.1.tar.gz) = 0aa41260917df1ef4724f34f314babbd48ba18963e4d5a14a1752f14ee765010
+SIZE (utf8proc/2.11.1/utf8proc-2.11.1.tar.gz) = 198822
+SHA256 (utf8proc/2.11.1/NormalizationTest.txt) = 5019ffd530751a741900c849c0e010332f142a3612234639bd200b82138a87db
+SIZE (utf8proc/2.11.1/NormalizationTest.txt) = 2827429
+SHA256 (utf8proc/2.11.1/GraphemeBreakTest.txt) = e2d134d2c52919bace503ebb6a551c1855fe1a1faec18478c78fff254a1793ec
+SIZE (utf8proc/2.11.1/GraphemeBreakTest.txt) = 126570
