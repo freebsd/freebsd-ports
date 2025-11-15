@@ -1,4 +1,4 @@
---- electron/spec/api-app-spec.ts.orig	2025-10-28 14:56:59 UTC
+--- electron/spec/api-app-spec.ts.orig	2025-11-13 22:57:06 UTC
 +++ electron/spec/api-app-spec.ts
 @@ -129,11 +129,11 @@ describe('app module', () => {
    });
@@ -14,7 +14,7 @@
        const languages = app.getPreferredSystemLanguages();
        if (languages.length) {
          expect(languages).to.not.include('C');
-@@ -196,7 +196,7 @@ describe('app module', () => {
+@@ -202,7 +202,7 @@ describe('app module', () => {
        expect(code).to.equal(123, 'exit code should be 123, if you see this please tag @MarshallOfSound');
      });
  
@@ -23,7 +23,7 @@
        const electronPath = process.execPath;
        const appPath = path.join(fixturesPath, 'api', 'singleton');
        appProcess = cp.spawn(electronPath, [appPath]);
-@@ -360,7 +360,7 @@ describe('app module', () => {
+@@ -366,7 +366,7 @@ describe('app module', () => {
    });
  
    // GitHub Actions macOS-13 runners used for x64 seem to have a problem with this test.
@@ -32,7 +32,7 @@
      const tempFiles = [
        path.join(fixturesPath, 'foo.txt'),
        path.join(fixturesPath, 'bar.txt'),
-@@ -488,7 +488,7 @@ describe('app module', () => {
+@@ -494,7 +494,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -41,7 +41,7 @@
    //       this.skip()
    //     }
    //   })
-@@ -595,7 +595,7 @@ describe('app module', () => {
+@@ -601,7 +601,7 @@ describe('app module', () => {
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
        (process.platform === 'win32') ||
@@ -50,7 +50,7 @@
  
      const expectedBadgeCount = 42;
  
-@@ -639,7 +639,7 @@ describe('app module', () => {
+@@ -645,7 +645,7 @@ describe('app module', () => {
      });
    });
  
@@ -59,7 +59,7 @@
      const isMac = process.platform === 'darwin';
      const isWin = process.platform === 'win32';
  
-@@ -1019,7 +1019,7 @@ describe('app module', () => {
+@@ -1025,7 +1025,7 @@ describe('app module', () => {
      });
    });
  
@@ -68,7 +68,7 @@
      it('is mutable', () => {
        const values = [false, true, false];
        const setters: Array<(arg: boolean) => void> = [
-@@ -1288,7 +1288,7 @@ describe('app module', () => {
+@@ -1294,7 +1294,7 @@ describe('app module', () => {
      });
    });
  
@@ -77,7 +77,7 @@
      let w: BrowserWindow;
  
      before(function () {
-@@ -1423,7 +1423,7 @@ describe('app module', () => {
+@@ -1429,7 +1429,7 @@ describe('app module', () => {
  
    describe('getApplicationNameForProtocol()', () => {
      // TODO: Linux CI doesn't have registered http & https handlers
@@ -86,7 +86,7 @@
        // We can't expect particular app names here, but these protocols should
        // at least have _something_ registered. Except on our Linux CI
        // environment apparently.
-@@ -1441,7 +1441,7 @@ describe('app module', () => {
+@@ -1447,7 +1447,7 @@ describe('app module', () => {
      });
    });
  
@@ -95,7 +95,7 @@
      it('returns promise rejection for a bogus protocol', async function () {
        await expect(
          app.getApplicationInfoForProtocol('bogus-protocol://')
-@@ -1491,7 +1491,7 @@ describe('app module', () => {
+@@ -1497,7 +1497,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -104,7 +104,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1573,7 +1573,7 @@ describe('app module', () => {
+@@ -1579,7 +1579,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -113,7 +113,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1647,7 +1647,7 @@ describe('app module', () => {
+@@ -1653,7 +1653,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -122,7 +122,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -1671,7 +1671,7 @@ describe('app module', () => {
+@@ -1677,7 +1677,7 @@ describe('app module', () => {
      });
    });
  
