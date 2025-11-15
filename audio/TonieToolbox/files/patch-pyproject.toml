@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-11-15 05:43:17 UTC
++++ pyproject.toml
+@@ -8,7 +8,7 @@ requires-python = ">=3.7"
+ description = "Convert audio files to Toniebox compatible format (.TAF) and interact with TeddyCloud."
+ readme = "README.md"
+ requires-python = ">=3.7"
+-license = "GPL-3.0-or-later"
++license = { file = "LICENSE.md" }
+ authors = [
+     {name = "Quentendo64", email = "quentin@wohlfeil.at"}
+ ]
+@@ -38,4 +38,4 @@ Homepage = "https://github.com/Quentendo64/TonieToolbo
+ "Bug Tracker" = "https://github.com/Quentendo64/TonieToolbox/issues"
+ 
+ [project.scripts]
+-tonietoolbox = "TonieToolbox.__main__:main"
+\ No newline at end of file
++tonietoolbox = "TonieToolbox.__main__:main"

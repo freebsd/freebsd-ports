@@ -3,6 +3,7 @@
     SUBDIR += GxSwitchlessWah-lv2
     SUBDIR += HVSC-Update
     SUBDIR += Maaate
+    SUBDIR += TonieToolbox
     SUBDIR += a2jmidid
     SUBDIR += abcde
     SUBDIR += abcselect

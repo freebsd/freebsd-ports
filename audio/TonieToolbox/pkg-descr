@@ -1,0 +1,15 @@
+TonieToolbox allows you to create custom audio content for Tonie boxes by
+converting various audio formats into the specific file format required by
+Tonie devices.
+
+The tool provides several capabilities:
+
+- Convert single or multiple audio files into a Tonie-compatible format
+- Process complex folder structures recursively to handle entire audio collections
+- Analyze and validate existing Tonie files
+- Split Tonie files into individual opus tracks
+- Compare two TAF files for debugging differences
+- Support various input formats through FFmpeg conversion
+- Extract and use audio media tags (ID3, Vorbis Comments, etc.) for better file naming
+- Upload Tonie files directly to a TeddyCloud server
+- Automatically upload cover artwork alongside Tonie files
