@@ -1,12 +1,19 @@
---- PreLoad.cmake.orig	2023-04-26 21:51:24 UTC
+--- PreLoad.cmake.orig	2024-09-26 19:15:26 UTC
 +++ PreLoad.cmake
-@@ -15,12 +15,17 @@ endif()
+@@ -15,12 +15,24 @@ endif()
      endif ()
  endif()
  
 +# Default toolchain - this is needed to avoid dependency on OS files.
-+execute_process(COMMAND uname -s OUTPUT_VARIABLE OS)
-+execute_process(COMMAND uname -m OUTPUT_VARIABLE ARCH)
++execute_process(COMMAND uname -s
++    OUTPUT_VARIABLE OS
++    COMMAND_ERROR_IS_FATAL ANY
++)
++execute_process(COMMAND uname -m
++    OUTPUT_VARIABLE ARCH
++    COMMAND_ERROR_IS_FATAL ANY
++)
++
 +
  # Check if environment is polluted.
 -if (NOT "$ENV{CFLAGS}" STREQUAL ""
@@ -20,14 +27,20 @@
  
      # if $ENV
      message("CFLAGS: $ENV{CFLAGS}")
-@@ -49,10 +54,6 @@ endif()
+@@ -49,16 +61,6 @@ endif()
  
          Note: if you don't like this behavior, you can manually edit the cmake files, but please don't complain to developers.")
  endif()
 -
 -# Default toolchain - this is needed to avoid dependency on OS files.
--execute_process(COMMAND uname -s OUTPUT_VARIABLE OS)
--execute_process(COMMAND uname -m OUTPUT_VARIABLE ARCH)
+-execute_process(COMMAND uname -s
+-    OUTPUT_VARIABLE OS
+-    COMMAND_ERROR_IS_FATAL ANY
+-)
+-execute_process(COMMAND uname -m
+-    OUTPUT_VARIABLE ARCH
+-    COMMAND_ERROR_IS_FATAL ANY
+-)
  
  # By default, prefer clang on Linux
  # But note, that you still may change the compiler with -DCMAKE_C_COMPILER/-DCMAKE_CXX_COMPILER.

@@ -1,8 +1,12 @@
 bin/ch
 bin/chc
+bin/chdig
 bin/chl
 bin/clickhouse
 bin/clickhouse-benchmark
+bin/clickhouse-chdig
+bin/clickhouse-check-marks
+bin/clickhouse-checksum-for-compressed-block
 bin/clickhouse-client
 bin/clickhouse-compressor
 bin/clickhouse-disks
@@ -10,12 +14,13 @@ bin/clickhouse-extract-from-config
 bin/clickhouse-format
 bin/clickhouse-git-import
 bin/clickhouse-keeper-client
-bin/clickhouse-library-bridge
 bin/clickhouse-local
 bin/clickhouse-obfuscator
 bin/clickhouse-server
 bin/clickhouse-static-files-disk-uploader
 bin/clickhouse-su
+bin/clickhouse-zookeeper-dump-tree
+bin/clickhouse-zookeeper-remove-by-list
 %%ETCDIR%%-client/config.xml.sample
 %%ETCDIR%%-server/config.xml.sample
 %%ETCDIR%%-server/users.xml.sample
