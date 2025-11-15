@@ -1,23 +1,27 @@
---- CMakeLists.txt.orig	2025-08-05 02:13:11 UTC
+--- CMakeLists.txt.orig	2025-11-08 19:08:45 UTC
 +++ CMakeLists.txt
-@@ -815,13 +815,13 @@ endif()
+@@ -906,15 +906,15 @@ endif()
      )
  endif()
  
--set(BASH_COMPLETION_DIR "/usr/share/bash-completion/completions")
+-if(NOT CMAKE_SYSTEM_NAME MATCHES "Darwin")
+-    set(BASH_COMPLETION_DIR "/usr/share/bash-completion/completions")
 -
--install(FILES
--        scripts/gerbera-completion.sh
--        DESTINATION "${BASH_COMPLETION_DIR}"
--        RENAME gerbera
--)
-+#set(BASH_COMPLETION_DIR "/usr/share/bash-completion/completions")
+-    install(FILES
+-            scripts/gerbera-completion.sh
+-            DESTINATION "${BASH_COMPLETION_DIR}"
+-            RENAME gerbera
+-    )
+-endif()
++#if(NOT CMAKE_SYSTEM_NAME MATCHES "Darwin")
++#    set(BASH_COMPLETION_DIR "/usr/share/bash-completion/completions")
 +#
-+#install(FILES
-+#        scripts/gerbera-completion.sh
-+#        DESTINATION "${BASH_COMPLETION_DIR}"
-+#        RENAME gerbera
-+#)
++#    install(FILES
++#            scripts/gerbera-completion.sh
++#            DESTINATION "${BASH_COMPLETION_DIR}"
++#            RENAME gerbera
++#    )
++#endif()
  
  set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA ${DEBIAN_EXTRA_FILES})
  
