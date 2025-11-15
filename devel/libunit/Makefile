@@ -11,6 +11,9 @@ WWW=		https://unit.nginx.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repo archived on Oct 8 2025
+EXPIRATION_DATE=2025-12-31
+
 CATEGORIES=	devel www
 
 USES+=		compiler:c11 cpe
