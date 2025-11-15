@@ -1,7 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.59.0
-PORTREVISION=	1
+DISTVERSION=	2.59.4
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:boringssl \
 		LOCAL/mikael/ringrtc/:build \
@@ -63,7 +62,7 @@ GH_TUPLE=	signalapp:ringrtc:${DISTVERSIONPREFIX}${DISTVERSION} \
 		signalapp:webrtc:${WEBRTC_REV}:webrtc
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	7339c
+WEBRTC_REV=	7339d
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BORINGSSL_REV=		ddb2ca4b48fca9a1c468d83dc513b837331843ac
@@ -71,7 +70,7 @@ BUILD_REV=		66d076c7ab192991f67891b062b35404f3cb0739
 BUILDTOOLS_REV=		0c4bbb0f8a874de0a2a15d196031c7303d04fbb3
 CATAPULT_REV=		0fd1415f0cf3219ba097d37336141897fab7c5e9
 ICU_REV=		1b2e3e8a421efae36141a7b932b41e315b089af8
-LIBCUBEB_VER=		0.31.2
+LIBCUBEB_VER=		0.33.0
 LIBJPEG_TURBO_REV=	e14cbfaa85529d47f9f55b0f104a579c1061f9ad
 LIBSRTP_REV=		a52756acb1c5e133089c798736dd171567df11f5
 LIBVPX_REV=		a985e5e847a2fe69bef3e547cf25088132194e39
@@ -132,6 +131,7 @@ PLIST_FILES=	lib/libringrtc.so
 
 RUSTC_VERSION!= rustc -V 2>/dev/null || true
 MAKE_ENV+=	RUSTC_BOOTSTRAP=1
+
 GN_ARGS+=	enable_rust=true \
 		rust_sysroot_absolute="${LOCALBASE}" \
 		rustc_version="${RUSTC_VERSION}"

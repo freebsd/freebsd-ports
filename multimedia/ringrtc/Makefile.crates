@@ -12,7 +12,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		anstyle-query-1.1.4 \
 		anstyle-wincon-3.0.10 \
 		anyhow-1.0.99 \
-		arbitrary-1.4.2 \
 		argon2-0.5.3 \
 		async-trait-0.1.89 \
 		atomic-waker-1.1.2 \
@@ -24,7 +23,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		backtrace-0.3.75 \
 		base64-0.22.1 \
 		base64ct-1.8.0 \
-		basic-toml-0.1.10 \
 		bincode-1.3.3 \
 		bindgen-0.69.5 \
 		bitflags-1.3.2 \
@@ -38,8 +36,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		bytes-1.10.1 \
-		bzip2-0.5.2 \
-		bzip2-sys-0.1.13+1.0.8 \
 		cbc-0.1.2 \
 		cc-1.2.33 \
 		cesu8-1.1.0 \
@@ -56,49 +52,55 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		colorchoice-1.0.4 \
 		combine-4.6.7 \
 		const-str-0.6.4 \
-		constant_time_eq-0.3.1 \
+		core-foundation-0.9.4 \
 		core-foundation-sys-0.8.7 \
+		core-graphics-0.23.2 \
+		core-graphics-types-0.1.3 \
 		core-models-0.0.3 \
+		core-text-20.1.0 \
 		cpufeatures-0.2.17 \
-		crc-3.3.0 \
-		crc-catalog-2.4.0 \
 		crc32fast-1.5.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
 		crypto-common-0.1.6 \
 		ctr-0.9.2 \
-		cubeb-0.31.2 \
-		cubeb-core-0.31.2 \
-		cubeb-sys-0.31.2 \
+		cubeb-0.33.0 \
+		cubeb-core-0.33.0 \
+		cubeb-sys-0.33.0 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
-		deflate64-0.1.9 \
 		deranged-0.4.0 \
 		derive-where-1.6.0 \
-		derive_arbitrary-1.4.2 \
 		derive_more-2.0.1 \
 		derive_more-impl-2.0.1 \
 		digest-0.10.7 \
-		directories-5.0.1 \
-		dirs-sys-0.4.1 \
+		dirs-6.0.0 \
+		dirs-sys-0.5.0 \
 		displaydoc-0.2.5 \
+		dlib-0.5.2 \
 		dunce-1.0.5 \
+		dwrote-0.11.4 \
 		dyn-clone-1.0.20 \
 		either-1.15.0 \
 		env_filter-0.1.3 \
 		env_logger-0.11.8 \
 		equivalent-1.0.2 \
-		erased-serde-0.4.6 \
 		errno-0.3.13 \
 		fastrand-2.3.0 \
 		fern-0.6.2 \
 		fiat-crypto-0.2.9 \
 		fixedbitset-0.5.7 \
 		flate2-1.1.2 \
+		float-ord-0.3.2 \
 		fnv-1.0.7 \
+		font-kit-0.14.3 \
+		foreign-types-0.5.0 \
+		foreign-types-macros-0.2.3 \
+		foreign-types-shared-0.3.1 \
 		form_urlencoded-1.2.1 \
+		freetype-sys-0.20.1 \
 		fs_extra-1.3.0 \
 		funty-2.0.0 \
 		futures-channel-0.3.31 \
@@ -132,7 +134,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
-		humansize-2.1.3 \
 		hyper-1.7.0 \
 		hyper-named-pipe-0.1.0 \
 		hyper-timeout-0.5.2 \
@@ -172,7 +173,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		libcrux-platform-0.0.2 \
 		libcrux-sha3-0.0.3 \
 		libloading-0.8.8 \
-		libm-0.2.15 \
 		libredox-0.1.9 \
 		linkme-0.3.33 \
 		linkme-impl-0.3.33 \
@@ -180,12 +180,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.8.0 \
 		log-0.4.27 \
-		lzma-rs-0.3.0 \
-		lzma-sys-0.1.20 \
 		matchit-0.8.4 \
 		memchr-2.7.5 \
 		mime-0.3.17 \
-		mime_guess-2.0.5 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.0.4 \
@@ -209,7 +206,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		partial-default-derive-0.1.0 \
 		password-hash-0.5.0 \
 		pastey-0.1.1 \
-		pbkdf2-0.12.2 \
+		pathfinder_geometry-0.5.1 \
+		pathfinder_simd-0.5.5 \
 		percent-encoding-2.3.1 \
 		petgraph-0.7.1 \
 		pin-project-1.1.10 \
@@ -217,9 +215,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		pin-project-lite-0.2.16 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.32 \
-		plotly-0.12.1 \
-		plotly_derive-0.12.1 \
-		plotly_kaleido-0.12.1 \
+		plotters-0.3.7 \
+		plotters-backend-0.3.7 \
+		plotters-svg-0.3.7 \
 		polyval-0.6.2 \
 		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.4 \
@@ -252,7 +250,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_core-0.9.3 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
-		redox_users-0.4.6 \
+		redox_users-0.5.2 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
 		regex-1.11.1 \
@@ -260,12 +258,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-syntax-0.8.5 \
 		relative-path-1.9.3 \
 		ring-0.17.14 \
-		rinja-0.3.5 \
-		rinja_derive-0.3.5 \
-		rinja_parser-0.3.5 \
 		rustc-demangle-0.1.26 \
 		rustc-hash-1.1.0 \
-		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.0.8 \
@@ -290,7 +284,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
 		signal-hook-registry-1.4.6 \
-		simd-adler32-0.3.7 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
 		socket2-0.6.0 \
@@ -331,7 +324,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tracing-attributes-0.1.30 \
 		tracing-core-0.1.34 \
 		try-lock-0.2.5 \
-		typeid-1.0.3 \
+		ttf-parser-0.20.0 \
 		typenum-1.18.0 \
 		unicase-2.8.1 \
 		unicode-ident-1.0.18 \
@@ -352,6 +345,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		wasm-bindgen-macro-0.2.100 \
 		wasm-bindgen-macro-support-0.2.100 \
 		wasm-bindgen-shared-0.2.100 \
+		web-sys-0.3.77 \
 		webpki-roots-0.26.11 \
 		webpki-roots-1.0.2 \
 		which-4.4.2 \
@@ -377,50 +371,42 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows-strings-0.1.0 \
 		windows-strings-0.4.2 \
 		windows-sys-0.45.0 \
-		windows-sys-0.48.0 \
 		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-targets-0.42.2 \
-		windows-targets-0.48.5 \
 		windows-targets-0.52.6 \
 		windows-targets-0.53.3 \
 		windows_aarch64_gnullvm-0.42.2 \
-		windows_aarch64_gnullvm-0.48.5 \
 		windows_aarch64_gnullvm-0.52.6 \
 		windows_aarch64_gnullvm-0.53.0 \
 		windows_aarch64_msvc-0.42.2 \
-		windows_aarch64_msvc-0.48.5 \
 		windows_aarch64_msvc-0.52.6 \
 		windows_aarch64_msvc-0.53.0 \
 		windows_i686_gnu-0.42.2 \
-		windows_i686_gnu-0.48.5 \
 		windows_i686_gnu-0.52.6 \
 		windows_i686_gnu-0.53.0 \
 		windows_i686_gnullvm-0.52.6 \
 		windows_i686_gnullvm-0.53.0 \
 		windows_i686_msvc-0.42.2 \
-		windows_i686_msvc-0.48.5 \
 		windows_i686_msvc-0.52.6 \
 		windows_i686_msvc-0.53.0 \
 		windows_x86_64_gnu-0.42.2 \
-		windows_x86_64_gnu-0.48.5 \
 		windows_x86_64_gnu-0.52.6 \
 		windows_x86_64_gnu-0.53.0 \
 		windows_x86_64_gnullvm-0.42.2 \
-		windows_x86_64_gnullvm-0.48.5 \
 		windows_x86_64_gnullvm-0.52.6 \
 		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.42.2 \
-		windows_x86_64_msvc-0.48.5 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
 		winnow-0.7.12 \
+		wio-0.2.2 \
 		wit-bindgen-rt-0.39.0 \
 		writeable-0.6.1 \
 		wyz-0.5.1 \
 		x25519-dalek-2.0.1 \
-		xz2-0.1.7 \
+		yeslogic-fontconfig-sys-6.0.0 \
 		yoke-0.8.0 \
 		yoke-derive-0.8.0 \
 		zerocopy-0.8.26 \
@@ -432,10 +418,5 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerotrie-0.2.2 \
 		zerovec-0.11.4 \
 		zerovec-derive-0.11.1 \
-		zip-2.4.2 \
-		zopfli-0.8.2 \
-		zstd-0.13.3 \
-		zstd-safe-7.2.4 \
-		zstd-sys-2.0.15+zstd.1.5.7 \
 		libsignal-account-keys,libsignal-core,poksho,signal-crypto,zkcredential,zkgroup@git+https://github.com/signalapp/libsignal?tag=v0.78.3\#9e2bcb2a74d8fc23dd360fe8bd371dd716f97cc2 \
 		curve25519-dalek,curve25519-dalek-derive@git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.1.3\#7c6d34756355a3566a704da84dce7b1c039a6572

@@ -1,8 +1,7 @@
 #!/bin/sh
 
-WEBRTC_REV=7339c
+WEBRTC_REV=7339d
 
-base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
 build_url="https://chromium.googlesource.com/chromium/src/build.git/+archive/"
 buildtools_url="https://chromium.googlesource.com/chromium/src/buildtools.git/+archive/"
@@ -21,10 +20,6 @@ third_party_url="https://chromium.googlesource.com/chromium/src/third_party.git/
 tools_url="https://chromium.googlesource.com/chromium/src/tools.git/+archive/"
 
 fetch -q -o /tmp/DEPS https://raw.githubusercontent.com/signalapp/webrtc/${WEBRTC_REV}/DEPS
-
-base_hash=$(grep 'base@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
-printf "BASE_REV=\t${base_hash}\n"
-printf "BASE_REV=\t${base_hash}\n" | portedit merge -i Makefile
 
 boringssl_hash=$(grep 'boringssl.git@' /tmp/DEPS | awk -F '@' '{print $2}' | sed -e "s#',##" -e "s#'##")
 printf "BORINGSSL_REV=\t${boringssl_hash}\n"
@@ -96,7 +91,7 @@ printf "TOOLS_REV=\t${tools_hash}\n" | portedit merge -i Makefile
 
 mkdir -p dist_good
 
-for c in base boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm perfetto protobuf_javascript re2 testing third_party tools
+for c in boringssl build buildtools catapult icu libjpeg_turbo libsrtp libvpx libyuv nasm perfetto protobuf_javascript re2 testing third_party tools
 do
 	hash=$(echo ${c}_hash)
 	eval "hash=\$$hash"
