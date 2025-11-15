@@ -343,7 +343,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fa_af/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fa_ir/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fi_fi/strings.po
-%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fil/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fo_fo/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fr_ca/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.fr_fr/strings.po
@@ -357,7 +356,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.is_is/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.it_it/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ja_jp/strings.po
-%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.kn_in/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.ko_kr/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.lt_lt/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.lv_lv/strings.po
@@ -370,8 +368,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.my_mm/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.nb_no/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.nl_nl/strings.po
-%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.oc_fr/strings.po
-%%DATADIR%%/addons/game.controller.default/resources/language/resource.language.os_os/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.pl_pl/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.pt_br/strings.po
 %%DATADIR%%/addons/game.controller.default/resources/language/resource.language.pt_pt/strings.po
@@ -439,7 +435,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.is_is/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.it_it/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.ja_jp/strings.po
-%%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.kn_in/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.ko_kr/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.lt_lt/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.lv_lv/strings.po
@@ -452,9 +447,8 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.my_mm/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.nb_no/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.nl_nl/strings.po
-%%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.oc_fr/strings.po
-%%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.os_os/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.prs/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.pt_br/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.pt_pt/strings.po
 %%DATADIR%%/addons/game.controller.keyboard/resources/language/resource.language.ro_ro/strings.po
@@ -521,7 +515,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.is_is/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.it_it/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.ja_jp/strings.po
-%%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.kn_in/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.ko_kr/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.lt_lt/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.lv_lv/strings.po
@@ -534,9 +527,8 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.my_mm/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.nb_no/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.nl_nl/strings.po
-%%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.oc_fr/strings.po
-%%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.os_os/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.pl_pl/strings.po
+%%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.prs/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.pt_br/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.pt_pt/strings.po
 %%DATADIR%%/addons/game.controller.mouse/resources/language/resource.language.ro_ro/strings.po
@@ -590,7 +582,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fa_af/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fa_ir/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fi_fi/strings.po
-%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fil/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fo_fo/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fr_ca/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.fr_fr/strings.po
@@ -604,7 +595,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.is_is/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.it_it/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ja_jp/strings.po
-%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.kn_in/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.ko_kr/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.lt_lt/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.lv_lv/strings.po
@@ -617,8 +607,6 @@ share/icons/hicolor/scalable/apps/kodi.svg
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.my_mm/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.nb_no/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.nl_nl/strings.po
-%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.oc_fr/strings.po
-%%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.os_os/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.pl_pl/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.pt_br/strings.po
 %%DATADIR%%/addons/game.controller.snes/resources/language/resource.language.pt_pt/strings.po

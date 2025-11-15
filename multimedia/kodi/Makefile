@@ -1,17 +1,12 @@
 PORTNAME=	kodi
-DISTVERSION=	21.2
-PORTREVISION=	6
+DISTVERSION=	21.3
 CATEGORIES=	multimedia java
-MASTER_SITES=	http://mirrors.kodi.tv/build-deps/sources/
+MASTER_SITES=	https://mirrors.kodi.tv/build-deps/sources/
 DISTFILES=	apache-groovy-binary-${GROOVY_VERSION}.zip \
 		commons-lang3-${COMMONS_LANG_VERSION}-bin.tar.gz \
 		commons-text-${COMMONS_TEXT_VERSION}-bin.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 # do not forget to fix devel/kodi-platform when updating kodi
-
-PATCH_SITES=	https://github.com/xbmc/xbmc/commit/
-PATCHFILES=	269053ebbfd3cc4a3156a511f54ab7f08a09a730.patch:-p1 \
-		957b4faa0b765bc91e64c6d33f07e853decae0d0.patch:-p1
 
 MAINTAINER=	yzrh@noema.org
 COMMENT=	Award winning media center application
