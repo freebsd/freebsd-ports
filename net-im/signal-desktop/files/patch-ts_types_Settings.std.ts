@@ -1,5 +1,5 @@
---- ts/types/Settings.ts.orig	2023-10-19 19:29:53 UTC
-+++ ts/types/Settings.ts
+--- ts/types/Settings.std.ts.orig	2023-10-19 19:29:53 UTC
++++ ts/types/Settings.std.ts
 @@ -31,7 +31,7 @@ export const isSystemTraySupported = (OS: OSType): boo
   * option with a command line flag, but that is not officially supported.
   */

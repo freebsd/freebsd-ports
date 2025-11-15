@@ -1,5 +1,5 @@
---- ts/util/os/osMain.ts.orig	2025-05-23 14:04:11 UTC
-+++ ts/util/os/osMain.ts
+--- ts/util/os/osMain.node.ts.orig	2025-05-23 14:04:11 UTC
++++ ts/util/os/osMain.node.ts
 @@ -6,7 +6,7 @@ function getLinuxName(): string | undefined {
  import { getOSFunctions } from './shared';
  

@@ -1,32 +1,6 @@
 --- package.json.orig	2025-05-28 20:17:57 UTC
 +++ package.json
-@@ -110,9 +110,6 @@
-     "react-devtools": "react-devtools",
-     "run-with-devtools": "cross-env REACT_DEVTOOLS=1 run-p --print-label react-devtools start"
-   },
--  "optionalDependencies": {
--    "fs-xattr": "0.3.0"
--  },
-   "dependencies": {
-     "@electron/asar": "3.4.1",
-     "@formatjs/fast-memoize": "2.2.3",
-@@ -236,7 +233,6 @@
-     "@indutny/parallel-prettier": "3.0.0",
-     "@indutny/rezip-electron": "2.0.1",
-     "@napi-rs/canvas": "0.1.61",
--    "@signalapp/mock-server": "14.1.1",
-     "@storybook/addon-a11y": "8.4.4",
-     "@storybook/addon-actions": "8.4.4",
-     "@storybook/addon-controls": "8.4.4",
-@@ -380,7 +376,6 @@
-     "patchedDependencies": {
-       "casual@1.6.2": "patches/casual+1.6.2.patch",
-       "protobufjs@7.3.2": "patches/protobufjs+7.3.2.patch",
--      "@types/express@4.17.21": "patches/@types+express+4.17.21.patch",
-       "protobufjs-cli@1.1.1": "patches/protobufjs-cli+1.1.1.patch",
-       "@types/fabric@4.5.3": "patches/@types+fabric+4.5.3.patch",
-       "qrcode-generator@1.4.4": "patches/qrcode-generator+1.4.4.patch",
-@@ -396,7 +391,10 @@
+@@ -398,7 +398,9 @@
        "zod@3.23.8": "patches/zod+3.23.8.patch",
        "app-builder-lib": "patches/app-builder-lib.patch",
        "dmg-builder": "patches/dmg-builder.patch",
@@ -34,28 +8,10 @@
 +      "eslint-plugin-better-tailwindcss": "patches/eslint-plugin-better-tailwindcss.patch",
 +      "electron-builder": "patches/electron-builder.patch",
 +      "@signalapp/ringrtc": "patches/signalapp-ringrtc.patch"
-+
      },
      "onlyBuiltDependencies": [
        "@indutny/mac-screen-share",
-@@ -411,7 +409,6 @@
-       "bufferutil",
-       "electron",
-       "esbuild",
--      "fs-xattr",
-       "utf-8-validate"
-     ],
-     "ignoredBuiltDependencies": [
-@@ -422,7 +419,7 @@
-     ]
-   },
-   "engines": {
--    "node": "22.18.0"
-+    "node": ""
-   },
-   "build": {
-     "appId": "org.whispersystems.signal-desktop",
-@@ -502,20 +499,6 @@
+@@ -504,20 +506,6 @@
        "asarUnpack": [
          "build/icons/win/icon.ico"
        ]

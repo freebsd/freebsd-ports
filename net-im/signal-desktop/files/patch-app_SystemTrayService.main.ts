@@ -1,5 +1,5 @@
---- app/SystemTrayService.ts.orig	2025-05-23 13:46:10 UTC
-+++ app/SystemTrayService.ts
+--- app/SystemTrayService.main.ts.orig	2025-05-23 13:46:10 UTC
++++ app/SystemTrayService.main.ts
 @@ -308,7 +308,7 @@ function getIcon(unreadCount: number) {
  
    let image: NativeImage;

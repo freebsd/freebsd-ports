@@ -1,5 +1,5 @@
---- ts/util/os/shared.ts.orig	2023-10-19 19:29:53 UTC
-+++ ts/util/os/shared.ts
+--- ts/util/os/shared.std.ts.orig	2023-10-19 19:29:53 UTC
++++ ts/util/os/shared.std.ts
 @@ -23,6 +23,7 @@ export type OSType = {
    getClassName: () => string;
    getName: () => string;

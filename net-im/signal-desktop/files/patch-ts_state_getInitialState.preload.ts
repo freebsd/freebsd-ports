@@ -1,5 +1,5 @@
---- ts/state/getInitialState.ts.orig	2023-10-19 19:29:53 UTC
-+++ ts/state/getInitialState.ts
+--- ts/state/getInitialState.preload.ts.orig	2023-10-19 19:29:53 UTC
++++ ts/state/getInitialState.preload.ts
 @@ -72,7 +72,7 @@ export function getInitialState({
  
    const theme = getThemeType();

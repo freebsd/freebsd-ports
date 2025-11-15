@@ -1,5 +1,5 @@
---- ts/state/ducks/user.ts.orig	2023-10-19 19:29:53 UTC
-+++ ts/state/ducks/user.ts
+--- ts/state/ducks/user.preload.ts.orig	2023-10-19 19:29:53 UTC
++++ ts/state/ducks/user.preload.ts
 @@ -23,7 +23,7 @@ export type UserStateType = Readonly<{
    isMainWindowMaximized: boolean;
    localeMessages: LocaleMessagesType;

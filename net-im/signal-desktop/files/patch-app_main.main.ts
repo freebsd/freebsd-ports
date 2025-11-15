@@ -1,5 +1,5 @@
---- app/main.ts.orig	2023-10-19 19:29:53 UTC
-+++ app/main.ts
+--- app/main.main.ts.orig	2023-10-19 19:29:53 UTC
++++ app/main.main.ts
 @@ -616,7 +616,7 @@ if (OS.isWindows()) {
  
  if (OS.isWindows()) {
@@ -17,15 +17,6 @@
    const legacyKeyValue = userConfig.get('key');
    const modernKeyValue = userConfig.get('encryptedKey');
    const previousBackend = isLinux
-@@ -1945,7 +1946,7 @@ app.commandLine.appendSwitch('disable-features', featu
- )}`;
- app.commandLine.appendSwitch('disable-features', featuresToDisable);
- 
--if (OS.isLinux()) {
-+if (OS.isLinux() || OS.isFreeBSD()) {
-   // https://github.com/electron/electron/issues/46538#issuecomment-2808806722
-   app.commandLine.appendSwitch('gtk-version', '3');
- }
 @@ -2570,7 +2571,7 @@ ipc.on('draw-attention', () => {
      return;
    }
