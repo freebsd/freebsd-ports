@@ -13,6 +13,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 LICENSE_FILE_UNLICENSE=	${WRKSRC}/UNLICENSE
 
+DEPRECATED=	Abandoned, repo archived on Apr 24, 2025. Consider migrating to textproc/xan or textproc/miller
+EXPIRATION_DATE=2025-12-31
+
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	BurntSushi
