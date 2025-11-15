@@ -73,6 +73,7 @@
 %%XAUTHGEN%%@sample %%ETCDIR%%.d/charon/xauth-generic.conf.sample
 %%XAUTH%%@sample %%ETCDIR%%.d/charon/xauth-pam.conf.sample
 @sample %%ETCDIR%%.d/charon/xcbc.conf.sample
+@sample %%ETCDIR%%.d/iptfs.conf.sample
 %%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
 %%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
 %%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
@@ -360,6 +361,7 @@ sbin/charon-cmd
 %%DATADIR%%/templates/config/strongswan.conf
 %%DATADIR%%/templates/config/strongswan.d/charon-logging.conf
 %%DATADIR%%/templates/config/strongswan.d/charon.conf
+%%DATADIR%%/templates/config/strongswan.d/iptfs.conf
 %%PKI%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
 %%SQL%%%%DATADIR%%/templates/config/strongswan.d/pool.conf
 %%SWANCTL%%%%DATADIR%%/templates/config/strongswan.d/swanctl.conf
