@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
 DISTVERSION=	18.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -23,7 +23,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 RUN_DEPENDS=	bash:shells/bash \
 		ca_root_nss>=0:security/ca_root_nss \
-		git:devel/git
+		git:devel/git \
+		gitlab-analyzers-secrets>=0:security/gitlab-analyzers-secrets
 
 USES=		go:modules,1.24
 USE_GITLAB=	yes
