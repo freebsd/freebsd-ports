@@ -9,6 +9,10 @@ WWW=		http://matricks.github.com/bam/
 
 LICENSE=	ZLIB
 
+BROKEN=		Unfetchable
+DEPRECATED=     Outdated, current release in tree is from 2013 while latest upstream is 2018
+EXPIRATION_DATE=2025-12-31
+
 USES=		compiler tar:bzip2
 
 CONFLICTS_INSTALL=	bamutil
