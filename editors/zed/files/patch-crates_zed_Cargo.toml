@@ -1,0 +1,20 @@
+--- crates/zed/Cargo.toml.orig	2025-11-15 04:18:59 UTC
++++ crates/zed/Cargo.toml
+@@ -43,7 +43,6 @@ copilot.workspace = true
+ command_palette.workspace = true
+ component.workspace = true
+ copilot.workspace = true
+-crashes.workspace = true
+ dap_adapters.workspace = true
+ db.workspace = true
+ debug_adapter_extension.workspace = true
+@@ -175,6 +174,9 @@ ashpd.workspace = true
+ 
+ [target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
+ ashpd.workspace = true
++
++[target.'cfg(not(target_os = "freebsd"))'.dependencies]
++crashes.workspace = true
+ 
+ [dev-dependencies]
+ call = { workspace = true, features = ["test-support"] }
