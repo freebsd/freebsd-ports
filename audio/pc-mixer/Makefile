@@ -9,6 +9,9 @@ WWW=		https://github.com/trueos/pc-mixer
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=	Abandoned upstream and depends on deprecated QT5
+EXPIRATION_DATE=2025-12-31
+
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 MAKE_JOBS_UNSAFE=yes
