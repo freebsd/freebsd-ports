@@ -12,6 +12,9 @@ WWW=		https://unit.nginx.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKDIR}/unit-${PORTVERSION}/LICENSE
 
+DEPRECATED=	Upstream repo archived on Oct 8 2025
+EXPIRATION_DATE=2025-12-31
+
 USES=		cargo cpe ssl
 
 CPE_VENDOR=	nginx
