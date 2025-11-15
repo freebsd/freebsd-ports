@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_app.cc.orig	2025-10-27 17:58:27 UTC
+--- electron/shell/browser/api/electron_api_app.cc.orig	2025-11-13 22:50:46 UTC
 +++ electron/shell/browser/api/electron_api_app.cc
 @@ -98,7 +98,7 @@
  #include "shell/common/process_util.h"
@@ -45,7 +45,7 @@
    // Read the xdg-activation token and set it in the command line for the
    // duration of the notification in order to ensure this is propagated to an
    // already running electron app instance if it exists.
-@@ -1436,7 +1436,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
+@@ -1447,7 +1447,7 @@ std::vector<gin_helper::Dictionary> App::GetAppMetrics
        pid_dict.Set("name", process_metric.second->name);
      }
  
@@ -54,7 +54,7 @@
      auto memory_info = process_metric.second->GetMemoryInfo();
  
      auto memory_dict = gin_helper::Dictionary::CreateEmpty(isolate);
-@@ -1833,7 +1833,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1844,7 +1844,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod(
            "removeAsDefaultProtocolClient",
            base::BindRepeating(&Browser::RemoveAsDefaultProtocolClient, browser))
@@ -63,7 +63,7 @@
        .SetMethod(
            "getApplicationInfoForProtocol",
            base::BindRepeating(&Browser::GetApplicationInfoForProtocol, browser))
-@@ -1891,7 +1891,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
+@@ -1902,7 +1902,7 @@ gin::ObjectTemplateBuilder App::GetObjectTemplateBuild
        .SetMethod("getJumpListSettings", &App::GetJumpListSettings)
        .SetMethod("setJumpList", &App::SetJumpList)
  #endif
