@@ -2208,7 +2208,6 @@
     SUBDIR += rubygem-gon-rails-gitlab
     SUBDIR += rubygem-gon-rails5
     SUBDIR += rubygem-gon-rails50
-    SUBDIR += rubygem-gon-rails61
     SUBDIR += rubygem-gon-rails70
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
