@@ -4,6 +4,7 @@ lib/libncutil.so
 lib/libtdclientshared.so
 lib/libtgchat
 lib/libtgchat.so
+libexec/nchat/compose
 share/man/man1/nchat.1.gz
 %%DATADIR%%/themes/basic-color/color.conf
 %%DATADIR%%/themes/basic-color/usercolor.conf

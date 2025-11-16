@@ -1,5 +1,5 @@
 PORTNAME=	nchat
-PORTVERSION=	5.10.15
+PORTVERSION=	5.11.32
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-v${PORTVERSION}_GH0.tar.gz
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake gperf localbase:ldflags ncurses:port \
-		pkgconfig readline ssl sqlite
+		python:run pkgconfig readline shebangfix ssl sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	d99kris
@@ -27,6 +27,8 @@ CMAKE_ARGS+=	-DCLIP_X11_WITH_PNG=OFF \
 		-DHAS_DYNAMICLOAD=OFF \
 		-DHAS_SHARED_LIBS=ON \
 		-DHAS_WHATSAPP=OFF
+
+SHEBANG_FILES=	src/compose
 
 post-install:
 	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s libtgchat.so libtgchat)
