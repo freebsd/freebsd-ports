@@ -1,5 +1,6 @@
 PORTNAME=	consult.el
-PORTVERSION=	2.9
+DISTVERSION=	2.9
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -18,13 +19,18 @@ GH_ACCOUNT=	minad
 GH_PROJECT=	consult
 
 NO_ARCH=	yes
-NO_BUILD=	yes
+
+ELISP_FILES=	${WRKSRC}/*.el
 
 OPTIONS_DEFINE=	DOCS
 
+do-build:
+	${EMACS_CMD} -q --batch -L ${WRKSRC} -f batch-byte-compile ${ELISP_FILES}
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/consult
-	${INSTALL_DATA} ${WRKSRC}/consult*.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/consult
+	${INSTALL_DATA} ${ELISP_FILES} ${ELISP_FILES:S/.el$$/.elc/} \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/consult
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
