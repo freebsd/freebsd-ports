@@ -35,6 +35,9 @@ FPC_ARCH=	i386
 FPC_ARCH=	x86_64
 .endif
 
+post-extract:
+	${RM} -R ${WRKSRC}/.git*
+
 post-patch:
 .if ${OPSYS} == FreeBSD
 	@${REINPLACE_CMD} -i "" -e 's|900044|${OSVERSION}|g' \
