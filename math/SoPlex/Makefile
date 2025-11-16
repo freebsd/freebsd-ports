@@ -1,6 +1,5 @@
 PORTNAME=	SoPlex
-DISTVERSION=	7.1.1.0
-PORTREVISION=	5
+DISTVERSION=	8.0.0
 CATEGORIES=	math science
 MASTER_SITES=	http://soplex.zib.de/download/release/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -20,12 +19,15 @@ USE_LDCONFIG=	yes
 
 TEST_TARGET=	test
 
-PLIST_SUB=	SHL4=${DISTVERSION:R:R} SHL2=${DISTVERSION}
+PLIST_SUB=	SHL4=${DISTVERSION:R} SHL2=${DISTVERSION}
 
 OPTIONS_DEFINE=		MPFR
+OPTIONS_SUB=		yes
 
 MPFR_DESC=		Use MPFR for multiple-precision floating-point numbers
 MPFR_CMAKE_BOOL=	MPFR
 MPFR_LIB_DEPENDS=	libmpfr.so:math/mpfr
+
+# tests as of 8.0.0: 100% tests passed, 0 tests failed out of 429
 
 .include <bsd.port.mk>
