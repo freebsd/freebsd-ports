@@ -1,6 +1,6 @@
 PORTNAME=	radio_datetime_analyzer
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	https://codeberg.org/rene0/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # prevent USES=cargo from overriding default DISTFILES
@@ -19,7 +19,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PLIST_FILES=	bin/radio_datetime_analyzer
 PORTDOCS=	README.md
-PORTEXAMPLES=	sample_dcf77.log sample_msf.log
+PORTEXAMPLES=	sample_dcf77.log sample_msf.log edge-999.log
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -27,7 +27,7 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for f in sample_dcf77.log sample_msf.log
+.for f in ${PORTEXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/src/transmitters/test/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
