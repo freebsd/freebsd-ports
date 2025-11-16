@@ -4,12 +4,15 @@ PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
-MAINTAINER=	lukasz@wasikowski.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rootkit detection tool
 WWW=		https://rkhunter.sourceforge.net
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/files/LICENSE
+
+DEPRECATED=		Project abandoned in 2009
+EXPIRATION_DATE=	2025-12-31
 
 OPTIONS_DEFINE=	LSOF NMAP DOCS
 OPTIONS_DEFAULT=LSOF
