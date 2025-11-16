@@ -1,11 +1,12 @@
 PORTNAME=	qpwgraph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6
+DISTVERSION=	0.9.7
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PipeWire Graph Qt GUI Interface
-WWW=		https://gitlab.freedesktop.org/rncbc/qpwgraph
+WWW=		https://gitlab.freedesktop.org/rncbc/qpwgraph \
+		https://github.com/rncbc/qpwgraph
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
