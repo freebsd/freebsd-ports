@@ -15,6 +15,8 @@ following permissions:
   chmod 640 %%PREFIX%%/etc/opk/auth_id
   chown root:%%GROUP%% %%PREFIX%%/etc/opk/providers
   chmod 640 %%PREFIX%%/etc/opk/providers
+
+Users attempting to use opkssh from jails, please add "allow.mlock" or it will not run.
 EOM
 }
 ]
