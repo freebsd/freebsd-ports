@@ -1,5 +1,5 @@
 PORTNAME=	fet
-DISTVERSION=	7.5.6
+DISTVERSION=	7.5.7
 CATEGORIES=	deskutils education
 MASTER_SITES=	https://lalescu.ro/liviu/fet/download/ \
 		https://lalescu.ro/liviu/fet/download/old/ \
@@ -14,10 +14,8 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++17-lang gl qmake qt:6 tar:bzip2
-USE_GL=		gl
+USE_GL=		opengl
 USE_QT=		base
-
-CONFLICTS_INSTALL=	${PORTNAME}-qt5 ${PORTNAME}-qt6
 
 DESKTOP_ENTRIES=	"FET" \
 			"Free timetable software" \
