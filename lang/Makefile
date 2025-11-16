@@ -388,6 +388,7 @@
     SUBDIR += trealla-prolog
     SUBDIR += tuareg-mode.el
     SUBDIR += typescript
+    SUBDIR += typescript-go
     SUBDIR += typstfmt
     SUBDIR += typstyle
     SUBDIR += ucc
