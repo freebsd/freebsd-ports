@@ -2,7 +2,7 @@ bin/di
 include/di.h
 lib/libdi.so
 lib/libdi.so.6
-lib/libdi.so.6.0.0
+lib/libdi.so.6.2.0
 libdata/pkgconfig/di.pc
 %%NLS%%share/locale/de/LC_MESSAGES/di.mo
 %%NLS%%share/locale/en/LC_MESSAGES/di.mo
