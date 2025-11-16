@@ -1,3 +1,70 @@
+  <vuln vid="bf6c9252-c2ec-11f0-8372-98b78501ef2a">
+    <topic>sudo-rs -- Authenticating user not recorded properly in timestamp</topic>
+    <affects>
+    <package>
+	<name>sudo-rs</name>
+	<range><ge>0.2.5</ge><lt>0.2.10</lt></range>
+	</package>
+	<package>
+	<name>sudo-rs-coexist</name>
+	<range><ge>0.2.5</ge><lt>0.2.10</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Trifecta Tech Foundation reports:</p>
+	<blockquote cite="https://github.com/trifectatechfoundation/sudo-rs/security/advisories/GHSA-q428-6v73-fc4q">
+	  <p>With Defaults targetpw (or Defaults rootpw) enabled, the password of the
+	  target account (or root account) instead of the invoking user is used for authentication.
+	  sudo-rs prior to 0.2.10 incorrectly recorded the invoking user’s UID instead of the
+	  authenticated-as user's UID in the authentication timestamp. Any later sudo invocation
+	  on the same terminal while the timestamp was still valid would use that timestamp,
+	  potentially bypassing new authentication even if the policy would have required it.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-64517</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-64517</url>
+    </references>
+    <dates>
+      <discovery>2025-11-12</discovery>
+      <entry>2025-11-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c1ceaaea-c2e7-11f0-8372-98b78501ef2a">
+    <topic>sudo-rs -- Partial password reveal when password timeout occurs</topic>
+    <affects>
+    <package>
+	<name>sudo-rs</name>
+	<range><ge>0.2.7</ge><lt>0.2.10</lt></range>
+    </package>
+    <package>
+	<name>sudo-rs-coexist</name>
+	<range><ge>0.2.7</ge><lt>0.2.10</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Trifecta Tech Foundation reports:</p>
+	<blockquote cite="https://github.com/trifectatechfoundation/sudo-rs/security/advisories/GHSA-c978-wq47-pvvw">
+	  <p>When typing partial passwords but not pressing return for a long time,
+	  a password timeout can occur. When this happens, the keys pressed are
+	  replayed onto the console.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-64170</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-64170</url>
+    </references>
+    <dates>
+      <discovery>2025-11-12</discovery>
+      <entry>2025-11-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="364e5fa4-c178-11f0-b614-b42e991fc52e">
     <topic>PostgreSQL -- Multiple vulnerabilities</topic>
     <affects>
