@@ -1,11 +1,12 @@
 PORTNAME=	redo
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://jdebp.eu/Repository/freebsd/
+MASTER_SITES=	https://jdebp.uk/Repository/freebsd/
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	crest@rlwinm.de
 COMMENT=	Incremental build system
-WWW=		https://jdebp.eu/Softwares/redo/
+WWW=		https://jdebp.uk/Softwares/redo/
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/source/COPYING
