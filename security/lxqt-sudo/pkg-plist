@@ -15,6 +15,7 @@ bin/lxsudo
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_en_GB.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_es.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_et.qm
+%%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_eu.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_fi.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_fr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_gl.qm
@@ -40,6 +41,7 @@ bin/lxsudo
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_si.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_sk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_sl.qm
+%%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_sv.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_tr.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_uk.qm
 %%LXQT_TRANSLATIONS%%/lxqt-sudo/lxqt-sudo_vi.qm
