@@ -1,6 +1,6 @@
 PORTNAME=	drm_info
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
+DISTVERSION=	2.9.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,8 +19,12 @@ GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	emersion
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFINE=	MANPAGES PCI
-OPTIONS_DEFAULT=MANPAGES PCI
+OPTIONS_DEFINE=	EDID MANPAGES PCI
+OPTIONS_DEFAULT=EDID MANPAGES PCI
+
+EDID_DESC=		Print EDID identification via libdisplay-info
+EDID_LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info
+EDID_MESON_ENABLED=	libdisplay-info
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
