@@ -15,6 +15,7 @@ libdata/pkgconfig/mateweather.pc
 %%PORTDOCS%%%%DOCSDIR%%/MateWeatherTimezone.html
 %%PORTDOCS%%%%DOCSDIR%%/MateWeatherTimezoneMenu.html
 %%PORTDOCS%%%%DOCSDIR%%/annotation-glossary.html
+%%PORTDOCS%%%%DOCSDIR%%/api-index-deprecated.html
 %%PORTDOCS%%%%DOCSDIR%%/api-index-full.html
 %%PORTDOCS%%%%DOCSDIR%%/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/home.png
