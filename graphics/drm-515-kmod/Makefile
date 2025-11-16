@@ -1,6 +1,6 @@
 PORTNAME=	drm-515-kmod
 PORTVERSION=	${DRM_KMOD_DISTVERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics kld
 
 .include "Makefile.version"
@@ -36,6 +36,11 @@ IGNORE=		not supported on older than 14.0, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500065
+# LinuxKPI PCI changes. We cannot apply them to drm-kmod yet as it would break 14.x.
+EXTRA_PATCHES+= ${PATCHDIR}/extra-patch-linuxkpi-pci
 .endif
 
 .if ${ARCH} == "amd64"
