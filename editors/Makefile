@@ -21,8 +21,8 @@
     SUBDIR += calligra
     SUBDIR += calligraplan
     SUBDIR += chexedit
-    SUBDIR += cooledit
     SUBDIR += consult.el
+    SUBDIR += cooledit
     SUBDIR += cpeditor
     SUBDIR += cream
     SUBDIR += cudatext
@@ -202,8 +202,8 @@
     SUBDIR += linux-wps-office
     SUBDIR += lite
     SUBDIR += lite-xl
-    SUBDIR += marker
     SUBDIR += marginalia.el
+    SUBDIR += marker
     SUBDIR += mg
     SUBDIR += mickey
     SUBDIR += micro
@@ -226,8 +226,8 @@
     SUBDIR += omegaT
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
-    SUBDIR += orderless.el
     SUBDIR += orbiton
+    SUBDIR += orderless.el
     SUBDIR += ox
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
