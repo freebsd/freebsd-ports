@@ -2492,6 +2492,7 @@
     SUBDIR += rubygem-tailwindcss-rails-rails70
     SUBDIR += rubygem-tailwindcss-rails-rails71
     SUBDIR += rubygem-tailwindcss-rails-rails72
+    SUBDIR += rubygem-tailwindcss-rails-rails80
     SUBDIR += rubygem-task_list
     SUBDIR += rubygem-thin
     SUBDIR += rubygem-thruster
