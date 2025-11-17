@@ -1,5 +1,6 @@
 PORTNAME=	libproxy
 DISTVERSION=	0.5.10
+PORTREVISION=	1
 CATEGORIES=	net devel
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -13,6 +14,8 @@ USES=		cpe gnome meson pkgconfig
 
 CPE_VENDOR=	libproxy_project
 USE_GITHUB=	yes
+
+HAS_SYMBOL_VERSION=	${PREFIX}/lib/libproxy.so.1
 
 USE_GNOME=	glib20 introspection
 
