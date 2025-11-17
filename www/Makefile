@@ -2081,6 +2081,7 @@
     SUBDIR += rubygem-actioncable71
     SUBDIR += rubygem-actioncable72
     SUBDIR += rubygem-actioncable80
+    SUBDIR += rubygem-actioncable81
     SUBDIR += rubygem-actionpack-gitlab
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-actionpack5
