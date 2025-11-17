@@ -1,5 +1,6 @@
 PORTNAME=	marginalia.el
-PORTVERSION=	2.4
+DISTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -18,13 +19,16 @@ GH_ACCOUNT=	minad
 GH_PROJECT=	marginalia
 
 NO_ARCH=	yes
-NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+do-build:
+	${EMACS_CMD} -q --batch -f batch-byte-compile ${WRKSRC}/marginalia.el
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/marginalia.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/marginalia.el ${WRKSRC}/marginalia.elc \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
