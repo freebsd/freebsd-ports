@@ -2412,6 +2412,7 @@
     SUBDIR += rubygem-railties71
     SUBDIR += rubygem-railties72
     SUBDIR += rubygem-railties80
+    SUBDIR += rubygem-railties81
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails
