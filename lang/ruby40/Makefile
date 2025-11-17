@@ -54,7 +54,7 @@ EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
 			--exclude ${DISTNAME}/sample/win32ole \
 			--no-same-owner --no-same-permissions
 
-RUBY_VER=	3.5
+RUBY_VER=	4.0
 
 OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC YJIT
 OPTIONS_DEFAULT=	RDOC
