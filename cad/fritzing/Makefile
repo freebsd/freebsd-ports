@@ -8,8 +8,6 @@ WWW=		https://fritzing.org/
 
 LICENSE=	GPLv2+
 
-IGNORE_FreeBSD_13=	Requires OpenSSL >= 3
-
 BUILD_DEPENDS=	boost-libs>1.52:devel/boost-libs \
 		svgpp>0:graphics/svgpp
 
@@ -52,4 +50,10 @@ post-install:
 		-f  ${STAGEDIR}${DATADIR} \
 		-platform offscreen
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400000 && ${SSL_DEFAULT} == "base"
+IGNORE=		Requires OpenSSL >= 3
+.endif
+
+.include <bsd.port.post.mk>
