@@ -1,3 +1,34 @@
+  <vuln vid="fa433f05-c217-11f0-82ac-901b0edee044">
+    <topic>py-pdfminer.six -- Arbitrary Code Execution in pdfminer.six via Crafted PDF Input</topic>
+    <affects>
+     <package>
+       <name>py310-pdfminer.six</name>
+       <name>py311-pdfminer.six</name>
+       <name>py312-pdfminer.six</name>
+       <name>py313-pdfminer.six</name>
+       <name>py313t-pdfminer.six</name>
+       <name>py314-pdfminer.six</name>
+       <range><lt>20251107</lt></range>
+     </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pieter Marsman reports:</p>
+	<blockquote cite="https://github.com/pdfminer/pdfminer.six/security/advisories/GHSA-wf5f-4jwr-ppcp">
+	  <p>pdfminer.six will execute arbitrary code from a malicious pickle file if provided with a malicious PDF file. The CMapDB._load_data() function in pdfminer.six uses pickle.loads() to deserialize pickle files. These pickle files are supposed to be part of the pdfminer.six distribution stored in the cmap/ directory, but a malicious PDF can specify an alternative directory and filename as long as the filename ends in .pickle.gz. A malicious, zipped pickle file can then contain code which will automatically execute when the PDF is processed.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-64512</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-64512</url>
+    </references>
+    <dates>
+      <discovery>2025-11-07</discovery>
+      <entry>2025-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bf6c9252-c2ec-11f0-8372-98b78501ef2a">
     <topic>sudo-rs -- Authenticating user not recorded properly in timestamp</topic>
     <affects>
