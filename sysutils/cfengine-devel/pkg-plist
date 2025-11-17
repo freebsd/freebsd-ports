@@ -15,7 +15,6 @@ libexec/cfengine/libpromises.so
 libexec/cfengine/libpromises.so.3
 libexec/cfengine/libpromises.so.3.0.6
 libexec/python/README
-%%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/README.md
 %%DOCSDIR%%/examples/abort.cf
 %%DOCSDIR%%/examples/accessed_before.cf
