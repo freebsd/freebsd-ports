@@ -40,4 +40,11 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/metrics.md
 %%PORTDOCS%%%%DOCSDIR%%/vlagent-metrics.md
 %%PORTDOCS%%%%DOCSDIR%%/logsql.md
+%%PORTDOCS%%%%DOCSDIR%%/integrations/_index.md
+%%PORTDOCS%%%%DOCSDIR%%/integrations/perses-datasource.webp
+%%PORTDOCS%%%%DOCSDIR%%/integrations/perses-logs-panel.webp
+%%PORTDOCS%%%%DOCSDIR%%/integrations/perses-overview.webp
+%%PORTDOCS%%%%DOCSDIR%%/integrations/perses-time-panel.webp
+%%PORTDOCS%%%%DOCSDIR%%/integrations/perses-variable.webp
+%%PORTDOCS%%%%DOCSDIR%%/integrations/perses.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
