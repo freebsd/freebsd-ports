@@ -2486,6 +2486,7 @@
     SUBDIR += rubygem-stimulus-rails-rails70
     SUBDIR += rubygem-stimulus-rails-rails71
     SUBDIR += rubygem-stimulus-rails-rails72
+    SUBDIR += rubygem-stimulus-rails-rails80
     SUBDIR += rubygem-swd
     SUBDIR += rubygem-tailwindcss-rails
     SUBDIR += rubygem-tailwindcss-rails-rails70
