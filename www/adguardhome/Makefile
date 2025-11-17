@@ -1,14 +1,14 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.107.66
-PORTREVISION=	3
+DISTVERSION=	0.107.69
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/
 DISTFILES=	${GH_PROJECT}_frontend${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Network-wide ads & trackers blocking DNS server
-WWW=		https://adguard.com/en/adguard-home/overview.html
+WWW=		https://adguard.com/en/adguard-home/overview.html \
+		https://github.com/AdguardTeam/AdGuardHome
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
