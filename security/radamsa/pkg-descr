@@ -1,0 +1,4 @@
+Radamsa is a generic test case generator for robustness testing, aka a fuzzer.
+It can be used to test how well a program can stand malformed and potentially
+malicious inputs. It operates on given sample inputs and thus requires minimal
+effort to set up.
