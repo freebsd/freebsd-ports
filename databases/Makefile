@@ -1006,6 +1006,7 @@
     SUBDIR += rubygem-globalid-rails71
     SUBDIR += rubygem-globalid-rails72
     SUBDIR += rubygem-globalid-rails80
+    SUBDIR += rubygem-globalid-rails81
     SUBDIR += rubygem-google-cloud-datastore
     SUBDIR += rubygem-google-cloud-datastore-v1
     SUBDIR += rubygem-google-cloud-firestore
