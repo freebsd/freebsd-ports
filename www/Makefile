@@ -2505,6 +2505,7 @@
     SUBDIR += rubygem-turbo-rails-rails70
     SUBDIR += rubygem-turbo-rails-rails71
     SUBDIR += rubygem-turbo-rails-rails72
+    SUBDIR += rubygem-turbo-rails-rails80
     SUBDIR += rubygem-turbolinks
     SUBDIR += rubygem-turbolinks-source
     SUBDIR += rubygem-typhoeus
