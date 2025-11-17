@@ -1,5 +1,6 @@
 PORTNAME=	perspective.el
-PORTVERSION=	2.20
+DISTVERSION=	2.20
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -16,16 +17,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nex3
 GH_PROJECT=	perspective-el
 
-EMACS_NO_DEPENDS=	yes
-
 NO_ARCH=	yes
-NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+do-build:
+	${EMACS_CMD} -q --batch -f batch-byte-compile ${WRKSRC}/perspective.el
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/perspective.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/perspective.el ${WRKSRC}/perspective.elc \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
