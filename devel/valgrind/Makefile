@@ -8,7 +8,7 @@ MAINTAINER=	pjfloyd@wanadoo.fr
 COMMENT=	Memory debugging and profiling tool
 WWW=		https://www.valgrind.org/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
