@@ -2265,6 +2265,7 @@
     SUBDIR += rubygem-jsbundling-rails-rails70
     SUBDIR += rubygem-jsbundling-rails-rails71
     SUBDIR += rubygem-jsbundling-rails-rails72
+    SUBDIR += rubygem-jsbundling-rails-rails80
     SUBDIR += rubygem-jsobfu
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-json-jwt-gitlab
