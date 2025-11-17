@@ -1072,6 +1072,7 @@
     SUBDIR += rubygem-solid_cache-rails80
     SUBDIR += rubygem-solid_queue
     SUBDIR += rubygem-solid_queue-rails72
+    SUBDIR += rubygem-solid_queue-rails80
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += rubygem-sqlite31
