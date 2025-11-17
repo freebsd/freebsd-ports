@@ -1,5 +1,6 @@
 PORTNAME=	kamal
 PORTVERSION=	2.8.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ WWW=		https://kamal-deploy.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport80>=7.0:devel/rubygem-activesupport80 \
+RUN_DEPENDS=	rubygem-activesupport81>=7.0:devel/rubygem-activesupport81 \
 		rubygem-base64>=0.2<1:converters/rubygem-base64 \
 		rubygem-bcrypt_pbkdf>=1.0<2:security/rubygem-bcrypt_pbkdf \
 		rubygem-concurrent-ruby>=1.2<2:devel/rubygem-concurrent-ruby \
