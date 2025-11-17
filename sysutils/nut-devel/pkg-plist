@@ -54,8 +54,6 @@ lib/libnutscan.a
 lib/libnutscan.so
 lib/libnutscan.so.4
 lib/libnutscan.so.4.0.0
-%%PYTHON_SITELIBDIR%%/PyNUT.py
-%%PYTHON_SITELIBDIR%%/test_nutclient.py
 %%DEV%%libdata/pkgconfig/libnutclient.pc
 %%DEV%%libdata/pkgconfig/libnutscan.pc
 %%DEV%%libdata/pkgconfig/libupsclient.pc

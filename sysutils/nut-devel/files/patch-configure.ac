@@ -1,6 +1,20 @@
---- configure.ac.orig	2022-08-25 15:32:21.256937000 -0700
-+++ configure.ac	2022-08-25 15:37:36.166445000 -0700
-@@ -802,7 +802,7 @@
+--- configure.ac.orig	2025-11-17 08:11:32.054205000 -0800
++++ configure.ac	2025-11-17 08:19:12.634169000 -0800
+@@ -509,13 +509,6 @@
+ 	[RUN_AS_GROUP="nogroup"]
+ )
+ 
+-dnl Last hit wins, user and groups accounts separately
+-for TOKEN in upsmon nutmon ups nut; do
+-	AS_IF([test -n "`${PROBE_OS_USER} ${TOKEN}`"], [RUN_AS_USER="${TOKEN}"])
+-	AS_IF([test -n "`${PROBE_OS_GROUP} ${TOKEN}`"], [RUN_AS_GROUP="${TOKEN}"])
+-done
+-unset TOKEN
+-
+ dnl NOTE: NUT legacy default, keep as is for least surprise
+ dnl Distributions are however welcome to specify the option to use tmpfs
+ AS_CASE([${target_os}],
+@@ -2844,7 +2837,7 @@
  
  dnl A Python GUI client application for the sysadmin desktop
  dnl (not necessarily on the NUT server itself):
@@ -9,9 +23,9 @@
  NUT_ARG_WITH([pynut], [install the PyNUT module files (yes, no, app, auto)], [auto])
  dnl Note: we did NUT_CHECK_PYTHON2 NUT_CHECK_PYTHON3 etc above,
  dnl and if at all possible, we generate the files from .in templates
-@@ -1301,7 +1301,7 @@
+@@ -3534,7 +3527,7 @@
      dnl Can we satisfy any NUT-Monitor installation request?
-     if test -n "${nut_with_nut_monitor_py2gtk2}${nut_with_nut_monitor_py3qt5}" ; then
+     if test -n "${nut_with_nut_monitor_py2gtk2}${nut_with_nut_monitor_py3qt5}${nut_with_nut_monitor_py3qt6}" ; then
          case "${nut_with_nut_monitor}" in
 -            "auto") nut_with_nut_monitor="yes" ;;
 +            "auto") nut_with_nut_monitor="no" ;;
