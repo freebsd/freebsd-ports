@@ -71,6 +71,8 @@ USES=		cpe gnome ldap python pgsql shebangfix
 USE_GNOME=	libxml2
 USE_PYTHON=	cryptography distutils
 
+NO_ARCH=	yes
+
 SHEBANG_LANG=	python
 SHEBANG_FILES=	${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
 		${WRKSRC}/${PORTNAME}/addons/web/tooling/hooks/pre-commit \
