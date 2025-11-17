@@ -1,10 +1,10 @@
 PORTNAME=	deltachat-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.25.1
+DISTVERSION=	2.25.2
 PORTREVISION=	0
 CATEGORIES=	net-im
 MASTER_SITES+=	LOCAL/feld:npmcache
-DISTFILES+=	${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}-node-deps.tgz:npmcache
+DISTFILES+=	${PORTNAME}-${DISTVERSIONPREFIX}2.25.1-node-deps.tgz:npmcache
 
 MAINTAINER=	feld@FreeBSD.org
 COMMENT=	Cross-platform decentralized encrypted messaging service
@@ -35,7 +35,7 @@ GH_PROJECT=	deltachat-desktop
 MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 		ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron${ELECTRON_VER} \
 		PATH=${PATH}:${WRKSRC}/node_modules/.bin/ \
-		VERSION_INFO_GIT_REF=freebsd
+		VERSION_INFO_GIT_REF=${GH_TAGNAME}
 
 .include <bsd.port.pre.mk>
 
