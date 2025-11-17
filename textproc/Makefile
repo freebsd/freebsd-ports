@@ -1809,6 +1809,7 @@
     SUBDIR += rubygem-actiontext71
     SUBDIR += rubygem-actiontext72
     SUBDIR += rubygem-actiontext80
+    SUBDIR += rubygem-actiontext81
     SUBDIR += rubygem-albino
     SUBDIR += rubygem-amatch
     SUBDIR += rubygem-asciidoctor
