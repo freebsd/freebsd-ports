@@ -1,0 +1,6 @@
+Solid Cache is a database-backed Active Support cache store that let's you keep
+a much larger cache than is typically possible with traditional memory-only
+Redis or Memcached stores. This is thanks to the speed of modern SSD drives,
+which make the access-time penalty of using disk vs RAM insignificant for most
+caching purposes. Simply put, you're now usually better off keeping a huge cache
+on disk rather than a small cache in memory.
