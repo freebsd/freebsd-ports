@@ -98,6 +98,7 @@ include/wine/msvcrt/wchar.h
 include/wine/msvcrt/wctype.h
 include/wine/svcctl.h
 include/wine/svcctl.idl
+include/wine/unixlib.h
 include/wine/windows/accctrl.h
 include/wine/windows/access.idl
 include/wine/windows/aclapi.h
