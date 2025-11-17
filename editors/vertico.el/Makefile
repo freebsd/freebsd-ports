@@ -1,5 +1,6 @@
 PORTNAME=	vertico.el
-PORTVERSION=	2.5
+DISTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -18,14 +19,19 @@ GH_ACCOUNT=	minad
 GH_PROJECT=	vertico
 
 NO_ARCH=	yes
-NO_BUILD=	yes
+
+ELISP_FILES=	${WRKSRC}/*.el ${WRKSRC}/extensions/*.el
 
 OPTIONS_DEFINE=	DOCS
 
+do-build:
+	${EMACS_CMD} -q --batch -L ${WRKSRC} -L ${WRKSRC}/extensions \
+		-f batch-byte-compile ${ELISP_FILES}
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/vertico
-	${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/vertico
-	${INSTALL_DATA} ${WRKSRC}/extensions/*.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/vertico
+	${INSTALL_DATA} ${ELISP_FILES} ${ELISP_FILES:S/.el$$/.elc/} \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/vertico
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
