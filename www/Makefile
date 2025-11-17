@@ -2350,6 +2350,7 @@
     SUBDIR += rubygem-propshaft-rails70
     SUBDIR += rubygem-propshaft-rails71
     SUBDIR += rubygem-propshaft-rails72
+    SUBDIR += rubygem-propshaft-rails80
     SUBDIR += rubygem-protocol-hpack
     SUBDIR += rubygem-protocol-http
     SUBDIR += rubygem-protocol-http1
