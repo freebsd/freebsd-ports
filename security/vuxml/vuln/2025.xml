@@ -1,3 +1,28 @@
+  <vuln vid="1a46e84d-c406-11f0-b513-0da7be77c170">
+    <topic>pkcs11-helper -- deserialize buffer overflow</topic>
+    <affects>
+      <package>
+	<name>pkcs11-helper</name>
+	<range><lt>1.31.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alon Bar-Lev reports:</p>
+	<blockquote cite="https://github.com/OpenSC/pkcs11-helper/releases/tag/pkcs11-helper-1.31.0">
+	  <p>util: fix deserialize buffer overflow. thanks to Aarnav Bos.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/OpenSC/pkcs11-helper/releases/tag/pkcs11-helper-1.31.0</url>
+    </references>
+    <dates>
+      <discovery>2025-11-10</discovery>
+      <entry>2025-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="50a0c266-c3ff-11f0-b513-0da7be77c170">
     <topic>OpenVPN -- avoid buffer overread parsing routes or endpoints</topic>
     <affects>
