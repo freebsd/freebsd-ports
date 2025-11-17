@@ -1,3 +1,67 @@
+  <vuln vid="50a0c266-c3ff-11f0-b513-0da7be77c170">
+    <topic>OpenVPN -- avoid buffer overread parsing routes or endpoints</topic>
+    <affects>
+      <package>
+	<name>openvpn-devel</name>
+	<range><lt>g20251117,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mikhail Khachaiants reports:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/commit/f1b851dae60eb1e277315dfe6265e3a58660b16a">
+	  <p>socket: reject mismatched address family in get_addr_generic.</p>
+	  <p>Add a family check to prevent copying address data of the wrong type,
+	    which could cause buffer over-read when parsing routes or endpoints.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12106</cvename>
+      <url>https://github.com/OpenVPN/openvpn/commit/f1b851dae60eb1e277315dfe6265e3a58660b16a</url>
+    </references>
+    <dates>
+      <discovery>2025-10-18</discovery>
+      <entry>2025-11-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="17a40d76-c3fd-11f0-b513-0da7be77c170">
+    <topic>OpenVPN -- HMAC verification on source IP address ineffective</topic>
+    <affects>
+      <package>
+	<name>openvpn</name>
+	<range><lt>2.6.16</lt></range>
+      </package>
+      <package>
+	<name>openvpn-devel</name>
+	<range><lt>g20251117,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Arne Schwabe reports:</p>
+	<blockquote cite="https://github.com/OpenVPN/openvpn/commit/fa6a1824b0f37bff137204156a74ca28cf5b6f83">
+	  <p>Fix memcmp check for the hmac verification in the 3way handshake being inverted
+	  This is a stupid mistake but causes all hmac cookies to be accepted,
+	  thus breaking source IP address validation.	As a consequence, TLS
+	  sessions can be openend and state can be consumed in the server from
+	    IP addresses that did not initiate an initial connection.</p>
+	  <p>While at it, fix check to only allow [t-2;t] timeslots, disallowing
+	    HMACs coming in from a future timeslot.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13086</cvename>
+      <url>https://github.com/OpenVPN/openvpn/commit/fa6a1824b0f37bff137204156a74ca28cf5b6f83</url>
+    </references>
+    <dates>
+      <discovery>2025-10-27</discovery>
+      <entry>2025-11-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fa433f05-c217-11f0-82ac-901b0edee044">
     <topic>py-pdfminer.six -- Arbitrary Code Execution in pdfminer.six via Crafted PDF Input</topic>
     <affects>
