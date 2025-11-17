@@ -1,5 +1,6 @@
 PORTNAME=	orderless.el
-PORTVERSION=	1.5
+DISTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -18,14 +19,15 @@ GH_ACCOUNT=	oantolin
 GH_PROJECT=	orderless
 
 NO_ARCH=	yes
-NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+do-build:
+	${EMACS_CMD} -q --batch -L ${WRKSRC} -f batch-byte-compile ${WRKSRC}/*.el
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/orderless.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/orderless-kwd.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.el ${WRKSRC}/*.elc ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
