@@ -1,0 +1,5 @@
+From bare metal to cloud VMs, deploy web apps anywhere with zero downtime. Kamal
+uses kamal-proxy to seamlessly switch requests between containers. Works
+seamlessly across multiple servers, using SSHKit to execute commands. Originally
+built for Rails apps, Kamal will work with any type of web app that can be
+containerized with Docker.

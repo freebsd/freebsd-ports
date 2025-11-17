@@ -2270,6 +2270,7 @@
     SUBDIR += rubygem-jwt
     SUBDIR += rubygem-jwt2
     SUBDIR += rubygem-kamal
+    SUBDIR += rubygem-kamal-rails80
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
     SUBDIR += rubygem-kaminari-actionview-rails-gitlab
