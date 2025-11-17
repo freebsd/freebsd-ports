@@ -26,6 +26,8 @@ RUN_DEPENDS=	${PYNUMPY} \
 USES=		localbase python
 USE_PYTHON=	autoplist concurrent cryptography pep517
 
+NO_ARCH=	yes
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^license = "BSD-3-Clause"|license = { text = "BSD-3-Clause" }|' \
 		${WRKSRC}/pyproject.toml
