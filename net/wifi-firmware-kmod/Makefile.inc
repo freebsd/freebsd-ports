@@ -120,12 +120,15 @@ post-extract:
 	@${ECHO_CMD} "compat.linuxkpi.skb.mem_limit=${COMPAT_LINUXKPI_SKB_MEM_LIMIT}" >> ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
 	@${ECHO_CMD} "${BOOT_LOADERCONFD}/${FLAVOR}.conf" >> ${PLIST}
 .endif
-.if defined(COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT) && (${COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT:M${FLAVOR}} != "")
+.if defined(COMPAT_LINUXKPI_HWCRYPTO_HT_VHT) && (${COMPAT_LINUXKPI_HWCRYPTO_HT_VHT:M${FLAVOR}} != "")
 	@${MKDIR} ${WRKSRC}/${BOOT_LOADERCONFD}
-	@${ECHO_CMD} "compat.linuxkpi.80211.hw_crypto=1" >> ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
-	@${ECHO_CMD} "compat.linuxkpi.iwlwifi_11n_disable=0" >> ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
-	@${ECHO_CMD} "compat.linuxkpi.iwlwifi_disable_11ac=0" >> ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
-	@${ECHO_CMD} "${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf" >> ${PLIST}
+	@${ECHO_CMD} "compat.linuxkpi.80211.hw_crypto=1" >> ${WRKSRC}/${BOOT_LOADERCONFD}/${FWDRV}-${FLAVOR}.conf
+	# "iwlwifi_11n_disable" one is iwlwifi specific; for all the others bz created them homogeneously.
+	# Setting an unknown kenv does not hurt.
+	@${ECHO_CMD} "compat.linuxkpi.${FWDRV}_11n_disable=0" >> ${WRKSRC}/${BOOT_LOADERCONFD}/${FWDRV}-${FLAVOR}.conf
+	@${ECHO_CMD} "compat.linuxkpi.${FWDRV}_disable_11n=0" >> ${WRKSRC}/${BOOT_LOADERCONFD}/${FWDRV}-${FLAVOR}.conf
+	@${ECHO_CMD} "compat.linuxkpi.${FWDRV}_disable_11ac=0" >> ${WRKSRC}/${BOOT_LOADERCONFD}/${FWDRV}-${FLAVOR}.conf
+	@${ECHO_CMD} "${BOOT_LOADERCONFD}/${FWDRV}-${FLAVOR}.conf" >> ${PLIST}
 .endif
 ################################################################################
 .for _f in ${DISTFILES_${FLAVOR}:O:u}
@@ -153,9 +156,9 @@ post-install:
 	@${MKDIR} ${STAGEDIR}/${BOOT_LOADERCONFD}
 	@${INSTALL_DATA} ${WRKSRC}/${BOOT_LOADERCONFD}/${FLAVOR}.conf ${STAGEDIR}/${BOOT_LOADERCONFD}/${FLAVOR}.conf
 .endif
-.if defined(COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT) && (${COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT:M${FLAVOR}} != "")
+.if defined(COMPAT_LINUXKPI_HWCRYPTO_HT_VHT) && (${COMPAT_LINUXKPI_HWCRYPTO_HT_VHT:M${FLAVOR}} != "")
 	@${MKDIR} ${STAGEDIR}/${BOOT_LOADERCONFD}
-	@${INSTALL_DATA} ${WRKSRC}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf ${STAGEDIR}/${BOOT_LOADERCONFD}/iwlwifi-${FLAVOR}.conf
+	@${INSTALL_DATA} ${WRKSRC}/${BOOT_LOADERCONFD}/${FWDRV}-${FLAVOR}.conf ${STAGEDIR}/${BOOT_LOADERCONFD}/${FWDRV}-${FLAVOR}.conf
 .endif
 	@${DO_NADA}
 

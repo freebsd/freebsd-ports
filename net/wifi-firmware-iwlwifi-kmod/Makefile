@@ -11,7 +11,7 @@ LICENSE_NAME=	Intel firmware license (${FWDRV})
 WHENCE_REGEX=	iwlwifi -.*
 
 # Temporary list of flavours which we believe work with HW_CRYPTO/HT/VHT.
-COMPAT_LINUXKPI_IWL_HWCRYPTO_HT_VHT=	22000 ax210 bz
+COMPAT_LINUXKPI_HWCRYPTO_HT_VHT=	22000 ax210 bz
 
 # Run iwlwifi-generate-fw-list.sh according to description.
 
