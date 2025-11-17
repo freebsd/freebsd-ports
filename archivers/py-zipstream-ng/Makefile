@@ -17,4 +17,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVO
 USES=		python
 USE_PYTHON=	autoplist distutils pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
