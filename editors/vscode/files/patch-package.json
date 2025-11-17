@@ -2,9 +2,9 @@ https://github.com/eclipse/openvsx/issues/543
 https://github.com/termux/termux-packages/issues/24739
 https://github.com/termux/termux-packages/pull/24757
 
---- package.json.orig	2025-10-08 13:50:39 UTC
+--- package.json.orig	2025-11-11 14:25:32 UTC
 +++ package.json
-@@ -107,6 +107,7 @@
+@@ -108,6 +108,7 @@
      "native-is-elevated": "0.7.0",
      "native-keymap": "^3.3.5",
      "native-watchdog": "^1.4.1",

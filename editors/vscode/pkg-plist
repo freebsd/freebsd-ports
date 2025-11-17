@@ -142,6 +142,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/docker/package.json
 %%DATADIR%%/resources/app/extensions/docker/package.nls.json
 %%DATADIR%%/resources/app/extensions/docker/syntaxes/docker.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/dotenv/language-configuration.json
+%%DATADIR%%/resources/app/extensions/dotenv/package.json
+%%DATADIR%%/resources/app/extensions/dotenv/package.nls.json
+%%DATADIR%%/resources/app/extensions/dotenv/syntaxes/dotenv.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/emmet/README.md
 %%DATADIR%%/resources/app/extensions/emmet/dist/node/emmetNodeMain.js
 %%DATADIR%%/resources/app/extensions/emmet/images/icon.png
@@ -306,7 +310,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/json-language-features/package.nls.json
 %%DATADIR%%/resources/app/extensions/json-language-features/server/.npmrc
 %%DATADIR%%/resources/app/extensions/json-language-features/server/dist/node/774.jsonServerMain.js
-%%DATADIR%%/resources/app/extensions/json-language-features/server/dist/node/875.jsonServerMain.js
+%%DATADIR%%/resources/app/extensions/json-language-features/server/dist/node/962.jsonServerMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/server/dist/node/jsonServerMain.js
 %%DATADIR%%/resources/app/extensions/json-language-features/server/package.json
 %%DATADIR%%/resources/app/extensions/json/language-configuration.json
@@ -3589,7 +3593,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/utils/UrlUtils.mjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-browser.cjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-browser.cjs.map
-%%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node-D8Iaiqq3.js
+%%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node-DhUjlPuB.js
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node.cjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node.cjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index.cjs
@@ -4291,6 +4295,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/browser/retryStrategies/exponentialRetryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/browser/retryStrategies/retryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/browser/retryStrategies/throttlingRetryStrategy.js
+%%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/browser/util/arrayBuffer.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/browser/util/bytesEncoding-browser.mjs.map
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/browser/util/bytesEncoding.common.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/browser/util/bytesEncoding.js
@@ -4375,6 +4380,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/commonjs/retryStrategies/retryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/commonjs/retryStrategies/throttlingRetryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/commonjs/tsdoc-metadata.json
+%%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/commonjs/util/arrayBuffer.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/commonjs/util/bytesEncoding.common.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/commonjs/util/bytesEncoding.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/commonjs/util/checkEnvironment.js
@@ -4452,6 +4458,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/esm/retryStrategies/exponentialRetryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/esm/retryStrategies/retryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/esm/retryStrategies/throttlingRetryStrategy.js
+%%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/esm/util/arrayBuffer.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/esm/util/bytesEncoding.common.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/esm/util/bytesEncoding.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/esm/util/checkEnvironment.js
@@ -4532,6 +4539,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/react-native/retryStrategies/exponentialRetryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/react-native/retryStrategies/retryStrategy.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/react-native/retryStrategies/throttlingRetryStrategy.js
+%%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/react-native/util/arrayBuffer.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/react-native/util/bytesEncoding-react-native.mjs.map
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/react-native/util/bytesEncoding.common.js
 %%DATADIR%%/resources/app/node_modules/@typespec/ts-http-runtime/dist/react-native/util/bytesEncoding.js
@@ -4573,6 +4581,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@vscode/deviceid/package.json
 %%DATADIR%%/resources/app/node_modules/@vscode/iconv-lite-umd/LICENSE
 %%DATADIR%%/resources/app/node_modules/@vscode/iconv-lite-umd/lib/iconv-lite-umd.js
+%%DATADIR%%/resources/app/node_modules/@vscode/iconv-lite-umd/lib/iconv-lite-umd.js.LICENSE.txt
 %%DATADIR%%/resources/app/node_modules/@vscode/iconv-lite-umd/package.json
 %%DATADIR%%/resources/app/node_modules/@vscode/policy-watcher/LICENSE
 %%DATADIR%%/resources/app/node_modules/@vscode/policy-watcher/build/Release/vscode-policy-watcher.node
@@ -4618,8 +4627,10 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/SECURITY.md
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/cgmanifest.json
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/package.json
+%%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/wasm/tree-sitter-bash.wasm
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/wasm/tree-sitter-css.wasm
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/wasm/tree-sitter-ini.wasm
+%%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/wasm/tree-sitter-powershell.wasm
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/wasm/tree-sitter-regex.wasm
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/wasm/tree-sitter-typescript.wasm
 %%DATADIR%%/resources/app/node_modules/@vscode/tree-sitter-wasm/wasm/tree-sitter.js

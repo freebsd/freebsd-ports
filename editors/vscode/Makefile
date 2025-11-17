@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.105.1
-PORTREVISION=	4
+DISTVERSION=	1.106.0
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -20,6 +19,7 @@ EXTRACT_DEPENDS=jq:textproc/jq \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
 BUILD_DEPENDS=	zip:archivers/zip \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
+		tsgo:lang/typescript-go \
 		jq:textproc/jq \
 		rg:textproc/ripgrep \
 		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
@@ -68,7 +68,7 @@ USES=		desktop-file-utils display:test gl gmake gnome gssapi:mit \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	7d842fb85a0275a4a8e4d7e040d2625abbf7f084
+SOURCE_COMMIT_HASH=	ac4cbdf48759c7d8c3eb91ffe6bb04316e263c57
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -212,12 +212,16 @@ do-build:
 # remove backup files so that they are not included in the package
 	@${FIND} ${WRKSRC} -type f \( -name '*.orig' -o -name '*~' \) -delete
 # build and package vscode
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npx tsc -p build/tsconfig.build.json
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		npm_config_runtime=electron \
-		npm_config_target=${ELECTRON_VER} \
-		npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers \
-		npm --userconfig=${WRKSRC}/.npmrc run gulp vscode-linux-${ELECTRON_ARCH}-min
+	cd ${WRKSRC}/build && \
+		${SETENV} ${MAKE_ENV} npm run prebuild-ts
+	cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} tsgo -p build/tsconfig.build.json
+	cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} \
+			npm_config_runtime=electron \
+			npm_config_target=${ELECTRON_VER} \
+			npm_config_nodedir=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers \
+			npm --userconfig=${WRKSRC}/.npmrc run gulp vscode-linux-${ELECTRON_ARCH}-min
 # move marketplace extensions
 	@${MV} ${WRKDIR}/builtInExtensions/* ${WRKDIR}/VSCode-linux-${ELECTRON_ARCH}/resources/app/extensions
 
