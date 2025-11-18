@@ -671,13 +671,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		zvariant_derive-5.8.0 \
 		zvariant_utils-3.2.1 \
 		cosmic-settings-daemon@git+https://github.com/pop-os/dbus-settings-bindings\#b2337437d70b3db7a56211a43aa1632306711b2d \
-		smithay@git+https://github.com/smithay/smithay.git?rev=d743e1a\#d743e1a317fa0f01d1c4cadd96d277a1ec7b59d9 \
 		cosmic-settings-config,cosmic-settings-daemon-config@git+https://github.com/pop-os/cosmic-settings-daemon\#68331387e4336c37ce2300bea8638257feab449a \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		iced_glyphon@git+https://github.com/pop-os/glyphon.git?tag=iced-0.14-dev\#6ef9d12a20cfd0f7bdf38136a26ded9f7459ec8b \
 		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#f44d82a7e83af15270a9ca3beb832f4799699337 \
 		cosmic-freedesktop-icons@git+https://github.com/pop-os/freedesktop-icons\#8a05c322c482ff3c69cf34bacfee98907ac45307 \
 		clipboard_macos,clipboard_wayland,clipboard_x11,dnd,mime,window_clipboard@git+https://github.com/pop-os/window_clipboard.git?tag=pop-0.13-2\#6b9faab87bea9cebec6ae036906fd67fed254f5f \
+		smithay@git+https://github.com/smithay/smithay.git?rev=d40ada5\#d40ada55eceac04fb1c752f0f17b0c32cf24fbb1 \
 		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#cffdea2b334e7830a5fd6f95bf5e1784014442a8 \
 		cosmic-randr-shell@git+https://github.com/pop-os/cosmic-randr/\#bce9cdf2d447508d4e2d54a2be4fcd738ab51df5 \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#5a3007def49eb678d1144850c9ee04b80707c56a \
