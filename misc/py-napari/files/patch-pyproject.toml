@@ -1,10 +1,21 @@
---- pyproject.toml.orig	2025-10-03 09:18:59 UTC
+--- pyproject.toml.orig	2025-10-16 09:24:27 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@ requires = [
  [build-system]
  requires = [
--  "setuptools >= 69",
+-  "setuptools >= 77.0.1",
 +  "setuptools",
    "setuptools_scm[toml]>=8"
  ]
  build-backend = "setuptools.build_meta"
+@@ -35,10 +35,6 @@ requires-python = ">=3.10"
+     "Operating System :: MacOS",
+ ]
+ requires-python = ">=3.10"
+-license = "BSD-3-Clause"
+-license-files = [
+-    "LICENSE",
+-]
+ dependencies = [
+     "appdirs>=1.4.4",
+     "app-model>=0.4.0,<0.5.0",
