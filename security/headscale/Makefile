@@ -1,6 +1,6 @@
 PORTNAME=	headscale
-PORTVERSION=	0.27.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.27.1
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	m.muenz@gmail.com
@@ -13,10 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv6=	fails to compile: modernc.org/libc
 BROKEN_armv7=	fails to compile: modernc.org/libc
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	version 0.27 removed i386 support
+
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss
 
-USES=		go:modules
-USE_RC_SUBR=	headscale
+USES=		go:1.25,modules
+USE_RC_SUBR=	${PORTNAME}
 
 GO_MODULE=	github.com/juanfont/headscale
 
@@ -28,7 +31,7 @@ PLIST_FILES=	"@sample ${ETCDIR}/config.yaml.sample" \
 		bin/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/headscale|${PREFIX}/etc/${PORTNAME}|g' \
+	@${REINPLACE_CMD} -e 's|/etc/headscale|${ETCDIR}|g' \
 		${WRKSRC}/cmd/headscale/cli/dump_config.go \
 		${WRKSRC}/cmd/headscale/cli/root.go \
 		${WRKSRC}/integration/hsic/hsic.go
@@ -36,9 +39,9 @@ post-patch:
 		${WRKSRC}/config-example.yaml
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/config-example.yaml ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/config.yaml.sample
-	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
-	${MKDIR} ${STAGEDIR}/var/cache/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${ETCDIR} \
+		 ${STAGEDIR}/var/cache/${PORTNAME} \
+		 ${STAGEDIR}/var/db/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/config-example.yaml ${STAGEDIR}${ETCDIR}/config.yaml.sample
 
 .include <bsd.port.mk>
