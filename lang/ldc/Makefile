@@ -30,6 +30,9 @@ CMAKE_ARGS+=	-DLDC_INSTALL_PREFIX="${PREFIX}" \
 		-DBUILD_SHARED_LIBS="BOTH" \
 		-DBUILD_LTO_LIBS=ON
 
+post-patch:
+	cd ${WRKDIR}; patch < ${.CURDIR}/files/extra-patch-ldc2-1.41.0-freebsd-x86_64-import-core-sys-freebsd-config.d
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc-build-runtime
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ldc-profdata
