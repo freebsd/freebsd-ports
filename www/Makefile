@@ -2729,6 +2729,7 @@
     SUBDIR += wiki-tui
     SUBDIR += wikicalc
     SUBDIR += wordpress
+    SUBDIR += wp-cli
     SUBDIR += wpebackend-fdo
     SUBDIR += writeas-cli
     SUBDIR += writefreely
