@@ -1,5 +1,5 @@
 PORTNAME=	qalculate-qt
-PORTVERSION=	5.8.1
+PORTVERSION=	5.8.2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
