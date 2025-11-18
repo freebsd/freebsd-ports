@@ -689,10 +689,12 @@ include/thrift/lib/cpp2/transport/rocket/server/detail/IncomingFrameHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/KeepAliveHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/MetadataPushHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/OutgoingFrameHandler.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RequestChannelHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestFnfHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestResponseHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestStreamHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/SetupFrameAcceptor.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/SinkCallbackManager.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/StreamCallbackManager.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/WriteBatchTypes.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/WriteBatcher.h
