@@ -1,7 +1,6 @@
 PORTNAME=	hyprls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
-PORTREVISION=	3
+DISTVERSION=	0.10.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:1.25,modules
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	hyprwm:hyprland-wiki:6c123a2f295b6b1846511587df0b68616dff1a47:hyprland_wiki/hyprland-wiki
+GH_TUPLE=	hyprwm:hyprland-wiki:584e32827d32256da60ea9db0f3d26b3d91dac05:hyprland_wiki/hyprland-wiki
 
 GO_MODULE=	github.com/hyprland-community/hyprls
 GO_TARGET=	./cmd/hyprls
