@@ -2,6 +2,7 @@ PORTNAME=	odin2-synthesizer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.4-13
 DISTVERSIONSUFFIX=	-gc8d3861f
+PORTREVISION=	1
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +20,9 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfreetype.so:print/freetype2
 
-USES=		gl cmake localbase:ldflags pkgconfig
+USES=		gl cmake localbase:ldflags pkgconfig xorg
 USE_GL=		gl
+USE_XORG=	x11 xext xinerama xrandr xrender # for juce
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	TheWaveWarden
