@@ -2019,6 +2019,7 @@ share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/hu/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/hu/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/hu/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/hu/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo

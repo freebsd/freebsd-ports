@@ -2471,6 +2471,7 @@ share/locale/fr/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/fr/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/fr/LC_MESSAGES/kcm_style.mo
 share/locale/fr/LC_MESSAGES/kcm_users.mo
+share/locale/fr/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/fr/LC_MESSAGES/kcminit.mo
 share/locale/fr/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/fr/LC_MESSAGES/kded_donationmessage.mo
@@ -6069,6 +6070,7 @@ share/locale/zh_CN/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_style.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_users.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/zh_CN/LC_MESSAGES/kcminit.mo
 share/locale/zh_CN/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/zh_CN/LC_MESSAGES/kded_donationmessage.mo
@@ -6145,6 +6147,7 @@ share/locale/zh_TW/LC_MESSAGES/kcm_regionandlang.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_soundtheme.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_style.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_users.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_wallpaper.mo
 share/locale/zh_TW/LC_MESSAGES/kcminit.mo
 share/locale/zh_TW/LC_MESSAGES/kded_devicenotifications.mo
 share/locale/zh_TW/LC_MESSAGES/kded_donationmessage.mo
