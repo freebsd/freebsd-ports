@@ -170,14 +170,14 @@ post-patch:
 do-build:
 # build fpc compiler
 	@${ECHO_MSG} "##### STARTING COMPILER AND UNITS #####"
-	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} all ${MAKE_ARGS} ${BOOTPPC})
+	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} all ${MAKE_ARGS} ${BOOTPPC})
 	@${ECHO_MSG} "##### COMPLETE COMPILER AND UNITS #####"
 
 do-install:
 	# Installing fpc compiler
-	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENV} ${MAKE_ENV} \
-		${MAKE_CMD} install ${MAKE_ARGS} ${BOOTPPC})
+	(cd ${WRKDIR}/${FPCSRCDIR} && ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS} ${BOOTPPC})
 
 	# Installing manpages
 	${INSTALL_MAN} ${WRKDIR}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1
