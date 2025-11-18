@@ -4866,3 +4866,4 @@ www/rubygem-gon-rails61|www/rubygem-gon-rails-gitlab|2025-11-15|Obsolete, use ww
 www/rubygem-gon-rails70|www/rubygem-gon-rails-gitlab|2025-11-15|Obsolete, use www/rubygem-gon-rails-gitlab instead
 deskutils/fet@qt5|deskutils/fet|2025-11-16|Qt Flavorization has been removed. Qt 5.x is EOL and deskutils/fet now based on Qt 6.x
 deskutils/fet@qt6|deskutils/fet|2025-11-16|Qt Flavorization has been removed. Continue to enjoy deskutils/fet based on Qt 6.x as usual
+lang/ruby35|lang/ruby40|2025-11-18|Upstream changed version of master branch in their repository from 3.5 to 4.0
