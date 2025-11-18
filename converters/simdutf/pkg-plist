@@ -14,7 +14,7 @@ lib/cmake/simdutf/simdutf-config-version.cmake
 lib/cmake/simdutf/simdutf-config.cmake
 lib/cmake/simdutf/simdutfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/simdutf/simdutfTargets.cmake
-lib/libsimdutf.so.27.0.0
-lib/libsimdutf.so.27
+lib/libsimdutf.so.28.0.0
+lib/libsimdutf.so.28
 lib/libsimdutf.so
 libdata/pkgconfig/simdutf.pc
