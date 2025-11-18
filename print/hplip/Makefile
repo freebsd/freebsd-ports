@@ -1,6 +1,5 @@
 PORTNAME=	hplip
-PORTVERSION=	3.24.4
-PORTREVISION=	3
+PORTVERSION=	3.25.8
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -98,6 +97,7 @@ post-patch:
 		${WRKSRC}/prnt/hpijs/foomatic-rip-hplip \
 		${WRKSRC}/prnt/filters/hpps \
 		${WRKSRC}/ui5/scandialog.py \
+		${WRKSRC}/ui5/setupdialog.py \
 		${WRKSRC}/ui5/devmgr5.py \
 
 post-install:
