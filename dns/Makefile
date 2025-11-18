@@ -1,5 +1,6 @@
     COMMENT = Domain Name Service tools
 
+    SUBDIR += aardvark-dns
     SUBDIR += acme-dns
     SUBDIR += adns
     SUBDIR += amass
