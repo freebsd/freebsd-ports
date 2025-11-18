@@ -1,6 +1,6 @@
 PORTNAME=	aardvark-dns
-PORTVERSION=	1.17.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	1.17.0
 CATEGORIES=	dns
 
 MAINTAINER=	osa@FreeBSD.org
@@ -10,14 +10,13 @@ WWW=		https://github.com/containers/aardvark-dns
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libinotify.so:devel/libinotify
-
 USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
 
 .if !exists(/usr/include/sys/inotify.h)
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 LDFLAGS+=	-L${LOCALBASE}/lib -linotify
 .endif
 
