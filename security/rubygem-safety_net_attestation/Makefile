@@ -1,6 +1,5 @@
 PORTNAME=	safety_net_attestation
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +9,7 @@ WWW=		https://github.com/bdewater/safety_net_attestation
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-jwt2>=2.0<3:www/rubygem-jwt2
+RUN_DEPENDS=	rubygem-jwt2>=2.0<4:www/rubygem-jwt2
 
 USES=		gem
 
