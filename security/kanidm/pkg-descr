@@ -1,1 +1,3 @@
-Kanidm is a simple and secure identity provider and client for UNIX systems
+Kanidm is a simple and secure identity management platform, allowing
+other applications and services to offload the challenge of
+authenticating and storing identities to Kanidm.

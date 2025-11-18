@@ -7,8 +7,9 @@
 # Add these lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# kanidmd_enable (bool):	Set to NO by default.
-#				Set it to YES to enable kanidm_unixd.
+# kanidmd_enable (bool):        Enable kanidmd. (default=NO)
+# kanidmd_config (str):         Configuration file.
+#                               (default=%%ETCDIR%%/config.toml)
 
 . /etc/rc.subr
 
@@ -18,10 +19,11 @@ rcvar=kanidmd_enable
 load_rc_config $name
 
 : ${kanidmd_enable:="NO"}
+: ${kanidmd_config:="%%ETCDIR%%/config.toml"}
 
 pidfile="/var/run/kanidmd.pid"
 command=/usr/sbin/daemon
-command_args="-u %%USER%% -p /var/run/kanidmd.pid -T kanidmd %%PREFIX%%/libexec/${name}"
+command_args="-u %%USER%% -p /var/run/kanidmd.pid -T kanidmd %%PREFIX%%/libexec/${name} server --config-path ${kanidmd_config}"
 procname=%%PREFIX%%/libexec/${name}
 
 run_rc_command "$1"
