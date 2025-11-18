@@ -32,7 +32,7 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/dplcompat.conf.sample
-@comment @sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
+@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/FileStorage.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/GlusterStorage.conf.sample

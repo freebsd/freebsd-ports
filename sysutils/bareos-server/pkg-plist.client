@@ -41,6 +41,9 @@ bin/bconsole
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/LICENSE.md
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/README.md
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/__init__.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/mariadb/BareosFdMariaDBClass.py
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/mariadb/README.md
+%%PYTHON%%lib/bareos/plugins/bareos_tasks/mariadb/__init__.py
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/mysql/BareosFdMySQLClass.py
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/mysql/README.md
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/mysql/__init__.py
@@ -55,6 +58,8 @@ bin/bconsole
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/xenserver/__init__.py
 lib/bareos/plugins/bpipe-fd.so
 %%GFAPI%%lib/bareos/plugins/gfapi-fd.so
+%%PYTHON%%lib/bareos/plugins/mariadb-dump/README.md
+%%PYTHON%%lib/bareos/plugins/mariadb-dump/bareos-fd-mariadb-dump.py
 %%PYTHON%%lib/bareos/plugins/openvz7/BareosFdPluginVz7CtFs.py
 %%PYTHON%%lib/bareos/plugins/openvz7/README.md
 %%PYTHON%%lib/bareos/plugins/openvz7/bareos-fd-vz7_ct_fs.py

@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	24.0.5
-PORTREVISION?=	1
+DISTVERSION=	24.0.7
+PORTREVISION?=	0
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -20,9 +20,11 @@ BUILD_DEPENDS+=	utf8cpp>0:devel/utf8cpp \
 		xxhash>0:devel/xxhash \
 		tl-expected>0:devel/tl-expected \
 		cli11>0:devel/cli11
+RUN_DEPENDS=	bash:shells/bash
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libjansson.so:devel/jansson \
-		libfmt.so:devel/libfmt
+		libfmt.so:devel/libfmt \
+		libxxhash.so:devel/xxhash
 
 USES+=		cmake compiler:c++11-lang cpe localbase:ldflags perl5 pkgconfig readline \
 		shebangfix
@@ -35,8 +37,8 @@ GROUPS=		${USERS}
 PLIST_SUB+=	LIB_VERSION=${PORTVERSION}
 
 USE_LDCONFIG=	yes
-SHEBANG_LANG=	perl python
-SHEBANG_GLOB=	*.py
+SHEBANG_LANG=	bash perl python
+SHEBANG_GLOB=	*.sh *.py
 SHEBANG_FILES=	${WRKSRC}/contrib/misc/bsmc/bin/bsmc
 
 CPPFLAGS+=	-I${LOCALBASE}/readline
@@ -199,6 +201,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|enable_testing()||g' ${WRKSRC}/CMakeLists.txt
 .endif
+
+	@${REINPLACE_CMD} -e 's/CMAKE_INSTALL_FULL_DATAROOTDIR/CMAKE_INSTALL_DATAROOTDIR/g' \
+		${WRKSRC}/cmake/BareosSetVariableDefaults.cmake \
+		${WRKSRC}/webui/CMakeLists.txt
 
 post-extract:
 .if defined(WITH_CLIENT_ONLY)

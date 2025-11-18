@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	24.0.5
+DISTVERSION=	24.0.7
 CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	-webui
 
@@ -40,6 +40,10 @@ ETCDIRWEBUI=		etc/${PORTNAME}${PKGNAMESUFFIX}
 
 post-extract:
 	${FIND} ${WRKSRC}/webui -name .gitignore -delete
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/CMAKE_INSTALL_FULL_DATAROOTDIR/CMAKE_INSTALL_DATAROOTDIR/g' \
+		${WRKSRC}/webui/CMakeLists.txt
 
 pre-install:
 	${FIND} ${WRKSRC}/webui -name *.in -delete

@@ -2,7 +2,7 @@ post-patch:
 .if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|\@bindir\@|${LOCALBASE}/bin|g' ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor.desktop.in
-	@${REINPLACE_CMD}  '206d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '207d' ${WRKSRC}/CMakeLists.txt
 .endif
 
 post-extract:

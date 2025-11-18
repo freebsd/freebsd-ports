@@ -42,7 +42,7 @@ bareos_start_precmd() {
 
 bareos_dir_configtest() {
 	echo "Performing sanity check on ${bareos_dir_config} configuration:"
-	eval ${command} -t
+	eval ${command} -c ${bareos_dir_config} -t
 }
 
 bareos_dir_reload() {

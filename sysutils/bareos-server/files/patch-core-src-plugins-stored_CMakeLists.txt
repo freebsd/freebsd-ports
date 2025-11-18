@@ -1,15 +1,23 @@
---- core/src/plugins/stored/CMakeLists.txt	2024-12-16 09:10:50.000000000 -0800
-+++ core/src/plugins/stored/CMakeLists.txt	2024-12-22 19:50:39.154511000 -0800
-@@ -33,6 +33,12 @@
-   endif()
- endif()
+--- core/src/plugins/stored/CMakeLists.txt	2025-09-02 01:09:07.000000000 -0700
++++ core/src/plugins/stored/CMakeLists.txt	2025-11-17 13:54:37.845349000 -0800
+@@ -16,6 +16,7 @@
+ #   along with this program; if not, write to the Free Software
+ #   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ #   02110-1301, USA.
++include(BareosPlugins)
+ message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
  
+ if(HAVE_WIN32)
+@@ -31,6 +32,12 @@
+     # work around https://bugs.python.org/issue4709
+     add_definitions(-DMS_WIN64)
+   endif()
++endif()
++
 +if(HAVE_FREEBSD_OS)
 +  include_directories(
 +    ${PROJECT_SOURCE_DIR}/src/fastlz/include
 +  )
-+endif()
-+
- if(ENABLE_PYTHON)
-   add_subdirectory(python)
  endif()
+ 
+ if(ENABLE_PYTHON)
