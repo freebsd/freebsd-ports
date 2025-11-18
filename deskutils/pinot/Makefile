@@ -1,6 +1,5 @@
 PORTNAME=	pinot
-PORTVERSION=	1.22
-PORTREVISION=	6
+PORTVERSION=	1.23
 CATEGORIES=	deskutils
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -62,6 +61,7 @@ CHMLIB_CONFIGURE_OFF=	--disable-chmlib
 CHMLIB_LIB_DEPENDS=	libchm.so:misc/chmlib
 
 INSTALL_TARGET=	install-strip
+
 DOCS=		AUTHORS ChangeLog ChangeLog-dijon INSTALL NEWS README TODO
 
 LM2FIX=		Core/pinot-index.cpp Core/pinot-index.1 Makefile.am	\
