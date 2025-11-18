@@ -10,6 +10,9 @@ PATCH_SITES=	https://hg.mozilla.org/mozilla-central/raw-rev/
 PATCHFILES+=	223087fdc29f18678f6174e9807b8780e439acf6:-p1 # https://bugzilla.mozilla.org/1894423
 PATCHFILES+=	68ff4d3f7338248b4d67cf03aade5a73f8d396b2:-p1 # https://bugzilla.mozilla.org/1849070
 
+DEPRECATED=	Old version, only ports user couchdb3 can use newer spidermonkey, see https://bugs.freebsd.org/291086
+EXPIRATION_DATE=2025-12-31
+
 MAINTAINER=	nc@FreeBSD.org
 COMMENT=	Standalone JavaScript based from Mozilla 102-esr
 WWW=		https://spidermonkey.dev/
