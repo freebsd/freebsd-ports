@@ -1103,6 +1103,7 @@
     SUBDIR += py-rdiff-backup
     SUBDIR += py-resolve-march-native
     SUBDIR += py-salt
+    SUBDIR += py-salt-tower
     SUBDIR += py-scandir
     SUBDIR += py-scarab
     SUBDIR += py-supervisor

@@ -1,0 +1,3 @@
+SaltStack pillar to allow a stack of different pillar with advanced merge
+capabilities. It allows to inject Jinja variables to select the pillar
+files to load and merge dictionaries into unique consolidated values.
