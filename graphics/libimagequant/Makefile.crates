@@ -1,16 +1,16 @@
 CARGO_CRATES=	adler2-2.0.1 \
 		arrayvec-0.7.6 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		bytemuck-1.24.0 \
-		cc-1.2.41 \
-		cfg-if-1.0.3 \
+		cc-1.2.46 \
+		cfg-if-1.0.4 \
 		crc32fast-1.5.0 \
 		crossbeam-deque-0.8.6 \
 		crossbeam-epoch-0.9.18 \
 		crossbeam-utils-0.8.21 \
 		either-1.15.0 \
-		find-msvc-tools-0.1.4 \
-		flate2-1.1.4 \
+		find-msvc-tools-0.1.5 \
+		flate2-1.1.5 \
 		libc-0.2.177 \
 		libz-rs-sys-0.5.2 \
 		lodepng-3.12.1 \
