@@ -1,3 +1,38 @@
+  <vuln vid="ca5d4e87-c465-11f0-b3f7-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>142.0.7444.175</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>142.0.7444.175</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/11/stable-channel-update-for-desktop_17.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[460017370] High CVE-2025-13223: Type Confusion in V8. Reported by Clément Lecigne of Google's Threat Analysis Group on 2025-11-12</li>
+	    <li>[450328966] High CVE-2025-13224: Type Confusion in V8. Reported by Google Big Sleep on 2025-10-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13223</cvename>
+      <cvename>CVE-2025-13224</cvename>
+      <url>https://chromereleases.googleblog.com/2025/11/stable-channel-update-for-desktop_17.html</url>
+    </references>
+    <dates>
+      <discovery>2025-11-17</discovery>
+      <entry>2025-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a46e84d-c406-11f0-b513-0da7be77c170">
     <topic>pkcs11-helper -- deserialize buffer overflow</topic>
     <affects>
