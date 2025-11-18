@@ -1,5 +1,5 @@
 PORTNAME=	S7
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,7 +14,7 @@ TEST_DEPENDS=	R-cran-callr>0:devel/R-cran-callr \
 		R-cran-covr>0:devel/R-cran-covr \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
-		R-cran-testthat>0:devel/R-cran-testthat \
+		R-cran-testthat>=3.2.0:devel/R-cran-testthat \
 		R-cran-tibble>0:devel/R-cran-tibble
 
 USES=		cran:auto-plist,compiles
