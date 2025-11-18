@@ -1402,6 +1402,7 @@
     SUBDIR += unix-selfauth-helper
     SUBDIR += vanguards-tor
     SUBDIR += vault
+    SUBDIR += vault-medusa
     SUBDIR += vaultwarden
     SUBDIR += veracrypt
     SUBDIR += vigenere
