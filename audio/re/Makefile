@@ -1,6 +1,6 @@
 PORTNAME=	re
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.2.0
+DISTVERSION=	4.3.0
 CATEGORIES=	audio devel
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
