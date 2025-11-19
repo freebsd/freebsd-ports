@@ -1,5 +1,5 @@
 PORTNAME=	bash-completion-freebsd
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.0
 CATEGORIES=	shells
 
 MAINTAINER=	0mp@FreeBSD.org
