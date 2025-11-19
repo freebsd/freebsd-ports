@@ -1,12 +1,15 @@
 PORTNAME=	aide
 PORTVERSION=	0.18.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	File and directory integrity checker
 WWW=		https://aide.github.io/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmhash.so:security/mhash \
 		libpcre2-8.so:devel/pcre2
