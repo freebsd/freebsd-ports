@@ -59,6 +59,7 @@ include/dns/message.h
 include/dns/name.h
 include/dns/nametree.h
 include/dns/ncache.h
+include/dns/notify.h
 include/dns/nsec.h
 include/dns/nsec3.h
 include/dns/nta.h
@@ -235,11 +236,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.14.so
-lib/libisc-9.21.14.so
-lib/libisccc-9.21.14.so
-lib/libisccfg-9.21.14.so
-lib/libns-9.21.14.so
+lib/libdns-9.21.15.so
+lib/libisc-9.21.15.so
+lib/libisccc-9.21.15.so
+lib/libisccfg-9.21.15.so
+lib/libns-9.21.15.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
