@@ -210,7 +210,7 @@ DESCR=			${.CURDIR:H:H}/x11/plasma6-plasma/pkg-descr
 .      elif ${_KDE_CATEGORY:Mkde-frameworks}
 PORTVERSION?=		${KDE_FRAMEWORKS_VERSION}
 PKGNAMEPREFIX?=		kf${_KDE_VERSION}-
-WWW?=			https://api.kde.org/frameworks/${PORTNAME}/html/index.html
+WWW?=			https://api.kde.org/${PORTNAME}-index.html
 # This is a slight duplication of _USE_PORTINGAIDS_ALL
 _PORTINGAIDS=		kjs kjsembed kdelibs4support kdesignerplugin khtml kmediaplayer kross kxmlrpcclient
 .        if ${_KDE_VERSION:M5}

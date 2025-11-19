@@ -6,6 +6,7 @@ PATCHFILES=	7a1d063137a8e8c7758cfdb1c95f2b258cd0d0c6.patch:-p1
 
 COMMENT=	Extra modules and scripts for CMake
 MAINTAINER=	kde@FreeBSD.org
+WWW=		https://api.kde.org/ecm-index.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING-CMAKE-SCRIPTS
