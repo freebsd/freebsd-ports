@@ -9,6 +9,7 @@ etc/xdg/walker/themes/default/item_dmenu.xml
 etc/xdg/walker/themes/default/item_files.xml
 etc/xdg/walker/themes/default/item_providerlist.xml
 etc/xdg/walker/themes/default/item_symbols.xml
+etc/xdg/walker/themes/default/item_symbols_grid.xml
 etc/xdg/walker/themes/default/item_todo.xml
 etc/xdg/walker/themes/default/item_unicode.xml
 etc/xdg/walker/themes/default/keybind.xml
