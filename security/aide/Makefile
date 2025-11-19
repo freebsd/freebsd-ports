@@ -1,6 +1,5 @@
 PORTNAME=	aide
-PORTVERSION=	0.18.6
-PORTREVISION=	3
+PORTVERSION=	0.19.2
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/aide/aide/releases/download/v${PORTVERSION}/
 
@@ -22,7 +21,7 @@ CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
 		--with-config_file=${PREFIX}/etc/aide.conf
 CONFIGURE_ENV=	YACC="bison -y" \
-		POSIX_ACL_CFLAGS="-I/usr/include/sys" \
+		POSIX_ACL_CFLAGS="-I/usr/include" \
 		POSIX_ACL_LIBS="-L/usr/lib" \
 		MHASH_CFLAGS="-I${LOCALBASE}/include" \
 		MHASH_LIBS="-L${LOCALBASE}/lib -lmhash"
