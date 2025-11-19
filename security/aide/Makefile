@@ -28,6 +28,18 @@ CONFIGURE_ENV=	YACC="bison -y" \
 
 LDFLAGS+=	-lpthread
 
+OPTIONS_RADIO=	CRYPT
+OPTIONS_DEFAULT=	GCRYPT
+OPTIONS_RADIO_CRYPT=	GCRYPT NETTLE
+
+GCRYPT_DESC=	use GNU crypto library
+NETTLE_DESC=	use Nettle crypto library
+
+GCRYPT_CONFIGURE_WITH=	gcrypt
+GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
+NETTLE_CONFIGURE_WITH=	nettle
+NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
+
 SUB_FILES=	pkg-message
 
 FLAVORS=	default without_acl
