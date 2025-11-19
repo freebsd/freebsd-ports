@@ -6,10 +6,10 @@ lib/node_modules/@github/copilot/prebuilds/freebsd-%%JS_ARCH%%/pty.node
 lib/node_modules/@github/copilot/sdk/index.d.ts
 lib/node_modules/@github/copilot/sdk/index.js
 lib/node_modules/@github/copilot/sharp/index.js
-lib/node_modules/@github/copilot/sharp/node_modules/@img/colour/color.cjs
-lib/node_modules/@github/copilot/sharp/node_modules/@img/colour/index.cjs
 lib/node_modules/@github/copilot/tree-sitter-bash.wasm
 lib/node_modules/@github/copilot/tree-sitter-powershell.wasm
 lib/node_modules/@github/copilot/tree-sitter.wasm
 lib/node_modules/@github/copilot/worker/conoutSocketWorker.js
 lib/node_modules/@img/sharp-freebsd-%%JS_ARCH%%/sharp.node
+@dir lib/node_modules/@github/copilot/ripgrep/bin
+@dir lib/node_modules/@github/copilot/sharp/node_modules/@img

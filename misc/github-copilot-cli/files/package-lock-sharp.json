@@ -54,9 +54,9 @@
       }
     },
     "node_modules/sharp/node_modules/@emnapi/runtime": {
-      "version": "1.6.0",
-      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.6.0.tgz",
-      "integrity": "sha512-obtUmAHTMjll499P+D9A3axeJFlhdjOWdKUNs/U6QIGT7V5RjcUW1xToAzjvmgTSQhDbYn/NwfTRoJcQ2rNBxA==",
+      "version": "1.7.1",
+      "resolved": "https://registry.npmjs.org/@emnapi/runtime/-/runtime-1.7.1.tgz",
+      "integrity": "sha512-PVtJr5CmLwYAU9PZDMITZoR5iAOShYREoR45EyyLrbntV50mdePTgUn4AmOw90Ifcj+x2kRjdzr1HP3RrNiHGA==",
       "license": "MIT",
       "optional": true,
       "dependencies": {
