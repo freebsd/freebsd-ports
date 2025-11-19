@@ -232,7 +232,7 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%share/man/man8/nutconf.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/nutdrv_atcl_usb.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/nutdrv_qx.8.gz
-%%MANPAGES%%%%SERIAL%%share/man/man8/nutdrv_siemens_sitop.8.gz
+%%MANPAGES%%%%SERIAL%%share/man/man8/nutdrv_siemens-sitop.8.gz
 %%MANPAGES%%share/man/man8/nutupsdrv.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/powervar_cx_usb.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/riello_ser.8.gz
