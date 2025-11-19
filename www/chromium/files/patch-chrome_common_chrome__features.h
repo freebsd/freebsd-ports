@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.h.orig	2025-10-30 15:44:36 UTC
+--- chrome/common/chrome_features.h.orig	2025-11-18 17:44:48 UTC
 +++ chrome/common/chrome_features.h
 @@ -83,13 +83,13 @@ BASE_DECLARE_FEATURE(kUseAdHocSigningForWebAppShims);
  #endif  // BUILDFLAG(IS_MAC)
@@ -25,7 +25,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kShortcutsNotApps);
-@@ -808,7 +808,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
+@@ -806,7 +806,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kKAnonymityServiceStorage);
  
@@ -34,7 +34,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -816,7 +816,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -814,7 +814,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
