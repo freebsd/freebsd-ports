@@ -8,6 +8,7 @@ LLVM_COMMANDS=	\
 		llvm-as \
 		llvm-bcanalyzer \
 		llvm-bitcode-strip \
+		llvm-cas \
 		llvm-cat \
 		llvm-cfi-verify \
 		llvm-cgdata \
@@ -42,6 +43,7 @@ LLVM_COMMANDS=	\
 		llvm-nm \
 		llvm-objcopy \
 		llvm-objdump \
+		llvm-offload-binary \
 		llvm-offload-wrapper \
 		llvm-opt-report \
 		llvm-otool \
