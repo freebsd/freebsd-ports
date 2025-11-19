@@ -1,6 +1,6 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.5
+DISTVERSION=	2.5.2
 CATEGORIES=	net
 
 # JavaScripts
@@ -29,10 +29,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		chart.js-${_CHARTJS}.tgz
 
 # Crystal library versions
-_AMQP_CLIENT=		1.3.1
-_AMQP_PROTO=		1.1.15
+_AMQP_CLIENT=		1.3.2
+_AMQP_PROTO=		1.1.16
 _LZ4=		96d714f7593c66ca7425872fd26c7b1286806d3d
-_MQTT=		36ff248ff8e9aaa749cfff3d251103e0e5f661bc
+_MQTT=		5cf504b32313b3b63eecde22e2a136b9b9935b8b
 
 # JavaScript library versions
 _AMQP_JS=		3.1.1
@@ -47,7 +47,9 @@ WWW=		https://www.lavinmq.com/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	crystal:lang/crystal \
+		liblz4>0:archivers/liblz4 \
 		help2man:misc/help2man \
+		pcre2>0:devel/pcre2 \
 		shards:devel/shards
 
 USES=		pkgconfig ssl:build
