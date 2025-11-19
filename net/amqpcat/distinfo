@@ -1,6 +1,6 @@
-TIMESTAMP = 1760712124
-SHA256 (cloudamqp-amqpcat-v1.0.1_GH0.tar.gz) = ab3e4939fade05417b357e578185d24fc574d9dc5b5fed72f49f65de0c5a349d
-SIZE (cloudamqp-amqpcat-v1.0.1_GH0.tar.gz) = 6758
+TIMESTAMP = 1762690544
+SHA256 (cloudamqp-amqpcat-v1.0.2_GH0.tar.gz) = 28c7d3ff37a463b5daa476233dcae200d3c855aa9f8e46d7065dd629731f80d7
+SIZE (cloudamqp-amqpcat-v1.0.2_GH0.tar.gz) = 6861
 SHA256 (cloudamqp-amq-protocol.cr-v1.1.15_GH0.tar.gz) = 2650924ad06f80a12d4f3eeaf800da45e7d74304289692a4b26576e5bfada85a
 SIZE (cloudamqp-amq-protocol.cr-v1.1.15_GH0.tar.gz) = 18077
 SHA256 (cloudamqp-amqp-client.cr-v1.3.1_GH0.tar.gz) = 2534b98bf64a17e075871f82fcf6bdee6d6d9dba5fc29472afe61bf6f1a5388e

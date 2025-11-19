@@ -1,7 +1,6 @@
 PORTNAME=	amqpcat
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.0.2
 CATEGORIES=	net
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
@@ -16,6 +15,7 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	crystal:lang/crystal \
 		help2man:misc/help2man \
+		pcre2>0:devel/pcre2 \
 		shards:devel/shards
 
 USES=		pkgconfig
