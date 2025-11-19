@@ -1,7 +1,6 @@
 PORTNAME=	re
-PORTVERSION=	1100.00
+PORTVERSION=	1101.00
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	net
 PKGNAMEPREFIX=	realtek-
 PKGNAMESUFFIX=	-kmod
@@ -17,7 +16,7 @@ USES=		kmod tar:tgz uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdupre
 GH_PROJECT=	rtl_bsd_drv
-GH_TAGNAME=	ea4ed1e
+GH_TAGNAME=	11d49ee
 
 .include <bsd.port.options.mk>
 
