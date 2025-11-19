@@ -3,6 +3,7 @@ include/baresip.h
 %%AAC%%lib/baresip/modules/aac.so
 lib/baresip/modules/account.so
 %%ALSA%%lib/baresip/modules/alsa.so
+%%AMR%%lib/baresip/modules/amr.so
 lib/baresip/modules/aubridge.so
 lib/baresip/modules/auconv.so
 lib/baresip/modules/aufile.so
@@ -81,8 +82,8 @@ lib/baresip/modules/vumeter.so
 %%WEBRTC_AEC%%lib/baresip/modules/webrtc_aec.so
 %%X11%%lib/baresip/modules/x11.so
 lib/libbaresip.so
-lib/libbaresip.so.22
-lib/libbaresip.so.22.2.0
+lib/libbaresip.so.23
+lib/libbaresip.so.23.3.0
 libdata/pkgconfig/libbaresip.pc
 share/applications/com.github.baresip.desktop
 %%DATADIR%%/autoanswer.wav
