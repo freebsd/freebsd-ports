@@ -389,6 +389,7 @@
     SUBDIR += seafile-server
     SUBDIR += semaphore
     SUBDIR += sendip
+    SUBDIR += simplomon
     SUBDIR += sipcalc
     SUBDIR += sjitter
     SUBDIR += smartctl_exporter

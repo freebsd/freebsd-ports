@@ -1,0 +1,22 @@
+--- meson.build.orig	2025-02-19 22:01:58 UTC
++++ meson.build
+@@ -66,7 +66,6 @@ sqlitewriter_dep = dependency('sqlitewriter', static: 
+ 
+ cpphttplib = dependency('cpp-httplib')
+ sqlitewriter_dep = dependency('sqlitewriter', static: true)
+-doctest_dep=dependency('doctest')
+ simplesockets_dep = dependency('simplesockets', static: true)
+ # argparse_dep = dependency('argparse', version: '>=3')
+ 
+@@ -104,11 +103,3 @@ webpages,
+ webpages,
+ 	dependencies: [json_dep, fmt_dep, cpphttplib,
+ 	simplesockets_dep, lua_dep, curl_dep, sqlite_dep, sqlitewriter_dep])
+-
+-executable('testrunner', 'testrunner.cc', 'notifiers.cc', 'minicurl.cc', 'dnsmon.cc', 'record-types.cc', 'dnsmessages.cc', 'dns-storage.cc', 'netmon.cc', 'luabridge.cc', 'webservice.cc', 'support.cc', 'promon.cc', 'mailmon.cc', 'nonblocker.cc', 
+-	dependencies: [doctest_dep, curl_dep, json_dep, fmt_dep, cpphttplib, sqlite_dep,
+-	simplesockets_dep, lua_dep, sqlitewriter_dep])
+-
+-
+-
+-
