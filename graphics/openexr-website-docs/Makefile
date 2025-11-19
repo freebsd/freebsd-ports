@@ -1,5 +1,5 @@
 PORTNAME=	openexr-website-docs
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 PORTREVISION=	0
 MASTER_SITES=	https://github.com/AcademySoftwareFoundation/openexr/releases/download/v${PORTVERSION}/:DEFAULT \
 		https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/main/:website \

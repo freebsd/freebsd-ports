@@ -1,6 +1,6 @@
 PORTNAME?=	openexr
-PORTVERSION?=	3.4.3 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
-PORTREVISION?=	1
+PORTVERSION?=	3.4.4 # ALSO update openexr-website-docs! -- verify sigstore: make makesum verify-sigstore
+PORTREVISION?=	0
 CATEGORIES=	graphics devel
 .if !defined(MASTERDIR)
 MASTER_SITES=	https://raw.githubusercontent.com/AcademySoftwareFoundation/openexr-images/v1.0/:testimages \
