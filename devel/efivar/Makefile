@@ -1,5 +1,6 @@
 PORTNAME=	efivar
 PORTVERSION=	39
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	decke@FreeBSD.org
@@ -23,6 +24,7 @@ GH_ACCOUNT=	rhboot
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 
-MAKE_ARGS+=	CC="${CC}" LIBDIR="${PREFIX}/lib"
+MAKE_ARGS+=	CC="${CC}" LIBDIR="${PREFIX}/lib" \
+		LDFLAGS="-Wl,-rpath,${PREFIX}/lib"
 
 .include <bsd.port.mk>
