@@ -1,7 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2025.10.0
-PORTREVISION=	2
+DISTVERSION=	2025.11.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -23,6 +22,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 BUILD_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libzstd.so:archivers/zstd \
 		libicui18n.so:devel/icu \
 		libuv.so:devel/libuv \
 		libsimdjson.so:devel/simdjson \
@@ -35,7 +35,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 TEST_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 
 USES=		gmake localbase:ldflags nodejs:22,build pkgconfig \
-		python:build ssl
+		python:build sqlite ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bitwarden
@@ -68,7 +68,9 @@ PKG_NODE_CONFIGURE_ARGS=--openssl-use-def-ca-store \
 			--shared-openssl \
 			--shared-ngtcp2 \
 			--shared-simdjson \
+			--shared-sqlite \
 			--shared-zlib \
+			--shared-zstd \
 			--with-intl=system-icu
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 
