@@ -14,8 +14,8 @@ USE_KDE=	ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		base
 
-SHEBANG_FILES=	generate-24px-versions.py \
-		svg-xml-script-template.py
+SHEBANG_FILES=	tools/generate-24px-versions.py \
+		tools/svg-xml-script-template.py
 
 CMAKE_ON=	BINARY_ICONS_RESOURCE \
 		WITH_ICON_GENERATION

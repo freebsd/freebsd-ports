@@ -5,6 +5,7 @@ share/ECM/find-modules/Find7Zip.cmake
 share/ECM/find-modules/Find7z.cmake
 share/ECM/find-modules/FindCanberra.cmake
 share/ECM/find-modules/FindEGL.cmake
+share/ECM/find-modules/FindFFmpeg.cmake
 share/ECM/find-modules/FindGLIB2.cmake
 share/ECM/find-modules/FindGperf.cmake
 share/ECM/find-modules/FindGradle.cmake
