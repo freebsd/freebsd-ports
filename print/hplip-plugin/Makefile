@@ -43,7 +43,8 @@ LINARCH=	x86_32
 .endif
 
 do-fetch:
-	@for s in ${MASTER_SITES}; do ${SETENV} ${FETCH_ENV} ${FETCH_CMD} \
+	@[ -e ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ] \
+	|| for s in ${MASTER_SITES}; do ${SETENV} ${FETCH_ENV} ${FETCH_CMD} \
 		--user-agent="Mozilla/5.0 (FreeBSD x86_64) Firefox/145.0" \
 		-o ${DISTDIR} $${s}${DISTNAME}${EXTRACT_SUFX} && break; done
 
