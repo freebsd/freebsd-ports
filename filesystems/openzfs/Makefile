@@ -1,5 +1,5 @@
 PORTNAME=	openzfs
-PORTVERSION=	2.3.4
+PORTVERSION=	2.3.5
 PORTEPOCH=	1
 CATEGORIES=	filesystems sysutils
 MASTER_SITES=   https://github.com/openzfs/zfs/releases/download/zfs-${PORTVERSION}/
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--enable-debug --enable-debuginfo
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=	--with-python=${PYTHON_VER}
+CONFIGURE_ARGS+=	--with-python=${PYTHON_VER} --enable-pyzfs
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}

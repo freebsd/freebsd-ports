@@ -336,12 +336,12 @@ lib/libzpool.so.6.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libzfs_core/test/__pycache__/test_nvlist%%PYTHON_TAG%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libzfs_core/test/test_libzfs_core.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/libzfs_core/test/test_nvlist.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.2.2-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.2.2-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.2.2-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.2.2-py%%PYTHON_VER%%.egg-info/not-zip-safe
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.2.2-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.2.2-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.3.5-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.3.5-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.3.5-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.3.5-py%%PYTHON_VER%%.egg-info/not-zip-safe
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.3.5-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyzfs-2.3.5-py%%PYTHON_VER%%.egg-info/top_level.txt
 lib/security/pam_zfs_key.so
 libdata/pkgconfig/libzfs.pc
 libdata/pkgconfig/libzfs_core.pc
@@ -1313,7 +1313,6 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/zfs_wait_deleteq.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zfs_wait/zfs_wait_getsubopt.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zinject/zinject_args.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zinject/zinject_counts.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zinject/zinject_probe.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zhack/library.kshlib
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zhack/zhack_label_repair_001.ksh
@@ -1342,8 +1341,10 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_007_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_008_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_009_neg.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_010_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_dryrun_output.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_warn_create.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_warn_degraded.ksh
+%%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_add/zpool_add_warn_removal.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_attach/attach-o_ashift.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_attach/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/cli_root/zpool_attach/setup.ksh
@@ -2303,8 +2304,6 @@ share/zfs/compatibility.d/zol-0.8
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/cleanup.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_001_neg.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_002_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_003_pos.ksh
-%%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_004_pos.ksr
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_expand_001_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_expand_002_pos.ksh
 %%TESTS%%share/zfs/zfs-tests/tests/functional/raidz/raidz_expand_003_neg.ksh
