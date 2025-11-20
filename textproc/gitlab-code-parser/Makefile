@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-code-parser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.1
-PORTREVISION=	1
+DISTVERSION=	0.20.2
 CATEGORIES=	textproc
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -13,16 +12,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BROKEN_i386=	compilation fails: error: undefined symbol: __atomic_load
 
-BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
-LIB_DEPENDS=	libonig.so:devel/oniguruma \
-		libzstd.so:archivers/zstd
+BUILD_DEPENDS=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT} \
+		oniguruma>=0:devel/oniguruma \
+		zstd>=0:archivers/zstd
 
 USES=		cargo ssl
 
 USE_GITLAB=	yes
-GL_ACCOUNT=	gitlab-org
-GL_PROJECT=	rust/gitlab-code-parser
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}
+GL_ACCOUNT=	gitlab-org/rust
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/parser-cli \
 		include/parser-c-bindings.h \
@@ -35,10 +33,10 @@ PLIST_FILES=	bin/parser-cli \
 # update the crates file with: make cargo-crates > Makefile.crates
 
 do-install:
-	@${INSTALL_DATA} ${CARGO_TARGET_DIR}/include/*.h ${STAGEDIR}${PREFIX}/include
-	@${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/*.so ${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_DATA} ${CARGO_TARGET_DIR}/release/*.a ${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_DATA} ${CARGO_TARGET_DIR}/release/*.rlib ${STAGEDIR}${PREFIX}/lib
-	@${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/parser-cli ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/include/*.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_LIB} ${CARGO_TARGET_DIR}/release/*.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/release/*.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${CARGO_TARGET_DIR}/release/*.rlib ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/release/parser-cli ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

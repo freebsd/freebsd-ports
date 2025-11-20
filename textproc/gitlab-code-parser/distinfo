@@ -1,4 +1,4 @@
-TIMESTAMP = 1761373371
+TIMESTAMP = 1763477939
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -843,5 +843,5 @@ SHA256 (rust/crates/zstd-sys-2.0.15+zstd.1.5.7.crate) = eb81183ddd97d0c74cedf1d5
 SIZE (rust/crates/zstd-sys-2.0.15+zstd.1.5.7.crate) = 774847
 SHA256 (gitlab-org-rust-gitalisk-v0.5.1_GL0.tar.gz) = e2f0915f77424cf7da8450548416f9d365acc52547ae1d26fb6cc31ad5a85de7
 SIZE (gitlab-org-rust-gitalisk-v0.5.1_GL0.tar.gz) = 146998
-SHA256 (rust/gitlab-code-parser-v0.20.1.tar.bz2) = f76036a5b06c6c1f79084cdbe8d813f04cdf7ed1352cdaad81ba1201641ac7d9
-SIZE (rust/gitlab-code-parser-v0.20.1.tar.bz2) = 308785
+SHA256 (gitlab-code-parser-v0.20.2.tar.bz2) = 70c06d5f99176c359f0e9a54a892ad50eb292eddc7f55c47f790b71e99e38770
+SIZE (gitlab-code-parser-v0.20.2.tar.bz2) = 311154
