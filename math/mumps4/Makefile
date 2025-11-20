@@ -15,7 +15,7 @@ WWW=		https://mumps-solver.org/
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		fortran
+USES=		fortran:gfortran
 
 MAKE_JOBS_UNSAFE=yes
 
