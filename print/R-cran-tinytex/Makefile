@@ -1,5 +1,5 @@
 PORTNAME=	tinytex
-DISTVERSION=	0.57
+DISTVERSION=	0.58
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -9,9 +9,7 @@ WWW=		https://cran.r-project.org/package=tinytex
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-xfun>=0.29:misc/R-cran-xfun
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-xfun>=0.48:misc/R-cran-xfun
 TEST_DEPENDS=	R-cran-testit>0:devel/R-cran-testit
 
 USES=		cran:auto-plist
