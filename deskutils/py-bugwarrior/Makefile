@@ -12,6 +12,8 @@ WWW=		https://github.com/ralphbean/bugwarrior
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=		Broken for more than 6 months
+EXPIRATION_DATE=	2025-12-31
 BROKEN=		python-3.9 or later is not supported
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>0:devel/py-click@${PY_FLAVOR} \
