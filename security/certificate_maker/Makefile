@@ -1,6 +1,6 @@
 PORTNAME=	certificate_maker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://www.sigstore.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.24,modules
+USES=		cpe go:modules
 CPE_VENDOR=	sigstore
 
 GO_MODULE=	github.com/sigstore/fulcio
