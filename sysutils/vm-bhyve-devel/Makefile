@@ -1,7 +1,8 @@
-PORTNAME=		vm-bhyve
+PORTNAME=	vm-bhyve
+# Generate with 'git describe --tags' and break them up
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.6.2-34
-DISTVERSIONSUFFIX=	-g73b127
+DISTVERSION=	1.7.0
+DISTVERSIONSUFFIX=
 CATEGORIES=		sysutils
 PKGNAMESUFFIX=		-devel
 
@@ -29,6 +30,9 @@ TMUX_DESC=		Tmux console access instead of cu/nmdm
 BHYVE_FIRMWARE_RUN_DEPENDS=	bhyve-firmware>0:sysutils/bhyve-firmware
 GRUB2_BHYVE_RUN_DEPENDS=	grub2-bhyve>0:sysutils/grub2-bhyve
 TMUX_RUN_DEPENDS=		tmux:sysutils/tmux
+
+post-patch:
+	${REINPLACE_CMD} -E -e '5s#=.+$$#=${DISTVERSION}${DISTVERSIONSUFFIX}#' ${WRKSRC}/lib/vm-base
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vm ${STAGEDIR}${PREFIX}/sbin
