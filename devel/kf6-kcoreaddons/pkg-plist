@@ -57,7 +57,7 @@ include/KF6/KCoreAddons/klistopenfilesjob.h
 include/KF6/KCoreAddons/kmacroexpander.h
 include/KF6/KCoreAddons/kmemoryinfo.h
 include/KF6/KCoreAddons/knetworkmounts.h
-include/KF6/KCoreAddons/kos%%CMAKE_BUILD_TYPE%%.h
+include/KF6/KCoreAddons/kosrelease.h
 include/KF6/KCoreAddons/kpluginfactory.h
 include/KF6/KCoreAddons/kpluginmetadata.h
 include/KF6/KCoreAddons/kprocess.h
