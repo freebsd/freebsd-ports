@@ -1,15 +1,14 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.5.0
-PORTREVISION=	2
+DISTVERSION=	18.6.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
 DISTFILES=	prebuilt-x86_64.tar.xz:dockerx64 \
 		prebuilt-arm.tar.xz:dockerarm
 
-#PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/
-#PATCHFILES+=	4551.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/4551, Allow FreeBSD to be used with Docker builds
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/
+PATCHFILES+=	5958.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5958, Permission denied in pipeline
 #PATCH_SITES=	https://gitlab.com/mfechner/gitlab-runner/-/commit/
 #PATCHFILES+=	2f12af03ccd5fe875d583ddc8b976329b635fd22.patch:-p1
 
@@ -31,9 +30,9 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 USE_RC_SUBR=	gitlab_runner
 # this branch removes the replace line in go.mod which breaks the way FreeBSD ports build go packages
-GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-runner/-/raw/18-5-stable/
+GO_MOD_DIST=	https://gitlab.com/mfechner/gitlab-runner/-/raw/18-6-stable/
 
-GITBRANCH=	18-5-stable
+GITBRANCH=	18-6-stable
 GO_MODULE=	gitlab.com/gitlab-org/gitlab-runner
 
 _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)
