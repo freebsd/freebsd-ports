@@ -1,7 +1,6 @@
 PORTNAME=	otree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
-PORTREVISION=	1
+DISTVERSION=	0.6.3
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -38,9 +37,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		colorchoice-1.0.4 \
 		compact_str-0.8.1 \
 		console-0.16.1 \
-		convert_case-0.7.1 \
 		crossterm-0.28.1 \
-		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
@@ -49,11 +46,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
-		derive_more-2.0.1 \
-		derive_more-impl-2.0.1 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
-		document-features-0.2.11 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
@@ -87,8 +81,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		libredox-0.1.10 \
 		libyml-0.0.5 \
 		linux-raw-sys-0.4.15 \
-		linux-raw-sys-0.11.0 \
-		litrs-0.4.2 \
 		lock_api-0.4.14 \
 		log-0.4.28 \
 		lru-0.12.5 \
@@ -119,7 +111,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-syntax-0.8.8 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
-		rustix-1.1.2 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
