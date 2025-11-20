@@ -28,10 +28,10 @@ RUN_DEPENDS=	rubygem-actioncable-gitlab>=${PORTVERSION}<${PORTVERSION}_99:www/ru
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	ruby_on_rails
+
+NO_ARCH=	yes
 
 PORTSCOUT=	limit:^7\.1\.
 

@@ -17,10 +17,10 @@ RUN_DEPENDS=	rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:deve
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	rubyonrails
 CPE_PRODUCT=	active_job
+
+NO_ARCH=	yes
 
 PORTSCOUT=	limit:^7\.1\.
 
