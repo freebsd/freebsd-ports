@@ -1,4 +1,4 @@
---- Gemfile.orig	2025-11-11 08:08:24 UTC
+--- Gemfile.orig	2025-11-19 16:58:17 UTC
 +++ Gemfile
 @@ -169,7 +169,7 @@ gem 'graphql', '2.5.11', feature_category: :api
  
@@ -18,7 +18,7 @@
  gem 'sidekiq-cron', '~> 1.12.0', feature_category: :scalability
  gem 'gitlab-sidekiq-fetcher',
    path: 'vendor/gems/sidekiq-reliable-fetch',
-@@ -477,141 +477,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
+@@ -476,141 +476,15 @@ gem 'warning', '~> 1.5.0', feature_category: :shared
  
  gem 'warning', '~> 1.5.0', feature_category: :shared
  
@@ -57,7 +57,7 @@
 -group :development, :test do
 -  gem 'deprecation_toolkit', '~> 2.2.3', require: false, feature_category: :shared
 -  gem 'bullet', '~> 8.0.0', feature_category: :shared
--  gem 'parser', '= 3.3.9.0', feature_category: :shared
+-  gem 'parser', '= 3.3.10.0', feature_category: :shared
 -  gem 'pry-byebug', feature_category: :shared
 -  gem 'pry-rails', '~> 0.3.9', feature_category: :shared
 -  gem 'pry-shell', '~> 0.6.4', feature_category: :shared
@@ -154,22 +154,22 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false, feature_category: :shared
 -
--  gem 'gitlab_quality-test_tooling', '~> 2.20.0', require: false, feature_category: :tooling
+-  gem 'gitlab_quality-test_tooling', '~> 2.26.0', require: false, feature_category: :tooling
 -end
 -
  gem 'octokit', '~> 9.0', feature_category: :importers
  # Needed by octokit: https://github.com/octokit/octokit.rb/pull/1688
  gem 'faraday-multipart', '~> 1.0', feature_category: :importers
-@@ -645,7 +519,7 @@ gem 'spamcheck', '~> 1.3.0', feature_category: :inside
- gem 'spamcheck', '~> 1.3.0', feature_category: :insider_threat
- 
- # Gitaly GRPC protocol definitions
--gem 'gitaly', '~> 18.4.0.pre.rc1', feature_category: :gitaly
-+gem 'gitaly', '~> 18.4', feature_category: :gitaly
+@@ -647,7 +521,7 @@ gem 'gitaly', '~> 18.6.0.pre.rc1', feature_category: :
+ gem 'gitaly', '~> 18.6.0.pre.rc1', feature_category: :gitaly
  
  # KAS GRPC protocol definitions
- gem 'gitlab-kas-grpc', '~> 18.5.0-rc4', feature_category: :deployment_management
-@@ -671,7 +545,7 @@ gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :
+-gem 'gitlab-kas-grpc', '~> 18.5.0-rc4', feature_category: :deployment_management
++gem 'gitlab-kas-grpc', '~> 18.5.2', feature_category: :deployment_management
+ 
+ gem 'grpc', '~> 1.76.0', feature_category: :shared
+ 
+@@ -670,7 +544,7 @@ gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :
  gem 'gitlab-net-dns', '~> 0.15.0', feature_category: :shared
  
  # Countries list
@@ -178,7 +178,7 @@
  
  gem 'retriable', '~> 3.1.2', feature_category: :shared
  
-@@ -756,10 +630,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
+@@ -755,10 +629,15 @@ gem 'duo_api', '~> 1.3', feature_category: :system_acc
  
  gem 'duo_api', '~> 1.3', feature_category: :system_access
  
@@ -194,4 +194,4 @@
 -gem "i18n_data", "~> 0.13.1", feature_category: :system_access
 +gem "i18n_data", "~> 0.13", feature_category: :system_access
  
- gem "gitlab-cloud-connector", "~> 1.26", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning
+ gem "gitlab-cloud-connector", "~> 1.35", require: 'gitlab/cloud_connector', feature_category: :plan_provisioning

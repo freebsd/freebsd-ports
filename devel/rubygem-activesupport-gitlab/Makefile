@@ -27,9 +27,9 @@ RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 
 USES=		cpe gem
 
-NO_ARCH=	yes
-
 CPE_VENDOR=	activesupport_project
+
+NO_ARCH=	yes
 
 PORTSCOUT=	limit:^7\.1\.
 
