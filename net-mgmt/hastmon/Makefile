@@ -9,6 +9,10 @@ WWW=		http://hastmon.googlecode.com/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		cc: error: no such file or directory: *.o
+DEPRECATED=	broken, dead upstream
+EXPIRATION_DATE=	2025-12-31
+
 BUILD_DEPENDS=	mk-configure>=0.20:devel/mk-configure
 
 USE_GITHUB=	yes
