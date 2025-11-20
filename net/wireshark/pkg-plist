@@ -17,10 +17,12 @@ bin/sharkd
 bin/text2pcap
 bin/tshark
 %%GUI%%bin/wireshark
-%%DEVELOPMENT%%include/wireshark/bits.h
+%%DEVELOPMENT%%include/wireshark/c128/bits.h
+%%DEVELOPMENT%%include/wireshark/c128/endian.h
+%%DEVELOPMENT%%include/wireshark/c128/integer.h
+%%DEVELOPMENT%%include/wireshark/c128/types.h
 %%DEVELOPMENT%%include/wireshark/cfile.h
 %%DEVELOPMENT%%include/wireshark/cli_main.h
-%%DEVELOPMENT%%include/wireshark/endian.h
 %%DEVELOPMENT%%include/wireshark/epan/addr_resolv.h
 %%DEVELOPMENT%%include/wireshark/epan/address.h
 %%DEVELOPMENT%%include/wireshark/epan/address_types.h
@@ -575,9 +577,7 @@ bin/tshark
 %%DEVELOPMENT%%include/wireshark/epan/wscbor.h
 %%DEVELOPMENT%%include/wireshark/epan/wscbor_enc.h
 %%DEVELOPMENT%%include/wireshark/file.h
-%%DEVELOPMENT%%include/wireshark/integer.h
 %%DEVELOPMENT%%include/wireshark/jtckdint.h
-%%DEVELOPMENT%%include/wireshark/types.h
 %%DEVELOPMENT%%include/wireshark/wireshark.h
 %%DEVELOPMENT%%include/wireshark/wiretap/file_wrappers.h
 %%DEVELOPMENT%%include/wireshark/wiretap/introspection.h

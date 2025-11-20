@@ -1,5 +1,6 @@
 PORTNAME=	wireshark
 DISTVERSION=	4.6.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -17,16 +18,17 @@ WWW=		https://www.wireshark.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libcares.so:dns/c-ares \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
 		libnghttp3.so:www/libnghttp3 \
-		libbrotlidec.so:archivers/brotli \
+		libpcre2-8.so:devel/pcre2 \
 		libsnappy.so:archivers/snappy \
-		libcares.so:dns/c-ares \
-		libzstd.so:archivers/zstd \
-		libspeexdsp.so:audio/speexdsp
+		libspeexdsp.so:audio/speexdsp \
+		libxxhash.so:devel/xxhash \
+		libzstd.so:archivers/zstd
 
 FLAVORS=	default nox11
 FLAVOR?=	${FLAVORS:[1]}
