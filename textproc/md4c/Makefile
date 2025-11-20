@@ -1,6 +1,5 @@
 PORTNAME=	md4c
-DISTVERSIONPREFIX=	release-
-DISTVERSION=	0.5.2
+DISTVERSION=	0.5.2.20240225
 CATEGORIES=	textproc
 
 MAINTAINER=	rosenke@dssgmbh.de
@@ -14,6 +13,7 @@ USES=		cmake cpe
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	mity
+GH_TAGNAME=	481fbfb
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
