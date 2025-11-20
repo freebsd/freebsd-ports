@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-labkit
-PORTVERSION=	0.42.1
+PORTVERSION=	0.42.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
