@@ -211,7 +211,6 @@ share/wasi-sysroot/lib/wasm32-wasi/crt1.o
 share/wasi-sysroot/lib/wasm32-wasi/libc-printscan-long-double.a
 share/wasi-sysroot/lib/wasm32-wasi/libc-printscan-no-floating-point.a
 share/wasi-sysroot/lib/wasm32-wasi/libc.a
-share/wasi-sysroot/lib/wasm32-wasi/libc.imports
 share/wasi-sysroot/lib/wasm32-wasi/libcrypt.a
 share/wasi-sysroot/lib/wasm32-wasi/libdl.a
 share/wasi-sysroot/lib/wasm32-wasi/libm.a
@@ -225,9 +224,5 @@ share/wasi-sysroot/lib/wasm32-wasi/libwasi-emulated-mman.a
 share/wasi-sysroot/lib/wasm32-wasi/libwasi-emulated-process-clocks.a
 share/wasi-sysroot/lib/wasm32-wasi/libwasi-emulated-signal.a
 share/wasi-sysroot/lib/wasm32-wasi/libxnet.a
-share/wasi-sysroot/share/wasm32-wasi/defined-symbols.txt
-share/wasi-sysroot/share/wasm32-wasi/include-all.c
-share/wasi-sysroot/share/wasm32-wasi/predefined-macros.txt
-share/wasi-sysroot/share/wasm32-wasi/undefined-symbols.txt
 @dir share/wasi-sysroot/include/wasm32-wasi/net
 @dir share/wasi-sysroot/include/wasm32-wasi/scsi

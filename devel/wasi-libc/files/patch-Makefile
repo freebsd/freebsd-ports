@@ -1,0 +1,20 @@
+--- Makefile.orig	2025-11-05 19:32:31 UTC
++++ Makefile
+@@ -861,7 +861,7 @@ endif
+ 	$(SYSROOT_LIB)/libsetjmp.a
+ endif
+ 
+-libc: $(INCLUDE_DIRS) $(STATIC_LIBS) builtins
++libc: $(INCLUDE_DIRS) $(STATIC_LIBS)
+ 
+ DUMMY := m rt pthread crypt util xnet resolv
+ DUMMY_LIBS := $(patsubst %,$(SYSROOT_LIB)/lib%.a,$(DUMMY))
+@@ -887,7 +887,7 @@ install: finish
+ 
+ install: finish
+ 	mkdir -p "$(INSTALL_DIR)"
+-	cp -p -r "$(SYSROOT)/lib" "$(SYSROOT)/share" "$(SYSROOT)/include" "$(INSTALL_DIR)"
++	cp -p -r "$(SYSROOT)/lib" "$(SYSROOT)/include" "$(INSTALL_DIR)"
+ 
+ DEFINED_SYMBOLS = $(SYSROOT_SHARE)/defined-symbols.txt
+ UNDEFINED_SYMBOLS = $(SYSROOT_SHARE)/undefined-symbols.txt
