@@ -1,5 +1,5 @@
 PORTNAME=	cudatext
-PORTVERSION=	1.229.5.0
+PORTVERSION=	1.230.0.1
 CATEGORIES=	editors
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -18,8 +18,8 @@ GH_ACCOUNT=	Alexey-T
 GH_PROJECT=	CudaText
 GH_TUPLE=	bgrabitmap:bgrabitmap:6ada359:bgrabitmap/bgrabitmap \
 		Alexey-T:Python-for-Lazarus:fda3fdb:python4lazarus/python4lazarus \
-		Alexey-T:ATFlatControls:0eabc69:atflatcontrols/atflatcontrols  \
-		Alexey-T:ATSynEdit:3284e06:atsynedit/atsynedit \
+		Alexey-T:ATFlatControls:ca8a923:atflatcontrols/atflatcontrols  \
+		Alexey-T:ATSynEdit:967a507:atsynedit/atsynedit \
 		Alexey-T:Emmet-Pascal:df69312:emmet/emmet \
 		Alexey-T:EControl:6296a46:econtrol/econtrol \
 		Alexey-T:ATSynEdit_Ex:650668f:atsyneditex/atsyneditex \
