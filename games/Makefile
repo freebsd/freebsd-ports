@@ -188,6 +188,7 @@
     SUBDIR += dangen
     SUBDIR += darkplaces
     SUBDIR += defendguin
+    SUBDIR += devd-controller-rules
     SUBDIR += devilutionX
     SUBDIR += dhewm3
     SUBDIR += diaspora
