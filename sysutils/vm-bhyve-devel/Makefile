@@ -3,6 +3,7 @@ PORTNAME=	vm-bhyve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.7.0
 DISTVERSIONSUFFIX=
+PORTREVISION=	1
 CATEGORIES=		sysutils
 PKGNAMESUFFIX=		-devel
 
@@ -37,6 +38,7 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vm ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/vm ${STAGEDIR}${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKSRC}/rc.d/vm_network ${STAGEDIR}${PREFIX}/etc/rc.d
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/vm-bhyve)
 	(cd ${WRKSRC}/sample-templates/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 	${INSTALL_MAN} ${WRKSRC}/vm.8 ${STAGEDIR}${PREFIX}/share/man/man8
