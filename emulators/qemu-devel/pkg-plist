@@ -64,6 +64,8 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/bios.bin
 %%DATADIR%%/dtb/bamboo.dtb
 %%DATADIR%%/dtb/canyonlands.dtb
+%%DATADIR%%/dtb/pegasos1.dtb
+%%DATADIR%%/dtb/pegasos2.dtb
 %%DATADIR%%/dtb/petalogix-ml605.dtb
 %%DATADIR%%/dtb/petalogix-s3adsp1800.dtb
 %%DATADIR%%/edk2-aarch64-code.fd

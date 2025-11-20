@@ -17,6 +17,7 @@ BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 		bash:shells/bash
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libinotify.so:devel/libinotify \
+		liblzo2.so:archivers/lzo2 \
 		libzstd.so:archivers/zstd
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t localbase:ldflags \
