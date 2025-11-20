@@ -15,5 +15,6 @@ share/metainfo/qimgv.appdata.xml
 %%DATADIR%%/translations/de_DE.qm
 %%DATADIR%%/translations/es_ES.qm
 %%DATADIR%%/translations/fr_FR.qm
+%%DATADIR%%/translations/tr_TR.qm
 %%DATADIR%%/translations/uk_UA.qm
 %%DATADIR%%/translations/zh_CN.qm
