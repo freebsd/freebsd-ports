@@ -1,7 +1,6 @@
 PORTNAME=	wallutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.14.2
-PORTREVISION=	6
+DISTVERSION=	5.14.3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -17,16 +16,16 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 USES=		go:modules pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	xyproto
-GH_TUPLE=	antchfx:xmlquery:v1.4.4:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
-		antchfx:xpath:v1.3.4:antchfx_xpath/vendor/github.com/antchfx/xpath \
+GH_TUPLE=	antchfx:xmlquery:v1.5.0:antchfx_xmlquery/vendor/github.com/antchfx/xmlquery \
+		antchfx:xpath:v1.3.5:antchfx_xpath/vendor/github.com/antchfx/xpath \
 		anthonynsimon:bild:v0.14.0:anthonynsimon_bild/vendor/github.com/anthonynsimon/bild \
 		cpuguy83:go-md2man:v2.0.7:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		fatih:color:v1.18.0:fatih_color/vendor/github.com/fatih/color \
 		golang:groupcache:2c02b8208cf8:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:image:v0.29.0:golang_image/vendor/golang.org/x/image \
-		golang:net:v0.42.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.34.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.27.0:golang_text/vendor/golang.org/x/text \
+		golang:image:v0.33.0:golang_image/vendor/golang.org/x/image \
+		golang:net:v0.47.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.38.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.31.0:golang_text/vendor/golang.org/x/text \
 		mattn:go-colorable:v0.1.14:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.20:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
