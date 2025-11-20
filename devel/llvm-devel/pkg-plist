@@ -7574,7 +7574,7 @@ llvm-devel/lib/libLLVM.so.%%LLVM_MAJOR_MINOR%%git
 %%STATIC_LIBS%%llvm-devel/lib/libLLVMipo.a
 llvm-devel/lib/libLTO.so
 llvm-devel/lib/libLTO.so.%%LLVM_MAJOR_MINOR%%git
-%%STATIC_LIBS%%llvm-devel/lib/libMIFDialect.a
+%%STATIC_LIBS%%%%FLANG%%llvm-devel/lib/libMIFDialect.a
 %%MLIR%%llvm-devel/lib/libMLIR.so
 %%MLIR%%llvm-devel/lib/libMLIR.so.%%LLVM_MAJOR_MINOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRAMDGPUDialect.a
