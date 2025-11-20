@@ -6,6 +6,7 @@ PKGNAMESUFFIX=		-${FLAVOR}
 
 PATCH_SITES=	https://github.com/Komet/MediaElch/commit/
 PATCHFILES+=	dbea12fbf2c1fe603819392aa2a181cffa168548.patch:-p1 # Fix build with Qt >= 6.9.0
+PATCHFILES+=	f125fad644d72f2740aeab64a2016ae2dd341b35.patch:-p1 # Suppress -Wc++20-extensions
 
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Desktop utility to manage metadata and artwork for Kodi and Jellyfin
