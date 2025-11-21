@@ -35,7 +35,7 @@ lib/libgnutls-openssl.so.27
 lib/libgnutls-openssl.so.27.0.2
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.40.4
+lib/libgnutls.so.30.41.0
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
@@ -155,6 +155,9 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_anti_replay_set_add_function.3.gz
 %%MAN3%%share/man/man3/gnutls_anti_replay_set_ptr.3.gz
 %%MAN3%%share/man/man3/gnutls_anti_replay_set_window.3.gz
+%%MAN3%%share/man/man3/gnutls_audit_current_context.3.gz
+%%MAN3%%share/man/man3/gnutls_audit_pop_context.3.gz
+%%MAN3%%share/man/man3/gnutls_audit_push_context.3.gz
 %%MAN3%%share/man/man3/gnutls_auth_client_get_type.3.gz
 %%MAN3%%share/man/man3/gnutls_auth_get_type.3.gz
 %%MAN3%%share/man/man3/gnutls_auth_server_get_type.3.gz
@@ -372,6 +375,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_handshake_set_read_function.3.gz
 %%MAN3%%share/man/man3/gnutls_handshake_set_secret_function.3.gz
 %%MAN3%%share/man/man3/gnutls_handshake_set_timeout.3.gz
+%%MAN3%%share/man/man3/gnutls_handshake_update_receiving_key.3.gz
 %%MAN3%%share/man/man3/gnutls_handshake_write.3.gz
 %%MAN3%%share/man/man3/gnutls_hash.3.gz
 %%MAN3%%share/man/man3/gnutls_hash_copy.3.gz
@@ -696,7 +700,9 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_protocol_list.3.gz
 %%MAN3%%share/man/man3/gnutls_protocol_set_enabled.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_allocate_client_credentials.3.gz
+%%MAN3%%share/man/man3/gnutls_psk_allocate_client_credentials2.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_allocate_server_credentials.3.gz
+%%MAN3%%share/man/man3/gnutls_psk_allocate_server_credentials2.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_client_get_hint.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_format_imported_identity.3.gz
 %%MAN3%%share/man/man3/gnutls_psk_free_client_credentials.3.gz
@@ -773,6 +779,7 @@ share/man/man1/tpmtool.1.gz
 %%MAN3%%share/man/man3/gnutls_record_get_direction.3.gz
 %%MAN3%%share/man/man3/gnutls_record_get_discarded.3.gz
 %%MAN3%%share/man/man3/gnutls_record_get_max_early_data_size.3.gz
+%%MAN3%%share/man/man3/gnutls_record_get_max_send_size.3.gz
 %%MAN3%%share/man/man3/gnutls_record_get_max_size.3.gz
 %%MAN3%%share/man/man3/gnutls_record_get_state.3.gz
 %%MAN3%%share/man/man3/gnutls_record_overhead_size.3.gz

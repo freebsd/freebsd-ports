@@ -1,5 +1,5 @@
 PORTNAME=	gnutls
-DISTVERSION=	3.8.10
+DISTVERSION=	3.8.11
 CATEGORIES=	security net
 MASTER_SITES=	GNUPG/${PORTNAME}/v${DISTVERSION:C/(\.[^.]*).*/\1/} \
 		https://gitlab.com/gnutls/gnutls/-/raw/${DISTVERSION}/tests/:test
