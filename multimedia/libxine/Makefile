@@ -32,6 +32,9 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libdvdnav.so:multimedia/libdvdnav
 
+EXTRA_PATCHES=	${FILESDIR}/ffmpeg8-1.patch:-p1 \
+		${FILESDIR}/ffmpeg8-2.patch:-p1
+
 USES=		compiler cpe gl gmake gnome iconv libtool:keepla jpeg \
 		localbase pathfix perl5 pkgconfig tar:xz xorg
 LLD_UNSAFE=	yes
