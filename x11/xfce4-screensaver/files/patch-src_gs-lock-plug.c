@@ -29,7 +29,7 @@ index d0806f64..fce7bf15 100644
 -    int num_processes;
 -    gchar *command = g_strdup_printf ("pidof %s | wc -l", name);
 -    FILE *fp = popen (command, "r");
-+    gchar *command = g_strdup_printf ("pgrep %s", name);
++    gchar *command = g_strdup_printf ("pgrep -a %s", name);
 +    int rc = system (command);
      g_free (command);
  
