@@ -3484,6 +3484,9 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/NetworkError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/NetworkError.mjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/NetworkError.mjs.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/PlatformBrokerError.d.ts.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/PlatformBrokerError.mjs
+%%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/PlatformBrokerError.mjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/ServerError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/ServerError.mjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/error/ServerError.mjs.map
@@ -3593,7 +3596,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/utils/UrlUtils.mjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-browser.cjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-browser.cjs.map
-%%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node-DhUjlPuB.js
+%%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node-BF0Vz18w.js
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node.cjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node.cjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index.cjs
@@ -3664,6 +3667,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/types/error/JoseHeaderError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/types/error/JoseHeaderErrorCodes.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/types/error/NetworkError.d.ts.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/types/error/PlatformBrokerError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/types/error/ServerError.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/types/exports-browser-only.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/types/exports-common.d.ts.map
