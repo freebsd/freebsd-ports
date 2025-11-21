@@ -15,6 +15,10 @@ Important changes in logwatch-7.13:
 
  - postfix script detects modified 3.10+ log entries, now
 
+Important changes in logwatch-7.13_1:
+
+ - postfix script detects 3.11+ TLS feature information in delivery status logging (tls=), now
+
 EOM
 }
 ]

@@ -1,0 +1,43 @@
+--- scripts/services/postfix.orig	2025-03-02 22:05:02 UTC
++++ scripts/services/postfix
+@@ -61,7 +61,8 @@ our $re_DSN     = qr/(?:(?:\d{3})?(?: ?\d\.\d\.\d+)?)/
+ our $re_QID;
+ 
+ our $re_DSN     = qr/(?:(?:\d{3})?(?: ?\d\.\d\.\d+)?)/;
+-our $re_DDD     = qr/(?:(?:conn_use=\d+ )?delay=-?[\d.]+(?:, delays=[\d\/.]+)?(?:, dsn=[\d.]+)?)/;
++# postfix >= 3.11 will log TLS feature information in delivery status logging by default (tls=)
++our $re_DDD     = qr/(?:(?:conn_use=\d+ )?delay=-?[\d.]+(?:, delays=[\d\/.]+)?(?:, tls=[^,]*)?(?:, dsn=[\d.]+)?)/;
+ 
+ #MODULE: ../Logreporters/Utils.pm
+ package Logreporters::Utils;
+@@ -3287,14 +3288,30 @@ sys     0m3.005s
+       }
+ 
+       ### sent, forwarded, bounced, softbounce, deferred, (un)deliverable
++      #
++      # postfix >= 3.11 will log TLS feature information in delivery status logging by default (tls=)
++      # modified $re_DDD detects the corresponding tls= part, now
++      #
+       elsif ($p1 =~ s/^to=<(.*?)>,(?: orig_to=<(.*?)>,)? relay=([^,]*).*, ($re_DDD), status=(\S+) //o) {
+          ($relay,$status) = ($3,$5);
+ 
+          my ($to,$origto,$localpart,$domainpart,$dsn,$p1) = process_delivery_attempt ($1,$2,$4,$p1);
+ 
++         my ($tlsfeatures) = $4 =~ /tls=([^,]+)/;
++         if ($tlsfeatures ne '') {
++            $domainpart = $domainpart . " (tls=" . $tlsfeatures . ")";
++         }
++
++         # postfix <= 3.10:
++         #
+          #TD 552B6C20E: to=<to@sample.com>, relay=mail.example.net[10.0.0.1]:25, delay=1021, delays=1020/0.04/0.56/0.78, dsn=2.0.0, status=sent (250 Ok: queued as 6EAC4719EB)
+          #TD 552B6C20E: to=<to@sample.com>, relay=mail.example.net[10.0.0.1]:25, conn_use=2 delay=1021, delays=1020/0.04/0.56/0.78, dsn=2.0.0, status=sent (250 Ok: queued as 6EAC4719EB)
+          #TD DD925BBE2: to=<to@example.net>, orig_to=<to-ext@example.net>, relay=mail.example.net[2001:dead:beef::1], delay=2, status=sent (250 Ok: queued as 5221227246)
++         #
++         # postfix >= 3.11:
++         #
++         #TD4d9bVw113Wz1SwX: to=<to@example.net>, relay=mail.example.org[10.0.01]:25, delay=3.2, delays=0.09/0.05/1.8/1.2, tls=dane, dsn=2.0.0, status=sent (250 OK id=1vLFwP-00000008xhU-3ZkI)
++         #TD4d9bVw113Wz1SwX: to=<to@example.net>, relay=mail.example.org[10.0.01]:25, delay=3.2, delays=0.09/0.05/1.8/1.2, tls=may, dsn=2.0.0, status=sent (250 OK id=1vLFwP-00000008xhU-3ZkI)
+ 
+          ### sent
+          if ($status eq 'sent') {
