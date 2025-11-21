@@ -9287,6 +9287,7 @@
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_TDK_ACM2520-2P.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_TDK_ACM2520-3P.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_TDK_ACM7060.kicad_mod
+%%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_Wuerth_WE-SL5-HC.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_Wuerth_WE-SL5.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonMode_Bourns_DR331.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonMode_Delevan_4222.kicad_mod
