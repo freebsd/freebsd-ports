@@ -52,6 +52,7 @@ bin/mstvpd
 %%DATADIR%%/ConnectX8.csv
 %%DATADIR%%/ConnectX8_Pure_PCIe_Switch.csv
 %%DATADIR%%/ConnectX9.csv
+%%DATADIR%%/ConnectX9_Pure_PCIe_Switch.csv
 %%DATADIR%%/GB100.csv
 %%DATADIR%%/GB100_PXUC.csv
 %%DATADIR%%/GR100.csv
