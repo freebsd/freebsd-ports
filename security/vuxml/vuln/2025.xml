@@ -1,3 +1,31 @@
+  <vuln vid="b6835edf-c6c8-11f0-8471-74563cf9e4e9">
+    <topic>GnuTLS -- Stack write buffer overflow</topic>
+    <affects>
+      <package>
+	<name>gnutls</name>
+	<range><lt>3.8.11</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>GnuTLS reports:</p>
+	<blockquote cite="https://gnutls.org/security-new.html#GNUTLS-SA-2025-11-18">
+	  <p>When a PKCS#11 token is initialized with gnutls_pkcs11_token_init function
+	    and it is passed a token label longer than 32 characters, it may write past
+	    the boundary of stack allocated memory.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9820</cvename>
+      <url>https://gnutls.org/security-new.html#GNUTLS-SA-2025-11-18</url>
+    </references>
+    <dates>
+      <discovery>2025-11-18</discovery>
+      <entry>2025-11-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ca5d4e87-c465-11f0-b3f7-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
