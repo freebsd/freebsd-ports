@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2021-01-07 15:34:20 UTC
+--- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2025-04-11 12:02:56 UTC
 +++ src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp
-@@ -67,8 +67,8 @@
+@@ -77,8 +77,8 @@
  # include <net/if.h>
  # include <pwd.h> /* getpwuid */
  # include <unistd.h>
@@ -11,7 +11,7 @@
  # endif
  # ifdef RT_OS_OS2
  #  include <net/if_dl.h>
-@@ -528,7 +528,7 @@ static void vgsvcVMInfoWriteFixedProperties(void)
+@@ -535,7 +535,7 @@ static void vgsvcVMInfoWriteFixedProperties(void)
  }
  
  
@@ -20,7 +20,7 @@
  /*
   * Simple wrapper to work around compiler-specific va_list madness.
   */
-@@ -555,12 +555,6 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -562,12 +562,6 @@ static int vgsvcVMInfoWriteUsers(void)
  #ifdef RT_OS_WINDOWS
      rc = VGSvcVMInfoWinWriteUsers(&g_VMInfoPropCache, &pszUserList, &cUsersInList);
  
@@ -33,7 +33,7 @@
  #elif defined(RT_OS_HAIKU)
      /** @todo Haiku: Port logged on user info retrieval. */
      rc = VERR_NOT_IMPLEMENTED;
-@@ -586,7 +580,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -593,7 +587,7 @@ static int vgsvcVMInfoWriteUsers(void)
      while (   (ut_user = getutxent())
             && RT_SUCCESS(rc))
      {
@@ -42,7 +42,7 @@
          VGSvcVerbose(4, "Found entry '%s' (type: %d, PID: %RU32)\n", ut_user->ut_user, ut_user->ut_type, ut_user->ut_pid);
  # else
          VGSvcVerbose(4, "Found entry '%s' (type: %d, PID: %RU32, session: %RU32)\n",
-@@ -621,7 +615,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -628,7 +622,7 @@ static int vgsvcVMInfoWriteUsers(void)
      }
  
  # ifdef VBOX_WITH_DBUS
@@ -51,7 +51,7 @@
      DBusError dbErr;
      DBusConnection *pConnection = NULL;
      int rc2 = RTDBusLoadLib();
-@@ -830,7 +824,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -837,7 +831,7 @@ static int vgsvcVMInfoWriteUsers(void)
      if (   fHaveLibDbus
          && dbus_error_is_set(&dbErr))
          dbus_error_free(&dbErr);
@@ -60,7 +60,7 @@
  # endif /* VBOX_WITH_DBUS */
  
      /** @todo Fedora/others: Handle systemd-loginctl. */
-@@ -867,7 +861,7 @@ static int vgsvcVMInfoWriteUsers(void)
+@@ -874,7 +868,7 @@ static int vgsvcVMInfoWriteUsers(void)
      RTMemFree(papszUsers);
  
      endutxent(); /* Close utmpx file. */
@@ -69,3 +69,19 @@
  
      Assert(RT_FAILURE(rc) || cUsersInList == 0 || (pszUserList && *pszUserList));
  
+@@ -1168,6 +1162,15 @@ static int vgsvcVMInfoWriteNetwork(void)
+ 
+             RTStrPrintf(szPropPath, sizeof(szPropPath), "/VirtualBox/GuestInfo/Net/%RU32/Status", cIfsReported);
+             VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, pIfCurr->ifa_flags & IFF_UP ? "Up" : "Down");
++
++# ifdef RT_OS_FREEBSD /** @todo Check the other guests. */
++            RTStrPrintf(szPropPath, sizeof(szPropPath), "/VirtualBox/GuestInfo/Net/%RU32/Name", cIfsReported);
++            int rc2 = RTStrValidateEncoding(pIfCurr->ifa_name);
++            if (RT_SUCCESS(rc2))
++                VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, "%s", pIfCurr->ifa_name);
++            else
++                VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, NULL);
++# endif
+ 
+             cIfsReported++;
+         }

@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	6.1.50
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/
 PKGNAMESUFFIX?=	-additions
