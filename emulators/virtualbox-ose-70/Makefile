@@ -31,12 +31,11 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-70
 
-USES=		compiler:c++14-lang cpe gnome iconv pkgconfig qt:5 ssl tar:bzip2
+USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_BINUTILS=	yes
 USE_GNOME=	libxml2
-USE_QT=		buildtools:build linguisttools:build
 USE_RC_SUBR=	vboxheadless vboxwatchdog
 
 HAS_CONFIGURE=		yes
@@ -126,7 +125,7 @@ PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
 PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
 QT5_IMPLIES=		X11
-QT5_USES=		gl qmake:no_env xorg
+QT5_USES=		gl qmake:no_env qt:5 xorg
 QT5_USE=		QT=buildtools:build,core,dbus,gui,linguisttools:build,opengl \
 			QT=printsupport,widgets,x11extras,xml XORG=xcb GL=gl
 QT5_CONFIGURE_ON=	--enable-qt5
@@ -329,6 +328,12 @@ post-patch:
 post-patch-AIO-off:
 	@${REINPLACE_CMD} 's|r3/freebsd/fileaio-freebsd.cpp|r3/posix/fileaio-posix.cpp|' \
 		${WRKSRC}/src/VBox/Runtime/Makefile.kmk
+
+post-patch-NLS-off:
+	@${ECHO} 'VBOX_WITH_NLS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_MAIN_NLS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_PUEL_NLS =' >> ${WRKSRC}/LocalConfig.kmk
+	@${ECHO} 'VBOX_WITH_VBOXMANAGE_NLS =' >> ${WRKSRC}/LocalConfig.kmk
 
 do-build:
 	cd ${WRKSRC} && ${SH} -c '. ${WRKSRC}/env.sh && \
