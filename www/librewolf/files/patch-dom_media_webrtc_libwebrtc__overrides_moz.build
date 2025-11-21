@@ -7,7 +7,7 @@ diff --git dom/media/webrtc/libwebrtc_overrides/moz.build dom/media/webrtc/libwe
 index ed9c450e5649..1ac213e48b28 100644
 --- dom/media/webrtc/libwebrtc_overrides/moz.build
 +++ dom/media/webrtc/libwebrtc_overrides/moz.build
-@@ -34,7 +34,7 @@ UNIFIED_SOURCES += [
+@@ -49,13 +49,13 @@
      "call/call_basic_stats.cc",
  ]
  
@@ -16,3 +16,10 @@ index ed9c450e5649..1ac213e48b28 100644
      CXXFLAGS += CONFIG["MOZ_X11_CFLAGS"]
      UNIFIED_SOURCES += [
          "modules/desktop_capture/linux/x11/x_error_trap.cc",
+     ]
+ 
+-if CONFIG["TARGET_CPU"] in ("loongarch64", "ppc64"):
++if CONFIG["TARGET_CPU"] in ("loongarch64"):
+     UNIFIED_SOURCES += [
+         "modules/desktop_capture/linux/x11/x_error_trap.cc",
+     ]
