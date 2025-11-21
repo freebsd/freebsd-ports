@@ -24,8 +24,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 MAKE_ENV=	SSP_CFLAGS=
 SHEBANG_FILES=	makehtml maketex
-FFLAGS+=	-std=legacy
 SUFFIXES=	flib clib bin
+CFLAGS=		-Wno-implicit-function-declaration
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # ld.bfd supports neither -z relro nor -z norelro on armv7
@@ -54,6 +54,12 @@ USE_PERL5=	build
 .if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLES=	Makefile.demo cpg/cpgdemo.c examples/pgdemo*.f
 PORTEXAMPLES=	${EXAMPLES:C|.*/||}
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} == gfortran
+FFLAGS+=	-std=legacy
 .endif
 
 post-patch:
@@ -102,4 +108,4 @@ check test: build
 	PGPLOT_DIR="${WRKSRC}" PGPLOT_DEV="/xwin" ${WRKSRC}/${DEMO}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
