@@ -1,7 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.2.0
-PORTREVISION=	1
+DISTVERSION=	12.3.0
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/ \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -11,14 +10,19 @@ DISTFILES=	grafana-${DISTVERSION}.linux-amd64${EXTRACT_SUFX} \
 		apps/advisor/go.mod:gomod \
 		apps/alerting/alertenrichment/go.mod:gomod \
 		apps/alerting/notifications/go.mod:gomod \
+		apps/alerting/rules/go.mod:gomod \
+		apps/correlations/go.mod:gomod \
 		apps/dashboard/go.mod:gomod \
+		apps/example/go.mod:gomod \
 		apps/folder/go.mod:gomod \
 		apps/iam/go.mod:gomod \
 		apps/investigations/go.mod:gomod \
+		apps/logsdrilldown/go.mod:gomod \
 		apps/playlist/go.mod:gomod \
 		apps/plugins/go.mod:gomod \
 		apps/preferences/go.mod:gomod \
 		apps/provisioning/go.mod:gomod \
+		apps/scope/go.mod:gomod \
 		apps/secret/go.mod:gomod \
 		apps/shorturl/go.mod:gomod \
 		pkg/aggregator/go.mod:gomod \
@@ -44,12 +48,12 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 riscv64
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		cpe go:modules
+USES=		cpe go:1.25,modules
 
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		92f1fba
+TAG=		20051fb
 
 GO_MOD_DIST=	github
 GO_MODULE=	github.com/grafana/grafana
