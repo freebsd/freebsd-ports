@@ -1,7 +1,6 @@
 PORTNAME=	phd2
 DISTVERSIONPREFIX=v
-DISTVERSION=	2.6.13
-PORTREVISION=	1
+DISTVERSION=	2.6.13dev8
 CATEGORIES=	astro
 
 MAINTAINER=	acm@FreeBSD.org
@@ -13,7 +12,8 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libgmock.so:devel/googletest \
 		libindidriver.so:devel/indi \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libopencv_core.so:graphics/opencv
 RUN_DEPENDS=	indiserver:devel/indi
 
 USES=		cmake desktop-file-utils eigen:3 gettext ninja pkgconfig xorg
