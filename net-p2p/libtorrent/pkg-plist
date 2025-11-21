@@ -32,6 +32,7 @@ include/torrent/net/http_get.h
 include/torrent/net/http_stack.h
 include/torrent/net/network_config.h
 include/torrent/net/network_manager.h
+include/torrent/net/poll.h
 include/torrent/net/resolver.h
 include/torrent/net/socket_address.h
 include/torrent/net/socket_address_key.h
@@ -49,7 +50,6 @@ include/torrent/peer/connection_list.h
 include/torrent/peer/peer.h
 include/torrent/peer/peer_info.h
 include/torrent/peer/peer_list.h
-include/torrent/poll.h
 include/torrent/rate.h
 include/torrent/throttle.h
 include/torrent/torrent.h
@@ -73,6 +73,6 @@ include/torrent/utils/string_manip.h
 include/torrent/utils/thread.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.32
-lib/libtorrent.so.32.0.0
+lib/libtorrent.so.33
+lib/libtorrent.so.33.0.0
 libdata/pkgconfig/libtorrent.pc
