@@ -29,7 +29,7 @@ GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
 GL_TUPLE=	World/Phosh:gmobile:v0.2.0:gmobile/subprojects/gmobile \
 		GNOME:gvdb:4758f6f:gvdb/subprojects/gvdb
-MESON_ARGS=	-Dembed-wlroots=disabled
+MESON_DISABLED=	embed-wlroots
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-outputs-states \
 		share/man/man1/${PORTNAME}-outputs-states.1.gz \
