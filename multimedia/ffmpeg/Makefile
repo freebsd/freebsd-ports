@@ -1,6 +1,6 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	6.1.2
-PORTREVISION=	16
+PORTREVISION=	17
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
