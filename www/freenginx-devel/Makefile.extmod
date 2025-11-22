@@ -195,13 +195,13 @@ KEYVAL_VARS=		DSO_EXTMODS+=keyval
 LET_GH_TUPLE=		baysao:nginx-let-module:c1f23aa:let
 LET_VARS=		DSO_EXTMODS+=let
 
-# YOU MUST UPDATE www/lua-resty-core IF YOU UPDATE THIS MODULE
 LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:de02114:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:de02114:lua \
+			openresty:lua-resty-core:0b61f61:luarc \
+			openresty:lua-resty-lrucache:1759068:luarl
 LUA_VARS=		DSO_EXTMODS+=lua
 
 LUASTREAM_IMPLIES=	DEVEL_KIT

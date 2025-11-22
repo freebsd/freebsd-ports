@@ -1,6 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/osa
@@ -367,6 +368,11 @@ do-install-DSO-on:
 
 do-install-LINK-on:
 	${INSTALL_DATA} ${WRKSRC_link}/src/ngx_link_func_module.h ${STAGEDIR}${PREFIX}/include
+
+do-install-LUA-on:
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/share/lua/5.1
+	(cd ${WRKSRC_luarc}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${LOCALBASE}/share/lua/5.1 "-name *\.lua")
+	(cd ${WRKSRC_luarl}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${LOCALBASE}/share/lua/5.1 "-name *\.lua")
 
 do-install-NAXSI-on:
 	${INSTALL_DATA} \
