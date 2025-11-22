@@ -1,6 +1,6 @@
 PORTNAME=	k6
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	net
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go:1.24,modules
 NOT_FOR_ARCHS=	armv6 armv7 i386
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
-_BUILD_HASH=	a9f9e3b
+_BUILD_HASH=	b670a64
 
 GO_MODULE=	github.com/grafana/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
@@ -23,8 +23,7 @@ GO_BUILDFLAGS=	-ldflags "\
 		-X go.k6.io/k6/lib/consts.VersionDetails=${_BUILD_DATE}/${_BUILD_HASH}"
 
 PLIST_FILES=	bin/${PORTNAME}
-_DOCS=		release\ notes/\${DISTVERSIONFULL}.md CODE_OF_CONDUCT.md \
-		CONTRIBUTING.md README.md SECURITY.md SUPPORT.md
+_DOCS=		CODE_OF_CONDUCT.md CONTRIBUTING.md README.md SECURITY.md SUPPORT.md
 PORTDOCS=	${_DOCS:T}
 
 OPTIONS_DEFINE=	DOCS
