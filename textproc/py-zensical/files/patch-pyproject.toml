@@ -1,0 +1,15 @@
+Relax some version requirements.
+
+--- pyproject.toml.orig	2025-11-22 17:17:57 UTC
++++ pyproject.toml
+@@ -47,8 +47,8 @@ dependencies = [
+ ]
+ dynamic = ["version"]
+ dependencies = [
+-    "click>=8.1.8",
+-    "deepmerge>=2.0",
++    "click>=8.1.7",
++    "deepmerge>=1.1.1",
+     "markdown>=3.7",
+     "pygments>=2.16",
+     "pymdown-extensions>=10.15",
