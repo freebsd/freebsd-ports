@@ -24,7 +24,8 @@ USES=		compiler:c11 gl meson pkgconfig
 USE_GITHUB=	yes
 USE_GL=		gbm
 GH_ACCOUNT=	emersion
-MESON_ARGS=	-Dsd-bus-provider=basu -Dsystemd=disabled
+MESON_DISABLED=	systemd
+MESON_ARGS=	-Dsd-bus-provider=basu
 PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.wlr.service \
 		share/xdg-desktop-portal/portals/wlr.portal
