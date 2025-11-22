@@ -1,7 +1,6 @@
 PORTNAME=		tl-expected
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.1.0
-PORTREVISION=		1
+DISTVERSION=		1.3.1
 CATEGORIES=		devel
 
 MAINTAINER=		henry.hu.sh@gmail.com
