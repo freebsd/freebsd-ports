@@ -36,6 +36,9 @@
 %%MANPAGES%%share/man/man1/glab-cluster-agent-check_manifest_usage.1.gz
 %%MANPAGES%%share/man/man1/glab-cluster-agent-get-token.1.gz
 %%MANPAGES%%share/man/man1/glab-cluster-agent-list.1.gz
+%%MANPAGES%%share/man/man1/glab-cluster-agent-token-cache-clear.1.gz
+%%MANPAGES%%share/man/man1/glab-cluster-agent-token-cache-list.1.gz
+%%MANPAGES%%share/man/man1/glab-cluster-agent-token-cache.1.gz
 %%MANPAGES%%share/man/man1/glab-cluster-agent-token-revoke.1.gz
 %%MANPAGES%%share/man/man1/glab-cluster-agent-update-kubeconfig.1.gz
 %%MANPAGES%%share/man/man1/glab-cluster-agent.1.gz
