@@ -16,7 +16,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	swaywm
-MESON_ARGS=	-Dlogind=disabled
+MESON_DISABLED=	logind
 PLIST_FILES=	bin/${PORTNAME} \
 		share/bash-completion/completions/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
