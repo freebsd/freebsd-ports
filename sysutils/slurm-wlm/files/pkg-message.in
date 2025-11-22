@@ -1,0 +1,31 @@
+[
+  {
+    type: install,
+    message: <<EOM
+Slurm has been installed.
+
+Sample config:
+  %%ETCDIR%%/slurm.conf.sample
+
+Before starting services:
+  - Copy and edit the sample to %%ETCDIR%%/slurm.conf
+  - Create state dirs (already created in stage): /var/spool/slurmctld
+  - Ensure munge is running and configured.
+
+Services:
+  - slurmctld (controller)
+  - slurmd     (node daemon)
+
+On FreeBSD, cgroups are typically not used. If slurmd/slurmctld complain
+about cgroup initialization, set this in slurm.conf:
+
+    ProctrackType=proctrack/linuxproc
+    TaskPlugin=task/none
+    CgroupPlugin=disabled
+
+Then restart slurmctld/slurmd.
+
+Docs: %%DOCSDIR%%
+EOM
+  }
+]
