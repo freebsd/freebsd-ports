@@ -1,6 +1,7 @@
 lib/compat/libasn1.so.11
 lib/compat/libcom_err.so.5
 lib/compat/libcrypto.so.30
+lib/compat/libdevinfo.so.6
 lib/compat/libdialog.so.10
 lib/compat/libdpv.so.3
 lib/compat/libfigpar.so.0
@@ -27,6 +28,7 @@ lib/compat/libwind.so.11
 %%COMPAT32%%lib32/compat/libasn1.so.11
 %%COMPAT32%%lib32/compat/libcom_err.so.5
 %%COMPAT32%%lib32/compat/libcrypto.so.30
+%%COMPAT32%%lib32/compat/libdevinfo.so.6
 %%COMPAT32%%lib32/compat/libdialog.so.10
 %%COMPAT32%%lib32/compat/libdpv.so.3
 %%COMPAT32%%lib32/compat/libfigpar.so.0

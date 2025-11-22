@@ -1,6 +1,7 @@
 lib/compat/libasn1.so.11
 lib/compat/libcom_err.so.5
 lib/compat/libcrypto.so.30
+lib/compat/libdevinfo.so.6
 lib/compat/libdialog.so.10
 lib/compat/libdpv.so.3
 lib/compat/libfigpar.so.0
