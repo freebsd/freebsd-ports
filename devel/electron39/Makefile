@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/:chromium \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
-DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}:chromium \
+DISTFILES=	chromium-${CHROMIUM_VER}-lite${EXTRACT_SUFX}:chromium \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
 		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
 DIST_SUBDIR=	${PORTNAME}
@@ -220,7 +220,7 @@ SNDIO_VARS=		GN_ARGS+=use_sndio=true
 SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 
 # See ${WRKSRC}/electron/DEPS for CHROMIUM_VER
-CHROMIUM_VER=			142.0.7444.162
+CHROMIUM_VER=			142.0.7444.175
 # See ${WRKSRC}/electron/DEPS for NODE_VER
 NODE_VER=			22.21.1
 # See ${WRKSRC}/electron/DEPS for NAN_VER
@@ -371,10 +371,17 @@ pre-configure:
 	touch ${WRKSRC:H}/pulseaudio-${PULSEV}/src/pulse/version.h
 	@${REINPLACE_CMD} -e 's|$${LOCALBASE}|${LOCALBASE}|;s|$${MODCLANG_VERSION}|${LLVM_DEFAULT}|' \
 		${WRKSRC}/build/config/rust.gni \
+		${WRKSRC}/build/linux/strip_binary.gni \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
 		${WRKSRC}/build/rust/rust_bindgen_generator.gni
 
 do-configure:
+	@( \
+		echo "#ifndef GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
+		echo "#define GPU_WEBGPU_DAWN_COMMIT_HASH_H_" ;\
+		echo "#define DAWN_COMMIT_HASH \"$$(cat ${WRKSRC}/gpu/webgpu/DAWN_VERSION)\"" ;\
+		echo "#endif  // GPU_WEBGPU_DAWN_COMMIT_HASH_H_" \
+	) > ${WRKSRC}/gpu/webgpu/dawn_commit_hash.h
 	# GN generator bootstrapping and generating ninja files
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} CC=${CC} CXX=${CXX} LD=${CXX} \
 		READELF=${READELF} AR=${AR} NM=${NM} ${PYTHON_CMD} \

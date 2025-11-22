@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2025-10-21 20:19:54 UTC
+--- chrome/common/chrome_features.cc.orig	2025-11-14 20:31:45 UTC
 +++ chrome/common/chrome_features.cc
 @@ -86,7 +86,7 @@ BASE_FEATURE(kUseAdHocSigningForWebAppShims, base::FEA
  #endif  // BUILDFLAG(IS_MAC)
@@ -36,7 +36,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -627,7 +627,7 @@ BASE_FEATURE(kGlicGuestContentsVisibilityState,
+@@ -625,7 +625,7 @@ BASE_FEATURE(kGlicGuestContentsVisibilityState,
  // Killswitch that controls whether the guest WebContents visibility state is
  // set to hidden when the Glic panel is warming.
  BASE_FEATURE(kGlicGuestContentsVisibilityState,
@@ -45,7 +45,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1088,7 +1088,7 @@ BASE_FEATURE(kKAnonymityServiceStorage, base::FEATURE_
+@@ -1086,7 +1086,7 @@ BASE_FEATURE(kKAnonymityServiceStorage, base::FEATURE_
  // public keys.
  BASE_FEATURE(kKAnonymityServiceStorage, base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -54,7 +54,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor, base::FEATURE_DISABLED_BY_DEFAULT);
  // Values taken from the low-memory-monitor documentation and also apply to the
  // portal API:
-@@ -1099,7 +1099,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -1097,7 +1097,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
