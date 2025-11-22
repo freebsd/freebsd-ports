@@ -11,7 +11,7 @@ DISTINFO_FILE=	${.CURDIR}/distinfo
 
 GH_ACCOUNT=	mstoeckl
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
-MESON_ARGS=	-Dlogind=disabled
+MESON_DISABLED=	logind
 
 pre-patch:
 # Compat to apply patch-pam_swaylock "as is"
