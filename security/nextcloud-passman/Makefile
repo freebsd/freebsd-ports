@@ -10,7 +10,7 @@ WWW=		https://passman.cc
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATES=	Upstream unmaintained
+DEPRECATED=	Upstream unmaintained
 EXPIRATION_DATE=2025-12-31
 
 NEXTCLOUD_RUN_DEPENDS=	26
