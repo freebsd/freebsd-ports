@@ -1,5 +1,5 @@
 PORTNAME=	libnpupnp
-DISTVERSION=	6.2.1
+DISTVERSION=	6.2.3
 CATEGORIES=	net
 MASTER_SITES=	https://www.lesbonscomptes.com/upmpdcli/downloads/
 
