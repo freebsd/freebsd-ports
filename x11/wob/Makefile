@@ -17,7 +17,7 @@ TEST_DEPENDS=	cmocka>0:sysutils/cmocka
 USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	francma
-MESON_ARGS=	${seccomp systemd-unit-files tests:L:C/.*/-D&=disabled/}
+MESON_DISABLED=	seccomp systemd-unit-files tests
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
