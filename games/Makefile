@@ -751,6 +751,7 @@
     SUBDIR += p5-Games-GuessWord
     SUBDIR += p5-Games-Tournament-RoundRobin
     SUBDIR += pachi
+    SUBDIR += pacman.c
     SUBDIR += pacmanarena
     SUBDIR += palapeli
     SUBDIR += pangzero
