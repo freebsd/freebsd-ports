@@ -33,16 +33,10 @@ USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 BINARY_ALIAS=	python=${PYTHON_CMD}
 SHEBANG_FILES=	src/vulkan/*/*control.py
-MESON_ARGS=	-Dgallium-mediafoundation=disabled \
-		-Dandroid-libbacktrace=disabled \
-		-Dlibunwind=disabled \
-		-Dlmsensors=disabled \
-		-Dmicrosoft-clc=disabled \
-		-Dvalgrind=disabled \
-		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
-		-Dvideo-codecs=all \
-		-Dunversion-libgallium=true \
-		${NULL}
+MESON_DISABLED=	android-libbacktrace gallium-mediafoundation \
+		libunwind lmsensors microsoft-clc valgrind
+MESON_TRUE=	unversion-libgallium
+MESON_ARGS=	-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} -Dvideo-codecs=all
 LDFLAGS+=	-Wl,--undefined-version # https://gitlab.freedesktop.org/mesa/mesa/-/issues/8003
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 
