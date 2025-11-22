@@ -16,8 +16,6 @@ share/man/man8/stunnel.pl.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.init
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.service
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.spec
-@comment %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.logrotate
-@comment %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stunnel.rh.init
 %%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.md
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.md
@@ -32,7 +30,6 @@ share/man/man8/stunnel.pl.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTDOCS%%%%DOCSDIR%%/TODO.md
 %%PORTDOCS%%@dir %%DOCSDIR%%
-@comment share/bash-completion/completions/stunnel.bash
 @dir lib/stunnel
 @dir etc/stunnel
 @dir etc/stunnel/conf.d
