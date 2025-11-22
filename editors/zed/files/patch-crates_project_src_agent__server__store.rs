@@ -1,6 +1,6 @@
---- crates/project/src/agent_server_store.rs.orig	2025-11-15 06:30:50 UTC
+--- crates/project/src/agent_server_store.rs.orig	2025-11-19 15:41:44 UTC
 +++ crates/project/src/agent_server_store.rs
-@@ -1343,6 +1343,8 @@ fn get_platform_info() -> Option<(&'static str, &'stat
+@@ -1355,6 +1355,8 @@ fn get_platform_info() -> Option<(&'static str, &'stat
          "pc-windows-msvc"
      } else if cfg!(target_os = "linux") {
          "unknown-linux-gnu"
@@ -9,7 +9,7 @@
      } else {
          return None;
      };
-@@ -1429,6 +1431,8 @@ impl ExternalAgentServer for LocalExtensionArchiveAgen
+@@ -1441,6 +1443,8 @@ impl ExternalAgentServer for LocalExtensionArchiveAgen
                  "linux"
              } else if cfg!(target_os = "windows") {
                  "windows"

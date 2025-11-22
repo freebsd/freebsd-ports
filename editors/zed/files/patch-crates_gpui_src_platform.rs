@@ -1,4 +1,4 @@
---- crates/gpui/src/platform.rs.orig	2025-11-15 04:46:05 UTC
+--- crates/gpui/src/platform.rs.orig	2025-11-19 15:41:44 UTC
 +++ crates/gpui/src/platform.rs
 @@ -82,7 +82,7 @@ pub(crate) use windows::*;
  #[cfg(target_os = "windows")]
@@ -9,7 +9,7 @@
  pub use linux::layer_shell;
  
  #[cfg(any(test, feature = "test-support"))]
-@@ -1320,7 +1320,7 @@ pub enum WindowKind {
+@@ -1338,7 +1338,7 @@ pub enum WindowKind {
  
      /// A Wayland LayerShell window, used to draw overlays or backgrounds for applications such as
      /// docks, notifications or wallpapers.
