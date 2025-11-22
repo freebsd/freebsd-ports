@@ -1,6 +1,5 @@
 PORTNAME=	far2l
-PORTVERSION=	2.6.5
-PORTREVISION=	1
+PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=	v_
 CATEGORIES=	misc
 
@@ -10,8 +9,7 @@ WWW=		https://github.com/elfmz/far2l
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:devel/pcre \
-		libuchardet.so:textproc/uchardet
+LIB_DEPENDS=	libuchardet.so:textproc/uchardet
 RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
@@ -54,6 +52,7 @@ post-patch:
 			${WRKSRC}/CMakeLists.txt
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
 		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
+# https://github.com/elfmz/far2l/issues/1143
 	@${REINPLACE_CMD} -e '/SetBackgroundColour/ { x; \
 		s|^|SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix()\
 		+ "/share/icons/far2l.svg", wxBITMAP_TYPE_ICO));|; H; x; }' \
