@@ -1,5 +1,6 @@
 PORTNAME=	qimgv
 PORTVERSION=	1.03.g20250905
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	kenrap@kennethraplee.com
@@ -18,24 +19,17 @@ GH_TAGNAME=	6bdfad1f47be2cd5eb54c6da45073f8eee55963f
 
 LDFLAGS+=	-linotify
 
-OPTIONS_DEFINE=		EXIV2 KDE5 OPENCV VIDEO
+OPTIONS_DEFINE=		EXIV2 OPENCV VIDEO
 OPTIONS_DEFAULT=	EXIV2 OPENCV QT6 VIDEO
 OPTIONS_SINGLE=		QT
 OPTIONS_SINGLE_QT=	QT5 QT6
 OPTIONS_SUB=		yes
 
-KDE5_DESC=		${KDE_DESC} (require QT5)
 OPENCV_DESC=		Enables high quality scaling options
 VIDEO_DESC=		Enables video playback via mpv
 
 EXIV2_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
 EXIV2_CMAKE_BOOL=	EXIV2
-
-KDE5_IMPLIES=		QT5
-KDE5_PREVENTS=		QT6
-KDE5_USES=		kde:5 xorg
-KDE5_USE=		kde=windowsystem xorg=x11
-KDE5_CMAKE_BOOL=	KDE_SUPPORT
 
 OPENCV_LIB_DEPENDS=	libopencv_core.so:graphics/opencv \
 			libopencv_imgproc.so:graphics/opencv
