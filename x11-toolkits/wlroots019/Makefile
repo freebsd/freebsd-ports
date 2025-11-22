@@ -22,7 +22,8 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-MESON_ARGS=	-Dexamples=false -Dallocators=gbm \
+MESON_FALSE=	examples
+MESON_ARGS=	-Dallocators=gbm \
 		-Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 PLIST_SUB=	SUFFIX=-${DISTVERSION:R}
 
