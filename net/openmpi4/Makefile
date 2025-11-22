@@ -1,7 +1,8 @@
 PORTNAME=	openmpi
-PORTVERSION=	4.1.8
+DISTVERSION=	4.1.8
+PORTREVISION=	1
 CATEGORIES=	net parallel
-MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${PORTVERSION:R}/
+MASTER_SITES=	https://download.open-mpi.org/release/open-mpi/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	4
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +12,7 @@ WWW=		https://www.open-mpi.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
+LIB_DEPENDS=	libhwloc.so:devel/hwloc2 \
 		libltdl.so:devel/libltdl \
 		libevent.so:devel/libevent \
 		libmunge.so:security/munge
@@ -19,19 +20,17 @@ LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
 # :keepla because port uses lt_dlopen
 USES=		fortran gmake libtool:keepla localbase perl5 \
 		pkgconfig shebangfix tar:bzip2
-
-CONFLICTS_INSTALL=	openmpi-5*
-
-USE_PERL5=	build
-
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${PORTNAME}
+USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib
+USE_PERL5=	build
 
-PLIST_SUB+=	MPIDIR=${MPIDIR}
+SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
+		ompi/mca/common/monitoring/aggregate_profile.pl
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_PREFIX=	${PREFIX}/${MPIDIR}
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/${MPIDIR}/share
+GNU_CONFIGURE_PREFIX=	${PREFIX}/${MPIDIR}
 CONFIGURE_ARGS+=	--program-prefix= \
 			--with-hwloc=external \
 			--with-libltdl \
@@ -45,16 +44,15 @@ CONFIGURE_ARGS+=	--program-prefix= \
 			--with-wrapper-ldflags=-Wl,-rpath=-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 			ompi_cv_fortran_ignore_tkr_data=0
 
-USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib
+TEST_TARGET=	check
+
+PIE_UNSAFE=	yes
+
+CONFLICTS_INSTALL=	openmpi-5*
 
 MANDIRS=	${PREFIX}/${MPIDIR}/share/man
 
-TEST_TARGET=	check
-
-SHEBANG_FILES=	ompi/mca/common/monitoring/profile2mat.pl \
-		ompi/mca/common/monitoring/aggregate_profile.pl
-
-PIE_UNSAFE=	yes
+PLIST_SUB+=	MPIDIR=${MPIDIR}
 
 OPTIONS_DEFINE=			AVX DEBUG IPV6 SLURM
 OPTIONS_DEFAULT=		SLURM
@@ -80,8 +78,8 @@ DEBUG_INSTALL_TARGET_OFF=	install-strip
 
 IPV6_CONFIGURE_ENABLE=	ipv6
 
-SLURM_CONFIGURE_WITH=	slurm
 SLURM_LIB_DEPENDS=	libslurm.so:sysutils/slurm-wlm
+SLURM_CONFIGURE_WITH=	slurm
 SLURM_PLIST_FILES=	${MPIDIR}/lib/openmpi/mca_ess_slurm.la \
 			${MPIDIR}/lib/openmpi/mca_ess_slurm.so \
 			${MPIDIR}/lib/openmpi/mca_plm_slurm.la \
