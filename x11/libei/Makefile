@@ -30,7 +30,8 @@ GH_TUPLE=	nemequ:munit:v0.2.0-38-gfbbdf14:munit/subprojects/munit
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	libinput
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-MESON_ARGS=	-Dsd-bus-provider=basu -Dtests=disabled
+MESON_DISABLED=	tests
+MESON_ARGS=	-Dsd-bus-provider=basu
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	BASU
