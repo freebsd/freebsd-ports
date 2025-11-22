@@ -1,22 +1,11 @@
 PORTNAME=	ding-libs
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	devel
-MASTER_SITES=	https://releases.pagure.org/SSSD/ding-libs/ \
-		LOCAL/tobik/ding-libs
-DIST_SUBDIR=	ding-libs
-
-# Build fixes for non-Linux systems
-PATCH_SITES=	LOCAL/tobik/ding-libs \
-		https://pagure.io/SSSD/ding-libs/c/
-PATCHFILES=	8fc522605a90e670fe76dc1b44669230c121a96e.patch:-p1 \
-		72c19bd018b107ecf5a80963b433e9922f7243fd.patch:-p1 \
-		315a0d527e0734ed2fd4529c9b685e41d2ce5dad.patch:-p1 \
-		be9ca3a2c26b061d1f22bd4a09009bba7a01f67b.patch:-p1 \
-		a731d8c8c515e7e42a4fb448e0ecb6934d5bf99b.patch:-p1
+MASTER_SITES=	https://github.com/SSSD/ding-libs/releases/download/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful libraries for developers
-WWW=		https://pagure.io/SSSD/ding-libs/
+WWW=		https://github.com/SSSD/ding-libs/
 
 LICENSE=	GPLv3+ LGPL3+
 LICENSE_COMB=	multi

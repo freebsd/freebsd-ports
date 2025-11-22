@@ -1,13 +1,3 @@
-TIMESTAMP = 1527583392
-SHA256 (ding-libs/ding-libs-0.6.1.tar.gz) = a319a327deb81f2dfab9ce4a4926e80e1dac5dcfc89f4c7e548cec2645af27c1
-SIZE (ding-libs/ding-libs-0.6.1.tar.gz) = 904092
-SHA256 (ding-libs/8fc522605a90e670fe76dc1b44669230c121a96e.patch) = d1f5265adb08915349c7bda9dad80fd3dc50b87e39da89a5380b9e36fd54b5ca
-SIZE (ding-libs/8fc522605a90e670fe76dc1b44669230c121a96e.patch) = 1604
-SHA256 (ding-libs/72c19bd018b107ecf5a80963b433e9922f7243fd.patch) = 7d0423031d45b78fdadc4a927333da76d1f0bdc3f83a0fe7cd4f3b1bc1b6cb42
-SIZE (ding-libs/72c19bd018b107ecf5a80963b433e9922f7243fd.patch) = 1568
-SHA256 (ding-libs/315a0d527e0734ed2fd4529c9b685e41d2ce5dad.patch) = 0b4df91d6c8bec9732375f79bd007af0690871c6eeff06d748f946294379abb8
-SIZE (ding-libs/315a0d527e0734ed2fd4529c9b685e41d2ce5dad.patch) = 991
-SHA256 (ding-libs/be9ca3a2c26b061d1f22bd4a09009bba7a01f67b.patch) = e129950a3bee6498f60ce9db7c98b8ce0e974cfea032a717ae06fa748f872c0c
-SIZE (ding-libs/be9ca3a2c26b061d1f22bd4a09009bba7a01f67b.patch) = 4037
-SHA256 (ding-libs/a731d8c8c515e7e42a4fb448e0ecb6934d5bf99b.patch) = d39a70ecb642c5fc6ccec16e4d9a3e32ec672497a9e3ea9e9844a8e553214611
-SIZE (ding-libs/a731d8c8c515e7e42a4fb448e0ecb6934d5bf99b.patch) = 862
+TIMESTAMP = 1763824955
+SHA256 (ding-libs-0.6.2.tar.gz) = e5f07f34f5921bcb5ccccfe3751c28497879a6451cd7b395e99e24d9b5728e8d
+SIZE (ding-libs-0.6.2.tar.gz) = 957577
