@@ -31,7 +31,8 @@ LIB_DEPENDS=	libzip.so:archivers/libzip \
 		libharfbuzz.so:print/harfbuzz \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libdouble-conversion.so:devel/double-conversion \
-		libtbb.so:devel/onetbb
+		libtbb.so:devel/onetbb \
+		lib3mf.so:cad/lib3mf
 
 CONFLICTS=	openscad
 
