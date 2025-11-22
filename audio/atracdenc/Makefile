@@ -1,5 +1,5 @@
 PORTNAME=	atracdenc
-DISTVERSION=	0.1.1
+DISTVERSION=	0.2.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/dcherednik/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://code.mastervirt.ru/st/${PORTNAME}/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing
+USES=		cmake:testing compiler:c++17-lang tar:xz
 
 PLIST_FILES=	bin/atracdenc \
 		share/man/man1/atracdenc.1.gz
