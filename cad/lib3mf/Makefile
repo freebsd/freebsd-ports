@@ -1,9 +1,9 @@
 PORTNAME=	lib3mf
-DISTVERSIONPREFIX=v
 DISTVERSION=	2.4.1
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	cad
-#PKGNAMESUFFIX=  -devel
+MASTER_SITES=	https://github.com/3MFConsortium/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-source-with-submodules
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Implementation of the 3D Manufacturing Format file standard
@@ -12,24 +12,38 @@ WWW=		http://3mf.io/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#CONFLICTS_INSTALL=      lib3mf-devel #
+BUILD_DEPENDS=	fast_float>0:math/fast_float
+LIB_DEPENDS=	libzip.so:archivers/libzip
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-LIB_DEPENDS=	libgtest.so:devel/googletest \
-		libzip.so:archivers/libzip
+USES=		compiler:c++17-lang cmake:testing localbase:ldflags pathfix \
+		pkgconfig python
+USE_LDCONFIG=	yes
 
-USES=		compiler:c++20-lang cmake pkgconfig python
-USE_GITHUB=	yes
-GH_ACCOUNT=	3MFConsortium
-GH_PROJECT=	lib3mf
+EXTRACT_SUFX=	.zip
+EXTRACT_AFTER_ARGS=	--exclude Libraries/fast_float \
+			--exclude Libraries/googletest \
+			--exclude Libraries/libressl \
+			--exclude Libraries/libzip \
+			--exclude Libraries/zlib \
+			--exclude submodules/fast_float \
+			--exclude submodules/googletest \
+			--exclude submodules/libzip \
+			--exclude submodules/zlib
 
-CMAKE_ARGS+=	-DUSE_INCLUDED_ZLIB=OFF \
-		-DUSE_INCLUDED_LIBZIP=OFF \
-		-DUSE_INCLUDED_SSL=OFF \
-		-DLIB3MF_TESTS=OFF
+NO_WRKSUBDIR=	yes
 
-CXXFLAGS+=	-I${WRKSRC}/Include -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CXXFLAGS+=	-I${LOCALBASE}/include/fast_float
 
-.include <bsd.port.options.mk>
+.if make(test)
+LDFLAGS+=	-lgmock -lgtest
+.endif
+
+CMAKE_TESTING_ON=	LIB3MF_TESTS
+
+CMAKE_OFF=	USE_INCLUDED_LIBZIP \
+		USE_INCLUDED_ZLIB \
+		USE_INCLUDED_SSL \
+		LIB3MF_TESTS
 
 .include <bsd.port.mk>
