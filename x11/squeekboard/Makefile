@@ -32,7 +32,7 @@ MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
-MESON_ARGS=	-Dstrict=false
+MESON_FALSE=	strict
 GLIB_SCHEMAS=	sm.puri.Squeekboard.gschema.xml
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
