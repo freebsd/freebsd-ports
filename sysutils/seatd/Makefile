@@ -15,7 +15,7 @@ USES=		compiler:c11 cpe meson pkgconfig
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	${PORTNAME}
 CPE_VENDOR=	${PORTNAME}_project
-MESON_ARGS=	-Dlibseat-logind=disabled
+MESON_DISABLED=	libseat-logind
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME} \
 		"@(,video,4750) bin/${PORTNAME}-launch" \
