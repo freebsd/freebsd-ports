@@ -1,4 +1,4 @@
---- ffi.h.orig	2024-04-30 07:10:18 UTC
+--- ffi.h.orig	2025-11-23 16:45:45 UTC
 +++ ffi.h
 @@ -4,7 +4,7 @@
  
@@ -6,6 +6,6 @@
  #define FFI_H
 -#define CELLSIZE 20000000
 +#define CELLSIZE 10000000
- // TCC does not have support for "static conts" as compile time constant
- #ifdef __TINYC__
- #define NIL 0
+ static const int NIL = 0;
+ static const int T = 2;
+ static const int SMALL_INT_MAX = 1000000000;
