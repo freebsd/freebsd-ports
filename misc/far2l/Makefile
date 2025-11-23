@@ -23,9 +23,12 @@ SHEBANG_FILES=	far2l/bootstrap/view.sh
 
 CMAKE_OFF=	UNRAR	# libarchive handles *.rar files just fine
 
-OPTIONS_DEFINE=	NFS SFTP SMB WEBDAV WXGTK X11
+OPTIONS_DEFINE=	AWS NFS SFTP SMB WEBDAV WXGTK X11
 OPTIONS_DEFAULT=	NFS SFTP WEBDAV WXGTK X11
 OPTIONS_SUB=	yes
+
+AWS_DESC=	AWS S3 protocol support
+AWS_LIB_DEPENDS=	libaws-cpp-sdk-s3.so:devel/aws-sdk-cpp
 
 NFS_LIB_DEPENDS=	libnfs.so:net/libnfs
 
@@ -52,7 +55,7 @@ post-patch:
 			${WRKSRC}/CMakeLists.txt
 	@${GREP} -Rl --null --include=\*.cpp /bin/bash ${WRKSRC} | ${XARGS} \
 		-0 ${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}&,'
-# https://github.com/elfmz/far2l/issues/1143
+# Show icon in graphical mode (https://github.com/elfmz/far2l/issues/1143)
 	@${REINPLACE_CMD} -e '/SetBackgroundColour/ { x; \
 		s|^|SetIcon(wxIcon(wxStandardPaths::Get().GetInstallPrefix()\
 		+ "/share/icons/far2l.svg", wxBITMAP_TYPE_ICO));|; H; x; }' \

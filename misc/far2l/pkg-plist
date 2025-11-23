@@ -1,5 +1,6 @@
 bin/far2l
 bin/far2ledit
+%%AWS%%lib/far2l/Plugins/NetRocks/plug/NetRocks-AWS.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks-FILE.broker
 lib/far2l/Plugins/NetRocks/plug/NetRocks-FTP.broker
 %%NFS%%lib/far2l/Plugins/NetRocks/plug/NetRocks-NFS.broker
