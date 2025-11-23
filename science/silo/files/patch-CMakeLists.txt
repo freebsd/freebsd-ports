@@ -1,0 +1,13 @@
+- workaround for https://github.com/LLNL/Silo/issues/501
+
+--- CMakeLists.txt.orig	2025-11-23 19:03:43 UTC
++++ CMakeLists.txt
+@@ -700,7 +700,7 @@ install(FILES ${silo_public_headers} DESTINATION ${CMA
+                     WORLD_READ)
+ 
+ # Symlink old style silo_f77.inc
+-if(SILO_ENABLE_FORTRAN AND CMAKE_Fortran_COMPILER)
++if(FALSE AND SILO_ENABLE_FORTRAN AND CMAKE_Fortran_COMPILER)
+     install(CODE "execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink silo.inc silo_f77.inc
+         WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_INCLUDEDIR})")
+ endif()
