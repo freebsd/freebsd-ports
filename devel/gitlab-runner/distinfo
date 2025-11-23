@@ -1,4 +1,4 @@
-TIMESTAMP = 1763794400
+TIMESTAMP = 1763928380
 SHA256 (go/devel_gitlab-runner/gitlab-runner-v18.6.1/prebuilt-x86_64.tar.xz) = b0dccc53f415962dde3f5a7e6f1ab068b8da5484a7fefdae2c5e39d8bb6c637e
 SIZE (go/devel_gitlab-runner/gitlab-runner-v18.6.1/prebuilt-x86_64.tar.xz) = 9594352
 SHA256 (go/devel_gitlab-runner/gitlab-runner-v18.6.1/prebuilt-arm.tar.xz) = 5018c6b661ebf4b9c661593548e45394c553bbd4082b5ef744a39a1f7f1fee32
@@ -7,3 +7,5 @@ SHA256 (go/devel_gitlab-runner/gitlab-runner-v18.6.1/go.mod) = 82fa95d31cd697359
 SIZE (go/devel_gitlab-runner/gitlab-runner-v18.6.1/go.mod) = 13992
 SHA256 (go/devel_gitlab-runner/gitlab-runner-v18.6.1/gitlab-runner-v18.6.1.tar.bz2) = 18ff6f31daba6afb697c3c6c2cb0e542f5d2e9e5c8a088e4b0c6b91abcd9ff37
 SIZE (go/devel_gitlab-runner/gitlab-runner-v18.6.1/gitlab-runner-v18.6.1.tar.bz2) = 2097455
+SHA256 (go/devel_gitlab-runner/gitlab-runner-v18.6.1/5961.patch) = 532ba5d8ee60cc81b6ae76564e9f14384192557b221f0d78a5d209e195e0958f
+SIZE (go/devel_gitlab-runner/gitlab-runner-v18.6.1/5961.patch) = 8331
