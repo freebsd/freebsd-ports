@@ -1,11 +1,7 @@
 PORTNAME=	unison
 PORTVERSION=	2.40.128
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
-MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
-DISTFILES=	${EXTRACT_ONLY} ${EXTRA_DOCS}
-DIST_SUBDIR=	${DISTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	User-level file synchronization tool
@@ -14,23 +10,27 @@ WWW=		https://www.cis.upenn.edu/~bcpierce/unison/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+VERSIONSUFFIX=	240
+
+DEPRECATED=	Legacy release unsupported by upstream
+EXPIRATION_DATE=	2026-02-28
+
 FLAVORS=	x11 nox11
 FLAVOR?=	${FLAVORS:[1]}
-
-VERSIONSUFFIX=	240
 
 nox11_PKGNAMESUFFIX=		${VERSIONSUFFIX}-nox11
 nox11_CONFLICTS_INSTALL=	unison${VERSIONSUFFIX}
 
-x11_PKGNAMESUFFIX=		${VERSIONSUFFIX}
-x11_CONFLICTS_INSTALL=		unison${VERSIONSUFFIX}-nox11
-x11_BUILD_DEPENDS=	lablgtk2:x11-toolkits/ocaml-lablgtk2 \
-			icotool:graphics/icoutils
+x11_PKGNAMESUFFIX=	${VERSIONSUFFIX}
+x11_BUILD_DEPENDS=	icotool:graphics/icoutils \
+			lablgtk2:x11-toolkits/ocaml-lablgtk2
 x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-USES=		gmake ocaml:build
+x11_CONFLICTS_INSTALL=	unison${VERSIONSUFFIX}-nox11
+USES=			gmake ocaml:build
+USE_GITHUB=		yes
+GH_ACCOUNT=		bcpierce00
+GH_TAGNAME=		2.40
 
 MAKE_ARGS=	CFLAGS=""
 ALL_TARGET=	unison all
@@ -38,21 +38,22 @@ TEST_TARGET=	selftest
 
 DOCS=		BUGS.txt NEWS README
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-EXTRA_DOCS=	${DISTNAME}-manual.html \
-		${DISTNAME}-manual.pdf ${DISTNAME}-manual.ps
 
-OPTIONS_DEFINE=		DOCS
+WRKSRC_SUBDIR=	src
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION} \
+		VERSIONSUFFIX=${VERSIONSUFFIX}
 
 .if ${FLAVOR} == nox11
-MAKE_ARGS+=		UISTYLE=text
-PKGMESSAGE=		${PKGDIR}/pkg-message.nox11
-PLIST_SUB+=		X11="@comment "
+MAKE_ARGS+=	UISTYLE=text
+PKGMESSAGE=	${PKGDIR}/pkg-message.nox11
+PLIST_SUB+=	X11="@comment "
 .else
-MAKE_ARGS+=		UISTYLE=gtk2
-SUB_FILES=		${PORTNAME}.desktop
-USE_GNOME+=		atk cairo gdkpixbuf glib20 gtk20 pango
-USES+=			gettext-runtime gnome
-PLIST_SUB+=		X11=""
+MAKE_ARGS+=	UISTYLE=gtk2
+SUB_FILES=	${PORTNAME}.desktop
+USE_GNOME+=	atk cairo gdkpixbuf glib20 gtk20 pango
+USES+=		gettext-runtime gnome
+PLIST_SUB+=	X11=""
 .endif
 
 .include <bsd.port.options.mk>
@@ -86,6 +87,5 @@ do-install:
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${EXTRA_DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
