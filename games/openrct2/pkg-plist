@@ -1966,11 +1966,11 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.3x3mantr.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.50rocket.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.adultele.json
-%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.afrclion.json
-%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.afrrhino.json
-%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.afrzebra.json
+%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.afrclion.parkobj
+%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.afrrhino.parkobj
+%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.afrzebra.parkobj
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.atomium.json
-%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.atractor.json
+%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.atractor.parkobj
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.bamborf1.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.bamborf2.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.bamborf3.json
@@ -1997,8 +1997,8 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.gwoctur1.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.gwoctur2.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.helipad.json
-%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo01.json
-%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo02.json
+%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo01.parkobj
+%%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo02.parkobj
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.icefor01.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.icefor02.json
 %%DATADIR%%/object/rct2ww/scenery_large/rct2ww.scenery_large.indianst.json
