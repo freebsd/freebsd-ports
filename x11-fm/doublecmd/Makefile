@@ -1,7 +1,6 @@
 PORTNAME=	doublecmd
-PORTVERSION=	1.1.28
+PORTVERSION=	1.1.30
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
 
@@ -26,7 +25,7 @@ USE_GNOME=	cairo glib20
 USE_XORG=	x11
 USE_BINUTILS=	yes
 
-DCHELP=		1.1.26
+DCHELP=		1.1.30
 
 LAZARUS_PROJECT_FILES=	components/chsdet/chsdet.lpk \
 			components/multithreadprocs/multithreadprocslaz.lpk \
