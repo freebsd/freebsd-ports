@@ -29,7 +29,8 @@ EXTRACT_AFTER_ARGS=	--exclude Libraries/fast_float \
 			--exclude submodules/fast_float \
 			--exclude submodules/googletest \
 			--exclude submodules/libzip \
-			--exclude submodules/zlib
+			--exclude submodules/zlib \
+			--no-same-owner --no-same-permissions
 
 NO_WRKSUBDIR=	yes
 
