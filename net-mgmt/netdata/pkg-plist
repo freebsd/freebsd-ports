@@ -408,6 +408,7 @@ etc/logrotate.d/netdata
 %%GOPLUGIN%%@sample(netdata,netdata,0640) lib/netdata/conf.d/go.d/zookeeper.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/adaptec_raid.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/apcupsd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/as400.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/bcache.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/beanstalkd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/boinc.conf.sample
@@ -418,6 +419,7 @@ etc/logrotate.d/netdata
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cockroachdb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/consul.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/cpu.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/db2.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dbengine.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dns_query.conf.sample
@@ -447,6 +449,7 @@ etc/logrotate.d/netdata
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/memcached.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/memory.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ml.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/mysql.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/net.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/netfilter.conf.sample
@@ -486,6 +489,9 @@ etc/logrotate.d/netdata
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vernemq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/websphere_jmx.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/websphere_mp.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/websphere_pmi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/whoisquery.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zfs.conf.sample
@@ -555,6 +561,7 @@ libexec/netdata/python.d/python_modules/third_party/monotonic.py
 libexec/netdata/python.d/python_modules/third_party/ordereddict.py
 libexec/netdata/python.d/traefik.chart.py
 sbin/log2journal
+sbin/nd-run
 sbin/netdata
 sbin/netdata-claim.sh
 sbin/netdatacli
@@ -568,141 +575,143 @@ sbin/systemd-cat-native
 %%DASHBOARD%%%%DATADIR%%/web/registry-hello.html
 %%DASHBOARD%%%%DATADIR%%/web/static/splash.css
 %%DASHBOARD%%%%DATADIR%%/web/v3/.well-known/assetlinks.json
-%%DASHBOARD%%%%DATADIR%%/web/v3/1220.540ca3785608fc5c0aef.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1454.bb3c9a2334e2a299b85e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1454.bb3c9a2334e2a299b85e.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/1526.2bbe70e3b756e5795f35.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1608.661a1532f5071032b910.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1658.245d41dd58a0674061f5.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1736.00d2a7c217456cf2618a.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/180.c7e688391492949637cb.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1861.cd7dede9055e55504199.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1878.a868fd385bd95c073e4f.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1910.fbb5da8c8f57af7c7c15.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1975.3d714442670a08c3bc55.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/1975.3d714442670a08c3bc55.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/2003.e802c4f7061c29df8441.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2117.a0b2ef507fe0a4a12fa4.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2143.256ca3a7ac2b9434624a.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2177.592995b60098f1190a6b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2201.31a710436bfad5142613.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2248.fc065905438e5e0f487a.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2436.d64fcbbc9a90cd3b6c9c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2439.f933c2ce9b190caae3c3.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2558.52351e1d8eb67a8185b7.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2573.137c159d782a65991b4c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2576.42ce622377542d09ca34.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1220.0c035c26a6ba7680115b.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1368.19c1bff2c401faaa738c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1608.63365f1b0cb024d69e67.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1658.bf72c4c052144d61a66b.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1688.79b083d3cd0d3c26cf16.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1736.04dc032fb0edf1016b2c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/180.8c8d951273b3504af9f0.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1861.e9b1462ff49ae587c199.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1910.1d344b2c015534876f6f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1975.ab65e7c5f1b2c6a6aa9b.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/1975.ab65e7c5f1b2c6a6aa9b.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/2003.8c22a882463ac7bc7efe.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2108.bedba8e4ed2986aa5d96.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2117.018285cf616da5e909c2.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2143.630d9e70533287c91922.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2177.46bc7dfa408eae510818.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2201.e0a00df722bee40783b8.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2248.9b795f4f0a3a41b76758.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2420.793639ada312f51d09e4.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2436.e3a7244e896337301c59.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2439.41110167280a0c0da0e2.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2558.b9b4dfc9743e40090a4e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2573.7525c33fb3d0ca8a28d5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2576.8fb2f6ce8cc77fd56801.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/2576.eaad527ad5b2c56e97a0.css
-%%DASHBOARD%%%%DATADIR%%/web/v3/2599.d5315aa8dde550917e02.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2599.d5315aa8dde550917e02.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/2634.04167e4573e1e103ebc5.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/271.a3377db5221db4f338f4.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2904.3841f50c58f899b80cf7.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2948.d5f63bac6943e8436a5e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3185.3fef0dad12d4b008336f.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3427.791ba25845e5c12d6dec.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3427.791ba25845e5c12d6dec.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/3439.81f9f81814330df40c0b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3457.eed006c31da2643bb947.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/35.a2c49346fcd2fc872e72.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3545.b4465065f60a5ec501c0.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3600.bb0b2cee60ebe7b932a1.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/363.fa2b7eb749447a3ae8da.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3677.81e6feff24be83d03e94.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3718.85e5a11572eb828dfcde.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3808.550f744f860aa9e4c032.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3864.43cd657c39c23de7a8c2.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3961.7c296a1e194864a3007b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/3961.7c296a1e194864a3007b.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/399.c26a086a34edf5094c7d.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2599.78d590551d5a0a98fed0.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2599.78d590551d5a0a98fed0.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/2603.77f7c19e6480c47bc740.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2634.ea00483b1dff8321e543.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/271.e7aefcc74837998c0484.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2904.57f6519b0c503b96c0ea.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2948.c4e34cab49a3602d9c61.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3083.983abf4bb8b2f8707262.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3185.eebe271edd583b2b95d5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3427.36b16bb36c3ec9ef50ea.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3427.36b16bb36c3ec9ef50ea.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/3439.a1a5bc8c115b8089c0c1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3457.3e3406b02f5f4284cbf4.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/35.05706012502a97d1b8f3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3545.03398fd9061f762de49c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3600.c630e33afa7e97d9c9f3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/363.0d6b9dadfe9fea76f0b1.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3677.c756a188963a5b5c48d5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3718.348fd49027ac26055d9a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3808.268f52b93602c8e9aa15.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3864.db78bcb2aa320d51fd17.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3961.41c7a0551e7cdb95ce77.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/3961.41c7a0551e7cdb95ce77.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/399.52016e3f953a256adf90.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/3D_PARTY_LICENSES.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/4142.bb4ac80ad9af39127ab2.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4211.96959e0998eeb690c36e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4265.504a9be6699e6d8d1fd7.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4277.8df81e715756139c2330.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4424.e6613392b3a77299f0c8.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4484.50388a50717cf0868ae0.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4651.b129a50096d3596d9747.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4652.a041a094965d81e2e4ae.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4652.a041a094965d81e2e4ae.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/4808.8507439a6e440d5c9540.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4837.565ad9d71bb5c09177b3.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/4913.a5078e1aa5afdbaaf1af.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5178.a0ed0e0f767e4920afa2.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5187.b7b78da5b0369181868d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5295.5096182e5317b3459742.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5297.067a3685e409c666a11a.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5302.ff072db875719471b9d6.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5476.efc120d3cbca4c5df582.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5566.1d0cf78a10db4cff6ce4.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5612.a028932e3f444f1ab96d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/5883.1adbf4ffdbe4486cacd7.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6003.28347a4993f426559770.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6025.b95398bf2dd55d736a7e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6141.82efda724b733e4d452f.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6238.6d975731713a2779b799.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6238.6d975731713a2779b799.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/6333.a3e01e7b2d05c253dc26.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6394.6c533153ec2ced8a6612.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6403.aa4d23d2b77e1844cef8.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6497.af4525ab3bf05fe466ab.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6506.50e39662086550266a3a.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/6601.8a2ab0619947cbf415c2.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7044.ec3190aead00801475f3.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7214.d4c9b999bc36793c8cbb.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7281.9a397c13294c68b0c504.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7530.4c08bf7384c0bbfd0d67.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7543.606307f4f75710d22b6b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7799.69f99b0cd42a6dbcbac1.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7877.e215f0f005bf857a39fe.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/7931.aa65882ec5599a3c1050.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8072.41e5878161608af4d1c8.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8399.4af2a62224d2005bdc4d.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8496.54ee18b387ceafef8f35.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8496.54ee18b387ceafef8f35.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/8554.f0d5402cbc11a07dbe0b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8643.77ea78945adf8c19cba4.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8761.e036e7cc953187e2d282.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8791.8d416aa457d404e7bd78.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8800.ebadd63583621e2e5252.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/884.bfa50959987bb67e5a86.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8850.de3d3f5459a476e7d69e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8904.5a2edaa87be80589b41e.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/8904.5a2edaa87be80589b41e.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/4142.b43408302308e4cc9161.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4211.145a6b08de2209389029.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4265.769fca7317076254e3b0.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4277.6386bd6ed205d389d99e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4301.426cf2dcfd3d782ec140.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4424.e63815e61709c2309923.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4480.bcdf770bac321a6bb68f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4484.9ee2bb133287af98b097.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4582.3c40ac0d6c412f3e8c24.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4606.5bb2601edf74d552957f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4606.5bb2601edf74d552957f.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/4651.1192ce6ff893d5e9dd5f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4837.b2be2afd45fdb2d9de63.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5030.33fdeacac57b4b7fcf99.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5178.90192ec0ab5a89cc3e76.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5187.f821f5efbf95905bdf79.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5295.1a8ae445c7f52e5c0e6e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5297.e875be9b1960e69d4454.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5302.5f6b4df89e1c7bc5f906.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5476.599c67ed3f70b017a1a9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5566.2496928f0951dbc77290.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/5883.76e297c0fa82ef3745ba.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6003.257010f19e5b84883157.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6025.d914dd2442a2d5be864e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6141.a9cdac98dd190ca7a168.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6238.4602c7dba1dd728461e2.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6238.4602c7dba1dd728461e2.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/6333.22588757a1136170b3e9.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6394.47a2932093529561ed6f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6403.e1dd935a1737ded72546.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6497.f9e9840bff52f64203c5.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6554.a9a8464c7f8e3b5da30f.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6554.a9a8464c7f8e3b5da30f.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/6601.7bbab22fa640bfa9a7ba.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/6839.5f19a0d4f1947422cd25.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7044.3879ee39be07550307bb.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7214.cc010f777c6d04ab408a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7281.457cc958a9b72ce8eafd.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7493.79e49ac98a2fe652d26c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7530.dfd93c86935a155f2c94.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7543.50384535fb0ffd4f8299.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7799.2558d538a4e71e72cbcc.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7877.82954f935d21fe1df769.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/7931.34606f555192d6613828.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8103.da64458cdbc5f9a1f133.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8399.45009c8ea7952f413fc3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8496.857f0f2a9d4c4e8c92aa.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8496.857f0f2a9d4c4e8c92aa.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/8643.2a4a46892be5e91704e2.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8761.ca5b76fe5755145eacae.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8791.131d81e398d9028b7967.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8800.54ae1fb08eb2876929df.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/884.1741c2d28bea048333e2.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8904.1840f5188112e612af65.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/8904.1840f5188112e612af65.chunk.js.LICENSE.txt
 %%DASHBOARD%%%%DATADIR%%/web/v3/8904.d489f3f6dbbebd1b75d7.css
-%%DASHBOARD%%%%DATADIR%%/web/v3/8938.a426c82a06d251428cd5.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9088.72644caafbeb82826022.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9244.73df2d956f91ba456c7b.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9418.13313a2fd85169ef88df.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9418.13313a2fd85169ef88df.chunk.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/953.79d1a3d6bca65ef64ba4.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9707.c5a35a1bbae8c45dd0c7.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9822.02a7eafc2f33db7becf8.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9856.448fb64ad13fba1da929.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9883.dabce998b4a54248766c.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/9961.190af3adeeaa565446ab.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9244.fc1bb71a3842b2f32943.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9341.dca06fd8d7902c399ab7.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9418.0d41b54c58c14ff035d3.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9418.0d41b54c58c14ff035d3.chunk.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/953.5dc8bd6e343ba97c013e.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9822.f928222a1d8030a1210a.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9856.82d776cf34c83bd5b315.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9883.06d3d57e8db8f2f64b61.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/9961.131d7beae1fbe7d0a46e.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/LICENSE.md
 %%DASHBOARD%%%%DATADIR%%/web/v3/LICENSE.txt
 %%DASHBOARD%%%%DATADIR%%/web/v3/agent.html
-%%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.71.0.json
+%%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.75.1.json
 %%DASHBOARD%%%%DATADIR%%/web/v3/allFiles.7.json
-%%DASHBOARD%%%%DATADIR%%/web/v3/app.3c03cb006ba91b09944f.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/app.37ca67c54659741a06f5.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/app.4da0883c6ce016bf3d81.css
 %%DASHBOARD%%%%DATADIR%%/web/v3/apple-app-site-association
 %%DASHBOARD%%%%DATADIR%%/web/v3/bundlesManifest.7.json
 %%DASHBOARD%%%%DATADIR%%/web/v3/favicon.ico
 %%DASHBOARD%%%%DATADIR%%/web/v3/index.html
 %%DASHBOARD%%%%DATADIR%%/web/v3/local-agent.html
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.c7546ca817ffc8744522.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.c7546ca817ffc8744522.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.fff53a90cb87802664e0.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.fff53a90cb87802664e0.js.LICENSE.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.a50346141b4b28c87254.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.a50346141b4b28c87254.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.d3d2859278a768d7e6c0.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.charts.d3d2859278a768d7e6c0.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.0e9d1b8c948c5858baa6.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/netdata.ui.0e9d1b8c948c5858baa6.js.LICENSE.txt
+%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.2ce993ff9a3b4f64332d.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/npm.react.dom.2ce993ff9a3b4f64332d.js.LICENSE.txt
 %%DASHBOARD%%%%DATADIR%%/web/v3/registry-access.html
 %%DASHBOARD%%%%DATADIR%%/web/v3/registry-alert-redirect.html
 %%DASHBOARD%%%%DATADIR%%/web/v3/registry-hello.html
-%%DASHBOARD%%%%DATADIR%%/web/v3/runtime.303142dbf12c54d89776.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/runtime.cb02d0bbda86530b8e5f.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/static/.well-known/assetlinks.json
 %%DASHBOARD%%%%DATADIR%%/web/v3/static/apple-app-site-association
 %%DASHBOARD%%%%DATADIR%%/web/v3/static/email/img/clea_badge.png

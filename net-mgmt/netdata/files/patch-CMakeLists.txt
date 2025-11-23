@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2025-10-01 17:58:58 UTC
-+++ CMakeLists.txt
-@@ -40,7 +40,7 @@ set(CMAKE_C_STANDARD 11)
+--- CMakeLists.txt.orig	2025-11-22 17:07:34.556416000 -0600
++++ CMakeLists.txt	2025-11-22 17:08:01.866346000 -0600
+@@ -38,7 +38,7 @@
  set(CMAKE_INSTALL_MESSAGE LAZY)
  
  set(CMAKE_C_STANDARD 11)
@@ -9,16 +9,35 @@
  set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME "netdata")
  
  option(USE_CXX_11 "Use C++11 instead of C++14 (should only be used on legacy systems that cannot support C++14, may disable some features)" False)
-@@ -95,7 +95,7 @@ set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
- set(OS_WINDOWS     False)
+@@ -80,7 +80,7 @@
+         endif()
+ endif()
  
- set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
 -set(BINDIR usr/sbin)
 +set(BINDIR sbin)
+ set(NETDATA_RUNTIME_PREFIX "${CMAKE_INSTALL_PREFIX}")
+ # This can be changed depending on the platform with the include below
+ include(NetdataPlatform)
+@@ -93,12 +93,13 @@
+   string(REGEX REPLACE "/$" "" NETDATA_RUNTIME_PREFIX "${NETDATA_RUNTIME_PREFIX}")
+ endif()
  
- if("${CMAKE_SYSTEM_NAME}" STREQUAL "Darwin")
-         set(OS_MACOS True)
-@@ -230,6 +230,7 @@ if(ENABLE_NETDATA_JOURNAL_FILE_READER OR ENABLE_PLUGIN
+-set(CACHE_DIR "${NETDATA_RUNTIME_PREFIX}/var/cache/netdata")
+-set(CONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/etc/netdata")
+-set(LIBCONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/lib/netdata/conf.d")
+-set(LOG_DIR "${NETDATA_RUNTIME_PREFIX}/var/log/netdata")
+-set(PLUGINS_DIR "${NETDATA_RUNTIME_PREFIX}/libexec/netdata/plugins.d")
++set(CACHE_DIR "%%NETDATA_CACHE%%")
++set(CONFIG_DIR "%%ETCDIR%%")
++set(LIBCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/lib/netdata/conf.d")
++set(LOG_DIR "%%NETDATA_LOG%%")
++set(PLUGINS_DIR "${CMAKE_INSTALL_PREFIX}/libexec/netdata/plugins.d")
+ set(VARLIB_DIR "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata")
++set(VARLIB_DIR "%%NETDATA_PERST%%")
+ set(NETDATA_BIN_DIR "${NETDATA_RUNTIME_PREFIX}/${BINDIR}")
+ 
+ # A non-default value is only used when building Debian packages (/var/lib/netdata/www)
+@@ -187,6 +188,7 @@
  
  # Setup Rust/Corrosion for plugins that need it
  if(ENABLE_NETDATA_JOURNAL_FILE_READER OR ENABLE_PLUGIN_OTEL)
@@ -26,7 +45,7 @@
      include(FetchContent)
      FetchContent_Declare(
          Corrosion
-@@ -237,6 +238,8 @@ if(ENABLE_NETDATA_JOURNAL_FILE_READER OR ENABLE_PLUGIN
+@@ -194,6 +196,8 @@
          GIT_TAG f3b91559efca32c6b54837866ef35ba98ff5b2ca # stable/v0.5
      )
      FetchContent_MakeAvailable(Corrosion)
@@ -35,7 +54,7 @@
      corrosion_import_crate(MANIFEST_PATH src/crates/jf/Cargo.toml
                             CRATES journal_reader_ffi otel-plugin)
  endif()
-@@ -413,7 +416,7 @@ include(NetdataBacktrace)
+@@ -370,7 +374,7 @@
  include(NetdataJSONC)
  include(NetdataYAML)
  include(NetdataBacktrace)
@@ -44,7 +63,7 @@
  
  if(ENABLE_LEGACY_EBPF_PROGRAMS)
          include(NetdataEBPFLegacy)
-@@ -438,9 +441,9 @@ endif()
+@@ -395,9 +399,9 @@
          netdata_bundle_sentry()
  endif()
  
@@ -57,7 +76,7 @@
  
  #
  # check include files
-@@ -3031,9 +3034,9 @@ add_executable(netdata
+@@ -3016,9 +3020,9 @@
          "$<$<BOOL:${OS_WINDOWS}>:${NETDATA_RES_FILES}>"
  )
  
@@ -70,15 +89,15 @@
  
  if(OS_WINDOWS)
          add_executable(NetdataClaim ${CLAIM_WINDOWS_FILES} ${NETDATA_CLAIM_RES_FILES})
-@@ -3156,6 +3159,7 @@ if(ENABLE_PLUGIN_GO)
-             COMPONENT plugin-go
+@@ -3177,6 +3181,7 @@
              DESTINATION libexec/netdata/plugins.d)
  
-+#[[
      # Build and install nd-mcp (stdio-golang bridge) exactly like go.d.plugin
++#[[
      if (OS_WINDOWS)
          set(ND_MCP_NAME nd-mcp.exe)
-@@ -3168,6 +3172,7 @@ if(ENABLE_PLUGIN_GO)
+     else()
+@@ -3188,6 +3193,7 @@
              ${CMAKE_BINARY_DIR}/${ND_MCP_NAME}
              COMPONENT plugin-go
              DESTINATION "${BINDIR}")
@@ -86,26 +105,7 @@
  endif()
  
  #
-@@ -3197,12 +3202,12 @@ endif()
-   string(REGEX REPLACE "/$" "" NETDATA_RUNTIME_PREFIX "${NETDATA_RUNTIME_PREFIX}")
- endif()
- 
--set(CACHE_DIR "${NETDATA_RUNTIME_PREFIX}/var/cache/netdata")
--set(CONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/etc/netdata")
--set(LIBCONFIG_DIR "${NETDATA_RUNTIME_PREFIX}/lib/netdata/conf.d")
--set(LOG_DIR "${NETDATA_RUNTIME_PREFIX}/var/log/netdata")
--set(PLUGINS_DIR "${NETDATA_RUNTIME_PREFIX}/libexec/netdata/plugins.d")
--set(VARLIB_DIR "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata")
-+set(CACHE_DIR "%%NETDATA_CACHE%%")
-+set(CONFIG_DIR "%%ETCDIR%%")
-+set(LIBCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/lib/netdata/conf.d")
-+set(LOG_DIR "%%NETDATA_LOG%%")
-+set(PLUGINS_DIR "${CMAKE_INSTALL_PREFIX}/libexec/netdata/plugins.d")
-+set(VARLIB_DIR "%%NETDATA_PERST%%")
- 
- # A non-default value is only used when building Debian packages (/var/lib/netdata/www)
- if(NOT DEFINED WEB_DIR)
-@@ -3255,11 +3260,12 @@ install(TARGETS netdata COMPONENT netdata DESTINATION 
+@@ -3289,11 +3295,11 @@
  
  install(TARGETS netdata COMPONENT netdata DESTINATION "${BINDIR}")
  
@@ -114,7 +114,6 @@
 -install(DIRECTORY COMPONENT netdata DESTINATION var/lib/netdata/registry)
 -install(DIRECTORY COMPONENT netdata DESTINATION var/lib/netdata/cloud.d)
 -install(DIRECTORY COMPONENT netdata DESTINATION var/run/netdata)
-+
 +install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_CACHE%%)
 +install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_LOG%%)
 +install(DIRECTORY COMPONENT netdata DESTINATION %%NETDATA_PERST%%/registery)
@@ -123,24 +122,7 @@
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata)
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/custom-plugins.d)
  install(DIRECTORY COMPONENT netdata DESTINATION etc/netdata/health.d)
-@@ -3274,11 +3280,11 @@ set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}"
- set(pkglibexecdir_POST "${NETDATA_RUNTIME_PREFIX}/libexec/netdata")
- set(localstatedir_POST "${NETDATA_RUNTIME_PREFIX}/var")
- set(sbindir_POST "${NETDATA_RUNTIME_PREFIX}/${BINDIR}")
--set(configdir_POST "${NETDATA_RUNTIME_PREFIX}/etc/netdata")
--set(libconfigdir_POST "${NETDATA_RUNTIME_PREFIX}/lib/netdata/conf.d")
--set(cachedir_POST "${NETDATA_RUNTIME_PREFIX}/var/cache/netdata")
--set(registrydir_POST "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata/registry")
--set(varlibdir_POST "${NETDATA_RUNTIME_PREFIX}/var/lib/netdata")
-+set(configdir_POST "%%ETCDIR%%")
-+set(libconfigdir_POST "${CMAKE_INSTALL_PREFIX}/lib/netdata/conf.d")
-+set(cachedir_POST "%%NETDATA_CACHE%%")
-+set(registrydir_POST "%%NETDATA_PERST%%/registery")
-+set(varlibdir_POST "%%NETDATA_PERST%%")
- set(netdata_user_POST "${NETDATA_USER}")
- set(netdata_group_POST "${NETDATA_USER}")
- 
-@@ -3804,8 +3810,8 @@ if(ENABLE_DASHBOARD)
+@@ -3847,8 +3853,8 @@
  #
  
  if(ENABLE_DASHBOARD)
