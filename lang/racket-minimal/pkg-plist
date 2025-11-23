@@ -250,8 +250,6 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/case.rkt
 %%DATADIR%%/collects/racket/class.rkt
 %%DATADIR%%/collects/racket/cmdline.rkt
-%%DATADIR%%/collects/racket/deprecation.rkt
-%%DATADIR%%/collects/racket/deprecation/transformer.rkt
 %%DATADIR%%/collects/racket/contract.rkt
 %%DATADIR%%/collects/racket/contract/base.rkt
 %%DATADIR%%/collects/racket/contract/collapsible.rkt
@@ -313,6 +311,8 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/contract/region.rkt
 %%DATADIR%%/collects/racket/control.rkt
 %%DATADIR%%/collects/racket/date.rkt
+%%DATADIR%%/collects/racket/deprecation.rkt
+%%DATADIR%%/collects/racket/deprecation/transformer.rkt
 %%DATADIR%%/collects/racket/dict.rkt
 %%DATADIR%%/collects/racket/engine.rkt
 %%DATADIR%%/collects/racket/enter.rkt
@@ -424,6 +424,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/private/kw-prop-key.rkt
 %%DATADIR%%/collects/racket/private/kw-syntax-binding.rkt
 %%DATADIR%%/collects/racket/private/kw-syntax-serialize.rkt
+%%DATADIR%%/collects/racket/private/kw-thread.rkt
 %%DATADIR%%/collects/racket/private/kw.rkt
 %%DATADIR%%/collects/racket/private/letstx-scheme.rkt
 %%DATADIR%%/collects/racket/private/link-path.rkt
@@ -556,6 +557,7 @@ lib/racket/system.rktd
 %%DATADIR%%/collects/racket/unit/lang/reader.rkt
 %%DATADIR%%/collects/racket/unreachable.rkt
 %%DATADIR%%/collects/racket/unsafe/ops.rkt
+%%DATADIR%%/collects/racket/unsafe/struct-type-property.rkt
 %%DATADIR%%/collects/racket/unsafe/undefined.rkt
 %%DATADIR%%/collects/racket/vector.rkt
 %%DATADIR%%/collects/raco/all-tools.rkt
@@ -1145,16 +1147,14 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/class_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/class_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/cmdline_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/cmdline_rkt.zo
-lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/deprecation_rkt.dep
-lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/deprecation_rkt.zo
-lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/deprecation/compiled/transformer_rkt.dep
-lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/deprecation/compiled/transformer_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/contract_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/contract_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/control_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/control_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/date_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/date_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/deprecation_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/deprecation_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/dict_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/dict_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/compiled/engine_rkt.dep
@@ -1441,6 +1441,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/contract/private/compi
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/contract/private/compiled/vector-common_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/contract/private/compiled/vector_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/contract/private/compiled/vector_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/deprecation/compiled/transformer_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/deprecation/compiled/transformer_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/gui/compiled/dynamic_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/gui/compiled/dynamic_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/kernel/compiled/init_rkt.dep
@@ -1571,6 +1573,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-sy
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-syntax-binding_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-syntax-serialize_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-syntax-serialize_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-thread_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-thread_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/letstx-scheme_rkt.dep
@@ -1757,6 +1761,8 @@ lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unit/lang/compiled/rea
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unit/lang/compiled/reader_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/ops_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/ops_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/struct-type-property_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/struct-type-property_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/undefined_rkt.dep
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/undefined_rkt.zo
 lib/racket/compiled/usr/local/%%DATADIR%%/collects/raco/compiled/all-tools_rkt.dep

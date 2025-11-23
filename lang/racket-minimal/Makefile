@@ -1,5 +1,5 @@
 PORTNAME=	racket
-PORTVERSION=	8.18
+PORTVERSION=	9.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
