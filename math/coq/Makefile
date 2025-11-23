@@ -7,7 +7,7 @@ DISTVERSIONPREFIX=	V
 #DISTVERSIONSUFFIX=	.0
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Theorem prover based on lambda-C
 WWW=		https://coq.inria.fr/
 
