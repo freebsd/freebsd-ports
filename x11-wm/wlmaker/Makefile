@@ -1,6 +1,6 @@
 PORTNAME=	wlmaker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo
 USE_XORG=	xcb
 GH_ACCOUNT=	phkaeser
-GH_TUPLE=	phkaeser:libbase:f44570e:libbase/submodules/libbase
+GH_TUPLE=	phkaeser:libbase:1cacb0f:libbase/submodules/libbase
 CMAKE_OFF=	${WITH_DEBUG:D:Uconfig_DEBUG}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/wlmclock \
