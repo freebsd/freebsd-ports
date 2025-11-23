@@ -1386,7 +1386,7 @@ PREFIX?=		${LOCALBASE}
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .    if defined(USE_LOCAL_MK)
-.include "${PORTSDIR}/Mk/bsd.local.mk"
+.sinclude "${PORTSDIR}/Mk/bsd.local.mk"
 .    endif
 .    for odir in ${OVERLAYS}
 .sinclude "${odir}/Mk/bsd.overlay.mk"
@@ -1936,7 +1936,7 @@ PKGPREDEINSTALL?=	${PKGDIR}/pkg-pre-deinstall
 PKGPOSTDEINSTALL?=	${PKGDIR}/pkg-post-deinstall
 
 .    if defined(USE_LOCAL_MK)
-.include "${PORTSDIR}/Mk/bsd.local.mk"
+.sinclude "${PORTSDIR}/Mk/bsd.local.mk"
 .    endif
 .    for odir in ${OVERLAYS}
 .sinclude "${odir}/Mk/bsd.overlay.mk"

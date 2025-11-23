@@ -1,4 +1,6 @@
-# bsd.local.mk - Sandbox for local modification to ports framework.
+# bsd.local.mk.local - Sandbox for local modification to ports framework.
+#
+# To use this feature, copy this file to Mk/bsd.local.mk, and modify as required
 #
 
 .if !defined(_POSTMKINCLUDED) && !defined(Local_Pre_Include)
