@@ -13772,6 +13772,8 @@ share/man/man1/setup-plt.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/math/pict_55.png
 %%PORTDOCS%%%%DOCSDIR%%/math/pict_56.png
 %%PORTDOCS%%%%DOCSDIR%%/math/pict_57.png
+%%PORTDOCS%%%%DOCSDIR%%/math/pict_58.png
+%%PORTDOCS%%%%DOCSDIR%%/math/pict_59.png
 %%PORTDOCS%%%%DOCSDIR%%/math/pict_6.png
 %%PORTDOCS%%%%DOCSDIR%%/math/pict_7.png
 %%PORTDOCS%%%%DOCSDIR%%/math/pict_8.png
@@ -15054,6 +15056,7 @@ share/man/man1/setup-plt.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/reference/async-channel.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/attaching-contracts-to-values.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/begin.html
+%%PORTDOCS%%%%DOCSDIR%%/reference/black-box.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/block.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/blueboxes.rktd
 %%PORTDOCS%%%%DOCSDIR%%/reference/booleans.html
@@ -16735,6 +16738,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/collects/racket/private/kw-prop-key.rkt
 %%DATADIR%%/collects/racket/private/kw-syntax-binding.rkt
 %%DATADIR%%/collects/racket/private/kw-syntax-serialize.rkt
+%%DATADIR%%/collects/racket/private/kw-thread.rkt
 %%DATADIR%%/collects/racket/private/kw.rkt
 %%DATADIR%%/collects/racket/private/letstx-scheme.rkt
 %%DATADIR%%/collects/racket/private/link-path.rkt
@@ -16867,6 +16871,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/collects/racket/unit/lang/reader.rkt
 %%DATADIR%%/collects/racket/unreachable.rkt
 %%DATADIR%%/collects/racket/unsafe/ops.rkt
+%%DATADIR%%/collects/racket/unsafe/struct-type-property.rkt
 %%DATADIR%%/collects/racket/unsafe/undefined.rkt
 %%DATADIR%%/collects/racket/vector.rkt
 %%DATADIR%%/collects/raco/all-tools.rkt
@@ -19380,6 +19385,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/frame.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/gauge.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/gcwin.rkt
+%%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/gl-cairo.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/gl-context.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/group-panel.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/gsettings.rkt
@@ -19410,6 +19416,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/unique.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/utils.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/w32.rkt
+%%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/wayland.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/widget.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/win32.rkt
 %%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/window.rkt
@@ -20449,6 +20456,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/impl/student-t-utils.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/impl/student-t.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/impl/walker-table.rkt
+%%DATADIR%%/pkgs/math-lib/math/private/distributions/impl/weibull.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/logistic-dist.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/normal-dist.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/poisson-dist.rkt
@@ -20457,6 +20465,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/truncated-dist.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/uniform-dist.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/distributions/utils.rkt
+%%DATADIR%%/pkgs/math-lib/math/private/distributions/weibull-dist.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/exception.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/flonum/expansion/expansion-base.rkt
 %%DATADIR%%/pkgs/math-lib/math/private/flonum/expansion/expansion-exp-reduction.rkt
@@ -21643,6 +21652,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/pkgs/racket-doc/scribblings/guide/other-editors.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/guide/other.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/guide/pairs.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/guide/parallel-threads.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/guide/parallelism.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/guide/parameterize.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/guide/paths.scrbl
@@ -21760,6 +21770,7 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/pkgs/racket-doc/scribblings/raco/zo-parse.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/raco/zo-struct.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/async-channels.scrbl
+%%DATADIR%%/pkgs/racket-doc/scribblings/reference/black-box.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/block.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/booleans.scrbl
 %%DATADIR%%/pkgs/racket-doc/scribblings/reference/breaks.scrbl
@@ -24218,3 +24229,19 @@ share/man/man1/setup-plt.1.gz
 %%DATADIR%%/slatex.py
 %%DATADIR%%/slatex.sty
 %%DATADIR%%/slideshow-exe-icon.png
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-thread_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/private/compiled/kw-thread_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/struct-type-property_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/collects/racket/unsafe/compiled/struct-type-property_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/compiled/gl-cairo_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/compiled/gl-cairo_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/compiled/wayland_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/gui-lib/mred/private/wx/gtk/compiled/wayland_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/math-lib/math/private/distributions/compiled/weibull-dist_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/math-lib/math/private/distributions/compiled/weibull-dist_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/math-lib/math/private/distributions/impl/compiled/weibull_rkt.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/math-lib/math/private/distributions/impl/compiled/weibull_rkt.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racket-doc/scribblings/guide/compiled/parallel-threads_scrbl.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racket-doc/scribblings/guide/compiled/parallel-threads_scrbl.zo
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/black-box_scrbl.dep
+lib/racket/compiled/usr/local/%%DATADIR%%/pkgs/racket-doc/scribblings/reference/compiled/black-box_scrbl.zo
