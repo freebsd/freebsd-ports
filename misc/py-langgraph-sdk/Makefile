@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-sdk
-DISTVERSION=	0.1.74
+DISTVERSION=	0.2.9
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.25.2:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.10.1:devel/py-orjson@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+# tests as of 0.2.9: 6 failed, 8 passed, 3 warnings in 0.64s (the file api/openapi.json is missing)
 
 .include <bsd.port.mk>
