@@ -1,7 +1,6 @@
 PORTNAME=	openmw
 DISTVERSIONPREFIX=	openmw-
-DISTVERSION=	0.49.0
-PORTREVISION=	4
+DISTVERSION=	0.50.0
 CATEGORIES=	games
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -23,7 +22,7 @@ LIB_DEPENDS=	libavcodec.so.60:multimedia/ffmpeg \
 		libicui18n.so:devel/icu \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		cmake compiler:c++20-lang desktop-file-utils gl luajit openal \
+USES=		cmake compiler:c++20-lang desktop-file-utils gl openal \
 		pkgconfig qt:6 sdl sqlite xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenMW
@@ -43,13 +42,19 @@ CMAKE_ARGS=	-DDESIRED_QT_VERSION=${_QT_VER} \
 LDFLAGS+=	-Wl,--as-needed
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS LUAJIT
+OPTIONS_DEFAULT=	LUAJIT
 
 DOCS_CMAKE_BOOL=	BUILD_DOCS
 DOCS_BINARY_ALIAS=	sphinx-build=sphinx-build-${PYTHON_VER}
 DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 DOCS_USES=		python:build
+
+LUAJIT_DESC=		Use LuaJIT instead of standard Lua
+LUAJIT_USES=		luajit
+LUAJIT_USES_OFF=	lua
+LUAJIT_CMAKE_BOOL=	USE_LUAJIT
 
 PORTDOCS=	*
 
