@@ -1025,6 +1025,7 @@
     SUBDIR += hyprlang
     SUBDIR += hyprutils
     SUBDIR += hyprwayland-scanner
+    SUBDIR += hyprwire
     SUBDIR += iaito
     SUBDIR += ice
     SUBDIR += ice37
