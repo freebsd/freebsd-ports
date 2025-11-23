@@ -1,7 +1,6 @@
 PORTNAME=	safetensors
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.2
-PORTREVISION=	4
+DISTVERSION=	0.7.0
 CATEGORIES=	misc python # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,30 +30,36 @@ GH_ACCOUNT=	huggingface
 
 WRKSRC_SUBDIR=	bindings/python
 
-CARGO_CRATES=	autocfg-1.5.0 \
+CARGO_CRATES=	allocator-api2-0.2.21 \
+		autocfg-1.5.0 \
+		equivalent-1.0.2 \
+		foldhash-0.2.0 \
+		hashbrown-0.16.0 \
 		heck-0.5.0 \
-		indoc-2.0.6 \
+		indoc-2.0.7 \
 		itoa-1.0.15 \
-		libc-0.2.174 \
-		memchr-2.7.5 \
-		memmap2-0.9.5 \
+		libc-0.2.177 \
+		memchr-2.7.6 \
+		memmap2-0.9.9 \
 		memoffset-0.9.1 \
 		once_cell-1.21.3 \
 		portable-atomic-1.11.1 \
-		proc-macro2-1.0.95 \
+		proc-macro2-1.0.103 \
 		pyo3-0.25.1 \
 		pyo3-build-config-0.25.1 \
 		pyo3-ffi-0.25.1 \
 		pyo3-macros-0.25.1 \
 		pyo3-macros-backend-0.25.1 \
-		quote-1.0.40 \
+		quote-1.0.42 \
+		rustversion-1.0.22 \
 		ryu-1.0.20 \
-		serde-1.0.219 \
-		serde_derive-1.0.219 \
-		serde_json-1.0.140 \
-		syn-2.0.104 \
-		target-lexicon-0.13.2 \
-		unicode-ident-1.0.18 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.145 \
+		syn-2.0.110 \
+		target-lexicon-0.13.3 \
+		unicode-ident-1.0.22 \
 		unindent-0.2.4
 
 CARGO_BUILD=	no
