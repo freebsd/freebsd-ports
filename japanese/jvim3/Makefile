@@ -2,13 +2,13 @@ PORTNAME=	jvim
 PORTVERSION=	3.0.j2.1b
 PORTREVISION=	3
 CATEGORIES=	japanese editors
-MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
-		http://hp.vector.co.jp/authors/VA003457/vim/vim3/2.1b/
-DISTFILES=	vim-3.0.tar.gz jvim.2.1b.tar.gz
+MASTER_SITES=	https://ftp.st.ryukoku.ac.jp/pub/editor/vim/unix/:vim \
+		https://ftp.st.ryukoku.ac.jp/pub/editor/jvim/jvim3/2.1b/:jvim
+DISTFILES=	vim-3.0.tar.gz:vim jvim.2.1b.tar.gz:jvim
 
-MAINTAINER=	hrs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanized Vim-3.0
-WWW=		https://hp.vector.co.jp/authors/VA003457/vim/
+WWW=		https://ftp.st.ryukoku.ac.jp/pub/editor/jvim/jvim3/vim.html
 
 EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}.diff
 WRKSRC=		${WRKDIR}/vim
