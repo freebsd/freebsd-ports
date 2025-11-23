@@ -1,6 +1,5 @@
 PORTNAME=	selectr
-DISTVERSION=	0.4-2
-PORTREVISION=	2
+DISTVERSION=	0.5-0
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,11 +9,9 @@ WWW=		https://cran.r-project.org/web/packages/selectr/
 
 LICENSE=	BSD3CLAUSE
 
-CRAN_DEPENDS=	R-cran-stringr>0:textproc/R-cran-stringr \
-		R-cran-R6>0:devel/R-cran-R6
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
+		R-cran-stringr>0:textproc/R-cran-stringr
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
