@@ -1,5 +1,5 @@
-TIMESTAMP = 1757949451
-SHA256 (phkaeser-wlmaker-v0.6.1_GH0.tar.gz) = bb7e5ea92eef8e21ff7091d8b307bc0179937d0bee7e55dc2948328d76aa5c7e
-SIZE (phkaeser-wlmaker-v0.6.1_GH0.tar.gz) = 423334
-SHA256 (phkaeser-libbase-f44570e_GH0.tar.gz) = 315de1cd1e179d8fc129a9beb57fdfccb323c6e1cae0282b15dc02c91b8b57dd
-SIZE (phkaeser-libbase-f44570e_GH0.tar.gz) = 121590
+TIMESTAMP = 1763900735
+SHA256 (phkaeser-wlmaker-v0.6.2_GH0.tar.gz) = bc0e5ab6d63cfcad331ab7197177215befd5cab47518dd43001dee1e389d1915
+SIZE (phkaeser-wlmaker-v0.6.2_GH0.tar.gz) = 423436
+SHA256 (phkaeser-libbase-1cacb0f_GH0.tar.gz) = ab53054e359dedeae856d45c78e2f3da4d91d8e4cbb61d1864b78cf1e48cb00f
+SIZE (phkaeser-libbase-1cacb0f_GH0.tar.gz) = 133786
