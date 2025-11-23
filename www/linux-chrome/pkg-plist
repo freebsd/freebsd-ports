@@ -252,7 +252,6 @@ share/applications/google-chrome.desktop
 %%DATADIR%%/product_logo_24.png
 %%DATADIR%%/product_logo_256.png
 %%DATADIR%%/product_logo_32.png
-%%DATADIR%%/product_logo_32.xpm
 %%DATADIR%%/product_logo_48.png
 %%DATADIR%%/product_logo_64.png
 %%DATADIR%%/resources.pak

@@ -2,12 +2,18 @@ PORTNAME=	chrome
 PORTVERSION=	${CHROME_VER}
 CATEGORIES=	www linux
 MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/x86_64/
-DISTNAME=	google-${PORTNAME}-stable-${CHROME_VER}-${CHROME_BUILD}.x86_64
 PKGNAMEPREFIX=	linux-
+DISTNAME=	google-${PORTNAME}-stable-${CHROME_VER}-${CHROME_BUILD}
+DISTFILES_aarch64?=	${DISTNAME:S/$/${EXTRACT_SUFX_aarch64}/}
+DISTFILES_amd64?=	${DISTNAME:S/$/${EXTRACT_SUFX_amd64}/}
+EXTRACT_ONLY?=		${DISTFILES_${ARCH}:C/:[^:]+$//}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Google web browser based on WebKit
 WWW=		https://www.chromium.org/Home
+
+LICENSE=	BSD3CLAUSE LGPL21 MPL11
+LICENSE_COMB=	multi
 
 RUN_DEPENDS=	linux-rl9-wget>0:ftp/linux-rl9-wget \
 		linux-rl9-gnupg2>0:security/linux-rl9-gnupg \
@@ -25,14 +31,12 @@ SHEBANG_FILES=	opt/google/chrome/google-chrome
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-EXTRACT_SUFX?=		.rpm
-EXTRACT_SUFX_aarch64?=	.aarch64${EXTRACT_SUFX}
-EXTRACT_SUFX_amd64?=	.x86_64${EXTRACT_SUFX}
-SRC_SUFX?=		.src${EXTRACT_SUFX}
+EXTRACT_SUFX_aarch64?=	.aarch64.rpm
+EXTRACT_SUFX_amd64?=	.x86_64.rpm
 
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	140.0.7339.80
+CHROME_VER?=	142.0.7444.175
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
