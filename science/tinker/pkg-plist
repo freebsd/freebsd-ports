@@ -14,6 +14,7 @@ bin/freefix
 bin/gda
 bin/intedit
 bin/intxyz
+bin/mdavg
 bin/minimize
 bin/minirot
 bin/minrigid
@@ -85,7 +86,7 @@ bin/xyzpdb
 %%DATADIR%%/params/charmm19.prm
 %%DATADIR%%/params/charmm22.prm
 %%DATADIR%%/params/charmm27.prm
-%%DATADIR%%/params/charmm36.prm
+%%DATADIR%%/params/charmm36m.prm
 %%DATADIR%%/params/dang.prm
 %%DATADIR%%/params/hippo19.prm
 %%DATADIR%%/params/hoch.prm
