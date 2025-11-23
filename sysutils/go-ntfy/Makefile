@@ -1,6 +1,7 @@
 PORTNAME=	ntfy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.15.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 PKGNAMEPREFIX=	go-
@@ -45,7 +46,7 @@ GITID=		eac523dc
 BUILD_DATE=	$$(date -u "+%Y-%m-%dT%H:%M:%SZ")
 
 post-patch:
-	@${GREP} -rl "/etc/${PORTNAME}" ${WRKSRC}/cmd \
+	@${GREP} -rl "/etc/${PORTNAME}" ${WRKSRC}/cmd ${WRKSRC}/server \
 		| ${XARGS} ${REINPLACE_CMD} -e 's#/etc/${PORTNAME}#${ETCDIR}#g'
 
 pre-build:
