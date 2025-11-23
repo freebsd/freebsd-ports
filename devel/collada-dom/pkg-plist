@@ -456,7 +456,7 @@ lib/cmake/collada_dom-2.5/collada_dom-config-version.cmake
 lib/cmake/collada_dom-2.5/collada_dom-config.cmake
 lib/libcollada-dom2.5-dp.so
 lib/libcollada-dom2.5-dp.so.0
-lib/libcollada-dom2.5-dp.so.2.5.0
+lib/libcollada-dom2.5-dp.so.2.5.2
 libdata/pkgconfig/collada-dom-141.pc
 libdata/pkgconfig/collada-dom-150.pc
 libdata/pkgconfig/collada-dom.pc
