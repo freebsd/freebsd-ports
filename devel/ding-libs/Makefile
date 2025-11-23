@@ -3,7 +3,7 @@ PORTVERSION=	0.6.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/SSSD/ding-libs/releases/download/${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Collection of useful libraries for developers
 WWW=		https://github.com/SSSD/ding-libs/
 
