@@ -4,6 +4,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://raw.githubusercontent.com/libsdl-org/SDL/${SDL_COMMIT}/src/joystick/:headers
 DISTFILES=	usb_ids.h:headers \
 		controller_list.h:headers
+DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 EXTRACT_ONLY=
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -23,7 +24,8 @@ PLIST_FILES=	etc/devd/${RULES_FILE}
 RULES_FILE=	gamecontrollers.conf
 
 do-extract:
-	${CP} ${DISTDIR}/usb_ids.h ${DISTDIR}/controller_list.h ${WRKDIR}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/usb_ids.h \
+		${DISTDIR}/${DIST_SUBDIR}/controller_list.h ${WRKDIR}
 	${INSTALL_SCRIPT} ${FILESDIR}/freebsd-sdl-controller-devd-rules.rb ${WRKDIR}
 
 do-build:
