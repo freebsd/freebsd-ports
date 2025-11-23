@@ -1,6 +1,5 @@
 PORTNAME=	hmat-oss
-DISTVERSION=	1.10.0
-PORTREVISION=	2
+DISTVERSION=	1.11.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,5 +32,7 @@ do-test:
 		${REINPLACE_CMD} "s|#define OPENBLAS_DISABLE_THREADS|\/\/&|" ${BUILD_WRKSRC}/config.h && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 1.11.0: 100% tests passed, 0 tests failed out of 4
 
 .include <bsd.port.mk>
