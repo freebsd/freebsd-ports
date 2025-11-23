@@ -2,12 +2,17 @@ PORTNAME=	brave
 PORTVERSION=	${BRAVE_VER}
 CATEGORIES=	www linux
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}-browser/releases/download/v${PORTVERSION}/
-DISTNAME=	${PORTNAME}-browser-${BRAVE_VER}-${BRAVE_BUILD}${EXTRACT_SUFX_${ARCH}}
 PKGNAMEPREFIX=	linux-
+DISTNAME=	${PORTNAME}-browser-${BRAVE_VER}-${BRAVE_BUILD}
+DISTFILES_aarch64?=	${DISTNAME:S/$/${EXTRACT_SUFX_aarch64}/}
+DISTFILES_amd64?=	${DISTNAME:S/$/${EXTRACT_SUFX_amd64}/}
+EXTRACT_ONLY?=		${DISTFILES_${ARCH}:C/:[^:]+$//}
 
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Brave web browser based on WebKit
 WWW=		https://www.brave.com
+
+LICENSE=	MPL20
 
 RUN_DEPENDS=	update-mime-database:misc/shared-mime-info
 
@@ -23,14 +28,12 @@ SHEBANG_FILES=	opt/brave.com/brave/brave-browser
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-EXTRACT_SUFX?=		.rpm
-EXTRACT_SUFX_aarch64?=	.aarch64
-EXTRACT_SUFX_amd64?=	.x86_64
-SRC_SUFX?=		.src${EXTRACT_SUFX}
+EXTRACT_SUFX_aarch64?=	.aarch64.rpm
+EXTRACT_SUFX_amd64?=	.x86_64.rpm
 
 REINPLACE_ARGS=	-i ""
 
-BRAVE_VER?=	1.82.161
+BRAVE_VER?=	1.84.141
 BRAVE_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
@@ -39,6 +42,13 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	brave-browser
+
+.if make(makesum) || make(checksum)
+_ALL_DISTFILES=		${DISTFILES_aarch64} ${DISTFILES_amd64}
+DISTFILES=		${_ALL_DISTFILES:O:u}
+.      else
+DISTFILES=		${DISTFILES_${ARCH}}
+.endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|/usr/bin/brave-browser-stable|${LOCALBASE}/bin/brave-browser|' \
