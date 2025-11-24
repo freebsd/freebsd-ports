@@ -1,7 +1,6 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.46.0
-PORTREVISION=	1
+DISTVERSION=	0.47.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -170,7 +169,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		heapless-0.8.0 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
-		home-0.5.11 \
 		http-1.3.1 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
