@@ -1,7 +1,7 @@
 Build with system wx workaround:
 https://github.com/aardappel/treesheets/issues/1083
 
---- CMakeLists.txt.orig	2025-09-20 08:01:27 UTC
+--- CMakeLists.txt.orig	2025-11-24 18:18:51 UTC
 +++ CMakeLists.txt
 @@ -7,7 +7,7 @@ endif()
      set(TREESHEETS_VERSION "${timestamp}")
@@ -12,26 +12,28 @@ https://github.com/aardappel/treesheets/issues/1083
      DESCRIPTION "A free-form hierarchical data organizer"
      HOMEPAGE_URL "https://github.com/aardappel/treesheets"
      VERSION "${TREESHEETS_VERSION}")
-@@ -32,17 +32,11 @@ FetchContent_Declare(
+@@ -32,19 +32,12 @@ FetchContent_Declare(
  
  include(FetchContent)
  FetchContent_Declare(
 -    wxwidgets
 -    GIT_REPOSITORY https://github.com/wxWidgets/wxWidgets
 -    GIT_TAG v3.2.8
+-    GIT_SHALLOW ON
 -    FIND_PACKAGE_ARGS 3.2.8 NAMES wxWidgets
 -)
 -FetchContent_Declare(
      lobster
      GIT_REPOSITORY https://github.com/aardappel/lobster
-     GIT_TAG v2025.3
+     GIT_TAG v2025.4
+     GIT_SHALLOW ON
  )
 -FetchContent_MakeAvailable(wxwidgets lobster)
 +FetchContent_MakeAvailable(lobster)
  
  ### Options
  
-@@ -143,7 +137,12 @@ target_precompile_headers(TreeSheets PUBLIC src/stdafx
+@@ -145,7 +138,12 @@ target_precompile_headers(TreeSheets PUBLIC src/stdafx
  target_precompile_headers(TreeSheets PUBLIC src/stdafx.h)
  
  ## Link wxWidgets, lobster-impl and StackWalker into TreeSheets
@@ -45,7 +47,7 @@ https://github.com/aardappel/treesheets/issues/1083
  if(WIN32)
      list(APPEND TREESHEETS_LIBS StackWalker)
  endif()
-@@ -193,7 +192,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
+@@ -195,7 +193,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
  file(GLOB treesheets_readme_files "TS/readme*.html")
  install(FILES ${treesheets_readme_files} DESTINATION ${TREESHEETS_DOCDIR})

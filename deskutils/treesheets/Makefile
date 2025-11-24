@@ -1,5 +1,5 @@
 PORTNAME=	treesheets
-DISTVERSION=	2732
+DISTVERSION=	2770
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cmake desktop-file-utils shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
 USE_WX=		3.2
-GH_TUPLE=	aardappel:lobster:v2025.3:external/lobster
+GH_TUPLE=	aardappel:lobster:v2025.4:external/lobster
 
 PORTDATA=	images scripts
 PORTDOCS=	docs readme-ko.html readme-zh_CN.html readme.html
