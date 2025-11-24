@@ -1,5 +1,5 @@
 PORTNAME=	ytree
-DISTVERSION=	2.05
+DISTVERSION=	2.10
 CATEGORIES=	misc
 MASTER_SITES=	http://www.han.de/~werner/
 
