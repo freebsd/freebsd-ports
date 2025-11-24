@@ -1,0 +1,9 @@
+--- src/desktop/bundled/miniaudio/CMakeLists.txt.orig	2025-11-24 04:01:34 UTC
++++ src/desktop/bundled/miniaudio/CMakeLists.txt
+@@ -16,5 +16,5 @@ elseif(UNIX AND NOT ANDROID AND NOT HAIKU AND NOT EMSC
+ if(APPLE)
+     target_link_options(miniaudio PUBLIC -lpthread -lm)
+ elseif(UNIX AND NOT ANDROID AND NOT HAIKU AND NOT EMSCRIPTEN)
+-    target_link_libraries(miniaudio PUBLIC -latomic -ldl -lpthread -lm)
++    target_link_libraries(miniaudio PUBLIC -ldl -lpthread -lm)
+ endif()
