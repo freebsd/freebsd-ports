@@ -1,6 +1,5 @@
 PORTNAME=	starship
-DISTVERSION=	1.24.0
-PORTREVISION=	1
+DISTVERSION=	1.24.1
 CATEGORIES=	shells
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -20,7 +19,6 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 
 USES=		cargo ssl
 
-(B)0[?1049h[1;24r[m[4l[?1h=[?25l[24;1H[34h[?25h[?1049l[?1l>[?1049h[1;24r[?25l[m[4l[H[J[9;24H┌─────────starship-1.24.0─────────┐[10;24H│ 'F1' for Ports Collection help. │[11;24H│ ┌─────────────────────────────┐ │[12;24H│ │new [ ] FONTS Install fonts  │ │[13;24H│ └─────────────────────────────┘ │[14;24H├─────────────────────────────────┤[15;24H│[15;33H^@ OK  ^^Cancel^@[15;58H│[16;24H└─────────────────────────────────┘[12;36H[?1h=[24;1H[34h[?25h[?1049l[?1l>
 CARGO_CRATES=	aho-corasick-1.1.3 \
 		allocator-api2-0.2.21 \
 		android_system_properties-0.1.5 \
@@ -62,10 +60,10 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
-		clap-4.5.50 \
-		clap_builder-4.5.50 \
-		clap_complete-4.5.59 \
-		clap_complete_nushell-4.5.9 \
+		clap-4.5.51 \
+		clap_builder-4.5.51 \
+		clap_complete-4.5.60 \
+		clap_complete_nushell-4.5.10 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.6 \
 		clru-0.6.2 \
@@ -210,7 +208,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		js-sys-0.3.81 \
-		jsonc-parser-0.27.0 \
+		jsonc-parser-0.27.1 \
 		kstring-2.0.2 \
 		lazy_static-1.5.0 \
 		lazycell-1.3.0 \
@@ -222,7 +220,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		lock_api-0.4.14 \
 		log-0.4.28 \
 		mac-notification-sys-0.6.6 \
-		mach2-0.4.3 \
+		mach2-0.5.0 \
 		maybe-async-0.2.10 \
 		memchr-2.7.6 \
 		memmap2-0.9.9 \
@@ -242,9 +240,19 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
 		objc2-0.6.3 \
+		objc2-cloud-kit-0.3.2 \
+		objc2-core-data-0.3.2 \
 		objc2-core-foundation-0.3.2 \
+		objc2-core-graphics-0.3.2 \
+		objc2-core-image-0.3.2 \
+		objc2-core-location-0.3.2 \
+		objc2-core-text-0.3.2 \
 		objc2-encode-4.1.0 \
 		objc2-foundation-0.3.2 \
+		objc2-io-surface-0.3.2 \
+		objc2-quartz-core-0.3.2 \
+		objc2-ui-kit-0.3.2 \
+		objc2-user-notifications-0.3.2 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
 		opaque-debug-0.3.1 \
@@ -253,7 +261,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		ordered-float-2.10.1 \
 		ordered-multimap-0.7.3 \
 		ordered-stream-0.2.0 \
-		os_info-3.12.0 \
+		os_info-3.13.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -271,7 +279,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		phf_shared-0.11.3 \
 		pin-project-lite-0.2.16 \
 		piper-0.2.4 \
-		plist-1.7.4 \
+		plist-1.8.0 \
 		polling-3.11.0 \
 		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.4 \
@@ -286,7 +294,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		process_control-5.2.0 \
 		prodash-30.0.1 \
 		quick-xml-0.37.5 \
-		quick-xml-0.38.3 \
+		quick-xml-0.38.4 \
 		quote-1.0.41 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
@@ -310,8 +318,8 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
-		schemars-1.0.4 \
-		schemars_derive-1.0.4 \
+		schemars-1.1.0 \
+		schemars_derive-1.1.0 \
 		scopeguard-1.2.0 \
 		semver-0.11.0 \
 		semver-1.0.27 \
@@ -338,7 +346,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
 		stable_deref_trait-1.2.1 \
-		starship-battery-0.10.2 \
+		starship-battery-0.10.3 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		syn-1.0.109 \
@@ -428,7 +436,6 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		windows-result-0.4.1 \
 		windows-strings-0.4.2 \
 		windows-strings-0.5.1 \
-		windows-sys-0.52.0 \
 		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
