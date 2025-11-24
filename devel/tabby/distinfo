@@ -1,4 +1,4 @@
-TIMESTAMP = 1757090186
+TIMESTAMP = 1763969453
 SHA256 (tabby/v5.17.14.zip) = 481244d0812097b11fbaeef79f71d942b171617f9c9f9514e63acbe13e71ccdc
 SIZE (tabby/v5.17.14.zip) = 4388280
 SHA256 (tabby/rust/crates/addr2line-0.21.0.crate) = 8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb
@@ -1341,7 +1341,7 @@ SHA256 (tabby/wsxiaoys-sqlx-77eb94dd672531bf1fec190aadf2f742cfb5a8db_GH0.tar.gz)
 SIZE (tabby/wsxiaoys-sqlx-77eb94dd672531bf1fec190aadf2f742cfb5a8db_GH0.tar.gz) = 893791
 SHA256 (tabby/JoranHonig-tree-sitter-solidity-0e86ae647bda22c9bee00ec59752df7b3d3b000b_GH0.tar.gz) = e326121389ba67b2b1cf25c8b5f504ee14c31ce2451c4d68a665aad65fcd6579
 SIZE (tabby/JoranHonig-tree-sitter-solidity-0e86ae647bda22c9bee00ec59752df7b3d3b000b_GH0.tar.gz) = 210673
-SHA256 (tabby/TabbyML-tabby-v0.31.1_GH0.tar.gz) = 07af88ee62ec4851cb6747e24607267c4b41d0842ff44f694c1424140c75422b
-SIZE (tabby/TabbyML-tabby-v0.31.1_GH0.tar.gz) = 15199514
+SHA256 (tabby/TabbyML-tabby-v0.31.2_GH0.tar.gz) = 5c76584e3577f0926b0084d1ac0f54d4651d39a082c57902fde10ba60f68707b
+SIZE (tabby/TabbyML-tabby-v0.31.2_GH0.tar.gz) = 15201426
 SHA256 (tabby/ggerganov-llama.cpp-952a47f455fbd92e2659b98b9b6317a2dafeb532_GH0.tar.gz) = 93d2c19c16adb7d5bbad04b4bfde9dfa0e3c5f6540fc1f6693cf02db6bd3ccd4
 SIZE (tabby/ggerganov-llama.cpp-952a47f455fbd92e2659b98b9b6317a2dafeb532_GH0.tar.gz) = 25404809
