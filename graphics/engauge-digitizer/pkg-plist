@@ -1,7 +1,5 @@
-bin/engauge
+bin/Engauge
 share/applications/engauge-digitizer.desktop
-%%PORTDOCS%%%%DOCSDIR%%/engauge.qch
-%%PORTDOCS%%%%DOCSDIR%%/engauge.qhc
 %%NLS%%%%DATADIR%%/translations/engauge_ar.qm
 %%NLS%%%%DATADIR%%/translations/engauge_cs.qm
 %%NLS%%%%DATADIR%%/translations/engauge_de.qm
@@ -15,6 +13,7 @@ share/applications/engauge-digitizer.desktop
 %%NLS%%%%DATADIR%%/translations/engauge_kk.qm
 %%NLS%%%%DATADIR%%/translations/engauge_ko.qm
 %%NLS%%%%DATADIR%%/translations/engauge_nb.qm
+%%NLS%%%%DATADIR%%/translations/engauge_nl.qm
 %%NLS%%%%DATADIR%%/translations/engauge_pt.qm
 %%NLS%%%%DATADIR%%/translations/engauge_ru.qm
 %%NLS%%%%DATADIR%%/translations/engauge_zh.qm
