@@ -1,7 +1,6 @@
 PORTNAME=	youtui
 DISTVERSIONPREFIX=	youtui/v
-DISTVERSION=	0.0.26
-PORTREVISION=	1
+DISTVERSION=	0.0.30
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -552,7 +551,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.17 \
-		tokio-util-0.7.15 \
+		tokio-util-0.7.17 \
 		toml-0.8.23 \
 		toml_datetime-0.6.11 \
 		toml_edit-0.19.15 \
@@ -695,7 +694,7 @@ CARGO_CRATES=	ab_glyph-0.2.29 \
 		yoke-0.8.0 \
 		yoke-derive-0.7.5 \
 		yoke-derive-0.8.0 \
-		youtui-vendored-rusty_ytdl-0.7.4-youtui-vendored.2 \
+		youtui-vendored-rusty_ytdl-0.7.4-youtui-vendored.3 \
 		zbus-3.15.2 \
 		zbus_macros-3.15.2 \
 		zbus_names-2.6.1 \
