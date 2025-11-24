@@ -7,7 +7,6 @@ include/entt/container/fwd.hpp
 include/entt/container/table.hpp
 include/entt/core/algorithm.hpp
 include/entt/core/any.hpp
-include/entt/core/attribute.h
 include/entt/core/bit.hpp
 include/entt/core/compressed_pair.hpp
 include/entt/core/enum.hpp
@@ -30,7 +29,6 @@ include/entt/entity/group.hpp
 include/entt/entity/handle.hpp
 include/entt/entity/helper.hpp
 include/entt/entity/mixin.hpp
-include/entt/entity/observer.hpp
 include/entt/entity/organizer.hpp
 include/entt/entity/ranges.hpp
 include/entt/entity/registry.hpp
@@ -60,6 +58,17 @@ include/entt/meta/resolve.hpp
 include/entt/meta/template.hpp
 include/entt/meta/type_traits.hpp
 include/entt/meta/utility.hpp
+include/entt/natvis/config.natvis
+include/entt/natvis/container.natvis
+include/entt/natvis/core.natvis
+include/entt/natvis/entity.natvis
+include/entt/natvis/graph.natvis
+include/entt/natvis/locator.natvis
+include/entt/natvis/meta.natvis
+include/entt/natvis/poly.natvis
+include/entt/natvis/process.natvis
+include/entt/natvis/resource.natvis
+include/entt/natvis/signal.natvis
 include/entt/poly/fwd.hpp
 include/entt/poly/poly.hpp
 include/entt/process/fwd.hpp
@@ -74,6 +83,8 @@ include/entt/signal/dispatcher.hpp
 include/entt/signal/emitter.hpp
 include/entt/signal/fwd.hpp
 include/entt/signal/sigh.hpp
+include/entt/tools.hpp
+include/entt/tools/davey.hpp
 lib/EnTT/cmake/EnTTConfig.cmake
 lib/EnTT/cmake/EnTTConfigVersion.cmake
 lib/EnTT/cmake/EnTTTargets.cmake
