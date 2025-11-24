@@ -9,6 +9,7 @@ share/man/man8/twprint.8.gz
 sbin/tripwire
 sbin/twadmin
 sbin/twprint
+sbin/twtest
 sbin/siggen
 share/doc/tripwire/COMMERCIAL
 share/doc/tripwire/COPYING
