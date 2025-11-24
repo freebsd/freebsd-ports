@@ -1,3 +1,5 @@
-TIMESTAMP = 1751644926
+TIMESTAMP = 1763977048
 SHA256 (keepassxc-2.7.10-src.tar.xz) = 5ce76d6440986c24842585f019d5f3cadc166fa71fc911a4fe97b8bbc4819dfa
 SIZE (keepassxc-2.7.10-src.tar.xz) = 9787952
+SHA256 (fedcbf60c5c0dc7c3602c49a984d53a45c154c73.diff) = d67481fdc34b9d2e78ba40e1adfabf6ed91bcdfe62abc64ea9509e08e60cbc5e
+SIZE (fedcbf60c5c0dc7c3602c49a984d53a45c154c73.diff) = 816
