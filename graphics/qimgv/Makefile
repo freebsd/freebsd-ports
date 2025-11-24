@@ -1,6 +1,6 @@
 PORTNAME=	qimgv
 PORTVERSION=	1.03.g20250905
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	kenrap@kennethraplee.com
@@ -50,5 +50,7 @@ VIDEO_CMAKE_BOOL=	VIDEO_SUPPORT
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/qimgv/settings.cpp
+	@${REINPLACE_CMD} -e 's|^Exec=|Exec=QT_SCALE_FACTOR_ROUNDING_POLICY=RoundPreferFloor |' \
+		${WRKSRC}/qimgv/distrib/qimgv.desktop
 
 .include <bsd.port.mk>
