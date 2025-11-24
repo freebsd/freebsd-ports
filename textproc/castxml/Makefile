@@ -1,6 +1,6 @@
 PORTNAME=	castxml
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.10
+DISTVERSION=	0.6.13
 CATEGORIES=	textproc devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,5 +37,7 @@ do-test: # many tests fail, see https://github.com/CastXML/CastXML/issues/245
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of 0.6.13: 100% tests passed, 0 tests failed out of 4392
 
 .include <bsd.port.mk>
