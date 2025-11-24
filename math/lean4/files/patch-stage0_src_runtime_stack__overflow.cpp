@@ -11,11 +11,3 @@
  #ifdef LEAN_WINDOWS
  #include <windows.h>
  #else
-@@ -20,6 +24,7 @@ Port of the corresponding Rust code (see links below).
- #include <lean/lean.h>
- #include <initializer_list>
- #include "runtime/stack_overflow.h"
-+
- 
- namespace lean {
- // stack guard of the main thread

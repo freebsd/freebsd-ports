@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.23.0
+DISTVERSION=	4.25.1
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,6 @@ CXXFLAGS+=	-fPIC
 CMAKE_OFF=	USE_MIMALLOC
 
 #MAKE_ARGS+=	V=1 VERBOSE=1
-#MAKE_JOBS_UNSAFE=     yes
 MAKE_ENV=	LD_LIBRARY_PATH=${BUILD_WRKSRC}/stage0/lib/lean
 
 BINARY_ALIAS=	make=${GMAKE} python=${PYTHON_CMD}
@@ -47,6 +46,19 @@ pre-everything::
 	@${ECHO_MSG} "  and then run this command as root:"
 	@${ECHO_MSG} "  # mount /proc"
 	@${ECHO_MSG} ""
+
+post-patch:
+	# Add weakLeancArgs = ["-fPIC"] to all test lakefile.toml files
+	@${FIND} ${WRKSRC}/tests -name "lakefile.toml" | while read f; do \
+		${GREP} -q "weakLeancArgs" "$$f" || \
+		( ${PRINTF} 'weakLeancArgs = ["-fPIC"]\n\n' | cat - "$$f" > "$$f.tmp" && ${MV} "$$f.tmp" "$$f" ); \
+	done
+	# Add weakLeancArgs to lakefile.lean files that define packages
+	@${FIND} ${WRKSRC}/tests -name "lakefile.lean" | while read f; do \
+		if ${GREP} -q "^package .* where" "$$f" && ! ${GREP} -q "weakLeancArgs" "$$f"; then \
+			${AWK} '/^package .* where$$/ {print; print "  weakLeancArgs := #[\"-fPIC\"]"; next} 1' "$$f" > "$$f.tmp" && ${MV} "$$f.tmp" "$$f"; \
+		fi; \
+	done
 
 post-install:
 	# remove empty dirs
@@ -65,7 +77,6 @@ post-install:
 		lib/lean/libleanshared_1.so \
 		lib/lean/libLake_shared.so
 
-# tests as of 4.20.0: 99% tests passed, 16 tests failed out of 2594, see https://github.com/leanprover/lean4/issues/8628
-# tests as of 4.23.0: 99% tests passed, 10 tests failed out of 2870
+# tests as of 4.25.1: 100% tests passed, 0 tests failed out of 3241
 
 .include <bsd.port.mk>
