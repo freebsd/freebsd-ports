@@ -1,6 +1,6 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.0
+DISTVERSION=	1.13.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,9 @@ GH_ACCOUNT=	facebookresearch
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING FAISS_ENABLE_GPU FAISS_ENABLE_PYTHON
+
+post-extract: # workaround for https://github.com/facebookresearch/faiss/issues/3913
+	@${LN} -s ${WRKSRC} ${WRKDIR}/faiss
 
 # tests as of 1.12.0: 100% tests passed
 
