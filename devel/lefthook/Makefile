@@ -1,7 +1,6 @@
 PORTNAME=	lefthook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.10
-PORTREVISION=	4
+DISTVERSION=	2.0.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,9 +11,9 @@ WWW=		https://evilmartians.github.io/lefthook/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:1.25,modules
 
-GO_MODULE=	github.com/evilmartians/lefthook
+GO_MODULE=	github.com/evilmartians/lefthook/v2
 
 PLIST_FILES=	bin/${PORTNAME}
 
