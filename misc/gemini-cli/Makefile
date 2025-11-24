@@ -1,5 +1,5 @@
 PORTNAME=	gemini-cli
-DISTVERSION=	0.17.0
+DISTVERSION=	0.17.1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

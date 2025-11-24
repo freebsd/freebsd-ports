@@ -2,6 +2,7 @@ bin/gemini
 lib/node_modules/@google/gemini-cli/LICENSE
 lib/node_modules/@google/gemini-cli/README.md
 lib/node_modules/@google/gemini-cli/dist/.last_build
+lib/node_modules/@google/gemini-cli/dist/google-gemini-cli-0.17.0.tgz
 lib/node_modules/@google/gemini-cli/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/dist/index.js
 lib/node_modules/@google/gemini-cli/dist/index.js.map
@@ -1919,6 +1920,7 @@ lib/node_modules/@google/gemini-cli/node_modules/@google-cloud/promisify/package
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/README.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/.last_build
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/google-gemini-cli-core-0.17.0.tgz
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js.map
@@ -19941,6 +19943,7 @@ lib/node_modules/@google/gemini-cli/node_modules/picomatch/lib/scan.js
 lib/node_modules/@google/gemini-cli/node_modules/picomatch/lib/utils.js
 lib/node_modules/@google/gemini-cli/node_modules/picomatch/package.json
 lib/node_modules/@google/gemini-cli/node_modules/picomatch/posix.js
+lib/node_modules/@google/gemini-cli/node_modules/pkce-challenge/CHANGELOG.md
 lib/node_modules/@google/gemini-cli/node_modules/pkce-challenge/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/pkce-challenge/README.md
 lib/node_modules/@google/gemini-cli/node_modules/pkce-challenge/dist/index.browser.d.ts
@@ -20208,17 +20211,10 @@ lib/node_modules/@google/gemini-cli/node_modules/range-parser/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/range-parser/README.md
 lib/node_modules/@google/gemini-cli/node_modules/range-parser/index.js
 lib/node_modules/@google/gemini-cli/node_modules/range-parser/package.json
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/HISTORY.md
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/README.md
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/SECURITY.md
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/index.js
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/http-errors/HISTORY.md
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/http-errors/LICENSE
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/http-errors/README.md
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/http-errors/index.js
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/http-errors/package.json
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/iconv-lite/Changelog.md
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/iconv-lite/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/iconv-lite/README.md
@@ -20246,12 +20242,6 @@ lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/iconv-lit
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/iconv-lite/lib/index.js
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/iconv-lite/lib/streams.js
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/iconv-lite/package.json
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/statuses/HISTORY.md
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/statuses/LICENSE
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/statuses/README.md
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/statuses/codes.json
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/statuses/index.js
-lib/node_modules/@google/gemini-cli/node_modules/raw-body/node_modules/statuses/package.json
 lib/node_modules/@google/gemini-cli/node_modules/raw-body/package.json
 lib/node_modules/@google/gemini-cli/node_modules/rc/LICENSE.APACHE2
 lib/node_modules/@google/gemini-cli/node_modules/rc/LICENSE.BSD
