@@ -1,8 +1,12 @@
 PORTNAME=	avidemux
 PORTVERSION=	${AVIDEMUX_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-plugins
+
+PATCH_SITES=	https://github.com/mean00/avidemux2/commit/
+# Fix build with x265 4.1
+PATCHFILES+=	c16d32a67cdb012db093472ad3776713939a30d1.patch:-p1
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Simple GUI based video editor (Plugins)
