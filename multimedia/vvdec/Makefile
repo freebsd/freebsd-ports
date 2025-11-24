@@ -1,6 +1,6 @@
 PORTNAME=	vvdec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
+DISTVERSION=	3.1.0
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +29,6 @@ CMAKE_TESTING_TARGET=	test
 CMAKE_ARGS+=	-DVVDEC_ENABLE_LINK_TIME_OPT:BOOL=OFF
 .endif
 
-# tests as of 3.0.0: 100% tests passed, 0 tests failed out of 239
+# tests as of 3.1.0: 100% tests passed, 0 tests failed out of 239
 
 .include <bsd.port.mk>
