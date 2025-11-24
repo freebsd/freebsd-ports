@@ -16,7 +16,7 @@ LIB_DEPENDS=	libabsl_strings.so:devel/abseil
 
 USES=		compiler:c++17-lang meson pkgconfig
 USE_LDCONFIG=	yes
-MESON_ARGS=	${ARCH:Mi386:C/.+/-Dinline-sse=false/} \
-		${ARCH:Narmv?:Naarch64:C/.+/-Dneon=disabled/}
+MESON_DISABLED=	${ARCH:Narmv?:Naarch64:C/.+/neon/}
+MESON_FALSE=	${ARCH:Mi386:C/.+/inline-sse/}
 
 .include <bsd.port.mk>
