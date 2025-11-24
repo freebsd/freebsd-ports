@@ -9,7 +9,7 @@ WWW=		https://gitlab.freedesktop.org/wayland/wayland-utils
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	wayland-protocols>=1.20:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.44:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		meson pkgconfig
