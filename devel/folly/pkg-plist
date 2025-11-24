@@ -710,6 +710,7 @@ include/folly/hash/HsiehHash.h
 include/folly/hash/MurmurHash.h
 include/folly/hash/SpookyHashV1.h
 include/folly/hash/SpookyHashV2.h
+include/folly/hash/UniqueHashKey.h
 include/folly/hash/detail/ChecksumDetail.h
 include/folly/hash/detail/RandomSeed.h
 include/folly/hash/rapidhash.h
