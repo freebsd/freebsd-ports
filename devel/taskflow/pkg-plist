@@ -57,17 +57,8 @@ include/taskflow/dsl/task_dsl.hpp
 include/taskflow/dsl/task_trait.hpp
 include/taskflow/dsl/tuple_utils.hpp
 include/taskflow/dsl/type_list.hpp
-include/taskflow/sycl/algorithm/reduce.hpp
-include/taskflow/sycl/algorithm/sycl_for_each.hpp
-include/taskflow/sycl/algorithm/sycl_transform.hpp
-include/taskflow/sycl/sycl_execution_policy.hpp
-include/taskflow/sycl/sycl_graph.hpp
-include/taskflow/sycl/sycl_meta.hpp
-include/taskflow/sycl/sycl_task.hpp
-include/taskflow/sycl/syclflow.hpp
 include/taskflow/taskflow.hpp
 include/taskflow/utility/iterator.hpp
-include/taskflow/utility/latch.hpp
 include/taskflow/utility/lazy_string.hpp
 include/taskflow/utility/macros.hpp
 include/taskflow/utility/math.hpp
@@ -75,7 +66,6 @@ include/taskflow/utility/mpmc.hpp
 include/taskflow/utility/object_pool.hpp
 include/taskflow/utility/os.hpp
 include/taskflow/utility/serializer.hpp
-include/taskflow/utility/singleton.hpp
 include/taskflow/utility/small_vector.hpp
 include/taskflow/utility/stream.hpp
 include/taskflow/utility/traits.hpp

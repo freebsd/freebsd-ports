@@ -1,6 +1,6 @@
 PORTNAME=	taskflow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.10.0
+DISTVERSION=	3.11.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +19,6 @@ CMAKE_TESTING_ON=	BUILD_TESTING TF_BUILD_TESTS
 
 NO_ARCH=	yes
 
-# tests as of 3.10.0: 100% tests passed, 0 tests failed out of 2454
+# tests as of 3.11.0: 100% tests passed, 0 tests failed out of 2190
 
 .include <bsd.port.mk>
