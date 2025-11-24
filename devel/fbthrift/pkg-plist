@@ -107,6 +107,7 @@ include/thrift/common/BaseType.h
 include/thrift/common/detail/string.h
 include/thrift/common/tree_printer.h
 include/thrift/common/universal_name.h
+include/thrift/lib/cpp/BiDiEventHandler.h
 include/thrift/lib/cpp/ContextStack.h
 include/thrift/lib/cpp/DistinctTable.h
 include/thrift/lib/cpp/EventHandlerBase.h
@@ -439,6 +440,10 @@ include/thrift/lib/cpp2/protocol/TableBasedSerializer.h
 include/thrift/lib/cpp2/protocol/TableBasedSerializerImpl.h
 include/thrift/lib/cpp2/protocol/Traits.h
 include/thrift/lib/cpp2/protocol/VirtualProtocol.h
+include/thrift/lib/cpp2/protocol/benchmark/ThriftProtocolBenchmarkHelper.h
+include/thrift/lib/cpp2/protocol/benchmark/gen/CarbonTestData.h
+include/thrift/lib/cpp2/protocol/benchmark/gen/CarbonTestDataMessages-inl.h
+include/thrift/lib/cpp2/protocol/benchmark/gen/CarbonTestDataMessages.h
 include/thrift/lib/cpp2/protocol/detail/CursorBasedSerialization.h
 include/thrift/lib/cpp2/protocol/detail/DynamicCursorSerializer.h
 include/thrift/lib/cpp2/protocol/detail/FieldMask.h
@@ -579,6 +584,7 @@ include/thrift/lib/cpp2/server/peeking/TLSHelper.h
 include/thrift/lib/cpp2/server/test/RequestPileTestUtils.h
 include/thrift/lib/cpp2/server/test/ServiceMethodDecoratorTestLib.h
 include/thrift/lib/cpp2/server/test/util/MockServerConfigs.h
+include/thrift/lib/cpp2/test/FlagTestUtils.h
 include/thrift/lib/cpp2/test/Matcher.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
 include/thrift/lib/cpp2/test/ObjectBenchUtils.h
