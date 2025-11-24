@@ -1,0 +1,1139 @@
+Submitted By:            Bruce Dubbs <bdubbs@linuxfromscratch.org>
+Date:                    2024-05-27
+Initial Package Version: 3.0.20
+Upstream Status:         Unknown
+Origin:                  Fedora
+Description:             Fixes compilation with ffmpeg-7
+
+From 965ad6ca875fea94712b4e8b107d0100937dcd4f Mon Sep 17 00:00:00 2001
+From: Steve Lhomme <robux4@ycbcr.xyz>
+Date: Fri, 3 Aug 2018 10:59:16 +0200
+Subject: [PATCH] avcodec: remove libavutils checks that are always true based
+ on configure checks
+
+We assume we use 55.9.0 and 55.22.101
+---
+ modules/codec/avcodec/avcommon_compat.h |  4 ----
+ modules/codec/avcodec/chroma.c          |  6 ------
+ modules/codec/avcodec/encoder.c         |  6 +-----
+ modules/codec/avcodec/va.c              |  5 +----
+ modules/codec/avcodec/video.c           | 12 ++----------
+ 5 files changed, 4 insertions(+), 29 deletions(-)
+
+diff --git a/modules/codec/avcodec/avcommon_compat.h b/modules/codec/avcodec/avcommon_compat.h
+index 8f9c12081cf8..afd5cc476f8f 100644
+--- a/modules/codec/avcodec/avcommon_compat.h
++++ b/modules/codec/avcodec/avcommon_compat.h
+@@ -91,10 +91,6 @@
+     ( (LIBAVUTIL_VERSION_MICRO <  100 && LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( a, b, c ) ) || \
+       (LIBAVUTIL_VERSION_MICRO >= 100 && LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( a, d, e ) ) )
+ 
+-#if !LIBAVUTIL_VERSION_CHECK( 52, 11, 0, 32, 100 )
+-#   define AV_PIX_FMT_FLAG_HWACCEL  PIX_FMT_HWACCEL
+-#endif
+-
+ /*
+  * AV_PIX_FMT_VAAPI is not introduced in the same major version in libav and FFmpeg:
+  *  - libav:  lavu 55.8.0:    libav/d264c720f7b74286840719e506daba39f83b438b
+diff --git a/modules/codec/avcodec/chroma.c b/modules/codec/avcodec/chroma.c
+index cd8d714bf295..454a20381e41 100644
+--- a/modules/codec/avcodec/chroma.c
++++ b/modules/codec/avcodec/chroma.c
+@@ -145,13 +145,11 @@ static const struct
+     VLC_RGB( VLC_CODEC_RGB32, AV_PIX_FMT_0BGR32, AV_PIX_FMT_0RGB32, 0x000000ff, 0x0000ff00, 0x00ff0000 )
+ #endif
+ 
+-#if (LIBAVUTIL_VERSION_MICRO == 0 || LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( 55, 0, 100 ) )
+ #ifdef WORDS_BIGENDIAN
+     {VLC_CODEC_RGBA64, AV_PIX_FMT_RGBA64BE, 0, 0, 0 },
+ #else /* !WORDS_BIGENDIAN */
+     {VLC_CODEC_RGBA64, AV_PIX_FMT_RGBA64LE, 0, 0, 0 },
+ #endif /* !WORDS_BIGENDIAN */
+-#endif
+ 
+     {VLC_CODEC_RGBA, AV_PIX_FMT_RGBA, 0, 0, 0 },
+     {VLC_CODEC_ARGB, AV_PIX_FMT_ARGB, 0, 0, 0 },
+@@ -180,9 +178,7 @@ static const struct
+     {VLC_CODEC_GBR_PLANAR_16B, AV_PIX_FMT_GBRP16BE, 0, 0, 0 },
+ 
+     /* XYZ */
+-#if LIBAVUTIL_VERSION_CHECK(52, 10, 0, 25, 100)
+     {VLC_CODEC_XYZ12, AV_PIX_FMT_XYZ12, 0xfff0, 0xfff0, 0xfff0},
+-#endif
+     { 0, 0, 0, 0, 0 }
+ };
+ 
+diff --git a/modules/codec/avcodec/encoder.c b/modules/codec/avcodec/encoder.c
+index a00439e93965..cbe150c7016f 100644
+--- a/modules/codec/avcodec/encoder.c
++++ b/modules/codec/avcodec/encoder.c
+@@ -48,9 +48,7 @@
+ #include "avcodec.h"
+ #include "avcommon.h"
+ 
+-#if LIBAVUTIL_VERSION_CHECK( 52,2,6,0,0 )
+-# include <libavutil/channel_layout.h>
+-#endif
++#include <libavutil/channel_layout.h>
+ 
+ #define HURRY_UP_GUARD1 (450000)
+ #define HURRY_UP_GUARD2 (300000)
+@@ -740,7 +738,6 @@ int InitVideoEnc( vlc_object_t *p_this )
+         p_context->time_base.num = 1;
+         p_context->time_base.den = p_context->sample_rate;
+         p_context->channels      = p_enc->fmt_out.audio.i_channels;
+-#if LIBAVUTIL_VERSION_CHECK( 52, 2, 6, 0, 0)
+         p_context->channel_layout = channel_mask[p_context->channels][1];
+ 
+         /* Setup Channel ordering for multichannel audio
+@@ -790,7 +787,6 @@ int InitVideoEnc( vlc_object_t *p_this )
+         p_sys->i_channels_to_reorder =
+             aout_CheckChannelReorder( NULL, pi_order_dst, order_mask,
+                                       p_sys->pi_reorder_layout );
+-#endif
+ 
+         if ( p_enc->fmt_out.i_codec == VLC_CODEC_MP4A )
+         {
+diff --git a/modules/codec/avcodec/va.c b/modules/codec/avcodec/va.c
+index d1e3048259be..ecf4e8aa14a1 100644
+--- a/modules/codec/avcodec/va.c
++++ b/modules/codec/avcodec/va.c
+@@ -58,7 +58,6 @@ vlc_fourcc_t vlc_va_GetChroma(enum Pixel
+             }
+             break;
+ 
+-#if LIBAVUTIL_VERSION_CHECK(54, 13, 1, 24, 100)
+         case AV_PIX_FMT_D3D11VA_VLD:
+             switch (swfmt)
+             {
+@@ -68,8 +67,7 @@ vlc_fourcc_t vlc_va_GetChroma(enum Pixel
+                     return VLC_CODEC_D3D11_OPAQUE;
+             }
+         break;
+-#endif
+-#if (LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(52, 4, 0))
++
+         case AV_PIX_FMT_VDPAU:
+             switch (swfmt)
+             {
+@@ -86,7 +84,6 @@ vlc_fourcc_t vlc_va_GetChroma(enum Pixel
+                     return 0;
+             }
+             break;
+-#endif
+         default:
+             return 0;
+     }
+diff --git a/modules/codec/avcodec/video.c b/modules/codec/avcodec/video.c
+index a9d45ba4abe1..3c2b3adb2663 100644
+--- a/modules/codec/avcodec/video.c
++++ b/modules/codec/avcodec/video.c
+@@ -39,7 +39,7 @@
+ #include <libavcodec/avcodec.h>
+ #include <libavutil/mem.h>
+ #include <libavutil/pixdesc.h>
+-#if (LIBAVUTIL_VERSION_MICRO >= 100 && LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( 55, 16, 101 ) )
++#if (LIBAVUTIL_VERSION_MICRO >= 100)
+ #include <libavutil/mastering_display_metadata.h>
+ #endif
+ 
+@@ -687,15 +687,11 @@ static int ffmpeg_OpenVa(decoder_t *p_de
+ static const enum PixelFormat hwfmts[] =
+ {
+ #ifdef _WIN32
+-#if LIBAVUTIL_VERSION_CHECK(54, 13, 1, 24, 100)
+     AV_PIX_FMT_D3D11VA_VLD,
+-#endif
+     AV_PIX_FMT_DXVA2_VLD,
+ #endif
+     AV_PIX_FMT_VAAPI,
+-#if (LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(52, 4, 0))
+     AV_PIX_FMT_VDPAU,
+-#endif
+     AV_PIX_FMT_NONE,
+ };
+ 
+@@ -995,7 +991,7 @@ static int DecodeSidedata( decoder_t *p_
+     decoder_sys_t *p_sys = p_dec->p_sys;
+     bool format_changed = false;
+ 
+-#if (LIBAVUTIL_VERSION_MICRO >= 100 && LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( 55, 16, 101 ) )
++#if (LIBAVUTIL_VERSION_MICRO >= 100)
+ #define FROM_AVRAT(default_factor, avrat) \
+ (uint64_t)(default_factor) * (avrat).num / (avrat).den
+     const AVFrameSideData *metadata =
+-- 
+GitLab
+
+
+From 16fd46fa506424134beb53ec88be3eea1b42a221 Mon Sep 17 00:00:00 2001
+From: Ilkka Ollakka <ileoo@videolan.org>
+Date: Wed, 7 Jul 2021 12:37:58 +0000
+Subject: [PATCH] avcodec: remove use of av_init_packet as it is deprecated in
+ new ffmpeg major version
+
+av_init_packet is deprecated in new major version of ffmpeg.
+
+Also use av_packet_free instead of unref.
+
+Use av_packet_clone and AVPacket * in vlc_av_packet_t.
+---
+ modules/codec/avcodec/subtitle.c | 4 ----
+ 5 files changed, 0 insertions(+), 4 deletions(-)
+
+
+diff --git a/modules/codec/avcodec/subtitle.c b/modules/codec/avcodec/subtitle.c
+index a92522e4ed00..4cb920a8f444 100644
+--- a/modules/codec/avcodec/subtitle.c
++++ b/modules/codec/avcodec/subtitle.c
+@@ -90,11 +90,7 @@ int InitSubtitleDec(vlc_object_t *obj)
+     context->extradata_size = 0;
+     context->extradata = NULL;
+ 
+-#if LIBAVFORMAT_VERSION_MAJOR >= 59
+     context->pkt_timebase=AV_TIME_BASE_Q;
+-#elif LIBAVFORMAT_VERSION_MICRO >= 100
+-    av_codec_set_pkt_timebase(context, AV_TIME_BASE_Q);
+-#endif
+ 
+     /* */
+     int ret;
+-- 
+GitLab
+
+
+From 18e98b8a0c410be5e1e9eac55052fe0c56901759 Mon Sep 17 00:00:00 2001
+From: Marvin Scholz <epirat07@gmail.com>
+Date: Tue, 30 Nov 2021 18:20:39 +0100
+Subject: [PATCH] avcommon: remove libav from version check macros
+
+---
+ modules/codec/avcodec/avcommon_compat.h | 29 ++++++++++++-------------
+ modules/codec/avcodec/fourcc.c          |  4 ++--
+ modules/codec/avcodec/video.c           |  4 ++--
+ modules/demux/avformat/mux.c            | 10 ++++-----
+ 5 files changed, 23 insertions(+), 24 deletions(-)
+
+diff --git a/modules/codec/avcodec/avcommon_compat.h b/modules/codec/avcodec/avcommon_compat.h
+index 90de502d99ce..010b570e0820 100644
+--- a/modules/codec/avcodec/avcommon_compat.h
++++ b/modules/codec/avcodec/avcommon_compat.h
+@@ -30,13 +30,13 @@
+ #ifdef HAVE_LIBAVCODEC_AVCODEC_H
+ #include <libavcodec/avcodec.h>
+ 
+-/* LIBAVCODEC_VERSION_CHECK checks for the right version of libav and FFmpeg
++/* LIBAVCODEC_VERSION_CHECK checks for the right version of FFmpeg
+  * a is the major version
+- * b and c the minor and micro versions of libav
+- * d and e the minor and micro versions of FFmpeg */
+-#define LIBAVCODEC_VERSION_CHECK( a, b, c, d, e ) \
+-    ( (LIBAVCODEC_VERSION_MICRO <  100 && LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( a, b, c ) ) || \
+-      (LIBAVCODEC_VERSION_MICRO >= 100 && LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( a, d, e ) ) )
++ * b is the minor version
++ * c is the micro version
++ */
++#define LIBAVCODEC_VERSION_CHECK( a, b, c ) \
++    (LIBAVCODEC_VERSION_MICRO >= 100 && LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( a, b, c ) )
+ 
+ #ifndef AV_CODEC_FLAG_OUTPUT_CORRUPT
+ # define AV_CODEC_FLAG_OUTPUT_CORRUPT CODEC_FLAG_OUTPUT_CORRUPT
+@@ -83,13 +83,13 @@
+ #ifdef HAVE_LIBAVUTIL_AVUTIL_H
+ # include <libavutil/avutil.h>
+ 
+-/* LIBAVUTIL_VERSION_CHECK checks for the right version of libav and FFmpeg
++/* LIBAVUTIL_VERSION_CHECK checks for the right version of FFmpeg
+  * a is the major version
+- * b and c the minor and micro versions of libav
+- * d and e the minor and micro versions of FFmpeg */
+-#define LIBAVUTIL_VERSION_CHECK( a, b, c, d, e ) \
+-    ( (LIBAVUTIL_VERSION_MICRO <  100 && LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( a, b, c ) ) || \
+-      (LIBAVUTIL_VERSION_MICRO >= 100 && LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( a, d, e ) ) )
++ * b is the minor version
++ * c is the micro version
++ */
++#define LIBAVUTIL_VERSION_CHECK( a, b, c ) \
++    (LIBAVUTIL_VERSION_MICRO >= 100 && LIBAVUTIL_VERSION_INT >= AV_VERSION_INT( a, b, c ) )
+ 
+ /*
+  * AV_PIX_FMT_VAAPI is not introduced in the same major version in libav and FFmpeg:
+@@ -115,9 +115,8 @@
+ #ifdef HAVE_LIBAVFORMAT_AVFORMAT_H
+ # include <libavformat/avformat.h>
+ 
+-#define LIBAVFORMAT_VERSION_CHECK( a, b, c, d, e ) \
+-    ( (LIBAVFORMAT_VERSION_MICRO <  100 && LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT( a, b, c ) ) || \
+-      (LIBAVFORMAT_VERSION_MICRO >= 100 && LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT( a, d, e ) ) )
++#define LIBAVFORMAT_VERSION_CHECK( a, b, c ) \
++    (LIBAVFORMAT_VERSION_MICRO >= 100 && LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT( a, b, c ) )
+ 
+ #endif
+ 
+diff --git a/modules/codec/avcodec/fourcc.c b/modules/codec/avcodec/fourcc.c
+index de41991ebb51..edab2cbdca8f 100644
+--- a/modules/codec/avcodec/fourcc.c
++++ b/modules/codec/avcodec/fourcc.c
+@@ -226,7 +226,7 @@ static const struct vlc_avcodec_fourcc v
+     { VLC_CODEC_CLLC, AV_CODEC_ID_CLLC },
+     { VLC_CODEC_MSS2, AV_CODEC_ID_MSS2 },
+     { VLC_CODEC_VP9, AV_CODEC_ID_VP9 },
+-#if LIBAVCODEC_VERSION_CHECK( 57, 26, 0, 83, 101 )
++#if LIBAVCODEC_VERSION_CHECK( 57, 83, 101 )
+     { VLC_CODEC_AV1, AV_CODEC_ID_AV1 },
+ #endif
+     { VLC_CODEC_ICOD, AV_CODEC_ID_AIC },
+@@ -281,19 +281,19 @@ static const struct vlc_avcodec_fourcc v
+     /* ffmpeg only: AV_CODEC_ID_SNOW */
+     /* ffmpeg only: AV_CODEC_ID_SMVJPEG */
+ 
+-#if LIBAVCODEC_VERSION_CHECK( 57, 999, 999, 24, 102 )
++#if LIBAVCODEC_VERSION_CHECK( 57, 24, 102 )
+     { VLC_CODEC_CINEFORM, AV_CODEC_ID_CFHD },
+ #endif
+ 
+-#if LIBAVCODEC_VERSION_CHECK( 57, 999, 999, 70, 100 )
++#if LIBAVCODEC_VERSION_CHECK( 57, 70, 100 )
+     { VLC_CODEC_PIXLET, AV_CODEC_ID_PIXLET },
+ #endif
+ 
+-#if LIBAVCODEC_VERSION_CHECK( 57, 999, 999, 71, 101 )
++#if LIBAVCODEC_VERSION_CHECK( 57, 71, 101 )
+     { VLC_CODEC_SPEEDHQ, AV_CODEC_ID_SPEEDHQ },
+ #endif
+ 
+-#if LIBAVCODEC_VERSION_CHECK( 57, 999, 999, 79, 100 )
++#if LIBAVCODEC_VERSION_CHECK( 57, 79, 100 )
+     { VLC_CODEC_FMVC, AV_CODEC_ID_FMVC },
+ #endif
+ };
+@@ -410,7 +410,7 @@ static const struct vlc_avcodec_fourcc a
+     /* AV_CODEC_ID_WESTWOOD_SND1 */
+     { VLC_CODEC_GSM, AV_CODEC_ID_GSM },
+     { VLC_CODEC_QDM2, AV_CODEC_ID_QDM2 },
+-#if LIBAVCODEC_VERSION_CHECK( 57, 999, 999, 71, 100 )
++#if LIBAVCODEC_VERSION_CHECK( 57, 71, 100 )
+     { VLC_CODEC_QDMC, AV_CODEC_ID_QDMC },
+ #endif
+     { VLC_CODEC_COOK, AV_CODEC_ID_COOK },
+@@ -478,7 +478,7 @@ static const struct vlc_avcodec_fourcc s
+     { VLC_CODEC_SSA, AV_CODEC_ID_SSA },
+     /* AV_CODEC_ID_MOV_TEXT */
+     { VLC_CODEC_BD_PG, AV_CODEC_ID_HDMV_PGS_SUBTITLE },
+-#if LIBAVCODEC_VERSION_CHECK( 57, 999, 999, 71, 100 )
++#if LIBAVCODEC_VERSION_CHECK( 57, 71, 100 )
+     { VLC_CODEC_BD_TEXT, AV_CODEC_ID_HDMV_TEXT_SUBTITLE },
+ #endif
+     { VLC_CODEC_TELETEXT, AV_CODEC_ID_DVB_TELETEXT },
+diff --git a/modules/codec/avcodec/video.c b/modules/codec/avcodec/video.c
+index 594c337486a9..d3ba649f272a 100644
+--- a/modules/codec/avcodec/video.c
++++ b/modules/codec/avcodec/video.c
+@@ -257,12 +257,12 @@ static int lavc_GetVideoFormat(decoder_t
+         case AVCOL_TRC_BT2020_12:
+             fmt->transfer = TRANSFER_FUNC_BT2020;
+             break;
+-#if LIBAVUTIL_VERSION_CHECK( 55, 14, 0, 31, 100)
++#if LIBAVUTIL_VERSION_CHECK( 55, 31, 100)
+         case AVCOL_TRC_ARIB_STD_B67:
+             fmt->transfer = TRANSFER_FUNC_ARIB_B67;
+             break;
+ #endif
+-#if LIBAVUTIL_VERSION_CHECK( 55, 17, 0, 37, 100)
++#if LIBAVUTIL_VERSION_CHECK( 55, 37, 100)
+         case AVCOL_TRC_SMPTE2084:
+             fmt->transfer = TRANSFER_FUNC_SMPTE_ST2084;
+             break;
+@@ -1302,7 +1302,7 @@ static picture_t *DecodeBlock( decoder_t
+         }
+ 
+         /* Compute the PTS */
+-#if LIBAVCODEC_VERSION_CHECK(57, 24, 0, 61, 100)
++#if LIBAVCODEC_VERSION_CHECK(57, 61, 100)
+ # if LIBAVCODEC_VERSION_MICRO >= 100
+         vlc_tick_t i_pts = frame->best_effort_timestamp;
+ # else
+diff --git a/modules/demux/avformat/mux.c b/modules/demux/avformat/mux.c
+index 52fe7ef7f9eb..b9c434f0814f 100644
+--- a/modules/demux/avformat/mux.c
++++ b/modules/demux/avformat/mux.c
+@@ -61,7 +61,7 @@ struct sout_mux_sys_t
+     bool     b_write_header;
+     bool     b_write_keyframe;
+     bool     b_error;
+-#if LIBAVFORMAT_VERSION_CHECK( 57, 7, 0, 40, 100 )
++#if LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
+     bool     b_header_done;
+ #endif
+ };
+@@ -76,7 +76,7 @@ static int Mux      ( sout_mux_t * );
+ 
+ static int IOWrite( void *opaque, uint8_t *buf, int buf_size );
+ static int64_t IOSeek( void *opaque, int64_t offset, int whence );
+-#if LIBAVFORMAT_VERSION_CHECK( 57, 7, 0, 40, 100 )
++#if LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
+ static int IOWriteTyped(void *opaque, uint8_t *buf, int buf_size,
+                               enum AVIODataMarkerType type, int64_t time);
+ #endif
+@@ -159,7 +159,7 @@ int avformat_OpenMux( vlc_object_t *p_th
+     p_sys->b_write_header = true;
+     p_sys->b_write_keyframe = false;
+     p_sys->b_error = false;
+-#if LIBAVFORMAT_VERSION_CHECK( 57, 7, 0, 40, 100 )
++#if LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
+     p_sys->io->write_data_type = IOWriteTyped;
+     p_sys->b_header_done = false;
+ #endif
+@@ -406,7 +406,7 @@ static int MuxBlock( sout_mux_t *p_mux,
+     return VLC_SUCCESS;
+ }
+ 
+-#if LIBAVFORMAT_VERSION_CHECK( 57, 7, 0, 40, 100 )
++#if LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
+ int IOWriteTyped(void *opaque, uint8_t *buf, int buf_size,
+                               enum AVIODataMarkerType type, int64_t time)
+ {
+@@ -523,7 +523,7 @@ static int IOWrite( void *opaque, uint8_
+ 
+     if( p_sys->b_write_header )
+         p_buf->i_flags |= BLOCK_FLAG_HEADER;
+-#if LIBAVFORMAT_VERSION_CHECK( 57, 7, 0, 40, 100 )
++#if LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
+     if( !p_sys->b_header_done )
+         p_buf->i_flags |= BLOCK_FLAG_HEADER;
+ #endif
+-- 
+GitLab
+
+
+From 8cf02acd84a1e099e15037d7c1e4dce6e8888df9 Mon Sep 17 00:00:00 2001
+From: Marvin Scholz <epirat07@gmail.com>
+Date: Tue, 30 Nov 2021 18:30:28 +0100
+Subject: [PATCH] avcodec: remove LIBAVCODEC_VERSION_MICRO >= 100 checks
+
+This check was used to distinguish FFmpeg and libav, as libav support
+is removed now, this is no longer necessary.
+---
+ modules/codec/avcodec/avcommon_compat.h |  2 +-
+ modules/codec/avcodec/directx_va.c      |  4 ++--
+ modules/codec/avcodec/fourcc.c          | 18 +++++++-----------
+ modules/codec/avcodec/video.c           | 11 +----------
+ 4 files changed, 11 insertions(+), 24 deletions(-)
+
+diff --git a/modules/codec/avcodec/avcommon_compat.h b/modules/codec/avcodec/avcommon_compat.h
+index 010b570e0820..f56ce84b72db 100644
+--- a/modules/codec/avcodec/avcommon_compat.h
++++ b/modules/codec/avcodec/avcommon_compat.h
+@@ -36,7 +36,7 @@
+  * c is the micro version
+  */
+ #define LIBAVCODEC_VERSION_CHECK( a, b, c ) \
+-    (LIBAVCODEC_VERSION_MICRO >= 100 && LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( a, b, c ) )
++    (LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( a, b, c ))
+ 
+ #ifndef AV_CODEC_FLAG_OUTPUT_CORRUPT
+ # define AV_CODEC_FLAG_OUTPUT_CORRUPT CODEC_FLAG_OUTPUT_CORRUPT
+diff --git a/modules/codec/avcodec/directx_va.c b/modules/codec/avcodec/directx_va.c
+index e240fec1ac51..7d180b574a28 100644
+--- a/modules/codec/avcodec/directx_va.c
++++ b/modules/codec/avcodec/directx_va.c
+@@ -274,7 +274,7 @@ static const directx_va_mode_t DXVA_MODE
+ 
+     /* VPx */
+     { "VP8",                                                                          &DXVA_ModeVP8_VLD,                      8, 0, NULL },
+-#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( 57, 17, 100 ) && LIBAVCODEC_VERSION_MICRO >= 100
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( 57, 17, 100 )
+     { "VP9 profile 0",                                                                &DXVA_ModeVP9_VLD_Profile0,             8, AV_CODEC_ID_VP9, PROF_VP9_MAIN },
+     { "VP9 profile 2",                                                                &DXVA_ModeVP9_VLD_10bit_Profile2,       10, AV_CODEC_ID_VP9, PROF_VP9_10 },
+ #else
+@@ -284,7 +284,7 @@ static const directx_va_mode_t DXVA_MODE
+     { "VP9 profile Intel",                                                            &DXVA_ModeVP9_VLD_Intel,                8, 0, NULL },
+ 
+     /* AV1 */
+-#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( 58, 112, 103 ) && LIBAVCODEC_VERSION_MICRO >= 100
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( 58, 112, 103 )
+     { "AV1 Main profile 8",                                                           &DXVA_ModeAV1_VLD_Profile0,             8, AV_CODEC_ID_AV1, PROF_AV1_MAIN },
+     { "AV1 Main profile 10",                                                          &DXVA_ModeAV1_VLD_Profile0,             10, AV_CODEC_ID_AV1, PROF_AV1_MAIN },
+     { "AV1 High profile 8",                                                           &DXVA_ModeAV1_VLD_Profile1,             8, AV_CODEC_ID_AV1, PROF_AV1_HIGH },
+diff --git a/modules/codec/avcodec/fourcc.c b/modules/codec/avcodec/fourcc.c
+index edab2cbdca8f..c14320aa1530 100644
+--- a/modules/codec/avcodec/fourcc.c
++++ b/modules/codec/avcodec/fourcc.c
+@@ -182,7 +182,7 @@ static const struct vlc_avcodec_fourcc v
+     /* AV_CODEC_ID_V210X */
+     { VLC_CODEC_TMV, AV_CODEC_ID_TMV },
+     { VLC_CODEC_V210, AV_CODEC_ID_V210 },
+-#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT( 54, 50, 100 ) && LIBAVCODEC_VERSION_MICRO >= 100
++#if LIBAVCODEC_VERSION_CHECK( 54, 50, 100 )
+     { VLC_CODEC_VUYA, AV_CODEC_ID_AYUV },
+ #endif
+     /* AV_CODEC_ID_DPX */
+diff --git a/modules/codec/avcodec/video.c b/modules/codec/avcodec/video.c
+index d3ba649f272a..c5385d4574d9 100644
+--- a/modules/codec/avcodec/video.c
++++ b/modules/codec/avcodec/video.c
+@@ -196,10 +196,6 @@ static int lavc_GetVideoFormat(decoder_t
+     {
+         fmt->i_frame_rate = ctx->framerate.num;
+         fmt->i_frame_rate_base = ctx->framerate.den;
+-# if LIBAVCODEC_VERSION_MICRO <  100
+-        // for some reason libav don't thinkg framerate presents actually same thing as in ffmpeg
+-        fmt->i_frame_rate_base *= __MAX(ctx->ticks_per_frame, 1);
+-# endif
+     }
+     else if (ctx->time_base.num > 0 && ctx->time_base.den > 0)
+     {
+@@ -1303,11 +1299,7 @@ static picture_t *DecodeBlock( decoder_t
+ 
+         /* Compute the PTS */
+ #if LIBAVCODEC_VERSION_CHECK(57, 61, 100)
+-# if LIBAVCODEC_VERSION_MICRO >= 100
+         vlc_tick_t i_pts = frame->best_effort_timestamp;
+-# else
+-        vlc_tick_t i_pts = frame->pts;
+-# endif
+ #else
+         vlc_tick_t i_pts = frame->pkt_pts;
+ #endif
+@@ -1819,8 +1811,7 @@ no_reuse:
+     if (!can_hwaccel)
+         return swfmt;
+ 
+-#if (LIBAVCODEC_VERSION_MICRO >= 100) \
+-  && (LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 83, 101))
++#if LIBAVCODEC_VERSION_CHECK(57, 83, 101)
+     if (p_context->active_thread_type)
+     {
+         msg_Warn(p_dec, "thread type %d: disabling hardware acceleration",
+-- 
+GitLab
+
+
+From 29747a8abb98ba53a64aa6761983891eeed2e0e4 Mon Sep 17 00:00:00 2001
+From: Ilkka Ollakka <ileoo@videolan.org>
+Date: Tue, 4 Jul 2023 16:52:38 +0300
+Subject: [PATCH] avcodec: use p_enc audio channels instead of context channels
+ in encoder
+
+Allows to have less conditions in code when adding new ch_layout use
+---
+ modules/codec/avcodec/encoder.c | 24 ++++++++++++------------
+ 1 file changed, 12 insertions(+), 12 deletions(-)
+
+diff --git a/modules/codec/avcodec/encoder.c b/modules/codec/avcodec/encoder.c
+index 48d41fe317cd..0ef334212ba4 100644
+--- a/modules/codec/avcodec/encoder.c
++++ b/modules/codec/avcodec/encoder.c
+@@ -781,7 +781,7 @@ int InitVideoEnc( vlc_object_t *p_this )
+                 }
+             }
+         }
+-        if( i_channels_src != p_context->channels )
++        if( i_channels_src != p_enc->fmt_out.audio.i_channels )
+             msg_Err( p_enc, "Channel layout not understood" );
+ 
+         p_sys->i_channels_to_reorder =
+@@ -887,7 +887,7 @@ int InitVideoEnc( vlc_object_t *p_this )
+     if( ret )
+     {
+         if( p_enc->fmt_in.i_cat != AUDIO_ES ||
+-                (p_context->channels <= 2 && i_codec_id != AV_CODEC_ID_MP2
++                (p_enc->fmt_out.audio.i_channels <= 2 && i_codec_id != AV_CODEC_ID_MP2
+                  && i_codec_id != AV_CODEC_ID_MP3) )
+ errmsg:
+         {
+@@ -912,7 +912,7 @@ errmsg:
+             goto error;
+         }
+ 
+-        if( p_context->channels > 2 )
++        if( p_enc->fmt_out.audio.i_channels > 2 )
+         {
+             p_context->channels = 2;
+             p_context->channel_layout = channel_mask[p_context->channels][1];
+@@ -1018,7 +1018,7 @@ errmsg:
+                                     p_context->frame_size :
+                                     AV_INPUT_BUFFER_MIN_SIZE;
+         p_sys->i_buffer_out = av_samples_get_buffer_size(NULL,
+-                p_sys->p_context->channels, p_sys->i_frame_size,
++                p_enc->fmt_out.audio.i_channels, p_sys->i_frame_size,
+                 p_sys->p_context->sample_fmt, DEFAULT_ALIGN);
+         p_sys->p_buffer = av_malloc( p_sys->i_buffer_out );
+         if ( unlikely( p_sys->p_buffer == NULL ) )
+@@ -1268,7 +1268,7 @@ static block_t *handle_delay_buffer( enc
+ {
+     block_t *p_block = NULL;
+     //How much we need to copy from new packet
+-    const size_t leftover = leftover_samples * p_sys->p_context->channels * p_sys->i_sample_bytes;
++    const size_t leftover = leftover_samples * p_enc->fmt_out.audio.i_channels * p_sys->i_sample_bytes;
+ 
+     av_frame_unref( p_sys->frame );
+     p_sys->frame->format     = p_sys->p_context->sample_fmt;
+@@ -1291,7 +1291,7 @@ static block_t *handle_delay_buffer( enc
+         // We need to deinterleave from p_aout_buf to p_buffer the leftover bytes
+         if( p_sys->b_planar )
+             aout_Deinterleave( p_sys->p_interleave_buf, p_sys->p_buffer,
+-                p_sys->i_frame_size, p_sys->p_context->channels, p_enc->fmt_in.i_codec );
++                p_sys->i_frame_size, p_enc->fmt_out.audio.i_channels, p_enc->fmt_in.i_codec );
+         else
+             memcpy( p_sys->p_buffer + buffer_delay, p_aout_buf->p_buffer, leftover);
+ 
+@@ -1309,7 +1309,7 @@ static block_t *handle_delay_buffer( enc
+         memset( p_sys->p_buffer + (leftover+buffer_delay), 0, padding_size );
+         buffer_delay += padding_size;
+     }
+-    if( avcodec_fill_audio_frame( p_sys->frame, p_sys->p_context->channels,
++    if( avcodec_fill_audio_frame( p_sys->frame, p_enc->fmt_out.audio.i_channels,
+             p_sys->p_context->sample_fmt, p_sys->b_planar ? p_sys->p_interleave_buf : p_sys->p_buffer,
+             p_sys->i_buffer_out,
+             DEFAULT_ALIGN) < 0 )
+@@ -1339,7 +1339,7 @@ static block_t *EncodeAudio( encoder_t *
+ 
+     //i_bytes_left is amount of bytes we get
+     i_samples_left = p_aout_buf ? p_aout_buf->i_nb_samples : 0;
+-    buffer_delay = p_sys->i_samples_delay * p_sys->i_sample_bytes * p_sys->p_context->channels;
++    buffer_delay = p_sys->i_samples_delay * p_sys->i_sample_bytes * p_enc->fmt_out.audio.i_channels;
+ 
+     //p_sys->i_buffer_out = p_sys->i_frame_size * chan * p_sys->i_sample_bytes
+     //Calculate how many bytes we would need from current buffer to fill frame
+@@ -1408,12 +1408,12 @@ static block_t *EncodeAudio( encoder_t *
+         p_sys->frame->channels = p_sys->p_context->channels;
+ 
+         const int in_bytes = p_sys->frame->nb_samples *
+-            p_sys->p_context->channels * p_sys->i_sample_bytes;
++            p_enc->fmt_out.audio.i_channels* p_sys->i_sample_bytes;
+ 
+         if( p_sys->b_planar )
+         {
+             aout_Deinterleave( p_sys->p_buffer, p_aout_buf->p_buffer,
+-                               p_sys->frame->nb_samples, p_sys->p_context->channels, p_enc->fmt_in.i_codec );
++                               p_sys->frame->nb_samples, p_enc->fmt_out.audio.i_channels, p_enc->fmt_in.i_codec );
+ 
+         }
+         else
+@@ -1421,7 +1421,7 @@ static block_t *EncodeAudio( encoder_t *
+             memcpy(p_sys->p_buffer, p_aout_buf->p_buffer, in_bytes);
+         }
+ 
+-        if( avcodec_fill_audio_frame( p_sys->frame, p_sys->p_context->channels,
++        if( avcodec_fill_audio_frame( p_sys->frame, p_enc->fmt_out.audio.i_channels,
+                                     p_sys->p_context->sample_fmt,
+                                     p_sys->p_buffer,
+                                     p_sys->i_buffer_out,
+@@ -1447,7 +1447,7 @@ static block_t *EncodeAudio( encoder_t *
+     if( p_aout_buf->i_nb_samples > 0 )
+     {
+        memcpy( p_sys->p_buffer + buffer_delay, p_aout_buf->p_buffer,
+-               p_aout_buf->i_nb_samples * p_sys->i_sample_bytes * p_sys->p_context->channels);
++               p_aout_buf->i_nb_samples * p_sys->i_sample_bytes * p_enc->fmt_out.audio.i_channels);
+        p_sys->i_samples_delay += p_aout_buf->i_nb_samples;
+     }
+ 
+-- 
+GitLab
+
+
+From c4302ca59dd79efd7208a45a3fcdc44388fd03a8 Mon Sep 17 00:00:00 2001
+From: Ilkka Ollakka <ileoo@videolan.org>
+Date: Tue, 4 Jul 2023 16:53:43 +0300
+Subject: [PATCH] avcodec: add handling of new ch_layout in audio encoder
+
+conditioned to avcodec version where is it added
+---
+ modules/codec/avcodec/encoder.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/modules/codec/avcodec/encoder.c b/modules/codec/avcodec/encoder.c
+index 0ef334212ba4..38a8437261dc 100644
+--- a/modules/codec/avcodec/encoder.c
++++ b/modules/codec/avcodec/encoder.c
+@@ -914,8 +914,12 @@ errmsg:
+ 
+         if( p_enc->fmt_out.audio.i_channels > 2 )
+         {
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++            av_channel_layout_default( &p_context->ch_layout, 2 );
++#else
+             p_context->channels = 2;
+             p_context->channel_layout = channel_mask[p_context->channels][1];
++#endif
+ 
+             /* Change fmt_in in order to ask for a channels conversion */
+             p_enc->fmt_in.audio.i_channels =
+@@ -1273,8 +1277,12 @@ static block_t *handle_delay_buffer( enc
+     av_frame_unref( p_sys->frame );
+     p_sys->frame->format     = p_sys->p_context->sample_fmt;
+     p_sys->frame->nb_samples = leftover_samples + p_sys->i_samples_delay;
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++    av_channel_layout_copy(&p_sys->frame->ch_layout, &p_sys->p_context->ch_layout);
++#else
+     p_sys->frame->channel_layout = p_sys->p_context->channel_layout;
+     p_sys->frame->channels = p_sys->p_context->channels;
++#endif
+ 
+     p_sys->frame->pts        = date_Get( &p_sys->buffer_date ) * p_sys->p_context->time_base.den /
+                                 CLOCK_FREQ / p_sys->p_context->time_base.num;
+@@ -1404,8 +1412,12 @@ static block_t *EncodeAudio( encoder_t *
+         p_sys->frame->pts        = date_Get( &p_sys->buffer_date ) * p_sys->p_context->time_base.den /
+                                     CLOCK_FREQ / p_sys->p_context->time_base.num;
+ 
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++        av_channel_layout_copy(&p_sys->frame->ch_layout, &p_sys->p_context->ch_layout);
++#else
+         p_sys->frame->channel_layout = p_sys->p_context->channel_layout;
+         p_sys->frame->channels = p_sys->p_context->channels;
++#endif
+ 
+         const int in_bytes = p_sys->frame->nb_samples *
+             p_enc->fmt_out.audio.i_channels* p_sys->i_sample_bytes;
+-- 
+GitLab
+
+
+From b73dc8841d999c6be9de718cd2cd3aeb13279792 Mon Sep 17 00:00:00 2001
+From: Ilkka Ollakka <ileoo@videolan.org>
+Date: Tue, 4 Jul 2023 16:55:28 +0300
+Subject: [PATCH] avcodec: use ch_layout for channel layout in audio encoder
+
+channels and channel_layout has been deprecated in FFMPEG 5.1 and will be removed eventually
+
+also always create the mapping, as ch_layout is always there
+---
+ modules/codec/avcodec/encoder.c | 46 +++++++++++++--------------------
+ 1 file changed, 18 insertions(+), 28 deletions(-)
+
+diff --git a/modules/codec/avcodec/encoder.c b/modules/codec/avcodec/encoder.c
+index 38a8437261dc..f8bd2bbf939e 100644
+--- a/modules/codec/avcodec/encoder.c
++++ b/modules/codec/avcodec/encoder.c
+@@ -179,6 +179,7 @@ static const uint64_t pi_channels_map[][
+     { AV_CH_STEREO_RIGHT,      0 },
+ };
+ 
++#if !LIBAVCODEC_VERSION_CHECK(59, 24, 100)
+ static const uint32_t channel_mask[][2] = {
+     {0,0},
+     {AOUT_CHAN_CENTER, AV_CH_LAYOUT_MONO},
+@@ -191,6 +192,7 @@ static const uint32_t channel_mask[][2]
+     {AOUT_CHANS_7_1, AV_CH_LAYOUT_7POINT1},
+     {AOUT_CHANS_8_1, AV_CH_LAYOUT_OCTAGONAL},
+ };
++#endif
+ 
+ static const char *const ppsz_enc_options[] = {
+     "keyint", "bframes", "vt", "qmin", "qmax", "codec", "hq",
+@@ -737,48 +739,36 @@ int InitVideoEnc( vlc_object_t *p_this )
+         date_Set( &p_sys->buffer_date, AV_NOPTS_VALUE );
+         p_context->time_base.num = 1;
+         p_context->time_base.den = p_context->sample_rate;
+-        p_context->channels      = p_enc->fmt_out.audio.i_channels;
+-        p_context->channel_layout = channel_mask[p_context->channels][1];
+ 
+-        /* Setup Channel ordering for multichannel audio
++        /* Setup Channel ordering for audio
+          * as VLC channel order isn't same as libavcodec expects
+          */
+ 
+         p_sys->i_channels_to_reorder = 0;
+ 
+-        /* Specified order
++        /* Create channel layout for avcodec
+          * Copied from audio.c
+          */
+-        const unsigned i_order_max = 8 * sizeof(p_context->channel_layout);
+         uint32_t pi_order_dst[AOUT_CHAN_MAX] = { };
+         uint32_t order_mask = 0;
+         int i_channels_src = 0;
+ 
+-        if( p_context->channel_layout )
+-        {
+-            msg_Dbg( p_enc, "Creating channel order for reordering");
+-            for( unsigned i = 0; i < sizeof(pi_channels_map)/sizeof(*pi_channels_map); i++ )
+-            {
+-                if( p_context->channel_layout & pi_channels_map[i][0] )
+-                {
+-                    msg_Dbg( p_enc, "%d %"PRIx64" mapped to %"PRIx64"", i_channels_src, pi_channels_map[i][0], pi_channels_map[i][1]);
+-                    pi_order_dst[i_channels_src++] = pi_channels_map[i][1];
+-                    order_mask |= pi_channels_map[i][1];
+-                }
+-            }
+-        }
+-        else
++        msg_Dbg( p_enc, "Creating channel order for reordering");
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++        av_channel_layout_default( &p_context->ch_layout, p_enc->fmt_out.audio.i_channels );
++        uint64_t channel_mask = p_context->ch_layout.u.mask;
++#else
++        p_context->channels = p_enc->fmt_out.audio.i_channels;
++        p_context->channel_layout = channel_mask[p_context->channels][1];
++        uint64_t channel_mask = p_context->channel_layout;
++#endif
++        for( unsigned i = 0; i < sizeof(pi_channels_map)/sizeof(*pi_channels_map); i++ )
+         {
+-            msg_Dbg( p_enc, "Creating default channel order for reordering");
+-            /* Create default order  */
+-            for( unsigned int i = 0; i < __MIN( i_order_max, (unsigned)p_sys->p_context->channels ); i++ )
++            if( channel_mask & pi_channels_map[i][0] )
+             {
+-                if( i < sizeof(pi_channels_map)/sizeof(*pi_channels_map) )
+-                {
+-                    msg_Dbg( p_enc, "%d channel is %"PRIx64"", i_channels_src, pi_channels_map[i][1]);
+-                    pi_order_dst[i_channels_src++] = pi_channels_map[i][1];
+-                    order_mask |= pi_channels_map[i][1];
+-                }
++                msg_Dbg( p_enc, "%d %"PRIx64" mapped to %"PRIx64"", i_channels_src, pi_channels_map[i][0], pi_channels_map[i][1]);
++                pi_order_dst[i_channels_src++] = pi_channels_map[i][1];
++                order_mask |= pi_channels_map[i][1];
+             }
+         }
+         if( i_channels_src != p_enc->fmt_out.audio.i_channels )
+-- 
+GitLab
+
+
+From bddf5ba19111d1cc4463d9876c4bc4ba75f82d7f Mon Sep 17 00:00:00 2001
+From: Ilkka Ollakka <ileoo@videolan.org>
+Date: Wed, 5 Jul 2023 12:51:34 +0300
+Subject: [PATCH] avcodec: use p_dec->fmt_out instead of context channels on
+ audio channel-count
+
+reduces the need of ifdefs when adding ch_layout support
+---
+ modules/codec/avcodec/audio.c | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/modules/codec/avcodec/audio.c b/modules/codec/avcodec/audio.c
+index 0937641f21ae..5044e1556231 100644
+--- a/modules/codec/avcodec/audio.c
++++ b/modules/codec/avcodec/audio.c
+@@ -484,15 +484,15 @@ static block_t * ConvertAVFrame( decoder
+     /* Interleave audio if required */
+     if( av_sample_fmt_is_planar( ctx->sample_fmt ) )
+     {
+-        p_block = block_Alloc(frame->linesize[0] * ctx->channels);
++        p_block = block_Alloc(frame->linesize[0] * p_dec->fmt_out.audio.i_channels );
+         if ( likely(p_block) )
+         {
+-            const void *planes[ctx->channels];
+-            for (int i = 0; i < ctx->channels; i++)
++            const void *planes[p_dec->fmt_out.audio.i_channels];
++            for (int i = 0; i < p_dec->fmt_out.audio.i_channels; i++)
+                 planes[i] = frame->extended_data[i];
+ 
+             aout_Interleave(p_block->p_buffer, planes, frame->nb_samples,
+-                            ctx->channels, p_dec->fmt_out.audio.i_format);
++                            p_dec->fmt_out.audio.i_channels, p_dec->fmt_out.audio.i_format);
+             p_block->i_nb_samples = frame->nb_samples;
+         }
+         av_frame_free(&frame);
+@@ -511,7 +511,7 @@ static block_t * ConvertAVFrame( decoder
+         {
+             aout_ChannelExtract( p_buffer->p_buffer,
+                                  p_dec->fmt_out.audio.i_channels,
+-                                 p_block->p_buffer, ctx->channels,
++                                 p_block->p_buffer, p_dec->fmt_out.audio.i_channels,
+                                  p_block->i_nb_samples, p_sys->pi_extraction,
+                                  p_dec->fmt_out.audio.i_bitspersample );
+             p_buffer->i_nb_samples = p_block->i_nb_samples;
+@@ -600,13 +600,13 @@ static void SetupOutputFormat( decoder_t
+     if( channel_layout )
+     {
+         for( unsigned i = 0; i < i_order_max
+-         && i_channels_src < p_sys->p_context->channels; i++ )
++         && i_channels_src < p_dec->fmt_out.audio.i_channels; i++ )
+         {
+             if( channel_layout & pi_channels_map[i][0] )
+                 pi_order_src[i_channels_src++] = pi_channels_map[i][1];
+         }
+ 
+-        if( i_channels_src != p_sys->p_context->channels && b_trust )
++        if( i_channels_src != p_dec->fmt_out.audio.i_channels && b_trust )
+             msg_Err( p_dec, "Channel layout not understood" );
+ 
+         /* Detect special dual mono case */
+-- 
+GitLab
+
+From 496f0f2a659c1339d1e37330d446e9b6ce96e76b Mon Sep 17 00:00:00 2001
+From: Ilkka Ollakka <ileoo@videolan.org>
+Date: Wed, 5 Jul 2023 13:33:09 +0300
+Subject: [PATCH] avcodec: audio decoder to use ch_layout
+
+---
+ modules/codec/avcodec/audio.c | 42 ++++++++++++++++++++++++++++-------
+ 1 file changed, 34 insertions(+), 8 deletions(-)
+
+diff --git a/modules/codec/avcodec/audio.c b/modules/codec/avcodec/audio.c
+index 5044e1556231..2c85d83005c5 100644
+--- a/modules/codec/avcodec/audio.c
++++ b/modules/codec/avcodec/audio.c
+@@ -139,7 +139,11 @@ static int OpenAudioCodec( decoder_t *p_
+     }
+ 
+     ctx->sample_rate = p_dec->fmt_in.audio.i_rate;
+-    ctx->channels = p_dec->fmt_in.audio.i_channels;
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++    av_channel_layout_default( &ctx->ch_layout, p_dec->fmt_in.audio.i_channels );
++#else
++    ctx->channels = p_dec->fmt_in.audio.i_channels;
++#endif
+     ctx->block_align = p_dec->fmt_in.audio.i_blockalign;
+     ctx->bit_rate = p_dec->fmt_in.i_bitrate;
+     ctx->bits_per_coded_sample = p_dec->fmt_in.audio.i_bitspersample;
+@@ -395,12 +399,17 @@ static int DecodeBlock( decoder_t *p_dec
+         ret = avcodec_receive_frame( ctx, frame );
+         if( ret == 0 )
+         {
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++            int channels = frame->ch_layout.nb_channels;
++#else
++            int channels = ctx->channels;
++#endif
+             /* checks and init from first decoded frame */
+-            if( ctx->channels <= 0 || ctx->channels > INPUT_CHAN_MAX
++            if( channels <= 0 || channels > INPUT_CHAN_MAX
+              || ctx->sample_rate <= 0 )
+             {
+                 msg_Warn( p_dec, "invalid audio properties channels count %d, sample rate %d",
+-                          ctx->channels, ctx->sample_rate );
++                          channels, ctx->sample_rate );
+                 goto drop;
+             }
+             else if( p_dec->fmt_out.audio.i_rate != (unsigned int)ctx->sample_rate )
+@@ -580,6 +589,16 @@ static void SetupOutputFormat( decoder_t
+     p_dec->fmt_out.audio.i_rate = p_sys->p_context->sample_rate;
+ 
+     /* */
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++    if( p_sys->i_previous_channels == p_sys->p_context->ch_layout.nb_channels &&
++        p_sys->i_previous_layout == p_sys->p_context->ch_layout.u.mask )
++        return;
++    if( b_trust )
++    {
++        p_sys->i_previous_channels = p_sys->p_context->ch_layout.nb_channels;
++        p_sys->i_previous_layout = p_sys->p_context->ch_layout.u.mask;
++    }
++#else
+     if( p_sys->i_previous_channels == p_sys->p_context->channels &&
+         p_sys->i_previous_layout == p_sys->p_context->channel_layout )
+         return;
+@@ -588,25 +607,32 @@ static void SetupOutputFormat( decoder_t
+         p_sys->i_previous_channels = p_sys->p_context->channels;
+         p_sys->i_previous_layout = p_sys->p_context->channel_layout;
+     }
++#endif
+ 
+-    const unsigned i_order_max = sizeof(pi_channels_map)/sizeof(*pi_channels_map);
+-    uint32_t pi_order_src[i_order_max];
++    uint32_t pi_order_src[AOUT_CHAN_MAX] = { 0 };
+ 
+     int i_channels_src = 0;
+-    int64_t channel_layout =
++#if LIBAVCODEC_VERSION_CHECK(59, 24, 100)
++    uint64_t channel_layout_mask = p_sys->p_context->ch_layout.u.mask;
++    int channel_count = p_sys->p_context->ch_layout.nb_channels;
++#else
++    uint64_t channel_layout_mask =
+         p_sys->p_context->channel_layout ? p_sys->p_context->channel_layout :
+         av_get_default_channel_layout( p_sys->p_context->channels );
++        (uint64_t)av_get_default_channel_layout( p_sys->p_context->channels );
++    int channel_count = p_sys->p_context->channels;
++#endif
+ 
+-    if( channel_layout )
++    if( channel_layout_mask )
+     {
+-        for( unsigned i = 0; i < i_order_max
+-         && i_channels_src < p_dec->fmt_out.audio.i_channels; i++ )
++        for( unsigned i = 0; pi_channels_map[i][0]
++         && i_channels_src < channel_count; i++ )
+         {
+-            if( channel_layout & pi_channels_map[i][0] )
++            if( channel_layout_mask & pi_channels_map[i][0] )
+                 pi_order_src[i_channels_src++] = pi_channels_map[i][1];
+         }
+ 
+-        if( i_channels_src != p_dec->fmt_out.audio.i_channels && b_trust )
++        if( i_channels_src != channel_count && b_trust )
+             msg_Err( p_dec, "Channel layout not understood" );
+ 
+         /* Detect special dual mono case */
+@@ -638,7 +664,7 @@ static void SetupOutputFormat( decoder_t
+     {
+         msg_Warn( p_dec, "no channel layout found");
+         p_dec->fmt_out.audio.i_physical_channels = 0;
+-        p_dec->fmt_out.audio.i_channels = p_sys->p_context->channels;
++        p_dec->fmt_out.audio.i_channels = channel_count;
+     }
+ 
+     aout_FormatPrepare( &p_dec->fmt_out.audio );
+-- 
+GitLab
+
+From 0ff86bf8a28a080340f600cb8561815fc43e3b4a Mon Sep 17 00:00:00 2001
+From: Ilkka Ollakka <ileoo@videolan.org>
+Date: Wed, 5 Jul 2023 15:09:57 +0300
+Subject: [PATCH] avcodec/audio: make channel mapping array 0 terminated
+
+Also change pi_channels_src to be only AOUT_CHAN_MAX instead of same
+size as mapping array.
+---
+ modules/codec/avcodec/audio.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/modules/codec/avcodec/audio.c b/modules/codec/avcodec/audio.c
+index 2c85d83005c5..d0c8bae750b2 100644
+--- a/modules/codec/avcodec/audio.c
++++ b/modules/codec/avcodec/audio.c
+@@ -577,6 +577,7 @@ static const uint64_t pi_channels_map[][
+     { AV_CH_TOP_BACK_RIGHT,    0 },
+     { AV_CH_STEREO_LEFT,       0 },
+     { AV_CH_STEREO_RIGHT,      0 },
++    { 0, 0 },
+ };
+ 
+ static void SetupOutputFormat( decoder_t *p_dec, bool b_trust )
+-- 
+GitLab
+
+
+From 1a57633d1820eb218771489505876fa55f8a8847 Mon Sep 17 00:00:00 2001
+From: Francois Cartegnie <fcvlcdev@free.fr>
+Date: Tue, 23 Apr 2024 13:13:30 +0700
+Subject: [PATCH 1/4] codec: avcodec: map AYUV as RAWVIDEO with ffmpeg 6.0
+
+---
+ modules/codec/avcodec/fourcc.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/modules/codec/avcodec/fourcc.c b/modules/codec/avcodec/fourcc.c
+index de7b9e1377bd..4ce2584bd303 100644
+--- a/modules/codec/avcodec/fourcc.c
++++ b/modules/codec/avcodec/fourcc.c
+@@ -182,7 +182,9 @@ static const struct vlc_avcodec_fourcc v
+     /* AV_CODEC_ID_V210X */
+     { VLC_CODEC_TMV, AV_CODEC_ID_TMV },
+     { VLC_CODEC_V210, AV_CODEC_ID_V210 },
+-#if LIBAVCODEC_VERSION_CHECK( 54, 50, 100 )
++#if LIBAVCODEC_VERSION_CHECK( 59, 42, 102 )
++    { VLC_CODEC_VUYA, AV_CODEC_ID_RAWVIDEO },
++#else
+     { VLC_CODEC_VUYA, AV_CODEC_ID_AYUV },
+ #endif
+     /* AV_CODEC_ID_DPX */
+-- 
+GitLab
+
+
+From 3ecdd252b42dca492c79470535703eae0dfc1093 Mon Sep 17 00:00:00 2001
+From: Francois Cartegnie <fcvlcdev@free.fr>
+Date: Tue, 23 Apr 2024 13:14:53 +0700
+Subject: [PATCH 2/4] demux/mux: avformat: use ch_layout from ffmpeg 5.1
+
+---
+ modules/demux/avformat/demux.c | 4 ++++
+ modules/demux/avformat/mux.c   | 4 ++++
+ 2 files changed, 8 insertions(+)
+
+diff --git a/modules/demux/avformat/demux.c b/modules/demux/avformat/demux.c
+index 743e0534901c..87f5b41c0d82 100644
+--- a/modules/demux/avformat/demux.c
++++ b/modules/demux/avformat/demux.c
+@@ -401,7 +401,11 @@ int avformat_OpenDemux( vlc_object_t *p_
+             es_format_Init( &es_fmt, AUDIO_ES, fcc );
+             es_fmt.i_original_fourcc = CodecTagToFourcc( cp->codec_tag );
+             es_fmt.i_bitrate = cp->bit_rate;
++#if LIBAVUTIL_VERSION_CHECK( 57, 28, 100 )
++            es_fmt.audio.i_channels = cp->ch_layout.nb_channels;
++#else
+             es_fmt.audio.i_channels = cp->channels;
++#endif
+             es_fmt.audio.i_rate = cp->sample_rate;
+             es_fmt.audio.i_bitspersample = cp->bits_per_coded_sample;
+             es_fmt.audio.i_blockalign = cp->block_align;
+diff --git a/modules/demux/avformat/mux.c b/modules/demux/avformat/mux.c
+index 55fc891437c7..0e87942aa76a 100644
+--- a/modules/demux/avformat/mux.c
++++ b/modules/demux/avformat/mux.c
+@@ -267,7 +267,11 @@ static int AddStream( sout_mux_t *p_mux,
+     {
+     case AUDIO_ES:
+         codecpar->codec_type = AVMEDIA_TYPE_AUDIO;
++#if LIBAVUTIL_VERSION_CHECK( 57, 28, 100 )
++        av_channel_layout_default( &codecpar->ch_layout, fmt->audio.i_channels );
++#else
+         codecpar->channels = fmt->audio.i_channels;
++#endif
+         codecpar->sample_rate = fmt->audio.i_rate;
+         stream->time_base = (AVRational){1, codecpar->sample_rate};
+         if (fmt->i_bitrate == 0) {
+-- 
+GitLab
+
+
+From 1c15a5e183df7e292afd27795548d3c2254a9bbd Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Robert-Andr=C3=A9=20Mauchin?= <zebob.m@gmail.com>
+Date: Mon, 6 May 2024 12:15:40 +0200
+Subject: [PATCH] demux/mux: avformat: Constify the buffer pointees
+
+in the write_packet from ffmpeg 6.1
+
+The deprecated FF_API_AVIO_WRITE_NONCONST was removed in ffmpeg 7.0.
+
+Ref:
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commit/2a68d945cd74265bb71c3d38b7a2e7f7d7e87be5
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commit/02aea61d69d8f81bc285e2131bf25f96a3e27feb
+---
+ modules/demux/avformat/mux.c | 18 +++++++++++++++++-
+ 1 file changed, 17 insertions(+), 1 deletion(-)
+
+diff --git a/modules/demux/avformat/mux.c b/modules/demux/avformat/mux.c
+index 0e87942aa76a..390aa3cb4dfd 100644
+--- a/modules/demux/avformat/mux.c
++++ b/modules/demux/avformat/mux.c
+@@ -75,9 +75,16 @@ static int AddStream( sout_mux_t *, sout_input_t * );
+ static void DelStream( sout_mux_t *, sout_input_t * );
+ static int Mux      ( sout_mux_t * );
+ 
++#if LIBAVFORMAT_VERSION_CHECK( 61, 01, 100 )
++static int IOWrite( void *opaque, const uint8_t *buf, int buf_size );
++#else
+ static int IOWrite( void *opaque, uint8_t *buf, int buf_size );
++#endif
+ static int64_t IOSeek( void *opaque, int64_t offset, int whence );
+-#if LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
++#if LIBAVFORMAT_VERSION_CHECK( 61, 01, 100 )
++static int IOWriteTyped(void *opaque, const uint8_t *buf, int buf_size,
++                              enum AVIODataMarkerType type, int64_t time);
++#elif LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
+ static int IOWriteTyped(void *opaque, uint8_t *buf, int buf_size,
+                               enum AVIODataMarkerType type, int64_t time);
+ #endif
+@@ -436,8 +443,13 @@ static int MuxBlock( sout_mux_t *p_mux, sout_input_t *p_input )
+ }
+ 
+ #if LIBAVFORMAT_VERSION_CHECK( 57, 40, 100 )
++#if LIBAVFORMAT_VERSION_CHECK( 61, 01, 100 )
++int IOWriteTyped(void *opaque, const uint8_t *buf, int buf_size,
++                              enum AVIODataMarkerType type, int64_t time)
++#else
+ int IOWriteTyped(void *opaque, uint8_t *buf, int buf_size,
+                               enum AVIODataMarkerType type, int64_t time)
++#endif
+ {
+     VLC_UNUSED(time);
+ 
+@@ -533,7 +545,11 @@ static int Control( sout_mux_t *p_mux, int i_query, va_list args )
+ /*****************************************************************************
+  * I/O wrappers for libavformat
+  *****************************************************************************/
++#if LIBAVFORMAT_VERSION_CHECK( 61, 01, 100 )
++static int IOWrite( void *opaque, const uint8_t *buf, int buf_size )
++#else
+ static int IOWrite( void *opaque, uint8_t *buf, int buf_size )
++#endif
+ {
+     sout_mux_t *p_mux = opaque;
+     sout_mux_sys_t *p_sys = p_mux->p_sys;
+-- 
+GitLab

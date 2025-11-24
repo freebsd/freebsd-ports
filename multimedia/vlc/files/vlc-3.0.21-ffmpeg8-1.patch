@@ -1,0 +1,393 @@
+Submitted By:            Joe Locash <jlocash@gmail.com>
+Date:                    2025-11-19
+Initial Package Version: 3.0.21
+Upstream Status:         Unknown
+Origin:                  Upstream
+Description:             Fixes compilation with ffmpeg-8.0
+
+diff -Nuarp vlc-3.0.21.orig/modules/codec/avcodec/audio.c vlc-3.0.21/modules/codec/avcodec/audio.c
+--- vlc-3.0.21.orig/modules/codec/avcodec/audio.c	2025-11-17 18:16:27.482219213 -0500
++++ vlc-3.0.21/modules/codec/avcodec/audio.c	2025-11-17 18:17:09.717861987 -0500
+@@ -44,6 +44,12 @@
+ #include <libavutil/channel_layout.h>
+ 
+ 
++#if ! LIBAVCODEC_VERSION_CHECK(61, 33, 102) // Compatibility for profiles <= FFMPEG 8
++# define AV_PROFILE_UNKNOWN FF_PROFILE_UNKNOWN
++# define AV_LEVEL_UNKNOWN FF_LEVEL_UNKNOWN
++# define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
++#endif
++
+ /*****************************************************************************
+  * decoder_sys_t : decoder descriptor
+  *****************************************************************************/
+@@ -101,7 +107,7 @@ static void InitDecoderConfig( decoder_t
+         if( i_size > 0 )
+         {
+             p_context->extradata =
+-                av_malloc( i_size + FF_INPUT_BUFFER_PADDING_SIZE );
++                av_malloc( i_size + AV_INPUT_BUFFER_PADDING_SIZE );
+             if( p_context->extradata )
+             {
+                 uint8_t *p_dst = p_context->extradata;
+@@ -109,7 +115,7 @@ static void InitDecoderConfig( decoder_t
+                 p_context->extradata_size = i_size;
+ 
+                 memcpy( &p_dst[0],            &p_src[i_offset], i_size );
+-                memset( &p_dst[i_size], 0, FF_INPUT_BUFFER_PADDING_SIZE );
++                memset( &p_dst[i_size], 0, AV_INPUT_BUFFER_PADDING_SIZE );
+             }
+         }
+     }
+@@ -266,9 +272,9 @@ int InitAudioDec( vlc_object_t *obj )
+     p_dec->pf_flush  = Flush;
+ 
+     /* XXX: Writing input format makes little sense. */
+-    if( avctx->profile != FF_PROFILE_UNKNOWN )
++    if( avctx->profile != AV_PROFILE_UNKNOWN )
+         p_dec->fmt_in.i_profile = avctx->profile;
+-    if( avctx->level != FF_LEVEL_UNKNOWN )
++    if( avctx->level != AV_LEVEL_UNKNOWN )
+         p_dec->fmt_in.i_level = avctx->level;
+ 
+     return VLC_SUCCESS;
+@@ -348,11 +354,11 @@ static int DecodeBlock( decoder_t *p_dec
+ 
+         if( (p_block->i_flags & BLOCK_FLAG_PRIVATE_REALLOCATED) == 0 )
+         {
+-            *pp_block = p_block = block_Realloc( p_block, 0, p_block->i_buffer + FF_INPUT_BUFFER_PADDING_SIZE );
++            *pp_block = p_block = block_Realloc( p_block, 0, p_block->i_buffer + AV_INPUT_BUFFER_PADDING_SIZE );
+             if( !p_block )
+                 goto end;
+-            p_block->i_buffer -= FF_INPUT_BUFFER_PADDING_SIZE;
+-            memset( &p_block->p_buffer[p_block->i_buffer], 0, FF_INPUT_BUFFER_PADDING_SIZE );
++            p_block->i_buffer -= AV_INPUT_BUFFER_PADDING_SIZE;
++            memset( &p_block->p_buffer[p_block->i_buffer], 0, AV_INPUT_BUFFER_PADDING_SIZE );
+ 
+             p_block->i_flags |= BLOCK_FLAG_PRIVATE_REALLOCATED;
+         }
+diff -Nuarp vlc-3.0.21.orig/modules/codec/avcodec/avcommon_compat.h vlc-3.0.21/modules/codec/avcodec/avcommon_compat.h
+--- vlc-3.0.21.orig/modules/codec/avcodec/avcommon_compat.h	2025-11-17 18:16:27.478199137 -0500
++++ vlc-3.0.21/modules/codec/avcodec/avcommon_compat.h	2025-11-17 18:17:09.718111806 -0500
+@@ -53,8 +53,11 @@
+ #ifndef AV_CODEC_FLAG2_FAST
+ # define AV_CODEC_FLAG2_FAST CODEC_FLAG2_FAST
+ #endif
+-#ifndef FF_INPUT_BUFFER_PADDING_SIZE
+-# define FF_INPUT_BUFFER_PADDING_SIZE AV_INPUT_BUFFER_PADDING_SIZE
++#if ! LIBAVCODEC_VERSION_CHECK(61, 33, 102) // Compatibility for profiles <= FFMPEG 8
++# ifndef FF_INPUT_BUFFER_PADDING_SIZE
++#  define FF_INPUT_BUFFER_PADDING_SIZE 64
++# endif
++#define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
+ #endif
+ #ifndef AV_CODEC_FLAG_INTERLACED_DCT
+ # define AV_CODEC_FLAG_INTERLACED_DCT CODEC_FLAG_INTERLACED_DCT
+@@ -72,7 +75,11 @@
+ # define AV_CODEC_CAP_SMALL_LAST_FRAME CODEC_CAP_SMALL_LAST_FRAME
+ #endif
+ #ifndef AV_INPUT_BUFFER_MIN_SIZE
+-# define AV_INPUT_BUFFER_MIN_SIZE FF_MIN_BUFFER_SIZE
++# ifdef FF_MIN_BUFFER_SIZE
++#  define AV_INPUT_BUFFER_MIN_SIZE FF_MIN_BUFFER_SIZE
++# else
++#  define AV_INPUT_BUFFER_MIN_SIZE 16384 // removed with ffmpeg 8
++# endif
+ #endif
+ #ifndef  FF_MAX_B_FRAMES
+ # define  FF_MAX_B_FRAMES 16 // FIXME: remove this
+diff -Nuarp vlc-3.0.21.orig/modules/codec/avcodec/encoder.c vlc-3.0.21/modules/codec/avcodec/encoder.c
+--- vlc-3.0.21.orig/modules/codec/avcodec/encoder.c	2025-11-17 18:16:27.481068106 -0500
++++ vlc-3.0.21/modules/codec/avcodec/encoder.c	2025-11-17 15:11:31.691944598 -0500
+@@ -65,6 +65,17 @@
+ # define AVC_MAYBE_CONST
+ #endif
+ 
++#if ! LIBAVCODEC_VERSION_CHECK(61, 33, 102) // Compatibility for profiles <= FFMPEG 8
++# define AV_PROFILE_AAC_MAIN    FF_PROFILE_AAC_MAIN
++# define AV_PROFILE_AAC_LOW     FF_PROFILE_AAC_LOW
++# define AV_PROFILE_AAC_SSR     FF_PROFILE_AAC_SSR
++# define AV_PROFILE_AAC_LTP     FF_PROFILE_AAC_LTP
++# define AV_PROFILE_AAC_HE_V2   FF_PROFILE_AAC_HE_V2
++# define AV_PROFILE_AAC_HE      FF_PROFILE_AAC_HE
++# define AV_PROFILE_AAC_LD      FF_PROFILE_AAC_LD
++# define AV_PROFILE_AAC_ELD     FF_PROFILE_AAC_ELD
++#endif
++
+ /*****************************************************************************
+  * Local prototypes
+  *****************************************************************************/
+@@ -468,30 +479,30 @@ int InitVideoEnc( vlc_object_t *p_this )
+     psz_val = var_GetString( p_enc, ENC_CFG_PREFIX "aac-profile" );
+     /* libavcodec uses faac encoder atm, and it has issues with
+      * other than low-complexity profile, so default to that */
+-    p_sys->i_aac_profile = FF_PROFILE_AAC_LOW;
++    p_sys->i_aac_profile = AV_PROFILE_AAC_LOW;
+     if( psz_val && *psz_val )
+     {
+         if( !strncmp( psz_val, "main", 4 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_MAIN;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_MAIN;
+         else if( !strncmp( psz_val, "low", 3 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_LOW;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_LOW;
+         else if( !strncmp( psz_val, "ssr", 3 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_SSR;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_SSR;
+         else if( !strncmp( psz_val, "ltp", 3 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_LTP;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_LTP;
+ /* These require libavcodec with libfdk-aac */
+         else if( !strncmp( psz_val, "hev2", 4 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_HE_V2;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_HE_V2;
+         else if( !strncmp( psz_val, "hev1", 4 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_HE;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_HE;
+         else if( !strncmp( psz_val, "ld", 2 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_LD;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_LD;
+         else if( !strncmp( psz_val, "eld", 3 ) )
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_ELD;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_ELD;
+         else
+         {
+             msg_Warn( p_enc, "unknown AAC profile requested, setting it to low" );
+-            p_sys->i_aac_profile = FF_PROFILE_AAC_LOW;
++            p_sys->i_aac_profile = AV_PROFILE_AAC_LOW;
+         }
+     }
+     free( psz_val );
+@@ -1217,8 +1228,19 @@ static block_t *EncodeVideo( encoder_t *
+         frame->pict_type = 0;
+ 
+         frame->repeat_pict = p_pict->i_nb_fields - 2;
++#if LIBAVUTIL_VERSION_CHECK( 58, 7, 100 )
++        if (p_pict->b_progressive)
++            frame->flags &= ~AV_FRAME_FLAG_INTERLACED;
++        else
++            frame->flags |= AV_FRAME_FLAG_INTERLACED;
++        if (p_pict->b_top_field_first)
++            frame->flags |= AV_FRAME_FLAG_TOP_FIELD_FIRST;
++        else
++            frame->flags &= ~AV_FRAME_FLAG_TOP_FIELD_FIRST;
++#else
+         frame->interlaced_frame = !p_pict->b_progressive;
+         frame->top_field_first = !!p_pict->b_top_field_first;
++#endif
+ 
+         frame->format = p_sys->p_context->pix_fmt;
+         frame->width = p_sys->p_context->width;
+@@ -1473,9 +1495,8 @@ void EndVideoEnc( vlc_object_t *p_this )
+     av_frame_free( &p_sys->frame );
+ 
+     vlc_avcodec_lock();
+-    avcodec_close( p_sys->p_context );
+-    vlc_avcodec_unlock();
+     avcodec_free_context( &p_sys->p_context );
++    vlc_avcodec_unlock();
+ 
+ 
+     av_free( p_sys->p_interleave_buf );
+diff -Nuarp vlc-3.0.21.orig/modules/codec/avcodec/subtitle.c vlc-3.0.21/modules/codec/avcodec/subtitle.c
+--- vlc-3.0.21.orig/modules/codec/avcodec/subtitle.c	2025-11-17 18:16:27.475904814 -0500
++++ vlc-3.0.21/modules/codec/avcodec/subtitle.c	2025-11-17 18:17:09.718626249 -0500
+@@ -174,11 +174,11 @@ static subpicture_t *DecodeBlock(decoder
+     *block_ptr =
+     block      = block_Realloc(block,
+                                0,
+-                               block->i_buffer + FF_INPUT_BUFFER_PADDING_SIZE);
++                               block->i_buffer + AV_INPUT_BUFFER_PADDING_SIZE);
+     if (!block)
+         return NULL;
+-    block->i_buffer -= FF_INPUT_BUFFER_PADDING_SIZE;
+-    memset(&block->p_buffer[block->i_buffer], 0, FF_INPUT_BUFFER_PADDING_SIZE);
++    block->i_buffer -= AV_INPUT_BUFFER_PADDING_SIZE;
++    memset(&block->p_buffer[block->i_buffer], 0, AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+     /* */
+     AVSubtitle subtitle;
+diff -Nuarp vlc-3.0.21.orig/modules/codec/avcodec/vaapi.c vlc-3.0.21/modules/codec/avcodec/vaapi.c
+--- vlc-3.0.21.orig/modules/codec/avcodec/vaapi.c	2024-06-05 11:56:07.000000000 -0400
++++ vlc-3.0.21/modules/codec/avcodec/vaapi.c	2025-11-17 18:17:09.718869643 -0500
+@@ -87,9 +87,9 @@ static int GetVaProfile(AVCodecContext *
+         count = 18;
+         break;
+     case AV_CODEC_ID_HEVC:
+-        if (ctx->profile == FF_PROFILE_HEVC_MAIN)
++        if (ctx->profile == AV_PROFILE_HEVC_MAIN)
+             i_profile = VAProfileHEVCMain;
+-        else if (ctx->profile == FF_PROFILE_HEVC_MAIN_10)
++        else if (ctx->profile == AV_PROFILE_HEVC_MAIN_10)
+         {
+             i_profile = VAProfileHEVCMain10;
+             i_vlc_chroma = VLC_CODEC_VAAPI_420_10BPP;
+@@ -103,10 +103,10 @@ static int GetVaProfile(AVCodecContext *
+         count = 5;
+         break;
+     case AV_CODEC_ID_VP9:
+-        if (ctx->profile == FF_PROFILE_VP9_0)
++        if (ctx->profile == AV_PROFILE_VP9_0)
+             i_profile = VAProfileVP9Profile0;
+ #if VA_CHECK_VERSION( 0, 39, 0 )
+-        else if (ctx->profile == FF_PROFILE_VP9_2)
++        else if (ctx->profile == AV_PROFILE_VP9_2)
+         {
+             i_profile = VAProfileVP9Profile2;
+             i_vlc_chroma = VLC_CODEC_VAAPI_420_10BPP;
+diff -Nuarp vlc-3.0.21.orig/modules/codec/avcodec/video.c vlc-3.0.21/modules/codec/avcodec/video.c
+--- vlc-3.0.21.orig/modules/codec/avcodec/video.c	2025-11-17 18:16:27.479151968 -0500
++++ vlc-3.0.21/modules/codec/avcodec/video.c	2025-11-17 15:17:39.571811094 -0500
+@@ -50,6 +50,13 @@
+ #include "../../packetizer/av1.h"
+ #include "../codec/cc.h"
+ 
++#if ! LIBAVCODEC_VERSION_CHECK(61, 33, 102) // Compatibility for profiles <= FFMPEG 8
++# define AV_PROFILE_UNKNOWN FF_PROFILE_UNKNOWN
++# define AV_LEVEL_UNKNOWN FF_LEVEL_UNKNOWN
++# define AV_INPUT_BUFFER_PADDING_SIZE FF_INPUT_BUFFER_PADDING_SIZE
++#endif
++
++
+ /*****************************************************************************
+  * decoder_sys_t : decoder descriptor
+  *****************************************************************************/
+@@ -200,8 +207,7 @@ static int lavc_GetVideoFormat(decoder_t
+     else if (ctx->time_base.num > 0 && ctx->time_base.den > 0)
+     {
+         fmt->i_frame_rate = ctx->time_base.den;
+-        fmt->i_frame_rate_base = ctx->time_base.num
+-                                 * __MAX(ctx->ticks_per_frame, 1);
++        fmt->i_frame_rate_base = ctx->time_base.num;
+     }
+ 
+     /* FIXME we should only set the known values and let the core decide
+@@ -323,12 +329,10 @@ static int lavc_UpdateVideoFormat(decode
+ 
+     /* always have date in fields/ticks units */
+     if(dec->p_sys->pts.i_divider_num)
+-        date_Change(&dec->p_sys->pts, fmt_out.i_frame_rate *
+-                                      __MAX(ctx->ticks_per_frame, 1),
++        date_Change(&dec->p_sys->pts, fmt_out.i_frame_rate,
+                                       fmt_out.i_frame_rate_base);
+     else
+-        date_Init(&dec->p_sys->pts, fmt_out.i_frame_rate *
+-                                    __MAX(ctx->ticks_per_frame, 1),
++        date_Init(&dec->p_sys->pts, fmt_out.i_frame_rate,
+                                     fmt_out.i_frame_rate_base);
+ 
+     fmt_out.p_palette = dec->fmt_out.video.p_palette;
+@@ -622,9 +626,9 @@ static int InitVideoDecCommon( decoder_t
+     p_dec->pf_flush  = Flush;
+ 
+     /* XXX: Writing input format makes little sense. */
+-    if( p_context->profile != FF_PROFILE_UNKNOWN )
++    if( p_context->profile != AV_PROFILE_UNKNOWN )
+         p_dec->fmt_in.i_profile = p_context->profile;
+-    if( p_context->level != FF_LEVEL_UNKNOWN )
++    if( p_context->level != AV_LEVEL_UNKNOWN )
+         p_dec->fmt_in.i_level = p_context->level;
+     return VLC_SUCCESS;
+ }
+@@ -937,9 +941,11 @@ static vlc_tick_t interpolate_next_pts(
+         p_sys->pts.i_divider_num == 0 )
+         return VLC_TICK_INVALID;
+ 
++#if LIBAVCODEC_VERSION_CHECK( 60, 12, 100 )
++    int i_tick = p_context->codec_descriptor->props & AV_CODEC_PROP_FIELDS ? 2 : 1;
++#else
+     int i_tick = p_context->ticks_per_frame;
+-    if( i_tick <= 0 )
+-        i_tick = 1;
++#endif
+ 
+     /* interpolate the next PTS */
+     return date_Increment( &p_sys->pts, i_tick + frame->repeat_pict );
+@@ -1179,13 +1185,13 @@ static picture_t *DecodeBlock( decoder_t
+         eos_spotted = ( p_block->i_flags & BLOCK_FLAG_END_OF_SEQUENCE ) != 0;
+ 
+         p_block = block_Realloc( p_block, 0,
+-                            p_block->i_buffer + FF_INPUT_BUFFER_PADDING_SIZE );
++                            p_block->i_buffer + AV_INPUT_BUFFER_PADDING_SIZE );
+         if( !p_block )
+             return NULL;
+-        p_block->i_buffer -= FF_INPUT_BUFFER_PADDING_SIZE;
++        p_block->i_buffer -= AV_INPUT_BUFFER_PADDING_SIZE;
+         *pp_block = p_block;
+         memset( p_block->p_buffer + p_block->i_buffer, 0,
+-                FF_INPUT_BUFFER_PADDING_SIZE );
++                AV_INPUT_BUFFER_PADDING_SIZE );
+     }
+ 
+     do
+@@ -1414,8 +1420,13 @@ static picture_t *DecodeBlock( decoder_t
+         /* Hack to force display of still pictures */
+         p_pic->b_force = p_sys->b_first_frame;
+         p_pic->i_nb_fields = 2 + frame->repeat_pict;
++#if LIBAVUTIL_VERSION_CHECK( 58, 7, 100 )
++        p_pic->b_progressive = !(frame->flags & AV_FRAME_FLAG_INTERLACED);
++        p_pic->b_top_field_first = !!(frame->flags & AV_FRAME_FLAG_TOP_FIELD_FIRST);
++#else
+         p_pic->b_progressive = !frame->interlaced_frame;
+         p_pic->b_top_field_first = frame->top_field_first;
++#endif
+ 
+         if (DecodeSidedata(p_dec, frame, p_pic))
+             i_pts = VLC_TICK_INVALID;
+@@ -1502,7 +1513,7 @@ static void ffmpeg_InitCodec( decoder_t
+         p_sys->p_context->extradata_size = i_size + 12;
+         p = p_sys->p_context->extradata =
+             av_malloc( p_sys->p_context->extradata_size +
+-                       FF_INPUT_BUFFER_PADDING_SIZE );
++                       AV_INPUT_BUFFER_PADDING_SIZE );
+         if( !p )
+             return;
+ 
+@@ -1539,13 +1550,13 @@ static void ffmpeg_InitCodec( decoder_t
+     {
+         p_sys->p_context->extradata_size = i_size;
+         p_sys->p_context->extradata =
+-            av_malloc( i_size + FF_INPUT_BUFFER_PADDING_SIZE );
++            av_malloc( i_size + AV_INPUT_BUFFER_PADDING_SIZE );
+         if( p_sys->p_context->extradata )
+         {
+             memcpy( p_sys->p_context->extradata,
+                     p_dec->fmt_in.p_extra, i_size );
+             memset( p_sys->p_context->extradata + i_size,
+-                    0, FF_INPUT_BUFFER_PADDING_SIZE );
++                    0, AV_INPUT_BUFFER_PADDING_SIZE );
+         }
+     }
+ }
+diff -Nuarp vlc-3.0.21.orig/modules/demux/avformat/demux.c vlc-3.0.21/modules/demux/avformat/demux.c
+--- vlc-3.0.21.orig/modules/demux/avformat/demux.c	2025-11-17 18:16:27.482817115 -0500
++++ vlc-3.0.21/modules/demux/avformat/demux.c	2025-11-17 15:40:29.653691401 -0500
+@@ -112,6 +112,18 @@ static vlc_fourcc_t CodecTagToFourcc( ui
+ #endif
+ }
+ 
++static inline void* GetStreamSideData(const AVStream *s, enum AVPacketSideDataType type)
++{
++#if LIBAVCODEC_VERSION_CHECK( 60, 29, 100 )
++    const AVCodecParameters *cp = s->codecpar;
++    const AVPacketSideData *psd =
++        av_packet_side_data_get(cp->coded_side_data, cp->nb_coded_side_data, type);
++    return psd ? psd->data : NULL;
++#else
++    return av_stream_get_side_data(s, type, NULL);
++#endif
++}
++
+ /*****************************************************************************
+  * Open
+  *****************************************************************************/
+@@ -138,7 +150,8 @@ static void get_rotation(es_format_t *fm
+         else
+             fmt->video.orientation = ORIENT_NORMAL;
+     }
+-    int32_t *matrix = (int32_t *)av_stream_get_side_data(s, AV_PKT_DATA_DISPLAYMATRIX, NULL);
++
++    int32_t *matrix = GetStreamSideData(s, AV_PKT_DATA_DISPLAYMATRIX);
+     if( matrix ) {
+         angle = lround(av_display_rotation_get(matrix));
+ 
