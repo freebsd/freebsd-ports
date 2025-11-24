@@ -1,5 +1,5 @@
 PORTNAME=	ruff
-DISTVERSION=	0.14.5
+DISTVERSION=	0.14.6
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -153,8 +153,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		fsevent-sys-4.1.0 \
 		funty-2.0.0 \
 		generic-array-0.14.7 \
-		get-size-derive2-0.7.1 \
-		get-size2-0.7.1 \
+		get-size-derive2-0.7.2 \
+		get-size2-0.7.2 \
 		getopts-0.2.24 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
@@ -185,7 +185,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		imara-diff-0.1.8 \
 		imperative-1.0.6 \
 		indexmap-2.12.0 \
-		indicatif-0.18.2 \
+		indicatif-0.18.3 \
 		indoc-2.0.7 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
@@ -294,8 +294,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		proc-macro-utils-0.10.0 \
 		proc-macro2-1.0.103 \
 		pyproject-toml-0.13.7 \
-		quick-junit-0.5.1 \
-		quick-xml-0.37.5 \
+		quick-junit-0.5.2 \
+		quick-xml-0.38.4 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.1.0 \
 		quote-1.0.42 \
@@ -358,6 +358,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
 		strum_macros-0.27.2 \
+		supports-hyperlinks-3.1.0 \
 		syn-2.0.110 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
@@ -490,8 +491,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=05a9af7f554b64b8aadc2eeb6f2caf73d0408d09\#05a9af7f554b64b8aadc2eeb6f2caf73d0408d09 \
-		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
+		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439 \
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=a885bb4c4c192741b8a17418fef81a71e33d111e\#a885bb4c4c192741b8a17418fef81a71e33d111e
 
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
