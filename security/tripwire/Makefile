@@ -182,5 +182,6 @@ create-database:
 
 post-install:	install-config-files create-database make-pkg-install
 	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	@ ${RMDIR} ${STAGEDIR}${PREFIX}/man || ${TRUE}
 
 .include <bsd.port.post.mk>
