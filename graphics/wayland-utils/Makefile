@@ -1,6 +1,5 @@
 PORTNAME=	wayland-utils
-DISTVERSION=	1.2.0
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
