@@ -18,7 +18,8 @@ USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
 GH_TUPLE=	fastfloat:fast_float:v5.2.0:fast_float/3rdparty/fast_float
-MESON_ARGS=	-Dd3d11=disabled -Dlibdovi=disabled -Ddemos=false
+MESON_DISABLED=	d3d11 libdovi
+MESON_FALSE=	demos
 
 OPTIONS_DEFINE=	LCMS2 LIBUNWIND OPENGL TEST VULKAN XXHASH
 OPTIONS_DEFAULT=LCMS2 LIBUNWIND OPENGL SHADERC XXHASH
