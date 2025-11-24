@@ -1,5 +1,6 @@
 PORTNAME=	oqsprovider
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	security
 PKGNAMEPREFIX=	openssl-
 
