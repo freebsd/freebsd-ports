@@ -73,6 +73,6 @@ include/torrent/utils/string_manip.h
 include/torrent/utils/thread.h
 include/torrent/utils/uri_parser.h
 lib/libtorrent.so
-lib/libtorrent.so.33
-lib/libtorrent.so.33.0.0
+lib/libtorrent.so.34
+lib/libtorrent.so.34.0.0
 libdata/pkgconfig/libtorrent.pc
