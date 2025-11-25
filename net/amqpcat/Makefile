@@ -15,8 +15,8 @@ LICENSE=	MIT
 
 BUILD_DEPENDS=	crystal:lang/crystal \
 		help2man:misc/help2man \
-		pcre2>0:devel/pcre2 \
 		shards:devel/shards
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		pkgconfig
 USE_GITHUB=	yes
@@ -31,8 +31,7 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-SHARDS_ENV=	--time --verbose --production --release --no-color --stats \
-		--static
+SHARDS_ENV=	--time --verbose --production --release --no-color --stats
 
 .include <bsd.port.options.mk>
 
