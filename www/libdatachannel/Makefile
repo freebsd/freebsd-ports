@@ -1,6 +1,6 @@
 PORTNAME=	libdatachannel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.2
+DISTVERSION=	0.24.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	paullouisageneau
 GH_TUPLE=	SergiusTheBest:plog:94899e0:SergiusTheBest_plog/deps/plog \
 		sctplab:usrsctp:fec583d:sctplab_usrsctp/deps/usrsctp \
-		paullouisageneau:libjuice:85efaa9:paullouisageneau_libjuice/deps/libjuice \
+		paullouisageneau:libjuice:5948a41:paullouisageneau_libjuice/deps/libjuice \
 		nlohmann:json:55f9368:nlohmann_json/deps/json \
 		cisco:libsrtp:ee1a77c:cisco_libsrtp/deps/libsrtp
 CMAKE_ON=	USE_SYSTEM_SRTP NO_EXAMPLES NO_TESTS
@@ -38,5 +38,7 @@ do-test: # tests require dual stack to be enabled with 'sysctl net.inet6.ip6.v6o
 		./tests-${DISTVERSION:C/-.*//}
 
 # installs lib/libjuice.a and lib/libusrsctp.a that would conflict with separately installed packages juice and usrsctp, see https://github.com/paullouisageneau/libdatachannel/issues/1277
+
+# tests as of 0.24.0: Finished 12 tests in 38s (38025 ms). Succeeded: 12. Failed: 0.
 
 .include <bsd.port.post.mk>
