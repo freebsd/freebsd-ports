@@ -56,6 +56,8 @@ USES+=		gettext-runtime gnome
 PLIST_SUB+=	X11=""
 .endif
 
+OPTIONS_DEFINE=		DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc
