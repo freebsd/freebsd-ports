@@ -1,11 +1,11 @@
---- stage0/src/shell/CMakeLists.txt.orig	2025-11-17 18:29:21 UTC
+--- stage0/src/shell/CMakeLists.txt.orig	2025-11-18 02:29:21 UTC
 +++ stage0/src/shell/CMakeLists.txt
-@@ -57,7 +57,7 @@ if(${EMSCRIPTEN})
+@@ -57,7 +57,7 @@ endif()
  endif()
  
  # LEANC_OPTS in CXX is necessary for macOS c++ to find its headers
 -set(TEST_VARS "PATH=${LEAN_BIN}:$PATH ${LEAN_TEST_VARS} CXX='${CMAKE_CXX_COMPILER} ${LEANC_OPTS}' LEANC_OPTS='${LEANC_OPTS}'")
 +set(TEST_VARS "PATH=${LEAN_BIN}:$PATH LD_LIBRARY_PATH=${CMAKE_BINARY_DIR}/lib/lean:\${LD_LIBRARY_PATH:-} ${LEAN_TEST_VARS} CXX='${CMAKE_CXX_COMPILER} ${LEANC_OPTS}' LEANC_OPTS='${LEANC_OPTS}'")
  
- set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${LEAN_BIN})
- 
+ # LEAN TESTS
+ file(GLOB LEANTESTS "${LEAN_SOURCE_DIR}/../tests/lean/*.lean")
