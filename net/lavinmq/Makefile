@@ -47,10 +47,10 @@ WWW=		https://www.lavinmq.com/
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	crystal:lang/crystal \
-		liblz4>0:archivers/liblz4 \
 		help2man:misc/help2man \
-		pcre2>0:devel/pcre2 \
 		shards:devel/shards
+LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
+		libpcre2-8.so:devel/pcre2
 
 USES=		pkgconfig ssl:build
 USE_GITHUB=	yes
@@ -71,7 +71,7 @@ PORTDOCS=	CHANGELOG.md NOTICE README.md SECURITY.md
 OPTIONS_DEFINE=	DOCS
 
 SHARDS_ENV=	--time --verbose --production --release --no-color --stats \
-		--static -Dgc_none --error-on-warnings -Dpreview_mt -Dexecution_context
+		-Dgc_none --error-on-warnings -Dpreview_mt -Dexecution_context
 
 .include <bsd.port.options.mk>
 
