@@ -1,5 +1,6 @@
 PORTNAME=	oxidized-web
 PORTVERSION=	0.17.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
