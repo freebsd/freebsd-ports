@@ -25,12 +25,20 @@ USE_GNOME=	gtk30 glib20 intltool introspection
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	packagekit_project
-SHEBANG_FILES=	contrib/cron/packagekit-background.cron
+SHEBANG_FILES=	contrib/cron/packagekit-background.cron \
+		tests/data/pk-spawn-test-sigquit.py \
+		tests/data/pk-spawn-dispatcher.py
 
 MESON_ARGS=	-Dsysconfdir=${PREFIX}/etc \
 		-Dpackaging_backend=freebsd -Dsystemd=false -Doffline_update=false \
 		-Dbash_completion=false -Dbash_command_not_found=false \
 		-Dgstreamer_plugin=false
+
+OPTIONS_DEFINE=	LOCAL_CHECKOUT
+
+LOCAL_CHECKOUT_DESC=		Support running tests (not for production use)
+LOCAL_CHECKOUT_TEST_DEPENDS=	bash:shells/bash
+LOCAL_CHECKOUT_MESON_TRUE=	local_checkout
 
 post-install:
 	${MV} ${STAGEDIR}/var/lib/PackageKit/transactions.db ${STAGEDIR}/var/lib/PackageKit/transactions.db.sample
