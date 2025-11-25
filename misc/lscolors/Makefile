@@ -1,7 +1,6 @@
 PORTNAME=	lscolors
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
-PORTREVISION=	10
+DISTVERSION=	0.21.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,51 +18,53 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	sharkdp
 
 CARGO_FEATURES=	nu-ansi-term
-CARGO_CRATES=	aho-corasick-1.1.3 \
+CARGO_CRATES=	aho-corasick-1.1.4 \
 		ansi_term-0.12.1 \
-		autocfg-1.4.0 \
-		bitflags-2.6.0 \
-		cfg-if-1.0.0 \
-		crossterm-0.28.1 \
+		bitflags-2.10.0 \
+		cfg-if-1.0.4 \
+		convert_case-0.7.1 \
+		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
-		errno-0.3.9 \
-		fastrand-2.1.1 \
-		hermit-abi-0.3.9 \
-		libc-0.2.159 \
-		linux-raw-sys-0.4.14 \
-		lock_api-0.4.12 \
-		log-0.4.22 \
-		memchr-2.7.4 \
-		mio-1.0.2 \
-		nu-ansi-term-0.50.1 \
-		once_cell-1.20.1 \
-		owo-colors-4.1.0 \
-		parking_lot-0.12.3 \
-		parking_lot_core-0.9.10 \
-		portable-atomic-1.9.0 \
-		redox_syscall-0.5.7 \
-		rustix-0.38.37 \
+		derive_more-2.0.1 \
+		derive_more-impl-2.0.1 \
+		document-features-0.2.12 \
+		errno-0.3.14 \
+		fastrand-2.3.0 \
+		getrandom-0.3.4 \
+		libc-0.2.177 \
+		linux-raw-sys-0.11.0 \
+		litrs-1.0.0 \
+		lock_api-0.4.14 \
+		log-0.4.28 \
+		memchr-2.7.6 \
+		mio-1.1.0 \
+		nu-ansi-term-0.50.3 \
+		once_cell-1.21.3 \
+		owo-colors-4.2.3 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
+		proc-macro2-1.0.103 \
+		quote-1.0.42 \
+		r-efi-5.3.0 \
+		redox_syscall-0.5.18 \
+		rustix-1.1.2 \
 		scopeguard-1.2.0 \
-		signal-hook-0.3.17 \
-		signal-hook-mio-0.2.4 \
-		signal-hook-registry-1.4.2 \
-		smallvec-1.13.2 \
-		tempfile-3.13.0 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
+		signal-hook-0.3.18 \
+		signal-hook-mio-0.2.5 \
+		signal-hook-registry-1.4.7 \
+		smallvec-1.15.1 \
+		syn-2.0.111 \
+		tempfile-3.23.0 \
+		unicode-ident-1.0.22 \
+		unicode-segmentation-1.12.0 \
+		wasi-0.11.1+wasi-snapshot-preview1 \
+		wasip2-1.0.1+wasi-0.2.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.52.0 \
-		windows-sys-0.59.0 \
-		windows-targets-0.52.6 \
-		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_msvc-0.52.6 \
-		windows_i686_gnu-0.52.6 \
-		windows_i686_gnullvm-0.52.6 \
-		windows_i686_msvc-0.52.6 \
-		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_msvc-0.52.6
+		windows-link-0.2.1 \
+		windows-sys-0.61.2 \
+		wit-bindgen-0.46.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
