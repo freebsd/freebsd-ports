@@ -290,6 +290,7 @@
 %%WWWDIR%%/admin/themes/default/images/piwigo-grey.svg
 %%WWWDIR%%/admin/themes/default/images/piwigo-orange.svg
 %%WWWDIR%%/admin/themes/default/images/piwigo_app_banner.jpg
+%%WWWDIR%%/admin/themes/default/images/promote-newsletter.png
 %%WWWDIR%%/admin/themes/default/index.php
 %%WWWDIR%%/admin/themes/default/js/LocalStorageCache.js
 %%WWWDIR%%/admin/themes/default/js/addAlbum.js
@@ -301,6 +302,7 @@
 %%WWWDIR%%/admin/themes/default/js/cat_list.js
 %%WWWDIR%%/admin/themes/default/js/cat_modify.js
 %%WWWDIR%%/admin/themes/default/js/cat_search.js
+%%WWWDIR%%/admin/themes/default/js/comments.js
 %%WWWDIR%%/admin/themes/default/js/common.js
 %%WWWDIR%%/admin/themes/default/js/datepicker.js
 %%WWWDIR%%/admin/themes/default/js/doubleSlider.js
@@ -318,6 +320,7 @@
 %%WWWDIR%%/admin/themes/default/js/plugins_new.js
 %%WWWDIR%%/admin/themes/default/js/stats.js
 %%WWWDIR%%/admin/themes/default/js/tags.js
+%%WWWDIR%%/admin/themes/default/js/user_activity.js
 %%WWWDIR%%/admin/themes/default/js/user_list.js
 %%WWWDIR%%/admin/themes/default/print.css
 %%WWWDIR%%/admin/themes/default/template/admin.tpl
@@ -335,6 +338,7 @@
 %%WWWDIR%%/admin/themes/default/template/configuration_default.tpl
 %%WWWDIR%%/admin/themes/default/template/configuration_display.tpl
 %%WWWDIR%%/admin/themes/default/template/configuration_main.tpl
+%%WWWDIR%%/admin/themes/default/template/configuration_search.tpl
 %%WWWDIR%%/admin/themes/default/template/configuration_sizes.tpl
 %%WWWDIR%%/admin/themes/default/template/configuration_watermark.tpl
 %%WWWDIR%%/admin/themes/default/template/double_select.tpl
@@ -451,7 +455,6 @@
 %%WWWDIR%%/include/common.inc.php
 %%WWWDIR%%/include/config_default.inc.php
 %%WWWDIR%%/include/constants.php
-%%WWWDIR%%/include/cssmin.class.php
 %%WWWDIR%%/include/dblayer/functions_mysql.inc.php
 %%WWWDIR%%/include/dblayer/functions_mysqli.inc.php
 %%WWWDIR%%/include/derivative.inc.php
@@ -484,6 +487,25 @@
 %%WWWDIR%%/include/jshrink.class.php
 %%WWWDIR%%/include/mdetect.php
 %%WWWDIR%%/include/menubar.inc.php
+%%WWWDIR%%/include/minify/LICENSE
+%%WWWDIR%%/include/minify/data/js/keywords_after.txt
+%%WWWDIR%%/include/minify/data/js/keywords_before.txt
+%%WWWDIR%%/include/minify/data/js/keywords_reserved.txt
+%%WWWDIR%%/include/minify/data/js/operators.txt
+%%WWWDIR%%/include/minify/data/js/operators_after.txt
+%%WWWDIR%%/include/minify/data/js/operators_before.txt
+%%WWWDIR%%/include/minify/path-converter/LICENSE
+%%WWWDIR%%/include/minify/path-converter/src/Converter.php
+%%WWWDIR%%/include/minify/path-converter/src/ConverterInterface.php
+%%WWWDIR%%/include/minify/path-converter/src/NoConverter.php
+%%WWWDIR%%/include/minify/src/CSS.php
+%%WWWDIR%%/include/minify/src/Exception.php
+%%WWWDIR%%/include/minify/src/Exceptions/BasicException.php
+%%WWWDIR%%/include/minify/src/Exceptions/FileImportException.php
+%%WWWDIR%%/include/minify/src/Exceptions/IOException.php
+%%WWWDIR%%/include/minify/src/Exceptions/PatternMatchException.php
+%%WWWDIR%%/include/minify/src/JS.php
+%%WWWDIR%%/include/minify/src/Minify.php
 %%WWWDIR%%/include/no_photo_yet.inc.php
 %%WWWDIR%%/include/page_header.php
 %%WWWDIR%%/include/page_tail.php
@@ -503,236 +525,182 @@
 %%WWWDIR%%/include/picture_rate.inc.php
 %%WWWDIR%%/include/pwgsession.class.php
 %%WWWDIR%%/include/pwgsession_php7.class.php
-%%WWWDIR%%/include/random_compat/byte_safe_strings.php
-%%WWWDIR%%/include/random_compat/cast_to_int.php
-%%WWWDIR%%/include/random_compat/error_polyfill.php
-%%WWWDIR%%/include/random_compat/random.php
-%%WWWDIR%%/include/random_compat/random_bytes_com_dotnet.php
-%%WWWDIR%%/include/random_compat/random_bytes_dev_urandom.php
-%%WWWDIR%%/include/random_compat/random_bytes_libsodium.php
-%%WWWDIR%%/include/random_compat/random_bytes_libsodium_legacy.php
-%%WWWDIR%%/include/random_compat/random_bytes_mcrypt.php
-%%WWWDIR%%/include/random_compat/random_int.php
 %%WWWDIR%%/include/search_filters.inc.php
 %%WWWDIR%%/include/section_init.inc.php
+%%WWWDIR%%/include/selected_tags.inc.php
 %%WWWDIR%%/include/smarty/CHANGELOG.md
 %%WWWDIR%%/include/smarty/LICENSE
 %%WWWDIR%%/include/smarty/README.md
 %%WWWDIR%%/include/smarty/SECURITY.md
-%%WWWDIR%%/include/smarty/lexer/smarty_internal_configfilelexer.plex
-%%WWWDIR%%/include/smarty/lexer/smarty_internal_configfileparser.y
-%%WWWDIR%%/include/smarty/lexer/smarty_internal_templatelexer.plex
-%%WWWDIR%%/include/smarty/lexer/smarty_internal_templateparser.y
-%%WWWDIR%%/include/smarty/libs/Autoloader.php
 %%WWWDIR%%/include/smarty/libs/Smarty.class.php
-%%WWWDIR%%/include/smarty/libs/bootstrap.php
-%%WWWDIR%%/include/smarty/libs/debug.tpl
-%%WWWDIR%%/include/smarty/libs/functions.php
-%%WWWDIR%%/include/smarty/libs/plugins/block.textformat.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.counter.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.cycle.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.fetch.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.html_checkboxes.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.html_image.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.html_options.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.html_radios.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.html_select_date.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.html_select_time.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.html_table.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.mailto.php
-%%WWWDIR%%/include/smarty/libs/plugins/function.math.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.capitalize.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.count.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.date_format.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.debug_print_var.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.escape.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.explode.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.mb_wordwrap.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.number_format.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.regex_replace.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.replace.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.spacify.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifier.truncate.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.cat.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.count_characters.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.count_paragraphs.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.count_sentences.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.count_words.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.default.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.escape.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.from_charset.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.indent.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.lower.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.nl2br.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.noprint.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.round.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.str_repeat.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.string_format.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.strip.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.strip_tags.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.strlen.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.to_charset.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.unescape.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.upper.php
-%%WWWDIR%%/include/smarty/libs/plugins/modifiercompiler.wordwrap.php
-%%WWWDIR%%/include/smarty/libs/plugins/outputfilter.trimwhitespace.php
-%%WWWDIR%%/include/smarty/libs/plugins/shared.escape_special_chars.php
-%%WWWDIR%%/include/smarty/libs/plugins/shared.literal_compiler_param.php
-%%WWWDIR%%/include/smarty/libs/plugins/shared.make_timestamp.php
-%%WWWDIR%%/include/smarty/libs/plugins/shared.mb_str_replace.php
-%%WWWDIR%%/include/smarty/libs/plugins/shared.mb_unicode.php
-%%WWWDIR%%/include/smarty/libs/plugins/variablefilter.htmlspecialchars.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_cacheresource.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_cacheresource_custom.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_cacheresource_keyvaluestore.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_data.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_block.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_cacheresource_file.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_append.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_assign.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_block.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_block_child.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_block_parent.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_break.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_call.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_capture.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_child.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_config_load.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_continue.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_debug.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_eval.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_extends.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_for.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_foreach.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_function.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_if.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_include.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_insert.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_ldelim.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_make_nocache.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_nocache.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_parent.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_block_plugin.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_foreachsection.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_function_plugin.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_modifier.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_object_function.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_print_expression.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_registered_block.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_registered_function.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_private_special_variable.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_rdelim.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_section.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_setfilter.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_shared_inheritance.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compile_while.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_compilebase.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_config_file_compiler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_configfilelexer.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_configfileparser.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_data.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_debug.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_errorhandler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_extension_handler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_addautoloadfilters.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_adddefaultmodifiers.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_append.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_appendbyref.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_assignbyref.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_assignglobal.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_clearallassign.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_clearallcache.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_clearassign.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_clearcache.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_clearcompiledtemplate.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_clearconfig.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_compileallconfig.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_compilealltemplates.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_configload.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_createdata.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getautoloadfilters.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getconfigvariable.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getconfigvars.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getdebugtemplate.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getdefaultmodifiers.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getglobal.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getregisteredobject.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_getstreamvariable.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_gettags.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_gettemplatevars.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_literals.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_loadfilter.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_loadplugin.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_mustcompile.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registercacheresource.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerclass.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerdefaultconfighandler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerdefaultpluginhandler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerdefaulttemplatehandler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerfilter.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerobject.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerplugin.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_registerresource.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_setautoloadfilters.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_setdebugtemplate.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_setdefaultmodifiers.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_unloadfilter.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_unregistercacheresource.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_unregisterfilter.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_unregisterobject.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_unregisterplugin.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_method_unregisterresource.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_nocache_insert.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_parsetree.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_parsetree_code.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_parsetree_dq.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_parsetree_dqcontent.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_parsetree_tag.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_parsetree_template.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_parsetree_text.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_resource_eval.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_resource_extends.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_resource_file.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_resource_php.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_resource_stream.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_resource_string.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_cachemodify.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_cacheresourcefile.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_capture.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_codeframe.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_filterhandler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_foreach.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_getincludepath.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_inheritance.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_make_nocache.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_tplfunction.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_updatecache.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_updatescope.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_runtime_writefile.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_smartytemplatecompiler.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_template.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_templatebase.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_templatecompilerbase.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_templatelexer.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_templateparser.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_testinstall.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_internal_undefined.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_resource.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_resource_custom.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_resource_recompiled.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_resource_uncompiled.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_security.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_template_cached.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_template_compiled.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_template_config.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_template_resource_base.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_template_source.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_undefined_variable.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smarty_variable.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smartycompilerexception.php
-%%WWWDIR%%/include/smarty/libs/sysplugins/smartyexception.php
-%%WWWDIR%%/include/srand.php
+%%WWWDIR%%/include/smarty/src/BlockHandler/Base.php
+%%WWWDIR%%/include/smarty/src/BlockHandler/BlockHandlerInterface.php
+%%WWWDIR%%/include/smarty/src/BlockHandler/BlockPluginWrapper.php
+%%WWWDIR%%/include/smarty/src/BlockHandler/TextFormat.php
+%%WWWDIR%%/include/smarty/src/Cacheresource/Base.php
+%%WWWDIR%%/include/smarty/src/Cacheresource/Custom.php
+%%WWWDIR%%/include/smarty/src/Cacheresource/File.php
+%%WWWDIR%%/include/smarty/src/Cacheresource/KeyValueStore.php
+%%WWWDIR%%/include/smarty/src/Compile/Base.php
+%%WWWDIR%%/include/smarty/src/Compile/BlockCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/CompilerInterface.php
+%%WWWDIR%%/include/smarty/src/Compile/DefaultHandlerBlockCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/DefaultHandlerFunctionCallCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/FunctionCallCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/BCPluginWrapper.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/Base.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/CatModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/CountCharactersModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/CountParagraphsModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/CountSentencesModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/CountWordsModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/DefaultModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/EmptyModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/EscapeModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/FromCharsetModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/IndentModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/IsArrayModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/IssetModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/JsonEncodeModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/LowerModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/ModifierCompilerInterface.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/Nl2brModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/NoPrintModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/RawModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/RoundModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/StrRepeatModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/StringFormatModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/StripModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/StripTagsModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/StrlenModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/SubstrModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/ToCharsetModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/UnescapeModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/UpperModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Modifier/WordWrapModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/ModifierCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/ObjectMethodBlockCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/ObjectMethodCallCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/PrintExpressionCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/SpecialVariableCompiler.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Append.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Assign.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/BCPluginWrapper.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Block.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/BlockClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/BreakTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Call.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Capture.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/CaptureClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ConfigLoad.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ContinueTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Debug.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ElseIfTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ElseTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/EvalTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ExtendsTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ForClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ForElse.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ForTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ForeachClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ForeachElse.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ForeachSection.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/ForeachTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/FunctionClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/FunctionTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/IfClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/IfTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/IncludeTag.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Inheritance.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Ldelim.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Nocache.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/NocacheClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Rdelim.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Section.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/SectionClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/SectionElse.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/Setfilter.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/SetfilterClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/WhileClose.php
+%%WWWDIR%%/include/smarty/src/Compile/Tag/WhileTag.php
+%%WWWDIR%%/include/smarty/src/Compiler/BaseCompiler.php
+%%WWWDIR%%/include/smarty/src/Compiler/CodeFrame.php
+%%WWWDIR%%/include/smarty/src/Compiler/Configfile.php
+%%WWWDIR%%/include/smarty/src/Compiler/Template.php
+%%WWWDIR%%/include/smarty/src/CompilerException.php
+%%WWWDIR%%/include/smarty/src/Data.php
+%%WWWDIR%%/include/smarty/src/Debug.php
+%%WWWDIR%%/include/smarty/src/ErrorHandler.php
+%%WWWDIR%%/include/smarty/src/Exception.php
+%%WWWDIR%%/include/smarty/src/Extension/BCPluginsAdapter.php
+%%WWWDIR%%/include/smarty/src/Extension/Base.php
+%%WWWDIR%%/include/smarty/src/Extension/CallbackWrapper.php
+%%WWWDIR%%/include/smarty/src/Extension/CoreExtension.php
+%%WWWDIR%%/include/smarty/src/Extension/DefaultExtension.php
+%%WWWDIR%%/include/smarty/src/Extension/ExtensionInterface.php
+%%WWWDIR%%/include/smarty/src/Filter/FilterInterface.php
+%%WWWDIR%%/include/smarty/src/Filter/FilterPluginWrapper.php
+%%WWWDIR%%/include/smarty/src/Filter/Output/TrimWhitespace.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/BCPluginWrapper.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/Base.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/Count.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/Counter.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/Cycle.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/Fetch.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/FunctionHandlerInterface.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlBase.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlCheckboxes.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlImage.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlOptions.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlRadios.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlSelectDate.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlSelectTime.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/HtmlTable.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/Mailto.php
+%%WWWDIR%%/include/smarty/src/FunctionHandler/Math.php
+%%WWWDIR%%/include/smarty/src/Lexer/ConfigfileLexer.php
+%%WWWDIR%%/include/smarty/src/Lexer/ConfigfileLexer.plex
+%%WWWDIR%%/include/smarty/src/Lexer/TemplateLexer.php
+%%WWWDIR%%/include/smarty/src/Lexer/TemplateLexer.plex
+%%WWWDIR%%/include/smarty/src/ParseTree/Base.php
+%%WWWDIR%%/include/smarty/src/ParseTree/Code.php
+%%WWWDIR%%/include/smarty/src/ParseTree/Dq.php
+%%WWWDIR%%/include/smarty/src/ParseTree/DqContent.php
+%%WWWDIR%%/include/smarty/src/ParseTree/Tag.php
+%%WWWDIR%%/include/smarty/src/ParseTree/Template.php
+%%WWWDIR%%/include/smarty/src/ParseTree/Text.php
+%%WWWDIR%%/include/smarty/src/Parser/ConfigfileParser.php
+%%WWWDIR%%/include/smarty/src/Parser/ConfigfileParser.y
+%%WWWDIR%%/include/smarty/src/Parser/TemplateParser.php
+%%WWWDIR%%/include/smarty/src/Parser/TemplateParser.y
+%%WWWDIR%%/include/smarty/src/Resource/BasePlugin.php
+%%WWWDIR%%/include/smarty/src/Resource/CustomPlugin.php
+%%WWWDIR%%/include/smarty/src/Resource/ExtendsPlugin.php
+%%WWWDIR%%/include/smarty/src/Resource/FilePlugin.php
+%%WWWDIR%%/include/smarty/src/Resource/RecompiledPlugin.php
+%%WWWDIR%%/include/smarty/src/Resource/StreamPlugin.php
+%%WWWDIR%%/include/smarty/src/Resource/StringEval.php
+%%WWWDIR%%/include/smarty/src/Resource/StringPlugin.php
+%%WWWDIR%%/include/smarty/src/Runtime/Block.php
+%%WWWDIR%%/include/smarty/src/Runtime/CaptureRuntime.php
+%%WWWDIR%%/include/smarty/src/Runtime/DefaultPluginHandlerRuntime.php
+%%WWWDIR%%/include/smarty/src/Runtime/ForeachRuntime.php
+%%WWWDIR%%/include/smarty/src/Runtime/InheritanceRuntime.php
+%%WWWDIR%%/include/smarty/src/Runtime/TplFunctionRuntime.php
+%%WWWDIR%%/include/smarty/src/Security.php
+%%WWWDIR%%/include/smarty/src/Smarty.php
+%%WWWDIR%%/include/smarty/src/Template.php
+%%WWWDIR%%/include/smarty/src/Template/Cached.php
+%%WWWDIR%%/include/smarty/src/Template/Compiled.php
+%%WWWDIR%%/include/smarty/src/Template/Config.php
+%%WWWDIR%%/include/smarty/src/Template/GeneratedPhpFile.php
+%%WWWDIR%%/include/smarty/src/Template/Source.php
+%%WWWDIR%%/include/smarty/src/TemplateBase.php
+%%WWWDIR%%/include/smarty/src/TestInstall.php
+%%WWWDIR%%/include/smarty/src/UndefinedVariable.php
+%%WWWDIR%%/include/smarty/src/Variable.php
+%%WWWDIR%%/include/smarty/src/debug.tpl
+%%WWWDIR%%/include/smarty/src/functions.php
 %%WWWDIR%%/include/template.class.php
 %%WWWDIR%%/include/totp.class.php
 %%WWWDIR%%/include/user.inc.php
@@ -740,6 +708,7 @@
 %%WWWDIR%%/include/ws_functions.inc.php
 %%WWWDIR%%/include/ws_functions/index.php
 %%WWWDIR%%/include/ws_functions/pwg.categories.php
+%%WWWDIR%%/include/ws_functions/pwg.comments.php
 %%WWWDIR%%/include/ws_functions/pwg.extensions.php
 %%WWWDIR%%/include/ws_functions/pwg.groups.php
 %%WWWDIR%%/include/ws_functions/pwg.images.php
@@ -832,6 +801,13 @@
 %%WWWDIR%%/install/db/172-database.php
 %%WWWDIR%%/install/db/173-database.php
 %%WWWDIR%%/install/db/174-database.php
+%%WWWDIR%%/install/db/175-database.php
+%%WWWDIR%%/install/db/176-database.php
+%%WWWDIR%%/install/db/177-database.php
+%%WWWDIR%%/install/db/178-database.php
+%%WWWDIR%%/install/db/179-database.php
+%%WWWDIR%%/install/db/180-database.php
+%%WWWDIR%%/install/db/181-database.php
 %%WWWDIR%%/install/db/61-database.php
 %%WWWDIR%%/install/db/62-database.php
 %%WWWDIR%%/install/db/63-database.php
@@ -889,6 +865,7 @@
 %%WWWDIR%%/install/upgrade_12.0.0.php
 %%WWWDIR%%/install/upgrade_13.0.0.php
 %%WWWDIR%%/install/upgrade_14.0.0.php
+%%WWWDIR%%/install/upgrade_15.0.0.php
 %%WWWDIR%%/install/upgrade_2.0.0.php
 %%WWWDIR%%/install/upgrade_2.1.0.php
 %%WWWDIR%%/install/upgrade_2.10.0.php
@@ -1068,11 +1045,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/common.lang.php
@@ -1098,11 +1077,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/da_DK/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/common.lang.php
@@ -1129,11 +1110,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/de_DE/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/dv_MV/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/dv_MV/dv_MV.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/dv_MV/index.php
@@ -1163,11 +1146,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/el_GR/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_GB/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_GB/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_GB/common.lang.php
@@ -1203,11 +1188,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_UK/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_US/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_US/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/en_US/en_US.jpg
@@ -1309,6 +1296,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/eu_ES/upgrade.lang.php
@@ -1364,6 +1352,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_CA/iso.txt
@@ -1394,11 +1383,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fr_FR/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ga_IE/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ga_IE/ga_IE.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ga_IE/iso.txt
@@ -1438,6 +1429,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/he_IL.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/help/cat_move.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/help/help_add_photos.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/he_IL/upgrade.lang.php
@@ -1510,12 +1502,14 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/common.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/is_IS.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/is_IS/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/common.lang.php
@@ -1541,12 +1535,14 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/it_IT.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/it_IT/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ja_JP/README.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ja_JP/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ja_JP/admin.lang.php
@@ -1717,12 +1713,14 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/nb_NO.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nb_NO/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/common.lang.php
@@ -1748,12 +1746,14 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/nl_NL.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nl_NL/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nn_NO/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nn_NO/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/nn_NO/common.lang.php
@@ -1801,12 +1801,14 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/pl_PL.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pl_PL/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/common.lang.php
@@ -1831,6 +1833,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_BR/iso.txt
@@ -1860,6 +1863,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/pt_PT/iso.txt
@@ -1985,6 +1989,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/help/group_list.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/help/help_groups.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/help/search.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sr_RS/iso.txt
@@ -2016,11 +2021,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/sv_SE.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/sv_SE/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ta_IN/install.lang.php
@@ -2063,11 +2070,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/tr_TR.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/tr_TR/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/uk_UA/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/uk_UA/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/uk_UA/common.lang.php
@@ -2137,10 +2146,12 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_CN/zh_CN.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_HK/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_HK/admin.lang.php
@@ -2178,10 +2189,12 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/zh_TW/zh_TW.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/README.md
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/admin.php
@@ -2959,6 +2972,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/style.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/css/clear-search.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/css/dark-search.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/css/help/quick_search.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/css/search.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/fix-ie5-ie6.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/fix-ie7.css
@@ -3415,10 +3429,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/comments.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/footer.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/header.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/help/quick_search.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/identification.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/autosize.inc.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/colorbox.inc.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/related_tags.inc.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/search_filters.inc.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/include/selected_tags.inc.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/index.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/infos_errors.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/default/template/mail/index.php
@@ -3996,5 +4013,20 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/thumbnails.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/theme.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/themeconf.inc.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/css/standard_pages.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/fonts/OpenSans-VariableFont_wdth,wght.ttf
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/images/piwigo_logo.svg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/images/piwigo_logo_dark.svg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/js/profile.js
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/js/standard_pages.js
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/js/toaster.js
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/footer.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/identification.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/password.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/profile.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/register.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/toaster.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/theme.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/themeconf.inc.php
 @dir(%%WWWOWN%%,%%WWWGRP%%,777) %%WWWDIR%%/_data
 @dir(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/upload
