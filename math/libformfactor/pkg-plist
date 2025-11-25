@@ -10,4 +10,4 @@ include/ff/Polyhedron.h
 include/ff/Prism.h
 include/ff/Topology.h
 lib/libformfactor.so
-lib/libformfactor.so.0.3.1
+lib/libformfactor.so.0.3.2
