@@ -1,22 +1,32 @@
 PORTNAME=	mujs
-DISTVERSION=	1.3.5
+DISTVERSION=	1.3.8
 CATEGORIES=	lang devel
+MASTER_SITES=	https://codeberg.org/ccxvii/mujs/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ \
+		https://www.unicode.org/Public/16.0.0/ucd/:unicode
+DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
+DISTFILES=	UnicodeData.txt:unicode \
+		SpecialCasing.txt:unicode \
+		${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Embeddable Javascript interpreter in C
-WWW=		https://mujs.com/
+WWW=		https://mujs.com/ \
+		https://github.com/ccxvii/mujs \
+		https://codeberg.org/ccxvii/mujs
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	curl:ftp/curl
 TEST_DEPENDS=	git:devel/git
 
-USES=		compiler:c11 cpe gmake readline # c11 is induced by the FreeBSD headers via isnan(3), etc, otherwise the project is all c99 code
-CPE_VENDOR=	artifex
+USES=		compiler:c11 cpe gmake python:build readline # c11 is induced by the FreeBSD headers via isnan(3), etc, otherwise the project is all c99 code
 USE_LDCONFIG=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	ccxvii
+CPE_VENDOR=	artifex
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 LDFLAGS=	-Wl,-soname=libmujs.so
 
@@ -28,6 +38,8 @@ INSTALL_TARGET=	install-shared install-static
 .if defined(WITH_DEBUG) # this project manages its build options itself
 MAKE_ARGS=	build=debug
 .endif
+
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 PLIST_FILES=	bin/mujs \
 		bin/mujs-pp \
@@ -44,6 +56,10 @@ OPTIONS_DEFAULT=	32BIT
 
 SANITIZED_DESC=		Sanitized build (only for debugging)
 SANITIZED_MAKE_ARGS=	build=sanitize
+
+post-patch:
+	${REINPLACE_CMD} -e 's|https://www.unicode.org/Public/16.0.0/ucd/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
+		${WRKSRC}/Makefile
 
 post-install:
 	@${STRIP_CMD} \
