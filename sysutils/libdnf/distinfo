@@ -1,3 +1,3 @@
-TIMESTAMP = 1737971787
-SHA256 (rpm-software-management-libdnf-0.73.4_GH0.tar.gz) = bce14012d29d58867669fc606938f6fa84f037efcd9c802150fba6506356814c
-SIZE (rpm-software-management-libdnf-0.73.4_GH0.tar.gz) = 1208308
+TIMESTAMP = 1764046596
+SHA256 (rpm-software-management-libdnf-0.75.0_GH0.tar.gz) = 0a06cc9656b10518c50f230ec8f7cf0218530823f6b2f28bf164899f8d569622
+SIZE (rpm-software-management-libdnf-0.75.0_GH0.tar.gz) = 1215141

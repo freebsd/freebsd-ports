@@ -1,5 +1,5 @@
 PORTNAME=	libdnf
-DISTVERSION=	0.73.4
+DISTVERSION=	0.75.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -51,6 +51,6 @@ ZCHUNK_DESC=		With zchunk support
 ZCHUNK_CMAKE_BOOL=	WITH_ZCHUNK
 ZCHUNK_BROKEN=		Links with zchunk when WITH_ZCHUNK=OFF https://github.com/rpm-software-management/libdnf/issues/1515
 
-# Tests fail to compile: ld: error: unable to find library -ltestshared, see https://github.com/rpm-software-management/libdnf/issues/1574
+# tests as of 0.75.0: 100% tests passed, 0 tests failed out of 2
 
 .include <bsd.port.mk>

@@ -1,9 +1,11 @@
---- python/hawkey/CMakeLists.txt.orig	2020-09-26 05:11:04 UTC
+--- python/hawkey/CMakeLists.txt.orig	2025-10-20 13:41:49 UTC
 +++ python/hawkey/CMakeLists.txt
-@@ -50,4 +50,6 @@ target_link_libraries(_hawkeymodule ${PYTHON_LIBRARY})
+@@ -50,6 +50,8 @@ install(TARGETS _hawkeymodule LIBRARY DESTINATION ${PY
  install(FILES __init__.py DESTINATION ${PYTHON_INSTALL_DIR}/hawkey)
  install(TARGETS _hawkeymodule LIBRARY DESTINATION ${PYTHON_INSTALL_DIR}/hawkey)
  
 +if (BUILD_TESTING)
- add_subdirectory(tests)
+ IF (WITH_TESTS)
 +endif()
+ add_subdirectory(tests)
+ ENDIF()
