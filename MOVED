@@ -4868,3 +4868,4 @@ deskutils/fet@qt5|deskutils/fet|2025-11-16|Qt Flavorization has been removed. Qt
 deskutils/fet@qt6|deskutils/fet|2025-11-16|Qt Flavorization has been removed. Continue to enjoy deskutils/fet based on Qt 6.x as usual
 lang/ruby35|lang/ruby40|2025-11-18|Upstream changed version of master branch in their repository from 3.5 to 4.0
 lang/spidermonkey91||2025-11-18|Removed
+science/zx||2025-11-25|Removed: upstream repository archived on Jun 15, 2023, they refactored this project into a different package

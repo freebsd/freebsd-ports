@@ -530,6 +530,5 @@
     SUBDIR += xtb
     SUBDIR += yoda
     SUBDIR += zotero
-    SUBDIR += zx
 
 .include <bsd.port.subdir.mk>

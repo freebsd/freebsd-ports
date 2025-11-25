@@ -1,9 +1,0 @@
-TIMESTAMP = 1667348044
-SHA256 (cda-tum-zx-g20221101-b01ba5e_GH0.tar.gz) = 4f106f5bb3f8651e91e25fd15c353f7d08c77bb34b5bb61c138a11cca3a7a50f
-SIZE (cda-tum-zx-g20221101-b01ba5e_GH0.tar.gz) = 26179
-SHA256 (boostorg-config-2543ff1_GH0.tar.gz) = aed1996926016faee81de7219a74f9fd41c9c3a4bb292f8936b54245b57ad3c2
-SIZE (boostorg-config-2543ff1_GH0.tar.gz) = 379371
-SHA256 (boostorg-multiprecision-be4b8e8_GH0.tar.gz) = 78b681530deb9c911f485f70d438099b9a7f7e63f61dba572ed68f32306e35c2
-SIZE (boostorg-multiprecision-be4b8e8_GH0.tar.gz) = 4144005
-SHA256 (google-googletest-3026483_GH0.tar.gz) = 1790cf41d6b9b023e1751888155b4fe1a20cd5b9842c3aa67633aac4b2610ba2
-SIZE (google-googletest-3026483_GH0.tar.gz) = 859168
