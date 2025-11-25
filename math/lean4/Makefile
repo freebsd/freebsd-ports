@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.25.1
+DISTVERSION=	4.25.2
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -77,6 +77,6 @@ post-install:
 		lib/lean/libleanshared_1.so \
 		lib/lean/libLake_shared.so
 
-# tests as of 4.25.1: 100% tests passed, 0 tests failed out of 3241
+# tests as of 4.25.2: 100% tests passed, 0 tests failed out of 3241
 
 .include <bsd.port.mk>
