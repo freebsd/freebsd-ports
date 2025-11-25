@@ -1,6 +1,7 @@
 bin/sonivoxrender
 include/sonivox/eas.h
 include/sonivox/eas_chorus.h
+include/sonivox/eas_report.h
 include/sonivox/eas_reverb.h
 include/sonivox/eas_types.h
 lib/cmake/sonivox/sonivox-config-version.cmake
@@ -10,7 +11,7 @@ lib/cmake/sonivox/sonivox-targets.cmake
 lib/libsonivox-static.a
 lib/libsonivox.so
 lib/libsonivox.so.3
-lib/libsonivox.so.3.6.15.0
+lib/libsonivox.so.3.6.16.0
 libdata/pkgconfig/sonivox-static.pc
 libdata/pkgconfig/sonivox.pc
 share/man/man1/sonivoxrender.1.gz
