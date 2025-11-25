@@ -5,7 +5,8 @@ CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Xyce electronic simulator
-WWW=		https://xyce.sandia.gov/
+WWW=		https://xyce.sandia.gov/ \
+		https://github.com/Xyce/Xyce
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
