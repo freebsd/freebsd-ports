@@ -1,5 +1,6 @@
 PORTNAME=	libedit
 DISTVERSION=	3.1-20251016
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://thrysoee.dk/editline/

@@ -1,0 +1,10 @@
+--- configure.orig	2025-11-25 18:37:32 UTC
++++ configure
+@@ -14914,6 +14914,7 @@ test -n "$NROFF" || NROFF="/bin/false"
+       MANTYPE=mdoc
+    fi
+ 
++MANTYPE=mdoc
+ 
+ 
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for tgetent in -lncurses" >&5
