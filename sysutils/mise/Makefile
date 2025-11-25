@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.11.5
+DISTVERSION=	2025.11.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,8 +43,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.4 \
-		anstyle-wincon-3.0.10 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
 		arbitrary-1.4.2 \
 		arc-swap-1.7.1 \
@@ -88,7 +88,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bumpalo-3.19.0 \
 		bytecount-0.6.9 \
 		byteorder-1.5.0 \
-		bytes-1.10.1 \
+		bytes-1.11.0 \
 		bytesize-2.2.0 \
 		bzip2-0.5.2 \
 		bzip2-0.6.1 \
@@ -96,7 +96,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		calm_io-0.1.1 \
 		calmio_filters-0.1.0 \
 		cbc-0.1.2 \
-		cc-1.2.45 \
+		cc-1.2.46 \
 		cesu8-1.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.4 \
@@ -109,9 +109,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ci_info-0.14.15 \
 		cipher-0.4.4 \
 		clang-sys-1.8.1 \
-		clap-4.5.51 \
+		clap-4.5.52 \
 		clap-sort-1.0.3 \
-		clap_builder-4.5.51 \
+		clap_builder-4.5.52 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.6 \
 		clru-0.6.2 \
@@ -222,7 +222,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		filetime-0.2.26 \
 		filetime_creation-0.2.0 \
 		find-crate-0.6.3 \
-		find-msvc-tools-0.1.4 \
+		find-msvc-tools-0.1.5 \
 		fixedbitset-0.5.7 \
 		flagset-0.4.7 \
 		flate2-1.1.5 \
@@ -337,10 +337,10 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		httpdate-1.0.3 \
 		human_format-1.1.0 \
 		humansize-2.1.3 \
-		hyper-1.8.0 \
+		hyper-1.8.1 \
 		hyper-rustls-0.27.7 \
 		hyper-tls-0.6.0 \
-		hyper-util-0.1.17 \
+		hyper-util-0.1.18 \
 		i18n-config-0.4.8 \
 		i18n-embed-0.15.4 \
 		i18n-embed-fl-0.9.4 \
@@ -574,7 +574,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		roff-0.2.2 \
 		rops-0.1.5 \
 		rowan-0.15.17 \
-		rsa-0.9.8 \
+		rsa-0.9.9 \
 		rust-embed-8.9.0 \
 		rust-embed-impl-8.9.0 \
 		rust-embed-utils-8.9.0 \
@@ -625,8 +625,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
 		serde_urlencoded-0.7.1 \
-		serde_with-3.15.1 \
-		serde_with_macros-3.15.1 \
+		serde_with-3.16.0 \
+		serde_with_macros-3.16.0 \
 		serde_yaml-0.9.34+deprecated \
 		serial_test-3.2.0 \
 		serial_test_derive-3.2.0 \
@@ -739,7 +739,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
 		unicode-xid-0.2.6 \
-		unit-prefix-0.5.1 \
+		unit-prefix-0.5.2 \
 		universal-hash-0.5.1 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.7.1 \
@@ -788,7 +788,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows-link-0.1.3 \
 		windows-link-0.2.1 \
 		windows-numerics-0.2.0 \
-		windows-registry-0.5.3 \
+		windows-registry-0.6.1 \
 		windows-result-0.3.4 \
 		windows-result-0.4.1 \
 		windows-strings-0.4.2 \
