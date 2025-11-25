@@ -176,6 +176,7 @@ bin/gotosocial
 %%WWWDIR%%/template/2fa.tmpl
 %%WWWDIR%%/template/404.tmpl
 %%WWWDIR%%/template/about.tmpl
+%%WWWDIR%%/template/authorize-interaction.tmpl
 %%WWWDIR%%/template/authorize.tmpl
 %%WWWDIR%%/template/confirm-email.tmpl
 %%WWWDIR%%/template/confirmed-email.tmpl

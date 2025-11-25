@@ -1,5 +1,5 @@
-TIMESTAMP = 1761619800
-SHA256 (gotosocial-0.20.1-source-code.tar.gz) = 8a380869e9735647c095e1524b6b24811a668cfd9094ad19580c857aecb1578c
-SIZE (gotosocial-0.20.1-source-code.tar.gz) = 133526412
-SHA256 (gotosocial_0.20.1_web-assets.tar.gz) = d16bda3d4553318775b73ed1b66969dfbbf1fdca3879f843752581738814cc05
-SIZE (gotosocial_0.20.1_web-assets.tar.gz) = 4158829
+TIMESTAMP = 1764109333
+SHA256 (gotosocial-0.20.2-source-code.tar.gz) = 512217351c4d0c2380ab7d03920a8ffb17ca36354c8db92b213eb02727e068b5
+SIZE (gotosocial-0.20.2-source-code.tar.gz) = 133594145
+SHA256 (gotosocial_0.20.2_web-assets.tar.gz) = f39b459f72ecb8c6cba221fa145b412bad0685c95f4ec4a223b2bf88d2da7636
+SIZE (gotosocial_0.20.2_web-assets.tar.gz) = 4162010
