@@ -101,6 +101,7 @@ USERS=		${WAZUH_USER}
 GROUPS=		${WAZUH_GROUP}
 
 SUB_FILES=	pkg-message
+PLIST_SUB+=	PYTHON_DISTVERSION=${PYTHON_REL:C|^([0-9])([0-9]{2})([0-9]+)|\1.\2.\3|}
 CONFLICTS=	ossec-* wazuh-agent
 
 WZBIN_FILES=	agent_control wazuh-logcollector wazuh-execd  manage_agents wazuh-modulesd \
