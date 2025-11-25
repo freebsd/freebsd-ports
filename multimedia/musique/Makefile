@@ -1,11 +1,12 @@
 PORTNAME=	musique
 DISTVERSION=	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Music player built for speed, simplicity and style
-WWW=		https://flavio.tordini.org/musique
+WWW=		https://flavio.tordini.org/musique \
+		https://github.com/flaviotordini/musique
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libmpv.so:multimedia/mpv \
 		libtag.so:audio/taglib
 
-USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:5
+USES=		compiler:c++11-lang desktop-file-utils gl pkgconfig qmake qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	flaviotordini
 GH_TUPLE=	\
@@ -26,7 +27,7 @@ GH_TUPLE=	\
 		itay-grudev:SingleApplication:14e9d14675156d3b55473a3b085de0e2a9f75578:itay_grudev_SingleApplication/lib/singleapplication
 
 USE_GL=		gl
-USE_QT=		core dbus declarative gui network sql widgets buildtools:build
+USE_QT=		base declarative tools:build
 
 QMAKE_ARGS=	QMAKE_LRELEASE=${LRELEASE}
 
@@ -35,8 +36,6 @@ CXXFLAGS+=	`pkg-config --cflags taglib`
 OPTIONS_DEFINE=		NLS
 OPTIONS_DEFAULT=	NLS
 OPTIONS_SUB=		yes
-
-NLS_USE=	QT=linguisttools:build
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e '/include(locale\/locale.pri)/d' ${WRKSRC}/${PORTNAME}.pro
