@@ -3,6 +3,9 @@ PORTVERSION=	2.73
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	0bef7559e78041cdfb4320bbb18629b71f1fea41.patch:-p1
+
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Embeddable JSON database engine library
 WWW=		https://ejdb.org/

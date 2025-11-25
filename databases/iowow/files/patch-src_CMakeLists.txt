@@ -1,15 +1,24 @@
---- src/CMakeLists.txt.orig	2019-03-29 16:56:25 UTC
+--- src/CMakeLists.txt.orig	2024-04-16 04:02:51 UTC
 +++ src/CMakeLists.txt
-@@ -164,7 +169,7 @@ endif()
+@@ -184,7 +184,7 @@ list(REMOVE_DUPLICATES PROJECT_INCLUDE_DIRS)
+ include_directories(${PROJECT_INCLUDE_DIRS})
+ 
+ # -pg -no-pie
+-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
++string(REGEX REPLACE " +" " " CMAKE_C_FLAGS "${CMAKE_C_FLAGS} \
+                     -std=gnu11 -fsigned-char -pedantic \
+                     -Wfatal-errors -Wall -Wextra \
+                     -Wno-sign-compare -Wno-unused-parameter \
+@@ -211,7 +211,7 @@ endif()
  
  set(CMAKE_C_FLAGS_DEBUG "-O0 -g -ggdb -Werror -DDEBUG -D_DEBUG -UNDEBUG \
                           -Wno-unused-variable ${CMAKE_C_ASAN}")
 -set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG ${CMAKE_C_ASAN}")
 +set(CMAKE_C_FLAGS_RELEASE "-DNDEBUG ${CMAKE_C_ASAN}")
  set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELEASE} -g")
+ set(CMAKE_C_FLAGS_RELEASEWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
  
- 
-@@ -278,7 +283,6 @@ endif()
+@@ -324,7 +324,6 @@ endif()
  
  
  install(FILES
