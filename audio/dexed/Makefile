@@ -1,13 +1,13 @@
 PORTNAME=	dexed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.8-17
-DISTVERSIONSUFFIX=	-g5a07eb1
+DISTVERSION=	0.9.9
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-synth
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	DX7 FM multi plaform/multi format plugin
-WWW=		https://asb2m10.github.io/dexed/
+WWW=		https://asb2m10.github.io/dexed/ \
+		https://github.com/asb2m10/dexed
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -29,14 +29,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	asb2m10
 
 GH_TUPLE=	\
-		steinbergmedia:vst3sdk:e9895dc9ef20bedd93a0fde5ad664bc8b56d4338:steinbergmedia_vst3sdk/libs/vst3sdk \
-		surge-synthesizer:tuning-library:601c0eabff31fff8a543b49d3e48073f338f413c:surge_synthesizer_tuning_library/libs/tuning-library \
+		steinbergmedia:vst3sdk:56e4b2a:steinbergmedia_vst3sdk/libs/vst3sdk \
+		surge-synthesizer:tuning-library:3bbe951:surge_synthesizer_tuning_library/libs/tuning-library \
 		surge-synthesizer:surgesynthteam_tuningui:54f9a74cd55cdb33fb4d32d706067626857cfc75:surge_synthesizer_surgesynthteam_tuningui/libs/surgesynthteam_tuningui \
-		ODDSound:MTS-ESP:514ed958b38e5ab501999f902a2427ebe6232a78:ODDSound_MTS_ESP/libs/MTS-ESP \
-		juce-framework:JUCE:d054f0d14dcac387aebda44ce5d792b5e7a625b3:juce_framework_JUCE/libs/JUCE \
-		free-audio:clap-juce-extensions:4491bc30223cecf8ff495de943510863b71a7a81:free_audio_clap_juce_extensions/libs/clap-juce-extensions \
-		free-audio:clap:df8f16c69ba1c1a15fb105f0c5a2e5b9ac6be742:free_audio_clap/libs/clap-juce-extensions/clap-libs/clap \
-		free-audio:clap-helpers:7b53a685e11465154b4ccba3065224dbcbf8a893:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers
+		ODDSound:MTS-ESP:803c3aa:ODDSound_MTS_ESP/libs/MTS-ESP \
+		juce-framework:JUCE:ae51448:juce_framework_JUCE/libs/JUCE \
+		free-audio:clap-juce-extensions:2c23b91:free_audio_clap_juce_extensions/libs/clap-juce-extensions \
+		free-audio:clap:41964fa:free_audio_clap/libs/clap-juce-extensions/clap-libs/clap \
+		free-audio:clap-helpers:41e1086:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers
 
 DOS2UNIX_GLOB=	*.cpp *.h
 
