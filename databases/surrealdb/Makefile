@@ -1,7 +1,6 @@
 PORTNAME=	surrealdb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.10
-PORTREVISION=	2
+DISTVERSION=	2.4.0
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,7 +36,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		allocator-api2-0.2.21 \
-		ammonia-4.0.0 \
+		ammonia-4.1.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
@@ -91,7 +90,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bincode-1.3.3 \
 		bindgen-0.69.5 \
 		bindgen-0.70.1 \
-		bindgen-0.71.1 \
+		bindgen-0.72.1 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitcode-0.6.6 \
@@ -153,6 +152,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crossbeam-utils-0.8.21 \
 		crunchy-0.2.3 \
 		crypto-common-0.1.6 \
+		cssparser-0.35.0 \
+		cssparser-macros-0.6.1 \
 		darling-0.20.10 \
 		darling_core-0.20.10 \
 		darling_macro-0.20.10 \
@@ -173,6 +174,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dmp-0.2.0 \
 		doc-comment-0.3.3 \
 		double-ended-peekable-0.1.0 \
+		dtoa-1.0.10 \
+		dtoa-short-0.3.5 \
 		earcutr-0.4.3 \
 		either-1.15.0 \
 		ena-0.14.3 \
@@ -250,7 +253,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hex-0.4.3 \
 		hmac-0.12.1 \
 		home-0.5.11 \
-		html5ever-0.27.0 \
+		html5ever-0.35.0 \
 		http-0.2.12 \
 		http-1.3.1 \
 		http-body-0.4.6 \
@@ -293,7 +296,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
 		itertools-0.12.1 \
-		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
 		jiff-0.2.4 \
@@ -311,7 +313,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libloading-0.8.6 \
 		libm-0.2.11 \
 		libredox-0.1.3 \
-		librocksdb-sys-0.17.1+9.9.3 \
 		libz-sys-1.1.22 \
 		linfa-linalg-0.1.0 \
 		linux-raw-sys-0.4.15 \
@@ -323,7 +324,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lz4-sys-1.11.1+lz4-1.10.0 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
-		markup5ever-0.12.1 \
+		markup5ever-0.35.0 \
+		match_token-0.35.0 \
 		matchers-0.2.0 \
 		matchit-0.7.3 \
 		matrixmultiply-0.3.9 \
@@ -472,7 +474,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rmpv-1.3.0 \
 		roaring-0.10.10 \
 		robust-1.1.0 \
-		rocksdb-0.23.0 \
 		rquickjs-0.9.0 \
 		rquickjs-core-0.9.0 \
 		rquickjs-macro-0.9.0 \
@@ -551,6 +552,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		subtle-2.6.1 \
 		surrealcs-0.4.4 \
 		surrealcs-kernel-0.4.4 \
+		surrealdb-librocksdb-sys-0.17.3+10.6.2 \
+		surrealdb-rocksdb-0.24.0-surreal.1 \
 		surrealdb-tikv-client-0.3.0-surreal.3 \
 		surrealkv-0.9.1 \
 		surrealml-core-0.1.3 \
@@ -663,6 +666,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasmtimer-0.2.1 \
 		web-sys-0.3.77 \
 		web-time-1.1.0 \
+		web_atoms-0.1.3 \
 		webpki-roots-0.26.8 \
 		which-4.4.2 \
 		winapi-0.3.9 \
