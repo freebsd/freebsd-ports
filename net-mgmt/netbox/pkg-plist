@@ -152,6 +152,7 @@
 %%DATADIR%%/core/tests/test_changelog.py
 %%DATADIR%%/core/tests/test_filtersets.py
 %%DATADIR%%/core/tests/test_models.py
+%%DATADIR%%/core/tests/test_openapi_schema.py
 %%DATADIR%%/core/tests/test_views.py
 %%DATADIR%%/core/urls.py
 %%DATADIR%%/core/utils.py
@@ -250,6 +251,7 @@
 %%DATADIR%%/dcim/migrations/0213_platform_parent.py
 %%DATADIR%%/dcim/migrations/0214_platform_rebuild.py
 %%DATADIR%%/dcim/migrations/0215_rackreservation_status.py
+%%DATADIR%%/dcim/migrations/0216_latitude_longitude_validators.py
 %%DATADIR%%/dcim/migrations/__init__.py
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/cpu.json
 %%DATADIR%%/dcim/migrations/initial_data/module_type_profiles/expansion_card.json
