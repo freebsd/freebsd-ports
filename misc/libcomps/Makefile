@@ -1,6 +1,5 @@
 PORTNAME=	libcomps
-DISTVERSION=	0.1.21
-PORTREVISION=	1
+DISTVERSION=	0.1.23
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,5 +32,9 @@ PYTHON_CMAKE_BOOL=	BUILD_PYTHON_MODULE
 PYTHON_USES=		python
 PYTHON_BUILD_DEPENDS=	${PY_SETUPTOOLS}
 PYTHON_CMAKE_ON=	-DPYTHON_DESIRED=${PYTHON_MAJOR_VER}
+
+# tests as of 0.1.23:
+# 100%: Checks: 5, Failures: 0, Errors: 0
+# 100%: Checks: 8, Failures: 0, Errors: 0
 
 .include <bsd.port.mk>
