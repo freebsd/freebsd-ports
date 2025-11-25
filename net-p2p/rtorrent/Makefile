@@ -1,5 +1,5 @@
 PORTNAME=	rtorrent
-DISTVERSION=	0.16.3
+DISTVERSION=	0.16.4
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
 
