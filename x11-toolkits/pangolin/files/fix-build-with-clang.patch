@@ -1,0 +1,35 @@
+From fb7c757fb51b6241019a36fc153c47ab69dd83c2 Mon Sep 17 00:00:00 2001
+From: Maurizio Monge <maurimo@fb.com>
+Date: Mon, 13 Oct 2025 12:01:22 +0100
+Subject: [PATCH] fix compilation with CLang
+
+---
+ components/pango_windowing/src/display_x11.cpp | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/components/pango_windowing/src/display_x11.cpp b/components/pango_windowing/src/display_x11.cpp
+index eac1cde04..e73fef669 100644
+--- a/components/pango_windowing/src/display_x11.cpp
++++ b/components/pango_windowing/src/display_x11.cpp
+@@ -431,8 +431,8 @@ void X11Window::ProcessEvents()
+         {
+             const int button = ev.xbutton.button-1;
+             MouseSignal(MouseEvent{
+-               (float)ev.xbutton.x, (float)ev.xbutton.y,
+-               GetEventFlagsFromXState(ev.xkey.state),
++               WindowInputEvent{(float)ev.xbutton.x, (float)ev.xbutton.y,
++                    GetEventFlagsFromXState(ev.xkey.state)},
+                button, ev.xbutton.type == ButtonPress
+            });
+            break;
+@@ -499,8 +499,8 @@ void X11Window::ProcessEvents()
+ 
+             if(key >=0) {
+                 KeyboardSignal(KeyboardEvent{
+-                    (float)ev.xkey.x, (float)ev.xkey.y,
+-                    GetEventFlagsFromXState(ev.xkey.state),
++                    WindowInputEvent{(float)ev.xkey.x, (float)ev.xkey.y,
++                        GetEventFlagsFromXState(ev.xkey.state)},
+                     (unsigned char)key, ev.type == KeyPress
+                 });
+             }
