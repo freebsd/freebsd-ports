@@ -418,4 +418,4 @@ include/tbox/zip/zlib.h
 include/tbox/zip/zlibraw.h
 lib/libtbox.so
 lib/libtbox.so.1
-lib/libtbox.so.1.7.7
+lib/libtbox.so.%%DISTVERSION%%
