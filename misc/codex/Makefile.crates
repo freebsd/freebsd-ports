@@ -68,6 +68,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.1.1 \
 		cfg_aliases-0.2.1 \
+		chardetng-0.1.17 \
 		chrono-0.4.42 \
 		chunked_transfer-1.5.0 \
 		cipher-0.4.4 \
@@ -160,7 +161,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		event-listener-strategy-0.5.4 \
 		eventsource-stream-0.2.3 \
 		eyre-0.6.12 \
-		fancy-regex-0.13.0 \
 		fastrand-2.3.0 \
 		fax-0.2.6 \
 		fax_derive-0.2.0 \
@@ -416,7 +416,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rmcp-0.8.5 \
 		rmcp-macros-0.8.5 \
 		rustc-demangle-0.1.25 \
-		rustc-hash-1.1.0 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
@@ -517,6 +516,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		termcolor-1.4.1 \
 		terminal_size-0.4.2 \
 		termtree-0.5.1 \
+		test-case-3.3.1 \
+		test-case-core-3.3.1 \
+		test-case-macros-3.3.1 \
 		test-log-0.2.18 \
 		test-log-macros-0.2.18 \
 		textwrap-0.11.0 \
@@ -527,7 +529,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.9 \
 		tiff-0.10.3 \
-		tiktoken-rs-0.7.0 \
 		time-0.3.44 \
 		time-core-0.1.6 \
 		time-macros-0.2.24 \

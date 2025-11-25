@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.58.0
+DISTVERSION=	0.63.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,7 +11,8 @@ WWW=		https://openai.com/codex \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libonig.so:devel/oniguruma
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+		libonig.so:devel/oniguruma
 RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
@@ -25,7 +26,7 @@ CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
 CARGO_BUILD_ARGS=	--bin ${PORTNAME}
 CARGO_INSTALL_PATH=	codex-rs
-CARGO_TEST_ARGS=	--all-features
+CARGO_TEST_ARGS=	--all-features --no-fail-fast
 CARGO_ENV=		OPENSSL_NO_VENDOR=1
 
 BUILD_WRKSRC=	${WRKSRC}/codex-rs
@@ -54,10 +55,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec.rs \
 		${BUILD_WRKSRC}/core/src/tools/spec.rs \
-		${BUILD_WRKSRC}/core/src/unified_exec/mod.rs \
-		${BUILD_WRKSRC}/core/tests/suite/approvals.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
-		${BUILD_WRKSRC}/core/tests/suite/shell_serialization.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
 		${BUILD_WRKSRC}/tui/src/exec_command.rs
