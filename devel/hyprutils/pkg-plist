@@ -2,6 +2,8 @@ include/hyprutils/animation/AnimatedVariable.hpp
 include/hyprutils/animation/AnimationConfig.hpp
 include/hyprutils/animation/AnimationManager.hpp
 include/hyprutils/animation/BezierCurve.hpp
+include/hyprutils/cli/ArgumentParser.hpp
+include/hyprutils/cli/Logger.hpp
 include/hyprutils/i18n/I18nEngine.hpp
 include/hyprutils/math/Box.hpp
 include/hyprutils/math/Edges.hpp
@@ -15,6 +17,7 @@ include/hyprutils/memory/ImplBase.hpp
 include/hyprutils/memory/SharedPtr.hpp
 include/hyprutils/memory/UniquePtr.hpp
 include/hyprutils/memory/WeakPtr.hpp
+include/hyprutils/os/File.hpp
 include/hyprutils/os/FileDescriptor.hpp
 include/hyprutils/os/Process.hpp
 include/hyprutils/path/Path.hpp
@@ -26,6 +29,6 @@ include/hyprutils/string/VarList.hpp
 include/hyprutils/string/VarList2.hpp
 include/hyprutils/utils/ScopeGuard.hpp
 lib/libhyprutils.so
-lib/libhyprutils.so.%%SOVERSION_MAJOR%%
 lib/libhyprutils.so.%%SOVERSION_FULL%%
+lib/libhyprutils.so.%%SOVERSION_MAJOR%%
 libdata/pkgconfig/hyprutils.pc
