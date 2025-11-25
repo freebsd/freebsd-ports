@@ -1,6 +1,6 @@
 PORTNAME=	mihomo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19.5
+DISTVERSION=	1.19.16
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/MetaCubeX/mihomo/tree/Alpha
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.21,modules cpe
+USES=		go:modules cpe
 
 CPE_VENDOR=	clash_project
 
