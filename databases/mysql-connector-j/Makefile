@@ -1,5 +1,5 @@
 PORTNAME=	mysql-connector-j
-PORTVERSION=	9.0.0
+PORTVERSION=	9.5.0
 CATEGORIES=	databases java
 MASTER_SITES=	MYSQL/Connector-J
 
