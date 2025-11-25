@@ -1,5 +1,6 @@
 PORTNAME=	gromacs
 DISTVERSION=	2025.4
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://ftp.gromacs.org/pub/gromacs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest

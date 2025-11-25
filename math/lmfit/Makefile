@@ -1,5 +1,5 @@
 PORTNAME=	lmfit
-DISTVERSION=	9.0
+DISTVERSION=	10.0
 CATEGORIES=	math
 MASTER_SITES=	https://jugit.fz-juelich.de/mlz/${PORTNAME}/-/archive/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
@@ -22,5 +22,7 @@ CMAKE_TESTING_ON=	BUILD_TESTING
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	*
+
+# tests as of 10.0 fail: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
