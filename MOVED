@@ -4869,3 +4869,4 @@ deskutils/fet@qt6|deskutils/fet|2025-11-16|Qt Flavorization has been removed. Co
 lang/ruby35|lang/ruby40|2025-11-18|Upstream changed version of master branch in their repository from 3.5 to 4.0
 lang/spidermonkey91||2025-11-18|Removed
 science/zx||2025-11-25|Removed: upstream repository archived on Jun 15, 2023, they refactored this project into a different package
+x11/salut||2025-11-25|Has expired: fails to build with rust 1.90.0
