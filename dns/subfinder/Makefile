@@ -1,6 +1,6 @@
 PORTNAME=	subfinder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.9.0
+DISTVERSION=	2.10.1
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://github.com/projectdiscovery/subfinder
 
 LICENSE=	MIT
 
-USES=		go:modules
+USES=		go:1.24,modules
 
 GO_MODULE=	github.com/projectdiscovery/subfinder/v2
 GO_TARGET=	./cmd/${PORTNAME}
