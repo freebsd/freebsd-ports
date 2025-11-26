@@ -1,4 +1,4 @@
-The buf CLI is the tool for working with Protocol Buffers. It provides:
+buf CLI is a tool for working with Protocol Buffers. It provides:
 * A linter that enforces good API design choices and structure.
 * A breaking change detector that enforces compatibility at the source code
   or wire level.
