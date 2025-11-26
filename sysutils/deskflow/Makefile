@@ -1,6 +1,6 @@
 PORTNAME=	deskflow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.0
+DISTVERSION=	1.25.0
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/deskflow/deskflow/commit/
@@ -14,19 +14,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_FreeBSD_13=	requires OpenSSL 3.0
 
-BUILD_DEPENDS=	${LOCALBASE}/include/CLI/Version.hpp:devel/cli11 \
-		googletest>0:devel/googletest \
+BUILD_DEPENDS=	googletest>0:devel/googletest \
 		help2man:misc/help2man
 LIB_DEPENDS=	libei.so:x11/libei \
 		libportal.so:deskutils/libportal \
-		libtomlplusplus.so:devel/tomlplusplus \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++20-lang gl gnome pkgconfig qt:6 ssl xorg
 USE_GITHUB=	yes
 USE_GL=		opengl
 USE_GNOME=	glib20
-USE_QT=		base
+USE_QT=		base translations tools:build
 USE_XORG=	ice sm x11 xext xi xinerama xkbfile xrandr xtst
 
 OPTIONS_DEFINE=	DOCS
