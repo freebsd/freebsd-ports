@@ -1,6 +1,5 @@
-PORTNAME=	setuptools-scm
-PORTVERSION=	8.0.4
-PORTREVISION=	2
+PORTNAME=	setuptools_scm
+PORTVERSION=	9.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,12 +7,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Setuptools plugin to manage your versions by scm tags
 WWW=		https://setuptools-scm.readthedocs.io/en/latest/ \
-		https://github.com/pypa/setuptools-scm
+			https://github.com/pypa/setuptools-scm
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=80:devel/py-setuptools@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20:devel/py-packaging@${PY_FLAVOR} \
