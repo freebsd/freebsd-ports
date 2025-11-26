@@ -1,5 +1,5 @@
 PORTNAME=	swoole
-DISTVERSION=	6.1.2
+DISTVERSION=	6.1.3
 PORTREVISION=	0
 CATEGORIES=	devel net
 
@@ -12,9 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	i386 powerpc
 NOT_FOR_ARCHS_REASON=	upstream drop 32 bits support
+IGNORE_WITH_PHP=	85
 
 USES=		compiler:c11 localbase:ldflags php:build,pecl pkgconfig ssl
-IGNORE_WITH_PHP=	85
 
 CONFIGURE_ARGS+=	--enable-mysqlnd --enable-openssl
 
