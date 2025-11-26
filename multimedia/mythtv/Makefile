@@ -1,6 +1,7 @@
 PORTNAME=	mythtv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	35.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 
@@ -34,7 +35,8 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libsndio.so:audio/sndio \
 		libgnutls.so:security/gnutls \
 		libzip.so:archivers/libzip \
-		libexpat.so:textproc/expat2
+		libexpat.so:textproc/expat2 \
+		libudfread.so:multimedia/libudfread
 RUN_DEPENDS+=	tv_check:textproc/p5-xmltv \
 		wget:ftp/wget
 

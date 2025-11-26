@@ -22,7 +22,6 @@ bin/mythtv-setup
 bin/mythutil
 bin/mythwelcome
 bin/mythwikiscripts
-include/mythtv/blockinput.h
 include/mythtv/dvdnav/dvd_types.h
 include/mythtv/dvdnav/dvdnav.h
 include/mythtv/dvdnav/dvdnav_events.h
@@ -404,7 +403,6 @@ include/mythtv/libswscale/version.h
 include/mythtv/libswscale/version_major.h
 include/mythtv/mythconfig.h
 include/mythtv/mythconfig.mak
-include/mythtv/udfread.h
 lib/libmyth-35.so
 lib/libmyth-35.so.35
 lib/libmyth-35.so.35.0
