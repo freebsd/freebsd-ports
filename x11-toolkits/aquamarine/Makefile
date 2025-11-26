@@ -1,6 +1,6 @@
 PORTNAME=	aquamarine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
+DISTVERSION=	0.10.0
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -32,8 +32,8 @@ USE_GL=		egl gbm glesv2
 USE_LDCONFIG=	yes
 USE_XORG=	pixman
 
-PLIST_SUB=	SOVERSION_MAJOR=8 \
-		SOVERSION_FULL=${DISTVERSION:C/-.*//}
+PLIST_SUB=	SOVERSION_FULL=${DISTVERSION:C/-.*//} \
+		SOVERSION_MAJOR=9
 
 # XXX Drop after FreeBSD 13.5 EOL around 2026-04-30
 # https://cgit.freebsd.org/src/commit/?id=af93fea71038
