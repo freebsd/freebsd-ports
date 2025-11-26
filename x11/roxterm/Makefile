@@ -1,5 +1,5 @@
 PORTNAME=	roxterm
-PORTVERSION=	3.16.2
+PORTVERSION=	3.17.2
 CATEGORIES=	x11
 
 MAINTAINER=	nc@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://github.com/realh/roxterm
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl
+BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
+		gettext>0:devel/gettext
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libgnutls.so:security/gnutls \
