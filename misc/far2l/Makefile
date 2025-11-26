@@ -1,5 +1,6 @@
 PORTNAME=	far2l
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v_
 CATEGORIES=	misc
 
@@ -9,7 +10,8 @@ WWW=		https://github.com/elfmz/far2l
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libuchardet.so:textproc/uchardet
+LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo \
+		libuchardet.so:textproc/uchardet
 RUN_DEPENDS=	bash:shells/bash
 
 USE_GITHUB=	yes
