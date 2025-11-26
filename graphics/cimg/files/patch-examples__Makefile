@@ -1,4 +1,4 @@
---- examples/Makefile.orig	2025-09-23 12:47:26 UTC
+--- examples/Makefile.orig	2025-11-21 07:26:29 UTC
 +++ examples/Makefile
 @@ -78,7 +78,7 @@ FILES = CImg_demo \
  	use_RGBclass \
@@ -80,37 +80,15 @@
  
  # Flags to enable native support for compressed .cimgz files, using the Zlib library.
  # ( http://www.zlib.net/ )
-@@ -306,11 +306,18 @@ endif
- 
- # Flags to enable the use of LAPACK routines for matrix computation
- # ( http://www.netlib.org/lapack/ )
--LAPACK_DEFINE = -Dcimg_use_lapack
-+#LAPACK_DEFINE = -Dcimg_use_lapack
- LAPACK_INCDIR =
--LAPACK_CFLAGS = $(LAPACK_DEFINE) $(LAPACK_INCDIR)
--LAPACK_LIBS = -lblas -llapack
-+#LAPACK_CFLAGS = $(LAPACK_DEFINE) $(LAPACK_INCDIR)
-+#LAPACK_LIBS = -lblas -llapack
- 
-+# Flags to enable the use of the Board library
-+# ( https://github.com/GreycLab/libboard )
-+BOARD_DEFINE = -Dcimg_use_board
-+BOARD_INCDIR = -I$(LOCALBASE)/include/board
-+BOARD_CFLAGS = $(BOARD_DEFINE) $(BOARD_INCDIR)
-+BOARD_LIBS = -lboard -lMagick++-7
-+
- # Enable native support of WebP image files, using the WebP library.
- # (https://chromium.googlesource.com/webm/libwebp/)
- WEBP_DEFINE = -Dcimg_use_webp
-@@ -386,6 +393,7 @@ $(XSHM_LIBS)" \
+@@ -377,6 +377,7 @@ $(XSHM_LIBS)" \
+ $(TIFF_LIBS) \
  $(HEIF_LIBS) \
- $(LAPACK_LIBS) \
  $(XSHM_LIBS)" \
 +$(PTHREAD_LIBS)" \
  all $(EXTRA_FILES)
  
  # Linux/BSD/Mac OSX targets, with X11 display.
-@@ -464,6 +472,7 @@ $(OPT_CFLAGS) \
+@@ -455,6 +456,7 @@ $(OPT_CFLAGS) \
  	@$(MAKE) \
  "CONF_CFLAGS = \
  $(OPT_CFLAGS) \
@@ -118,12 +96,10 @@
  $(VT100_CFLAGS) \
  $(X11_CFLAGS) \
  $(XSHM_CFLAGS) \
-@@ -477,8 +486,12 @@ $(MAGICK_CFLAGS) \
+@@ -468,8 +470,10 @@ $(MAGICK_CFLAGS) \
  $(CURL_CFLAGS) \
  $(OPENCV_CFLAGS) \
  $(MAGICK_CFLAGS) \
-+$(LAPACK_CFLAGS) \
-+$(BOARD_CFLAGS) \
 +$(WEBP_CFLAGS) \
  $(FFTW3_CFLAGS)" \
  "CONF_LIBS = \
@@ -131,12 +107,10 @@
  $(X11_LIBS) \
  $(XSHM_LIBS) \
  $(XRANDR_LIBS) \
-@@ -491,6 +504,9 @@ $(MAGICK_LIBS) \
+@@ -482,6 +486,7 @@ $(MAGICK_LIBS) \
  $(CURL_LIBS) \
  $(OPENCV_LIBS) \
  $(MAGICK_LIBS) \
-+$(LAPACK_LIBS) \
-+$(BOARD_LIBS) \
 +$(WEBP_LIBS) \
  $(FFTW3_LIBS)" \
  "STRIP_EXE=true" \
