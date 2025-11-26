@@ -38,6 +38,7 @@ lib/cairo-lang/corelib/src/iter/traits/accum.cairo
 lib/cairo-lang/corelib/src/iter/traits/collect.cairo
 lib/cairo-lang/corelib/src/iter/traits/iterator.cairo
 lib/cairo-lang/corelib/src/keccak.cairo
+lib/cairo-lang/corelib/src/keyword_docs.cairo
 lib/cairo-lang/corelib/src/lib.cairo
 lib/cairo-lang/corelib/src/math.cairo
 lib/cairo-lang/corelib/src/metaprogramming.cairo
