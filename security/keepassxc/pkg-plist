@@ -19,6 +19,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-keepassxc.svg
 %%DATADIR%%/docs/KeePassXC_UserGuide.html
 %%DATADIR%%/icons/application/256x256/apps/keepassxc.png
 %%DATADIR%%/translations/keepassxc_ar.qm
+%%DATADIR%%/translations/keepassxc_be.qm
 %%DATADIR%%/translations/keepassxc_bg.qm
 %%DATADIR%%/translations/keepassxc_ca.qm
 %%DATADIR%%/translations/keepassxc_cs.qm
