@@ -6,9 +6,13 @@ share/locale/ar/LC_MESSAGES/damask.mo
 share/locale/bg/LC_MESSAGES/damask.mo
 share/locale/de/LC_MESSAGES/damask.mo
 share/locale/es/LC_MESSAGES/damask.mo
+share/locale/et/LC_MESSAGES/damask.mo
 share/locale/fi/LC_MESSAGES/damask.mo
 share/locale/fr/LC_MESSAGES/damask.mo
+share/locale/hi/LC_MESSAGES/damask.mo
 share/locale/nl/LC_MESSAGES/damask.mo
+share/locale/pt_BR/LC_MESSAGES/damask.mo
 share/locale/ru/LC_MESSAGES/damask.mo
 share/locale/tr/LC_MESSAGES/damask.mo
+share/locale/uk/LC_MESSAGES/damask.mo
 share/metainfo/app.drey.Damask.metainfo.xml

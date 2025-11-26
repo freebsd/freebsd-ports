@@ -1,6 +1,6 @@
 PORTNAME=	damask
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.3.1
 CATEGORIES=	x11 gnome
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://gitlab.gnome.org/subpop/damask
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib \
+BUILD_DEPENDS=	appstreamcli:devel/appstream \
 		blueprint-compiler:devel/blueprint-compiler
 LIB_DEPENDS=	libportal.so:deskutils/libportal \
 		libportal-gtk4.so:deskutils/libportal-gtk4 \
