@@ -1,6 +1,6 @@
 PORTNAME=	chawan
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.3.0
 CATEGORIES=	www
 MASTER_SITES=	https://git.sr.ht/~bptato/chawan/archive/
 DISTNAME=	${DISTVERSIONFULL}
@@ -19,8 +19,8 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 
 USES=		gmake libtool pkgconfig ssl
 
-WRKSRC=		${WRKDIR}/chawan-${DISTVERSIONFULL}
-
 MAKE_ENV+=	PATH=${LOCALBASE}/nim/bin:${PATH}
+
+WRKSRC=		${WRKDIR}/chawan-${DISTVERSIONFULL}
 
 .include <bsd.port.mk>
