@@ -72,8 +72,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		cipher-0.4.4 \
-		clap-4.5.51 \
-		clap_builder-4.5.51 \
+		clap-4.5.53 \
+		clap_builder-4.5.53 \
 		clap_complete-4.5.55 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
@@ -184,7 +184,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		half-2.6.0 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
-		hashbrown-0.16.0 \
+		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hex-0.4.3 \
@@ -213,7 +213,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ignore-0.4.25 \
 		image-0.25.6 \
 		imagesize-0.11.0 \
-		indexmap-2.12.0 \
+		indexmap-2.12.1 \
 		indicatif-0.18.3 \
 		indoc-2.0.7 \
 		inout-0.1.4 \
@@ -364,12 +364,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.5 \
 		rend-0.5.2 \
-		reqsign-0.18.0 \
-		reqsign-aws-v4-2.0.0 \
-		reqsign-command-execute-tokio-2.0.0 \
-		reqsign-core-2.0.0 \
-		reqsign-file-read-tokio-2.0.0 \
-		reqsign-http-send-reqwest-2.0.0 \
+		reqsign-0.18.1 \
+		reqsign-aws-v4-2.0.1 \
+		reqsign-command-execute-tokio-2.0.1 \
+		reqsign-core-2.0.1 \
+		reqsign-file-read-tokio-2.0.1 \
+		reqsign-http-send-reqwest-2.0.1 \
 		reqwest-0.12.22 \
 		resvg-0.29.0 \
 		retry-policies-0.4.0 \
