@@ -394,7 +394,6 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/tabsqlitedb%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/tabstatistics%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/tabstatistics%%PYTHON_TAG%%.pyc
-%%DATADIR%%/engine/ollama_pull.py
 %%DATADIR%%/engine/emoji_picker.py
 %%DATADIR%%/engine/factory.py
 %%DATADIR%%/engine/get_clipboard_gtk4.py
@@ -410,9 +409,12 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/itb_version.py
 %%DATADIR%%/engine/m17n_translit.py
 %%DATADIR%%/engine/main.py
+%%DATADIR%%/engine/ollama_pull.py
 %%DATADIR%%/engine/tabsqlitedb.py
 %%DATADIR%%/engine/tabstatistics.py
 %%DATADIR%%/icons/ibus-typing-booster.svg
+%%DATADIR%%/setup/__pycache__/dictionary_download%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/setup/__pycache__/dictionary_download%%PYTHON_TAG%%.pyc
 %%DATADIR%%/setup/__pycache__/i18n%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/setup/__pycache__/i18n%%PYTHON_TAG%%.pyc
 %%DATADIR%%/setup/__pycache__/itb_version%%PYTHON_TAG%%.opt-1.pyc
@@ -423,6 +425,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/setup/__pycache__/pkginstall%%PYTHON_TAG%%.pyc
 %%DATADIR%%/setup/__pycache__/test_input_purpose%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/setup/__pycache__/test_input_purpose%%PYTHON_TAG%%.pyc
+%%DATADIR%%/setup/dictionary_download.py
 %%DATADIR%%/setup/i18n.py
 %%DATADIR%%/setup/itb_version.py
 %%DATADIR%%/setup/main.py
