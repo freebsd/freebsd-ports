@@ -17,6 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pr0m1th3as
 GH_PROJECT=	octave-llms
 
+BROKEN_arm64=	does not build
+
 OCTAVE_SRC=	${GH_PROJECT}-release-${DISTVERSION}
 
 .include <bsd.port.mk>
