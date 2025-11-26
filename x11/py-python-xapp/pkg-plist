@@ -2,3 +2,7 @@
 %%PYTHON_SITELIBDIR%%/xapp/SettingsWidgets.py
 %%PYTHON_SITELIBDIR%%/xapp/__init__.py
 %%PYTHON_SITELIBDIR%%/xapp/os.py
+%%PYTHON_SITELIBDIR%%/xapp/threading/__init__.py
+%%PYTHON_SITELIBDIR%%/xapp/util/__init__.py
+%%PYTHON_SITELIBDIR%%/xapp/widgets/ListEditor.py
+%%PYTHON_SITELIBDIR%%/xapp/widgets/__init__.py

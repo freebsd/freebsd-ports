@@ -1,5 +1,5 @@
 PORTNAME=	python-xapp
-DISTVERSION=	2.4.2
+DISTVERSION=	3.0.0
 CATEGORIES=	x11 gnome
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	gnome
@@ -18,7 +18,7 @@ USES=		gnome meson python shebangfix
 USE_GNOME=	pygobject3
 USE_PYTHON=	flavors
 SHEBANG_GLOB=	*.py
-BINARY_ALIAS=	python3=${PYTHON_CMD}
+MESON_ARGS=	-Dpython_target=${PYTHON_VERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxmint
