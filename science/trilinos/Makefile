@@ -1,17 +1,15 @@
 PORTNAME=	trilinos
-DISTVERSIONPREFIX=	trilinos-release-
-DISTVERSION=	16-1-0
-PORTREVISION=	1
+DISTVERSION=	16.2.0
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for multi-physics engineering and scientific problems
-WWW=		https://trilinos.github.io/
+WWW=		https://trilinos.github.io/ \
+		https://github.com/trilinos/trilinos
 
 LICENSE=	BSD3CLAUSE LGPL20 # Trilinos is licensed on a per-package basis. Most packages are under a BSD license, some are published under the (L)GPL.
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_15=	compilation fails with clang-19, see https://github.com/trilinos/Trilinos/issues/13570
 BROKEN_armv6=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
 BROKEN_armv7=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
 BROKEN_i386=	kokkos assumes a 64-bit build; i.e., 8-byte pointers, but found 4-byte
@@ -94,5 +92,7 @@ CONFLICTS_INSTALL=	googletest # installs files into the same place, problematic 
 post-install:
 	# remove MPI headers that it installs
 	@${RM} ${STAGEDIR}${PREFIX}/include/mpi*.h
+
+# Tests fail to compile, see https://github.com/trilinos/Trilinos/issues/14748
 
 .include <bsd.port.mk>
