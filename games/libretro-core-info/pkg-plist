@@ -3,6 +3,7 @@ share/libretro/info/2048_libretro.info
 share/libretro/info/3dengine_libretro.info
 share/libretro/info/81_libretro.info
 share/libretro/info/DoubleCherryGB_libretro.info
+share/libretro/info/FreeIntvTSOverlay_libretro.info
 share/libretro/info/a5200_libretro.info
 share/libretro/info/advanced_tests_libretro.info
 share/libretro/info/anarch_libretro.info
