@@ -560,6 +560,7 @@
     SUBDIR += py-safetensors
     SUBDIR += py-sagemaker
     SUBDIR += py-sagemaker-core
+    SUBDIR += py-sagemaker-train
     SUBDIR += py-schedulefree
     SUBDIR += py-scikit-fusion
     SUBDIR += py-scikit-quant
