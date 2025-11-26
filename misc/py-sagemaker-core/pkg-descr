@@ -1,7 +1,11 @@
-sagemaker-core is a Python SDK designed to provide an object-oriented interface
-for interacting with Amazon SageMaker resources. It offers full parity with
-SageMaker APIs, allowing developers to leverage all SageMaker capabilities
-directly through the SDK. sagemaker-core introduces features such as dedicated
-resource classes, resource chaining, auto code completion, comprehensive
-documentation and type hints to enhance the developer experience as well as
-productivity.
+sagemaker-core is a part of the SageMaker Python SDK.
+
+SageMaker Python SDK is an open source library for training and deploying
+machine learning models on Amazon SageMaker.
+
+With the SDK, you can train and deploy models using popular deep learning
+frameworks Apache MXNet and TensorFlow. You can also train and deploy
+models with Amazon algorithms, which are scalable implementations of core
+machine learning algorithms that are optimized for SageMaker and GPU training.
+If you have your own algorithms built into SageMaker compatible Docker
+containers, you can train and host models using these as well.

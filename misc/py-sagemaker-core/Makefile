@@ -6,8 +6,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Sagemaker core functionalities
-WWW=		https://github.com/aws/sagemaker-core
+COMMENT=	SageMaker: Core functionalities
+WWW=		https://github.com/aws/sagemaker-python-sdk \
+		https://github.com/aws/sagemaker-core
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
