@@ -1,5 +1,9 @@
 bin/copilot
 lib/node_modules/.bin/copilot
+lib/node_modules/@github/copilot/clipboard/index.js
+lib/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/LICENSE
+lib/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/index.d.ts
+lib/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/index.js
 lib/node_modules/@github/copilot/index.js
 lib/node_modules/@github/copilot/prebuilds/freebsd-%%JS_ARCH%%/keytar.node
 lib/node_modules/@github/copilot/prebuilds/freebsd-%%JS_ARCH%%/pty.node
