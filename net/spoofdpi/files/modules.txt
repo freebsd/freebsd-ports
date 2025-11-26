@@ -1,17 +1,7 @@
-# atomicgo.dev/cursor v0.2.0
-## explicit; go 1.15
-# atomicgo.dev/keyboard v0.2.9
-## explicit; go 1.15
-# atomicgo.dev/schedule v0.1.0
-## explicit; go 1.18
 # github.com/BurntSushi/toml v1.5.0
 ## explicit; go 1.18
 github.com/BurntSushi/toml
 github.com/BurntSushi/toml/internal
-# github.com/containerd/console v1.0.3
-## explicit; go 1.13
-# github.com/cpuguy83/go-md2man/v2 v2.0.7
-## explicit; go 1.12
 # github.com/davecgh/go-spew v1.1.1
 ## explicit
 github.com/davecgh/go-spew/spew
@@ -20,39 +10,29 @@ github.com/davecgh/go-spew/spew
 github.com/google/gopacket
 github.com/google/gopacket/layers
 github.com/google/gopacket/pcap
-# github.com/gookit/color v1.5.4
-## explicit; go 1.18
 # github.com/jackpal/gateway v1.1.1
 ## explicit; go 1.24.2
 github.com/jackpal/gateway
-# github.com/lithammer/fuzzysearch v1.1.8
-## explicit; go 1.15
+# github.com/kr/pretty v0.1.0
+## explicit
 # github.com/mattn/go-colorable v0.1.13
 ## explicit; go 1.15
 github.com/mattn/go-colorable
 # github.com/mattn/go-isatty v0.0.19
 ## explicit; go 1.15
 github.com/mattn/go-isatty
-# github.com/mattn/go-runewidth v0.0.15
-## explicit; go 1.9
 # github.com/miekg/dns v1.1.61
 ## explicit; go 1.19
 github.com/miekg/dns
 # github.com/pmezard/go-difflib v1.0.0
 ## explicit
 github.com/pmezard/go-difflib/difflib
-# github.com/pterm/pterm v0.12.79
-## explicit; go 1.21
-# github.com/rivo/uniseg v0.4.4
-## explicit; go 1.18
 # github.com/rs/zerolog v1.33.0
 ## explicit; go 1.15
 github.com/rs/zerolog
 github.com/rs/zerolog/internal/cbor
 github.com/rs/zerolog/internal/json
 github.com/rs/zerolog/log
-# github.com/russross/blackfriday/v2 v2.1.0
-## explicit
 # github.com/stretchr/objx v0.5.2
 ## explicit; go 1.20
 github.com/stretchr/objx
@@ -61,15 +41,9 @@ github.com/stretchr/objx
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/assert/yaml
 github.com/stretchr/testify/mock
-# github.com/urfave/cli v1.22.17
-## explicit; go 1.11
-# github.com/urfave/cli-altsrc/v3 v3.1.0
-## explicit; go 1.23.2
 # github.com/urfave/cli/v3 v3.5.0
 ## explicit; go 1.22
 github.com/urfave/cli/v3
-# github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e
-## explicit; go 1.19
 # golang.org/x/mod v0.18.0
 ## explicit; go 1.18
 golang.org/x/mod/semver
@@ -88,10 +62,6 @@ golang.org/x/sync/errgroup
 ## explicit; go 1.23.0
 golang.org/x/sys/unix
 golang.org/x/sys/windows
-# golang.org/x/term v0.30.0
-## explicit; go 1.23.0
-# golang.org/x/text v0.23.0
-## explicit; go 1.23.0
 # golang.org/x/tools v0.22.0
 ## explicit; go 1.19
 golang.org/x/tools/go/gcexportdata
@@ -111,6 +81,8 @@ golang.org/x/tools/internal/stdlib
 golang.org/x/tools/internal/tokeninternal
 golang.org/x/tools/internal/typesinternal
 golang.org/x/tools/internal/versions
+# gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15
+## explicit
 # gopkg.in/yaml.v3 v3.0.1
 ## explicit
 gopkg.in/yaml.v3
