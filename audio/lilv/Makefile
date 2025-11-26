@@ -1,5 +1,5 @@
 PORTNAME=	lilv
-DISTVERSION=	0.26.0
+DISTVERSION=	0.26.2
 CATEGORIES=	audio
 MASTER_SITES=	https://download.drobilla.net/
 
