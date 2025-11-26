@@ -29,7 +29,7 @@ include/tracy/common/TracyQueue.hpp
 include/tracy/common/TracySocket.hpp
 include/tracy/common/TracyStackFrames.hpp
 include/tracy/common/TracySystem.hpp
-include/tracy/common/TracyUwp.hpp
+include/tracy/common/TracyWinFamily.hpp
 include/tracy/common/TracyYield.hpp
 include/tracy/common/tracy_lz4.hpp
 include/tracy/common/tracy_lz4hc.hpp
