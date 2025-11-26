@@ -4871,3 +4871,4 @@ lang/spidermonkey91||2025-11-18|Removed
 science/zx||2025-11-25|Removed: upstream repository archived on Jun 15, 2023, they refactored this project into a different package
 x11/salut||2025-11-25|Has expired: fails to build with rust 1.90.0
 comms/gtkmmorse||2025-11-26|Has expired: Depends on expired devel/gconfmm26
+devel/gconfmm26||2025-11-26|Has expired: Gconf has been replaced with gsettings

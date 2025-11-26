@@ -769,7 +769,6 @@
     SUBDIR += gcem
     SUBDIR += gcli
     SUBDIR += gconf2
-    SUBDIR += gconfmm26
     SUBDIR += gdb
     SUBDIR += gdcm
     SUBDIR += gdmd
