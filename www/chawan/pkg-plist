@@ -16,6 +16,7 @@ libexec/chawan/cgi-bin/resize
 libexec/chawan/cgi-bin/sftp
 libexec/chawan/cgi-bin/sixel
 libexec/chawan/cgi-bin/spartan
+libexec/chawan/cgi-bin/ssl
 libexec/chawan/cgi-bin/stbi
 libexec/chawan/dirlist2html
 libexec/chawan/gmi2html
@@ -23,6 +24,7 @@ libexec/chawan/gopher2html
 libexec/chawan/img2html
 libexec/chawan/md2html
 libexec/chawan/nc
+libexec/chawan/tohtml
 libexec/chawan/uri2html
 libexec/chawan/urldec
 libexec/chawan/urlenc
