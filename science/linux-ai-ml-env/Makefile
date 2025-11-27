@@ -30,6 +30,7 @@ GH_PROJECT=	examples:examples
 GH_TAGNAME=	5dfeb46902baf444010f2f54bcf4dfbea109ae4d:examples
 
 WRKSRC=		${WRKSRC_examples}
+MAKEDIST_WRKSRC=${WRKDIR}/makedist
 
 SUB_FILES=	ai-ml-env-bash \
 		ai-ml-env-python
@@ -45,21 +46,31 @@ PYTHON_SUFFIX=	39
 PYTHON_VER=	3.9
 DATA_DIR=	${LOCALBASE}/share/${PORTNAME}
 
-create-distfile:
-	${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		fetch -a -v https://repo.anaconda.com/miniconda/${CONDA_SCRIPT}
-	@if [ ! -d "${DISTDIR}/${DIST_SUBDIR}/miniconda3/envs/pytorch" ]; then \
-		${ECHO_MSG} "Miniconda environment 'pytorch' not found. Setting up..."; \
-		${SETENV} HOME=${DISTDIR}/${DIST_SUBDIR} ${SH} ${DISTDIR}/${DIST_SUBDIR}/${CONDA_SCRIPT} -b -s; \
-		${DISTDIR}/${DIST_SUBDIR}/miniconda3/bin/conda create --name pytorch python=${PYTHON_VER} -y; \
-		${LINUXBASE}/bin/bash -c "source ${DISTDIR}/${DIST_SUBDIR}/miniconda3/etc/profile.d/conda.sh && \
-			conda activate pytorch && \
-			pip install -r ${FILESDIR}/requirements.txt"; \
-	fi
-	cd ${DISTDIR}/${DIST_SUBDIR} && \
-		tar -czf miniconda3.tar.gz miniconda3
-	${MAKE} makesum
+makedist:
+	@${MKDIR} ${MAKEDIST_WRKSRC}
+	@${ECHO_MSG} "Setting up Miniconda 'pytorch' environment"
+	cd ${MAKEDIST_WRKSRC} && \
+		${FETCH_CMD} -a -v https://repo.anaconda.com/miniconda/${CONDA_SCRIPT}
+
+	${SETENV} HOME=${MAKEDIST_WRKSRC} CONDA_OVERRIDE_GLIBC=2.28 \
+		${SH} ${MAKEDIST_WRKSRC}/${CONDA_SCRIPT} -b -s
+
+	${SETENV} HOME=${MAKEDIST_WRKSRC} ${SH} -c \
+		"${MAKEDIST_WRKSRC}/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
+		${MAKEDIST_WRKSRC}/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r && \
+		${MAKEDIST_WRKSRC}/miniconda3/bin/conda create --name pytorch python=${PYTHON_VER} -y"
+
+	${LINUXBASE}/bin/bash -c \
+		"source ${MAKEDIST_WRKSRC}/miniconda3/etc/profile.d/conda.sh && \
+		conda activate pytorch && \
+		pip install -r ${FILESDIR}/requirements.txt"
+
+	cd ${MAKEDIST_WRKSRC} && \
+		tar -czf /tmp/miniconda3.tar.gz miniconda3
+	@cd /tmp \
+		&& sha256 miniconda3.tar.gz \
+		&& ${ECHO_CMD} -n "SIZE (${DIST_SUBDIR}/miniconda3.tar.gz) = " \
+		&& ${STAT} -f %z miniconda3.tar.gz
 
 do-build:
 	/compat/linux/bin/cc --sysroot=/compat/linux -m64 -std=c99 -Wall -ldl -fPIC -shared -o ${WRKDIR}/dummy-uvm.so ${FILESDIR}/uvm_ioctl_override.c
