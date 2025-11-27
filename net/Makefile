@@ -1133,6 +1133,7 @@
     SUBDIR += py-pysmb
     SUBDIR += py-pysocks
     SUBDIR += py-pystun
+    SUBDIR += py-pystun3
     SUBDIR += py-python-barbicanclient
     SUBDIR += py-python-bitcoinrpc
     SUBDIR += py-python-cinderclient

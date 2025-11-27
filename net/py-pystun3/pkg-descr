@@ -1,0 +1,2 @@
+PyStun3 is a Python STUN client for getting NAT type and external
+IP with support for Python versions 2 and 3.
