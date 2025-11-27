@@ -1,3 +1,69 @@
+  <vuln vid="4b297f5a-cbad-11f0-ac9f-b42e991fc52e">
+    <topic>png -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>png</name>
+	<range><lt>1.6.51</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/pnggroup/libpng/security/advisories/GHSA-7wv6-48j4-hj3g reports:</p>
+	<blockquote cite="https://github.com/pnggroup/libpng/security/advisories/GHSA-7wv6-48j4-hj3g">
+	<p>LIBPNG is a reference library for use in applications
+	that read, create, and manipulate PNG (Portable Network
+	Graphics) raster image files.
+	</p>
+	<ul>
+	<li>From version 1.6.0 to before 1.6.51, there is a heap
+	buffer overflow vulnerability in the libpng simplified API
+	function png_image_finish_read when processing 16-bit
+	interlaced PNGs with 8-bit output format.  Attacker-crafted
+	interlaced PNG files cause heap writes beyond allocated
+	buffer bounds.  This issue has been patched in version
+	1.6.51.</li>
+	<li>From version 1.6.0 to before 1.6.51, an out-of-bounds read
+	vulnerability exists in png_image_read_composite when
+	processing palette images with PNG_FLAG_OPTIMIZE_ALPHA
+	enabled.  The palette compositing code in
+	png_init_read_transformations incorrectly applies background
+	compositing during premultiplication, violating the invariant
+	component alpha 257 required by the simplified PNG API.</li>
+	<li>From version 1.6.0 to before 1.6.51, a heap buffer over-read
+	vulnerability exists in libpng's png_write_image_8bit function
+	when processing 8-bit images through the simplified write API
+	with convert_to_8bit enabled.  The vulnerability affects 8-bit
+	grayscale+alpha, RGB/RGBA, and images with incomplete row data.
+	A conditional guard incorrectly allows 8-bit input to enter code
+	expecting 16-bit input, causing reads up to 2 bytes beyond
+	allocated buffer boundaries.</li>
+	<li>Prior to version 1.6.51, a heap buffer over-read vulnerability
+	exists in libpng's png_do_quantize function when processing PNG
+	files with malformed palette indices.  The vulnerability occurs
+	when palette_lookup array bounds are not validated against
+	externally-supplied image data, allowing an attacker to craft a
+	PNG file with out-of-range palette indices that trigger
+	out-of-bounds memory access.</li>
+	</ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-65018</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-65018</url>
+      <cvename>CVE-2025-64720</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-64720</url>
+      <cvename>CVE-2025-64506</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-64506</url>
+      <cvename>CVE-2025-64505</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-64505</url>
+    </references>
+    <dates>
+      <discovery>2025-11-24</discovery>
+      <entry>2025-11-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4530fc9f-cb47-11f0-85d8-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
