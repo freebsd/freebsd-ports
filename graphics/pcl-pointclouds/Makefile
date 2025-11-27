@@ -1,7 +1,6 @@
 PORTNAME=	pcl
 DISTVERSIONPREFIX=	pcl-
-DISTVERSION=	1.15.0
-PORTREVISION=	3
+DISTVERSION=	1.15.1
 CATEGORIES=	graphics math
 #MASTER_SITES=	https://github.com/PointCloudLibrary/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 PKGNAMESUFFIX=	-pointclouds
@@ -42,6 +41,7 @@ GH_TAGNAME=	release-1.11.0:gtest
 
 CMAKE_TESTING_ON=	BUILD_global_tests # 6 tests are known to fail: https://github.com/PointCloudLibrary/pcl/issues/5127
 CMAKE_TESTING_TARGET=	tests
+CMAKE_ON=		BUILD_tools
 CMAKE_ARGS=		-DGTEST_SRC_DIR=${WRKSRC_gtest}/googletest -DGTEST_INCLUDE_DIR=${WRKSRC_gtest}/googletest/include
 
 #WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -51,7 +51,7 @@ PLIST_SUB=	SHL3=${DISTVERSION:R}.1.99 SHL2=${DISTVERSION:R}
 
 DATADIR=	${PREFIX}/share/${PORTNAME}-${DISTVERSION:R}  # match the directory where the project installs .cmake files
 
-OPTIONS_DEFINE=		OPENGL PNG QHULL QT5 VTK
+OPTIONS_DEFINE=		OPENGL PNG QHULL VTK
 OPTIONS_DEFAULT=	PNG VTK # QHULL is disabled due to conflicts qhull8 vs. qhull
 OPTIONS_SUB=		yes
 
@@ -66,18 +66,16 @@ QHULL_DESC=		Include convex-hull operations
 QHULL_CMAKE_BOOL=	WITH_QHULL
 QHULL_LIB_DEPENDS=	libqhull_r.so:math/qhull
 
-QT5_CMAKE_ON=		-DWITH_QT=QT5
-QT5_CMAKE_OFF=		-DWITH_QT=NO
-QT5_BROKEN=		WITH_QT doesn't do anything, should be used by apps, but apps is also broken: see https://github.com/PointCloudLibrary/pcl/issues/2642
-
 VTK_DESC=		Build VTK visualizations
 VTK_USES=		gl qt:5
-VTK_USE=		GL=gl,glu QT=core,gui,opengl,widgets,buildtools:build,qmake:build
+VTK_USE=		GL=gl,glu QT=core,concurrent,opengl,widgets,buildtools:build,qmake:build
 VTK_CMAKE_BOOL=		WITH_VTK
-VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER}
-VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R}
+VTK_CMAKE_ON=		-DVTK_DIR=${LOCALBASE}/lib/cmake/vtk-${VTK_VER} -DWITH_QT=QT5
+VTK_CMAKE_OFF=		-DWITH_QT=NO
+VTK_LIB_DEPENDS=	libvtkCommonCore-${VTK_VER}.so:math/vtk${VTK_VER:R} \
+			libpng16.so:graphics/png
 
-# tests as of 1.15.0: 100% tests passed, 0 tests failed out of 133
+# tests as of 1.15.1: 98% tests passed, 2 tests failed out of 133, see https://github.com/PointCloudLibrary/pcl/issues/6373
 
 .include <../../math/vtk9/Makefile.version>
 
