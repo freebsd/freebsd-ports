@@ -168,6 +168,7 @@
     SUBDIR += gimp-help-en
     SUBDIR += github-copilot-cli
     SUBDIR += github-copilot-language-server
+    SUBDIR += gitlogue
     SUBDIR += gkrellm-gamma
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmbgchg2
