@@ -7,9 +7,11 @@ To run ollama, plese open 2 terminals.
 1. In the first terminal, please run:
    $ OLLAMA_NUM_PARALLEL=1 OLLAMA_DEBUG=1 LLAMA_DEBUG=1 ollama start
 2. In the second terminal, please run:
+   $ ollama run gemma3
+   or
    $ ollama run mistral
 
-This will download and run the AI model "mistral".
+This will download and run the specified AI model.
 You will be able to interact with it in plain English.
 
 Please see https://ollama.com/library for the list

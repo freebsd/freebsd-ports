@@ -1,9 +1,5 @@
-TIMESTAMP = 1724010094
-SHA256 (go/misc_ollama/ollama-v0.3.6/v0.3.6.mod) = 16c078d8f0b29f84598fb04e3979acf86da41eb41bf4ff8363548e490f38b54e
-SIZE (go/misc_ollama/ollama-v0.3.6/v0.3.6.mod) = 2992
-SHA256 (go/misc_ollama/ollama-v0.3.6/v0.3.6.zip) = 94d2376c9555dd03a76cb093f3213e8155811874db7eab6aff2941d0e75dce07
-SIZE (go/misc_ollama/ollama-v0.3.6/v0.3.6.zip) = 1842735
-SHA256 (go/misc_ollama/ollama-v0.3.6/ggerganov-llama.cpp-1e6f6554aa11fa10160a5fda689e736c3c34169f_GH0.tar.gz) = b2b3137f734fc9a202fac710986f1de837e0ae69a0b532d4cbadb90748f4cb73
-SIZE (go/misc_ollama/ollama-v0.3.6/ggerganov-llama.cpp-1e6f6554aa11fa10160a5fda689e736c3c34169f_GH0.tar.gz) = 19016896
-SHA256 (go/misc_ollama/ollama-v0.3.6/blabber-go-freebsd-sysctl-503969f_GH0.tar.gz) = 1f497780d88f6f056b8d8f59b6aa129566c8041d16d1cda89f212accf88f3165
-SIZE (go/misc_ollama/ollama-v0.3.6/blabber-go-freebsd-sysctl-503969f_GH0.tar.gz) = 2117
+TIMESTAMP = 1764279505
+SHA256 (go/misc_ollama/ollama-v0.13.1-rc0/v0.13.1-rc0.mod) = 24e9aaaef0e2169fef54d14b95b528fce46e0f6788ffb71a93bcd3b035f99654
+SIZE (go/misc_ollama/ollama-v0.13.1-rc0/v0.13.1-rc0.mod) = 3454
+SHA256 (go/misc_ollama/ollama-v0.13.1-rc0/v0.13.1-rc0.zip) = 07d7cb01a4556fb134ab8c4986239afcf87363c12a074e60c9893dda977a5ea3
+SIZE (go/misc_ollama/ollama-v0.13.1-rc0/v0.13.1-rc0.zip) = 20653199
