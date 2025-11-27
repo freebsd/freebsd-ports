@@ -1,5 +1,6 @@
 PORTNAME=	spidermonkey
 DISTVERSION=	115.30.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		MOZILLA/firefox/candidates/${DISTVERSION}esr-candidates/build1/source
@@ -16,6 +17,8 @@ WWW=		https://spidermonkey.dev/
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	EOL upstream except to support older Windows
 
 BUILD_DEPENDS=	gm4:devel/m4 \
 		${RUST_DEFAULT}>=1.81:lang/${RUST_DEFAULT} \
