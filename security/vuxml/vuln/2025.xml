@@ -1,3 +1,42 @@
+  <vuln vid="4530fc9f-cb47-11f0-85d8-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.6.0</ge><lt>18.6.1</lt></range>
+	<range><ge>18.5.0</ge><lt>18.5.3</lt></range>
+	<range><ge>8.3.0</ge><lt>18.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/11/26/patch-release-gitlab-18-6-1-released/">
+	  <p>Race condition issue in CI/CD cache impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in JSON input validation middleware impacts GitLab CE/EE</p>
+	  <p>Authentication bypass issue in account registration impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in HTTP response processing impacts GitLab CE/EE</p>
+	  <p>Improper authorization issue in markdown rendering impacts GitLab EE</p>
+	  <p>Information disclosure issue in terraform registry impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2024-9183</cvename>
+      <cvename>CVE-2025-12571</cvename>
+      <cvename>CVE-2025-12653</cvename>
+      <cvename>CVE-2025-7449</cvename>
+      <cvename>CVE-2025-6195</cvename>
+      <cvename>CVE-2025-13611</cvename>
+      <url>https://about.gitlab.com/releases/2025/11/26/patch-release-gitlab-18-6-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-11-26</discovery>
+      <entry>2025-11-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6835edf-c6c8-11f0-8471-74563cf9e4e9">
     <topic>GnuTLS -- Stack write buffer overflow</topic>
     <affects>
