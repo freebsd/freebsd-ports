@@ -27,6 +27,7 @@ OPTIONS_DEFAULT=BASH MANIFESTS PORTCONFIG ZSH
 OPTIONS_SUB=	yes
 
 DEBUG_CONFIGURE_ENABLE=	debug
+DEBUG_DESC=		Enables extra runtime assertions and output
 
 MANIFESTS_DESC=		Install manifests for jail creation
 MANIFESTS_RUN_DEPENDS+=	freebsd-release-manifests>0:misc/freebsd-release-manifests
