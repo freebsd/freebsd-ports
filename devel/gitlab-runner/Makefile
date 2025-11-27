@@ -1,7 +1,6 @@
 PORTNAME=	gitlab-runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.6.1
-PORTREVISION=	1
+DISTVERSION=	18.6.2
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -9,7 +8,7 @@ DISTFILES=	prebuilt-x86_64.tar.xz:dockerx64 \
 		prebuilt-arm.tar.xz:dockerarm
 
 PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/
-PATCHFILES+=	5961.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5961, Fix "unable to get password from user" errors in shell executor
+PATCHFILES+=	5966.patch:-p1 # https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/5966, Fix bash shell cleanup to support variable expansion in paths
 #PATCH_SITES=	https://gitlab.com/mfechner/gitlab-runner/-/commit/
 #PATCHFILES+=	2f12af03ccd5fe875d583ddc8b976329b635fd22.patch:-p1
 
