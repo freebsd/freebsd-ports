@@ -1,6 +1,5 @@
 PORTNAME=	cinnamon
-DISTVERSION=	6.4.10
-PORTREVISION=	5
+PORTVERSION=	6.4.13
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -13,54 +12,53 @@ WWW=		https://github.com/linuxmint/cinnamon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${LOCALBASE}/include/EGL/eglmesaext.h:graphics/mesa-dri \
-		${PYTHON_PKGNAMEPREFIX}libsass>0:www/py-libsass@${PY_FLAVOR}
+BUILD_DEPENDS=	pysassc:www/py-libsass@${PY_FLAVOR}
 LIB_DEPENDS=	libcjs.so:lang/cjs \
 		libmuffin.so:x11-wm/muffin \
+		libcinnamon-desktop.so:x11/cinnamon-desktop \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
 		libdbus-1.so:devel/dbus \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libxapp.so:x11/xapp \
-		libgcr-base-3.so:security/gcr3 \
-		libcinnamon-desktop.so:x11/cinnamon-desktop
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
-		gnome-themes-extra>3.0.0:x11-themes/gnome-themes-extra \
-		caribou>0:accessibility/caribou \
-		cinnamon-control-center:sysutils/cinnamon-control-center \
+		libgcr-base-3.so:security/gcr3
+RUN_DEPENDS=	cinnamon-control-center:sysutils/cinnamon-control-center \
 		cinnamon-screensaver:x11/cinnamon-screensaver \
 		cinnamon-settings-daemon>0:sysutils/cinnamon-settings-daemon \
 		nemo:x11-fm/nemo \
-		${PY_PILLOW} \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xapp>0:x11/py-python-xapp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}python-pam>0:security/py-python-pam@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tinycss>0:textproc/py-tinycss@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>0:sysutils/py-distro@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-pam>0:security/py-python-pam@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
+		${PY_PILLOW} \
+		${PYTHON_PKGNAMEPREFIX}pyinotify>0:devel/py-pyinotify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tinycss2>0:textproc/py-tinycss2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
+		caribou>0:accessibility/caribou \
 		gkbd-keyboard-display:x11/libgnomekbd \
 		gucharmap:deskutils/gucharmap \
 		keybinder-gtk3>0:x11/keybinder-gtk3 \
 		timezonemap>0:misc/timezonemap \
 		${LOCALBASE}/lib/girepository-1.0/GSound-1.0.typelib:audio/gsound \
+		${LOCALBASE}/lib/girepository-1.0/Soup-3.0.typelib:devel/libsoup3 \
+		gnome-themes-extra>3.0.0:x11-themes/gnome-themes-extra \
 		gnome-backgrounds>0:x11-themes/gnome-backgrounds \
+		webp-pixbuf-loader>0:graphics/webp-pixbuf-loader \
 		metacity:x11-wm/metacity \
 		tint2:x11/tint \
 		lspci:sysutils/pciutils \
 		${LOCALBASE}/libexec/polkit-gnome-authentication-agent-1:sysutils/polkit-gnome \
 		${LOCALBASE}/libexec/cups-pk-helper-mechanism:print/cups-pk-helper \
-		${PYTHON_PKGNAMEPREFIX}tinycss2>0:textproc/py-tinycss2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils \
 		xdg-user-dirs-gtk>0:x11/xdg-user-dirs-gtk \
 		inxi:sysutils/inxi \
 		wget:ftp/wget
 
-USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome \
-		meson perl5 pkgconfig python shebangfix xorg
+USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome meson perl5 \
+		pkgconfig python shebangfix xorg
 CPE_VENDOR=	linuxmint
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool introspection libxml2 pygobject3
 USE_XORG=	x11 xfixes
@@ -80,22 +78,25 @@ NO_SHLIB_REQUIRES_GLOB=	libmuffin-clutter-* libmuffin-cogl-*
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	-Ddisable_networkmanager=true
 
-GLIB_SCHEMAS=	org.cinnamon.gschema.xml
+GLIB_SCHEMAS=	org.cinnamon.gschema.xml \
+		org.cinnamon.gestures.gschema.xml
 
-OPTIONS_DEFINE=	DOCS NLS WAYLAND RECORDER
+OPTIONS_DEFINE=	DOCS NLS RECORDER WAYLAND
 OPTIONS_DEFAULT=	RECORDER
 OPTIONS_SUB=	yes
 
-RECORDER_DESC=	Build the cinnamon recorder into source
+RECORDER_DESC=	Build the recorder into source
 
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 DOCS_MESON_TRUE=	docs
-WAYLAND_MESON_TRUE=	wayland
-RECORDER_MESON_TRUE=	build_recorder
-RECORDER_USES=	gstreamer
-RECORDER_USE=	GSTREAMER=vpx
 
 NLS_RUN_DEPENDS=	cinnamon-translations>0:misc/cinnamon-translations
+
+RECORDER_USES=	gstreamer
+RECORDER_USE=	gstreamer=vpx
+RECORDER_MESON_TRUE=	build_recorder
+
+WAYLAND_MESON_TRUE=	wayland
 
 post-patch:
 	@${REINPLACE_CMD} -e '/prefix/s|/usr|${PREFIX}|g ;\
