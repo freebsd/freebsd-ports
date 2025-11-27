@@ -52,7 +52,7 @@ CONFIGURE_ARGS=	--enable-shared \
 		--with-system-libtommath
 LDFLAGS+=	-Wl,-z,muldefs
 
-TCL_VERSION=	9.0.2
+TCL_VERSION=	9.0.3
 TCL_VER=	${TCL_VERSION:R}
 TCL_RC=
 SHORT_TCL_VER=	${TCL_VER:S/.//}
