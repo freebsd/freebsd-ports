@@ -27,3 +27,4 @@ share/applications/wifimgr.desktop
 %%NLS%%share/locale/ja/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/wifimgr.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/wifimgr.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/wifimgr.mo
