@@ -1296,6 +1296,7 @@
     SUBDIR += xpdf3
     SUBDIR += xpdf4
     SUBDIR += xpx
+    SUBDIR += xreader
     SUBDIR += xsane
     SUBDIR += xtexcad
     SUBDIR += xv

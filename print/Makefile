@@ -270,7 +270,6 @@
     SUBDIR += utopia
     SUBDIR += xmbibtex
     SUBDIR += xpdfopen
-    SUBDIR += xreader
     SUBDIR += xtexsh
     SUBDIR += yatex
 
