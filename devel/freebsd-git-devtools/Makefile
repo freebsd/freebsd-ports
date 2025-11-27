@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-git-devtools
-PORTVERSION=	20250115
+PORTVERSION=	20251127
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/freebsd/freebsd-src/${_REV}/tools/tools/git/
 DISTFILES=	git-arc.sh \
@@ -13,7 +13,7 @@ WWW=		https://github.com/freebsd/freebsd-src/tree/main/tools/tools/git
 
 LICENSE=	BSD2CLAUSE
 
-RUN_DEPENDS=	arc:devel/arcanist \
+RUN_DEPENDS=	${LOCALBASE}/lib/php/arcanist/bin/arc:devel/arcanist-lib \
 		git:devel/git \
 		jq:textproc/jq
 
@@ -33,7 +33,7 @@ PLIST_FILES=	bin/git-arc \
 		bin/mfc-candidates \
 		share/man/man1/git-arc.1.gz
 
-_REV=		1132466b56bc87dbdcc32bdf84b93d2fabe67776
+_REV=		6049f1bc210653b126974961b29d6eb71a6c6709
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-arc.sh ${STAGEDIR}${PREFIX}/bin/git-arc
