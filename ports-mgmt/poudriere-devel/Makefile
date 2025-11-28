@@ -1,6 +1,7 @@
 PORTNAME=	poudriere
 DISTVERSION=	3.4.99.20251127
 PORTREVISION=	0
+BROKEN=		Has a fatal error during bulk
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
