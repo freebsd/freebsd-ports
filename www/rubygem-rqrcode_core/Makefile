@@ -1,9 +1,9 @@
 PORTNAME=	rqrcode_core
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library for encoding QR Codes
 WWW=		https://github.com/whomwah/rqrcode_core
 
