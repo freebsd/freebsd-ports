@@ -11,9 +11,6 @@ WWW=		https://ollama.com \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
-ONLY_FOR_ARCHS_REASON=	bundled patched llama-cpp is placed into the arch-specific path
-
 BUILD_DEPENDS=	bash:shells/bash \
 		cmake:devel/cmake-core \
 		glslc:graphics/shaderc \
