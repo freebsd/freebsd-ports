@@ -1,11 +1,6 @@
 PORTNAME=	pqiv
-PORTVERSION=	2.13.2
-PORTREVISION=	4
+PORTVERSION=	2.13.3
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/phillipberndt/pqiv/commit/
-PATCHFILES=	a36571549a32d2ec41d6f523d443de74e0fb1276.patch:-p1 \
-		fc4f1767ee72e3f9cc7c0f7945da6a05b56db458.patch:-p1
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Pretty Quick Image Viewer
