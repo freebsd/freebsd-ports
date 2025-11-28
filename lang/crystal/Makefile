@@ -1,5 +1,6 @@
 PORTNAME=	crystal
 DISTVERSION=	1.18.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/dmgk/crystal-bootstrap/releases/download/${_BOOTSTRAP_VERSION}/:bootstrap \
 		LOCAL/dmgk/crystal:bootstrap
@@ -52,7 +53,7 @@ TEST_TARGET=	spec
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES INTERPRETER STATIC
+OPTIONS_DEFINE=		DEBUG DOCS EXAMPLES INTERPRETER
 OPTIONS_DEFAULT=	INTERPRETER
 
 INTERPRETER_DESC=	Enable interpreter (experimental)
@@ -61,7 +62,6 @@ DEBUG_VARS=		OPT_FLAGS+="--debug" \
 			STRIP=
 DEBUG_VARS_OFF=		OPT_FLAGS+="--release --no-debug"
 INTERPRETER_MAKE_ARGS=	interpreter=1
-STATIC_MAKE_ARGS=	static=1
 
 .include <bsd.port.options.mk>
 
