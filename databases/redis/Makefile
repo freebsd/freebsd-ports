@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	8.2.3
+DISTVERSION=	8.4.0
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
@@ -22,7 +22,6 @@ USE_RC_SUBR=	redis sentinel
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-LDFLAGS+=	-lpthread -lm -lexecinfo
 #PIE_UNSAFE=	ld: error: relocation R_X86_64_32 cannot be used against local \
 #		symbol; recompile with -fPIC
 
