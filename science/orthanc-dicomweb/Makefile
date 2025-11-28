@@ -1,5 +1,6 @@
 PORTNAME=	orthanc-dicomweb
 DISTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-dicomweb/:dicomweb \
 		https://orthanc.uclouvain.be/downloads/third-party-downloads/:thirdparty \
@@ -35,7 +36,6 @@ USES=		cmake localbase python:build
 # FIXME: Should plugins be moved to lib?
 USE_LDCONFIG=	${DATADIR}/plugins
 
-ORTHANC_VER=	1.12.9
 CMAKE_ARGS=	-DORTHANC_FRAMEWORK_ROOT=${WRKSRC}/ThirdPartyDownloads/Orthanc-${ORTHANC_VER}/OrthancFramework/Sources \
 		-DORTHANC_FRAMEWORK_SOURCE=path
 CMAKE_OFF=	USE_SYSTEM_UUID
@@ -46,6 +46,8 @@ CXXFLAGS+=	-DNDEBUG
 WRKSRC=		${WRKDIR}/OrthancDicomWeb-${PORTVERSION}
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
+
+.include "${.CURDIR}/../../science/orthanc/version.mk"
 
 post-extract:
 	${MKDIR} ${WRKSRC}/ThirdPartyDownloads
