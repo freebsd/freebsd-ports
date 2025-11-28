@@ -1,0 +1,45 @@
+bin/pcp_attach_node
+bin/pcp_detach_node
+bin/pcp_health_check_stats
+bin/pcp_invalidate_query_cache
+bin/pcp_log_rotate
+bin/pcp_node_count
+bin/pcp_node_info
+bin/pcp_pool_status
+bin/pcp_proc_count
+bin/pcp_proc_info
+bin/pcp_promote_node
+bin/pcp_recovery_node
+bin/pcp_reload_config
+bin/pcp_stop_pgpool
+bin/pcp_watchdog_info
+bin/pg_enc
+bin/pg_md5
+bin/pgpool
+bin/pgpool_setup
+bin/pgproto
+bin/watchdog_setup
+bin/wd_cli
+@sample etc/aws_eip_if_cmd.sh.sample
+@sample etc/aws_rtb_if_cmd.sh.sample
+@sample etc/escalation.sh.sample
+@sample etc/failover.sh.sample
+@sample etc/follow_primary.sh.sample
+@sample etc/pcp.conf.sample
+@sample etc/pgpool.conf.sample
+@sample etc/pgpool_remote_start.sample
+@sample etc/pool_hba.conf.sample
+@sample etc/replication_mode_recovery_1st_stage.sample
+@sample etc/replication_mode_recovery_2nd_stage.sample
+etc/recovery_1st_stage.sample
+include/libpcp_ext.h
+include/pcp.h
+include/pool_process_reporting.h
+include/pool_type.h
+lib/libpcp.a
+lib/libpcp.so
+lib/libpcp.so.3
+lib/libpcp.so.3.0.0
+%%DATADIR%%/insert_lock.sql
+%%DATADIR%%/pgpool.pam
+@dir /var/run/pgpool
