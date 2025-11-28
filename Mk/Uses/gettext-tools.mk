@@ -14,10 +14,10 @@ gettext-tools_ARGS=	build
 .  endif
 
 .  if ${gettext-tools_ARGS:Mbuild}
-BUILD_DEPENDS+=	msgfmt:devel/gettext-tools
+BUILD_DEPENDS+=	gettext-tools>=0.26:devel/gettext-tools
 .  endif
 .  if ${gettext-tools_ARGS:Mrun}
-RUN_DEPENDS+=	msgfmt:devel/gettext-tools
+RUN_DEPENDS+=	gettext-tools>=0.26:devel/gettext-tools
 .  endif
 
 .endif

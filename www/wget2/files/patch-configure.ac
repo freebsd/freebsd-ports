@@ -1,0 +1,23 @@
+--- configure.ac.orig	2024-11-24 18:15:30 UTC
++++ configure.ac
+@@ -410,17 +410,10 @@ test "${ENABLE_XATTR}" = "yes" && AC_DEFINE([ENABLE_XA
+ #
+ # Gettext
+ #
+-m4_ifdef([AM_GNU_GETTEXT], [
+-  AM_GNU_GETTEXT([external],[need-ngettext])
+-  AC_CONFIG_FILES([po/Makefile.in])
+-  have_po=yes
+-], [
+-  have_po=no
+-])
+-m4_ifdef([AM_GNU_GETTEXT_VERSION], [
+-#do not indent here
++AM_GNU_GETTEXT([external],[need-ngettext])
++AC_CONFIG_FILES([po/Makefile.in])
++have_po=yes
+ AM_GNU_GETTEXT_VERSION([0.22.5])
+-])
+ AM_CONDITIONAL([HAVE_PO], [ test "$have_po" = "yes" ])
+ 
+ #

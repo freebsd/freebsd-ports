@@ -21,11 +21,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	ldo
 GH_TAGNAME=	fe8fe35
 
-USES=		autoreconf:build bison:alias gettext-tools \
-		gmake gnome iconv localbase pkgconfig
+USES=		autoreconf bison:alias gettext-tools gmake gnome iconv libtool \
+		localbase pkgconfig
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SUB_FILES=	README.FreeBSD
 
@@ -52,15 +51,8 @@ MANPAGES_BUILD_DEPENDS=		docbook2man:textproc/docbook-utils \
 NTSC_CONFIGURE_ON=		--enable-default-video-format=NTSC
 PAL_CONFIGURE_ON=		--enable-default-video-format=PAL
 
-pre-configure-MANPAGES-off:
-	@(${MV} ${WRKSRC}/doc/Makefile.am ${WRKSRC}/doc/Makefile.am.bak && \
-	 ${GREP} '^dist_pkgdata_DATA' \
-		${WRKSRC}/doc/Makefile.am.bak > ${WRKSRC}/doc/Makefile.am)
-
-pre-configure:
-	@(cd ${WRKSRC} && ${MKDIR} autotools/ && \
-	 ${CP} ${LOCALBASE}/share/gettext/config.rpath autotools/ && \
-	 ${LOCALBASE}/bin/autoreconf -i)
+post-patch-MANPAGES-off:
+	@${REINPLACE_CMD} /^man._MANS/d ${WRKSRC}/doc/Makefile.am
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

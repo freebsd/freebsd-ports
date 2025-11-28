@@ -20,8 +20,7 @@ ${FLAVOR}_PKGNAMEPREFIX=	${FLAVOR}-
 ${FLAVOR}_BUILD_DEPENDS=	asterisk:net/${FLAVOR}
 ${FLAVOR}_RUN_DEPENDS=		asterisk:net/${FLAVOR}
 
-USES=		autoreconf:2.69 compiler:c11 gettext-tools iconv:wchar_t \
-		libtool ssl
+USES=		compiler:c11 iconv:wchar_t libtool ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	chan-sccp
 GH_PROJECT=	chan-sccp

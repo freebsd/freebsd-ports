@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${NONEXISTENT}:${LIBUNRAR_PORT}:patch
 LIB_DEPENDS=	libunrar.so:${LIBUNRAR_PORT}
 
-USES=		autoreconf compiler:c11 fuse gmake
+USES=		autoreconf compiler:c11 fuse gettext-tools gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	hasse69
 

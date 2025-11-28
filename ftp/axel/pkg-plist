@@ -1,0 +1,13 @@
+bin/axel
+%%NLS%%share/locale/de/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/es/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/it/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/axel.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/axel.mo
+share/man/man1/axel.1.gz

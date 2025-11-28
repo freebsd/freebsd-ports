@@ -11,9 +11,8 @@ WWW=		https://sourceforge.net/projects/wzdftpd/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf:2.69 cpe gettext-tools libtool localbase pkgconfig
+USES=		autoreconf cpe gettext-tools libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --datadir=${PREFIX}/lib \
 		--disable-bonjour --disable-static
 INSTALL_TARGET=	install-strip

@@ -14,14 +14,14 @@ gettext-runtime_ARGS=	lib
 .  endif
 
 .  if ${gettext-runtime_ARGS:Mlib}
-BUILD_DEPENDS+=	gettext-runtime>=0.22_1:devel/gettext-runtime
+BUILD_DEPENDS+=	gettext-runtime>=0.26:devel/gettext-runtime
 LIB_DEPENDS+=	libintl.so:devel/gettext-runtime
 .  endif
 .  if ${gettext-runtime_ARGS:Mbuild}
-BUILD_DEPENDS+=	gettext-runtime>=0.22_1:devel/gettext-runtime
+BUILD_DEPENDS+=	gettext-runtime>=0.26:devel/gettext-runtime
 .  endif
 .  if ${gettext-runtime_ARGS:Mrun}
-RUN_DEPENDS+=	gettext-runtime>=0.22_1:devel/gettext-runtime
+RUN_DEPENDS+=	gettext-runtime>=0.26:devel/gettext-runtime
 .  endif
 
 .endif

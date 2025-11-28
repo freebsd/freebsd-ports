@@ -18,8 +18,8 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libvorbisfile.so:audio/libvorbis \
 		libzstd.so:archivers/zstd
 
-USES=		autoreconf compiler:c++11-lang gl iconv localbase pkgconfig sdl \
-		tar:xz
+USES=		autoreconf compiler:c++11-lang gettext-tools gl iconv \
+		localbase pkgconfig sdl tar:xz
 USE_GL=		egl
 USE_SDL=	sdl2
 
@@ -80,7 +80,7 @@ NES_CONFIGURE_ENABLE=		nes
 
 NGP_CONFIGURE_ENABLE=		ngp
 
-NLS_USES=			gettext
+NLS_USES=			gettext-runtime
 NLS_CONFIGURE_ENABLE=		nls
 
 PCE_CONFIGURE_ENABLE=		pce pce-fast
@@ -98,11 +98,6 @@ SS_CONFIGURE_ENABLE=		ss
 VB_CONFIGURE_ENABLE=		vb
 
 WSWAN_CONFIGURE_ENABLE=		wswan
-
-pre-configure:
-	${REINPLACE_CMD} 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/m4/lib-link.m4 \
-		${WRKSRC}/m4/lib-prefix.m4
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

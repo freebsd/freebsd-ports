@@ -10,7 +10,7 @@ WWW=		https://github.com/ykaliuta/fidogate
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf perl5 iconv
+USES=		autoreconf gettext-tools iconv perl5
 USE_GITHUB=	yes
 GH_ACCOUNT=	ykaliuta
 GNU_CONFIGURE=	yes

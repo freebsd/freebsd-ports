@@ -1,0 +1,12 @@
+--- Makefile.am.orig	2024-04-07 22:59:28 UTC
++++ Makefile.am
+@@ -1,8 +1,5 @@ AUTOMAKE_OPTIONS = foreign dist-bzip2 dist-xz
+ AUTOMAKE_OPTIONS = foreign dist-bzip2 dist-xz
+-
+-# XXX Fix disagreement between aclocal and make
+-# (aclocal doesn't update based on mtime)
+-ACLOCAL = touch $@; @ACLOCAL@
++ACLOCAL_AMFLAGS = -I m4
+ 
+ SUBDIRS = po
+ 

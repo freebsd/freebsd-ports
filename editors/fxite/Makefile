@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 
-USES=		autoreconf desktop-file-utils gmake lua:52 pkgconfig
+USES=		autoreconf desktop-file-utils gettext-tools gmake lua:52 \
+		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	yetanothergeek
 

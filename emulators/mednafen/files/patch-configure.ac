@@ -1,6 +1,14 @@
---- configure.ac.orig	2024-08-19 17:50:17 UTC
+--- configure.ac.orig	2024-04-05 02:27:32 UTC
 +++ configure.ac
-@@ -238,7 +238,6 @@ SS_EXTRA_FLAGS=""
+@@ -88,6 +88,7 @@ fi
+ 	AC_MSG_ERROR([*** iconv not found!])
+ fi
+ AM_GNU_GETTEXT
++AM_GNU_GETTEXT_VERSION([0.18.1])
+ 
+ AC_SUBST(LIBICONV)
+ AC_SUBST(LIBINTL)
+@@ -238,7 +239,6 @@ SS_EXTRA_FLAGS=""
  # Begin ss flags
  #
  SS_EXTRA_FLAGS=""
@@ -8,7 +16,7 @@
  AC_SUBST(SS_EXTRA_FLAGS)
  #
  # End ss flags
-@@ -626,12 +625,12 @@ if test x$with_external_tremor = xyes; then
+@@ -626,12 +626,12 @@ if test x$with_external_tremor = xyes; then
  	[],
  	[with_external_tremor=no])
  if test x$with_external_tremor = xyes; then

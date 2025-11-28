@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libck.so:devel/concurrencykit
 
-USES=		autoreconf compiler:c11 gmake libtool luajit pkgconfig
+USES=		autoreconf compiler:c11 gettext-tools gmake libtool luajit \
+		pkgconfig
 
 CONFIGURE_ARGS=	--with-system-ck --with-system-luajit
 GNU_CONFIGURE=	yes

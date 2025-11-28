@@ -13,11 +13,11 @@ WWW=		https://cdrdao.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias autoreconf compiler:c++11-lang gmake iconv localbase tar:bzip2
+USES=		alias autoreconf compiler:c++11-lang gettext-tools gmake iconv \
+		localbase tar:bzip2
 USE_CXXSTD=	c++11
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-gcdmaster=no \
 		--without-pcctsbin \
 		--without-pcctsinc \

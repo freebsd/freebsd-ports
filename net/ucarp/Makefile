@@ -11,14 +11,15 @@ LICENSE_NAME=	ISC License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		autoreconf libtool
+USES=		autoreconf gettext-tools libtool
 USE_GITHUB=	yes
 GH_ACCOUNT=	jedisct1
 GH_PROJECT=	UCarp
 GH_TAGNAME=	4f339d4
-GNU_CONFIGURE=	yes
-
 USE_RC_SUBR=	ucarp
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-nls
 
 PLIST_FILES=	sbin/ucarp
 
@@ -27,9 +28,6 @@ OPTIONS_DEFAULT=	SCRIPTS
 
 SCRIPTS_DESC=		Install scripts to manage virtual IP
 SCRIPTS_PLIST_FILES=	sbin/ucarp-up sbin/ucarp-down
-
-pre-configure:
-	@${TOUCH} ${WRKSRC}/config.rpath ${WRKSRC}/ABOUT-NLS
 
 post-install-SCRIPTS-on:
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-up.sh ${STAGEDIR}${PREFIX}/sbin/ucarp-up

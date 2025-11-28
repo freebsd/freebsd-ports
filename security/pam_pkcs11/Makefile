@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		autoreconf gmake libtool pkgconfig shebangfix
+USES=		autoreconf gettext-tools gmake libtool pkgconfig shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenSC
@@ -22,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${ETCDIR}
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto"
-GNU_CONFIGURE_MANPREFIX= ${PREFIX}/share
 
 SHEBANG_FILES=	tools/pkcs11_make_hash_link
 
@@ -50,7 +49,7 @@ PCSC_CONFIGURE_WITH=	pcsclite
 SSL_USES=		ssl
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext
+NLS_USES=		gettext-runtime
 
 DOCS_CONFIGURE_ENABLE=	doc
 
@@ -93,8 +92,5 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g'	\
 		${WRKSRC}/doc/pam_pkcs11.8.in
-
-pre-configure:
-	@(cd ${WRKSRC} && ./bootstrap)
 
 .include <bsd.port.mk>
