@@ -1,6 +1,6 @@
 PORTNAME=	rustup-init
 DISTVERSION=	1.28.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel
 DISTNAME=	rustup
 
@@ -10,6 +10,9 @@ WWW=		https://rustup.rs/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
+
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libzstd.so:archivers/zstd
 
 USES=		cargo llvm ssl
 USE_GITHUB=	yes
