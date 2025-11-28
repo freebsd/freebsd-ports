@@ -19,7 +19,7 @@
  {
  	struct statvfs svfs {};
  	const std::string &path = Wide2MB(lpwszRootPathName);
-@@ -483,8 +484,6 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
+@@ -483,13 +484,9 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
  
  	if (lpMaximumComponentLength)
  		*lpMaximumComponentLength = svfs.f_namemax;
@@ -28,7 +28,17 @@
  	if (lpFileSystemFlags)
  		*lpFileSystemFlags = (DWORD)svfs.f_flag;
  
-@@ -507,8 +506,22 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
+-	if (pVolumeName) {
+-		pVolumeName->Clear();
+ #if 0
+ #if defined(FS_IOC_GETFSLABEL) && defined(FSLABEL_MAX)
+ 		int fd = open(path.c_str(), O_RDONLY);
+@@ -502,13 +499,35 @@ BOOL apiGetVolumeInformation(const wchar_t *lpwszRootP
+ 		}
+ #endif
+ #endif
+-	}
+ 
  	if (pFileSystemName) {
  		*pFileSystemName = MountInfo().GetFileSystem(path);
  	}
@@ -49,6 +59,15 @@
 +				*pDiskIdent = ident;
 +			close(fd);
 +		}
++	}
++	if (pVolumeName) {
++		std::string reply{}, cmd{"fstyp -l " + devname};
++		if (POpen(reply, cmd.c_str())) {
++			const auto pos = reply.find(' ') + 1;
++			if (pos > 0) {
++				*pVolumeName = reply.substr(pos, reply.size() - pos - 1);
++			} //else pVolumeName->Clear();
++		} //else pVolumeName->Clear();
  	}
  
  	return TRUE;

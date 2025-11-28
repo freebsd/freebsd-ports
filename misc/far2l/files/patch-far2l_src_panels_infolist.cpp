@@ -36,7 +36,19 @@
  		} else						// Error!
  			strTitle = strCurDir;	// strDriveRoot;
  
-@@ -444,7 +441,7 @@ void InfoList::DisplayObject()
+@@ -259,9 +256,11 @@ void InfoList::DisplayObject()
+ 				PrintInfo(strVolumeName);
+ 			}
+ 
++		if (!strDiskNumber.IsEmpty()) {
+ 			GotoXY(X1 + 2, CurY++);
+ 			PrintText(Msg::InfoDiskNumber);
+ 			PrintInfo(strDiskNumber);
++		}
+ 
+ 			// new fields
+ 			GotoXY(X1 + 2, CurY++);
+@@ -444,7 +443,7 @@ void InfoList::DisplayObject()
  			PrintInfo(strOutStr);
  		}
  
@@ -45,3 +57,12 @@
  		struct sysinfo si = {};
  		if (sysinfo(&si) == 0) {
  			DWORD dwMemoryLoad = 100 - ToPercent64(si.freeram + si.freeswap, si.totalram + si.totalswap);
+@@ -683,7 +682,7 @@ void InfoList::PrintInfo(const wchar_t *str)
+ 
+ 	FARString strStr = str;
+ 	TruncStr(strStr, MaxLength);
+-	int Length = (int)strStr.GetLength();
++	int Length = (int)strStr.CellsCount();
+ 	int NewX = X2 - Length - 1;
+ 
+ 	if (NewX > X1 && NewX > WhereX()) {
