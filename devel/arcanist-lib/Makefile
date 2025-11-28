@@ -1,6 +1,6 @@
 PORTNAME?=	arcanist
 PORTVERSION?=	20220518
-PORTREVISION?=	10
+PORTREVISION?=	11
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
@@ -42,7 +42,7 @@ ENCODINGS_USE=		PHP=mbstring
 
 .else # link only
 
-RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>0:devel/arcanist-lib@${PHP_FLAVOR}
+RUN_DEPENDS=	arcanist-lib${PHP_PKGNAMESUFFIX}>=${PORTVERSION}_${PORTREVISION}:devel/arcanist-lib@${PHP_FLAVOR}
 
 CONFLICTS=	arc arcanist-php??
 
@@ -51,10 +51,6 @@ PLIST_FILES=	bin/arc
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${PHP_VER} >= 82
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_utils_utf8.php
-.endif
 
 .if ${PHP_VER} >= 83
 post-patch:
