@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: goimapnotify
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# goimapnotify_enable (bool):	Set to NO by default.
+#				Set it to YES to enable goimapnotify.
+# goimapnotify_config (path):	Set to %%ETCDIR%%/goimapnotify.yaml
+#				by default.
+# goimapnotify_logfile (path):	Set to /var/log/goimapnotify.log
+#				by default.
+# goimapnotify_user (user):	Set user to run goimapnotify.
+#				Default is "goimapnotify".
+# goimapnotify_group (group):	Set group to run goimapnotify.
+#				Default is "goimapnotify".
+
+. /etc/rc.subr
+
+desc="Execute scripts on IMAP mailbox changes using IDLE"
+name=goimapnotify
+rcvar=goimapnotify_enable
+
+load_rc_config $name
+
+: ${goimapnotify_enable:=NO}
+: ${goimapnotify_config=%%ETCDIR%%/goimapnotify.yaml}
+: ${goimapnotify_logfile=/var/log/goimapnotify.log}
+: ${goimapnotify_user=%%USERS%%}
+: ${goimapnotify_group=%%GROUPS%%}
+
+command=/usr/sbin/daemon
+procname=/usr/local/bin/goimapnotify
+pidfile=/var/run/${name}.pid
+
+command_args="-cf -p ${pidfile} -o ${goimapnotify_logfile} -H ${procname} -conf ${goimapnotify_config}"
+
+start_precmd=goimapnotify_startprecmd
+
+goimapnotify_startprecmd()
+{
+	if [ ! -e ${pidfile} ]; then
+		install -o ${goimapnotify_user} -g ${goimapnotify_group} /dev/null ${pidfile}
+	fi
+
+	if [ ! -e ${goimapnotify_logfile} ]; then
+		install -o ${goimapnotify_user} -g ${goimapnotify_group} /dev/null ${goimapnotify_logfile}
+	fi
+}
+
+run_rc_command "$1"

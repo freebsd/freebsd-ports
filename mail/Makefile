@@ -147,6 +147,7 @@
     SUBDIR += gnarwl
     SUBDIR += gnubiff
     SUBDIR += gnumail
+    SUBDIR += goimapnotify
     SUBDIR += gotmail
     SUBDIR += grepmail
     SUBDIR += greyfix

@@ -1,0 +1,48 @@
+configurations:
+    -
+        host: example.com
+        port: 143
+        tls: true
+        tlsOptions:
+            rejectUnauthorized: false
+            starttls: true
+        idleLogoutTimeout: 15
+        username: USERNAME
+        alias: ExampleCOM
+        password: PASSWORD
+        xoAuth2: false
+        boxes:
+            -
+                mailbox: INBOX
+                onNewMail: 'mbsync examplecom:INBOX'
+                onChangedMail: 'mbsync examplenet:INBOX'
+                onChangedMailPost: SKIP
+                onNewMailPost: SKIP
+    -
+        hostCMD: COMMAND_TO_RETRIEVE_HOST
+        port: 993
+        tls: true
+        tlsOptions:
+            rejectUnauthorized: true
+            starttls: true
+        username: ''
+        usernameCMD: ''
+        password: ''
+        passwordCMD: ''
+        xoAuth2: false
+        onNewMail: ''
+        onNewMailPost: ''
+        onChangedMail: ''
+        onChangedMailPost: ''
+        onDeletedMail: ''
+        onDeletedMailPost: ''
+        boxes:
+            -
+                mailbox: INBOX
+                onNewMail: 'mbsync examplenet:INBOX'
+                onNewMailPost: SKIP
+                onChangedMail: 'mbsync examplenet:INBOX'
+            -
+                mailbox: Junk
+                onNewMail: 'mbsync examplenet:Junk'
+                onNewMailPost: SKIP
