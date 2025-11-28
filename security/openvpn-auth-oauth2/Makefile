@@ -1,7 +1,6 @@
 PORTNAME=	openvpn-auth-oauth2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.26.2
-PORTREVISION=	2
+DISTVERSION=	1.26.4
 CATEGORIES=	security net net-vpn
 
 MAINTAINER=	otis@FreeBSD.org
@@ -16,6 +15,7 @@ EXTRACT_DEPENDS=	${BUILD_DEPENDS}
 USES=		go:1.25,modules
 
 GO_MODULE=	github.com/jkroepke/openvpn-auth-oauth2
+GO_TARGET=	./cmd/openvpn-auth-oauth2
 
 SUB_FILES=	openvpn_auth_oauth2
 
