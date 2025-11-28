@@ -87,12 +87,12 @@ include/gnuastro/warp.h
 include/gnuastro/wcs.h
 lib/libgnuastro.a
 lib/libgnuastro.so
-lib/libgnuastro.so.21
-lib/libgnuastro.so.21.0.0
+lib/libgnuastro.so.22
+lib/libgnuastro.so.22.0.0
 lib/libgnuastro_make.a
 lib/libgnuastro_make.so
-lib/libgnuastro_make.so.21
-lib/libgnuastro_make.so.21.0.0
+lib/libgnuastro_make.so.22
+lib/libgnuastro_make.so.22.0.0
 libdata/pkgconfig/gnuastro.pc
 %%DATADIR%%/astscript-fits-view.desktop
 %%DATADIR%%/completion.bash
@@ -139,6 +139,7 @@ share/man/man1/astmkcatalog.1.gz
 share/man/man1/astmkprof.1.gz
 share/man/man1/astnoisechisel.1.gz
 share/man/man1/astquery.1.gz
+share/man/man1/astscript-color-faint-gray.1.gz
 share/man/man1/astscript-ds9-region.1.gz
 share/man/man1/astscript-fits-view.1.gz
 share/man/man1/astscript-pointing-simulate.1.gz
