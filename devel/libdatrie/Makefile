@@ -1,8 +1,7 @@
 PORTNAME=	libdatrie
-PORTVERSION=	0.2.13
-PORTREVISION=	2
+DISTVERSION=	0.2.14
 CATEGORIES=	devel
-MASTER_SITES=	http://linux.thai.net/pub/thailinux/software/libthai/
+MASTER_SITES=	https://github.com/tlwg/libdatrie/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Double-array trie implementation library
@@ -15,7 +14,6 @@ USES=		iconv:wchar_t libtool localbase:ldflags pathfix tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
