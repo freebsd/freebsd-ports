@@ -1,0 +1,1 @@
+ORTHANC_VER=	1.12.10

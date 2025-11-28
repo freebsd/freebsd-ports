@@ -1,5 +1,5 @@
 PORTNAME=	orthanc
-DISTVERSION=	1.12.9
+DISTVERSION=	${ORTHANC_VER}	# version.mk
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}
@@ -54,4 +54,5 @@ post-install:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${CMAKE_SOURCE_PATH}/Resources/Configuration.json
 	${CP} ${CMAKE_SOURCE_PATH}/Resources/Configuration.json ${STAGEDIR}${ETCDIR}/orthanc.json.sample
 
+.include "${.CURDIR}/version.mk"
 .include <bsd.port.mk>
