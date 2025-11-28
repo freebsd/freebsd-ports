@@ -1,6 +1,6 @@
 PORTNAME?=	arcanist
 PORTVERSION?=	20220518
-PORTREVISION?=	9
+PORTREVISION?=	10
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
@@ -51,6 +51,10 @@ PLIST_FILES=	bin/arc
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${PHP_VER} >= 82
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_utils_utf8.php
+.endif
 
 .if ${PHP_VER} >= 83
 post-patch:
