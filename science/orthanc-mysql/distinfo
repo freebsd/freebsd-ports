@@ -1,7 +1,7 @@
-TIMESTAMP = 1761521650
+TIMESTAMP = 1764253462
 SHA256 (orthanc/OrthancMySQL-5.2.tar.gz) = 0d446b53c3fdaa66d9f2365864f1ac54d133fe3760d7d3bb52c850ca67ce9fbb
 SIZE (orthanc/OrthancMySQL-5.2.tar.gz) = 603876
-SHA256 (orthanc/Orthanc-1.12.9.tar.gz) = 7a7cbc5f3663939fbef31ded021b36fcd52420337911ed43491bb663bcb5a4b2
-SIZE (orthanc/Orthanc-1.12.9.tar.gz) = 2165182
+SHA256 (orthanc/Orthanc-1.12.10.tar.gz) = b5d6934d123182fb2186cd54ef7f203be06b544afb03df67b0c64ad68d6c9286
+SIZE (orthanc/Orthanc-1.12.10.tar.gz) = 2192892
 SHA256 (orthanc/e2fsprogs-1.44.5.tar.gz) = 2e211fae27ef74d5af4a4e40b10b8df7f87c655933bd171aab4889bfc4e6d1cc
 SIZE (orthanc/e2fsprogs-1.44.5.tar.gz) = 7619237

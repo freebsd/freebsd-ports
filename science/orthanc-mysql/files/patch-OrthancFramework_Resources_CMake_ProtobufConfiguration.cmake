@@ -1,5 +1,5 @@
---- MySQL/ThirdPartyDownloads/Orthanc-1.12.9/OrthancFramework/Resources/CMake/ProtobufConfiguration.cmake.orig	2025-08-11 16:02:50 UTC
-+++ MySQL/ThirdPartyDownloads/Orthanc-1.12.9/OrthancFramework/Resources/CMake/ProtobufConfiguration.cmake
+--- MySQL/ThirdPartyDownloads/Orthanc-1.12.10/OrthancFramework/Resources/CMake/ProtobufConfiguration.cmake.orig	2025-08-11 16:02:50 UTC
++++ MySQL/ThirdPartyDownloads/Orthanc-1.12.10/OrthancFramework/Resources/CMake/ProtobufConfiguration.cmake
 @@ -60,27 +60,31 @@ else()
      add_custom_target(ProtobufCompiler)
    endif()
