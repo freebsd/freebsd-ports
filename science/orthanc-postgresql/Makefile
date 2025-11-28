@@ -1,5 +1,6 @@
 PORTNAME=	orthanc-postgresql
 DISTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://orthanc.uclouvain.be/downloads/sources/orthanc-postgresql/:pgsql \
 		https://orthanc.uclouvain.be/downloads/sources/orthanc/:orthanc \
@@ -20,9 +21,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/include/orthanc/OrthancCDatabasePlugin.h:science/orthanc \
 		googletest>0:devel/googletest
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
-		libgdcmCommon.so:devel/gdcm \
 		libjsoncpp.so:devel/jsoncpp \
-		libpugixml.so:textproc/pugixml
+		libprotobuf.so:devel/protobuf
 RUN_DEPENDS=	Orthanc:science/orthanc
 
 USES=		cmake localbase pgsql:11+ python:build ssl
@@ -40,7 +40,7 @@ CFLAGS+=	-DORTHANC_ENABLE_LOGGING_PLUGIN -DNDEBUG
 
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
-ORTHANC_VER=	1.12.9
+.include "${.CURDIR}/../../science/orthanc/version.mk"
 
 post-extract:
 		${MKDIR} ${WRKSRC}/PostgreSQL/ThirdPartyDownloads

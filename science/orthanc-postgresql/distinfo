@@ -1,7 +1,7 @@
-TIMESTAMP = 1761533913
+TIMESTAMP = 1764254021
 SHA256 (orthanc/OrthancPostgreSQL-9.0.tar.gz) = 92c3fde9c3baad343a4de7090759274a733ac28af06037538dbf70f0ee50cd75
 SIZE (orthanc/OrthancPostgreSQL-9.0.tar.gz) = 790691
-SHA256 (orthanc/Orthanc-1.12.9.tar.gz) = 7a7cbc5f3663939fbef31ded021b36fcd52420337911ed43491bb663bcb5a4b2
-SIZE (orthanc/Orthanc-1.12.9.tar.gz) = 2165182
+SHA256 (orthanc/Orthanc-1.12.10.tar.gz) = b5d6934d123182fb2186cd54ef7f203be06b544afb03df67b0c64ad68d6c9286
+SIZE (orthanc/Orthanc-1.12.10.tar.gz) = 2192892
 SHA256 (orthanc/e2fsprogs-1.44.5.tar.gz) = 2e211fae27ef74d5af4a4e40b10b8df7f87c655933bd171aab4889bfc4e6d1cc
 SIZE (orthanc/e2fsprogs-1.44.5.tar.gz) = 7619237
