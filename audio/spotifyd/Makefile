@@ -1,7 +1,6 @@
 PORTNAME=	spotifyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	6
+DISTVERSION=	0.4.2
 CATEGORIES=	audio
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		cargo ssl:build llvm
+USES=		cargo llvm ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Spotifyd
 USE_RC_SUBR=	spotifyd
