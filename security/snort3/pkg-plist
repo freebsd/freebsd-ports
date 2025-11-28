@@ -245,6 +245,7 @@ include/snort/service_inspectors/http_inspect/http_inspect_base.h
 include/snort/service_inspectors/http_inspect/http_stream_splitter_base.h
 include/snort/service_inspectors/http_inspect/http_test_manager.h
 include/snort/service_inspectors/netflow/netflow_record.h
+include/snort/service_inspectors/ssh/ssh_types.h
 include/snort/service_inspectors/ssl/ssl_flow_data.h
 include/snort/sfip/sf_cidr.h
 include/snort/sfip/sf_ip.h
@@ -305,6 +306,7 @@ libdata/pkgconfig/snort.pc
 %%PORTDOCS%%%%DOCSDIR%%/iec104.txt
 %%PORTDOCS%%%%DOCSDIR%%/js_norm.txt
 %%PORTDOCS%%%%DOCSDIR%%/mms.txt
+%%PORTDOCS%%%%DOCSDIR%%/opcua.txt
 %%PORTDOCS%%%%DOCSDIR%%/overview.txt
 %%PORTDOCS%%%%DOCSDIR%%/params.txt
 %%PORTDOCS%%%%DOCSDIR%%/perf_monitor.txt
