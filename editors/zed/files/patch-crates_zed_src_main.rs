@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2025-11-19 15:41:44 UTC
+--- crates/zed/src/main.rs.orig	2025-11-27 19:12:04 UTC
 +++ crates/zed/src/main.rs
 @@ -8,6 +8,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, UserStore, parse_zed_link};
@@ -24,11 +24,11 @@
      app.background_executor()
          .spawn(crashes::init(InitCrashHandler {
              session_id: session_id.clone(),
-@@ -547,6 +550,7 @@ pub fn main() {
+@@ -549,6 +552,7 @@ pub fn main() {
          auto_update::init(client.clone(), cx);
          dap_adapters::init(cx);
          auto_update_ui::init(cx);
 +        #[cfg(not(target_os = "freebsd"))]
-         reliability::init(
-             client.http_client(),
-             system_id.as_ref().map(|id| id.to_string()),
+         reliability::init(client.clone(), cx);
+         extension_host::init(
+             extension_host_proxy.clone(),

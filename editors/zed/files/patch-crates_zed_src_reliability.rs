@@ -1,26 +1,26 @@
---- crates/zed/src/reliability.rs.orig	2025-11-19 15:41:44 UTC
+--- crates/zed/src/reliability.rs.orig	2025-11-27 19:12:04 UTC
 +++ crates/zed/src/reliability.rs
-@@ -14,6 +14,7 @@ use crate::STARTUP_TIME;
+@@ -13,6 +13,7 @@ use crate::STARTUP_TIME;
  
  use crate::STARTUP_TIME;
  
 +#[cfg(not(target_os = "freebsd"))]
- pub fn init(http_client: Arc<HttpClientWithUrl>, installation_id: Option<String>, cx: &mut App) {
+ pub fn init(client: Arc<Client>, cx: &mut App) {
      monitor_hangs(cx);
  
-@@ -365,6 +366,7 @@ fn save_hang_trace(
+@@ -151,6 +152,7 @@ fn save_hang_trace(
      );
  }
  
 +#[cfg(not(target_os = "freebsd"))]
- pub async fn upload_previous_minidumps(
-     http: Arc<HttpClientWithUrl>,
-     installation_id: Option<String>,
-@@ -404,6 +406,7 @@ pub async fn upload_previous_minidumps(
+ pub async fn upload_previous_minidumps(client: Arc<Client>) -> anyhow::Result<()> {
+     let Some(minidump_endpoint) = MINIDUMP_ENDPOINT.as_ref() else {
+         log::warn!("Minidump endpoint not set");
+@@ -186,6 +188,7 @@ pub async fn upload_previous_minidumps(client: Arc<Cli
      Ok(())
  }
  
 +#[cfg(not(target_os = "freebsd"))]
  async fn upload_minidump(
-     http: Arc<HttpClientWithUrl>,
+     client: Arc<Client>,
      endpoint: &str,
