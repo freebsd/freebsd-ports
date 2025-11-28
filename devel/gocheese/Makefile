@@ -2,11 +2,11 @@ PORTNAME=	gocheese
 DISTVERSION=	4.2.0
 PORTREVISION=	17
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.gocheese.cypherpunks.ru/download/
+MASTER_SITES=	http://www.gocheese.cypherpunks.su/download/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python private package repository and caching proxy
-WWW=		http://www.gocheese.cypherpunks.ru/
+WWW=		http://www.gocheese.cypherpunks.su/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
