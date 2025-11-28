@@ -1743,6 +1743,11 @@
        <name>unbound</name>
        <range><lt>1.24.1</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>14.3</ge><lt>14.3_6</lt></range>
+	<range><ge>13.5</ge><lt>13.5_7</lt></range>
+      </package>
     </affects>
     <description>
        <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1768,10 +1773,12 @@
     <references>
       <cvename>CVE-2025-11411</cvename>
       <url>https://nvd.nist.gov/vuln/detail/CVE-2025-11411</url>
+      <freebsdsa>SA-25:10.unbound</freebsdsa>
     </references>
     <dates>
       <discovery>2025-10-22</discovery>
       <entry>2025-10-23</entry>
+      <modified>2025-11-27</modified>
     </dates>
   </vuln>
 
