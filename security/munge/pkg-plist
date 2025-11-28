@@ -5,7 +5,7 @@ include/munge.h
 lib/libmunge.a
 lib/libmunge.so
 lib/libmunge.so.2
-lib/libmunge.so.2.0.0
+lib/libmunge.so.2.0.1
 libdata/pkgconfig/munge.pc
 share/man/man1/munge.1.gz
 share/man/man1/remunge.1.gz
