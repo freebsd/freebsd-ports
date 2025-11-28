@@ -9,7 +9,7 @@ To play with Stable Diffusion copy it to a user-writable directory, edit at will
 and launch it via ai-ml-env-python:
 
 	cp /usr/local/share/ai-ml-env/stable-diffusion-sample.py ~/
-	ai-ml-env-python stable-diffusion-sample.py
+	ai-ml-env-python ~/stable-diffusion-sample.py
 
 This will download data packages into ~/.cache/huggingface/hub/ during the
 first-time run.

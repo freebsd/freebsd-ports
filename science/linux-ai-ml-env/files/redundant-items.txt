@@ -1,4 +1,11 @@
 bin/2to3-3.9
+bin/bunzip2
+bin/bzcat
+bin/bzdiff
+bin/bzgrep
+bin/bzip2
+bin/bzip2recover
+bin/bzmore
 bin/c_rehash
 bin/clear
 bin/idle3.9
@@ -23,6 +30,7 @@ bin/tset
 bin/wheel
 bin/wish8.6
 bin/x86_64-conda-linux-gnu-ld
+bin/xmlwf
 bin/xz
 bin/xzdec
 bin/xzdiff

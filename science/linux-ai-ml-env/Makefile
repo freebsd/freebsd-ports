@@ -1,12 +1,12 @@
 PORTNAME=	ai-ml-env
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	science linux
 MASTER_SITES=	https://arrowd.name/
 PKGNAMEPREFIX=	linux-
 DISTFILES=	miniconda3.tar.gz
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	voxnod@gmail.com
+MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Linux Python environment for running Stable Diffusion models and PyTorch CUDA examples
 
 ONLY_FOR_ARCHS=	amd64
@@ -16,7 +16,6 @@ LICENSE_NAME=	Multiple licenses
 LICENSE_TEXT=	The package contains multiple packages with different licenses
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-FETCH_DEPENDS=	linux_base-rl9>=9.2:emulators/linux_base-rl9
 BUILD_DEPENDS=	linux-rl9-devtools>=0:devel/linux-rl9-devtools
 RUN_DEPENDS=	linux-nvidia-libs>=0:x11/linux-nvidia-libs \
 		linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3 \
@@ -40,7 +39,7 @@ SUB_LIST=	LOCALBASE=${LOCALBASE} \
 PLIST_SUB+=     PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
 
-CONDA_VERSION=	py39_25.1.1-2
+CONDA_VERSION=	py${PYTHON_SUFFIX}_25.9.1-1
 CONDA_SCRIPT=	Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh
 PYTHON_SUFFIX=	39
 PYTHON_VER=	3.9
