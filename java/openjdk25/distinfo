@@ -1,3 +1,3 @@
-TIMESTAMP = 1761395132
-SHA256 (freebsd-openjdk-jdk-25+36-freebsd-1_GH0.tar.gz) = 3bd387e9c63a6610977cf7785b2887b154fdd9f7a9cf62a80809c1fd1b2eaebf
-SIZE (freebsd-openjdk-jdk-25+36-freebsd-1_GH0.tar.gz) = 119485554
+TIMESTAMP = 1764336333
+SHA256 (freebsd-openjdk-jdk-25.0.1+8-freebsd-1_GH0.tar.gz) = 9984b61091295635b610497f9b334ff6654f466ecff018b74e123b5c1c3c5e99
+SIZE (freebsd-openjdk-jdk-25.0.1+8-freebsd-1_GH0.tar.gz) = 119483711
