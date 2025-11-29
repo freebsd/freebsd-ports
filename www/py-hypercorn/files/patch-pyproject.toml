@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-11-08 13:49:44 UTC
++++ pyproject.toml
+@@ -29,7 +29,7 @@ dependencies = [
+ dependencies = [
+     "exceptiongroup >= 1.1.0; python_version < '3.11'",
+     "h11",
+-    "h2 >= 4.3.0",
++    "h2 >= 4.1.0",
+     "priority",
+     "taskgroup; python_version < '3.11'",
+     "tomli; python_version < '3.11'",

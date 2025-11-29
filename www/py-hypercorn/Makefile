@@ -1,5 +1,5 @@
 PORTNAME=	hypercorn
-PORTVERSION=	0.17.3
+PORTVERSION=	0.18.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,10 @@ WWW=		https://hypercorn.readthedocs.io/en/latest/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>=0:devel/py-pdm-backend@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_EXCEPTIONGROUP} \
 		${PYTHON_PKGNAMEPREFIX}h11>=0:net/py-h11@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}h2>=3.1.0:www/py-h2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}h2>=4.1.0:www/py-h2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}priority>=0:www/py-priority@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0:textproc/py-toml@${PY_FLAVOR} \
 		${PY_TOMLI} \
