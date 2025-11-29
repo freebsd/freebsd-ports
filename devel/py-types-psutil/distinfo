@@ -1,3 +1,3 @@
-TIMESTAMP = 1759774659
-SHA256 (types_psutil-7.0.0.20251001.tar.gz) = 60d696200ddae28677e7d88cdebd6e960294e85adefbaafe0f6e5d0e7b4c1963
-SIZE (types_psutil-7.0.0.20251001.tar.gz) = 20469
+TIMESTAMP = 1763853400
+SHA256 (types_psutil-7.1.1.20251122.tar.gz) = cdb39c30a81ce6e433aa672922d59b78c4c6a9c64cd9936f1f6894d26c82ae0f
+SIZE (types_psutil-7.1.1.20251122.tar.gz) = 22275
