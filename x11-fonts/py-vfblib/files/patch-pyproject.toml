@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-04-09 11:40:14 UTC
+--- pyproject.toml.orig	2025-11-06 10:53:27 UTC
 +++ pyproject.toml
 @@ -1,12 +1,10 @@
  [project]
@@ -14,11 +14,11 @@
  
  authors = [{ name = "Jens Kutílek", email = "webmail@kutilek.de" }]
  classifiers = [
-@@ -60,7 +59,7 @@ vfbdiff = "vfbLib.diff:diffvfb"
+@@ -73,7 +71,7 @@ vfbdiff = "vfbLib.diff:diffvfb"
  # yuri = vfbLib.value:yuri
  
  [build-system]
--requires = ["setuptools>=78.0.2", "setuptools-scm[toml]>=6.2", "wheel"]
+-requires = ["setuptools>=80.9.0", "setuptools-scm[toml]>=9.2.0", "wheel"]
 +requires = ["setuptools>=61", "setuptools-scm[toml]>=6.2", "wheel"]
  build-backend = "setuptools.build_meta"
  
