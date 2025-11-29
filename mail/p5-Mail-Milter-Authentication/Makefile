@@ -1,5 +1,5 @@
 PORTNAME=	Mail-Milter-Authentication
-PORTVERSION=	3.20241024
+PORTVERSION=	4.20250811
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	p5-File-ShareDir-Install>0:devel/p5-File-ShareDir-Install
 RUN_DEPENDS=	p5-App-Cmd>0:devel/p5-App-Cmd \
 		p5-Clone>0:devel/p5-Clone \
 		p5-Date-Manip>0:devel/p5-Date-Manip \
+		p5-Email-Address-XS>=1.05:mail/p5-Email-Address-XS \
 		p5-Email-Date-Format>0:mail/p5-Email-Date-Format \
 		p5-Email-Sender>0:mail/p5-Email-Sender \
 		p5-Email-Simple>0:mail/p5-Email-Simple \
