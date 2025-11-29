@@ -6876,6 +6876,7 @@
     SUBDIR += rubygem-aws-sdk-osis
     SUBDIR += rubygem-aws-sdk-outposts
     SUBDIR += rubygem-aws-sdk-panorama
+    SUBDIR += rubygem-aws-sdk-partnercentralchannel
     SUBDIR += rubygem-aws-sdk-partnercentralselling
     SUBDIR += rubygem-aws-sdk-paymentcryptography
     SUBDIR += rubygem-aws-sdk-paymentcryptographydata
