@@ -1,5 +1,6 @@
 PORTNAME=	jekyll
 PORTVERSION=	4.4.1
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -26,7 +27,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-pathutil>=0.9<1:devel/rubygem-pathutil \
 		rubygem-rouge>=3.0<5.0:textproc/rubygem-rouge \
 		rubygem-safe_yaml>=1.0<2:devel/rubygem-safe_yaml \
-		rubygem-terminal-table>=1.8<4.0:textproc/rubygem-terminal-table \
+		rubygem-terminal-table3>=1.8<4.0:textproc/rubygem-terminal-table3 \
 		rubygem-webrick>=1.7<2:www/rubygem-webrick
 
 USES=		cpe gem
