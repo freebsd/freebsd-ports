@@ -1,13 +1,11 @@
 PORTNAME=	build
-PORTVERSION=	1.2.2
-DISTVERSIONSUFFIX=	.post1
-PORTREVISION=	2
+PORTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	PEP517 package builder
+COMMENT=	Simple, correct Python build frontend
 WWW=		https://build.pypa.io/en/stable/ \
 		https://github.com/pypa/build
 
@@ -24,17 +22,11 @@ USE_PYTHON=	allflavors autoplist concurrent pep517
 NO_ARCH=	yes
 
 PEP517_BUILD_CMD=	${PYTHON_CMD} -m flit_core.wheel
-PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.8:devel/py-flit-core@${PY_FLAVOR}
+PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.11:devel/py-flit-core@${PY_FLAVOR}
 
 #OPTIONS_DEFINE=	VIRTUALENV
 #VIRTUALENV_DESC=	Use virtualenv for isolation
 
-#VIRTUALENV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=20.0.35:devel/py-virtualenv@${PY_FLAVOR}
+#VIRTUALENV_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=20.31:devel/py-virtualenv@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-#.if ${PYTHON_REL} < 31200
-#RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR}
-#.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
