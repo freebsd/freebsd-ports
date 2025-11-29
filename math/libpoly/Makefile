@@ -1,6 +1,6 @@
 PORTNAME=	libpoly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +26,6 @@ CMAKE_OFF=	LIBPOLY_BUILD_PYTHON_API LIBPOLY_BUILD_STATIC LIBPOLY_BUILD_STATIC_PI
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
-# tests as of 0.2.0: 100% tests passed, 0 tests failed out of 14
+# tests as of 0.2.1: 100% tests passed, 0 tests failed out of 15
 
 .include <bsd.port.post.mk>
