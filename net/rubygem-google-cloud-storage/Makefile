@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-storage
-PORTVERSION=	1.57.0
+PORTVERSION=	1.57.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
