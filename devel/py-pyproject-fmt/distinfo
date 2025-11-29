@@ -1,6 +1,6 @@
-TIMESTAMP = 1761446698
-SHA256 (pyproject_fmt-2.11.0.tar.gz) = 24d2370fccbc29a7d696479ab0792ff81b188accabf399e0b35fd3c433780d1f
-SIZE (pyproject_fmt-2.11.0.tar.gz) = 46894
+TIMESTAMP = 1763853372
+SHA256 (pyproject_fmt-2.11.1.tar.gz) = 86f4ebc71d658b848bd14da5f2d2f156a238687e5c9adc0e787ecbf925fd24b1
+SIZE (pyproject_fmt-2.11.1.tar.gz) = 47310
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916

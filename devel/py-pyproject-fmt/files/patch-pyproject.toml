@@ -4,8 +4,8 @@
    "version",
  ]
  dependencies = [
--  "toml-fmt-common==1.0.1",
-+  "toml-fmt-common>=1.0.1",
+-  "toml-fmt-common==1.1",
++  "toml-fmt-common>=1.1",
  ]
  urls."Bug Tracker" = "https://github.com/tox-dev/toml-fmt/issues"
  urls."Changelog" = "https://github.com/tox-dev/toml-fmt/blob/main/pyproject-fmt/CHANGELOG.md"
