@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -36,7 +36,7 @@ python = ">=3.9,<4.0"
+ 
+ [tool.poetry.dependencies]
+ python = ">=3.9,<4.0"
+-astroid = "^3.0"
++astroid = ">=3.0,<5"
+ packaging = ">=21.3"
+ tomli = { version = "^2.2.1", python = "<3.11" }
+ semver = "^3.0.0"
