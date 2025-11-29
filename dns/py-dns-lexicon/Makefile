@@ -1,5 +1,5 @@
 PORTNAME=	dns-lexicon
-PORTVERSION=	3.21.1
+PORTVERSION=	3.23.2
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	dns_lexicon-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manipulate DNS records on various DNS providers in a standardized way
-WWW=		https://github.com/AnalogJ/lexicon
+WWW=		https://dns-lexicon.github.io/dns-lexicon/ \
+		https://github.com/dns-lexicon/dns-lexicon
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
