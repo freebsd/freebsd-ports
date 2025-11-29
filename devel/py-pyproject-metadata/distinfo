@@ -1,3 +1,3 @@
-TIMESTAMP = 1756663636
-SHA256 (pyproject_metadata-0.9.1.tar.gz) = b8b2253dd1b7062b78cf949a115f02ba7fa4114aabe63fa10528e9e1a954a816
-SIZE (pyproject_metadata-0.9.1.tar.gz) = 38415
+TIMESTAMP = 1763853374
+SHA256 (pyproject_metadata-0.10.0.tar.gz) = 7f5bd0ef398b60169556cb17ea261d715caf7f8561238151f51b2305084ba8d4
+SIZE (pyproject_metadata-0.10.0.tar.gz) = 40568
