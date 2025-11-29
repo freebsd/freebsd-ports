@@ -4645,6 +4645,7 @@
     SUBDIR += py-cbor2
     SUBDIR += py-cclib
     SUBDIR += py-cdg
+    SUBDIR += py-cel-python
     SUBDIR += py-celery
     SUBDIR += py-celery-progress
     SUBDIR += py-celery-singleton
