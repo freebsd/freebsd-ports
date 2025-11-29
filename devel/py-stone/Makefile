@@ -23,7 +23,4 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-post-patch:
-	@${CP} ${FILESDIR}/requirements.txt ${WRKSRC}/
-
 .include <bsd.port.mk>
