@@ -1,3 +1,50 @@
+  <vuln vid="d2f2c691-cd42-11f0-85d4-b42e991fc52e">
+    <topic>MongoDB Server -- Improper Certificate Validation</topic>
+    <affects>
+    <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.26</lt></range>
+    </package>
+    <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.16</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-105783 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-105783">
+	<p>Clients may successfully perform a TLS handshake with a
+	MongoDB server despite presenting a client certificate not
+	aligning with the documented Extended Key Usage (EKU)
+	requirements.  A certificate that specifies extendedKeyUsage
+	but is missing extendedKeyUsage = clientAuth may still be
+	successfully authenticated via the TLS handshake as a
+	client.  This issue is specific to MongoDB servers running
+	on Windows or Apple as the expected validation behavior
+	functions correctly on Linux systems.  Additionally, MongoDB
+	servers may successfully establish egress TLS connections
+	with servers that present server certificates not aligning
+	with the documented Extended Key Usage (EKU) requirements.
+	A certificate that specifies extendedKeyUsage but is missing
+	extendedKeyUsage = serverAuth may still be successfully
+	authenticated via the TLS handshake as a server.  This issue
+	is specific to MongoDB servers running on Apple as the
+	expected validation behavior functions correctly on both
+	Linux and Windows systems.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12893</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-12893</url>
+    </references>
+    <dates>
+      <discovery>2025-11-25</discovery>
+      <entry>2025-11-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b297f5a-cbad-11f0-ac9f-b42e991fc52e">
     <topic>png -- Multiple vulnerabilities</topic>
     <affects>
