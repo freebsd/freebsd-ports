@@ -215,7 +215,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		idna-1.0.3 \
 		idna_adapter-1.2.0 \
 		indexmap-1.9.3 \
-		indexmap-2.6.0 \
+		indexmap-2.11.4 \
+		indoc-2.0.7 \
 		inout-0.1.4 \
 		integer-encoding-3.0.4 \
 		io-lifetimes-1.0.11 \
@@ -325,6 +326,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		protoc-bin-vendored-macos-aarch_64-3.1.0 \
 		protoc-bin-vendored-macos-x86_64-3.1.0 \
 		protoc-bin-vendored-win32-3.1.0 \
+		pyo3-0.25.1 \
+		pyo3-build-config-0.25.1 \
+		pyo3-ffi-0.25.1 \
+		pyo3-macros-0.25.1 \
+		pyo3-macros-backend-0.25.1 \
 		quote-1.0.37 \
 		r-efi-5.2.0 \
 		rand-0.8.5 \
@@ -421,6 +427,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		sysinfo-0.29.11 \
 		tabwriter-1.4.1 \
 		tar-0.4.43 \
+		target-lexicon-0.13.3 \
 		target-triple-0.1.4 \
 		tempfile-3.13.0 \
 		termcolor-1.4.1 \
@@ -472,6 +479,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		unicode-ident-1.0.13 \
 		unicode-width-0.2.1 \
 		unicode-xid-0.2.6 \
+		unindent-0.2.4 \
 		unsafe-libyaml-0.2.11 \
 		untrusted-0.9.0 \
 		url-2.5.3 \

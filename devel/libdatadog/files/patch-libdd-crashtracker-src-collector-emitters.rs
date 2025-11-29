@@ -1,5 +1,5 @@
---- datadog-crashtracker/src/collector/emitters.rs.orig	2025-11-03 12:41:37 UTC
-+++ datadog-crashtracker/src/collector/emitters.rs
+--- libdd-crashtracker/src/collector/emitters.rs.orig	2025-11-03 12:41:37 UTC
++++ libdd-crashtracker/src/collector/emitters.rs
 @@ -198,7 +198,7 @@ fn emit_proc_self_maps(w: &mut impl Write) -> Result<(
      Ok(())
  }
