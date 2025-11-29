@@ -1,5 +1,5 @@
 PORTNAME=	cheroot
-PORTVERSION=	11.1.0
+PORTVERSION=	11.1.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/cherrypy/cheroot/releases/download/v${PORTVERSION}/
