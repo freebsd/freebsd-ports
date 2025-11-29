@@ -1,6 +1,5 @@
 PORTNAME=	faraday-cookie_jar
-PORTVERSION=	0.0.7
-PORTREVISION=	3
+PORTVERSION=	0.0.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-faraday1>=0.8.0:www/rubygem-faraday1 \
-		rubygem-http-cookie>=1.0.0<2:www/rubygem-http-cookie
+		rubygem-http-cookie>=1.0.0:www/rubygem-http-cookie
 
 USES=		gem
 
