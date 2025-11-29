@@ -1,5 +1,5 @@
 PORTNAME=	fakeredis
-PORTVERSION=	2.32.0
+PORTVERSION=	2.32.1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=4.3:databases/py-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2<3:devel/py-sortedcontainers@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.5<2:devel/py-jsonpath-ng@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lupa>=2.1<3.0:lang/py-lupa@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2:devel/py-sortedcontainers@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.5:devel/py-jsonpath-ng@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}lupa>=2.1:lang/py-lupa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
@@ -31,8 +31,8 @@ LUA_DESC=		Lua support
 PROBABILISTIC_DESC=	Probabilistic data structure support
 VALKEY_DESC=		Valkey support
 
-JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.5<2:devel/py-jsonpath-ng@${PY_FLAVOR}
-LUA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lupa>=2.1<3.0:lang/py-lupa@${PY_FLAVOR}
+JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpath-ng>=1.5:devel/py-jsonpath-ng@${PY_FLAVOR}
+LUA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lupa>=2.1:lang/py-lupa@${PY_FLAVOR}
 PROBABILISTIC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyprobables>=0.6<1:math/py-pyprobables@${PY_FLAVOR}
 VALKEY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}valkey>=6:databases/py-valkey@${PY_FLAVOR}
 
