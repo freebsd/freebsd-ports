@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-04-09 17:16:35 UTC
+--- pyproject.toml.orig	2025-11-03 19:50:58 UTC
 +++ pyproject.toml
 @@ -1,10 +1,10 @@
  [build-system]
@@ -20,6 +20,6 @@
 -license = "BSD-3-Clause"
 -license-files = ["LICENSE.md"]
 +license = {file = 'LICENSE.md'}
- requires-python = '>=3.9'
- dependencies = [
-     "importlib-metadata>=4.4;python_version<'3.10'"
+ requires-python = '>=3.10'
+ keywords = ['markdown', 'markdown-parser', 'python-markdown', 'markdown-to-html']
+ classifiers = [
