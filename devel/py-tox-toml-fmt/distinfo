@@ -1,6 +1,6 @@
-TIMESTAMP = 1759774655
-SHA256 (tox_toml_fmt-1.2.0.tar.gz) = 5a998532dc225f68fdab2fe0ba329e56e8b6ffc42566ae6d612b43725ff63de8
-SIZE (tox_toml_fmt-1.2.0.tar.gz) = 29310
+TIMESTAMP = 1763853394
+SHA256 (tox_toml_fmt-1.2.1.tar.gz) = c21c781d200426cfbe4c5b5b2e23535fde43f326b9bd4ce302a73bfd411a7e2f
+SIZE (tox_toml_fmt-1.2.1.tar.gz) = 29650
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.3.crate) = 8e60d3430d3a69478ad0993f19238d2df97c507009a52b3c10addcd7f6bcb916
