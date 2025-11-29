@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2023-07-07 17:30:18 UTC
+--- pyproject.toml.orig	2025-11-06 16:54:27 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools>=62.6", "versioneer[toml]==0.29"]
-+requires = ["setuptools>=62.6", "versioneer[toml]>=0.29"]
+-requires = ["setuptools>=80", "setuptools-scm"]
++requires = ["setuptools>=62.2", "setuptools-scm"]
  build-backend = "setuptools.build_meta"
  
  [project]
