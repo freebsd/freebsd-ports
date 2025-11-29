@@ -5,6 +5,8 @@ include/level_zero/loader/ze_loader.h
 include/level_zero/ze_api.h
 include/level_zero/ze_ddi.h
 include/level_zero/ze_ddi_common.h
+include/level_zero/zer_api.h
+include/level_zero/zer_ddi.h
 include/level_zero/zes_api.h
 include/level_zero/zes_ddi.h
 include/level_zero/zet_api.h
