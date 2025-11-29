@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2024-10-10 14:46:12 UTC
++++ pyproject.toml
+@@ -44,7 +44,7 @@ pylint-plugin-utils = ">=0.8"
+ [tool.poetry.dependencies]
+ python = ">=3.9,<4.0"
+ pylint-plugin-utils = ">=0.8"
+-pylint = ">=3.0,<4"
++pylint = ">=3.0,<5"
+ Django = { version = ">=2.2", optional = true }
+ 
+ [tool.poetry.group.dev.dependencies]
