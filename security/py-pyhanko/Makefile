@@ -1,6 +1,5 @@
 PORTNAME=	pyhanko
-PORTVERSION=	0.31.0
-PORTREVISION=	1
+PORTVERSION=	0.32.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI \
 		https://github.com/MatthiasValvekens/pyHanko/releases/download/v${PORTVERSION}/
@@ -42,8 +41,8 @@ ETSI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}signxml>=4.2.0:security/py-signxml@${PY
 IMAGE_SUPPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=7.2.0:graphics/py-pillow@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}python-barcode>=0.15.1<0.15.1_99:graphics/py-python-barcode@${PY_FLAVOR}
 OPENTYPE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>=4.33.3:print/py-fonttools@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0.25.0<0.51.0:print/py-uharfbuzz@${PY_FLAVOR}
-PKCS11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-pkcs11>=0.9.0<0.10:security/py-python-pkcs11@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0.25.0<0.53.0:print/py-uharfbuzz@${PY_FLAVOR}
+PKCS11_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-pkcs11>=0.9.2<0.10:security/py-python-pkcs11@${PY_FLAVOR}
 QR_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}qrcode>=7.3.1:textproc/py-qrcode@${PY_FLAVOR}
 
 .include <bsd.port.mk>
