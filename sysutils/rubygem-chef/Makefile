@@ -1,5 +1,6 @@
 PORTNAME=	chef
 PORTVERSION=	18.8.54
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -43,7 +44,7 @@ RUN_DEPENDS=	rubygem-activesupport71>=4.2.7.1<7.1.5.2_99:devel/rubygem-activesup
 		rubygem-train-rest>=0.4.1:net/rubygem-train-rest \
 		rubygem-train-winrm>=0.2.17:net/rubygem-train-winrm \
 		rubygem-unf_ext>=0.0.8.2:textproc/rubygem-unf_ext \
-		rubygem-uri>=1.0.3<1.1:net/rubygem-uri \
+		rubygem-uri>=1.0.3:net/rubygem-uri \
 		rubygem-uuidtools>=2.1.5:devel/rubygem-uuidtools \
 		rubygem-vault>=0.18.2<0.19:security/rubygem-vault
 

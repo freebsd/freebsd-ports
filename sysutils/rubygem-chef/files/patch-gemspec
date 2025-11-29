@@ -1,8 +1,8 @@
---- chef.gemspec.orig	2025-10-26 01:53:02 UTC
+--- chef.gemspec.orig	2025-11-22 18:58:55 UTC
 +++ chef.gemspec
 @@ -26,7 +26,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<chef-config>.freeze, ["= 18.8.46".freeze])
-   s.add_runtime_dependency(%q<chef-utils>.freeze, ["= 18.8.46".freeze])
+   s.add_runtime_dependency(%q<chef-config>.freeze, ["= 18.8.54".freeze])
+   s.add_runtime_dependency(%q<chef-utils>.freeze, ["= 18.8.54".freeze])
    s.add_runtime_dependency(%q<train-core>.freeze, ["~> 3.13".freeze, ">= 3.13.4".freeze])
 -  s.add_runtime_dependency(%q<train-winrm>.freeze, ["~> 0.2.17".freeze])
 +  s.add_runtime_dependency(%q<train-winrm>.freeze, [">= 0.2.17".freeze])
@@ -24,14 +24,16 @@
    s.add_runtime_dependency(%q<ffi-libarchive>.freeze, ["~> 1.0".freeze, ">= 1.0.3".freeze])
    s.add_runtime_dependency(%q<chef-zero>.freeze, [">= 15.0.21".freeze])
    s.add_runtime_dependency(%q<chef-vault>.freeze, [">= 0".freeze])
-@@ -49,8 +49,8 @@ Gem::Specification.new do |s|
+@@ -49,9 +49,9 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<iniparse>.freeze, ["~> 1.4".freeze])
    s.add_runtime_dependency(%q<addressable>.freeze, [">= 0".freeze])
    s.add_runtime_dependency(%q<syslog-logger>.freeze, ["~> 1.6".freeze])
 -  s.add_runtime_dependency(%q<uuidtools>.freeze, [">= 2.1.5".freeze, "< 3.0".freeze])
 -  s.add_runtime_dependency(%q<unf_ext>.freeze, ["~> 0.0.8.2".freeze])
+-  s.add_runtime_dependency(%q<uri>.freeze, ["~> 1.0.3".freeze])
 +  s.add_runtime_dependency(%q<uuidtools>.freeze, [">= 2.1.5".freeze])
 +  s.add_runtime_dependency(%q<unf_ext>.freeze, [">= 0.0.8.2".freeze])
-   s.add_runtime_dependency(%q<uri>.freeze, ["~> 1.0.3".freeze])
++  s.add_runtime_dependency(%q<uri>.freeze, [">= 1.0.3".freeze])
    s.add_runtime_dependency(%q<corefoundation>.freeze, ["~> 0.3.4".freeze])
    s.add_runtime_dependency(%q<proxifier2>.freeze, ["~> 1.1".freeze])
+   s.add_runtime_dependency(%q<aws-sdk-s3>.freeze, ["~> 1.91".freeze])
