@@ -2161,6 +2161,7 @@
     SUBDIR += rubygem-erubi
     SUBDIR += rubygem-erubis
     SUBDIR += rubygem-ethon
+    SUBDIR += rubygem-ethon-gitlab
     SUBDIR += rubygem-eventmachine_httpserver
     SUBDIR += rubygem-faraday
     SUBDIR += rubygem-faraday-em_http
