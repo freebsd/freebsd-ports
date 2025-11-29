@@ -3,7 +3,7 @@ PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	https://jdebp.eu/Repository/freebsd/
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Incremental build system
 WWW=		https://jdebp.eu/Softwares/redo/
 
