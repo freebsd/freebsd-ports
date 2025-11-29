@@ -1,5 +1,5 @@
 PORTNAME=	srsly
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/srsly/releases/download/release-v${PORTVERSION}/
