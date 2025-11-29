@@ -1,0 +1,18 @@
+--- pyproject.toml.orig	2025-09-23 19:56:57 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=80", "setuptools-scm>=8"]
++requires = ["setuptools>=61", "setuptools-scm>=8"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+@@ -7,7 +7,7 @@ readme = "README.md"
+ dynamic = ["version"]
+ description = "Script to normalize the XML and other data inside of a UFO."
+ readme = "README.md"
+-license-files = ["LICENSE.txt"]
++license = {file = "LICENSE.txt"}
+ requires-python = ">=3.6"
+ authors = [{ name = "Tal Leming", email = "tal@typesupply.com" }]
+ classifiers = [
