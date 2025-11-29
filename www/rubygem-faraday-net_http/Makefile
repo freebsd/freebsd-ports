@@ -1,5 +1,5 @@
 PORTNAME=	faraday-net_http
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/lostisland/faraday-net_http
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-net-http>=0.5.0:www/rubygem-net-http
+RUN_DEPENDS=	rubygem-net-http>=0.5<1:www/rubygem-net-http
 
 USES=		gem
 
