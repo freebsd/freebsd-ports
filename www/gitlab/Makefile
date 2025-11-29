@@ -47,7 +47,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-zeitwerk>=2.6.18<2.6.19:devel/rubygem-zeitwerk \
 	rubygem-mutex_m>=0.3<1:devel/rubygem-mutex_m \
 	rubygem-drb-gitlab>=2.2.3<3:devel/rubygem-drb-gitlab \
-	rubygem-bootsnap>=1.18.6<1.19:devel/rubygem-bootsnap \
+	rubygem-bootsnap-gitlab>=1.18.6<1.19:devel/rubygem-bootsnap-gitlab \
 	rubygem-ffi>=1.17.2<2:devel/rubygem-ffi \
 	rubygem-openssl>=3.3.2<3.4:security/rubygem-openssl \
 	rubygem-gitlab-secret_detection>=0.38.0<1:security/rubygem-gitlab-secret_detection \
@@ -101,7 +101,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-net-ldap017>=0.17.1<0.18:net/rubygem-net-ldap017 \
 	rubygem-grape20>=2.0.0<2.1:devel/rubygem-grape20 \
 	rubygem-grape-entity>=1.0.1<1.1,1:devel/rubygem-grape-entity \
-	rubygem-grape-swagger>=2.1.2<2.2:devel/rubygem-grape-swagger \
+	rubygem-grape-swagger-gitlab>=2.1.2<2.2:devel/rubygem-grape-swagger-gitlab \
 	rubygem-grape-swagger-entity>=0.5.5<0.6:devel/rubygem-grape-swagger-entity \
 	rubygem-grape-path-helpers>=2.0.1<2.1:devel/rubygem-grape-path-helpers \
 	rubygem-rack-cors>=2.0.1<2.1:www/rubygem-rack-cors \
