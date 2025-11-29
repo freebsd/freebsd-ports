@@ -1,5 +1,6 @@
 PORTNAME=	zathura-cb
 DISTVERSION=	0.1.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://pwmt.org/projects/zathura-cb/download/
 
@@ -15,8 +16,7 @@ BUILD_DEPENDS=	appstreamcli:devel/appstream \
 LIB_DEPENDS=	libgirara-gtk3.so:x11-toolkits/girara
 RUN_DEPENDS=	zathura:graphics/zathura
 
-USES=		compiler:c17 desktop-file-utils gnome libarchive meson \
-		pkgconfig tar:xz
+USES=		compiler:c17 desktop-file-utils gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30
 
 PLIST_FILES=	lib/zathura/libcb.so \
