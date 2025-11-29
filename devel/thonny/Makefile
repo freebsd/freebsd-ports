@@ -26,6 +26,8 @@ RUN_DEPENDS=	pylint:devel/pylint@${PY_FLAVOR} \
 USES=		python desktop-file-utils
 USE_PYTHON=	distutils
 
+NO_ARCH=	yes
+
 ICON_SIZES=	16 22 32 48 64 128 192 256
 
 post-patch:
