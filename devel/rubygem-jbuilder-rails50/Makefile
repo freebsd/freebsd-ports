@@ -18,7 +18,7 @@ USES=		gem shebangfix
 
 NO_ARCH=	yes
 
-PORTCOUT=	limit:^2\.13\.
+PORTSCOUT=	limit:^2\.13\.
 
 SHEBANG_FILES=	bin/test
 
