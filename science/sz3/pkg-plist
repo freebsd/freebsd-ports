@@ -1,6 +1,7 @@
 bin/sz3
 bin/sz3_customized_demo
 bin/sz3_smoke_test
+include/SZ3/api/impl/SZAlgoBioMD.hpp
 include/SZ3/api/impl/SZAlgoInterp.hpp
 include/SZ3/api/impl/SZAlgoLorenzoReg.hpp
 include/SZ3/api/impl/SZAlgoNopred.hpp
@@ -16,13 +17,17 @@ include/SZ3/decomposition/BlockwiseDecomposition.hpp
 include/SZ3/decomposition/Decomposition.hpp
 include/SZ3/decomposition/InterpolationDecomposition.hpp
 include/SZ3/decomposition/NoPredictionDecomposition.hpp
+include/SZ3/decomposition/SZBioMDDecomposition.hpp
+include/SZ3/decomposition/SZBioMDXtcDecomposition.hpp
 include/SZ3/decomposition/TimeSeriesDecomposition.hpp
 include/SZ3/def.hpp
 include/SZ3/encoder/ArithmeticEncoder.hpp
 include/SZ3/encoder/BypassEncoder.hpp
 include/SZ3/encoder/Encoder.hpp
 include/SZ3/encoder/HuffmanEncoder.hpp
+include/SZ3/encoder/HuffmanEncoderV2.hpp
 include/SZ3/encoder/RunlengthEncoder.hpp
+include/SZ3/encoder/XtcBasedEncoder.hpp
 include/SZ3/lossless/Lossless.hpp
 include/SZ3/lossless/Lossless_bypass.hpp
 include/SZ3/lossless/Lossless_zstd.hpp
@@ -45,7 +50,7 @@ include/SZ3/utils/Interpolators.hpp
 include/SZ3/utils/Iterator.hpp
 include/SZ3/utils/KmeansUtil.hpp
 include/SZ3/utils/MemoryUtil.hpp
-include/SZ3/utils/QuantOptimizatioin.hpp
+include/SZ3/utils/QuantOptimization.hpp
 include/SZ3/utils/Sample.hpp
 include/SZ3/utils/Statistic.hpp
 include/SZ3/utils/Timer.hpp
