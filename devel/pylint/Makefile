@@ -1,5 +1,5 @@
 PORTNAME=	pylint
-PORTVERSION=	3.3.9
+PORTVERSION=	4.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pylint-dev/pylint/releases/download/v${PORTVERSION}/
@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=62.6:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.37.1:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=3.3.8<3.4.0:devel/py-astroid@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=4.0.2<4.1_99:devel/py-astroid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>=0.3.7:devel/py-dill@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}isort>=4.2.5<7:devel/py-isort@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}isort>=5<8:devel/py-isort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mccabe>=0.6<0.8:devel/py-mccabe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.2:devel/py-platformdirs@${PY_FLAVOR} \
 		${PY_TOMLI} \
