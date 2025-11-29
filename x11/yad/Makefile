@@ -1,6 +1,5 @@
 PORTNAME=	yad
-PORTVERSION=	14.1
-PORTREVISION=	1
+PORTVERSION=	14.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11 gnome
 
@@ -16,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:x11/rgb
 
 USES=		autoreconf gettext gnome gmake pkgconfig
 
-USE_GNOME=	cairo gtk30 intltool
+USE_GNOME=	cairo gtk30
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 CONFIGURE_ARGS+=	--with-rgb=${LOCALBASE}/lib/X11/rgb.txt
@@ -35,9 +34,9 @@ OPTIONS_DEFAULT=	SPELL
 OPTIONS_SUB=	yes
 
 HTML_CONFIGURE_ENABLE=	html
-HTML_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk@40 \
-			libsoup-2.4.so:devel/libsoup \
-			libjavascriptcoregtk-4.0.so:www/webkit2-gtk@40
+HTML_LIB_DEPENDS=	libwebkit2gtk-4.1.so:www/webkit2-gtk@41 \
+			libsoup-3.0.so:devel/libsoup3 \
+			libjavascriptcoregtk-4.1.so:www/webkit2-gtk@41
 
 ICONBROWSER_CONFIGURE_ENABLE=	icon-browser
 
