@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-pubsub_v1
-PORTVERSION=	0.62.0
+PORTVERSION=	0.63.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
