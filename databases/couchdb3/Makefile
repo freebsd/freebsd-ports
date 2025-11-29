@@ -1,5 +1,6 @@
 PORTNAME=	couchdb3
 DISTVERSION=	3.5.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	APACHE/couchdb/source/${DISTVERSION}
 DISTNAME=	apache-couchdb-${DISTVERSION}
@@ -17,9 +18,9 @@ NOT_FOR_ARCHS=	i386
 BUILD_DEPENDS=	erlang-runtime${_ERLVER}>=${_ERLVER}.0:lang/erlang-runtime${_ERLVER} \
 		rebar:devel/rebar
 LIB_DEPENDS=	libicudata.so:devel/icu \
-		libmozjs-102.so:lang/spidermonkey102
+		libmozjs-128.so:lang/spidermonkey128
 
-USES=		compiler:c++17-lang cpe gmake libtool ncurses
+USES=		compiler:c++17-lang cpe gmake libtool ncurses ssl
 CPE_VENDOR=	apache
 CPE_PRODUCT=	couchdb
 USE_RC_SUBR=	${PORTNAME}
@@ -28,12 +29,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--skip-deps \
 		--user ${USERS} \
 		--rebar ${LOCALBASE}/bin/rebar \
-		--spidermonkey-version 102
+		--spidermonkey-version 128
 
 MAKE_ENV=	PATH=${LOCALBASE}/lib/erlang${_ERLVER}/bin:${PATH}
 ALL_TARGET=	release
 
-CONFLICTS=	couchdb[24]*
+CONFLICTS=	couchdb4*
 
 SUB_FILES=	pkg-message
 SUB_LIST=	APPDIR=${_APPDIR} \
