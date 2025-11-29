@@ -1,5 +1,6 @@
 PORTNAME=	openbolt
 PORTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -29,7 +30,7 @@ RUN_DEPENDS=	puppet:sysutils/openvox-agent8 \
 		rubygem-puppet-resource_api>=1.8.1:devel/rubygem-puppet-resource_api \
 		rubygem-puppetfile-resolver>=0.6.2:sysutils/rubygem-puppetfile-resolver \
 		rubygem-ruby_smb>=1.0:net/rubygem-ruby_smb \
-		rubygem-terminal-table>=3.0<4:textproc/rubygem-terminal-table \
+		rubygem-terminal-table3>=3.0<4:textproc/rubygem-terminal-table3 \
 		rubygem-winrm-fs>=1.3:filesystems/rubygem-winrm-fs \
 		rubygem-winrm>=2.0:sysutils/rubygem-winrm
 
