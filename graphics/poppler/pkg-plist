@@ -113,7 +113,7 @@ include/poppler/splash/SplashPattern.h
 include/poppler/splash/SplashTypes.h
 lib/libpoppler-cpp.so
 lib/libpoppler-cpp.so.2
-lib/libpoppler-cpp.so.2.1.0
+lib/libpoppler-cpp.so.2.2.0
 lib/libpoppler.so
 lib/libpoppler.so.%%SHLIB_VER%%
 lib/libpoppler.so.%%SHLIB_VER%%.0.0
