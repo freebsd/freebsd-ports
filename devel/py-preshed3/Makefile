@@ -1,5 +1,5 @@
 PORTNAME=	preshed
-PORTVERSION=	3.0.10
+PORTVERSION=	3.0.12
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/preshed/releases/download/release-v${PORTVERSION}/
