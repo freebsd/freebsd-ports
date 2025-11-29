@@ -17,7 +17,7 @@ DISTFILES=	build-${BUILD_REV}.tar.gz:local \
 DIST_SUBDIR=	v8/${PORTVERSION:R:R}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	sunpoet@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source JavaScript engine by Google
 WWW=		https://v8.dev/
 
