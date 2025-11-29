@@ -1,0 +1,10 @@
+--- sysinfo.gemspec.orig	2025-11-23 07:53:16 UTC
++++ sysinfo.gemspec
+@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<storable>.freeze, ["~> 0.10".freeze])
+-  s.add_runtime_dependency(%q<drydock>.freeze, ["< 1.0".freeze])
++  s.add_runtime_dependency(%q<drydock>.freeze, [">= 0".freeze])
+ end
+ 

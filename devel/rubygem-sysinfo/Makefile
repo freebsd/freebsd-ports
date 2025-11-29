@@ -1,5 +1,6 @@
 PORTNAME=	sysinfo
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/delano/sysinfo
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-drydock>=0<1.0:devel/rubygem-drydock \
+RUN_DEPENDS=	rubygem-drydock>=0:devel/rubygem-drydock \
 		rubygem-storable>=0.10<1:devel/rubygem-storable
 
 USES=		gem shebangfix
