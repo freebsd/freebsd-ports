@@ -1,5 +1,5 @@
 PORTNAME=	xarray
-PORTVERSION=	2025.10.1
+PORTVERSION=	2025.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cartopy>=0.23:graphics/py-cartopy@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}cfgrib>=0:science/py-cfgrib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cftime>=0:devel/py-cftime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dask>=0:devel/py-dask@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.8:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netCDF4>=1.6.0:science/py-netCDF4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pint>=0:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rasterio>=0:graphics/py-rasterio@${PY_FLAVOR} \
