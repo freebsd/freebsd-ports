@@ -9,6 +9,7 @@ WWW=		https://pecl.php.net/package/couchbase \
 		https://github.com/couchbase/couchbase-php-client
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:indirect compiler:c++17-lang php:build,pecl
 
