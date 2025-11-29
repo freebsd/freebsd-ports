@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-05-30 20:49:07 UTC
+--- pyproject.toml.orig	2025-11-06 16:08:46 UTC
 +++ pyproject.toml
 @@ -2,7 +2,7 @@ readme = 'README.rst'
  name = "asdf"
@@ -6,6 +6,6 @@
  readme = 'README.rst'
 -license-files = ['LICENSE']
 +license = { file = 'LICENSE' }
- authors = [{ name = 'The ASDF Developers', email = 'help@stsci.edu' }]
+ authors = [{ name = 'The ASDF Developers' }]
  requires-python = '>=3.9'
  classifiers = [
