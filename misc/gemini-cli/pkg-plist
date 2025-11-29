@@ -2,6 +2,7 @@ bin/gemini
 lib/node_modules/@google/gemini-cli/LICENSE
 lib/node_modules/@google/gemini-cli/README.md
 lib/node_modules/@google/gemini-cli/dist/.last_build
+lib/node_modules/@google/gemini-cli/dist/google-gemini-cli-0.18.3.tgz
 lib/node_modules/@google/gemini-cli/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/dist/index.js
 lib/node_modules/@google/gemini-cli/dist/index.js.map
@@ -103,6 +104,9 @@ lib/node_modules/@google/gemini-cli/dist/src/commands/mcp/remove.js.map
 lib/node_modules/@google/gemini-cli/dist/src/commands/mcp/remove.test.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/commands/mcp/remove.test.js
 lib/node_modules/@google/gemini-cli/dist/src/commands/mcp/remove.test.js.map
+lib/node_modules/@google/gemini-cli/dist/src/commands/utils.d.ts
+lib/node_modules/@google/gemini-cli/dist/src/commands/utils.js
+lib/node_modules/@google/gemini-cli/dist/src/commands/utils.js.map
 lib/node_modules/@google/gemini-cli/dist/src/config/auth.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/config/auth.js
 lib/node_modules/@google/gemini-cli/dist/src/config/auth.js.map
@@ -1684,12 +1688,6 @@ lib/node_modules/@google/gemini-cli/dist/src/utils/startupWarnings.js.map
 lib/node_modules/@google/gemini-cli/dist/src/utils/startupWarnings.test.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/utils/startupWarnings.test.js
 lib/node_modules/@google/gemini-cli/dist/src/utils/startupWarnings.test.js.map
-lib/node_modules/@google/gemini-cli/dist/src/utils/stdio.d.ts
-lib/node_modules/@google/gemini-cli/dist/src/utils/stdio.js
-lib/node_modules/@google/gemini-cli/dist/src/utils/stdio.js.map
-lib/node_modules/@google/gemini-cli/dist/src/utils/stdio.test.d.ts
-lib/node_modules/@google/gemini-cli/dist/src/utils/stdio.test.js
-lib/node_modules/@google/gemini-cli/dist/src/utils/stdio.test.js.map
 lib/node_modules/@google/gemini-cli/dist/src/utils/updateEventEmitter.d.ts
 lib/node_modules/@google/gemini-cli/dist/src/utils/updateEventEmitter.js
 lib/node_modules/@google/gemini-cli/dist/src/utils/updateEventEmitter.js.map
@@ -1956,6 +1954,7 @@ lib/node_modules/@google/gemini-cli/node_modules/@google-cloud/promisify/package
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/LICENSE
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/README.md
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/.last_build
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/google-gemini-cli-core-0.18.3.tgz
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/index.js.map
@@ -3074,6 +3073,12 @@ lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/sr
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/shell-utils.test.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/shell-utils.test.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/shell-utils.test.js.map
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/stdio.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/stdio.js
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/stdio.js.map
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/stdio.test.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/stdio.test.js
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/stdio.test.js.map
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/summarizer.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/summarizer.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/summarizer.js.map
@@ -3086,6 +3091,9 @@ lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/sr
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/systemEncoding.test.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/systemEncoding.test.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/systemEncoding.test.js.map
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/terminal.d.ts
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/terminal.js
+lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/terminal.js.map
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/terminalSerializer.d.ts
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/terminalSerializer.js
 lib/node_modules/@google/gemini-cli/node_modules/@google/gemini-cli-core/dist/src/utils/terminalSerializer.js.map
