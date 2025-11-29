@@ -1,6 +1,5 @@
 PORTNAME=	tmux
-PORTVERSION=	3.5a
-PORTREVISION=	1
+PORTVERSION=	3.6
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -9,12 +8,12 @@ MAINTAINER=	jrm@FreeBSD.org
 COMMENT=	Terminal Multiplexer
 WWW=		https://tmux.github.io/
 
-LICENSE=	ISCL GPLv2
+LICENSE=	GPLv2 ISCL
 LICENSE_COMB=	multi
-LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
 LICENSE_FILE_GPLv2=	${WRKSRC_bash}/COPYING
-LICENSE_DISTFILES_ISCL=	${DISTNAME}${EXTRACT_SUFX}
+LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
 LICENSE_DISTFILES_GPLv2=	${DISTFILE_bash}
+LICENSE_DISTFILES_ISCL=		${DISTNAME}${EXTRACT_SUFX}
 
 USES=		cpe pkgconfig
 
@@ -40,22 +39,22 @@ OPTIONS_DEFINE=	DOCS EXAMPLES LIBEVENT_STATIC UTF8PROC
 
 LIBEVENT_STATIC_DESC=	Build with static libevent
 UTF8PROC_DESC=		Build with utf8proc support
-UTF8PROC_USES=		localbase
 
 LIBEVENT_STATIC_BUILD_DEPENDS=		${LOCALBASE}/lib/libevent.a:devel/libevent
 LIBEVENT_STATIC_LIB_DEPENDS_OFF=	libevent.so:devel/libevent
 LIBEVENT_STATIC_VARS=			LESTATIC=${LOCALBASE}/lib/libevent.a
 
 UTF8PROC_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc
+UTF8PROC_USES=			localbase
 UTF8PROC_CONFIGURE_ENABLE=	utf8proc
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1401502 || \
-	${OSVERSION} >= 1500000 && ${OSVERSION} < 1500020)
-USES+=	ncurses:port
+.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1401502 || ${OSVERSION} >= 1500000 && \
+	${OSVERSION} < 1500020)
+USES+=		ncurses:port
 .else
-USES+=	ncurses
+USES+=		ncurses
 .endif
 
 post-patch:
