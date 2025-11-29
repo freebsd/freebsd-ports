@@ -1,5 +1,5 @@
 PORTNAME=	copier
-PORTVERSION=	9.10.3
+PORTVERSION=	9.11.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,10 +34,6 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}eval-type-backport>=0.1.3<0.3.0:devel/py-eval-type-backport@${PY_FLAVOR}
-.endif
 
 .if ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.0<5.0.0:devel/py-typing-extensions@${PY_FLAVOR}
