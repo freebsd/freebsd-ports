@@ -36,7 +36,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-PY-252.26199.168
+%%DATADIR%%/lib/build-marker-PY-252.28238.29
 %%DATADIR%%/lib/eclipse.lsp4j.debug.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -322,6 +322,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/dataWrangler-plugin/lib/modules/intellij.dataWrangler.core.jar
 %%DATADIR%%/plugins/dataWrangler-plugin/lib/modules/intellij.dataWrangler.jar
 %%DATADIR%%/plugins/dataWrangler-plugin/lib/modules/intellij.dataWrangler.llm.jar
+%%DATADIR%%/plugins/dataspell-jupyter-customCells/lib/dataspell-jupyter-customCells.jar
 %%DATADIR%%/plugins/dbt/lib/dbt.jar
 %%DATADIR%%/plugins/dev/lib/dev.jar
 %%DATADIR%%/plugins/dotenv/lib/dotenv.jar
@@ -643,8 +644,8 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-file-path-resolver.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-a71380e98a7c.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-a71380e98a7c.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
@@ -1258,8 +1259,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.core.jar
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.jsonschema.jar
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.serialization.jar
-%%DATADIR%%/plugins/mcpserver/lib/io.ktor.utils.jar
-%%DATADIR%%/plugins/mcpserver/lib/ktor-server-cio.jar
+%%DATADIR%%/plugins/mcpserver/lib/ktor-server-cio-internal.jar
 %%DATADIR%%/plugins/mcpserver/lib/mcpserver-frontend.jar
 %%DATADIR%%/plugins/mcpserver/lib/mcpserver.jar
 %%DATADIR%%/plugins/microservices-ui/lib/microservices-ui.jar
@@ -1385,15 +1385,14 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/io.github.z4kn4fein.semver.jvm.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.whatsNew.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/pycharm-community-customization-shared.jar
-%%DATADIR%%/plugins/pycharm-ds-jupyter-customCells/lib/pycharm-ds-jupyter-customCells.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/modules/intellij.platform.trialPromotion.common.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/modules/intellij.platform.trialPromotion.idesWithFreeTier.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/modules/intellij.pycharm.pro.customizationTrial.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/tips-pycharm-pro.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b3d66beaba9a-c6efb3732140.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-b3d66beaba9a-c6efb3732140.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-a101402ee41c-968fe969f28a.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-a101402ee41c-968fe969f28a.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
