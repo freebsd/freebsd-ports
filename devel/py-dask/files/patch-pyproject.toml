@@ -1,0 +1,21 @@
+--- pyproject.toml.orig	2025-11-06 16:54:09 UTC
++++ pyproject.toml
+@@ -1,16 +1,12 @@
+ [build-system]
+-requires = ["setuptools>=80", "setuptools-scm"]
++requires = ["setuptools>=62.2", "setuptools-scm"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+ name = "dask"
+ description = "Parallel PyData with Task Scheduling"
+ maintainers = [{name = "Matthew Rocklin", email = "mrocklin@gmail.com"}]
+-license = "BSD-3-Clause"
+-license-files = [
+-    "LICENSE.txt",
+-    "dask/array/NUMPY_LICENSE.txt",
+-]
++license = {text = "BSD-3-Clause"}
+ keywords = ["task-scheduling parallel numpy pandas pydata"]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
