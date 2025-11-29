@@ -1,5 +1,5 @@
 PORTNAME=	pyhanko-cli
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.1:devel/py-asn1crypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1.3:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.3.8:devel/py-platformdirs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyhanko>=0.31.0<0.32:security/py-pyhanko@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyhanko>=0.32.0<0.33:security/py-pyhanko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyhanko-certvalidator>=0.29.0<0.30:security/py-pyhanko-certvalidator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzlocal>=4.3:devel/py-tzlocal@${PY_FLAVOR}
 
