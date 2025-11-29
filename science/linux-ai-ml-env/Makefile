@@ -17,9 +17,8 @@ LICENSE_TEXT=	The package contains multiple packages with different licenses
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 BUILD_DEPENDS=	linux-rl9-devtools>=0:devel/linux-rl9-devtools
-RUN_DEPENDS=	linux-nvidia-libs>=0:x11/linux-nvidia-libs \
-		linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3 \
-		nvidia-driver>=0:x11/nvidia-driver
+RUN_DEPENDS=	linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3 \
+		${NVIDIA_DEPS}
 
 USES=		linux:rl9
 USE_LINUX_PREFIX=	yes
@@ -36,7 +35,7 @@ SUB_FILES=	ai-ml-env-bash \
 SUB_LIST=	LOCALBASE=${LOCALBASE} \
 		LINUXBASE=${LINUXBASE}
 
-PLIST_SUB+=     PYTHON_SUFFIX=${PYTHON_SUFFIX} \
+PLIST_SUB=	PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
 
 CONDA_VERSION=	py${PYTHON_SUFFIX}_25.9.1-1
@@ -44,6 +43,20 @@ CONDA_SCRIPT=	Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh
 PYTHON_SUFFIX=	39
 PYTHON_VER=	3.9
 DATA_DIR=	${LOCALBASE}/share/${PORTNAME}
+
+OPTIONS_DEFINE=	NVIDIA_DEVEL
+
+NVIDIA_DEVEL_DESC=	Depend on x11/nvidia-driver-devel instead of the stable version
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNVIDIA_DEVEL}
+NVIDIA_DEPS=	linux-nvidia-libs-devel>=0:x11/linux-nvidia-libs-devel \
+		nvidia-driver-devel>=0:x11/nvidia-driver-devel
+.else
+NVIDIA_DEPS=	linux-nvidia-libs>=0:x11/linux-nvidia-libs \
+		nvidia-driver>=0:x11/nvidia-driver
+.endif
 
 makedist:
 	@${MKDIR} ${MAKEDIST_WRKSRC}
