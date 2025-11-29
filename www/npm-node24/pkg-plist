@@ -1735,15 +1735,6 @@ lib/node_modules/npm/node_modules/nopt/lib/nopt-lib.js
 lib/node_modules/npm/node_modules/nopt/lib/nopt.js
 lib/node_modules/npm/node_modules/nopt/lib/type-defs.js
 lib/node_modules/npm/node_modules/nopt/package.json
-lib/node_modules/npm/node_modules/normalize-package-data/LICENSE
-lib/node_modules/npm/node_modules/normalize-package-data/lib/extract_description.js
-lib/node_modules/npm/node_modules/normalize-package-data/lib/fixer.js
-lib/node_modules/npm/node_modules/normalize-package-data/lib/make_warning.js
-lib/node_modules/npm/node_modules/normalize-package-data/lib/normalize.js
-lib/node_modules/npm/node_modules/normalize-package-data/lib/safe_format.js
-lib/node_modules/npm/node_modules/normalize-package-data/lib/typos.json
-lib/node_modules/npm/node_modules/normalize-package-data/lib/warning_messages.json
-lib/node_modules/npm/node_modules/normalize-package-data/package.json
 lib/node_modules/npm/node_modules/npm-audit-report/LICENSE
 lib/node_modules/npm/node_modules/npm-audit-report/lib/colors.js
 lib/node_modules/npm/node_modules/npm-audit-report/lib/exit-code.js
