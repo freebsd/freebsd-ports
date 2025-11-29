@@ -1,5 +1,5 @@
 PORTNAME=	python-semantic-release
-PORTVERSION=	10.4.1
+PORTVERSION=	10.5.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-semantic-release/python-semantic-release/releases/download/v${PORTVERSION}/
@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.1.0<8.2:devel/py-click@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=14.0<15:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.5<2:devel/py-shellingham@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11<1:textproc/py-tomlkit@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.14:textproc/py-tomlkit@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
