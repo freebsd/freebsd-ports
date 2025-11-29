@@ -1,5 +1,5 @@
 PORTNAME=	xapian-bindings
-PORTVERSION=	1.4.29
+PORTVERSION=	1.4.30
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
