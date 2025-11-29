@@ -1,11 +1,11 @@
 PORTNAME=	hypothesis
-PORTVERSION=	6.146.0
+PORTVERSION=	6.148.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Library for property based testing
+COMMENT=	Property-based testing library for Python
 WWW=		https://hypothesis.works/ \
 		https://hypothesis.readthedocs.io/en/latest/ \
 		https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python
