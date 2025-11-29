@@ -1,5 +1,5 @@
 PORTNAME=	graphviz
-PORTVERSION=	14.0.2
+PORTVERSION=	14.0.5
 PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
@@ -50,7 +50,7 @@ FIX_TCL_SCRIPT=	tclpkg/gdtclft/demo/entities.tcl \
 		tclpkg/tcldot/demo/gcat.tcl
 FIX_TK_SCRIPT=	tclpkg/tcldot/demo/doted.tcl \
 		tclpkg/tclpathplan/demo/pathplan.tcl
-PLIST_SUB=	SH_VERSION_SHORT="8" SH_VERSION_FULL="8.0.2"
+PLIST_SUB=	SH_VERSION_SHORT="8" SH_VERSION_FULL="8.0.4"
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS ANN GTS \
 		PANGOCAIRO POPPLER GDK GHOSTSCRIPT DEVIL \

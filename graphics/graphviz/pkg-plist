@@ -161,7 +161,7 @@ lib/graphviz/libgvplugin_webp.so.%%SH_VERSION_FULL%%
 lib/libcdt.la
 lib/libcdt.so
 lib/libcdt.so.6
-lib/libcdt.so.6.0.0
+lib/libcdt.so.6.0.1
 lib/libcgraph.la
 lib/libcgraph.so
 lib/libcgraph.so.%%SH_VERSION_SHORT%%
@@ -169,15 +169,15 @@ lib/libcgraph.so.%%SH_VERSION_FULL%%
 lib/libgvc.la
 lib/libgvc.so
 lib/libgvc.so.7
-lib/libgvc.so.7.0.1
+lib/libgvc.so.7.0.3
 lib/libgvpr.la
 lib/libgvpr.so
 lib/libgvpr.so.2
-lib/libgvpr.so.2.0.2
+lib/libgvpr.so.2.0.4
 lib/libpathplan.la
 lib/libpathplan.so
 lib/libpathplan.so.4
-lib/libpathplan.so.4.0.2
+lib/libpathplan.so.4.0.3
 lib/libxdot.la
 lib/libxdot.so
 lib/libxdot.so.4
