@@ -1,3 +1,3 @@
-TIMESTAMP = 1761447588
-SHA256 (rubygem/aws-sdk-timestreaminfluxdb-1.33.0.gem) = ee27ea6ed677e945abe27f37f1ef3890a546118b6db7982f8931ea7faffa1bbd
-SIZE (rubygem/aws-sdk-timestreaminfluxdb-1.33.0.gem) = 56832
+TIMESTAMP = 1763854266
+SHA256 (rubygem/aws-sdk-timestreaminfluxdb-1.34.0.gem) = fc522a1c728e41a1b6b5543491b8bf6f7eac00f24e02ec08199cc5a07bd641dc
+SIZE (rubygem/aws-sdk-timestreaminfluxdb-1.34.0.gem) = 56832
