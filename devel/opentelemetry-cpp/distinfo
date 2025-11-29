@@ -1,3 +1,5 @@
-TIMESTAMP = 1759774531
-SHA256 (open-telemetry-opentelemetry-cpp-v1.23.0_GH0.tar.gz) = 148ef298a4ef9e016228d53d7208ab9359d4fdf87f55649d60d07ffacc093b33
-SIZE (open-telemetry-opentelemetry-cpp-v1.23.0_GH0.tar.gz) = 1193184
+TIMESTAMP = 1763853162
+SHA256 (open-telemetry-opentelemetry-cpp-v1.24.0_GH0.tar.gz) = 7b8e966affca1daf1906272f4d983631cad85fb6ea60fb6f55dcd1811a730604
+SIZE (open-telemetry-opentelemetry-cpp-v1.24.0_GH0.tar.gz) = 1223110
+SHA256 (open-telemetry-opentelemetry-proto-v1.9.0_GH0.tar.gz) = 2d2220db196bdfd0aec872b75a5e614458f8396557fc718b28017e1a08db49e4
+SIZE (open-telemetry-opentelemetry-proto-v1.9.0_GH0.tar.gz) = 119325
