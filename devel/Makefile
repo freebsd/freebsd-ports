@@ -4353,6 +4353,7 @@
     SUBDIR += protobuf3
     SUBDIR += protoc-gen-go-grpc
     SUBDIR += prototool
+    SUBDIR += protovalidate
     SUBDIR += protozero
     SUBDIR += pructl
     SUBDIR += psimd
