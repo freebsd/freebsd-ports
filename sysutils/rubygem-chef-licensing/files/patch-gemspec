@@ -1,16 +1,18 @@
---- chef-licensing.gemspec.orig	2025-10-07 15:34:32 UTC
+--- chef-licensing.gemspec.orig	2025-11-23 10:06:50 UTC
 +++ chef-licensing.gemspec
-@@ -24,11 +24,11 @@ Gem::Specification.new do |s|
+@@ -24,12 +24,12 @@ Gem::Specification.new do |s|
  
    s.add_runtime_dependency(%q<chef-config>.freeze, [">= 15".freeze])
    s.add_runtime_dependency(%q<tty-prompt>.freeze, ["~> 0.23".freeze])
 -  s.add_runtime_dependency(%q<faraday>.freeze, [">= 1".freeze, "< 2".freeze])
 +  s.add_runtime_dependency(%q<faraday>.freeze, [">= 1".freeze, "< 3".freeze])
    s.add_runtime_dependency(%q<faraday-http-cache>.freeze, [">= 0".freeze])
-   s.add_runtime_dependency(%q<activesupport>.freeze, ["~> 7.2".freeze, ">= 7.2.2.1".freeze])
+   s.add_runtime_dependency(%q<faraday_middleware>.freeze, ["~> 1.0".freeze])
    s.add_runtime_dependency(%q<tty-spinner>.freeze, ["~> 0.9.3".freeze])
    s.add_runtime_dependency(%q<mixlib-log>.freeze, ["~> 3.0".freeze])
 -  s.add_runtime_dependency(%q<ostruct>.freeze, ["~> 0.1.0".freeze])
+-  s.add_runtime_dependency(%q<pstore>.freeze, ["~> 0.1.1".freeze])
 +  s.add_runtime_dependency(%q<ostruct>.freeze, ["~> 0.1".freeze])
++  s.add_runtime_dependency(%q<pstore>.freeze, ["~> 0.1".freeze, ">= 0.1.1".freeze])
  end
  
