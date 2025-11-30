@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20251130:
+  AFFECTS: users of www/node{22,24,25}
+  AUTHOR: sunpoet@FreeBSD.org
+
+  www/node{22,24,25} now uses databases/sqlite3 instead of the bundled one.
+  It requires SESSION option (enabled by default) in databases/sqlite3.
+  Please update your option configuration. Otherwise, the build fails.
+  See PR 290509 and 290588 for details.
+
 20251113:
   AFFECTS: users of deskutils/fet
   AUTHOR: uzsolt@FreeBSD.org
