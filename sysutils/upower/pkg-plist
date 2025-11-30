@@ -11,7 +11,7 @@ include/libupower-glib/upower.h
 lib/girepository-1.0/UPowerGlib-1.0.typelib
 lib/libupower-glib.so
 lib/libupower-glib.so.3
-lib/libupower-glib.so.3.1.0
+lib/libupower-glib.so.3.1.1
 libdata/pkgconfig/upower-glib.pc
 libexec/upowerd
 %%MANPAGES%%share/man/man1/upower.1.gz
@@ -22,6 +22,7 @@ share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.xml
 share/dbus-1/system.d/org.freedesktop.UPower.conf
 share/dbus-1/system-services/org.freedesktop.UPower.service
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 share/gir-1.0/UPowerGlib-1.0.gir
 %%NLS%%share/locale/fr/LC_MESSAGES/upower.mo
 %%NLS%%share/locale/it/LC_MESSAGES/upower.mo
@@ -29,5 +30,6 @@ share/gir-1.0/UPowerGlib-1.0.gir
 %%NLS%%share/locale/pl/LC_MESSAGES/upower.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/upower.mo
 share/polkit-1/actions/org.freedesktop.upower.policy
+@dir etc/UPower/UPower.conf.d
 @dir /var/lib/upower
 @dir /var/lib/

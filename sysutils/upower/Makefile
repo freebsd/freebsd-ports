@@ -1,6 +1,6 @@
 PORTNAME=	upower
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.90.10
+DISTVERSION=	1.91.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -18,6 +18,7 @@ GL_SITE=	https://gitlab.freedesktop.org/
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgtk-doc=false \
+		-Dinstalled_tests=false \
 		-Didevice=disabled \
 		-Dos_backend=freebsd \
 		-Dpolkit=enabled \
@@ -27,7 +28,7 @@ MESON_ARGS=	-Dgtk-doc=false \
 		-Dzshcompletiondir=no
 LDFLAGS+=	-lkvm
 
-OPTIONS_DEFINE=		MANPAGES NLS
+OPTIONS_DEFINE=		DOCS MANPAGES NLS
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
@@ -41,5 +42,8 @@ NLS_USES=	gettext-runtime
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/UPower/UPower.conf.d
 
 .include <bsd.port.mk>
