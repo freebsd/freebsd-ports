@@ -4,6 +4,7 @@ bin/hyprland
 bin/hyprpm
 include/hyprland/protocols/alpha-modifier-v1.hpp
 include/hyprland/protocols/color-management-v1.hpp
+include/hyprland/protocols/commit-timing-v1.hpp
 include/hyprland/protocols/content-type-v1.hpp
 include/hyprland/protocols/cursor-shape-v1.hpp
 include/hyprland/protocols/drm-lease-v1.hpp
@@ -12,6 +13,7 @@ include/hyprland/protocols/ext-foreign-toplevel-list-v1.hpp
 include/hyprland/protocols/ext-idle-notify-v1.hpp
 include/hyprland/protocols/ext-session-lock-v1.hpp
 include/hyprland/protocols/ext-workspace-v1.hpp
+include/hyprland/protocols/fifo-v1.hpp
 include/hyprland/protocols/fractional-scale-v1.hpp
 include/hyprland/protocols/frog-color-management-v1.hpp
 include/hyprland/protocols/hyprland-ctm-control-v1.hpp
@@ -101,10 +103,12 @@ include/hyprland/src/events/Events.hpp
 include/hyprland/src/helpers/AnimatedVariable.hpp
 include/hyprland/src/helpers/AsyncDialogBox.hpp
 include/hyprland/src/helpers/ByteOperations.hpp
+include/hyprland/src/helpers/CMType.hpp
 include/hyprland/src/helpers/Color.hpp
 include/hyprland/src/helpers/CursorShapes.hpp
 include/hyprland/src/helpers/DamageRing.hpp
 include/hyprland/src/helpers/Format.hpp
+include/hyprland/src/helpers/MainLoopExecutor.hpp
 include/hyprland/src/helpers/MiscFunctions.hpp
 include/hyprland/src/helpers/Monitor.hpp
 include/hyprland/src/helpers/MonitorFrameScheduler.hpp
@@ -146,6 +150,7 @@ include/hyprland/src/managers/XCursorManager.hpp
 include/hyprland/src/managers/XWaylandManager.hpp
 include/hyprland/src/managers/animation/AnimationManager.hpp
 include/hyprland/src/managers/animation/DesktopAnimationManager.hpp
+include/hyprland/src/managers/cursor/CursorShapeOverrideController.hpp
 include/hyprland/src/managers/eventLoop/EventLoopManager.hpp
 include/hyprland/src/managers/eventLoop/EventLoopTimer.hpp
 include/hyprland/src/managers/input/InputManager.hpp
@@ -172,6 +177,7 @@ include/hyprland/src/plugins/PluginSystem.hpp
 include/hyprland/src/protocols/AlphaModifier.hpp
 include/hyprland/src/protocols/CTMControl.hpp
 include/hyprland/src/protocols/ColorManagement.hpp
+include/hyprland/src/protocols/CommitTiming.hpp
 include/hyprland/src/protocols/ContentType.hpp
 include/hyprland/src/protocols/CursorShape.hpp
 include/hyprland/src/protocols/DRMLease.hpp
@@ -179,6 +185,7 @@ include/hyprland/src/protocols/DRMSyncobj.hpp
 include/hyprland/src/protocols/DataDeviceWlr.hpp
 include/hyprland/src/protocols/ExtDataDevice.hpp
 include/hyprland/src/protocols/ExtWorkspace.hpp
+include/hyprland/src/protocols/Fifo.hpp
 include/hyprland/src/protocols/FocusGrab.hpp
 include/hyprland/src/protocols/ForeignToplevel.hpp
 include/hyprland/src/protocols/ForeignToplevelWlr.hpp
@@ -240,7 +247,9 @@ include/hyprland/src/protocols/types/DMABuffer.hpp
 include/hyprland/src/protocols/types/DataDevice.hpp
 include/hyprland/src/protocols/types/SurfaceRole.hpp
 include/hyprland/src/protocols/types/SurfaceState.hpp
+include/hyprland/src/protocols/types/SurfaceStateQueue.hpp
 include/hyprland/src/protocols/types/WLBuffer.hpp
+include/hyprland/src/render/AsyncResourceGatherer.hpp
 include/hyprland/src/render/Framebuffer.hpp
 include/hyprland/src/render/OpenGL.hpp
 include/hyprland/src/render/Renderbuffer.hpp

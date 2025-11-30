@@ -1,11 +1,14 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.51.1
-PORTREVISION=	5
+DISTVERSION=	0.52.1
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
 DIST_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	https://github.com/hyprwm/Hyprland/commit/
+PATCHFILES=	43527d363472b52f17dd9f9f4f87ec25cbf8a399.patch:-p1 \
+		55a93b8a52ad3bd2c0a7468e8f79f5667eea0702.patch:-p1
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -17,6 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		glaze>0:devel/glaze \
 		hyprwayland-scanner>=0.3.10:devel/hyprwayland-scanner \
+		hyprland-protocols>=0.6.4:graphics/hyprland-protocols \
 		wayland-protocols>=1.45:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
@@ -31,6 +35,7 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprcursor.so:x11/hyprcursor \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	hyprland-dialog:x11/hyprland-guiutils
 
 USES=		cmake compiler:c++23-lang gl gnome pkgconfig xorg
 
@@ -40,6 +45,7 @@ USE_XORG=	pixman xcursor
 
 CMAKE_ON=	NO_SYSTEMD
 CMAKE_OFF=	CMAKE_CXX_SCAN_FOR_MODULES # avoid devel/llvm*
+CMAKE_OFF+=	BUILD_TESTING
 
 LDFLAGS+=	-Wl,--as-needed # GL, pango deps
 
@@ -51,10 +57,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-source
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
 .endif
 
-OPTIONS_DEFINE=		QT6 X11
-OPTIONS_DEFAULT=	QT6 X11
-
-QT6_RUN_DEPENDS=	hyprland-dialog:x11/hyprland-qtutils
+OPTIONS_DEFINE=		X11
+OPTIONS_DEFAULT=	X11
 
 X11_LIB_DEPENDS=	libxcb-errors.so:x11/xcb-util-errors \
 			libxcb-icccm.so:x11/xcb-util-wm
@@ -80,7 +84,8 @@ post-patch:
 		${WRKSRC}/src/debug/CrashReporter.cpp \
 		${WRKSRC}/src/helpers/MiscFunctions.cpp \
 		${WRKSRC}/src/plugins/HookSystem.cpp \
-		${WRKSRC}/src/plugins/PluginAPI.cpp
+		${WRKSRC}/src/plugins/PluginAPI.cpp \
+		${WRKSRC}/hyprtester/src/tests/main/exec.cpp
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/hyprland
