@@ -62,7 +62,7 @@ USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome meson perl5 \
 CPE_VENDOR=	linuxmint
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool introspection libxml2 pygobject3
 USE_XORG=	x11 xfixes
-USE_GL=		gl
+USE_GL=		gbm gl
 USE_PERL5=	build
 
 USE_GITHUB=	yes
