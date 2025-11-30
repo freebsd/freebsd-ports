@@ -1,4 +1,4 @@
-TIMESTAMP = 1764220553
+TIMESTAMP = 1764508114
 SHA256 (go/devel_gitaly/gitaly-v18.6.1/go.mod) = 1aace7ab09969668d9aad9416851833a2ec122442b060ce133e60d1d7c9b0252
 SIZE (go/devel_gitaly/gitaly-v18.6.1/go.mod) = 14044
 SHA256 (go/devel_gitaly/gitaly-v18.6.1/gitaly-v18.6.1.tar.bz2) = 598192b4c0ea1f323ff085db5ff02e507d698456fdf5333e562f0360a319abbc
@@ -9,3 +9,5 @@ SHA256 (go/devel_gitaly/gitaly-v18.6.1/gitlab-org-git-419c72cb8ada252b260efc38ff
 SIZE (go/devel_gitaly/gitaly-v18.6.1/gitlab-org-git-419c72cb8ada252b260efc38ff91fe201de7c8c3_GL0.tar.gz) = 11822923
 SHA256 (go/devel_gitaly/gitaly-v18.6.1/gitlab-org-git-23466173824c0a0f835c0d790c2f38156ae6284a_GL0.tar.gz) = 01a4069b15e9262151b3b97f989d4939ba8966bd5269875add2a34806817c01a
 SIZE (go/devel_gitaly/gitaly-v18.6.1/gitlab-org-git-23466173824c0a0f835c0d790c2f38156ae6284a_GL0.tar.gz) = 11745131
+SHA256 (go/devel_gitaly/gitaly-v18.6.1/8309.patch) = 44a7f527e23f818b0c7080ac6f8a56b14f6711b3feca5dd1f59e39557a7e8bce
+SIZE (go/devel_gitaly/gitaly-v18.6.1/8309.patch) = 1287
