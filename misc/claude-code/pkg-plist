@@ -4,6 +4,8 @@ lib/node_modules/@anthropic-ai/claude-code/README.md
 lib/node_modules/@anthropic-ai/claude-code/cli.js
 lib/node_modules/@anthropic-ai/claude-code/package.json
 lib/node_modules/@anthropic-ai/claude-code/sdk-tools.d.ts
+lib/node_modules/@anthropic-ai/claude-code/tree-sitter-bash.wasm
+lib/node_modules/@anthropic-ai/claude-code/tree-sitter.wasm
 lib/node_modules/@anthropic-ai/claude-code/vendor/claude-code-jetbrains-plugin/lib/annotations-23.0.0.jar
 lib/node_modules/@anthropic-ai/claude-code/vendor/claude-code-jetbrains-plugin/lib/claude-code-jetbrains-plugin-0.1.12-beta-searchableOptions.jar
 lib/node_modules/@anthropic-ai/claude-code/vendor/claude-code-jetbrains-plugin/lib/claude-code-jetbrains-plugin-0.1.12-beta.jar
