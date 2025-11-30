@@ -6,5 +6,5 @@ lib/cmake/hmat/HMATConfigVersion.cmake
 lib/cmake/hmat/HMATTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/hmat/HMATTargets.cmake
 lib/libhmat.so
-lib/libhmat.so.1.10.0
+lib/libhmat.so.1.11.1
 lib/libhmat.so.4

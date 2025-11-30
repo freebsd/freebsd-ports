@@ -1,5 +1,5 @@
 PORTNAME=	hmat-oss
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,6 +33,6 @@ do-test:
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 1.11.0: 100% tests passed, 0 tests failed out of 4
+# tests as of 1.11.1: 100% tests passed, 0 tests failed out of 4
 
 .include <bsd.port.mk>
