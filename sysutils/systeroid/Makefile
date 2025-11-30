@@ -1,7 +1,6 @@
 PORTNAME=	systeroid
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.5
-PORTREVISION=	8
+DISTVERSION=	0.4.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -67,8 +66,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		either-1.13.0 \
 		encode_unicode-0.3.6 \
 		enum-as-inner-0.6.1 \
-		env_filter-0.1.2 \
-		env_logger-0.11.5 \
+		env_filter-0.1.3 \
+		env_logger-0.11.8 \
 		equivalent-1.0.1 \
 		errno-0.3.10 \
 		flate2-1.0.35 \
@@ -76,7 +75,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		foldhash-0.1.3 \
 		fxhash-0.2.1 \
 		gethostname-0.2.3 \
-		getopts-0.2.21 \
+		getopts-0.2.24 \
 		getrandom-0.2.15 \
 		globset-0.4.15 \
 		globwalk-0.8.1 \
@@ -85,26 +84,26 @@ CARGO_CRATES=	adler2-2.0.0 \
 		heck-0.5.0 \
 		hermit-abi-0.4.0 \
 		home-0.5.9 \
-		humantime-2.1.0 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		ignore-0.4.23 \
 		indoc-2.0.5 \
-		insta-1.41.1 \
+		insta-1.43.1 \
 		instability-0.3.3 \
 		is-terminal-0.4.13 \
 		is_ci-1.2.0 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.13.0 \
 		itoa-1.0.14 \
+		jiff-0.2.15 \
+		jiff-static-0.2.15 \
 		js-sys-0.3.76 \
 		lazy-bytes-cast-5.0.1 \
 		lazy_static-1.5.0 \
 		libc-0.2.168 \
 		libloading-0.8.6 \
 		libredox-0.1.3 \
-		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.4.14 \
 		lock_api-0.4.12 \
 		log-0.4.22 \
@@ -122,34 +121,36 @@ CARGO_CRATES=	adler2-2.0.0 \
 		objc_id-0.1.1 \
 		once_cell-1.20.2 \
 		ordered-multimap-0.7.3 \
-		owo-colors-4.1.0 \
+		owo-colors-4.2.2 \
 		parking_lot-0.12.3 \
 		parking_lot_core-0.9.10 \
 		parseit-0.1.2 \
 		paste-1.0.15 \
 		pkg-config-0.3.31 \
+		portable-atomic-1.11.1 \
+		portable-atomic-util-0.2.4 \
 		pretty_assertions-1.4.1 \
-		proc-macro2-1.0.92 \
-		quote-1.0.37 \
+		proc-macro2-1.0.95 \
+		quote-1.0.40 \
 		ratatui-0.29.0 \
-		rayon-1.10.0 \
-		rayon-core-1.12.1 \
+		rayon-1.11.0 \
+		rayon-core-1.13.0 \
 		redox_syscall-0.5.8 \
 		redox_termios-0.1.3 \
 		redox_users-0.4.6 \
 		regex-1.11.1 \
 		regex-automata-0.4.9 \
 		regex-syntax-0.8.5 \
-		rust-ini-0.21.1 \
+		rust-ini-0.21.3 \
 		rustix-0.38.42 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.2.0 \
-		serde-1.0.216 \
-		serde_derive-1.0.216 \
-		serde_json-1.0.133 \
+		serde-1.0.219 \
+		serde_derive-1.0.219 \
+		serde_json-1.0.143 \
 		shlex-1.3.0 \
 		similar-2.6.0 \
 		smallvec-1.13.2 \
@@ -161,14 +162,13 @@ CARGO_CRATES=	adler2-2.0.0 \
 		strum_macros-0.26.4 \
 		supports-color-2.1.0 \
 		supports-color-3.0.2 \
-		syn-2.0.90 \
+		syn-2.0.104 \
 		sysctl-0.6.0 \
-		termion-4.0.3 \
+		termion-4.0.5 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
 		tiny-keccak-2.0.2 \
-		trim-in-place-0.1.7 \
-		tui-logger-0.14.0 \
+		tui-logger-0.17.3 \
 		unicode-ident-1.0.14 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
