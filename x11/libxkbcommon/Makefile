@@ -1,10 +1,7 @@
 PORTNAME=	libxkbcommon
-DISTVERSION=	1.8.1
-PORTREVISION=	3
+DISTVERSIONPREFIX=	xkbcommon-
+DISTVERSION=	1.13.0
 CATEGORIES=	x11
-
-PATCH_SITES=	https://github.com/xkbcommon/libxkbcommon/commit/
-PATCHFILES=	d7e112febb7ab756563da6eced0a650396be5945.patch:-p1
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Keymap handling library for toolkits and window systems
@@ -25,9 +22,8 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xkbcommon
-GH_TAGNAME=	${GH_ACCOUNT}-${DISTVERSION}
 
-HAS_SYMBOL_VERSION=	${PREFIX}/lib/libxkbregistry.so.0.8.1
+HAS_SYMBOL_VERSION=	${PREFIX}/lib/libxkbregistry.so.0.13.0
 
 MESON_ARGS=	-Denable-docs=false \
 		-Dx-locale-root="${PREFIX}/lib/X11/locale"

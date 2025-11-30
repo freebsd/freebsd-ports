@@ -1,5 +1,3 @@
-TIMESTAMP = 1743897665
-SHA256 (xkbcommon-libxkbcommon-1.8.1-xkbcommon-1.8.1_GH0.tar.gz) = c65c668810db305c4454ba26a10b6d84a96b5469719fe3c729e1c6542b8d0d87
-SIZE (xkbcommon-libxkbcommon-1.8.1-xkbcommon-1.8.1_GH0.tar.gz) = 983334
-SHA256 (d7e112febb7ab756563da6eced0a650396be5945.patch) = 5701bd42031689331fe9b9746d0443cedcc3b0834ed42ec622392827e32f4c7c
-SIZE (d7e112febb7ab756563da6eced0a650396be5945.patch) = 1858
+TIMESTAMP = 1762978495
+SHA256 (xkbcommon-libxkbcommon-xkbcommon-1.13.0_GH0.tar.gz) = cd9367eec501867dfe7ddc3f6b18a026f2a2844a89d19108448d376cb849c9ed
+SIZE (xkbcommon-libxkbcommon-xkbcommon-1.13.0_GH0.tar.gz) = 1234211
