@@ -1,6 +1,6 @@
 PORTNAME=	dexed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.9
+DISTVERSION=	1.0.1
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-synth
 
@@ -34,9 +34,9 @@ GH_TUPLE=	\
 		surge-synthesizer:surgesynthteam_tuningui:54f9a74cd55cdb33fb4d32d706067626857cfc75:surge_synthesizer_surgesynthteam_tuningui/libs/surgesynthteam_tuningui \
 		ODDSound:MTS-ESP:803c3aa:ODDSound_MTS_ESP/libs/MTS-ESP \
 		juce-framework:JUCE:ae51448:juce_framework_JUCE/libs/JUCE \
-		free-audio:clap-juce-extensions:2c23b91:free_audio_clap_juce_extensions/libs/clap-juce-extensions \
-		free-audio:clap:41964fa:free_audio_clap/libs/clap-juce-extensions/clap-libs/clap \
-		free-audio:clap-helpers:41e1086:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers
+		free-audio:clap-juce-extensions:4d454e5:free_audio_clap_juce_extensions/libs/clap-juce-extensions \
+			free-audio:clap:df8f16c:free_audio_clap/libs/clap-juce-extensions/clap-libs/clap \
+			free-audio:clap-helpers:7b53a68:free_audio_clap_helpers/libs/clap-juce-extensions/clap-libs/clap-helpers
 
 DOS2UNIX_GLOB=	*.cpp *.h
 
