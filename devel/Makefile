@@ -5840,6 +5840,7 @@
     SUBDIR += py-pythonfinder
     SUBDIR += py-pythran
     SUBDIR += py-pytimeparse
+    SUBDIR += py-pytokens
     SUBDIR += py-pytoolconfig
     SUBDIR += py-pytools
     SUBDIR += py-pytrie
