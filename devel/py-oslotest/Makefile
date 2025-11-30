@@ -1,6 +1,5 @@
 PORTNAME=	oslotest
-DISTVERSION=	4.4.1
-PORTREVISION=	1
+DISTVERSION=	6.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,18 +12,17 @@ WWW=		https://docs.openstack.org/oslotest/latest/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}pbr>=6.1.1:devel/py-pbr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fixtures>=3.0.0:devel/py-fixtures@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-subunit>=1.0.0:devel/py-python-subunit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>=1.10.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}testtools>=2.2.0:devel/py-testtools@${PY_FLAVOR} \
 		bash>0:shells/bash
 
 USES=		python shebangfix
-USE_PYTHON=	distutils concurrent autoplist
-SHEBANG_FILES=	tools/oslo_debug_helper \
-		tools/oslo_run_cross_tests \
-		tools/oslo_run_pre_release_tests
+USE_PYTHON=	autoplist concurrent pep517 pytest
+SHEBANG_FILES=	tools/oslo_debug_helper
 
 NO_ARCH=	yes
 
