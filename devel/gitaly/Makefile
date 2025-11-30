@@ -4,6 +4,8 @@ DISTVERSION=	${GITLAB_VERSION}
 PORTREVISION=	${GITLAB_PORTREVISION} # modify it in www/gitlab/Makefile.common
 CATEGORIES=	devel
 
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitaly/-/merge_requests/
+PATCHFILES+=	8309.patch:-p1 # https://gitlab.com/gitlab-org/gitaly/-/merge_requests/8309, Fix build on i386 system
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Smart reverse proxy for GitLab
 WWW=		https://gitlab.com/gitlab-org/gitaly
