@@ -698,6 +698,7 @@
     SUBDIR += tkregexp
     SUBDIR += tkrunit
     SUBDIR += tlci
+    SUBDIR += tlm
     SUBDIR += toilet
     SUBDIR += translate
     SUBDIR += trurl
