@@ -1,0 +1,24 @@
+[
+{ type: install
+  message: <<EOM
+!!! This port is EXPERIMENTAL !!!
+
+Add the following lines to your /boot/loader.conf
+to load the FreeBSD rge(4) driver.
+
+if_rge_load="YES"
+
+EOM
+},
+{ type: upgrade
+  message: <<EOM
+!!! This port is EXPERIMENTAL !!!
+
+Add the following lines to your /boot/loader.conf
+to load the FreeBSD rge(4) driver.
+
+if_rge_load="YES"
+
+EOM
+}
+]
