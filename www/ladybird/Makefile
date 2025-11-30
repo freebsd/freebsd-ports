@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${_DISTFILES:M*${GH_ACCOUNT}*}
 PATCH_SITES=	https://github.com/LadybirdBrowser/ladybird/commit/
 PATCHFILES=	397774d42272fff8dbc6d8d53616d79667d6608a.diff:-p1
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	portsFreeBSD.org
 COMMENT=	SerenityOS web browser
 WWW=		https://ladybird.dev/
 
