@@ -1,3 +1,49 @@
+  <vuln vid="ba02dfb6-ce31-11f0-a327-589cfc01894a">
+    <topic>wolfssl -- multiple issues</topic>
+    <affects>
+      <package>
+      <name>wolfssl</name>
+	      <range><lt>5.8.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>wolfSSL blog  reports:</p>
+	<blockquote cite="https://www.wolfssl.com/wolfssl-5-8-4-now-available/">
+	  <p>This release includes multiple fixes across TLS 1.2, TLS 1.3, X25519,
+	  XChaCha20-Poly1305, and PSK processing. Highlights include:</p>
+    <ul>
+      <li>A timing-side-channel issue in X25519 specifically affecting
+      Xtensa-based ESP32 devices. Low-memory X25519 implementations are now
+      the default for Xtensa.</li>
+      <li>A medium-severity TLS 1.3 server-side DoS risk from repeated
+      KeyShareEntry values in malicious ClientHello messages.</li>
+      <li>Several TLS 1.3 downgrade-related issues (PFS downgrades, signature
+      algorithm downgrades, and duplicate extension parsing).</li>
+      <li>A memory leak risk in TLS 1.2 certificate digest handling.</li>
+      <li>XChaCha20-Poly1305 decryption bounds-check fix and constant-time
+      improvements in PSK binder verification.</li>
+    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12888</cvename>
+      <cvename>CVE-2025-11936</cvename>
+      <cvename>CVE-2025-11935</cvename>
+      <cvename>CVE-2025-11934</cvename>
+      <cvename>CVE-2025-11933</cvename>
+      <cvename>CVE-2025-11932</cvename>
+      <cvename>CVE-2025-11931</cvename>
+      <cvename>CVE-2025-12889</cvename>
+      <url>https://github.com/wolfSSL/wolfssl/releases/tag/v5.8.4-stable</url>
+    </references>
+    <dates>
+      <discovery>2025-11-20</discovery>
+      <entry>2025-11-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2f2c691-cd42-11f0-85d4-b42e991fc52e">
     <topic>MongoDB Server -- Improper Certificate Validation</topic>
     <affects>
