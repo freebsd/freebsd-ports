@@ -1031,7 +1031,9 @@
 %%MARKDOWN%%%%WWWDIR%%/bundler.d/markdown.rb
 %%RMAGIC%%%%WWWDIR%%/bundler.d/mini_magick.rb
 %%MYSQL%%%%WWWDIR%%/bundler.d/mysql.rb
-%%POSTGRESQL%%%%WWWDIR%%/bundler.d/pg.rb
+%%PGSQL%%%%WWWDIR%%/bundler.d/pg.rb
+%%SQLITE%%%%WWWDIR%%/bundler.d/sqlite3.rb
+%%SQL%%%%WWWDIR%%/bundler.d/sql.rb
 %%PUMA%%%%WWWDIR%%/bundler.d/puma.rb
 %%WWWDIR%%/config.ru
 %%WWWDIR%%/config/additional_environment.rb.example
@@ -2162,6 +2164,7 @@
 @dir %%WWWDIR%%/app/views/previews
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/files
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/log
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/public/assets
 @dir %%WWWDIR%%/public/help/ar
 @dir %%WWWDIR%%/public/help/az
 @dir %%WWWDIR%%/public/help/bg
@@ -2216,8 +2219,10 @@
 @dir %%WWWDIR%%/test/fixtures/mailer
 @dir %%WWWDIR%%/test/mocks/development
 @dir %%WWWDIR%%/test/mocks/test
+@dir(%%WWWOWN%%,%%WWWGRP%%,755) %%WWWDIR%%/tmp
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/cache
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/imports
+@dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/pdf
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sessions
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/sockets
 @dir(%%WWWOWN%%,%%WWWGRP%%,) %%WWWDIR%%/tmp/test

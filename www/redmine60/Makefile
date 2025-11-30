@@ -1,5 +1,6 @@
 PORTNAME=	redmine
 PORTVERSION=	6.0.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	60
@@ -29,58 +30,63 @@ RUN_DEPENDS=	rubygem-actionpack-xml_parser-rails72>=0:textproc/rubygem-actionpac
 		rubygem-net-ldap>=0.19.0:net/rubygem-net-ldap \
 		rubygem-net-pop>=0.1.2:mail/rubygem-net-pop \
 		rubygem-net-smtp>=0.3.3:mail/rubygem-net-smtp \
-		rubygem-nokogiri>=1.15.2:textproc/rubygem-nokogiri \
+		rubygem-nokogiri>=1.18.3:textproc/rubygem-nokogiri \
 		rubygem-rails72>=7.2.2:www/rubygem-rails72 \
-		rubygem-rbpdf>=1.21.3:print/rubygem-rbpdf \
+		rubygem-rbpdf>=1.21.4:print/rubygem-rbpdf \
 		rubygem-request_store15>=1.5.1:devel/rubygem-request_store15 \
 		rubygem-roadie-rails-rails72>=3.2.0:mail/rubygem-roadie-rails-rails72 \
 		rubygem-rotp>=5.0.0:devel/rubygem-rotp \
-		rubygem-rouge>=4.2.0:textproc/rubygem-rouge \
+		rubygem-rouge>=4.5.0:textproc/rubygem-rouge \
 		rubygem-rqrcode>0:www/rubygem-rqrcode \
 		rubygem-rubocop-performance>=0:devel/rubygem-rubocop-performance \
 		rubygem-rubocop-rails>0:devel/rubygem-rubocop-rails \
 		rubygem-rubocop>0<2:devel/rubygem-rubocop \
-		rubygem-rubyzip>0:archivers/rubygem-rubyzip \
+		rubygem-rubyzip>2.3.0:archivers/rubygem-rubyzip \
 		rubygem-simplecov>0:devel/rubygem-simplecov \
 		rubygem-svg_sprite>=0:graphics/rubygem-svg_sprite \
 		rubygem-yard>=0:textproc/rubygem-yard
 
 # Per https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=264638#c9
 # to be removed if https://www.redmine.org/issues/37394 is fixed
-RUN_DEPENDS+=	rubygem-redcarpet>=3.6.0:textproc/rubygem-redcarpet \
+RUN_DEPENDS+=	rubygem-commonmarker0>=0.23.8:textproc/rubygem-commonmarker0 \
+		rubygem-deckar01-task_list>=2.3.2:www/rubygem-deckar01-task_list \
 		rubygem-html-pipeline>=2.13.2:textproc/rubygem-html-pipeline \
-		rubygem-commonmarker0>=0.23.8:textproc/rubygem-commonmarker0 \
-		rubygem-sanitize>=6.0:textproc/rubygem-sanitize \
-		rubygem-deckar01-task_list>=2.3.2:www/rubygem-deckar01-task_list
+		rubygem-redcarpet>=3.6.0:textproc/rubygem-redcarpet \
+		rubygem-sanitize>=6.0:textproc/rubygem-sanitize
 
 USES=		cpe ruby
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+SUB_LIST=	RUBY_SUFFIX=${RUBY_SUFFIX}
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-SUB_LIST=	RUBY_SUFFIX=${RUBY_SUFFIX}
 
-OPTIONS_DEFINE=	MYSQL POSTGRESQL PUMA MARKDOWN RMAGIC
+OPTIONS_DEFINE=	PUMA MARKDOWN RMAGIC
 OPTIONS_DEFAULT=MYSQL MARKDOWN PUMA RMAGIC
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE SQL
+NO_OPTIONS_SORT=	yes
 OPTIONS_SUB=	yes
-POSTGRESQL_DESC=Enable PostgreSQL support
 MARKDOWN_DESC=	Enable Markdown support
+MYSQL_DESC=	MySQL database support (via mysql2 rubygem)
+PGSQL_DESC=	Postgres database support (via pg rubygem)
 PUMA_DESC=	Use Puma WEB server
 RMAGIC_DESC=	Enable Gantt charts support
-MYSQL_DESC=	MySQL database support (via mysql2 rubygem)
-NO_OPTIONS_SORT=	yes
+SQLITE_DESC=	Sqlite3 database support (Not for production!)
+SQL_DESC=	SQL Server requires manual (non-port) gem install
+MARKDOWN_RUN_DEPENDS=	rubygem-redcarpet>=3.5.1:textproc/rubygem-redcarpet
 MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.5.0:databases/rubygem-mysql2 \
 			rubygem-with_advisory_lock61>0:devel/rubygem-with_advisory_lock61
-POSTGRESQL_RUN_DEPENDS=	rubygem-pg>=1.2.2:databases/rubygem-pg
-PUMA_RUN_DEPENDS=	rubygem-puma6>=6.5.0<7:www/rubygem-puma6 \
+PGSQL_RUN_DEPENDS=	rubygem-pg>=1.5.3:databases/rubygem-pg
+PUMA_RUN_DEPENDS=	rubygem-puma>=6.5.0:www/rubygem-puma \
 			rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue
 PUMA_SUB_LIST=		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PUMA_VARS=		USE_RC_SUBR=redmine
-MARKDOWN_RUN_DEPENDS=	rubygem-redcarpet>=3.5.1:textproc/rubygem-redcarpet
 RMAGIC_RUN_DEPENDS=	rubygem-mini_magick4>=4.11.0:graphics/rubygem-mini_magick4
+SQLITE_RUN_DEPENDS=	rubygem-sqlite3>=1.7.0:databases/rubygem-sqlite3
 
 .include <bsd.port.options.mk>
 
@@ -97,8 +103,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/bundler.d
 	${MKDIR} ${STAGEDIR}${WWWDIR}/log
-	${MKDIR} ${STAGEDIR}${WWWDIR}/public/plugin_assets
-	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp
+	${MKDIR} ${STAGEDIR}${WWWDIR}/public/assets
+	${MKDIR} ${STAGEDIR}${WWWDIR}/tmp/pdf
 
 	# https://www.redmine.org/issues/37394
 	${CP} ${FILESDIR}/commonmark.rb ${STAGEDIR}${WWWDIR}/bundler.d
@@ -108,8 +114,14 @@ do-install:
 do-install-MYSQL-on:
 	${CP} ${FILESDIR}/mysql.rb ${STAGEDIR}${WWWDIR}/bundler.d
 
-do-install-POSTGRESQL-on:
+do-install-PGSQL-on:
 	${CP} ${FILESDIR}/pg.rb ${STAGEDIR}${WWWDIR}/bundler.d
+
+do-install-SQLITE-on:
+	${CP} ${FILESDIR}/sqlite3.rb ${STAGEDIR}${WWWDIR}/bundler.d
+
+do-install-SQL-on:
+	${CP} ${FILESDIR}/sql.rb ${STAGEDIR}${WWWDIR}/bundler.d
 
 do-install-MARKDOWN-on:
 	${CP} ${FILESDIR}/markdown.rb ${STAGEDIR}${WWWDIR}/bundler.d

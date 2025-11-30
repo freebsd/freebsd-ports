@@ -1,0 +1,39 @@
+--- config/database.yml.sample.orig	2025-09-21 10:15:06.000000000 +0000
++++ config/database.yml.sample	2025-11-26 13:53:51.979489000 +0000
+@@ -1,7 +1,12 @@
+ # Default setup is given for MySQL 5.7.7 or later.
+ # Examples for PostgreSQL, SQLite3 and SQL Server can be found at the end.
+ # Line indentation must be 2 spaces (no tabs).
++# Delete/comment all non-installed adapter entries
+ 
++# WARNING: Changing database adapter requires manually reinstalling the bundle
++# or rebuilding/reinstalling the port with corrected OPTIONS.
++
++# Uses default port of 3306, can be specified with 'port:'
+ production:
+   adapter: mysql2
+   database: redmine
+@@ -43,12 +48,15 @@
+     transaction_isolation: "READ-COMMITTED"
+ 
+ # PostgreSQL configuration example
++# Uses default port of 5432, can be specified with 'port:'
++# Uses default schema of public, can be specified with 'schema_search_path:'
+ #production:
+ #  adapter: postgresql
+ #  database: redmine
+ #  host: localhost
+ #  username: postgres
+ #  password: "postgres"
++#  encoding: utf8
+ 
+ # SQLite3 configuration example
+ #production:
+@@ -56,6 +64,7 @@
+ #  database: db/redmine.sqlite3
+ 
+ # SQL Server configuration example
++# Uses default port of 1433, can be specified with 'port:'
+ #production:
+ #  adapter: sqlserver
+ #  database: redmine

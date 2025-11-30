@@ -6,6 +6,12 @@ Redmine was installed.
 You now need to setup your Redmine installation so
 please have a look at the Installation Guide.
 
+Steps 1, 4 and 8 were completed by the pkg install. Step 10
+is accomplished using the rc script. The other steps must be
+completed manually.
+
+SQL Server users must manually install needed ruby gems.
+
 https://www.redmine.org/projects/redmine/wiki/RedmineInstall
 
 If you are upgrading please read the Upgrading Guide
