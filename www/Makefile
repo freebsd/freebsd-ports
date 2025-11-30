@@ -1875,6 +1875,7 @@
     SUBDIR += py-lia-web
     SUBDIR += py-libsass
     SUBDIR += py-limits
+    SUBDIR += py-litestar
     SUBDIR += py-livereload
     SUBDIR += py-mailman-hyperkitty
     SUBDIR += py-mechanicalsoup
