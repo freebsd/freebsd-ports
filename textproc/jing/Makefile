@@ -3,7 +3,7 @@ PORTVERSION=	20241231
 CATEGORIES=	textproc java
 MASTER_SITES=	https://github.com/relaxng/jing-trang/releases/download/V${PORTVERSION}/
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RELAX NG validator in Java
 WWW=		http://www.thaiopensource.com/relaxng/jing.html
 

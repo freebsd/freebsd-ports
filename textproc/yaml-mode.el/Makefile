@@ -4,7 +4,7 @@ PORTREVISION=	6
 CATEGORIES=	textproc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple major mode to edit YAML file for Emacsen
 WWW=		https://github.com/yoshiki/yaml-mode
 

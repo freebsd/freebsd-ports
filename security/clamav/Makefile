@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source (GPL) anti-virus engine (Regular Feature Release)
 WWW=		https://www.clamav.net/
 

@@ -5,7 +5,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
 DIST_SUBDIR=	eb
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command to lookup words in EB format dictionaries
 WWW=		http://openlab.ring.gr.jp/edict/eblook/index.html.ja
 

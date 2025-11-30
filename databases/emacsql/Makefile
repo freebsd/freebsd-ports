@@ -4,7 +4,7 @@ DISTVERSION=	4.3.3
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-level Emacs Lisp RDBMS front-end
 WWW=		https://github.com/magit/emacsql
 

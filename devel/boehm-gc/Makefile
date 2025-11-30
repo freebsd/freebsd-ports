@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	boehm-
 PKGNAMESUFFIX=	-${GC_VARIANT}
 .endif
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 WWW=		https://www.hboehm.info/gc/
 

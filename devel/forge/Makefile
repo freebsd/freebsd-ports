@@ -4,7 +4,7 @@ DISTVERSION=	0.6.2
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Work with Git forges from the comfort of Magit
 WWW=		https://github.com/magit/forge
 

@@ -4,7 +4,7 @@ PORTREVISION=	21
 CATEGORIES=	japanese elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs search interface for CD-ROM books, etc
 WWW=		https://lookup2.github.io/
 

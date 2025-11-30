@@ -3,7 +3,7 @@ DISTVERSION=	14.9.25
 CATEGORIES=	mail
 MASTER_SITES=	https://www.sdaoden.eu/downloads/
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send and receive Internet mail
 WWW=		https://www.sdaoden.eu/code.html #s-mailx
 

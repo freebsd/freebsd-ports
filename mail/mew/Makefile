@@ -5,7 +5,7 @@ CATEGORIES=	mail elisp
 MASTER_SITES=	http://www.mew.org/Release/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Messaging in the Emacs World for emacs
 WWW=		https://www.Mew.org/
 

@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs for locking and unlocking files and mailboxes
 WWW=		https://tracker.debian.org/pkg/lockfile-progs
 

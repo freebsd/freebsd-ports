@@ -4,7 +4,7 @@ CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 WWW=		https://salsa.debian.org/debian/logcheck
 

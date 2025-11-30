@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard lockfile library
 WWW=		https://github.com/miquels/liblockfile
 

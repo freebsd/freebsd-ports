@@ -4,7 +4,7 @@ DISTVERSION=	2.3.2
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Store EIEIO objects using EmacSQL
 WWW=		https://github.com/magit/closql
 

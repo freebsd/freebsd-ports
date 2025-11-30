@@ -4,7 +4,7 @@ DISTVERSION=	0.2.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional and improved binding conditionals in Emacs Lisp
 WWW=		https://github.com/tarsius/cond-let
 

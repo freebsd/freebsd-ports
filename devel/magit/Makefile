@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interface to Git for Emacs
 WWW=		https://magit.vc/
 

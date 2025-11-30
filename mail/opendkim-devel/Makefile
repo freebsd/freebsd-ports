@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	mail security
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DKIM library and milter implementation
 WWW=		http://opendkim.org/
 

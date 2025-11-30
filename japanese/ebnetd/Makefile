@@ -4,7 +4,7 @@ PORTREVISION=	12
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Servers for accessing CD-ROM books via TCP/IP
 
 LICENSE=	GPLv2+

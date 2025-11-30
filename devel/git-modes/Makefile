@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Emacs modes for Git-related files
 WWW=		https://github.com/magit/git-modes
 

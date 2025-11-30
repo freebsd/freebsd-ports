@@ -8,7 +8,7 @@ PKGNAMEPREFIX?=
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oracle Berkeley DB, Release ${BDBVER}
 WWW=		https://www.oracle.com/database/berkeley-db/
 

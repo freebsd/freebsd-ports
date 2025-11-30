@@ -4,7 +4,7 @@ DISTVERSION=	0.61
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL Elisp interface
 WWW=		https://github.com/emarsden/pg-el
 

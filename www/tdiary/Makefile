@@ -4,7 +4,7 @@ CATEGORIES?=	www ruby
 MASTER_SITES=	https://github.com/tdiary/tdiary-core/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-full-v${PORTVERSION}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based diary system (like weblog) written in Ruby
 WWW=		https://www.tdiary.org/
 

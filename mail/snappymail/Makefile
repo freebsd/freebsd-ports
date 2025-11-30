@@ -5,7 +5,7 @@ CATEGORIES=	mail www
 MASTER_SITES=	https://github.com/the-djmaze/snappymail/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, modern, lightweight & fast web-based email client
 WWW=		https://snappymail.eu/
 

@@ -4,7 +4,7 @@ PORTREVISION=	19
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Signature insertion tool for Emacs
 WWW=		https://github.com/yasuhirokimura/c-sig
 

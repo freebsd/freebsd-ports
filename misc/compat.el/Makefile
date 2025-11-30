@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	misc elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compatibility library for Emacs Lisp
 WWW=		https://github.com/emacs-compat/compat
 

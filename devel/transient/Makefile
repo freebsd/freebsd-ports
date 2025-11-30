@@ -4,7 +4,7 @@ DISTVERSION=	0.11.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
-MAINTAINER=	yasu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs key and popup interface for complex keybindings
 WWW=		https://github.com/magit/transient
 
