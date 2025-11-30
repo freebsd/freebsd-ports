@@ -1,6 +1,7 @@
 bin/wolfssl-config
 include/wolfssl/callbacks.h
 include/wolfssl/certs_test.h
+include/wolfssl/certs_test_sm.h
 include/wolfssl/crl.h
 include/wolfssl/error-ssl.h
 include/wolfssl/ocsp.h
@@ -159,7 +160,7 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.44
-lib/libwolfssl.so.44.0.0
+lib/libwolfssl.so.44.0.1
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
