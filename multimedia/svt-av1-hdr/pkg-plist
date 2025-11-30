@@ -6,6 +6,10 @@ include/svt-av1/EbSvtAv1Enc.h
 include/svt-av1/EbSvtAv1ErrorCodes.h
 include/svt-av1/EbSvtAv1Formats.h
 include/svt-av1/EbSvtAv1Metadata.h
+lib/cmake/SVT-AV1/SVT-AV1-sharedTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SVT-AV1/SVT-AV1-sharedTargets.cmake
+lib/cmake/SVT-AV1/SVT-AV1Config.cmake
+lib/cmake/SVT-AV1/SVT-AV1ConfigVersion.cmake
 lib/libSvtAv1Enc.so
 lib/libSvtAv1Enc.so.3
 lib/libSvtAv1Enc.so.%%VERSION%%
