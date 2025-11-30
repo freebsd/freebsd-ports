@@ -1,4 +1,4 @@
-TIMESTAMP = 1763965528
+TIMESTAMP = 1764464542
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -937,5 +937,5 @@ SHA256 (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439_GH0.tar.gz)
 SIZE (astral-sh-lsp-types-3512a9f33eadc5402cfab1b8f7340824c8ca1439_GH0.tar.gz) = 71124
 SHA256 (salsa-rs-salsa-a885bb4c4c192741b8a17418fef81a71e33d111e_GH0.tar.gz) = 253577f6e5164a268311071a8b61977a18033120ef330d17a1389106613bba04
 SIZE (salsa-rs-salsa-a885bb4c4c192741b8a17418fef81a71e33d111e_GH0.tar.gz) = 730610
-SHA256 (astral-sh-ruff-0.14.6_GH0.tar.gz) = 58ebb8ec4479e8b307c5364fcf562f94d1debf65a0f9821c153f2b3aa019243c
-SIZE (astral-sh-ruff-0.14.6_GH0.tar.gz) = 8397813
+SHA256 (astral-sh-ruff-0.14.7_GH0.tar.gz) = e137d712834274bb8faf60ecd3c6040b831c52330c3c884cb925b531057ea575
+SIZE (astral-sh-ruff-0.14.7_GH0.tar.gz) = 10307498
