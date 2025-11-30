@@ -12,8 +12,7 @@ WWW=		https://opentelemetry.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libc4core.so:devel/c4core \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgtest.so:devel/googletest \
 		libryml.so:devel/rapidyaml
 TEST_DEPENDS=	benchmark>=0:devel/benchmark
