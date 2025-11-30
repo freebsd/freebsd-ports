@@ -1,5 +1,5 @@
 PORTNAME=	sendmail
-PORTVERSION=	8.18.1.15
+PORTVERSION=	8.18.1.16
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/snapshots/
