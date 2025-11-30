@@ -1,0 +1,8 @@
+subprocess.h is a single header solution for launching and interacting
+with child processes in C and C++.
+
+It provides a simple and modern C++ API for executing external commands,
+redirecting I/O, and managing process lifecycle.
+
+This library aims to be a cross-platform solution for process management,
+offering an easy-to-use alternative to platform-specific APIs.

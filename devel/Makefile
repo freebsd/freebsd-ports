@@ -8375,6 +8375,7 @@
     SUBDIR += stylua
     SUBDIR += styx
     SUBDIR += subprocess
+    SUBDIR += subprocess.h
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-lts
