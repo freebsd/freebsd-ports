@@ -1,9 +1,13 @@
 PORTNAME=	labplot
-DISTVERSION=	2.11.80
-PORTREVISION=	3
+DISTVERSION=	2.12.1
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
-DIST_SUBDIR=	KDE/invent.kde.org
+DIST_SUBDIR=	KDE/${PORTNAME}
+
+PATCH_SITES=	https://invent.kde.org/education/labplot/-/commit/
+PATCHFILES+=	b0e233b6b20134177af40e8904b593b8dbc18ada.patch:-p1 # Fix configure with Qt 6.10
+PATCHFILES+=	c2db2ec28aa8958f7041ae5cd03ddae9f44e5aa3.patch:-p1 # Fix build with Qt 6.10
+PATCHFILES+=	c70e8e89249cd04c4e0e5f456257e4d0f026d8d0.patch:-p1 # Fix configure with Eigen 5.x
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data plotting and function analysis tool by KDE
@@ -21,20 +25,18 @@ LIB_DEPENDS=	libQXlsxQt6.so:devel/qxlsx@qt6 \
 		libzstd.so:archivers/zstd
 
 USES=		bison cmake compiler:c++17-lang desktop-file-utils eigen:3 \
-		kde:6 pkgconfig qt:6 shared-mime-info xorg gettext
-USE_KDE=	archive completion config configwidgets coreaddons crash \
-		i18n iconthemes kio newstuff parts purpose service \
+		gettext kde:6 pkgconfig qt:6 shared-mime-info tar:xz xorg
+USE_KDE=	archive colorscheme completion config configwidgets coreaddons \
+		crash i18n iconthemes kio newstuff parts purpose service \
 		syntaxhighlighting textwidgets userfeedback widgetsaddons \
 		xmlgui \
 		doctools:build ecm:build
 USE_QT=		base mqtt serialport svg
 USE_XORG=	x11 xcb
 
-KDE_INVENT=	110f258e44a45354c5219e497409a22185fa2933 education labplot
-
 CXXFLAGS+=	-Wno-error=undef
 
-PLIST_SUB=	SHLIB_VER=${PORTVERSION}
+PLIST_SUB=	SHLIB_VER=2.12.0
 
 OPTIONS_DEFINE=		CANTOR FITS FFTW3 HDF5 LIBCERF MATLAB NETCDF ORCUS \
 			ORIGINLAB READSTAT
@@ -82,10 +84,5 @@ READSTAT_DESC=		SAS, SPSS, Stata data support
 READSTAT_LIB_DEPENDS=	libreadstat.so:math/readstat
 READSTAT_USES=		iconv
 READSTAT_CMAKE_BOOL=	ENABLE_READSTAT
-
-post-patch:
-# workaround for undefined version, to be fixed upstream
-	${REINPLACE_CMD} 's,QXLSX_VERSION_STRING,"1.5.0",' \
-		${WRKSRC}/src/frontend/AboutDialog.cpp
 
 .include <bsd.port.mk>

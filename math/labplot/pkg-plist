@@ -35,8 +35,6 @@ lib/cmake/labplot/LabPlotTargets.cmake
 lib/liblabplot.so
 lib/liblabplot.so.%%SHLIB_VER%%
 share/applications/org.kde.labplot.desktop
-share/doc/HTML/ca/labplot/index.cache.bz2
-share/doc/HTML/ca/labplot/index.docbook
 share/doc/HTML/en/labplot/datapicker_active_curve_data_spreadsheet.png
 share/doc/HTML/en/labplot/datapicker_original_transformed_segments.png
 share/doc/HTML/en/labplot/datapicker_segments.png
@@ -82,54 +80,6 @@ share/doc/HTML/en/labplot/tutorial-xy-function8.png
 share/doc/HTML/en/labplot/tutorial-xy-function9.png
 share/doc/HTML/en/labplot/workbook.png
 share/doc/HTML/en/labplot/worksheet.png
-share/doc/HTML/es/labplot/index.cache.bz2
-share/doc/HTML/es/labplot/index.docbook
-share/doc/HTML/it/labplot/index.cache.bz2
-share/doc/HTML/it/labplot/index.docbook
-share/doc/HTML/nl/labplot/index.cache.bz2
-share/doc/HTML/nl/labplot/index.docbook
-share/doc/HTML/pt_BR/labplot/index.cache.bz2
-share/doc/HTML/pt_BR/labplot/index.docbook
-share/doc/HTML/ru/labplot/index.cache.bz2
-share/doc/HTML/ru/labplot/index.docbook
-share/doc/HTML/sv/labplot/index.cache.bz2
-share/doc/HTML/sv/labplot/index.docbook
-share/doc/HTML/uk/labplot/export_spreadsheet_dialog.png
-share/doc/HTML/uk/labplot/export_worksheet_dialog.png
-share/doc/HTML/uk/labplot/import-dialog.png
-share/doc/HTML/uk/labplot/index.cache.bz2
-share/doc/HTML/uk/labplot/index.docbook
-share/doc/HTML/uk/labplot/labplot.png
-share/doc/HTML/uk/labplot/matrix.png
-share/doc/HTML/uk/labplot/matrix_function_values.png
-share/doc/HTML/uk/labplot/pe-context-menu.png
-share/doc/HTML/uk/labplot/project-explorer.png
-share/doc/HTML/uk/labplot/properties.png
-share/doc/HTML/uk/labplot/spreadsheet.png
-share/doc/HTML/uk/labplot/spreadsheet_generate_equidistant_values.png
-share/doc/HTML/uk/labplot/spreadsheet_generate_function_values.png
-share/doc/HTML/uk/labplot/spreadsheet_generate_random_values.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet1.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet2.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet3.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet4.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet5.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet6.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet7.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet8.png
-share/doc/HTML/uk/labplot/tutorial-spreadsheet9.png
-share/doc/HTML/uk/labplot/tutorial-xy-function1.png
-share/doc/HTML/uk/labplot/tutorial-xy-function10.png
-share/doc/HTML/uk/labplot/tutorial-xy-function2.png
-share/doc/HTML/uk/labplot/tutorial-xy-function3.png
-share/doc/HTML/uk/labplot/tutorial-xy-function4.png
-share/doc/HTML/uk/labplot/tutorial-xy-function5.png
-share/doc/HTML/uk/labplot/tutorial-xy-function6.png
-share/doc/HTML/uk/labplot/tutorial-xy-function7.png
-share/doc/HTML/uk/labplot/tutorial-xy-function8.png
-share/doc/HTML/uk/labplot/tutorial-xy-function9.png
-share/doc/HTML/uk/labplot/workbook.png
-share/doc/HTML/uk/labplot/worksheet.png
 share/icons/hicolor/128x128/apps/labplot.png
 share/icons/hicolor/150x150/apps/labplot.png
 share/icons/hicolor/16x16/apps/labplot.png
@@ -244,6 +194,8 @@ share/icons/hicolor/scalable/apps/org.kde.labplot.svg
 %%DATADIR%%/datasets/StatLib.json
 %%DATADIR%%/datasets/seaborn.json
 %%DATADIR%%/examples/Analysis/Fit/ENSO.lml
+%%DATADIR%%/examples/Analysis/Fit/NIST - Linear Regression.lml
+%%DATADIR%%/examples/Analysis/Fit/NIST - Nonlinear Regression.lml
 %%DATADIR%%/examples/Analysis/Fourier Filter/SOS Morse Signal.lml
 %%DATADIR%%/examples/Analysis/Hilbert Transformation/Time response of a super regenerative receiver.lml
 %%DATADIR%%/examples/Analysis/Smooth/Data = Smooth + Rough.lml
@@ -261,6 +213,8 @@ share/icons/hicolor/scalable/apps/org.kde.labplot.svg
 %%DATADIR%%/examples/General/SLOC History.lml
 %%DATADIR%%/examples/General/Space Debris.lml
 %%DATADIR%%/examples/General/Tufte's Minimal Ink Design.lml
+%%DATADIR%%/examples/Statistics/Language Learning - Percent Correct PBC.lml
+%%DATADIR%%/examples/Statistics/PBC Examples (Wheeler and Montgomery).lml
 %%DATADIR%%/examples/Statistics/Same Data, Different Boxplots.lml
 %%DATADIR%%/examples/Statistics/SameStats.lml
 %%DATADIR%%/labplot.ico
@@ -393,50 +347,25 @@ share/icons/hicolor/scalable/apps/org.kde.labplot.svg
 %%DATADIR%%/themes/screenshots/Tufte.png
 %%DATADIR%%/themes/screenshots/Unavailable.png
 share/locale/ar/LC_MESSAGES/labplot.mo
-share/locale/bs/LC_MESSAGES/labplot.mo
 share/locale/ca/LC_MESSAGES/labplot.mo
 share/locale/ca@valencia/LC_MESSAGES/labplot.mo
 share/locale/cs/LC_MESSAGES/labplot.mo
-share/locale/da/LC_MESSAGES/labplot.mo
 share/locale/de/LC_MESSAGES/labplot.mo
-share/locale/el/LC_MESSAGES/labplot.mo
-share/locale/en_GB/LC_MESSAGES/labplot.mo
-share/locale/eo/LC_MESSAGES/labplot.mo
 share/locale/es/LC_MESSAGES/labplot.mo
 share/locale/eu/LC_MESSAGES/labplot.mo
 share/locale/fi/LC_MESSAGES/labplot.mo
 share/locale/fr/LC_MESSAGES/labplot.mo
 share/locale/gl/LC_MESSAGES/labplot.mo
-share/locale/hi/LC_MESSAGES/labplot.mo
-share/locale/hu/LC_MESSAGES/labplot.mo
-share/locale/ia/LC_MESSAGES/labplot.mo
 share/locale/it/LC_MESSAGES/labplot.mo
-share/locale/ja/LC_MESSAGES/labplot.mo
 share/locale/ka/LC_MESSAGES/labplot.mo
-share/locale/lt/LC_MESSAGES/labplot.mo
-share/locale/nds/LC_MESSAGES/labplot.mo
 share/locale/nl/LC_MESSAGES/labplot.mo
 share/locale/pl/LC_MESSAGES/labplot.mo
-share/locale/pt/LC_MESSAGES/labplot.mo
 share/locale/pt_BR/LC_MESSAGES/labplot.mo
-share/locale/ru/LC_MESSAGES/labplot.mo
-share/locale/sa/LC_MESSAGES/labplot.mo
-share/locale/sk/LC_MESSAGES/labplot.mo
 share/locale/sl/LC_MESSAGES/labplot.mo
 share/locale/sv/LC_MESSAGES/labplot.mo
 share/locale/tr/LC_MESSAGES/labplot.mo
 share/locale/uk/LC_MESSAGES/labplot.mo
 share/locale/zh_CN/LC_MESSAGES/labplot.mo
-share/locale/zh_TW/LC_MESSAGES/labplot.mo
-share/man/ca/man1/labplot.1.gz
-share/man/de/man1/labplot.1.gz
-share/man/es/man1/labplot.1.gz
-share/man/it/man1/labplot.1.gz
 share/man/man1/labplot.1.gz
-share/man/nl/man1/labplot.1.gz
-share/man/pt_BR/man1/labplot.1.gz
-share/man/ru/man1/labplot.1.gz
-share/man/sv/man1/labplot.1.gz
-share/man/uk/man1/labplot.1.gz
 share/metainfo/org.kde.labplot.appdata.xml
 share/mime/packages/labplot.xml
