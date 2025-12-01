@@ -493,7 +493,6 @@
     SUBDIR += ml-aspell
     SUBDIR += ml1
     SUBDIR += mn-aspell
-    SUBDIR += moar
     SUBDIR += modlogan
     SUBDIR += moor
     SUBDIR += mp_doccer
