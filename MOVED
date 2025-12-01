@@ -4878,3 +4878,4 @@ lang/typescript||2025-12-01|Has expired: New port was added without port maintai
 games/dose-response||2025-12-01|Has expired: fails to build with rust-1.91.0 and no maintainer for this port
 textproc/moar|textproc/moor|2025-12-01|Has expired: Upstream renamed to moor, use textproc/moor instead
 accessibility/gammy||2025-12-01|Has expired: Abandoned and unfetchable
+mail/mu4e-maildirs|mail/mu|2025-12-01|Has expired: Upstream discourages using this software and recommends feature now integrated into mail/mu
