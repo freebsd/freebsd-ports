@@ -5,7 +5,8 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+# Ask clusteradm@ before removal
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bundle of Perceval backends for Mozilla ecosystem
 WWW=		https://github.com/chaoss/grimoirelab-perceval-mozilla
 
