@@ -10,6 +10,9 @@ if [ ! -f "$I386_ROOT/$PREFIX/bin/wine" ]
 then
   printf "%s doesn't exist!\n\n" "$I386_ROOT/$PREFIX/bin/wine"
   printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine-devel mesa-dri"
+
+  printf "In the case of FreeBSD 15.0, use wine64 instead or use Poudriere if 32bit is needed\n"
+
   ABI=$(pkg config ABI | sed s/amd64/i386/)
   FREEBSD_VERSION_MAJOR=`uname -r | sed "s/\..*//"`
   cat <<- HERE
@@ -20,6 +23,7 @@ then
 	  FreeBSD:$FREEBSD_VERSION_MAJOR:i386
 	to the relevant output directories. See pkg.conf(5) for more info.
 HERE
+
   exit 1
 fi
 

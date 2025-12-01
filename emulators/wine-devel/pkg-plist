@@ -592,6 +592,7 @@ include/wine/windows/icm.h
 include/wine/windows/icmpapi.h
 include/wine/windows/icodecapi.h
 include/wine/windows/icodecapi.idl
+include/wine/windows/icu.h
 include/wine/windows/idispids.h
 include/wine/windows/ieautomation.h
 include/wine/windows/ieautomation.idl
@@ -935,6 +936,7 @@ include/wine/windows/rstloc.idl
 include/wine/windows/rstnot.idl
 include/wine/windows/rstscr.idl
 include/wine/windows/rstupd.idl
+include/wine/windows/rstvw.idl
 include/wine/windows/rstxsc.idl
 include/wine/windows/rtlsupportapi.h
 include/wine/windows/rtutils.h
@@ -1091,6 +1093,8 @@ include/wine/windows/vsstyle.h
 include/wine/windows/vssym32.h
 include/wine/windows/vswriter.h
 include/wine/windows/vswriter.idl
+include/wine/windows/vwchp.idl
+include/wine/windows/vwflt.idl
 include/wine/windows/wbemcli.h
 include/wine/windows/wbemcli.idl
 include/wine/windows/wbemdisp.h
@@ -1529,6 +1533,7 @@ lib/wine/%%WINEARCH%%-unix/libhlink.a
 lib/wine/%%WINEARCH%%-unix/libhtmlhelp.a
 lib/wine/%%WINEARCH%%-unix/libhttpapi.a
 lib/wine/%%WINEARCH%%-unix/libicmui.a
+lib/wine/%%WINEARCH%%-unix/libicu.a
 lib/wine/%%WINEARCH%%-unix/libieframe.a
 lib/wine/%%WINEARCH%%-unix/libimagehlp.a
 lib/wine/%%WINEARCH%%-unix/libimm32.a
@@ -1957,6 +1962,9 @@ lib/wine/%%WINEARCH%%-windows/iccvid.dll
 lib/wine/%%WINEARCH%%-windows/icinfo.exe
 lib/wine/%%WINEARCH%%-windows/icmp.dll
 lib/wine/%%WINEARCH%%-windows/icmui.dll
+lib/wine/%%WINEARCH%%-windows/icu.dll
+lib/wine/%%WINEARCH%%-windows/icuin.dll
+lib/wine/%%WINEARCH%%-windows/icuuc.dll
 lib/wine/%%WINEARCH%%-windows/ieframe.dll
 lib/wine/%%WINEARCH%%-windows/ieproxy.dll
 lib/wine/%%WINEARCH%%-windows/iertutil.dll
@@ -2094,6 +2102,7 @@ lib/wine/%%WINEARCH%%-windows/libhlink.a
 lib/wine/%%WINEARCH%%-windows/libhtmlhelp.a
 lib/wine/%%WINEARCH%%-windows/libhttpapi.a
 lib/wine/%%WINEARCH%%-windows/libicmui.a
+lib/wine/%%WINEARCH%%-windows/libicu.a
 lib/wine/%%WINEARCH%%-windows/libieframe.a
 lib/wine/%%WINEARCH%%-windows/libimagehlp.a
 lib/wine/%%WINEARCH%%-windows/libimm32.a
@@ -2365,6 +2374,7 @@ lib/wine/%%WINEARCH%%-windows/msvcrt.dll
 lib/wine/%%WINEARCH%%-windows/msvcrt20.dll
 lib/wine/%%WINEARCH%%-windows/msvcrt40.dll
 lib/wine/%%WINEARCH%%-windows/msvcrtd.dll
+lib/wine/%%WINEARCH%%-windows/msvdsp.dll
 lib/wine/%%WINEARCH%%-windows/msvfw32.dll
 lib/wine/%%WINEARCH%%-windows/msvidc32.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/msvideo.dll16
@@ -2590,6 +2600,7 @@ lib/wine/%%WINEARCH%%-windows/vdmdbg.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/ver.dll16
 lib/wine/%%WINEARCH%%-windows/version.dll
 lib/wine/%%WINEARCH%%-windows/vga.dll
+lib/wine/%%WINEARCH%%-windows/vidreszr.dll
 lib/wine/%%WINEARCH%%-windows/view.exe
 lib/wine/%%WINEARCH%%-windows/virtdisk.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/vmm.vxd
