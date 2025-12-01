@@ -4873,3 +4873,4 @@ x11/salut||2025-11-25|Has expired: fails to build with rust 1.90.0
 comms/gtkmmorse||2025-11-26|Has expired: Depends on expired devel/gconfmm26
 devel/gconfmm26||2025-11-26|Has expired: Gconf has been replaced with gsettings
 print/xreader|graphics/xreader|2025-11-27|Use proper category based on repocopy from graphics/atril
+audio/decibels||2025-12-01|Has expired: Depends on deprecated lang/typescript (which needs a maintainer), see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=289856

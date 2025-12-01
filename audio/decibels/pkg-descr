@@ -1,7 +1,0 @@
-An audio player that just plays audio files. It doesn't require an organized
-music library and won't overload you with tons of functionality.
-Decibels offers advanced features such as:
-- An elegant waveform of the track
-- Adjustable playback speed
-- Easy seek controls
-- Playing multiple files at the same time
