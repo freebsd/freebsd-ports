@@ -1,0 +1,13 @@
+[
+{
+  type: upgrade
+  message: <<EOM
+tmux must be restarted after upgrading.
+
+If you see the following message when you try to attach, it likely means
+you forgot to restart tmux:
+
+  open terminal failed: not a terminal
+EOM
+}
+]
