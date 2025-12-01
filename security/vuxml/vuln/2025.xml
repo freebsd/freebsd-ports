@@ -1,3 +1,104 @@
+  <vuln vid="eda92945-ced4-11f0-a958-b42e991fc52e">
+    <topic>MongoDB -- Missing Authorization</topic>
+    <affects>
+    <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.14</lt></range>
+    </package>
+    <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.26</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-103582 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-103582">
+	  <p>A user with access to the cluster with a limited set of
+	  privilege actions may be able to terminate queries that are
+	  being executed by other users.  This may cause a denial of
+	  service by preventing a fraction of queries from
+	  successfully completing.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13643</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13643</url>
+    </references>
+    <dates>
+      <discovery>2025-11-25</discovery>
+      <entry>2025-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ea64d2ec-ced4-11f0-a958-b42e991fc52e">
+    <topic>MongoDB -- Improper Validation of Specified Quantity in Input</topic>
+    <affects>
+    <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.16</lt></range>
+    </package>
+    <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.26</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-108565 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-108565">
+	  <p>Inconsistent object size validation in time series
+	  processing logic may result in later processing of oversized
+	  BSON documents leading to an assert failing and process
+	  termination.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13507</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13507</url>
+    </references>
+    <dates>
+      <discovery>2025-11-25</discovery>
+      <entry>2025-12-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e72ec9c1-ced4-11f0-a958-b42e991fc52e">
+    <topic>MongoDB -- Reachable Assertion</topic>
+    <affects>
+    <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.13</lt></range>
+    </package>
+    <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.26</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-101180 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-101180">
+	  <p>MongoDB Server may experience an invariant failure during
+	  batched delete operations when handling documents.  The
+	  issue arises when the server mistakenly assumes the presence
+	  of multiple documents in a batch based solely on document
+	  size exceeding BSONObjMaxSize.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13644</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13644</url>
+    </references>
+    <dates>
+      <discovery>2025-11-25</discovery>
+      <entry>2025-12-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba02dfb6-ce31-11f0-a327-589cfc01894a">
     <topic>wolfssl -- multiple issues</topic>
     <affects>
