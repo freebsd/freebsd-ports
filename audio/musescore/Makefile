@@ -5,7 +5,10 @@ PORTREVISION=	1
 CATEGORIES=	audio
 
 PATCH_SITES=	https://github.com/musescore/MuseScore/commit/
-PATCHFILES+=	05056ed19520060c3912a09a3adfa0927057f956.patch:-p1 # Fix build with Qt >= 6.9.0
+PATCHFILES+=	05056ed19520060c3912a09a3adfa0927057f956.patch:-p1 # Fix build with Qt 6.9
+PATCHFILES+=	b67be2bace728c870bde6e327649a3f9441346ea.patch:-p1 # Fix configure with Qt 6.10
+PATCHFILES+=	650e05645f1c45993ec566c98c3d9743650cf8c1.patch:-p1 # Fix build with Qt 6.10
+PATCHFILES+=	8a9a871c47b934423eb1d6568d7dbcd5c8c8b3b1.patch:-p1 # Fix build with Qt 6.10
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
