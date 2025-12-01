@@ -209,7 +209,6 @@
     SUBDIR += doom-wolfendoom
     SUBDIR += doomlegacy
     SUBDIR += doomsday
-    SUBDIR += dose-response
     SUBDIR += dreamchess
     SUBDIR += duel
     SUBDIR += dunelegacy
