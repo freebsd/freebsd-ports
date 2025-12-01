@@ -1,7 +1,6 @@
 PORTNAME=	shaderc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.4
-PORTREVISION=	2
+DISTVERSION=	2025.5
 CATEGORIES=	graphics devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -20,7 +19,7 @@ USES=		cmake:testing compiler:c++11-lib localbase:ldflags \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-446-g01e0577:headers/third_party/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-454-gb824a46:headers/third_party/spirv-headers
 
 USE_LDCONFIG=	yes
 
