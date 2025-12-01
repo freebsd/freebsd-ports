@@ -2,6 +2,8 @@ include/hyprtoolkit/core/Backend.hpp
 include/hyprtoolkit/core/CoreMacros.hpp
 include/hyprtoolkit/core/Input.hpp
 include/hyprtoolkit/core/LogTypes.hpp
+include/hyprtoolkit/core/Output.hpp
+include/hyprtoolkit/core/SessionLock.hpp
 include/hyprtoolkit/core/Timer.hpp
 include/hyprtoolkit/element/Button.hpp
 include/hyprtoolkit/element/Checkbox.hpp
@@ -20,13 +22,12 @@ include/hyprtoolkit/element/Text.hpp
 include/hyprtoolkit/element/Textbox.hpp
 include/hyprtoolkit/palette/Color.hpp
 include/hyprtoolkit/palette/Palette.hpp
-include/hyprtoolkit/palette/Palette.hpp.orig
 include/hyprtoolkit/system/Icons.hpp
 include/hyprtoolkit/types/FontTypes.hpp
 include/hyprtoolkit/types/PointerShape.hpp
 include/hyprtoolkit/types/SizeType.hpp
 include/hyprtoolkit/window/Window.hpp
 lib/libhyprtoolkit.so
-lib/libhyprtoolkit.so.%%SOVERSION_MAJOR%%
 lib/libhyprtoolkit.so.%%SOVERSION_FULL%%
+lib/libhyprtoolkit.so.%%SOVERSION_MAJOR%%
 libdata/pkgconfig/hyprtoolkit.pc
