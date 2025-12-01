@@ -1,5 +1,5 @@
 PORTNAME=	fcgi
-DISTVERSION=	2.4.6
+DISTVERSION=	2.4.7
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devkit
 
@@ -24,13 +24,12 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcgi.so.0.0.0
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcgi++.so.0.0.0
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfcgi.so \
+		${STAGEDIR}${PREFIX}/lib/libfcgi++.so
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${STAGEDIR}${PREFIX}/share/man/man3
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name *\.[13]")
 
