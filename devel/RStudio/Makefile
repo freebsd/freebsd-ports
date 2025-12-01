@@ -8,11 +8,12 @@ CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://rstudio-buildtools.s3.amazonaws.com/rstudio-buildtools/:gin \
 		https://rstudio-buildtools.s3.us-east-1.amazonaws.com/gwt/:gwt \
+		https://rstudio-buildtools.s3.us-east-1.amazonaws.com/gwt/:mathjax \
 		https://github.com/quarto-dev/quarto/archive/:quarto_mono
 DISTFILES=	core-dictionaries.zip:dictionaries \
 		gin-${GIN_VERSION}.zip:gin \
 		gwt-${GWT_VERSION}.tar.gz:gwt \
-		mathjax-27.zip:buildtools \
+		mathjax-27.zip:mathjax \
 		${QUARTO_MONO_COMMIT}.tar.gz:quarto_mono
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -146,7 +147,7 @@ post-fetch:
 		${FIND} node_modules -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; 2>/dev/null; \
 		${TAR} -czf ${NPM_DISTDIR}/${NPM_TARBALL} node_modules && \
 		${RM} -rf /tmp/rstudio-npm-fetch && \
-		${ECHO_MSG} "====> Created npm dependencies tarball"; \
+		${ECHO_MSG} "====> Created npm dependencies tarball ${NPM_DISTDIR}/${NPM_TARBALL}"; \
 	fi
 	@if ! [ -f ${NPM_DISTDIR}/${QUARTO_TARBALL} ]; then \
 		${MKDIR} ${NPM_DISTDIR} && \
