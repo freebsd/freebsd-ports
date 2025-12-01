@@ -1,0 +1,6 @@
+microsoft-security-utilities-secret-masker is part of the Microsoft Security
+Utilities used internally. You can find the related .NET SDK package here. This
+Secret Masker Python library focuses on:
+- providing some built-in detection rules in json format
+- detecting sensitive data for given input
+- masking sensitive data with simple symbols or sha256 hash for given input

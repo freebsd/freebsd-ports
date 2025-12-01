@@ -5290,6 +5290,7 @@
     SUBDIR += py-mergedeep
     SUBDIR += py-merossiot
     SUBDIR += py-methodtools
+    SUBDIR += py-microsoft-security-utilities-secret-masker
     SUBDIR += py-microversion-parse
     SUBDIR += py-milc
     SUBDIR += py-mime
