@@ -3,7 +3,7 @@ DISTVERSION=	1.25.0
 CATEGORIES=	ftp www
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
 WWW=		https://www.gnu.org/s/wget/
 
