@@ -1,7 +1,7 @@
 PORTNAME=	blst
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -17,6 +17,7 @@ GH_ACCOUNT=	supranational
 USE_LDCONFIG=	yes
 
 SUB_FILES=	libblst.pc
+SUB_LIST=	PORTVERSION=${PORTVERSION}
 
 do-build:
 	cd ${WRKSRC} && ./build.sh -shared
