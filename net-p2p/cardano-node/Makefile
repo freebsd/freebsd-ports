@@ -1,5 +1,5 @@
 PORTNAME=	cardano-node
-PORTVERSION=	10.5.1
+PORTVERSION=	10.5.3
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://chap.intersectmbo.org/package/:chap
 
@@ -25,7 +25,7 @@ GH_ACCOUNT=	IntersectMBO
 
 GH_TUPLE=	IntersectMBO:libsodium:${LIBSODIUM_HASH}:sodium
 
-CARDANO_NODE_HASH=	ca1ec278070baf4481564a6ba7b4a5b9e3d9f366
+CARDANO_NODE_HASH=	6c034ec038d8d276a3595e10e2d38643f09bd1f2
 # taken from https://github.com/IntersectMBO/cardano-node/blob/420c94fbb075146c6ec7fba78c5b0482fafe72dd/flake.lock#L887
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
 
@@ -95,28 +95,28 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		boring-0.2.2_1 \
-		brick-2.9 \
+		brick-2.9_1 \
 		bsb-http-chunked-0.0.0.4_4 \
-		byron-spec-chain-1.0.1.0:chap \
-		byron-spec-ledger-1.1.0.0:chap \
+		byron-spec-chain-1.0.1.1:chap \
+		byron-spec-ledger-1.1.0.1:chap \
 		byteorder-1.0.4 \
 		bytestring-strict-builder-0.4.5.8 \
 		bytestring-trie-0.2.7.6 \
 		call-stack-0.4.0 \
 		canonical-json-0.6.0.1_1 \
-		capability-0.5.0.1_4 \
+		capability-0.5.0.1_6 \
 		cardano-addresses-4.0.0_1 \
 		cardano-api-10.16.3.0:chap \
-		cardano-binary-1.7.1.0:chap \
+		cardano-binary-1.7.2.0:chap \
 		cardano-cli-10.11.0.0:chap \
 		cardano-crypto-1.3.0 \
-		cardano-crypto-class-2.2.2.0:chap \
-		cardano-crypto-praos-2.2.1.0:chap \
+		cardano-crypto-class-2.2.3.2:chap \
+		cardano-crypto-praos-2.2.1.1:chap \
 		cardano-crypto-test-1.6.0.0:chap \
-		cardano-crypto-tests-2.2.1.0:chap \
-		cardano-crypto-wrapper-1.6.0.0:chap \
-		cardano-data-1.2.4.0:chap \
-		cardano-git-rev-0.2.2.0:chap \
+		cardano-crypto-tests-2.2.2.0_1:chap \
+		cardano-crypto-wrapper-1.6.1.0:chap \
+		cardano-data-1.2.4.1:chap \
+		cardano-git-rev-0.2.2.1:chap \
 		cardano-ledger-allegra-1.7.0.0:chap \
 		cardano-ledger-alonzo-1.13.0.0:chap \
 		cardano-ledger-alonzo-test-1.3.1.0:chap \
@@ -134,13 +134,13 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		cardano-ledger-shelley-ma-test-1.3.0.0:chap \
 		cardano-ledger-shelley-test-1.6.0.0:chap \
 		cardano-lmdb-0.4.0.3:chap \
-		cardano-lmdb-simple-0.8.0.1:chap \
+		cardano-lmdb-simple-0.8.1.0:chap \
 		cardano-ping-0.8.0.1:chap \
 		cardano-prelude-0.2.1.0:chap \
 		cardano-prelude-test-0.1.0.5:chap \
 		cardano-protocol-tpraos-1.4.0.0:chap \
-		cardano-slotting-0.2.0.0:chap \
-		cardano-strict-containers-0.1.4.0:chap \
+		cardano-slotting-0.2.0.1:chap \
+		cardano-strict-containers-0.1.5.0:chap \
 		case-insensitive-1.2.1.0 \
 		cassava-0.5.3.2_1 \
 		cborg-0.2.10.0_3 \
@@ -161,7 +161,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		config-ini-0.2.7.0_1 \
 		constraints-0.14.2_1 \
 		constraints-extras-0.4.0.2 \
-		contra-tracer-0.1.0.1:chap \
+		contra-tracer-0.1.0.2:chap \
 		contravariant-1.5.5 \
 		cookie-0.5.1 \
 		criterion-1.6.4.0_1 \
@@ -188,7 +188,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		diff-containers-1.3.0.0:chap \
 		digest-0.0.2.1 \
 		direct-sqlite-2.3.29 \
-		directory-ospath-streaming-0.2.2 \
+		directory-ospath-streaming-0.2.2_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		dns-4.2.0 \
@@ -206,7 +206,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		errors-2.3.0_5 \
 		extra-1.8 \
 		fast-logger-3.2.5 \
-		fgl-5.8.3.0 \
+		fgl-5.8.3.0_1 \
 		file-embed-0.0.16.0 \
 		file-io-0.1.5 \
 		filelock-0.1.1.7 \
@@ -241,7 +241,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		heapwords-0.1.0.2:chap \
 		hedgehog-1.5_2 \
 		hedgehog-extras-0.7.0.0_1 \
-		hedgehog-quickcheck-0.1.1_9 \
+		hedgehog-quickcheck-0.1.1_10 \
 		heredoc-0.2.0.0 \
 		hostname-1.0 \
 		hourglass-0.2.12_1 \
@@ -320,7 +320,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		network-mux-0.8.0.2:chap \
 		network-uri-2.6.4.2_1 \
 		newtype-0.2.2.0_3 \
-		newtype-generics-0.6.2_4 \
+		newtype-generics-0.6.2_5 \
 		non-integral-1.0.0.0_2:chap \
 		nonempty-containers-0.3.5.0 \
 		nonempty-vector-0.2.4 \
@@ -336,13 +336,13 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		ouroboros-consensus-cardano-0.25.1.0:chap \
 		ouroboros-consensus-diffusion-0.23.0.0:chap \
 		ouroboros-consensus-protocol-0.12.0.0_1:chap \
-		ouroboros-network-0.21.3.0:chap \
+		ouroboros-network-0.21.4.0:chap \
 		ouroboros-network-api-0.14.1.0:chap \
 		ouroboros-network-framework-0.18.0.2:chap \
 		ouroboros-network-mock-0.1.1.2:chap \
 		ouroboros-network-protocols-0.14.0.2:chap \
 		ouroboros-network-testing-0.8.1.0:chap \
-		parallel-3.2.2.0_9 \
+		parallel-3.2.2.0_10 \
 		parser-combinators-1.3.0_1 \
 		parsers-0.12.12_1 \
 		partial-order-0.2.0.0 \
@@ -367,7 +367,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		pvar-1.0.0.0_1 \
 		quickcheck-instances-0.3.32_1 \
 		quickcheck-io-0.2.0 \
-		quickcheck-monoids-0.1.0.1:chap \
+		quickcheck-monoids-0.1.0.3:chap \
 		quickcheck-state-machine-0.10.1 \
 		quickcheck-transformer-0.3.1.2_1 \
 		quiet-0.2 \
@@ -395,7 +395,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		serialise-0.2.6.1_5 \
 		servant-0.20.2_1 \
 		servant-server-0.20.2_1 \
-		set-algebra-1.1.0.3:chap \
+		set-algebra-1.1.0.4:chap \
 		show-combinators-0.2.0.0_2 \
 		si-timers-1.5.0.0_2 \
 		signal-0.1.0.4 \
@@ -405,16 +405,16 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		singletons-th-3.2 \
 		size-based-0.1.3.3_1 \
 		slugify-0.1.0.2 \
-		small-steps-1.1.1.0:chap \
+		small-steps-1.1.2.0:chap \
 		smtp-mail-0.5.0.0_1 \
 		socks-0.6.1 \
 		some-1.0.6_2 \
 		sop-core-0.5.0.2_5 \
-		sop-extras-0.4.0.0:chap \
+		sop-extras-0.4.1.0:chap \
 		split-0.2.5 \
 		splitmix-0.1.1 \
 		sqlite-easy-1.1.1.0 \
-		statistics-0.16.3.0 \
+		statistics-0.16.3.0_2 \
 		statistics-linreg-0.3 \
 		streaming-0.2.4.0 \
 		streaming-binary-0.3.0.1 \
@@ -430,14 +430,14 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		string-qq-0.0.6 \
 		syb-0.7.2.4 \
 		tagged-0.8.9 \
-		tar-0.6.4.0_1 \
+		tar-0.6.4.0_4 \
 		tasty-1.5.3_2 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
-		tasty-hedgehog-1.4.0.2_6 \
+		tasty-hedgehog-1.4.0.2_7 \
 		tasty-hunit-0.10.2 \
-		tasty-quickcheck-0.11.1_3 \
-		tasty-rerun-1.1.20_1 \
+		tasty-quickcheck-0.11.1_4 \
+		tasty-rerun-1.1.20_2 \
 		tdigest-0.3.1 \
 		temporary-1.3 \
 		terminal-size-0.3.4_1 \
@@ -480,7 +480,7 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		unagi-chan-0.4.1.4 \
 		unbounded-delays-0.1.1.1 \
 		unicode-data-0.6.0_2 \
-		unicode-transforms-0.4.0.1_7 \
+		unicode-transforms-0.4.0.1_8 \
 		uniplate-1.6.13_1 \
 		universe-base-1.1.4_1 \
 		unix-bytestring-0.4.0.3 \
@@ -496,14 +496,14 @@ USE_CABAL=	Cabal-3.14.2.0_1 \
 		validity-0.12.1.0 \
 		vary-0.1.1.2 \
 		vault-0.3.1.5_10 \
-		vector-0.13.2.0_1 \
+		vector-0.13.2.0_2 \
 		vector-algorithms-0.9.1.0 \
 		vector-binary-instances-0.2.5.2_5 \
-		vector-map-1.1.0.0:chap \
-		vector-stream-0.1.0.1_3 \
+		vector-map-1.1.0.1:chap \
+		vector-stream-0.1.0.1_4 \
 		vector-th-unbox-0.2.2_8 \
 		void-0.7.3 \
-		vty-6.2 \
+		vty-6.2_1 \
 		vty-crossplatform-0.4.0.0 \
 		vty-unix-0.2.0.0 \
 		wai-3.2.4 \
@@ -531,7 +531,7 @@ WITH_LTO=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/$$(gitRevFromGit)/"${CARDANO_NODE_HASH}"/' \
 			 -e '/Cardano.Git.RevFromGit/d' \
-			 ${WRKSRC}/_cabal_deps/cardano-git-rev-0.2.2.0/src/Cardano/Git/Rev.hs
+			 ${WRKSRC}/_cabal_deps/cardano-git-rev-0.2.2.1/src/Cardano/Git/Rev.hs
 
 pre-build:
 	@${MKDIR} ${PKGCONFIG_LINKDIR}
