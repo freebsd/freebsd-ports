@@ -10,7 +10,7 @@ MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
 .endif
 CATEGORIES+=	www
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
 WWW=		${MASTER_SITES}
 
