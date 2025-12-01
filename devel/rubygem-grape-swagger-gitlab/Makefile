@@ -1,5 +1,5 @@
 PORTNAME=	grape-swagger
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -11,8 +11,7 @@ WWW=		https://github.com/ruby-grape/grape-swagger
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-grape20>=1.7<3.0:devel/rubygem-grape20 \
-		rubygem-rack-test>=2<3:www/rubygem-rack-test
+RUN_DEPENDS=	rubygem-grape20>=1.7<4.0:devel/rubygem-grape20
 
 USES=		gem
 
