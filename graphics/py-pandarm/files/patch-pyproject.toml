@@ -1,0 +1,36 @@
+--- pyproject.toml.orig	2025-11-28 23:32:04 UTC
++++ pyproject.toml
+@@ -1,7 +1,7 @@ build-backend = "setuptools.build_meta"
+ [build-system]
+ # Requirements for building the compiled package
+ build-backend = "setuptools.build_meta"
+-requires = ["wheel", "setuptools >=40.8", "setuptools_scm[toml]>=6.2", "cython >=3", "numpy >=2.0"]
++requires = ["wheel", "setuptools >=40.8", "setuptools_scm[toml]>=6.2", "cython >=3", "numpy"]
+ 
+ [tool.setuptools_scm]
+ 
+@@ -9,7 +9,7 @@ dependencies = [
+ name = "pandarm"
+ dynamic = ["version"]
+ dependencies = [
+-        "numpy >=2",
++        "numpy",
+         "pandas >=2",
+         "geopandas",
+         "scikit-learn >=0.18",
+@@ -19,7 +19,7 @@ classifiers = [
+         "Programming Language :: Python :: 3",
+         "License :: OSI Approved :: GNU Affero General Public License v3"
+ ]
+-license-files = ["LICENSE"]
++license = {file = "LICENSE"}
+ requires-python = ">=3.10"
+ 
+ [tool.setuptools.packages.find]
+@@ -74,4 +74,4 @@ exclude_lines = [
+     "raise NotImplementedError",
+     "except ModuleNotFoundError:",
+     "except ImportError",
+-]
+\ No newline at end of file
++]

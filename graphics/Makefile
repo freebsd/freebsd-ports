@@ -980,6 +980,7 @@
     SUBDIR += py-optimize-images
     SUBDIR += py-osmnet
     SUBDIR += py-pandana
+    SUBDIR += py-pandarm
     SUBDIR += py-pdf2image
     SUBDIR += py-photocollage
     SUBDIR += py-piexif
