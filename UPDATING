@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20251201:
+  AFFECTS: users of lang/php83
+  AUTHOR: bofh@FreeBSD.org
+
+  The default version of PHP has been switched from 8.3 to 8.4.
+
+  If you use binary packages you should make a list of php packages
+  before running 'pkg upgrade':
+
+  # pkg info \*php83\* > ~/installed-php-ports-list
+
+  After the upgrade, check with such list if all your php extensions
+  are still installed, and reinstall them if needed.
+
+  If you use mod_php83 you need to deinstall it and install mod_php84.
+
+20251201:
   AFFECTS: users of sysutils/tmux
   AUTHOR: jrm@FreeBSD.org
 
@@ -260,7 +276,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: mandree@FreeBSD.org
 
   The mail/bogofilter-bdb port has expired and will be removed.
-  
+
   1. BEFORE uninstallation or changing to a different mail/bogofilter*
   variant, please use bogoutil to export all user data bases (wordlist.db)
   to text files, bogoutil has a -d option for that.
