@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
 CATEGORIES=	audio multimedia
 
+PATCH_SITES=	https://github.com/fooyin/fooyin/commit/
+PATCHFILES+=	7b171c0da2b9289468696424fe51f76e1c365bb5.patch:-p1 # Fix build with Qt 6.10
+
 MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	foobar2000 inspired audio player
 WWW=		https://github.com/fooyin/fooyin
