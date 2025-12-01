@@ -5223,6 +5223,7 @@
     SUBDIR += py-libpeas
     SUBDIR += py-libpeas1
     SUBDIR += py-libplist
+    SUBDIR += py-librt
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux
     SUBDIR += py-libusb-package
