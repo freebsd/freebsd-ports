@@ -1,0 +1,15 @@
+Fix configure with Qt 6.10. Private API components must now be found
+with their CMake configs.
+
+--- CMakeLists.txt.orig	2023-12-18 15:32:38 UTC
++++ CMakeLists.txt
+@@ -46,6 +46,9 @@ if (QT_MAJOR_VERSION STREQUAL "6")
+ 
+ if (QT_MAJOR_VERSION STREQUAL "6")
+     find_package(KF6StatusNotifierItem ${KF_MIN_VERSION} REQUIRED)
++    if (Qt6Gui_VERSION VERSION_GREATER_EQUAL 6.10)
++        find_package(Qt6 6.10 CONFIG REQUIRED COMPONENTS GuiPrivate)
++    endif()
+ endif()
+ 
+ find_package(XCB COMPONENTS REQUIRED XCB COMPOSITE EVENT RECORD XFIXES)
