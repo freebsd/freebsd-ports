@@ -1,0 +1,12 @@
+Python bindings for the Rust unicode-segmentation and unicode-width crates,
+providing Unicode text segmentation and width calculation according to Unicode
+standards.
+
+Features:
+- Grapheme Cluster Segmentation: Split text into user-perceived characters
+- Word Segmentation: Split text into words according to Unicode rules
+- Sentence Segmentation: Split text into sentences
+- Display Width Calculation: Get the display width of text (for
+  terminal/monospace display)
+- Gettext PO Wrapping: Wrap text for gettext PO files with proper handling of
+  escape sequences and CJK characters
