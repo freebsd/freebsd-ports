@@ -5601,6 +5601,7 @@
     SUBDIR += py-pure-eval
     SUBDIR += py-purl
     SUBDIR += py-py
+    SUBDIR += py-py-deviceid
     SUBDIR += py-py-partiql-parser
     SUBDIR += py-py-serializable
     SUBDIR += py-py-stackexchange
