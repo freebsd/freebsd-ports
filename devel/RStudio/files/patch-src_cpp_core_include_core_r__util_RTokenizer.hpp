@@ -1,3 +1,5 @@
+- Disable wchar_t Unicode check that fails on FreeBSD
+
 --- src/cpp/core/include/core/r_util/RTokenizer.hpp.orig	2017-11-16 21:40:37 UTC
 +++ src/cpp/core/include/core/r_util/RTokenizer.hpp
 @@ -35,7 +35,7 @@

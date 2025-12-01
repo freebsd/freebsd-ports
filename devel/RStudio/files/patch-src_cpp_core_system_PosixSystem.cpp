@@ -1,9 +1,11 @@
-- one of the patches is a workaround for access to /proc/{pid}/fd : https://github.com/rstudio/rstudio/issues/8912
+- Add FreeBSD-specific includes (netinet/in.h, dirent.h)
+- Disable getOpenFds on FreeBSD (no /proc/{pid}/fd): https://github.com/rstudio/rstudio/issues/8912
+- Use /proc/curproc/file instead of /proc/self/exe on FreeBSD
 
---- src/cpp/core/system/PosixSystem.cpp.orig	2022-12-03 07:38:59 UTC
+--- src/cpp/core/system/PosixSystem.cpp.orig	2025-10-20 20:09:32 UTC
 +++ src/cpp/core/system/PosixSystem.cpp
-@@ -56,6 +56,11 @@
- #include <dirent.h>
+@@ -65,6 +65,11 @@
+ 
  #endif
  
 +#if defined(__FreeBSD__)
@@ -11,18 +13,18 @@
 +#include <dirent.h>
 +#endif
 +
- #include <boost/thread.hpp>
- #include <boost/format.hpp>
- #include <boost/lexical_cast.hpp>
-@@ -619,6 +624,7 @@ Error getOpenFds(std::vector<uint32_t>* pFds)
- #ifndef __APPLE__
+ #include <boost/algorithm/string.hpp>
+ #include <boost/algorithm/string/replace.hpp>
+ #include <boost/algorithm/string/split.hpp>
+@@ -680,6 +685,7 @@ Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFd
+ 
  Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFds)
  {
 +#if !defined(__FreeBSD__)
     std::string pidStr = safe_convert::numberToString(pid);
     boost::format fmt("/proc/%1%/fd");
     FilePath filePath(boost::str(fmt % pidStr));
-@@ -645,6 +651,7 @@ Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFd
+@@ -706,6 +712,7 @@ Error getOpenFds(pid_t pid, std::vector<uint32_t>* pFd
           pFds->push_back(fd.get());
        }
     }
@@ -30,7 +32,7 @@
  
     return Success();
  }
-@@ -970,7 +977,7 @@ Error executablePath(const char * argv0,
+@@ -1039,7 +1046,7 @@ Error executablePath(const char * argv0,
  
  #elif defined(HAVE_PROCSELF)
  

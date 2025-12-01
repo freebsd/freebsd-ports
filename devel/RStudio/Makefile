@@ -3,15 +3,17 @@
 
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.12.0+353
-PORTREVISION=	11
+DISTVERSION=	2025.09.2+418
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
-		https://s3.amazonaws.com/rstudio-buildtools/:buildtools
+		https://rstudio-buildtools.s3.amazonaws.com/rstudio-buildtools/:gin \
+		https://rstudio-buildtools.s3.us-east-1.amazonaws.com/gwt/:gwt \
+		https://github.com/quarto-dev/quarto/archive/:quarto_mono
 DISTFILES=	core-dictionaries.zip:dictionaries \
-		gin-${GIN_VERSION}.zip:buildtools \
-		gwt-${GWT_VERSION}.zip:buildtools \
-		mathjax-27.zip:buildtools
+		gin-${GIN_VERSION}.zip:gin \
+		gwt-${GWT_VERSION}.tar.gz:gwt \
+		mathjax-27.zip:buildtools \
+		${QUARTO_MONO_COMMIT}.tar.gz:quarto_mono
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Integrated development environment (IDE) for R
@@ -21,27 +23,34 @@ WWW=		https://www.rstudio.com/ \
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build with Boost>=1.87, see https://github.com/rstudio/rstudio/issues/15862
-BROKEN_i386=	[ERROR] Line 101: Failed to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
+BROKEN_i386=	[ERROR] line 101: failed to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
 
 BUILD_DEPENDS=	ant:devel/apache-ant \
 		${LOCALBASE}/include/sys/sysinfo.h:devel/libsysinfo \
 		node:www/node \
 		pandoc:textproc/hs-pandoc \
-		R-cran-rstudioapi>0:devel/R-cran-rstudioapi
+		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
+		${LOCALBASE}/include/gsl/gsl-lite.hpp:devel/gsl-lite \
+		${LOCALBASE}/include/rapidjson/rapidjson.h:devel/rapidjson \
+		${LOCALBASE}/include/websocketpp/version.hpp:devel/websocketpp \
+		${LOCALBASE}/include/tl/expected.hpp:devel/tl-expected
 LIB_DEPENDS=	libR.so:math/R \
 		libboost_thread.so:devel/boost-libs \
 		libinotify.so:devel/libinotify \
 		libsoci_core.so:databases/soci \
 		libuuid.so:misc/libuuid \
-		libyaml-cpp.so:devel/yaml-cpp
+		libyaml-cpp.so:devel/yaml-cpp \
+		libfmt.so:devel/libfmt \
+		libhunspell-1.7.so:textproc/hunspell
+BUILD_DEPENDS+=	quarto:textproc/quarto
+RUN_DEPENDS=	quarto:textproc/quarto
 
 FLAVORS=	desktop server
 FLAVOR?=	${FLAVORS:[1]}
 server_PKGNAMESUFFIX=	-server
 
 USES=		cmake fortran java:build localbase:ldflags pgsql pkgconfig sqlite ssl
-JAVA_VERSION=	11 # Java 8 fails on aarch64: Internal Error (assembler_aarch64.hpp:237), pid=1644, tid=0x00000000000c62b6 guarantee(val < (1U << nbits)) failed: Field too big for insn
+JAVA_VERSION=	17 # Build requires Java 17 target
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tl}
 GH_TUPLE=	rstudio:r2d3:v0.2.0:r2d3/dependencies/common/r2d3 \
@@ -50,33 +59,63 @@ GH_TUPLE=	rstudio:r2d3:v0.2.0:r2d3/dependencies/common/r2d3 \
 		trestletech:plumber:v0.4.6:plumber/dependencies/common/plumber
 
 CMAKE_ARGS=	-DFREEBSD_RSTUDIO_VERSION:STRING=${PORTVERSION} \
-		-DFREEBSD_LIBDIR:STRING=${PREFIX}/lib
+		-DFREEBSD_LIBDIR:STRING=${PREFIX}/lib \
+		-DRSTUDIO_DEPENDENCIES_QUARTO_DIR:STRING=${LOCALBASE}/share/quarto
 CMAKE_ARGS+=	-DQT_QMAKE_EXECUTABLE:STRING=${QMAKE}
 CMAKE_ARGS+=	-DRSTUDIO_BOOST_SIGNALS_VERSION=2
 CMAKE_ARGS+=	-DFREEBSD_PORT_VERSION:STRING=${DISTVERSION}
 CMAKE_ARGS+=	-DFREEBSD_LOCALBASE:STRING=${LOCALBASE} # SOCI package is looked up here, see patch patch-src_cpp_CMakeLists.txt
+#CMAKE_ON=	RSTUDIO_USE_SYSTEM_DEPENDENCIES
 CMAKE_ON=	RSTUDIO_USE_SYSTEM_YAML_CPP \
-		RSTUDIO_USE_SYSTEM_SOCI
+		RSTUDIO_USE_SYSTEM_BOOST \
+		RSTUDIO_USE_SYSTEM_HUNSPELL \
+		RSTUDIO_USE_SYSTEM_SOCI \
+		RSTUDIO_USE_SYSTEM_FMT \
+		RSTUDIO_USE_SYSTEM_GSL_LITE \
+		RSTUDIO_USE_SYSTEM_RAPIDJSON \
+		RSTUDIO_USE_SYSTEM_WEBSOCKETPP \
+		RSTUDIO_USE_SYSTEM_TL_EXPECTED \
+		RSTUDIO_INSTALL_FREEDESKTOP
+CMAKE_OFF=	RSTUDIO_ENABLE_COPILOT \
+		BUILD_TESTING \
+		RSTUDIO_UNIT_TESTS_ENABLED
 MAKE_ENV=	HOME=${WRKDIR} \
 		JAVA_HOME=${JAVA_HOME} \
 		PATH=${JAVA_HOME}/bin:${PATH} \
 		ANT_OPTS="-Duser.home=${WRKDIR}"
 LDFLAGS+=	-lexecinfo
 
-GWT_VERSION=	2.8.1
+GWT_VERSION=	2.12.2 # GWT_VER in src/gwt/tools/build-gwt
 GIN_VERSION=	2.1.2
+QUARTO_VERSION=	1.7.32 # Version expected by RStudio for panmirror build
+QUARTO_MONO_COMMIT=	591b3520eafbb4da7b26b9f31aac6948801f19d8 # Commit from quarto monorepo with panmirror
 
 .if ${FLAVOR:U} == desktop
 COMMENT+=	(desktop UI version)
-USES+=		desktop-file-utils qt:5 shared-mime-info
-USE_QT=		core dbus declarative gui location network opengl printsupport quickcontrols sensors \
-		sql svg webchannel webengine widgets xml xmlpatterns buildtools:build qmake:build
-CMAKE_ARGS+=	-DRSTUDIO_TARGET=Desktop
+USES+=		desktop-file-utils shared-mime-info
+FETCH_DEPENDS+=	npm:www/npm \
+		yarn:www/yarn
+BUILD_DEPENDS+=	npm:www/npm \
+		yarn:www/yarn \
+		electron37:devel/electron37 \
+		zip:archivers/zip
+RUN_DEPENDS+=	electron37:devel/electron37
+CMAKE_ARGS+=	-DRSTUDIO_TARGET=Electron
+MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
+		npm_config_nodedir=${WRKDIR}/.electron-headers \
+		ELECTRON_ZIP_DIR=${WRKDIR}/.electron-zip
+LDFLAGS+=	-linotify
 INSTALL_SUBDIR=	${PORTNAME:tl}
 EXECUTABLE=	${PORTNAME:tl}
+# npm dependencies are pre-fetched during do-fetch phase
+NPM_DISTDIR=	${DISTDIR}/${PORTNAME}
+NPM_TARBALL=	${PORTNAME}-desktop-node_modules-${DISTVERSION}${EXTRACT_SUFX}
+# quarto/panmirror dependencies (uses yarn workspaces)
+QUARTO_TARBALL=	${PORTNAME}-quarto-node_modules-${DISTVERSION}${EXTRACT_SUFX}
 .endif
 
 .if ${FLAVOR:U} == server
+BROKEN=		doesn't build with the latest RSTudio version, needs to be fixed
 COMMENT+=	(web UI version)
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Server
 LDFLAGS+=	-linotify
@@ -88,26 +127,84 @@ USE_RC_SUBR=	${PORTNAME:tl}-server
 .endif
 
 OPTIONS_DEFINE=		WITH_QUARTO
+OPTIONS_DEFAULT=	WITH_QUARTO
 
 WITH_QUARTO_DESC=	Build with support for Quarto
-WITH_QUARTO_CMAKE_BOOL=	FREEBSD_QUARTO_ENABLED
-WITH_QUARTO_BROKEN=	Quarto isn't yet ported
+WITH_QUARTO_CMAKE_BOOL=	QUARTO_ENABLED
+
+# Custom fetch for desktop npm dependencies
+.if ${FLAVOR:U} == desktop
+post-fetch:
+	@if ! [ -f ${NPM_DISTDIR}/${NPM_TARBALL} ]; then \
+		${MKDIR} ${NPM_DISTDIR} && \
+		${ECHO_MSG} "====> Fetching npm dependencies for desktop..." && \
+		${MKDIR} /tmp/rstudio-npm-fetch && \
+		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package.json" -o /tmp/rstudio-npm-fetch/package.json && \
+		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package-lock.json" -o /tmp/rstudio-npm-fetch/package-lock.json && \
+		cd /tmp/rstudio-npm-fetch && \
+		HOME=/tmp/rstudio-npm-fetch npm ci --ignore-scripts && \
+		${FIND} node_modules -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; 2>/dev/null; \
+		${TAR} -czf ${NPM_DISTDIR}/${NPM_TARBALL} node_modules && \
+		${RM} -rf /tmp/rstudio-npm-fetch && \
+		${ECHO_MSG} "====> Created npm dependencies tarball"; \
+	fi
+	@if ! [ -f ${NPM_DISTDIR}/${QUARTO_TARBALL} ]; then \
+		${MKDIR} ${NPM_DISTDIR} && \
+		${ECHO_MSG} "====> Fetching quarto/panmirror npm dependencies..." && \
+		${MKDIR} /tmp/rstudio-quarto-fetch && \
+		cd /tmp/rstudio-quarto-fetch && \
+		${FETCH_CMD} -q "https://github.com/quarto-dev/quarto/archive/${QUARTO_MONO_COMMIT}.tar.gz" -o quarto.tar.gz && \
+		${TAR} -xzf quarto.tar.gz && \
+		cd quarto-${QUARTO_MONO_COMMIT} && \
+		HOME=/tmp/rstudio-quarto-fetch yarn install --ignore-scripts --network-timeout 240000 && \
+		cd apps/panmirror && PANMIRROR_OUTDIR=dist-rstudio yarn build --minify true --sourcemap true && cd ../.. && \
+		${FIND} node_modules apps/*/node_modules packages/*/node_modules apps/panmirror/dist-rstudio -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; 2>/dev/null; \
+		${TAR} -czf ${NPM_DISTDIR}/${QUARTO_TARBALL} node_modules apps/*/node_modules packages/*/node_modules apps/panmirror/dist-rstudio && \
+		${RM} -rf /tmp/rstudio-quarto-fetch && \
+		${ECHO_MSG} "====> Created quarto npm dependencies tarball"; \
+	fi
+.endif
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/dependencies/dictionaries && ${MV} ${WRKDIR}/en_* ${WRKSRC}/dependencies/dictionaries/
 	@${MV} ${WRKDIR}/mathjax-* ${WRKSRC}/dependencies/
-	@${MKDIR} ${WRKSRC}/src/gwt/lib/gwt && ${MV} ${WRKDIR}/gwt-${GWT_VERSION} ${WRKSRC}/src/gwt/lib/gwt/${GWT_VERSION}
-	@${MKDIR} ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION} && ${MV} ${WRKDIR}/*.jar ${WRKSRC}/src/gwt/lib/gin/${GIN_VERSION}/
+	# GWT libraries go into dependencies/common/gwtproject
+	@${MKDIR} ${WRKSRC}/dependencies/common/gwtproject/gwt && ${MV} ${WRKDIR}/gwt/gwt-rstudio ${WRKSRC}/dependencies/common/gwtproject/gwt/
+	@${MKDIR} ${WRKSRC}/dependencies/common/gwtproject/gin/${GIN_VERSION}
+	@${MV} ${WRKDIR}/gin-${GIN_VERSION}.jar ${WRKSRC}/dependencies/common/gwtproject/gin/${GIN_VERSION}/
+	@${MV} ${WRKDIR}/aopalliance.jar ${WRKSRC}/dependencies/common/gwtproject/gin/${GIN_VERSION}/
+	@${MV} ${WRKDIR}/guice-*.jar ${WRKSRC}/dependencies/common/gwtproject/gin/${GIN_VERSION}/
+	@${MV} ${WRKDIR}/javax.inject.jar ${WRKSRC}/dependencies/common/gwtproject/gin/${GIN_VERSION}/
+	# Copy other gwtproject dependencies from extracted gwt tarball
+	@${MV} ${WRKDIR}/elemental2 ${WRKSRC}/dependencies/common/gwtproject/
+	@${MV} ${WRKDIR}/jsinterop ${WRKSRC}/dependencies/common/gwtproject/
+	@${MV} ${WRKDIR}/jspecify ${WRKSRC}/dependencies/common/gwtproject/
+	# Setup quarto monorepo for panmirror build
+	# Copy entire quarto monorepo structure (needed for yarn workspaces)
+	@${MV} ${WRKDIR}/quarto-${QUARTO_MONO_COMMIT} ${WRKSRC}/src/gwt/lib/quarto
+	# add hunspell discovery module
+	@${CP} ${FILESDIR}/Findhunspell.cmake ${WRKSRC}/cmake/modules
+.if ${FLAVOR:U} == desktop
+	# Extract pre-fetched npm node_modules for desktop electron build
+	@${ECHO_MSG} "====> Extracting pre-fetched npm dependencies..."
+	@cd ${WRKSRC}/src/node/desktop && ${TAR} -xzf ${NPM_DISTDIR}/${NPM_TARBALL}
+	# Extract pre-fetched quarto/panmirror npm dependencies
+	@${ECHO_MSG} "====> Extracting pre-fetched quarto npm dependencies..."
+	@cd ${WRKSRC}/src/gwt/lib/quarto && ${TAR} -xzf ${NPM_DISTDIR}/${QUARTO_TARBALL}
+	# Patch native modules binding.gyp to support FreeBSD (treat as Linux)
+	@${REINPLACE_CMD} "s/'OS==\"linux\"'/'OS==\"linux\" or OS==\"freebsd\"'/" \
+		${WRKSRC}/src/node/desktop/node_modules/node-system-fonts/binding.gyp
+	# For msgpackr-extract: add FreeBSD support and set compiler to cc
+	@${REINPLACE_CMD} -e "s/\"OS=='linux'\"/\"OS=='linux' or OS=='freebsd'\"/" \
+		-e 's/"os_linux_compiler%": "gcc"/"os_linux_compiler%": "cc"/' \
+		${WRKSRC}/src/node/desktop/node_modules/msgpackr-extract/binding.gyp
+.endif
 
 post-patch:
+	# quarto node_modules are pre-fetched and extracted
+	# Add Java 17+ compatibility args for GWT/Guice reflection
 	@${REINPLACE_CMD} -e ' \
-		s|target_link_libraries(rstudio|target_link_libraries(rstudio procstat|; \
-		s|get_filename_component|#get_filename_component|; \
-		s|set(CMAKE_PREFIX_PATH "$${QT_BIN_DIR}//..//lib//cmake")|set(CMAKE_PREFIX_PATH "${LOCALBASE}/lib/cmake")|; \
-		s|/usr/share/|${PREFIX}/share/|g' \
-		${WRKSRC}/src/cpp/desktop/CMakeLists.txt
-	@${REINPLACE_CMD} -e ' \
-		s|</java>|<jvmarg value="-Duser.home=${WRKDIR}"/></java>|' \
+		s|</java>|<jvmarg value="-Duser.home=${WRKDIR}"/><jvmarg value="--add-opens=java.base/java.lang=ALL-UNNAMED"/></java>|' \
 		${WRKSRC}/src/gwt/build.xml
 	@${REINPLACE_CMD} -e ' \
 		s|rHomePaths.push_back|//rHomePaths.push_back|; \
@@ -116,16 +213,52 @@ post-patch:
 	@${REINPLACE_CMD} -e ' \
 		s|<condition property="node.bin" value="../../../$${node.dir}/bin/node">|<condition property="node.bin" value="${LOCALBASE}/bin/node">|' \
 		${WRKSRC}/src/gwt/build.xml
+	# quarto dependency
+	${LN} -s ${LOCALBASE}/share/quarto ${WRKSRC}/dependencies/quarto
 	# add $PREFIX/bin to PATH for the server daemon
 .if ${FLAVOR:U} == server
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/cpp/session/modules/SessionGit.cpp
 .endif
+	# correct for boost-1.87+ class replacement
+	@${FIND} ${WRKSRC} -name "*.cpp" -o -name "*.hpp" | ${XARGS} ${REINPLACE_CMD} -i "" -e 's/io_service/io_context/g'
 
 pre-build:
-	@${CP} ${FILESDIR}/global-setenv.h ${WRKSRC}/src/cpp/desktop/
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cpp/desktop/global-setenv.h
+	#@${CP} ${FILESDIR}/global-setenv.h ${WRKSRC}/src/cpp/desktop/
+	#@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/cpp/desktop/global-setenv.h
+.if ${FLAVOR:U} == desktop
+	# Create proper electron headers structure for node-gyp
+	# node-gyp expects common.gypi at root and headers at include/node
+	@${MKDIR} ${WRKDIR}/.electron-headers
+	@${LN} -sf ${LOCALBASE}/share/electron37/node_headers/include ${WRKDIR}/.electron-headers/include
+	@${LN} -sf ${LOCALBASE}/share/electron37/node_headers/include/node/common.gypi ${WRKDIR}/.electron-headers/common.gypi
+	# Create electron ZIP for electron-packager (expects electron-v{VERSION}-linux-x64.zip)
+	@${MKDIR} ${WRKDIR}/.electron-zip
+	@cd ${LOCALBASE}/share/electron37 && zip -rq ${WRKDIR}/.electron-zip/electron-v37.6.1-linux-x64.zip \
+		electron chromedriver *.so *.pak *.bin *.json locales resources version LICENSE LICENSES.chromium.html
+.endif
 
 post-install:
+.if ${FLAVOR:U} == desktop
+	# Desktop flavor: create launcher script that uses electron37
+	@(echo "#!/bin/sh"; \
+	  echo ""; \
+	  echo "if ! [ -d /proc/curproc ]; then"; \
+	  echo "  echo \"${PORTNAME} needs /proc to be mounted as procfs\" >&2"; \
+	  echo "  exit 1"; \
+	  echo "fi"; \
+	  echo ""; \
+	  echo "# Environment setup"; \
+	  echo "export LD_PRELOAD=${PREFIX}/lib/gcc${GCC_DEFAULT}/libgcc_s.so"; \
+	  echo "export JAVA_HOME=${JAVA_HOME}"; \
+	  echo "export ELECTRON_IS_DEV=0"; \
+	  echo "export ELECTRON_FORCE_IS_PACKAGED=true"; \
+	  echo ""; \
+	  echo "exec ${PREFIX}/bin/electron37 ${PREFIX}/resources/app \"\$$@\"" \
+	) > ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
+	-${REINPLACE_CMD} -i '' -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/${EXECUTABLE}|' ${STAGEDIR}${PREFIX}/share/applications/${EXECUTABLE}.desktop 2>/dev/null || true
+.else
+	# Server flavor: create launcher script for rserver
 	@(echo "#!/bin/sh"; \
 	  echo ""; \
 	  echo "if ! [ -d /proc/curproc ]; then"; \
@@ -134,15 +267,15 @@ post-install:
 	  echo "fi"; \
 	  echo ""; \
 	  echo "# workaround for the problem that RStudio passes /lib with LD_LIBRARY_PATH that causes the /lib/libgcc_s.so.1 conflict with gcc"; \
-	  echo "LD_PRELOAD=${PREFIX}/lib/gcc${GCC_DEFAULT}/libgcc_s.so JAVA_HOME=${JAVA_HOME} ${PREFIX}/lib/${INSTALL_SUBDIR}/bin/${EXECUTABLE} \"$$"@"\"" \
+	  echo "LD_PRELOAD=${PREFIX}/lib/gcc${GCC_DEFAULT}/libgcc_s.so JAVA_HOME=${JAVA_HOME} ${PREFIX}/lib/${INSTALL_SUBDIR}/bin/${EXECUTABLE} \"\$$@\"" \
 	) > ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
 	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${EXECUTABLE}
-.if ${FLAVOR:U} == desktop
-	${REINPLACE_CMD} -i '' -e 's|^Exec=.*/rstudio|Exec=${PREFIX}/bin/${EXECUTABLE}|' ${STAGEDIR}${PREFIX}/share/applications/${EXECUTABLE}.desktop
 .endif
 .if ${FLAVOR:U} == server
 	${RM} ${STAGEDIR}${LOCALBASE}/lib/${INSTALL_SUBDIR}/bin/rstudio-server # not compatible with FreeBSD
 .endif
+	# Remove quarto files since quarto is installed by the quarto port
+	${RM} -rf ${STAGEDIR}${PREFIX}/bin/quarto
 	# Some functions expect the pandoc symlink.
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc
 	@cd ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc && ${LN} -s ../../../../bin/pandoc

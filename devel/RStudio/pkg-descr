@@ -1,4 +1,12 @@
-RStudio is an integrated development environment (IDE) for R.
-It includes a console, syntax-highlighting editor that supports direct
-code execution, as well as tools for plotting, history, debugging and
-workspace management.
+RStudio is a powerful and productive integrated development environment (IDE)
+for the R programming language. It includes a console, a syntax-highlighting
+editor that supports direct code execution, and a wide range of tools for
+plotting, history, debugging, and workspace management.
+
+RStudio is available in two flavors:
+- Desktop: A standalone application for your computer (requires X11).
+- Server: A web-based interface that provides access to RStudio from anywhere
+  with a web browser.
+
+It also features deep integration with Quarto, a next-generation scientific
+and technical publishing system.
