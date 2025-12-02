@@ -22,4 +22,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	DAPHNE
+DAPHNE_DESC=	Django ASGI support via daphne
+
+DAPHNE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}daphne>=4.0.0:www/py-daphne@${PY_FLAVOR}
+
 .include <bsd.port.mk>
