@@ -221,8 +221,6 @@ include/proxygen/lib/http/coro/util/Refcount.h
 include/proxygen/lib/http/coro/util/TimedBaton.h
 include/proxygen/lib/http/coro/util/Transport.h
 include/proxygen/lib/http/coro/util/WindowContainer.h
-include/proxygen/lib/http/coro/util/WtEgressContainer.h
-include/proxygen/lib/http/coro/util/WtStreamManager.h
 include/proxygen/lib/http/experimental/RFC1867.h
 include/proxygen/lib/http/observer/HTTPSessionObserverContainer.h
 include/proxygen/lib/http/observer/HTTPSessionObserverInterface.h
@@ -285,6 +283,8 @@ include/proxygen/lib/http/webtransport/HTTPWebTransport.h
 include/proxygen/lib/http/webtransport/QuicWebTransport.h
 include/proxygen/lib/http/webtransport/WebTransport.h
 include/proxygen/lib/http/webtransport/WebTransportImpl.h
+include/proxygen/lib/http/webtransport/WtEgressContainer.h
+include/proxygen/lib/http/webtransport/WtStreamManager.h
 include/proxygen/lib/http/webtransport/test/FakeSharedWebTransport.h
 include/proxygen/lib/pools/generators/FileServerListGenerator.h
 include/proxygen/lib/pools/generators/MemberGroupConfig.h
