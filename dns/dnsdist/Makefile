@@ -1,12 +1,8 @@
 PORTNAME=	dnsdist
-DISTVERSION=	2.0.1
-PORTREVISION=	5
+DISTVERSION=	2.0.2
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES=	https://github.com/PowerDNS/pdns/commit/
-PATCHFILES=	8045b2c8860c786d2ca9e13de05c431ba638c90f.diff:-p2
 
 MAINTAINER=	tremere@cainites.net
 COMMENT=	Highly DNS-, DoS- and abuse-aware loadbalancer
