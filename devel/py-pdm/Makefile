@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.26.1
+PORTVERSION=	2.26.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,6 +34,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}shellingham>=1.3.2:devel/py-shellingham@${PY_FLAVOR} \
 		${PY_TOMLI} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11.1<1:textproc/py-tomlkit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}truststore>=0.10.4:security/py-truststore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unearth>=0.17.5:devel/py-unearth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=20:devel/py-virtualenv@${PY_FLAVOR}
 
@@ -54,12 +55,4 @@ COPIER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}copier>=8.0.0:devel/py-copier@${PY_FL
 KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=0,1:security/py-keyring@${PY_FLAVOR} \
 MSGPACK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR} \
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6:devel/py-importlib-metadata@${PY_FLAVOR}
-.else
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}truststore>=0.10.4:security/py-truststore@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
