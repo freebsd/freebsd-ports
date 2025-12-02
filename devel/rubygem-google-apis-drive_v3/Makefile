@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-drive_v3
-PORTVERSION=	0.73.0
+PORTVERSION=	0.74.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
