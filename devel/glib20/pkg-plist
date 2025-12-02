@@ -7931,7 +7931,7 @@ share/gettext/its/gschema.loc
 %%DATADIR%%-2.0/dtds/gresource.dtd
 %%DATADIR%%-2.0/gdb/glib_gdb.py
 %%DATADIR%%-2.0/gdb/gobject_gdb.py
-%%DATADIR%%-2.0/gettext/po/Makefile.in.in
+%%NLS%%%%DATADIR%%-2.0/gettext/po/Makefile.in.in
 %%DATADIR%%-2.0/schemas/gschema.dtd
 %%DATADIR%%-2.0/valgrind/glib.supp
 %%NLS%%share/locale/ab/LC_MESSAGES/glib20.mo

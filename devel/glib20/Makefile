@@ -1,6 +1,6 @@
 PORTNAME=	glib
 DISTVERSION=	2.84.1
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -32,7 +32,7 @@ bootstrap_PKGNAMESUFFIX=	-bootstrap
 
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
-USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
+USES=		compiler:c11 cpe gettext-runtime gnome iconv:wchar_t localbase:ldflags \
 		meson perl5 pkgconfig python tar:xz ${${FLAVOR}_USES}
 USE_LDCONFIG=	yes
 USE_PERL5=	build
@@ -69,13 +69,16 @@ FAM_ALTBACKEND_DESC=	Alternate file monitor backend
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man-pages
 
+NLS_USES=	gettext-tools
+NLS_MESON_ENABLED=	nls
+
 TEST_MESON_TRUE=	tests
 
 # doesn't build yet
 MESON_ARGS+=	-Ddtrace=disabled
 
 .if ${FLAVOR:U} == bootstrap
-MESON_ARGS+=	-Dintrospection=disabled -Ddocumentation=false -Dman-pages=disabled
+MESON_ARGS+=	-Dintrospection=disabled -Ddocumentation=false -Dman-pages=disabled -Dnls=disabled
 OPTIONS_DEFINE=
 PREFIX=		${LOCALBASE}/glib-bootstrap
 PLIST_SUB+=	DOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
