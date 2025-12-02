@@ -1,0 +1,19 @@
+Reference:	https://github.com/numpy/numpy/commit/1e424dae42a2d560520b6e053e8e60ac4205bfc7
+
+--- numpy/core/code_generators/generate_numpy_api.py.orig	2024-02-05 21:17:48 UTC
++++ numpy/core/code_generators/generate_numpy_api.py
+@@ -118,7 +118,13 @@ _import_array(void)
+   return 0;
+ }
+ 
+-#define import_array() {if (_import_array() < 0) {PyErr_Print(); PyErr_SetString(PyExc_ImportError, "numpy.core.multiarray failed to import"); return NULL; } }
++#if (SWIG_VERSION < 0x040400)
++#define _RETURN_VALUE NULL
++#else
++#define _RETURN_VALUE 0
++#endif
++
++#define import_array() {if (_import_array() < 0) {PyErr_Print(); PyErr_SetString(PyExc_ImportError, "numpy.core.multiarray failed to import"); return _RETURN_VALUE; } }
+ 
+ #define import_array1(ret) {if (_import_array() < 0) {PyErr_Print(); PyErr_SetString(PyExc_ImportError, "numpy.core.multiarray failed to import"); return ret; } }
+ 
