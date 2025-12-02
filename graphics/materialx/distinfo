@@ -1,0 +1,17 @@
+TIMESTAMP = 1761654601
+SHA256 (AcademySoftwareFoundation-MaterialX-v1.39.4_GH0.tar.gz) = ce9c1a3b84a060d6280d355a72bf42b53837ee7bcc5a566cab1e927c64078fd9
+SIZE (AcademySoftwareFoundation-MaterialX-v1.39.4_GH0.tar.gz) = 114786830
+SHA256 (mitsuba-renderer-nanogui-6452dd6_GH0.tar.gz) = 3f3cc3c88b1aac6a3d1a2338ad3e12951bc12c98e461b1b5bc1a4aec2fb8f2ee
+SIZE (mitsuba-renderer-nanogui-6452dd6_GH0.tar.gz) = 2900817
+SHA256 (ocornut-imgui-9aae45e_GH0.tar.gz) = cb2cfc2545ff665a4ca8c48b38171271acd4f3887fcb11b7bea18ca0cabc5744
+SIZE (ocornut-imgui-9aae45e_GH0.tar.gz) = 1488056
+SHA256 (thedmd-imgui-node-editor-2f99b2d_GH0.tar.gz) = add46eb447f6c3e883f5bffcc69de20df1dfbb2fc8f55fae3f20eeebb8729a05
+SIZE (thedmd-imgui-node-editor-2f99b2d_GH0.tar.gz) = 1329470
+SHA256 (wjakob-glfw-e130e55_GH0.tar.gz) = ee38c08c5568fa110ef38790ac8c4054001ba47da07109d0428174018b771fcb
+SIZE (wjakob-glfw-e130e55_GH0.tar.gz) = 783212
+SHA256 (wjakob-nanobind-e504eeb_GH0.tar.gz) = 27857a9f5d6de02859f82fde2633bd217ce45b6ebb3f85211835e75950aac85c
+SIZE (wjakob-nanobind-e504eeb_GH0.tar.gz) = 912516
+SHA256 (wjakob-nanovg-bf2320d_GH0.tar.gz) = d59db3e256ed22cdf1aae797136a1d45998eb5b8b757258cc07d0e7d5c951515
+SIZE (wjakob-nanovg-bf2320d_GH0.tar.gz) = 2023633
+SHA256 (wjakob-nanovg_metal-075b04f_GH0.tar.gz) = 07b627adcae703cf9481d90e502974985a3e248eb1068bf172594eff75648def
+SIZE (wjakob-nanovg_metal-075b04f_GH0.tar.gz) = 159169
