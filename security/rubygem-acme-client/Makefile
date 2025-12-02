@@ -1,5 +1,5 @@
 PORTNAME=	acme-client
-PORTVERSION=	2.0.27
+PORTVERSION=	2.0.28
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
