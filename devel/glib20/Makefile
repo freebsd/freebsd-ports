@@ -1,6 +1,6 @@
 PORTNAME=	glib
 DISTVERSION=	2.84.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -78,7 +78,7 @@ MESON_ARGS+=	-Ddtrace=disabled
 MESON_ARGS+=	-Dintrospection=disabled -Ddocumentation=false -Dman-pages=disabled
 OPTIONS_DEFINE=
 PREFIX=		${LOCALBASE}/glib-bootstrap
-PLIST_SUB+=	PORTDOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
+PLIST_SUB+=	DOCS='@comment ' NLS='@comment ' MANPAGES='@comment '
 .else
 BINARY_ALIAS+=	g-ir-scanner=${LOCALBASE}/gobject-introspection-bootstrap/bin/g-ir-scanner
 MESON_ARGS+=	-Dintrospection=enabled
@@ -120,11 +120,6 @@ post-patch:
 		${WRKSRC}/glib/tests/utils.c
 
 CODEGENDIR=	${PREFIX}/share/glib-2.0/codegen
-
-post-install-DOCS-on:
-# this doc file gets created conditionally, so instead of adding another
-# PLIST_SUB item just create an empty file if it is missing
-	${TOUCH} ${STAGEDIR}${DOCSDIR}-2.0/const.VA_COPY_AS_ARRAY.html
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
