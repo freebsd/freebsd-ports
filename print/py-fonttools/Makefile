@@ -1,5 +1,5 @@
 PORTNAME=	fonttools
-PORTVERSION=	4.60.1
+PORTVERSION=	4.61.0
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -34,15 +34,15 @@ INTERPOLATABLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=0:graphics/py-cairo@${
 				${PYTHON_PKGNAMEPREFIX}scipy>=0:science/py-scipy@${PY_FLAVOR}
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=4.0:devel/py-lxml@${PY_FLAVOR}
 PLOT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR}
-REPACKER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0.23.0:print/py-uharfbuzz@${PY_FLAVOR}
+REPACKER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uharfbuzz>=0.45.0:print/py-uharfbuzz@${PY_FLAVOR}
 SYMFONT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=0:math/py-sympy@${PY_FLAVOR}
 WOFF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.1:archivers/py-brotli@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}zopfli>=0.1.4:archivers/py-zopfli@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:UNICODE} && ${PYTHON_REL} < 31300
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=15.1.0:devel/py-unicodedata2@${PY_FLAVOR}
+.if ${PORT_OPTIONS:UNICODE} && ${PYTHON_REL} < 31500
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=17.0.0:devel/py-unicodedata2@${PY_FLAVOR}
 .endif
 
 post-install:
