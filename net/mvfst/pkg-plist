@@ -133,6 +133,7 @@ include/quic/handshake/TransportParameters.h
 include/quic/happyeyeballs/QuicHappyEyeballsFunctions.h
 include/quic/logging/BaseQLogger.h
 include/quic/logging/FileQLogger.h
+include/quic/logging/QLogSchema.h
 include/quic/logging/QLogger.h
 include/quic/logging/QLoggerCommon.h
 include/quic/logging/QLoggerConstants.h
