@@ -1,5 +1,12 @@
 %%DATADIR%%/CodeCoverage.php
+%%DATADIR%%/Data/ProcessedBranchCoverageData.php
+%%DATADIR%%/Data/ProcessedClassType.php
 %%DATADIR%%/Data/ProcessedCodeCoverageData.php
+%%DATADIR%%/Data/ProcessedFunctionCoverageData.php
+%%DATADIR%%/Data/ProcessedFunctionType.php
+%%DATADIR%%/Data/ProcessedMethodType.php
+%%DATADIR%%/Data/ProcessedPathCoverageData.php
+%%DATADIR%%/Data/ProcessedTraitType.php
 %%DATADIR%%/Data/RawCodeCoverageData.php
 %%DATADIR%%/Driver/Driver.php
 %%DATADIR%%/Driver/PcovDriver.php
