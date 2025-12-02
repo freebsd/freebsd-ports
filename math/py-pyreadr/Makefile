@@ -1,5 +1,5 @@
 PORTNAME=	pyreadr
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LIB_DEPENDS=	librdata.so:math/librdata
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.2.0,1:math/py-pandas@${PY_FLAVOR}
 
 USES=		localbase python
-USE_PYTHON=	autoplist concurrent cython pep517
+USE_PYTHON=	autoplist concurrent cython3 pep517
 
 post-patch:
 # Clean up bundled libraries
