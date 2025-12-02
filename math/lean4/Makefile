@@ -1,6 +1,6 @@
 PORTNAME=	lean4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.25.2
+DISTVERSION=	4.25.2-20251201
 CATEGORIES=	math lang devel # lean4 is primarily a math theorem prover, but it is also a language and a development environment
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,7 @@ USES=		cmake:noninja,testing compiler:c++14-lang gmake pkgconfig python:build # 
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	leanprover
+GH_TAGNAME=	5e165e3
 
 CFLAGS+=	-fPIC
 CXXFLAGS+=	-fPIC
@@ -77,6 +78,6 @@ post-install:
 		lib/lean/libleanshared_1.so \
 		lib/lean/libLake_shared.so
 
-# tests as of 4.25.2: 100% tests passed, 0 tests failed out of 3241
+# tests as of 4.25.2-20251201: 100% tests passed, 0 tests failed out of 3367
 
 .include <bsd.port.mk>
