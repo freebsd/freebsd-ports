@@ -1,6 +1,5 @@
 PORTNAME=	geosnap
-PORTVERSION=	0.15.3
-PORTREVISION=	1
+PORTVERSION=	0.16.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}contextily>=0:graphics/py-contextily@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}mapclassify>=0:graphics/py-mapclassify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandana>=0:graphics/py-pandana@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pandarm>=0:graphics/py-pandarm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=0,1:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pooch>=0:devel/py-pooch@${PY_FLAVOR} \
