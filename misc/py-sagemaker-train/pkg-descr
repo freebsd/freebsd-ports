@@ -1,11 +1,6 @@
-sagemaker-train is a part of the SageMaker Python SDK.
+sagemaker-train is an Amazon SageMaker Training Toolkit.
 
-SageMaker Python SDK is an open source library for training and deploying
-machine learning models on Amazon SageMaker.
-
-With the SDK, you can train and deploy models using popular deep learning
-frameworks Apache MXNet and TensorFlow. You can also train and deploy
-models with Amazon algorithms, which are scalable implementations of core
-machine learning algorithms that are optimized for SageMaker and GPU training.
-If you have your own algorithms built into SageMaker compatible Docker
-containers, you can train and host models using these as well.
+This library allows you to write a script to train a model in Amazon
+SageMaker. It provides functionality for your training script to communicate
+with the SageMaker training environment, including writing metrics, saving
+models, and accessing hyperparameters and other configuration.

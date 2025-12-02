@@ -6,9 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	SageMaker: Library for training & deploying models on Amazon SageMaker
-WWW=		https://sagemaker.readthedocs.io/en/stable/ \
-		https://github.com/aws/sagemaker-python-sdk
+COMMENT=	SageMaker: Amazon Training Toolkit
+WWW=		https://github.com/aws/sagemaker-training-toolkit
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
