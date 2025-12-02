@@ -1,4 +1,4 @@
-TIMESTAMP = 1763853158
+TIMESTAMP = 1764510882
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
@@ -1179,5 +1179,5 @@ SHA256 (rust/crates/zwohash-0.1.2.crate) = beaf63e0740cea93ca85de39611a8bc8262a5
 SIZE (rust/crates/zwohash-0.1.2.crate) = 11110
 SHA256 (bantonsson-proptest-9f623fbab7a1a4da487551128c2bffeee2ed6b87_GH0.tar.gz) = 0a38017d8f794ab1a9740942e65de8940c08a6dd3224275bf7f6f2dbddb72872
 SIZE (bantonsson-proptest-9f623fbab7a1a4da487551128c2bffeee2ed6b87_GH0.tar.gz) = 330664
-SHA256 (DataDog-libdatadog-v24.0.1_GH0.tar.gz) = f866aff2a6500fb6f1cb420c96643e8454587e9ce83aee63b7ab70b6063f7c8d
-SIZE (DataDog-libdatadog-v24.0.1_GH0.tar.gz) = 2010023
+SHA256 (DataDog-libdatadog-v24.0.2_GH0.tar.gz) = 8b912314fe605d2df06f44bab5b9e0488081975641475d600ee3a2b5e9ced37f
+SIZE (DataDog-libdatadog-v24.0.2_GH0.tar.gz) = 2010538
