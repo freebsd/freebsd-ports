@@ -9,7 +9,7 @@ include/PartioIterator.h
 include/PartioVec3.h
 lib/libpartio.so
 lib/libpartio.so.1
-lib/libpartio.so.1.19.0
+lib/libpartio.so.1.19.2
 %%PYTHON_SITELIBDIR%%/_partio.so
 %%PYTHON_SITELIBDIR%%/partedit.py
 %%PYTHON_SITELIBDIR%%/partinspect.py

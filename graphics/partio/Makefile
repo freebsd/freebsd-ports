@@ -1,7 +1,11 @@
 PORTNAME=	partio
-PORTVERSION=	1.19.0
+PORTVERSION=	1.19.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics math
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	73b02b28bf19b69756349441a24b97530cd9f06b.patch:-p1 \
+		47c81dbdc37e8dccedad9fd68c0edfc2dc8a73ab.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	C++ library for particle I/O and manipulation
