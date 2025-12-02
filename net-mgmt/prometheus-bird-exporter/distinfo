@@ -1,5 +1,5 @@
-TIMESTAMP = 1740738528
-SHA256 (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-1.4.3_GH0/go.mod) = a1cb316ad9848531d1179c0f29927d738c21aa87f81505386326927319b1b391
-SIZE (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-1.4.3_GH0/go.mod) = 979
-SHA256 (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-1.4.3_GH0/czerwonk-bird_exporter-1.4.3_GH0.tar.gz) = 75bf25dc979f2bbc4dd95e31b25a9b2defd43d2ee5d9e790ef7e70c355443243
-SIZE (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-1.4.3_GH0/czerwonk-bird_exporter-1.4.3_GH0.tar.gz) = 109110
+TIMESTAMP = 1764661851
+SHA256 (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-v1.4.4_GH0/go.mod) = 4d03b705e4640285332c4bdd188d2e3746164ce5e51b19b92a8c8ae918523baa
+SIZE (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-v1.4.4_GH0/go.mod) = 945
+SHA256 (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-v1.4.4_GH0/czerwonk-bird_exporter-v1.4.4_GH0.tar.gz) = 02e4278b31a8c77d9d77dc8cf3d29f6bac1418e3c60e8d18b6b95ac2d007a262
+SIZE (go/net-mgmt_prometheus-bird-exporter/czerwonk-bird_exporter-v1.4.4_GH0/czerwonk-bird_exporter-v1.4.4_GH0.tar.gz) = 109226
