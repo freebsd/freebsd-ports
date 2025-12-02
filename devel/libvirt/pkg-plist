@@ -4,7 +4,9 @@ bin/virt-host-validate
 bin/virt-pki-query-dn
 bin/virt-pki-validate
 bin/virt-ssh-helper
+%%QEMU%%bin/virt-qemu-qmp-proxy
 %%QEMU%%bin/virt-qemu-run
+%%QEMU%%bin/virt-qemu-sev-validate
 bin/virt-xml-validate
 %%BHYVE%%sbin/virtbhyved
 sbin/virtnetworkd
@@ -19,7 +21,9 @@ share/man/man1/virt-admin.1.gz
 share/man/man1/virt-host-validate.1.gz
 share/man/man1/virt-pki-query-dn.1.gz
 share/man/man1/virt-pki-validate.1.gz
+%%QEMU%%share/man/man1/virt-qemu-qmp-proxy.1.gz
 %%QEMU%%share/man/man1/virt-qemu-run.1.gz
+%%QEMU%%share/man/man1/virt-qemu-sev-validate.1.gz
 share/man/man1/virt-xml-validate.1.gz
 share/man/man7/virkeycode-atset1.7.gz
 share/man/man7/virkeycode-atset2.7.gz
@@ -103,6 +107,7 @@ lib/libvirt.so
 lib/libvirt.so.0
 lib/libvirt.so.%%SHLIB_VER%%
 lib/sysusers.d/libvirt.conf
+%%QEMU%%lib/sysusers.d/libvirt-qemu.conf
 %%NSS%%lib/nss_libvirt.so.1
 %%NSS%%lib/nss_libvirt_guest.so.1
 libdata/pkgconfig/libvirt-admin.pc
@@ -194,6 +199,8 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server-v4.xml
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server-v5.xml
 %%DATADIR%%/cpu_map/x86_Cascadelake-Server.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest-v1.xml
+%%DATADIR%%/cpu_map/x86_ClearwaterForest.xml
 %%DATADIR%%/cpu_map/x86_Conroe-v1.xml
 %%DATADIR%%/cpu_map/x86_Conroe.xml
 %%DATADIR%%/cpu_map/x86_Cooperlake-v1.xml
@@ -207,23 +214,30 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Dhyana-v2.xml
 %%DATADIR%%/cpu_map/x86_Dhyana.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Genoa-v1.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Genoa-v2.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Genoa.xml
 %%DATADIR%%/cpu_map/x86_EPYC-IBPB.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Milan-v1.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Milan-v2.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Milan-v3.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Milan.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v1.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v2.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v3.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome-v4.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Rome-v5.xml
 %%DATADIR%%/cpu_map/x86_EPYC-Rome.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Turin-v1.xml
+%%DATADIR%%/cpu_map/x86_EPYC-Turin.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v1.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v2.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v3.xml
 %%DATADIR%%/cpu_map/x86_EPYC-v4.xml
+%%DATADIR%%/cpu_map/x86_EPYC-v5.xml
 %%DATADIR%%/cpu_map/x86_EPYC.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids-v1.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids-v2.xml
+%%DATADIR%%/cpu_map/x86_GraniteRapids-v3.xml
 %%DATADIR%%/cpu_map/x86_GraniteRapids.xml
 %%DATADIR%%/cpu_map/x86_Haswell-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Haswell-noTSX-IBRS.xml
@@ -273,8 +287,11 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v1.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v2.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids-v3.xml
+%%DATADIR%%/cpu_map/x86_SapphireRapids-v4.xml
 %%DATADIR%%/cpu_map/x86_SapphireRapids.xml
 %%DATADIR%%/cpu_map/x86_SierraForest-v1.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v2.xml
+%%DATADIR%%/cpu_map/x86_SierraForest-v3.xml
 %%DATADIR%%/cpu_map/x86_SierraForest.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-noTSX-IBRS.xml
@@ -300,6 +317,10 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Westmere-v1.xml
 %%DATADIR%%/cpu_map/x86_Westmere-v2.xml
 %%DATADIR%%/cpu_map/x86_Westmere.xml
+%%DATADIR%%/cpu_map/x86_YongFeng-v1.xml
+%%DATADIR%%/cpu_map/x86_YongFeng-v2.xml
+%%DATADIR%%/cpu_map/x86_YongFeng-v3.xml
+%%DATADIR%%/cpu_map/x86_YongFeng.xml
 %%DATADIR%%/cpu_map/x86_athlon-v1.xml
 %%DATADIR%%/cpu_map/x86_athlon.xml
 %%DATADIR%%/cpu_map/x86_core2duo-v1.xml
@@ -432,6 +453,7 @@ lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 %%QEMU%%@dir /var/log/swtpm/libvirt
 %%QEMU%%@dir /var/log/swtpm
 %%QEMU%%@dir /var/run/libvirt/qemu/dbus
+%%QEMU%%@dir /var/run/libvirt/qemu/passt
 %%QEMU%%@dir /var/run/libvirt/qemu/slirp
 %%QEMU%%@dir /var/run/libvirt/qemu/swtpm
 %%QEMU%%@dir /var/run/libvirt/qemu

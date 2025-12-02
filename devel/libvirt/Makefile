@@ -1,5 +1,5 @@
 PORTNAME=	libvirt
-DISTVERSION=	11.9.0
+DISTVERSION=	11.10.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -19,12 +19,12 @@ BUILD_DEPENDS=	dnsmasq:dns/dnsmasq \
 		xsltproc:textproc/libxslt
 RUN_DEPENDS=	dnsmasq:dns/dnsmasq
 
-OPTIONS_DEFINE=	DOCS NLS NSS QEMU READLINE SASL LIBSSH LIBSSH2 ZFS
+OPTIONS_DEFINE=	DOCS NLS NSS QEMU READLINE SASL SLIRP LIBSSH LIBSSH2 ZFS
 OPTIONS_DEFAULT=	READLINE LIBSSH LIBSSH2 ZFS
 OPTIONS_DEFINE_amd64=	XEN
 .if exists(/usr/sbin/bhyveload)
 OPTIONS_DEFINE+=	BHYVE
-OPTIONS_DEFAULT+=	BHYVE
+OPTIONS_DEFAULT+=	BHYVE SLIRP
 .else
 PLIST_SUB+=		BHYVE="@comment "
 SUB_LIST+=		BHYVE="@comment "
@@ -34,6 +34,7 @@ QEMU_DESC=	QEMU driver
 BHYVE_DESC=	bhyve driver
 XEN_DESC=	Xen support via libxl
 NSS_DESC=	Name Service Switch plugin
+SLIRP_DESC=	SLIRP networking for bhyve driver
 LIBSSH_DESC=	libssh remote transport
 LIBSSH2_DESC=	libssh2 remote transport
 ZFS_DESC=	ZFS storage driver
@@ -57,6 +58,9 @@ READLINE_USES=		readline
 
 SASL_MESON_ENABLED=	sasl
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+
+SLIRP_IMPLIES=		BHYVE
+SLIRP_LIB_DEPENDS=	libslirp.so:net/libslirp
 
 XEN_MESON_ENABLED=	driver_libxl
 XEN_CFLAGS=	-I${LOCALBASE}/include
@@ -120,7 +124,6 @@ MESON_ARGS+=	\
 		-Dwireshark_dissector=disabled \
 		-Dinit_script=none \
 		-Dbash_completion=disabled \
-		-Duserfaultfd_sysctl=disabled \
 		-Drunstatedir=/var/run
 
 # random_data fix can be removed when 8.x is eol
@@ -140,10 +143,9 @@ USE_PERL5=	build
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-SHLIB_VER=	0.11009.0
+SHLIB_VER=	0.11010.0
 PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
-#SHEBANG_FILES=	src/keycodemapdb/tools/keymap-gen
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 SUB_FILES=	pkg-message
@@ -155,6 +157,11 @@ LIB_DEPENDS+=		libjson-c.so:devel/json-c
 MESON_ARGS+=	-Djson_c=enabled
 .else
 MESON_ARGS+=	-Djson_c=disabled
+.endif
+
+.if ${PORT_OPTIONS:MQEMU}
+SHEBANG_FILES=	tools/virt-qemu-qmp-proxy \
+		tools/virt-qemu-sev-validate
 .endif
 
 .if !${PLIST_SUB:MXEN}
