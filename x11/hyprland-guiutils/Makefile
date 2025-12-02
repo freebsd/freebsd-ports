@@ -1,7 +1,6 @@
 PORTNAME=	hyprland-guiutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.0
-PORTREVISION=	1
+DISTVERSION=	0.2.0
 CATEGORIES=	x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libdrm.so:graphics/libdrm \
-		libhyprtoolkit.so:x11-toolkits/hyprtoolkit
+		libhyprtoolkit.so:x11-toolkits/hyprtoolkit \
+		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++11-lib pkgconfig xorg
 
@@ -29,6 +29,8 @@ CONFLICTS_INSTALL=	hyprland-qtutils
 
 PLIST_FILES=	bin/hyprland-dialog \
 		bin/hyprland-donate-screen \
-		bin/hyprland-update-screen
+		bin/hyprland-run \
+		bin/hyprland-update-screen \
+		bin/hyprland-welcome
 
 .include <bsd.port.mk>
