@@ -1,14 +1,17 @@
 PORTNAME=	e16-themes
-PORTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	x11-themes enlightenment
-MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/${DISTVERSION}
 
 MAINTAINER=	enlightenment@FreeBSD.org
 COMMENT=	Set of themes for the e16 window manager
 WWW=		https://www.enlightenment.org/
 
-DATADIR=	${PREFIX}/share/e16
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 GNU_CONFIGURE=	yes
+DATADIR=	${PREFIX}/share/e16
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
