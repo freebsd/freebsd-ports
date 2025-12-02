@@ -1,5 +1,5 @@
 PORTNAME=	openssl-cmac
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -9,6 +9,8 @@ WWW=		https://github.com/SmallLars/openssl-cmac
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	rubygem-openssl>=3.0<4:security/rubygem-openssl
 
 USES=		gem
 
