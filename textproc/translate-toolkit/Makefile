@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.16.3
+PORTVERSION=	3.17.2
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
 		${PYTHON_PKGNAMEPREFIX}lxml>=5.2.0<6.1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wcwidth>=0.2.8<0.3:devel/py-wcwidth@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.1.1:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
 
 USES=		gettext python shebangfix
 USE_PYTHON=	autoplist noflavors pep517
@@ -29,13 +29,13 @@ NO_ARCH=	yes
 
 SHEBANG_FILES=	tools/*
 
-MANPAGES=	android2po csv2po csv2tbx dtd2po flatxml2po html2po idml2po json2po moz2po mozlang2po odf2xliff oo2po oo2xliff po2csv po2dtd po2flatxml po2html po2idml po2json po2moz po2mozlang po2oo po2prop po2resx po2sub po2symb po2tiki po2tmx po2ts po2txt po2web2py po2wordfast po2xliff pot2po prop2po resx2po sub2po symb2po tbx2po tiki2po ts2po txt2po web2py2po xliff2odf xliff2oo
+MANPAGES=	android2po csv2po csv2tbx dtd2po flatxml2po html2po ical2po idml2po ini2po json2po md2po moz2po mozlang2po odf2xliff oo2po oo2xliff php2po po2csv po2dtd po2flatxml po2html po2ical po2idml po2ini po2json po2md po2moz po2mozlang po2odf po2oo po2php po2prop po2rc po2resx po2sub po2symb po2tiki po2tmx po2ts po2txt po2web2py po2wordfast po2xliff po2yaml pot2po prop2po rc2po resx2po sub2po symb2po tbx2po tiki2po ts2po txt2po web2py2po xliff2odf xliff2oo yaml2po
 
-OPTIONS_DEFINE=	ALL CHARDET FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
-OPTIONS_DEFAULT=ALL CHARDET FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
+OPTIONS_DEFINE=	ALL CHARDET FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TOML TRADOS YAML
+OPTIONS_DEFAULT=ALL CHARDET FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TOML TRADOS YAML
 OPTIONS_SUB=	yes
 ALL_DESC=	All optional dependencies
-AAL_IMPLIES=	CHARDET FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TRADOS YAML
+AAL_IMPLIES=	CHARDET FLUENT ICAL INI LEVENSHTEIN MARKDOWN PHP RC SPELLCHECK SUBTITLES TMSERVER TOML TRADOS YAML
 CHARDET_DESC=	Encoding detection
 FLUENT_DESC=	Fluent translation format support
 ICAL_DESC=	iCal format support
@@ -65,7 +65,9 @@ RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0<3.3:devel/py-pyparsing@
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.14.1<1.16:textproc/py-aeidon@${PY_FLAVOR}
-TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=10.0.1:www/py-cheroot@${PY_FLAVOR}
+TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=11.1.2:www/py-cheroot@${PY_FLAVOR}
+TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.14.0:textproc/py-tomlkit@${PY_FLAVOR}
+TOML_VARS=		MANPAGES+="toml2po po2toml"
 TRADOS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.13.0:www/py-beautifulsoup@${PY_FLAVOR}
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.0<0.19.0:devel/py-ruamel.yaml@${PY_FLAVOR}
 YAML_VARS=		MANPAGES+="po2yaml yaml2po"

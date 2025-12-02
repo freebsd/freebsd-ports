@@ -27,6 +27,7 @@ share/man/man1/po2json.1.gz
 %%MARKDOWN%%share/man/man1/po2md.1.gz
 share/man/man1/po2moz.1.gz
 share/man/man1/po2mozlang.1.gz
+share/man/man1/po2odf.1.gz
 share/man/man1/po2oo.1.gz
 %%PHP%%share/man/man1/po2php.1.gz
 share/man/man1/po2prop.1.gz
@@ -36,6 +37,7 @@ share/man/man1/po2sub.1.gz
 share/man/man1/po2symb.1.gz
 share/man/man1/po2tiki.1.gz
 share/man/man1/po2tmx.1.gz
+%%TOML%%share/man/man1/po2toml.1.gz
 share/man/man1/po2ts.1.gz
 share/man/man1/po2txt.1.gz
 share/man/man1/po2web2py.1.gz
@@ -51,6 +53,7 @@ share/man/man1/sub2po.1.gz
 share/man/man1/symb2po.1.gz
 share/man/man1/tbx2po.1.gz
 share/man/man1/tiki2po.1.gz
+%%TOML%%share/man/man1/toml2po.1.gz
 share/man/man1/ts2po.1.gz
 share/man/man1/txt2po.1.gz
 share/man/man1/web2py2po.1.gz
