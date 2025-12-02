@@ -1,5 +1,5 @@
 lib/libngtcp2_crypto_wolfssl.a
 lib/libngtcp2_crypto_wolfssl.so
 lib/libngtcp2_crypto_wolfssl.so.5
-lib/libngtcp2_crypto_wolfssl.so.5.2.0
+lib/libngtcp2_crypto_wolfssl.so.5.3.0
 libdata/pkgconfig/libngtcp2_crypto_wolfssl.pc
