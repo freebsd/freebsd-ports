@@ -34,10 +34,4 @@ OPENAPI_DESC=	OpenAPI support
 OPENAPI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openapi-core>=0.18.0<0.19:devel/py-openapi-core@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0:devel/py-ruamel.yaml@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8.3:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
