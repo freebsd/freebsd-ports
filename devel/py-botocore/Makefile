@@ -1,5 +1,5 @@
 PORTNAME=	botocore
-PORTVERSION=	1.41.2
+PORTVERSION=	1.41.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jmespath>=0.7.1<2.0.0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.1<3.0.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.4,1<3,1:net/py-urllib3@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscrt>=0.28.4:devel/py-awscrt@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscrt>=0.29.0:devel/py-awscrt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=0:devel/py-jsonschema@${PY_FLAVOR}
 
 USES=		python
@@ -27,6 +27,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	CRT
 CRT_DESC=	Common runtime support
 
-CRT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscrt>=0.28.4:devel/py-awscrt@${PY_FLAVOR}
+CRT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscrt>=0.29.0:devel/py-awscrt@${PY_FLAVOR}
 
 .include <bsd.port.mk>
