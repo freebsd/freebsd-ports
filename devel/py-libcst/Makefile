@@ -31,10 +31,6 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}libcst03
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
 .if ${PYTHON_REL} < 31300
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pyyaml>=5.2:devel/py-pyyaml@${PY_FLAVOR}
 .else
