@@ -1,4 +1,4 @@
-# bsd.local.mk.local - Sandbox for local modification to ports framework.
+# bsd.local.mk.sample - Sandbox for local modification to ports framework.
 #
 # To use this feature, copy this file to Mk/bsd.local.mk, and modify as required
 #
