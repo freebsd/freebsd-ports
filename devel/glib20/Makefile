@@ -1,6 +1,6 @@
 PORTNAME=	glib
 DISTVERSION=	2.84.1
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -14,7 +14,6 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libffi.so:devel/libffi \
-		libinotify.so:devel/libinotify \
 		libpcre2-8.so:devel/pcre2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 TEST_DEPENDS=	dbus-uuidgen:devel/dbus \
@@ -56,15 +55,13 @@ CONFLICTS_INSTALL=	p5-Giovanni
 _LIBVERSION=	0.${DISTVERSION:R:E}00.${DISTVERSION:E}
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
-OPTIONS_DEFINE=		DOCS FAM_ALTBACKEND MANPAGES NLS TEST
+OPTIONS_DEFINE=		DOCS MANPAGES NLS TEST
 OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
 DOCS_IMPLIES=		MANPAGES TEST
 DOCS_MESON_TRUE=	documentation
-
-FAM_ALTBACKEND_DESC=	Alternate file monitor backend
 
 MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man-pages
@@ -90,6 +87,7 @@ MESON_ARGS+=	-Dintrospection=enabled
 .if exists(/usr/include/sys/inotify.h)
 MESON_ARGS+=	-Dfile_monitor_backend='inotify'
 .else
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
 MESON_ARGS+=	-Dfile_monitor_backend='libinotify-kqueue'
 .endif
 
@@ -98,15 +96,6 @@ post-extract:
 	${CP} -r ${LOCALBASE}/gobject-introspection-bootstrap/libdata/pkgconfig ${PKGCONFIG_LINKDIR}
 	${CP} ${LOCALBASE}/glib-bootstrap/libdata/pkgconfig/* ${PKGCONFIG_LINKDIR}
 .endif
-
-pre-configure-FAM_ALTBACKEND-on:
-	@${REINPLACE_CMD} -e 's|kqueue-helper.c|kqueue_fnm.c|g ; \
-		s|.*kqueue-missing.c.*||g ; \
-		s|.*dep-list.c.*||g' \
-		${WRKSRC}/gio/kqueue/meson.build
-	@${CP} -f ${FILESDIR}/gkqueuefilemonitor.c ${WRKSRC}/gio/kqueue/gkqueuefilemonitor.c
-	@${CP} ${FILESDIR}/kqueue_fnm.c ${WRKSRC}/gio/kqueue/kqueue_fnm.c
-	@${CP} ${FILESDIR}/kqueue_fnm.h ${WRKSRC}/gio/kqueue/kqueue_fnm.h
 
 post-patch:
 	${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|g' \
