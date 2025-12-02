@@ -1,5 +1,5 @@
 lib/libngtcp2_crypto_gnutls.a
 lib/libngtcp2_crypto_gnutls.so
 lib/libngtcp2_crypto_gnutls.so.8
-lib/libngtcp2_crypto_gnutls.so.8.2.0
+lib/libngtcp2_crypto_gnutls.so.8.3.0
 libdata/pkgconfig/libngtcp2_crypto_gnutls.pc

@@ -1,3 +1,3 @@
-TIMESTAMP = 1761446500
-SHA256 (ngtcp2-1.17.0.tar.xz) = 9c9a4e2e150e90bf77d4ffcbefe82f738ee375287e68aaa715fa83c04a12209c
-SIZE (ngtcp2-1.17.0.tar.xz) = 679244
+TIMESTAMP = 1764510890
+SHA256 (ngtcp2-1.18.0.tar.xz) = aac91fbcb8af77216862cc1bf6e9ddcabfe42b4c373a438b7b1d36b763a4ac5f
+SIZE (ngtcp2-1.18.0.tar.xz) = 688432
