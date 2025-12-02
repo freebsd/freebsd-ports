@@ -1,4 +1,5 @@
-Application Insights is a service that allows developers to keep their
-application available, performing and succeeding. This Python module will allow
-you to send telemetry of various kinds (event, trace, exception, etc.) to the
-Application Insights service where they can be visualized in the Azure Portal.
+This SDK is no longer maintained or supported by Microsoft. Check out the Python
+OpenCensus SDK for Azure Monitor’s latest Python investments. Azure Monitor only
+provides support when using the supported SDKs. We’re constantly assessing
+opportunities to expand our support for other languages, so follow our GitHub
+Announcements page to receive the latest SDK news.

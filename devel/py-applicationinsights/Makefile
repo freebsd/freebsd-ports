@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Applications Insights SDK for Python
+COMMENT=	Application Insights API surface to support Python
 WWW=		https://github.com/microsoft/ApplicationInsights-Python
 
 LICENSE=	MIT
