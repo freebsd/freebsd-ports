@@ -1,8 +1,16 @@
-This is python module for RFC 5451 Authentication-Results Headers
-generation and parsing.
-It also supports Authentication Results extensions:
+This module (authres) is designed to provide support for RFC 5451/7001,
+originally https://tools.ietf.org/html/rfc5451 (and then
+https://tools.ietf.org/html/rfc7001 and https://tools.ietf.org/html/rfc7601) and
+currently https://tools.ietf.org/html/rfc8601, processing in Python.
 
-RFC 5617 DKIM/ADSP
-RFC 6008 DKIM signature identification (header.b)
-RFC 6212 Vouch By Reference (VBR)
-draft-kucherawy-dmarc-base-00 DMARC
+It also supports Authentication Results extensions:
+- RFC 5617 DKIM/ADSP
+- RFC 6008 DKIM signature identification (header.b)
+- RFC 6212 Vouch By Reference (VBR)
+- RFC 6577 Sender Policy Framework (SPF)
+- RFC 7281 Authentication-Results Registration for S/MIME
+- RFC 7293, The Require-Recipient-Valid-Since Header Field and SMTP Service
+  Extension, header field types
+- RFC 7489 Domain-based Message Authentication, Reporting, and Conformance
+  (DMARC)
+- RFC 8617 The Authenticated Received Chain (ARC) Protocol
