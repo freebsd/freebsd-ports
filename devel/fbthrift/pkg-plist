@@ -465,6 +465,7 @@ include/thrift/lib/cpp2/reflection/internal/merge-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/reflection-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/test_helpers.h
+include/thrift/lib/cpp2/reflection/invoke_by_field_name.h
 include/thrift/lib/cpp2/reflection/legacy_reflection.h
 include/thrift/lib/cpp2/reflection/merge.h
 include/thrift/lib/cpp2/reflection/populator.h
