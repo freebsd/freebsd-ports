@@ -430,6 +430,7 @@ include/folly/executors/SerialExecutor.h
 include/folly/executors/SerializedExecutor.h
 include/folly/executors/SoftRealTimeExecutor.h
 include/folly/executors/StrandExecutor.h
+include/folly/executors/StripedEDFThreadPoolExecutor.h
 include/folly/executors/ThreadPoolExecutor.h
 include/folly/executors/ThreadedExecutor.h
 include/folly/executors/ThreadedRepeatingFunctionRunner.h
