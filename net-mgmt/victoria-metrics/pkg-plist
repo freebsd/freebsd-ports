@@ -68,6 +68,8 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-holtwinters-example.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-prophet-example.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-sharding-ha-diagram.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-example-alert-btn.webp
+%%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-example-alert-menu.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-model-config-menu-yaml-tab.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-model-config-menu.webp
 %%PORTDOCS%%%%DOCSDIR%%/anomaly-detection/vmanomaly-ui-model-config-wizard.webp
