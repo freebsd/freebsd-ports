@@ -22,6 +22,7 @@
     SUBDIR += createtorrent
     SUBDIR += ctcs
     SUBDIR += ctorrent
+    SUBDIR += datum_gateway
     SUBDIR += dclib
     SUBDIR += deluge
     SUBDIR += deluge-cli
