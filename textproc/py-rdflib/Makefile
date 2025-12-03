@@ -1,5 +1,6 @@
 PORTNAME=	rdflib
-PORTVERSION=	7.5.0
+DISTVERSION=	7.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -47,5 +48,11 @@ ORJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=3.9.14<4:devel/py-orjson@${PY
 .if ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}isodate>=0.7.2<1.0.0:devel/py-isodate@${PY_FLAVOR}
 .endif
+
+post-patch:
+	# conflict with security/sequoia-sq, see https://github.com/RDFLib/rdflib/issues/3337
+	@${REINPLACE_CMD} -e 's|sq|sparqlquery|g' \
+		${WRKSRC}/pyproject.toml \
+		${WRKSRC}/rdflib/tools/sparqlquery.py
 
 .include <bsd.port.post.mk>
