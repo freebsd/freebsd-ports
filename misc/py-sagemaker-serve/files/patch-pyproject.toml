@@ -1,0 +1,44 @@
+Removed dependencies:
+- deepdiff: declared but never imported or used in the codebase
+- mlflow: optional, only used conditionally when sagemaker_mlflow is installed
+- sagemaker_schema_inference_artifacts: optional, used in try/except fallback
+- pytest: test-only dependency, not needed at runtime
+- tqdm, psutil: handled via RUN_DEPENDS in Makefile
+- tritonclient[http]: optional, used in try/except for Triton validation
+- onnx, onnxruntime, torch: not available on FreeBSD; torch has a module-level
+  import in app.py but that module is only used for specific serving scenarios
+
+--- pyproject.toml.orig	2025-11-20 20:42:14 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools>=64", "wheel"]
++requires = ["setuptools", "wheel"]
+ build-backend = "setuptools.build_meta"
+
+ [project]
+@@ -23,16 +23,6 @@ dependencies = [
+     "sagemaker-train>=0.1.0",
+     "boto3>=1.35.75,<2.0",
+     "botocore>=1.35.75,<2.0",
+-    "deepdiff",
+-    "mlflow",
+-    "sagemaker_schema_inference_artifacts",
+-    "pytest",
+-    "tqdm",
+-    "psutil",
+-    "tritonclient[http]",
+-    "onnx",
+-    "onnxruntime",
+-    "torch>=2.0.0"
+ ]
+
+ [project.optional-dependencies]
+@@ -49,7 +39,6 @@ dev = [
+ ]
+
+ [tool.setuptools]
+-package-dir = {"" = "src"}
+ include-package-data = true
+
+ [tool.setuptools.packages.find]
