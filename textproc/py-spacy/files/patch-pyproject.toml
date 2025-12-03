@@ -1,13 +1,11 @@
---- pyproject.toml.orig	2024-09-11 19:33:13 UTC
+--- pyproject.toml.orig	2025-11-17 18:00:06 UTC
 +++ pyproject.toml
-@@ -6,8 +6,8 @@ requires = [
+@@ -6,7 +6,7 @@ requires = [
      "preshed>=3.0.2,<3.1.0",
      "murmurhash>=0.28.0,<1.1.0",
-     "thinc>=8.3.0,<8.4.0",
--    "numpy>=2.0.0,<2.1.0; python_version < '3.9'",
--    "numpy>=2.0.0,<2.1.0; python_version >= '3.9'",
-+    "numpy>=1.15.0; python_version < '3.9'",
-+    "numpy>=1.19.0; python_version >= '3.9'",
+     "thinc>=8.3.4,<8.4.0",
+-    "numpy>=2.0.0,<3.0.0"
++    "numpy>=1.19.0,<3.0.0"
  ]
  build-backend = "setuptools.build_meta"
  
