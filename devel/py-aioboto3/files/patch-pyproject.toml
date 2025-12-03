@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2025-10-30 13:36:21 UTC
++++ pyproject.toml
+@@ -7,7 +7,7 @@ dependencies = [
+ license = {text = "Apache-2.0"}
+ requires-python = ">=3.9"
+ dependencies = [
+-    "aiobotocore[boto3]==2.25.1",
++    "aiobotocore[boto3]",
+     "aiofiles>=23.2.1",
+ ]
+ 
+@@ -73,7 +73,7 @@ cache-keys = [{ file = "pyproject.toml" }, { git = { c
+ cache-keys = [{ file = "pyproject.toml" }, { git = { commit = true, tags = true } }]
+ 
+ [build-system]
+-requires = ["setuptools>=68.2.0", "setuptools-scm>=8"]
++requires = ["setuptools", "setuptools-scm"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools.dynamic]

@@ -4392,6 +4392,7 @@
     SUBDIR += py-addict
     SUBDIR += py-aenum
     SUBDIR += py-aioapns
+    SUBDIR += py-aioboto3
     SUBDIR += py-aiobotocore
     SUBDIR += py-aiofiles
     SUBDIR += py-aiohttp-apispec
