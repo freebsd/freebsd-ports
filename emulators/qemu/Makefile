@@ -124,6 +124,9 @@ CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 WITHOUT_CPU_CFLAGS=	yes #to avoid problems with register allocation
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
+.if exists(/usr/include/sys/inotify.h)
+EXTRA_PATCHES+=                ${PATCHDIR}/extra-patch-meson.build
+.endif
 
 PORTDOCS=	.buildinfo _static/* about/* dbus-dbusindex.html devel/* docs \
 		genindex.html glossary.html index.html interop/* objects.inv \
