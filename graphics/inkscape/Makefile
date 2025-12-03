@@ -1,8 +1,13 @@
 PORTNAME=	inkscape
 DISTVERSION=	1.4.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
+
+PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/merge_requests/
+PATCHFILES=		7261.patch:-p1
+PATCHFILES+=	7449.patch:-p1
+PATCHFILES+=	7502.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
