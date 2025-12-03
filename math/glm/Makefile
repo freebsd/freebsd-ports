@@ -1,5 +1,6 @@
 PORTNAME=	glm
 PORTVERSION=	1.0.2
+PORTEPOCH=	1
 CATEGORIES=	math graphics
 
 MAINTAINER=	amdmi3@FreeBSD.org
