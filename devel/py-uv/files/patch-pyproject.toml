@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-10-21 16:14:22 UTC
+--- pyproject.toml.orig	2025-12-03 00:57:55 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -9,7 +9,7 @@
  
  [project]
  name = "uv"
-@@ -40,62 +40,10 @@ Discord = "https://discord.gg/astral-sh"
+@@ -40,55 +40,12 @@ Discord = "https://discord.gg/astral-sh"
  Releases = "https://github.com/astral-sh/uv/releases"
  Discord = "https://discord.gg/astral-sh"
  
@@ -23,10 +23,13 @@
 -    { path = "rust-toolchain.toml", format = ["sdist", "wheel"] },
 -    # this one isn't discovered by maturin because it's behind a feature flag
 -    { path = "crates/uv-performance-memory-allocator/**/*", format = ["sdist", "wheel"] },
--    { path = "crates/uv-trampoline/trampolines/*", format = "sdist" },
+-    { path = "crates/uv-trampoline-builder/trampolines/*", format = "sdist" },
 -    { path = "LICENSE-APACHE", format = "sdist" },
 -    { path = "LICENSE-MIT", format = "sdist" },
 -]
++[tool.setuptools]
++packages = ["uv"]
++package-dir = {"" = "python"}
  
 -[tool.rooster]
 -changelog-contributors = false  # We exclude contributors from the CHANGELOG file
@@ -51,10 +54,7 @@
 -  "docs/concepts/projects/workspaces.md",
 -  { target = "docs/reference/environment.md", replace = "next release" },
 -]
-+[tool.setuptools]
-+packages = ["uv"]
-+package-dir = {"" = "python"}
- 
+-
 -[tool.rooster.section-labels]
 -"Breaking changes" = ["breaking"]
 -"Enhancements" = ["enhancement", "compatibility", "error messages"]
@@ -65,15 +65,8 @@
 -"Rust API" = ["rustlib"]
 -"Documentation" = ["documentation"]
 -"Other changes" = ["__unknown__"]
--
--[tool.mypy]
--ignore_missing_imports = true
--files = [
--  "crates/uv-python/*.py",
--  "python/uv/*.py",
--]
--
--[tool.uv]
--managed = false
 +[tool.setuptools.package-data]
 +uv = ["py.typed"]
+ 
+ [tool.mypy]
+ ignore_missing_imports = true
