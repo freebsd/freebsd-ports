@@ -1,5 +1,6 @@
 PORTNAME=	python-nmap
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,8 @@ WWW=		https://pypi.org/project/python-nmap/ \
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl-3.0.txt
+
+RUN_DEPENDS=	nmap:security/nmap
 
 USES=		python:build,run
 USE_PYTHON=	autoplist distutils flavors
