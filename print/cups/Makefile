@@ -1,8 +1,13 @@
 PORTNAME=	cups
 DISTVERSION=	2.4.15
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/OpenPrinting/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
+
+PATCH_SITES=	https://github.com/OpenPrinting/cups/commit/
+PATCHFILES=	93c39a4beae637bc1648409e23c03cb53b92a2b9.patch:-p1 \
+		6efa179b8446a7999b9149c5101fb11580ea8998.patch:-p1
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
