@@ -1,0 +1,17 @@
+Obtained from:	https://github.com/swig/swig/issues/3260#issuecomment-3272521479
+
+--- s2_common.i.orig	2025-02-02 07:37:37 UTC
++++ s2_common.i
+@@ -170,11 +170,9 @@ class S2PolygonLayerOptions { (public)
+     if (SWIG_IsOK(res)) {
+       loops.push_back(loop->Clone());
+     } else {
+-      SWIG_Python_TypeError(SWIG_TypePrettyName($descriptor(S2Loop *)), element);
+-      SWIG_Python_ArgFail(i);
++      %argument_fail(SWIG_TypeError, "$type", $symname, $argnum);
+       Py_DECREF(element);
+       Py_DECREF(iterator);
+-      SWIG_fail;
+     }
+     Py_DECREF(element);
+   }
