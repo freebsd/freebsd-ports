@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION:C/[a-z].*//}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -176,6 +176,10 @@ sigstore-verify: ${_sigstorebundle} checksum
 		--cert-identity hugo@python.org \
 		--cert-oidc-issuer https://github.com/login/oauth \
 		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
+
+pre-test:
+	${ECHO_CMD} "=== NOTE: the py314-* gdbm, sqlite3, tkinter modules must be rebuilt before the test ==="
+	sleep 5
 
 post-clean:
 	${RM} ${_sigstorebundle}
