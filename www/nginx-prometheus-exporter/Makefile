@@ -1,6 +1,7 @@
 PORTNAME=	nginx-prometheus-exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	arcade@b1t.name
