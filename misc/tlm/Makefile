@@ -1,5 +1,6 @@
 PORTNAME=	tlm
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

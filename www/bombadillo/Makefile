@@ -1,6 +1,6 @@
 PORTNAME=	bombadillo
 DISTVERSION=	2.4.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	https://tildegit.org/sloum/bombadillo/archive/
 DISTNAME=	${DISTVERSION}
