@@ -1,5 +1,6 @@
 PORTNAME=	zls
 DISTVERSION=	0.14.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,8 +10,8 @@ WWW=		https://github.com/zigtools/zls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.14.0:lang/zig
-RUN_DEPENDS=	zig:lang/zig
+BUILD_DEPENDS=	zig014>=0.14.0:lang/zig014
+RUN_DEPENDS=	zig014>=0.14.0:lang/zig014
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zigtools
@@ -18,11 +19,11 @@ GH_TUPLE=	wolfpld:tracy:v0.11.1:tracy/../.cache/zig/p/N-V-__8AAMeOlQEipHjcyu0TCf
 		ziglibs:diffz:ef45c00:diffz/../.cache/zig/p/N-V-__8AABhrAQAQLLLGadghhPsdxTgBk9N9aLVOjXW3ay0V \
 		ziglibs:known-folders:0.7.0-57-gaa24df4:known_folders/../.cache/zig/p/known_folders-0.0.0-Fy-PJtLDAADGDOwYwMkVydMSTp_aN-nfjCZw6qPQ2ECL \
 		zigtools:zig-lsp-codegen:063a98c:zig_lsp_codegen/../.cache/zig/p/lsp_codegen-0.1.0-CMjjo0ZXCQB-rAhPYrlfzzpU0u0u2MeGvUucZ-_g32eg
-MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
 		-Dcpu=${CPUTYPE:Ubaseline} \
 		--verbose
+MAKE_ENV=	DESTDIR="${STAGEDIR}"
 NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME}
 
