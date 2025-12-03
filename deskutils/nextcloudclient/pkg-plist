@@ -22,7 +22,6 @@ lib/nextcloudsync_vfs_suffix.so
 %%KDE%%%%QT_PLUGINDIR%%/kf6/overlayicon/nextclouddolphinoverlayplugin.so
 share/applications/com.nextcloud.desktopclient.nextcloud.desktop
 %%GNOME%%share/caja-python/extensions/syncstate-Nextcloud.py
-%%EXAMPLESDIR%%/sync-exclude.lst
 share/icons/hicolor/1024x1024/apps/Nextcloud.png
 share/icons/hicolor/128x128/apps/Nextcloud.png
 share/icons/hicolor/128x128/apps/Nextcloud_a_shared.png
@@ -108,6 +107,7 @@ share/nextcloud/i18n/client_is.qm
 share/nextcloud/i18n/client_it.qm
 share/nextcloud/i18n/client_ja.qm
 share/nextcloud/i18n/client_ko.qm
+share/nextcloud/i18n/client_lo.qm
 share/nextcloud/i18n/client_lt_LT.qm
 share/nextcloud/i18n/client_lv.qm
 share/nextcloud/i18n/client_mk.qm
