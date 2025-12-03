@@ -1,5 +1,5 @@
-TIMESTAMP = 1738982912
-SHA256 (go/textproc_gojq/gojq-v0.12.17/v0.12.17.mod) = 568a908f2d2d1a37c4869c37d5f32e65b86cbea5490404d95f966732ca71a144
-SIZE (go/textproc_gojq/gojq-v0.12.17/v0.12.17.mod) = 318
-SHA256 (go/textproc_gojq/gojq-v0.12.17/v0.12.17.zip) = 324888343247749c1edc4b391adafd17700434d6236522b02513e7f3fdd35c24
-SIZE (go/textproc_gojq/gojq-v0.12.17/v0.12.17.zip) = 161636
+TIMESTAMP = 1764764855
+SHA256 (go/textproc_gojq/gojq-v0.12.18/v0.12.18.mod) = 2881fa0f9eb04cb95530d337a3e450a9f2463e6a19b596d4b147ebab5dde8d25
+SIZE (go/textproc_gojq/gojq-v0.12.18/v0.12.18.mod) = 422
+SHA256 (go/textproc_gojq/gojq-v0.12.18/v0.12.18.zip) = 9151159ef2bdaa6467d11f1bc2a128e5411ff7658faf34b178df7d8797857e39
+SIZE (go/textproc_gojq/gojq-v0.12.18/v0.12.18.zip) = 161990
