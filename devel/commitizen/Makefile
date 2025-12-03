@@ -30,10 +30,4 @@ USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	importlib-metadata>=8.0.0<9:devel/py-importlib-metadata
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
