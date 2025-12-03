@@ -1,5 +1,5 @@
 PORTNAME=	cargo-deny
-DISTVERSION=	0.18.6
+DISTVERSION=	0.18.7
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +31,6 @@ CARGO_CRATES=	adler2-2.0.1 \
 		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
 		arc-swap-1.7.1 \
-		askalono-0.5.0 \
 		async-compression-0.4.34 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.0 \
@@ -39,14 +38,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		bitflags-2.10.0 \
 		bitvec-1.0.1 \
 		block-buffer-0.10.4 \
-		borsh-1.5.7 \
+		borsh-1.6.0 \
 		bstr-1.12.1 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		bytes-1.11.0 \
 		camino-1.2.1 \
 		cargo-lock-11.0.0 \
-		cc-1.2.47 \
+		cc-1.2.48 \
 		cfg-expr-0.20.4 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
@@ -155,7 +154,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		gix-worktree-0.44.0 \
 		gix-worktree-state-0.22.0 \
 		globset-0.4.18 \
-		goblin-0.10.3 \
+		goblin-0.10.4 \
 		h2-0.4.12 \
 		hash32-0.3.1 \
 		hashbrown-0.15.5 \
@@ -163,7 +162,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		heapless-0.8.0 \
 		heck-0.5.0 \
 		home-0.5.12 \
-		http-1.3.1 \
+		http-1.4.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
@@ -180,7 +179,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		indexmap-2.12.1 \
-		insta-1.44.1 \
+		insta-1.44.3 \
 		io-close-0.3.7 \
 		ipnet-2.11.0 \
 		iri-string-0.7.9 \
@@ -191,10 +190,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		jiff-tzdb-0.1.4 \
 		jiff-tzdb-platform-0.1.3 \
 		jobserver-0.1.34 \
-		js-sys-0.3.82 \
+		js-sys-0.3.83 \
 		krates-0.20.0 \
 		kstring-2.0.2 \
-		lazy_static-1.5.0 \
 		libc-0.2.177 \
 		libredox-0.1.10 \
 		libz-rs-sys-0.5.2 \
@@ -211,13 +209,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		mio-1.1.0 \
 		nu-ansi-term-0.50.3 \
 		num-conv-0.1.0 \
-		num-traits-0.2.19 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
 		openssl-probe-0.1.6 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
-		paste-1.0.15 \
 		percent-encoding-2.3.2 \
 		petgraph-0.8.3 \
 		pin-project-lite-0.2.16 \
@@ -249,14 +245,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		regex-syntax-0.8.8 \
 		reqwest-0.12.24 \
 		ring-0.17.14 \
-		rmp-0.8.14 \
-		rmp-serde-1.3.0 \
 		rustc-hash-2.1.1 \
 		rustc-stable-hash-0.1.2 \
 		rustix-1.1.2 \
 		rustls-0.23.35 \
 		rustls-native-certs-0.8.2 \
-		rustls-pki-types-1.13.0 \
+		rustls-pki-types-1.13.1 \
 		rustls-webpki-0.103.8 \
 		rustsec-0.31.0 \
 		rustversion-1.0.22 \
@@ -288,7 +282,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		smallvec-1.15.1 \
 		smol_str-0.3.2 \
 		socket2-0.6.1 \
-		spdx-0.12.0 \
+		spdx-0.13.0 \
 		stable_deref_trait-1.2.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
@@ -322,11 +316,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		toml_parser-1.0.4 \
 		toml_writer-1.0.4 \
 		tower-0.5.2 \
-		tower-http-0.6.6 \
+		tower-http-0.6.7 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
-		tracing-0.1.41 \
-		tracing-core-0.1.34 \
+		tracing-0.1.43 \
+		tracing-core-0.1.35 \
 		try-lock-0.2.5 \
 		twox-hash-2.1.2 \
 		typenum-1.19.0 \
@@ -343,12 +337,12 @@ CARGO_CRATES=	adler2-2.0.1 \
 		want-0.3.1 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.1+wasi-0.2.4 \
-		wasm-bindgen-0.2.105 \
-		wasm-bindgen-futures-0.4.55 \
-		wasm-bindgen-macro-0.2.105 \
-		wasm-bindgen-macro-support-0.2.105 \
-		wasm-bindgen-shared-0.2.105 \
-		web-sys-0.3.82 \
+		wasm-bindgen-0.2.106 \
+		wasm-bindgen-futures-0.4.56 \
+		wasm-bindgen-macro-0.2.106 \
+		wasm-bindgen-macro-support-0.2.106 \
+		wasm-bindgen-shared-0.2.106 \
+		web-sys-0.3.83 \
 		web-time-1.1.0 \
 		webpki-roots-1.0.4 \
 		winapi-0.3.9 \
@@ -381,14 +375,14 @@ CARGO_CRATES=	adler2-2.0.1 \
 		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.1 \
-		winnow-0.7.13 \
+		winnow-0.7.14 \
 		wit-bindgen-0.46.0 \
 		writeable-0.6.2 \
 		wyz-0.5.1 \
 		yoke-0.8.1 \
 		yoke-derive-0.8.1 \
-		zerocopy-0.8.28 \
-		zerocopy-derive-0.8.28 \
+		zerocopy-0.8.31 \
+		zerocopy-derive-0.8.31 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
 		zeroize-1.8.2 \
