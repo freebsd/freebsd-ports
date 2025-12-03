@@ -20,14 +20,3 @@
          }
          else if (!strcmp(argv[x], "-restarts")) {
              temp = optional(argc, argv, x++);
-@@ -424,6 +420,10 @@ static arg_data *parse(int argc, char *argv[])
-         }
-         /* Java 11 specific options */
-         else if (!strncmp(argv[x], "--enable-preview", 16)) {
-+            args->opts[args->onum++] = strdup(argv[x]);
-+        }
-+        /* Java 21 specific options */
-+        else if (!strncmp(argv[x], "--enable-native-access=", 23)) {
-             args->opts[args->onum++] = strdup(argv[x]);
-         }
-         else if (*argv[x] == '-') {
