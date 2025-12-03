@@ -63,6 +63,7 @@ include/faiss/impl/LocalSearchQuantizer.h
 include/faiss/impl/LookupTableScaler.h
 include/faiss/impl/NNDescent.h
 include/faiss/impl/NSG.h
+include/faiss/impl/Panorama.h
 include/faiss/impl/PanoramaStats.h
 include/faiss/impl/PolysemousTraining.h
 include/faiss/impl/ProductAdditiveQuantizer.h
@@ -71,6 +72,7 @@ include/faiss/impl/ProductQuantizer.h
 include/faiss/impl/Quantizer.h
 include/faiss/impl/RaBitQUtils.h
 include/faiss/impl/RaBitQuantizer.h
+include/faiss/impl/RaBitQuantizerMultiBit.h
 include/faiss/impl/ResidualQuantizer.h
 include/faiss/impl/ResultHandler.h
 include/faiss/impl/ScalarQuantizer.h
