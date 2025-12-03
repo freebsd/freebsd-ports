@@ -1,6 +1,6 @@
 PORTNAME=	qtutilities
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.14.4
+DISTVERSION=	6.18.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,5 +25,7 @@ MAKE_ENV+=	QT_QPA_PLATFORM=offscreen # otherwise tests fail because they can't c
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ARGS=	-DEXCLUDE_TESTS_FROM_ALL=OFF
 CMAKE_TESTING_TARGET=	check
+
+# tests as of 6.18.4: 100% tests passed, 0 tests failed out of 3
 
 .include <bsd.port.mk>
