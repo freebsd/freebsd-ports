@@ -53,10 +53,4 @@ CPE_VENDOR=	jupyter
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=5.0:devel/py-importlib-resources@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
