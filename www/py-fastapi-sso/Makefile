@@ -28,14 +28,8 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.12.2<5:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
