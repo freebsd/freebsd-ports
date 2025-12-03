@@ -44,12 +44,6 @@ MANPAGES_BUILD_DEPENDS=	${RUN_DEPENDS} \
 MANPAGES_PLIST_FILES=	share/man/man1/certbot.1.gz \
 			share/man/man7/certbot.7.gz
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=8.6.1:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/src/certbot/compat/misc.py ${WRKSRC}/src/certbot/_internal/tests/cli_test.py
 
@@ -66,4 +60,4 @@ post-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/docs/_build/man/certbot.7 ${STAGEDIR}${PREFIX}/share/man/man7
 
 .include "${.CURDIR}/../py-acme/version.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
