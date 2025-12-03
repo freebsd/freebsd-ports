@@ -92,12 +92,6 @@ CONFLICTS=	odoo16 odoo
 
 ETCDIR=		${PREFIX}/etc/odoo
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-IGNORE=		odoo requires Python 3.10+
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
 		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
@@ -111,4 +105,4 @@ pre-install:
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/odoo.conf ${STAGEDIR}${ETCDIR}/odoo.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
