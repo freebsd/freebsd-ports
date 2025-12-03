@@ -1,6 +1,6 @@
 PORTNAME=	scribus
 DISTVERSION=	1.7.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/
@@ -9,7 +9,18 @@ PKGNAMESUFFIX=	-devel
 PATCH_SITES=	https://github.com/scribusproject/scribus/commit/
 PATCHFILES=	188d030acd0cb71e89dbb57695fe52158b6a0959.patch:-p1 \
 		f553dce73905d11b301901dc039e973c18adf0a5.patch:-p1 \
-		13fc4f874354511e05bf91a48703b57b4c489715.patch:-p1
+		13fc4f874354511e05bf91a48703b57b4c489715.patch:-p1 \
+		5ad6755d25e79e07ed12426fa02509e58061815a.patch:-p1 \
+		4f4f61ac42f43f14b9ac918d0e86e85107114605.patch:-p1 \
+		8c1b88ac188143a9cc0a152f28d13b14bdda2298.patch:-p1 \
+		42c5319d4213ac36630b673a95b285b3913b2b1d.patch:-p1 \
+		8dcf8d777bd85a0741c455961f2de382e3ed47ec.patch:-p1 \
+		ff6c6abfa8683028e548a269dee6a859b6f63335.patch:-p1 \
+		4a27f282c5b9f7b6743987d5e51b1dc269aaaaa3.patch:-p1 \
+		f0cfe30019a514bdaf38b78590451e2c5b9b5420.patch:-p1 \
+		2db93722610ff5b0853aa7406373faeb39e86e41.patch:-p1 \
+		cc6449aa0cd638036ccb30d4ff64b94e87eee359.patch:-p1 \
+		3c1fc34fae1aa26fceb65b6bdf631a7f00b03c3c.patch:-p1 
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program (development version)
