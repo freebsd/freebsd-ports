@@ -1753,7 +1753,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/__pycache__/_uninstall%%PYTHON_TAG%%.pyc
-%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-25.2-py3-none-any.whl
+%%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_bundled/pip-25.3-py3-none-any.whl
 %%PYTHON_BASELIBDIR%%%%THREAD%%/ensurepip/_uninstall.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/enum.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/filecmp.py
