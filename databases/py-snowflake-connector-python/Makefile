@@ -33,14 +33,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0.24.0<2.0.0:devel/py-asn1crypto@
 USES=		python
 USE_PYTHON=	autoplist concurrent cryptography cython3 pep517
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}urllib3>=1.21.1<2:net/py-urllib3@${PY_FLAVOR}
-.endif
-
 post-install:
 	${STRIP_CMD} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/snowflake/connector/nanoarrow_arrow_iterator.cpython-${PYTHON_SUFFIX}.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
