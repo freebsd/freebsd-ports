@@ -47,10 +47,4 @@ CRYSTAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-crystal>=0.3.4:textproc
 PYTHONLEGACY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-python-legacy>=0.2.1:textproc/py-mkdocstrings-python-legacy@${PY_FLAVOR}
 PYTHON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=0.16.2:textproc/py-mkdocstrings-python@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.6:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
