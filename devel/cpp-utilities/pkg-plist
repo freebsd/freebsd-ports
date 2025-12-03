@@ -28,14 +28,16 @@ include/c++utilities/misc/levenshtein.h
 include/c++utilities/misc/math.h
 include/c++utilities/misc/multiarray.h
 include/c++utilities/misc/parseerror.h
+include/c++utilities/misc/signingkeys.h
 include/c++utilities/misc/traits.h
+include/c++utilities/misc/verification.h
 include/c++utilities/tests/cppunit.h
 include/c++utilities/tests/outputcheck.h
 include/c++utilities/tests/testutils.h
 include/c++utilities/version.h
 lib/libc++utilities.so
 lib/libc++utilities.so.5
-lib/libc++utilities.so.5.28.1
+lib/libc++utilities.so.5.32.0
 libdata/pkgconfig/c++utilities.pc
 share/c++utilities/cmake/c++utilitiesConfig.cmake
 share/c++utilities/cmake/c++utilitiesConfigVersion.cmake
@@ -52,6 +54,7 @@ share/c++utilities/cmake/modules/Doxygen.cmake
 share/c++utilities/cmake/modules/LibraryTarget.cmake
 share/c++utilities/cmake/modules/ListToString.cmake
 share/c++utilities/cmake/modules/ShellCompletion.cmake
+share/c++utilities/cmake/modules/Sphinx.cmake
 share/c++utilities/cmake/modules/TemplateFinder.cmake
 share/c++utilities/cmake/modules/TestTarget.cmake
 share/c++utilities/cmake/modules/TestUtilities.cmake
@@ -63,6 +66,7 @@ share/c++utilities/cmake/templates/config.h.in
 share/c++utilities/cmake/templates/desktop.in
 share/c++utilities/cmake/templates/doxygen.in
 share/c++utilities/cmake/templates/global.h.in
+share/c++utilities/cmake/templates/sphinx-conf.py.in
 share/c++utilities/cmake/templates/template.pc.in
 share/c++utilities/cmake/templates/version.h.in
 share/c++utilities/coding-style.clang-format
