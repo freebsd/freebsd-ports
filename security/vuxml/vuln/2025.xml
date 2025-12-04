@@ -1,3 +1,32 @@
+  <vuln vid="be3167b5-d140-11f0-ad27-c01803b56cc4">
+    <topic>libvirt -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libvirt</name>
+	<range><lt>11.10.0</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libvirt project reports:</p>
+	<blockquote cite="https://libvirt.org/news.html#v11-10-0-2025-12-01">
+		<p>See <a href="https://libvirt.org/news.html#v11-10-0-2025-12-01">
+					changelog</a> for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12748</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-12748</url>
+      <cvename>CVE-2025-13193</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-13193</url>
+    </references>
+    <dates>
+      <discovery>2025-11-11</discovery>
+      <entry>2025-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6ebe4a30-d138-11f0-af8c-8447094a420f">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
