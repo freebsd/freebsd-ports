@@ -5,6 +5,9 @@ PORTREVISION=	2
 DISTVERSIONSUFFIX=	-18170-g23b339d410
 CATEGORIES=	emulators wayland
 
+PATCH_SITES=	https://github.com/RPCS3/rpcs3/commit/
+PATCHFILES+=	038ee090b731bf63917371a3586c2f7d7cf4e585.patch:-p1 # Fix build with Qt 6.10
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 WWW=		https://rpcs3.net/
