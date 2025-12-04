@@ -1,6 +1,6 @@
 PORTNAME=	andwatch
-PORTVERSION=	2.1.0
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.2.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dennypage@me.com
@@ -11,15 +11,14 @@ LICENSE=	BSD2CLAUSE
 
 BROKEN_FreeBSD_13=	Does not build
 
-LIB_DEPENDS=	libpcap.so:net/libpcap \
-		libsqlite3.so:databases/sqlite3 \
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
 		libcurl.so:ftp/curl
 
+USES=		localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	dennypage
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L/usr/lib
 
 SUB_FILES=	pkg-message
 
@@ -30,10 +29,10 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/andwatchd ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/andwatch-query ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/andwatch-query-ma ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/andwatch-update-ma ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/andwatchd \
+		${WRKSRC}/andwatch-query \
+		${WRKSRC}/andwatch-query-ma \
+		${WRKSRC}/andwatch-update-ma ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/andwatch-notify.sh ${STAGEDIR}${DATADIR}
 
