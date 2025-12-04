@@ -25,7 +25,7 @@ MAKE_ENV=	freebsd_src=${SRC_BASE}
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500018 || (${OSVERSION} >= 1401000 && ${OSVERSION} < 1500000))
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1401000
 EXTRA_PATCHES+=	${FILESDIR}/extra-zpool-add.patch
 .endif
 
@@ -35,7 +35,13 @@ IGNORE=		requires kernel source files in ${SRC_BASE}
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400000
 PATCH_SITES=    https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=     0b2ab0594997c44e80e3fdfe9d2add106d81149a.diff:-p1 # backport of https://github.com/truenas/py-libzfs/pull/251
+PATCHFILES+=     0b2ab0594997c44e80e3fdfe9d2add106d81149a.diff:-p1 # backport of https://github.com/truenas/py-libzfs/pull/251
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1500000
+PATCH_SITES=    https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=     0ce0c8be75ae4c8873824b3c6e8f0a1736cd673b.diff:-p1 # backport of https://github.com/truenas/py-libzfs/pull/297
+PATCHFILES+=     9882ea5d43407b3be71621a2988e7cdaaf87aa09.diff:-p1 # backport of https://github.com/truenas/py-libzfs/pull/297
 .endif
 
 .include <bsd.port.mk>
