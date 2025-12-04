@@ -1,31 +1,14 @@
 bin/copilot-language-server
+lib/node_modules/.bin/copilot-language-server
 lib/node_modules/@github/copilot-language-server/LICENSE
 lib/node_modules/@github/copilot-language-server/README.md
 lib/node_modules/@github/copilot-language-server/dist/api/types.d.ts
-lib/node_modules/@github/copilot-language-server/dist/bin/darwin/arm64/rg
-lib/node_modules/@github/copilot-language-server/dist/bin/darwin/x64/rg
-lib/node_modules/@github/copilot-language-server/dist/bin/linux/arm64/rg
-lib/node_modules/@github/copilot-language-server/dist/bin/linux/x64/rg
-lib/node_modules/@github/copilot-language-server/dist/bin/win32/arm64/rg.exe
-lib/node_modules/@github/copilot-language-server/dist/bin/win32/x64/rg.exe
+lib/node_modules/@github/copilot-language-server/dist/assets/agents/Plan.agent.md
+lib/node_modules/@github/copilot-language-server/dist/assets/prompts.contributions.json
 lib/node_modules/@github/copilot-language-server/dist/cl100k_base.tiktoken
-lib/node_modules/@github/copilot-language-server/dist/compiled/darwin/arm64/kerberos.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/darwin/arm64/node_sqlite3.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/darwin/arm64/vscode-policy-watcher.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/darwin/x64/kerberos.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/darwin/x64/node_sqlite3.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/darwin/x64/vscode-policy-watcher.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/linux/arm64/kerberos.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/linux/arm64/node_sqlite3.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/linux/arm64/vscode-policy-watcher.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/linux/x64/kerberos.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/linux/x64/node_sqlite3.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/linux/x64/vscode-policy-watcher.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/win32/x64/kerberos.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/win32/x64/node_sqlite3.node
-lib/node_modules/@github/copilot-language-server/dist/compiled/win32/x64/vscode-policy-watcher.node
-lib/node_modules/@github/copilot-language-server/dist/crypt32-arm64.node
-lib/node_modules/@github/copilot-language-server/dist/crypt32.node
+lib/node_modules/@github/copilot-language-server/dist/compiled/freebsd/%%JS_ARCH%%/kerberos.node
+lib/node_modules/@github/copilot-language-server/dist/compiled/freebsd/%%JS_ARCH%%/node_sqlite3.node
+lib/node_modules/@github/copilot-language-server/dist/compiled/freebsd/%%JS_ARCH%%/vscode-policy-watcher.node
 lib/node_modules/@github/copilot-language-server/dist/diffWorker.js
 lib/node_modules/@github/copilot-language-server/dist/diffWorker.js.map
 lib/node_modules/@github/copilot-language-server/dist/language-server.js
@@ -34,6 +17,8 @@ lib/node_modules/@github/copilot-language-server/dist/main.js.map
 lib/node_modules/@github/copilot-language-server/dist/o200k_base.tiktoken
 lib/node_modules/@github/copilot-language-server/dist/resources/cl100k_base.tiktoken.noindex
 lib/node_modules/@github/copilot-language-server/dist/resources/o200k_base.tiktoken.noindex
+lib/node_modules/@github/copilot-language-server/dist/tfidfWorker.js
+lib/node_modules/@github/copilot-language-server/dist/tfidfWorker.js.map
 lib/node_modules/@github/copilot-language-server/dist/tree-sitter-c-sharp.wasm
 lib/node_modules/@github/copilot-language-server/dist/tree-sitter-cpp.wasm
 lib/node_modules/@github/copilot-language-server/dist/tree-sitter-go.wasm
@@ -173,4 +158,7 @@ lib/node_modules/@github/copilot-language-server/node_modules/vscode-languageser
 lib/node_modules/@github/copilot-language-server/node_modules/vscode-languageserver-types/package.json
 lib/node_modules/@github/copilot-language-server/node_modules/vscode-languageserver-types/thirdpartynotices.txt
 lib/node_modules/@github/copilot-language-server/package.json
-@dir lib/node_modules/@github/copilot-language-server/node_modules/@github
+lib/package-lock.json
+lib/package.json
+@dir lib/node_modules/@github/copilot-language-server/dist/bin
+@dir lib/node_modules/@github/copilot-language-server/dist/policy-templates
