@@ -1,4 +1,4 @@
---- wg-quick/freebsd.bash.orig	2025-10-19 18:21:50 UTC
+--- wg-quick/freebsd.bash.orig	2025-12-03 19:32:16 UTC
 +++ wg-quick/freebsd.bash
 @@ -25,11 +25,20 @@ CONFIG_FILE=""
  POST_DOWN=( )
@@ -127,12 +127,20 @@
  }
  
  set_endpoint_direct_route() {
-@@ -297,18 +325,18 @@ monitor_daemon() {
+@@ -297,18 +325,25 @@ monitor_daemon() {
  }
  
  monitor_daemon() {
+-	echo "[+] Backgrounding route monitor" >&2
 +	[[ $MONITOR -eq 0 ]] && return 0
- 	echo "[+] Backgrounding route monitor" >&2
++
++	if [[ $1 == "spawn" ]]; then
++		# re-run this function over daemon to detach from session
++	    echo "[+] Backgrounding route monitor" >&2
++        env TMPDIR="${ORIGINAL_TMPDIR}" daemon $0 monitor-daemon ${INTERFACE}
++        return 0
++    fi
++
  	(make_temp
  	trap 'del_routes; clean_temp; exit 0' INT TERM EXIT
  	exec >/dev/null 2>&1
@@ -148,7 +156,7 @@
  		ifconfig "$INTERFACE" >/dev/null 2>&1 || break
  		[[ $AUTO_ROUTE4 -eq 1 || $AUTO_ROUTE6 -eq 1 ]] && set_endpoint_direct_route
  		# TODO: set the mtu as well, but only if up
-@@ -316,6 +344,76 @@ monitor_daemon() {
+@@ -316,6 +351,82 @@ monitor_daemon() {
  	kill $pid) & disown
  }
  
@@ -183,9 +191,15 @@
 +
 +monitor_dns_changes() {
 +	local pk peer_ip port peer_host host_ip
++
 +	[[ $TRACK_DNS_CHANGES -eq 0 ]] && return 0
 +
-+	echo "[+] Backgrounding DNS tracker" >&2
++	if [[ $1 == "spawn" ]]; then
++		# re-run this function over daemon to detach from session
++	    echo "[+] Backgrounding DNS tracker" >&2
++        env TMPDIR="${ORIGINAL_TMPDIR}" daemon $0 monitor-dns-changes ${INTERFACE}
++        return 0
++    fi
 +
 +	pid_file="$(tracker_pid_file)"
 +	[[ -f "$pid_file" ]] && kill $(cat "$pid_file") 2>/dev/null || true
@@ -225,7 +239,7 @@
  HAVE_SET_DNS=0
  set_dns() {
  	[[ ${#DNS[@]} -gt 0 ]] || return 0
-@@ -354,7 +452,7 @@ set_config() {
+@@ -354,7 +465,7 @@ set_config() {
  }
  
  set_config() {
@@ -234,7 +248,7 @@
  }
  
  save_config() {
-@@ -386,7 +484,7 @@ save_config() {
+@@ -386,7 +497,7 @@ save_config() {
  	done
  	old_umask="$(umask)"
  	umask 077
@@ -243,7 +257,7 @@
  	trap 'rm -f "$CONFIG_FILE.tmp"; clean_temp; exit' INT TERM EXIT
  	echo "${current_config/\[Interface\]$'\n'/$new_config}" > "$CONFIG_FILE.tmp" || die "Could not write configuration file"
  	sync "$CONFIG_FILE.tmp"
-@@ -412,7 +510,7 @@ cmd_usage() {
+@@ -412,7 +523,7 @@ cmd_usage() {
  	  followed by \`.conf'. Otherwise, INTERFACE is an interface name, with
  	  configuration found at:
  	  ${CONFIG_SEARCH_PATHS[@]/%//INTERFACE.conf}.
@@ -252,7 +266,7 @@
  	  of the following additions to the [Interface] section, which are handled
  	  by $PROGRAM:
  
-@@ -429,10 +527,24 @@ cmd_usage() {
+@@ -429,10 +540,24 @@ cmd_usage() {
  	  - SaveConfig: if set to \`true', the configuration is saved from the current
  	    state of the interface upon shutdown.
  
@@ -278,7 +292,7 @@
  cmd_up() {
  	local i
  	[[ -z $(ifconfig "$INTERFACE" 2>/dev/null) ]] || die "\`$INTERFACE' already exists"
-@@ -446,26 +558,31 @@ cmd_up() {
+@@ -446,26 +571,31 @@ cmd_up() {
  	set_mtu
  	up_if
  	set_dns
@@ -287,8 +301,9 @@
  		add_route "$i"
  	done
  	[[ $AUTO_ROUTE4 -eq 1 || $AUTO_ROUTE6 -eq 1 ]] && set_endpoint_direct_route
- 	monitor_daemon
-+	monitor_dns_changes
+-	monitor_daemon
++	monitor_daemon spawn
++	monitor_dns_changes spawn
  	execute_hooks "${POST_UP[@]}"
  	trap 'clean_temp; exit' INT TERM EXIT
  }
@@ -313,7 +328,7 @@
  	save_config
  }
  
-@@ -473,6 +590,10 @@ cmd_strip() {
+@@ -473,6 +603,10 @@ cmd_strip() {
  	echo "$WG_CONFIG"
  }
  
@@ -324,7 +339,7 @@
  # ~~ function override insertion point ~~
  
  make_temp
-@@ -496,6 +617,10 @@ elif [[ $# -eq 2 && $1 == strip ]]; then
+@@ -496,6 +630,18 @@ elif [[ $# -eq 2 && $1 == strip ]]; then
  	auto_su
  	parse_options "$2"
  	cmd_strip
@@ -332,6 +347,14 @@
 +	auto_su
 +	parse_options "$2"
 +	cmd_reload
++elif [[ $# -eq 2 && $1 == "monitor-daemon" ]]; then
++	auto_su
++	parse_options "$2"
++    monitor_daemon
++elif [[ $# -eq 2 && $1 == "monitor-dns-changes" ]]; then
++	auto_su
++	parse_options "$2"
++    monitor_dns_changes
  else
  	cmd_usage
  	exit 1
