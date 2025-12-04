@@ -1,6 +1,6 @@
 PORTNAME=	sssd
 PORTVERSION=	2.9.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 PKGNAMESUFFIX=	2
 
@@ -85,7 +85,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-krb5authdata-plugin-path=${LOCALBASE}/lib/krb5/plugins/authdata \
 		--with-krb5-conf=/etc/krb5.conf \
 		--without-python2-bindings \
-		--with-winbind-plugin-path=${LOCALBASE}/lib/samba4/modules/idmap \
+		--with-winbind-plugin-path=${SAMBA_IDMAP_MODULESDIR} \
 		--without-selinux \
 		--with-gpo-cache-path=/var/db/sss/gpo_cache  \
 		--without-semanage \
@@ -98,7 +98,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-secrets-db-path=/var/lib/sss/secrets \
 		--with-kcm \
 		--with-oidc-child \
-		--with-ldb-lib-dir=${LOCALBASE}/lib/shared-modules/ldb \
+		--with-ldb-lib-dir=${SAMBA_LDB_MODULESDIR} \
 		--with-smb-idmap-interface-version=6 \
 		--without-libnl \
 		--with-nscd-conf=/etc/nscd.conf \
@@ -109,7 +109,9 @@ CPPFLAGS+=	-DRENEWAL_PROG_PATH='\"${LOCALBASE}/sbin/adcli\"'
 CFLAGS+=	-fstack-protector-all
 LIBS+=		-linotify -lintl
 
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+PLIST_SUB=	PYTHON_VER=${PYTHON_VER} \
+		SAMBA_IDMAP_MODULESDIR=${SAMBA_IDMAP_MODULESDIR} \
+		SAMBA_LDB_MODULESDIR=${SAMBA_LDB_MODULESDIR}
 MAKE_ENV=	MAKELEVEL=0 LINGUAS="bg de eu es fr hu id it ja nb nl pl pt ru sv tg tr uk zh_CN zh_TW"
 SUB_FILES=	pkg-message
 

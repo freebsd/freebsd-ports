@@ -47,8 +47,8 @@ lib/pam_sss_gss.so
 %%PYTHON_SITELIBDIR%%/sssd/source_journald.py
 %%PYTHON_SITELIBDIR%%/sssd/source_reader.py
 %%PYTHON_SITELIBDIR%%/sssd/sss_analyze.py
-lib/samba4/modules/idmap/sss.so
-lib/shared-modules/ldb/memberof.so
+%%SAMBA_IDMAP_MODULESDIR%%/sss.so
+%%SAMBA_LDB_MODULESDIR%%/memberof.so
 lib/sssd/conf/sssd.conf
 lib/sssd/libifp_iface.so
 lib/sssd/libifp_iface_sync.so
