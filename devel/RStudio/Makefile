@@ -4,6 +4,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2025.09.2+418
+PORTREVISION=	1
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://rstudio-buildtools.s3.amazonaws.com/rstudio-buildtools/:gin \
@@ -24,7 +25,7 @@ WWW=		https://www.rstudio.com/ \
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_i386=	[ERROR] line 101: failed to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
+BROKEN_i386=	fails to resolve 'org.rstudio.studio.client.workbench.views.vcs.common.diff.LineActionButtonRenderer.GrayResources' via deferred binding
 
 BUILD_DEPENDS=	ant:devel/apache-ant \
 		${LOCALBASE}/include/sys/sysinfo.h:devel/libsysinfo \
@@ -49,6 +50,7 @@ RUN_DEPENDS=	quarto:textproc/quarto
 FLAVORS=	desktop server
 FLAVOR?=	${FLAVORS:[1]}
 server_PKGNAMESUFFIX=	-server
+server_BROKEN=		does not build with the latest RStudio version, needs to be fixed
 
 USES=		cmake fortran java:build localbase:ldflags pgsql pkgconfig sqlite ssl
 JAVA_VERSION=	17 # Build requires Java 17 target
@@ -77,8 +79,7 @@ CMAKE_ON=	RSTUDIO_USE_SYSTEM_YAML_CPP \
 		RSTUDIO_USE_SYSTEM_WEBSOCKETPP \
 		RSTUDIO_USE_SYSTEM_TL_EXPECTED \
 		RSTUDIO_INSTALL_FREEDESKTOP
-CMAKE_OFF=	RSTUDIO_ENABLE_COPILOT \
-		BUILD_TESTING \
+CMAKE_OFF=	BUILD_TESTING \
 		RSTUDIO_UNIT_TESTS_ENABLED
 MAKE_ENV=	HOME=${WRKDIR} \
 		JAVA_HOME=${JAVA_HOME} \
@@ -108,15 +109,17 @@ MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
 LDFLAGS+=	-linotify
 INSTALL_SUBDIR=	${PORTNAME:tl}
 EXECUTABLE=	${PORTNAME:tl}
-# npm dependencies are pre-fetched during do-fetch phase
+# npm dependencies are pre-fetched during post-fetch phase
 NPM_DISTDIR=	${DISTDIR}/${PORTNAME}
 NPM_TARBALL=	${PORTNAME}-desktop-node_modules-${DISTVERSION}${EXTRACT_SUFX}
 # quarto/panmirror dependencies (uses yarn workspaces)
 QUARTO_TARBALL=	${PORTNAME}-quarto-node_modules-${DISTVERSION}${EXTRACT_SUFX}
+# Add npm tarballs to DISTFILES for checksum verification
+DISTFILES+=	${PORTNAME}/${NPM_TARBALL}:prefetch \
+		${PORTNAME}/${QUARTO_TARBALL}:prefetch
 .endif
 
 .if ${FLAVOR:U} == server
-BROKEN=		doesn't build with the latest RSTudio version, needs to be fixed
 COMMENT+=	(web UI version)
 CMAKE_ARGS+=	-DRSTUDIO_TARGET=Server
 LDFLAGS+=	-linotify
@@ -127,8 +130,12 @@ SUB_LIST=	USER=${USER}
 USE_RC_SUBR=	${PORTNAME:tl}-server
 .endif
 
-OPTIONS_DEFINE=		WITH_QUARTO
-OPTIONS_DEFAULT=	WITH_QUARTO
+OPTIONS_DEFINE=		COPILOT WITH_QUARTO
+OPTIONS_DEFAULT=	COPILOT WITH_QUARTO
+
+COPILOT_DESC=		Build with Copilot support
+COPILOT_CMAKE_BOOL=	RSTUDIO_ENABLE_COPILOT
+COPILOT_RUN_DEPENDS=	copilot-language-server:misc/github-copilot-language-server
 
 WITH_QUARTO_DESC=	Build with support for Quarto
 WITH_QUARTO_CMAKE_BOOL=	QUARTO_ENABLED
@@ -139,29 +146,29 @@ post-fetch:
 	@if ! [ -f ${NPM_DISTDIR}/${NPM_TARBALL} ]; then \
 		${MKDIR} ${NPM_DISTDIR} && \
 		${ECHO_MSG} "====> Fetching npm dependencies for desktop..." && \
-		${MKDIR} /tmp/rstudio-npm-fetch && \
-		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package.json" -o /tmp/rstudio-npm-fetch/package.json && \
-		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package-lock.json" -o /tmp/rstudio-npm-fetch/package-lock.json && \
-		cd /tmp/rstudio-npm-fetch && \
-		HOME=/tmp/rstudio-npm-fetch npm ci --ignore-scripts && \
+		${MKDIR} ${WRKDIR}/tmp/rstudio-npm-fetch && \
+		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package.json" -o ${WRKDIR}/tmp/rstudio-npm-fetch/package.json && \
+		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package-lock.json" -o ${WRKDIR}/tmp/rstudio-npm-fetch/package-lock.json && \
+		cd ${WRKDIR}/tmp/rstudio-npm-fetch && \
+		HOME=${WRKDIR}/tmp/rstudio-npm-fetch npm ci --ignore-scripts && \
 		${FIND} node_modules -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; 2>/dev/null; \
 		${TAR} -czf ${NPM_DISTDIR}/${NPM_TARBALL} node_modules && \
-		${RM} -rf /tmp/rstudio-npm-fetch && \
+		${RM} -rf ${WRKDIR}/tmp/rstudio-npm-fetch && \
 		${ECHO_MSG} "====> Created npm dependencies tarball ${NPM_DISTDIR}/${NPM_TARBALL}"; \
 	fi
 	@if ! [ -f ${NPM_DISTDIR}/${QUARTO_TARBALL} ]; then \
 		${MKDIR} ${NPM_DISTDIR} && \
 		${ECHO_MSG} "====> Fetching quarto/panmirror npm dependencies..." && \
-		${MKDIR} /tmp/rstudio-quarto-fetch && \
-		cd /tmp/rstudio-quarto-fetch && \
+		${MKDIR} ${WRKDIR}/tmp/rstudio-quarto-fetch && \
+		cd ${WRKDIR}/tmp/rstudio-quarto-fetch && \
 		${FETCH_CMD} -q "https://github.com/quarto-dev/quarto/archive/${QUARTO_MONO_COMMIT}.tar.gz" -o quarto.tar.gz && \
 		${TAR} -xzf quarto.tar.gz && \
 		cd quarto-${QUARTO_MONO_COMMIT} && \
-		HOME=/tmp/rstudio-quarto-fetch yarn install --ignore-scripts --network-timeout 240000 && \
+		HOME=${WRKDIR}/tmp/rstudio-quarto-fetch yarn install --ignore-scripts --network-timeout 240000 && \
 		cd apps/panmirror && PANMIRROR_OUTDIR=dist-rstudio yarn build --minify true --sourcemap true && cd ../.. && \
 		${FIND} node_modules apps/*/node_modules packages/*/node_modules apps/panmirror/dist-rstudio -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; 2>/dev/null; \
 		${TAR} -czf ${NPM_DISTDIR}/${QUARTO_TARBALL} node_modules apps/*/node_modules packages/*/node_modules apps/panmirror/dist-rstudio && \
-		${RM} -rf /tmp/rstudio-quarto-fetch && \
+		${RM} -rf ${WRKDIR}/tmp/rstudio-quarto-fetch && \
 		${ECHO_MSG} "====> Created quarto npm dependencies tarball"; \
 	fi
 .endif
@@ -220,6 +227,8 @@ post-patch:
 .if ${FLAVOR:U} == server
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/cpp/session/modules/SessionGit.cpp
 .endif
+	# substitute LOCALBASE for copilot-language-server path
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/cpp/session/include/session/SessionConstants.hpp
 	# correct for boost-1.87+ class replacement
 	@${FIND} ${WRKSRC} -name "*.cpp" -o -name "*.hpp" | ${XARGS} ${REINPLACE_CMD} -i "" -e 's/io_service/io_context/g'
 
@@ -282,5 +291,7 @@ post-install:
 	@cd ${STAGEDIR}${PREFIX}/lib/${INSTALL_SUBDIR}/bin/pandoc && ${LN} -s ../../../../bin/pandoc
 	# There is a variability in .js file names due to use of random numbers, so we use the automatic plist.
 	@${SETENV} ${CO_ENV} ${SH} ${SCRIPTSDIR}/check-stagedir.sh makeplist | ${GREP} -v ^\/ | ${SED} -e 's|%%WWWDIR%%|www/rstudio| ; s|%%CMAKE_BUILD_TYPE%%|${CMAKE_BUILD_TYPE:tl}|' > ${TMPPLIST}
+
+DISTINFO_FILE=	${.CURDIR}/distinfo.${FLAVOR}
 
 .include <bsd.port.mk>
