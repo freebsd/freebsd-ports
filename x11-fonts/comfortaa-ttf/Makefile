@@ -5,7 +5,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://orig00.deviantart.net/40a3/f/2017/093/d/4/
 DISTNAME=	comfortaa___font_by_aajohan-d1qr019
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Stylish, modern and free sans-serif true type font
 WWW=		https://fonts.google.com/specimen/Comfortaa
 

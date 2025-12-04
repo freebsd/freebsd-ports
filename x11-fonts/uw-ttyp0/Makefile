@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospaced bitmap fonts for X11
 WWW=		https://people.mpi-inf.mpg.de/~uwe/misc/uw-ttyp0/
 

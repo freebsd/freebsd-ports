@@ -3,7 +3,7 @@ PORTVERSION=	7.222
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fonts
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sans-serif font inspired by the street signs of Montserrat
 WWW=		https://github.com/JulietaUla/Montserrat/
 
