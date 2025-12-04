@@ -3,6 +3,9 @@ PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/QtExcel/QXlsx/commit/
+PATCHFILES+=	90d762625750c6b2c73f6cd96b633e9158aed72e.patch:-p3 # Fix configure with Qt 6.10
+
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Excel file reader/writer library using Qt
 WWW=		https://qtexcel.github.io/QXlsx/
