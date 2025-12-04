@@ -1,12 +1,12 @@
 PORTNAME=	github-release-monitor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.4.0
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/dtxdf/${PORTNAME}/
 
 MAINTAINER=	dtxdf@FreeBSD.org
 COMMENT=	Self-hostable application to monitor GitHub repository releases
-WWW=		https://github.com/iamspido/${PORTNAME}
+WWW=		https://github.com/iamspido/github-release-monitor
 
 LICENSE=	AGPLv3
 
