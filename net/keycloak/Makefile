@@ -1,5 +1,5 @@
 PORTNAME=	keycloak
-DISTVERSION=	26.4.5
+DISTVERSION=	26.4.7
 CATEGORIES=	net java
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -30,8 +30,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message
-SUB_LIST+=	GROUP=${KEYCLOAK_GROUP} \
-		JAVA=${JAVA} \
+SUB_LIST+=	JAVA=${JAVA} \
 		JAVA_HOME=${JAVA_HOME} \
 		LOG_DIR=${LOG_DIR} \
 		PORTNAME=${PORTNAME} \
