@@ -3,21 +3,7 @@
   message: <<EOM
 IMPORTANT - READ CAREFULLY: You may not use these fonts if you do not agree to
 the terms of the Microsoft End-User License Agreement ("EULA").  You will find
-the EULA at %%DOCSDIR%%/LICENSE.  If you read and agree
-to the EULA, you can start using the fonts by following these instructions:
-
-Make sure that the freetype module is loaded.  If it is not, add the following
-line to the "Modules" section of xorg.conf or XF86Config:
-
-	Load "freetype"
-
-Add the following line to the "Files" section of xorg.conf or XF86Config:
-
-	FontPath "%%FONTSDIR%%/"
-
-NOTE: Due to known freetype bug some glyphs (N, W) of y2006 Verdana Bold
-      font are not rendered correctly in anti-aliased mode within the range
-      9-16 ppem
+the EULA at %%DOCSDIR%%/LICENSE.
 EOM
 }
 ]
