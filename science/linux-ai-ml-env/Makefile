@@ -1,5 +1,5 @@
 PORTNAME=	ai-ml-env
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	science linux
 MASTER_SITES=	https://arrowd.name/
 PKGNAMEPREFIX=	linux-
@@ -16,7 +16,8 @@ LICENSE_NAME=	Multiple licenses
 LICENSE_TEXT=	The package contains multiple packages with different licenses
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	linux-rl9-devtools>=0:devel/linux-rl9-devtools
+BUILD_DEPENDS=	gmd5sum:sysutils/coreutils \
+		linux-rl9-devtools>=0:devel/linux-rl9-devtools
 RUN_DEPENDS=	linux-rl9-python${PYTHON_SUFFIX}>=0:lang/linux-rl9-python3 \
 		${NVIDIA_DEPS}
 
@@ -29,6 +30,8 @@ GH_TAGNAME=	5dfeb46902baf444010f2f54bcf4dfbea109ae4d:examples
 
 WRKSRC=		${WRKSRC_examples}
 MAKEDIST_WRKSRC=${WRKDIR}/makedist
+
+BINARY_ALIAS=	md5sum=gmd5sum
 
 SUB_FILES=	ai-ml-env-bash \
 		ai-ml-env-python
@@ -58,13 +61,13 @@ NVIDIA_DEPS=	linux-nvidia-libs>=0:x11/linux-nvidia-libs \
 		nvidia-driver>=0:x11/nvidia-driver
 .endif
 
-makedist:
+makedist: create-binary-alias
 	@${MKDIR} ${MAKEDIST_WRKSRC}
 	@${ECHO_MSG} "Setting up Miniconda 'pytorch' environment"
 	cd ${MAKEDIST_WRKSRC} && \
 		${FETCH_CMD} -a -v https://repo.anaconda.com/miniconda/${CONDA_SCRIPT}
 
-	${SETENV} HOME=${MAKEDIST_WRKSRC} CONDA_OVERRIDE_GLIBC=2.28 \
+	${SETENV} HOME=${MAKEDIST_WRKSRC} PATH=${PATH} CONDA_OVERRIDE_GLIBC=2.28 \
 		${SH} ${MAKEDIST_WRKSRC}/${CONDA_SCRIPT} -b -s
 
 	${SETENV} HOME=${MAKEDIST_WRKSRC} ${SH} -c \
@@ -85,7 +88,7 @@ makedist:
 		&& ${STAT} -f %z miniconda3.tar.gz
 
 do-build:
-	/compat/linux/bin/cc --sysroot=/compat/linux -m64 -std=c99 -Wall -ldl -fPIC -shared -o ${WRKDIR}/dummy-uvm.so ${FILESDIR}/uvm_ioctl_override.c
+	${LINUXBASE}/bin/cc --sysroot=/compat/linux -m64 -std=c99 -Wall -ldl -fPIC -shared -o ${WRKDIR}/dummy-uvm.so ${FILESDIR}/uvm_ioctl_override.c
 
 do-install:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
