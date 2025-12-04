@@ -3,6 +3,9 @@ DISTVERSION=	25.1.1
 CATEGORIES=	games education kde
 MASTER_SITES=	https://gcompris.net/download/qt/src/
 
+PATCH_SITES=	https://invent.kde.org/education/gcompris/-/commit/
+PATCHFILES+=	d4bd9ad1d588158963610f3dacef86e8d3b2641c.patch:-p1 # Fix configure with Qt 6.10
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Educational games and activities for kids ages 2 to 10
 WWW=		https://gcompris.net/
