@@ -1,6 +1,6 @@
 PORTNAME=	bouncycastle
 DISTVERSION=	1.71
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java security
 MASTER_SITES=	http://www.bouncycastle.org/download/ \
 		http://polydistortion.net/bc/download/

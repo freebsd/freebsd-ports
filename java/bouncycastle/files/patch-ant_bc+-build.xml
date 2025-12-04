@@ -1,0 +1,26 @@
+--- ant/bc+-build.xml.orig	2025-12-04 21:43:00 UTC
++++ ant/bc+-build.xml
+@@ -118,6 +118,7 @@
+                 <mkdir dir="${artifacts.dir}/@{target}" />
+ 
+                 <javac source="${bc.javac.source}" target="${bc.javac.target}"
++                    encoding="UTF-8"
+                     srcdir="${artifacts.dir}/@{target}/src"
+                     destdir="${build.dir}/@{target}/classes"
+                     memoryMaximumSize="512m"
+@@ -155,6 +156,7 @@
+                 <mkdir dir="${artifacts.dir}/@{target}" />
+ 
+                 <javac source="${bc.javac.source}" target="${bc.javac.target}"
++                    encoding="UTF-8"
+                     srcdir="${artifacts.dir}/@{target}/src"
+                     destdir="${build.dir}/@{target}/classes"
+                     memoryMaximumSize="512m"
+@@ -302,6 +304,7 @@
+         </copy>
+ 
+         <javac source="${bc.javac.source}" target="${bc.javac.target}"
++            encoding="UTF-8"
+             srcdir="${lcrypto.target.src.dir}"
+             destdir="${lcrypto.target.classes.dir}"
+ 	    memoryMaximumSize="512m"
