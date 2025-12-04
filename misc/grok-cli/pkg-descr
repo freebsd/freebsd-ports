@@ -1,0 +1,14 @@
+Grok CLI is an open-source AI agent that brings the power of Grok directly
+into your terminal. It provides a conversational AI interface powered by
+Grok with intelligent text editor capabilities and tool usage.
+
+Features:
+
+* Conversational AI: Natural language interface powered by Grok
+* Smart File Operations: AI automatically uses tools to view, create, and
+  edit files
+* Bash Integration: Execute shell commands through natural conversation
+* Automatic Tool Selection: AI intelligently chooses the right tools for
+  your requests
+* MCP Tools: Extend capabilities with Model Context Protocol servers
+* Interactive UI: Beautiful terminal interface built with Ink
