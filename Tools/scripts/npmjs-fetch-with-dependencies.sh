@@ -115,6 +115,22 @@ fi
 
 cd ${TMPDIR}
 
+# Remove files that npm generates inconsistently across environments, breaking reproducibility:
+#
+# 1. .package-lock.json: npm creates this cache file in node_modules/ recording what was installed.
+#    Different npm versions write different content - e.g., npm 11.6.1 includes entries for ALL
+#    optional dependencies (with "ideallyInert": true) even for other platforms, while npm 11.6.2
+#    only includes actually-installed packages. This causes checksum mismatches between systems.
+#
+# 2. Empty @-scoped directories: When npm skips platform-specific optional dependencies (e.g.,
+#    @img/sharp-wasm32 on x64), some npm versions create empty placeholder directories like
+#    @emnapi/ while others don't. These empty directories also cause tarball differences.
+#
+# Neither file is needed for the build - npm regenerates .package-lock.json during install,
+# and empty directories serve no purpose.
+find ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION} -name '.package-lock.json' -delete
+find ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION} -type d -name '@*' -empty -delete
+
 find ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION} -and -exec touch -h -d 1970-01-01T00:00:00Z {} \;
 find ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION} -print0 | sort -z | \
       	tar czf ${PACKAGE_TARBALL_OUTPUT} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T -
