@@ -133,6 +133,6 @@ find ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION} -type d -name '@*' -empty -delete
 
 find ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION} -and -exec touch -h -d 1970-01-01T00:00:00Z {} \;
 find ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION} -print0 | sort -z | \
-      	tar czf ${PACKAGE_TARBALL_OUTPUT} --format=bsdtar --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T -
+      	tar czf ${PACKAGE_TARBALL_OUTPUT} --format=bsdtar --no-read-sparse --gid 0 --uid 0 --options gzip:!timestamp --no-recursion --null -T -
 rm -rf ${PACKAGE_NAME_PURE}-${PACKAGE_VERSION}
 echo "INFO: created package tarball with dependencies at: ${PACKAGE_TARBALL_OUTPUT}"
