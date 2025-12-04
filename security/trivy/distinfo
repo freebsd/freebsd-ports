@@ -1,5 +1,5 @@
-TIMESTAMP = 1760123985
-SHA256 (go/security_trivy/aquasecurity-trivy-v0.67.2_GH0/go.mod) = 130a0a0c893125dadbcc30ec66370aac6f848cc1b116a5d1acae4ceecb5a256d
-SIZE (go/security_trivy/aquasecurity-trivy-v0.67.2_GH0/go.mod) = 26741
-SHA256 (go/security_trivy/aquasecurity-trivy-v0.67.2_GH0/aquasecurity-trivy-v0.67.2_GH0.tar.gz) = 280ff8cfb17d05d6b4d1b07bdd3cd26971032301bedb3b800a14886e64ce75eb
-SIZE (go/security_trivy/aquasecurity-trivy-v0.67.2_GH0/aquasecurity-trivy-v0.67.2_GH0.tar.gz) = 57236343
+TIMESTAMP = 1764769990
+SHA256 (go/security_trivy/aquasecurity-trivy-v0.68.1_GH0/go.mod) = ed1e2812f402bc580b5cdd5665d62f0aef5f8d12d1a36dc3f808c3e13cd227f9
+SIZE (go/security_trivy/aquasecurity-trivy-v0.68.1_GH0/go.mod) = 26727
+SHA256 (go/security_trivy/aquasecurity-trivy-v0.68.1_GH0/aquasecurity-trivy-v0.68.1_GH0.tar.gz) = 9dd35dd79b0452ab5cf426fac6511718473cc42f92dc6c494839e42690f8023d
+SIZE (go/security_trivy/aquasecurity-trivy-v0.68.1_GH0/aquasecurity-trivy-v0.68.1_GH0.tar.gz) = 56758578
