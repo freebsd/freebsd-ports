@@ -1,0 +1,38 @@
+Backport of upstream commit [1] to fix build with Qt 6.10.
+
+[1] https://github.com/zealdocs/zeal/commit/11f6a85bb5f314ba8e1dbdc7654ef2647b75161e
+
+--- src/libs/ui/docsetsdialog.cpp.orig	2024-09-08 15:33:39 UTC
++++ src/libs/ui/docsetsdialog.cpp
+@@ -360,7 +360,8 @@ void DocsetsDialog::downloadCompleted()
+         QTemporaryFile *tmpFile = m_tmpFiles[docsetName];
+         if (!tmpFile) {
+             tmpFile = new QTemporaryFile(QStringLiteral("%1/%2.XXXXXX.tmp").arg(Core::Application::cacheLocation(), docsetName), this);
+-            tmpFile->open();
++            if (!tmpFile->open())
++                return;
+             m_tmpFiles.insert(docsetName, tmpFile);
+         }
+ 
+@@ -403,7 +404,8 @@ void DocsetsDialog::downloadProgress(qint64 received, 
+         QTemporaryFile *tmpFile = m_tmpFiles[docsetName];
+         if (!tmpFile) {
+             tmpFile = new QTemporaryFile(QStringLiteral("%1/%2.XXXXXX.tmp").arg(Core::Application::cacheLocation(), docsetName), this);
+-            tmpFile->open();
++            if (!tmpFile->open())
++                return;
+             m_tmpFiles.insert(docsetName, tmpFile);
+         }
+ 
+--- src/libs/ui/qxtglobalshortcut/CMakeLists.txt.orig	2024-09-08 15:33:39 UTC
++++ src/libs/ui/qxtglobalshortcut/CMakeLists.txt
+@@ -42,6 +42,9 @@ elseif(UNIX AND X11_FOUND)
+         find_package(Qt5 COMPONENTS X11Extras REQUIRED)
+         target_link_libraries(QxtGlobalShortcut Qt5::X11Extras)
+     else()
++        if(Qt6Core_VERSION VERSION_GREATER_EQUAL 6.10)
++            find_package(Qt6 COMPONENTS GuiPrivate REQUIRED)
++        endif()
+         target_link_libraries(QxtGlobalShortcut Qt${QT_VERSION_MAJOR}::GuiPrivate)
+     endif()
+ 
