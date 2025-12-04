@@ -1,7 +1,7 @@
 bin/prometheus
 bin/promtool
 %%PORTDOCS%%%%DOCSDIR%%/command-line/index.md
-%%PORTDOCS%%%%DOCSDIR%%/command-line/%%PROMETHEUS_USER%%.md
+%%PORTDOCS%%%%DOCSDIR%%/command-line/prometheus.md
 %%PORTDOCS%%%%DOCSDIR%%/command-line/promtool.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/alerting_rules.md
 %%PORTDOCS%%%%DOCSDIR%%/configuration/configuration.md
@@ -16,11 +16,13 @@ bin/promtool
 %%PORTDOCS%%%%DOCSDIR%%/federation.md
 %%PORTDOCS%%%%DOCSDIR%%/getting_started.md
 %%PORTDOCS%%%%DOCSDIR%%/http_sd.md
+%%PORTDOCS%%%%DOCSDIR%%/images/prometheus_agent.png
 %%PORTDOCS%%%%DOCSDIR%%/images/remote_integrations.png
 %%PORTDOCS%%%%DOCSDIR%%/index.md
 %%PORTDOCS%%%%DOCSDIR%%/installation.md
 %%PORTDOCS%%%%DOCSDIR%%/management_api.md
 %%PORTDOCS%%%%DOCSDIR%%/migration.md
+%%PORTDOCS%%%%DOCSDIR%%/prometheus_agent.md
 %%PORTDOCS%%%%DOCSDIR%%/querying/api.md
 %%PORTDOCS%%%%DOCSDIR%%/querying/basics.md
 %%PORTDOCS%%%%DOCSDIR%%/querying/examples.md
