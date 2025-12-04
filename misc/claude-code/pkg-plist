@@ -1,4 +1,5 @@
 bin/claude
+lib/node_modules/.bin/claude
 lib/node_modules/@anthropic-ai/claude-code/LICENSE.md
 lib/node_modules/@anthropic-ai/claude-code/README.md
 lib/node_modules/@anthropic-ai/claude-code/cli.js
@@ -50,4 +51,3 @@ lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg
 lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/ripgrep.node
 lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-win32/rg.exe
 lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-win32/ripgrep.node
-@dir lib/node_modules/@anthropic-ai/claude-code/node_modules/@img
