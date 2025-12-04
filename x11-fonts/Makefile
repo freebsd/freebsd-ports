@@ -138,7 +138,6 @@
     SUBDIR += gnu-unifont-otf
     SUBDIR += gofont-ttf
     SUBDIR += gohufont
-    SUBDIR += google-fonts
     SUBDIR += hack-font
     SUBDIR += hanazono-fonts-ttf
     SUBDIR += hermit

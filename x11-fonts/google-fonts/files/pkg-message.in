@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Add the following line to the "Files" section of X Windows configuration file:
-
-        FontPath "%%FONTSDIR%%/"
-EOM
-}
-]
