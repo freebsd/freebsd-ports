@@ -2,7 +2,7 @@
 #
 # Feature:	samba
 # Usage:	USES=samba or USES=samba:ARGS
-# Valid ARGS:	build, env, lib, run
+# Valid ARGS:	build, env, lib, self, run
 #		default is build,run (implicit)
 #
 # MAINTAINER: samba@FreeBSD.org
@@ -14,16 +14,36 @@ _INCLUDE_USES_SAMBA_MK=   yes
 samba_ARGS=	build run
 .  endif
 
-.  if ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
-IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nrun}
+.  if ${samba_ARGS:Nbuild:Nenv:Nlib:Nself:Nrun}
+IGNORE=		USES=samba has invalid arguments: ${samba_ARGS:Nbuild:Nenv:Nlib:Nself:Nrun}
 .  endif
 
 .  if ${SAMBA_DEFAULT} != 4.16 && ${SAMBA_DEFAULT} != 4.19 && ${SAMBA_DEFAULT} != 4.20 && ${SAMBA_DEFAULT} != 4.22
 IGNORE=		Invalid version of samba: ${SAMBA_DEFAULT}
 .  endif
 
+# E.g., "422".
 SAMBA_SUFFIX=	${SAMBA_DEFAULT:S/.//}
+# _SAMBA_BASE is the directory where Samba is installed. For Samba
+# consumers that is LOCALBASE, while it is PREFIX for Samba itself.
+_SAMBA_BASE=	${LOCALBASE}
+.  if ${samba_ARGS:Mself}
+_SAMBA_BASE=	${PREFIX}
+.  endif
 
+### Directories
+SAMBA_LDB_MODULESDIR_416=	${LOCALBASE}/lib/shared-modules/ldb
+SAMBA_LDB_MODULESDIR_419=	${LOCALBASE}/lib/shared-modules/ldb
+SAMBA_LDB_MODULESDIR_420=	${LOCALBASE}/lib/shared-modules/ldb
+SAMBA_LDB_MODULESDIR_422=	${SAMBA_MODULESDIR}/ldb
+
+SAMBA_INCLUDEDIR=	${_SAMBA_BASE}/include/samba4
+SAMBA_LIBDIR=		${_SAMBA_BASE}/lib/samba4
+SAMBA_MODULESDIR=	${SAMBA_LIBDIR}/modules
+SAMBA_IDMAP_MODULESDIR=	${SAMBA_MODULESDIR}/idmap
+SAMBA_LDB_MODULESDIR=	${SAMBA_LDB_MODULESDIR_${SAMBA_SUFFIX}}
+
+### Port names
 SAMBA_PORT_416=		net/samba416
 SAMBA_LDB_PORT_416=	databases/ldb25
 SAMBA_TALLOC_PORT_416=	devel/talloc
@@ -45,8 +65,6 @@ SAMBA_TDB_PORT_422=	databases/tdb1413
 SAMBA_TEVENT_PORT_422=	devel/tevent017
 
 SAMBA_PORT=		${SAMBA_PORT_${SAMBA_SUFFIX}}
-SAMBA_INCLUDEDIR=	${LOCALBASE}/include/samba4
-SAMBA_LIBDIR=		${LOCALBASE}/lib/samba4
 # Only define SAMBA_LDB_PORT if SAMBA_LDB_PORT_${SAMBA_SUFFIX} is set. Samba
 # requires ldb to be bundled since version 4.22, so it makes no sense to set
 # SAMBA_LDB_PORT in that case. By not setting SAMBA_LDB_PORT, we allow ports to
@@ -58,6 +76,7 @@ SAMBA_TALLOC_PORT=	${SAMBA_TALLOC_PORT_${SAMBA_SUFFIX}}
 SAMBA_TDB_PORT=		${SAMBA_TDB_PORT_${SAMBA_SUFFIX}}
 SAMBA_TEVENT_PORT=	${SAMBA_TEVENT_PORT_${SAMBA_SUFFIX}}
 
+### Dependencies
 .  if ${samba_ARGS:Mbuild}
 BUILD_DEPENDS+=	smbd:${SAMBA_PORT}
 .  endif
