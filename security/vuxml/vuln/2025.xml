@@ -1,3 +1,39 @@
+  <vuln vid="245bd19f-d035-11f0-84e9-c7a56e37e3f0">
+    <topic>go -- excessive resource consumption</topic>
+    <affects>
+      <package>
+       <name>go124</name>
+       <range><lt>1.24.11</lt></range>
+      </package>
+      <package>
+       <name>go125</name>
+       <range><lt>1.25.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>The Go project reports:</p>
+	  <blockquote cite="https://pkg.go.dev/vuln/GO-2025-4155">
+	   <p>Within HostnameError.Error(), when constructing an error
+	   string, there is no limit to the number of hosts that will
+	   be printed out.</p>
+	   <p>Furthermore, the error string is constructed by repeated
+	   string concatenation, leading to quadratic runtime.
+	   Therefore, a certificate provided by a malicious actor can
+	   result in excessive resource consumption.</p>
+	  </blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-61729</cvename>
+      <url>https://pkg.go.dev/vuln/GO-2025-4155</url>
+    </references>
+    <dates>
+      <discovery>2025-12-02</discovery>
+      <entry>2025-12-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eda92945-ced4-11f0-a958-b42e991fc52e">
     <topic>MongoDB -- Missing Authorization</topic>
     <affects>
