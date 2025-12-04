@@ -6,7 +6,7 @@ DISTFILES=	${PORTNAME}
 DIST_SUBDIR=	vote-${DISTVERSION}
 EXTRACT_ONLY=	#
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparent git based voting system
 WWW=		https://codeberg.org/tcberner/vote
 

@@ -4,7 +4,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/alerque/libertinus/releases/download/v${DISTVERSION}/
 DISTNAME=	Libertinus-${DISTVERSION}
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libertinus Open Fonts
 WWW=		https://github.com/alerque/libertinus
 

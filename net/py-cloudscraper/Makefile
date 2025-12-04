@@ -5,7 +5,7 @@ CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to bypass Cloudflare's anti-bot page #'
 WWW=		https://pypi.org/project/cloudscraper/
 

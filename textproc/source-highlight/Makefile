@@ -4,7 +4,7 @@ PORTREVISION=	14
 CATEGORIES=	textproc
 MASTER_SITES=	GNU/src-highlite
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 WWW=		https://www.gnu.org/software/src-highlite/source-highlight.html
 
