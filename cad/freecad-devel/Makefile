@@ -4,9 +4,6 @@ DISTVERSION=	r${GIT_SRC_DATE}
 CATEGORIES=	cad
 PKGNAMESUFFIX=  -devel
 
-#PATCH_SITES=	https://github.com/FreeCAD/FreeCAD/pull/17325/commits/
-#PATCHFILES+=	cc302dfc06916719698bd43fe76ddf3cad2d6cc7.patch:-p1
-
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	General purpose 3D CAD modeller
 WWW=		https://www.freecadweb.org/
@@ -40,7 +37,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreeimage.so:graphics/freeimage \
 		libavutil.so.58:multimedia/ffmpeg \
-                libavformat.so.58:multimedia/ffmpeg4 \
+		libavformat.so.58:multimedia/ffmpeg4 \
 		libmed.so:french/med \
 		libshiboken6.abi3.so:devel/shiboken6@${PY_FLAVOR} \
 		libhdf5.so:science/hdf5

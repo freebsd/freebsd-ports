@@ -708,6 +708,7 @@ FreeCAD/Mod/CAM/Path/Tool/shape/ui/shapeselector.py
 FreeCAD/Mod/CAM/Path/Tool/shape/ui/shapewidget.py
 FreeCAD/Mod/CAM/Path/Tool/shape/util.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/__init__.py
+FreeCAD/Mod/CAM/Path/Tool/toolbit/migration.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/mixins/__init__.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/mixins/cutting.py
 FreeCAD/Mod/CAM/Path/Tool/toolbit/mixins/rotary.py
@@ -1118,6 +1119,8 @@ FreeCAD/Mod/Fem/femexamples/ccx_cantilever_ele_tria6.py
 FreeCAD/Mod/Fem/femexamples/ccx_cantilever_faceload.py
 FreeCAD/Mod/Fem/femexamples/ccx_cantilever_nodeload.py
 FreeCAD/Mod/Fem/femexamples/ccx_cantilever_prescribeddisplacement.py
+FreeCAD/Mod/Fem/femexamples/ccx_disc_cyclic_symm_centrif.py
+FreeCAD/Mod/Fem/femexamples/ccx_pipe_pressure_2D.py
 FreeCAD/Mod/Fem/femexamples/ccx_rigid_body.py
 FreeCAD/Mod/Fem/femexamples/constraint_centrif.py
 FreeCAD/Mod/Fem/femexamples/constraint_contact_shell_shell.py
@@ -2373,6 +2376,7 @@ FreeCAD/share/Gui/PreferencePacks/package.xml
 FreeCAD/share/Gui/Stylesheets/FreeCAD Dark.qss
 FreeCAD/share/Gui/Stylesheets/FreeCAD Light.qss
 FreeCAD/share/Gui/Stylesheets/FreeCAD.qss
+FreeCAD/share/Gui/Stylesheets/defaults.qss
 FreeCAD/share/Gui/Stylesheets/images_classic/arrow-double-leftright-black.png
 FreeCAD/share/Gui/Stylesheets/images_classic/arrow-double-leftright-black.svg
 FreeCAD/share/Gui/Stylesheets/images_classic/arrow-double-leftright-blue.png
