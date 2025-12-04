@@ -1,3 +1,35 @@
+  <vuln vid="6ebe4a30-d138-11f0-af8c-8447094a420f">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.66</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://downloads.apache.org/httpd/CHANGES_2.4.66">
+	  <p>See <a href="https://downloads.apache.org/httpd/CHANGES_2.4.66">
+	    changelog</a> or <a href="https://httpd.apache.org/security/vulnerabilities_24.html">
+	    2.4 vulnerabilities</a> for details.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-66200</cvename>
+      <cvename>CVE-2025-65082</cvename>
+      <cvename>CVE-2025-59775</cvename>
+      <cvename>CVE-2025-58098</cvename>
+      <cvename>CVE-2025-55753</cvename>
+      <url>https://downloads.apache.org/httpd/CHANGES_2.4.66</url>
+    </references>
+    <dates>
+      <discovery>2025-12-04</discovery>
+      <entry>2025-12-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="245bd19f-d035-11f0-84e9-c7a56e37e3f0">
     <topic>go -- excessive resource consumption</topic>
     <affects>
