@@ -1,0 +1,21 @@
+Backport [1] to fix build with Qt 6.10.
+
+[1] https://github.com/stenzek/duckstation/commit/cd37cd741cc11e887d1e8ca72f92f4ce928d7668
+
+--- src/duckstation-qt/CMakeLists.txt.orig	2024-06-14 05:59:32 UTC
++++ src/duckstation-qt/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-find_package(Qt6 6.7.0 COMPONENTS Core Gui Widgets LinguistTools REQUIRED)
++find_package(Qt6 6.7.0 COMPONENTS Core Gui GuiPrivate Widgets LinguistTools REQUIRED)
+ 
+ include(CopyBaseTranslations)
+ 
+@@ -171,7 +171,7 @@ target_include_directories(duckstation-qt PRIVATE "${Q
+ add_executable(duckstation-qt ${SRCS} ${QM_FILES})
+ target_precompile_headers(duckstation-qt PRIVATE "pch.h")
+ target_include_directories(duckstation-qt PRIVATE "${Qt6Gui_PRIVATE_INCLUDE_DIRS}" "${CMAKE_CURRENT_SOURCE_DIR}")
+-target_link_libraries(duckstation-qt PRIVATE core common imgui minizip scmversion Qt6::Core Qt6::Gui Qt6::Widgets)
++target_link_libraries(duckstation-qt PRIVATE core common imgui minizip scmversion Qt6::Core Qt6::Gui Qt6::GuiPrivate Qt6::Widgets)
+ 
+ # Our Qt builds may have exceptions on, so force them off.
+ target_compile_definitions(duckstation-qt PRIVATE QT_NO_EXCEPTIONS)
