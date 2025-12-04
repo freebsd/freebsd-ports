@@ -340,6 +340,7 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/array.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/bare.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/binding.py
+%%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/dfs.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/dnsserver.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/integer.py
 %%PYTHON_SITELIBDIR%%/samba/tests/dcerpc/lsa.py
