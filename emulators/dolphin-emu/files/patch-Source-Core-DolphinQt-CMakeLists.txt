@@ -1,8 +1,42 @@
 Add DISABLE_NLS option
 
---- Source/Core/DolphinQt/CMakeLists.txt.orig	2023-07-23 02:24:09 UTC
+Backport [1]. I really don't know why [1] is limited to LINUX, since
+this is a platform-independent change in Qt. Uptream has been notified [2].
+
+[1] https://github.com/dolphin-emu/dolphin/commit/b3bdad416ca0a6a604dca12bed7bd00542092d25
+[2] https://github.com/dolphin-emu/dolphin/pull/14165
+
+--- Source/Core/DolphinQt/CMakeLists.txt.orig	2025-09-15 19:46:44 UTC
 +++ Source/Core/DolphinQt/CMakeLists.txt
-@@ -479,6 +479,9 @@ if(WIN32)
+@@ -15,6 +15,13 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets 
+ set(CMAKE_AUTORCC ON)
+ 
+ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Svg)
++
++if (Qt6_VERSION VERSION_GREATER_EQUAL 6.10.0)
++  # GuiPrivate is needed to #include qplatformnativeinterface.h in MainWindow.cpp with Qt 6.10+.
++  set(NEED_QT_GUI_PRIVATE_COMPONENT ON)
++  find_package(Qt6 REQUIRED COMPONENTS GuiPrivate)
++endif()
++
+ message(STATUS "Found Qt version ${Qt6_VERSION}")
+ 
+ set_property(TARGET Qt6::Core PROPERTY INTERFACE_COMPILE_FEATURES "")
+@@ -440,6 +447,13 @@ PRIVATE
+   implot
+ )
+ 
++if (NEED_QT_GUI_PRIVATE_COMPONENT)
++  target_link_libraries(dolphin-emu
++  PRIVATE
++    Qt6::GuiPrivate
++  )
++endif()
++
+ if (WIN32)
+   target_link_libraries(dolphin-emu
+   PRIVATE
+@@ -530,6 +544,9 @@ endif()
    )
  endif()
  
@@ -12,7 +46,7 @@ Add DISABLE_NLS option
  # Handle localization
  find_package(Gettext)
  
-@@ -530,6 +533,8 @@ if(GETTEXT_MSGFMT_EXECUTABLE)
+@@ -581,6 +598,8 @@ endif()
      endif()
    endforeach()
  endif()
