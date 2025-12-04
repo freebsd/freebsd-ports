@@ -2,7 +2,7 @@ PORTNAME=	mpv-mpris
 DISTVERSION=	1.1
 CATEGORIES=	multimedia
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPRIS plugin for mpv
 WWW=		https://github.com/hoyon/mpv-mpris
 

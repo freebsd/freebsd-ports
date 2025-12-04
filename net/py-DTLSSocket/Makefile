@@ -5,7 +5,7 @@ CATEGORIES=	net
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python IKEA Tradfri API controller
 WWW=		https://git.fslab.de/jkonra2m/tinydtls-cython
 

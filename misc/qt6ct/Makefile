@@ -3,7 +3,7 @@ DISTVERSION=	0.9
 PORTREVISION=	4
 CATEGORIES=	misc
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 6 configuration tool
 WWW=		https://github.com/trialuser02/qt6ct/tags
 

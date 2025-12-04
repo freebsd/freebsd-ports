@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	tcberner@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Scientific Library - mathematical libs
 WWW=		https://www.gnu.org/software/gsl
 
