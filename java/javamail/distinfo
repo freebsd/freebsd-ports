@@ -1,3 +1,5 @@
-TIMESTAMP = 1569853775
+TIMESTAMP = 1764885494
+SHA256 (jakarta.activation.jar) = d84d4ba8b55cdb7fdcbb885e6939386367433f56f5ab8cfdc302a7c3587fa92b
+SIZE (jakarta.activation.jar) = 65690
 SHA256 (javaee-javamail-JAVAMAIL-1_6_2_GH0.tar.gz) = 870e17293628437a03ae03404f51105c1ab8f682594cb18e005cb99e15d01d24
 SIZE (javaee-javamail-JAVAMAIL-1_6_2_GH0.tar.gz) = 1107140
