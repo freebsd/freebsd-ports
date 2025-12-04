@@ -128,7 +128,6 @@
     SUBDIR += genseki
     SUBDIR += gensen
     SUBDIR += gentium
-    SUBDIR += gentium-basic
     SUBDIR += gentium-book
     SUBDIR += gentium-plus-compact
     SUBDIR += genwan
