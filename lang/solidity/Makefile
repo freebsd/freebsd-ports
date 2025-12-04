@@ -1,5 +1,5 @@
 PORTNAME=	solidity
-DISTVERSION=	0.8.31-pre.1
+DISTVERSION=	0.8.31
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/argotorg/solidity/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
