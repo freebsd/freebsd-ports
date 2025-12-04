@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}422
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			2
+PORTREVISION=			3
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -11,8 +11,6 @@ WWW=				https://gitlab.com/samba-freebsd/
 
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
-
-USES=				cpe
 
 CONFLICTS_INSTALL?=		samba4*
 
@@ -60,8 +58,9 @@ SAMBA4_LOCKDIR=			${VARDIR}/db/${SAMBA4_PORTNAME}
 SAMBA4_BINDDNSDIR=		${SAMBA4_LOCKDIR}/bind-dns
 SAMBA4_PRIVATEDIR=		${SAMBA4_LOCKDIR}/private
 SAMBA4_PAMDIR=			${PREFIX}/lib
-SAMBA4_LIBDIR=			${PREFIX}/lib/${SAMBA4_PORTNAME}
-SAMBA4_INCLUDEDIR=		${PREFIX}/include/${SAMBA4_PORTNAME}
+SAMBA4_LIBDIR=			${SAMBA_LIBDIR}
+SAMBA4_MODULEDIR=		${SAMBA_MODULESDIR}
+SAMBA4_INCLUDEDIR=		${SAMBA_INCLUDEDIR}
 SAMBA4_CONFDIR=			${PREFIX}/etc
 SAMBA4_CONFIG=			smb4.conf
 SAMBA4_MODULES_CLASS=		auth bind9 gensec gpext idmap ldb nss_info \
@@ -75,6 +74,7 @@ CONFIGURE_ARGS=			--mandir="${PREFIX}/share/man" \
 				--with-privatelibdir="${SAMBA4_LIBDIR}/private" \
 				--with-pammodulesdir="${SAMBA4_PAMDIR}" \
 				--with-modulesdir="${SAMBA4_MODULEDIR}" \
+				--with-ldbmodulesdir="${SAMBA_LDB_MODULESDIR}" \
 				--with-pkgconfigdir="${PKGCONFIGDIR}" \
 				--localstatedir="${VARDIR}" \
 				--with-piddir="${SAMBA4_RUNDIR}" \
@@ -91,8 +91,9 @@ CONFIGURE_ENV=			PTHREAD_LDFLAGS="-lpthread" \
 				PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1
 
-USES=				compiler:c++11-lang iconv localbase:ldflags \
-				perl5 pkgconfig shebangfix waf gettext-runtime
+USES=				cpe compiler:c++11-lang iconv localbase:ldflags \
+				perl5 pkgconfig shebangfix waf gettext-runtime \
+				samba:self
 USE_PERL5=			build
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
 WAF_CMD=			buildtools/bin/waf
@@ -257,7 +258,6 @@ SAMBA4_BUNDLED_LIBS+=		com_err
 # ldb
 SAMBA4_PRIVATE_LIBS+=		!ldb
 CONFLICTS_INSTALL+=		ldb-* ldb2[0-9]-*
-SAMBA4_MODULEDIR=		${SAMBA4_LIBDIR}/modules
 
 # Set the test environment variables
 TEST_USES=			python
