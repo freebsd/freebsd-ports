@@ -950,7 +950,6 @@ lib/webmin/authentic-theme/extensions/csf/csf-lib.pl
 lib/webmin/authentic-theme/extensions/csf/csf.min.css
 lib/webmin/authentic-theme/extensions/csf/csf.min.css.gz
 lib/webmin/authentic-theme/extensions/csf/csf.min.js
-lib/webmin/authentic-theme/extensions/csf/csf.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/csf/csf.min.js.gz
 lib/webmin/authentic-theme/extensions/file-manager/acls.cgi
 lib/webmin/authentic-theme/extensions/file-manager/bookmark.cgi
@@ -970,10 +969,8 @@ lib/webmin/authentic-theme/extensions/file-manager/extract.cgi
 lib/webmin/authentic-theme/extensions/file-manager/fetcher.cgi
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-lib.pl
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js
-lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/file-manager/file-manager-reinit.min.js.gz
 lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js
-lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/file-manager/file-manager.min.js.gz
 lib/webmin/authentic-theme/extensions/file-manager/gpg.cgi
 lib/webmin/authentic-theme/extensions/file-manager/http_download.cgi
@@ -989,14 +986,12 @@ lib/webmin/authentic-theme/extensions/mail/mail-lib.pl
 lib/webmin/authentic-theme/extensions/mail/mail.min.css
 lib/webmin/authentic-theme/extensions/mail/mail.min.css.gz
 lib/webmin/authentic-theme/extensions/mail/mail.min.js
-lib/webmin/authentic-theme/extensions/mail/mail.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/mail/mail.min.js.gz
 lib/webmin/authentic-theme/extensions/mail/mail.src.js
 lib/webmin/authentic-theme/extensions/mail/message.cgi
 lib/webmin/authentic-theme/extensions/mail/messages.cgi
 lib/webmin/authentic-theme/extensions/mail/search.cgi
 lib/webmin/authentic-theme/extensions/sql.min.js
-lib/webmin/authentic-theme/extensions/sql.min.js.LEGAL.txt
 lib/webmin/authentic-theme/extensions/sql.min.js.gz
 lib/webmin/authentic-theme/extensions/stats/stats.min.css
 lib/webmin/authentic-theme/extensions/stats/stats.min.js
@@ -2034,6 +2029,8 @@ lib/webmin/authentic-theme/unauthenticated/css/palettes/teal.min.css
 lib/webmin/authentic-theme/unauthenticated/css/palettes/white.min.css
 lib/webmin/authentic-theme/unauthenticated/css/photoswipe.min.css
 lib/webmin/authentic-theme/unauthenticated/css/photoswipe.min.css.gz
+lib/webmin/authentic-theme/unauthenticated/css/rounded-content.min.css
+lib/webmin/authentic-theme/unauthenticated/css/rounded-content.min.css.gz
 lib/webmin/authentic-theme/unauthenticated/css/rounded-menu.min.css
 lib/webmin/authentic-theme/unauthenticated/css/rounded-menu.min.css.gz
 lib/webmin/authentic-theme/unauthenticated/css/rounded-slider.min.css
@@ -2083,7 +2080,6 @@ lib/webmin/authentic-theme/unauthenticated/js/bundle.min.js
 lib/webmin/authentic-theme/unauthenticated/js/bundle.min.js.gz
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/build-config.js
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/build-config.js.gz
-lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor-custom.min.css
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor-custom.min.css.gz
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor.js
 lib/webmin/authentic-theme/unauthenticated/js/ckeditor/ckeditor.js.gz
