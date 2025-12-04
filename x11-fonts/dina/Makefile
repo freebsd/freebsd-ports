@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	LOCAL/rakuco
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospace bitmap font, primarily aimed at programmers
 WWW=		https://www.donationcoder.com/Software/Jibz/Dina/
 

@@ -5,7 +5,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fontlibrary.org/assets/downloads/consolamono/61cc2afcc4eca96efe7c6ebf178d39df/
 DISTNAME=	consolamono
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monospace font created for programming, text editors and terminal-use
 WWW=		https://fontlibrary.org/en/font/consolamono
 

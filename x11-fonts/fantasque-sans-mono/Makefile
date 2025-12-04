@@ -4,7 +4,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/belluzj/fantasque-sans/releases/download/v${PORTVERSION}/
 DIST_SUBDIR=	${DISTNAME}
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programming font, designed with functionality in mind
 WWW=		https://fontlibrary.org/en/font/fantasque-sans-mono
 

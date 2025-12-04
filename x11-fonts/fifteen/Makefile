@@ -5,7 +5,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	https://fontlibrary.org/assets/downloads/${PORTNAME}/c1556403ec283a1b5a23ad483af659f9/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Narrow monospaced fonts
 WWW=		https://fontlibrary.org/en/font/fifteen
 

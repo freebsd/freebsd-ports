@@ -3,7 +3,7 @@ PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
-MAINTAINER=	rakuco@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fancier diff output formatter
 WWW=		https://github.com/so-fancy/diff-so-fancy/
 
