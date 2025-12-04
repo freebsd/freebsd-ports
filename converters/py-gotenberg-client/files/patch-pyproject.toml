@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2025-12-03 09:15:17 UTC
++++ pyproject.toml
+@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
+ [build-system]
+ build-backend = "hatchling.build"
+ 
+-requires = [ "hatchling~=1.27.0" ]
++requires = [ "hatchling>=1.27.0" ]
+ 
+ [project]
+ name = "gotenberg-client"
