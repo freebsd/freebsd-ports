@@ -3,6 +3,12 @@ PORTVERSION=	5.2.1
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
+PATCH_SITES=	https://invent.kde.org/office/kmymoney/-/commit/
+PATCHFILES+=	aac6f62208c3bc856c70971ca98d44558e7d6e93.patch:-p1
+PATCHFILES+=	b28d1af4303050ff0d9548aaaafbd89aa06c1794.patch:-p1
+PATCHFILES+=	d05e0579f068fa52f3340ea448b2c781b837e711.patch:-p1
+PATCHFILES+=	b429ac275e9ebde2b234e2c33cce936beb8589f2.patch:-p1
+
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	KDE personal finance manager
 WWW=		https://kmymoney.org/
