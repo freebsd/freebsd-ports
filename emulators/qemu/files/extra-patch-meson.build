@@ -26,3 +26,13 @@
  endif
  if host_os == 'darwin'
    summary_info += {'ParavirtualizedGraphics support': pvg}
+--- util/meson.build.orig	2025-12-04 10:07:58 UTC
++++ util/meson.build
+@@ -110,7 +110,6 @@ if have_block
+   if config_host_data.get('CONFIG_INOTIFY1')
+     freebsd_dep = []
+     if host_os == 'freebsd'
+-      freebsd_dep = inotify
+     endif
+     util_ss.add(files('filemonitor-inotify.c'), freebsd_dep)
+   else
