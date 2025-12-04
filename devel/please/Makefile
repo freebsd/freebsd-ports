@@ -1,7 +1,6 @@
 PORTNAME=	please
 DISTVERSIONPREFIX=	v
-DISTVERSION=	17.25.0
-PORTREVISION=	1
+DISTVERSION=	17.25.1
 CATEGORIES=	devel
 MASTER_SITES=	https://raw.githubusercontent.com/thought-machine/please/${DISTVERSIONFULL}/
 DISTFILES=	go.mod
@@ -14,8 +13,8 @@ WWW=		https://please.build/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	armv7
-NOT_FOR_ARCHS_REASON=	Build crashes
+NOT_FOR_ARCHS=	armv7 i386
+NOT_FOR_ARCHS_REASON=	Build crashes with integer overflow
 
 BUILD_DEPENDS=	bash:shells/bash \
 		ca_root_nss>0:security/ca_root_nss \
