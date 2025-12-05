@@ -1,3 +1,47 @@
+  <vuln vid="c7187676-d176-11f0-841f-843a4b343614">
+    <topic>xkbcomp -- Several vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>xkbcomp</name>
+	<range><lt>1.5.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>X.Org reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2025-December/003644.html">
+    <p>Multiple issues have been found in xkbcomp that have been previously
+    been published as CVEs in libxbkcommon. libxkbcommon is (to some degree)
+    a fork of xkbcomp and some of the code base is identical. These CVEs
+      were published earlier as:</p>
+    <ul>
+      <li>CVE-2018-15853: Endless recursion in xkbcomp/expr.c resulting in a crash</li>
+      <li>CVE-2018-15859: NULL pointer dereference when parsing invalid atoms in
+	ExprResolveLhs resulting in a crash</li>
+      <li>CVE-2018-15861: NULL pointer dereference in ExprResolveLhs resulting
+	in a crash</li>
+      <li>CVE-2018-15863: NULL pointer dereference in ResolveStateAndPredicate
+	resulting in a crash</li>
+    </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2018-15863</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2018-15863</url>
+      <cvename>CVE-2018-15859</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2018-15859</url>
+      <cvename>CVE-2018-15861</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2018-15861</url>
+      <cvename>CVE-2018-15863</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2018-15863</url>
+    </references>
+    <dates>
+      <discovery>2025-12-03</discovery>
+      <entry>2025-12-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f323f148-d181-11f0-841f-843a4b343614">
     <topic>png -- Out-of-bounds read</topic>
     <affects>
