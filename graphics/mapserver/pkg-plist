@@ -9,6 +9,6 @@ bin/mapserver_sortshp
 bin/mapserver_tile4ms
 lib/libmapserver.so
 lib/libmapserver.so.2
-lib/libmapserver.so.8.4.1
+lib/libmapserver.so.8.6.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_mapscript.so
