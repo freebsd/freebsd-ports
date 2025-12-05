@@ -4883,3 +4883,4 @@ devel/libavl||2025-12-04|Has expired: Since 2002 libavl is no longer distributed
 net/py-netif||2025-12-04|Has expired: Upstream unmaintained
 x11-fonts/google-fonts||2025-12-04|Has expired: Depends on expired x11-fonts/gentium-basic
 x11-fonts/gentium-basic||2025-12-04|Has expired: Superceeded by Gentium-7.000 https://software.sil.org/gentium/download/
+www/rubygem-cssbundling-rails-gitlab|www/rubygem-cssbundling-rails-rails-gitlab|2025-12-05|Obsolete, use www/rubygem-cssbundling-rails-rails-gitlab instead
