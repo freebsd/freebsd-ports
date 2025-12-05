@@ -1,7 +1,7 @@
 PORTNAME=	local-php-security-checker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	GH
 
@@ -12,10 +12,7 @@ WWW=		https://github.com/fabpot/local-php-security-checker
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fabpot
