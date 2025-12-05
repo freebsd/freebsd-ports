@@ -1,6 +1,0 @@
-include/libmill.h
-lib/libmill.a
-lib/libmill.so
-lib/libmill.so.18
-lib/libmill.so.18.1.1
-libdata/pkgconfig/libmill.pc

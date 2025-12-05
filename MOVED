@@ -4885,3 +4885,4 @@ x11-fonts/google-fonts||2025-12-04|Has expired: Depends on expired x11-fonts/gen
 x11-fonts/gentium-basic||2025-12-04|Has expired: Superceeded by Gentium-7.000 https://software.sil.org/gentium/download/
 www/rubygem-cssbundling-rails-gitlab|www/rubygem-cssbundling-rails-rails-gitlab|2025-12-05|Obsolete, use www/rubygem-cssbundling-rails-rails-gitlab instead
 misc/amazon-qldb-shell||2025-12-05|Discontinued by Amazon as of July 2025: old and new customers are advised to migrate to Amazon Aurora PostgreSQL
+devel/libmill||2025-12-05|Has expired: Abandonware, not use in the ports tree
