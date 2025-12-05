@@ -1,0 +1,13 @@
+Export Qt6::GuiPrivate to consumers. This is required since Qt 6.10.0.
+
+--- como-config.cmake.in.orig	2024-10-09 12:19:16 UTC
++++ como-config.cmake.in
+@@ -10,7 +10,7 @@ find_dependency(wlroots @WLROOTS_MIN_VERSION@)
+ find_dependency(epoxy)
+ find_dependency(Pixman)
+ find_dependency(wlroots @WLROOTS_MIN_VERSION@)
+-find_dependency(Qt6Gui @QT_MIN_VERSION@)
++find_dependency(Qt6 @QT_MIN_VERSION@ COMPONENTS Gui GuiPrivate)
+ find_dependency(KF6 @KF6_MIN_VERSION@ COMPONENTS
+   Auth
+   ColorScheme

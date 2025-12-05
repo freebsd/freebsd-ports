@@ -1,0 +1,17 @@
+Since Qt 6.9.0, the GuiPrivate target has had it's own CMake config, but
+beginning with Qt 6.10.0, this must be found separately.
+
+--- CMakeLists.txt.orig	2024-10-09 12:19:16 UTC
++++ CMakeLists.txt
+@@ -47,6 +47,11 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COM
+     UiTools
+     Widgets
+ )
++if(Qt6_VERSION VERSION_GREATER_EQUAL 6.10.0)
++    find_package(Qt6 6.10.0 CONFIG REQUIRED COMPONENTS
++        GuiPrivate
++    )
++endif()
+ 
+ find_package(Qt6Test ${QT_MIN_VERSION} CONFIG QUIET)
+ set_package_properties(Qt6Test PROPERTIES

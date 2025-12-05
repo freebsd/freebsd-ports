@@ -1,0 +1,15 @@
+Remove unneeded Qt::CorePrivate target. Qt upstream has been cracking
+down on use of private headers/targets since 6.9.0 and keeping these
+unused targets is becoming increasingly problematic. This appears to
+be a carryover from Qt5.
+
+--- plugins/qpa/CMakeLists.txt.orig	2024-10-09 12:19:16 UTC
++++ plugins/qpa/CMakeLists.txt
+@@ -25,7 +25,6 @@ target_link_libraries(ComoQpaPlugin PRIVATE
+ 
+ target_link_libraries(ComoQpaPlugin PRIVATE
+     epoxy::epoxy
+-    Qt::CorePrivate
+     Qt::GuiPrivate
+     Freetype::Freetype # Must be after Qt platform support libs
+     Fontconfig::Fontconfig
