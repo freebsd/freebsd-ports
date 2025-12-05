@@ -1,3 +1,5 @@
-TIMESTAMP = 1757738292
+TIMESTAMP = 1763723655
 SHA256 (hyprwm-hyprland-qtutils-v0.1.5_GH0.tar.gz) = c02e47c9f720c20a5adca1baebbcfee0db5d3d36ce9595779563a2e5d27bafca
 SIZE (hyprwm-hyprland-qtutils-v0.1.5_GH0.tar.gz) = 10135
+SHA256 (5ffdfc13ed03df1dae5084468d935f0a3f2c9a4c.patch) = 8546391a1e6fa4655008dfd84253a54e58cc3d89f2e4395bbd1f83ab7576422e
+SIZE (5ffdfc13ed03df1dae5084468d935f0a3f2c9a4c.patch) = 2279
