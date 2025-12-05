@@ -9,7 +9,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		bindgen-0.70.1 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
-		bitflags-2.6.0 \
+		bitflags-2.10.0 \
 		brotli-8.0.2 \
 		brotli-decompressor-5.0.0 \
 		buf-trait-0.4.1 \
@@ -25,13 +25,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		chrono-0.4.42 \
 		chrono-humanize-0.2.3 \
 		clang-sys-1.8.1 \
+		convert_case-0.7.1 \
 		core-foundation-sys-0.8.7 \
 		crc32fast-1.4.2 \
-		crossterm-0.28.1 \
+		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
+		derive_more-2.0.1 \
+		derive_more-impl-2.0.1 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
 		doctest-file-1.0.0 \
+		document-features-0.2.11 \
 		either-1.15.0 \
 		equivalent-1.0.1 \
 		erased-serde-0.4.5 \
@@ -42,15 +46,16 @@ CARGO_CRATES=	adler2-2.0.0 \
 		getrandom-0.2.15 \
 		glob-0.3.1 \
 		hashbrown-0.15.5 \
+		hashbrown-0.16.0 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		iana-time-zone-0.1.61 \
 		iana-time-zone-haiku-0.1.2 \
-		indexmap-2.11.0 \
+		indexmap-2.12.0 \
 		interprocess-2.2.2 \
 		inventory-0.3.15 \
 		is_ci-1.2.0 \
-		itertools-0.11.0 \
+		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.14 \
 		js-sys-0.3.78 \
@@ -60,6 +65,8 @@ CARGO_CRATES=	adler2-2.0.0 \
 		libproc-0.14.10 \
 		libredox-0.1.3 \
 		linux-raw-sys-0.4.14 \
+		linux-raw-sys-0.9.4 \
+		litrs-0.4.1 \
 		lock_api-0.4.12 \
 		log-0.4.27 \
 		lru-0.12.5 \
@@ -75,17 +82,17 @@ CARGO_CRATES=	adler2-2.0.0 \
 		nom-7.1.3 \
 		ntapi-0.4.1 \
 		nu-ansi-term-0.50.3 \
-		nu-derive-value-0.108.0 \
-		nu-engine-0.108.0 \
-		nu-experimental-0.108.0 \
-		nu-glob-0.108.0 \
-		nu-path-0.108.0 \
-		nu-plugin-0.108.0 \
-		nu-plugin-core-0.108.0 \
-		nu-plugin-protocol-0.108.0 \
-		nu-protocol-0.108.0 \
-		nu-system-0.108.0 \
-		nu-utils-0.108.0 \
+		nu-derive-value-0.109.1 \
+		nu-engine-0.109.1 \
+		nu-experimental-0.109.1 \
+		nu-glob-0.109.1 \
+		nu-path-0.109.1 \
+		nu-plugin-0.109.1 \
+		nu-plugin-core-0.109.1 \
+		nu-plugin-protocol-0.109.1 \
+		nu-protocol-0.109.1 \
+		nu-system-0.109.1 \
+		nu-utils-0.109.1 \
 		num-format-0.4.4 \
 		num-traits-0.2.19 \
 		objc2-core-foundation-0.3.1 \
@@ -100,12 +107,12 @@ CARGO_CRATES=	adler2-2.0.0 \
 		paste-1.0.15 \
 		proc-macro-error-attr2-2.0.0 \
 		proc-macro-error2-2.0.1 \
-		proc-macro2-1.0.92 \
+		proc-macro2-1.0.103 \
 		procfs-0.17.0 \
 		procfs-core-0.17.0 \
 		pure-rust-locales-0.8.1 \
 		pwd-1.4.0 \
-		quote-1.0.37 \
+		quote-1.0.42 \
 		recvmsg-1.0.0 \
 		redox_syscall-0.5.8 \
 		redox_users-0.5.2 \
@@ -118,13 +125,14 @@ CARGO_CRATES=	adler2-2.0.0 \
 		rmp-serde-1.3.0 \
 		rustc-hash-1.1.0 \
 		rustix-0.38.42 \
+		rustix-1.0.7 \
 		rustversion-1.0.18 \
 		ryu-1.0.18 \
 		scopeguard-1.2.0 \
 		semver-1.0.23 \
-		serde-1.0.225 \
-		serde_core-1.0.225 \
-		serde_derive-1.0.225 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
 		serde_json-1.0.133 \
 		shlex-1.3.0 \
 		signal-hook-0.3.17 \
@@ -137,9 +145,9 @@ CARGO_CRATES=	adler2-2.0.0 \
 		supports-color-3.0.2 \
 		supports-hyperlinks-3.1.0 \
 		supports-unicode-3.0.0 \
-		syn-2.0.90 \
+		syn-2.0.110 \
 		sys-locale-0.3.2 \
-		sysinfo-0.36.1 \
+		sysinfo-0.37.2 \
 		terminal_size-0.4.1 \
 		textwrap-0.16.1 \
 		thiserror-1.0.69 \
@@ -152,6 +160,7 @@ CARGO_CRATES=	adler2-2.0.0 \
 		unicase-2.8.0 \
 		unicode-ident-1.0.14 \
 		unicode-linebreak-0.1.5 \
+		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.11 \
 		vte-0.14.1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
