@@ -1,3 +1,34 @@
+  <vuln vid="f323f148-d181-11f0-841f-843a4b343614">
+    <topic>png -- Out-of-bounds read</topic>
+    <affects>
+    <package>
+	<name>png</name>
+	<range><lt>1.6.52</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/pnggroup/libpng/security/advisories/GHSA-9mpm-9pxh-mg4f reports:</p>
+	<blockquote cite="https://github.com/pnggroup/libpng/security/advisories/GHSA-9mpm-9pxh-mg4f">
+	  <p>Prior to 1.6.52, an out-of-bounds read vulnerability in
+    libpng's simplified API allows reading up to 1012 bytes beyond the
+    png_sRGB_base[512] array when processing valid palette PNG images
+    with partial transparency and gamma correction.  The PNG files that
+    trigger this vulnerability are valid per the PNG specification; the
+      bug is in libpng's internal state management.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-66293</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-66293</url>
+    </references>
+    <dates>
+      <discovery>2025-12-03</discovery>
+      <entry>2025-12-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be3167b5-d140-11f0-ad27-c01803b56cc4">
     <topic>libvirt -- Multiple vulnerabilities</topic>
     <affects>
