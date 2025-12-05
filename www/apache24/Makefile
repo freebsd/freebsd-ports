@@ -1,6 +1,5 @@
 PORTNAME=	apache24
-PORTVERSION=	2.4.65
-PORTREVISION=	1
+PORTVERSION=	2.4.66
 CATEGORIES=	www
 MASTER_SITES=	APACHE_HTTPD
 DISTNAME=	httpd-${PORTVERSION}
@@ -102,6 +101,7 @@ ETC_SUBDIRS=		Includes envvars.d extra modules.d
 
 APR_CONFIG?=		${LOCALBASE}/bin/apr-1-config
 APU_CONFIG?=		${LOCALBASE}/bin/apu-1-config
+APU_GDBM?=		${LOCALBASE}/lib/apr-util-1/apr_dbm_gdbm.so
 APU_LDAP?=		${LOCALBASE}/lib/apr-util-1/apr_ldap.so
 APU_CRYPTO_OPENSSL?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_openssl.so
 APU_CRYPTO_NSS?=	${LOCALBASE}/lib/apr-util-1/apr_crypto_nss.so
@@ -145,6 +145,9 @@ IGNORE=	LDAP and AUTHNZ_LDAP requires APR-util to have LDAP support built in.\
 	!(exists(${APU_CRYPTO_OPENSSL}) || exists(${APU_CRYPTO_NSS}))
 IGNORE=	SESSION_CRYPTO requires APR-util to have crypto openssl support built in.\
 	Please rebuild APR with crypto openssl support
+.  endif
+.  if exists(${APU_GDBM})
+        LIB_DEPENDS+=libgdbm.so:databases/gdbm
 .  endif
 .endif	# exists APU_CONFIG
 
