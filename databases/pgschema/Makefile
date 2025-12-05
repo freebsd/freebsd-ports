@@ -1,7 +1,6 @@
 PORTNAME=	pgschema
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	4
+DISTVERSION=	1.5.0
 CATEGORIES=	databases
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_NAME=	pgschema Community License v1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-USES=		go:1.24,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/pgschema/pgschema
 
