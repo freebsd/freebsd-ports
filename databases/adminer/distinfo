@@ -1,4 +1,6 @@
-TIMESTAMP = 1763089532
+TIMESTAMP = 1764916864
+SHA256 (adminer-5.4.1.zip) = f8a8b8ea647e13cd85feca54d0304cee459e958df303d6dd15a778e07799e4ba
+SIZE (adminer-5.4.1.zip) = 881687
 SHA256 (MirLach-adminer-forced-server-1.2_GH0.tar.gz) = 8f00a802ed5e6f323a28d46edac026926dc294f5e50e393c6a3827aba0c0a886
 SIZE (MirLach-adminer-forced-server-1.2_GH0.tar.gz) = 5685
 SHA256 (vrana-adminer-plugins-pematon-99912d508a1b39db27910ef6c6dd07bab9368670_GH0.tar.gz) = a38e075f1c70fa4acdbe54ebedf52e7901e89739ff277d7a340f87923aaa6cbd
