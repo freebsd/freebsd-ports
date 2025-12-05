@@ -1,6 +1,5 @@
 PORTNAME=	ecflow
-DISTVERSION=	5.13.0
-PORTREVISION=	4
+DISTVERSION=	5.15.1
 CATEGORIES=	misc
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/8650755/
 DISTNAME=	ecFlow-${DISTVERSION}-Source
@@ -11,8 +10,6 @@ WWW=		https://confluence.ecmwf.int/display/ECFLOW/ecflow+home
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build with boost-1.86+
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-libs>0:devel/boost-python-libs@${PY_FLAVOR}
 BUILD_DEPENDS=	bash:shells/bash \
