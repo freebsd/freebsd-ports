@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
 CATEGORIES=	misc
 
+PATCH_SITES=	https://github.com/hyprwm/hyprqt6engine/commit/
+PATCHFILES+=	9063e6837b4e282a73b052a0c0371916daccf50a.patch:-p1 # Fix configure with Qt 6.10
+
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Qt6 theme provider for Hyprland
 WWW=		https://github.com/hyprwm/hyprqt6engine
