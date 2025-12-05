@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.11.8
+DISTVERSION=	2025.12.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -423,7 +423,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		luajit-src-210.6.4+e17ee83 \
 		lzma-rs-0.3.0 \
 		lzma-rust-0.1.7 \
-		lzma-rust2-0.6.1 \
+		lzma-rust2-0.15.2 \
 		lzma-sys-0.1.20 \
 		matchers-0.2.0 \
 		maybe-async-0.2.10 \
@@ -446,6 +446,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		multimap-0.10.1 \
 		native-tls-0.2.14 \
 		ndk-context-0.1.1 \
+		netrc-rs-0.1.2 \
 		nix-0.30.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
@@ -629,7 +630,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		serial_test-3.2.0 \
 		serial_test_derive-3.2.0 \
 		sevenz-rust-0.6.1 \
-		sevenz-rust2-0.17.1 \
+		sevenz-rust2-0.19.4 \
 		sha1-0.10.6 \
 		sha1-checked-0.10.0 \
 		sha2-0.10.9 \
@@ -724,7 +725,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		typed-path-0.9.3 \
 		typeid-1.0.3 \
 		typenum-1.19.0 \
-		ubi-0.7.4 \
+		ubi-0.8.4 \
 		ucd-trie-0.1.7 \
 		uluru-3.1.0 \
 		unic-langid-0.9.6 \
@@ -744,7 +745,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		untrusted-0.9.0 \
 		url-2.5.7 \
 		urlencoding-2.1.3 \
-		usage-lib-2.8.0 \
+		usage-lib-2.9.0 \
 		utf8-decode-1.0.1 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
