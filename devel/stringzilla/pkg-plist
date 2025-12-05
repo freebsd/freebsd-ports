@@ -10,6 +10,8 @@ include/stringzilla/stringzilla.h
 include/stringzilla/stringzilla.hpp
 include/stringzilla/types.h
 include/stringzilla/types.hpp
+include/stringzilla/utf8.h
+include/stringzilla/utf8_case.h
 include/stringzillas/fingerprints.cuh
 include/stringzillas/fingerprints.hpp
 include/stringzillas/similarities.cuh
@@ -19,10 +21,10 @@ include/stringzillas/types.cuh
 include/stringzillas/types.hpp
 lib/libstringzilla_bare.so
 lib/libstringzilla_bare.so.1
-lib/libstringzilla_bare.so.4.2.3
+lib/libstringzilla_bare.so.4.4.2
 lib/libstringzilla_shared.so
 lib/libstringzilla_shared.so.1
-lib/libstringzilla_shared.so.4.2.3
+lib/libstringzilla_shared.so.4.4.2
 lib/libstringzillas_cpus_shared.so
 lib/libstringzillas_cpus_shared.so.1
-lib/libstringzillas_cpus_shared.so.4.2.3
+lib/libstringzillas_cpus_shared.so.4.4.2
