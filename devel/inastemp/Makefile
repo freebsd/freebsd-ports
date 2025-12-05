@@ -10,9 +10,6 @@ WWW=		https://gitlab.mpcdf.mpg.de/bbramas/inastemp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		Unfetchable
-EXPIRATION_DATE=2025-12-31
-
 USES=		cmake
 NO_ARCH=	yes
 CMAKE_ARGS=	-DINASTEMP_DO_INSTALL:BOOL=ON \
