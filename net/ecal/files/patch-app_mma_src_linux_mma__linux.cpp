@@ -1,5 +1,5 @@
---- contrib/mma/src/linux/mma_linux.cpp.orig	2024-04-26 04:43:39 UTC
-+++ contrib/mma/src/linux/mma_linux.cpp
+--- app/mma/src/linux/mma_linux.cpp.orig	2024-09-08 02:28:28 UTC
++++ app/mma/src/linux/mma_linux.cpp
 @@ -44,6 +44,13 @@
  #include <pwd.h>
  #include <unistd.h>

@@ -1,11 +1,36 @@
---- CMakeLists.txt.orig	2024-04-24 12:44:35 UTC
+--- CMakeLists.txt.orig	2024-09-08 02:28:28 UTC
 +++ CMakeLists.txt
-@@ -236,7 +236,7 @@ find_package(CMakeFunctions REQUIRED)
+@@ -290,9 +290,10 @@ else()
+   endif()
+ endif()
  
- find_package(CMakeFunctions REQUIRED)
+-find_package(CMakeFunctions REQUIRED)
++#find_package(CMakeFunctions REQUIRED)
++include(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/cmakefunctions/cmake_functions/cmake_functions.cmake)
  
 -git_revision_information(DEFAULT ${ECAL_BUILD_VERSION})
 +#git_revision_information(DEFAULT ${ECAL_BUILD_VERSION})
  set(eCAL_VERSION_MAJOR  ${GIT_REVISION_MAJOR})
  set(eCAL_VERSION_MINOR  ${GIT_REVISION_MINOR})
  set(eCAL_VERSION_PATCH  ${GIT_REVISION_PATCH})
+@@ -360,6 +361,20 @@ add_subdirectory(app/app_pb)
+ # ecal core
+ # --------------------------------------------------------
+ add_subdirectory(ecal)
++
++# Build recycle, tcp_pubsub and ecaludp as subdirectories before ecal
++add_subdirectory(thirdparty/recycle/recycle)
++set(TCP_PUBSUB_BUILD_SAMPLES OFF CACHE BOOL "Don't build tcp_pubsub samples" FORCE)
++set(TCP_PUBSUB_BUILD_TESTS OFF CACHE BOOL "Don't build tcp_pubsub tests" FORCE)
++set(TCP_PUBSUB_USE_BUILTIN_ASIO OFF CACHE BOOL "Use system asio" FORCE)
++set(TCP_PUBSUB_USE_BUILTIN_RECYCLE OFF CACHE BOOL "Use system recycle" FORCE)
++add_subdirectory(thirdparty/tcp_pubsub/tcp_pubsub)
++set(ECALUDP_USE_BUILTIN_ASIO OFF CACHE BOOL "Use system asio" FORCE)
++set(ECALUDP_USE_BUILTIN_RECYCLE OFF CACHE BOOL "Use system recycle" FORCE)
++set(ECALUDP_BUILD_SAMPLES OFF CACHE BOOL "Don't build ecaludp samples" FORCE)
++set(ECALUDP_BUILD_TESTS OFF CACHE BOOL "Don't build ecaludp tests" FORCE)
++add_subdirectory(thirdparty/ecaludp/ecaludp)
++list(APPEND CMAKE_PREFIX_PATH "${CMAKE_CURRENT_BINARY_DIR}/thirdparty/ecaludp/ecaludp/ecaludp/cmake_")
+ 
+ # --------------------------------------------------------
+ # custom libs
