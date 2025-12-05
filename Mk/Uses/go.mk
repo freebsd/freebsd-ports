@@ -6,7 +6,7 @@
 # Valid ARGS:	(none), N.NN, N.NN-devel, modules, no_targets, run
 #
 # (none)	Setup GOPATH and build in GOPATH mode using default Go version.
-# N.NN[-devel]	Specify Go version
+# N.NN		Specify Go version
 # modules	If the upstream uses Go modules, this can be set to build
 #		in modules-aware mode.
 # no_targets	Indicates that Go is needed at build time as a part of
@@ -15,6 +15,19 @@
 #		do-{build,install,test} targets.
 # run		Indicates that Go is needed at run time and adds it to
 #		RUN_DEPENDS.
+#
+# Note about Go versions:
+#   The use of a version specifier (i.e. go:N.NN) should be reserved only for
+#   when a port absolutely cannot build with any other version. This is very
+#   rare. If a port builds in both supported Go versions with just USES=go
+#   (or USES=go:modules etc.), then stick with just USES=go and drop the version
+#   specifier.
+#
+#   Each go version is supported for about one year, so ports pinned to an
+#   old version will have to be removed when its Go version is removed.
+#
+#   DO NOT treat the version specified in go.mod as a hard requirement. In most
+#   cases it's just a hint to the compiler.
 #
 # You can set the following variables to control the process.
 #
