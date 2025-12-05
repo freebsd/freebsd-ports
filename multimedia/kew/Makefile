@@ -10,8 +10,6 @@ WWW=		https://github.com/ravachol/kew
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	compilation fails with incompatible pointer, see https://github.com/ravachol/kew/issues/118
-
 LIB_DEPENDS=	libchafa.so:graphics/chafa \
 		libcurl.so:ftp/curl \
 		libfaad.so:audio/faad \
