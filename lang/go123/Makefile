@@ -17,4 +17,7 @@ MASTERDIR=	${.CURDIR}/../go-devel
 WRKSRC=		${WRKDIR}/go
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
+DEPRECATED=	Old version, unsupported upstream
+EXPIRATION_DATE=2026-01-01
+
 .include "${MASTERDIR}/Makefile"

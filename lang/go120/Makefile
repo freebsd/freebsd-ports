@@ -22,4 +22,7 @@ SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
 		src/net/http/cgi/testdata/test.cgi
 BASH=		${SH}
 
+DEPRECATED=	Old version, unsupported upstream
+EXPIRATION_DATE=2026-01-01
+
 .include "${MASTERDIR}/Makefile"

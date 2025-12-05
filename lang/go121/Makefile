@@ -23,4 +23,7 @@ SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
 BASH=		${SH}
 TESTING_UNSAFE=	MemorySanitizer: use-of-uninitialized-value (/tmp/TestMSAN747758340/msan8+0x11efcf) in msanGoLoop
 
+DEPRECATED=	Old version, unsupported upstream
+EXPIRATION_DATE=2026-01-01
+
 .include "${MASTERDIR}/Makefile"
