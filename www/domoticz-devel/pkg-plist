@@ -1205,6 +1205,7 @@ domoticz/www/views/forecast.html
 domoticz/www/views/frontpage.html
 domoticz/www/views/frontpage_example.html
 domoticz/www/views/history.html
+domoticz/www/views/iam_auth.html
 domoticz/www/views/inc_topbar.html
 domoticz/www/views/lights.html
 domoticz/www/views/log.html

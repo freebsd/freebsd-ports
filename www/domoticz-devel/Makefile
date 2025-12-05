@@ -21,7 +21,7 @@ USES=		cmake compiler:c++11-lang cpe lua:53 minizip pkgconfig sqlite \
 		ssl
 
 USE_GITHUB=	yes
-GH_TAGNAME=	32b88a6aa
+GH_TAGNAME=	98c45ad1c
 USE_RC_SUBR=	domoticz
 
 CMAKE_OFF=	GIT_SUBMODULE \
@@ -42,8 +42,8 @@ EXTRACT_AFTER_ARGS=	--exclude ${GH_PROJECT_DEFAULT}-${GH_TAGNAME_EXTRACT}/hardwa
 
 # This hack is to get rid of dependency of git while building
 # the package.
-DOMOTICZ_REL=	16884
-DOMOTICZ_TS=	1762861862
+DOMOTICZ_REL=	16990
+DOMOTICZ_TS=	1764749269
 
 USERS=		domoticz
 GROUPS=		domoticz
