@@ -4609,7 +4609,6 @@
     SUBDIR += py-botocore
     SUBDIR += py-bps-restpy
     SUBDIR += py-breathe
-    SUBDIR += py-bsd
     SUBDIR += py-btest
     SUBDIR += py-build
     SUBDIR += py-buildbot
