@@ -17,6 +17,9 @@ LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE.MPLv2.0
 
 USES=		go:1.23,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GO_MODULE=	github.com/mjl-/mox
 
 PLIST_FILES=	bin/${PORTNAME}

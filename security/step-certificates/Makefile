@@ -16,6 +16,9 @@ RUN_DEPENDS=	step:security/step-cli
 
 USES=		go:1.22,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 USE_RC_SUBR=	step_ca
 
 GO_MODULE=	github.com/smallstep/certificates

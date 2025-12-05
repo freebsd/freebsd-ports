@@ -16,6 +16,9 @@ RUN_DEPENDS=	chafa:graphics/chafa \
 
 USES=		go:1.23,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GO_MODULE=	github.com/r3tr0ananas/wallhaven-cli/v2
 GO_TARGET=	./wallhaven
 PLIST_FILES=	bin/wallhaven

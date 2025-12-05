@@ -12,6 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		go:1.22,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 _BUILD_MAJOR=	${DISTVERSIONFULL:C/\..*$//}
 _BUILD_DATE=	$$(date +%Y-%m-%d)
 

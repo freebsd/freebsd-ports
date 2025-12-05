@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		go:1.22,modules
 GO_MODULE=	github.com/vmware/govmomi
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GO_TARGET=	./govc \
 		./vcsim
 

@@ -17,6 +17,9 @@ USES=		cpe gmake go:1.23,modules,no_targets
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/containerd/containerd
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 CPE_VENDOR=	linuxfoundation
 
 USE_RC_SUBR=	containerd

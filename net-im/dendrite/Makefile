@@ -18,6 +18,9 @@ USE_RC_SUBR=	${PORTNAME}
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 DENDRITE_BINS=	create-account dendrite-demo-pinecone			\
 		dendrite-demo-yggdrasil dendrite			\
 		dendrite-upgrade-tests furl generate-config 		\

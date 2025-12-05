@@ -16,6 +16,9 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 USES=		go:1.21,modules
 GO_MODULE=	github.com/iawia002/${PORTNAME}
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CONTRIBUTING.md README.md
 

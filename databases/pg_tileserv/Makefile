@@ -16,6 +16,9 @@ USE_GITHUB=	nodefault
 GH_TUPLE=	golang:sys:v0.6.0:sys
 GO_MODULE=	github.com/crunchydata/pg_tileserv
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-patch:

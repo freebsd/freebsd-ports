@@ -22,6 +22,9 @@ GO_MODULE=	go.etcd.io/etcd/v3
 GO_MOD_DIST=	github
 GO_TARGET=	./etcdctl .
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 CONFLICTS_INSTALL=	coreos-etcd[0-9][0-9]
 
 PLIST_FILES=	bin/etcd \

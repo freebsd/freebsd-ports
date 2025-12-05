@@ -18,6 +18,9 @@ USES=		go:1.23,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyperledger
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 # the upstream claims that it is too difficult to add the /v2 suffix to the GoLang module URL: https://github.com/hyperledger/fabric/issues/2929
 GH_TUPLE=	\
 		AdaLogics:go-fuzz-headers:ced1acdcaa24:adalogics_go_fuzz_headers/vendor/github.com/AdaLogics/go-fuzz-headers \

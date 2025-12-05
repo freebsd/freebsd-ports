@@ -12,6 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.23,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 #NOT_FOR_ARCHS=	armv6 armv7 i386
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")

@@ -16,6 +16,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openpubkey
 GO_BUILDFLAGS=	-ldflags "-X main.Version=${DISTVERSIONPREFIX}${DISTVERSION}"
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 SUB_FILES=	pkg-message
 SUB_LIST=	GROUP=${OPKSSH_GROUP} \
 		USER=${OPKSSH_USER}

@@ -28,6 +28,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
 USE_RC_SUBR=	nomad
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GO_MODULE=	github.com/hashicorp/nomad
 GO_BUILDFLAGS=	-tags ui \
 		-ldflags "-X main.GitDescribe=${DISTVERSIONFULL}"

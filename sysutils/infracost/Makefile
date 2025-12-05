@@ -18,6 +18,9 @@ RUN_DEPENDS=	terraform:sysutils/terraform \
 
 USES=		go:1.23,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 
 GO_BUILDFLAGS=	-ldflags="-X github.com/infracost/infracost/internal/version.Version=v${PORTVERSION}"

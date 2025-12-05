@@ -17,6 +17,9 @@ USES=		go:1.21,modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:sys:v0.6.0:sys
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GO_MODULE=	github.com/git-town/git-town/v10
 
 PLIST_FILES=	bin/${PORTNAME}

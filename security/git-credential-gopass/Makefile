@@ -14,6 +14,9 @@ USES=		go:1.22,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gopasspw
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GO_MODULE=	github.com/${GH_ACCOUNT}/${PORTNAME}
 
 PLIST_FILES=	bin/git-credential-gopass

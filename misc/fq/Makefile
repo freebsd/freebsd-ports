@@ -35,6 +35,9 @@ GH_TUPLE=	\
 		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		wader:gojq:0aa7b87b2c2b:wader_gojq/vendor/github.com/wader/gojq
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>

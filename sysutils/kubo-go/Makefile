@@ -16,6 +16,9 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 
 USES=		cpe go:1.22,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 CONFLICTS_INSTALL?=	ipfs-go-*
 
 CPE_VENDOR=	protocol

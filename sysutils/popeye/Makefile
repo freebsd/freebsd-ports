@@ -16,6 +16,9 @@ NOT_FOR_ARCHS=		armv7 i386
 
 USES=		go:1.23,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
 _BUILD_HASH=	f736e64
 

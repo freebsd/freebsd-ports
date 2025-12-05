@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:1.22,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	fabpot
 GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \

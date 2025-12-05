@@ -16,6 +16,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/mage:devel/mage
 USES=		go:1.22,modules
 USE_GITHUB=	yes
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 GH_ACCOUNT=	elastic
 GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor/github.com/Azure/azure-amqp-common-go/v3 \
 		Azure:azure-event-hubs-go:v3.3.15:azure_azure_event_hubs_go_v3/vendor/github.com/Azure/azure-event-hubs-go/v3 \

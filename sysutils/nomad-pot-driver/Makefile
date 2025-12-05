@@ -21,4 +21,7 @@ GO_TARGET=	:${PREFIX}/libexec/nomad/plugins/nomad-pot-driver
 SUB_FILES=	pkg-message
 PLIST_FILES=	${PREFIX}/libexec/nomad/plugins/nomad-pot-driver
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 .include <bsd.port.mk>

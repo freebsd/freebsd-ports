@@ -19,6 +19,9 @@ RUN_DEPENDS=	git:devel/git
 
 USES=		go:1.23,modules nodejs:20,build
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	thomiceli
 GH_PROJECT=	opengist

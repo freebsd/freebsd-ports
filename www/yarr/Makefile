@@ -12,6 +12,9 @@ LICENSE_FILE=	${WRKSRC}/license
 
 USES=		go:1.23,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 USE_RC_SUBR=	${PORTNAME}
 
 USE_GITHUB=	yes

@@ -18,6 +18,9 @@ PATCH_DEPENDS=	bash:shells/bash
 
 USES=		cpe gmake go:1.23,modules
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 CONFLICTS_INSTALL=	prometheus[13]
 
 USE_GITHUB=	yes

@@ -22,6 +22,9 @@ RUN_DEPENDS=	git:devel/git
 USES=		cpe gmake go:1.23,no_targets
 USE_RC_SUBR=	forgejo
 
+DEPRECATED=	Uses old go, but try building without USES=go:someversion
+EXPIRATION_DATE=2026-01-01
+
 CONFLICTS_INSTALL=	forgejo forgejo-lts
 
 EXTRACT_AFTER_ARGS=	--strip-components 1
