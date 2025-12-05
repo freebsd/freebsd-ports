@@ -1,7 +1,7 @@
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.12
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev
@@ -12,11 +12,8 @@ WWW=		https://yggdrasil-network.github.io/ \
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 USE_RC_SUBR=	yggdrasil
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 GO_MODULE=	github.com/yggdrasil-network/yggdrasil-go
 GO_TARGET=	./cmd/yggdrasil \
