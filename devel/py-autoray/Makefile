@@ -1,5 +1,5 @@
 PORTNAME=	autoray
-DISTVERSION=	0.8.0
+DISTVERSION=	0.8.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +30,6 @@ USE_PYTHON=	pep517 autoplist concurrent pytest
 
 NO_ARCH=	yes
 
-# tests as of : 1692 passed, 1274 skipped, 70 xfailed, 12 warnings in 49.94s
+# tests as of 0.8.4: 1720 passed, 1286 skipped, 68 xfailed, 12 warnings in 8.02s
 
 .include <bsd.port.mk>
