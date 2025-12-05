@@ -1,5 +1,5 @@
 PORTNAME=	hledger
-DISTVERSION=	1.50.2
+DISTVERSION=	1.50.4
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,7 +64,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		crypton-connection-0.4.5 \
 		crypton-socks-0.6.2 \
 		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.11 \
+		crypton-x509-store-1.6.12_1 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.14 \
 		csv-0.1.2 \
@@ -79,14 +79,14 @@ USE_CABAL=	Decimal-0.5.2 \
 		encoding-0.10.2 \
 		entropy-0.4.1.11 \
 		extensible-exceptions-0.1.1.4 \
-		extra-1.8 \
+		extra-1.8.1 \
 		file-embed-0.0.16.0 \
 		generically-0.1.1_4 \
 		githash-0.1.7.0 \
 		half-0.3.3_1 \
 		hashable-1.5.0.0_1 \
 		hashtables-1.4.2 \
-		hledger-lib-1.50.2 \
+		hledger-lib-1.50.4 \
 		hourglass-0.2.12_1 \
 		hpke-0.0.0 \
 		hsc2hs-0.68.10_4 \
@@ -139,10 +139,10 @@ USE_CABAL=	Decimal-0.5.2 \
 		semialign-1.3.1_2 \
 		semigroupoids-6.0.1_2 \
 		serialise-0.2.6.1_5 \
-		shakespeare-2.1.7.1 \
+		shakespeare-2.2.0 \
 		split-0.2.5 \
 		splitmix-0.1.3.1 \
-		streaming-commons-0.2.3.0 \
+		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
 		tabular-0.2.2.8_1 \
 		tagged-0.8.9 \
@@ -160,7 +160,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
 		timeit-2.0_2 \
-		tls-2.1.11 \
+		tls-2.1.13 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		uglymemo-0.1.0.1 \
