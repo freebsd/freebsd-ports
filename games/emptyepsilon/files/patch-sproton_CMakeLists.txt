@@ -1,0 +1,18 @@
+- Use bundled glm from libs/glm when WITH_GLM=bundled
+- Avoids FetchContent for glm since we provide it via GH_TUPLE for compatibility
+
+--- sproton/CMakeLists.txt.orig	2024-11-06 08:14:52 UTC
++++ sproton/CMakeLists.txt
+@@ -48,6 +48,12 @@ if(NOT WITH_GLM STREQUAL "bundled")
+     find_package(glm ${glm_find_args})
+ endif()
+ 
++# Check if glm is already provided in libs/glm (via ports GH_TUPLE)
++if(NOT glm_FOUND AND EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/libs/glm/CMakeLists.txt")
++    add_subdirectory(libs/glm EXCLUDE_FROM_ALL)
++    set(glm_FOUND TRUE)
++endif()
++
+ if(glm_FOUND)
+     message(STATUS "GLM version used: SYSTEM")
+     if(NOT TARGET glm::glm)

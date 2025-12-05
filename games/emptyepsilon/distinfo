@@ -1,7 +1,9 @@
-TIMESTAMP = 1733775767
+TIMESTAMP = 1764964262
 SHA256 (daid-EmptyEpsilon-EE-2024.12.08_GH0.tar.gz) = 8be5360270b9a616a5d749aec9653b3e36beba96b2d6b1651e18594a3314f010
 SIZE (daid-EmptyEpsilon-EE-2024.12.08_GH0.tar.gz) = 261708187
 SHA256 (daid-SeriousProton-EE-2024.12.08_GH0.tar.gz) = fa4a9873c5f8872f9f2d75d03eec06c8a40ea2e0daeb977f0445f14c1e76a236
 SIZE (daid-SeriousProton-EE-2024.12.08_GH0.tar.gz) = 2648907
 SHA256 (BinomialLLC-basis_universal-v1_15_update2_GH0.tar.gz) = 3caff917d63ed0255fc56bcdf80d305bb47ac9315a4a45409a1264a0e5e0e572
 SIZE (BinomialLLC-basis_universal-v1_15_update2_GH0.tar.gz) = 13283133
+SHA256 (g-truc-glm-0.9.9.8_GH0.tar.gz) = 7d508ab72cb5d43227a3711420f06ff99b0a0cb63ee2f93631b162bfe1fe9592
+SIZE (g-truc-glm-0.9.9.8_GH0.tar.gz) = 4368032
