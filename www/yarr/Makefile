@@ -1,6 +1,7 @@
 PORTNAME=	yarr
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	decke@FreeBSD.org
@@ -10,10 +11,7 @@ WWW=		https://github.com/nkanaev/yarr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license
 
-USES=		go:1.23,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 USE_RC_SUBR=	${PORTNAME}
 
