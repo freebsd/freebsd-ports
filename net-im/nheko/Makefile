@@ -4,6 +4,9 @@ DISTVERSION=	0.12.0
 PORTREVISION=	2
 CATEGORIES=	net-im
 
+PATCH_SITES=	https://github.com/Nheko-Reborn/nheko/commit/
+PATCHFILES+=	af2ca72030deb14a920a888e807dc732d93e3714.patch:-p1 # Fix configure with Qt 6.10
+
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Matrix IM client based on Qt technologies
 WWW=		https://nheko.im/nheko-reborn/nheko/
