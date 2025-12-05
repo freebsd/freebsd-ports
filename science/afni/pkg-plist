@@ -879,6 +879,9 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_tableize.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_matplot.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_msar.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_obl_child.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_obl_name.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_obl_tool.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_filt.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_funcs.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_physio_interact.py
@@ -1318,8 +1321,8 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_rjsquirrel.jpg
 %%DATADIR%%/funstuff/face_rmbirn.jpg
 %%DATADIR%%/funstuff/face_roadbrain.jpg
+%%DATADIR%%/funstuff/face_robertwill.jpg
 %%DATADIR%%/funstuff/face_robinkampe.jpg
-%%DATADIR%%/funstuff/face_robterwill.jpg
 %%DATADIR%%/funstuff/face_rory.jpg
 %%DATADIR%%/funstuff/face_roryd.jpg
 %%DATADIR%%/funstuff/face_rprost.jpg
@@ -1347,6 +1350,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_rwcoxI.jpg
 %%DATADIR%%/funstuff/face_rwcoxJ.jpg
 %%DATADIR%%/funstuff/face_rwcoxK.jpg
+%%DATADIR%%/funstuff/face_will_e.jpg
 %%DATADIR%%/funstuff/face_rwcoxL.jpg
 %%DATADIR%%/funstuff/face_rwcoxM.jpg
 %%DATADIR%%/funstuff/face_rwcoxN.jpg
