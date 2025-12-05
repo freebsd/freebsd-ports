@@ -1,6 +1,6 @@
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.58
+DISTVERSION=	0.60
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	abc:cad/abc \
 		gawk:lang/gawk
 LIB_DEPENDS=	libffi.so:devel/libffi
 RUN_DEPENDS=	bash:shells/bash \
+		vcd2fst:cad/gtkwave \
 		xdot:x11/py-xdot@${PY_FLAVOR}
 
 TEST_DEPENDS=	iverilog:cad/iverilog
