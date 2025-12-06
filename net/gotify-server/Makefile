@@ -17,7 +17,7 @@ BROKEN_i386=	Build does not succeed (timeout in poudriere)
 
 BUILD_DEPENDS=	yarn${NODEJS_SUFFIX}>=1.10.0:www/yarn${NODEJS_SUFFIX} \
 		
-USES=		go:modules,1.25 nodejs:build
+USES=		go:modules nodejs:build
 USE_RC_SUBR=	gotify_server
 GO_MODULE=	github.com/gotify/server/v2
 

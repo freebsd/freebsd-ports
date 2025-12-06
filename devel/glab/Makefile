@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	git:devel/git
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:1.25,modules
+USES=		go:modules
 
 _BUILD_VERSION=		${DISTVERSION}
 _BUILD_PLATFORM=	${OPSYS:tl}

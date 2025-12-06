@@ -26,7 +26,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		git:devel/git \
 		gitlab-analyzers-secrets>=0:security/gitlab-analyzers-secrets
 
-USES=		go:modules,1.24
+USES=		go:modules
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 USE_RC_SUBR=	gitlab_runner

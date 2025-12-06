@@ -21,7 +21,7 @@ EXTRACT_DEPENDS=	${UNZIP_CMD}:archivers/unzip
 RUN_DEPENDS=	gitleaks:devel/gitleaks \
 		git>=0:devel/git
 
-USES=		go:modules,1.24 tar:bzip2
+USES=		go:modules tar:bzip2
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org/security-products/analyzers
