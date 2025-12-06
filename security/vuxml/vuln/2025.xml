@@ -1,3 +1,39 @@
+  <vuln vid="8acfcfdc-d27c-11f0-8512-b0416f0c4c67">
+    <topic>spotipy -- CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</topic>
+    <affects>
+    <package>
+	    <name>py310-spotipy</name>
+	    <name>py311-spotipy</name>
+	    <name>py312-spotipy</name>
+	    <name>py313-spotipy</name>
+	    <name>py313t-spotipy</name>
+	    <name>py314-spotipy</name>
+	    <range><lt>2.25.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/spotipy-dev/spotipy/security/advisories/GHSA-r77h-rpp9-w2xm reports:</p>
+	<blockquote cite="https://github.com/spotipy-dev/spotipy/security/advisories/GHSA-r77h-rpp9-w2xm">
+	  <p>Spotipy is a Python library for the Spotify Web API.  Prior to
+version 2.25.2, there is a cross-site scripting (XSS) vulnerability
+in the OAuth callback server that allows for JavaScript injection
+through the unsanitized error parameter.  Attackers can execute
+arbitrary JavaScript in the user's browser during OAuth authentication.
+This issue has been patched in version 2.25.2.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-66040</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-66040</url>
+    </references>
+    <dates>
+      <discovery>2025-11-26</discovery>
+      <entry>2025-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c7187676-d176-11f0-841f-843a4b343614">
     <topic>xkbcomp -- Several vulnerabilities</topic>
     <affects>
