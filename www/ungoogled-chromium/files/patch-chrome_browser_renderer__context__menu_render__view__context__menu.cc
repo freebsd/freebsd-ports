@@ -1,6 +1,6 @@
---- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig	2025-11-12 17:42:57 UTC
+--- chrome/browser/renderer_context_menu/render_view_context_menu.cc.orig	2025-12-06 13:30:52 UTC
 +++ chrome/browser/renderer_context_menu/render_view_context_menu.cc
-@@ -244,7 +244,7 @@
+@@ -249,7 +249,7 @@
  #include "url/origin.h"
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -4987,7 +4987,7 @@ void RenderViewContextMenu::OpenLinkInSplitView() {
+@@ -5026,7 +5026,7 @@ void RenderViewContextMenu::OpenLinkInSplitView() {
  #endif  // !BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

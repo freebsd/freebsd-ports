@@ -1,11 +1,11 @@
---- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	2025-11-07 07:18:16 UTC
+--- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	2025-12-06 13:30:52 UTC
 +++ chrome/browser/ui/views/location_bar/location_bar_view.cc
-@@ -539,7 +539,7 @@ bool LocationBarView::IsInitialized() const {
- }
+@@ -1768,7 +1768,7 @@ void LocationBarView::OnPopupStateChanged(OmniboxPopup
+                      weak_factory_.GetWeakPtr()),
+       base::Milliseconds(100));
  
- void LocationBarView::OnPopupOpened() {
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   // It's not great for promos to overlap the omnibox if the user opens the
-   // drop-down after showing the promo. This especially causes issues on Mac and
-   // Linux due to z-order/rendering issues, see crbug.com/1225046 and
+   if (new_state != OmniboxPopupState::kNone) {
+     // Close any overlapping user education bubbles when any popup opens.
+     // It's not great for promos to overlap the omnibox if the user opens the

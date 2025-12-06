@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/common/chrome_paths.cc.orig	2025-12-06 13:30:52 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -31,7 +31,7 @@
  #include "base/apple/foundation_util.h"
@@ -20,10 +20,10 @@
  const base::FilePath::CharType kFilepathSinglePrefExtensions[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
 -    FILE_PATH_LITERAL("/usr/share/google-chrome/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/ungoogled-chromium/extensions");
++    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
  #else
 -    FILE_PATH_LITERAL("/usr/share/chromium/extensions");
-+    FILE_PATH_LITERAL("/usr/local/share/ungoogled-chromium/extensions");
++    FILE_PATH_LITERAL("/usr/local/share/chromium/extensions");
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -66,21 +66,17 @@
  #if BUILDFLAG(ENABLE_EXTENSIONS_CORE) &&                                   \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
 -     BUILDFLAG(IS_ANDROID))
-+     BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD))
++     BUILDFLAG(IS_ANDROID)) || BUILDFLAG(IS_BSD)
      case chrome::DIR_NATIVE_MESSAGING:
  #if BUILDFLAG(IS_MAC)
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-@@ -474,9 +474,12 @@ bool PathProvider(int key, base::FilePath* result) {
+@@ -474,6 +474,9 @@ bool PathProvider(int key, base::FilePath* result) {
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
        cur = base::FilePath(
            FILE_PATH_LITERAL("/etc/opt/chrome/native-messaging-hosts"));
 +#elif BUILDFLAG(IS_FREEBSD)
 +      cur = base::FilePath(FILE_PATH_LITERAL(
-+          "/usr/local/etc/ungoogled-chromium/native-messaging-hosts"));
++          "/usr/local/etc/chromium/native-messaging-hosts"));
  #else
        cur = base::FilePath(
--          FILE_PATH_LITERAL("/etc/chromium/native-messaging-hosts"));
-+          FILE_PATH_LITERAL("/etc/ungoogled-chromium/native-messaging-hosts"));
- #endif
- #endif  // !BUILDFLAG(IS_MAC)
-       break;
+           FILE_PATH_LITERAL("/etc/chromium/native-messaging-hosts"));

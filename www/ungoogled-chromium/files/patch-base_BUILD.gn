@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2025-11-01 06:40:37 UTC
+--- base/BUILD.gn.orig	2025-12-06 13:30:52 UTC
 +++ base/BUILD.gn
-@@ -1115,11 +1115,26 @@ component("base") {
+@@ -1124,11 +1124,26 @@ component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -28,7 +28,7 @@
    if (use_allocator_shim) {
      if (is_apple) {
        sources += [ "allocator/early_zone_registration_apple.h" ]
-@@ -1139,7 +1154,7 @@ component("base") {
+@@ -1148,7 +1163,7 @@ component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -37,7 +37,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2139,6 +2154,22 @@ component("base") {
+@@ -2151,6 +2166,22 @@ component("base") {
      ]
    }
  
@@ -60,7 +60,7 @@
    # iOS
    if (is_ios) {
      sources += [
-@@ -2313,6 +2344,33 @@ component("base") {
+@@ -2325,6 +2356,33 @@ component("base") {
      }
    }
  
@@ -94,7 +94,7 @@
    if (use_blink) {
      sources += [
        "files/file_path_watcher.cc",
-@@ -2719,7 +2777,7 @@ buildflag_header("protected_memory_buildflags") {
+@@ -2728,7 +2786,7 @@ buildflag_header("protected_memory_buildflags") {
    header = "protected_memory_buildflags.h"
    header_dir = "base/memory"
  
@@ -103,7 +103,7 @@
                               (is_win || is_linux || is_android || is_mac)
  
    flags = [ "PROTECTED_MEMORY_ENABLED=$protected_memory_enabled" ]
-@@ -3225,7 +3283,7 @@ if (is_apple) {
+@@ -3234,7 +3292,7 @@ if (is_apple) {
    }
  }
  
@@ -112,7 +112,7 @@
    # This test must compile with -fstack-protector-all
    source_set("stack_canary_linux_unittests") {
      testonly = true
-@@ -3923,7 +3981,7 @@ test("base_unittests") {
+@@ -3941,7 +3999,7 @@ test("base_unittests") {
      configs += [ ":delayload_esent_dll" ]
    }
  
@@ -121,7 +121,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3947,7 +4005,7 @@ test("base_unittests") {
+@@ -3965,7 +4023,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -130,7 +130,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3958,7 +4016,7 @@ test("base_unittests") {
+@@ -3976,7 +4034,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -139,7 +139,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -4145,7 +4203,7 @@ test("base_unittests") {
+@@ -4163,7 +4221,7 @@ test("base_unittests") {
      deps += [ ":base_profiler_test_support_library" ]
    }
  

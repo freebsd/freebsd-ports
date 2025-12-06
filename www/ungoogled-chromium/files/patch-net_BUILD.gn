@@ -1,4 +1,4 @@
---- net/BUILD.gn.orig	2025-11-01 06:40:37 UTC
+--- net/BUILD.gn.orig	2025-12-06 13:30:52 UTC
 +++ net/BUILD.gn
 @@ -126,7 +126,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1378,6 +1378,19 @@ component("net") {
+@@ -1381,6 +1381,19 @@ component("net") {
      ]
    }
  
@@ -29,7 +29,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1543,7 +1556,7 @@ component("net") {
+@@ -1546,7 +1559,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -38,7 +38,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2279,7 +2292,7 @@ static_library("test_support") {
+@@ -2292,7 +2305,7 @@ static_library("test_support") {
      ]
    }
  
@@ -47,7 +47,7 @@
      sources += [
        "base/address_tracker_linux_test_util.cc",
        "base/address_tracker_linux_test_util.h",
-@@ -3078,14 +3091,14 @@ target(_test_target_type, "net_unittests") {
+@@ -3093,14 +3106,14 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -64,7 +64,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3187,6 +3200,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3206,6 +3219,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -75,7 +75,7 @@
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3243,7 +3260,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3262,7 +3279,7 @@ target(_test_target_type, "net_unittests") {
    ]
    data_deps = [ "//testing/buildbot/filters:net_unittests_filters" ]
  
@@ -84,7 +84,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3373,7 +3390,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3392,7 +3409,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

@@ -1,6 +1,6 @@
---- v8/src/base/atomicops.h.orig	2025-11-01 06:40:37 UTC
+--- v8/src/base/atomicops.h.orig	2025-12-06 13:30:52 UTC
 +++ v8/src/base/atomicops.h
-@@ -57,10 +57,10 @@ using Atomic64 = SbAtomic64;
+@@ -32,10 +32,10 @@ using Atomic64 = SbAtomic64;
  using Atomic8 = char;
  using Atomic16 = int16_t;
  using Atomic32 = int32_t;
@@ -13,12 +13,12 @@
  using Atomic64 = int64_t;
  #else
  using Atomic64 = intptr_t;
-@@ -281,7 +281,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
-                                    std::memory_order_seq_cst);
- }
+@@ -59,7 +59,7 @@ inline void SeqCst_MemoryFence() {
  
+ template <typename T>
+ concept AtomicTypeForTrivialOperations =
 -#if defined(V8_HOST_ARCH_64_BIT)
 +#if defined(V8_HOST_ARCH_64_BIT) || defined(V8_OS_OPENBSD)
- 
- inline Atomic64 Relaxed_CompareAndSwap(volatile Atomic64* ptr,
-                                        Atomic64 old_value, Atomic64 new_value) {
+     std::is_same_v<T, Atomic64> ||
+ #endif
+     std::is_same_v<T, Atomic8> || std::is_same_v<T, Atomic16> ||

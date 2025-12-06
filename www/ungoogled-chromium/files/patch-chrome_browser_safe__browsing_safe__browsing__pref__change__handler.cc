@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc.orig	2025-12-06 13:30:52 UTC
 +++ chrome/browser/safe_browsing/safe_browsing_pref_change_handler.cc
-@@ -12,7 +12,7 @@
+@@ -14,7 +14,7 @@
  #include "content/public/browser/web_contents.h"
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/browser_finder.h"
  #include "chrome/browser/ui/browser_window/public/browser_window_features.h"
  #include "chrome/browser/ui/toasts/api/toast_id.h"
-@@ -59,7 +59,7 @@ SafeBrowsingPrefChangeHandler::~SafeBrowsingPrefChange
+@@ -61,7 +61,7 @@ SafeBrowsingPrefChangeHandler::~SafeBrowsingPrefChange
  void SafeBrowsingPrefChangeHandler::
      MaybeShowEnhancedProtectionSettingChangeNotification() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -18,7 +18,7 @@
    if (!profile_ ||
        !base::FeatureList::IsEnabled(safe_browsing::kEsbAsASyncedSetting)) {
      return;
-@@ -186,7 +186,7 @@ void SafeBrowsingPrefChangeHandler::
+@@ -216,7 +216,7 @@ void SafeBrowsingPrefChangeHandler::
  }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \

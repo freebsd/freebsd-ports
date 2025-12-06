@@ -1,9 +1,9 @@
---- components/password_manager/core/browser/password_store/login_database.cc.orig	2025-11-01 06:40:37 UTC
+--- components/password_manager/core/browser/password_store/login_database.cc.orig	2025-12-06 13:30:52 UTC
 +++ components/password_manager/core/browser/password_store/login_database.cc
 @@ -1043,7 +1043,7 @@ bool ShouldDeleteUndecryptablePasswords(
-     bool is_user_data_dir_policy_set,
      bool is_enabled_by_policy,
-     IsAccountStore is_account_store) {
+     IsAccountStore is_account_store,
+     const os_crypt_async::Encryptor* encryptor) {
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    std::unique_ptr<base::Environment> environment(base::Environment::Create());

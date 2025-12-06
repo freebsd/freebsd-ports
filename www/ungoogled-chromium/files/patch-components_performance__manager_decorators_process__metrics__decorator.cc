@@ -1,11 +1,11 @@
---- components/performance_manager/decorators/process_metrics_decorator.cc.orig	2025-10-21 16:57:35 UTC
+--- components/performance_manager/decorators/process_metrics_decorator.cc.orig	2025-12-06 13:30:52 UTC
 +++ components/performance_manager/decorators/process_metrics_decorator.cc
-@@ -266,7 +266,7 @@ void ProcessMetricsDecorator::DidGetMemoryUsage(
-     base::ByteCount process_rss =
-         base::KiB(process_dump_iter.os_dump().resident_set_kb);
-     process_node->set_resident_set(process_rss);
+@@ -54,7 +54,7 @@ class ProcessMetricsDecorator::NodeMetricsUpdater {
+     auto* process_node = ProcessNodeImpl::FromNode(context.GetProcessNode());
+     process_node->set_private_footprint(memory_summary_->private_footprint);
+     process_node->set_resident_set(memory_summary_->resident_set_size);
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
-     process_node->set_private_swap(
-         base::KiB(process_dump_iter.os_dump().private_footprint_swap_kb));
+     process_node->set_private_swap(memory_summary_->private_swap);
  #endif
+   }

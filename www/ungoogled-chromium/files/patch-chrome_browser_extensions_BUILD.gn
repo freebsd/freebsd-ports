@@ -1,6 +1,6 @@
---- chrome/browser/extensions/BUILD.gn.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/extensions/BUILD.gn.orig	2025-12-06 13:30:52 UTC
 +++ chrome/browser/extensions/BUILD.gn
-@@ -1517,6 +1517,10 @@ source_set("extensions") {
+@@ -1515,6 +1515,10 @@ source_set("extensions") {
        deps += [ "//chrome/services/printing/public/mojom" ]
      }
  

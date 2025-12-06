@@ -1,4 +1,4 @@
---- extensions/common/api/_permission_features.json.orig	2025-11-01 06:40:37 UTC
+--- extensions/common/api/_permission_features.json.orig	2025-12-06 13:30:52 UTC
 +++ extensions/common/api/_permission_features.json
 @@ -61,7 +61,7 @@
      "channel": "stable",
@@ -101,7 +101,7 @@
      "allowlist": [
        "0DE0F05680A4A056BCEC864ED8DDA84296F82B40",  // http://crbug.com/434651
        "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/293683
-@@ -490,7 +490,7 @@
+@@ -484,7 +484,7 @@
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
      // "desktop_android" is not supported.
@@ -110,7 +110,7 @@
      "allowlist": [
        // DO NOT ADD ANY MORE ENTRIES HERE.
        // networkingPrivate is being migrated to networking.onc.
-@@ -570,7 +570,7 @@
+@@ -564,7 +564,7 @@
      "channel": "stable",
      "extension_types": ["extension", "platform_app" ],
      // "desktop_android" is not supported.
@@ -119,7 +119,7 @@
    },
    // Note: runtime is not actually a permission, but some systems check these
    // values to verify restrictions.
-@@ -582,13 +582,13 @@
+@@ -576,13 +576,13 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.
@@ -135,7 +135,7 @@
    },
    "storage": [
      {
-@@ -678,13 +678,13 @@
+@@ -672,13 +672,13 @@
        "channel": "stable",
        "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
        // "desktop_android" is not supported.
@@ -151,7 +151,7 @@
        "allowlist": ["B44D08FD98F1523ED5837D78D0A606EA9D6206E5"]  // Web Store
      }
    ],
-@@ -693,13 +693,13 @@
+@@ -687,13 +687,13 @@
        "channel": "stable",
        "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
        // "desktop_android" is not supported.
@@ -167,16 +167,16 @@
        "allowlist": ["B44D08FD98F1523ED5837D78D0A606EA9D6206E5"]  // Web Store
      }
    ],
-@@ -727,7 +727,7 @@
-       "channel": "stable",
-       "extension_types": ["platform_app"],
-       // "desktop_android" is not supported.
--      "platforms": ["chromeos", "linux", "mac", "win"]
-+      "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"]
-     },
+@@ -720,7 +720,7 @@
+     "channel": "stable",
+     "extension_types": ["platform_app"],
+     // "desktop_android" is not supported.
+-    "platforms": ["chromeos", "linux", "mac", "win"]
++    "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"]
+   },
+   "usbDevices": [
      {
-       "channel": "dev",
-@@ -813,7 +813,7 @@
+@@ -788,7 +788,7 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.

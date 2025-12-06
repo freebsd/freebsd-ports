@@ -1,4 +1,4 @@
---- components/sync_bookmarks/bookmark_model_view.cc.orig	2025-11-01 06:40:37 UTC
+--- components/sync_bookmarks/bookmark_model_view.cc.orig	2025-12-06 13:30:52 UTC
 +++ components/sync_bookmarks/bookmark_model_view.cc
 @@ -9,7 +9,7 @@
  #include "components/bookmarks/browser/bookmark_model.h"
@@ -6,15 +6,15 @@
  #include "components/bookmarks/common/bookmark_metrics.h"
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- #include "components/sync_bookmarks/initial_account_bookmark_deduplicator.h"
- #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
- 
-@@ -250,7 +250,7 @@ void BookmarkModelViewUsingAccountNodes::RemoveAllSync
+ #include "base/metrics/histogram_base.h"
+ #include "base/metrics/histogram_functions.h"
+ #include "base/time/time.h"
+@@ -253,7 +253,7 @@ void BookmarkModelViewUsingAccountNodes::RemoveAllSync
  
  void BookmarkModelViewUsingAccountNodes::
      MaybeRemoveUnderlyingModelDuplicatesUponInitialSync() {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   InitialAccountBookmarkDeduplicator initial_account_bookmark_deduplicator(
-       underlying_model());
-   initial_account_bookmark_deduplicator.Deduplicate();
+   BeginExtensiveChanges();
+ 
+   const base::Time deduplication_start_time = base::Time::Now();

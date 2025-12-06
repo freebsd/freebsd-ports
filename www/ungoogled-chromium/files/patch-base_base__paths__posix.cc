@@ -1,4 +1,4 @@
---- base/base_paths_posix.cc.orig	2025-02-20 09:59:21 UTC
+--- base/base_paths_posix.cc.orig	2025-12-06 13:30:52 UTC
 +++ base/base_paths_posix.cc
 @@ -15,6 +15,7 @@
  #include <ostream>
@@ -97,7 +97,7 @@
 +        if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)
 +          *result = FilePath(cpath);
 +        else
-+          *result = FilePath("/usr/local/ungoogled-chromium/ungoogled-chromium");
++          *result = FilePath("/usr/local/chrome/chrome");
 +        return true;
 +#if !BUILDFLAG(IS_AIX)
 +      }

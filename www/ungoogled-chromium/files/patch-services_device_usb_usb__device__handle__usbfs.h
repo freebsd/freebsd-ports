@@ -1,6 +1,6 @@
---- services/device/usb/usb_device_handle_usbfs.h.orig	2025-05-06 12:23:00 UTC
+--- services/device/usb/usb_device_handle_usbfs.h.orig	2025-12-06 13:30:52 UTC
 +++ services/device/usb/usb_device_handle_usbfs.h
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "base/threading/sequence_bound.h"
  #include "services/device/usb/usb_device_handle.h"
  
@@ -9,7 +9,7 @@
  #include "base/containers/flat_set.h"
  #endif  // BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
  
-@@ -215,7 +215,7 @@ class UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper {
+@@ -216,7 +216,7 @@ class UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper {
    bool ClearHalt(uint8_t endpoint_address);
    void DiscardUrb(Transfer* transfer);
  
@@ -18,7 +18,7 @@
    // Detach the interface from a kernel driver before ClaimInterface
    virtual bool DetachInterface(int interface_number,
                                 const CombinedInterfaceInfo& interfaceInfo);
-@@ -228,7 +228,7 @@ class UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper {
+@@ -229,7 +229,7 @@ class UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper {
    // Called when |fd_| is writable without blocking.
    void OnFileCanWriteWithoutBlocking();
  
@@ -27,7 +27,7 @@
    // Called from |DetachInterface|.
    std::string GetKernelDriver(int interface_number) const;
  #endif  // BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX)
-@@ -240,7 +240,7 @@ class UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper {
+@@ -241,7 +241,7 @@ class UsbDeviceHandleUsbfs::BlockingTaskRunnerHelper {
    std::unique_ptr<base::FileDescriptorWatcher::Controller> watch_controller_;
    SEQUENCE_CHECKER(sequence_checker_);
  

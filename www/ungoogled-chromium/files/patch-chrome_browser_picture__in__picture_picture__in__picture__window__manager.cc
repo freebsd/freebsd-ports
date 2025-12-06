@@ -1,6 +1,6 @@
---- chrome/browser/picture_in_picture/picture_in_picture_window_manager.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/picture_in_picture/picture_in_picture_window_manager.cc.orig	2025-12-06 13:30:52 UTC
 +++ chrome/browser/picture_in_picture/picture_in_picture_window_manager.cc
-@@ -22,7 +22,7 @@
+@@ -21,7 +21,7 @@
  #include "ui/gfx/geometry/resize_utils.h"
  #include "ui/gfx/geometry/size.h"
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

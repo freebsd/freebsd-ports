@@ -1,6 +1,6 @@
---- chrome/browser/component_updater/registration.cc.orig	2025-09-10 13:22:16 UTC
+--- chrome/browser/component_updater/registration.cc.orig	2025-12-06 13:30:52 UTC
 +++ chrome/browser/component_updater/registration.cc
-@@ -92,7 +92,7 @@
+@@ -93,7 +93,7 @@
  #endif  // BUILDFLAG(ENABLE_WIDEVINE_CDM_COMPONENT)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "components/component_updater/installer_policies/amount_extraction_heuristic_regexes_component_installer.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-@@ -105,7 +105,7 @@
+@@ -106,7 +106,7 @@
  #include "chrome/browser/component_updater/lacros_component_remover.h"
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
@@ -18,7 +18,7 @@
  #include "chrome/browser/component_updater/wasm_tts_engine_component_installer.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -240,7 +240,7 @@ void RegisterComponentsForUpdate() {
+@@ -242,7 +242,7 @@ void RegisterComponentsForUpdate() {
    RegisterCookieReadinessListComponent(cus);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
    RegisterAmountExtractionHeuristicRegexesComponent(cus);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -252,7 +252,7 @@ void RegisterComponentsForUpdate() {
+@@ -254,7 +254,7 @@ void RegisterComponentsForUpdate() {
    }
  #endif  // BUIDLFLAG(IS_ANDROID)
  
