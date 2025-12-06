@@ -1,3 +1,60 @@
+  <vuln vid="ea34264d-d289-11f0-a15a-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>143.0.7499.40</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>143.0.7499.40</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop.html">
+	 <p>This update includes 13 security fixes:</p>
+	 <ul>
+	    <li>[456547591] High CVE-2025-13630: Type Confusion in V8. Reported by Shreyas Penkar (@streypaws) on 2025-10-31</li>
+	    <li>[448113221] High CVE-2025-13631: Inappropriate implementation in Google Updater. Reported by Jota Domingos on 2025-09-29</li>
+	    <li>[439058242] High CVE-2025-13632: Inappropriate implementation in DevTools. Reported by Leandro Teles on 2025-08-16</li>
+	    <li>[458082926] High CVE-2025-13633: Use after free in Digital Credentials. Reported by Chrome on 2025-11-05</li>
+	    <li>[429140219] Medium CVE-2025-13634: Inappropriate implementation in Downloads. Reported by Eric Lawrence of Microsoft on 2025-07-02</li>
+	    <li>[457818670] Medium CVE-2025-13720: Bad cast in Loader. Reported by Chrome on 2025-11-04</li>
+	    <li>[355120682] Medium CVE-2025-13721: Race in v8. Reported by Chrome on 2024-07-23</li>
+	    <li>[405727341] Low CVE-2025-13635: Inappropriate implementation in Downloads. Reported by Hafiizh on 2025-03-24</li>
+	    <li>[446181124] Low CVE-2025-13636: Inappropriate implementation in Split View. Reported by Khalil Zhani on 2025-09-20</li>
+	    <li>[392375329] Low CVE-2025-13637: Inappropriate implementation in Downloads. Reported by Hafiizh on 2025-01-27</li>
+	    <li>[448046109] Low CVE-2025-13638: Use after free in Media Stream. Reported by sherkito on 2025-09-29</li>
+	    <li>[448408148] Low CVE-2025-13639: Inappropriate implementation in WebRTC. Reported by Philipp Hancke on 2025-10-01</li>
+	    <li>[452071826] Low CVE-2025-13640: Inappropriate implementation in Passwords. Reported by Anonymous on 2025-10-14</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13631</cvename>
+      <cvename>CVE-2025-13632</cvename>
+      <cvename>CVE-2025-13633</cvename>
+      <cvename>CVE-2025-13634</cvename>
+      <cvename>CVE-2025-13635</cvename>
+      <cvename>CVE-2025-13636</cvename>
+      <cvename>CVE-2025-13637</cvename>
+      <cvename>CVE-2025-13638</cvename>
+      <cvename>CVE-2025-13639</cvename>
+      <cvename>CVE-2025-13640</cvename>
+      <cvename>CVE-2025-13634</cvename>
+      <cvename>CVE-2025-13720</cvename>
+      <cvename>CVE-2025-13721</cvename>
+      <url>https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2025-12-02</discovery>
+      <entry>2025-12-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8acfcfdc-d27c-11f0-8512-b0416f0c4c67">
     <topic>spotipy -- CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')</topic>
     <affects>
