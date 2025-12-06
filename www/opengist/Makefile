@@ -17,10 +17,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 BUILD_DEPENDS=	npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:1.23,modules nodejs:20,build
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules nodejs:20,build
 
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	thomiceli
