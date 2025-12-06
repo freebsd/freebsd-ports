@@ -1,6 +1,6 @@
---- components/policy/core/common/cloud/cloud_policy_refresh_scheduler.cc.orig	2025-10-30 15:44:36 UTC
+--- components/policy/core/common/cloud/cloud_policy_refresh_scheduler.cc.orig	2025-12-05 10:12:50 UTC
 +++ components/policy/core/common/cloud/cloud_policy_refresh_scheduler.cc
-@@ -25,7 +25,7 @@ namespace policy {
+@@ -26,7 +26,7 @@ namespace policy {
  
  namespace {
  
@@ -9,7 +9,7 @@
  BASE_FEATURE(kRetryWithKeyReset, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  
-@@ -218,7 +218,7 @@ void CloudPolicyRefreshScheduler::OnStoreError(CloudPo
+@@ -219,7 +219,7 @@ void CloudPolicyRefreshScheduler::OnStoreError(CloudPo
    // continue using the stale information. Thus, no specific response to a store
    // error is required. NB: Changes to is_managed fire OnStoreLoaded().
  

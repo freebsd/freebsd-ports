@@ -1,4 +1,4 @@
---- remoting/host/remoting_me2me_host.cc.orig	2025-10-02 04:28:32 UTC
+--- remoting/host/remoting_me2me_host.cc.orig	2025-12-05 10:12:50 UTC
 +++ remoting/host/remoting_me2me_host.cc
 @@ -140,7 +140,7 @@
  #include "remoting/host/mac/permission_utils.h"
@@ -99,7 +99,7 @@
    context_->input_task_runner()->PostTask(
        FROM_HERE,
        base::BindOnce([]() { delete ui::X11EventSource::GetInstance(); }));
-@@ -1835,7 +1835,7 @@ void HostProcess::StartHost() {
+@@ -1829,7 +1829,7 @@ void HostProcess::StartHost() {
  
    SetState(HOST_STARTED);
  
@@ -108,7 +108,7 @@
    if (webrtc::DesktopCapturer::IsRunningUnderWayland()) {
      GnomeRemoteDesktopSession::GetInstance()->Init(
          base::BindOnce([](base::expected<void, std::string> result) {
-@@ -1925,7 +1925,7 @@ void HostProcess::StartHost() {
+@@ -1919,7 +1919,7 @@ void HostProcess::StartHost() {
  
    host_->AddExtension(std::make_unique<TestEchoExtension>());
  
@@ -117,7 +117,7 @@
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
    if (cmd_line->HasSwitch(kEnableWtmpdb)) {
      host_wtmpdb_logger_ =
-@@ -1960,7 +1960,7 @@ void HostProcess::StartHost() {
+@@ -1954,7 +1954,7 @@ void HostProcess::StartHost() {
    // addresses.
    host_->Start(*host_owner_emails_.begin());
  
@@ -126,7 +126,7 @@
    // For Windows and Mac, ChromotingHostServices connections are handled by
    // another process, then the message pipe is forwarded to the network process.
    host_->StartChromotingHostServices();
-@@ -2105,7 +2105,7 @@ int HostProcessMain() {
+@@ -2099,7 +2099,7 @@ int HostProcessMain() {
    HOST_LOG << "Starting host process: version " << STRINGIZE(VERSION);
    const base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
  
@@ -135,7 +135,7 @@
  #if defined(REMOTING_USE_X11)
    // Initialize Xlib for multi-threaded use, allowing non-Chromium code to
    // use X11 safely (such as the WebRTC capturer, GTK ...)
-@@ -2150,7 +2150,7 @@ int HostProcessMain() {
+@@ -2144,7 +2144,7 @@ int HostProcessMain() {
      return kInitializationFailed;
    }
  
@@ -144,7 +144,7 @@
    // Log and cleanup the crash database. We do this after a short delay so that
    // the crash database has a chance to be updated properly if we just got
    // relaunched after a crash.
-@@ -2170,7 +2170,7 @@ int HostProcessMain() {
+@@ -2164,7 +2164,7 @@ int HostProcessMain() {
    std::unique_ptr<net::NetworkChangeNotifier> network_change_notifier(
        net::NetworkChangeNotifier::CreateIfNeeded());
  

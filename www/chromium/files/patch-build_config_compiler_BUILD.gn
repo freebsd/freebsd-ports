@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2025-10-30 15:44:36 UTC
+--- build/config/compiler/BUILD.gn.orig	2025-12-05 10:12:50 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -196,7 +196,7 @@ declare_args() {
+@@ -201,7 +201,7 @@ declare_args() {
    # This greatly reduces the size of debug builds, at the cost of
    # debugging information which is required by some specialized
    # debugging tools.
@@ -9,7 +9,7 @@
  
    # This switch is used to enable -Wexit-time-destructors by default. This
    # warning serves as a flip switch to allow a gradual migration of targets
-@@ -270,7 +270,7 @@ assert(!(llvm_force_head_revision && use_remoteexec &&
+@@ -282,7 +282,7 @@ assert(is_bot ||
  #
  # Since this is referenced both when passing the file and when deciding which
  # warnings to enable, store it in a separate variable here.
@@ -18,7 +18,7 @@
      is_clang && clang_warning_suppression_file != ""
  
  # default_include_dirs ---------------------------------------------------------
-@@ -288,13 +288,16 @@ config("default_include_dirs") {
+@@ -300,13 +300,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -36,7 +36,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -567,6 +570,10 @@ config("compiler") {
+@@ -579,6 +582,10 @@ config("compiler") {
      }
    }
  
@@ -47,7 +47,7 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_icf && (!is_apple || use_lld)) {
-@@ -657,7 +664,7 @@ config("compiler") {
+@@ -669,7 +676,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -56,7 +56,7 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1315,7 +1322,7 @@ config("compiler_cpu_abi") {
+@@ -1297,7 +1304,7 @@ config("compiler_cpu_abi") {
      # CPU architecture. We may or may not be doing a cross compile now, so for
      # simplicity we always explicitly set the architecture.
      if (current_cpu == "x64") {
@@ -65,7 +65,7 @@
          cflags += [ "--target=x86_64-unknown-linux-gnu" ]
          ldflags += [ "--target=x86_64-unknown-linux-gnu" ]
        } else {
-@@ -1324,7 +1331,7 @@ config("compiler_cpu_abi") {
+@@ -1306,7 +1313,7 @@ config("compiler_cpu_abi") {
        }
        cflags += [ "-msse3" ]
      } else if (current_cpu == "x86") {
@@ -74,7 +74,7 @@
          cflags += [ "--target=i386-unknown-linux-gnu" ]
          ldflags += [ "--target=i386-unknown-linux-gnu" ]
        } else {
-@@ -1336,7 +1343,7 @@ config("compiler_cpu_abi") {
+@@ -1318,7 +1325,7 @@ config("compiler_cpu_abi") {
          "-msse3",
        ]
      } else if (current_cpu == "arm") {
@@ -83,7 +83,7 @@
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
        }
-@@ -1348,7 +1355,7 @@ config("compiler_cpu_abi") {
+@@ -1330,7 +1337,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -92,7 +92,7 @@
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
        }
-@@ -1747,7 +1754,7 @@ config("compiler_deterministic") {
+@@ -1735,7 +1742,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -101,7 +101,7 @@
        current_os != "zos") {
      _perform_consistency_checks = current_toolchain == default_toolchain
      if (llvm_force_head_revision) {
-@@ -2955,7 +2962,7 @@ config("afdo_optimize_size") {
+@@ -2969,7 +2976,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -110,7 +110,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2982,7 +2989,7 @@ config("afdo") {
+@@ -2996,7 +3003,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }

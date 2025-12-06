@@ -1,7 +1,7 @@
---- media/gpu/test/video_frame_helpers.cc.orig	2025-08-07 06:57:29 UTC
+--- media/gpu/test/video_frame_helpers.cc.orig	2025-12-05 10:12:50 UTC
 +++ media/gpu/test/video_frame_helpers.cc
-@@ -23,7 +23,7 @@
- #include "ui/gfx/buffer_format_util.h"
+@@ -22,7 +22,7 @@
+ #include "third_party/libyuv/include/libyuv.h"
  #include "ui/gfx/gpu_memory_buffer_handle.h"
  
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)

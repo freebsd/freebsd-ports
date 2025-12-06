@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/opaque_browser_frame_view_layout_delegate.h.orig	2025-01-15 09:18:26 UTC
+--- chrome/browser/ui/views/frame/opaque_browser_frame_view_layout_delegate.h.orig	2025-12-05 10:12:50 UTC
 +++ chrome/browser/ui/views/frame/opaque_browser_frame_view_layout_delegate.h
 @@ -9,7 +9,7 @@
  
@@ -9,7 +9,7 @@
  #include "ui/base/ui_base_types.h"
  #endif
  
-@@ -92,7 +92,7 @@ class OpaqueBrowserFrameViewLayoutDelegate {
+@@ -88,7 +88,7 @@ class OpaqueBrowserFrameViewLayoutDelegate {
    // Returns true if a client-side shadow should be drawn for restored windows.
    virtual bool ShouldDrawRestoredFrameShadow() const = 0;
  
