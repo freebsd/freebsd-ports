@@ -1,5 +1,5 @@
 PORTNAME=	logseq
-PORTVERSION=	0.10.13
+PORTVERSION=	0.10.15
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/logseq/logseq/releases/download/${PORTVERSION}/ \
 		LOCAL/arrowd/:node_modules
@@ -14,14 +14,11 @@ WWW=		https://logseq.com
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on expired devel/electron34
-EXPIRATION_DATE=2026-02-01
-
 ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		desktop-file-utils electronfix:34 shared-mime-info zip
+USES=		desktop-file-utils electronfix:38 shared-mime-info zip
 
 ELECTRONFIX_MAIN_EXECUTABLE=	Logseq
 SUB_FILES=	Logseq
@@ -31,7 +28,7 @@ WRKSRC=		${WRKDIR}/Logseq-linux-x64
 RSAPI_HASH=	0162b98aaec78aa991cdbca2e070816c6acd189a
 # Taken from https://github.com/search?q=repo%3Alogseq%2Flogseq%20better-sqlite&type=code
 BETTER_SQLITE_VERSION=	11.10.0
-ELECTRON_VERSION=	34.5.6
+ELECTRON_VERSION=	38.4.0
 
 post-patch:
 	${RM} ${WRKSRC}/resources/app/node_modules/@logseq/rsapi-linux-x64-gnu/package.json.orig
