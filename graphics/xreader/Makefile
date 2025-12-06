@@ -1,5 +1,6 @@
 PORTNAME=	xreader
 PORTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	graphics print gnome
 DIST_SUBDIR=	gnome
 

@@ -1,6 +1,6 @@
 PORTNAME=	yacreader
 DISTVERSION=	9.15.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/YACReader/${PORTNAME}/releases/download/${DISTVERSION}/
 EXTRACT_SUFX=	-src.tar.xz

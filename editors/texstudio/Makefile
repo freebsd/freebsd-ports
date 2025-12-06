@@ -1,5 +1,6 @@
 PORTNAME=	texstudio
 DISTVERSION=	4.9.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	wen@FreeBSD.org
