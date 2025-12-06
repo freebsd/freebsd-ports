@@ -1,5 +1,5 @@
 PORTNAME=	valkey
-DISTVERSION=	8.1.4
+DISTVERSION=	8.1.5
 CATEGORIES=	databases
 PKGNAMESUFFIX=	8
 
@@ -58,6 +58,9 @@ post-build:
 		${WRKSRC}/valkey.conf > ${WRKDIR}/valkey.conf
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/sentinel.conf > ${WRKDIR}/valkey-sentinel.conf
+
+post-stage:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/valkey*
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/valkey.conf ${STAGEDIR}${PREFIX}/etc/valkey.conf.sample
