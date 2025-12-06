@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-+# Ask clusteradm@ before removal
+# Ask clusteradm@ before removal
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unify, eventize and enrich information from Perceval
 WWW=		https://github.com/chaoss/grimoirelab-cereslib
