@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	not supported, see https://github.com/aquasecurity/trivy/pull/9102
 
-USES=		go:modules,1.25
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aquasecurity
