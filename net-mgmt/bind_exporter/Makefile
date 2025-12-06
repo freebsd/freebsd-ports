@@ -1,7 +1,7 @@
 PORTNAME=	bind_exporter
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.8.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt dns
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://github.com/prometheus-community/bind_exporter
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 USE_RC_SUBR=	bind_exporter
 
 DEPRECATED=	Uses old go, but try building without USES=go:someversion
