@@ -8,13 +8,13 @@
 # loki_enable="YES"
 #
 # loki_enable (bool):
-#     Set it to YES to enable grafana
+#     Set it to YES to enable loki
 #     Set to NO by default
 # loki_user (string):
-#     Set user that grafana will run under
+#     Set user that loki will run under
 #     Default is "%%LOKI_USER%%"
 # loki_group (string):
-#     Set group that own grafana files
+#     Set group that own loki files
 #     Default is "%%LOKI_GROUP%%"
 # loki_config (string)
 #     Set full path to config file
