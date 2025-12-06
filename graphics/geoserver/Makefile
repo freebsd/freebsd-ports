@@ -1,5 +1,5 @@
 PORTNAME=	geoserver
-DISTVERSION=	2.28.0
+DISTVERSION=	2.28.1
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
@@ -30,13 +30,13 @@ GEODIRS=	data_dir etc lib logs modules resources webapps
 PLIST_SUB=	BATIK=1.18 \
 		ECLIPSE=2.15.0 \
 		G="${GEOSERVERDIR:S,^${PREFIX}/,,}" \
-		GT=34.0 \
-		GWC=1.28.0 \
-		IMAGEIO=2.0.0 \
+		GT=34.1 \
+		GWC=1.28.1 \
+		IMAGEIO=2.0.1 \
 		JACKSON=2.19.0 \
 		JETTY=10.0.25 \
 		JNA=5.17.0 \
-		JT=0.9.0 \
+		JT=0.9.1 \
 		MVER=${PORTVERSION} \
 		SI=2.2 \
 		SPRING=5.3.39 \

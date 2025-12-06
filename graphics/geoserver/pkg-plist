@@ -603,7 +603,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/binarize-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/border-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/buffer-%%JT%%.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/checker-qual-3.49.3.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/checker-qual-3.49.5.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/classbreaks-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/classifier-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/colorconvert-%%JT%%.jar
@@ -806,7 +806,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/picocontainer-1.2.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/piecewise-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/pngj-2.0.1.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/postgresql-42.7.7.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/postgresql-42.7.8.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/re2j-1.8.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/rendered-image-browser-%%JT%%.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/rescale-%%JT%%.jar
