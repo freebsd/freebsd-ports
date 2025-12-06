@@ -1,6 +1,6 @@
---- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2025-10-21 16:57:35 UTC
+--- media/mojo/mojom/video_frame_mojom_traits.cc.orig	2025-12-06 13:30:52 UTC
 +++ media/mojo/mojom/video_frame_mojom_traits.cc
-@@ -21,7 +21,7 @@
+@@ -22,7 +22,7 @@
  #include "ui/gfx/mojom/color_space_mojom_traits.h"
  #include "ui/gfx/mojom/hdr_metadata_mojom_traits.h"
  
@@ -9,7 +9,7 @@
  #include "base/posix/eintr_wrapper.h"
  #include "media/gpu/buffer_validation.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -182,7 +182,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
+@@ -183,7 +183,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
          media::mojom::OpaqueVideoFrameData::New());
    }
  
@@ -18,7 +18,7 @@
    if (input->storage_type() == media::VideoFrame::STORAGE_DMABUFS) {
      // Duplicates the DMA buffer FDs to a new vector since this cannot take
      // ownership of the FDs in |input| due to constness.
-@@ -213,7 +213,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
+@@ -214,7 +214,7 @@ media::mojom::VideoFrameDataPtr MakeVideoFrameData(
  
  }  // namespace
  
@@ -27,7 +27,7 @@
  // static
  bool StructTraits<
      media::mojom::ColorPlaneLayoutDataView,
-@@ -445,7 +445,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
+@@ -446,7 +446,7 @@ bool StructTraits<media::mojom::VideoFrameDataView,
      frame = media::VideoFrame::WrapTrackingToken(
          format, *metadata.tracking_token, coded_size, visible_rect,
          natural_size, timestamp);

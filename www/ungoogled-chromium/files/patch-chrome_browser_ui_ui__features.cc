@@ -1,6 +1,6 @@
---- chrome/browser/ui/ui_features.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/ui/ui_features.cc.orig	2025-12-06 13:30:52 UTC
 +++ chrome/browser/ui/ui_features.cc
-@@ -39,7 +39,7 @@ BASE_FEATURE(kCloseOmniboxPopupOnInactiveAreaClick,
+@@ -40,7 +40,7 @@ BASE_FEATURE(kCloseOmniboxPopupOnInactiveAreaClick,
  BASE_FEATURE(kCreateNewTabGroupAppMenuTopLevel,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  // Enables the feature to remove the last confirmation dialog when relaunching
  // to update Chrome.
  BASE_FEATURE(kFewerUpdateConfirmations, base::FEATURE_ENABLED_BY_DEFAULT);
-@@ -149,7 +149,7 @@ BASE_FEATURE_PARAM(int,
+@@ -171,7 +171,7 @@ BASE_FEATURE_PARAM(int,
                     "drop_target_hide_for_os_width",
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN)
                     32
@@ -18,7 +18,7 @@
                     50
  #else
                     0
-@@ -435,7 +435,7 @@ BASE_FEATURE(kViewsFirstRunDialog, base::FEATURE_DISAB
+@@ -472,7 +472,7 @@ BASE_FEATURE(kViewsFirstRunDialog, base::FEATURE_ENABL
  BASE_FEATURE(kViewsJSAppModalDialog, base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  
@@ -27,7 +27,7 @@
  BASE_FEATURE(kUsePortalAccentColor, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  
-@@ -639,7 +639,7 @@ bool IsBookmarkTabGroupConversionEnabled() {
+@@ -682,7 +682,7 @@ bool IsBookmarkTabGroupConversionEnabled() {
    return base::FeatureList::IsEnabled(kBookmarkTabGroupConversion);
  }
  

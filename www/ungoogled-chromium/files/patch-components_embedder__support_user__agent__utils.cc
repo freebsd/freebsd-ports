@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils.cc.orig	2025-09-10 13:22:16 UTC
+--- components/embedder_support/user_agent_utils.cc.orig	2025-12-06 13:30:52 UTC
 +++ components/embedder_support/user_agent_utils.cc
 @@ -321,7 +321,7 @@ std::string GetUserAgentPlatform() {
    return "";
@@ -46,7 +46,7 @@
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -879,6 +882,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -874,6 +877,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

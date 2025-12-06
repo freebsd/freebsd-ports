@@ -1,15 +1,6 @@
---- services/device/public/cpp/device_features.cc.orig	2025-11-01 06:40:37 UTC
+--- services/device/public/cpp/device_features.cc.orig	2025-12-06 13:30:52 UTC
 +++ services/device/public/cpp/device_features.cc
-@@ -81,7 +81,7 @@ BASE_FEATURE(kBatteryStatusManagerBroadcastReceiverInB
- // Modifies the internal allowlist behavior that enables privileged extensions
- // to bypass the HID blocklist when accessing FIDO devices. When enabled,
- // privileged extensions can access non-FIDO interfaces on known security keys.
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kSecurityKeyHidInterfacesAreFido,
-              base::FEATURE_ENABLED_BY_DEFAULT);
- #else
-@@ -130,7 +130,7 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
+@@ -125,7 +125,7 @@ bool IsOsLevelGeolocationPermissionSupportEnabled() {
  // a USB interface is busy.
  #if BUILDFLAG(IS_ANDROID)
  BASE_FEATURE(kAutomaticUsbDetach, base::FEATURE_ENABLED_BY_DEFAULT);

@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2025-11-01 06:40:37 UTC
+--- third_party/blink/renderer/core/exported/web_view_impl.cc.orig	2025-12-06 13:30:52 UTC
 +++ third_party/blink/renderer/core/exported/web_view_impl.cc
-@@ -422,7 +422,7 @@ void RecordPrerenderActivationSignalDelay(const String
+@@ -423,7 +423,7 @@ void RecordPrerenderActivationSignalDelay(const String
  #if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_WIN)
  SkFontHinting RendererPreferencesToSkiaHinting(
      const blink::RendererPreferences& prefs) {
@@ -9,7 +9,7 @@
    if (!prefs.should_antialias_text) {
      // When anti-aliasing is off, GTK maps all non-zero hinting settings to
      // 'Normal' hinting so we do the same. Otherwise, folks who have 'Slight'
-@@ -3467,7 +3467,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
+@@ -3478,7 +3478,7 @@ void WebViewImpl::UpdateFontRenderingFromRendererPrefs
        gfx::FontRenderParams::SUBPIXEL_RENDERING_NONE);
    WebFontRenderStyle::SetSubpixelPositioning(
        renderer_preferences_.use_subpixel_positioning);
