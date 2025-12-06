@@ -37,6 +37,17 @@
 %%HTML%%%%DOCBASE%%/en/articles/vinum/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vm-design/index.html
 %%HTML%%%%DOCBASE%%/en/articles/vpn-ipsec/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/blindness/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/book/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/colors/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/development/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/help/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/lowvision/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/parti/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/partii/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/preface/index.html
+%%HTML%%%%DOCBASE%%/en/books/accessibility/virtual-terminal/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/bibliography/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/book/index.html
 %%HTML%%%%DOCBASE%%/en/books/arch-handbook/boot/index.html
@@ -990,6 +1001,7 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/tobez.key
 %%HTML%%%%DOCBASE%%/pgpkeys/tobik.key
 %%HTML%%%%DOCBASE%%/pgpkeys/tota.key
+%%HTML%%%%DOCBASE%%/pgpkeys/tpearson.key
 %%HTML%%%%DOCBASE%%/pgpkeys/trevor.key
 %%HTML%%%%DOCBASE%%/pgpkeys/trhodes.key
 %%HTML%%%%DOCBASE%%/pgpkeys/trociny.key
@@ -1002,8 +1014,8 @@
 %%HTML%%%%DOCBASE%%/pgpkeys/uzsolt.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vanilla.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vd.key
-%%HTML%%%%DOCBASE%%/pgpkeys/vexeduxr.key
 %%HTML%%%%DOCBASE%%/pgpkeys/versus.key
+%%HTML%%%%DOCBASE%%/pgpkeys/vexeduxr.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vg.key
 %%HTML%%%%DOCBASE%%/pgpkeys/viny.key
 %%HTML%%%%DOCBASE%%/pgpkeys/vishwin.key
@@ -1080,6 +1092,7 @@
 %%PDF%%%%DOCBASE%%/en/articles/vinum/vinum_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vm-design/vm-design_en.pdf
 %%PDF%%%%DOCBASE%%/en/articles/vpn-ipsec/vpn-ipsec_en.pdf
+%%PDF%%%%DOCBASE%%/en/books/accessibility/accessibility_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/arch-handbook/arch-handbook_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/design-44bsd/design-44bsd_en.pdf
 %%PDF%%%%DOCBASE%%/en/books/dev-model/dev-model_en.pdf
