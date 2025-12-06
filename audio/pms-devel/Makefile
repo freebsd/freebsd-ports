@@ -1,6 +1,6 @@
 PORTNAME=	pms-devel
 PORTVERSION=	0.0.20231224
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	audio
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -10,10 +10,7 @@ WWW=		https://github.com/ambientsound/pms
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.21,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kimtore
