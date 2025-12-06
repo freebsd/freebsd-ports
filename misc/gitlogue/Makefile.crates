@@ -18,6 +18,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
+		chrono-english-0.1.8 \
 		clap-4.5.53 \
 		clap_builder-4.5.53 \
 		clap_derive-4.5.49 \
@@ -120,6 +121,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		rustix-1.1.2 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
+		scanlex-0.1.4 \
 		scopeguard-1.2.0 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
@@ -165,12 +167,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		tree-sitter-json-0.24.8 \
 		tree-sitter-kotlin-ng-1.1.0 \
 		tree-sitter-language-0.1.5 \
+		tree-sitter-lua-0.2.0 \
 		tree-sitter-md-0.5.1 \
 		tree-sitter-php-0.24.2 \
 		tree-sitter-python-0.25.0 \
 		tree-sitter-ruby-0.23.1 \
 		tree-sitter-rust-0.24.0 \
 		tree-sitter-scala-0.24.0 \
+		tree-sitter-svelte-ng-1.0.2 \
 		tree-sitter-swift-0.7.1 \
 		tree-sitter-typescript-0.23.2 \
 		tree-sitter-xml-0.7.0 \

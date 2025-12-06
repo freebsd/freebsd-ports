@@ -1,6 +1,6 @@
 PORTNAME=	gitlogue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.0
 CATEGORIES=	misc
 
 MAINTAINER=	nxjoseph@protonmail.com
