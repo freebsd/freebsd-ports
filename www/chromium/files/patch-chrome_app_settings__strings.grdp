@@ -1,6 +1,6 @@
---- chrome/app/settings_strings.grdp.orig	2025-09-06 10:01:20 UTC
+--- chrome/app/settings_strings.grdp.orig	2025-12-05 10:12:50 UTC
 +++ chrome/app/settings_strings.grdp
-@@ -240,11 +240,9 @@
+@@ -237,11 +237,9 @@
    <message name="IDS_SETTINGS_RESET_TO_DEFAULT" desc="Name of the control which resets a browser setting back to the default value">
      Reset to default
    </message>

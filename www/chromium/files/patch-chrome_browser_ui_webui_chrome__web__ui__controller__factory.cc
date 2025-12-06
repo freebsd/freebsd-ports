@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2025-10-30 15:44:36 UTC
+--- chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc.orig	2025-12-05 10:12:50 UTC
 +++ chrome/browser/ui/webui/chrome_web_ui_controller_factory.cc
-@@ -116,18 +116,18 @@
+@@ -115,18 +115,18 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -22,7 +22,7 @@
  #include "chrome/browser/ui/webui/whats_new/whats_new_ui.h"
  #endif
  
-@@ -276,7 +276,7 @@ void ChromeWebUIControllerFactory::GetFaviconForURL(
+@@ -275,7 +275,7 @@ void ChromeWebUIControllerFactory::GetFaviconForURL(
      const std::vector<int>& desired_sizes_in_pixel,
      favicon_base::FaviconResultsCallback callback) const {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -31,21 +31,21 @@
    if (page_url.SchemeIs(webapps::kIsolatedAppScheme)) {
      ReadIsolatedWebAppFaviconsFromDisk(profile, page_url, std::move(callback));
      return;
-@@ -411,7 +411,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -410,7 +410,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
      return NewTabPageUI::GetFaviconResourceBytes(scale_factor);
    }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (page_url.host_piece() == chrome::kChromeUIWhatsNewHost) {
+   if (page_url.host() == chrome::kChromeUIWhatsNewHost) {
      return WhatsNewUI::GetFaviconResourceBytes(scale_factor);
    }
-@@ -450,7 +450,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
+@@ -449,7 +449,7 @@ base::RefCountedMemory* ChromeWebUIControllerFactory::
    }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   if (page_url.host_piece() == commerce::kChromeUICompareHost) {
+   if (page_url.host() == commerce::kChromeUICompareHost) {
      return commerce::ProductSpecificationsUI::GetFaviconResourceBytes(
          scale_factor);

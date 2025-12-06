@@ -1,6 +1,6 @@
---- sandbox/policy/mojom/sandbox.mojom.orig	2025-09-06 10:01:20 UTC
+--- sandbox/policy/mojom/sandbox.mojom.orig	2025-12-05 10:12:50 UTC
 +++ sandbox/policy/mojom/sandbox.mojom
-@@ -71,6 +71,12 @@ enum Sandbox {
+@@ -68,6 +68,12 @@ enum Sandbox {
    // Minimally privileged sandbox on Fuchsia.
    [EnableIf=is_fuchsia] kVideoCapture,
  

@@ -1,0 +1,11 @@
+--- ui/gl/BUILD.gn.orig	2025-12-05 10:12:50 UTC
++++ ui/gl/BUILD.gn
+@@ -387,7 +387,7 @@ component("gl") {
+     ]
+   }
+ 
+-  if (is_android || is_chromeos || is_linux) {
++  if ((is_android || is_chromeos || is_linux) && !is_bsd) {
+     # Windows doesn't support base::FileDescriptor.
+     # libsync isn't supported or needed on MacOSX.
+     # Fuchsia is excluded due to a libsync dependency and because it's

@@ -1,6 +1,6 @@
---- components/ntp_tiles/pref_names.h.orig	2025-10-02 04:28:32 UTC
+--- components/ntp_tiles/pref_names.h.orig	2025-12-05 10:12:50 UTC
 +++ components/ntp_tiles/pref_names.h
-@@ -48,7 +48,7 @@ inline constexpr char kCustomLinksInitialized[] = "cus
+@@ -49,7 +49,7 @@ inline constexpr char kCustomLinksInitialized[] = "cus
  
  // Prefs used to cache enterprise shortcuts.
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \

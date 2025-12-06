@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/connectors/analysis/analysis_service_settings.cc.orig	2025-10-30 15:44:36 UTC
+--- chrome/browser/enterprise/connectors/analysis/analysis_service_settings.cc.orig	2025-12-05 10:12:50 UTC
 +++ chrome/browser/enterprise/connectors/analysis/analysis_service_settings.cc
-@@ -192,7 +192,7 @@ void AnalysisServiceSettings::ParseVerificationSignatu
+@@ -55,7 +55,7 @@ void AnalysisServiceSettings::ParseVerificationSignatu
    const char* verification_key = kKeyWindowsVerification;
  #elif BUILDFLAG(IS_MAC)
    const char* verification_key = kKeyMacVerification;

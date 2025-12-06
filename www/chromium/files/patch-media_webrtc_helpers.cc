@@ -1,6 +1,6 @@
---- media/webrtc/helpers.cc.orig	2025-05-28 14:55:43 UTC
+--- media/webrtc/helpers.cc.orig	2025-12-05 10:12:50 UTC
 +++ media/webrtc/helpers.cc
-@@ -46,14 +46,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
+@@ -48,14 +48,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
      return;
    }
  

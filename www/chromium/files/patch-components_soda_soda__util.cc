@@ -1,4 +1,4 @@
---- components/soda/soda_util.cc.orig	2025-05-05 10:57:53 UTC
+--- components/soda/soda_util.cc.orig	2025-12-05 10:12:50 UTC
 +++ components/soda/soda_util.cc
 @@ -23,7 +23,7 @@
  #include "base/win/windows_version.h"
@@ -18,8 +18,8 @@
  bool IsSupportedLinux() {
  #if defined(ARCH_CPU_X86_FAMILY)
    // Check if the CPU has the required instruction set to run the Speech
-@@ -70,7 +70,7 @@ bool IsSupportedWin() {
- bool IsOnDeviceSpeechRecognitionSupported() {
+@@ -73,7 +73,7 @@ bool IsOnDeviceSpeechRecognitionSupported() {
+   // support Gemini Nano.
  #if BUILDFLAG(IS_CHROMEOS)
    return IsSupportedChromeOS();
 -#elif BUILDFLAG(IS_LINUX)

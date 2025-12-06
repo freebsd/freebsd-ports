@@ -1,6 +1,6 @@
---- media/mojo/mojom/BUILD.gn.orig	2025-10-30 15:44:36 UTC
+--- media/mojo/mojom/BUILD.gn.orig	2025-12-05 10:12:50 UTC
 +++ media/mojo/mojom/BUILD.gn
-@@ -970,7 +970,7 @@ source_set("test_support") {
+@@ -1037,7 +1037,7 @@ source_set("test_support") {
    sources = []
    deps = []
  

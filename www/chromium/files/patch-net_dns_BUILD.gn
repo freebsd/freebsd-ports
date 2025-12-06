@@ -1,15 +1,15 @@
---- net/dns/BUILD.gn.orig	2025-10-30 15:44:36 UTC
+--- net/dns/BUILD.gn.orig	2025-12-05 10:12:50 UTC
 +++ net/dns/BUILD.gn
-@@ -142,7 +142,7 @@ source_set("dns") {
-       "dns_config_service_android.cc",
-       "dns_config_service_android.h",
+@@ -144,7 +144,7 @@ source_set("dns") {
+       "platform_dns_query_executor_android.cc",
+       "platform_dns_query_executor_android.h",
      ]
 -  } else if (is_linux) {
 +  } else if (is_linux && !is_bsd) {
      sources += [
        "dns_config_service_linux.cc",
        "dns_config_service_linux.h",
-@@ -176,6 +176,7 @@ source_set("dns") {
+@@ -178,6 +178,7 @@ source_set("dns") {
    }
  
    deps = [ "//net:net_deps" ]
@@ -17,18 +17,18 @@
  
    public_deps = [
      ":dns_client",
-@@ -183,6 +184,7 @@ source_set("dns") {
-     ":host_resolver_manager",
-     ":mdns_client",
-     "//net:net_public_deps",
+@@ -258,6 +259,7 @@ source_set("host_resolver") {
+   deps = [
+     "//net:net_deps",
+     "//net/dns/public",
 +    "//printing/buildflags",
    ]
+   public_deps = [ "//net:net_public_deps" ]
  
-   if (enable_mdns) {
-@@ -458,9 +460,9 @@ source_set("tests") {
- 
-   if (is_android) {
-     sources += [ "dns_config_service_android_unittest.cc" ]
+@@ -463,9 +465,9 @@ source_set("tests") {
+       "dns_config_service_android_unittest.cc",
+       "platform_dns_query_executor_android_unittest.cc",
+     ]
 -  } else if (is_linux) {
 +  } else if (is_linux && !is_bsd) {
      sources += [ "dns_config_service_linux_unittest.cc" ]

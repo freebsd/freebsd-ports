@@ -1,4 +1,4 @@
---- ui/gl/gl_switches.cc.orig	2025-10-30 15:44:36 UTC
+--- ui/gl/gl_switches.cc.orig	2025-12-05 10:12:50 UTC
 +++ ui/gl/gl_switches.cc
 @@ -17,7 +17,7 @@
  #endif
@@ -9,7 +9,7 @@
  #include <vulkan/vulkan_core.h>
  #include "third_party/angle/src/gpu_info_util/SystemInfo.h"  // nogncheck
  #endif  // BUILDFLAG(ENABLE_VULKAN) && (BUILDFLAG(IS_LINUX) ||
-@@ -316,7 +316,7 @@ bool IsDefaultANGLEVulkan() {
+@@ -320,7 +320,7 @@ bool IsDefaultANGLEVulkan() {
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  #if BUILDFLAG(ENABLE_VULKAN) && \
@@ -18,7 +18,7 @@
    angle::SystemInfo system_info;
    {
      TRACE_EVENT("gpu,startup", "angle::GetSystemInfoVulkan");
-@@ -410,7 +410,7 @@ bool IsDefaultANGLEVulkan() {
+@@ -414,7 +414,7 @@ bool IsDefaultANGLEVulkan() {
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  

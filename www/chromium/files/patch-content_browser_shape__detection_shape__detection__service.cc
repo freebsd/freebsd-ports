@@ -1,5 +1,5 @@
---- content/browser/shape_detection/shape_detection_service_host.cc.orig	2025-10-02 04:28:32 UTC
-+++ content/browser/shape_detection/shape_detection_service_host.cc
+--- content/browser/shape_detection/shape_detection_service.cc.orig	2025-12-05 10:12:50 UTC
++++ content/browser/shape_detection/shape_detection_service.cc
 @@ -15,7 +15,7 @@
  #endif
  

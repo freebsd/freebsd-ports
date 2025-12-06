@@ -1,4 +1,4 @@
---- chrome/browser/page_load_metrics/page_load_metrics_initialize.cc.orig	2025-10-30 15:44:36 UTC
+--- chrome/browser/page_load_metrics/page_load_metrics_initialize.cc.orig	2025-12-05 10:12:50 UTC
 +++ chrome/browser/page_load_metrics/page_load_metrics_initialize.cc
 @@ -70,7 +70,7 @@
  #include "url/gurl.h"
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -342,7 +342,7 @@ bool PageLoadMetricsEmbedder::IsInternalWebUI(const GU
+@@ -351,7 +351,7 @@ bool PageLoadMetricsEmbedder::IsInternalWebUI(const GU
  
  bool PageLoadMetricsEmbedder::ShouldObserveScheme(std::string_view scheme) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
