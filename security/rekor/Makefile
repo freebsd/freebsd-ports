@@ -1,7 +1,6 @@
 PORTNAME=	rekor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.10
-PORTREVISION=	9
+DISTVERSION=	1.4.0
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -20,7 +19,7 @@ server_PKGNAMESUFFIX=	-server
 server_COMMENT=		(server only)
 server_PLIST=	${.CURDIR}/pkg-plist.server
 
-USES=		cpe go:1.24,modules
+USES=		cpe go:modules
 CPE_VENDOR=	linuxfoundation
 .if ${FLAVOR} == server
 USE_RC_SUBR=	rekor
@@ -46,7 +45,7 @@ USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 .endif
 
-GIT_HASH=	4118a64b4b9c228a968b2d935a00807ca1b33aed
+GIT_HASH=	d7d31f0250d4b98ce0be3837fef9510b59e57cb7
 
 .include <bsd.port.pre.mk>
 
