@@ -1,7 +1,6 @@
 PORTNAME=		snowflake
 DISTVERSIONPREFIX=	v
-PORTVERSION=		2.5.1
-PORTREVISION=	27
+DISTVERSION=		2.11.0
 CATEGORIES=		security net
 PKGNAMESUFFIX=		-tor
 
@@ -21,31 +20,34 @@ USE_GITHUB=	nodefault
 USE_GITLAB=	nodefault
 CPE_VENDOR=	torproject
 TPO_GEOIP=	7ce4b3d98d01ff33bad8007db3f488d5b172382a
-TPO_SNOWFLAKE=	7b77001eaa90e09d41172a2b170dabd3f1922b4a
+TPO_SNOWFLAKE=6472bd86cdd5d13fe61dc851edcf83b03df7bda1
+TPO_GOPTLIB=f4bb5dd5725833bd880347b8fbaf60522ed0a710
 
-GO_MODULE=      git.torproject.org/pluggable-transports/snowflake.git/v2
+GO_MODULE=      gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/v2
 GO_BUILDFLAGS=  -ldflags '${STRIP} -w -extldflags "-static"'
 GO_PKGNAME=	${GO_MODULE}
 GO_TARGET=	./broker ./client ./proxy ./server
 
 GL_SITE=	https://gitlab.torproject.org/tpo
-GL_TUPLE=	anti-censorship:pluggable-transports/${PORTNAME}:${TPO_SNOWFLAKE}:tpo_acs_snowflake/vendor/git.torproject.org/pluggable-transports/snowflake.git/v2 \
-		anti-censorship:geoip:${TPO_GEOIP}:tpo_acs_geoip/vendor/gitlab.torproject.org/tpo/anti-censorship/geoip
+GL_TUPLE=	anti-censorship:pluggable-transports/${PORTNAME}:${TPO_SNOWFLAKE}:tpo_acs_snowflake/vendor/gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake \
+		anti-censorship:geoip:${TPO_GEOIP}:tpo_acs_geoip/vendor/gitlab.torproject.org/tpo/anti-censorship/geoip \
+		anti-censorship:pluggable-transports/goptlib:${TPO_GOPTLIB}:tpo_acs_goptlib/vendor/gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/goptlib
 
-GH_TUPLE=	torbsd:goptlib:v1.2.0:torbsd_goptlib/vendor/git.torproject.org/pluggable-transports/goptlib.git \
-		golang:mod:v0.8.0:mod \
-		golang:net:v0.8.0:net \
-		golang:sys:v0.6.0:sys \
-		golang:text:v0.8.0:text \
-		golang:tools:v0.6.0:tools \
-		templexxx:cpu:v0.1.0:cpu
+GH_TUPLE=golang:mod:v0.30.0:mod \
+		golang:net:v0.47.0:net \
+		golang:sys:v0.38.0:sys \
+		golang:text:v0.22.0:text \
+		golang:tools:v0.30.0:tools \
+		templexxx:cpu:v0.1.1:cpu
 
 PLIST_SUB=	MANPAGES=${MANPAGES}
 SUB_FILES=	pkg-message
 
 pre-extract:
 	${MKDIR} ${WRKDIR}/pluggable-transports ${WRKDIR}/${PORTNAME}-${TPO_SNOWFLAKE} && \
-	${RLN} ${WRKDIR}/${PORTNAME}-${TPO_SNOWFLAKE} ${WRKDIR}/pluggable-transports/.
+	${RLN} ${WRKDIR}/${PORTNAME}-${TPO_SNOWFLAKE} ${WRKDIR}/pluggable-transports/. && \
+	${MKDIR} ${WRKDIR}/pluggable-transports ${WRKDIR}/goptlib-${TPO_GOPTLIB} && \
+	${RLN} ${WRKDIR}/goptlib-${TPO_GOPTLIB} ${WRKDIR}/pluggable-transports/.
 
 pre-patch:
 .for m in mod net sys text tools
@@ -58,6 +60,7 @@ pre-patch:
 post-patch:
 	${REINPLACE_CMD} "s|/usr/share|${PREFIX}/share|g" \
 	  ${WRKDIR}/${GO_MODULE}@v${PORTVERSION}/broker/broker.go
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_CMD} mod vendor
 
 post-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/share/man/man1
