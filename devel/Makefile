@@ -1231,7 +1231,6 @@
     SUBDIR += libb2
     SUBDIR += libbacktrace
     SUBDIR += libbegemot
-    SUBDIR += libbfd
     SUBDIR += libbinio
     SUBDIR += libblake3
     SUBDIR += libbpfjit

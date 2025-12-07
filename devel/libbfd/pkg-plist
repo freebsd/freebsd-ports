@@ -1,9 +1,0 @@
-include/ansidecl.h
-include/bfd.h
-include/bfdlink.h
-include/diagnostics.h
-include/plugin-api.h
-include/symcat.h
-lib/libbfd-2.40.so
-lib/libbfd.a
-lib/libbfd.so

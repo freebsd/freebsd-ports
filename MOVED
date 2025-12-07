@@ -4888,3 +4888,4 @@ misc/amazon-qldb-shell||2025-12-05|Discontinued by Amazon as of July 2025: old a
 devel/libmill||2025-12-05|Has expired: Abandonware, not use in the ports tree
 devel/py-bsd||2025-12-05|Has expired: Unmaintained upstream
 devel/electron34||2025-12-07|Has expired: EOLed upstream, switch to newer version
+devel/libbfd||2025-12-07|Obsolete port, use devel/binutils instead
