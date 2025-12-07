@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	6.3.4
+DISTVERSION=	6.3.6
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -33,8 +33,6 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libdbus-1.so:devel/dbus \
 		libdispatch.so:devel/libdispatch \
 		libfmt.so:devel/libfmt \
-		libgeoclue-2.so:net/geoclue \
-		libgeocode-glib-2.so:net/geocode-glib2 \
 		libheif.so:graphics/libheif \
 		libhunspell-1.7.so:textproc/hunspell \
 		libjxl.so:graphics/libjxl \
