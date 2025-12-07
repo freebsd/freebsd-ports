@@ -151,6 +151,7 @@ sbin/auto-restore-user
 sbin/auto-root-check
 sbin/auto-secure-directory
 sbin/auto-security-manager
+sbin/auto-select-sound-device
 sbin/auto-service-enabled
 sbin/auto-services-manager
 sbin/auto-set-conf-var
