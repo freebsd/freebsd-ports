@@ -1,3 +1,3 @@
-TIMESTAMP = 1631602777
-SHA256 (wireguard-tools-1.0.20210914.tar.xz) = 97ff31489217bb265b7ae850d3d0f335ab07d2652ba1feec88b734bc96bd05ac
-SIZE (wireguard-tools-1.0.20210914.tar.xz) = 99744
+TIMESTAMP = 1765109364
+SHA256 (wireguard-tools-1.0.20250521.tar.xz) = b6f2628b85b1b23cc06517ec9c74f82d52c4cdbd020f3dd2f00c972a1782950e
+SIZE (wireguard-tools-1.0.20250521.tar.xz) = 100340

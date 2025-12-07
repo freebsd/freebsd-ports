@@ -1,6 +1,5 @@
 PORTNAME=	wireguard-tools
-PORTVERSION=	1.0.20210914
-PORTREVISION=	4
+PORTVERSION=	1.0.20250521
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
