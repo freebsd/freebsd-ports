@@ -20,7 +20,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app-client.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/bouncy-castle.jar
-%%DATADIR%%/lib/build-marker-GO-252.26199.158
+%%DATADIR%%/lib/build-marker-GO-252.27397.100
 %%DATADIR%%/lib/eclipse.lsp4j.debug.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -264,6 +264,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/fullLine/full-line-native-server-windows-x86_64.zip
 %%DATADIR%%/plugins/fullLine/lib/clikt.jar
 %%DATADIR%%/plugins/fullLine/lib/fullLine.jar
+%%DATADIR%%/plugins/fullLine/lib/jetbrains.ai.completion.trigger.model.polyglot.cloud.jar
+%%DATADIR%%/plugins/fullLine/lib/jetbrains.mlapi.core.jar
 %%DATADIR%%/plugins/fullLine/lib/jgrapht.core.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.css.local.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.go.local.jar
@@ -481,8 +483,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-f466f9b0953e-3d2cccfc42a2.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-f466f9b0953e-3d2cccfc42a2.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-f466f9b0953e-146d08934cbf.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-f466f9b0953e-146d08934cbf.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/com.carrotsearch-hppc.jar
@@ -572,8 +574,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-file-path-resolver.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9c94529fcfe0.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-3aa1da707db6.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-3aa1da707db6.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
@@ -815,8 +817,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.core.jar
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.jsonschema.jar
 %%DATADIR%%/plugins/mcpserver/lib/io.github.smiley4.schema.kenerator.serialization.jar
-%%DATADIR%%/plugins/mcpserver/lib/io.ktor.utils.jar
-%%DATADIR%%/plugins/mcpserver/lib/ktor-server-cio.jar
+%%DATADIR%%/plugins/mcpserver/lib/ktor-server-cio-internal.jar
 %%DATADIR%%/plugins/mcpserver/lib/mcpserver-frontend.jar
 %%DATADIR%%/plugins/mcpserver/lib/mcpserver.jar
 %%DATADIR%%/plugins/microservices-ui/lib/microservices-ui.jar
@@ -906,6 +907,9 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/terminal/shell-integrations/zsh/zdotdir/.zshrc
 %%DATADIR%%/plugins/terminal/shell-integrations/zsh/zdotdir/source-original.zsh
 %%DATADIR%%/plugins/terminal/shell-integrations/zsh/zsh-integration.zsh
+%%DATADIR%%/plugins/terraform/lib/modules/intellij.terraform.template.jar
+%%DATADIR%%/plugins/terraform/lib/terraform-metadata.jar
+%%DATADIR%%/plugins/terraform/lib/terraform.jar
 %%DATADIR%%/plugins/textmate/lib/bundles/adoc/LICENSE
 %%DATADIR%%/plugins/textmate/lib/bundles/adoc/README.md
 %%DATADIR%%/plugins/textmate/lib/bundles/adoc/asciidoc-language-configuration.json
