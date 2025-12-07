@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	dependency modernc.org/sqlite only supported on these
 
 BUILD_DEPENDS=	npm>0:www/npm
 
-USES=		go:1.24,modules tar:zstd
+USES=		go:modules tar:zstd
 USE_RC_SUBR=	mailpit
 GO_MODULE=	github.com/axllent/mailpit
 GO_BUILDFLAGS=	-ldflags="-s -w -X \"github.com/axllent/mailpit/config.Version=${DISTVERSIONPREFIX}${DISTVERSION}\""
