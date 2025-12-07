@@ -1,5 +1,5 @@
 PORTNAME=	treesheets
-DISTVERSION=	2770
+DISTVERSION=	2830
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cmake desktop-file-utils shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
 USE_WX=		3.2
-GH_TUPLE=	aardappel:lobster:v2025.4:external/lobster
+GH_TUPLE=	aardappel:lobster:v2025.4:external/lobster-src
 
 PORTDATA=	images scripts
 PORTDOCS=	docs readme-ko.html readme-zh_CN.html readme.html
@@ -25,7 +25,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext-tools
 
 post-extract:
-	${MKDIR} ${WRKDIR}/.build/_deps/lobster-src
-	${CP} -R ${WRKSRC}/lobster/* ${WRKDIR}/.build/_deps/lobster-src
+	${MKDIR} ${WRKDIR}/.build/_deps
+	${LN} -s ${WRKSRC}/lobster-src ${WRKDIR}/.build/_deps/lobster-src
 
 .include <bsd.port.mk>

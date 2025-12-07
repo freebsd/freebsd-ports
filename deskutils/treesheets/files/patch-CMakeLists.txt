@@ -1,7 +1,7 @@
 Build with system wx workaround:
 https://github.com/aardappel/treesheets/issues/1083
 
---- CMakeLists.txt.orig	2025-11-24 18:18:51 UTC
+--- CMakeLists.txt.orig	2025-12-07 19:27:28 UTC
 +++ CMakeLists.txt
 @@ -7,7 +7,7 @@ endif()
      set(TREESHEETS_VERSION "${timestamp}")
@@ -18,9 +18,9 @@ https://github.com/aardappel/treesheets/issues/1083
  FetchContent_Declare(
 -    wxwidgets
 -    GIT_REPOSITORY https://github.com/wxWidgets/wxWidgets
--    GIT_TAG v3.2.8
+-    GIT_TAG v3.2.9
 -    GIT_SHALLOW ON
--    FIND_PACKAGE_ARGS 3.2.8 NAMES wxWidgets
+-    FIND_PACKAGE_ARGS 3.2.9 NAMES wxWidgets
 -)
 -FetchContent_Declare(
      lobster
