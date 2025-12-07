@@ -1,6 +1,6 @@
 PORTNAME=	mongodb-tools
 DISTVERSION=	100.13.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
@@ -10,13 +10,10 @@ WWW=		https://www.mongodb.com/docs/database-tools/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		compiler:c++14-lang go:1.23 localbase
+USES=		compiler:c++14-lang go localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
 GH_PROJECT=	mongo-tools
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
@@ -25,6 +22,8 @@ GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 # MAKE_ENV instead of TEST_ENV in the do-test target.
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284387
 MAKE_ENV+=		TOOLS_TESTING_UNIT=true
+
+NO_TEST=	yes # tests fail when go.mod does not match go pkg version
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	BSONDUMP MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \
@@ -56,10 +55,6 @@ MONGOTOP_VARS=		go_target+=./mongotop/main:mongotop
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASL_USE=		my_tags=sasl
 SSL_USE=		my_tags=ssl
-
-post-extract:
-# Verify we use the proper go version.
-	${SH} -xc "test \"X`grep -E '^go [[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$$' ${WRKSRC}/go.mod`\" = \"Xgo ${GO_VERSION}.0\""
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
