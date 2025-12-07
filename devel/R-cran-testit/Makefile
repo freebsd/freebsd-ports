@@ -1,11 +1,11 @@
 PORTNAME=	testit
-DISTVERSION=	0.13
+DISTVERSION=	0.14
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Simple Package for Testing R Packages
-WWW=		https://cran.r-project.org/web/packages/testit/
+WWW=		https://cran.r-project.org/package=testit
 
 LICENSE=	GPLv3
 
