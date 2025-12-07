@@ -24,7 +24,6 @@ share/man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.profile
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.rhosts
 %%DATADIR%%/cbsd-profile/skel/usr/home/provision/.shrc
-%%DATADIR%%/cbsd-profile/skel/usr/local/etc/sudoers
 %%DATADIR%%/cbsd-profile/system/clone-local.d/placeholder
 %%DATADIR%%/cbsd-profile/system/clone.d/placeholder
 %%DATADIR%%/cbsd-profile/system/create.d/placeholder
@@ -145,7 +144,6 @@ share/man/man1/reggae.1.gz
 %%DATADIR%%/templates/rtadvd.conf
 %%DATADIR%%/templates/rtsold
 %%DATADIR%%/templates/setup-vm.sh
-%%DATADIR%%/templates/sudoers
 %%DATADIR%%/templates/unbound.conf
 %%DATADIR%%/templates/unbound_control.conf
 %%DATADIR%%/templates/unbound_reggae.conf
