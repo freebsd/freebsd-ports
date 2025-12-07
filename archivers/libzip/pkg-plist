@@ -3,6 +3,8 @@ bin/zipmerge
 bin/ziptool
 include/zip.h
 include/zipconf.h
+lib/cmake/libzip/libzip-bin-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libzip/libzip-bin-targets.cmake
 lib/cmake/libzip/libzip-config-version.cmake
 lib/cmake/libzip/libzip-config.cmake
 lib/cmake/libzip/libzip-targets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -36,6 +38,7 @@ share/man/man3/zip_error_get_sys_type.3.gz
 share/man/man3/zip_error_init.3.gz
 share/man/man3/zip_error_init_with_code.3.gz
 share/man/man3/zip_error_set.3.gz
+share/man/man3/zip_error_set_from_source.3.gz
 share/man/man3/zip_error_strerror.3.gz
 share/man/man3/zip_error_system_type.3.gz
 share/man/man3/zip_error_to_data.3.gz
@@ -94,7 +97,6 @@ share/man/man3/zip_set_archive_flag.3.gz
 share/man/man3/zip_set_default_password.3.gz
 share/man/man3/zip_set_file_comment.3.gz
 share/man/man3/zip_set_file_compression.3.gz
-share/man/man3/zip_source.3.gz
 share/man/man3/zip_source_begin_write.3.gz
 share/man/man3/zip_source_begin_write_cloning.3.gz
 share/man/man3/zip_source_buffer.3.gz
@@ -145,3 +147,7 @@ share/man/man3/zip_strerror.3.gz
 share/man/man3/zip_unchange.3.gz
 share/man/man3/zip_unchange_all.3.gz
 share/man/man3/zip_unchange_archive.3.gz
+share/man/man5/zip.5.gz
+share/man/man5/zip_error.5.gz
+share/man/man5/zip_file.5.gz
+share/man/man5/zip_source.5.gz
