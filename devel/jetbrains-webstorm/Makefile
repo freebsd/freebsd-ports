@@ -1,5 +1,5 @@
 PORTNAME=	webstorm
-DISTVERSION=	2025.1.4.1
+DISTVERSION=	2025.2.4
 CATEGORIES=	devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/webstorm/
 PKGNAMEPREFIX=	jetbrains-
@@ -19,8 +19,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 BUILD_DEPENDS=	jna>0:devel/jna
 RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
-		jetbrains-pty4j>=0.13.2:devel/jetbrains-pty4j \
-		jetbrains-restarter>=241.15989.150:devel/jetbrains-restarter \
+		jetbrains-pty4j>=0.13.11:devel/jetbrains-pty4j \
+		jetbrains-restarter>=2025.2.2:devel/jetbrains-restarter \
 		jetbrains-sqlite>=241.15989.150:devel/jetbrains-sqlite \
 		lsof:sysutils/lsof
 
@@ -37,7 +37,7 @@ NO_BUILD=	yes
 SUB_FILES=	${PORTNAME} ${PORTNAME}.desktop pkg-message
 SUB_LIST=	JAVA_HOME=${JAVA_HOME}
 
-WRKSRC=		${WRKDIR}/WebStorm-251.27812.50
+WRKSRC=		${WRKDIR}/WebStorm-252.27397.92
 
 _PTY4J_ARCH=	freebsd/${ARCH:S/amd64/x86-64/}
 _SQLITE_ARCH=	linux-${ARCH:S/amd64/x86_64/}
@@ -63,6 +63,7 @@ do-install:
 		${WRKSRC}/plugins/cwm-plugin \
 		${WRKSRC}/plugins/gateway-plugin/lib/remote-dev-workers \
 		${WRKSRC}/plugins/remote-dev-server \
+		${WRKSRC}/plugins/station-plugin/toolbox \
 		${WRKSRC}/plugins/webp/lib/libwebp
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR} \
