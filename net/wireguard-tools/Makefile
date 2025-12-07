@@ -3,7 +3,7 @@ PORTVERSION=	1.0.20250521
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
-MAINTAINER=	decke@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast, modern and secure VPN Tunnel
 WWW=		https://git.zx2c4.com/wireguard-tools/about/
 
