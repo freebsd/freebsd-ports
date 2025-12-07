@@ -929,8 +929,10 @@ include/wine/windows/rpcproxy.h
 include/wine/windows/rpcsal.h
 include/wine/windows/rstbas.idl
 include/wine/windows/rstchg.idl
+include/wine/windows/rstcridx.idl
 include/wine/windows/rstfnd.idl
 include/wine/windows/rstidn.idl
+include/wine/windows/rstind.idl
 include/wine/windows/rstinf.idl
 include/wine/windows/rstloc.idl
 include/wine/windows/rstnot.idl
@@ -1533,7 +1535,6 @@ lib/wine/%%WINEARCH%%-unix/libhlink.a
 lib/wine/%%WINEARCH%%-unix/libhtmlhelp.a
 lib/wine/%%WINEARCH%%-unix/libhttpapi.a
 lib/wine/%%WINEARCH%%-unix/libicmui.a
-lib/wine/%%WINEARCH%%-unix/libicu.a
 lib/wine/%%WINEARCH%%-unix/libieframe.a
 lib/wine/%%WINEARCH%%-unix/libimagehlp.a
 lib/wine/%%WINEARCH%%-unix/libimm32.a
@@ -1635,6 +1636,7 @@ lib/wine/%%WINEARCH%%-unix/libsxs.a
 lib/wine/%%WINEARCH%%-unix/libt2embed.a
 lib/wine/%%WINEARCH%%-unix/libtapi32.a
 lib/wine/%%WINEARCH%%-unix/libtdh.a
+lib/wine/%%WINEARCH%%-unix/libtwaindsm.a
 lib/wine/%%WINEARCH%%-unix/libucrtbase.a
 lib/wine/%%WINEARCH%%-unix/libuiautomationcore.a
 lib/wine/%%WINEARCH%%-unix/libunicows.a
@@ -1962,9 +1964,6 @@ lib/wine/%%WINEARCH%%-windows/iccvid.dll
 lib/wine/%%WINEARCH%%-windows/icinfo.exe
 lib/wine/%%WINEARCH%%-windows/icmp.dll
 lib/wine/%%WINEARCH%%-windows/icmui.dll
-lib/wine/%%WINEARCH%%-windows/icu.dll
-lib/wine/%%WINEARCH%%-windows/icuin.dll
-lib/wine/%%WINEARCH%%-windows/icuuc.dll
 lib/wine/%%WINEARCH%%-windows/ieframe.dll
 lib/wine/%%WINEARCH%%-windows/ieproxy.dll
 lib/wine/%%WINEARCH%%-windows/iertutil.dll
@@ -2102,7 +2101,6 @@ lib/wine/%%WINEARCH%%-windows/libhlink.a
 lib/wine/%%WINEARCH%%-windows/libhtmlhelp.a
 lib/wine/%%WINEARCH%%-windows/libhttpapi.a
 lib/wine/%%WINEARCH%%-windows/libicmui.a
-lib/wine/%%WINEARCH%%-windows/libicu.a
 lib/wine/%%WINEARCH%%-windows/libieframe.a
 lib/wine/%%WINEARCH%%-windows/libimagehlp.a
 lib/wine/%%WINEARCH%%-windows/libimm32.a
@@ -2204,6 +2202,7 @@ lib/wine/%%WINEARCH%%-windows/libsxs.a
 lib/wine/%%WINEARCH%%-windows/libt2embed.a
 lib/wine/%%WINEARCH%%-windows/libtapi32.a
 lib/wine/%%WINEARCH%%-windows/libtdh.a
+lib/wine/%%WINEARCH%%-windows/libtwaindsm.a
 lib/wine/%%WINEARCH%%-windows/libucrtbase.a
 lib/wine/%%WINEARCH%%-windows/libuiautomationcore.a
 lib/wine/%%WINEARCH%%-windows/libunicows.a
@@ -2564,7 +2563,8 @@ lib/wine/%%WINEARCH%%-windows/timeout.exe
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/toolhelp.dll16
 lib/wine/%%WINEARCH%%-windows/traffic.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/twain.dll16
-lib/wine/%%WINEARCH%%-windows/twain_32.dll
+%%WINE32%%lib/wine/%%WINEARCH%%-windows/twain_32.dll
+lib/wine/%%WINEARCH%%-windows/twaindsm.dll
 lib/wine/%%WINEARCH%%-windows/twinapi.appcore.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/typelib.dll16
 lib/wine/%%WINEARCH%%-windows/tzres.dll

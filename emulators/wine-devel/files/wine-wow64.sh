@@ -11,7 +11,7 @@ then
   printf "%s doesn't exist!\n\n" "$I386_ROOT/$PREFIX/bin/wine"
   printf "Try installing 32-bit Wine with\n\t%s\n" "$PREFIX/share/wine/pkg32.sh install wine-devel mesa-dri"
 
-  printf "In the case of FreeBSD 15.0, use wine64 instead or use Poudriere if 32bit is needed\n"
+  printf "In the case of FreeBSD 15.0, use wine64.bin instead or use Poudriere if 32bit is needed\n"
 
   ABI=$(pkg config ABI | sed s/amd64/i386/)
   FREEBSD_VERSION_MAJOR=`uname -r | sed "s/\..*//"`

@@ -1,8 +1,8 @@
 PORTNAME=	wine
-DISTVERSION=	10.20
+DISTVERSION=	11.0-rc1
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	https://dl.winehq.org/wine/source/10.x/
+MASTER_SITES=	https://dl.winehq.org/wine/source/11.0/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	monwarez@mailoo.org
