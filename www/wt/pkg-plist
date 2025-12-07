@@ -179,6 +179,7 @@ include/Wt/Signals/signals.hpp
 %%LIBWTTEST%%include/Wt/Test/WTestEnvironment.h
 include/Wt/Utils.h
 include/Wt/WAbstractArea.h
+include/Wt/WAbstractDataInfo.h
 include/Wt/WAbstractGLImplementation.h
 include/Wt/WAbstractItemDelegate.h
 include/Wt/WAbstractItemModel.h
@@ -221,6 +222,7 @@ include/Wt/WContainerWidget.h
 include/Wt/WCssDecorationStyle.h
 include/Wt/WCssStyleSheet.h
 include/Wt/WCssTheme.h
+include/Wt/WDataInfo.h
 include/Wt/WDate.h
 include/Wt/WDateEdit.h
 include/Wt/WDatePicker.h
@@ -229,6 +231,7 @@ include/Wt/WDateValidator.h
 include/Wt/WDefaultLoadingIndicator.h
 include/Wt/WDialog.h
 include/Wt/WDllDefs.h
+include/Wt/WDocRootDataInfo.h
 include/Wt/WDoubleSpinBox.h
 include/Wt/WDoubleValidator.h
 include/Wt/WEmailEdit.h
@@ -306,6 +309,8 @@ include/Wt/WPaintedWidget.h
 include/Wt/WPainter.h
 include/Wt/WPainterPath.h
 include/Wt/WPanel.h
+include/Wt/WPasswordEdit.h
+include/Wt/WPasswordValidator.h
 include/Wt/WPdfImage.h
 include/Wt/WPen.h
 include/Wt/WPoint.h
@@ -338,6 +343,7 @@ include/Wt/WSpinBox.h
 include/Wt/WSplitButton.h
 include/Wt/WSslCertificate.h
 include/Wt/WSslInfo.h
+include/Wt/WStackedValidator.h
 include/Wt/WStackedWidget.h
 include/Wt/WStandardItem.h
 include/Wt/WStandardItemModel.h
@@ -394,6 +400,7 @@ include/Wt/cpp17/any.hpp
 include/Wt/cpp17/any/LICENSE_1_0.txt
 include/Wt/cpp17/any/README.md
 include/Wt/cpp17/any/any.hpp
+include/Wt/cpp17/filesystem.hpp
 include/Wt/cpp20/date.hpp
 include/Wt/cpp20/tz.hpp
 include/thirdparty/qrcodegen/QrCode.hpp
