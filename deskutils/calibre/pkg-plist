@@ -27,6 +27,9 @@ lib/calibre/calibre/ai/github/config.py
 lib/calibre/calibre/ai/google/__init__.py
 lib/calibre/calibre/ai/google/backend.py
 lib/calibre/calibre/ai/google/config.py
+lib/calibre/calibre/ai/lm_studio/__init__.py
+lib/calibre/calibre/ai/lm_studio/backend.py
+lib/calibre/calibre/ai/lm_studio/config.py
 lib/calibre/calibre/ai/ollama/__init__.py
 lib/calibre/calibre/ai/ollama/backend.py
 lib/calibre/calibre/ai/ollama/config.py
@@ -696,6 +699,7 @@ lib/calibre/calibre/gui2/actions/fetch_news.py
 lib/calibre/calibre/gui2/actions/fts.py
 lib/calibre/calibre/gui2/actions/help.py
 lib/calibre/calibre/gui2/actions/layout_actions.py
+lib/calibre/calibre/gui2/actions/llm_book.py
 lib/calibre/calibre/gui2/actions/manage_categories.py
 lib/calibre/calibre/gui2/actions/mark_books.py
 lib/calibre/calibre/gui2/actions/match_books.py
@@ -853,6 +857,7 @@ lib/calibre/calibre/gui2/dialogs/enum_values_edit.py
 lib/calibre/calibre/gui2/dialogs/exim.py
 lib/calibre/calibre/gui2/dialogs/ff_doc_editor.py
 lib/calibre/calibre/gui2/dialogs/jobs_ui.py
+lib/calibre/calibre/gui2/dialogs/llm_book.py
 lib/calibre/calibre/gui2/dialogs/match_books.py
 lib/calibre/calibre/gui2/dialogs/match_books_ui.py
 lib/calibre/calibre/gui2/dialogs/message_box.py
@@ -923,6 +928,7 @@ lib/calibre/calibre/gui2/library/notes.py
 lib/calibre/calibre/gui2/library/views.py
 lib/calibre/calibre/gui2/linux_file_dialogs.py
 lib/calibre/calibre/gui2/listener.py
+lib/calibre/calibre/gui2/llm.py
 lib/calibre/calibre/gui2/lrf_renderer/__init__.py
 lib/calibre/calibre/gui2/lrf_renderer/bookview.py
 lib/calibre/calibre/gui2/lrf_renderer/config_ui.py
