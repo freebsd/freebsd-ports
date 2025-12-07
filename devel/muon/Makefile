@@ -1,11 +1,15 @@
 PORTNAME=	muon
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://muon.build/releases/v${DISTVERSION}/ \
 		https://muon.build/releases/v${DISTVERSION}/docs/:docs
 DISTFILES=	${PORTNAME}-v${DISTVERSION}${EXTRACT_SUFX} \
 		man.tar.gz:docs
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
+
+PATCH_SITES=	https://github.com/muon-build/muon/commit/
+PATCHFILES=	42dbeee661a9419b9f0514996d67978713de7726.patch:-p1
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Build system compatible with meson
