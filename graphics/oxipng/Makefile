@@ -1,7 +1,6 @@
 PORTNAME=	oxipng
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.5 # apply ${FILESDIR}/patch-man before generating cargo-crates list for missing deps
-PORTREVISION=	5
+DISTVERSION=	10.0.0 # apply ${FILESDIR}/patch-man before generating cargo-crates list for missing deps
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org
