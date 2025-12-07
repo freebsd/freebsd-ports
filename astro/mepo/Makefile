@@ -1,6 +1,6 @@
 PORTNAME=	mepo
 DISTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography wayland
 MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3+ OFL11
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.14.0:lang/zig
+BUILD_DEPENDS=	zig014=0.14.0:lang/zig014
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	jq:textproc/jq
 
@@ -21,11 +21,11 @@ USE_SDL=	gfx2 image2 ttf2
 SHEBANG_FILES=	scripts/*
 SHEBANG_LANG=	sh
 sh_CMD=		/bin/sh
-MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
 		-Dcpu=${CPUTYPE:Ubaseline} \
 		--verbose
+MAKE_ENV=	DESTDIR="${STAGEDIR}"
 NO_INSTALL=	yes # strip(1) breaks runtime
 
 post-patch:
