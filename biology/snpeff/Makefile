@@ -12,6 +12,9 @@ WWW=		https://snpeff.sourceforge.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN=		Unfetchable
+EXPIRATION_DATE=2026-01-31
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		java python shebangfix zip
