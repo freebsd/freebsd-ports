@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-11-15 05:43:17 UTC
+--- pyproject.toml.orig	2025-10-26 20:56:37 UTC
 +++ pyproject.toml
 @@ -8,7 +8,7 @@ requires-python = ">=3.7"
  description = "Convert audio files to Toniebox compatible format (.TAF) and interact with TeddyCloud."
@@ -9,6 +9,15 @@
  authors = [
      {name = "Quentendo64", email = "quentin@wohlfeil.at"}
  ]
+@@ -20,7 +20,7 @@ dependencies = [
+     "Topic :: Multimedia :: Sound/Audio :: Conversion",
+ ]
+ dependencies = [
+-    "protobuf<=6.33.0",
++    "protobuf<=6.33.1",
+     "requests>=2.32.5",
+     "mutagen>=1.47.0",
+     "packaging>=25.0",
 @@ -38,4 +38,4 @@ Homepage = "https://github.com/Quentendo64/TonieToolbo
  "Bug Tracker" = "https://github.com/Quentendo64/TonieToolbox/issues"
  
