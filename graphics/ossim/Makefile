@@ -1,6 +1,6 @@
 PORTNAME=	ossim
 DISTVERSION=	2.12.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://github.com/ossimlabs/${PORTNAME}/releases/download/v${DISTVERSION}/
 
