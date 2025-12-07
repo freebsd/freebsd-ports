@@ -1,6 +1,6 @@
 PORTNAME=	minio
 DISTVERSION=	${GH_TAGNAME:S/RELEASE.//:S/Z//:S/T/-/:S/-/./g}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 DIST_SUBDIR=	minio
 
@@ -9,6 +9,9 @@ COMMENT=	Amazon S3 compatible object storage server
 WWW=		https://minio.io/
 
 LICENSE=	AGPLv3
+
+DEPRECATED=	Upstream unmaintained
+EXPIRATION_DATE=	2026-12-31
 
 USES=		compiler cpe go:modules
 GH_TAGNAME=	RELEASE.2025-10-15T17-29-55Z
