@@ -1,5 +1,6 @@
 PORTNAME=	libdatrie
 DISTVERSION=	0.2.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tlwg/libdatrie/releases/download/v${DISTVERSION}/
 
