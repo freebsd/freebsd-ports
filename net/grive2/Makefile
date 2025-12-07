@@ -32,7 +32,7 @@ PLIST_FILES=	bin/grive \
 OPTIONS_DEFINE=	BACKTRACE
 
 BACKTRACE_DESC=	Enable backtrace support
-BACKTRACE_LIB_DEPENDS=	libbfd.so:devel/libbfd
+BACKTRACE_LIB_DEPENDS=	libbfd.so:devel/binutils
 BACKTRACE_LDFLAGS=	-lexecinfo
 BACKTRACE_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_BFD=true
 
