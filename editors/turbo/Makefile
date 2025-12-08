@@ -1,5 +1,5 @@
 PORTNAME=	turbo
-PORTVERSION=	g20230621
+PORTVERSION=	g20250826
 CATEGORIES=	editors
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 
 GH_ACCOUNT=	magiblot
 GH_PROJECT=	tvision:tv
-GH_TAGNAME=	45a02f7 92177cb:tv
+GH_TAGNAME=	695175f df6424f:tv
 GH_SUBDIR=	deps/tvision:tv
 
 .include <bsd.port.mk>
