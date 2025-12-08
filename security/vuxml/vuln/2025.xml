@@ -1,11 +1,29 @@
   <vuln vid="613d0f9e-d477-11f0-9e85-03ddfea11990">
     <topic>python -- several vulnerabilities</topic>
     <affects>
+      <!-- someone please research the 3.10/3.11/3.12 vulnerable/fixed ranges and update this entry -->
       <package>
-	<name>python</name>
-	<!-- someone please research the 3.10/3.11/3.12 vulnerable/fixed ranges and update this entry -->
-	<range><lt>3.13</lt></range>
+	<name>python39</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>python310</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>python311</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>python312</name>
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>python313</name>
 	<range><ge>3.13.0</ge><lt>3.13.11</lt></range>
+      </package>
+      <package>
+	<name>python314</name>
 	<range><ge>3.14.0</ge><lt>3.14.2</lt></range>
       </package>
     </affects>
