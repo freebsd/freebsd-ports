@@ -1,5 +1,6 @@
 PORTNAME=	fwupd
 DISTVERSION=	2.0.18
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -62,5 +63,12 @@ MESON_ARGS+=	-Dlibmnl=disabled \
 		-Dumockdev_tests=disabled \
 		-Dplugin_modem_manager=disabled \
 		-Dpython=${PYTHON_CMD}
+
+.include <bsd.port.options.mk>
+
+# FreeBSD 14.x needs extra libinotify dependency
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+.endif
 
 .include <bsd.port.mk>
