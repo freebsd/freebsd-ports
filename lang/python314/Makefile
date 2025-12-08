@@ -178,7 +178,7 @@ sigstore-verify: ${_sigstorebundle} checksum
 		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
 
 pre-test:
-	${ECHO_CMD} "=== NOTE: the py314-* gdbm, sqlite3, tkinter modules must be rebuilt before the test ==="
+	@${ECHO_CMD} "=== NOTE: the py314-* gdbm, sqlite3, tkinter modules must be rebuilt before the test ==="
 	sleep 5
 
 post-clean:
