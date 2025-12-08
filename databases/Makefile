@@ -561,6 +561,7 @@
     SUBDIR += pgbarman
     SUBDIR += pgbouncer
     SUBDIR += pgdbf
+    SUBDIR += pgjwt
     SUBDIR += pgloader3
     SUBDIR += pglogical
     SUBDIR += pgmetrics

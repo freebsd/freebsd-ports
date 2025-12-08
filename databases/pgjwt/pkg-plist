@@ -1,0 +1,4 @@
+share/postgresql/extension/pgjwt.control
+share/postgresql/extension/pgjwt--0.1.1.sql
+share/postgresql/extension/pgjwt--0.1.0--0.1.1.sql
+share/postgresql/extension/pgjwt--0.1.1--0.2.0.sql
