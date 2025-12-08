@@ -1,36 +1,40 @@
 CARGO_CRATES=	associative-cache-2.0.0 \
-		bytecount-0.6.8 \
-		castaway-0.2.3 \
-		cc-1.2.1 \
-		cfg-if-1.0.0 \
-		compact_str-0.8.1 \
-		crunchy-0.2.2 \
+		bytecount-0.6.9 \
+		bytes-1.10.1 \
+		cc-1.2.41 \
+		cfg-if-1.0.4 \
+		crunchy-0.2.4 \
 		encoding_rs-0.8.35 \
-		gimli-0.31.1 \
-		half-2.4.1 \
-		itoa-1.0.14 \
+		find-msvc-tools-0.1.4 \
+		gimli-0.32.3 \
+		half-2.7.1 \
+		itoa-1.0.15 \
 		itoap-1.0.1 \
-		jiff-0.1.21 \
-		libc-0.2.169 \
-		memchr-2.7.4 \
-		once_cell-1.20.2 \
-		portable-atomic-1.10.0 \
+		jiff-0.2.15 \
+		jiff-static-0.2.15 \
+		libc-0.2.177 \
+		memchr-2.7.6 \
+		once_cell-1.21.3 \
+		portable-atomic-1.11.1 \
 		portable-atomic-util-0.2.4 \
-		proc-macro2-1.0.92 \
-		quote-1.0.38 \
-		rustversion-1.0.19 \
-		ryu-1.0.18 \
-		serde-1.0.217 \
-		serde_derive-1.0.217 \
-		serde_json-1.0.135 \
+		proc-macro2-1.0.103 \
+		pyo3-build-config-0.27.1 \
+		pyo3-ffi-0.27.1 \
+		quote-1.0.41 \
+		ryu-1.0.20 \
+		serde-1.0.228 \
+		serde_core-1.0.228 \
+		serde_derive-1.0.228 \
+		serde_json-1.0.145 \
 		shlex-1.3.0 \
 		simdutf8-0.1.5 \
-		smallvec-1.13.2 \
-		static_assertions-1.1.0 \
-		syn-2.0.95 \
-		target-lexicon-0.13.1 \
-		unicode-ident-1.0.14 \
-		unwinding-0.2.5 \
-		uuid-1.11.0 \
+		smallvec-1.15.1 \
+		syn-2.0.108 \
+		target-lexicon-0.13.3 \
+		unicode-ident-1.0.20 \
+		unwinding-0.2.8 \
+		uuid-1.18.1 \
 		version_check-0.9.5 \
-		xxhash-rust-0.8.15
+		xxhash-rust-0.8.15 \
+		zerocopy-0.8.27 \
+		zerocopy-derive-0.8.27
