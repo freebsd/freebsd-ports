@@ -1,5 +1,5 @@
-TIMESTAMP = 1763878299
-SHA256 (go/sysutils_elephant/elephant-v2.16.1/v2.16.1.mod) = c79c4ffab3eaf73014f4dfb3b90ec56ce6f744d77c60409183f800c6bef8bd5a
-SIZE (go/sysutils_elephant/elephant-v2.16.1/v2.16.1.mod) = 2451
-SHA256 (go/sysutils_elephant/elephant-v2.16.1/v2.16.1.zip) = ae27d35171ed6a1fa6e29de831a4b6de2fd6c4ece07f61d8f1ef7b8ea13c7d13
-SIZE (go/sysutils_elephant/elephant-v2.16.1/v2.16.1.zip) = 7565458
+TIMESTAMP = 1765230041
+SHA256 (go/sysutils_elephant/elephant-v2.17.1/v2.17.1.mod) = b0ec2ac128f1dc577aa5b3f85beeff215d994383a87d6ce5b78a2fdf8dae5a8f
+SIZE (go/sysutils_elephant/elephant-v2.17.1/v2.17.1.mod) = 2451
+SHA256 (go/sysutils_elephant/elephant-v2.17.1/v2.17.1.zip) = 6afe25e58ce4591b650e3aa7fe606cd036d76e6302e67b713e14acf3b6b74b60
+SIZE (go/sysutils_elephant/elephant-v2.17.1/v2.17.1.zip) = 7566566

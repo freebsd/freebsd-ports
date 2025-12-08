@@ -1,7 +1,6 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.16.1
-PORTREVISION=	1
+DISTVERSION=	2.17.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		aarch64 armv7 i386
 NOT_FOR_ARCHS_REASON=	-buildmode=plugin not supported on these architectures
 
-USES=		go:1.25,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/abenz1267/elephant/v2
 GO_TARGET=	./cmd/elephant
