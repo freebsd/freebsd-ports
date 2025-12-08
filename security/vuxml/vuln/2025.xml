@@ -1,3 +1,42 @@
+  <vuln vid="613d0f9e-d477-11f0-9e85-03ddfea11990">
+    <topic>python -- several vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python</name>
+	<!-- someone please research the 3.10/3.11/3.12 vulnerable/fixed ranges and update this entry -->
+	<range><lt>3.13</lt></range>
+	<range><ge>3.13.0</ge><lt>3.13.11</lt></range>
+	<range><ge>3.14.0</ge><lt>3.14.2</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Hugo van Kemenade reports:</p>
+	<blockquote cite="https://pythoninsider.blogspot.com/2025/12/python-3142-and-31311-are-now-available.html">
+	  <p>Python 3.14.2 and 3.13.11 are now available [... and] come with some bonus security fixes.</p>
+	  <ul><li>gh-142145: Remove quadratic behavior in node ID cache clearing (CVE-2025-12084)</li>
+	    <li>gh-119451: Fix a potential denial of service in http.client [only in 3.13; CVE-2025-13836]</li>
+	    <li>gh-119452: Fix a potential virtual memory allocation denial of service in http.server [affects platforms without fork()]</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12084</cvename>
+      <cvename>CVE-2025-13836</cvename>
+      <url>https://pythoninsider.blogspot.com/2025/12/python-3142-and-31311-are-now-available.html</url>
+      <url>https://github.com/python/cpython/issues/142145</url>
+      <url>https://github.com/python/cpython/issues/119451</url>
+      <url>https://github.com/python/cpython/issues/119452</url>
+      <url>https://docs.python.org/release/3.14.2/whatsnew/changelog.html</url>
+      <url>https://docs.python.org/release/3.13.11/whatsnew/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2024-05-23</discovery>
+      <entry>2025-12-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ea34264d-d289-11f0-a15a-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
