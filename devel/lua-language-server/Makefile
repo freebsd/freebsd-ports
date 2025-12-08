@@ -60,6 +60,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%LINK_INOTIFY%|${_LINK_INOTIFY_}|' ${WRKSRC}/3rd/luamake/compile/ninja/freebsd.ninja
 	${REINPLACE_CMD} -e 's|%WRKDIR%|${WRKDIR}|' ${WRKSRC}/3rd/luamake/bee.lua/test/test.lua
 	${REINPLACE_CMD} -e 's|%WRKDIR%|${WRKDIR}|' ${WRKSRC}/3rd/bee.lua/test/test.lua
+	${REINPLACE_CMD} -e 's|%NINJA_CMD%|${NINJA_CMD}|' ${WRKSRC}/3rd/luamake/compile/build.sh
+	${REINPLACE_CMD} -e 's|%NINJA_CMD%|${NINJA_CMD}|' ${WRKSRC}/3rd/luamake/scripts/globals.lua
 
 # `luamake all` instead of `luamake rebuild` because there is a flaky test
 do-build:
