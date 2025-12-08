@@ -1,12 +1,11 @@
 PORTNAME=	oath-toolkit
-PORTVERSION=	2.6.9
-PORTREVISION=	2
+PORTVERSION=	2.6.13
 CATEGORIES=	security
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Library, tools, and PAM module for OATH authentication
-WWW=		https://www.nongnu.org/oath-toolkit/
+WWW=		https://oath-toolkit.codeberg.page/
 
 LICENSE=	GPLv3+ LGPL20+
 LICENSE_COMB=	multi
