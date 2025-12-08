@@ -1,0 +1,13 @@
+A vim-inspired, TUI-based hexadecimal editor.
+
+Features:
+ - Fast, even when editing large files
+ - Runs in the terminal / Text User Interface (TUI)
+ - vim-like key bindings
+ - Configurable options
+ - Edit in hex or ASCII
+ - String list with regex filtering
+ - Multiple smart ways to navigate through a file
+ - Find strings and hex bytes
+ - Cross-platform
+ - Open source

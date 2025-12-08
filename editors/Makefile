@@ -33,6 +33,7 @@
     SUBDIR += dkns
     SUBDIR += drjava
     SUBDIR += dte
+    SUBDIR += dz6
     SUBDIR += e3
     SUBDIR += e93
     SUBDIR += ecce
