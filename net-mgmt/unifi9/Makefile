@@ -1,6 +1,6 @@
 PORTNAME=	unifi9
 PORTVERSION=	9.5.21
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -29,7 +29,7 @@ CPE_PRODUCT=	unifi_controller
 JAVA_VERSION=	17
 USE_RC_SUBR=	unifi
 
-CONFLICTS_INSTALL=	unifi8
+CONFLICTS_INSTALL=	unifi10
 
 EXTRACT_CMD=	${AR}
 EXTRACT_BEFORE_ARGS=	-p
