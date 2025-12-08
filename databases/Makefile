@@ -577,6 +577,7 @@
     SUBDIR += pgrouting
     SUBDIR += pgsanity
     SUBDIR += pgschema
+    SUBDIR += pgsql-http
     SUBDIR += pgtcl
     SUBDIR += pgtop
     SUBDIR += pguri
