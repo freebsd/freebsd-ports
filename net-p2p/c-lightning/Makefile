@@ -1,8 +1,7 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	25.09
+PORTVERSION=	25.12
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
 #PKGNAMESUFFIX=	-git-f8d8348c

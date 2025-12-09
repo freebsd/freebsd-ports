@@ -46,6 +46,7 @@ share/man/man7/lightning-addgossip.7.gz
 share/man/man7/lightning-addpsbtoutput.7.gz
 share/man/man7/lightning-askrene-age.7.gz
 share/man/man7/lightning-askrene-bias-channel.7.gz
+share/man/man7/lightning-askrene-bias-node.7.gz
 share/man/man7/lightning-askrene-create-channel.7.gz
 share/man/man7/lightning-askrene-create-layer.7.gz
 share/man/man7/lightning-askrene-disable-node.7.gz
@@ -68,6 +69,7 @@ share/man/man7/lightning-bkpr-listaccountevents.7.gz
 share/man/man7/lightning-bkpr-listbalances.7.gz
 share/man/man7/lightning-bkpr-listincome.7.gz
 share/man/man7/lightning-blacklistrune.7.gz
+share/man/man7/lightning-cancelrecurringinvoice.7.gz
 share/man/man7/lightning-check.7.gz
 share/man/man7/lightning-checkmessage.7.gz
 share/man/man7/lightning-checkrune.7.gz
@@ -84,6 +86,7 @@ share/man/man7/lightning-decodepay.7.gz
 share/man/man7/lightning-deldatastore.7.gz
 share/man/man7/lightning-delforward.7.gz
 share/man/man7/lightning-delinvoice.7.gz
+share/man/man7/lightning-delnetworkevent.7.gz
 share/man/man7/lightning-delpay.7.gz
 share/man/man7/lightning-deprecations.7.gz
 share/man/man7/lightning-dev-forget-channel.7.gz
@@ -126,6 +129,7 @@ share/man/man7/lightning-listfunds.7.gz
 share/man/man7/lightning-listhtlcs.7.gz
 share/man/man7/lightning-listinvoicerequests.7.gz
 share/man/man7/lightning-listinvoices.7.gz
+share/man/man7/lightning-listnetworkevents.7.gz
 share/man/man7/lightning-listnodes.7.gz
 share/man/man7/lightning-listoffers.7.gz
 share/man/man7/lightning-listpays.7.gz
@@ -189,5 +193,6 @@ share/man/man7/lightning-waitsendpay.7.gz
 share/man/man7/lightning-withdraw.7.gz
 share/man/man7/lightning-xpay.7.gz
 share/man/man7/lightningd-rpc.7.gz
+share/man/man8/lightning-downgrade.8.gz
 share/man/man8/lightning-hsmtool.8.gz
 share/man/man8/lightningd.8.gz
