@@ -45,6 +45,8 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		block-buffer-0.10.4 \
 		block2-0.5.1 \
 		blocking-1.6.2 \
+		bstr-1.12.1 \
+		btoi-0.5.0 \
 		bumpalo-3.19.0 \
 		by_address-1.2.1 \
 		bytemuck-1.24.0 \
@@ -100,9 +102,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		derive_setters-0.1.8 \
 		derive_utils-0.15.0 \
 		digest-0.10.7 \
-		dirs-5.0.1 \
 		dirs-6.0.0 \
-		dirs-sys-0.4.1 \
 		dirs-sys-0.5.0 \
 		dispatch-0.2.0 \
 		displaydoc-0.2.5 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		fluent-syntax-0.12.0 \
 		fnv-1.0.7 \
 		foldhash-0.1.5 \
-		font-types-0.10.0 \
+		font-types-0.10.1 \
 		fontconfig-parser-0.5.8 \
 		fontdb-0.18.0 \
 		fontdb-0.23.0 \
@@ -194,7 +194,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		grid-0.18.0 \
 		guillotiere-0.6.2 \
 		half-2.7.1 \
-		harfrust-0.3.2 \
+		harfrust-0.4.1 \
 		hashbrown-0.12.3 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.0 \
@@ -227,7 +227,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		imagesize-0.12.0 \
 		indexmap-1.9.3 \
 		indexmap-2.11.4 \
-		ini_core-0.2.0 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		input-0.9.1 \
@@ -359,9 +358,13 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		paste-1.0.15 \
 		percent-encoding-2.3.2 \
 		phf-0.11.3 \
+		phf-0.13.1 \
 		phf_generator-0.11.3 \
+		phf_generator-0.13.1 \
 		phf_macros-0.11.3 \
+		phf_macros-0.13.1 \
 		phf_shared-0.11.3 \
+		phf_shared-0.13.1 \
 		pico-args-0.5.0 \
 		pin-project-1.1.10 \
 		pin-project-internal-1.1.10 \
@@ -399,10 +402,10 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		raw-window-handle-0.6.2 \
 		rctree-0.5.0 \
 		read-fonts-0.35.0 \
+		read-fonts-0.36.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.18 \
-		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
@@ -453,6 +456,7 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		siphasher-0.3.11 \
 		siphasher-1.0.1 \
 		skrifa-0.37.0 \
+		skrifa-0.39.0 \
 		slab-0.4.11 \
 		slotmap-1.0.7 \
 		smallvec-1.15.1 \
@@ -640,7 +644,6 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		x11rb-0.13.2 \
 		x11rb-protocol-0.13.2 \
 		xcursor-0.3.10 \
-		xdg-2.5.2 \
 		xdg-3.0.0 \
 		xdg-user-0.2.1 \
 		xkbcommon-0.8.0 \
@@ -670,16 +673,16 @@ CARGO_CRATES=	ab_glyph-0.2.32 \
 		zvariant_derive-5.8.0 \
 		zvariant_utils-3.2.1 \
 		cosmic-settings-daemon@git+https://github.com/pop-os/dbus-settings-bindings\#b2337437d70b3db7a56211a43aa1632306711b2d \
+		smithay@git+https://github.com/smithay/smithay.git?rev=cb9acba\#cb9acba2775de4f2032e023520e007cd66909eda \
+		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#7051682e70defcab6b683d6e9db07124a6de0df7 \
 		cosmic-settings-config,cosmic-settings-daemon-config@git+https://github.com/pop-os/cosmic-settings-daemon\#68331387e4336c37ce2300bea8638257feab449a \
 		atomicwrites@git+https://github.com/jackpot51/rust-atomicwrites\#043ab4859d53ffd3d55334685303d8df39c9f768 \
 		iced_glyphon@git+https://github.com/pop-os/glyphon.git?tag=iced-0.14-dev\#6ef9d12a20cfd0f7bdf38136a26ded9f7459ec8b \
-		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#f44d82a7e83af15270a9ca3beb832f4799699337 \
-		cosmic-freedesktop-icons@git+https://github.com/pop-os/freedesktop-icons\#8a05c322c482ff3c69cf34bacfee98907ac45307 \
 		clipboard_macos,clipboard_wayland,clipboard_x11,dnd,mime,window_clipboard@git+https://github.com/pop-os/window_clipboard.git?tag=pop-0.13-2\#6b9faab87bea9cebec6ae036906fd67fed254f5f \
-		smithay@git+https://github.com/smithay/smithay.git?rev=d40ada5\#d40ada55eceac04fb1c752f0f17b0c32cf24fbb1 \
-		cosmic-text@git+https://github.com/pop-os/cosmic-text.git\#cffdea2b334e7830a5fd6f95bf5e1784014442a8 \
+		cosmic-freedesktop-icons@git+https://github.com/pop-os/freedesktop-icons\#7a61a704f6d1ec41f71cbe766e3cc484858523fa \
 		cosmic-randr-shell@git+https://github.com/pop-os/cosmic-randr/\#bce9cdf2d447508d4e2d54a2be4fcd738ab51df5 \
 		smithay-clipboard@git+https://github.com/pop-os/smithay-clipboard?tag=pop-dnd-5\#5a3007def49eb678d1144850c9ee04b80707c56a \
 		softbuffer@git+https://github.com/pop-os/softbuffer?tag=cosmic-4.0\#a3f77e251e7422803f693df6e3fc313c010c4dcb \
+		cosmic-config,cosmic-config-derive,cosmic-theme,iced,iced_core,iced_futures,iced_graphics,iced_renderer,iced_runtime,iced_tiny_skia,iced_wgpu,iced_widget,libcosmic@git+https://github.com/pop-os/libcosmic/\#3b8ad45950f5d23c8550e18e628f6e70b7089d89 \
 		cosmic-client-toolkit,cosmic-protocols@git+https://github.com/pop-os/cosmic-protocols?branch=main\#d0e95be25e423cfe523b11111a3666ed7aaf0dc4 \
 		id_tree@git+https://github.com/Drakulix/id-tree.git?branch=feature%2Fcopy_clone\#632a57d6d49160e18d7300fa7edae52281ec5482
