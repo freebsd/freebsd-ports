@@ -5617,6 +5617,7 @@
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybind11
     SUBDIR += py-pybix
+    SUBDIR += py-pybreaker
     SUBDIR += py-pycadf
     SUBDIR += py-pycalendar
     SUBDIR += py-pycallgraph
