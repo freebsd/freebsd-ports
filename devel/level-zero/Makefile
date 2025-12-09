@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog
 
-USES=		cmake compiler:c++14-lang localbase:ldflags pathfix
+USES=		cmake compiler:c++14-lang localbase:ldflags
 
 CMAKE_OFF=	BUILD_INSTALLER \
 		BUILD_L0_LOADER_TESTS \
