@@ -169,6 +169,7 @@ include/grpcpp/create_channel_posix.h
 include/grpcpp/ext/call_metric_recorder.h
 include/grpcpp/ext/channelz_service_plugin.h
 include/grpcpp/ext/health_check_service_server_builder_option.h
+include/grpcpp/ext/otel_plugin.h
 include/grpcpp/ext/proto_server_reflection_plugin.h
 include/grpcpp/ext/server_metric_recorder.h
 include/grpcpp/generic/async_generic_service.h
@@ -346,6 +347,9 @@ lib/libgrpc_unsecure.so.51.0.0
 lib/libgrpcpp_channelz.so
 lib/libgrpcpp_channelz.so.%%SHLIB_VER%%
 lib/libgrpcpp_channelz.so.%%PORTVERSION%%
+lib/libgrpcpp_otel_plugin.so
+lib/libgrpcpp_otel_plugin.so.%%SHLIB_VER%%
+lib/libgrpcpp_otel_plugin.so.%%PORTVERSION%%
 lib/libupb_base_lib.so
 lib/libupb_base_lib.so.51
 lib/libupb_base_lib.so.51.0.0
