@@ -1,7 +1,12 @@
 PORTNAME=	openjpeg
 PORTVERSION=	2.5.4
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/uclouvain/openjpeg/commit/
+PATCHFILES=	5e258319332800f7a9937dc0b8b16b19a07dea8f.patch:-p1 \
+		7b508bb00f7fc5e7b61a6035fc4e2622d4ddff0d.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open-source JPEG 2000 codec
