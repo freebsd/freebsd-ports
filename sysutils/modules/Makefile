@@ -1,7 +1,7 @@
 PORTNAME=	modules
-DISTVERSION=	5.6.0
+DISTVERSION=	5.6.1
 CATEGORIES=	sysutils tcl
-MASTER_SITES=	https://github.com/cea-hpc/modules/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/envmodules/modules/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	laurent.chardon@gmail.com
 COMMENT=	Dynamic modification of a user environment
