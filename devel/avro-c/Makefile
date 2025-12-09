@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libsnappy.so:archivers/snappy
 
-USES=		cmake cpe pathfix pkgconfig shebangfix
+USES=		cmake cpe pkgconfig shebangfix
 
 USE_LDCONFIG=	yes
 
