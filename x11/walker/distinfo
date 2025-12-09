@@ -1,4 +1,4 @@
-TIMESTAMP = 1764318750
+TIMESTAMP = 1765254286
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -501,5 +501,5 @@ SHA256 (rust/crates/xml-rs-0.8.27.crate) = 6fd8403733700263c6eb89f192880191f1b83
 SIZE (rust/crates/xml-rs-0.8.27.crate) = 55258
 SHA256 (rust/crates/yaml-rust2-0.10.3.crate) = 4ce2a4ff45552406d02501cea6c18d8a7e50228e7736a872951fe2fe75c91be7
 SIZE (rust/crates/yaml-rust2-0.10.3.crate) = 76325
-SHA256 (abenz1267-walker-v2.11.3_GH0.tar.gz) = 7ec419c93425ffdce77c83bd3bd6d30fe4ad4def012b799441f6a41cc6ef50d7
-SIZE (abenz1267-walker-v2.11.3_GH0.tar.gz) = 150472
+SHA256 (abenz1267-walker-v2.12.1_GH0.tar.gz) = 8285934c25bb3fa4b42fa33c7cfb9bbc92f953b5a304f1da5e401f8cfa07f7e8
+SIZE (abenz1267-walker-v2.12.1_GH0.tar.gz) = 152110
