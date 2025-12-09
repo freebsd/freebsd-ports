@@ -6875,6 +6875,7 @@
     SUBDIR += rubygem-aws-sdk-networkmonitor
     SUBDIR += rubygem-aws-sdk-notifications
     SUBDIR += rubygem-aws-sdk-notificationscontacts
+    SUBDIR += rubygem-aws-sdk-novaact
     SUBDIR += rubygem-aws-sdk-oam
     SUBDIR += rubygem-aws-sdk-observabilityadmin
     SUBDIR += rubygem-aws-sdk-odb
