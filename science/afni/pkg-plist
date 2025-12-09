@@ -641,6 +641,7 @@ bin/nifti_tool
 bin/niml_feedme
 bin/niprobe
 bin/nsize
+bin/obliquity_remover.py
 bin/open_apqc.py
 bin/p2dsetstat
 bin/parse_fs_lt_log.py
