@@ -1,5 +1,6 @@
 PORTNAME=	protovalidate
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cel-python>=0.2<0.3:devel/py-cel-python@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cel-python02>=0.2<0.3:devel/py-cel-python02@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}google-re2>=1.1.20250722:devel/py-google-re2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=5,1:devel/py-protobuf@${PY_FLAVOR}
 
