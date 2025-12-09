@@ -1,3 +1,3 @@
-TIMESTAMP = 1761446670
-SHA256 (opentelemetry_instrumentation_flask-0.59b0.tar.gz) = 8b379d331b61f40a7c72c9ae8e0fca72c72ffeb6db75908811217196c9544b9b
-SIZE (opentelemetry_instrumentation_flask-0.59b0.tar.gz) = 19587
+TIMESTAMP = 1765032750
+SHA256 (opentelemetry_instrumentation_flask-0.60b0.tar.gz) = 560f08598ef40cdcf7ca05bfb2e3ea74fab076e676f4c18bb36bb379bf5c4a1b
+SIZE (opentelemetry_instrumentation_flask-0.60b0.tar.gz) = 20336
