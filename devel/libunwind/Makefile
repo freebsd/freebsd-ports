@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
-USES=		compiler:c11 cpe libtool pathfix pkgconfig
+USES=		compiler:c11 cpe libtool pkgconfig
 
 CONFIGURE_ARGS=	--disable-cxx-exceptions \
 		--disable-unwind-header \
