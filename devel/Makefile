@@ -1556,6 +1556,7 @@
     SUBDIR += linux-rl9-lld
     SUBDIR += linux-rl9-lldb
     SUBDIR += linux-rl9-llvm
+    SUBDIR += linux-rl9-nasm
     SUBDIR += linux-rl9-npth
     SUBDIR += linux-rl9-nspr
     SUBDIR += linux-rl9-ocl-icd
