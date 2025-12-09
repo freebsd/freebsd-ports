@@ -13,7 +13,7 @@ WWW=		https://capnproto.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c++14-lang cpe gmake libtool pathfix ssl
+USES=		compiler:c++14-lang cpe gmake libtool ssl
 
 CONFIGURE_ARGS=	ac_cv_lib_ssl_OPENSSL_init_ssl=yes
 GNU_CONFIGURE=	yes
