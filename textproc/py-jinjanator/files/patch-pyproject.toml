@@ -5,7 +5,7 @@
    "hatch-fancy-pypi-readme",
    "hatch-vcs",
 -  "hatchling<1.27",
-+  "hatchling<1.28",
++  "hatchling<=1.28",
  ]
  
  [project]
