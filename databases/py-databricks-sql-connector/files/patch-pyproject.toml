@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -10,10 +10,10 @@ python = "^3.8.0"
+ 
+ [tool.poetry.dependencies]
+ python = "^3.8.0"
+-thrift = ">=0.16.0,<0.21.0"
++thrift = ">=0.16.0"
+ pandas = [
+-    { version = ">=1.2.5,<2.3.0", python = ">=3.8,<3.13" },
+-    { version = ">=2.2.3,<2.3.0", python = ">=3.13" }
++    { version = ">=1.2.5", python = ">=3.8,<3.13" },
++    { version = ">=2.2.3", python = ">=3.13" }
+ ]
+ lz4 = "^4.0.2"
+ requests = "^2.18.1"
+@@ -88,4 +88,4 @@ skip_covered = false
+ skip_covered = false
+ 
+ [tool.coverage.xml]
+-output = "coverage.xml"
+\ No newline at end of file
++output = "coverage.xml"

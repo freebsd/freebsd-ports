@@ -767,6 +767,7 @@
     SUBDIR += py-couchdb
     SUBDIR += py-cymysql
     SUBDIR += py-databases
+    SUBDIR += py-databricks-sql-connector
     SUBDIR += py-datafusion
     SUBDIR += py-dbf
     SUBDIR += py-dbt-core
