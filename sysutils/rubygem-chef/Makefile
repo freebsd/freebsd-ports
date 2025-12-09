@@ -1,6 +1,6 @@
 PORTNAME=	chef
 PORTVERSION=	18.8.54
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -46,7 +46,7 @@ RUN_DEPENDS=	rubygem-activesupport71>=4.2.7.1<7.1.5.2_99:devel/rubygem-activesup
 		rubygem-unf_ext>=0.0.8.2:textproc/rubygem-unf_ext \
 		rubygem-uri>=1.0.3:net/rubygem-uri \
 		rubygem-uuidtools>=2.1.5:devel/rubygem-uuidtools \
-		rubygem-vault>=0.18.2<0.19:security/rubygem-vault
+		rubygem-vault>=0.18.2<1:security/rubygem-vault
 
 USES=		cpe gem
 
