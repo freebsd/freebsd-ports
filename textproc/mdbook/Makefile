@@ -1,7 +1,6 @@
 PORTNAME=	mdbook
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.52
-PORTREVISION=	3
+DISTVERSION=	0.5.1
 CATEGORIES=	textproc
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -18,7 +17,7 @@ GH_ACCOUNT=	rust-lang
 GH_PROJECT=	mdBook
 
 PLIST_FILES=	bin/mdbook
-PORTEXAMPLES=	examples guide test_book
+PORTEXAMPLES=	examples guide
 
 OPTIONS_DEFINE=	EXAMPLES
 
