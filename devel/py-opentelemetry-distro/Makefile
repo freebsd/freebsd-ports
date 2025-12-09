@@ -1,5 +1,5 @@
 PORTNAME=	opentelemetry-distro
-PORTVERSION=	0.59b0
+PORTVERSION=	0.60b0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,6 @@ OPTIONS_DEFINE=	OTLP
 OPTIONS_DEFAULT=OTLP
 OTLP_DESC=	OpenTelemetry Protocol support
 
-OTLP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp>=1.38.${PORTVERSION:C|.*b||}<1.38.${PORTVERSION:C|.*b||}_99:devel/py-opentelemetry-exporter-otlp@${PY_FLAVOR}
+OTLP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-exporter-otlp>=1.39.${PORTVERSION:C|.*b||}<1.39.${PORTVERSION:C|.*b||}_99:devel/py-opentelemetry-exporter-otlp@${PY_FLAVOR}
 
 .include <bsd.port.mk>
