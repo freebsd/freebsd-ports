@@ -1,4 +1,4 @@
---- sudo.cpp.orig	2023-04-15 15:54:02 UTC
+--- sudo.cpp.orig	2025-11-05 12:14:34 UTC
 +++ sudo.cpp
 @@ -44,7 +44,7 @@
  #else
@@ -19,18 +19,7 @@
      const QString doas_prog{QStringLiteral(LXQTSUDO_DOAS)};
      const QString pwd_prompt_end{QStringLiteral(": ")};
      const QChar nl{QLatin1Char('\n')};
-@@ -194,7 +197,9 @@ int Sudo::main()
-         } else if (QStringLiteral("-a") == arg1 || QStringLiteral("--doas") == arg1)
-         {
-             mBackend = BACK_DOAS;
--            mArgs.removeAt(0);
-+            mArgs.removeAt(0); //remove -m
-+            mArgs.removeAt(1); //remove root
-+            mArgs.removeAt(2); // remove -c
-         }
-     }
-     //any other arguments we simply forward to su/sudo
-@@ -265,7 +270,7 @@ void Sudo::child()
+@@ -272,7 +275,7 @@ void Sudo::child()
      switch (mBackend)
      {
          case BACK_SU:
@@ -39,7 +28,7 @@
              break;
          case BACK_SUDO:
              params_cnt += 3; // --preserve-env=... /bin/sh -c for sudo
-@@ -295,8 +300,10 @@ void Sudo::child()
+@@ -302,8 +305,10 @@ void Sudo::child()
              break;
          case BACK_DOAS:
              *(param_arg++) = "/bin/sh";
@@ -49,9 +38,9 @@
 +           *(param_arg++) = "-m";
 +           *(param_arg++) = "root";
          case BACK_NONE:
-             env_workarounds();
+             env_workarounds(mQuiet);
              break;
-@@ -404,7 +411,8 @@ int Sudo::parent()
+@@ -414,7 +419,8 @@ int Sudo::parent()
                  }
              } else
              {
