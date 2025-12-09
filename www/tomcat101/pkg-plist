@@ -29,7 +29,7 @@
 %%T%%/lib/catalina.jar
 %%T%%/lib/ecj-4.27.jar
 %%T%%/lib/el-api.jar
-%%T%%/lib/jakartaee-migration-1.0.9-shaded.jar
+%%T%%/lib/jakartaee-migration-1.0.10-shaded.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
 %%T%%/lib/jaspic-api.jar
