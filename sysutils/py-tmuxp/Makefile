@@ -1,5 +1,5 @@
 PORTNAME=	tmuxp
-PORTVERSION=	1.57.0
+PORTVERSION=	1.59.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.3.9:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}libtmux>=0.48.0<0.49:devel/py-libtmux@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}libtmux>=0.50.0<0.51:devel/py-libtmux@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=6.0:devel/py-pyyaml@${PY_FLAVOR} \
 		tmux:sysutils/tmux
 
