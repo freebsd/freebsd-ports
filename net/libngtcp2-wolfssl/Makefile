@@ -17,7 +17,7 @@ BUILD_DEPENDS=	libngtcp2>=${PORTVERSION}<${PORTVERSION}_99:net/libngtcp2
 LIB_DEPENDS=	libwolfssl.so:security/wolfssl
 RUN_DEPENDS=	libngtcp2>=${PORTVERSION}<${PORTVERSION}_99:net/libngtcp2
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only \
 		--with-jemalloc \
