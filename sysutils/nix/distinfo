@@ -1,3 +1,5 @@
-TIMESTAMP = 1761053753
-SHA256 (NixOS-nix-2.32.1_GH0.tar.gz) = 879e05682a35aefe7fc8c570475ce8deb93e0324ac3d6cccadd060de2b481947
-SIZE (NixOS-nix-2.32.1_GH0.tar.gz) = 1950308
+TIMESTAMP = 1764968570
+SHA256 (NixOS-nix-2.32.4_GH0.tar.gz) = b3a63dab4fc3c89a1a746c6debdef1675ed27530969459e5beb8ce6b3c0d9099
+SIZE (NixOS-nix-2.32.4_GH0.tar.gz) = 1954164
+SHA256 (nix-fix-build-with-mdbook-update.patch) = 68a63748895487adf283767cd2fd21bd6ec8b5d59a2d77a9255c8c3157997ccb
+SIZE (nix-fix-build-with-mdbook-update.patch) = 3658
