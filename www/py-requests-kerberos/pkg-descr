@@ -1,0 +1,3 @@
+Requests is an HTTP library, written in Python, for human beings. This library
+adds optional Kerberos/GSSAPI authentication support and supports mutual
+authentication.
