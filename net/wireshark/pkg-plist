@@ -587,6 +587,7 @@ bin/tshark
 %%DEVELOPMENT%%include/wireshark/wiretap/secrets-types.h
 %%DEVELOPMENT%%include/wireshark/wiretap/wtap.h
 %%DEVELOPMENT%%include/wireshark/wiretap/wtap_modules.h
+%%DEVELOPMENT%%include/wireshark/wiretap/wtap_module.h
 %%DEVELOPMENT%%include/wireshark/wiretap/wtap_opttypes.h
 %%DEVELOPMENT%%include/wireshark/ws_attributes.h
 %%DEVELOPMENT%%include/wireshark/ws_codepoints.h
@@ -601,7 +602,6 @@ bin/tshark
 %%DEVELOPMENT%%include/wireshark/wsutil/adler32.h
 %%DEVELOPMENT%%include/wireshark/wsutil/application_flavor.h
 %%DEVELOPMENT%%include/wireshark/wsutil/array.h
-%%DEVELOPMENT%%include/wireshark/wsutil/base32.h
 %%DEVELOPMENT%%include/wireshark/wsutil/bits_count_ones.h
 %%DEVELOPMENT%%include/wireshark/wsutil/bits_ctz.h
 %%DEVELOPMENT%%include/wireshark/wsutil/bitswap.h
@@ -697,10 +697,10 @@ bin/tshark
 %%DEVELOPMENT%%lib/cmake/wireshark/WiresharkTargets.cmake
 lib/libwireshark.so
 lib/libwireshark.so.19
-lib/libwireshark.so.19.0.1
+lib/libwireshark.so.19.0.2
 lib/libwiretap.so
 lib/libwiretap.so.16
-lib/libwiretap.so.16.0.1
+lib/libwiretap.so.16.0.2
 lib/libwsutil.so
 lib/libwsutil.so.17
 lib/libwsutil.so.17.0.0
