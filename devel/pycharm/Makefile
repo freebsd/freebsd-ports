@@ -1,5 +1,5 @@
 PORTNAME=	pycharm
-DISTVERSION=	2025.2.5
+DISTVERSION=	2025.3
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DIST_SUBDIR=	jetbrains
@@ -24,10 +24,7 @@ SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle.py \
 		plugins/python-ce/helpers/pycodestyle-2.10.0.py \
 		plugins/python-ce/helpers/py3only/docutils/utils/math/math2html.py \
 		plugins/python-ce/helpers/py3only/docutils/utils/smartquotes.py \
-		plugins/python-ce/helpers/py3only/docutils/writers/odf_odt/prepstyles.py \
-		plugins/python-ce/helpers/typeshed/scripts/generate_proto_stubs.sh \
-		plugins/python-ce/helpers/typeshed/scripts/sync_s2clientprotocol_protobuf_stubs.sh \
-		plugins/python-ce/helpers/typeshed/scripts/sync_tensorflow_protobuf_stubs.sh
+		plugins/python-ce/helpers/py3only/docutils/writers/odf_odt/prepstyles.py
 
 ONLY_FOR_ARCH=	amd64
 CPE_VENDOR=	jetbrains
