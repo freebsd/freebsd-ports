@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	cmocka>=1.1.0:sysutils/cmocka
 
-USES=		cmake:testing pathfix python
+USES=		cmake:testing python
 
 CMAKE_OFF=	PICKY_DEVELOPER \
 		UNIT_TESTING
