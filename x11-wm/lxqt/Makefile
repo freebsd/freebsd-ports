@@ -1,5 +1,6 @@
 PORTNAME=	lxqt
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	lxqt@FreeBSD.org
@@ -27,7 +28,8 @@ RUN_DEPENDS=	startlxqt:x11-wm/lxqt-session \
 	lxqt-wayland-session>=0.3.0:x11-wm/lxqt-wayland-session \
 	qlipper:deskutils/qlipper \
 	openbox:x11-wm/openbox \
-	xdg-desktop-portal-lxqt>0:deskutils/xdg-desktop-portal-lxqt
+	xdg-desktop-portal-lxqt>0:deskutils/xdg-desktop-portal-lxqt \
+	qtxdg-tools>0:sysutils/qtxdg-tools
 
 USES=	qt:6 metaport
 USE_QT=	translations
