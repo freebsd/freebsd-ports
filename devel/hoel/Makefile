@@ -11,7 +11,7 @@ WWW=		https://babelouest.github.io/hoel/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake pathfix
+USES=		cmake
 
 BUILD_DEPENDS=	jansson>=2.4:devel/jansson \
 		orcania>=2.3.2:devel/orcania \
