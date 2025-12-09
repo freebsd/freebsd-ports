@@ -32,6 +32,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_asciidoc.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_assembly.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_astro.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_audio.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_autohotkey.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_autoit.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_awk.png
@@ -185,6 +186,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_velocity.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_verilog.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vhdl.png
+%%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_video.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vim.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vlang.png
 %%DATADIR%%/data/filetypeicons/vscode_16x16/file_type_vscode.png
