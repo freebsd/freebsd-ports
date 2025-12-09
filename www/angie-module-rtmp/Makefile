@@ -1,13 +1,16 @@
 PORTNAME=	angie-module-rtmp
-GH_TUPLE=	arut:nginx-rtmp-module:v1.2.2:module
+MODULE_VERSION=	1.2.2
+MODULE_PORTREVISION=	0
+GH_TUPLE=	arut:nginx-rtmp-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie RTMP dynamic module
+WWW=		https://github.com/arut/nginx-rtmp-module/
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_rtmp_module.so \
 	    ${STAGEDIR}${MODDIR}

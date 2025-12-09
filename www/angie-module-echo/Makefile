@@ -1,13 +1,16 @@
 PORTNAME=	angie-module-echo
-GH_TUPLE=	openresty:echo-nginx-module:v0.63:module
+MODULE_VERSION=	0.63
+MODULE_PORTREVISION=	0
+GH_TUPLE=	openresty:echo-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie echo dynamic module
+WWW=		https://github.com/openresty/echo-nginx-module/
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_echo_module.so \
 	    ${STAGEDIR}${MODDIR}

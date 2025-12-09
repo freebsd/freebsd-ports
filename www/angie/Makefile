@@ -1,9 +1,9 @@
 PORTNAME?=	angie
-DISTVERSION=	1.10.2
-PORTREVISION=	1
+ANGIE_VERSION=	1.10.2
+ANGIE_PORTREVISION=	2
 CATEGORIES+=	www
 MASTER_SITES+=	https://download.angie.software/files/:angie
-DISTNAME=	angie-${DISTVERSIONFULL}
+DISTNAME=	angie-${ANGIE_VERSION}
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}:angie
 
 MAINTAINER?=	sko@rostwald.de
@@ -13,6 +13,8 @@ WWW?=		https://angie.software/en/
 LICENSE?=	BSD2CLAUSE
 
 .if ${PORTNAME} == angie
+DISTVERSION=	${ANGIE_VERSION}
+PORTREVISION=	${ANGIE_PORTREVISION}
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 USE_RC_SUBR=	angie
@@ -22,9 +24,17 @@ SUB_FILES=	angie.conf.sample \
 		example.conf.sample \
 		pkg-message
 .else
+.  if defined(MODULE_VERSION)
+DISTVERSION=	${MODULE_VERSION}
+PORTREVISION=	${MODULE_PORTREVISION}
+PORTEPOCH=	1
+.  else
+DISTVERSION=	${ANGIE_VERSION}
+PORTREVISION=	${ANGIE_PORTREVISION}
+.  endif
 LICENSE_FILE?=	${WRKSRC_module}/LICENSE
 BUILD_DEPENDS+=	pcre2>=0:devel/pcre2
-RUN_DEPENDS+=	angie==${PKGVERSION}:www/angie
+RUN_DEPENDS+=	angie>=${ANGIE_VERSION}:www/angie
 ALL_TARGET?=	modules
 CONFIGURE_ADD?=	--add-dynamic-module=${WRKSRC_module}
 .endif

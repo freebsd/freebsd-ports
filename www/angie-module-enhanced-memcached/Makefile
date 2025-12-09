@@ -1,15 +1,19 @@
 PORTNAME=	angie-module-enhanced-memcached
-GH_TUPLE=	bpaquet:ngx_http_enhanced_memcached_module:v0.3:module
+MODULE_VERSION=	0.3
+MODULE_PORTREVISION=	0
+GH_TUPLE=	bpaquet:ngx_http_enhanced_memcached_module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie enhanced memcached dynamic module
+WWW=		https://github.com/bpaquet/ngx_http_enhanced_memcached_module/
 
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC_module}/README.markdown
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_enhanced_memcached_module.so \
 	    ${STAGEDIR}${MODDIR}

@@ -1,13 +1,16 @@
 PORTNAME=	angie-module-cache-purge
-GH_TUPLE=	nginx-modules:ngx_cache_purge:2.5.4:module
+MODULE_VERSION= 2.5.4
+MODULE_PORTREVISION=	0
+GH_TUPLE=	nginx-modules:ngx_cache_purge:${MODULE_VERSION}:module
 
 COMMENT=	Angie cache_purge dynamic module
+WWW=		https://github.com/nginx-modules/ngx_cache_purge/
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_cache_purge_module.so \
 	    ${STAGEDIR}${MODDIR}
