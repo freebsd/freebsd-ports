@@ -1,4 +1,3 @@
-libdata/pkgconfig/iso-codes.pc
 %%DATADIR%%/json/iso_15924.json
 %%DATADIR%%/json/iso_3166-1.json
 %%DATADIR%%/json/iso_3166-2.json
@@ -1149,6 +1148,7 @@ share/locale/zu/LC_MESSAGES/iso_639-2.mo
 share/locale/zu/LC_MESSAGES/iso_639-3.mo
 share/locale/zu/LC_MESSAGES/iso_639.mo
 share/locale/zu/LC_MESSAGES/iso_639_3.mo
+share/pkgconfig/iso-codes.pc
 share/xml/iso-codes/iso_15924.xml
 share/xml/iso-codes/iso_3166-1.xml
 share/xml/iso-codes/iso_3166-2.xml
