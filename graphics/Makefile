@@ -1011,6 +1011,7 @@
     SUBDIR += py-pymaging
     SUBDIR += py-pymaging-png
     SUBDIR += py-pyocr
+    SUBDIR += py-pyogrio
     SUBDIR += py-pypillowfight
     SUBDIR += py-pyproj
     SUBDIR += py-pyqrcode
