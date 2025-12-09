@@ -1,5 +1,5 @@
 PORTNAME=	pudb
-PORTVERSION=	2025.1.3
+PORTVERSION=	2025.1.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jedi>=0.18<1:devel/py-jedi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=2.7.4:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.19:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.13:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}urwid>=2.4:devel/py-urwid@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}urwid>=2.5.1:devel/py-urwid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urwid-readline>=0:devel/py-urwid-readline@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
