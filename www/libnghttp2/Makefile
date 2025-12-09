@@ -12,7 +12,7 @@ WWW=		https://nghttp2.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool pathfix pkgconfig tar:xz
+USES=		cpe libtool pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only
 GNU_CONFIGURE=	yes
