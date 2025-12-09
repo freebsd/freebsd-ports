@@ -1,4 +1,4 @@
-    cOMMENT = Networking tools
+    COMMENT = Networking tools
 
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
