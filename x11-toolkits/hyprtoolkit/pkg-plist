@@ -24,6 +24,7 @@ include/hyprtoolkit/palette/Color.hpp
 include/hyprtoolkit/palette/Palette.hpp
 include/hyprtoolkit/system/Icons.hpp
 include/hyprtoolkit/types/FontTypes.hpp
+include/hyprtoolkit/types/ImageTypes.hpp
 include/hyprtoolkit/types/PointerShape.hpp
 include/hyprtoolkit/types/SizeType.hpp
 include/hyprtoolkit/window/Window.hpp
