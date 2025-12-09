@@ -1,5 +1,5 @@
 PORTNAME=	angie-module-lua
-MODULE_VERSION=	0.10.28
+MODULE_VERSION=	0.10.29
 MODULE_PORTREVISION=	0
 GH_TUPLE=	openresty:lua-nginx-module:v${MODULE_VERSION}:lua
 GH_TUPLE+=	openresty:stream-lua-nginx-module:v0.0.16:lua_stream

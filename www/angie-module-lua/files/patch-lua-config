@@ -1,5 +1,5 @@
---- ../lua-nginx-module-0.10.28/config.orig
-+++ ../lua-nginx-module-0.10.28/config
+--- ../lua-nginx-module-0.10.29/config.orig
++++ ../lua-nginx-module-0.10.29/config
 @@ -45,9 +45,9 @@
          NGX_TEST_LD_OPT="$ngx_lua_opt_L $NGX_TEST_LD_OPT"
 
