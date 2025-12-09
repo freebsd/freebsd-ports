@@ -1,7 +1,7 @@
 PORTNAME=	hyprland-qtutils
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/hyprwm/hyprland-qtutils/commit/
