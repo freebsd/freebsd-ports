@@ -1,6 +1,6 @@
---- machine.h.orig	2014-05-05 15:00:00 UTC
+--- machine.h.orig	2019-07-26 15:00:00 UTC
 +++ machine.h
-@@ -584,25 +584,6 @@ typedef long	off_t;
+@@ -594,25 +594,6 @@ typedef long	off_t;
  #define	USEINETATON
  #endif
  
@@ -26,7 +26,7 @@
  #if	defined (__FreeBSD__) && !defined (OSTYPE) && !defined (__BOW__)
  #define	BSD44
  #define	OSTYPE			"FREEBSD"
-@@ -1315,7 +1296,7 @@ typedef unsigned long		u_long;
+@@ -1341,7 +1322,7 @@ typedef unsigned long		u_long;
  #define	CCCOMMAND		"cc"
  #endif
  #ifndef	EXTENDCCOPT

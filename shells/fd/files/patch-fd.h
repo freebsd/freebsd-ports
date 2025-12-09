@@ -1,6 +1,6 @@
---- fd.h.orig	2008-04-19 00:00:00.000000000 +0900
-+++ fd.h	2008-07-10 20:00:12.000000000 +0900
-@@ -183,11 +183,11 @@
+--- fd.h.orig	2019-07-26 15:00:00 UTC
++++ fd.h
+@@ -215,11 +215,11 @@ extern char *_mtrace_file;
   ****************************************************************/
  #define	MAXBINDTABLE		256
  #define	MAXMACROTABLE		64
@@ -15,3 +15,12 @@
  #if	MSDOS
  #define	MAXCOMMSTR		(128 - 2)
  #endif
+@@ -408,7 +408,7 @@ extern char *_mtrace_file;
+ #define	TC_USED			(TC_TOTAL + TW_TOTAL + TD_TOTAL + TW_GAP)
+ #define	TC_FREE			(TC_USED + TW_USED + TD_USED + TW_GAP)
+ 
+-#define	WSIZE			9
++#define	WSIZE			10
+ #define	WSIZE2			8
+ #define	TWSIZE2			10
+ #define	WDATE			8
