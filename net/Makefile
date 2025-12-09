@@ -1,4 +1,4 @@
-    COMMENT = Networking tools
+    cOMMENT = Networking tools
 
     SUBDIR += 3proxy
     SUBDIR += 44bsd-rdist
@@ -1077,6 +1077,7 @@
     SUBDIR += py-haproxy-log-analysis
     SUBDIR += py-haproxyctl
     SUBDIR += py-httpstat
+    SUBDIR += py-icmplib
     SUBDIR += py-ifaddr
     SUBDIR += py-impacket
     SUBDIR += py-iplib
