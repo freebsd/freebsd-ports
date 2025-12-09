@@ -12,7 +12,7 @@ WWW=		https://nghttp2.org/ngtcp2/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		libtool pathfix pkgconfig tar:xz
+USES=		libtool pkgconfig tar:xz
 
 CONFIGURE_ARGS=	--enable-lib-only \
 		--with-jemalloc \
