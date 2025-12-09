@@ -1,8 +1,11 @@
 PORTNAME=	angie-module-set-misc
-GH_TUPLE=	vision5:ngx_devel_kit:v0.3.4:ndk
+MODULE_VERSION=	0.3.4
+MODULE_PORTREVISION=	0
+GH_TUPLE=	vision5:ngx_devel_kit:v${MODULE_VERSION}:ndk
 GH_TUPLE+=	openresty:set-misc-nginx-module:v0.33:module
 
 COMMENT=	Angie set-misc dynamic module
+WWW=		https://github.com/openresty/set-misc-nginx-module/
 
 LICENSE_FILE=	${WRKSRC_module}/README.markdown
 
@@ -12,8 +15,8 @@ CONFIGURE_ADD=	--add-dynamic-module=${WRKSRC_ndk} \
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_set_misc_module.so \
 	    ${STAGEDIR}${MODDIR}

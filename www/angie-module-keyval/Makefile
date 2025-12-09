@@ -1,15 +1,20 @@
 PORTNAME=	angie-module-keyval
-GH_TUPLE=	kjdev:nginx-keyval:0.3.0:module
+MODULE_VERSION=	0.3.0
+MODULE_PORTREVISION=	0
+GH_TUPLE=	kjdev:nginx-keyval:${MODULE_VERSION}:module
 
 COMMENT=	Angie keyval dynamic module
+WWW=		https://github.com/kjdev/nginx-keyval/
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	libhiredis.so:databases/hiredis
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_keyval_module.so \
 	    ${STAGEDIR}${MODDIR}

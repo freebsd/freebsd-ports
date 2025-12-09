@@ -1,13 +1,18 @@
 PORTNAME=	angie-module-auth-totp
-GH_TUPLE=	61131:nginx-http-auth-totp:1.1.0:module
+MODULE_VERSION=	1.1.0
+MODULE_PORTREVISION=	0
+GH_TUPLE=	61131:nginx-http-auth-totp:${MODULE_VERSION}:module
 
 COMMENT=	Angie auth-totp dynamic module
+WWW=		https://github.com/61131/nginx-http-auth-totp/
+
+LICENSE=	MIT
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_auth_totp_module.so \
 	    ${STAGEDIR}${MODDIR}

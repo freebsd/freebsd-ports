@@ -1,7 +1,10 @@
 PORTNAME=	angie-module-njs
-GH_TUPLE=	nginx:njs:0.9.1:module
+MODULE_VERSION=	0.9.1
+MODULE_PORTREVISION=	0
+GH_TUPLE=	nginx:njs:${MODULE_VERSION}:module
 
 COMMENT=	Angie NJS dynamic module
+WWW=		https://github.com/nginx/njs/
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
@@ -13,8 +16,8 @@ CONFIGURE_ADD=	--add-dynamic-module=${WRKSRC_module}/nginx
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 .for i in ngx_http_js_module ngx_stream_js_module
 	${INSTALL_LIB} ${WRKSRC}/objs/${i}.so ${STAGEDIR}${MODDIR}

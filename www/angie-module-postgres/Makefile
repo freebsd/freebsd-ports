@@ -1,15 +1,18 @@
 PORTNAME=	angie-module-postgres
-GH_TUPLE=	FRiCKLE:ngx_postgres:1.0rc7:module
+MODULE_VERSION=	1.0rc7
+MODULE_PORTREVISION=	0
+GH_TUPLE=	FRiCKLE:ngx_postgres:${MODULE_VERSION}:module
 
 COMMENT=	Angie postgres dynamic module
+WWW=		https://github.com/FRiCKLE/ngx_postgres/
 
 USES=		pgsql
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_postgres_module.so \
 	    ${STAGEDIR}${MODDIR}

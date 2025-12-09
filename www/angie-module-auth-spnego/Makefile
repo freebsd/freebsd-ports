@@ -1,7 +1,10 @@
 PORTNAME=	angie-module-auth-spnego
-GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v1.1.3:module
+MODULE_VERSION=	1.1.3
+MODULE_PORTREVISION=	0
+GH_TUPLE=	stnoonan:spnego-http-auth-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie auth-spnego dynamic module
+WWW=		https://github.com/stnoonan/spnego-http-auth-nginx-module/
 
 USES=		gssapi:mit
 
@@ -12,8 +15,8 @@ pre-configure:
 		${WRKSRC_module}/config
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_auth_spnego_module.so \
 	    ${STAGEDIR}${MODDIR}

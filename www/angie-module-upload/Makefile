@@ -1,15 +1,19 @@
 PORTNAME=	angie-module-upload
-GH_TUPLE=	fdintino:nginx-upload-module:2.3.0:module
+MODULE_VERSION=	2.3.0
+MODULE_PORTREVISION=	0
+GH_TUPLE=	fdintino:nginx-upload-module:${MODULE_VERSION}:module
 
 COMMENT=	Angie upload dynamic module
+WWW=		https://github.com/fdintino/nginx-upload-module/
 
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC_module}/LICENCE
 
 MASTERDIR=	${.CURDIR}/../../www/angie
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${MODDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR} \
+		 ${STAGEDIR}${MODDIR}
 
 	${INSTALL_LIB} ${WRKSRC}/objs/ngx_http_upload_module.so \
 	    ${STAGEDIR}${MODDIR}
