@@ -293,6 +293,7 @@
     SUBDIR += bacnet-stack
     SUBDIR += bacon
     SUBDIR += bam
+    SUBDIR += base64
     SUBDIR += bashdb
     SUBDIR += basu
     SUBDIR += bats-core
