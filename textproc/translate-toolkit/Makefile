@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.17.2
+PORTVERSION=	3.17.4
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -20,7 +20,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		msghack:devel/gettext-msghack \
 		${PYTHON_PKGNAMEPREFIX}lxml>=5.2.0<6.1:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.1.1:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.2.0<0.3:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
 
 USES=		gettext python shebangfix
 USE_PYTHON=	autoplist noflavors pep517

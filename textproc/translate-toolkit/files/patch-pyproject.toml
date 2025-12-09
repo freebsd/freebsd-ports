@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-11-27 21:20:48 UTC
+--- pyproject.toml.orig	2025-12-04 14:39:27 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
@@ -9,16 +9,7 @@
  ]
  
  [dependency-groups]
-@@ -63,7 +63,7 @@ dependencies = [
- ]
- dependencies = [
-   "lxml>=5.2.0,<6.1",
--  "unicode-segmentation-rs>=0.1.1,<0.2"
-+  "unicode-segmentation-rs>=0.1.1"
- ]
- description = "Tools and API for translation and localization engineering."
- dynamic = [
-@@ -72,8 +72,7 @@ keywords = [
+@@ -76,8 +76,7 @@ keywords = [
  keywords = [
    "i18n l10n gettext translate"
  ]
@@ -28,7 +19,7 @@
  name = "translate-toolkit"
  requires-python = ">=3.10"
  
-@@ -88,10 +87,10 @@ ical = [
+@@ -92,10 +91,10 @@ ical = [
    "fluent.syntax>=0.19.0,<0.20"
  ]
  ical = [
@@ -41,7 +32,7 @@
  ]
  levenshtein = [
    "python-Levenshtein>=0.21.0"
-@@ -106,13 +105,13 @@ spellcheck = [
+@@ -110,13 +109,13 @@ spellcheck = [
    "pyparsing>=3.2.0,<3.3"
  ]
  spellcheck = [
