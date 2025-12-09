@@ -25,5 +25,6 @@ pidfile="/var/run/kanidmd.pid"
 command=/usr/sbin/daemon
 command_args="-u %%USER%% -p /var/run/kanidmd.pid -T kanidmd %%PREFIX%%/libexec/${name} server --config-path ${kanidmd_config}"
 procname=%%PREFIX%%/libexec/${name}
+extra_commands="reload"
 
 run_rc_command "$1"
