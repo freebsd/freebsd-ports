@@ -1,6 +1,5 @@
 PORTNAME=	pip-audit
-PORTVERSION=	2.9.0
-PORTREVISION=	2
+PORTVERSION=	2.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pypa/pip-audit/releases/download/v${PORTVERSION}/
@@ -23,7 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.13.0:www/py-cachecontrol@${P
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=4.2.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.31.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=12.4:textproc/py-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}toml>=0.10:textproc/py-toml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tomli>=2.2.1:textproc/py-tomli@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli-w>=1.2.0:textproc/py-tomli-w@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
