@@ -16,8 +16,8 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		heck-0.5.0 \
 		indoc-2.0.7 \
 		itoa-1.0.15 \
-		js-sys-0.3.82 \
-		libc-0.2.177 \
+		js-sys-0.3.83 \
+		libc-0.2.178 \
 		lock_api-0.4.14 \
 		memchr-2.7.6 \
 		memoffset-0.9.1 \
@@ -27,12 +27,12 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		pin-project-lite-0.2.16 \
 		portable-atomic-1.11.1 \
 		proc-macro2-1.0.103 \
-		pyo3-0.27.1 \
-		pyo3-build-config-0.27.1 \
-		pyo3-ffi-0.27.1 \
-		pyo3-macros-0.27.1 \
-		pyo3-macros-backend-0.27.1 \
-		quote-1.0.41 \
+		pyo3-0.27.2 \
+		pyo3-build-config-0.27.2 \
+		pyo3-ffi-0.27.2 \
+		pyo3-macros-0.27.2 \
+		pyo3-macros-backend-0.27.2 \
+		quote-1.0.42 \
 		redox_syscall-0.5.18 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
@@ -43,16 +43,16 @@ CARGO_CRATES=	arc-swap-1.7.1 \
 		serde_json-1.0.145 \
 		smallstr-0.3.1 \
 		smallvec-1.15.1 \
-		syn-2.0.108 \
+		syn-2.0.111 \
 		target-lexicon-0.13.3 \
 		thiserror-2.0.17 \
 		thiserror-impl-2.0.17 \
 		unicode-ident-1.0.22 \
 		unindent-0.2.4 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.105 \
-		wasm-bindgen-macro-0.2.105 \
-		wasm-bindgen-macro-support-0.2.105 \
-		wasm-bindgen-shared-0.2.105 \
+		wasm-bindgen-0.2.106 \
+		wasm-bindgen-macro-0.2.106 \
+		wasm-bindgen-macro-support-0.2.106 \
+		wasm-bindgen-shared-0.2.106 \
 		windows-link-0.2.1 \
-		yrs-0.24.0
+		yrs-0.25.0
