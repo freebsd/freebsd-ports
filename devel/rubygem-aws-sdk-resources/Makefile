@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.247.0
+PORTVERSION=	3.249.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -289,6 +289,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-networkmonitor>=1<2:devel/rubygem-aws-sdk-networkmonitor \
 		rubygem-aws-sdk-notifications>=1<2:devel/rubygem-aws-sdk-notifications \
 		rubygem-aws-sdk-notificationscontacts>=1<2:devel/rubygem-aws-sdk-notificationscontacts \
+		rubygem-aws-sdk-novaact>=1<2:devel/rubygem-aws-sdk-novaact \
 		rubygem-aws-sdk-oam>=1<2:devel/rubygem-aws-sdk-oam \
 		rubygem-aws-sdk-observabilityadmin>=1<2:devel/rubygem-aws-sdk-observabilityadmin \
 		rubygem-aws-sdk-odb>=1<2:devel/rubygem-aws-sdk-odb \
@@ -299,6 +300,8 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-osis>=1<2:devel/rubygem-aws-sdk-osis \
 		rubygem-aws-sdk-outposts>=1<2:devel/rubygem-aws-sdk-outposts \
 		rubygem-aws-sdk-panorama>=1<2:devel/rubygem-aws-sdk-panorama \
+		rubygem-aws-sdk-partnercentralaccount>=1<2:devel/rubygem-aws-sdk-partnercentralaccount \
+		rubygem-aws-sdk-partnercentralbenefits>=1<2:devel/rubygem-aws-sdk-partnercentralbenefits \
 		rubygem-aws-sdk-partnercentralchannel>=1<2:devel/rubygem-aws-sdk-partnercentralchannel \
 		rubygem-aws-sdk-partnercentralselling>=1<2:devel/rubygem-aws-sdk-partnercentralselling \
 		rubygem-aws-sdk-paymentcryptography>=1<2:devel/rubygem-aws-sdk-paymentcryptography \
@@ -339,6 +342,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-rolesanywhere>=1<2:devel/rubygem-aws-sdk-rolesanywhere \
 		rubygem-aws-sdk-route53>=1<2:devel/rubygem-aws-sdk-route53 \
 		rubygem-aws-sdk-route53domains>=1<2:devel/rubygem-aws-sdk-route53domains \
+		rubygem-aws-sdk-route53globalresolver>=1<2:devel/rubygem-aws-sdk-route53globalresolver \
 		rubygem-aws-sdk-route53profiles>=1<2:devel/rubygem-aws-sdk-route53profiles \
 		rubygem-aws-sdk-route53recoverycluster>=1<2:devel/rubygem-aws-sdk-route53recoverycluster \
 		rubygem-aws-sdk-route53recoverycontrolconfig>=1<2:devel/rubygem-aws-sdk-route53recoverycontrolconfig \
