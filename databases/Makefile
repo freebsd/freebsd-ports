@@ -845,6 +845,7 @@
     SUBDIR += py-redis5
     SUBDIR += py-redis6
     SUBDIR += py-redisvl
+    SUBDIR += py-redshift-connector
     SUBDIR += py-rrdtool
     SUBDIR += py-schemachange
     SUBDIR += py-sispy
