@@ -50,7 +50,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		form_urlencoded-1.2.2 \
 		getrandom-0.2.16 \
 		getrandom-0.3.4 \
-		git2-0.20.2 \
+		git2-0.20.3 \
 		globset-0.4.18 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.0 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		jobserver-0.1.34 \
 		js-sys-0.3.82 \
 		libc-0.2.177 \
-		libgit2-sys-0.18.2+1.9.1 \
+		libgit2-sys-0.18.3+1.9.2 \
 		libredox-0.1.10 \
 		libssh2-sys-0.3.1 \
 		libz-sys-1.1.22 \
@@ -146,11 +146,11 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		tinystr-0.8.2 \
 		toml-0.9.8 \
 		toml_datetime-0.7.3 \
-		toml_edit-0.23.7 \
+		toml_edit-0.23.9 \
 		toml_parser-1.0.4 \
 		toml_writer-1.0.4 \
 		tree-sitter-0.25.10 \
-		tree-sitter-bash-0.25.0 \
+		tree-sitter-bash-0.25.1 \
 		tree-sitter-c-0.24.1 \
 		tree-sitter-c-sharp-0.23.1 \
 		tree-sitter-clojure-0.1.0 \
