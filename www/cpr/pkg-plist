@@ -42,6 +42,7 @@ include/cpr/response.h
 include/cpr/secure_string.h
 include/cpr/session.h
 include/cpr/singleton.h
+include/cpr/sse.h
 include/cpr/ssl_ctx.h
 include/cpr/ssl_options.h
 include/cpr/status_codes.h
