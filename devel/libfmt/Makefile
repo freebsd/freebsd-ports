@@ -12,7 +12,7 @@ WWW=		https://fmt.dev/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++11-lang cpe pathfix zip
+USES=		cmake:testing compiler:c++11-lang cpe zip
 
 CMAKE_OFF=	FMT_CUDA_TEST \
 		FMT_DOC \
