@@ -1,7 +1,7 @@
 PORTNAME=	s2
 PORTVERSION=	0.12.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,21 +16,23 @@ NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 
 LIB_DEPENDS=	libabsl_base.so:devel/abseil
+TEST_DEPENDS=	googletest>=1.10:devel/googletest
 
-USES=		cmake compiler:c++17-lang localbase ssl
+USES=		cmake:testing compiler:c++17-lang localbase ssl
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17
 CMAKE_OFF=	BUILD_TESTS \
 		S2_USE_SYSTEM_INCLUDES \
 		WITH_PYTHON
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_TESTING_ON=	BUILD_TESTS
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_PROJECT=	s2geometry
-USE_GITHUB=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
