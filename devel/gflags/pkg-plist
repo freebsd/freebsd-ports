@@ -11,11 +11,11 @@ lib/cmake/gflags/gflags-targets.cmake
 lib/libgflags.a
 lib/libgflags.so
 lib/libgflags.so.2
-lib/libgflags.so.2.2
+lib/libgflags.so.2.3
 lib/libgflags.so.%%PORTVERSION%%
 lib/libgflags_nothreads.a
 lib/libgflags_nothreads.so
 lib/libgflags_nothreads.so.2
-lib/libgflags_nothreads.so.2.2
+lib/libgflags_nothreads.so.2.3
 lib/libgflags_nothreads.so.%%PORTVERSION%%
 libdata/pkgconfig/gflags.pc

@@ -1,6 +1,6 @@
 PORTNAME=	opencv
 DISTVERSION=	4.11.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/opencv/opencv/commit/
