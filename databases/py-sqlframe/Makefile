@@ -25,4 +25,21 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	BIGQUERY DUCKDB OPENAI PANDAS POSTGRES REDSHIFT
+BIGQUERY_DESC=	BigQuery support
+DUCKDB_DESC=	DuckDB support
+DUCKDB_IMPLIES=	PANDAS
+OPENAI_DESC=	OpenAI support
+PANDAS_DESC=	Pandas support
+POSTGRES_DESC=	PostgreSQL support
+REDSHIFT_DESC=	Amazon Redshift support
+
+BIGQUERY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-cloud-bigquery>=3<4:www/py-google-cloud-bigquery@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}google-cloud-bigquery-storage>=2<3:www/py-google-cloud-bigquery-storage@${PY_FLAVOR}
+DUCKDB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}duckdb>=1.2<1.5:databases/py-duckdb@${PY_FLAVOR}
+OPENAI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openai>=1.30<3:misc/py-openai@${PY_FLAVOR}
+PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=2,1<3,1:math/py-pandas@${PY_FLAVOR}
+POSTGRES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8<3:databases/py-psycopg2@${PY_FLAVOR}
+REDSHIFT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redshift-connector>=2.1.1<2.2.0:databases/py-redshift-connector@${PY_FLAVOR}
+
 .include <bsd.port.mk>
