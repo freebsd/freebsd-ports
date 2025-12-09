@@ -15,7 +15,7 @@ ONLY_FOR_ARCHS_REASON=	Only amd64/aarch64 are listed in README.md, powerpc64le m
 
 BUILD_DEPENDS=	nasm:devel/nasm
 
-USES=		autoreconf gmake libtool pathfix
+USES=		autoreconf gmake libtool
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
