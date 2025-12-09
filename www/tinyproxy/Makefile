@@ -1,9 +1,12 @@
 PORTNAME=	tinyproxy
 PORTVERSION=	1.11.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/tinyproxy/tinyproxy/releases/download/${PORTVERSION}/
+
+PATCH_SITES=	https://github.com/tinyproxy/tinyproxy/commit/
+PATCHFILES=	3c0fde94981b025271ffa1788ae425257841bf5a.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, efficient HTTP proxy server
