@@ -1,5 +1,5 @@
 PORTNAME=	oxidized
-PORTVERSION=	0.34.3
+PORTVERSION=	0.35.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -17,26 +17,24 @@ RUN_DEPENDS=	rubygem-asetus>=0.4<1:devel/rubygem-asetus \
 		rubygem-net-scp>=4.1:security/rubygem-net-scp \
 		rubygem-net-ssh>=7.3,2<8,2:security/rubygem-net-ssh \
 		rubygem-net-telnet>=0.2<1:security/rubygem-net-telnet \
-		rubygem-ostruct>=0.6<1:devel/rubygem-ostruct \
 		rubygem-psych>=5.0<6:textproc/rubygem-psych \
 		rubygem-rugged>=1.6<2:devel/rubygem-rugged \
 		rubygem-semantic_logger>=4.17.0:devel/rubygem-semantic_logger \
 		rubygem-slop>=4.6<5:devel/rubygem-slop \
 		rubygem-syslog>=0.3.0:devel/rubygem-syslog \
-		rubygem-syslog_protocol>=0.9.2:devel/rubygem-syslog_protocol \
+		rubygem-syslog_protocol>=0.9.2:devel/rubygem-syslog_protocol
 
 USES=		gem shebangfix
-
-NO_ARCH=	yes
 USE_RC_SUBR=	oxidized
 
-PLIST_FILES=	bin/oxidized
-
 SHEBANG_FILES=	extra/*.runit
+
+NO_ARCH=	yes
+SUB_LIST=	RUBY=${RUBY}
 
 USERS=		oxidized
 GROUPS=		oxidized
 
-SUB_LIST=	RUBY=${RUBY}
+PLIST_FILES=	bin/oxidized
 
 .include <bsd.port.mk>
