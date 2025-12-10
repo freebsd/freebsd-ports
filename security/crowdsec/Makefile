@@ -1,7 +1,6 @@
 PORTNAME=	crowdsec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
-PORTREVISION=	2
+DISTVERSION=	1.7.4
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -14,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libre2.so:devel/re2
 
-USES=		go:1.25,modules pkgconfig
-_COMMIT=	c8aad699
+USES=		go:modules pkgconfig
+_COMMIT=	469b374e
 _BUILD_DATE=	$$(date -u "+%F_%T")
 USE_RC_SUBR=	crowdsec
 
@@ -23,6 +22,7 @@ GO_MODULE=	github.com/crowdsecurity/crowdsec
 GO_TARGET=	./cmd/crowdsec \
 		./cmd/crowdsec-cli \
 		./cmd/notification-email \
+		./cmd/notification-file \
 		./cmd/notification-http \
 		./cmd/notification-sentinel \
 		./cmd/notification-slack \
@@ -71,6 +71,7 @@ do-install:
 
 	@${MKDIR} ${STAGE_PLUGINS}
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-email ${STAGE_PLUGINS}/
+	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-file ${STAGE_PLUGINS}/
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-http ${STAGE_PLUGINS}/
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-sentinel ${STAGE_PLUGINS}/
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/notification-slack ${STAGE_PLUGINS}/
@@ -111,6 +112,10 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/email
 	@${MV} ${WRKSRC}/cmd/notification-email/email.yaml \
 		${STAGEDIR}${ETCDIR}/notifications/email.yaml.sample
+
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/file
+	@${MV} ${WRKSRC}/cmd/notification-file/file.yaml \
+		${STAGEDIR}${ETCDIR}/notifications/file.yaml.sample
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/notifications/http
 	@${MV} ${WRKSRC}/cmd/notification-http/http.yaml \
@@ -168,6 +173,7 @@ do-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/windows-dev.yaml
 	@${RM} ${STAGEDIR}${ETCDIR}/user.yaml
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/email
+	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/file
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/http
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/sentinel
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/slack
