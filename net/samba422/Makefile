@@ -176,11 +176,11 @@ PORTDOCS=			README.FreeBSD
 OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM LDAP GPGME \
 				MANPAGES PROFILE PYTHON3 QUOTAS \
 				SYSLOG UTMP
-#OPTIONS_DEFINE+=		DEVELOPER MEMORY_DEBUG
 OPTIONS_DEFAULT=		AD_DC ADS DOCS FAM LDAP MANPAGES \
 				PROFILE PYTHON3 QUOTAS SYSLOG UTMP \
 				FRUIT GSSAPI_BUILTIN AVAHI
-OPTIONS_GROUP=			VFS
+OPTIONS_GROUP=			DEVELOPMENT VFS
+OPTIONS_GROUP_DEVELOPMENT=	DEVELOPER MEMORY_DEBUG PICKY_DEVELOPER
 OPTIONS_GROUP_VFS=		FRUIT GLUSTERFS
 OPTIONS_SINGLE=			GSSAPI ZEROCONF
 OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
@@ -192,6 +192,7 @@ ADS_DESC=			Active Directory client
 AD_DC_DESC=			Active Directory Domain Controller(implies PYTHON3)
 CLUSTER_DESC=			Clustering support
 DEVELOPER_DESC=			With developer framework
+DEVELOPMENT_DESC=		Testing, debugging, and development
 FAM_DESC=			File Alteration Monitor
 FRUIT_DESC=			MacOSX and TimeMachine support
 GLUSTERFS_DESC=			GlusterFS support
@@ -291,23 +292,6 @@ TEST_DEPENDS=			bash:shells/bash \
 TEST_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 TEST_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 ##############################################################################
-MEMORY_DEBUG_IMPLIES=		DEBUG
-MEMORY_DEBUG_CONFIGURE_ENV=	ADDITIONAL_CFLAGS="-DENABLE_JEMALLOC `pkg-config --cflags jemalloc`" ADDITIONAL_LDFLAGS="`pkg-config --libs jemalloc`"
-MEMORY_DEBUG_LIB_DEPENDS=	libjemalloc.so.2:devel/jemalloc
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
-GDB_CMD?=			${LOCALBASE}/bin/gdb
-# https://bugzilla.samba.org/show_bug.cgi?id=8969
-PICKY_DEVELOPER_IMPLIES=	DEVELOPER
-PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
-
-DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
-DEVELOPER_CONFIGURE_ENV=	WAF_CMD_FORMAT=string
-DEVELOPER_BUILD_DEPENDS=	${SAMBA4_LMDB_DEPENDS} \
-				${GDB_CMD}:devel/gdb
-DEVELOPER_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
-DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
-DEVELOPER_VARS_OFF=		GDB_CMD=true
-##############################################################################
 ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads
 # List of extra modules taken from RHEL build
@@ -334,6 +318,19 @@ CLUSTER_VARS=			PLIST+=${PKGDIR}/pkg-plist.cluster
 
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
 CUPS_CONFIGURE_ENABLE=		cups iprint
+
+DEVELOPER_BUILD_DEPENDS=	${SAMBA4_LMDB_DEPENDS} \
+				${GDB_CMD}:devel/gdb
+DEVELOPER_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
+DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
+DEVELOPER_CONFIGURE_ON=		--enable-developer --enable-selftest --abi-check-disable
+DEVELOPER_CONFIGURE_ENV=	WAF_CMD_FORMAT=string
+DEVELOPER_VARS=			SAMBA4_MODULES+="auth_skel pdb_test gpext_security gpext_registry \
+				gpext_scripts perfcount_test vfs_fake_dfq \
+				vfs_skel_opaque vfs_skel_transparent \
+				vfs_shadow_copy_test vfs_fake_acls \
+				vfs_nfs4acl_xattr vfs_error_inject vfs_delay_inject"
+DEVELOPER_VARS_OFF=		GDB_CMD=true
 
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
 FAM_USES=			fam
@@ -376,6 +373,14 @@ MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="false"
 MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
 MDNSRESPONDER_CONFIGURE_ENABLE=	dnssd
 MDNSRESPONDER_VARS=		SAMBA4_SERVICES+=mdnsd
+
+MEMORY_DEBUG_IMPLIES=		DEBUG
+MEMORY_DEBUG_LIB_DEPENDS=	libjemalloc.so.2:devel/jemalloc
+MEMORY_DEBUG_CONFIGURE_ENV=	ADDITIONAL_CFLAGS="-DENABLE_JEMALLOC `pkg-config --cflags jemalloc`" ADDITIONAL_LDFLAGS="`pkg-config --libs jemalloc`"
+
+# https://bugzilla.samba.org/show_bug.cgi?id=8969
+PICKY_DEVELOPER_IMPLIES=	DEVELOPER
+PICKY_DEVELOPER_CONFIGURE_ON=	--picky-developer
 
 PROFILE_CONFIGURE_WITH=		profiling-data
 
@@ -430,14 +435,6 @@ SAMBA4_MODULES+=		vfs_acl_tdb vfs_acl_xattr vfs_aio_fork vfs_aio_pthread \
 				vfs_time_audit vfs_unityed_media vfs_virusfilter \
 				vfs_widelinks vfs_worm vfs_xattr_tdb vfs_zfsacl
 
-.if ${PORT_OPTIONS:MDEVELOPER}
-SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry \
-				gpext_scripts perfcount_test vfs_fake_dfq \
-				vfs_skel_opaque vfs_skel_transparent \
-				vfs_shadow_copy_test vfs_fake_acls \
-				vfs_nfs4acl_xattr vfs_error_inject vfs_delay_inject
-.endif
-
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 SAMBA4_MODULES+=		${WANT_EXP_MODULES}
 .endif
@@ -469,6 +466,9 @@ CONFIGURE_ARGS+=		--verbose --enable-debug
 MAKE_ARGS+=			--verbose
 DEBUG_FLAGS?=			-g -ggdb3 -O0
 .endif
+
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
+GDB_CMD?=			${LOCALBASE}/bin/gdb
 
 _LIBARCHIVE_DEPENDS=	libarchive>=3.1.2:archivers/libarchive
 _JANSSON_DEPENDS=	jansson>=2.10:devel/jansson
