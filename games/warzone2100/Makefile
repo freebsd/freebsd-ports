@@ -1,6 +1,5 @@
 PORTNAME=	warzone2100
-DISTVERSION=	4.6.1
-PORTREVISION=	1
+DISTVERSION=	4.6.2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_src
@@ -34,7 +33,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 USES=		cmake bison compiler:c++11-lib gl openal:al pkgconfig \
 		sdl sqlite tar:xz
 USE_GL=		gl
-USE_SDL=	sdl2
+USE_SDL=	sdl3
 CMAKE_ON=	WZ_DISABLE_FETCHCONTENT_GIT_CLONE \
 		CMAKE_DISABLE_FIND_PACKAGE_Asciidoctor \
 		CMAKE_DISABLE_FIND_PACKAGE_Git \
