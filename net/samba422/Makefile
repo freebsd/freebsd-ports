@@ -127,13 +127,13 @@ TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
 				MD5SUM=${MD5} \
 				PYTHONDONTWRITEBYTECODE=1
 
-# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
-CFLAGS_amd64+=			-fno-omit-frame-pointer
 # No fancy color error messages
 CFLAGS+=			${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_clang=			-fno-color-diagnostics
 CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
 MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
+# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
+CFLAGS_amd64+=			-fno-omit-frame-pointer
 # Some symbols in samba's linker version scripts are not defined, but since the
 # scripts are generated dynamically, suppress errors with lld >= 17 due to these
 # undefined symbols.
