@@ -1,6 +1,6 @@
 PORTNAME=	meta1
 PORTVERSION=	1.1.1a.21.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.MeTA1.org/download/.alpha/bdconf/
 DISTNAME=	${PORTNAME}-1.1.Alpha21.0
