@@ -11,7 +11,6 @@ WWW=		http://zarbi.chem.yale.edu/products/psi88/index.shtml
 
 USES=		fortran tar:Z
 MAKE_ARGS=	BIN=${STAGEDIR}${PREFIX}/bin
-FFLAGS+=	-std=legacy
 
 PLIST_FILES=	bin/PSI1 bin/PSICON bin/PSI2CT bin/PSI2HP bin/PSI2PS bin/PSI2 \
 		bin/PREPLOT bin/preplot bin/rpsi1 bin/rpsi2 bin/rpsicon
@@ -19,6 +18,12 @@ PORTDOCS=	README psi88.doc
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} == gfortran
+FFLAGS+=       -std=legacy
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/f77/$${FC}/' -e 's/LFLAGS/LDFLAGS/' \
@@ -42,4 +47,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
