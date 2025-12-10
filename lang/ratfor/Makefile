@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/README
 
 USES=		fortran
 
+CFLAGS=		-Wno-implicit-function-declaration -Wno-implicit-int
 ALL_TARGET=	all tests
 
 EXTRACT_CMD=	${CAT}
