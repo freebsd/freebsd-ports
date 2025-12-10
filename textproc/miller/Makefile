@@ -6,7 +6,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://raw.githubusercontent.com/johnkerl/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Sed/awk/cut/join/sort for name-indexed data such as CSV, TSV and JSON
 WWW=		https://johnkerl.org/miller/doc/
 
