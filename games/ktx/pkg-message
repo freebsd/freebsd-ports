@@ -4,7 +4,7 @@
   Example configureation in rc.conf:
     ktx_enable="YES"
     ktx_randommaps="aerowalk bravado catalyst monsoon shifter toxicity ztndm3 dm2 dm3 e1m2 spinev2 pkeg1 ztndm6"
-    ktx_args="-mem 64"
+    ktx_args="-mem 256"
     ktx_instances="ffa 1 2 3 4"
     ktx_ffa_args="+exec matchless.cfg"
     ktx_ffa_randommaps="aerowalk bravado catalyst monsoon shifter toxicity ztndm3 spinev2 pkeg1 ztndm2 ztndm4 ztndm5 ztndm6 skyhigh"
