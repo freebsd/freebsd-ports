@@ -66,6 +66,18 @@ SAMBA4_CONFIG=			smb4.conf
 SAMBA4_MODULES_CLASS=		auth bind9 gensec gpext idmap ldb nss_info \
 				pdb perfcount process_model service vfs
 
+SAMBA4_SUB+=			SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
+				SAMBA4_RUNDIR="${SAMBA4_RUNDIR}" \
+				SAMBA4_LOCKDIR="${SAMBA4_LOCKDIR}" \
+				SAMBA4_LIBDIR="${SAMBA4_LIBDIR}" \
+				SAMBA4_MODULEDIR="${SAMBA4_MODULEDIR}" \
+				SAMBA_LDB_MODULESDIR="${SAMBA_LDB_MODULESDIR}" \
+				SAMBA4_BINDDNSDIR="${SAMBA4_BINDDNSDIR}" \
+				SAMBA4_PRIVATEDIR="${SAMBA4_PRIVATEDIR}" \
+				SAMBA4_CONFDIR="${SAMBA4_CONFDIR}" \
+				SAMBA4_CONFIG="${SAMBA4_CONFIG}" \
+				SAMBA4_SERVICES="${SAMBA4_SERVICES}"
+
 USES=				cpe compiler:c++11-lang iconv \
 				localbase:ldflags ncurses perl5 pkgconfig \
 				shebangfix waf gettext-runtime samba:self
@@ -171,12 +183,14 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch \
 
 SUB_FILES=			pkg-message README.FreeBSD
-SUB_LIST=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+SUB_LIST=			PKGCONFIGDIR=${PKGCONFIGDIR_REL} \
+				${SAMBA4_SUB}
 
 # PLIST must be defined here explicitly as we append to PLIST later on to
 # handle extra pkg-plist files like pkg-plist.python.
 PLIST?=                         ${PKGDIR}/pkg-plist
-PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR_REL} \
+				${SAMBA4_SUB}
 PORTDOCS=			README.FreeBSD
 
 ##############################################################################
@@ -224,52 +238,44 @@ SAMBA4_BUNDLED_TDB?=		no
 .if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
 CONFLICTS_INSTALL+=		cmocka-1.*
-PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA=""
-SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA=""
+SAMBA4_SUB+=			SAMBA4_BUNDLED_CMOCKA=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!cmocka
 BUILD_DEPENDS+=			cmocka>=1.1.3:sysutils/cmocka
 TEST_DEPENDS+=			cmocka>=1.1.3:sysutils/cmocka
-PLIST_SUB+=			SAMBA4_BUNDLED_CMOCKA="@comment "
-SUB_LIST+=			SAMBA4_BUNDLED_CMOCKA="@comment "
+SAMBA4_SUB+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 .endif
 # talloc
 .if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		talloc
-PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC=""
-SUB_LIST+=			SAMBA4_BUNDLED_TALLOC=""
+SAMBA4_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!talloc
 BUILD_DEPENDS+=			talloc243>=2.4.3:devel/talloc243
 RUN_DEPENDS+=			talloc243>=2.4.3:devel/talloc243
-PLIST_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
-SUB_LIST+=			SAMBA4_BUNDLED_TALLOC="@comment "
+SAMBA4_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
 # tevent
 .if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
 SAMBA4_BUNDLED_LIBS+=		tevent
 CONFLICTS_INSTALL+=		tevent-* tevent1-*
-PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT=""
-SUB_LIST+=			SAMBA4_BUNDLED_TEVENT=""
+SAMBA4_SUB+=			SAMBA4_BUNDLED_TEVENT=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tevent
 BUILD_DEPENDS+=			tevent017>=0.17:devel/tevent017
 RUN_DEPENDS+=			tevent017>=0.17:devel/tevent017
-PLIST_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
-SUB_LIST+=			SAMBA4_BUNDLED_TEVENT="@comment "
+SAMBA4_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
 # tdb
 .if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
 SAMBA4_BUNDLED_LIBS+=		tdb
 CONFLICTS_INSTALL+=		tdb-* tdb1-*
-PLIST_SUB+=			SAMBA4_BUNDLED_TDB=""
-SUB_LIST+=			SAMBA4_BUNDLED_TDB=""
+SAMBA4_SUB+=			SAMBA4_BUNDLED_TDB=""
 .else
 SAMBA4_BUNDLED_LIBS+=		!tdb
 BUILD_DEPENDS+=			tdb1413>=1.4.13:databases/tdb1413
 RUN_DEPENDS+=			tdb1413>=1.4.13:databases/tdb1413
-PLIST_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
-SUB_LIST+=			SAMBA4_BUNDLED_TDB="@comment "
+SAMBA4_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
 
 .if (defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes) \
@@ -484,21 +490,6 @@ PLIST_FILES+=			${SAMBA4_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 				${SAMBA_LDB_MODULESDIR}/mdb.so
 .	endif
 .endif
-
-SAMBA4_SUB=			SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
-				SAMBA4_RUNDIR="${SAMBA4_RUNDIR}" \
-				SAMBA4_LOCKDIR="${SAMBA4_LOCKDIR}" \
-				SAMBA4_LIBDIR="${SAMBA4_LIBDIR}" \
-				SAMBA4_MODULEDIR="${SAMBA4_MODULEDIR}" \
-				SAMBA_LDB_MODULESDIR="${SAMBA_LDB_MODULESDIR}" \
-				SAMBA4_BINDDNSDIR="${SAMBA4_BINDDNSDIR}" \
-				SAMBA4_PRIVATEDIR="${SAMBA4_PRIVATEDIR}" \
-				SAMBA4_CONFDIR="${SAMBA4_CONFDIR}" \
-				SAMBA4_CONFIG="${SAMBA4_CONFIG}" \
-				SAMBA4_SERVICES="${SAMBA4_SERVICES}"
-
-PLIST_SUB+=			${SAMBA4_SUB}
-SUB_LIST+=			${SAMBA4_SUB}
 
 post-extract:
 	@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
