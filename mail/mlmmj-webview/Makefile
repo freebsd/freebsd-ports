@@ -1,5 +1,6 @@
 PORTNAME=	mlmmj-webview
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	https://codeberg.org/bapt/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 

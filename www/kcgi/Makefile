@@ -1,5 +1,5 @@
 PORTNAME=	kcgi
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www devel
 MASTER_SITES=	http://kristaps.bsd.lv/kcgi/snapshots/
 
@@ -18,8 +18,4 @@ MAKE_ARGS=	DATADIR=${EXAMPLESDIR} INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		MANDIR=${PREFIX}/share/man
 USE_RC_SUBR=	kfcgi
 
-post-install:
-	cd ${STAGEDIR}${PREFIX}/lib; for i in *.so; do \
-		${RLN} -s $${i}.1.1 $${i}.1 ; \
-		done
 .include <bsd.port.mk>
