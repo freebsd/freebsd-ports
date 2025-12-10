@@ -4,4 +4,4 @@
 # 1. Update python documentation (lang/python-doc-*)
 #    Run "make -C lang/python-doc-html makesum"
 # 2. Remove PORTREVISION in Makefile
-PYTHON_DISTVERSION=	3.13.10
+PYTHON_DISTVERSION=	3.13.11
