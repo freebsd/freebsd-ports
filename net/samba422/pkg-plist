@@ -443,6 +443,16 @@ bin/ldbsearch
 %%SAMBA4_LIBDIR%%/private/libldb-tdb-err-map-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libldb-tdb-int-private-samba.so
 %%LDAP%%%%SAMBA_LDB_MODULESDIR%%/ldap.so
+%%SAMBA_LDB_MODULESDIR%%/asq.so
+%%SAMBA_LDB_MODULESDIR%%/ildap.so
+%%SAMBA_LDB_MODULESDIR%%/ldb.so
+%%SAMBA_LDB_MODULESDIR%%/ldbsamba_extensions.so
+%%SAMBA_LDB_MODULESDIR%%/paged_searches.so
+%%SAMBA_LDB_MODULESDIR%%/rdn_name.so
+%%SAMBA_LDB_MODULESDIR%%/sample.so
+%%SAMBA_LDB_MODULESDIR%%/server_sort.so
+%%SAMBA_LDB_MODULESDIR%%/skel.so
+%%SAMBA_LDB_MODULESDIR%%/tdb.so
 %%MANPAGES%%share/man/man3/ldb.3.gz
 %%MANPAGES%%share/man/man1/ldbadd.1.gz
 %%MANPAGES%%share/man/man1/ldbdel.1.gz
