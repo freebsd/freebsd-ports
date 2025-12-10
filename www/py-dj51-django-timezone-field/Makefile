@@ -1,5 +1,5 @@
 PORTNAME=	django-timezone-field
-DISTVERSION=	7.1
+DISTVERSION=	7.2.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj51-
@@ -16,7 +16,7 @@ DEPRECATED=	Extended support of Django 5.1 ends December 2025, upgrade to the Dj
 EXPIRATION_DATE=2025-12-31
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django51>=3.2:www/py-django51@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django51>=3.2<6.1:www/py-django51@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
