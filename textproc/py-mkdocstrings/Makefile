@@ -1,5 +1,5 @@
 PORTNAME=	mkdocstrings
-DISTVERSION=	0.30.1
+DISTVERSION=	1.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.1:devel/py-Jinja2@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.6:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markupsafe>=1.1:textproc/py-markupsafe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocs>=1.6:textproc/py-mkdocs@${PY_FLAVOR} \
@@ -27,10 +27,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dirty-equals>0:devel/py-dirty-equals@${PY_F
 USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 # Skip "test_sphinx_load_mkdocstrings_inventory_file" as it requires
-# mkdocs-gen-files (not in Ports tree, yet).
-# The same applies to "test_plugin" which requires markdown-exec (not in Ports
-# tree yet).
-PYTEST_IGNORED_TESTS=	test_sphinx_load_mkdocstrings_inventory_file test_plugin
+# py-markdown-exec (not in Ports tree, yet).
+PYTEST_IGNORED_TESTS=	test_sphinx_load_mkdocstrings_inventory_file
 
 NO_ARCH=	yes
 
