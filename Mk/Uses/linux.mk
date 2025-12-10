@@ -37,7 +37,7 @@ linux_ARGS=		${LINUX_DEFAULT}
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
 .  elif ${linux_ARGS} == rl9
-LINUX_DIST_VER?=	9.6
+LINUX_DIST_VER?=	9.7
 .  else
 ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
