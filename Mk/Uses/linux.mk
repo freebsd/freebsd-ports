@@ -246,9 +246,12 @@ MASTER_SITES=		${MASTER_SITE_ROCKY_LINUX}
 MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/BaseOS/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/AppStream/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/BaseOS/x86_64/os/Packages/:DEFAULT,amd64 \
+			${LINUX_DIST_VER}/CRB/aarch64/os/Packages/:DEFAULT,aarch64 \
 			${LINUX_DIST_VER}/AppStream/x86_64/os/Packages/:DEFAULT,amd64 \
+			${LINUX_DIST_VER}/CRB/x86_64/os/Packages/:DEFAULT,amd64 \
 			${LINUX_DIST_VER}/BaseOS/source/tree/Packages/:SOURCE \
-			${LINUX_DIST_VER}/AppStream/source/tree/Packages/:SOURCE
+			${LINUX_DIST_VER}/AppStream/source/tree/Packages/:SOURCE \
+			${LINUX_DIST_VER}/CRB/source/tree/Packages/:SOURCE
 .      endif
 DIST_SUBDIR?=		rocky
 .    endif # ${linux_ARGS} == *
