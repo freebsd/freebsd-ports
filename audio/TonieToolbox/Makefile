@@ -1,6 +1,7 @@
 PORTNAME=	TonieToolbox
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	audio sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,7 +14,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 # get from pyproject.toml
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=0<=6.33.1,1:devel/py-protobuf@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=0<=6.33.1,2:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.32.5:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mutagen>=1.47.0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=25.0:devel/py-packaging@${PY_FLAVOR} \
