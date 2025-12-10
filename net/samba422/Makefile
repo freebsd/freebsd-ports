@@ -335,10 +335,12 @@ FAM_CONFIGURE_WITH=		fam
 
 FRUIT_PREVENTS=			ZEROCONF_NONE
 FRUIT_PREVENTS_MSG=		MacOSX support requires Zeroconf(AVAHI or MDNSRESPONDER)
+FRUIT_PLIST_FILES=		%%MANPAGES%%share/man/man8/vfs_fruit.8.gz
 FRUIT_VARS=			SAMBA4_MODULES+=vfs_fruit
 
 GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs
 GLUSTERFS_CONFIGURE_ENABLE=	glusterfs
+GLUSTERFS_PLIST_FILES=		%%MANPAGES%%share/man/man8/vfs_glusterfs.8.gz
 GLUSTERFS_VARS=			SAMBA4_MODULES+=vfs_glusterfs
 
 GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme
@@ -475,16 +477,6 @@ PLIST_FILES+=			${SAMBA4_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 .	endif
 .endif
 
-.if ${PORT_OPTIONS:MFRUIT}
-.	if ${PORT_OPTIONS:MMANPAGES}
-PLIST_FILES+=			share/man/man8/vfs_fruit.8.gz
-.	endif
-.endif
-.if ${PORT_OPTIONS:MGLUSTERFS}
-.	if ${PORT_OPTIONS:MMANPAGES}
-PLIST_FILES+=			share/man/man8/vfs_glusterfs.8.gz
-.	endif
-.endif
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 CFLAGS_amd64+=			-fno-omit-frame-pointer
 # No fancy color error messages
