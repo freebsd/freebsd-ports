@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}422
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			4
+PORTREVISION=			5
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -66,9 +66,9 @@ SAMBA4_CONFIG=			smb4.conf
 SAMBA4_MODULES_CLASS=		auth bind9 gensec gpext idmap ldb nss_info \
 				pdb perfcount process_model service vfs
 
-USES=				cpe compiler:c++11-lang iconv localbase:ldflags \
-				perl5 pkgconfig shebangfix waf gettext-runtime \
-				samba:self
+USES=				cpe compiler:c++11-lang iconv \
+				localbase:ldflags ncurses perl5 pkgconfig \
+				shebangfix waf gettext-runtime samba:self
 CPE_VENDOR=			samba
 CPE_PRODUCT=			samba
 USE_LDCONFIG=			${SAMBA4_LIBDIR}
