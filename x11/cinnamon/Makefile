@@ -1,5 +1,6 @@
 PORTNAME=	cinnamon
 PORTVERSION=	6.4.13
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -12,7 +13,8 @@ WWW=		https://github.com/linuxmint/cinnamon
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	pysassc:www/py-libsass@${PY_FLAVOR}
+BUILD_DEPENDS=	pysassc:www/py-libsass@${PY_FLAVOR} \
+		${LOCALBASE}/include/EGL/eglmesaext.h:graphics/mesa-dri
 LIB_DEPENDS=	libcjs.so:lang/cjs \
 		libmuffin.so:x11-wm/muffin \
 		libcinnamon-desktop.so:x11/cinnamon-desktop \
@@ -48,7 +50,6 @@ RUN_DEPENDS=	cinnamon-control-center:sysutils/cinnamon-control-center \
 		gnome-backgrounds>0:x11-themes/gnome-backgrounds \
 		webp-pixbuf-loader>0:graphics/webp-pixbuf-loader \
 		metacity:x11-wm/metacity \
-		tint2:x11/tint \
 		lspci:sysutils/pciutils \
 		${LOCALBASE}/libexec/polkit-gnome-authentication-agent-1:sysutils/polkit-gnome \
 		${LOCALBASE}/libexec/cups-pk-helper-mechanism:print/cups-pk-helper \
@@ -62,7 +63,7 @@ USES=		compiler:c11 cpe gettext-runtime gettext-tools:run gl gnome meson perl5 \
 CPE_VENDOR=	linuxmint
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 intltool introspection libxml2 pygobject3
 USE_XORG=	x11 xfixes
-USE_GL=		gbm gl
+USE_GL=		gl
 USE_PERL5=	build
 
 USE_GITHUB=	yes
@@ -82,19 +83,32 @@ GLIB_SCHEMAS=	org.cinnamon.gschema.xml \
 		org.cinnamon.gestures.gschema.xml
 
 OPTIONS_DEFINE=	DOCS NLS RECORDER WAYLAND
-OPTIONS_DEFAULT=	RECORDER
+OPTIONS_DEFAULT=	MATE RECORDER
 OPTIONS_SUB=	yes
 
+OPTIONS_SINGLE=	PANEL
+OPTIONS_SINGLE_PANEL=	MATE GNOME TINT
+
+GNOME_DESC=	GNOME Panel
+MATE_DESC=	MATE Panel
+PANEL_DESC=	Fallback panel
+TINT_DESC=	Tint
 RECORDER_DESC=	Build the recorder into source
 
 DOCS_BUILD_DEPENDS=	gtkdocize:textproc/gtk-doc
 DOCS_MESON_TRUE=	docs
+
+GNOME_RUN_DEPENDS=	gnome-panel:x11/gnome-panel
+
+MATE_RUN_DEPENDS=	mate-panel:x11/mate-panel
 
 NLS_RUN_DEPENDS=	cinnamon-translations>0:misc/cinnamon-translations
 
 RECORDER_USES=	gstreamer
 RECORDER_USE=	gstreamer=vpx
 RECORDER_MESON_TRUE=	build_recorder
+
+TINT_RUN_DEPENDS=	tint2:x11/tint
 
 WAYLAND_MESON_TRUE=	wayland
 
