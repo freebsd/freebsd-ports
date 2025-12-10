@@ -351,6 +351,9 @@ GSSAPI_MIT_USES=		bison gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
 				--with-system-mitkdc=${GSSAPIBASEDIR}/sbin/krb5kdc \
 				--with-experimental-mit-ad-dc
+GSSAPI_MIT_PLIST_FILES=		${SAMBA4_MODULEDIR}/krb5/winbind_krb5_localauth.so \
+				%%MANPAGES%%share/man/man8/winbind_krb5_localauth.8.gz \
+				%%AD_DC%%${SAMBA4_LIBDIR}/krb5/plugins/kdb/samba.so
 
 LDAP_USES=			ldap
 LDAP_CONFIGURE_ON=		--with-ldap
@@ -489,15 +492,6 @@ PLIST_FILES+=			${SAMBA4_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 .	endif
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_MIT}
-PLIST_FILES+=			${SAMBA4_MODULEDIR}/krb5/winbind_krb5_localauth.so
-.	if ${PORT_OPTIONS:MMANPAGES}
-PLIST_FILES+=			share/man/man8/winbind_krb5_localauth.8.gz
-.	endif
-.	if ${PORT_OPTIONS:MAD_DC}
-PLIST_FILES+=			${SAMBA4_LIBDIR}/krb5/plugins/kdb/samba.so
-.	endif
-.endif
 .if ${PORT_OPTIONS:MFRUIT}
 .	if ${PORT_OPTIONS:MMANPAGES}
 PLIST_FILES+=			share/man/man8/vfs_fruit.8.gz
