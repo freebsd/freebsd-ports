@@ -42,7 +42,6 @@ sbin/smbd
 sbin/winbindd
 include/samba4/credentials.h
 include/samba4/dcerpc.h
-%%AD_DC%%include/samba4/dcerpc_server.h
 include/samba4/gen_ndr/ndr_samr_c.h
 include/samba4/ldb.h
 include/samba4/ldb_errors.h
@@ -137,8 +136,6 @@ include/samba4/wbclient.h
 @dir include/samba4
 %%SAMBA4_LIBDIR%%/libdcerpc-samr.so
 %%SAMBA4_LIBDIR%%/libdcerpc-samr.so.0
-%%AD_DC%%%%SAMBA4_LIBDIR%%/libdcerpc-server.so
-%%AD_DC%%%%SAMBA4_LIBDIR%%/libdcerpc-server.so.0
 %%SAMBA4_LIBDIR%%/libdcerpc.so
 %%SAMBA4_LIBDIR%%/libdcerpc.so.0
 %%SAMBA4_LIBDIR%%/libldb.so
@@ -314,7 +311,6 @@ libexec/samba/samba-dcerpcd
 %%PKGCONFIGDIR%%/wbclient.pc
 %%PKGCONFIGDIR%%/dcerpc.pc
 %%PKGCONFIGDIR%%/dcerpc_samr.pc
-%%AD_DC%%%%PKGCONFIGDIR%%/dcerpc_server.pc
 %%PKGCONFIGDIR%%/ldb.pc
 %%PKGCONFIGDIR%%/samba-credentials.pc
 %%PKGCONFIGDIR%%/samba-hostconfig.pc
@@ -446,18 +442,7 @@ bin/ldbsearch
 %%SAMBA4_LIBDIR%%/private/libldb-key-value-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libldb-tdb-err-map-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libldb-tdb-int-private-samba.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/count_attrs.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/asq.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/ildap.so
-%%LDAP%%%%SAMBA4_MODULEDIR%%/ldb/ldap.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/ldb.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/ldbsamba_extensions.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/paged_searches.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/rdn_name.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/sample.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/server_sort.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/skel.so
-%%AD_DC%%%%SAMBA4_MODULEDIR%%/ldb/tdb.so
+%%LDAP%%%%SAMBA_LDB_MODULESDIR%%/ldap.so
 %%MANPAGES%%share/man/man3/ldb.3.gz
 %%MANPAGES%%share/man/man1/ldbadd.1.gz
 %%MANPAGES%%share/man/man1/ldbdel.1.gz
