@@ -4,7 +4,7 @@ CATEGORIES=	www linux
 MASTER_SITES=	https://dl.google.com/linux/chrome/rpm/stable/x86_64/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	google-${PORTNAME}-stable-${CHROME_VER}-${CHROME_BUILD}
-DISTFILES_aarch64?=	${DISTNAME:S/$/${EXTRACT_SUFX_aarch64}/}
+#DISTFILES_aarch64?=	${DISTNAME:S/$/${EXTRACT_SUFX_aarch64}/}
 DISTFILES_amd64?=	${DISTNAME:S/$/${EXTRACT_SUFX_amd64}/}
 EXTRACT_ONLY?=		${DISTFILES_${ARCH}:C/:[^:]+$//}
 
@@ -36,7 +36,7 @@ EXTRACT_SUFX_amd64?=	.x86_64.rpm
 
 REINPLACE_ARGS=	-i ""
 
-CHROME_VER?=	142.0.7444.175
+CHROME_VER?=	143.0.7499.40
 CHROME_BUILD?=	1
 
 DATADIR=	${PREFIX}/share/${PORTNAME}
