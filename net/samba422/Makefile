@@ -12,7 +12,99 @@ WWW=				https://gitlab.com/samba-freebsd/
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
+SAMBA4_BASENAME=		samba
+SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
+SAMBA4_VERSION=			4.22.6
+SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
+
+# Directories
+VARDIR=				${DESTDIR}/var
+SAMBA4_RUNDIR=			${VARDIR}/run/${SAMBA4_PORTNAME}
+SAMBA4_LOGDIR=			${VARDIR}/log/${SAMBA4_PORTNAME}
+SAMBA4_LOCKDIR=			${VARDIR}/db/${SAMBA4_PORTNAME}
+SAMBA4_BINDDNSDIR=		${SAMBA4_LOCKDIR}/bind-dns
+SAMBA4_PRIVATEDIR=		${SAMBA4_LOCKDIR}/private
+SAMBA4_PAMDIR=			${PREFIX}/lib
+SAMBA4_LIBDIR=			${SAMBA_LIBDIR}
+SAMBA4_MODULEDIR=		${SAMBA_MODULESDIR}
+SAMBA4_INCLUDEDIR=		${SAMBA_INCLUDEDIR}
+SAMBA4_CONFDIR=			${PREFIX}/etc
+SAMBA4_CONFIG=			smb4.conf
+SAMBA4_MODULES_CLASS=		auth bind9 gensec gpext idmap ldb nss_info \
+				pdb perfcount process_model service vfs
+
+USES=				cpe compiler:c++11-lang iconv localbase:ldflags \
+				perl5 pkgconfig shebangfix waf gettext-runtime \
+				samba:self
+CPE_VENDOR=			samba
+CPE_PRODUCT=			samba
+USE_LDCONFIG=			${SAMBA4_LIBDIR}
+USE_PERL5=			build
+USE_RC_SUBR=			samba_server
+WAF_CMD=			buildtools/bin/waf
+# Make sure that the right version of Python is used by the tools
+# https://bugzilla.samba.org/show_bug.cgi?id=7305
+SHEBANG_FILES=			source3/script* source4/scripting/bin/* selftest/*
+
+CONFIGURE_LOG=			bin/config.log
+CONFIGURE_ARGS=			--mandir="${PREFIX}/share/man" \
+				--sysconfdir="${SAMBA4_CONFDIR}" \
+				--includedir="${SAMBA4_INCLUDEDIR}" \
+				--datadir="${DATADIR}" \
+				--libdir="${SAMBA4_LIBDIR}" \
+				--with-privatelibdir="${SAMBA4_LIBDIR}/private" \
+				--with-pammodulesdir="${SAMBA4_PAMDIR}" \
+				--with-modulesdir="${SAMBA4_MODULEDIR}" \
+				--with-ldbmodulesdir="${SAMBA_LDB_MODULESDIR}" \
+				--with-pkgconfigdir="${PKGCONFIGDIR}" \
+				--localstatedir="${VARDIR}" \
+				--with-piddir="${SAMBA4_RUNDIR}" \
+				--with-sockets-dir="${SAMBA4_RUNDIR}" \
+				--with-privileged-socket-dir="${SAMBA4_RUNDIR}" \
+				--with-lockdir="${SAMBA4_LOCKDIR}" \
+				--with-statedir="${SAMBA4_LOCKDIR}" \
+				--with-cachedir="${SAMBA4_LOCKDIR}" \
+				--with-bind-dns-dir=${SAMBA4_BINDDNSDIR} \
+				--with-privatedir="${SAMBA4_PRIVATEDIR}" \
+				--with-logfilebase="${SAMBA4_LOGDIR}"
+CONFIGURE_ARGS+=		\
+				--with-pam \
+				--with-iconv \
+				--with-libiconv="${ICONV_PREFIX}" \
+				--with-winbind \
+				--with-regedit \
+				--disable-rpath \
+				--without-lttng \
+				--without-gettext \
+				--enable-pthreadpool \
+				--without-fake-kaserver \
+				--without-systemd \
+				--with-libarchive \
+				--with-acl-support \
+				--with-sendfile-support \
+				--disable-ctdb-tests \
+				--disable-spotlight
+CONFIGURE_ENV=			PTHREAD_LDFLAGS="-lpthread" \
+				PYTHONHASHSEED=1
+MAKE_ENV=			PYTHONHASHSEED=1 \
+				RPCGEN_CPP="${CPP}"
+
+# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
+CFLAGS_amd64+=			-fno-omit-frame-pointer
+# No fancy color error messages
+CFLAGS+=			${CFLAGS_${CHOSEN_COMPILER_TYPE}}
+CFLAGS_clang=			-fno-color-diagnostics
+CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
+MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
+# Some symbols in samba's linker version scripts are not defined, but since the
+# scripts are generated dynamically, suppress errors with lld >= 17 due to these
+# undefined symbols.
+LDFLAGS+=			-Wl,--undefined-version
+
 CONFLICTS_INSTALL?=		samba4*
+
+PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
+PKGCONFIGDIR_REL?=		${PKGCONFIGDIR:S,^${PREFIX}/,,}
 
 EXTRA_PATCHES=			\
 				${PATCHDIR}/0001-Compact-and-simplify-modules-build-and-config-genera.patch:-p1 \
@@ -40,74 +132,15 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0025-From-d9b748869a8f4018ebee302aae8246bf29f60309-Mon-Se.patch:-p1 \
 				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch \
 
-SAMBA4_BASENAME=		samba
-SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
-SAMBA4_VERSION=			4.22.6
-SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
-
-CPE_VENDOR=			samba
-CPE_PRODUCT=			samba
-# Directories
-VARDIR=				${DESTDIR}/var
-SAMBA4_RUNDIR=			${VARDIR}/run/${SAMBA4_PORTNAME}
-SAMBA4_LOGDIR=			${VARDIR}/log/${SAMBA4_PORTNAME}
-SAMBA4_LOCKDIR=			${VARDIR}/db/${SAMBA4_PORTNAME}
-SAMBA4_BINDDNSDIR=		${SAMBA4_LOCKDIR}/bind-dns
-SAMBA4_PRIVATEDIR=		${SAMBA4_LOCKDIR}/private
-SAMBA4_PAMDIR=			${PREFIX}/lib
-SAMBA4_LIBDIR=			${SAMBA_LIBDIR}
-SAMBA4_MODULEDIR=		${SAMBA_MODULESDIR}
-SAMBA4_INCLUDEDIR=		${SAMBA_INCLUDEDIR}
-SAMBA4_CONFDIR=			${PREFIX}/etc
-SAMBA4_CONFIG=			smb4.conf
-SAMBA4_MODULES_CLASS=		auth bind9 gensec gpext idmap ldb nss_info \
-				pdb perfcount process_model service vfs
-
-CONFIGURE_ARGS=			--mandir="${PREFIX}/share/man" \
-				--sysconfdir="${SAMBA4_CONFDIR}" \
-				--includedir="${SAMBA4_INCLUDEDIR}" \
-				--datadir="${DATADIR}" \
-				--libdir="${SAMBA4_LIBDIR}" \
-				--with-privatelibdir="${SAMBA4_LIBDIR}/private" \
-				--with-pammodulesdir="${SAMBA4_PAMDIR}" \
-				--with-modulesdir="${SAMBA4_MODULEDIR}" \
-				--with-ldbmodulesdir="${SAMBA_LDB_MODULESDIR}" \
-				--with-pkgconfigdir="${PKGCONFIGDIR}" \
-				--localstatedir="${VARDIR}" \
-				--with-piddir="${SAMBA4_RUNDIR}" \
-				--with-sockets-dir="${SAMBA4_RUNDIR}" \
-				--with-privileged-socket-dir="${SAMBA4_RUNDIR}" \
-				--with-lockdir="${SAMBA4_LOCKDIR}" \
-				--with-statedir="${SAMBA4_LOCKDIR}" \
-				--with-cachedir="${SAMBA4_LOCKDIR}" \
-				--with-bind-dns-dir=${SAMBA4_BINDDNSDIR} \
-				--with-privatedir="${SAMBA4_PRIVATEDIR}" \
-				--with-logfilebase="${SAMBA4_LOGDIR}"
-# XXX: Flags
-CONFIGURE_ENV=			PTHREAD_LDFLAGS="-lpthread" \
-				PYTHONHASHSEED=1
-MAKE_ENV=			PYTHONHASHSEED=1
-
-USES=				cpe compiler:c++11-lang iconv localbase:ldflags \
-				perl5 pkgconfig shebangfix waf gettext-runtime \
-				samba:self
-USE_PERL5=			build
-USE_LDCONFIG=			${SAMBA4_LIBDIR}
-WAF_CMD=			buildtools/bin/waf
-CONFIGURE_LOG=			bin/config.log
-
-# Make sure that the right version of Python is used by the tools
-# https://bugzilla.samba.org/show_bug.cgi?id=7305
-SHEBANG_FILES=			source3/script* source4/scripting/bin/* selftest/*
-
-PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
-PKGCONFIGDIR_REL?=		${PKGCONFIGDIR:S,^${PREFIX}/,,}
-PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+SUB_FILES=			pkg-message README.FreeBSD
 SUB_LIST=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 
 # PLIST must be defined here explicitly as we append to PLIST later on to
 # handle extra pkg-plist files like pkg-plist.python.
 PLIST?=                         ${PKGDIR}/pkg-plist
+PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
+PORTDOCS=			README.FreeBSD
+
 ##############################################################################
 OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM LDAP GPGME \
 				MANPAGES PROFILE PYTHON3 QUOTAS \
@@ -263,27 +296,6 @@ TEST_DEPENDS=			bash:shells/bash \
 # External Python modules
 TEST_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 TEST_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
-##############################################################################
-CONFIGURE_ARGS+=		\
-				--with-pam \
-				--with-iconv \
-				--with-libiconv="${ICONV_PREFIX}" \
-				--with-winbind \
-				--with-regedit \
-				--disable-rpath \
-				--without-lttng \
-				--without-gettext \
-				--enable-pthreadpool \
-				--without-fake-kaserver \
-				--without-systemd \
-				--with-libarchive \
-				--with-acl-support \
-				--with-sendfile-support \
-				--disable-ctdb-tests \
-				--disable-spotlight
-#				${ICONV_CONFIGURE_BASE}
-##############################################################################
-
 ##############################################################################
 MEMORY_DEBUG_IMPLIES=		DEBUG
 MEMORY_DEBUG_CONFIGURE_ENV=	ADDITIONAL_CFLAGS="-DENABLE_JEMALLOC `pkg-config --cflags jemalloc`" ADDITIONAL_LDFLAGS="`pkg-config --libs jemalloc`"
@@ -477,23 +489,6 @@ PLIST_FILES+=			${SAMBA4_LIBDIR}/private/libldb-mdb-int-private-samba.so \
 .	endif
 .endif
 
-# for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
-CFLAGS_amd64+=			-fno-omit-frame-pointer
-# No fancy color error messages
-CFLAGS+=			${CFLAGS_${CHOSEN_COMPILER_TYPE}}
-CFLAGS_clang=			-fno-color-diagnostics
-CONFIGURE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
-MAKE_ENV+=			NOCOLOR=yes WAF_LOG_FORMAT='%(c1)s%(zone)s%(c2)s %(message)s'
-# Allow rpcgen to find proper CPP
-MAKE_ENV+=			RPCGEN_CPP="${CPP}"
-#.if ${readline_ARGS} == port
-#CFLAGS+=			-D_FUNCTION_DEF
-#.endif
-# Some symbols in samba's linker version scripts are not defined, but since the
-# scripts are generated dynamically, suppress errors with lld >= 17 due to these
-# undefined symbols.
-LDFLAGS+=			-Wl,--undefined-version
-
 SAMBA4_SUB=			SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
 				SAMBA4_RUNDIR="${SAMBA4_RUNDIR}" \
 				SAMBA4_LOCKDIR="${SAMBA4_LOCKDIR}" \
@@ -508,11 +503,6 @@ SAMBA4_SUB=			SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
 
 PLIST_SUB+=			${SAMBA4_SUB}
 SUB_LIST+=			${SAMBA4_SUB}
-
-USE_RC_SUBR=			samba_server
-SUB_FILES=			pkg-message README.FreeBSD
-
-PORTDOCS=			README.FreeBSD
 
 post-extract:
 				@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
