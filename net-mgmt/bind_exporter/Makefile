@@ -14,9 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_RC_SUBR=	bind_exporter
 
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
-
 GO_MODULE=	github.com/prometheus-community/bind_exporter
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
