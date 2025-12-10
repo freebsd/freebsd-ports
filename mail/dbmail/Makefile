@@ -1,9 +1,10 @@
 PORTNAME=	dbmail
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5.5
+PORTREVISION=	1
 CATEGORIES=	mail
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	SQL database-based mail system (POP3 and IMAP)
 WWW=		http://www.dbmail.org/
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent \
 		libgmime-3.0.so:mail/gmime30 \
 		libmhash.so:security/mhash \
-		libzdb.so:databases/libzdb
+		libzdb.so.17:databases/libzdb
 
 USES=		autoreconf gmake gnome libtool localbase pkgconfig shebangfix \
 		ssl
