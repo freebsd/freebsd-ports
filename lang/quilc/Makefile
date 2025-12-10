@@ -21,7 +21,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libffi.so:devel/libffi \
 		liblapack.so:math/lapack
 
-USES=		fortran gmake localbase pkgconfig
+USES=		fortran:gfortran gmake localbase pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	quil-lang
