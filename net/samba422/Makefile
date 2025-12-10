@@ -305,6 +305,9 @@ DEVELOPER_VARS_OFF=		GDB_CMD=true
 ##############################################################################
 ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads
+# List of extra modules taken from RHEL build
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197320
+ADS_VARS=			SAMBA4_MODULES+="idmap_ad idmap_rfc2307 nss-info_template nss-info_rfc2307 nss-info_sfu nss-info_sfu20"
 
 AD_DC_IMPLIES=			ADS PYTHON3
 AD_DC_BUILD_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
@@ -394,12 +397,6 @@ LIB_DEPENDS+=			libdbus-glib-1.so:devel/dbus-glib
 SAMBA4_MODULES+=		krb5_async_dns_krb5_locator krb5_winbind_krb5_locator idmap_nss idmap_autorid \
 				idmap_rid idmap_hash idmap_tdb idmap_tdb2 idmap_script \
 				nss-info_hash
-# List of extra modules taken from RHEL build
-# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=197320
-.if ${PORT_OPTIONS:MADS}
-SAMBA4_MODULES+=		idmap_ad idmap_rfc2307 nss-info_template \
-				nss-info_rfc2307 nss-info_sfu nss-info_sfu20
-.endif
 # This kind of special for this distribution
 SAMBA4_MODULES+=		vfs_freebsd
 
