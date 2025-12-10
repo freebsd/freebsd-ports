@@ -12,6 +12,37 @@ WWW=				https://gitlab.com/samba-freebsd/
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
+BUILD_DEPENDS=			${_JANSSON_DEPENDS} \
+				${_LIBARCHIVE_DEPENDS} \
+				${_TASN1_DEPENDS} \
+				p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
+# Unconditional dependencies which can't be switched off if present:
+# - GnuTLS: libgnutls.so and libgcrypt.so
+# - Iconv
+# - inotify
+# - libsunacl: provides NFSv4 ACL glue.
+# - libicu
+# - unwind
+# - p5-Parse-Yapp: needed for the IDL compiler.
+# - popt
+# - Readline: required by Python; USES=readline pollutes CPPFLAGS, so we add
+#   devel/readline to LIB_DEPENDS explicitly instead.
+LIB_DEPENDS=			libgnutls.so:security/gnutls \
+				libgcrypt.so:security/libgcrypt \
+				libiconv.so:converters/libiconv \
+				libinotify.so:devel/libinotify \
+				libsunacl.so:sysutils/libsunacl \
+				libreadline.so:devel/readline \
+				libpopt.so:devel/popt \
+				libunwind.so:devel/libunwind \
+				libicui18n.so:devel/icu \
+				libicuuc.so:devel/icu
+RUN_DEPENDS=			${_JANSSON_DEPENDS} \
+				${_LIBARCHIVE_DEPENDS} \
+				${_TASN1_DEPENDS}
+
+SAMBA4_BUNDLED_LIBS=		!libarchive
+
 SAMBA4_BASENAME=		samba
 SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
 SAMBA4_VERSION=			4.22.6
@@ -176,43 +207,6 @@ VFS_DESC=			VFS modules
 ZEROCONF_DESC=			Zero configuration networking
 ZEROCONF_NONE_DESC=		Zeroconf support is absent
 ##############################################################################
-# XXX: Unconditional dependencies which can't be switched off(if present in
-# the system)
-
-# Iconv(picked up unconditionaly)
-LIB_DEPENDS=			libiconv.so:converters/libiconv
-# unwind
-LIB_DEPENDS+=			libunwind.so:devel/libunwind
-# Readline(sponsored by Python)
-# XXX: USES=readline pollutes CPPFLAGS, so we explicitly put dependency
-LIB_DEPENDS+=			libreadline.so:devel/readline
-# popt
-LIB_DEPENDS+=			libpopt.so:devel/popt
-# inotify
-LIB_DEPENDS+=			libinotify.so:devel/libinotify
-# GNUTLS
-LIB_DEPENDS+=			libgnutls.so:security/gnutls
-LIB_DEPENDS+=			libgcrypt.so:security/libgcrypt
-# NFSv4 ACL glue
-LIB_DEPENDS+=			libsunacl.so:sysutils/libsunacl
-# libicu
-LIB_DEPENDS+=			libicui18n.so:devel/icu
-LIB_DEPENDS+=			libicuuc.so:devel/icu
-# Jansson
-BUILD_DEPENDS+=			jansson>=2.10:devel/jansson
-RUN_DEPENDS+=			jansson>=2.10:devel/jansson
-# tasn1
-BUILD_DEPENDS+=			libtasn1>=3.8:security/libtasn1
-RUN_DEPENDS+=			libtasn1>=3.8:security/libtasn1
-# External Samba dependencies
-# Needed for IDL compiler
-BUILD_DEPENDS+=			p5-Parse-Yapp>=0:devel/p5-Parse-Yapp
-
-# Libarchive
-SAMBA4_BUNDLED_LIBS=		!libarchive
-BUILD_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
-RUN_DEPENDS+=			libarchive>=3.1.2:archivers/libarchive
-
 ### Bundled libraries
 SAMBA4_BUNDLED_CMOCKA?=		no
 SAMBA4_BUNDLED_TALLOC?=		no
@@ -475,6 +469,10 @@ CONFIGURE_ARGS+=		--verbose --enable-debug
 MAKE_ARGS+=			--verbose
 DEBUG_FLAGS?=			-g -ggdb3 -O0
 .endif
+
+_LIBARCHIVE_DEPENDS=	libarchive>=3.1.2:archivers/libarchive
+_JANSSON_DEPENDS=	jansson>=2.10:devel/jansson
+_TASN1_DEPENDS=		libtasn1>=3.8:security/libtasn1
 
 ##############################################################################
 .include <bsd.port.pre.mk>
