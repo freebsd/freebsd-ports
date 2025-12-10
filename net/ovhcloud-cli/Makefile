@@ -1,7 +1,6 @@
 PORTNAME=		ovhcloud-cli
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.8.1
-PORTREVISION=	2
+DISTVERSION=		0.9.0
 CATEGORIES=		net devel
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -15,6 +14,11 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ovh
+
+GO_TARGET=	./cmd/ovhcloud
+GO_BUILDFLAGS=	-ldflags "-s -w -extldflags -static -X github.com/ovh/ovhcloud-cli/internal/version.Version=v${PORTVERSION}"
+
+PLIST_FILES=	bin/ovhcloud
 
 GH_TUPLE=	\
 		PaesslerAG:gval:v1.2.4:paesslerag_gval/vendor/github.com/PaesslerAG/gval \
@@ -83,11 +87,6 @@ GH_TUPLE=	\
 		xo:terminfo:abceb7e1c41e:xo_terminfo/vendor/github.com/xo/terminfo \
 		yuin:goldmark-emoji:v1.0.5:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
 		yuin:goldmark:v1.7.8:yuin_goldmark/vendor/github.com/yuin/goldmark
-
-GO_TARGET=	./cmd/ovhcloud
-GO_BUILDFLAGS=	-ldflags "-s -w -extldflags -static -X github.com/ovh/ovhcloud-cli/internal/version.Version=v${PORTVERSION}"
-
-PLIST_FILES=	bin/ovhcloud
 
 post-extract:
 	@${RM} -r ${WRKSRC}/vendor/github.com/charmbracelet/x/cellbuf
