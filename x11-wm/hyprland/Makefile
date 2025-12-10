@@ -1,15 +1,10 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.1
-PORTREVISION=	1
+DISTVERSION=	0.52.2
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
 DIST_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=	https://github.com/hyprwm/Hyprland/commit/
-PATCHFILES=	43527d363472b52f17dd9f9f4f87ec25cbf8a399.patch:-p1 \
-		55a93b8a52ad3bd2c0a7468e8f79f5667eea0702.patch:-p1
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -80,13 +75,13 @@ post-patch:
 		${WRKSRC}/src/render/OpenGL.cpp
 # XXX Replace linprocfs(4) with sysctl(3)
 	@${REINPLACE_CMD} -e 's|/proc|${LINUXBASE}&|g' \
-		${WRKSRC}/src/desktop/Window.cpp \
-		${WRKSRC}/src/debug/HyprCtl.cpp \
+		${WRKSRC}/hyprtester/src/tests/main/exec.cpp \
 		${WRKSRC}/src/debug/CrashReporter.cpp \
+		${WRKSRC}/src/debug/HyprCtl.cpp \
+		${WRKSRC}/src/desktop/Window.cpp \
 		${WRKSRC}/src/helpers/MiscFunctions.cpp \
 		${WRKSRC}/src/plugins/HookSystem.cpp \
-		${WRKSRC}/src/plugins/PluginAPI.cpp \
-		${WRKSRC}/hyprtester/src/tests/main/exec.cpp
+		${WRKSRC}/src/plugins/PluginAPI.cpp
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/hyprland
