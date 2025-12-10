@@ -575,15 +575,6 @@ post-patch:
 				@${REINPLACE_CMD} -e 's|%%SAMBA4_CONFIG%%|${SAMBA4_CONFIG}|g' \
 					${PATCH_WRKSRC}/dynconfig/wscript
 
-# Use threading (or multiprocessing) but not thread (renamed in python 3+).
-pre-configure:
-.if !${PORT_OPTIONS:MPYTHON3} && ${PORT_OPTIONS:MAD_DC}
-				@${ECHO_CMD}; \
-				${ECHO_MSG} "===>  AD_DC option requires PYTHON3 to be set"; \
-				${ECHO_CMD}; \
-				${FALSE}
-.endif
-
 post-install-rm-junk:
 				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party
 				${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name __pycache__ \
