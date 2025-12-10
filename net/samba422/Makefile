@@ -45,9 +45,6 @@ SAMBA4_PORTNAME=		${SAMBA4_BASENAME}4
 SAMBA4_VERSION=			4.22.6
 SAMBA4_DISTNAME=		${SAMBA4_BASENAME}-${SAMBA4_VERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alpha|}
 
-WRKSRC?=			${WRKDIR}/${DISTNAME}
-PLIST?=				${PKGDIR}/pkg-plist
-
 CPE_VENDOR=			samba
 CPE_PRODUCT=			samba
 # Directories
@@ -110,6 +107,10 @@ SUB_LIST=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 ##############################################################################
 OPTIONS_SUB=			yes
 
+# PLIST must be defined here explicitly as we append to PLIST later on to
+# handle extra pkg-plist files like pkg-plist.python.
+PLIST?=                         ${PKGDIR}/pkg-plist
+##############################################################################
 OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM LDAP GPGME \
 				MANPAGES PROFILE PYTHON3 QUOTAS \
 				SYSLOG UTMP
