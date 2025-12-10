@@ -192,10 +192,10 @@ MAKE_ENV+=	BL31=${LOCALBASE}/share/atf-rk3399/bl31.elf
 .endif
 
 .if defined(FAMILY) && ${FAMILY} == rk356X
-BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.21.bin:sysutils/rkbin \
+BUILD_DEPENDS+=	${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.23.bin:sysutils/rkbin \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
-MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3568_bl31_v1.44.elf \
-		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.21.bin
+MAKE_ENV+=	BL31=${LOCALBASE}/share/rkbin/rk35/rk3568_bl31_v1.45.elf \
+		ROCKCHIP_TPL=${LOCALBASE}/share/rkbin/rk35/rk3566_ddr_1056MHz_v1.23.bin
 .endif
 
 .if defined(FAMILY) && ${FAMILY} == rk3588
