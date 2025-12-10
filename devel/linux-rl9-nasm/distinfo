@@ -1,3 +1,7 @@
-TIMESTAMP = 1765265471
+TIMESTAMP = 1765353031
+SHA256 (rocky/n/nasm-2.15.03-7.el9.aarch64.rpm) = fb4f9e43da9fe0072c062a6f62c7c387153a31f3540212eecca89d082f7c6936
+SIZE (rocky/n/nasm-2.15.03-7.el9.aarch64.rpm) = 434648
 SHA256 (rocky/n/nasm-2.15.03-7.el9.x86_64.rpm) = 91a07325837ba1bd556ceb0ce07ae85ae99caf7f30ce8bee1a6bff1ecad6920b
 SIZE (rocky/n/nasm-2.15.03-7.el9.x86_64.rpm) = 444673
+SHA256 (rocky/n/nasm-2.15.03-7.el9.src.rpm) = e8846916ec40161861b5fbdfc5122cf9f28e8939ea861779bf7277e0a116fbd2
+SIZE (rocky/n/nasm-2.15.03-7.el9.src.rpm) = 1815091
