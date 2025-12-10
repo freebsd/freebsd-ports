@@ -371,6 +371,20 @@ MDNSRESPONDER_VARS=		SAMBA4_SERVICES+=mdnsd
 
 PROFILE_CONFIGURE_WITH=		profiling-data
 
+PYTHON3_USES=			python
+PYTHON3_USES_OFF=		python:build,test
+# Don't cache Python modules
+PYTHON3_CONFIGURE_ON=		--nopycache
+# Use PYTHON3_CONFIGURE_OFF instead of PYTHON3_CONFIGURE_ENABLE=python because
+# Samba's configure script does not recognize --enable-python.
+PYTHON3_CONFIGURE_OFF=		--disable-python
+PYTHON3_MAKE_ENV=		PYTHONDONTWRITEBYTECODE=1
+PYTHON3_VARS=			PLIST+=${PKGDIR}/pkg-plist.python \
+				SAMBA4_BUNDLED_LIBS+=${"${SAMBA4_BUNDLED_TALLOC:Myes}" == "yes":?:!}pytalloc-util \
+				SAMBA4_BUNDLED_LIBS+=${"${SAMBA4_BUNDLED_TEVENT:Myes}" == "yes":?:!}pytevent \
+				SAMBA4_BUNDLED_LIBS+=${"${SAMBA4_BUNDLED_TDB:Myes}" == "yes":?:!}pytdb \
+				SAMBA4_BUNDLED_LIBS+="pyldb pyldb-util"
+
 QUOTAS_CONFIGURE_WITH=		quotas
 
 SYSLOG_CONFIGURE_WITH=		syslog
@@ -414,37 +428,6 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry \
 				vfs_skel_opaque vfs_skel_transparent \
 				vfs_shadow_copy_test vfs_fake_acls \
 				vfs_nfs4acl_xattr vfs_error_inject vfs_delay_inject
-.endif
-# Python bindings
-.if ! ${PORT_OPTIONS:MPYTHON3}
-USES+=				python:build,test
-CONFIGURE_ARGS+=		--disable-python
-.else
-USES+=				python
-PLIST+=				${PKGDIR}/pkg-plist.python
-# Don't cache Python modules
-CONFIGURE_ARGS+=		--nopycache
-MAKE_ENV+=			PYTHONDONTWRITEBYTECODE=1
-
-.	if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
-SAMBA4_BUNDLED_LIBS+=		pytalloc-util
-.	else
-SAMBA4_BUNDLED_LIBS+=		!pytalloc-util
-.	endif
-
-.	if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
-SAMBA4_BUNDLED_LIBS+=		pytevent
-.	else
-SAMBA4_BUNDLED_LIBS+=		!pytevent
-.	endif
-
-.	if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
-SAMBA4_BUNDLED_LIBS+=		pytdb
-.	else
-SAMBA4_BUNDLED_LIBS+=		!pytdb
-.	endif
-
-SAMBA4_BUNDLED_LIBS+=		pyldb pyldb-util
 .endif
 
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
