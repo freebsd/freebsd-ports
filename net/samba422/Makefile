@@ -430,7 +430,7 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry \
 				vfs_nfs4acl_xattr vfs_error_inject vfs_delay_inject
 .endif
 # Python bindings
-.if ! ${PORT_OPTIONS:MPYTHON3} || defined(NO_PYTHON)
+.if ! ${PORT_OPTIONS:MPYTHON3}
 USES+=				python:build,test
 CONFIGURE_ARGS+=		--disable-python
 .else
@@ -577,7 +577,7 @@ post-patch:
 
 # Use threading (or multiprocessing) but not thread (renamed in python 3+).
 pre-configure:
-.if (!${PORT_OPTIONS:MPYTHON3} || defined(NO_PYTHON)) && ${PORT_OPTIONS:MAD_DC}
+.if !${PORT_OPTIONS:MPYTHON3} && ${PORT_OPTIONS:MAD_DC}
 				@${ECHO_CMD}; \
 				${ECHO_MSG} "===>  AD_DC option requires PYTHON3 to be set"; \
 				${ECHO_CMD}; \
