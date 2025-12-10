@@ -501,79 +501,72 @@ PLIST_SUB+=			${SAMBA4_SUB}
 SUB_LIST+=			${SAMBA4_SUB}
 
 post-extract:
-				@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
+	@${RM} -r ${WRKSRC}/pidl/lib/Parse/Yapp
 
 post-patch:
-				@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \
-					${PATCH_WRKSRC}/buildtools/wafsamba/pkgconfig.py
-				@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-					${PATCH_WRKSRC}/buildtools/wafsamba/wafsamba.py
-				@${REINPLACE_CMD} -e 's|%%GDB_CMD%%|${GDB_CMD}|g' \
-					${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
-				@${REINPLACE_CMD} -e 's|%%SAMBA4_CONFIG%%|${SAMBA4_CONFIG}|g' \
-					${PATCH_WRKSRC}/dynconfig/wscript
+	@${REINPLACE_CMD} -e 's|$${PKGCONFIGDIR}|${PKGCONFIGDIR}|g' \
+		${PATCH_WRKSRC}/buildtools/wafsamba/pkgconfig.py
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/buildtools/wafsamba/wafsamba.py
+	@${REINPLACE_CMD} -e 's|%%GDB_CMD%%|${GDB_CMD}|g' \
+		${PATCH_WRKSRC}/buildtools/scripts/abi_gen.sh
+	@${REINPLACE_CMD} -e 's|%%SAMBA4_CONFIG%%|${SAMBA4_CONFIG}|g' \
+		${PATCH_WRKSRC}/dynconfig/wscript
 
-post-install-rm-junk:
-				${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party
-				${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name __pycache__ \
-					-type d -print0 | ${XARGS} -0 -n 1 -t ${RM} -r
-				${FIND} ${STAGEDIR} -type f -empty -delete
+post-install:
+	${RM} -r ${STAGEDIR}${PYTHON_SITELIBDIR}/samba/third_party
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name __pycache__ \
+		-type d -print0 | ${XARGS} -0 -n 1 -t ${RM} -r
+	${FIND} ${STAGEDIR} -type f -empty -delete
 
-post-install-fix-manpages:
-.if ${PORT_OPTIONS:MMANPAGES}
-.for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
-				${RM} ${STAGEDIR}${PREFIX}/share/man/man8/${f}
+.for dir in ${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${SAMBA4_MODULEDIR}
+	${INSTALL} -d -m 0755 "${STAGEDIR}${dir}"
 .endfor
-
-.if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
-.	for f in talloc.3
-				${MV} ${STAGEDIR}${PREFIX}/share/man/man3/${f} ${STAGEDIR}${PREFIX}/share/man/man3/samba-${f}
-.	endfor
-.endif
-
-.if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
-.	for f in tdbbackup.8 tdbdump.8 tdbrestore.8 tdbtool.8
-				${MV} ${STAGEDIR}${PREFIX}/share/man/man8/${f} ${STAGEDIR}${PREFIX}/share/man/man8/samba-${f}
-.	endfor
-.endif
-.endif
-
-post-install: post-install-rm-junk post-install-fix-manpages
-.if ${PORT_OPTIONS:MMANPAGES}
-				${LN} -sf smb.conf.5.gz ${STAGEDIR}${PREFIX}/share/man/man5/smb4.conf.5.gz
-.endif
-# Run post-install script
-.for dir in			${SAMBA4_LOGDIR} ${SAMBA4_RUNDIR} ${SAMBA4_LOCKDIR} ${SAMBA4_MODULEDIR}
-					${INSTALL} -d -m 0755 "${STAGEDIR}${dir}"
-.endfor
-				${INSTALL} -d -m 0750 "${STAGEDIR}${SAMBA4_BINDDNSDIR}"
-				${INSTALL} -d -m 0750 "${STAGEDIR}${SAMBA4_PRIVATEDIR}"
-.for module_class in			${SAMBA4_MODULES_CLASS}
-					${INSTALL} -d -m 0755 "${STAGEDIR}${SAMBA4_MODULEDIR}/${module_class}"
+	${INSTALL} -d -m 0750 "${STAGEDIR}${SAMBA4_BINDDNSDIR}"
+	${INSTALL} -d -m 0750 "${STAGEDIR}${SAMBA4_PRIVATEDIR}"
+.for module_class in ${SAMBA4_MODULES_CLASS}
+	${INSTALL} -d -m 0755 "${STAGEDIR}${SAMBA4_MODULEDIR}/${module_class}"
 .endfor
 .if !defined(WITH_DEBUG)
-				-${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/libexec \
-					-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
-				-${FIND} ${STAGEDIR}${PREFIX}/lib -name '*.so*' \
-					-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
-.endif
-
-post-install-FRUIT-off:
-				${RM} ${STAGEDIR}${SAMBA4_MODULEDIR}/vfs/fruit.so
-.if ${PORT_OPTIONS:MMANPAGES}
-				${RM} ${STAGEDIR}${PREFIX}/share/man/man8/vfs_fruit.8
+	-${FIND} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/sbin ${STAGEDIR}${PREFIX}/libexec \
+		-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
+	-${FIND} ${STAGEDIR}${PREFIX}/lib -name '*.so*' \
+		-type f -print0 | ${XARGS} -0 -n 1 -t ${STRIP_CMD}
 .endif
 
 post-install-DOCS-on:
-				${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for doc in			${PORTDOCS}
-				${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKDIR}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 post-install-CLUSTER-on:
-				${LN} -nfs ../../../../share/ctdb/events/legacy/00.ctdb.script		${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/00.ctdb.script
-				${LN} -nfs ../../../../share/ctdb/events/legacy/10.interface.script	${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/10.interface.script
-				${LN} -nfs ../../../../share/ctdb/events/legacy/05.system.script	${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/05.system.script
-				${LN} -nfs ../../../../share/ctdb/events/legacy/01.reclock.script	${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/01.reclock.script
+	${RLN} ${STAGEDIR}${PREFIX}/share/ctdb/events/legacy/00.ctdb.script ${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/00.ctdb.script
+	${RLN} ${STAGEDIR}${PREFIX}/share/ctdb/events/legacy/01.reclock.script ${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/01.reclock.script
+	${RLN} ${STAGEDIR}${PREFIX}/share/ctdb/events/legacy/05.system.script ${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/05.system.script
+	${RLN} ${STAGEDIR}${PREFIX}/share/ctdb/events/legacy/10.interface.script ${STAGEDIR}${PREFIX}/etc/ctdb/events/legacy/10.interface.script
+
+post-install-FRUIT-off:
+	${RM} ${STAGEDIR}${SAMBA4_MODULEDIR}/vfs/fruit.so
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man8/vfs_fruit.8
+
+post-install-MANPAGES-on:
+	${RLN} ${STAGEDIR}${PREFIX}/share/man/man5/smb.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5/smb4.conf.5
+
+.for f in vfs_aio_linux.8 vfs_btrfs.8 vfs_ceph.8 vfs_gpfs.8
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man8/${f}
+.endfor
+
+.if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
+.  for f in talloc.3
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man3/${f} ${STAGEDIR}${PREFIX}/share/man/man3/samba-${f}
+.  endfor
+.endif
+
+.if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
+.  for f in tdbbackup.8 tdbdump.8 tdbrestore.8 tdbtool.8
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man8/${f} ${STAGEDIR}${PREFIX}/share/man/man8/samba-${f}
+.  endfor
+.endif
 
 .include <bsd.port.post.mk>
