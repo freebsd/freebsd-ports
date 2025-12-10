@@ -1,4 +1,4 @@
-TIMESTAMP = 1765300000
+TIMESTAMP = 1765353535
 SHA256 (angie-1.10.3.tar.gz) = ff820ec9dc7ac8b0e873c52ddc48b3417f5054f157b5d2df5c1b8ed7adfb2256
 SIZE (angie-1.10.3.tar.gz) = 1758928
 SHA256 (61131-nginx-http-auth-totp-1.1.0_GH0.tar.gz) = d36d2b75a3b239e63ec060ef9ccfa6b89acbceb74b7c93e47550c1f75ac4857e
@@ -51,3 +51,5 @@ SHA256 (fdintino-nginx-upload-module-2.3.0_GH0.tar.gz) = c86e318addb9c88d70fdbd5
 SIZE (fdintino-nginx-upload-module-2.3.0_GH0.tar.gz) = 40139
 SHA256 (kaltura-nginx-vod-module-1.33_GH0.tar.gz) = 9c9600e5da4ee02ef6820d056da9eb5f3449f715468334ddab41727b76d478d8
 SIZE (kaltura-nginx-vod-module-1.33_GH0.tar.gz) = 471858
+SHA256 (tokers-zstd-nginx-module-0.1.1_GH0.tar.gz) = 707d534f8ca4263ff043066db15eac284632aea875f9fe98c96cea9529e15f41
+SIZE (tokers-zstd-nginx-module-0.1.1_GH0.tar.gz) = 55417

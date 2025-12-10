@@ -1,0 +1,17 @@
+[
+{ type: install
+  message: <<EOM
+
+The zstd dynamic modules for Angie have been installed.
+To enable these modules, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ngx_http_zstd_filter_module.so;
+    load_module modules/ngx_http_zstd_static_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/tokers/zstd-nginx-module
+https://en.angie.software/angie/docs/installation/external-modules/zstd/
+EOM
+}
+]
