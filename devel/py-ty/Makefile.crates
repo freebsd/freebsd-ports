@@ -362,13 +362,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		toml_edit-0.23.6 \
 		toml_parser-1.0.4 \
 		toml_writer-1.0.4 \
-		tracing-0.1.41 \
-		tracing-attributes-0.1.30 \
-		tracing-core-0.1.34 \
+		tracing-0.1.43 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.35 \
 		tracing-flame-0.2.0 \
 		tracing-indicatif-0.3.13 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.20 \
+		tracing-subscriber-0.3.22 \
 		tryfn-0.2.3 \
 		typed-arena-2.0.2 \
 		typenum-1.18.0 \
@@ -465,5 +465,5 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.16+zstd.1.5.7 \
-		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439 \
-		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=17bc55d699565e5a1cb1bd42363b905af2f9f3e7\#17bc55d699565e5a1cb1bd42363b905af2f9f3e7
+		salsa,salsa-macro-rules,salsa-macros@git+https://github.com/salsa-rs/salsa.git?rev=59aa1075e837f5deb0d6ffb24b68fedc0f4bc5e0\#59aa1075e837f5deb0d6ffb24b68fedc0f4bc5e0 \
+		lsp-types@git+https://github.com/astral-sh/lsp-types.git?rev=3512a9f\#3512a9f33eadc5402cfab1b8f7340824c8ca1439
