@@ -1,7 +1,7 @@
 PORTNAME=	qt5
 PORTVERSION=	5.15.9
-DISTVERSIONSUFFIX=	-2.el9_6
-PORTREVISION=	3
+DISTVERSIONSUFFIX=	-2.el9_7.1
+PORTREVISION=	4
 CATEGORIES=	graphics linux
 PKGNAMESUFFIX=	-qt3d
 
@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	cups-libs dbuslibs dri imageformats-libs libxml2 qtbase xorglibs
+USE_LINUX=	cups-libs dbuslibs dri imageformats-libs libxml2 qtbase qtimageformats xorglibs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
