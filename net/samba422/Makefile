@@ -135,7 +135,6 @@ GLUSTERFS_DESC=			GlusterFS support
 GPGME_DESC=			GpgME support
 GSSAPI_BUILTIN_DESC=		GSSAPI support via bundled Heimdal
 LDAP_DESC=			LDAP client
-LIBZFS_DESC=			LibZFS
 MEMORY_DEBUG_DESC=		Debug memory allocator
 PICKY_DEVELOPER_DESC=		Treat compiler warnings as errors(implies DEVELOPER)
 PROFILE_DESC=			Profiling data
@@ -361,9 +360,6 @@ LDAP_CONFIGURE_ON=		--with-ldap
 LDAP_CONFIGURE_OFF=		--without-ldap
 LDAP_CONFIGURE_WITH=		ldap
 LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
-
-LIBZFS_CONFIGURE_WITH=		libzfs
-LIBZFS_VARS=			SAMBA4_MODULES+=vfs_zfs_space
 
 MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl \
 				xsltproc:textproc/libxslt
