@@ -1,6 +1,6 @@
 PORTNAME=			${SAMBA4_BASENAME}422
 PORTVERSION=			${SAMBA4_VERSION}
-PORTREVISION=			3
+PORTREVISION=			4
 CATEGORIES?=			net
 MASTER_SITES=			SAMBA/samba/stable SAMBA/samba/rc
 DISTNAME=			${SAMBA4_DISTNAME}
@@ -40,6 +40,8 @@ LIB_DEPENDS=			libgnutls.so:security/gnutls \
 RUN_DEPENDS=			${_JANSSON_DEPENDS} \
 				${_LIBARCHIVE_DEPENDS} \
 				${_TASN1_DEPENDS}
+TEST_DEPENDS=			bash:shells/bash \
+				tshark:net/wireshark@nox11
 
 SAMBA4_BUNDLED_LIBS=		!libarchive
 
@@ -119,6 +121,11 @@ CONFIGURE_ENV=			PTHREAD_LDFLAGS="-lpthread" \
 				PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1 \
 				RPCGEN_CPP="${CPP}"
+TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
+				SHA1SUM=/sbin/sha1 \
+				SHA256SUM=${SHA256} \
+				MD5SUM=${MD5} \
+				PYTHONDONTWRITEBYTECODE=1
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top of the stack)
 CFLAGS_amd64+=			-fno-omit-frame-pointer
@@ -180,7 +187,7 @@ OPTIONS_DEFAULT=		AD_DC ADS DOCS FAM LDAP MANPAGES \
 				PROFILE PYTHON3 QUOTAS SYSLOG UTMP \
 				FRUIT GSSAPI_BUILTIN AVAHI
 OPTIONS_GROUP=			DEVELOPMENT VFS
-OPTIONS_GROUP_DEVELOPMENT=	DEVELOPER MEMORY_DEBUG PICKY_DEVELOPER
+OPTIONS_GROUP_DEVELOPMENT=	DEVELOPER MEMORY_DEBUG PICKY_DEVELOPER TEST
 OPTIONS_GROUP_VFS=		FRUIT GLUSTERFS
 OPTIONS_SINGLE=			GSSAPI ZEROCONF
 OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
@@ -278,19 +285,6 @@ SAMBA4_BUNDLED_LIBS+=		com_err
 SAMBA4_PRIVATE_LIBS+=		!ldb
 CONFLICTS_INSTALL+=		ldb-* ldb2[0-9]-*
 
-# Set the test environment variables
-TEST_USES=			python
-TEST_ENV=			PYTHON="${PYTHON_CMD}" \
-				SHA1SUM=/sbin/sha1 \
-				SHA256SUM=/sbin/sha256 \
-				MD5SUM=/sbin/md5 \
-				PYTHONDONTWRITEBYTECODE=1
-
-TEST_DEPENDS=			bash:shells/bash \
-				tshark:net/wireshark@nox11
-# External Python modules
-TEST_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
-TEST_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 ##############################################################################
 ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads
@@ -402,6 +396,9 @@ QUOTAS_CONFIGURE_WITH=		quotas
 
 SYSLOG_CONFIGURE_WITH=		syslog
 
+TEST_BUILD_DEPENDS=		${_ISO8601_DEPENDS}
+TEST_RUN_DEPENDS=		${_ISO8601_DEPENDS}
+
 UTMP_CONFIGURE_WITH=		utmp
 
 ZEROCONF_NONE_MAKE_ENV=		ZEROCONF=none
@@ -470,8 +467,9 @@ DEBUG_FLAGS?=			-g -ggdb3 -O0
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=194046
 GDB_CMD?=			${LOCALBASE}/bin/gdb
 
-_LIBARCHIVE_DEPENDS=	libarchive>=3.1.2:archivers/libarchive
+_ISO8601_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 _JANSSON_DEPENDS=	jansson>=2.10:devel/jansson
+_LIBARCHIVE_DEPENDS=	libarchive>=3.1.2:archivers/libarchive
 _TASN1_DEPENDS=		libtasn1>=3.8:security/libtasn1
 
 ##############################################################################
