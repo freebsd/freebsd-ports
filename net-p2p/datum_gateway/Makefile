@@ -11,6 +11,9 @@ WWW=		https://github.com/OCEAN-xyz/datum_gateway
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS_REASON=	This port requires a 64-bit architecture.
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libjansson.so:devel/jansson \
 		libsodium.so:security/libsodium \
