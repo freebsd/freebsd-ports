@@ -346,7 +346,7 @@ GPGME_CONFIGURE_WITH=		gpgme
 
 GSSAPI_BUILTIN_USES=		bison
 
-GSSAPI_MIT_USES=		gssapi:mit
+GSSAPI_MIT_USES=		bison gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
 				--with-system-mitkdc=${GSSAPIBASEDIR}/sbin/krb5kdc \
 				--with-experimental-mit-ad-dc
