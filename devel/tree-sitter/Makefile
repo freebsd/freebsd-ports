@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.10
 CATEGORIES=	devel
 
+# When updating this port, make sure that editors/neovim can
+# build against it. Updates may need to be delayed until
+# neovim gains support.
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Incremental parser generator
 WWW=		https://tree-sitter.github.io/tree-sitter/
