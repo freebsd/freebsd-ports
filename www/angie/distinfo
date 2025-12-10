@@ -1,4 +1,4 @@
-TIMESTAMP = 1765353535
+TIMESTAMP = 1765363285
 SHA256 (angie-1.10.3.tar.gz) = ff820ec9dc7ac8b0e873c52ddc48b3417f5054f157b5d2df5c1b8ed7adfb2256
 SIZE (angie-1.10.3.tar.gz) = 1758928
 SHA256 (61131-nginx-http-auth-totp-1.1.0_GH0.tar.gz) = d36d2b75a3b239e63ec060ef9ccfa6b89acbceb74b7c93e47550c1f75ac4857e
@@ -13,8 +13,8 @@ SHA256 (nginx-modules-ngx_cache_purge-2.5.4_GH0.tar.gz) = 5bd04373d818b1aa0f3ba0
 SIZE (nginx-modules-ngx_cache_purge-2.5.4_GH0.tar.gz) = 17174
 SHA256 (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = d2499d94d82d4e4eac8425d799e52883131ae86a956524040ff2fd230ef9f859
 SIZE (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = 14558
-SHA256 (openresty-echo-nginx-module-v0.63_GH0.tar.gz) = 8af374d29592ef95baee53c91959c7b04927f11304c318a94f0ee140760515a4
-SIZE (openresty-echo-nginx-module-v0.63_GH0.tar.gz) = 53421
+SHA256 (openresty-echo-nginx-module-v0.64_GH0.tar.gz) = 6f43f56d7e7e8526716bbda06b300f0119912eede47b3a48bb948252a1fb38c8
+SIZE (openresty-echo-nginx-module-v0.64_GH0.tar.gz) = 53549
 SHA256 (bpaquet-ngx_http_enhanced_memcached_module-v0.3_GH0.tar.gz) = 4071b2cc0baa9f403c124c0ef0cdfbde14dacc1ec9f0dbc92d7310ac530e3eeb
 SIZE (bpaquet-ngx_http_enhanced_memcached_module-v0.3_GH0.tar.gz) = 101136
 SHA256 (openresty-nginx-eval-module-2016.06.10_GH0.tar.gz) = 6b91d3c2c2f254ebb37eb3dd6dd41048dfb18320bb98a3afdd1ad38b47f6d609
