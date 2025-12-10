@@ -23,7 +23,6 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-mpich-4*
 MPIOPTIONS=		--oversubscribe --stream-buffering 0
 .elif ${MP} == "MPICH"
 USES+=			fortran mpi:mpich
-LDFLAGS+=		${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}mpi4py-4*
 MPIOPTIONS=
 .else
@@ -35,6 +34,12 @@ PORTDOCS=	*
 #SLAVEDIRS=	net/py-mpi4py-mpich
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${FORTRAN_DEFAULT} == gfortran
+LDFLAGS+=	${LOCALBASE}/lib/gcc${GCC_DEFAULT}/libgcc_s.so
+.endif
 
 pre-configure:
 	${CP} ${FILESDIR}/mpi.cfg ${WRKSRC}/
@@ -52,4 +57,4 @@ post-install:
 do-test:
 	(cd ${WRKSRC} && ${MPIEXEC} ${MPIOPTIONS} -n 5 ${PYTHON_CMD} test/main.py)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
