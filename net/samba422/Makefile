@@ -306,7 +306,7 @@ DEVELOPER_VARS_OFF=		GDB_CMD=true
 ADS_IMPLIES=			LDAP
 ADS_CONFIGURE_WITH=		ads
 
-AD_DC_IMPLIES=			PYTHON3
+AD_DC_IMPLIES=			ADS PYTHON3
 AD_DC_BUILD_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
 AD_DC_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
 AD_DC_CONFIGURE_OFF=		--without-ad-dc --without-ldb-lmdb
@@ -381,10 +381,6 @@ ZEROCONF_NONE_MAKE_ENV=		ZEROCONF=none
 ##############################################################################
 .include <bsd.port.options.mk>
 ##############################################################################
-.if !${PORT_OPTIONS:MADS} && ${PORT_OPTIONS:MAD_DC}
-IGNORE=To disable ADS option you also need to disable AD_DC option
-.endif
-
 .if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=		vfs_cacheprime
 .endif
