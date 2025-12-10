@@ -104,8 +104,6 @@ PKGCONFIGDIR?=			${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=		${PKGCONFIGDIR:S,^${PREFIX}/,,}
 PLIST_SUB=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
 SUB_LIST=			PKGCONFIGDIR=${PKGCONFIGDIR_REL}
-##############################################################################
-OPTIONS_SUB=			yes
 
 # PLIST must be defined here explicitly as we append to PLIST later on to
 # handle extra pkg-plist files like pkg-plist.python.
@@ -115,27 +113,27 @@ OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM LDAP GPGME \
 				MANPAGES PROFILE PYTHON3 QUOTAS \
 				SYSLOG UTMP
 #OPTIONS_DEFINE+=		DEVELOPER MEMORY_DEBUG
-
-OPTIONS_GROUP=			VFS
-OPTIONS_GROUP_VFS=		FRUIT GLUSTERFS
-
-OPTIONS_SINGLE=			GSSAPI ZEROCONF
-
-OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
-#GSSAPI_HEIMDAL
-OPTIONS_SINGLE_ZEROCONF=	ZEROCONF_NONE AVAHI MDNSRESPONDER
-
-# Make those default options
 OPTIONS_DEFAULT=		AD_DC ADS DOCS FAM LDAP MANPAGES \
 				PROFILE PYTHON3 QUOTAS SYSLOG UTMP \
 				FRUIT GSSAPI_BUILTIN AVAHI
+OPTIONS_GROUP=			VFS
+OPTIONS_GROUP_VFS=		FRUIT GLUSTERFS
+OPTIONS_SINGLE=			GSSAPI ZEROCONF
+OPTIONS_SINGLE_GSSAPI=		GSSAPI_BUILTIN GSSAPI_MIT
+#GSSAPI_HEIMDAL
+OPTIONS_SINGLE_ZEROCONF=	ZEROCONF_NONE AVAHI MDNSRESPONDER
+OPTIONS_SUB=			yes
+
 ##############################################################################
 ADS_DESC=			Active Directory client
 AD_DC_DESC=			Active Directory Domain Controller(implies PYTHON3)
 CLUSTER_DESC=			Clustering support
 DEVELOPER_DESC=			With developer framework
 FAM_DESC=			File Alteration Monitor
+FRUIT_DESC=			MacOSX and TimeMachine support
+GLUSTERFS_DESC=			GlusterFS support
 GPGME_DESC=			GpgME support
+GSSAPI_BUILTIN_DESC=		GSSAPI support via bundled Heimdal
 LDAP_DESC=			LDAP client
 LIBZFS_DESC=			LibZFS
 MEMORY_DEBUG_DESC=		Debug memory allocator
@@ -143,13 +141,7 @@ PICKY_DEVELOPER_DESC=		Treat compiler warnings as errors(implies DEVELOPER)
 PROFILE_DESC=			Profiling data
 QUOTAS_DESC=			Disk quota support
 UTMP_DESC=			UTMP accounting
-
 VFS_DESC=			VFS modules
-FRUIT_DESC=			MacOSX and TimeMachine support
-GLUSTERFS_DESC=			GlusterFS support
-
-GSSAPI_BUILTIN_DESC=		GSSAPI support via bundled Heimdal
-
 ZEROCONF_DESC=			Zero configuration networking
 ZEROCONF_NONE_DESC=		Zeroconf support is absent
 ##############################################################################
@@ -293,23 +285,7 @@ CONFIGURE_ARGS+=		\
 				--disable-spotlight
 #				${ICONV_CONFIGURE_BASE}
 ##############################################################################
-FRUIT_PREVENTS=			ZEROCONF_NONE
-FRUIT_PREVENTS_MSG=		MacOSX support requires Zeroconf(AVAHI or MDNSRESPONDER)
-FRUIT_VARS=			SAMBA4_MODULES+=vfs_fruit
 
-GLUSTERFS_CONFIGURE_ENABLE=	glusterfs
-GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs
-GLUSTERFS_VARS=			SAMBA4_MODULES+=vfs_glusterfs
-
-ZEROCONF_NONE_MAKE_ENV=		ZEROCONF=none
-##############################################################################
-AVAHI_CONFIGURE_ENABLE=		avahi
-AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
-AVAHI_VARS=			SAMBA4_SERVICES+=avahi_daemon
-
-MDNSRESPONDER_CONFIGURE_ENABLE=	dnssd
-MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
-MDNSRESPONDER_VARS=		SAMBA4_SERVICES+=mdnsd
 ##############################################################################
 MEMORY_DEBUG_IMPLIES=		DEBUG
 MEMORY_DEBUG_CONFIGURE_ENV=	ADDITIONAL_CFLAGS="-DENABLE_JEMALLOC `pkg-config --cflags jemalloc`" ADDITIONAL_LDFLAGS="`pkg-config --libs jemalloc`"
@@ -328,10 +304,13 @@ DEVELOPER_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
 DEVELOPER_TEST_DEPENDS=		${GDB_CMD}:devel/gdb
 DEVELOPER_VARS_OFF=		GDB_CMD=true
 ##############################################################################
+ADS_IMPLIES=			LDAP
+ADS_CONFIGURE_WITH=		ads
+
 AD_DC_IMPLIES=			PYTHON3
-AD_DC_CONFIGURE_OFF=		--without-ad-dc --without-ldb-lmdb
 AD_DC_BUILD_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
 AD_DC_RUN_DEPENDS=		${SAMBA4_LMDB_DEPENDS}
+AD_DC_CONFIGURE_OFF=		--without-ad-dc --without-ldb-lmdb
 AD_DC_VARS=			PLIST+=${PKGDIR}/pkg-plist.ad_dc
 # samba-tool requires those for *upgrade
 AD_DC_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7:textproc/py-markdown@${PY_FLAVOR} \
@@ -339,38 +318,48 @@ AD_DC_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7:textproc/py-markdo
 AD_DC_RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7:textproc/py-markdown@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}dnspython>=2.2.1:dns/py-dnspython@${PY_FLAVOR}
 
-ADS_IMPLIES=			LDAP
-ADS_CONFIGURE_WITH=		ads
+AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
+AVAHI_CONFIGURE_ENABLE=		avahi
+AVAHI_VARS=			SAMBA4_SERVICES+=avahi_daemon
 
 CLUSTER_CONFIGURE_WITH=		cluster-support
 CLUSTER_VARS=			PLIST+=${PKGDIR}/pkg-plist.cluster
 
-CUPS_CONFIGURE_ENABLE=		cups iprint
 CUPS_LIB_DEPENDS=		libcups.so:print/cups
+CUPS_CONFIGURE_ENABLE=		cups iprint
+
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
 FAM_USES=			fam
 FAM_CONFIGURE_WITH=		fam
 
-GPGME_CONFIGURE_WITH=		gpgme
+FRUIT_PREVENTS=			ZEROCONF_NONE
+FRUIT_PREVENTS_MSG=		MacOSX support requires Zeroconf(AVAHI or MDNSRESPONDER)
+FRUIT_VARS=			SAMBA4_MODULES+=vfs_fruit
+
+GLUSTERFS_LIB_DEPENDS=		libglusterfs.so:net/glusterfs
+GLUSTERFS_CONFIGURE_ENABLE=	glusterfs
+GLUSTERFS_VARS=			SAMBA4_MODULES+=vfs_glusterfs
+
 GPGME_LIB_DEPENDS=		libgpgme.so:security/gpgme
 GPGME_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}gpg>=2.0.0:security/py-gpg@${PY_FLAVOR}
+GPGME_CONFIGURE_WITH=		gpgme
 
 GSSAPI_BUILTIN_USES=		bison
 
+GSSAPI_MIT_USES=		gssapi:mit
 GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
 				--with-system-mitkdc=${GSSAPIBASEDIR}/sbin/krb5kdc \
 				--with-experimental-mit-ad-dc
-GSSAPI_MIT_USES=		gssapi:mit
 
 GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-system-heimdalkrb5 ${GSSAPIBASEDIR}
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
 GSSAPI_HEIMDAL_PREVENTS=	AD_DC
 GSSAPI_HEIMDAL_PREVENTS_MSG=	GSSAPI_HEIMDAL and AD_DC enable conflicting options
 
-LDAP_CONFIGURE_WITH=		ldap
+LDAP_USES=			ldap
 LDAP_CONFIGURE_ON=		--with-ldap
 LDAP_CONFIGURE_OFF=		--without-ldap
-LDAP_USES=			ldap
+LDAP_CONFIGURE_WITH=		ldap
 LDAP_VARS=			SAMBA4_MODULES+=idmap_ldap
 
 LIBZFS_CONFIGURE_WITH=		libzfs
@@ -380,6 +369,10 @@ MANPAGES_BUILD_DEPENDS=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:tex
 				xsltproc:textproc/libxslt
 MANPAGES_CONFIGURE_ENV_OFF=	XSLTPROC="false"
 
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
+MDNSRESPONDER_CONFIGURE_ENABLE=	dnssd
+MDNSRESPONDER_VARS=		SAMBA4_SERVICES+=mdnsd
+
 PROFILE_CONFIGURE_WITH=		profiling-data
 
 QUOTAS_CONFIGURE_WITH=		quotas
@@ -388,6 +381,7 @@ SYSLOG_CONFIGURE_WITH=		syslog
 
 UTMP_CONFIGURE_WITH=		utmp
 
+ZEROCONF_NONE_MAKE_ENV=		ZEROCONF=none
 ##############################################################################
 .include <bsd.port.options.mk>
 ##############################################################################
