@@ -1,0 +1,7 @@
+aiobreaker is a Python implementation of the Circuit Breaker pattern, described
+in Michael T. Nygard's book Release It!.
+
+Circuit breakers exist to allow one subsystem to fail without destroying the
+entire system. This is done by wrapping dangerous operations (typically
+integration points) with a component that can circumvent calls when the system
+is not healthy.
