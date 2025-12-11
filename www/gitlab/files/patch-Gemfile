@@ -1,4 +1,4 @@
---- Gemfile.orig	2025-11-19 16:58:17 UTC
+--- Gemfile.orig	2025-12-10 01:46:48 UTC
 +++ Gemfile
 @@ -169,7 +169,7 @@ gem 'graphql', '2.5.11', feature_category: :api
  
@@ -154,7 +154,7 @@
 -  # Moved in `test` because https://gitlab.com/gitlab-org/gitlab/-/issues/217527
 -  gem 'derailed_benchmarks', require: false, feature_category: :shared
 -
--  gem 'gitlab_quality-test_tooling', '~> 2.26.0', require: false, feature_category: :tooling
+-  gem 'gitlab_quality-test_tooling', '~> 3.1.0', require: false, feature_category: :tooling
 -end
 -
  gem 'octokit', '~> 9.0', feature_category: :importers

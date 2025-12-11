@@ -163,7 +163,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-rouge-gitlab>=4.6.1<4.7:textproc/rubygem-rouge-gitlab \
 	rubygem-truncato>=0.7.13<0.8.0:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.18.10<2:textproc/rubygem-nokogiri \
-	rubygem-gitlab-glfm-markdown>=0.0.38<0.1:textproc/rubygem-gitlab-glfm-markdown \
+	rubygem-gitlab-glfm-markdown>=0.0.39<0.1:textproc/rubygem-gitlab-glfm-markdown \
 	rubygem-tanuki_emoji>=0.13<1:graphics/rubygem-tanuki_emoji \
 	rubygem-unicode-emoji>=4.0.4<5:devel/rubygem-unicode-emoji \
 	rubygem-icalendar-gitlab>=2.10.3<2.11:devel/rubygem-icalendar-gitlab \
