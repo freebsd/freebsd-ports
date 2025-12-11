@@ -28,12 +28,13 @@ BUILD=	0.9.0
 
 GH_ACCOUNT=	patric-r
 USE_GITHUB=	yes
+JAVA_VERSION=	8
 
 post-extract:
 	@${TAR} -xf ${DISTDIR}/jvmtop-maven-repository-${BUILD}.tar.gz -C ${WRKSRC}
 
 do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/mvn -o -Dmaven.repo.local=.m2/repository ${INSTALL}
+	cd ${WRKSRC} && JAVA_HOME=${JAVA_HOME} ${LOCALBASE}/bin/mvn -o -Dmaven.repo.local=.m2/repository ${INSTALL}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
