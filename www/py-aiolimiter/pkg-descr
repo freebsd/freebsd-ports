@@ -1,0 +1,3 @@
+An efficient implementation of a rate limiter for asyncio.
+
+This project implements the Leaky bucket algorithm.

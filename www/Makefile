@@ -1495,6 +1495,7 @@
     SUBDIR += py-aiohttp-session
     SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-aiohttp_cors
+    SUBDIR += py-aiolimiter
     SUBDIR += py-aioquic
     SUBDIR += py-aioresponses
     SUBDIR += py-aiostream
