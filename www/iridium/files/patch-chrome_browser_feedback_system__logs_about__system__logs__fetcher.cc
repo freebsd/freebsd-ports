@@ -1,4 +1,4 @@
---- chrome/browser/feedback/system_logs/about_system_logs_fetcher.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/feedback/system_logs/about_system_logs_fetcher.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/feedback/system_logs/about_system_logs_fetcher.cc
 @@ -38,7 +38,7 @@
  #include "chrome/browser/ash/system_logs/ui_hierarchy_log_source.h"

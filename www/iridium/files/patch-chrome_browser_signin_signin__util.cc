@@ -1,4 +1,4 @@
---- chrome/browser/signin/signin_util.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/signin/signin_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/signin/signin_util.cc
 @@ -50,7 +50,7 @@
  #include "services/network/public/mojom/cookie_manager.mojom.h"

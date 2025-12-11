@@ -1,4 +1,4 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
 @@ -48,7 +48,7 @@
  #include "printing/backend/cups_connection_pool.h"

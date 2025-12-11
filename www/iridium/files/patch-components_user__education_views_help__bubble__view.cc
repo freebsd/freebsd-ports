@@ -1,4 +1,4 @@
---- components/user_education/views/help_bubble_view.cc.orig	2025-09-11 13:19:19 UTC
+--- components/user_education/views/help_bubble_view.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/user_education/views/help_bubble_view.cc
 @@ -269,7 +269,7 @@ DEFINE_CLASS_ELEMENT_IDENTIFIER_VALUE(HelpBubbleView, 
  // TODO(https://crbug.com/382611284): Temporarily handle the case when the

@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_metrics.cc.orig	2025-10-28 14:29:43 UTC
+--- third_party/blink/renderer/platform/fonts/font_metrics.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/blink/renderer/platform/fonts/font_metrics.cc
 @@ -40,7 +40,7 @@
  namespace blink {

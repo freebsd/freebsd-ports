@@ -1,4 +1,4 @@
---- services/network/network_service.cc.orig	2025-10-28 14:29:43 UTC
+--- services/network/network_service.cc.orig	2025-12-10 15:04:57 UTC
 +++ services/network/network_service.cc
 @@ -108,11 +108,11 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"

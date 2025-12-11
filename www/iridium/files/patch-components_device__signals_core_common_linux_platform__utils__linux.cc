@@ -1,4 +1,4 @@
---- components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2025-10-28 14:29:43 UTC
+--- components/device_signals/core/common/linux/platform_utils_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/device_signals/core/common/linux/platform_utils_linux.cc
 @@ -4,12 +4,23 @@
  

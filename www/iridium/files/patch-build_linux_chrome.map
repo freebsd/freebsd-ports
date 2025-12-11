@@ -1,4 +1,4 @@
---- build/linux/chrome.map.orig	2025-05-07 06:48:23 UTC
+--- build/linux/chrome.map.orig	2025-12-10 15:04:57 UTC
 +++ build/linux/chrome.map
 @@ -20,6 +20,10 @@ global:
    # Program entry point.

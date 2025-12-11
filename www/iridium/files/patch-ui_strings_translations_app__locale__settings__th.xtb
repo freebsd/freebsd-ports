@@ -1,4 +1,4 @@
---- ui/strings/translations/app_locale_settings_th.xtb.orig	2025-05-07 06:48:23 UTC
+--- ui/strings/translations/app_locale_settings_th.xtb.orig	2025-12-10 15:04:57 UTC
 +++ ui/strings/translations/app_locale_settings_th.xtb
 @@ -6,7 +6,7 @@
    <translation id="IDS_WEB_FONT_FAMILY">Tahoma,sans-serif</translation>

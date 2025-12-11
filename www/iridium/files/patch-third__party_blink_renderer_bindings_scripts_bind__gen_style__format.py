@@ -1,4 +1,4 @@
---- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2025-05-07 06:48:23 UTC
+--- third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2025-12-10 15:04:57 UTC
 +++ third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
 @@ -30,7 +30,7 @@ def init(root_src_dir, enable_style_format=True):
  

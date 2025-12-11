@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/enterprise/signin/interstitials/managed_profile_required_page.cc
 @@ -95,7 +95,7 @@ void ManagedProfileRequiredPage::CommandReceived(const
  

@@ -1,4 +1,4 @@
---- ui/gtk/gtk_compat.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/gtk/gtk_compat.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/gtk/gtk_compat.cc
 @@ -64,27 +64,47 @@ auto DlCast(void* symbol) {
  }

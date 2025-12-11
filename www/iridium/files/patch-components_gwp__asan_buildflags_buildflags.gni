@@ -1,4 +1,4 @@
---- components/gwp_asan/buildflags/buildflags.gni.orig	2025-11-06 10:11:34 UTC
+--- components/gwp_asan/buildflags/buildflags.gni.orig	2025-12-10 15:04:57 UTC
 +++ components/gwp_asan/buildflags/buildflags.gni
 @@ -11,10 +11,10 @@ import("//build/config/compiler/compiler.gni")
  # Android requires frame pointers for unwinding, unwind tables aren't shipped in

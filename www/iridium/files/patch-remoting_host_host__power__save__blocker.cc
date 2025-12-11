@@ -1,4 +1,4 @@
---- remoting/host/host_power_save_blocker.cc.orig	2025-11-06 10:11:34 UTC
+--- remoting/host/host_power_save_blocker.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/host_power_save_blocker.cc
 @@ -29,7 +29,7 @@ HostPowerSaveBlocker::~HostPowerSaveBlocker() {
  

@@ -1,4 +1,4 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2025-11-06 10:11:34 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2025-12-10 15:04:57 UTC
 +++ pdf/pdfium/pdfium_engine.cc
 @@ -116,7 +116,7 @@
  #include "ui/accessibility/ax_features.mojom-features.h"

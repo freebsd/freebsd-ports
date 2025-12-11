@@ -1,4 +1,4 @@
---- third_party/zlib/cpu_features.c.orig	2025-05-07 06:48:23 UTC
+--- third_party/zlib/cpu_features.c.orig	2025-12-10 15:04:57 UTC
 +++ third_party/zlib/cpu_features.c
 @@ -39,7 +39,8 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmul = 0;
  #ifndef CPU_NO_SIMD

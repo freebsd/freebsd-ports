@@ -1,6 +1,6 @@
---- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/enterprise/util/managed_browser_utils.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
-@@ -300,7 +300,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+@@ -302,7 +302,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
    // The updated consent screen also ask the user for consent to share device
    // signals.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    profile->GetPrefs()->SetBoolean(
        device_signals::prefs::kDeviceSignalsPermanentConsentReceived, accepted);
  #endif
-@@ -309,7 +309,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+@@ -311,7 +311,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
        profile_manager->GetProfileAttributesStorage()
            .GetProfileAttributesWithPath(profile->GetPath());
    if (entry) {
@@ -18,7 +18,7 @@
      SetEnterpriseProfileLabel(profile);
  #endif
      entry->SetUserAcceptedAccountManagement(accepted);
-@@ -408,7 +408,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
+@@ -410,7 +410,7 @@ bool CanShowEnterpriseProfileUI(Profile* profile) {
  }
  
  bool CanShowEnterpriseBadgingForNTPFooter(Profile* profile) {
@@ -27,12 +27,12 @@
    BrowserManagementNoticeState management_notice_state =
        GetManagementNoticeStateForNTPFooter(profile);
    switch (management_notice_state) {
-@@ -426,7 +426,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
+@@ -428,7 +428,7 @@ bool CanShowEnterpriseBadgingForNTPFooter(Profile* pro
  
  BrowserManagementNoticeState GetManagementNoticeStateForNTPFooter(
      Profile* profile) {
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   if (!policy::ManagementServiceFactory::GetForProfile(profile)
-            ->IsBrowserManaged() ||
-       !g_browser_process->local_state()->GetBoolean(
+   auto* management_service =
+       policy::ManagementServiceFactory::GetForProfile(profile);
+   if (!management_service->IsBrowserManaged() ||

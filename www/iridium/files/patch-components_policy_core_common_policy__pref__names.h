@@ -1,4 +1,4 @@
---- components/policy/core/common/policy_pref_names.h.orig	2025-11-06 10:11:34 UTC
+--- components/policy/core/common/policy_pref_names.h.orig	2025-12-10 15:04:57 UTC
 +++ components/policy/core/common/policy_pref_names.h
 @@ -96,7 +96,7 @@ extern const char kFloatingWorkspaceEnabled[];
  #endif

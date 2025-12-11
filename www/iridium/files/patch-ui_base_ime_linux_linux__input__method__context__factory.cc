@@ -1,4 +1,4 @@
---- ui/base/ime/linux/linux_input_method_context_factory.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/base/ime/linux/linux_input_method_context_factory.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/base/ime/linux/linux_input_method_context_factory.cc
 @@ -9,7 +9,7 @@
  #include "build/build_config.h"

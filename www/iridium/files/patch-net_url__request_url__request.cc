@@ -1,4 +1,4 @@
---- net/url_request/url_request.cc.orig	2025-05-07 06:48:23 UTC
+--- net/url_request/url_request.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/url_request/url_request.cc
 @@ -10,6 +10,7 @@
  #	include <unistd.h>

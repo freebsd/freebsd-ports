@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/page_allocator_constants.h.orig	2025-11-06 10:11:34 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/page_allocator_constants.h.orig	2025-12-10 15:04:57 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/page_allocator_constants.h
 @@ -31,9 +31,9 @@
  #define PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR __attribute__((const))

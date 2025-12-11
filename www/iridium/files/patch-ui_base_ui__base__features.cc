@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.cc.orig	2025-11-06 10:11:34 UTC
+--- ui/base/ui_base_features.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/base/ui_base_features.cc
 @@ -108,7 +108,7 @@ BASE_FEATURE(kWaylandLinuxDrmSyncobj, base::FEATURE_EN
  

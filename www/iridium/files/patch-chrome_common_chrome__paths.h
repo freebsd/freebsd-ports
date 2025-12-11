@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.h.orig	2025-10-28 14:29:43 UTC
+--- chrome/common/chrome_paths.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/common/chrome_paths.h
 @@ -58,7 +58,7 @@ enum {
                       // to set policies for chrome. This directory

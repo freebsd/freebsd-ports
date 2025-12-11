@@ -1,4 +1,4 @@
---- base/rand_util_posix.cc.orig	2025-10-28 14:29:43 UTC
+--- base/rand_util_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/rand_util_posix.cc
 @@ -30,7 +30,7 @@
  #include "build/build_config.h"

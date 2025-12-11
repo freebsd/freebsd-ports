@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/password_manual_fallback_flow.cc.orig	2025-10-28 14:29:43 UTC
+--- components/password_manager/core/browser/password_manual_fallback_flow.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/password_manager/core/browser/password_manual_fallback_flow.cc
 @@ -46,7 +46,7 @@ std::u16string GetUsernameFromLabel(const std::u16stri
  }

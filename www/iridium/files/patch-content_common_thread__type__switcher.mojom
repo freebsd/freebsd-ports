@@ -1,4 +1,4 @@
---- content/common/thread_type_switcher.mojom.orig	2025-05-07 06:48:23 UTC
+--- content/common/thread_type_switcher.mojom.orig	2025-12-10 15:04:57 UTC
 +++ content/common/thread_type_switcher.mojom
 @@ -10,6 +10,6 @@ import "mojo/public/mojom/base/thread_type.mojom";
  // occur in a child process due to its sandbox, e.g. on Linux and ChromeOS.

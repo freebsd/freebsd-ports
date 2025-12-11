@@ -1,4 +1,4 @@
---- components/collaboration/public/collaboration_controller_delegate.h.orig	2025-11-06 10:11:34 UTC
+--- components/collaboration/public/collaboration_controller_delegate.h.orig	2025-12-10 15:04:57 UTC
 +++ components/collaboration/public/collaboration_controller_delegate.h
 @@ -125,7 +125,7 @@ class CollaborationControllerDelegate {
          case Type::kSigninDisabledByPolicy:

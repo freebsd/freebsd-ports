@@ -1,4 +1,4 @@
---- net/socket/udp_socket_unittest.cc.orig	2025-10-28 14:29:43 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/socket/udp_socket_unittest.cc
 @@ -396,7 +396,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);

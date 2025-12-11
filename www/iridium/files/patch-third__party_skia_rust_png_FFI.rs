@@ -1,4 +1,4 @@
---- third_party/skia/rust/png/FFI.rs.orig	2025-11-06 10:11:34 UTC
+--- third_party/skia/rust/png/FFI.rs.orig	2025-12-10 15:04:57 UTC
 +++ third_party/skia/rust/png/FFI.rs
 @@ -246,6 +246,7 @@ mod ffi {
          type StreamWriter;

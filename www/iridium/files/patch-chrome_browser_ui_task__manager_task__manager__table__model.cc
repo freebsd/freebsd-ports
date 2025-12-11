@@ -1,4 +1,4 @@
---- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/ui/task_manager/task_manager_table_model.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/task_manager/task_manager_table_model.cc
 @@ -374,7 +374,7 @@ TaskManagerTableModel::~TaskManagerTableModel() {
    // Note: system_total_time_ is used for both since there is no functional

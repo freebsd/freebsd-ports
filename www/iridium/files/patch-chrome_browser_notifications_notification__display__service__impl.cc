@@ -1,4 +1,4 @@
---- chrome/browser/notifications/notification_display_service_impl.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/notifications/notification_display_service_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/notifications/notification_display_service_impl.cc
 @@ -31,7 +31,7 @@
  #endif

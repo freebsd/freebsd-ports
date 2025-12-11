@@ -1,4 +1,4 @@
---- chrome/common/extensions/permissions/chrome_permission_message_rules.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/common/extensions/permissions/chrome_permission_message_rules.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/common/extensions/permissions/chrome_permission_message_rules.cc
 @@ -280,7 +280,7 @@ class USBDevicesFormatter : public ChromePermissionMes
  int GetEnterpriseReportingPrivatePermissionMessageId() {

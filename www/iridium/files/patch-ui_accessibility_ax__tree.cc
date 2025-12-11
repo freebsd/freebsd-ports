@@ -1,4 +1,4 @@
---- ui/accessibility/ax_tree.cc.orig	2025-10-28 14:29:43 UTC
+--- ui/accessibility/ax_tree.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/accessibility/ax_tree.cc
 @@ -700,7 +700,7 @@ struct AXTreeUpdateState {
    // (crrev.com/c/2892259).

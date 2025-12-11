@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/enterprise/profile_management/profile_management_navigation_throttle.cc
 @@ -67,8 +67,8 @@ base::flat_map<std::string, SAMLProfileAttributes>& Ge
    // TODO(crbug.com/40267996): Add actual domains with attribute names.

@@ -1,4 +1,4 @@
---- components/feed/core/v2/proto_util.cc.orig	2025-10-28 14:29:43 UTC
+--- components/feed/core/v2/proto_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/feed/core/v2/proto_util.cc
 @@ -92,8 +92,8 @@ feedwire::Version GetPlatformVersionMessage() {
  

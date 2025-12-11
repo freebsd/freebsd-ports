@@ -1,4 +1,4 @@
---- remoting/host/chromoting_host.cc.orig	2025-09-11 13:19:19 UTC
+--- remoting/host/chromoting_host.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/chromoting_host.cc
 @@ -138,7 +138,7 @@ void ChromotingHost::Start(const std::string& host_own
        &ChromotingHost::OnIncomingSession, base::Unretained(this)));

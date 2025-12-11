@@ -1,4 +1,4 @@
---- components/gwp_asan/client/gwp_asan_features.cc.orig	2025-09-11 13:19:19 UTC
+--- components/gwp_asan/client/gwp_asan_features.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/gwp_asan/client/gwp_asan_features.cc
 @@ -9,7 +9,7 @@
  namespace gwp_asan::internal {

@@ -1,4 +1,4 @@
---- build/linux/strip_binary.gni.orig	2025-11-24 05:40:57 UTC
+--- build/linux/strip_binary.gni.orig	2025-12-10 15:04:57 UTC
 +++ build/linux/strip_binary.gni
 @@ -21,8 +21,8 @@ template("strip_binary") {
                             "testonly",

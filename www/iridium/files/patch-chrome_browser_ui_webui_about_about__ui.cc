@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/about/about_ui.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/ui/webui/about/about_ui.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/webui/about/about_ui.cc
 @@ -415,7 +415,7 @@ using about_ui::AppendHeader;
  

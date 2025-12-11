@@ -1,4 +1,4 @@
---- media/video/renderable_gpu_memory_buffer_video_frame_pool.cc.orig	2025-10-28 14:29:43 UTC
+--- media/video/renderable_gpu_memory_buffer_video_frame_pool.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/video/renderable_gpu_memory_buffer_video_frame_pool.cc
 @@ -196,7 +196,7 @@ bool FrameResources::Initialize(VideoPixelFormat forma
  

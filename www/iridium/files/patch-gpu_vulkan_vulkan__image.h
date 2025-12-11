@@ -1,4 +1,4 @@
---- gpu/vulkan/vulkan_image.h.orig	2025-09-11 13:19:19 UTC
+--- gpu/vulkan/vulkan_image.h.orig	2025-12-10 15:04:57 UTC
 +++ gpu/vulkan/vulkan_image.h
 @@ -86,7 +86,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanImage {
        VkImageUsageFlags usage,

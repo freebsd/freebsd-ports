@@ -1,4 +1,4 @@
---- third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc.orig	2025-11-06 10:11:34 UTC
+--- third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/blink/renderer/modules/webgpu/gpu_canvas_context.cc
 @@ -255,7 +255,7 @@ GPUCanvasContext::PaintRenderingResultsToCanvas(
  

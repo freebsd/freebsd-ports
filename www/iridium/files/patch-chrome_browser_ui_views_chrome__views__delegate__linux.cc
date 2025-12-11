@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/chrome_views_delegate_linux.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/ui/views/chrome_views_delegate_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/views/chrome_views_delegate_linux.cc
 @@ -27,7 +27,7 @@ bool IsDesktopEnvironmentUnity() {
    return desktop_env == base::nix::DESKTOP_ENVIRONMENT_UNITY;

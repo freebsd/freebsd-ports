@@ -1,4 +1,4 @@
---- tools/generate_stubs/rules.gni.orig	2025-05-07 06:48:23 UTC
+--- tools/generate_stubs/rules.gni.orig	2025-12-10 15:04:57 UTC
 +++ tools/generate_stubs/rules.gni
 @@ -110,7 +110,6 @@ template("generate_stubs") {
        "${target_gen_dir}/${invoker.output_name}.cc",

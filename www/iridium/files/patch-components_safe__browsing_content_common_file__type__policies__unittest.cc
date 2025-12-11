@@ -1,4 +1,4 @@
---- components/safe_browsing/content/common/file_type_policies_unittest.cc.orig	2025-05-07 06:48:23 UTC
+--- components/safe_browsing/content/common/file_type_policies_unittest.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/safe_browsing/content/common/file_type_policies_unittest.cc
 @@ -146,7 +146,7 @@ TEST_F(FileTypePoliciesTest, UnpackResourceBundle) {
    EXPECT_EQ(142, file_type.uma_value());

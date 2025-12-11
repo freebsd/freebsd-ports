@@ -1,4 +1,4 @@
---- content/browser/browser_url_handler_impl.cc.orig	2025-09-11 13:19:19 UTC
+--- content/browser/browser_url_handler_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/browser_url_handler_impl.cc
 @@ -13,6 +13,7 @@
  #include "content/browser/webui/web_ui_impl.h"

@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/layout/layout_view.cc.orig	2025-09-11 13:19:19 UTC
+--- third_party/blink/renderer/core/layout/layout_view.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/blink/renderer/core/layout/layout_view.cc
 @@ -75,7 +75,7 @@
  #include "ui/display/screen_info.h"

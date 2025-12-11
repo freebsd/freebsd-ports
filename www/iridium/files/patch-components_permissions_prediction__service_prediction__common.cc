@@ -1,4 +1,4 @@
---- components/permissions/prediction_service/prediction_common.cc.orig	2025-09-11 13:19:19 UTC
+--- components/permissions/prediction_service/prediction_common.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/permissions/prediction_service/prediction_common.cc
 @@ -36,7 +36,7 @@ int BucketizeValue(int count) {
  

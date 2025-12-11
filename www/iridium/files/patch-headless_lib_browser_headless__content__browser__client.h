@@ -1,4 +1,4 @@
---- headless/lib/browser/headless_content_browser_client.h.orig	2025-09-11 13:19:19 UTC
+--- headless/lib/browser/headless_content_browser_client.h.orig	2025-12-10 15:04:57 UTC
 +++ headless/lib/browser/headless_content_browser_client.h
 @@ -48,7 +48,7 @@ class HeadlessContentBrowserClient : public content::C
    CreateDevToolsManagerDelegate() override;

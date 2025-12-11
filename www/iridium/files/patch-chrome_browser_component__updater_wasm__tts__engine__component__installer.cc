@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/component_updater/wasm_tts_engine_component_installer.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/component_updater/wasm_tts_engine_component_installer.cc
 @@ -11,7 +11,7 @@
  #include "components/prefs/pref_registry_simple.h"

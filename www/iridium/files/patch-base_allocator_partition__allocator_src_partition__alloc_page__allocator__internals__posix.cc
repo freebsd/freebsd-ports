@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc.orig	2025-09-11 13:19:19 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/page_allocator_internals_posix.cc
 @@ -44,7 +44,7 @@ uint32_t SecTaskGetCodeSignStatus(SecTaskRef task) API
  

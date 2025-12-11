@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2025-11-06 10:11:34 UTC
+--- content/app/content_main_runner_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -151,18 +151,21 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"

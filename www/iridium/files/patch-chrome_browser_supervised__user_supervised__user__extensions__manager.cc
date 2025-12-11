@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_extensions_manager.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/supervised_user/supervised_user_extensions_manager.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/supervised_user/supervised_user_extensions_manager.cc
 @@ -345,7 +345,7 @@ void SupervisedUserExtensionsManager::
      ActivateManagementPolicyAndUpdateRegistration() {

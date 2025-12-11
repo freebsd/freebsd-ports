@@ -1,4 +1,4 @@
---- services/network/network_service.h.orig	2025-10-28 14:29:43 UTC
+--- services/network/network_service.h.orig	2025-12-10 15:04:57 UTC
 +++ services/network/network_service.h
 @@ -243,7 +243,7 @@ class COMPONENT_EXPORT(NETWORK_SERVICE) NetworkService
        const std::vector<ContentSettingPatternSource>& settings) override;

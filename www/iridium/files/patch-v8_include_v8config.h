@@ -1,4 +1,4 @@
---- v8/include/v8config.h.orig	2025-11-06 10:11:34 UTC
+--- v8/include/v8config.h.orig	2025-12-10 15:04:57 UTC
 +++ v8/include/v8config.h
 @@ -207,6 +207,8 @@ path. Add it with -I<path> to the command line
    && !defined(V8_TARGET_OS_IOS) \

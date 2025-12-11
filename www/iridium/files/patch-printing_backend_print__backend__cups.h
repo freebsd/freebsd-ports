@@ -1,4 +1,4 @@
---- printing/backend/print_backend_cups.h.orig	2025-09-11 13:19:19 UTC
+--- printing/backend/print_backend_cups.h.orig	2025-12-10 15:04:57 UTC
 +++ printing/backend/print_backend_cups.h
 @@ -17,7 +17,7 @@
  #include "printing/mojom/print.mojom.h"

@@ -1,4 +1,4 @@
---- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2025-09-11 13:19:19 UTC
+--- ui/gfx/mojom/native_handle_types_mojom_traits.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/gfx/mojom/native_handle_types_mojom_traits.h
 @@ -18,7 +18,7 @@
  #include "ui/gfx/gpu_memory_buffer_handle.h"

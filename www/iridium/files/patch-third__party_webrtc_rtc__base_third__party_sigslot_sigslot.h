@@ -1,4 +1,4 @@
---- third_party/webrtc/rtc_base/third_party/sigslot/sigslot.h.orig	2025-05-07 06:48:23 UTC
+--- third_party/webrtc/rtc_base/third_party/sigslot/sigslot.h.orig	2025-12-10 15:04:57 UTC
 +++ third_party/webrtc/rtc_base/third_party/sigslot/sigslot.h
 @@ -178,6 +178,10 @@ class multi_threaded_local {
  #endif  // _SIGSLOT_HAS_WIN32_THREADS

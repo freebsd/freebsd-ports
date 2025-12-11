@@ -1,4 +1,4 @@
---- third_party/ipcz/src/reference_drivers/random.cc.orig	2025-09-11 13:19:19 UTC
+--- third_party/ipcz/src/reference_drivers/random.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/ipcz/src/reference_drivers/random.cc
 @@ -53,7 +53,7 @@ decltype(&ProcessPrng) GetProcessPrng() {
  }

@@ -1,4 +1,4 @@
---- content/browser/webui/web_ui_main_frame_observer.cc.orig	2025-05-07 06:48:23 UTC
+--- content/browser/webui/web_ui_main_frame_observer.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.cc
 @@ -47,7 +47,7 @@ std::string RedactURL(const GURL& url) {
  bool IsWebUIJavaScriptErrorReportingSupported() {

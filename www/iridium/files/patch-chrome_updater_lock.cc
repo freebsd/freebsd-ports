@@ -1,4 +1,4 @@
---- chrome/updater/lock.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/updater/lock.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/updater/lock.cc
 @@ -26,7 +26,7 @@ namespace updater {
  std::unique_ptr<ScopedLock> CreateScopedLock(const std::string& name,

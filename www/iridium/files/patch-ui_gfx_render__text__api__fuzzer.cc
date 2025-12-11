@@ -1,4 +1,4 @@
---- ui/gfx/render_text_api_fuzzer.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/gfx/render_text_api_fuzzer.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/gfx/render_text_api_fuzzer.cc
 @@ -19,7 +19,7 @@
  #include "ui/gfx/font_util.h"

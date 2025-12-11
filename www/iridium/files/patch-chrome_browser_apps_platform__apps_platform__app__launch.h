@@ -1,4 +1,4 @@
---- chrome/browser/apps/platform_apps/platform_app_launch.h.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/apps/platform_apps/platform_app_launch.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/apps/platform_apps/platform_app_launch.h
 @@ -38,7 +38,7 @@ bool OpenExtensionApplicationWindow(Profile* profile,
  content::WebContents* OpenExtensionApplicationTab(Profile* profile,

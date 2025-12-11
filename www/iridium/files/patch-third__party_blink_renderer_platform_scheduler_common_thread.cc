@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2025-09-11 13:19:19 UTC
+--- third_party/blink/renderer/platform/scheduler/common/thread.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/blink/renderer/platform/scheduler/common/thread.cc
 @@ -95,7 +95,7 @@ void Thread::CreateAndSetCompositorThread() {
            // the program's lifetime once assigned.

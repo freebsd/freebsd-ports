@@ -1,4 +1,4 @@
---- media/base/libvpx_thread_wrapper.cc.orig	2025-05-07 06:48:23 UTC
+--- media/base/libvpx_thread_wrapper.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/base/libvpx_thread_wrapper.cc
 @@ -5,11 +5,14 @@
  #include "media/base/libvpx_thread_wrapper.h"

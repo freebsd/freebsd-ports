@@ -1,4 +1,4 @@
---- services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ services/service_manager/public/cpp/service_executable/BUILD.gn
 @@ -22,7 +22,7 @@ source_set("support") {
      "//services/service_manager/public/mojom",

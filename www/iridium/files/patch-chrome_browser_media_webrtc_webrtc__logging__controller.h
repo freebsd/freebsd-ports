@@ -1,6 +1,6 @@
---- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/media/webrtc/webrtc_logging_controller.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/media/webrtc/webrtc_logging_controller.h
-@@ -133,7 +133,7 @@ class WebRtcLoggingController
+@@ -134,7 +134,7 @@ class WebRtcLoggingController
                           size_t web_app_id,
                           const StartEventLoggingCallback& callback);
  
@@ -9,7 +9,7 @@
    // Ensures that the WebRTC Logs directory exists and then grants render
    // process access to the 'WebRTC Logs' directory, and invokes |callback| with
    // the ids necessary to create a DirectoryEntry object.
-@@ -197,7 +197,7 @@ class WebRtcLoggingController
+@@ -198,7 +198,7 @@ class WebRtcLoggingController
  
    content::BrowserContext* GetBrowserContext() const;
  

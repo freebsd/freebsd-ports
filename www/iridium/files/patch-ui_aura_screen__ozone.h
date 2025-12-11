@@ -1,4 +1,4 @@
---- ui/aura/screen_ozone.h.orig	2025-10-28 14:29:43 UTC
+--- ui/aura/screen_ozone.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/aura/screen_ozone.h
 @@ -44,7 +44,7 @@ class AURA_EXPORT ScreenOzone : public display::Screen
    display::Display GetDisplayMatching(

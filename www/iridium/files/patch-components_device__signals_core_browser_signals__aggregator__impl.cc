@@ -1,4 +1,4 @@
---- components/device_signals/core/browser/signals_aggregator_impl.cc.orig	2025-05-07 06:48:23 UTC
+--- components/device_signals/core/browser/signals_aggregator_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/device_signals/core/browser/signals_aggregator_impl.cc
 @@ -64,7 +64,7 @@ SignalsAggregatorImpl::SignalsAggregatorImpl(
  

@@ -1,4 +1,4 @@
---- content/browser/service_host/utility_process_host_receiver_bindings.cc.orig	2025-05-07 06:48:23 UTC
+--- content/browser/service_host/utility_process_host_receiver_bindings.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/service_host/utility_process_host_receiver_bindings.cc
 @@ -10,7 +10,7 @@
  #include "content/public/common/content_client.h"

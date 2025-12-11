@@ -1,4 +1,4 @@
---- build/toolchain/openbsd/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- build/toolchain/openbsd/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ build/toolchain/openbsd/BUILD.gn
 @@ -0,0 +1,66 @@
 +# Copyright 2013 The Chromium Authors. All rights reserved.

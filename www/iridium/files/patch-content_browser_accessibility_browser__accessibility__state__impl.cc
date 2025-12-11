@@ -1,4 +1,4 @@
---- content/browser/accessibility/browser_accessibility_state_impl.cc.orig	2025-09-11 13:19:19 UTC
+--- content/browser/accessibility/browser_accessibility_state_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/accessibility/browser_accessibility_state_impl.cc
 @@ -296,7 +296,7 @@ BrowserAccessibilityStateImpl* BrowserAccessibilitySta
  

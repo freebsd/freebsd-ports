@@ -1,4 +1,4 @@
---- chrome/browser/process_singleton_posix.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/process_singleton_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/process_singleton_posix.cc
 @@ -102,7 +102,7 @@
  #include "ui/base/l10n/l10n_util.h"

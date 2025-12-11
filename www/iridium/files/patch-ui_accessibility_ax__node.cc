@@ -1,4 +1,4 @@
---- ui/accessibility/ax_node.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/accessibility/ax_node.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/accessibility/ax_node.cc
 @@ -1547,7 +1547,7 @@ AXNode::GetExtraMacNodes() const {
    return &table_info->extra_mac_nodes;

@@ -1,4 +1,4 @@
---- chrome/common/chrome_content_client.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/common/chrome_content_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/common/chrome_content_client.cc
 @@ -62,12 +62,12 @@
  #include "url/url_constants.h"

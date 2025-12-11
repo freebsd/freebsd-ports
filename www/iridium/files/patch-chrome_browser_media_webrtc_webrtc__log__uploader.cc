@@ -1,4 +1,4 @@
---- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/media/webrtc/webrtc_log_uploader.cc
 @@ -100,7 +100,7 @@ std::string GetLogUploadProduct() {
    const char product[] = "Chrome";

@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2025-05-07 06:48:23 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -21,7 +21,7 @@
  #include "base/win/wincred_shim.h"

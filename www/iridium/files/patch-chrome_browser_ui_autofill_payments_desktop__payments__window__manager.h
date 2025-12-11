@@ -1,4 +1,4 @@
---- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h
 @@ -14,7 +14,7 @@
  #include "components/autofill/core/browser/payments/payments_window_manager.h"

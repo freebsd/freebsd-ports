@@ -1,4 +1,4 @@
---- chrome/browser/upgrade_detector/version_history_client.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/upgrade_detector/version_history_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/upgrade_detector/version_history_client.cc
 @@ -176,7 +176,7 @@ GURL GetVersionReleasesUrl(base::Version version) {
  #define CURRENT_PLATFORM "win"

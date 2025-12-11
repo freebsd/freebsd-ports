@@ -1,4 +1,4 @@
---- chrome/app/chrome_main_delegate.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/app/chrome_main_delegate.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/app/chrome_main_delegate.cc
 @@ -105,7 +105,7 @@
  #include "ui/base/ui_base_switches.h"

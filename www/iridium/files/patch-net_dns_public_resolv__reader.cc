@@ -1,4 +1,4 @@
---- net/dns/public/resolv_reader.cc.orig	2025-09-11 13:19:19 UTC
+--- net/dns/public/resolv_reader.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/dns/public/resolv_reader.cc
 @@ -34,7 +34,7 @@ std::unique_ptr<ScopedResState> ResolvReader::GetResSt
  }

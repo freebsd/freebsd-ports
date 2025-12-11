@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/ui/views/frame/system_menu_model_builder.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/views/frame/system_menu_model_builder.cc
 @@ -81,7 +81,7 @@ void SystemMenuModelBuilder::BuildMenu(ui::SimpleMenuM
  

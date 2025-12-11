@@ -1,4 +1,4 @@
---- base/files/scoped_file.cc.orig	2025-05-07 06:48:23 UTC
+--- base/files/scoped_file.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/files/scoped_file.cc
 @@ -32,7 +32,7 @@ void ScopedFDCloseTraits::Free(int fd) {
    int ret = IGNORE_EINTR(close(fd));

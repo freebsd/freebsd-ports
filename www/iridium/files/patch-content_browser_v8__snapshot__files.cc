@@ -1,4 +1,4 @@
---- content/browser/v8_snapshot_files.cc.orig	2025-11-06 10:11:34 UTC
+--- content/browser/v8_snapshot_files.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/v8_snapshot_files.cc
 @@ -36,7 +36,7 @@ void registerContextSnapshotAndroid(
  std::map<std::string, std::variant<base::FilePath, base::ScopedFD>>

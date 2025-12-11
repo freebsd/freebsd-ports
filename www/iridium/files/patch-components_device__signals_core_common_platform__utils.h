@@ -1,4 +1,4 @@
---- components/device_signals/core/common/platform_utils.h.orig	2025-10-28 14:29:43 UTC
+--- components/device_signals/core/common/platform_utils.h.orig	2025-12-10 15:04:57 UTC
 +++ components/device_signals/core/common/platform_utils.h
 @@ -54,7 +54,7 @@ SettingValue GetSecureBootEnabled();
  std::optional<std::string> GetWindowsMachineDomain();

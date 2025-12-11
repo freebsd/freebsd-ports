@@ -1,4 +1,4 @@
---- media/capture/video/video_capture_buffer_tracker_factory_impl.cc.orig	2025-05-07 06:48:23 UTC
+--- media/capture/video/video_capture_buffer_tracker_factory_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/capture/video/video_capture_buffer_tracker_factory_impl.cc
 @@ -13,7 +13,7 @@
  #include "media/capture/video/chromeos/gpu_memory_buffer_tracker_cros.h"

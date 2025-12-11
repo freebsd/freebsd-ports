@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/cloud_content_scanning/binary_upload_service.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/safe_browsing/cloud_content_scanning/binary_upload_service.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/safe_browsing/cloud_content_scanning/binary_upload_service.cc
-@@ -20,7 +20,7 @@
+@@ -21,7 +21,7 @@
  #include "components/safe_browsing/core/common/safebrowsing_switches.h"
  #include "net/base/url_util.h"
  

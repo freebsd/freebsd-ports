@@ -1,4 +1,4 @@
---- components/regional_capabilities/regional_capabilities_switches.cc.orig	2025-11-06 10:11:34 UTC
+--- components/regional_capabilities/regional_capabilities_switches.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/regional_capabilities/regional_capabilities_switches.cc
 @@ -23,7 +23,7 @@ BASE_FEATURE(kResolveRegionalCapabilitiesFromDevice,
               base::FEATURE_ENABLED_BY_DEFAULT);
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) 
  BASE_FEATURE(kUseFinchPermanentCountryForFetchCountryId,
               "UseFinchPermanentCountyForFetchCountryId",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+              base::FEATURE_ENABLED_BY_DEFAULT);

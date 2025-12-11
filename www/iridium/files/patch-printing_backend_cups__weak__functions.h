@@ -1,4 +1,4 @@
---- printing/backend/cups_weak_functions.h.orig	2025-09-11 13:19:19 UTC
+--- printing/backend/cups_weak_functions.h.orig	2025-12-10 15:04:57 UTC
 +++ printing/backend/cups_weak_functions.h
 @@ -6,7 +6,7 @@
  

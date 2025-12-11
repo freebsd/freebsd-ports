@@ -1,4 +1,4 @@
---- third_party/swiftshader/src/System/Configurator.cpp.orig	2025-05-07 06:48:23 UTC
+--- third_party/swiftshader/src/System/Configurator.cpp.orig	2025-12-10 15:04:57 UTC
 +++ third_party/swiftshader/src/System/Configurator.cpp
 @@ -38,6 +38,9 @@ namespace sw {
  

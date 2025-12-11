@@ -1,4 +1,4 @@
---- content/browser/devtools/devtools_frontend_host_impl.cc.orig	2025-10-28 14:29:43 UTC
+--- content/browser/devtools/devtools_frontend_host_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/devtools/devtools_frontend_host_impl.cc
 @@ -25,7 +25,7 @@
  #include "third_party/blink/public/common/associated_interfaces/associated_interface_provider.h"

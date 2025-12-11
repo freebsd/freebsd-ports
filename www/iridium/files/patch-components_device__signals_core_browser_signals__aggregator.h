@@ -1,4 +1,4 @@
---- components/device_signals/core/browser/signals_aggregator.h.orig	2025-05-07 06:48:23 UTC
+--- components/device_signals/core/browser/signals_aggregator.h.orig	2025-12-10 15:04:57 UTC
 +++ components/device_signals/core/browser/signals_aggregator.h
 @@ -22,7 +22,7 @@ class SignalsAggregator : public KeyedService {
  

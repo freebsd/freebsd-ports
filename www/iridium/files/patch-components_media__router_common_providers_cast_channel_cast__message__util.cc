@@ -1,4 +1,4 @@
---- components/media_router/common/providers/cast/channel/cast_message_util.cc.orig	2025-05-07 06:48:23 UTC
+--- components/media_router/common/providers/cast/channel/cast_message_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/media_router/common/providers/cast/channel/cast_message_util.cc
 @@ -168,7 +168,7 @@ int GetVirtualConnectPlatformValue() {
    return 4;

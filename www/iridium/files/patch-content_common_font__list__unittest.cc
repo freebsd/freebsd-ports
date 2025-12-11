@@ -1,4 +1,4 @@
---- content/common/font_list_unittest.cc.orig	2025-05-07 06:48:23 UTC
+--- content/common/font_list_unittest.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/common/font_list_unittest.cc
 @@ -48,7 +48,7 @@ TEST(FontList, GetFontList) {
          EXPECT_TRUE(HasFontWithName(fonts, "MS Gothic", "MS Gothic"));

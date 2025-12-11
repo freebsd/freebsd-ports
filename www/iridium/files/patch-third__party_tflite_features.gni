@@ -1,4 +1,4 @@
---- third_party/tflite/features.gni.orig	2025-11-06 10:11:34 UTC
+--- third_party/tflite/features.gni.orig	2025-12-10 15:04:57 UTC
 +++ third_party/tflite/features.gni
 @@ -11,7 +11,7 @@ if (build_with_chromium) {
  

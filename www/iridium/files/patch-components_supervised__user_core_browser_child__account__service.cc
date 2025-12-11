@@ -1,4 +1,4 @@
---- components/supervised_user/core/browser/child_account_service.cc.orig	2025-09-11 13:19:19 UTC
+--- components/supervised_user/core/browser/child_account_service.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/supervised_user/core/browser/child_account_service.cc
 @@ -170,7 +170,7 @@ void ChildAccountService::OnPrimaryAccountChanged(
  void ChildAccountService::UpdateForceGoogleSafeSearch() {

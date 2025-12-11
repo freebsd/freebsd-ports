@@ -1,4 +1,4 @@
---- ui/native_theme/native_theme_base.cc.orig	2025-11-06 10:11:34 UTC
+--- ui/native_theme/native_theme_base.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/native_theme/native_theme_base.cc
 @@ -168,7 +168,7 @@ void NativeThemeBase::PaintImpl(cc::PaintCanvas* canva
                      std::get<ButtonExtraParams>(extra_params), dark_mode,

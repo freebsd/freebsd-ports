@@ -1,4 +1,4 @@
---- gpu/config/gpu_finch_features.cc.orig	2025-11-06 10:11:34 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2025-12-10 15:04:57 UTC
 +++ gpu/config/gpu_finch_features.cc
 @@ -122,7 +122,8 @@ BASE_FEATURE(kAllowHardwareBufferUsageFlagsFromVulkanF
  // Android and Linux.

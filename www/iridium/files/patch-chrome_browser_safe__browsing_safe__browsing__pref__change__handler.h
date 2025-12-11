@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/safe_browsing/safe_browsing_pref_change_handler.h
 @@ -20,7 +20,7 @@
  #endif

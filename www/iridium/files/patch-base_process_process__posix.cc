@@ -1,4 +1,4 @@
---- base/process/process_posix.cc.orig	2025-09-11 13:19:19 UTC
+--- base/process/process_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/process/process_posix.cc
 @@ -25,10 +25,15 @@
  #include "base/trace_event/trace_event.h"

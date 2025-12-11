@@ -1,4 +1,4 @@
---- components/sync/service/sync_prefs.cc.orig	2025-10-28 14:29:43 UTC
+--- components/sync/service/sync_prefs.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/sync/service/sync_prefs.cc
 @@ -840,7 +840,7 @@ bool SyncPrefs::MaybeMigratePrefsForSyncToSigninPart1(
            update_selected_types_dict->EnsureDict(

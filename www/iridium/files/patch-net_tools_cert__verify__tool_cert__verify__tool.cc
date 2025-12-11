@@ -1,4 +1,4 @@
---- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2025-06-19 07:37:57 UTC
+--- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
 @@ -35,7 +35,7 @@
  #include "third_party/boringssl/src/pki/trust_store.h"

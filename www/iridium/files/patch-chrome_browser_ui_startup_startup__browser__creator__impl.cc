@@ -1,4 +1,4 @@
---- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/ui/startup/startup_browser_creator_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/startup/startup_browser_creator_impl.cc
 @@ -81,7 +81,7 @@
  #include "components/app_restore/full_restore_utils.h"

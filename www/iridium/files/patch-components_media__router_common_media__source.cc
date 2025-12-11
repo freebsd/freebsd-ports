@@ -1,4 +1,4 @@
---- components/media_router/common/media_source.cc.orig	2025-09-11 13:19:19 UTC
+--- components/media_router/common/media_source.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/media_router/common/media_source.cc
 @@ -62,7 +62,7 @@ bool IsSystemAudioCaptureSupported() {
  #if BUILDFLAG(IS_MAC)

@@ -1,4 +1,4 @@
---- extensions/shell/browser/shell_extensions_api_client.h.orig	2025-06-19 07:37:57 UTC
+--- extensions/shell/browser/shell_extensions_api_client.h.orig	2025-12-10 15:04:57 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.h
 @@ -42,14 +42,14 @@ class ShellExtensionsAPIClient : public ExtensionsAPIC
        content::BrowserContext* browser_context) const override;

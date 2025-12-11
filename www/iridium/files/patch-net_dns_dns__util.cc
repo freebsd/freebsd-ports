@@ -1,4 +1,4 @@
---- net/dns/dns_util.cc.orig	2025-05-07 06:48:23 UTC
+--- net/dns/dns_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/dns/dns_util.cc
 @@ -29,6 +29,8 @@
  #include "net/dns/public/util.h"

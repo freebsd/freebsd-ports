@@ -1,4 +1,4 @@
---- chrome/browser/regional_capabilities/regional_capabilities_service_factory.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/regional_capabilities/regional_capabilities_service_factory.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/regional_capabilities/regional_capabilities_service_factory.cc
 @@ -21,7 +21,7 @@
  #include "chrome/browser/regional_capabilities/regional_capabilities_service_client_chromeos.h"

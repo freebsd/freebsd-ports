@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/browser_management/browser_management_service.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/enterprise/browser_management/browser_management_service.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/enterprise/browser_management/browser_management_service.h
 @@ -41,7 +41,7 @@ class BrowserManagementService : public ManagementServ
  

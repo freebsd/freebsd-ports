@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/thread_task_runner.cc.orig	2025-11-06 10:11:34 UTC
+--- third_party/perfetto/src/base/thread_task_runner.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/perfetto/src/base/thread_task_runner.cc
 @@ -27,7 +27,8 @@
  #include "perfetto/ext/base/lock_free_task_runner.h"

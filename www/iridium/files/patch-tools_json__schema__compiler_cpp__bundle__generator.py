@@ -1,4 +1,4 @@
---- tools/json_schema_compiler/cpp_bundle_generator.py.orig	2025-09-11 13:19:19 UTC
+--- tools/json_schema_compiler/cpp_bundle_generator.py.orig	2025-12-10 15:04:57 UTC
 +++ tools/json_schema_compiler/cpp_bundle_generator.py
 @@ -140,7 +140,7 @@ class CppBundleGenerator(object):
        elif platform == Platforms.DESKTOP_ANDROID:

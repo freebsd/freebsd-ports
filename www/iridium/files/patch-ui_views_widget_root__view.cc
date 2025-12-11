@@ -1,4 +1,4 @@
---- ui/views/widget/root_view.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/views/widget/root_view.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/views/widget/root_view.cc
 @@ -169,7 +169,7 @@ class AnnounceTextView : public View {
  #if BUILDFLAG(IS_CHROMEOS)

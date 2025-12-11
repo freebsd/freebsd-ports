@@ -1,4 +1,4 @@
---- components/supervised_user/core/common/features.h.orig	2025-09-11 13:19:19 UTC
+--- components/supervised_user/core/common/features.h.orig	2025-12-10 15:04:57 UTC
 +++ components/supervised_user/core/common/features.h
 @@ -20,12 +20,12 @@ BASE_DECLARE_FEATURE(kLocalWebApprovals);
  BASE_DECLARE_FEATURE(kAllowSubframeLocalWebApprovals);

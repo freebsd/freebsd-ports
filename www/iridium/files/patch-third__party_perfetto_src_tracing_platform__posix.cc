@@ -1,4 +1,4 @@
---- third_party/perfetto/src/tracing/platform_posix.cc.orig	2025-05-07 06:48:23 UTC
+--- third_party/perfetto/src/tracing/platform_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/perfetto/src/tracing/platform_posix.cc
 @@ -110,12 +110,13 @@ std::unique_ptr<base::TaskRunner> PlatformPosix::Creat
  }

@@ -1,4 +1,4 @@
---- extensions/common/api/runtime.json.orig	2025-10-28 14:29:43 UTC
+--- extensions/common/api/runtime.json.orig	2025-12-10 15:04:57 UTC
 +++ extensions/common/api/runtime.json
 @@ -85,7 +85,8 @@
              {"name": "android", "description": "Specifies the Android operating system."},

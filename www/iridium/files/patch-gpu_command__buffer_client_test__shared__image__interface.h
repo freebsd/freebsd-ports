@@ -1,4 +1,4 @@
---- gpu/command_buffer/client/test_shared_image_interface.h.orig	2025-09-11 13:19:19 UTC
+--- gpu/command_buffer/client/test_shared_image_interface.h.orig	2025-12-10 15:04:57 UTC
 +++ gpu/command_buffer/client/test_shared_image_interface.h
 @@ -37,7 +37,7 @@ class TestSharedImageInterface : public SharedImageInt
   public:

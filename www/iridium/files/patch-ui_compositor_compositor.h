@@ -1,4 +1,4 @@
---- ui/compositor/compositor.h.orig	2025-09-11 13:19:19 UTC
+--- ui/compositor/compositor.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/compositor/compositor.h
 @@ -462,7 +462,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
    // base::PowerSuspendObserver:

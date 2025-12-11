@@ -1,4 +1,4 @@
---- base/posix/file_descriptor_shuffle.h.orig	2025-05-07 06:48:23 UTC
+--- base/posix/file_descriptor_shuffle.h.orig	2025-12-10 15:04:57 UTC
 +++ base/posix/file_descriptor_shuffle.h
 @@ -26,6 +26,8 @@
  #include "base/base_export.h"

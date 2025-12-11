@@ -1,4 +1,4 @@
---- ui/views/window/default_frame_view.cc.orig	2025-11-06 10:11:34 UTC
+--- ui/views/window/default_frame_view.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/views/window/default_frame_view.cc
 @@ -285,7 +285,7 @@ int DefaultFrameView::NonClientTopBorderHeight() const
  int DefaultFrameView::CaptionButtonY() const {

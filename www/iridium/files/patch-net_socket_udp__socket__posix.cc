@@ -1,4 +1,4 @@
---- net/socket/udp_socket_posix.cc.orig	2025-11-06 10:11:34 UTC
+--- net/socket/udp_socket_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/socket/udp_socket_posix.cc
 @@ -550,12 +550,17 @@ int UDPSocketPosix::SetRecvTos() {
  #endif  // BUILDFLAG(IS_APPLE)

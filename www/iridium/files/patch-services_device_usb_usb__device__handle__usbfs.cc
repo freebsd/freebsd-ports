@@ -1,4 +1,4 @@
---- services/device/usb/usb_device_handle_usbfs.cc.orig	2025-10-28 14:29:43 UTC
+--- services/device/usb/usb_device_handle_usbfs.cc.orig	2025-12-10 15:04:57 UTC
 +++ services/device/usb/usb_device_handle_usbfs.cc
 @@ -34,7 +34,7 @@
  #include "chromeos/dbus/permission_broker/permission_broker_client.h"

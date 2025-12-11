@@ -1,4 +1,4 @@
---- remoting/host/host_attributes.cc.orig	2025-10-28 14:29:43 UTC
+--- remoting/host/host_attributes.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/host_attributes.cc
 @@ -102,7 +102,7 @@ std::string GetHostAttributes() {
    if (media::InitializeMediaFoundation()) {

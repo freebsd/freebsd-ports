@@ -1,4 +1,4 @@
---- base/time/time_now_posix.cc.orig	2025-09-11 13:19:19 UTC
+--- base/time/time_now_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/time/time_now_posix.cc
 @@ -110,7 +110,11 @@ std::optional<TimeTicks> MaybeTimeTicksNowIgnoringOver
  }

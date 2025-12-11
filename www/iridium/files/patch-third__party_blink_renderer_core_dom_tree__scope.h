@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/dom/tree_scope.h.orig	2025-11-06 10:11:34 UTC
+--- third_party/blink/renderer/core/dom/tree_scope.h.orig	2025-12-10 15:04:57 UTC
 +++ third_party/blink/renderer/core/dom/tree_scope.h
 @@ -28,6 +28,7 @@
  #define THIRD_PARTY_BLINK_RENDERER_CORE_DOM_TREE_SCOPE_H_

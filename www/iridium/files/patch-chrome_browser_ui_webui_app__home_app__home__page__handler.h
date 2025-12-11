@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/app_home/app_home_page_handler.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/ui/webui/app_home/app_home_page_handler.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/webui/app_home/app_home_page_handler.h
 @@ -23,7 +23,7 @@
  #include "mojo/public/cpp/bindings/receiver.h"

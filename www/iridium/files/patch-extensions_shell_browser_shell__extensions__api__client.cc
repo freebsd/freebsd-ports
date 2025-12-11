@@ -1,4 +1,4 @@
---- extensions/shell/browser/shell_extensions_api_client.cc.orig	2025-06-19 07:37:57 UTC
+--- extensions/shell/browser/shell_extensions_api_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ extensions/shell/browser/shell_extensions_api_client.cc
 @@ -18,7 +18,7 @@
  #include "extensions/shell/browser/shell_extension_web_contents_observer.h"

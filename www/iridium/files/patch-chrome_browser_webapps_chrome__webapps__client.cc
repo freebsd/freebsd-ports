@@ -1,4 +1,4 @@
---- chrome/browser/webapps/chrome_webapps_client.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/webapps/chrome_webapps_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/webapps/chrome_webapps_client.cc
 @@ -11,7 +11,7 @@
  #include "url/origin.h"

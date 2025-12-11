@@ -1,4 +1,4 @@
---- components/enterprise/watermarking/watermark.cc.orig	2025-09-11 13:19:19 UTC
+--- components/enterprise/watermarking/watermark.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/enterprise/watermarking/watermark.cc
 @@ -29,7 +29,7 @@ gfx::Font WatermarkFont(int font_size) {
        "Segoe UI",

@@ -1,4 +1,4 @@
---- mojo/core/channel.cc.orig	2025-11-06 10:11:34 UTC
+--- mojo/core/channel.cc.orig	2025-12-10 15:04:57 UTC
 +++ mojo/core/channel.cc
 @@ -81,7 +81,11 @@ const size_t kMaxAttachedHandles = 64;
  const size_t kMaxAttachedHandles = 253;
@@ -12,7 +12,16 @@
  Channel::AlignedBuffer MakeAlignedBuffer(size_t size) {
    // Generic allocators (such as malloc) return a pointer that is suitably
    // aligned for storing any type of object with a fundamental alignment
-@@ -1121,7 +1125,7 @@ bool Channel::OnControlMessage(Message::MessageType me
+@@ -274,7 +278,7 @@ bool ShouldRecordSubsampledHistograms() {
+ }  // namespace
+ 
+ #if BUILDFLAG(IS_ANDROID) || \
+-    (BUILDFLAG(IS_LINUX) && defined(FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION))
++    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(FUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION))
+ 
+ namespace {
+ 
+@@ -1306,7 +1310,7 @@ bool Channel::OnControlMessage(Message::MessageType me
  }
  
  // Currently only CrOs, Linux, and Android support upgrades.

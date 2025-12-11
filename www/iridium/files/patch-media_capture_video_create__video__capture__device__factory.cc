@@ -1,4 +1,4 @@
---- media/capture/video/create_video_capture_device_factory.cc.orig	2025-09-11 13:19:19 UTC
+--- media/capture/video/create_video_capture_device_factory.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/capture/video/create_video_capture_device_factory.cc
 @@ -13,7 +13,7 @@
  #include "media/capture/video/fake_video_capture_device_factory.h"

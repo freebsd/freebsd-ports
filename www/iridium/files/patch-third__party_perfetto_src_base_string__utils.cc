@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/string_utils.cc.orig	2025-09-11 13:19:19 UTC
+--- third_party/perfetto/src/base/string_utils.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/perfetto/src/base/string_utils.cc
 @@ -39,7 +39,8 @@ namespace base {
  // Locale-independent as possible version of strtod.

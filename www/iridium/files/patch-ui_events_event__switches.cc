@@ -1,4 +1,4 @@
---- ui/events/event_switches.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/events/event_switches.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/events/event_switches.cc
 @@ -21,7 +21,7 @@ const char kCompensateForUnstablePinchZoom[] =
  // value is a floating point number that is interpreted as a distance in pixels.

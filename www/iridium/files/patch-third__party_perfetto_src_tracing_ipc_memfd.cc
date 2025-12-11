@@ -1,4 +1,4 @@
---- third_party/perfetto/src/tracing/ipc/memfd.cc.orig	2025-06-19 07:37:57 UTC
+--- third_party/perfetto/src/tracing/ipc/memfd.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/perfetto/src/tracing/ipc/memfd.cc
 @@ -20,7 +20,8 @@
  

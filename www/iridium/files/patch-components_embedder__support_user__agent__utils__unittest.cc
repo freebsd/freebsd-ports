@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2025-09-11 13:19:19 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
 @@ -152,7 +152,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
    ASSERT_EQ("CrOS", pieces[0]);

@@ -1,4 +1,4 @@
---- services/audio/audio_sandbox_hook_linux.cc.orig	2025-06-19 07:37:57 UTC
+--- services/audio/audio_sandbox_hook_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ services/audio/audio_sandbox_hook_linux.cc
 @@ -147,6 +147,7 @@ void AddPulseAudioFilePermissions(
  }

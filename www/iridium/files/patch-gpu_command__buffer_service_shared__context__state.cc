@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_context_state.cc.orig	2025-09-11 13:19:19 UTC
+--- gpu/command_buffer/service/shared_context_state.cc.orig	2025-12-10 15:04:57 UTC
 +++ gpu/command_buffer/service/shared_context_state.cc
 @@ -65,7 +65,7 @@
  #include "gpu/vulkan/vulkan_implementation.h"

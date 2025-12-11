@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/webui/certificate_manager/certificate_manager_handler.cc
 @@ -217,7 +217,7 @@ CertificateManagerPageHandler::GetCertSource(
                  CERTIFICATE_TRUST_TYPE_DISTRUSTED,

@@ -1,4 +1,4 @@
---- printing/backend/cups_helper.cc.orig	2025-09-11 13:19:19 UTC
+--- printing/backend/cups_helper.cc.orig	2025-12-10 15:04:57 UTC
 +++ printing/backend/cups_helper.cc
 @@ -13,7 +13,7 @@
  #include "base/time/time.h"

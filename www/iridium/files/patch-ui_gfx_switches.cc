@@ -1,4 +1,4 @@
---- ui/gfx/switches.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/gfx/switches.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/gfx/switches.cc
 @@ -36,7 +36,7 @@ const char kHeadless[] = "headless";
  // See //components/headless/screen_info/README.md for more details.

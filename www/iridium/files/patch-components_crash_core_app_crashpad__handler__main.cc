@@ -1,4 +1,4 @@
---- components/crash/core/app/crashpad_handler_main.cc.orig	2025-05-07 06:48:23 UTC
+--- components/crash/core/app/crashpad_handler_main.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/crash/core/app/crashpad_handler_main.cc
 @@ -10,7 +10,7 @@
  #include "third_party/crashpad/crashpad/handler/handler_main.h"

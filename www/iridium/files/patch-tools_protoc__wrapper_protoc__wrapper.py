@@ -1,4 +1,4 @@
---- tools/protoc_wrapper/protoc_wrapper.py.orig	2025-09-11 13:19:19 UTC
+--- tools/protoc_wrapper/protoc_wrapper.py.orig	2025-12-10 15:04:57 UTC
 +++ tools/protoc_wrapper/protoc_wrapper.py
 @@ -227,15 +227,19 @@ def main(argv):
      if not options.exclude_imports:

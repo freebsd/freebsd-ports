@@ -1,4 +1,4 @@
---- build/config/gcc/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- build/config/gcc/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ build/config/gcc/BUILD.gn
 @@ -32,7 +32,9 @@ declare_args() {
  # See http://gcc.gnu.org/wiki/Visibility

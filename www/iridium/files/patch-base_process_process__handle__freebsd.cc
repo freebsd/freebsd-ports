@@ -1,4 +1,4 @@
---- base/process/process_handle_freebsd.cc.orig	2025-05-07 06:48:23 UTC
+--- base/process/process_handle_freebsd.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/process/process_handle_freebsd.cc
 @@ -3,6 +3,7 @@
  // found in the LICENSE file.

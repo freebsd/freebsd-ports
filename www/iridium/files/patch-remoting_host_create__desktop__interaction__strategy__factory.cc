@@ -1,4 +1,4 @@
---- remoting/host/create_desktop_interaction_strategy_factory.cc.orig	2025-11-06 10:11:34 UTC
+--- remoting/host/create_desktop_interaction_strategy_factory.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/create_desktop_interaction_strategy_factory.cc
 @@ -12,7 +12,7 @@
  #include "remoting/host/desktop_interaction_strategy.h"

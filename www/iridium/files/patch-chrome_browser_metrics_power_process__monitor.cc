@@ -1,4 +1,4 @@
---- chrome/browser/metrics/power/process_monitor.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/metrics/power/process_monitor.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/metrics/power/process_monitor.cc
 @@ -64,7 +64,7 @@ ProcessMonitor::Metrics SampleMetrics(base::ProcessMet
        process_metrics.GetPlatformIndependentCPUUsage());

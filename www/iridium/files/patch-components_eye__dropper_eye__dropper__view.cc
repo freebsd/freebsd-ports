@@ -1,4 +1,4 @@
---- components/eye_dropper/eye_dropper_view.cc.orig	2025-11-06 10:11:34 UTC
+--- components/eye_dropper/eye_dropper_view.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/eye_dropper/eye_dropper_view.cc
 @@ -213,7 +213,7 @@ EyeDropperView::EyeDropperView(gfx::NativeView parent,
    // EyeDropper/WidgetDelegate.

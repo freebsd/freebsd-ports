@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-11-06 10:11:34 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2025-12-10 15:04:57 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
 @@ -92,7 +92,7 @@ if (current_cpu == "x64" || current_cpu == "arm64" || 
  # TODO(crbug.com/329199197): Clean this up when experiments are complete.

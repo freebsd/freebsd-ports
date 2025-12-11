@@ -1,4 +1,4 @@
---- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2025-05-07 06:48:23 UTC
+--- ui/base/dragdrop/os_exchange_data_provider_non_backed.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/base/dragdrop/os_exchange_data_provider_non_backed.cc
 @@ -101,7 +101,7 @@ void OSExchangeDataProviderNonBacked::SetPickledData(
  

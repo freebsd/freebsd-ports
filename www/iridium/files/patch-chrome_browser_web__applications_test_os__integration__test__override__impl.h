@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/test/os_integration_test_override_impl.h.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/web_applications/test/os_integration_test_override_impl.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/web_applications/test/os_integration_test_override_impl.h
 @@ -40,7 +40,7 @@ class ShellLinkItem;
  
