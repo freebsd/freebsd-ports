@@ -1,4 +1,4 @@
---- ui/views/views_delegate.h.orig	2025-06-19 07:37:57 UTC
+--- ui/views/views_delegate.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/views/views_delegate.h
 @@ -143,7 +143,7 @@ class VIEWS_EXPORT ViewsDelegate {
    // environment.

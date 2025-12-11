@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/views/frame/browser_frame_view_factory_views.cc
 @@ -17,7 +17,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_win.h"

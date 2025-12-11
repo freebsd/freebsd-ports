@@ -1,4 +1,4 @@
---- tools/grit/grit/node/base.py.orig	2025-09-11 13:19:19 UTC
+--- tools/grit/grit/node/base.py.orig	2025-12-10 15:04:57 UTC
 +++ tools/grit/grit/node/base.py
 @@ -491,7 +491,8 @@ class Node:
          value = defs

@@ -1,4 +1,4 @@
---- net/dns/address_info.cc.orig	2025-09-11 13:19:19 UTC
+--- net/dns/address_info.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/dns/address_info.cc
 @@ -78,8 +78,12 @@ AddressInfo::AddressInfoAndResult AddressInfo::Get(
      // error.

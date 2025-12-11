@@ -1,4 +1,4 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/chrome_pages.cc
 @@ -86,12 +86,12 @@
  #include "components/signin/public/identity_manager/identity_manager.h"

@@ -1,4 +1,4 @@
---- net/url_request/url_request_context.cc.orig	2025-09-11 13:19:19 UTC
+--- net/url_request/url_request_context.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/url_request/url_request_context.cc
 @@ -128,7 +128,7 @@ const HttpNetworkSessionContext* URLRequestContext::Ge
    return &network_session->context();

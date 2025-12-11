@@ -1,4 +1,4 @@
---- chrome/renderer/chrome_content_renderer_client.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/renderer/chrome_content_renderer_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/renderer/chrome_content_renderer_client.cc
 @@ -188,7 +188,7 @@
  #include "v8/include/v8-isolate.h"

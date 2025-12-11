@@ -1,4 +1,4 @@
---- skia/ext/font_utils.cc.orig	2025-09-11 13:19:19 UTC
+--- skia/ext/font_utils.cc.orig	2025-12-10 15:04:57 UTC
 +++ skia/ext/font_utils.cc
 @@ -21,7 +21,7 @@
  #include "third_party/skia/include/ports/SkFontMgr_mac_ct.h"

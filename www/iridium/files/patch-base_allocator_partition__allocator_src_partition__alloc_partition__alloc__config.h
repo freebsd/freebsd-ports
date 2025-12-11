@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2025-11-06 10:11:34 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h.orig	2025-12-10 15:04:57 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_config.h
 @@ -171,7 +171,7 @@ constexpr bool kUseLazyCommit = false;
  // macOS, where it yielded no beenefit (nor any real downside).

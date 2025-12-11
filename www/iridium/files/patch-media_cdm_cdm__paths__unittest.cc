@@ -1,4 +1,4 @@
---- media/cdm/cdm_paths_unittest.cc.orig	2025-05-07 06:48:23 UTC
+--- media/cdm/cdm_paths_unittest.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/cdm/cdm_paths_unittest.cc
 @@ -26,7 +26,7 @@ const char kComponentPlatform[] =
      "win";

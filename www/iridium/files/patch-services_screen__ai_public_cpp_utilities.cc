@@ -1,4 +1,4 @@
---- services/screen_ai/public/cpp/utilities.cc.orig	2025-09-11 13:19:19 UTC
+--- services/screen_ai/public/cpp/utilities.cc.orig	2025-12-10 15:04:57 UTC
 +++ services/screen_ai/public/cpp/utilities.cc
 @@ -21,7 +21,7 @@ namespace {
  // The maximum image dimension which is processed without downsampling by OCR.

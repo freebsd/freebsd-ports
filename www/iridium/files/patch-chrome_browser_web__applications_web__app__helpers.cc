@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/web_app_helpers.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/web_applications/web_app_helpers.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/web_applications/web_app_helpers.cc
 @@ -145,7 +145,7 @@ bool IsValidWebAppUrl(const GURL& app_url) {
      return false;

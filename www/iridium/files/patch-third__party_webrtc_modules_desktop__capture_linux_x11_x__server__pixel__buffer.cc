@@ -1,4 +1,4 @@
---- third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc.orig	2025-09-11 13:19:19 UTC
+--- third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc
 @@ -212,6 +212,12 @@ bool XServerPixelBuffer::Init(XAtomCache* cache, Windo
  void XServerPixelBuffer::InitShm(const XWindowAttributes& attributes) {

@@ -1,4 +1,4 @@
---- components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc.orig	2025-09-11 13:19:19 UTC
+--- components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/supervised_user/core/browser/kids_chrome_management_url_checker_client.cc
 @@ -66,7 +66,7 @@ void OnResponse(
  }

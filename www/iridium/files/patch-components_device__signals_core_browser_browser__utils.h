@@ -1,4 +1,4 @@
---- components/device_signals/core/browser/browser_utils.h.orig	2025-09-11 13:19:19 UTC
+--- components/device_signals/core/browser/browser_utils.h.orig	2025-12-10 15:04:57 UTC
 +++ components/device_signals/core/browser/browser_utils.h
 @@ -38,7 +38,7 @@ bool GetSiteIsolationEnabled();
  std::string GetHostName();

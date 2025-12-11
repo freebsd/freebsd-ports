@@ -1,4 +1,4 @@
---- media/audio/audio_input_device.cc.orig	2025-11-06 10:11:34 UTC
+--- media/audio/audio_input_device.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/audio/audio_input_device.cc
 @@ -270,7 +270,7 @@ void AudioInputDevice::OnStreamCreated(
  // here. See comments in AliveChecker and PowerObserverHelper for details and

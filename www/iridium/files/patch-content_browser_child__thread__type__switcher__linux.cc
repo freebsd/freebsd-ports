@@ -1,4 +1,4 @@
---- content/browser/child_thread_type_switcher_linux.cc.orig	2025-09-11 13:19:19 UTC
+--- content/browser/child_thread_type_switcher_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/child_thread_type_switcher_linux.cc
 @@ -6,6 +6,7 @@
  

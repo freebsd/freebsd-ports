@@ -1,4 +1,4 @@
---- components/power_metrics/energy_metrics_provider.cc.orig	2025-09-11 13:19:19 UTC
+--- components/power_metrics/energy_metrics_provider.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/power_metrics/energy_metrics_provider.cc
 @@ -9,6 +9,8 @@
  #include "components/power_metrics/energy_metrics_provider_win.h"

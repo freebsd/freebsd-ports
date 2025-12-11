@@ -1,4 +1,4 @@
---- chrome/browser/metrics/power/process_monitor.h.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/metrics/power/process_monitor.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/metrics/power/process_monitor.h
 @@ -76,7 +76,7 @@ class ProcessMonitor : public content::BrowserChildPro
      std::optional<double> cpu_usage;

@@ -1,4 +1,4 @@
---- remoting/host/setup/me2me_native_messaging_host_main.cc.orig	2025-09-11 13:19:19 UTC
+--- remoting/host/setup/me2me_native_messaging_host_main.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/setup/me2me_native_messaging_host_main.cc
 @@ -41,7 +41,7 @@
  #include "base/apple/scoped_nsautorelease_pool.h"

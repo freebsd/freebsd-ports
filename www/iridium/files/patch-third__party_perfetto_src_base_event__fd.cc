@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/event_fd.cc.orig	2025-09-11 13:19:19 UTC
+--- third_party/perfetto/src/base/event_fd.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/perfetto/src/base/event_fd.cc
 @@ -25,7 +25,8 @@
  #include <synchapi.h>

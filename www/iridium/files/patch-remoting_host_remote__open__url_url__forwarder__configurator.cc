@@ -1,4 +1,4 @@
---- remoting/host/remote_open_url/url_forwarder_configurator.cc.orig	2025-09-11 13:19:19 UTC
+--- remoting/host/remote_open_url/url_forwarder_configurator.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/remote_open_url/url_forwarder_configurator.cc
 @@ -13,7 +13,7 @@ UrlForwarderConfigurator::UrlForwarderConfigurator() =
  

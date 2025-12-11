@@ -1,4 +1,4 @@
---- content/utility/on_device_model/on_device_model_sandbox_init.h.orig	2025-09-11 13:19:19 UTC
+--- content/utility/on_device_model/on_device_model_sandbox_init.h.orig	2025-12-10 15:04:57 UTC
 +++ content/utility/on_device_model/on_device_model_sandbox_init.h
 @@ -11,6 +11,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"

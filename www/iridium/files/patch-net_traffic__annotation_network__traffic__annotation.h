@@ -1,4 +1,4 @@
---- net/traffic_annotation/network_traffic_annotation.h.orig	2025-11-06 10:11:34 UTC
+--- net/traffic_annotation/network_traffic_annotation.h.orig	2025-12-10 15:04:57 UTC
 +++ net/traffic_annotation/network_traffic_annotation.h
 @@ -369,7 +369,7 @@ struct MutablePartialNetworkTrafficAnnotationTag {
  }  // namespace net

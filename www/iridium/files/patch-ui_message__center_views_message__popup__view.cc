@@ -1,4 +1,4 @@
---- ui/message_center/views/message_popup_view.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/message_center/views/message_popup_view.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/message_center/views/message_popup_view.cc
 @@ -164,7 +164,7 @@ std::unique_ptr<views::Widget> MessagePopupView::Show(
        views::Widget::InitParams::CLIENT_OWNS_WIDGET,

@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/passwords/password_bubble_view_base.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/ui/views/passwords/password_bubble_view_base.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/views/passwords/password_bubble_view_base.cc
 @@ -42,7 +42,7 @@
  #include "ui/base/metadata/metadata_impl_macros.h"

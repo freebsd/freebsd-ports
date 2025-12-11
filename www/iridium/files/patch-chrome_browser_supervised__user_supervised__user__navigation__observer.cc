@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_navigation_observer.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/supervised_user/supervised_user_navigation_observer.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/supervised_user/supervised_user_navigation_observer.cc
 @@ -49,7 +49,7 @@
  #include "chrome/browser/supervised_user/android/supervised_user_web_content_handler_impl.h"

@@ -1,4 +1,4 @@
---- ui/native_theme/native_theme.h.orig	2025-11-06 10:11:34 UTC
+--- ui/native_theme/native_theme.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/native_theme/native_theme.h
 @@ -61,7 +61,7 @@ class COMPONENT_EXPORT(NATIVE_THEME) NativeTheme {
    // A part being sized or painted.

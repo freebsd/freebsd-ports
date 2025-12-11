@@ -1,4 +1,4 @@
---- third_party/libusb/src/libusb/os/threads_posix.c.orig	2025-05-07 06:48:23 UTC
+--- third_party/libusb/src/libusb/os/threads_posix.c.orig	2025-12-10 15:04:57 UTC
 +++ third_party/libusb/src/libusb/os/threads_posix.c
 @@ -19,9 +19,11 @@
   * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA

@@ -1,4 +1,4 @@
---- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/signin/signin_view_controller_delegate.h
 @@ -50,7 +50,7 @@ class SigninViewControllerDelegate {
        SyncConfirmationStyle style,

@@ -1,4 +1,4 @@
---- chrome/browser/ui/hats/trust_safety_sentiment_service_factory.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/ui/hats/trust_safety_sentiment_service_factory.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/hats/trust_safety_sentiment_service_factory.cc
 @@ -59,7 +59,7 @@ TrustSafetySentimentServiceFactory::BuildServiceInstan
    // TrustSafetySentimentSurvey is conducted only for Windows, MacOS and Linux

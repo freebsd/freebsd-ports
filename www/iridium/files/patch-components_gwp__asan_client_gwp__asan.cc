@@ -1,4 +1,4 @@
---- components/gwp_asan/client/gwp_asan.cc.orig	2025-09-11 13:19:19 UTC
+--- components/gwp_asan/client/gwp_asan.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/gwp_asan/client/gwp_asan.cc
 @@ -81,7 +81,7 @@ namespace {
  // ProcessSamplingBoost is the multiplier to increase the

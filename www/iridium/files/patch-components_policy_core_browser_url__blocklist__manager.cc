@@ -1,4 +1,4 @@
---- components/policy/core/browser/url_blocklist_manager.cc.orig	2025-09-11 13:19:19 UTC
+--- components/policy/core/browser/url_blocklist_manager.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/policy/core/browser/url_blocklist_manager.cc
 @@ -377,7 +377,7 @@ void URLBlocklistManager::RegisterProfilePrefs(
        policy_prefs::kSafeSitesFilterBehavior,

@@ -1,4 +1,4 @@
---- remoting/host/session_policies_from_dict.cc.orig	2025-05-07 06:48:23 UTC
+--- remoting/host/session_policies_from_dict.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/session_policies_from_dict.cc
 @@ -75,7 +75,7 @@ std::optional<SessionPolicies> SessionPoliciesFromDict
    session_policies.curtain_required =

@@ -1,4 +1,4 @@
---- gpu/vulkan/vulkan_device_queue.cc.orig	2025-06-19 07:37:57 UTC
+--- gpu/vulkan/vulkan_device_queue.cc.orig	2025-12-10 15:04:57 UTC
 +++ gpu/vulkan/vulkan_device_queue.cc
 @@ -145,7 +145,7 @@ bool VulkanDeviceQueue::Initialize(
  

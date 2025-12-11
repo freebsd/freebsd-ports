@@ -1,4 +1,4 @@
---- third_party/angle/src/common/system_utils.cpp.orig	2025-05-07 06:48:23 UTC
+--- third_party/angle/src/common/system_utils.cpp.orig	2025-12-10 15:04:57 UTC
 +++ third_party/angle/src/common/system_utils.cpp
 @@ -25,7 +25,7 @@ namespace angle
  {

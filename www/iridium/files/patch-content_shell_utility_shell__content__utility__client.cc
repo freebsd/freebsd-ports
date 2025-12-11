@@ -1,4 +1,4 @@
---- content/shell/utility/shell_content_utility_client.cc.orig	2025-10-28 14:29:43 UTC
+--- content/shell/utility/shell_content_utility_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/shell/utility/shell_content_utility_client.cc
 @@ -39,7 +39,7 @@
  #include "sandbox/policy/sandbox.h"

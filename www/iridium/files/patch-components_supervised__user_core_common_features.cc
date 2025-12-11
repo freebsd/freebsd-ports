@@ -1,4 +1,4 @@
---- components/supervised_user/core/common/features.cc.orig	2025-11-06 10:11:34 UTC
+--- components/supervised_user/core/common/features.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/supervised_user/core/common/features.cc
 @@ -32,7 +32,7 @@ BASE_FEATURE(kAllowSubframeLocalWebApprovals,
  #endif

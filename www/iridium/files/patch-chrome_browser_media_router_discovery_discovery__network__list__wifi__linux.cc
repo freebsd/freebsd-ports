@@ -1,4 +1,4 @@
---- chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/media/router/discovery/discovery_network_list_wifi_linux.cc
 @@ -4,7 +4,11 @@
  

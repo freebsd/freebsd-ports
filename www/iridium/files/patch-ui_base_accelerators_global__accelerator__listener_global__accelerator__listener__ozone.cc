@@ -1,4 +1,4 @@
---- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2025-11-06 10:11:34 UTC
+--- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc
 @@ -12,7 +12,7 @@
  #include "ui/base/accelerators/accelerator.h"

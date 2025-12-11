@@ -1,4 +1,4 @@
---- chrome/browser/devtools/remote_debugging_server.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/devtools/remote_debugging_server.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/devtools/remote_debugging_server.cc
 @@ -42,7 +42,7 @@ namespace {
  

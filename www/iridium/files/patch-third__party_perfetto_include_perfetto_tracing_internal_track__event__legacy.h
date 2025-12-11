@@ -1,4 +1,4 @@
---- third_party/perfetto/include/perfetto/tracing/internal/track_event_legacy.h.orig	2025-11-06 10:11:34 UTC
+--- third_party/perfetto/include/perfetto/tracing/internal/track_event_legacy.h.orig	2025-12-10 15:04:57 UTC
 +++ third_party/perfetto/include/perfetto/tracing/internal/track_event_legacy.h
 @@ -253,7 +253,7 @@ class PERFETTO_EXPORT_COMPONENT LegacyTraceId {
  // are different. E.g. on Mac size_t is considered a different type from

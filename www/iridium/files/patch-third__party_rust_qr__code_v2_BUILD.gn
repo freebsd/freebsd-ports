@@ -1,4 +1,4 @@
---- third_party/rust/qr_code/v2/BUILD.gn.orig	2025-09-11 13:19:19 UTC
+--- third_party/rust/qr_code/v2/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ third_party/rust/qr_code/v2/BUILD.gn
 @@ -40,6 +40,10 @@ cargo_crate("lib") {
    cargo_pkg_repository = "https://github.com/RCasatta/qr_code"

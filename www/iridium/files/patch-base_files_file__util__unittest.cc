@@ -1,4 +1,4 @@
---- base/files/file_util_unittest.cc.orig	2025-11-06 10:11:34 UTC
+--- base/files/file_util_unittest.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/files/file_util_unittest.cc
 @@ -4156,7 +4156,7 @@ TEST_F(FileUtilTest, ReadFileToStringWithNamedPipe) {
  }

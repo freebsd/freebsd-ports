@@ -1,4 +1,4 @@
---- ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/ozone/platform/headless/vulkan_implementation_headless.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/ozone/platform/headless/vulkan_implementation_headless.cc
 @@ -117,7 +117,7 @@ VulkanImplementationHeadless::ExportVkFenceToGpuFence(
  

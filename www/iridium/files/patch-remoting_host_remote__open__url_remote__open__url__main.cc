@@ -1,4 +1,4 @@
---- remoting/host/remote_open_url/remote_open_url_main.cc.orig	2025-09-11 13:19:19 UTC
+--- remoting/host/remote_open_url/remote_open_url_main.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/remote_open_url/remote_open_url_main.cc
 @@ -27,7 +27,7 @@
  #include "remoting/host/usage_stats_consent.h"

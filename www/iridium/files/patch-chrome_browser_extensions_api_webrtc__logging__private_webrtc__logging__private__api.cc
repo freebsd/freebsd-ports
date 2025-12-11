@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc
 @@ -28,7 +28,7 @@
  #include "extensions/browser/process_manager.h"

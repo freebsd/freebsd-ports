@@ -1,4 +1,4 @@
---- base/trace_event/malloc_dump_provider.cc.orig	2025-09-11 13:19:19 UTC
+--- base/trace_event/malloc_dump_provider.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/trace_event/malloc_dump_provider.cc
 @@ -31,6 +31,8 @@
  

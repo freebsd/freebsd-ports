@@ -1,4 +1,4 @@
---- build/dotfile_settings.gni.orig	2025-11-06 10:11:34 UTC
+--- build/dotfile_settings.gni.orig	2025-12-10 15:04:57 UTC
 +++ build/dotfile_settings.gni
 @@ -23,6 +23,7 @@ build_dotfile_settings = {
      "//build/config/mac/mac_sdk.gni",

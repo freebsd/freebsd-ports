@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/policy/web_app_policy_manager.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/web_applications/policy/web_app_policy_manager.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/web_applications/policy/web_app_policy_manager.cc
 @@ -135,7 +135,7 @@ GetPreinstalledWebAppsMappingForTesting() {
  namespace web_app {

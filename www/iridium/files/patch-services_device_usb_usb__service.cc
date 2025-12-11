@@ -1,4 +1,4 @@
---- services/device/usb/usb_service.cc.orig	2025-09-11 13:19:19 UTC
+--- services/device/usb/usb_service.cc.orig	2025-12-10 15:04:57 UTC
 +++ services/device/usb/usb_service.cc
 @@ -20,12 +20,16 @@
  

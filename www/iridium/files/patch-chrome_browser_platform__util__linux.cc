@@ -1,4 +1,4 @@
---- chrome/browser/platform_util_linux.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/platform_util_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/platform_util_linux.cc
 @@ -301,7 +301,9 @@ void OnLaunchOptionsCreated(const std::string& command
    argv.push_back(command);

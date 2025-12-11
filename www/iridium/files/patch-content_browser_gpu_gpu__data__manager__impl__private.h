@@ -1,4 +1,4 @@
---- content/browser/gpu/gpu_data_manager_impl_private.h.orig	2025-11-06 10:11:34 UTC
+--- content/browser/gpu/gpu_data_manager_impl_private.h.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/gpu/gpu_data_manager_impl_private.h
 @@ -149,7 +149,7 @@ class CONTENT_EXPORT GpuDataManagerImplPrivate {
    void OnDisplayMetricsChanged(const display::Display& display,

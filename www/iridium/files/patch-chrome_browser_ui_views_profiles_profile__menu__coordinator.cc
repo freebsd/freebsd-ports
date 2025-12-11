@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/profile_menu_coordinator.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/ui/views/profiles/profile_menu_coordinator.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/views/profiles/profile_menu_coordinator.cc
 @@ -87,7 +87,7 @@ void ProfileMenuCoordinator::ShowWithPromoResults(
        ->NotifyFeaturePromoFeatureUsed(

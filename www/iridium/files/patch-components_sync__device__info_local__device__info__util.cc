@@ -1,4 +1,4 @@
---- components/sync_device_info/local_device_info_util.cc.orig	2025-11-06 10:11:34 UTC
+--- components/sync_device_info/local_device_info_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/sync_device_info/local_device_info_util.cc
 @@ -84,7 +84,7 @@ void OnMachineStatisticsLoaded(LocalDeviceNameInfo* na
  sync_pb::SyncEnums::DeviceType GetLocalDeviceType() {

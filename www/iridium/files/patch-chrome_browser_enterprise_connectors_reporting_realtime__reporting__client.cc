@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.cc
 @@ -53,7 +53,7 @@
  #include "base/strings/utf_string_conversions.h"

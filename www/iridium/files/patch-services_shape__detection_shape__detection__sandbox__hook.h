@@ -1,4 +1,4 @@
---- services/shape_detection/shape_detection_sandbox_hook.h.orig	2025-09-11 13:19:19 UTC
+--- services/shape_detection/shape_detection_sandbox_hook.h.orig	2025-12-10 15:04:57 UTC
 +++ services/shape_detection/shape_detection_sandbox_hook.h
 @@ -5,7 +5,13 @@
  #ifndef SERVICES_SHAPE_DETECTION_SHAPE_DETECTION_SANDBOX_HOOK_H_

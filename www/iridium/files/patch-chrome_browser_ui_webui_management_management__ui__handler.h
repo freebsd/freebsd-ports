@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.h
 @@ -34,7 +34,7 @@ namespace enterprise_management {
  class GetUserEligiblePromotionsResponse;

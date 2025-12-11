@@ -1,4 +1,4 @@
---- third_party/perfetto/src/base/periodic_task.cc.orig	2025-05-07 06:48:23 UTC
+--- third_party/perfetto/src/base/periodic_task.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/perfetto/src/base/periodic_task.cc
 @@ -24,7 +24,7 @@
  #include "perfetto/base/time.h"

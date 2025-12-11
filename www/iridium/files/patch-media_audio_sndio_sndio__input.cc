@@ -1,4 +1,4 @@
---- media/audio/sndio/sndio_input.cc.orig	2025-09-11 13:19:19 UTC
+--- media/audio/sndio/sndio_input.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/audio/sndio/sndio_input.cc
 @@ -0,0 +1,201 @@
 +// Copyright 2013 The Chromium Authors. All rights reserved.

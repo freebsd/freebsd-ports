@@ -1,4 +1,4 @@
---- chrome/common/extensions/extension_constants.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/common/extensions/extension_constants.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/common/extensions/extension_constants.h
 @@ -313,7 +313,7 @@ inline constexpr char kReadingModeGDocsHelperExtension
  inline constexpr base::FilePath::CharType

@@ -1,4 +1,4 @@
---- chrome/common/chrome_paths.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/common/chrome_paths.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/common/chrome_paths.cc
 @@ -31,7 +31,7 @@
  #include "base/apple/foundation_util.h"

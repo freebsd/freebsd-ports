@@ -1,4 +1,4 @@
---- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/supervised_user/supervised_user_metrics_service_factory.cc
 @@ -15,7 +15,7 @@
  #include "content/public/browser/browser_context.h"

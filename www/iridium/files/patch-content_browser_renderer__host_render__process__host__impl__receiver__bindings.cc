@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2025-09-11 13:19:19 UTC
+--- content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/renderer_host/render_process_host_impl_receiver_bindings.cc
 @@ -52,7 +52,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"

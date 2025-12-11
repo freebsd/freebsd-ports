@@ -1,4 +1,4 @@
---- net/disk_cache/simple/simple_file_tracker.cc.orig	2025-10-28 14:29:43 UTC
+--- net/disk_cache/simple/simple_file_tracker.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/disk_cache/simple/simple_file_tracker.cc
 @@ -36,7 +36,17 @@ bool SimpleFileTracker::TrackedFiles::InLRUList() cons
  }

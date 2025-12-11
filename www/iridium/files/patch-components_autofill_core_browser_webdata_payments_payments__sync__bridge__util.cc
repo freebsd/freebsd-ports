@@ -1,4 +1,4 @@
---- components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc.orig	2025-10-28 14:29:43 UTC
+--- components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/autofill/core/browser/webdata/payments/payments_sync_bridge_util.cc
 @@ -1262,7 +1262,7 @@ bool AreMaskedBankAccountSupported() {
  

@@ -1,4 +1,4 @@
---- third_party/leveldatabase/env_chromium.cc.orig	2025-09-11 13:19:19 UTC
+--- third_party/leveldatabase/env_chromium.cc.orig	2025-12-10 15:04:57 UTC
 +++ third_party/leveldatabase/env_chromium.cc
 @@ -330,7 +330,8 @@ ChromiumWritableFile::ChromiumWritableFile(const std::
  

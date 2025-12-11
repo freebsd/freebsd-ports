@@ -1,4 +1,4 @@
---- components/policy/core/common/policy_pref_names.cc.orig	2025-09-11 13:19:19 UTC
+--- components/policy/core/common/policy_pref_names.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/policy/core/common/policy_pref_names.cc
 @@ -199,7 +199,7 @@ const char kFloatingWorkspaceEnabled[] = "ash.floating
  // A boolean value indicating whether the built-in AI APIs are enabled.

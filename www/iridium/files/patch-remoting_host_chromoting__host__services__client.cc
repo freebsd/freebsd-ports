@@ -1,4 +1,4 @@
---- remoting/host/chromoting_host_services_client.cc.orig	2025-09-11 13:19:19 UTC
+--- remoting/host/chromoting_host_services_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/chromoting_host_services_client.cc
 @@ -139,7 +139,7 @@ bool ChromotingHostServicesClient::EnsureSessionServic
    if (session_services_remote_.is_bound()) {

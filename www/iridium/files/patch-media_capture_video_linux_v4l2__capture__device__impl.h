@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_device_impl.h.orig	2025-05-07 06:48:23 UTC
+--- media/capture/video/linux/v4l2_capture_device_impl.h.orig	2025-12-10 15:04:57 UTC
 +++ media/capture/video/linux/v4l2_capture_device_impl.h
 @@ -19,7 +19,7 @@ class CAPTURE_EXPORT V4L2CaptureDeviceImpl : public V4
   public:

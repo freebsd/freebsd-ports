@@ -1,4 +1,4 @@
---- components/enterprise/data_controls/core/browser/rule.cc.orig	2025-11-06 10:11:34 UTC
+--- components/enterprise/data_controls/core/browser/rule.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/enterprise/data_controls/core/browser/rule.cc
 @@ -531,7 +531,7 @@ bool Rule::AddUnsupportedAttributeErrors(
                },

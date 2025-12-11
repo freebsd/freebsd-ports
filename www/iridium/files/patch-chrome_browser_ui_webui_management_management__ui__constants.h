@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/management/management_ui_constants.h.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/ui/webui/management/management_ui_constants.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/ui/webui/management/management_ui_constants.h
 @@ -7,14 +7,14 @@
  

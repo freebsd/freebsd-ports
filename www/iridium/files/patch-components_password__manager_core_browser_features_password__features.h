@@ -1,6 +1,6 @@
---- components/password_manager/core/browser/features/password_features.h.orig	2025-11-06 10:11:34 UTC
+--- components/password_manager/core/browser/features/password_features.h.orig	2025-12-10 15:04:57 UTC
 +++ components/password_manager/core/browser/features/password_features.h
-@@ -147,7 +147,7 @@ BASE_DECLARE_FEATURE(kPasswordManualFallbackAvailable)
+@@ -172,7 +172,7 @@ BASE_DECLARE_FEATURE(kPasswordManualFallbackAvailable)
  // terminal.
  BASE_DECLARE_FEATURE(kPasswordManagerLogToTerminal);
  

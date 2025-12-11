@@ -1,4 +1,4 @@
---- components/performance_manager/resource_attribution/memory_measurement_delegate.cc.orig	2025-11-06 10:11:34 UTC
+--- components/performance_manager/resource_attribution/memory_measurement_delegate.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/performance_manager/resource_attribution/memory_measurement_delegate.cc
 @@ -100,7 +100,7 @@ void MemoryMeasurementDelegateImpl::OnMemorySummary(
                  base::KiB(process_dump.os_dump().resident_set_kb),

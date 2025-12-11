@@ -1,4 +1,4 @@
---- components/viz/host/host_display_client.cc.orig	2025-09-11 13:19:19 UTC
+--- components/viz/host/host_display_client.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/viz/host/host_display_client.cc
 @@ -66,9 +66,9 @@ void HostDisplayClient::AddChildWindowToBrowser(
  }

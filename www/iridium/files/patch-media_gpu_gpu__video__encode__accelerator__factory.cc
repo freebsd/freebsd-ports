@@ -1,4 +1,4 @@
---- media/gpu/gpu_video_encode_accelerator_factory.cc.orig	2025-11-06 10:11:34 UTC
+--- media/gpu/gpu_video_encode_accelerator_factory.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/gpu/gpu_video_encode_accelerator_factory.cc
 @@ -160,7 +160,7 @@ std::vector<VEAFactoryFunction> GetVEAFactoryFunctions
    }

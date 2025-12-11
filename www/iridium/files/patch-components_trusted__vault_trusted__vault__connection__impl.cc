@@ -1,4 +1,4 @@
---- components/trusted_vault/trusted_vault_connection_impl.cc.orig	2025-09-11 13:19:19 UTC
+--- components/trusted_vault/trusted_vault_connection_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/trusted_vault/trusted_vault_connection_impl.cc
 @@ -105,7 +105,7 @@ GetLocalPhysicalDeviceType() {
    // currently used or even built on all platforms.

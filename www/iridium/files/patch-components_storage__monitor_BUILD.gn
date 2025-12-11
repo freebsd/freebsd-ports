@@ -1,4 +1,4 @@
---- components/storage_monitor/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- components/storage_monitor/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ components/storage_monitor/BUILD.gn
 @@ -73,7 +73,7 @@ component("storage_monitor") {
        deps += [ "//services/device/public/mojom" ]

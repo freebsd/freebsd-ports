@@ -1,4 +1,4 @@
---- services/shape_detection/shape_detection_service.cc.orig	2025-10-28 14:29:43 UTC
+--- services/shape_detection/shape_detection_service.cc.orig	2025-12-10 15:04:57 UTC
 +++ services/shape_detection/shape_detection_service.cc
 @@ -22,7 +22,7 @@
  #elif BUILDFLAG(IS_ANDROID)

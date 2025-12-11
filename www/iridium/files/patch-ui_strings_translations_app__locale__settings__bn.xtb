@@ -1,4 +1,4 @@
---- ui/strings/translations/app_locale_settings_bn.xtb.orig	2025-05-07 06:48:23 UTC
+--- ui/strings/translations/app_locale_settings_bn.xtb.orig	2025-12-10 15:04:57 UTC
 +++ ui/strings/translations/app_locale_settings_bn.xtb
 @@ -10,7 +10,7 @@
    <translation id="IDS_WEB_FONT_FAMILY">Vrinda</translation>

@@ -1,4 +1,4 @@
---- chrome/browser/first_run/first_run_internal_linux.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/first_run/first_run_internal_linux.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/first_run/first_run_internal_linux.cc
 @@ -21,7 +21,13 @@ bool IsOrganicFirstRun() {
  base::FilePath InitialPrefsPath() {

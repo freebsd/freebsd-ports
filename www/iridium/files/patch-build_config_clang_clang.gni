@@ -1,4 +1,4 @@
---- build/config/clang/clang.gni.orig	2025-11-06 10:11:34 UTC
+--- build/config/clang/clang.gni.orig	2025-12-10 15:04:57 UTC
 +++ build/config/clang/clang.gni
 @@ -88,7 +88,7 @@ declare_args() {
    #

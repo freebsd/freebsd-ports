@@ -1,4 +1,4 @@
---- ui/base/clipboard/clipboard_constants.h.orig	2025-06-19 07:37:57 UTC
+--- ui/base/clipboard/clipboard_constants.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/base/clipboard/clipboard_constants.h
 @@ -44,7 +44,7 @@ inline constexpr char kMimeTypeWindowDrag[] = "chromiu
  

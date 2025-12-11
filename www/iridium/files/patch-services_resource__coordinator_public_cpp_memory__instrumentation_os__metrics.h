@@ -1,4 +1,4 @@
---- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2025-06-19 07:37:57 UTC
+--- services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2025-12-10 15:04:57 UTC
 +++ services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
 @@ -65,7 +65,7 @@ class COMPONENT_EXPORT(
    static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(

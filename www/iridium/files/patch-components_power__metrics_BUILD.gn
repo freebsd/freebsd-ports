@@ -1,4 +1,4 @@
---- components/power_metrics/BUILD.gn.orig	2025-05-07 06:48:23 UTC
+--- components/power_metrics/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ components/power_metrics/BUILD.gn
 @@ -41,7 +41,7 @@ static_library("power_metrics") {
      ldflags = [ "/DELAYLOAD:setupapi.dll" ]

@@ -1,4 +1,4 @@
---- ui/accessibility/ax_tree.h.orig	2025-09-11 13:19:19 UTC
+--- ui/accessibility/ax_tree.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/accessibility/ax_tree.h
 @@ -64,7 +64,7 @@ enum class AXTreeUnserializeError {
  };

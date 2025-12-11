@@ -1,4 +1,4 @@
---- chrome/browser/sync/device_info_sync_client_impl.cc.orig	2025-05-07 06:48:23 UTC
+--- chrome/browser/sync/device_info_sync_client_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/sync/device_info_sync_client_impl.cc
 @@ -34,7 +34,7 @@ DeviceInfoSyncClientImpl::~DeviceInfoSyncClientImpl() 
  std::string DeviceInfoSyncClientImpl::GetSigninScopedDeviceId() const {

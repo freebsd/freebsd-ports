@@ -1,4 +1,4 @@
---- ui/compositor/compositor_observer.h.orig	2025-05-07 06:48:23 UTC
+--- ui/compositor/compositor_observer.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/compositor/compositor_observer.h
 @@ -56,7 +56,7 @@ class COMPOSITOR_EXPORT CompositorObserver {
    // Called when a child of the compositor is resizing.

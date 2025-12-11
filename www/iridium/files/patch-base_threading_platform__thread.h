@@ -1,4 +1,4 @@
---- base/threading/platform_thread.h.orig	2025-10-28 14:29:43 UTC
+--- base/threading/platform_thread.h.orig	2025-12-10 15:04:57 UTC
 +++ base/threading/platform_thread.h
 @@ -56,6 +56,8 @@ class BASE_EXPORT PlatformThreadId {
    using UnderlyingType = zx_koid_t;

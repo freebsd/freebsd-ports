@@ -1,4 +1,4 @@
---- v8/src/base/sys-info.cc.orig	2025-05-07 06:48:23 UTC
+--- v8/src/base/sys-info.cc.orig	2025-12-10 15:04:57 UTC
 +++ v8/src/base/sys-info.cc
 @@ -36,7 +36,7 @@ namespace base {
  // static

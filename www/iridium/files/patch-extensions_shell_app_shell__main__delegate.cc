@@ -1,4 +1,4 @@
---- extensions/shell/app/shell_main_delegate.cc.orig	2025-09-11 13:19:19 UTC
+--- extensions/shell/app/shell_main_delegate.cc.orig	2025-12-10 15:04:57 UTC
 +++ extensions/shell/app/shell_main_delegate.cc
 @@ -31,7 +31,7 @@
  #if BUILDFLAG(IS_WIN)

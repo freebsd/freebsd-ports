@@ -1,4 +1,4 @@
---- net/http/http_auth_preferences.cc.orig	2025-05-07 06:48:23 UTC
+--- net/http/http_auth_preferences.cc.orig	2025-12-10 15:04:57 UTC
 +++ net/http/http_auth_preferences.cc
 @@ -38,7 +38,7 @@ std::string HttpAuthPreferences::AuthAndroidNegotiateA
  }

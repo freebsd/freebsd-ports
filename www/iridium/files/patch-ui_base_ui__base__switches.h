@@ -1,4 +1,4 @@
---- ui/base/ui_base_switches.h.orig	2025-10-28 14:29:43 UTC
+--- ui/base/ui_base_switches.h.orig	2025-12-10 15:04:57 UTC
 +++ ui/base/ui_base_switches.h
 @@ -37,13 +37,13 @@ inline constexpr char kDisableModalAnimations[] = "dis
  inline constexpr char kShowMacOverlayBorders[] = "show-mac-overlay-borders";

@@ -1,4 +1,4 @@
---- chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2025-06-19 07:37:57 UTC
+--- chrome/test/chromedriver/chrome/chrome_finder.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/test/chromedriver/chrome/chrome_finder.cc
 @@ -59,7 +59,7 @@ void GetApplicationDirs(std::vector<base::FilePath>* l
          installation_locations[i].Append(L"Chromium\\Application"));

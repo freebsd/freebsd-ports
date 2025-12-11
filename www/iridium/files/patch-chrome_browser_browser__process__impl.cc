@@ -1,24 +1,15 @@
---- chrome/browser/browser_process_impl.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/browser_process_impl.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/browser_process_impl.cc
-@@ -253,7 +253,7 @@
+@@ -257,7 +257,7 @@ void OnLocalStatePrefsLoaded();
  #include "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/browser_features.h"
- #include "components/os_crypt/async/browser/fallback_linux_key_provider.h"
  #include "components/os_crypt/async/browser/freedesktop_secret_key_provider.h"
-@@ -265,7 +265,7 @@
- #include "chrome/browser/safe_browsing/safe_browsing_service.h"
- #endif
- 
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // How often to check if the persistent instance of Chrome needs to restart
- // to install an update.
- static const int kUpdateCheckIntervalHours = 6;
-@@ -1167,7 +1167,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
+ #include "components/os_crypt/async/browser/secret_portal_key_provider.h"
+@@ -1182,7 +1182,7 @@ void BrowserProcessImpl::RegisterPrefs(PrefRegistrySim
                                  GoogleUpdateSettings::GetCollectStatsConsent());
    registry->RegisterBooleanPref(prefs::kDevToolsRemoteDebuggingAllowed, true);
  
@@ -27,16 +18,25 @@
    os_crypt_async::SecretPortalKeyProvider::RegisterLocalPrefs(registry);
  #endif
  }
-@@ -1368,7 +1368,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+@@ -1383,7 +1383,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
            local_state())));
  #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    base::CommandLine* cmd_line = base::CommandLine::ForCurrentProcess();
-   if (cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore) !=
-       "basic") {
-@@ -1718,7 +1718,7 @@ void BrowserProcessImpl::Unpin() {
+   const auto password_store =
+       cmd_line->GetSwitchValueASCII(password_manager::kPasswordStore);
+@@ -1404,7 +1404,7 @@ void BrowserProcessImpl::PreMainMessageLoopRun() {
+           password_store, l10n_util::GetStringUTF8(IDS_PRODUCT_NAME), nullptr));
+ #endif  // BUILDFLAG(IS_LINUX)
+ 
+-#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_POSIX) && !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
+   // On other POSIX systems, this is the only key provider.
+   providers.emplace_back(
+       /*precedence=*/5u, std::make_unique<os_crypt_async::PosixKeyProvider>());
+@@ -1735,7 +1735,7 @@ void BrowserProcessImpl::Unpin() {
  }
  
  // Mac is currently not supported.

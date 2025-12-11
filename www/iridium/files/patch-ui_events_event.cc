@@ -1,4 +1,4 @@
---- ui/events/event.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/events/event.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/events/event.cc
 @@ -375,7 +375,7 @@ std::string LocatedEvent::ToString() const {
  MouseEvent::MouseEvent(const PlatformEvent& native_event)

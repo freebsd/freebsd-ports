@@ -1,4 +1,4 @@
---- components/password_manager/core/common/password_manager_pref_names.h.orig	2025-11-06 10:11:34 UTC
+--- components/password_manager/core/common/password_manager_pref_names.h.orig	2025-12-10 15:04:57 UTC
 +++ components/password_manager/core/common/password_manager_pref_names.h
 @@ -59,7 +59,7 @@ inline constexpr char kCredentialProviderEnabledOnStar
  #endif

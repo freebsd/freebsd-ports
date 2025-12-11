@@ -1,4 +1,4 @@
---- base/debug/stack_trace.cc.orig	2025-11-06 10:11:34 UTC
+--- base/debug/stack_trace.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/debug/stack_trace.cc
 @@ -292,7 +292,7 @@ bool StackTrace::WillSymbolizeToStreamForTesting() {
    // Symbols are not expected to be reliable when gn args specifies

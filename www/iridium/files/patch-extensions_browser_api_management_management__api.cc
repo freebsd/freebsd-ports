@@ -1,4 +1,4 @@
---- extensions/browser/api/management/management_api.cc.orig	2025-11-06 10:11:34 UTC
+--- extensions/browser/api/management/management_api.cc.orig	2025-12-10 15:04:57 UTC
 +++ extensions/browser/api/management/management_api.cc
 @@ -296,7 +296,7 @@ void AddExtensionInfo(const Extension* source_extensio
  

@@ -1,4 +1,4 @@
---- sandbox/policy/switches.h.orig	2025-09-11 13:19:19 UTC
+--- sandbox/policy/switches.h.orig	2025-12-10 15:04:57 UTC
 +++ sandbox/policy/switches.h
 @@ -24,7 +24,8 @@ SANDBOX_POLICY_EXPORT extern const char kDisableSetuid
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxAllowSysVShm[];

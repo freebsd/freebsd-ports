@@ -1,4 +1,4 @@
---- ui/ozone/common/egl_util.cc.orig	2025-09-11 13:19:19 UTC
+--- ui/ozone/common/egl_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ ui/ozone/common/egl_util.cc
 @@ -35,9 +35,9 @@ const base::FilePath::CharType kDefaultGlesSoname[] =
      FILE_PATH_LITERAL("libGLESv2.so");

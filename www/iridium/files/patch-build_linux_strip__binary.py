@@ -1,4 +1,4 @@
---- build/linux/strip_binary.py.orig	2025-09-11 13:19:19 UTC
+--- build/linux/strip_binary.py.orig	2025-12-10 15:04:57 UTC
 +++ build/linux/strip_binary.py
 @@ -10,6 +10,7 @@ import sys
  

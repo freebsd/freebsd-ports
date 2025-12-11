@@ -1,4 +1,4 @@
---- components/services/on_device_translation/sandbox_hook.h.orig	2025-05-07 06:48:23 UTC
+--- components/services/on_device_translation/sandbox_hook.h.orig	2025-12-10 15:04:57 UTC
 +++ components/services/on_device_translation/sandbox_hook.h
 @@ -5,7 +5,13 @@
  #ifndef COMPONENTS_SERVICES_ON_DEVICE_TRANSLATION_SANDBOX_HOOK_H_

@@ -1,4 +1,4 @@
---- services/on_device_model/ml/BUILD.gn.orig	2025-11-06 10:11:34 UTC
+--- services/on_device_model/ml/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ services/on_device_model/ml/BUILD.gn
 @@ -82,7 +82,7 @@ if (use_blink || (is_ios && build_with_internal_optimi
      if (!is_fuchsia) {

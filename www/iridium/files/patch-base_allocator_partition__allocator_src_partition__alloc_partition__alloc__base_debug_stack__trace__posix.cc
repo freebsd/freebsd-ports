@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2025-09-11 13:19:19 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc
 @@ -18,11 +18,11 @@
  #include "partition_alloc/partition_alloc_base/posix/eintr_wrapper.h"

@@ -1,4 +1,4 @@
---- base/threading/platform_thread_metrics.h.orig	2025-10-28 14:29:43 UTC
+--- base/threading/platform_thread_metrics.h.orig	2025-12-10 15:04:57 UTC
 +++ base/threading/platform_thread_metrics.h
 @@ -67,7 +67,7 @@ class BASE_EXPORT PlatformThreadMetrics {
        PlatformThreadHandle handle);

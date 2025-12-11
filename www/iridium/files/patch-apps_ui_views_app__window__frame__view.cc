@@ -1,4 +1,4 @@
---- apps/ui/views/app_window_frame_view.cc.orig	2025-05-07 06:48:23 UTC
+--- apps/ui/views/app_window_frame_view.cc.orig	2025-12-10 15:04:57 UTC
 +++ apps/ui/views/app_window_frame_view.cc
 @@ -146,7 +146,7 @@ gfx::Rect AppWindowFrameView::GetBoundsForClientView()
  gfx::Rect AppWindowFrameView::GetWindowBoundsForClientBounds(

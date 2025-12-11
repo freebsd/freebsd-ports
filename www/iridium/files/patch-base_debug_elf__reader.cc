@@ -1,4 +1,4 @@
---- base/debug/elf_reader.cc.orig	2025-05-07 06:48:23 UTC
+--- base/debug/elf_reader.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/debug/elf_reader.cc
 @@ -49,6 +49,10 @@ using Xword = Elf64_Xword;
  

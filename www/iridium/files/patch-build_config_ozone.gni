@@ -1,4 +1,4 @@
---- build/config/ozone.gni.orig	2025-05-07 06:48:23 UTC
+--- build/config/ozone.gni.orig	2025-12-10 15:04:57 UTC
 +++ build/config/ozone.gni
 @@ -80,7 +80,15 @@ declare_args() {
        ozone_platform = "x11"

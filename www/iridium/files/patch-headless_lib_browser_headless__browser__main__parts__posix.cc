@@ -1,4 +1,4 @@
---- headless/lib/browser/headless_browser_main_parts_posix.cc.orig	2025-10-28 14:29:43 UTC
+--- headless/lib/browser/headless_browser_main_parts_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ headless/lib/browser/headless_browser_main_parts_posix.cc
 @@ -26,7 +26,7 @@
  #include "content/public/browser/browser_thread.h"

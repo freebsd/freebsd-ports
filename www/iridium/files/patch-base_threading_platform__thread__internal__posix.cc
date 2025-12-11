@@ -1,4 +1,4 @@
---- base/threading/platform_thread_internal_posix.cc.orig	2025-10-28 14:29:43 UTC
+--- base/threading/platform_thread_internal_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/threading/platform_thread_internal_posix.cc
 @@ -31,10 +31,19 @@ ThreadPriorityForTest NiceValueToThreadPriorityForTest
  }

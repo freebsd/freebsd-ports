@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2025-09-11 13:19:19 UTC
+--- chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/enterprise/connectors/reporting/realtime_reporting_client.h
 @@ -19,7 +19,7 @@
  #include "components/keyed_service/core/keyed_service.h"

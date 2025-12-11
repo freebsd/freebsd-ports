@@ -1,4 +1,4 @@
---- chrome/browser/component_updater/iwa_key_distribution_component_installer.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/component_updater/iwa_key_distribution_component_installer.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/component_updater/iwa_key_distribution_component_installer.cc
 @@ -77,7 +77,7 @@ bool IsOnDemandUpdateSupported() {
  

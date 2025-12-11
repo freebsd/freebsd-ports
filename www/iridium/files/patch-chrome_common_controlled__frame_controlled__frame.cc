@@ -1,4 +1,4 @@
---- chrome/common/controlled_frame/controlled_frame.cc.orig	2025-11-06 10:11:34 UTC
+--- chrome/common/controlled_frame/controlled_frame.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/common/controlled_frame/controlled_frame.cc
 @@ -18,7 +18,7 @@
  #include "third_party/blink/public/common/features.h"

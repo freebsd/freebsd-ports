@@ -1,4 +1,4 @@
---- services/device/geolocation/location_provider_manager.cc.orig	2025-05-07 06:48:23 UTC
+--- services/device/geolocation/location_provider_manager.cc.orig	2025-12-10 15:04:57 UTC
 +++ services/device/geolocation/location_provider_manager.cc
 @@ -91,7 +91,7 @@ LocationProviderManager::LocationProviderManager(
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)

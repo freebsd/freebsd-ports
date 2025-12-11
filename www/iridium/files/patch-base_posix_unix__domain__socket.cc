@@ -1,4 +1,4 @@
---- base/posix/unix_domain_socket.cc.orig	2025-09-11 13:19:19 UTC
+--- base/posix/unix_domain_socket.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/posix/unix_domain_socket.cc
 @@ -20,6 +20,7 @@
  #include "base/files/scoped_file.h"

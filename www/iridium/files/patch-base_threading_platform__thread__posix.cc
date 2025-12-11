@@ -1,4 +1,4 @@
---- base/threading/platform_thread_posix.cc.orig	2025-10-28 14:29:43 UTC
+--- base/threading/platform_thread_posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ base/threading/platform_thread_posix.cc
 @@ -80,6 +80,7 @@ void* ThreadFunc(void* params) {
        base::DisallowSingleton();

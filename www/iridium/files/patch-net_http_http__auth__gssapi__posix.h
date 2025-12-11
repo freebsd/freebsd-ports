@@ -1,4 +1,4 @@
---- net/http/http_auth_gssapi_posix.h.orig	2025-05-07 06:48:23 UTC
+--- net/http/http_auth_gssapi_posix.h.orig	2025-12-10 15:04:57 UTC
 +++ net/http/http_auth_gssapi_posix.h
 @@ -21,6 +21,9 @@
  #if BUILDFLAG(IS_APPLE)

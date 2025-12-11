@@ -1,4 +1,4 @@
---- extensions/renderer/bindings/api_binding_util.cc.orig	2025-11-06 10:11:34 UTC
+--- extensions/renderer/bindings/api_binding_util.cc.orig	2025-12-10 15:04:57 UTC
 +++ extensions/renderer/bindings/api_binding_util.cc
 @@ -128,7 +128,7 @@ void InvalidateContext(v8::Local<v8::Context> context)
  std::string GetPlatformString() {

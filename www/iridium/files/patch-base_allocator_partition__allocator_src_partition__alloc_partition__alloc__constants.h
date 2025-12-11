@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h.orig	2025-10-28 14:29:43 UTC
+--- base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h.orig	2025-12-10 15:04:57 UTC
 +++ base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h
 @@ -315,7 +315,7 @@ PA_DEFINE_OPERATORS_FOR_FLAGS(PoolHandleMask);
  // 8GB for each of the glued pools).

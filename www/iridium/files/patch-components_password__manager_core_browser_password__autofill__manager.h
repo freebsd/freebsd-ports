@@ -1,4 +1,4 @@
---- components/password_manager/core/browser/password_autofill_manager.h.orig	2025-11-06 10:11:34 UTC
+--- components/password_manager/core/browser/password_autofill_manager.h.orig	2025-12-10 15:04:57 UTC
 +++ components/password_manager/core/browser/password_autofill_manager.h
 @@ -291,7 +291,7 @@ class PasswordAutofillManager : public autofill::Autof
  

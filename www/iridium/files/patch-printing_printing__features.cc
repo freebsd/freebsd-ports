@@ -1,4 +1,4 @@
---- printing/printing_features.cc.orig	2025-11-06 10:11:34 UTC
+--- printing/printing_features.cc.orig	2025-12-10 15:04:57 UTC
 +++ printing/printing_features.cc
 @@ -22,7 +22,7 @@ BASE_FEATURE(kAddPrinterViaPrintscanmgr, base::FEATURE
  BASE_FEATURE(kApiPrintingMarginsAndScale, base::FEATURE_DISABLED_BY_DEFAULT);

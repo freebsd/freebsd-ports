@@ -1,4 +1,4 @@
---- v8/src/trap-handler/handler-inside-posix.cc.orig	2025-09-11 13:19:19 UTC
+--- v8/src/trap-handler/handler-inside-posix.cc.orig	2025-12-10 15:04:57 UTC
 +++ v8/src/trap-handler/handler-inside-posix.cc
 @@ -62,6 +62,8 @@ namespace trap_handler {
  #define CONTEXT_REG(reg, REG) &uc->uc_mcontext->__ss.__##reg

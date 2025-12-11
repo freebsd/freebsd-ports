@@ -1,6 +1,6 @@
---- chrome/browser/BUILD.gn.orig	2025-11-06 10:11:34 UTC
+--- chrome/browser/BUILD.gn.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/BUILD.gn
-@@ -7144,6 +7144,13 @@ static_library("browser") {
+@@ -7142,6 +7142,13 @@ static_library("browser") {
            [ "//third_party/webrtc/modules/desktop_capture:pipewire_config" ]
      }
  

@@ -1,4 +1,4 @@
---- components/device_signals/core/browser/desktop/desktop_os_signals_collector.cc.orig	2025-09-11 13:19:19 UTC
+--- components/device_signals/core/browser/desktop/desktop_os_signals_collector.cc.orig	2025-12-10 15:04:57 UTC
 +++ components/device_signals/core/browser/desktop/desktop_os_signals_collector.cc
 @@ -43,7 +43,7 @@ std::unique_ptr<OsSignalsResponse> AddAsyncOsSignals(
      os_signals_response->disk_encryption = device_signals::GetDiskEncrypted();

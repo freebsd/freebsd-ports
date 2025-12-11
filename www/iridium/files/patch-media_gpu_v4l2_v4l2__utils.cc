@@ -1,4 +1,4 @@
---- media/gpu/v4l2/v4l2_utils.cc.orig	2025-11-06 10:11:34 UTC
+--- media/gpu/v4l2/v4l2_utils.cc.orig	2025-12-10 15:04:57 UTC
 +++ media/gpu/v4l2/v4l2_utils.cc
 @@ -18,7 +18,7 @@
  #include <map>

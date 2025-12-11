@@ -1,4 +1,4 @@
---- content/browser/child_thread_type_switcher_linux.h.orig	2025-05-07 06:48:23 UTC
+--- content/browser/child_thread_type_switcher_linux.h.orig	2025-12-10 15:04:57 UTC
 +++ content/browser/child_thread_type_switcher_linux.h
 @@ -36,7 +36,7 @@ class ChildThreadTypeSwitcher : public mojom::ThreadTy
    void SetPid(base::ProcessId child_pid);

@@ -1,4 +1,4 @@
---- chrome/browser/webauthn/password_credential_ui_controller.cc.orig	2025-10-28 14:29:43 UTC
+--- chrome/browser/webauthn/password_credential_ui_controller.cc.orig	2025-12-10 15:04:57 UTC
 +++ chrome/browser/webauthn/password_credential_ui_controller.cc
 @@ -26,7 +26,7 @@ using content::WebContents;
  namespace {

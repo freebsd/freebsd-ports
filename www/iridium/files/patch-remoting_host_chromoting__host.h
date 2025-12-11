@@ -1,4 +1,4 @@
---- remoting/host/chromoting_host.h.orig	2025-05-07 06:48:23 UTC
+--- remoting/host/chromoting_host.h.orig	2025-12-10 15:04:57 UTC
 +++ remoting/host/chromoting_host.h
 @@ -36,7 +36,7 @@
  #include "remoting/protocol/session_manager.h"
