@@ -11,6 +11,9 @@ WWW=		https://www.mediawiki.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=		Upstream EOL
+EXPIRATION_DATE=	2025-12-31
+
 CONFLICTS=	mediawiki14[0-9]
 
 USES=		cpe php:flavors shebangfix
