@@ -62,7 +62,6 @@ share/man/man1/gsf.1.gz
 share/gir-1.0/Gsf-1.gir
 share/gtk-doc/html/gsf/annotation-glossary.html
 share/gtk-doc/html/gsf/api.html
-share/gtk-doc/html/gsf/dependencies.html
 share/gtk-doc/html/gsf/gsf-Compression.html
 share/gtk-doc/html/gsf/gsf-GIO.html
 share/gtk-doc/html/gsf/gsf-GIOChannel.html
@@ -81,13 +80,10 @@ share/gtk-doc/html/gsf/gsf-clip-data.html
 share/gtk-doc/html/gsf/gsf-index.html
 share/gtk-doc/html/gsf/gsf-memory.html
 share/gtk-doc/html/gsf/gsf-metadata.html
-share/gtk-doc/html/gsf/gsf-users.html
 share/gtk-doc/html/gsf/gsf-Utilities.html
 share/gtk-doc/html/gsf/gsf.devhelp2
-share/gtk-doc/html/gsf/history.html
 share/gtk-doc/html/gsf/home.png
 share/gtk-doc/html/gsf/index.html
-share/gtk-doc/html/gsf/intro.html
 share/gtk-doc/html/gsf/io.html
 share/gtk-doc/html/gsf/left-insensitive.png
 share/gtk-doc/html/gsf/left.png
