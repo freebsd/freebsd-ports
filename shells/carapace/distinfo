@@ -1,5 +1,5 @@
-TIMESTAMP = 1763538960
-SHA256 (go/shells_carapace/carapace-v1.5.5/v1.5.5.mod) = af2695ab67ab12002757b931fef5c420fbeb9b813260630527a3e340a9b160c6
-SIZE (go/shells_carapace/carapace-v1.5.5/v1.5.5.mod) = 828
-SHA256 (go/shells_carapace/carapace-v1.5.5/v1.5.5.zip) = 6575e3a85a793b77f9566c40df826af810cc3c4d17c14cbbd17fa382378705e0
-SIZE (go/shells_carapace/carapace-v1.5.5/v1.5.5.zip) = 22497188
+TIMESTAMP = 1765418688
+SHA256 (go/shells_carapace/carapace-v1.5.7/v1.5.7.mod) = e0565826d56e952e2602faa9085f14035cfdc15313c5ea9511518981e3f3463b
+SIZE (go/shells_carapace/carapace-v1.5.7/v1.5.7.mod) = 829
+SHA256 (go/shells_carapace/carapace-v1.5.7/v1.5.7.zip) = 3d5125385af15e70793424f6c8cf5bae2cddd91850b2b4661359e08a4d480e43
+SIZE (go/shells_carapace/carapace-v1.5.7/v1.5.7.zip) = 22557098
