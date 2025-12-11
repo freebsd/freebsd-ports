@@ -9,6 +9,7 @@ COMMENT=	Lua scripting tool for Java
 WWW=		http://www.keplerproject.org/luajava/
 
 USES=		gmake dos2unix java lua:51
+JAVA_VERSION=	8
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
