@@ -1,8 +1,8 @@
 PORTNAME=	intellij-ultimate
-DISTVERSION=	2025.2.3
+DISTVERSION=	2025.3
 CATEGORIES=	java devel
 MASTER_SITES=	https://download-cdn.jetbrains.com/idea/
-DISTNAME=	ideaIU-${DISTVERSION}
+DISTNAME=	idea-${DISTVERSION}
 DIST_SUBDIR=	jetbrains
 
 MAINTAINER=	andoriyu@gmail.com
@@ -21,7 +21,7 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		lsof:sysutils/lsof
 
 USES=		java
-JAVA_VERSION=	17+
+JAVA_VERSION=	21+
 
 CONFLICTS=	idea intellij
 
@@ -29,7 +29,7 @@ NO_BUILD=	yes
 SUB_FILES=	idea idea.desktop pkg-message
 
 BUILD_TYPE=	IU
-BUILD_VERSION=	252.26830.84
+BUILD_VERSION=	253.28294.334
 BUILD_MARKER=	${BUILD_TYPE}-${BUILD_VERSION}
 PLIST_SUB=	BUILD_MARKER=${BUILD_MARKER}
 WRKSRC=		${WRKDIR}/idea-${BUILD_MARKER}
@@ -53,13 +53,10 @@ post-patch:
 		${WRKSRC}/plugins/clouds-docker-impl \
 		${WRKSRC}/plugins/cwm-plugin \
 		${WRKSRC}/plugins/gateway-plugin \
-		${WRKSRC}/plugins/gateway-terminal \
-		${WRKSRC}/plugins/llmInstaller/video/Idea/.DS_Store \
 		${WRKSRC}/plugins/maven/lib/maven3/lib/jansi-native/ \
 		${WRKSRC}/plugins/maven/lib/maven4-server-lib \
 		${WRKSRC}/plugins/remote-dev-server/ \
-		${WRKSRC}/plugins/station-plugin/toolbox/ \
-		${WRKSRC}/plugins/webp/lib/libwebp/
+		${WRKSRC}/plugins/station-plugin/toolbox
 
 	@${SED} -i '' 's,/amd64,,' ${WRKSRC}/bin/idea.sh ${WRKSRC}/product-info.json
 	@${SED} -i '' 's/amd64/${ARCH}/' ${WRKSRC}/product-info.json
