@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.91.1
+PORTVERSION?=	1.92.0
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -47,7 +47,7 @@ CONFLICTS_INSTALL?=	rust-nightly rust188
 TMPDIR?=	${WRKDIR}
 
 OPTIONS_DEFINE=		DOCS GDB LTO PORT_LLVM SOURCES WASM
-OPTIONS_DEFAULT=	DOCS SOURCES
+OPTIONS_DEFAULT=	DOCS SOURCES WASM
 OPTIONS_DEFINE_i386=	SSE2
 OPTIONS_DEFAULT_i386=	SSE2
 
@@ -63,17 +63,18 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true \
 			_COMPONENTS+="rust-docs-${_PACKAGE_VERS}-${_RUST_TARGET} rust-docs-json-${_PACKAGE_VERS}-${_RUST_TARGET}"
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
-PORT_LLVM_USES=		llvm:min=19,lib,noexport
+PORT_LLVM_USES=		llvm:min=${LLVM_VERSION},lib,noexport
 PORT_LLVM_MAKE_ENV=	RUSTFLAGS="-Lnative=${LOCALBASE}/lib"
-WASM_USES=		llvm:min=19,lib,noexport
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
 WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-std-${_PACKAGE_VERS}-wasm32-unknown-unknown" \
 			_RUST_TARGETS+=wasm32-unknown-unknown
 
 # See WRKSRC/src/stage0 for the date and version values
-BOOTSTRAPS_DATE?=		2025-09-18
-RUST_BOOTSTRAP_VERSION?=	1.90.0
+BOOTSTRAPS_DATE?=		2025-10-30
+RUST_BOOTSTRAP_VERSION?=	1.91.0
+
+LLVM_VERSION=	20
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -199,6 +200,9 @@ do-configure:
 	@${ECHO_CMD} 'remap-debuginfo=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'download-ci-llvm=false' >> ${WRKSRC}/config.toml
+.if ${PORT_OPTIONS:MWASM}
+	@${ECHO_CMD} 'clang=true' >> ${WRKSRC}/config.toml
+.endif
 .if ${PORT_OPTIONS:MLTO}
 	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
 .endif
@@ -220,11 +224,11 @@ do-configure:
 	@${ECHO_CMD} 'cxx="${WRKDIR}/cxx-wrapper"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
 .else
-# base clang doesn't support wasm32-unknown-unknown, use llvm from ports
+# use the builtin clang
 .if ${_target} == "wasm32-unknown-unknown"
-	@${ECHO_CMD} 'cc="${LOCALBASE}/bin/clang${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'cxx="${LOCALBASE}/bin/clang++${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
-	@${ECHO_CMD} 'linker="${LOCALBASE}/bin/clang${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cc="${WRKDIR}/_build/${_RUST_TARGET}/llvm/bin/clang"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cxx="${WRKDIR}/_build/${_RUST_TARGET}/llvm/bin/clang++"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'linker="${WRKDIR}/_build/${_RUST_TARGET}/llvm/bin/clang"' >> ${WRKSRC}/config.toml
 .else
 	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
