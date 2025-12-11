@@ -1,3 +1,3 @@
-TIMESTAMP = 1765462485
-SHA256 (freebsd-drm-kmod-6.6.25-drm_v6.6.25_8_GH0.tar.gz) = 997bc429a45cce30c27a0a5c294faf5cd2ea0e7bff9fb1b7354ce1547e8cf266
-SIZE (freebsd-drm-kmod-6.6.25-drm_v6.6.25_8_GH0.tar.gz) = 38487070
+TIMESTAMP = 1765465156
+SHA256 (freebsd-drm-kmod-6.6.25-drm_v6.6.25_9_GH0.tar.gz) = 14e90e4cc9ed5e72f6036f01987a20e2918026502d3116e97ffa4156514a13bb
+SIZE (freebsd-drm-kmod-6.6.25-drm_v6.6.25_9_GH0.tar.gz) = 38488554
