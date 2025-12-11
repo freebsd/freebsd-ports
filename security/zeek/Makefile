@@ -1,5 +1,6 @@
 PORTNAME=	zeek
 DISTVERSION=	8.0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://download.zeek.org/
 
@@ -159,6 +160,11 @@ STRIP=
 .if ${PORT_OPTIONS:MZEEKCTL}
 USE_RC_SUBR=	zeek
 .endif
+
+# Let crash-diag find gdb (when installed)
+post-patch:
+	${REINPLACE_CMD} -e "2s,^\#,export PATH=${LOCALBASE}/bin"':$${PATH}', \
+	    ${WRKSRC}/auxil/zeekctl/bin/crash-diag
 
 post-install:
 	${MV} ${STAGEDIR}${DATADIR}/site/local.zeek \
