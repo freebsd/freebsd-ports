@@ -2146,6 +2146,7 @@ share/locale/is/LC_MESSAGES/kcmmouse.mo
 share/locale/is/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/is/LC_MESSAGES/knetattach.mo
 share/locale/is/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/is/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -2158,6 +2159,7 @@ share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.showdesktop.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.taskmanager.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.trash.mo
 share/locale/is/LC_MESSAGES/plasma_applet_org.kde.plasma.windowlist.mo
+share/locale/is/LC_MESSAGES/plasma_runner_keys.mo
 share/locale/is/LC_MESSAGES/plasma_runner_kwin.mo
 share/locale/is/LC_MESSAGES/plasma_runner_plasma-desktop.mo
 share/locale/is/LC_MESSAGES/plasma_shell_org.kde.plasma.desktop.mo

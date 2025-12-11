@@ -340,11 +340,14 @@ share/locale/id/LC_MESSAGES/kdesu.mo
 share/locale/id/LC_MESSAGES/kioclient.mo
 share/locale/id/LC_MESSAGES/kmimetypefinder.mo
 share/locale/id/LC_MESSAGES/kstart.mo
+share/locale/is/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/is/LC_MESSAGES/kcm_filetypes.mo
+share/locale/is/LC_MESSAGES/kde-inhibit.mo
 share/locale/is/LC_MESSAGES/kdesu.mo
 share/locale/is/LC_MESSAGES/kioclient.mo
 share/locale/is/LC_MESSAGES/kmimetypefinder.mo
 share/locale/is/LC_MESSAGES/kstart.mo
+share/locale/is/LC_MESSAGES/plasma-open-settings.mo
 share/locale/it/LC_MESSAGES/kbroadcastnotification.mo
 share/locale/it/LC_MESSAGES/kcm_filetypes.mo
 share/locale/it/LC_MESSAGES/kde-inhibit.mo

@@ -1200,6 +1200,7 @@ share/locale/id/LC_MESSAGES/kcmkwincommon.mo
 share/locale/id/LC_MESSAGES/kcmkwinscreenedges.mo
 share/locale/id/LC_MESSAGES/kcmkwm.mo
 share/locale/id/LC_MESSAGES/kwin.mo
+share/locale/is/LC_MESSAGES/kcm_animations.mo
 share/locale/is/LC_MESSAGES/kcm_kwin_effects.mo
 share/locale/is/LC_MESSAGES/kcm_kwin_scripts.mo
 share/locale/is/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
