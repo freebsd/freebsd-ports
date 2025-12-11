@@ -8,6 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java package for scalable scientific and technical computing
 WWW=		https://acs.lbl.gov/~hoschek/colt/
 
+JAVA_VERSION=	8
+
 NO_ARCH=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
