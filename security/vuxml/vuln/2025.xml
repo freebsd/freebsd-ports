@@ -1,3 +1,446 @@
+  <vuln vid="c11e0878-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>MongoDB Server -- Improper Locking</topic>
+    <affects>
+    <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.26</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-106075 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-106075">
+	  <p>A post-authenticationflaw in the network two-phase commit
+	  protocol used for cross-shard transactions in MongoDB Server
+	  may lead to logical data inconsistencies under specific
+	  conditions which are not predictable and exist for a very
+	  short period of time.  This error can cause the transaction
+	  coordination logic to misinterpret the transaction as
+	  committed, resulting in inconsistent state on those shards.
+	  This may lead to low integrity and availability impact.
+	</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14345</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14345</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bb326db4-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/buglist.cgi?bug_id=1966501%2C1997639 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1966501%2C1997639">
+	  <p>Memory safety bugs. Some of these bugs showed evidence of
+	  memory corruption and we presume that with enough effort
+	  some of these could have been exploited to run arbitrary
+	  code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14333</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14333</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b6e19247-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/buglist.cgi?bug_id=1963153%2C1985058%2C1995637%2C1997118 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1963153%2C1985058%2C1995637%2C1997118">
+	  <p>Memory safety bugs. Some of these bugs showed evidence of
+	  memory corruption and we presume that with enough effort
+	  some of these could have been exploited to run arbitrary
+	  code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14332</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14332</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b463bded-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Same-origin policy bypass</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2000218 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2000218">
+	  <p>Same-origin policy bypass in the Request Handling
+	  component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14331</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14331</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b25f61b8-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- JIT miscompilation in the JavaScript Engine: JIT component</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1997503 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1997503">
+	  <p>JIT miscompilation in the JavaScript Engine: JIT
+	  component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14330</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14330</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b06e1b9a-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Privilege escalation</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1997018 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1997018">
+	  <p>Privilege escalation in the Netmonitor component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14329</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14329</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ae40f296-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Privilege escalation</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1996761 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1996761">
+	  <p>Privilege escalation in the Netmonitor component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14328</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14328</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="aad09be1-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Spoofing issue</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1970743 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1970743">
+	  <p>Spoofing issue in the Downloads Panel component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14327</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14327</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a74a1ffc-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Use-after-free</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1840666 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1840666">
+	  <p>Use-after-free in the Audio/Video: GMP component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14326</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14326</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a3c77387-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- JIT miscompilation</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1998050 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1998050">
+	  <p>JIT miscompilation in the JavaScript Engine: JIT
+	  component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14325</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14325</url>
+      <cvename>CVE-2025-14324</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14324</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9c923dc2-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Privilege escalation</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1996555 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1996555">
+	  <p>Privilege escalation in the DOM: Notifications
+	  component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14323</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14323</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9a9d50a6-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Sandbox escape</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>Thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1996473 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1996473">
+	  <p>Sandbox escape due to incorrect boundary conditions in
+	  the Graphics: CanvasWebGL component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14322</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14322</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9525edbf-d6a8-11f0-8e1b-b42e991fc52e">
+    <topic>Mozilla -- Use-after-free</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.0,2</lt></range>
+    </package>
+    <package>
+	<name>firefox-esr</name>
+	<range><lt>140.6</lt></range>
+    </package>
+    <package>
+	<name>Thunderbird</name>
+	<range><lt>146.0.0</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=1992760 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=1992760">
+	  <p>Use-after-free in the WebRTC: Signaling component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14321</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14321</url>
+    </references>
+    <dates>
+      <discovery>2025-12-09</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c6c9306e-d645-11f0-8ce2-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
