@@ -66,6 +66,7 @@
 %%DCN_3_1_6%%/%%KMODDIR%%/amdgpu_dcn_3_1_6_dmcub_bin.ko
 %%DCN_3_2_0%%/%%KMODDIR%%/amdgpu_dcn_3_2_0_dmcub_bin.ko
 %%DCN_3_2_1%%/%%KMODDIR%%/amdgpu_dcn_3_2_1_dmcub_bin.ko
+%%DCN_3_5%%/%%KMODDIR%%/amdgpu_dcn_3_5_dmcub_bin.ko
 %%FIJI%%/%%KMODDIR%%/amdgpu_fiji_ce_bin.ko
 %%FIJI%%/%%KMODDIR%%/amdgpu_fiji_mc_bin.ko
 %%FIJI%%/%%KMODDIR%%/amdgpu_fiji_me_bin.ko
@@ -78,6 +79,8 @@
 %%FIJI%%/%%KMODDIR%%/amdgpu_fiji_smc_bin.ko
 %%FIJI%%/%%KMODDIR%%/amdgpu_fiji_uvd_bin.ko
 %%FIJI%%/%%KMODDIR%%/amdgpu_fiji_vce_bin.ko
+%%GC_9_4_3%%/%%KMODDIR%%/amdgpu_gc_9_4_3_mec_bin.ko
+%%GC_9_4_3%%/%%KMODDIR%%/amdgpu_gc_9_4_3_rlc_bin.ko
 %%GC_10_3_6%%/%%KMODDIR%%/amdgpu_gc_10_3_6_ce_bin.ko
 %%GC_10_3_6%%/%%KMODDIR%%/amdgpu_gc_10_3_6_me_bin.ko
 %%GC_10_3_6%%/%%KMODDIR%%/amdgpu_gc_10_3_6_mec_bin.ko
@@ -129,6 +132,13 @@
 %%GC_11_0_4%%/%%KMODDIR%%/amdgpu_gc_11_0_4_mes_2_bin.ko
 %%GC_11_0_4%%/%%KMODDIR%%/amdgpu_gc_11_0_4_pfp_bin.ko
 %%GC_11_0_4%%/%%KMODDIR%%/amdgpu_gc_11_0_4_rlc_bin.ko
+%%GC_11_5_0%%/%%KMODDIR%%/amdgpu_gc_11_5_0_imu_bin.ko
+%%GC_11_5_0%%/%%KMODDIR%%/amdgpu_gc_11_5_0_me_bin.ko
+%%GC_11_5_0%%/%%KMODDIR%%/amdgpu_gc_11_5_0_mec_bin.ko
+%%GC_11_5_0%%/%%KMODDIR%%/amdgpu_gc_11_5_0_mes1_bin.ko
+%%GC_11_5_0%%/%%KMODDIR%%/amdgpu_gc_11_5_0_mes_2_bin.ko
+%%GC_11_5_0%%/%%KMODDIR%%/amdgpu_gc_11_5_0_pfp_bin.ko
+%%GC_11_5_0%%/%%KMODDIR%%/amdgpu_gc_11_5_0_rlc_bin.ko
 %%HAINAN%%/%%KMODDIR%%/amdgpu_hainan_ce_bin.ko
 %%HAINAN%%/%%KMODDIR%%/amdgpu_hainan_k_smc_bin.ko
 %%HAINAN%%/%%KMODDIR%%/amdgpu_hainan_mc_bin.ko
@@ -321,6 +331,8 @@
 %%PSP_13_0_5%%/%%KMODDIR%%/amdgpu_psp_13_0_5_asd_bin.ko
 %%PSP_13_0_5%%/%%KMODDIR%%/amdgpu_psp_13_0_5_ta_bin.ko
 %%PSP_13_0_5%%/%%KMODDIR%%/amdgpu_psp_13_0_5_toc_bin.ko
+%%PSP_13_0_6%%/%%KMODDIR%%/amdgpu_psp_13_0_6_sos_bin.ko
+%%PSP_13_0_6%%/%%KMODDIR%%/amdgpu_psp_13_0_6_ta_bin.ko
 %%PSP_13_0_7%%/%%KMODDIR%%/amdgpu_psp_13_0_7_sos_bin.ko
 %%PSP_13_0_7%%/%%KMODDIR%%/amdgpu_psp_13_0_7_ta_bin.ko
 %%PSP_13_0_8%%/%%KMODDIR%%/amdgpu_psp_13_0_8_asd_bin.ko
@@ -330,6 +342,8 @@
 %%PSP_13_0_10%%/%%KMODDIR%%/amdgpu_psp_13_0_10_ta_bin.ko
 %%PSP_13_0_11%%/%%KMODDIR%%/amdgpu_psp_13_0_11_ta_bin.ko
 %%PSP_13_0_11%%/%%KMODDIR%%/amdgpu_psp_13_0_11_toc_bin.ko
+%%PSP_14_0_0%%/%%KMODDIR%%/amdgpu_psp_14_0_0_ta_bin.ko
+%%PSP_14_0_0%%/%%KMODDIR%%/amdgpu_psp_14_0_0_toc_bin.ko
 %%RAVEN2%%/%%KMODDIR%%/amdgpu_raven2_asd_bin.ko
 %%RAVEN2%%/%%KMODDIR%%/amdgpu_raven2_ce_bin.ko
 %%RAVEN2%%/%%KMODDIR%%/amdgpu_raven2_gpu_info_bin.ko
@@ -366,15 +380,19 @@
 %%RENOIR%%/%%KMODDIR%%/amdgpu_renoir_sdma_bin.ko
 %%RENOIR%%/%%KMODDIR%%/amdgpu_renoir_ta_bin.ko
 %%RENOIR%%/%%KMODDIR%%/amdgpu_renoir_vcn_bin.ko
+%%SDMA_4_4_2%%/%%KMODDIR%%/amdgpu_sdma_4_4_2_bin.ko
 %%SDMA_5_2_6%%/%%KMODDIR%%/amdgpu_sdma_5_2_6_bin.ko
 %%SDMA_5_2_7%%/%%KMODDIR%%/amdgpu_sdma_5_2_7_bin.ko
 %%SDMA_6_0_0%%/%%KMODDIR%%/amdgpu_sdma_6_0_0_bin.ko
 %%SDMA_6_0_1%%/%%KMODDIR%%/amdgpu_sdma_6_0_1_bin.ko
 %%SDMA_6_0_2%%/%%KMODDIR%%/amdgpu_sdma_6_0_2_bin.ko
 %%SDMA_6_0_3%%/%%KMODDIR%%/amdgpu_sdma_6_0_3_bin.ko
+%%SDMA_6_1_0%%/%%KMODDIR%%/amdgpu_sdma_6_1_0_bin.ko
 %%SMU_13_0_0%%/%%KMODDIR%%/amdgpu_smu_13_0_0_bin.ko
+%%SMU_13_0_6%%/%%KMODDIR%%/amdgpu_smu_13_0_6_bin.ko
 %%SMU_13_0_7%%/%%KMODDIR%%/amdgpu_smu_13_0_7_bin.ko
 %%SMU_13_0_10%%/%%KMODDIR%%/amdgpu_smu_13_0_10_bin.ko
+%%SMU_14_0_2%%/%%KMODDIR%%/amdgpu_smu_14_0_2_bin.ko
 %%SI58%%/%%KMODDIR%%/amdgpu_si58_mc_bin.ko
 %%STONEY%%/%%KMODDIR%%/amdgpu_stoney_ce_bin.ko
 %%STONEY%%/%%KMODDIR%%/amdgpu_stoney_me_bin.ko
@@ -420,6 +438,7 @@
 %%VCN_4_0_0%%/%%KMODDIR%%/amdgpu_vcn_4_0_0_bin.ko
 %%VCN_4_0_2%%/%%KMODDIR%%/amdgpu_vcn_4_0_2_bin.ko
 %%VCN_4_0_4%%/%%KMODDIR%%/amdgpu_vcn_4_0_4_bin.ko
+%%VCN_4_0_5%%/%%KMODDIR%%/amdgpu_vcn_4_0_5_bin.ko
 %%VEGA10%%/%%KMODDIR%%/amdgpu_vega10_acg_smc_bin.ko
 %%VEGA10%%/%%KMODDIR%%/amdgpu_vega10_asd_bin.ko
 %%VEGA10%%/%%KMODDIR%%/amdgpu_vega10_ce_bin.ko
@@ -482,6 +501,7 @@
 %%VERDE%%/%%KMODDIR%%/amdgpu_verde_rlc_bin.ko
 %%VERDE%%/%%KMODDIR%%/amdgpu_verde_smc_bin.ko
 %%VERDE%%/%%KMODDIR%%/amdgpu_verde_uvd_bin.ko
+%%VPE_6_1_0%%/%%KMODDIR%%/amdgpu_vpe_6_1_0_bin.ko
 %%DIMGREY_CAVEFISH%%/%%KMODDIR%%/amdgpu_dimgrey_cavefish_ce_bin.ko
 %%DIMGREY_CAVEFISH%%/%%KMODDIR%%/amdgpu_dimgrey_cavefish_dmcub_bin.ko
 %%DIMGREY_CAVEFISH%%/%%KMODDIR%%/amdgpu_dimgrey_cavefish_me_bin.ko
