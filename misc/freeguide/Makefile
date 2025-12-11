@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 RUN_DEPENDS=	tv_cat:textproc/p5-xmltv
 
 USES=		java:ant,run
-JAVA_VERSION=	8
 
 NO_ARCH=	yes
 
