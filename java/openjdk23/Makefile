@@ -1,6 +1,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -9,6 +10,9 @@ COMMENT=	Java Development Kit ${JDK_MAJOR_VERSION}
 WWW=		https://openjdk.java.net/projects/jdk/23/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=	2026-05-12
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
