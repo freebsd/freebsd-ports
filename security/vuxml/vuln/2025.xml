@@ -1,3 +1,50 @@
+  <vuln vid="c6c9306e-d645-11f0-8ce2-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.6.0</ge><lt>18.6.2</lt></range>
+	<range><ge>18.5.0</ge><lt>18.5.4</lt></range>
+	<range><ge>6.3.0</ge><lt>18.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2025/12/10/patch-release-gitlab-18-6-2-released/">
+	  <p>Cross-site scripting issue in Wiki impacts GitLab CE/EE</p>
+	  <p>Improper encoding in vulnerability reports impacts GitLab CE/EE</p>
+	  <p>Cross-site scripting issue in Swagger UI impacts GitLab CE/EE</p>
+	  <p>Denial of service issue in GraphQL endpoints impacts GitLab CE/EE</p>
+	  <p>Authentication bypass issue for WebAuthn users impacts GitLab CE/EE</p>
+	  <p>Denial of service issue in ExifTool processing impacts GitLab CE/EE</p>
+	  <p>Denial of service issue in Commit API impacts GitLab CE/EE</p>
+	  <p>Information disclosure issue in compliance frameworks impacts GitLab EE</p>
+	  <p>Information disclosure through error messages impacts GitLab CE/EE</p>
+	  <p>HTML injection issue in merge request titles impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-12716</cvename>
+      <cvename>CVE-2025-8405</cvename>
+      <cvename>CVE-2025-12029</cvename>
+      <cvename>CVE-2025-12562</cvename>
+      <cvename>CVE-2025-11984</cvename>
+      <cvename>CVE-2025-4097</cvename>
+      <cvename>CVE-2025-14157</cvename>
+      <cvename>CVE-2025-11247</cvename>
+      <cvename>CVE-2025-13978</cvename>
+      <cvename>CVE-2025-12734</cvename>
+      <url>https://about.gitlab.com/releases/2025/12/10/patch-release-gitlab-18-6-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2025-12-10</discovery>
+      <entry>2025-12-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="613d0f9e-d477-11f0-9e85-03ddfea11990">
     <topic>python -- several vulnerabilities</topic>
     <affects>
