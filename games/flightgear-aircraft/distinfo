@@ -1,4 +1,4 @@
-TIMESTAMP = 1760729034
+TIMESTAMP = 1765402677
 SHA256 (flightgear-aircraft/737-200.zip) = 9464ca2b5bb4eb1dd1e8d39a9f78aae43a0de21a96204382d95aae9f82702b6a
 SIZE (flightgear-aircraft/737-200.zip) = 31936863
 SHA256 (flightgear-aircraft/A-10.zip) = d0b3d053c91e8ae3c88da1d3ec08beadeebea0adcceaafea4ccfcb7cec2e7b52
@@ -15,8 +15,8 @@ SHA256 (flightgear-aircraft/Breguet-XIX.zip) = cd01028439aab02a1012156e3d6454562
 SIZE (flightgear-aircraft/Breguet-XIX.zip) = 6357593
 SHA256 (flightgear-aircraft/C130.zip) = cf72c728e8111022754d788e6d1efb1cf89eca0c05931193b3ddfaeed2c379c1
 SIZE (flightgear-aircraft/C130.zip) = 76859988
-SHA256 (flightgear-aircraft/Caravelle.zip) = dad86884fff5e01904722c7a3d41d2b8eb5027210b6deb390e111d10e4bf347f
-SIZE (flightgear-aircraft/Caravelle.zip) = 39615790
+SHA256 (flightgear-aircraft/Caravelle.zip) = d4ede6585ed474416a108c51da8dfef0c858fe0d5ff4c411aa36e752496a2dc6
+SIZE (flightgear-aircraft/Caravelle.zip) = 46417672
 SHA256 (flightgear-aircraft/Caudron-G3.zip) = b58293780aed60b1cea0c8daef425139f2a390785f33c14cd58453fd8c8fd4a1
 SIZE (flightgear-aircraft/Caudron-G3.zip) = 23720305
 SHA256 (flightgear-aircraft/F80C.zip) = 7e6d72122a18e502a0c432139cc306e717c41fabf73c52c23c115b985f5f8c22

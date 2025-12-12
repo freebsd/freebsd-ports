@@ -1,5 +1,5 @@
 PORTNAME=	flightgear-aircraft
-PORTVERSION=	20251017
+PORTVERSION=	20251211
 CATEGORIES=	games
 # See http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2024/
