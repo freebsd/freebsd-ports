@@ -52,7 +52,8 @@ USE_CSTD=	c99
 LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
 
 CFLAGS+=	-I${LOCALBASE}/include -I${PKG_PREFIX}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-lm -lkvm -ldevstat \
+		-L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}
 CONFIGURE_ENV+=	PERLPROG="${PERL}" PSPROG="${PS_CMD}" SED="${SED}"
 CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-default-snmp-version="${DEFAULT_SNMP_VERSION}" \
@@ -62,7 +63,7 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
 		--with-gnu-ld --without-libwrap --enable-ipv6 \
 		--without-kmem-usage \
-		--with-ldflags="-lm -lkvm -ldevstat -L${PKG_PREFIX}/lib -L${LOCALBASE}/lib ${LCRYPTO}"
+		--with-ldflags=${LDFLAGS:Q}
 SUB_FILES=	pkg-message
 
 .if defined(WITH_SSP)
