@@ -1,6 +1,6 @@
 PORTNAME=	rekor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2
+DISTVERSION=	1.4.3
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -45,7 +45,7 @@ USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 .endif
 
-GIT_HASH=	23797850121dc2608ef0b3684db460d1decafdfd
+GIT_HASH=	cb5b1d5f364a8437e1c6c857b200283e2dcc2b29
 
 .include <bsd.port.pre.mk>
 
