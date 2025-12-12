@@ -1,4 +1,4 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-12-06 13:30:52 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-12-12 07:44:27 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
 @@ -0,0 +1,396 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -68,11 +68,11 @@
 +
 +#define MAXTOKENS	3
 +
-+#define _UNVEIL_MAIN		"/etc/chromium/unveil.main";
-+#define _UNVEIL_GPU		"/etc/chromium/unveil.gpu";
-+#define _UNVEIL_UTILITY_NETWORK	"/etc/chromium/unveil.utility_network";
-+#define _UNVEIL_UTILITY_AUDIO	"/etc/chromium/unveil.utility_audio";
-+#define _UNVEIL_UTILITY_VIDEO	"/etc/chromium/unveil.utility_video";
++#define _UNVEIL_MAIN		"/etc/ungoogled-chromium/unveil.main";
++#define _UNVEIL_GPU		"/etc/ungoogled-chromium/unveil.gpu";
++#define _UNVEIL_UTILITY_NETWORK	"/etc/ungoogled-chromium/unveil.utility_network";
++#define _UNVEIL_UTILITY_AUDIO	"/etc/ungoogled-chromium/unveil.utility_audio";
++#define _UNVEIL_UTILITY_VIDEO	"/etc/ungoogled-chromium/unveil.utility_video";
 +
 +namespace sandbox {
 +namespace policy {
@@ -135,7 +135,7 @@
 +      base::PathService::Get(base::DIR_CACHE, &cache_directory);
 +      base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
-+      cache_directory = cache_directory.AppendASCII("chromium");
++      cache_directory = cache_directory.AppendASCII("ungoogled-chromium");
 +      local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
 +
 +      if (!base::CreateDirectory(cache_directory)) {
@@ -334,7 +334,7 @@
 +
 +  switch(sandbox_type) {
 +    case sandbox::mojom::Sandbox::kNoSandbox:
-+      SetPledge(NULL, "/etc/chromium/pledge.main");
++      SetPledge(NULL, "/etc/ungoogled-chromium/pledge.main");
 +      break;
 +    case sandbox::mojom::Sandbox::kRenderer:
 +      // prot_exec needed by v8
@@ -346,13 +346,13 @@
 +      SetPledge("stdio drm inet rpath flock cpath wpath prot_exec recvfd sendfd tmppath unix", NULL);
 +      break;
 +    case sandbox::mojom::Sandbox::kAudio:
-+      SetPledge(NULL, "/etc/chromium/pledge.utility_audio");
++      SetPledge(NULL, "/etc/ungoogled-chromium/pledge.utility_audio");
 +      break;
 +    case sandbox::mojom::Sandbox::kNetwork:
-+      SetPledge(NULL, "/etc/chromium/pledge.utility_network");
++      SetPledge(NULL, "/etc/ungoogled-chromium/pledge.utility_network");
 +      break;
 +    case sandbox::mojom::Sandbox::kVideoCapture:
-+      SetPledge(NULL, "/etc/chromium/pledge.utility_video");
++      SetPledge(NULL, "/etc/ungoogled-chromium/pledge.utility_video");
 +      break;
 +    case sandbox::mojom::Sandbox::kUtility:
 +    case sandbox::mojom::Sandbox::kService:
