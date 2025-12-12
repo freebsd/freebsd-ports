@@ -1,1 +1,3 @@
-Tools for HTML generation and output
+R-cran-htmltools makes it easy to customize the user interface (UI) of any
+Shiny or R Markdown project by using R code to generate custom HTML (including
+JavaScript and CSS).
