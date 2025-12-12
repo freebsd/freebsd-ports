@@ -1,3 +1,39 @@
+  <vuln vid="ff25a369-d730-11f0-a15a-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>143.0.7499.109</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>143.0.7499.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop_10.html">
+	 <p>This update includes 3 security fixes:</p>
+	 <ul>
+	    <li>[466192044] High: Under coordination.</li>
+	    <li>[460599518] Medium CVE-2025-14372: Use after free in Password Manager. Reported by Weipeng Jiang (@Krace) of VRI on 2025-11-14</li>
+	    <li>[461532432] Medium CVE-2025-14373: Inappropriate implementation in Toolbar. Reported by Khalil Zhani on 2025-11-18</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14372</cvename>
+      <cvename>CVE-2025-14373</cvename>
+      <url>https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop_10.html</url>
+    </references>
+    <dates>
+      <discovery>2025-12-10</discovery>
+      <entry>2025-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c11e0878-d6a8-11f0-8e1b-b42e991fc52e">
     <topic>MongoDB Server -- Improper Locking</topic>
     <affects>
