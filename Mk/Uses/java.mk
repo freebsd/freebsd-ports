@@ -201,7 +201,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .  endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	8 11 17 18 19 20 21 22 23 24
+__JAVA_VERSION_LIST=	8 11 17 18 19 20 21 22 23 24 25
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle
