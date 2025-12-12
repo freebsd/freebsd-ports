@@ -1,0 +1,14 @@
+bin/isdv4-serial-debugger
+bin/isdv4-serial-inputattach
+bin/xsetwacom
+@comment Not marked @sample due to conflict with devd and HAL
+etc/X11/xorg.conf.d/wacom.conf.sample
+include/xorg/Xwacom.h
+include/xorg/isdv4.h
+include/xorg/wacom-properties.h
+include/xorg/wacom-util.h
+lib/xorg/modules/xlibre-25.0/input/wacom_drv.so
+libdata/pkgconfig/xorg-wacom.pc
+share/man/man1/xsetwacom.1.gz
+share/man/man4/wacom.4x.gz
+share/X11/xorg.conf.d/70-wacom.conf

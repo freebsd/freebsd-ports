@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: wacom
+# REQUIRE: mountcritlocal
+# BEFORE:  devd
+# KEYWORD: nojail
+#
+# Add the following lines to /etc/rc.conf to enable this service:
+#
+# wacom_enable (bool):	Set it to YES to add Wacom USB quirks on startup.
+#			Default: NO
+
+. /etc/rc.subr
+
+name="wacom"
+rcvar="wacom_enable"
+
+load_rc_config "$name"
+
+: ${wacom_enable:="NO"}
+
+start_precmd="wacom_prepare"
+start_cmd="wacom_start"
+stop_cmd="wacom_stop"
+
+wacom_prepare()
+{
+	kldload -n usb_quirk
+}
+
+wacom_start()
+{
+	# Prevent moused(8) from picking up bogus /dev/umsN
+	usbconfig add_dev_quirk_vplh 0x056a 0 0 0xffff UQ_MATCH_VENDOR_ONLY
+	usbconfig add_dev_quirk_vplh 0x056a 0 0 0xffff UQ_UMS_IGNORE
+}
+
+wacom_stop()
+{
+	usbconfig remove_dev_quirk_vplh 0x056a 0 0 0xffff UQ_MATCH_VENDOR_ONLY
+	usbconfig remove_dev_quirk_vplh 0x056a 0 0 0xffff UQ_UMS_IGNORE
+}
+
+run_rc_command "$1"

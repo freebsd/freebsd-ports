@@ -1,0 +1,11 @@
+--- src/sna/meson.build.orig	2025-08-14 09:53:17 UTC
++++ src/sna/meson.build
+@@ -68,7 +68,7 @@ sna_sources = [
+   'gen9_render.c',
+ ]
+ 
+-if libudev.found()
++if with_udev
+   sna_deps += libudev
+ endif
+ 

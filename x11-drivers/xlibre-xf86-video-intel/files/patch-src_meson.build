@@ -1,0 +1,38 @@
+--- src/meson.build.orig	2025-08-13 22:04:23 UTC
++++ src/meson.build
+@@ -147,7 +147,6 @@ shared_module('intel_drv',
+ 	      dependencies : intel_drv_deps,
+ 	      link_with : intel_drv_libs,
+ 	      c_args : [
+-		'-DMAJOR_IN_SYSMACROS',
+ 		'-Wno-unused-parameter',
+ 		'-Wno-sign-compare',
+ 	      ],
+--- src/meson.build.orig	2025-08-13 22:04:23 UTC
++++ src/meson.build
+@@ -133,14 +133,10 @@
+   intel_drv_deps += valgrind
+ endif
+ 
+-xorg_moduledir = get_option('xorg-module-dir')
+-moduledir = ''
+-foreach dir : xorg_moduledir.split('/')
+-  if dir == '@libdir@'
+-    dir = get_option('libdir')
+-  endif
+-  moduledir = join_paths(moduledir, dir)
+-endforeach
++dir_xorg_modules = get_option('xorg-module-dir')
++if dir_xorg_modules == ''
++	dir_xorg_modules = xorg.get_variable(pkgconfig: 'moduledir') 
++endif
+ 
+ shared_module('intel_drv',
+ 	      sources : intel_drv_sources,
+@@ -151,5 +147,5 @@
+ 		'-Wno-sign-compare',
+ 	      ],
+ 	      name_prefix : '',
+-	      install_dir : join_paths(moduledir, 'drivers'),
++	      install_dir : join_paths(dir_xorg_modules, 'drivers'),
+ 	      install : true)

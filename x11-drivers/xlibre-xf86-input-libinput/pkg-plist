@@ -1,0 +1,5 @@
+include/xorg/libinput-properties.h
+lib/xorg/modules/xlibre-25.0/input/libinput_drv.so
+libdata/pkgconfig/xorg-libinput.pc
+share/man/man4/libinput.4x.gz
+share/X11/xorg.conf.d/40-libinput.conf

@@ -1,0 +1,5 @@
+lib/xorg/modules/xlibre-25.0/drivers/spiceqxl_drv.so
+lib/xorg/modules/xlibre-25.0/drivers/qxl_drv.so
+bin/Xspice
+%%PORTDOCS%%%%DOCSDIR%%/spiceqxl.xorg.conf.example
+@sample etc/X11/xorg.conf.d/spiceqxl.xorg.conf.example etc/X11/xorg.conf.d/spiceqxl.xorg.conf

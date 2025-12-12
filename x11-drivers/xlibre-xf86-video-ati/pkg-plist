@@ -1,0 +1,5 @@
+lib/xorg/modules/xlibre-25.0/drivers/ati_drv.so
+lib/xorg/modules/xlibre-25.0/drivers/radeon_drv.so
+share/man/man4/ati.4x.gz
+share/man/man4/radeon.4x.gz
+share/X11/xorg.conf.d/10-radeon.conf

@@ -1,0 +1,5 @@
+TIMESTAMP = 1760814301
+SHA256 (xlibre/driver/X11Libre-xf86-video-amdgpu-23.0.0.5-xlibre-xf86-video-amdgpu-23.0.0.5_GH0.tar.gz) = a255bf446272a87907ea0a13274536dcc65898c223fa42aa9afd52007ad23209
+SIZE (xlibre/driver/X11Libre-xf86-video-amdgpu-23.0.0.5-xlibre-xf86-video-amdgpu-23.0.0.5_GH0.tar.gz) = 98771
+SHA256 (xlibre/driver/77b13493.patch) = 1e76bb36f7fd69e0556ae6b5a7d2331a711367b6a7421adc221f2fcae1aff82b
+SIZE (xlibre/driver/77b13493.patch) = 1269
