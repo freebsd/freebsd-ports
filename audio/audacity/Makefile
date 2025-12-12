@@ -1,9 +1,10 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.7.6
+DISTVERSION=	3.7.7
 CATEGORIES=	audio
-MASTER_SITES+=	https://github.com/${PORTNAME}/${PORTNAME}-manual/releases/download/v${DISTVERSION}/:manual
-DISTFILES+=	${PORTNAME}-manual-${DISTVERSION}.tar.gz:manual
+MANVERSION=	3.7.6
+MASTER_SITES+=	https://github.com/${PORTNAME}/${PORTNAME}-manual/releases/download/v${MANVERSION}/:manual
+DISTFILES+=	${PORTNAME}-manual-${MANVERSION}.tar.gz:manual
 
 MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
