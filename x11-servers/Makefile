@@ -4,6 +4,7 @@
     SUBDIR += x2vnc
     SUBDIR += x2x
     SUBDIR += xarcan
+    SUBDIR += xlibre-ephyr
     SUBDIR += xorg-server
     SUBDIR += xwayland
 

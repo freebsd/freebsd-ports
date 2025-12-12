@@ -1,0 +1,3 @@
+Xephyr is a kdrive server that outputs to a window on a pre-existing
+'host' X display. Think Xnest but with support for modern extensions
+like composite, damage and randr.
