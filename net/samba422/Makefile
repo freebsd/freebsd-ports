@@ -313,6 +313,7 @@ AVAHI_LIB_DEPENDS=		libavahi-client.so:net/avahi-app
 AVAHI_CONFIGURE_ENABLE=		avahi
 AVAHI_VARS=			SAMBA4_SERVICES+=avahi_daemon
 
+CLUSTER_LIB_DEPENDS=		libpcap.so:net/libpcap
 CLUSTER_CONFIGURE_WITH=		cluster-support
 CLUSTER_VARS=			PLIST+=${PKGDIR}/pkg-plist.cluster
 
