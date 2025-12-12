@@ -234,8 +234,15 @@ SAMBA4_BUNDLED_CMOCKA?=		no
 SAMBA4_BUNDLED_TALLOC?=		no
 SAMBA4_BUNDLED_TEVENT?=		no
 SAMBA4_BUNDLED_TDB?=		no
+# Check if SAMBA4_BUNDLED_* variables are set to either "yes" or "no" to avoid
+# having to check if they are defined over and over.
+.for bvar in SAMBA4_BUNDLED_CMOCKA SAMBA4_BUNDLED_TALLOC SAMBA4_BUNDLED_TDB SAMBA4_BUNDLED_TEVENT
+.  if !defined(${bvar}) || (${${bvar}} != yes && ${${bvar}} != no)
+IGNORE=				requires ${bvar} to be either "yes" or "no"
+.  endif
+.endfor
 # cmocka
-.if defined(SAMBA4_BUNDLED_CMOCKA) && ${SAMBA4_BUNDLED_CMOCKA} == yes
+.if ${SAMBA4_BUNDLED_CMOCKA} == yes
 SAMBA4_BUNDLED_LIBS+=		cmocka
 CONFLICTS_INSTALL+=		cmocka-1.*
 SAMBA4_SUB+=			SAMBA4_BUNDLED_CMOCKA=""
@@ -246,7 +253,7 @@ TEST_DEPENDS+=			cmocka>=1.1.3:sysutils/cmocka
 SAMBA4_SUB+=			SAMBA4_BUNDLED_CMOCKA="@comment "
 .endif
 # talloc
-.if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
+.if ${SAMBA4_BUNDLED_TALLOC} == yes
 SAMBA4_BUNDLED_LIBS+=		talloc
 SAMBA4_SUB+=			SAMBA4_BUNDLED_TALLOC=""
 .else
@@ -256,7 +263,7 @@ RUN_DEPENDS+=			talloc243>=2.4.3:devel/talloc243
 SAMBA4_SUB+=			SAMBA4_BUNDLED_TALLOC="@comment "
 .endif
 # tevent
-.if defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes
+.if ${SAMBA4_BUNDLED_TEVENT} == yes
 SAMBA4_BUNDLED_LIBS+=		tevent
 CONFLICTS_INSTALL+=		tevent-* tevent1-*
 SAMBA4_SUB+=			SAMBA4_BUNDLED_TEVENT=""
@@ -267,7 +274,7 @@ RUN_DEPENDS+=			tevent017>=0.17:devel/tevent017
 SAMBA4_SUB+=			SAMBA4_BUNDLED_TEVENT="@comment "
 .endif
 # tdb
-.if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
+.if ${SAMBA4_BUNDLED_TDB} == yes
 SAMBA4_BUNDLED_LIBS+=		tdb
 CONFLICTS_INSTALL+=		tdb-* tdb1-*
 SAMBA4_SUB+=			SAMBA4_BUNDLED_TDB=""
@@ -278,9 +285,9 @@ RUN_DEPENDS+=			tdb1413>=1.4.13:databases/tdb1413
 SAMBA4_SUB+=			SAMBA4_BUNDLED_TDB="@comment "
 .endif
 
-.if (defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes) \
-	|| (defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes) \
-	|| (defined(SAMBA4_BUNDLED_TEVENT) && ${SAMBA4_BUNDLED_TEVENT} == yes)
+.if (${SAMBA4_BUNDLED_TALLOC} == yes) \
+	|| (${SAMBA4_BUNDLED_TDB} == yes) \
+	|| (${SAMBA4_BUNDLED_TEVENT} == yes)
 SAMBA4_BUNDLED_LIBS+=		replace
 .endif
 # Don't use external libcom_err
@@ -548,13 +555,13 @@ post-install-MANPAGES-on:
 	${RM} ${STAGEDIR}${PREFIX}/share/man/man8/${f}
 .endfor
 
-.if defined(SAMBA4_BUNDLED_TALLOC) && ${SAMBA4_BUNDLED_TALLOC} == yes
+.if ${SAMBA4_BUNDLED_TALLOC} == yes
 .  for f in talloc.3
 	${MV} ${STAGEDIR}${PREFIX}/share/man/man3/${f} ${STAGEDIR}${PREFIX}/share/man/man3/samba-${f}
 .  endfor
 .endif
 
-.if defined(SAMBA4_BUNDLED_TDB) && ${SAMBA4_BUNDLED_TDB} == yes
+.if ${SAMBA4_BUNDLED_TDB} == yes
 .  for f in tdbbackup.8 tdbdump.8 tdbrestore.8 tdbtool.8
 	${MV} ${STAGEDIR}${PREFIX}/share/man/man8/${f} ${STAGEDIR}${PREFIX}/share/man/man8/samba-${f}
 .  endfor
