@@ -3,7 +3,7 @@ include/audiocdplugins/audiocdplugins_export.h
 include/audiocdplugins/audiocdplugins_version.h
 lib/libaudiocdplugins.so
 lib/libaudiocdplugins.so.5
-lib/libaudiocdplugins.so.5.1.0
+lib/libaudiocdplugins.so.%%SHLIB_VER_LONG%%
 %%QT_PLUGINDIR%%/kf6/kio/audiocd.so
 %%QT_PLUGINDIR%%/libaudiocd_encoder_flac.so
 %%QT_PLUGINDIR%%/libaudiocd_encoder_lame.so

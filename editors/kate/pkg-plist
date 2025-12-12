@@ -1,6 +1,8 @@
+bin/exec_inspect.sh
 bin/kate
 bin/kwrite
 lib/libkateprivate.so.%%KDE_APPLICATIONS_VERSION%%
+%%QT_PLUGINDIR%%/kf6/kio/kio_kateexec.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/bookmarksplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/cmaketoolsplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/compilerexplorer.so
@@ -16,6 +18,7 @@ lib/libkateprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/kf6/ktexteditor/katefiletreeplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/kategdbplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/kategitblameplugin.so
+%%QT_PLUGINDIR%%/kf6/ktexteditor/kategpgplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/katekonsoleplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/kateprojectplugin.so
 %%QT_PLUGINDIR%%/kf6/ktexteditor/katereplicodeplugin.so
@@ -92,6 +95,7 @@ share/locale/ar/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ar/LC_MESSAGES/katefiletree.mo
 share/locale/ar/LC_MESSAGES/kategdbplugin.mo
 share/locale/ar/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ar/LC_MESSAGES/kategpgplugin.mo
 share/locale/ar/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ar/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ar/LC_MESSAGES/kateproject.mo
@@ -231,6 +235,7 @@ share/locale/ca/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca/LC_MESSAGES/katefiletree.mo
 share/locale/ca/LC_MESSAGES/kategdbplugin.mo
 share/locale/ca/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ca/LC_MESSAGES/kategpgplugin.mo
 share/locale/ca/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ca/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ca/LC_MESSAGES/kateproject.mo
@@ -261,6 +266,7 @@ share/locale/ca@valencia/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefiletree.mo
 share/locale/ca@valencia/LC_MESSAGES/kategdbplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ca@valencia/LC_MESSAGES/kategpgplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ca@valencia/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/kateproject.mo
@@ -347,6 +353,7 @@ share/locale/de/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/de/LC_MESSAGES/katefiletree.mo
 share/locale/de/LC_MESSAGES/kategdbplugin.mo
 share/locale/de/LC_MESSAGES/kategitblameplugin.mo
+share/locale/de/LC_MESSAGES/kategpgplugin.mo
 share/locale/de/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/de/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/de/LC_MESSAGES/kateproject.mo
@@ -460,6 +467,7 @@ share/locale/es/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/es/LC_MESSAGES/katefiletree.mo
 share/locale/es/LC_MESSAGES/kategdbplugin.mo
 share/locale/es/LC_MESSAGES/kategitblameplugin.mo
+share/locale/es/LC_MESSAGES/kategpgplugin.mo
 share/locale/es/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/es/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/es/LC_MESSAGES/kateproject.mo
@@ -552,6 +560,7 @@ share/locale/fi/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fi/LC_MESSAGES/katefiletree.mo
 share/locale/fi/LC_MESSAGES/kategdbplugin.mo
 share/locale/fi/LC_MESSAGES/kategitblameplugin.mo
+share/locale/fi/LC_MESSAGES/kategpgplugin.mo
 share/locale/fi/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/fi/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/fi/LC_MESSAGES/kateproject.mo
@@ -582,6 +591,7 @@ share/locale/fr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fr/LC_MESSAGES/katefiletree.mo
 share/locale/fr/LC_MESSAGES/kategdbplugin.mo
 share/locale/fr/LC_MESSAGES/kategitblameplugin.mo
+share/locale/fr/LC_MESSAGES/kategpgplugin.mo
 share/locale/fr/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/fr/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/fr/LC_MESSAGES/kateproject.mo
@@ -659,6 +669,7 @@ share/locale/he/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/he/LC_MESSAGES/katefiletree.mo
 share/locale/he/LC_MESSAGES/kategdbplugin.mo
 share/locale/he/LC_MESSAGES/kategitblameplugin.mo
+share/locale/he/LC_MESSAGES/kategpgplugin.mo
 share/locale/he/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/he/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/he/LC_MESSAGES/kateproject.mo
@@ -827,6 +838,7 @@ share/locale/it/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/it/LC_MESSAGES/katefiletree.mo
 share/locale/it/LC_MESSAGES/kategdbplugin.mo
 share/locale/it/LC_MESSAGES/kategitblameplugin.mo
+share/locale/it/LC_MESSAGES/kategpgplugin.mo
 share/locale/it/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/it/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/it/LC_MESSAGES/kateproject.mo
@@ -884,6 +896,7 @@ share/locale/ka/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ka/LC_MESSAGES/katefiletree.mo
 share/locale/ka/LC_MESSAGES/kategdbplugin.mo
 share/locale/ka/LC_MESSAGES/kategitblameplugin.mo
+share/locale/ka/LC_MESSAGES/kategpgplugin.mo
 share/locale/ka/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/ka/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/ka/LC_MESSAGES/kateproject.mo
@@ -962,9 +975,11 @@ share/locale/lt/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/lt/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/lt/LC_MESSAGES/kate.mo
 share/locale/lt/LC_MESSAGES/katebacktracebrowserplugin.mo
+share/locale/lt/LC_MESSAGES/katebookmarksplugin.mo
 share/locale/lt/LC_MESSAGES/katebuild-plugin.mo
 share/locale/lt/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/lt/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/lt/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/lt/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/lt/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/lt/LC_MESSAGES/katefiletree.mo
@@ -983,6 +998,7 @@ share/locale/lt/LC_MESSAGES/katexmltools.mo
 share/locale/lt/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/lt/LC_MESSAGES/lspclient.mo
 share/locale/lt/LC_MESSAGES/rainbowparens.mo
+share/locale/lt/LC_MESSAGES/rbqlplugin.mo
 share/locale/lt/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/lv/LC_MESSAGES/formatplugin.mo
 share/locale/lv/LC_MESSAGES/kate-ctags-plugin.mo
@@ -1142,6 +1158,7 @@ share/locale/nl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/nl/LC_MESSAGES/katefiletree.mo
 share/locale/nl/LC_MESSAGES/kategdbplugin.mo
 share/locale/nl/LC_MESSAGES/kategitblameplugin.mo
+share/locale/nl/LC_MESSAGES/kategpgplugin.mo
 share/locale/nl/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/nl/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/nl/LC_MESSAGES/kateproject.mo
@@ -1276,6 +1293,7 @@ share/locale/pt_BR/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/pt_BR/LC_MESSAGES/katefiletree.mo
 share/locale/pt_BR/LC_MESSAGES/kategdbplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kategitblameplugin.mo
+share/locale/pt_BR/LC_MESSAGES/kategpgplugin.mo
 share/locale/pt_BR/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/pt_BR/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/pt_BR/LC_MESSAGES/kateproject.mo
@@ -1318,7 +1336,6 @@ share/locale/ru/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ru/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/ru/LC_MESSAGES/kate.mo
 share/locale/ru/LC_MESSAGES/katebacktracebrowserplugin.mo
-share/locale/ru/LC_MESSAGES/katebookmarksplugin.mo
 share/locale/ru/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ru/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ru/LC_MESSAGES/katecolorpickerplugin.mo
@@ -1431,6 +1448,7 @@ share/locale/sl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sl/LC_MESSAGES/katefiletree.mo
 share/locale/sl/LC_MESSAGES/kategdbplugin.mo
 share/locale/sl/LC_MESSAGES/kategitblameplugin.mo
+share/locale/sl/LC_MESSAGES/kategpgplugin.mo
 share/locale/sl/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/sl/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/sl/LC_MESSAGES/kateproject.mo
@@ -1616,6 +1634,7 @@ share/locale/tr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/tr/LC_MESSAGES/katefiletree.mo
 share/locale/tr/LC_MESSAGES/kategdbplugin.mo
 share/locale/tr/LC_MESSAGES/kategitblameplugin.mo
+share/locale/tr/LC_MESSAGES/kategpgplugin.mo
 share/locale/tr/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/tr/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/tr/LC_MESSAGES/kateproject.mo
@@ -1661,6 +1680,7 @@ share/locale/uk/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/uk/LC_MESSAGES/katefiletree.mo
 share/locale/uk/LC_MESSAGES/kategdbplugin.mo
 share/locale/uk/LC_MESSAGES/kategitblameplugin.mo
+share/locale/uk/LC_MESSAGES/kategpgplugin.mo
 share/locale/uk/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/uk/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/uk/LC_MESSAGES/kateproject.mo
@@ -1725,6 +1745,7 @@ share/locale/zh_CN/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katefiletree.mo
 share/locale/zh_CN/LC_MESSAGES/kategdbplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kategitblameplugin.mo
+share/locale/zh_CN/LC_MESSAGES/kategpgplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/zh_CN/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/zh_CN/LC_MESSAGES/kateproject.mo
@@ -1755,6 +1776,7 @@ share/locale/zh_TW/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katefiletree.mo
 share/locale/zh_TW/LC_MESSAGES/kategdbplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kategitblameplugin.mo
+share/locale/zh_TW/LC_MESSAGES/kategpgplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/zh_TW/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/zh_TW/LC_MESSAGES/kateproject.mo

@@ -1,10 +1,6 @@
 PORTNAME=	kdeconnect-kde
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-applications
-
-PATCH_SITES=	https://invent.kde.org/network/kdeconnect-kde/-/commit/
-PATCHFILES+=	55e3302d56e1eb22ff174d8f6afd7a7b1c9db819.patch:-p1 # Fix build with Qt 6.10
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Support for KDE to interface between your phone and your computer

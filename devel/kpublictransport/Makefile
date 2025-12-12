@@ -9,7 +9,7 @@ LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
 USES=		cmake compiler:c++11-lang gettext kde:6 qt:6 tar:xz
 USE_KDE=	kirigami-addons ecm:build
-USE_QT=		base
+USE_QT=		base location
 
 OPTIONS_DEFINE=	DOCS
 

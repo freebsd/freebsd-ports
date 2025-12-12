@@ -23,8 +23,10 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		windowsystem xmlgui \
 		ecm:build
 USE_QT=		base
-
 USE_LDCONFIG=	yes
+
+_${PORTNAME}_PROJECT_VERSION=	5.1
+KDE_APPS_BASED_PATCHLEVEL=	${KDE_APPLICATIONS_VERSION:R:S/.//}${KDE_APPLICATIONS_VERSION:E}
 
 OPTIONS_DEFINE=	LAME DOCS
 LAME_DESC=	Install LAME MP3 audio encoder

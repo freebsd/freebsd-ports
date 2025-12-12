@@ -13,7 +13,7 @@ USES=		cmake compiler:c++20-lang gettext gl gnome gstreamer kde:6 \
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_GSTREAMER=	v4l2
-USE_KDE=	config i18n kio notifications purpose \
+USE_KDE=	config i18n kio kirigami-addons notifications purpose \
 		doctools:build ecm:build \
 		kirigami2:run
 USE_QT=		base declarative

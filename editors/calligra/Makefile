@@ -1,10 +1,6 @@
 PORTNAME=	calligra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors kde kde-applications
-
-PATCH_SITES=	https://invent.kde.org/office/calligra/-/commit/
-PATCHFILES=		45e8b302bce1d318f310ea13599d7ce84acc477e.patch:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE office suite

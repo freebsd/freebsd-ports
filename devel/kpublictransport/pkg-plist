@@ -29,6 +29,7 @@ include/KPublicTransport/KPublicTransport/Platform
 include/KPublicTransport/KPublicTransport/PlatformLayout
 include/KPublicTransport/KPublicTransport/RentalVehicle
 include/KPublicTransport/KPublicTransport/Reply
+include/KPublicTransport/KPublicTransport/StopInformation
 include/KPublicTransport/KPublicTransport/Stopover
 include/KPublicTransport/KPublicTransport/StopoverQueryModel
 include/KPublicTransport/KPublicTransport/StopoverReply
@@ -73,6 +74,7 @@ include/KPublicTransport/kpublictransport/platform.h
 include/KPublicTransport/kpublictransport/platformlayout.h
 include/KPublicTransport/kpublictransport/rentalvehicle.h
 include/KPublicTransport/kpublictransport/reply.h
+include/KPublicTransport/kpublictransport/stopinformation.h
 include/KPublicTransport/kpublictransport/stopover.h
 include/KPublicTransport/kpublictransport/stopoverquerymodel.h
 include/KPublicTransport/kpublictransport/stopoverreply.h
@@ -121,6 +123,8 @@ lib/libKPublicTransportOnboard.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/kpublictransportquickplugin.qmltypes
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/libkpublictransportquickplugin.so
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/private/CountryComboBox.qml
+%%QT_QMLDIR%%/org/kde/kpublictransport/ui/private/CurrentLocationDelegate.qml
+%%QT_QMLDIR%%/org/kde/kpublictransport/ui/private/globals.js
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/qmldir
 share/locale/ar/LC_MESSAGES/kpublictransport.mo
 share/locale/ca/LC_MESSAGES/kpublictransport.mo
@@ -141,6 +145,7 @@ share/locale/ia/LC_MESSAGES/kpublictransport.mo
 share/locale/it/LC_MESSAGES/kpublictransport.mo
 share/locale/ka/LC_MESSAGES/kpublictransport.mo
 share/locale/ko/LC_MESSAGES/kpublictransport.mo
+share/locale/lt/LC_MESSAGES/kpublictransport.mo
 share/locale/lv/LC_MESSAGES/kpublictransport.mo
 share/locale/nl/LC_MESSAGES/kpublictransport.mo
 share/locale/pl/LC_MESSAGES/kpublictransport.mo

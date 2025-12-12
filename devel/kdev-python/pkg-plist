@@ -15,8 +15,11 @@ share/kdevpythonsupport/correction_files/matplotlib/pyplot.py
 share/kdevpythonsupport/correction_files/re.py
 share/kdevpythonsupport/correction_files/string.py
 share/kdevpythonsupport/correction_files/testCorrectionFiles/example.py
-share/kdevpythonsupport/debugger/__kdevpython_debugger_utils.py
+share/kdevpythonsupport/debugger/asmskip.py
 share/kdevpythonsupport/debugger/kdevpdb.py
+share/kdevpythonsupport/debugger/kdevpdbconn.py
+share/kdevpythonsupport/debugger/kdevpdbcore.py
+share/kdevpythonsupport/debugger/kdevpdbvariablesupport.py
 share/kdevpythonsupport/documentation_files/COPYING
 share/kdevpythonsupport/documentation_files/PyKDE4/akonadi.py
 share/kdevpythonsupport/documentation_files/PyKDE4/dnssd.py

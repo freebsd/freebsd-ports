@@ -4,6 +4,7 @@ include/KWeatherCore/KWeatherCore/CAPArea
 include/KWeatherCore/KWeatherCore/CAPNamedValue
 include/KWeatherCore/KWeatherCore/CAPParser
 include/KWeatherCore/KWeatherCore/CAPReference
+include/KWeatherCore/KWeatherCore/CAPResource
 include/KWeatherCore/KWeatherCore/DailyWeatherForecast
 include/KWeatherCore/KWeatherCore/GeoTimezone
 include/KWeatherCore/KWeatherCore/HourlyWeatherForecast
@@ -20,6 +21,7 @@ include/KWeatherCore/kweathercore/caparea.h
 include/KWeatherCore/kweathercore/capnamedvalue.h
 include/KWeatherCore/kweathercore/capparser.h
 include/KWeatherCore/kweathercore/capreference.h
+include/KWeatherCore/kweathercore/capresource.h
 include/KWeatherCore/kweathercore/dailyweatherforecast.h
 include/KWeatherCore/kweathercore/geotimezone.h
 include/KWeatherCore/kweathercore/hourlyweatherforecast.h

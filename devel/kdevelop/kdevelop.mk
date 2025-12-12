@@ -3,7 +3,7 @@
 # devel/kdev-python
 # devel/kdevelop
 
-_kdevelop_PROJECT_VERSION=	6.3
+_kdevelop_PROJECT_VERSION=	6.4
 PLATFORM_VER=	${_kdevelop_PROJECT_VERSION:S/.//}
 PLIST_SUB+=	PLATFORM_VER="${PLATFORM_VER}"
 

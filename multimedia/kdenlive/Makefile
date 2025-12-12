@@ -9,6 +9,7 @@ WWW=		https://www.kdenlive.org
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libImath.so:math/Imath \
+		libkddockwidgets-qt6.so:x11-toolkits/kddockwidgets \
 		libopentimelineio.so:multimedia/opentimelineio \
 		librttr_core.so:devel/rttr
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \

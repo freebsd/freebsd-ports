@@ -246,8 +246,12 @@ lib/plugins/designer/MarbleNavigatorPlugin.so
 lib/plugins/designer/MarbleWidgetPlugin.so
 %%QT_MKSPECDIR%%/modules/qt_Marble.pri
 %%QT_PLUGINDIR%%/kf6/krunner/plasma_runner_marble.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/marble_thumbnail_geojson.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/marble_thumbnail_gpx.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/marble_thumbnail_kml.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/marble_thumbnail_kmz.so
+%%QT_PLUGINDIR%%/kf6/thumbcreator/marble_thumbnail_osm.so
 %%QT_PLUGINDIR%%/libmarble_part.so
-%%QT_PLUGINDIR%%/marblethumbnail.so
 %%QT_QMLDIR%%/org/kde/marble/imageprovider/kde-qmlmodule.version
 %%QT_QMLDIR%%/org/kde/marble/imageprovider/libmarbleimageprovider.so
 %%QT_QMLDIR%%/org/kde/marble/imageprovider/marbleimageprovider.qmltypes
@@ -256,15 +260,10 @@ lib/plugins/designer/MarbleWidgetPlugin.so
 %%QT_QMLDIR%%/org/kde/marble/libmarbledeclarative.so
 %%QT_QMLDIR%%/org/kde/marble/marbledeclarative.qmltypes
 %%QT_QMLDIR%%/org/kde/marble/qmldir
-share/applications/marble_geo.desktop
 share/applications/marble_geojson.desktop
 share/applications/marble_gpx.desktop
 share/applications/marble_kml.desktop
 share/applications/marble_kmz.desktop
-share/applications/marble_thumbnail_kml.desktop
-share/applications/marble_thumbnail_kmz.desktop
-share/applications/marble_thumbnail_osm.desktop
-share/applications/marble_worldwind.desktop
 share/applications/org.kde.marble.behaim.desktop
 share/applications/org.kde.marble.desktop
 share/applications/org.kde.marble.maps.desktop
@@ -472,6 +471,7 @@ share/locale/ko/LC_MESSAGES/marble_qt.qm
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/ko/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/ko/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
+share/locale/lt/LC_MESSAGES/marble-behaim.mo
 share/locale/lt/LC_MESSAGES/marble-maps.mo
 share/locale/lt/LC_MESSAGES/marble.mo
 share/locale/lt/LC_MESSAGES/marble_qt.qm

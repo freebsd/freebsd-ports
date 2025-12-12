@@ -5,7 +5,7 @@ share/dbus-1/services/org.kde.neochat.service
 share/icons/hicolor/scalable/apps/org.kde.neochat.svg
 share/icons/hicolor/scalable/apps/org.kde.neochat.tray.svg
 share/knotifications6/neochat.notifyrc
-share/krunner/dbusplugins/plasma-runner-neochat.desktop
+share/krunner/dbusplugins/org.kde.neochat.desktop
 share/locale/ar/LC_MESSAGES/neochat.mo
 share/locale/ast/LC_MESSAGES/neochat.mo
 share/locale/az/LC_MESSAGES/neochat.mo

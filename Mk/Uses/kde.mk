@@ -104,8 +104,8 @@ KDE_FRAMEWORKS6_BRANCH?=	stable
 
 # Current KDE applications. Update _${PORTNAME}_PROJECT_VERSION for the following ports:
 # devel/kdevelop, games/libkdegames, games/libkmahjongg, graphics/kgraphviewer
-KDE_APPLICATIONS6_VERSION?=	25.08.3
-KDE_APPLICATIONS6_SHLIB_VER?=	6.5.3
+KDE_APPLICATIONS6_VERSION?=	25.12.0
+KDE_APPLICATIONS6_SHLIB_VER?=	6.6.0
 # G as in KDE Gear, and as in "don't make the variable name longer than required".
 KDE_APPLICATIONS6_SHLIB_G_VER?=	${KDE_APPLICATIONS6_VERSION}
 KDE_APPLICATIONS6_BRANCH?=	stable

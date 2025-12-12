@@ -1,5 +1,3 @@
-TIMESTAMP = 1764829753
-SHA256 (KDE/release-service/25.08.3/calligra-25.08.3.tar.xz) = 74fac78253c429853e99fae00bcf2b84332dbc3a8f538ccf70674259266b9251
-SIZE (KDE/release-service/25.08.3/calligra-25.08.3.tar.xz) = 58045012
-SHA256 (KDE/release-service/25.08.3/45e8b302bce1d318f310ea13599d7ce84acc477e.patch) = cf621e71d0bcca57c9bdb9df3bfae7a0103b44ee229c8d82007a56f06b769e5b
-SIZE (KDE/release-service/25.08.3/45e8b302bce1d318f310ea13599d7ce84acc477e.patch) = 6581
+TIMESTAMP = 1765478436
+SHA256 (KDE/release-service/25.12.0/calligra-25.12.0.tar.xz) = 0e1590961131c5ca7690f6d691131239b685403d14f346c0138dbc7e2f8a69fb
+SIZE (KDE/release-service/25.12.0/calligra-25.12.0.tar.xz) = 58046252

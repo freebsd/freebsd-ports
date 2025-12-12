@@ -88,4 +88,4 @@ share/locale/uz/LC_MESSAGES/juk.mo
 share/locale/uz@cyrillic/LC_MESSAGES/juk.mo
 share/locale/zh_CN/LC_MESSAGES/juk.mo
 share/locale/zh_TW/LC_MESSAGES/juk.mo
-share/metainfo/org.kde.juk.appdata.xml
+share/metainfo/org.kde.juk.metainfo.xml
