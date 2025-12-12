@@ -1,10 +1,6 @@
 PORTNAME=	valkey
-DISTVERSION=	9.0.0
-PORTREVISION=	1
+DISTVERSION=	9.0.1
 CATEGORIES=	databases
-
-PATCH_SITES=	https://github.com/valkey-io/valkey/commit/
-PATCHFILES=	f54818cc60597e9fe5dc03a52fd39ab944cd4932.patch:-p1
 
 MAINTAINER=	bofh@freebsd.org
 COMMENT=	High-performance data structure server that primarily serves key/value workloads

@@ -1,5 +1,3 @@
-TIMESTAMP = 1762119749
-SHA256 (valkey-io-valkey-9.0.0_GH0.tar.gz) = 088f47e167eb640ea31af48c81c5d62ee56321f25a4b05d4e54a0ef34232724b
-SIZE (valkey-io-valkey-9.0.0_GH0.tar.gz) = 4113905
-SHA256 (f54818cc60597e9fe5dc03a52fd39ab944cd4932.patch) = 3e996dba6bf785cc9a6e0d1edba07e2cdd299c80c8be87b6f8c54fcffe05ba2b
-SIZE (f54818cc60597e9fe5dc03a52fd39ab944cd4932.patch) = 1474
+TIMESTAMP = 1765532267
+SHA256 (valkey-io-valkey-9.0.1_GH0.tar.gz) = 9cfbc5f32a2a6058ee0f8c532b9c4d24167cc49d719f091dd75f1bb8353a1fc5
+SIZE (valkey-io-valkey-9.0.1_GH0.tar.gz) = 4115784
