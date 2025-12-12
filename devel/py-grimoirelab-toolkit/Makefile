@@ -5,7 +5,8 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	grimoirelab_toolkit-${DISTVERSION}
 
-MAINTAINER=	bofh@FreeBSD.org
+# Ask clusteradm@ before removal
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit of common functions used across GrimoireLab projects
 WWW=		https://github.com/chaoss/grimoirelab-toolkit/
 
