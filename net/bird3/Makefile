@@ -1,5 +1,5 @@
 PORTNAME=	bird
-DISTVERSION=	3.1.4
+DISTVERSION=	3.1.5
 CATEGORIES=	net
 MASTER_SITES=	https://bird.nic.cz/download/
 PKGNAMESUFFIX=	3
