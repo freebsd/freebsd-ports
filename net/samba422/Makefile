@@ -129,6 +129,9 @@ CONFIGURE_ARGS+=		\
 				--with-sendfile-support \
 				--disable-ctdb-tests \
 				--disable-spotlight
+CONFIGURE_ARGS+=		${SAMBA4_PRIVATE_LIBS:D--private-libraries="${SAMBA4_PRIVATE_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"}
+CONFIGURE_ARGS+=		${SAMBA4_BUNDLED_LIBS:D--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"}
+CONFIGURE_ARGS+=		${SAMBA4_MODULES:D--with-shared-modules="${SAMBA4_MODULES:C|-|_|:Q:C|(\\\\ )+|,|g:S|\\||g}"}
 CONFIGURE_ENV=			PTHREAD_LDFLAGS="-lpthread" \
 				PYTHONHASHSEED=1
 MAKE_ENV=			PYTHONHASHSEED=1 \
@@ -448,17 +451,6 @@ SAMBA4_MODULES+=		vfs_acl_tdb vfs_acl_xattr vfs_aio_fork vfs_aio_pthread \
 SAMBA4_MODULES+=		${WANT_EXP_MODULES}
 .endif
 
-.if defined(SAMBA4_PRIVATE_LIBS) && !empty(SAMBA4_PRIVATE_LIBS)
-CONFIGURE_ARGS+=		--private-libraries="${SAMBA4_PRIVATE_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
-.endif
-
-.if defined(SAMBA4_BUNDLED_LIBS) && !empty(SAMBA4_BUNDLED_LIBS)
-CONFIGURE_ARGS+=		--bundled-libraries="${SAMBA4_BUNDLED_LIBS:Q:C|(\\\\ )+|,|g:S|\\||g}"
-.endif
-
-.if defined(SAMBA4_MODULES) && !empty(SAMBA4_MODULES)
-CONFIGURE_ARGS+=		--with-shared-modules="${SAMBA4_MODULES:C|-|_|:Q:C|(\\\\ )+|,|g:S|\\||g}"
-.endif
 # XXX: Hack for nss-info_* -> nss_info/* modules
 # Add selected modules to the plist
 .for module in ${SAMBA4_MODULES}
