@@ -1,3 +1,35 @@
+  <vuln vid="64bec4c7-d785-11f0-a1c0-0050569f0b83">
+    <topic>www/varnish-libvmod-digest -- base64 decoding vulnerability</topic>
+    <affects>
+      <package>
+      <name>varnish-libvmod-digest</name>
+      <range><lt>1.0.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>varnish developers report:</p>
+	<blockquote cite="https://vinyl-cache.org/security/VSV00012.html">
+	  <p>Common usage of vmod-digest is for basic HTTP authentication, in
+	  which case it may be possible for an attacker to circumvent the
+	  authentication check. If the decoded result string is somehow
+	  being made visible to the attacker (for example the result of
+	  the decoding is added to a response header), then there is the
+	  potential for information disclosure from reading out of band
+	  workspace data.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2023-41104</cvename>
+      <url>https://vinyl-cache.org/security/VSV00012.html</url>
+    </references>
+    <dates>
+      <discovery>2023-08-17</discovery>
+      <entry>2025-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2956aba3-1fcb-4c39-9cea-d88a46a3bf93">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
