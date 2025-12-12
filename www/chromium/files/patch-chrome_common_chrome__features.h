@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.h.orig	2025-12-05 10:12:50 UTC
+--- chrome/common/chrome_features.h.orig	2025-12-12 08:02:48 UTC
 +++ chrome/common/chrome_features.h
 @@ -85,13 +85,13 @@ BASE_DECLARE_FEATURE(kUseKeychainKeyProvider);
  #endif  // BUILDFLAG(IS_MAC)
@@ -25,7 +25,17 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kChromeAppsDeprecation);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kShortcutsNotApps);
-@@ -952,7 +952,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
+@@ -640,6 +640,9 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+ BASE_DECLARE_FEATURE(kGlicFaviconDataUrls);
+ 
+ COMPONENT_EXPORT(CHROME_FEATURES)
++BASE_DECLARE_FEATURE(kGlicIgnoreOfflineState);
++
++COMPONENT_EXPORT(CHROME_FEATURES)
+ BASE_DECLARE_FEATURE(kGlicMultitabUnderlines);
+ 
+ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -952,7 +955,7 @@ BASE_DECLARE_FEATURE(kKAnonymityServiceOHTTPRequests);
  COMPONENT_EXPORT(CHROME_FEATURES)
  BASE_DECLARE_FEATURE(kKAnonymityServiceStorage);
  
@@ -34,7 +44,7 @@
  COMPONENT_EXPORT(CHROME_FEATURES) BASE_DECLARE_FEATURE(kLinuxLowMemoryMonitor);
  COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorModerateLevel;
-@@ -960,7 +960,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
+@@ -960,7 +963,7 @@ COMPONENT_EXPORT(CHROME_FEATURES)
  extern const base::FeatureParam<int> kLinuxLowMemoryMonitorCriticalLevel;
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
