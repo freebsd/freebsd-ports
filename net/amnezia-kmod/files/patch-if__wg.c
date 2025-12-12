@@ -1,6 +1,6 @@
---- if_wg.c.orig	2025-07-22 17:38:01 UTC
+--- if_wg.c.orig	2025-12-10 17:55:03 UTC
 +++ if_wg.c
-@@ -278,21 +278,21 @@ static volatile unsigned long peer_counter = 0;
+@@ -305,21 +305,21 @@ static volatile unsigned long peer_counter = 0;
  static int clone_count;
  static uma_zone_t wg_packet_zone;
  static volatile unsigned long peer_counter = 0;
@@ -27,7 +27,7 @@
  #define	WG_CAPS		IFCAP_LINKSTATE
  
  struct wg_timespec64 {
-@@ -386,10 +386,10 @@ static int wg_ioctl(if_t, u_long, caddr_t);
+@@ -418,10 +418,10 @@ static int wg_ioctl(if_t, u_long, caddr_t);
  static void wg_reassign(if_t, struct vnet *, char *unused);
  static void wg_init(void *);
  static int wg_ioctl(if_t, u_long, caddr_t);
@@ -42,7 +42,7 @@
  
  /* TODO Peer */
  static struct wg_peer *
-@@ -408,7 +408,7 @@ wg_peer_alloc(struct wg_softc *sc, const uint8_t pub_k
+@@ -448,7 +448,7 @@ wg_peer_create(struct wg_softc *sc, const uint8_t pub_
  
  	cookie_maker_init(&peer->p_cookie, pub_key);
  
@@ -51,7 +51,7 @@
  
  	wg_queue_init(&peer->p_stage_queue, "stageq");
  	wg_queue_init(&peer->p_encrypt_serial, "txq");
-@@ -428,9 +428,9 @@ wg_peer_alloc(struct wg_softc *sc, const uint8_t pub_k
+@@ -468,9 +468,9 @@ wg_peer_create(struct wg_softc *sc, const uint8_t pub_
  	peer->p_handshake_retries = 0;
  
  	GROUPTASK_INIT(&peer->p_send, 0, (gtask_fn_t *)wg_deliver_out, peer);
@@ -63,7 +63,7 @@
  
  	LIST_INIT(&peer->p_aips);
  	peer->p_aips_num = 0;
-@@ -3286,26 +3286,26 @@ static void
+@@ -3720,26 +3720,26 @@ static void
  }
  
  static void
@@ -79,9 +79,9 @@
 +	V_amn_cloner = ifc_attach_cloner(wgname, &req);
  }
 -VNET_SYSINIT(vnet_wg_init, SI_SUB_PROTO_IFATTACHDOMAIN, SI_ORDER_ANY,
--	     vnet_wg_init, NULL);
+-		 vnet_wg_init, NULL);
 +VNET_SYSINIT(vnet_amn_init, SI_SUB_PROTO_IFATTACHDOMAIN, SI_ORDER_ANY,
-+	     vnet_amn_init, NULL);
++		 vnet_amn_init, NULL);
  
  static void
 -vnet_wg_uninit(const void *unused __unused)
@@ -93,13 +93,13 @@
 +		ifc_detach_cloner(V_amn_cloner);
  }
 -VNET_SYSUNINIT(vnet_wg_uninit, SI_SUB_PROTO_IFATTACHDOMAIN, SI_ORDER_ANY,
--	       vnet_wg_uninit, NULL);
+-		   vnet_wg_uninit, NULL);
 +VNET_SYSUNINIT(vnet_amn_uninit, SI_SUB_PROTO_IFATTACHDOMAIN, SI_ORDER_ANY,
-+    vnet_amn_uninit, NULL);
++		   vnet_amn_uninit, NULL);
  
  static int
  wg_prison_remove(void *obj, void *data __unused)
-@@ -3352,14 +3352,14 @@ static int
+@@ -3786,14 +3786,14 @@ static int
  #endif
  
  static int
@@ -113,10 +113,10 @@
  
 -	wg_packet_zone = uma_zcreate("wg packet", sizeof(struct wg_packet),
 +	wg_packet_zone = uma_zcreate("amn packet", sizeof(struct wg_packet),
- 	     NULL, NULL, NULL, NULL, 0, 0);
+ 		 NULL, NULL, NULL, NULL, 0, 0);
  
  	ret = crypto_init();
-@@ -3378,15 +3378,15 @@ static void
+@@ -3812,15 +3812,15 @@ static void
  }
  
  static void
@@ -135,7 +135,7 @@
  		}
  	}
  	VNET_LIST_RUNLOCK();
-@@ -3401,13 +3401,13 @@ static int
+@@ -3835,13 +3835,13 @@ static int
  }
  
  static int
@@ -152,7 +152,7 @@
  			break;
  		default:
  			return (EOPNOTSUPP);
-@@ -3415,12 +3415,12 @@ wg_module_event_handler(module_t mod, int what, void *
+@@ -3849,12 +3849,12 @@ wg_module_event_handler(module_t mod, int what, void *
  	return (0);
  }
  
