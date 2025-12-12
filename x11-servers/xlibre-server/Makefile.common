@@ -1,0 +1,90 @@
+_XMASTERDIR_REL=../xlibre-server/
+XMASTERDIR=	${_XMASTERDIR_REL:tA}
+PATCHDIR?=	${XMASTERDIR}/files
+DISTINFO_FILE?=	${XMASTERDIR}/distinfo
+
+.include "${XMASTERDIR}/Makefile.version"
+
+
+USES+=		gl compiler:c11 meson pkgconfig tar:xz xorg
+USE_GL+=	gl
+USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
+
+OPTIONS_DEFINE+=LIBUNWIND
+OPTIONS_DEFAULT+=LIBUNWIND
+LIBUNWIND_DESC= Enable libunwind for better stack traces in case of an error.
+
+SERVERS=	xorg xnest xephyr xvfb
+SERVERNAME=	${PORTNAME:S/^xlibre-/x/:S/xserver/xorg/}
+
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
+RUN_DEPENDS+=	xkeyboard-config>=2.5:x11/xkeyboard-config \
+		xkbcomp:x11/xkbcomp \
+		${LOCALBASE}/libdata/pkgconfig/dri.pc:graphics/mesa-dri
+
+MESON_ARGS+=	-Dxwin=false \
+		-Dxquartz=false \
+		-Ddtrace=false \
+		-Dhal=false \
+		-Dsystemd_logind=false \
+		-Dxselinux=false \
+		-Dfallback_input_driver=libinput \
+		-Ddocs=false \
+		-Dxcsecurity=true
+MESON_ARGS+=	-D${SERVERNAME}=true
+
+.for f in ${SERVERS:N${SERVERNAME}}
+MESON_ARGS+=	-D${f}=false
+.endfor
+
+FONTPATH_ROOT?=	${LOCALBASE}/share/fonts
+FONTPATHD?=	${PREFIX}/etc/X11/fontpath.d
+DEFAULT_FONTPATH_LIST= \
+	${FONTPATH_ROOT}/misc/	\
+	${FONTPATH_ROOT}/TTF/ \
+	${FONTPATH_ROOT}/OTF/ \
+	${FONTPATH_ROOT}/Type1/ \
+	${FONTPATH_ROOT}/100dpi/ \
+	${FONTPATH_ROOT}/75dpi/ \
+	catalogue:${FONTPATHD}
+MESON_ARGS+=	-Ddefault_font_path=${DEFAULT_FONTPATH_LIST:ts,}
+
+
+# Non X server common flags
+.if ${SERVERNAME} != xorg
+MESON_ARGS+=	-Dudev=false \
+		-Dudev_kms=false
+PLIST=
+PKGMESSAGE=
+BINARY_NAME=	${SERVERNAME:C/^(.).*/\1/:tu}${SERVERNAME:C/^.//}
+PLIST_FILES=	bin/${BINARY_NAME} \
+		share/man/man1/${BINARY_NAME}.1.gz
+.endif
+
+.include <bsd.port.pre.mk>
+.if ${OPSYS}==FreeBSD
+AMD64=amd64
+.else
+AMD64=x86_64
+.endif
+
+.if ${PORT_OPTIONS:MLIBUNWIND}
+.  if ${ARCH} == aarch64 || ${ARCH} == ${AMD64} || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
+MESON_ARGS+=	-Dlibunwind=true
+.  endif
+.else
+MESON_ARGS+=	-Dlibunwind=false
+.endif
+
+.if ${OPSYS} == FreeBSD
+MESON_ARGS+=	-Dsha1=libmd
+.endif
+
+.if ${SERVERNAME} != xorg
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/xorg/protocol.txt
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/xorg
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man1/Xserver.1
+.include <bsd.port.post.mk>
+.endif
