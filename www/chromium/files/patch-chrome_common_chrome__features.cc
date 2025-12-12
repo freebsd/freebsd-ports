@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2025-12-05 10:12:50 UTC
+--- chrome/common/chrome_features.cc.orig	2025-12-12 08:02:48 UTC
 +++ chrome/common/chrome_features.cc
 @@ -90,7 +90,7 @@ BASE_FEATURE(kUseKeychainKeyProvider, base::FEATURE_EN
  #endif  // BUILDFLAG(IS_MAC)
@@ -45,7 +45,18 @@
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -1295,7 +1295,7 @@ BASE_FEATURE(kKAnonymityServiceOHTTPRequests, base::FE
+@@ -891,6 +891,10 @@ BASE_FEATURE(kGlicAssetsV2, base::FEATURE_ENABLED_BY_D
+ 
+ BASE_FEATURE(kGlicFaviconDataUrls, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
++// Whether Glic should ignore the offline network status, and assume it is
++// online.
++BASE_FEATURE(kGlicIgnoreOfflineState, base::FEATURE_DISABLED_BY_DEFAULT);
++
+ BASE_FEATURE(kGlicExtensions, base::FEATURE_ENABLED_BY_DEFAULT);
+ 
+ BASE_FEATURE(kGlicMultitabUnderlines, base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -1295,7 +1299,7 @@ BASE_FEATURE(kKAnonymityServiceOHTTPRequests, base::FE
  // public keys.
  BASE_FEATURE(kKAnonymityServiceStorage, base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -54,7 +65,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor, base::FEATURE_DISABLED_BY_DEFAULT);
  // Values taken from the low-memory-monitor documentation and also apply to the
  // portal API:
-@@ -1306,7 +1306,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -1306,7 +1310,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
