@@ -1,4 +1,4 @@
---- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2025-12-06 13:30:52 UTC
+--- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2025-12-12 07:44:27 UTC
 +++ sandbox/policy/freebsd/sandbox_freebsd.cc
 @@ -0,0 +1,210 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -121,7 +121,7 @@
 +      base::PathService::Get(base::DIR_CACHE, &cache_directory);
 +      base::PathService::Get(base::DIR_HOME, &local_directory);   
 +
-+      cache_directory = cache_directory.AppendASCII("chromium");
++      cache_directory = cache_directory.AppendASCII("ungoogled-chromium");
 +      local_directory = local_directory.AppendASCII(".local").AppendASCII("share").AppendASCII("applications");
 +
 +      if (!base::CreateDirectory(cache_directory)) {
