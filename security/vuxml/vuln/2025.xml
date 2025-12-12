@@ -1,3 +1,45 @@
+  <vuln vid="2956aba3-1fcb-4c39-9cea-d88a46a3bf93">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.541</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.528.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2025-12-10/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3630 / CVE-2025-67635</h5>
+	  <p>Denial of service vulnerability in HTTP-based CLI</p>
+	  <h5>(Medium) SECURITY-1809 / CVE-2025-67636</h5>
+	  <p>Missing permission check on password fields</p>
+	  <h5>(Medium) SECURITY-783 / CVE-2025-67637 (storage), CVE-2025-67638 (masking)</h5>
+	  <p>Build authorization token stored and displayed in plain text</p>
+	  <h5>(Low) SECURITY-1166 / CVE-2025-67639</h5>
+	  <p>CSRF vulnerability on the login form</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-67635</cvename>
+      <cvename>CVE-2025-67636</cvename>
+      <cvename>CVE-2025-67637</cvename>
+      <cvename>CVE-2025-67638</cvename>
+      <cvename>CVE-2025-67639</cvename>
+      <url>https://www.jenkins.io/security/advisory/2025-12-10/</url>
+    </references>
+    <dates>
+      <discovery>2025-12-10</discovery>
+      <entry>2025-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1adf9ece-d4a3-11f0-83a2-843a4b343614">
     <topic>c-ares -- Use After Free</topic>
     <affects>
