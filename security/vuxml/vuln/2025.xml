@@ -1,3 +1,33 @@
+  <vuln vid="1adf9ece-d4a3-11f0-83a2-843a4b343614">
+    <topic>c-ares -- Use After Free</topic>
+    <affects>
+    <package>
+	<name>c-ares</name>
+  <range><ge>1.32.3</ge><lt>1.34.6</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/c-ares/c-ares/security/advisories/GHSA-jq53-42q6-pqr5 reports:</p>
+	<blockquote cite="https://github.com/c-ares/c-ares/security/advisories/GHSA-jq53-42q6-pqr5">
+	  <p>c-ares is an asynchronous resolver library.  Versions
+	  1.32.3 through 1.34.5 terminate a query after maximum
+	  attempts when using read_answer() and process_answer(),
+	  which can cause a Denial of Service.  This issue is fixed in
+	  version 1.34.6.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-62408</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-62408</url>
+    </references>
+    <dates>
+      <discovery>2025-12-08</discovery>
+      <entry>2025-12-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff25a369-d730-11f0-a15a-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
