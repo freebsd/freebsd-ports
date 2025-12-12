@@ -1,6 +1,5 @@
 PORTNAME=	opencsg
 PORTVERSION=	1.6.0
-#PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.opencsg.org/
 DISTNAME=	OpenCSG-${PORTVERSION}

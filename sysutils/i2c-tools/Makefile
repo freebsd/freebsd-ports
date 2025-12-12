@@ -1,6 +1,5 @@
 PORTNAME=	i2c-tools
 DISTVERSION=	4.3
-#PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://mirrors.edge.kernel.org/pub/software/utils/i2c-tools/
 

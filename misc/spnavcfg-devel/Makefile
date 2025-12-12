@@ -1,6 +1,5 @@
 PORTNAME=	spnavcfg
 PORTVERSION=	r${GIT_SRC_DATE}
-#PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES+=	https://github.com/FreeSpacenav/spnavcfg/raw/refs/heads/master/icons/:icons
 PKGNAMESUFFIX=	-devel
