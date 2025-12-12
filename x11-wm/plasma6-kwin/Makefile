@@ -1,6 +1,9 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	x11-wm kde kde-plasma
+PATCH_SITES=	https://invent.kde.org/plasma/kwin/-/commit/
+PATCHFILES=	ef4504320de2c3a7c7aebcf083d75db361f802ae.patch:-p1
 
 COMMENT=	Easy to use, but flexible, Wayland Compositor
 MAINTAINER=	kde@FreeBSD.org
