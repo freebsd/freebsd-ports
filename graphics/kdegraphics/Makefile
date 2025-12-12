@@ -43,7 +43,7 @@ SKANLITE_DESC=			Simple scanning application
 SKANLITE_RUN_DEPENDS=		skanlite>=${KDE_APPLICATIONS_VERSION}:graphics/skanlite
 
 MOBIPOCKET_DESC=		Mobipocket plugins for Strigi indexing and thumbnailers
-MOBIPOCKET_RUN_DEPENDS=		kdegraphics-mobipocket-qt6>=${KDE_APPLICATIONS_VERSION}:graphics/kdegraphics-mobipocket@qt6
+MOBIPOCKET_RUN_DEPENDS=		kdegraphics-mobipocket>=${KDE_APPLICATIONS_VERSION}:graphics/kdegraphics-mobipocket
 
 SVG_DESC=			SVG KPart
 SVG_RUN_DEPENDS=		kdegraphics-svgpart>=${KDE_APPLICATIONS_VERSION}:graphics/kdegraphics-svgpart

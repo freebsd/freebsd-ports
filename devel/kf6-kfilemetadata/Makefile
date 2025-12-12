@@ -1,6 +1,6 @@
 PORTNAME=	kfilemetadata
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde kde-frameworks
 
 COMMENT=	Library for extracting the text and metadata from a number files
@@ -24,6 +24,6 @@ OPTIONS_DEFAULT=	MOBIPOCKET
 OPTIONS_SUB=	yes
 
 MOBIPOCKET_DESC=	Mobipocket plugin to handle metadata
-MOBIPOCKET_LIB_DEPENDS=	libQMobipocket6.so:graphics/kdegraphics-mobipocket@qt6
+MOBIPOCKET_LIB_DEPENDS=	libQMobipocket6.so:graphics/kdegraphics-mobipocket
 
 .include <bsd.port.mk>

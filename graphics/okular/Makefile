@@ -15,7 +15,7 @@ LIB_DEPENDS=	libchm.so:misc/chmlib \
 		libdjvulibre.so:graphics/djvulibre \
 		libepub.so:textproc/ebook-tools \
 		libfreetype.so:print/freetype2 \
-		libQMobipocket6.so:graphics/kdegraphics-mobipocket@qt6 \
+		libQMobipocket6.so:graphics/kdegraphics-mobipocket \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt6.so:graphics/poppler-qt6 \
 		libqca-qt6.so:devel/qca@qt6 \
