@@ -5,6 +5,7 @@
     SUBDIR += x2x
     SUBDIR += xarcan
     SUBDIR += xlibre-ephyr
+    SUBDIR += xlibre-nest
     SUBDIR += xorg-server
     SUBDIR += xwayland
 
