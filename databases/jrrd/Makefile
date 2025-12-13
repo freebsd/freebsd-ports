@@ -8,9 +8,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java native interface (JNI) to RRDtool
 WWW=		https://www.opennms.org/index.php/Jrrd
 
+DEPRECATED=	only builds with Java 8, unmaintained, no dependencies in the ports tree
+EXPIRATION_DATE=	2026-04-13
+
 LIB_DEPENDS=	librrd.so:databases/rrdtool
 
 USES=		java libtool
+JAVA_VERSION=	8
 JAVA_VENDOR=	openjdk
 USE_LDCONFIG=	yes
 
