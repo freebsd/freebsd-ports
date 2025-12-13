@@ -1,4 +1,4 @@
-This package provides the compat14x libraries for your
+This package provides the compat15x libraries for your
 system, so you can use legacy binaries that depend on them.
 
 Ports usage example:
@@ -6,7 +6,7 @@ Ports usage example:
 --
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1500000
-LIB_DEPENDS+=	libmd.so.6:misc/compat14x
+.if ${OSVERSION} >= 1600000
+LIB_DEPENDS+=	libtpool.so.2:misc/compat15x
 .endif
 --
