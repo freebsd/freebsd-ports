@@ -11,6 +11,8 @@ WWW=		https://github.com/erikarn/if_rge_freebsd
 
 LICENSE=	BSD2CLAUSE
 
+IGNORE_FreeBSD_13=	Does not build on FreeBSD <=13
+
 USES=		kmod tar:tgz uidfix
 
 USE_GITHUB=	yes
@@ -25,11 +27,5 @@ PLIST_FILES=	${KMODDIR}/if_rge.ko \
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/rge.4 ${STAGEDIR}/${PREFIX}/share/man/man4
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && (${OSVERSION} < 1403000)
-IGNORE=		Does not build on 13
-.endif
 
 .include <bsd.port.mk>
