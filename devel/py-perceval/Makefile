@@ -4,7 +4,8 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	bofh@FreeBSD.org
+# Ask clusteradm@ before removal
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send Sir Perceval on a quest to fetch and gather data from software repositories
 WWW=		https://github.com/chaoss/grimoirelab-perceval
 
