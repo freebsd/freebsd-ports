@@ -1,0 +1,12 @@
+--- pom.xml.orig	2025-12-11 22:29:09 UTC
++++ pom.xml
+@@ -454,9 +454,7 @@ setup to run configuration. -->
+                 <version>2.10.4</version>
+ 
+                 <configuration>
+-                    <!--- Possible solution to not print any warrnings for Java 1.8
+                         <additionalparam>-Xdoclint:none</additionalparam>
+-                    -->
+ 
+                     <sourceFileExcludes>
+                         <sourcepath>
