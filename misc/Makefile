@@ -66,6 +66,7 @@
     SUBDIR += compat12x
     SUBDIR += compat13x
     SUBDIR += compat14x
+    SUBDIR += compat15x
     SUBDIR += compat4x
     SUBDIR += compat5x
     SUBDIR += compat6x
