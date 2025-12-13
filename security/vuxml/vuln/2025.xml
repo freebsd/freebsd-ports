@@ -1,3 +1,42 @@
+  <vuln vid="7a1bd1ca-cf40-41e2-9c5f-143a0d4b17af">
+    <topic>github-release-monitor -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>github-release-monitor</name>
+	<range><lt>1.4.1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://nextjs.org/blog/security-update-2025-12-11 reports:</p>
+	<blockquote cite="https://nextjs.org/blog/security-update-2025-12-11">
+	  <h1>Description</h1>
+	  <h5>(Medium) Source Code Exposure: CVE-2025-55183</h5>
+	  <p>A specifically crafted HTTP request can cause a Server Function to
+	  return the compiled source code of other Server Functions in your
+	  application. This could reveal business logic. Secrets could also be exposed
+	  if they are defined directly in your code (rather than accessed via environment
+	  variables at runtime) and referenced within a Server Function.
+	  Depending on your bundler configuration, these values may be inlined into the
+	  compiled function output.</p>
+	  <h5>(High) Denial of Service: CVE-2025-55184</h5>
+	  <p>A specifically crafted HTTP request can be sent to any App Router endpoint
+	  that, when deserialized, can cause an infinite loop that hangs the server
+	  process and prevents future HTTP requests from being served.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-55183</cvename>
+      <cvename>CVE-2025-55184</cvename>
+      <url>https://nextjs.org/blog/security-update-2025-12-11</url>
+    </references>
+    <dates>
+      <discovery>2025-12-11</discovery>
+      <entry>2025-12-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="64bec4c7-d785-11f0-a1c0-0050569f0b83">
     <topic>www/varnish-libvmod-digest -- base64 decoding vulnerability</topic>
     <affects>
