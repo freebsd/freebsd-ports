@@ -68,6 +68,7 @@
     SUBDIR += lxqt-wayland-session
     SUBDIR += lxsession
     SUBDIR += magpie
+    SUBDIR += mangowc
     SUBDIR += marco
     SUBDIR += mcwm
     SUBDIR += metacity

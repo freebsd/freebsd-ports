@@ -1,0 +1,19 @@
+MangoWC is a modern, lightweight, high-performance Wayland compositor built on
+dwl - crafted for speed, flexibility, and a customizable desktop experience.
+
+Feature Highlights
+
+  - Excellent xwayland support
+  - Base tags not workspaces (supports separate window layouts for each tag)
+  - Smooth and customizable complete animations (window open/move/close, tag
+    enter/leave,layer open/close/move)
+  - Excellent input method support (text input v2/v3)
+  - Flexible window layouts with easy switching (scroller, master-stack,
+    monocle,center-master, etc.)
+  - Rich window states (swallow, minimize, maximize, unglobal, global,
+    fakefullscreen, overlay, etc.)
+  - Simple yet powerful external configuration (support shortcuts hot-reload)
+  - Sway-like scratchpad and named scratchpad
+  - Ipc support (get/send message from/to compositor by external program)
+  - Hycov-like overview
+  - Window effects from scenefx (blur, shadow, corner radius, opacity)

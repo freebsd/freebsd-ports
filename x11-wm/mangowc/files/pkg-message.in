@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Before using MangoWC run the following commands as user:
+
+    mkdir -p ~/.config/mangowc
+    cp %%PREFIX%%/etc/mango/config.conf ~/.config/mangowc/
+
+then customize that file, in particular the variable
+
+    xkb_rules_layout
+
+and the keyboard shortcut to launch a terminal
+
+    bind=Alt,Return,spawn,foot
+
+(replace foot with your preferred terminal emulator).
+EOM
+}
+]
