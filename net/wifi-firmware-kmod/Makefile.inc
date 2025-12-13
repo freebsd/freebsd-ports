@@ -1,6 +1,6 @@
 PORTNAME=	wifi-firmware-${FWDRV}-kmod
 PORTVERSION=	${FWDRV_VERSION}
-PORTREVISION?=	2
+#PORTREVISION?=	0
 CATEGORIES=	net
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
 		https://fra.source.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/ \
