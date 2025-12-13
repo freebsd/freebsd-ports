@@ -7,7 +7,7 @@ include/gpgrt.h
 lib/libgpg-error.a
 lib/libgpg-error.so
 lib/libgpg-error.so.0
-lib/libgpg-error.so.0.41.0
+lib/libgpg-error.so.0.41.1
 libdata/pkgconfig/gpg-error.pc
 share/man/man1/gpg-error-config.1.gz
 share/man/man1/gpgrt-config.1.gz
