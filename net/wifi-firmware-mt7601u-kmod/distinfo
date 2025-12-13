@@ -1,7 +1,7 @@
-TIMESTAMP = 1739475756
-SHA256 (linux-firmware/mt7601ufw/mediatek/mt7601u.bin?h=20241017) = 4511b1d840e22aea2bf5fdca419c91c0d94cbfb291b9ac4f8be6d9100d1a7046
-SIZE (linux-firmware/mt7601ufw/mediatek/mt7601u.bin?h=20241017) = 45412
-SHA256 (linux-firmware/mt7601ufw/LICENCE.ralink_a_mediatek_company_firmware?h=20241017) = 8568352b57f3574f9d5b2753cdb7c6e5eb2b79e82fbb9c9ba6566947467ef508
-SIZE (linux-firmware/mt7601ufw/LICENCE.ralink_a_mediatek_company_firmware?h=20241017) = 2100
-SHA256 (linux-firmware/mt7601ufw/WHENCE?h=20241017) = 7851ae8e04d71ccfc741fd2df450ef5724c4a172a0a282f69e8a8ce44877ba84
-SIZE (linux-firmware/mt7601ufw/WHENCE?h=20241017) = 291838
+TIMESTAMP = 1765588290
+SHA256 (linux-firmware/mt7601ufw/mediatek/mt7601u.bin?h=20251125) = 4511b1d840e22aea2bf5fdca419c91c0d94cbfb291b9ac4f8be6d9100d1a7046
+SIZE (linux-firmware/mt7601ufw/mediatek/mt7601u.bin?h=20251125) = 45412
+SHA256 (linux-firmware/mt7601ufw/LICENCE.ralink_a_mediatek_company_firmware?h=20251125) = 8568352b57f3574f9d5b2753cdb7c6e5eb2b79e82fbb9c9ba6566947467ef508
+SIZE (linux-firmware/mt7601ufw/LICENCE.ralink_a_mediatek_company_firmware?h=20251125) = 2100
+SHA256 (linux-firmware/mt7601ufw/WHENCE?h=20251125) = 978a5f084a81eec37f7fc146d0f12b21d263dc1afe97a38bd9556d68fa5b421f
+SIZE (linux-firmware/mt7601ufw/WHENCE?h=20251125) = 365316
