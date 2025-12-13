@@ -32,6 +32,7 @@ share/osinfo/device/pcisig.com/pci-1af4-1048.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1049.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1050.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1052.d/class.xml
+share/osinfo/device/pcisig.com/pci-1af4-1053.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-1058.d/class.xml
 share/osinfo/device/pcisig.com/pci-1af4-105a.d/class.xml
 share/osinfo/device/pcisig.com/pci-1b36-0004.d/class.xml
@@ -85,6 +86,8 @@ share/osinfo/os/alpinelinux.org/alpinelinux-3.18.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.19.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.20.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.21.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.22.xml
+share/osinfo/os/alpinelinux.org/alpinelinux-3.23.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.5.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.6.xml
 share/osinfo/os/alpinelinux.org/alpinelinux-3.7.xml
@@ -94,6 +97,9 @@ share/osinfo/os/altlinux.org/alt-10.0.xml
 share/osinfo/os/altlinux.org/alt-10.1.xml
 share/osinfo/os/altlinux.org/alt-10.2.xml
 share/osinfo/os/altlinux.org/alt-10.3.xml
+share/osinfo/os/altlinux.org/alt-10.4.xml
+share/osinfo/os/altlinux.org/alt-11.0.xml
+share/osinfo/os/altlinux.org/alt-11.1.xml
 share/osinfo/os/altlinux.org/alt-8.0.xml
 share/osinfo/os/altlinux.org/alt-8.1.xml
 share/osinfo/os/altlinux.org/alt-8.2.xml
@@ -322,6 +328,7 @@ share/osinfo/os/fedoraproject.org/fedora-4.xml
 share/osinfo/os/fedoraproject.org/fedora-40.xml
 share/osinfo/os/fedoraproject.org/fedora-41.xml
 share/osinfo/os/fedoraproject.org/fedora-42.xml
+share/osinfo/os/fedoraproject.org/fedora-43.xml
 share/osinfo/os/fedoraproject.org/fedora-5.xml
 share/osinfo/os/fedoraproject.org/fedora-6.xml
 share/osinfo/os/fedoraproject.org/fedora-7.xml
@@ -344,6 +351,8 @@ share/osinfo/os/fedoraproject.org/silverblue-38.xml
 share/osinfo/os/fedoraproject.org/silverblue-39.xml
 share/osinfo/os/fedoraproject.org/silverblue-40.xml
 share/osinfo/os/fedoraproject.org/silverblue-41.xml
+share/osinfo/os/fedoraproject.org/silverblue-42.xml
+share/osinfo/os/fedoraproject.org/silverblue-43.xml
 share/osinfo/os/fedoraproject.org/silverblue-rawhide.xml
 share/osinfo/os/fedoraproject.org/silverblue-unknown.xml
 share/osinfo/os/freebsd.org/freebsd-1.0.xml
@@ -370,6 +379,8 @@ share/osinfo/os/freebsd.org/freebsd-13.4.xml
 share/osinfo/os/freebsd.org/freebsd-14.0.xml
 share/osinfo/os/freebsd.org/freebsd-14.1.xml
 share/osinfo/os/freebsd.org/freebsd-14.2.xml
+share/osinfo/os/freebsd.org/freebsd-14.3.xml
+share/osinfo/os/freebsd.org/freebsd-15.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.5.xml
 share/osinfo/os/freebsd.org/freebsd-2.0.xml
 share/osinfo/os/freebsd.org/freebsd-2.2.8.xml
@@ -418,6 +429,7 @@ share/osinfo/os/freedos.org/freedos-1.2.xml
 share/osinfo/os/freedos.org/freedos-1.3.xml
 share/osinfo/os/freenix.net/freenix-14.2.xml
 share/osinfo/os/gentoo.org/gentoo-rolling.xml
+share/osinfo/os/getsol.us/solus-rolling.xml
 share/osinfo/os/gnome.org/gnome-3.6.xml
 share/osinfo/os/gnome.org/gnome-3.8.xml
 share/osinfo/os/gnome.org/gnome-continuous-3.10.xml
@@ -570,6 +582,7 @@ share/osinfo/os/nixos.org/nixos-23.11.xml
 share/osinfo/os/nixos.org/nixos-24.05.xml
 share/osinfo/os/nixos.org/nixos-24.11.xml
 share/osinfo/os/nixos.org/nixos-25.05.xml
+share/osinfo/os/nixos.org/nixos-25.11.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
@@ -620,6 +633,7 @@ share/osinfo/os/openbsd.org/openbsd-7.3.xml
 share/osinfo/os/openbsd.org/openbsd-7.4.xml
 share/osinfo/os/openbsd.org/openbsd-7.5.xml
 share/osinfo/os/openbsd.org/openbsd-7.6.xml
+share/osinfo/os/openbsd.org/openbsd-7.7.xml
 share/osinfo/os/openindiana.org/hipster-rolling.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -640,10 +654,12 @@ share/osinfo/os/opensuse.org/opensuse-15.3.xml
 share/osinfo/os/opensuse.org/opensuse-15.4.xml
 share/osinfo/os/opensuse.org/opensuse-15.5.xml
 share/osinfo/os/opensuse.org/opensuse-15.6.xml
+share/osinfo/os/opensuse.org/opensuse-16.0.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
 share/osinfo/os/opensuse.org/opensuse-factory.xml
+share/osinfo/os/opensuse.org/opensuse-microos.xml
 share/osinfo/os/opensuse.org/opensuse-tumbleweed.xml
 share/osinfo/os/opensuse.org/opensuse-unknown.xml
 share/osinfo/os/oracle.com/oel-4.4.xml
@@ -819,6 +835,8 @@ share/osinfo/os/redhat.com/rhl-7.3.xml
 share/osinfo/os/redhat.com/rhl-7.xml
 share/osinfo/os/redhat.com/rhl-8.0.xml
 share/osinfo/os/redhat.com/rhl-9.xml
+share/osinfo/os/rockylinux.org/rocky-10-unknown.xml
+share/osinfo/os/rockylinux.org/rocky-10.xml
 share/osinfo/os/rockylinux.org/rocky-8-unknown.xml
 share/osinfo/os/rockylinux.org/rocky-8.4.xml
 share/osinfo/os/rockylinux.org/rocky-8.5.xml
@@ -908,6 +926,7 @@ share/osinfo/os/suse.com/sle-15.3.xml
 share/osinfo/os/suse.com/sle-15.4.xml
 share/osinfo/os/suse.com/sle-15.5.xml
 share/osinfo/os/suse.com/sle-15.6.xml
+share/osinfo/os/suse.com/sle-15.7.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
