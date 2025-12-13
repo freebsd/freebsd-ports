@@ -11,7 +11,11 @@ WWW=		https://jalingo.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Last release in 2006. Does not compile in Java 9+.
+EXPIRATION_DATE=	2026-04-13
+
 USES=		7z java:ant,run
+JAVA_VERSION=	8
 
 ALL_TARGET=	dist
 
