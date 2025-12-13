@@ -1,7 +1,8 @@
 PORTNAME=	nextcloud
-PORTVERSION=	32.0.2
+PORTVERSION=	32.0.3
 CATEGORIES=	www
-MASTER_SITES=	https://download.nextcloud.com/server/releases/
+MASTER_SITES=	https://github.com/nextcloud-releases/server/releases/download/v${PORTVERSION} \
+		https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DIST_SUBDIR=	${PORTNAME}
 
