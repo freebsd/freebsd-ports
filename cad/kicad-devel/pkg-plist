@@ -36,6 +36,7 @@ lib/libkigal.so.9.99.0
 %%DESKTOPDIR%%/org.kicad.kicad.desktop
 %%DESKTOPDIR%%/org.kicad.pcbcalculator.desktop
 %%DESKTOPDIR%%/org.kicad.pcbnew.desktop
+share/bash-completion/completions/kicad-cli
 share/icons/hicolor/128x128/apps/bitmap2component.png
 share/icons/hicolor/128x128/apps/eeschema.png
 share/icons/hicolor/128x128/apps/gerbview.png
@@ -889,3 +890,4 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-worksheet.svg
 share/metainfo/org.kicad.kicad.metainfo.xml
 share/mime/packages/kicad-gerbers.xml
 share/mime/packages/kicad-kicad.xml
+share/zsh/site-functions/_kicad-cli

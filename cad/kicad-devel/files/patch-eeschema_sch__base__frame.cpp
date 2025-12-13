@@ -1,15 +1,15 @@
---- eeschema/sch_base_frame.cpp.orig	2025-09-14 17:37:19 UTC
+--- eeschema/sch_base_frame.cpp.orig	2025-12-12 23:35:14 UTC
 +++ eeschema/sch_base_frame.cpp
-@@ -61,7 +61,7 @@
- #include <wx/log.h>
+@@ -65,7 +65,7 @@
  #include <wx/msgdlg.h>
+ #include <trace_helpers.h>
  
 -#ifndef __linux__
 +#if not defined (__linux__) && not defined (__FreeBSD__)
  #include <navlib/nl_schematic_plugin.h>
  #include <wx/fdrepdlg.h>
  #else
-@@ -370,7 +370,7 @@ void SCH_BASE_FRAME::ActivateGalCanvas()
+@@ -338,7 +338,7 @@ void SCH_BASE_FRAME::ActivateGalCanvas()
      {
          if( !m_spaceMouse )
          {

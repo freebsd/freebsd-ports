@@ -1,4 +1,4 @@
---- include/pcb_base_frame.h.orig	2025-09-14 17:37:19 UTC
+--- include/pcb_base_frame.h.orig	2025-12-12 23:35:14 UTC
 +++ include/pcb_base_frame.h
 @@ -62,7 +62,7 @@ class PCB_LAYER_BOX_SELECTOR;
  class PROGRESS_REPORTER;
@@ -9,7 +9,7 @@
  class NL_PCBNEW_PLUGIN;
  #else
  class SPNAV_2D_PLUGIN;
-@@ -436,7 +436,7 @@ class PCB_BASE_FRAME : public EDA_DRAW_FRAME (private)
+@@ -437,7 +437,7 @@ class PCB_BASE_FRAME : public EDA_DRAW_FRAME (private)
      PCB_ORIGIN_TRANSFORMS   m_originTransforms;
  
  private:

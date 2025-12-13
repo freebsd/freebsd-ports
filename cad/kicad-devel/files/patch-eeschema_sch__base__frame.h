@@ -1,6 +1,6 @@
---- eeschema/sch_base_frame.h.orig	2025-09-14 17:37:19 UTC
+--- eeschema/sch_base_frame.h.orig	2025-12-12 23:35:14 UTC
 +++ eeschema/sch_base_frame.h
-@@ -57,7 +57,7 @@ struct SCH_SELECTION_FILTER_OPTIONS;
+@@ -59,7 +59,7 @@ struct SCH_SELECTION_FILTER_OPTIONS;
  class SYMBOL_EDITOR_SETTINGS;
  struct SCH_SELECTION_FILTER_OPTIONS;
  
@@ -9,7 +9,7 @@
  class NL_SCHEMATIC_PLUGIN;
  #else
  class SPNAV_2D_PLUGIN;
-@@ -336,7 +336,7 @@ class SCH_BASE_FRAME : public EDA_DRAW_FRAME, public S
+@@ -329,7 +329,7 @@ class SCH_BASE_FRAME : public EDA_DRAW_FRAME, public S
      wxTimer                                 m_watcherDebounceTimer;
      bool                                    m_inSymChangeTimerEvent;
  
