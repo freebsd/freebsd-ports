@@ -1,6 +1,6 @@
 PORTNAME=	g4music
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5
+DISTVERSION=	4.6
 CATEGORIES=	audio
 
 MAINTAINER=	duchateau.olivier@gmail.com
