@@ -10,6 +10,7 @@ WWW=		https://www.opennms.org/index.php/Jicmp
 WRKSRC=		${WRKDIR}/jicmp-${PORTVERSION}
 
 USES=		java libtool
+JAVA_VERSION=	8
 JAVA_VENDOR=	openjdk
 USE_LDCONFIG=	yes
 
