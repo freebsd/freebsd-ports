@@ -1,0 +1,11 @@
+--- build.xml.orig	2025-12-14 16:17:27 UTC
++++ build.xml
+@@ -3,7 +3,7 @@
+     <property name="runtime.jar" value="JChessBoard.jar"/>
+ 
+     <target name="compile">
+-        <javac srcdir="jchessboard" destdir="." includes="*.java"/>
++        <javac srcdir="jchessboard" destdir="." includes="*.java" encoding="ISO-8859-1"/>
+     </target>
+ 
+     <target name="jar" depends="compile">
