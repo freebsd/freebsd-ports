@@ -1,6 +1,7 @@
 CARGO_CRATES=	adler2-2.0.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
+		alloca-0.4.0 \
 		allocator-api2-0.2.21 \
 		ammonia-4.1.2 \
 		android_system_properties-0.1.5 \
@@ -31,27 +32,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		block-buffer-0.10.4 \
 		bstr-1.12.0 \
 		bumpalo-3.19.0 \
-		burn-0.19.0 \
-		burn-autodiff-0.19.0 \
-		burn-candle-0.19.0 \
-		burn-common-0.19.0 \
-		burn-core-0.19.0 \
-		burn-cubecl-0.19.0 \
-		burn-cubecl-fusion-0.19.0 \
-		burn-cuda-0.19.0 \
-		burn-dataset-0.19.0 \
-		burn-derive-0.19.0 \
-		burn-fusion-0.19.0 \
-		burn-ir-0.19.0 \
-		burn-ndarray-0.19.0 \
-		burn-nn-0.19.0 \
-		burn-optim-0.19.0 \
-		burn-rocm-0.19.0 \
-		burn-router-0.19.0 \
-		burn-store-0.19.0 \
-		burn-tensor-0.19.0 \
-		burn-train-0.19.0 \
-		burn-wgpu-0.19.0 \
+		burn-0.19.1 \
+		burn-autodiff-0.19.1 \
+		burn-candle-0.19.1 \
+		burn-common-0.19.1 \
+		burn-core-0.19.1 \
+		burn-cubecl-0.19.1 \
+		burn-cubecl-fusion-0.19.1 \
+		burn-cuda-0.19.1 \
+		burn-dataset-0.19.1 \
+		burn-derive-0.19.1 \
+		burn-fusion-0.19.1 \
+		burn-ir-0.19.1 \
+		burn-ndarray-0.19.1 \
+		burn-nn-0.19.1 \
+		burn-optim-0.19.1 \
+		burn-rocm-0.19.1 \
+		burn-router-0.19.1 \
+		burn-store-0.19.1 \
+		burn-tensor-0.19.1 \
+		burn-train-0.19.1 \
+		burn-wgpu-0.19.1 \
 		bytemuck-1.24.0 \
 		bytemuck_derive-1.10.2 \
 		byteorder-1.5.0 \
@@ -71,8 +72,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clang-sys-1.8.1 \
-		clap-4.5.51 \
-		clap_builder-4.5.51 \
+		clap-4.5.53 \
+		clap_builder-4.5.53 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.5 \
 		codespan-reporting-0.12.0 \
@@ -89,8 +90,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		core-graphics-types-0.2.0 \
 		cpufeatures-0.2.17 \
 		crc32fast-1.5.0 \
-		criterion-0.7.0 \
-		criterion-plot-0.6.0 \
+		criterion-0.8.1 \
+		criterion-plot-0.8.1 \
 		critical-section-1.2.0 \
 		crossbeam-channel-0.5.15 \
 		crossbeam-deque-0.8.6 \
@@ -102,27 +103,27 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cssparser-macros-0.6.1 \
 		csv-1.3.1 \
 		csv-core-0.1.12 \
-		cubecl-0.8.0 \
-		cubecl-common-0.8.0 \
-		cubecl-convolution-0.8.0 \
-		cubecl-core-0.8.0 \
-		cubecl-cpp-0.8.0 \
-		cubecl-cpu-0.8.0 \
-		cubecl-cuda-0.8.0 \
-		cubecl-hip-0.8.0 \
+		cubecl-0.8.1 \
+		cubecl-common-0.8.1 \
+		cubecl-convolution-0.8.1 \
+		cubecl-core-0.8.1 \
+		cubecl-cpp-0.8.1 \
+		cubecl-cpu-0.8.1 \
+		cubecl-cuda-0.8.1 \
+		cubecl-hip-0.8.1 \
 		cubecl-hip-sys-7.0.5183101 \
-		cubecl-ir-0.8.0 \
-		cubecl-macros-0.8.0 \
+		cubecl-ir-0.8.1 \
+		cubecl-macros-0.8.1 \
 		cubecl-macros-internal-0.8.0 \
-		cubecl-matmul-0.8.0 \
-		cubecl-opt-0.8.0 \
-		cubecl-quant-0.8.0 \
-		cubecl-random-0.8.0 \
-		cubecl-reduce-0.8.0 \
-		cubecl-runtime-0.8.0 \
-		cubecl-std-0.8.0 \
-		cubecl-wgpu-0.8.0 \
-		cudarc-0.17.5 \
+		cubecl-matmul-0.8.1 \
+		cubecl-opt-0.8.1 \
+		cubecl-quant-0.8.1 \
+		cubecl-random-0.8.1 \
+		cubecl-reduce-0.8.1 \
+		cubecl-runtime-0.8.1 \
+		cubecl-std-0.8.1 \
+		cubecl-wgpu-0.8.1 \
+		cudarc-0.17.7 \
 		darling-0.20.11 \
 		darling-0.21.0 \
 		darling_core-0.20.11 \
@@ -232,7 +233,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		hashbrown-0.13.2 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
-		hashbrown-0.16.0 \
+		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		hermit-abi-0.5.2 \
 		hexf-parse-0.2.1 \
@@ -256,7 +257,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
-		indexmap-2.12.0 \
+		indexmap-2.12.1 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
 		is-docker-0.2.0 \
@@ -274,6 +275,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		lazy_static-1.5.0 \
 		levenshtein_automata-0.2.1 \
 		libc-0.2.174 \
+		libfuzzer-sys-0.4.10 \
 		libloading-0.8.8 \
 		liblzma-0.4.5 \
 		liblzma-sys-0.4.4 \
@@ -331,10 +333,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.1 \
 		oorandom-11.1.5 \
-		open-5.3.2 \
+		open-5.3.3 \
 		option-ext-0.2.0 \
 		ordered-float-4.6.0 \
 		ordered-float-5.1.0 \
+		page_size-0.6.0 \
 		parking-2.2.1 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
@@ -501,15 +504,15 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tracel-mlir-rs-macros-20.1.4-5 \
 		tracel-mlir-sys-20.1.4-5 \
 		tracel-tblgen-rs-20.1.4-5 \
-		tracing-0.1.41 \
+		tracing-0.1.43 \
 		tracing-appender-0.2.3 \
-		tracing-attributes-0.1.30 \
-		tracing-core-0.1.34 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.35 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.20 \
+		tracing-subscriber-0.3.22 \
 		tracing-wasm-0.2.1 \
 		tree-sitter-0.25.10 \
-		tree-sitter-bash-0.25.0 \
+		tree-sitter-bash-0.25.1 \
 		tree-sitter-c-0.24.1 \
 		tree-sitter-c-sharp-0.23.1 \
 		tree-sitter-clojure-0.1.0 \
@@ -549,7 +552,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		unicode-ident-1.0.18 \
 		unicode-math-class-0.1.0 \
 		unicode-normalization-0.1.24 \
-		unicode-script-0.5.7 \
+		unicode-script-0.5.8 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.1.14 \
 		unicode-width-0.2.2 \
