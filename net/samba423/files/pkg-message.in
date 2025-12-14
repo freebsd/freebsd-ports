@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+How to start: http://wiki.samba.org/index.php/Samba4/HOWTO
+
+* Your configuration is: %%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%
+
+* All the relevant databases are under: %%SAMBA4_LOCKDIR%%
+
+* All the logs are under: %%SAMBA4_LOGDIR%%
+
+%%AD_DC%%* Provisioning script is: %%PREFIX%%/bin/samba-tool
+%%AD_DC%%
+%%AD_DC%%For the working DNS updates you will need to either build dns/bind9*
+%%AD_DC%%with the enabled GSSAPI(GSSAPI_MIT5 is recommended) or install
+%%AD_DC%%dns/samba-nsupdate package, which is preconfigured with such a support.
+%%AD_DC%%
+%%AD_DC%%You will need to specify location of the 'nsupdate' command in the
+%%AD_DC%%%%SAMBA4_CONFIG%% file:
+%%AD_DC%%
+%%AD_DC%%    nsupdate command = %%PREFIX%%/bin/samba-nsupdate -g
+%%AD_DC%%
+%%AD_DC%%For additional documentation check: https://wiki.samba.org/index.php/User_Documentation
+
+Port related bug reports can go to the https://gitlab.com/samba-freebsd/ports/-/issues or
+to the FreeBSD Bugzilla https://bugs.freebsd.org/
+
+All Samba related bug reports should go to the: https://bugzilla.samba.org/
+EOM
+}
+]
