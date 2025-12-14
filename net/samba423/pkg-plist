@@ -274,7 +274,6 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_LIBDIR%%/private/libserver-id-db-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libserver-role-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libshares-private-samba.so
-%%SAMBA4_LIBDIR%%/private/libsmb-transport-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsmbclient-raw-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsmbd-base-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsmbd-shim-private-samba.so
@@ -297,6 +296,7 @@ libexec/samba/samba-dcerpcd
 %%SAMBA4_LIBDIR%%/private/libsamba-modules-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-net-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-security-private-samba.so
+%%SAMBA4_LIBDIR%%/private/libsamba-security-trusts-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba-sockets-private-samba.so
 %%SAMBA4_LIBDIR%%/private/libsamba3-util-private-samba.so
 @dir %%SAMBA4_LIBDIR%%/private

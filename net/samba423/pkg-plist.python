@@ -26,6 +26,7 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/atsvc%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/auth%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/base%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/bcrypt_rsakey_blob%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/claims%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/conditional_ace%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/dcerpc%%PYTHON_TAG%%.so
@@ -42,6 +43,7 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/idmap%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/initshutdown%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/irpc%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/keycredlink%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/krb5ccache%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/krb5pac%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/lsa%%PYTHON_TAG%%.so
@@ -63,6 +65,7 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/spoolss%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/srvsvc%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/svcctl%%PYTHON_TAG%%.so
+%%PYTHON_SITELIBDIR%%/samba/dcerpc/tpm20_rsakey_blob%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/unixinfo%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/winbind%%PYTHON_TAG%%.so
 %%PYTHON_SITELIBDIR%%/samba/dcerpc/windows_event_ids%%PYTHON_TAG%%.so
@@ -302,6 +305,7 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/auth_log_pass_change.py
 %%PYTHON_SITELIBDIR%%/samba/tests/auth_log_samlogon.py
 %%PYTHON_SITELIBDIR%%/samba/tests/auth_log_winbind.py
+%%PYTHON_SITELIBDIR%%/samba/tests/bcrypt_rsakey_blob.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/__init__.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/bug13653.py
 %%PYTHON_SITELIBDIR%%/samba/tests/blackbox/check_output.py
@@ -399,6 +403,7 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/kcc/graph_utils.py
 %%PYTHON_SITELIBDIR%%/samba/tests/kcc/kcc_utils.py
 %%PYTHON_SITELIBDIR%%/samba/tests/kcc/ldif_import_export.py
+%%PYTHON_SITELIBDIR%%/samba/tests/key_credential_link.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/alias_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/as_canonicalization_tests.py
 %%PYTHON_SITELIBDIR%%/samba/tests/krb5/as_req_tests.py
@@ -456,13 +461,15 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/messaging.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ndr/gkdi.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ndr/gmsa.py
+%%PYTHON_SITELIBDIR%%/samba/tests/ndr/sd.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ndr/wbint.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join_no_spnego.py
 %%PYTHON_SITELIBDIR%%/samba/tests/netbios.py
 %%PYTHON_SITELIBDIR%%/samba/tests/netcmd.py
 %%PYTHON_SITELIBDIR%%/samba/tests/netlogonsvc.py
-%%PYTHON_SITELIBDIR%%/samba/tests/ndr/sd.py
+%%PYTHON_SITELIBDIR%%/samba/tests/nss/base.py
+%%PYTHON_SITELIBDIR%%/samba/tests/nss/group.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ntacls.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ntacls_backup.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ntlm_auth.py
@@ -572,10 +579,15 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/subunitrun.py
 %%PYTHON_SITELIBDIR%%/samba/tests/tdb_util.py
 %%PYTHON_SITELIBDIR%%/samba/tests/token_factory.py
+%%PYTHON_SITELIBDIR%%/samba/tests/tpm20_rsakey_blob.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovision.py
 %%PYTHON_SITELIBDIR%%/samba/tests/upgradeprovisionneeddc.py
 %%PYTHON_SITELIBDIR%%/samba/tests/usage.py
+%%PYTHON_SITELIBDIR%%/samba/tests/varlink/base.py
+%%PYTHON_SITELIBDIR%%/samba/tests/varlink/getgrouprecord.py
+%%PYTHON_SITELIBDIR%%/samba/tests/varlink/getmemberships.py
+%%PYTHON_SITELIBDIR%%/samba/tests/varlink/getuserrecord.py
 %%PYTHON_SITELIBDIR%%/samba/tests/xattr.py
 %%PYTHON_SITELIBDIR%%/samba/upgrade.py
 %%PYTHON_SITELIBDIR%%/samba/upgradehelpers.py

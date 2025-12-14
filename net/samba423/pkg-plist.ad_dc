@@ -67,6 +67,7 @@ include/samba4/dcerpc_server.h
 %%SAMBA_LDB_MODULESDIR%%/subtree_delete.so
 %%SAMBA_LDB_MODULESDIR%%/subtree_rename.so
 %%SAMBA_LDB_MODULESDIR%%/tombstone_reanimate.so
+%%SAMBA_LDB_MODULESDIR%%/trust_notify.so
 %%SAMBA_LDB_MODULESDIR%%/unique_object_sids.so
 %%SAMBA_LDB_MODULESDIR%%/update_keytab.so
 %%SAMBA_LDB_MODULESDIR%%/vlv.so
@@ -75,9 +76,10 @@ include/samba4/dcerpc_server.h
 %%SAMBA4_MODULEDIR%%/process_model/standard.so
 %%SAMBA4_MODULEDIR%%/service/cldap.so
 %%SAMBA4_MODULEDIR%%/service/dcerpc.so
-%%SAMBA4_MODULEDIR%%/service/dns_update.so
 %%SAMBA4_MODULEDIR%%/service/dns.so
+%%SAMBA4_MODULEDIR%%/service/dns_update.so
 %%SAMBA4_MODULEDIR%%/service/drepl.so
+%%SAMBA4_MODULEDIR%%/service/ft_scanner.so
 %%SAMBA4_MODULEDIR%%/service/kcc.so
 %%SAMBA4_MODULEDIR%%/service/kdc.so
 %%SAMBA4_MODULEDIR%%/service/ldap.so
