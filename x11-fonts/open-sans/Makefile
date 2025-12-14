@@ -15,6 +15,9 @@ LICENSE_FILE=	${WRKSRC}/Apache\ License.txt
 
 USES=		fonts zip
 
+BROKEN=		Unfetchable
+EXPIRATION_DATE=2026-01-31
+
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
