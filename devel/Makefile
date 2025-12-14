@@ -4394,6 +4394,7 @@
     SUBDIR += py-Automat
     SUBDIR += py-BTrees
     SUBDIR += py-Dumper
+    SUBDIR += py-Events
     SUBDIR += py-Faker
     SUBDIR += py-Farama-Notifications
     SUBDIR += py-IBMQuantumExperience
