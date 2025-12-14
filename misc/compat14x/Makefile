@@ -1,5 +1,6 @@
 PORTNAME=	compat14x
 PORTVERSION=	14.2.1402000.20251120
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/arrowd
 PKGNAMESUFFIX=	-${ARCH}
@@ -61,6 +62,10 @@ OPTIONS_SUB=	yes
 
 .if ${OSREL:R} < 14
 IGNORE=		is for FreeBSD 14.x and newer
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1600000
+RUN_DEPENDS+=	compat15x-${ARCH}>=0:misc/compat15x
 .endif
 
 .include <bsd.port.options.mk>
