@@ -21,6 +21,7 @@ lib/bear/wrapper.d/clang++17
 lib/bear/wrapper.d/clang++18
 lib/bear/wrapper.d/clang++19
 lib/bear/wrapper.d/clang++20
+lib/bear/wrapper.d/clang++21
 lib/bear/wrapper.d/clang++33
 lib/bear/wrapper.d/clang++34
 lib/bear/wrapper.d/clang++35
@@ -45,6 +46,7 @@ lib/bear/wrapper.d/clang17
 lib/bear/wrapper.d/clang18
 lib/bear/wrapper.d/clang19
 lib/bear/wrapper.d/clang20
+lib/bear/wrapper.d/clang21
 lib/bear/wrapper.d/clang33
 lib/bear/wrapper.d/clang34
 lib/bear/wrapper.d/clang35
@@ -69,6 +71,7 @@ lib/bear/wrapper.d/cpp17
 lib/bear/wrapper.d/cpp18
 lib/bear/wrapper.d/cpp19
 lib/bear/wrapper.d/cpp20
+lib/bear/wrapper.d/cpp21
 lib/bear/wrapper.d/cpp33
 lib/bear/wrapper.d/cpp34
 lib/bear/wrapper.d/cpp35
