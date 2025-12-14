@@ -1,10 +1,10 @@
 PORTNAME=	unfs3
 DISTVERSIONPREFIX=	unfs3-
 DISTVERSION=	0.9.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-space implementation of the NFSv3 server specification
 WWW=		https://unfs3.github.io/
 
