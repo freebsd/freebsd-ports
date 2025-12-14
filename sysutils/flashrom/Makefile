@@ -21,6 +21,8 @@ LIB_DEPENDS=	libpci.so:devel/libpci
 USES=		meson pkgconfig ssl tar:xz
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-Wno-deprecated-declarations
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS FTDI MANPAGES
