@@ -25,6 +25,7 @@ do-build:
 	(cd ${WRKSRC} && ${RM} -r classes/* && ${SETENV}         \
 		LANG=en_US.ISO8859-1 LC_ALL=en_US.ISO8859-1 ${JAVAC} \
 		-classpath ${INTERFACES:S, ,,g}                   \
+		-encoding Windows-1252 \
 		-d classes src/java/net/htmlparser/jericho/*.java \
 		src/java/net/htmlparser/jericho/nodoc/*.java)
 	${MKDIR} ${WRKSRC}/lib
