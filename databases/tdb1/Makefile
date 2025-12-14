@@ -1,10 +1,9 @@
 PORTNAME=	tdb
-DISTVERSION=	1.4.13
+DISTVERSION=	1.4.14
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SAMBA
-PKGNAMESUFFIX=	1413
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	samba@FreeBSD.org
 COMMENT=	Trivial Database
@@ -32,7 +31,9 @@ MAKE_ENV=		PYTHONHASHSEED=1
 # undefined symbols.
 LDFLAGS+=		-Wl,--undefined-version
 
-CONFLICTS_INSTALL=	tdb tdb[0-9]*
+# tdb1 links with installed tdb libraries, so we need to set
+# CONFLICTS instead of just CONFLICTS_INSTALL.
+CONFLICTS=	tdb tdb14*
 
 PLIST_SUB+=	PKGCONFIGDIR=${PKGCONFIGDIR:S;^${PREFIX}/;;}
 
