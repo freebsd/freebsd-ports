@@ -1,5 +1,5 @@
 PORTNAME=	shiny
-PORTVERSION=	1.11.1
+PORTVERSION=	1.12.1
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	R-cran-bslib>=0.6.0:www/R-cran-bslib \
 		R-cran-cachem>=1.1.0:databases/R-cran-cachem \
 		R-cran-cli>0:devel/R-cran-cli \
-		R-cran-commonmark>=1.7:textproc/R-cran-commonmark \
+		R-cran-commonmark>=2.0.0:textproc/R-cran-commonmark \
 		R-cran-fastmap>=1.1.1:databases/R-cran-fastmap \
 		R-cran-fontawesome>=0.4.0:devel/R-cran-fontawesome \
 		R-cran-glue>=1.3.2:devel/R-cran-glue \
@@ -23,7 +23,7 @@ RUN_DEPENDS=	R-cran-bslib>=0.6.0:www/R-cran-bslib \
 		R-cran-later>=1.0.0:devel/R-cran-later \
 		R-cran-lifecycle>=0.2.0:devel/R-cran-lifecycle \
 		R-cran-mime>=0.3:misc/R-cran-mime \
-		R-cran-promises>=1.3.2:devel/R-cran-promises \
+		R-cran-promises>=1.5.0:devel/R-cran-promises \
 		R-cran-R6>=2.0:devel/R-cran-R6 \
 		R-cran-rlang>=0.4.10:devel/R-cran-rlang \
 		R-cran-sourcetools>0:devel/R-cran-sourcetools \
