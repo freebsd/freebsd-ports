@@ -4,7 +4,7 @@ CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 # Pull in PR #61 to unbreak default route detection on CURRENT
-# Pull in PR #101 to unbreak build (man page)
+# Pull in PR #107 to unbreak build (man page)
 PATCH_SITES=    https://github.com/freebsd/iocage/commit/
 PATCHFILES=	2120a86d1d4fd3d383a3f0bddfc1e92eb5a7d2e7.patch:-p1 \
 		13c342c37746bffa944b5c397d51ef39cd2eb172.patch:-p1
