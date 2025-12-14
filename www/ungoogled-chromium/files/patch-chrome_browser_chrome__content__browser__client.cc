@@ -1,4 +1,4 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2025-12-12 21:27:37 UTC
+--- chrome/browser/chrome_content_browser_client.cc.orig	2025-12-14 17:46:41 UTC
 +++ chrome/browser/chrome_content_browser_client.cc
 @@ -574,7 +574,7 @@
  #include "third_party/cros_system_api/switches/chrome_switches.h"
@@ -55,6 +55,15 @@
  #if BUILDFLAG(IS_MAC)
    std::unique_ptr<metrics::ClientInfo> client_info =
        GoogleUpdateSettings::LoadMetricsClientInfo();
+@@ -2687,7 +2689,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+                                     client_info->client_id);
+   }
+ #elif BUILDFLAG(IS_POSIX)
+-#if !BUILDFLAG(IS_ANDROID)
++#if !BUILDFLAG(IS_ANDROID) && !BUILDFLAG(IS_BSD)
+   pid_t pid;
+   if (crash_reporter::GetHandlerSocket(nullptr, &pid)) {
+     command_line->AppendSwitchASCII(
 @@ -3020,7 +3022,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
      }
    }
