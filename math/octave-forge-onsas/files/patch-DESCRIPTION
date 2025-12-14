@@ -1,9 +1,0 @@
---- ../DESCRIPTION.orig	2025-01-25 12:54:46.986090000 -0600
-+++ ../DESCRIPTION	2025-01-25 12:54:54.809288000 -0600
-@@ -1,5 +1,5 @@
- Name: ONSAS
--Version: 0.2.4
-+Version: 0.2.5
- Date: 2022-08-02
- Author: Pérez Zerpa, Jorge M. and Bazzano García, Juan Bruno and Viera Sosa, Joaquin and Vanzulli Pena, Mauricio and Forets, Marcelo and Battini, Jean-Marc and Toro, Sebastián
- Maintainer: Pérez Zerpa, Jorge M. (jorgepz@fing.edu.uy)
