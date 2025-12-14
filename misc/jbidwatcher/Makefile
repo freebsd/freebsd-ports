@@ -8,7 +8,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java-based application allowing you to monitor eBay auctions
 WWW=		https://www.jbidwatcher.com/
 
+DEPRECATED=	unmaintained, upstream website is gone, no users in the ports tree
+EXPIRATION_DATE=	2026-04-14
+
 USES=	java:ant,run tar:bzip2
+JAVA_VERSION=	8 11
 
 ALL_TARGET=	jar
 
