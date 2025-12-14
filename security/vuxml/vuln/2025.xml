@@ -1,3 +1,29 @@
+  <vuln vid="3a59024c-d8cf-11f0-af8c-8447094a420f">
+    <topic>Roundcube -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>1.6.12,1</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Roundcube project reports:</p>
+	<blockquote cite="https://roundcube.net/news/2025/12/13/security-updates-1.6.12-and-1.5.12">
+	  <p>Cross-Site-Scripting vulnerability via SVG’s animate tag</p>
+	  <p>Information Disclosure vulnerability in the HTML style sanitizer</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://roundcube.net/news/2025/12/13/security-updates-1.6.12-and-1.5.12</url>
+    </references>
+    <dates>
+      <discovery>2025-12-14</discovery>
+      <entry>2025-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a1bd1ca-cf40-41e2-9c5f-143a0d4b17af">
     <topic>github-release-monitor -- multiple vulnerabilities</topic>
     <affects>
