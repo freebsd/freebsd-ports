@@ -8,6 +8,7 @@ COMMENT=	Java native interface (JNI) to ICMPv6
 WWW=		https://www.opennms.org/wiki/Jicmp
 
 USES=		java libtool
+JAVA_VERSION=	8
 JAVA_VENDOR=	openjdk
 
 GNU_CONFIGURE=	yes
