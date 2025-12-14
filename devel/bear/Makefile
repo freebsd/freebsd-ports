@@ -1,9 +1,9 @@
 PORTNAME=	bear
 DISTVERSION=	3.1.5
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	devel
 
-MAINTAINER=	jrm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool that generates a compilation database for clang tooling
 WWW=		https://github.com/rizsotto/Bear
 
