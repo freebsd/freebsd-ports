@@ -1,7 +1,6 @@
 PORTNAME=	codeberg-pages-server
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.1
-PORTREVISION=	9
+DISTVERSION=	6.4
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/Codeberg/pages-server/archive/
 DISTFILES=	${DISTVERSIONFULL}.zip
@@ -13,7 +12,7 @@ WWW=		https://codeberg.org/Codeberg/pages-server
 LICENSE=	EUPL12
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.24,modules
+USES=		cpe go:modules
 USE_RC_SUBR=	codeberg-pages-server
 
 GO_MODULE=	codeberg.org/codeberg/pages
