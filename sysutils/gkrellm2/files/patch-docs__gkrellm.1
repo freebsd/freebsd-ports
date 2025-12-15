@@ -1,8 +1,8 @@
---- gkrellm.1.orig	2025-01-19 16:02:37 UTC
-+++ gkrellm.1
+--- docs/gkrellm.1.orig	2025-12-14 15:28:26 UTC
++++ docs/gkrellm.1
 @@ -1,4 +1,4 @@
 -.TH gkrellm 1 "Jan 07, 2025" "" "User's Manual"
-+.TH gkrellm 1 "June 7, 2003" "FreeBSD" "User's Manual"
++.TH gkrellm 1 "Jan 7, 2025" "FreeBSD" "User's Manual"
  
  .SH "NAME"
  gkrellm \- The GNU Krell Monitors
@@ -29,55 +29,54 @@
  state is detected by the existence of
  .IR /var/run/pppX.pid
  and the time stamp of this file is the base for the on line time.
-@@ -1138,7 +1138,7 @@ several locations:
+@@ -1138,7 +1138,6 @@ several locations:
  .nf
  ~/.gkrellm2/themes
  /usr/local/share/gkrellm2/themes
 -/usr/share/gkrellm2/themes
-+/usr/X11R6/share/gkrellm2/themes
  .fi
  .RE
  .PP
-@@ -1149,7 +1149,7 @@ theme may also be installed as:
+@@ -1149,7 +1148,7 @@ theme may also be installed as:
  .RS
  .nf
  ~/.themes/THEME_NAME/gkrellm2
 -/usr/share/themes/THEME_NAME/gkrellm2
-+/usr/X11R6/share/themes/THEME_NAME/gkrellm2
++/usr/local/share/themes/THEME_NAME/gkrellm2
  .fi
  .RE
  .PP
-@@ -1177,7 +1177,7 @@ and
+@@ -1177,7 +1176,7 @@ and
  The directories
  .IR /usr/local/lib/gkrellm2/plugins
  and
 -.IR /usr/lib/gkrellm2/plugins
-+.IR /usr/X11R6/libexec/gkrellm2/plugins
++.IR /usr/local/libexec/gkrellm2/plugins
  are also searched for plugins to install.
  .PP
  Some plugins may be available only as source files and they will
-@@ -1213,7 +1213,7 @@ User plugin directory.
+@@ -1213,7 +1212,7 @@ User plugin directory.
  .I ~/.gkrellm2/plugins
  User plugin directory.
  .TP
 -.I /usr/lib/gkrellm2/plugins
-+.I /usr/X11R6/libexec/gkrellm2/plugins
++.I /usr/local/libexec/gkrellm2/plugins
  System wide plugin directory.
  .TP
  .I /usr/local/lib/gkrellm2/plugins
-@@ -1225,13 +1225,13 @@ User theme packaged as part of a user Gtk theme.
+@@ -1225,13 +1224,13 @@ User theme packaged as part of a user Gtk theme.
  .I ~/.themes/THEME_NAME/gkrellm2
  User theme packaged as part of a user Gtk theme.
  .TP
 -.I /usr/share/gkrellm2/themes
-+.I /usr/X11R6/share/gkrellm2/themes
++.I /usr/local/share/gkrellm2/themes
  System wide theme directory.
  .TP
  .I /usr/local/share/gkrellm2/themes
  Local theme directory.
  .TP
 -.I /usr/share/themes/THEME_NAME/gkrellm2
-+.I /usr/X11R6/share/themes/THEME_NAME/gkrellm2
++.I /usr/local/share/themes/THEME_NAME/gkrellm2
  System wide theme packaged as part of a system wide Gtk theme.
  
  .SH "AUTHORS"

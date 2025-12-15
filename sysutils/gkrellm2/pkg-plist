@@ -1,6 +1,7 @@
 %%CLIENT%%bin/gkrellm
 %%CLIENT%%include/gkrellm2/gkrellm-public-proto.h
 %%CLIENT%%include/gkrellm2/gkrellm-version.h
+include/gkrellm2/gkrellm-visibility.h
 %%CLIENT%%include/gkrellm2/gkrellm.h
 include/gkrellm2/gkrellmd-version.h
 include/gkrellm2/gkrellmd.h

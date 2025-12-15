@@ -1,6 +1,6 @@
 PORTNAME=	gkrellm
-PORTVERSION=	2.4.0
-PORTREVISION=	2
+PORTVERSION=	2.5.0
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gkrellm.srcbox.net/releases/ \
 		LOCAL/ume
@@ -48,12 +48,11 @@ MAKE_ENV+=	without-gnutls=1 without-ssl=1
 PORTDOCS=	COPYRIGHT CREDITS README Themes.html
 
 ALL_TARGET=	freebsd
+INSTALL_TARGET=	install_freebsd
 
 MAKE_ENV+=	INSTALLROOT=${PREFIX} INSTALL_PREFIX=${STAGEDIR} \
-		PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig \
-		SINSTALLDIR=${PREFIX}/sbin \
-		MANDIR=${PREFIX}/share/man/man1 SMANDIR=${PREFIX}/share/man/man8 \
-		VERSION=${PORTVERSION}
+		PKGCONFIGDIR=${PREFIX}/libdata/pkgconfig CFGDIR=${EXAMPLESDIR} \
+		SINSTALLDIR=${PREFIX}/sbin SMANSECTION=8 VERSION=${PORTVERSION}
 
 CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${LOCALBASE}/share/gkrellm2/themes\"' \
 		-DSYSTEM_PLUGINS_DIR='\"${LOCALBASE}/libexec/gkrellm2/plugins\"' \
@@ -70,9 +69,6 @@ post-install-CLIENT-on:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins-gkrellmd
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/server/gkrellmd.conf \
-		${STAGEDIR}${EXAMPLESDIR}/gkrellmd.conf
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

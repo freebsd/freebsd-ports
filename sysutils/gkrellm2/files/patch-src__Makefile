@@ -1,6 +1,6 @@
---- src/Makefile.orig	2025-01-19 16:02:37 UTC
+--- src/Makefile.orig	2025-12-14 15:28:26 UTC
 +++ src/Makefile
-@@ -38,7 +38,8 @@ endif
+@@ -36,7 +36,8 @@ endif
  	CONFIGURE_ARGS += --without-ntlm
  endif
  # run configure shell script
@@ -10,116 +10,14 @@
  # pull in variables set by configure script
  include configure.mk
  
-@@ -51,7 +52,7 @@ PKG_LIB := $(shell $(PKG_CONFIG) --libs $(PKG_MODULES)
- endif
- PKG_LIB := $(shell $(PKG_CONFIG) --libs $(PKG_MODULES))
+@@ -197,8 +198,8 @@ install_freebsd:
  
--FLAGS = -O2 -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC)\
-+FLAGS = -I.. -I$(SHARED_PATH) $(PKG_INCLUDE) $(GTOP_INCLUDE) $(PTHREAD_INC)\
-  ${SSL_INCLUDE} ${NTLM_INCLUDE} -DGSEAL_ENABLED -DGTK_DISABLE_DEPRECATED -DGKRELLM_CLIENT
+ install_freebsd:
+ 	$(MAKE) install
+-	chgrp kmem $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
+-	chmod g+s $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
++	# chgrp kmem $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
++	# chmod g+s $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)
  
- LIBS = $(PKG_LIB) $(GTOP_LIBS) $(X11_LIBS) $(SYS_LIBS) $(SSL_LIBS) $(SENSORS_LIBS)\
-@@ -107,13 +108,20 @@ endif
- 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -lmd" gkrellm
- endif
- 
--freebsd3 freebsd:
-+freebsd3 freebsd4:
- ifeq ($(HAVE_SSL),1)
- 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat" gkrellm
- else
- 	$(MAKE) EXTRAOBJS= SYS_LIBS="-lkvm -ldevstat -lmd" gkrellm
- endif
- 
-+freebsd5 freebsd6 freebsd7 freebsd8 freebsd9 freebsd:
-+ifeq ($(HAVE_SSL),1)
-+	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat" gkrellm
-+else
-+	$(MAKE) EXTRAOBJS= SYS_LIBS="-ldevstat -lmd" gkrellm
-+endif
-+
- # Darwin target for systems that still have libkvm
- darwin: 
- ifeq ($(HAVE_SSL),1)
-@@ -181,51 +189,51 @@ install_bin:
- 	$(MAKE) STRIP="-s" install
- 
- install_bin:
--	$(INSTALL) -d -m $(INSTALLDIRMODE) $(INSTALLDIR)
--	$(INSTALL) -c $(STRIP) -m $(BINMODE) $(PACKAGE)$(BINEXT) $(INSTALLDIR)/$(PACKAGE)$(BINEXT)
-+	$(INSTALL) -d -m $(INSTALLDIRMODE) $(DESTDIR)$(INSTALLDIR)
-+	$(INSTALL) -c $(STRIP) -m $(BINMODE) $(PACKAGE)$(BINEXT) $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)$(BINEXT)
- 
- uninstall_bin:
--	$(RM) $(INSTALLDIR)/$(PACKAGE)$(BINEXT)
-+	$(RM) $(DESTDIR)$(INSTALLDIR)/$(PACKAGE)$(BINEXT)
- 
- install_inc:
--	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(INCLUDEDIR)/gkrellm2
--	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLM_INCLUDES) $(INCLUDEDIR)/gkrellm2
-+	$(INSTALL) -d -m $(INCLUDEDIRMODE) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
-+	$(INSTALL) -c -m $(INCLUDEMODE) $(GKRELLM_INCLUDES) $(DESTDIR)$(INCLUDEDIR)/gkrellm2
- 
- # FIXME: may remove too many files, overlaps with uninstall_inc from server
- uninstall_inc:
--	$(RM) -r $(INCLUDEDIR)/gkrellm2
-+	$(RM) -r $(DESTDIR)$(INCLUDEDIR)/gkrellm2
- 
- install_man:
--	$(INSTALL) -d -m $(MANDIRMODE) $(MANDIR)
--	$(INSTALL) -c -m $(MANMODE) ../gkrellm.1 $(MANDIR)/$(PACKAGE).1
-+	$(INSTALL) -d -m $(MANDIRMODE) $(DESTDIR)$(MANDIR)
-+	$(INSTALL) -c -m $(MANMODE) ../gkrellm.1 $(DESTDIR)$(MANDIR)/$(PACKAGE).1
- 
- uninstall_man:
--	$(RM) $(MANDIR)/$(PACKAGE).1
-+	$(RM) $(DESTDIR)$(MANDIR)/$(PACKAGE).1
- 
- install-data:
--	$(INSTALL) -d -m 755 $(MENUDIR)
--	$(INSTALL) -c -m 644 ../data/gkrellm.desktop $(MENUDIR)/
--	$(INSTALL) -d -m 755 $(ICONDIR)/hicolor/16x16/apps
--	$(INSTALL) -c -m 644 ../data/icons/16/gkrellm.png $(ICONDIR)/hicolor/16x16/apps/
--	$(INSTALL) -d -m 755 $(ICONDIR)/hicolor/24x24/apps
--	$(INSTALL) -c -m 644 ../data/icons/24/gkrellm.png $(ICONDIR)/hicolor/24x24/apps/
--	$(INSTALL) -d -m 755 $(ICONDIR)/hicolor/32x32/apps
--	$(INSTALL) -c -m 644 ../data/icons/32/gkrellm.png $(ICONDIR)/hicolor/32x32/apps/
--	$(INSTALL) -d -m 755 $(ICONDIR)/hicolor/48x48/apps
--	$(INSTALL) -c -m 644 ../data/icons/48/gkrellm.png $(ICONDIR)/hicolor/48x48/apps/
--	$(INSTALL) -d -m 755 $(ICONDIR)/hicolor/64x64/apps
--	$(INSTALL) -c -m 644 ../data/icons/64/gkrellm.png $(ICONDIR)/hicolor/64x64/apps/
--	$(INSTALL) -d -m 755 $(METAINFODIR)
--	$(INSTALL) -c -m 644 ../data/net.srcbox.gkrellm.GKrellM.metainfo.xml $(METAINFODIR)/
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(MENUDIR)
-+	$(INSTALL) -c -m 644 ../data/gkrellm.desktop $(DESTDIR)$(MENUDIR)/
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(ICONDIR)/hicolor/16x16/apps
-+	$(INSTALL) -c -m 644 ../data/icons/16/gkrellm.png $(DESTDIR)$(ICONDIR)/hicolor/16x16/apps/
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(ICONDIR)/hicolor/24x24/apps
-+	$(INSTALL) -c -m 644 ../data/icons/24/gkrellm.png $(DESTDIR)$(ICONDIR)/hicolor/24x24/apps/
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(ICONDIR)/hicolor/32x32/apps
-+	$(INSTALL) -c -m 644 ../data/icons/32/gkrellm.png $(DESTDIR)$(ICONDIR)/hicolor/32x32/apps/
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(ICONDIR)/hicolor/48x48/apps
-+	$(INSTALL) -c -m 644 ../data/icons/48/gkrellm.png $(DESTDIR)$(ICONDIR)/hicolor/48x48/apps/
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(ICONDIR)/hicolor/64x64/apps
-+	$(INSTALL) -c -m 644 ../data/icons/64/gkrellm.png $(DESTDIR)$(ICONDIR)/hicolor/64x64/apps/
-+	$(INSTALL) -d -m 755 $(DESTDIR)$(METAINFODIR)
-+	$(INSTALL) -c -m 644 ../data/net.srcbox.gkrellm.GKrellM.metainfo.xml $(DESTDIR)$(METAINFODIR)/
- 
- uninstall-data:
--	$(RM) $(MENUDIR)/gkrellm.desktop
--	$(RM) $(ICONDIR)/hicolor/16x16/apps/gkrellm.png
--	$(RM) $(ICONDIR)/hicolor/24x24/apps/gkrellm.png
--	$(RM) $(ICONDIR)/hicolor/32x32/apps/gkrellm.png
--	$(RM) $(ICONDIR)/hicolor/48x48/apps/gkrellm.png
--	$(RM) $(ICONDIR)/hicolor/64x64/apps/gkrellm.png
--	$(RM) $(METAINFODIR)/net.srcbox.gkrellm.GKrellM.metainfo.xml
-+	$(RM) $(DESTDIR)$(MENUDIR)/gkrellm.desktop
-+	$(RM) $(DESTDIR)$(ICONDIR)/hicolor/16x16/apps/gkrellm.png
-+	$(RM) $(DESTDIR)$(ICONDIR)/hicolor/24x24/apps/gkrellm.png
-+	$(RM) $(DESTDIR)$(ICONDIR)/hicolor/32x32/apps/gkrellm.png
-+	$(RM) $(DESTDIR)$(ICONDIR)/hicolor/48x48/apps/gkrellm.png
-+	$(RM) $(DESTDIR)$(ICONDIR)/hicolor/64x64/apps/gkrellm.png
-+	$(RM) $(DESTDIR)$(METAINFODIR)/net.srcbox.gkrellm.GKrellM.metainfo.xml
- 
- uninstall: uninstall_bin uninstall_inc uninstall_man uninstall-data
- 
+ install_netbsd:
+ 	$(MAKE) MANDIR="$(PREFIX)/man/man1" install
