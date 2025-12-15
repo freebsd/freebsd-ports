@@ -3,10 +3,11 @@
 #
 # Feature:	go
 # Usage:	USES=go
-# Valid ARGS:	(none), N.NN, N.NN-devel, modules, no_targets, run
+# Valid ARGS:	(none), N.NN+, N.NN, modules, no_targets, run
 #
 # (none)	Setup GOPATH and build in GOPATH mode using default Go version.
-# N.NN		Specify Go version
+# N.NN+		Specify minimum Go version
+# N.NN		Specify exact Go version (should be avoided)
 # modules	If the upstream uses Go modules, this can be set to build
 #		in modules-aware mode.
 # no_targets	Indicates that Go is needed at build time as a part of
@@ -83,19 +84,30 @@ _INCLUDE_USES_GO_MK=	yes
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-GO_VALID_VERSIONS=	1.20 1.21 1.22 1.23 1.24 1.25 1.26-devel
+GO_VALID_VERSIONS=	1.20 1.21 1.22 1.23 1.24 1.25
 
 # Check arguments sanity
-.  if !empty(go_ARGS:N[1-9].[0-9][0-9]:N*-devel:Nmodules:Nno_targets:Nrun)
-IGNORE=	USES=go has invalid arguments: ${go_ARGS:N[1-9].[0-9][0-9]:N*-devel:Nmodules:Nno_targets:Nrun}
+.  if !empty(go_ARGS:N[1-9].[0-9][0-9]+:N[1-9].[0-9][0-9]:Nmodules:Nno_targets:Nrun)
+IGNORE=	USES=go has invalid arguments: ${go_ARGS:N[1-9].[0-9][0-9]+:N[1-9].[0-9][0-9]:Nmodules:Nno_targets:Nrun}
 .  endif
 
 # Parse Go version
-GO_VERSION=	${go_ARGS:Nmodules:Nno_targets:Nrun:C/^$/${GO_DEFAULT}/}
-.  if empty(GO_VALID_VERSIONS:M${GO_VERSION})
+.  if !empty(go_ARGS:M*+)
+GO_MIN_VERSION=	${go_ARGS:M*+:S/+//}
+.    for version in ${GO_VALID_VERSIONS:[-1..1]}
+.      if empty(GO_VERSION)
+.        if ${version} == ${GO_DEFAULT} || ${version} == ${GO_MIN_VERSION}
+GO_VERSION:=	${version}
+.        endif
+.      endif
+.    endfor
+.  else
+GO_VERSION:=	${go_ARGS:Nmodules:Nno_targets:Nrun:C/^$/${GO_DEFAULT}/}
+.    if empty(GO_VALID_VERSIONS:M${GO_VERSION})
 IGNORE?= USES=go has invalid version number: ${GO_VERSION}
+.    endif
 .  endif
-GO_SUFFIX=	${GO_VERSION:S/.//:C/.*-devel/-devel/}
+GO_SUFFIX=	${GO_VERSION:S/.//}
 GO_PORT=	lang/go${GO_SUFFIX}
 
 # Settable variables
