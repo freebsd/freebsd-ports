@@ -107,8 +107,8 @@ bin/xyzpdb
 %%DATADIR%%/params/water21.prm
 %%DATADIR%%/params/water22.prm
 %%DATADIR%%/test/0README
+%%DATADIR%%/test/anion.1st
 %%DATADIR%%/test/anion.dat
-%%DATADIR%%/test/anion.dyn0
 %%DATADIR%%/test/anion.key
 %%DATADIR%%/test/anion.log
 %%DATADIR%%/test/anion.run
@@ -219,6 +219,14 @@ bin/xyzpdb
 %%DATADIR%%/test/salt.key
 %%DATADIR%%/test/salt.log
 %%DATADIR%%/test/salt.run
+%%DATADIR%%/test/scorpion.cif
+%%DATADIR%%/test/scorpion.key
+%%DATADIR%%/test/scorpion.log
+%%DATADIR%%/test/scorpion.run
+%%DATADIR%%/test/tip4p.key
+%%DATADIR%%/test/tip4p.log
+%%DATADIR%%/test/tip4p.run
+%%DATADIR%%/test/tip4p.xyz
 %%DATADIR%%/test/vasopressin.key
 %%DATADIR%%/test/vasopressin.log
 %%DATADIR%%/test/vasopressin.run
