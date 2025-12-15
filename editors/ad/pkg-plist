@@ -1,6 +1,12 @@
 bin/ad
 %%PORTDOCS%%%%DOCSDIR%%/9p.md
 %%PORTDOCS%%%%DOCSDIR%%/address-syntax.md
+%%PORTDOCS%%%%DOCSDIR%%/demos/exec/edit-with-external-commands
+%%PORTDOCS%%%%DOCSDIR%%/demos/exec/run-external-commands
+%%PORTDOCS%%%%DOCSDIR%%/demos/scratch-buffer/fsys
+%%PORTDOCS%%%%DOCSDIR%%/demos/scratch-buffer/index
+%%PORTDOCS%%%%DOCSDIR%%/demos/scratch-buffer/load-exec
+%%PORTDOCS%%%%DOCSDIR%%/demos/scratch-buffer/overview
 %%PORTDOCS%%%%DOCSDIR%%/design.md
 %%PORTDOCS%%%%DOCSDIR%%/tour/executing
 %%PORTDOCS%%%%DOCSDIR%%/tour/fsys
