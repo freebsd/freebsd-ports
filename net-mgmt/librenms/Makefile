@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	25.11.0
+PORTVERSION=	25.12.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -47,7 +47,7 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/buil
 		../librenms-vendor-${PORTVERSION}/symfony/yaml/Resources/bin/yaml-lint \
 		alerts.php artisan billing-calculate.php check-services.php \
 		config_to_json.php cronic daily.php daily.sh delhost.php \
-		discovery-wrapper.py discovery.php dist-pollers.php irc.php \
+		discovery-wrapper.py discovery.php irc.php \
 		librenms-service.py LibreNMS/command_runner.py \
 		LibreNMS/wrapper.py lnms misc/lnms-completion.bash \
 		misc/smokeping-debian.example misc/smokeping-rhel.example \
@@ -117,7 +117,7 @@ _ROOT_FILES=		alerts.php artisan billing-calculate.php \
 			check-services.php composer.json composer.lock \
 			config.php.default config_to_json.php cronic daily.php \
 			delhost.php discovery-wrapper.py discovery.php \
-			dist-pollers.php irc.php librenms-service.py mkdocs.yml \
+			irc.php librenms-service.py mkdocs.yml \
 			phpunit.xml ping.php poll-billing.php poller.php \
 			poller-wrapper.py renamehost.php snmp-scan.py \
 			snmptrap.php syslog.php validate.php
@@ -125,7 +125,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1763386152
+_RELEASE_TIMESTAMP=	1765807513
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
