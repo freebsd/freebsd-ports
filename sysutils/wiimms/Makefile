@@ -13,6 +13,10 @@ WWW=		https://wit.wiimm.de/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
+DEPRECATED=	sysutils/wiimms has been abandoned for many years
+EXPIRATION_DATE=2026-01-31
+BROKEN_FreeBSD_16=	compilation failed
+
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
