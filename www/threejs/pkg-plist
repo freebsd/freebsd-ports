@@ -319,7 +319,7 @@
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_GGX_Multiscatter.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_Lambert.js
 %%WWWDIR%%/nodes/functions/BSDF/BRDF_Sheen.js
-%%WWWDIR%%/nodes/functions/BSDF/DFGApprox.js
+%%WWWDIR%%/nodes/functions/BSDF/DFGLUT.js
 %%WWWDIR%%/nodes/functions/BSDF/D_GGX.js
 %%WWWDIR%%/nodes/functions/BSDF/D_GGX_Anisotropic.js
 %%WWWDIR%%/nodes/functions/BSDF/EnvironmentBRDF.js
@@ -375,12 +375,15 @@
 %%WWWDIR%%/nodes/materialx/lib/mx_noise.js
 %%WWWDIR%%/nodes/materialx/lib/mx_transform_color.js
 %%WWWDIR%%/nodes/math/BitcastNode.js
+%%WWWDIR%%/nodes/math/BitcountNode.js
 %%WWWDIR%%/nodes/math/ConditionalNode.js
 %%WWWDIR%%/nodes/math/Hash.js
 %%WWWDIR%%/nodes/math/MathNode.js
 %%WWWDIR%%/nodes/math/MathUtils.js
 %%WWWDIR%%/nodes/math/OperatorNode.js
+%%WWWDIR%%/nodes/math/PackFloatNode.js
 %%WWWDIR%%/nodes/math/TriNoise3D.js
+%%WWWDIR%%/nodes/math/UnpackFloatNode.js
 %%WWWDIR%%/nodes/parsers/GLSLNodeFunction.js
 %%WWWDIR%%/nodes/parsers/GLSLNodeParser.js
 %%WWWDIR%%/nodes/pmrem/PMREMNode.js
@@ -619,7 +622,7 @@
 %%WWWDIR%%/renderers/shaders/ShaderLib/backgroundCube.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/cube.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/depth.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderLib/distanceRGBA.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderLib/distance.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/equirect.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/linedashed.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/meshbasic.glsl.js
@@ -663,6 +666,7 @@
 %%WWWDIR%%/renderers/webgl/WebGLMaterials.js
 %%WWWDIR%%/renderers/webgl/WebGLMorphtargets.js
 %%WWWDIR%%/renderers/webgl/WebGLObjects.js
+%%WWWDIR%%/renderers/webgl/WebGLOutput.js
 %%WWWDIR%%/renderers/webgl/WebGLProgram.js
 %%WWWDIR%%/renderers/webgl/WebGLPrograms.js
 %%WWWDIR%%/renderers/webgl/WebGLProperties.js
@@ -702,6 +706,7 @@
 %%WWWDIR%%/textures/CompressedArrayTexture.js
 %%WWWDIR%%/textures/CompressedCubeTexture.js
 %%WWWDIR%%/textures/CompressedTexture.js
+%%WWWDIR%%/textures/CubeDepthTexture.js
 %%WWWDIR%%/textures/CubeTexture.js
 %%WWWDIR%%/textures/Data3DTexture.js
 %%WWWDIR%%/textures/DataArrayTexture.js
