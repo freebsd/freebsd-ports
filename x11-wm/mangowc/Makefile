@@ -12,8 +12,7 @@ LICENSE_FILE_CC0-1.0=	${WRKSRC}/LICENSE.tinywl
 LICENSE_FILE_GPLv3=	${WRKSRC}/LICENSE.dwl
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.wlroots
 
-BUILD_DEPENDS=	git:devel/git \
-		hwdata>=0.399:misc/hwdata \
+BUILD_DEPENDS=	hwdata>=0.399:misc/hwdata \
 		wayland-protocols>=1.24:graphics/wayland-protocols
 LIB_DEPENDS=	libdisplay-info.so:sysutils/libdisplay-info \
 		libdrm.so:graphics/libdrm \
