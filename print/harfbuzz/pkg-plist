@@ -103,6 +103,11 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-2-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-3-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-10-4-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-11-0-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-11-2-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-11-3-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-12-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-1-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-2-2-0.html
@@ -165,6 +170,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-face.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-features.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-font.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-fontations.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ft.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-gdi.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-glib.html
