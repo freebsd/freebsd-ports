@@ -1,0 +1,20 @@
+--- Makefile.orig	2025-12-08 16:03:39 UTC
++++ Makefile
+@@ -28,7 +28,7 @@ COMMIT_NO ?= $(shell git rev-parse HEAD 2> /dev/null |
+ RACEFLAGS ?= $(shell $(GO_TEST) -race ./pkg/dummy > /dev/null 2>&1 && echo -race)
+ 
+ COMMIT_NO ?= $(shell git rev-parse HEAD 2> /dev/null || true)
+-GIT_COMMIT ?= $(if $(shell git status --porcelain --untracked-files=no),${COMMIT_NO}-dirty,${COMMIT_NO})
++#GIT_COMMIT ?= $(if $(shell git status --porcelain --untracked-files=no),${COMMIT_NO}-dirty,${COMMIT_NO})
+ SOURCE_DATE_EPOCH ?= $(if $(shell date +%s),$(shell date +%s),$(error "date failed"))
+ 
+ # we get GNU make 3.x in MacOS build envs, which wants # to be escaped in
+@@ -39,7 +39,7 @@ EXTRA_LDFLAGS ?=
+ 
+ SEQUOIA_SONAME_DIR =
+ EXTRA_LDFLAGS ?=
+-BUILDAH_LDFLAGS := $(GO_LDFLAGS) '-X main.GitCommit=$(GIT_COMMIT) -X main.buildInfo=$(SOURCE_DATE_EPOCH) -X main.cniVersion=$(CNI_COMMIT) -X go.podman.io/image/v5/signature/internal/sequoia.sequoiaLibraryDir="$(SEQUOIA_SONAME_DIR)" $(EXTRA_LDFLAGS)'
++BUILDAH_LDFLAGS := $(GO_LDFLAGS) '-X main.GitCommit="unknown" -X main.buildInfo=$(SOURCE_DATE_EPOCH) -X main.cniVersion=$(CNI_COMMIT) -X go.podman.io/image/v5/signature/internal/sequoia.sequoiaLibraryDir="$(SEQUOIA_SONAME_DIR)" $(EXTRA_LDFLAGS)'
+ 
+ # This isn't what we actually build; it's a superset, used for target
+ # dependencies. Basically: all *.go and *.c files, except *_test.go,
