@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-12-03 00:57:55 UTC
+--- pyproject.toml.orig	2025-12-09 22:36:00 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -9,7 +9,7 @@
  
  [project]
  name = "uv"
-@@ -40,55 +40,12 @@ Discord = "https://discord.gg/astral-sh"
+@@ -40,56 +40,12 @@ Discord = "https://discord.gg/astral-sh"
  Releases = "https://github.com/astral-sh/uv/releases"
  Discord = "https://discord.gg/astral-sh"
  
@@ -48,6 +48,7 @@
 -  "docs/guides/integration/docker.md",
 -  "docs/guides/integration/pre-commit.md",
 -  "docs/guides/integration/github.md",
+-  "docs/guides/integration/gitlab.md",
 -  "docs/guides/integration/aws-lambda.md",
 -  "docs/concepts/build-backend.md",
 -  "docs/concepts/projects/init.md",
