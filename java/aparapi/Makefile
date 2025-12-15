@@ -17,6 +17,7 @@ RUN_DEPENDS=	opencl>=0:devel/opencl
 
 USES=		dos2unix java:ant,run
 USE_GITHUB=	yes
+JAVA_VERSION=	8 11 17
 
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
