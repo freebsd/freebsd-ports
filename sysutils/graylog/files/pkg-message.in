@@ -11,27 +11,28 @@ When running graylog in a jail, you need to set enforce_statfs for the jail.
 
 For a single-node installation, install:
 
-- databases/mongodb50 or higher
-- textproc/opensearch 1.3, 2.0 or higher
+- databases/mongodb70 or databases/mongodb80
+- textproc/opensearch between 2.0 to 2.9 inclusive
 
 And ensure that the elasticsearch cluster name matches that used by graylog.
 
 See https://go2docs.graylog.org/5-0/downloading_and_installing_graylog/installing_graylog.html
 
+
 EOM
 }
 { type: upgrade
   message: <<EOM
-Graylog v5.0 requires significant preparation to migrate both to newer
+Graylog v7.0 requires significant preparation to migrate both to newer
 MongoDB and to switch from older ElasticSearch to the new OpenSearch.
 
 You may need to re-index OpenSearch after migrating, refer to upstream
 docs for more details.
 
-https://go2docs.graylog.org/5-0/upgrading_graylog/upgrading_to_graylog_5.0.x.htm
+https://go2docs.graylog.org/current/upgrading_graylog/upgrade_to_graylog_7.0.htm
 
-- textproc/opensearch 1.3, 2.0 or higher
-- databases/mongodb50 or higher
+- databases/mongodb70 or databases/mongodb80
+- textproc/opensearch between 2.0 to 2.9 inclusive
 
 Remember to backup both MongoDB & ES/OS databases before upgrading Graylog
 itself.
