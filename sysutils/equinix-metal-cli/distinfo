@@ -1,5 +1,0 @@
-TIMESTAMP = 1730463712
-SHA256 (go/sysutils_equinix-metal-cli/equinix-metal-cli-v0.25.0/v0.25.0.mod) = 91193dc14e5493e5f1f1bec3c29f7e7009402814c1652e660a53a692e1b915d5
-SIZE (go/sysutils_equinix-metal-cli/equinix-metal-cli-v0.25.0/v0.25.0.mod) = 1604
-SHA256 (go/sysutils_equinix-metal-cli/equinix-metal-cli-v0.25.0/v0.25.0.zip) = 95f4413e187466bc19ade3fecf5d4728f942ab87e39419ef2abf15267f6cfd44
-SIZE (go/sysutils_equinix-metal-cli/equinix-metal-cli-v0.25.0/v0.25.0.zip) = 347329

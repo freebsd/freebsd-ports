@@ -361,7 +361,6 @@
     SUBDIR += env4801
     SUBDIR += envconsul
     SUBDIR += epazote
-    SUBDIR += equinix-metal-cli
     SUBDIR += erdtree
     SUBDIR += etcmerge
     SUBDIR += ethname
