@@ -1,6 +1,6 @@
 PORTNAME=	nsupdate
 DISTVERSION=	9.16.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
 PKGNAMEPREFIX=	samba-
@@ -13,7 +13,7 @@ WWW=		https://www.isc.org/software/bind
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-DEPRECATED=	net/samba_dnsupdate has been abandoned for many years; use dns/bind-tools for DNS updates with GSS-TSIG
+DEPRECATED=	dns/samba-nsupdate has been abandoned for many years; use dns/bind-tools for DNS updates with GSS-TSIG
 EXPIRATION_DATE=2026-05-01
 
 LIB_DEPENDS=	libuv.so:devel/libuv
