@@ -1,7 +1,7 @@
 PORTNAME=	dino
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.5
-PORTREVISION=	2
+DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -20,12 +20,12 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libgspell-1.so:textproc/gspell \
 		libharfbuzz.so:print/harfbuzz \
 		libicuuc.so:devel/icu \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libsqlite3.so:databases/sqlite3 \
 		libsrtp2.so:net/libsrtp2 \
 		libvulkan.so:graphics/vulkan-loader
 
-USES=		cmake cpe desktop-file-utils gettext-tools gnome localbase \
+USES=		meson cpe desktop-file-utils gettext-tools gnome localbase \
 		ninja pkgconfig vala:build
 
 USE_GITHUB=	yes
@@ -39,7 +39,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 LDFLAGS+=	-Wl,--export-dynamic
 USE_LDCONFIG=	yes
 
-USE_GNOME=	cairo gdkpixbuf glib20 gnomeprefix gtk40 intlhack
+#USE_GNOME=	cairo gdkpixbuf glib20 gnomeprefix gtk40 intlhack
+USE_GNOME=	cairo gdkpixbuf glib20 gtk40 intlhack
 
 CANBERRA_DESC=	Notifications sounds support
 ICE_DESC=		ICE NAT traversal plugin
@@ -48,32 +49,32 @@ RTP_DESC=		RTP plugin
 UPLOAD_DESC=		HTTP file upload plugin
 ICE_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 			libnice.so:net-im/libnice
-ICE_VARS=		ENABLED_PLUGINS+=ice
-ICE_VARS_OFF=		DISABLED_PLUGINS+=ice
+ICE_VARS=		ENABLED_PLUGINS+=plugin-ice
+ICE_VARS_OFF=		DISABLED_PLUGINS+=plugin-ice
 RTP_LIB_DEPENDS=	libgnutls.so:security/gnutls \
-			libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
+			libwebrtc-audio-processing.so:audio/webrtc-audio-processing
 RTP_USES=		gstreamer
 RTP_USE=		GSTREAMER=gtk,opus,pulse,speex,srtp,v4l2,vpx,x264
-RTP_VARS=		ENABLED_PLUGINS+=rtp
-RTP_CMAKE_BOOL=		RTP_ENABLE_H264 RTP_ENABLE_VP9 RTP_ENABLE_H264 RTP_ENABLE_VAAPI
-RTP_VARS_OFF=		DISABLED_PLUGINS+=rtp
-OMEMO_GH_TUPLE=		signalapp:libsignal-protocol-c:v2.3.3:signalapp/plugins/signal-protocol/libsignal-protocol-c
-OMEMO_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
-OMEMO_VARS=		ENABLED_PLUGINS+=omemo
-OMEMO_CMAKE_BOOL=	BUILD_LIBSIGNAL_IN_TREE
-OMEMO_VARS_OFF=		DISABLED_PLUGINS+=omemo
-UPLOAD_CMAKE_ON=	-DSOUP_VERSION:INT=2
-UPLOAD_VARS=		ENABLED_PLUGINS+=http-files
-UPLOAD_VARS_OFF=	DISABLED_PLUGINS+=http-files
+RTP_VARS=		ENABLED_PLUGINS+= plugin-rtp plugin-rtp-h264 plugin-rtp-msdk \
+			plugin-rtp-vaapi plugin-rtp-vp9 plugin-rtp-webrtc-audio-processing
+RTP_VARS_OFF=		DISABLED_PLUGINS+=plugin-rtp plugin-rtp-h264 plugin-rtp-msdk \
+			plugin-rtp-vaapi plugin-rtp-vp9 plugin-rtp-webrtc-audio-processing
+OMEMO_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode \
+			libomemo-c.so:security/libomemo-c
+OMEMO_VARS=		ENABLED_PLUGINS+=plugin-omemo
+OMEMO_VARS_OFF=		DISABLED_PLUGINS+=plugin-omemo
+UPLOAD_MESON_ON=	-DSOUP_VERSION:INT=2
+UPLOAD_VARS=		ENABLED_PLUGINS+=plugin-http-files
+UPLOAD_VARS_OFF=	DISABLED_PLUGINS+=plugin-http-files
 GNUPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
-GNUPG_VARS=		ENABLED_PLUGINS+=openpgp
-GNUPG_VARS_OFF=		DISABLED_PLUGINS+=openpgp
-CANBERRA_VARS=		ENABLED_PLUGINS+=notification-sound
-CANBERRA_VARS_OFF=	DISABLED_PLUGINS+=notification-sound
+GNUPG_VARS=		ENABLED_PLUGINS+=plugin-openpgp
+GNUPG_VARS_OFF=		DISABLED_PLUGINS+=plugin-openpgp
+CANBERRA_VARS=		ENABLED_PLUGINS+=plugin-notification-sound
+CANBERRA_VARS_OFF=	DISABLED_PLUGINS+=plugin-notification-sound
 CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
 
-CMAKE_ARGS+=	-DENABLED_PLUGINS="${ENABLED_PLUGINS:S/ /;/gW}"
-CMAKE_ARGS+=	-DDISABLED_PLUGINS="${DISABLED_PLUGINS:S/ /;/gW}"
+OPT_MESON_ENABLED=	"${ENABLED_PLUGINS}"
+OPT_MESON_DISABLED=	"${DISABLED_PLUGINS}"
 
 pre-configure:
 	@if [ -z "${PACKAGE_BUILDING}" ]; then if ! ${PKG_BIN} query \
