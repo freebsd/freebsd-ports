@@ -1,5 +1,5 @@
 PORTNAME=	xterm
-DISTVERSION=	404
+DISTVERSION=	405
 CATEGORIES=	x11
 MASTER_SITES=	https://invisible-island.net/archives/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
