@@ -10,7 +10,7 @@ WWW=		https://github.com/linki/chaoskube
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 GO_MODULE=	github.com/linki/chaoskube
 
 PLIST_FILES=	bin/${PORTNAME}

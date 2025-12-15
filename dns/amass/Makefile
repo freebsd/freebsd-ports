@@ -16,7 +16,7 @@ BROKEN_i386=	compilation fails: cgo_specific.go:100:2: type [1073741824]*_Ctype_
 
 LIB_DEPENDS=	libpostal.so:misc/libpostal
 
-USES=		go:1.24,modules pkgconfig
+USES=		go:1.24+,modules pkgconfig
 
 GO_MODULE=	github.com/owasp-amass/amass/v5
 GO_TARGET=	./cmd/${PORTNAME}

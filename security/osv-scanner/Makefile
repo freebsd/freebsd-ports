@@ -11,7 +11,7 @@ WWW=		https://github.com/google/osv-scanner
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules,run
+USES=		go:1.25+,modules,run
 
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 

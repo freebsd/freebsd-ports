@@ -22,7 +22,7 @@ BUILD_DEPENDS+=	npm>0:www/npm
 LIB_DEPENDS+=	libtag.so:audio/taglib
 RUN_DEPENDS+=	ffmpeg:multimedia/ffmpeg
 
-USES=		cpe go:1.24,modules pkgconfig
+USES=		cpe go:1.24+,modules pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	Masterminds:squirrel:v1.5.4:masterminds_squirrel/vendor/github.com/Masterminds/squirrel \
 		RaveNoX:go-jsoncommentstrip:v1.0.0:ravenox_go_jsoncommentstrip/vendor/github.com/RaveNoX/go-jsoncommentstrip \

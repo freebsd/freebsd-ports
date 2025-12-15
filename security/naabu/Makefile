@@ -10,7 +10,7 @@ WWW=		https://github.com/projectdiscovery/naabu
 
 LICENSE=	MIT
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 GO_MODULE=	github.com/projectdiscovery/naabu/v2
 
 GO_TARGET=	./cmd/${PORTNAME}

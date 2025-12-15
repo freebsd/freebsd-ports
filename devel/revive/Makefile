@@ -10,10 +10,7 @@ WWW=		https://revive.run
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_COMMIT=	e1d05f7

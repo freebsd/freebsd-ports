@@ -11,7 +11,7 @@ WWW=		https://github.com/terraform-docs/terraform-docs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 GO_MODULE=	github.com/terraform-docs/terraform-docs
 
 PLIST_FILES=	bin/${PORTNAME}

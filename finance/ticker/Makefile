@@ -11,7 +11,7 @@ WWW=		https://github.com/achannarasappa/ticker
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 
 GO_BUILDFLAGS=	-ldflags="-X github.com/achannarasappa/ticker/v4/cmd.Version=${DISTVERSIONPREFIX}${PKGVERSION}"
 GO_MODULE=	github.com/achannarasappa/ticker/v5

@@ -11,7 +11,7 @@ WWW=		https://github.com/wader/fq
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	wader
 GH_TUPLE=	\
@@ -34,9 +34,6 @@ GH_TUPLE=	\
 		mitchellh:reflectwalk:v1.0.2:mitchellh_reflectwalk/vendor/github.com/mitchellh/reflectwalk \
 		niemeyer:pretty:a10e7caefd8e:niemeyer_pretty/vendor/github.com/niemeyer/pretty \
 		wader:gojq:0aa7b87b2c2b:wader_gojq/vendor/github.com/wader/gojq
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 PLIST_FILES=	bin/${PORTNAME}
 

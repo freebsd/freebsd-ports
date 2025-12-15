@@ -10,7 +10,7 @@ WWW=		https://github.com/dundee/gdu
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:1.23,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/dundee/${PORTNAME}/${DISTVERSIONFULL:R:R}
 GO_TARGET=	./cmd/${PORTNAME}

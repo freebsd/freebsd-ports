@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	notify-send:devel/libnotify
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	variadico

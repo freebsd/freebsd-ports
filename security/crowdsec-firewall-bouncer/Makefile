@@ -11,7 +11,7 @@ WWW=		https://github.com/crowdsecurity/cs-firewall-bouncer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 _COMMIT=	910a36b2
 _BUILD_DATE=	$$(date -u "+%F_%T")
 USE_RC_SUBR=	crowdsec_firewall

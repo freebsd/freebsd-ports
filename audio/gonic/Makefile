@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		mpv:multimedia/mpv
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 USE_RC_SUBR=	${PORTNAME}
 

@@ -12,7 +12,7 @@ WWW=		https://f2.freshman.tech/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/ayoisaiah/f2/v2
 GO_TARGET=	./cmd/f2

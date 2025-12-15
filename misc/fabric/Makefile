@@ -12,10 +12,7 @@ WWW=		https://github.com/danielmiessler/fabric
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 GO_MODULE=	github.com/danielmiessler/fabric
 

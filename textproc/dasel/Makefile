@@ -11,7 +11,7 @@ WWW=		https://github.com/TomWright/dasel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
+USES=		go:modules
 
 GO_MODULE=	github.com/tomwright/${PORTNAME}/v2
 GO_TARGET=	./cmd/${PORTNAME}
@@ -24,9 +24,6 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md CODE_OF_CONDUCT.md README.md
 
 OPTIONS_DEFINE=	DOCS
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

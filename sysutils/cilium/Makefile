@@ -11,7 +11,7 @@ WWW=		https://github.com/cilium/cilium-cli
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/cilium/cilium-cli
 GO_BUILDFLAGS=	-ldflags="\

@@ -16,10 +16,7 @@ ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
 RUN_DEPENDS=	terraform:sysutils/terraform \
 		terragrunt:sysutils/terragrunt
 
-USES=		go:1.23,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 

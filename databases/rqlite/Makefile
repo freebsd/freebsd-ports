@@ -12,7 +12,7 @@ WWW=		https://rqlite.io \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/rqlite/rqlite/v9
 GO_TARGET=	./cmd/rqbench \

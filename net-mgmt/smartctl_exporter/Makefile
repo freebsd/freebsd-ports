@@ -10,12 +10,9 @@ WWW=			https://github.com/prometheus-community/smartctl_exporter
 
 LICENSE=		APACHE20
 
-USES=			go:1.23,modules
+USES=			go:modules
 USE_GITHUB=		yes
 GH_ACCOUNT=		prometheus-community
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 USE_RC_SUBR=		smartctl_exporter
 RUN_DEPENDS+=		smartctl:sysutils/smartmontools

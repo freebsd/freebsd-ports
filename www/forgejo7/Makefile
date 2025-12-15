@@ -19,7 +19,7 @@ EXPIRATION_DATE=	2025-12-31
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		cpe gmake go:1.23,no_targets
+USES=		cpe gmake go:no_targets
 USE_RC_SUBR=	forgejo
 
 CONFLICTS_INSTALL=	forgejo forgejo-lts

@@ -11,7 +11,7 @@ WWW=		https://github.com/fullstorydev/grpcui
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 
 GO_MODULE=	github.com/fullstorydev/grpcui
 GO_TARGET=	./cmd/${PORTNAME}

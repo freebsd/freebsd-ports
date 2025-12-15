@@ -10,7 +10,7 @@ WWW=		https://github.com/freswa/dovecot-xaps-daemon
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 USE_RC_SUBR=	xapsd
 USE_GITHUB=	yes
 GH_ACCOUNT=	freswa

@@ -11,7 +11,7 @@ WWW=		https://github.com/ipfs/ipget
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/ipfs/ipget
 

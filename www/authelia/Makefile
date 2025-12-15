@@ -14,7 +14,7 @@ WWW=		https://www.authelia.com/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.24,modules
+USES=		cpe go:1.24+,modules
 
 GO_MODULE=	github.com/authelia/authelia/v4
 GO_TARGET=	./cmd/${PORTNAME}

@@ -11,7 +11,7 @@ WWW=		https://docs.plakar.io/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 GO_MODULE=	github.com/PlakarKorp/plakar
 GO_TARGET=	.
 

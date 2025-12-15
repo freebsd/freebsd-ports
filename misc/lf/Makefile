@@ -11,7 +11,7 @@ WWW=		https://github.com/gokcehan/lf
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24
+USES=		go:1.24+
 USE_GITHUB=	yes
 GH_ACCOUNT=	gokcehan
 GH_TUPLE=	\

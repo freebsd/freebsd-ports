@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	kubectl:sysutils/kubectl
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 PLIST_FILES=	bin/${PORTNAME}
 

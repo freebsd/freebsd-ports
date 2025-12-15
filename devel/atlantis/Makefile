@@ -13,10 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	terraform:sysutils/terraform
 
-USES=		go:1.23,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 GO_MODULE=	github.com/runatlantis/atlantis
 CGO_ENABLED=	0

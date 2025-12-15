@@ -15,15 +15,12 @@ WWW=		https://github.com/coreos/etcd
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.23,modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	etcd-io
 GO_MODULE=	go.etcd.io/etcd/v3
 GO_MOD_DIST=	github
 GO_TARGET=	./etcdctl .
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 CONFLICTS_INSTALL=	coreos-etcd[0-9][0-9]
 

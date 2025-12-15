@@ -11,7 +11,7 @@ WWW=		https://github.com/prometheus/pushgateway
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gmake go:1.24,modules
+USES=		gmake go:1.24+,modules
 GO_MODULE=	github.com/prometheus/pushgateway
 
 USE_RC_SUBR=	pushgateway

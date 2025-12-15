@@ -14,7 +14,7 @@ WWW=		https://filebrowserquantum.com \
 
 LICENSE=	APACHE20
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gtsteffaniak
 GH_PROJECT=	filebrowser

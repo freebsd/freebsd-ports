@@ -11,7 +11,7 @@ WWW=		https://github.com/buildkite/cli
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	buildkite
 GH_PROJECT=	cli

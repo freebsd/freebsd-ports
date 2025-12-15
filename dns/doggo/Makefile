@@ -16,7 +16,7 @@ FLAVORS=	default webui
 FLAVOR?=	${FLAVORS:[1]}
 webui_PKGNAMESUFFIX=	-webui
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 .if ${FLAVOR} == webui
 COMMENT+=	(web UI version)

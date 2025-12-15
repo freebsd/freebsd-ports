@@ -25,15 +25,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	aarch64
 NOT_FOR_ARCHS_REASON=	fails to fetch: v0.0.1-go1.23.8.freebsd-arm64.lock: no locks available
 
-USES=		cpe go:1.23,modules
+USES=		cpe go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	etcd-io
 GO_MODULE=	go.etcd.io/etcd/v3
 GO_MOD_DIST=	github
 GO_TARGET=	./etcdctl ./etcdutl ./server
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 CONFLICTS_INSTALL=	coreos-etcd[0-9][0-9]
 

@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/include/nlohmann/json_fwd.hpp:devel/nlohmann-json \
 		${LOCALBASE}/include/stb/stb_image.h:devel/stb
 
-USES=		cmake:indirect go:1.24,modules localbase pkgconfig
+USES=		cmake:indirect go:1.24+,modules localbase pkgconfig
 
 GO_MODULE=	github.com/yurivict/${PORTNAME} # fork with FreeBSD patches
 GO_TARGET=	.

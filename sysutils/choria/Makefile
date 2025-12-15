@@ -11,10 +11,7 @@ WWW=		https://choria.io/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.22,modules
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
+USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	choria-io

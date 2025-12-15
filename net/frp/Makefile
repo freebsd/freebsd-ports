@@ -11,7 +11,7 @@ WWW=		https://github.com/fatedier/frp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:net:v0.8.0:net \
 		golang:sys:v0.6.0:sys \

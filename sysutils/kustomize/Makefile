@@ -11,7 +11,7 @@ WWW=		https://github.com/kubernetes-sigs/kustomize
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 
 _BUILD_DATE=	$$(date -u +"%FT%T%z")
 

@@ -11,7 +11,7 @@ WWW=		https://github.com/nginxinc/nginx-prometheus-exporter
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 USE_RC_SUBR=	${PORTNAME}
 GO_MODULE=	github.com/nginxinc/nginx-prometheus-exporter

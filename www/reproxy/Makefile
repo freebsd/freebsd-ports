@@ -11,12 +11,9 @@ WWW=		https://reproxy.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	umputun
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 BUILD_WRKSRC=	${WRKSRC}/app
 PLIST_FILES=	bin/reproxy

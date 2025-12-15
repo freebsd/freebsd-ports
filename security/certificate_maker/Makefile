@@ -10,7 +10,7 @@ WWW=		https://www.sigstore.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.25,modules
+USES=		cpe go:1.25+,modules
 CPE_VENDOR=	sigstore
 
 GO_MODULE=	github.com/sigstore/fulcio

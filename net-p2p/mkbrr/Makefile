@@ -11,7 +11,7 @@ WWW=		https://github.com/autobrr/mkbrr
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 CGO_ENABLED=	0
 GO_MODULE=	github.com/autobrr/${PORTNAME}

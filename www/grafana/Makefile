@@ -49,7 +49,7 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 riscv64
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		cpe go:1.25,modules
+USES=		cpe go:1.25+,modules
 
 USE_GITHUB=	yes
 

@@ -11,7 +11,7 @@ WWW=		https://github.com/google/trillian
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 USE_RC_SUBR=	trillian_log_server trillian_log_signer
 
 GO_MODULE=	github.com/google/trillian

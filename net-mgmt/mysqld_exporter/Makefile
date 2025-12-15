@@ -11,11 +11,8 @@ WWW=		https://github.com/prometheus/mysqld_exporter
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.23,modules
+USES=		go:modules
 GO_MODULE=	github.com/prometheus/mysqld_exporter
-
-DEPRECATED=	Uses old go, but try building without USES=go:someversion
-EXPIRATION_DATE=2026-01-01
 
 PLIST_FILES=	bin/mysqld_exporter
 USE_RC_SUBR=	mysqld_exporter

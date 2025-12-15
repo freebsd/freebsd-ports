@@ -17,7 +17,7 @@ BROKEN_i386=	fails to find resvg_xx symbols, see https://github.com/xo/usql/issu
 
 LIB_DEPENDS=	libresvg.so:graphics/resvg-capi
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 
 GO_MODULE=	github.com/xo/usql
 
