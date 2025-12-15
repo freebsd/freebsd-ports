@@ -1,10 +1,14 @@
 PORTNAME=	antlr4
 DISTVERSION=	4.13.2
+PORTREVISION=	1
 DISTVERSIONPREFIX=	cpp-runtime-
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	devel
 MASTER_SITES=	http://www.antlr.org/download/
 PKGNAMEPREFIX=		lib
+
+PATCH_SITES+=	https://github.com/antlr/antlr4/commit/
+PATCHFILES+=	df4d68c09cdef73e023b8838a8bc7ca4dff1d1de.patch:-p3
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	ANother Tool for Language Recognition (C runtime)

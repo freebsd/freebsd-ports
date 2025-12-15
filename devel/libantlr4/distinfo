@@ -1,3 +1,5 @@
-TIMESTAMP = 1730830190
+TIMESTAMP = 1765551156
 SHA256 (antlr4-cpp-runtime-4.13.2-source.zip) = 0ed13668906e86dbc0dcddf30fdee68c10203dea4e83852b4edb810821bee3c4
 SIZE (antlr4-cpp-runtime-4.13.2-source.zip) = 3182150
+SHA256 (df4d68c09cdef73e023b8838a8bc7ca4dff1d1de.patch) = ce5695876ae674db2e0cba4c4bbf6845596e510b034075f8ba19c8bc9e4cc9da
+SIZE (df4d68c09cdef73e023b8838a8bc7ca4dff1d1de.patch) = 830
