@@ -3,8 +3,8 @@
   message: <<EOM
 Before using MangoWC run the following commands as user:
 
-    mkdir -p ~/.config/mangowc
-    cp %%PREFIX%%/etc/mango/config.conf ~/.config/mangowc/
+    mkdir -p ~/.config/mango
+    cp %%PREFIX%%/etc/mango/config.conf ~/.config/mango/
 
 then customize that file, in particular the variable
 
