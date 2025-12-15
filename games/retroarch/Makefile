@@ -1,7 +1,9 @@
 PORTNAME=	RetroArch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.21.0
+DISTVERSION=	1.22.2
 CATEGORIES=	games emulators
+MASTER_SITES=	https://github.com/libretro/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME:tl}-sourceonly-${DISTVERSION}
 
 MAINTAINER=	dmenelkir@gmail.com
 COMMENT=	Cross-platform entertainment system based on libretro API
@@ -20,10 +22,9 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 RUN_DEPENDS=	retroarch-assets>0:games/retroarch-assets \
 		libretro-core-info>0:games/libretro-core-info
 
-USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl
+USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl \
+		tar:xz
 CPE_VENDOR=	libretro
-USE_GITHUB=	yes
-GH_ACCOUNT=	libretro
 
 SHEBANG_FILES=	libretro-common/glsym/glgen.py libretro-common/glsym/rglgen.py \
 		tools/cg2glsl.py tools/vulkan_loader_generator.py
