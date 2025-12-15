@@ -1,14 +1,5 @@
---- Makefile.orig	2025-10-17 08:57:36 UTC
+--- Makefile.orig	2025-12-08 15:49:16 UTC
 +++ Makefile
-@@ -84,7 +84,7 @@ EXTRA_LDFLAGS ?=
- GIT_COMMIT := $(shell GIT_CEILING_DIRECTORIES=$$(cd ..; pwd) git rev-parse HEAD 2> /dev/null || true)
- 
- EXTRA_LDFLAGS ?=
--SKOPEO_LDFLAGS := -ldflags '-X main.gitCommit=${GIT_COMMIT} $(EXTRA_LDFLAGS)'
-+SKOPEO_LDFLAGS := -ldflags '-X main.gitCommit="unknown" $(EXTRA_LDFLAGS)'
- 
- MANPAGES_MD = $(wildcard docs/*.md)
- MANPAGES ?= $(MANPAGES_MD:%.md=%)
 @@ -131,9 +131,9 @@ bin/skopeo:
  # Build w/o using containers
  .PHONY: bin/skopeo

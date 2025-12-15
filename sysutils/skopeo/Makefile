@@ -1,6 +1,6 @@
 PORTNAME=	skopeo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.20.0
+DISTVERSION=	1.21.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 LIB_DEPENDS=	libgpgme.so:security/gpgme
 RUN_DEPENDS=	${LOCALBASE}/etc/containers/containers.conf.sample:sysutils/containers-common
 
-USES=		gmake go:modules,no_targets,1.23 pkgconfig
+USES=		gmake go:modules,no_targets,1.24 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
 
