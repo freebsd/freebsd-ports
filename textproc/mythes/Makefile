@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell
 
-USES=		compiler:c++11-lib libtool pathfix perl5 pkgconfig shebangfix
+USES=		compiler:c++11-lib libtool perl5 pkgconfig shebangfix
 USE_LDCONFIG=	yes
 USE_PERL5=	run
 SHEBANG_FILES=	th_gen_idx.pl
