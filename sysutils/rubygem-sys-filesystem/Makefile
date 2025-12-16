@@ -1,5 +1,5 @@
 PORTNAME=	sys-filesystem
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
