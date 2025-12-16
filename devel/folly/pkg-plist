@@ -1010,8 +1010,11 @@ include/folly/python/request_context.h
 include/folly/random/hash.h
 include/folly/random/xoshiro256pp.h
 include/folly/result/coro.h
+include/folly/result/detail/immortal_exception_storage.h
 include/folly/result/gtest_helpers.h
 include/folly/result/result.h
+include/folly/result/rich_error_fwd.h
+include/folly/result/rich_msg.h
 include/folly/result/try.h
 include/folly/result/value_only_result.h
 include/folly/result/value_only_result_coro.h
