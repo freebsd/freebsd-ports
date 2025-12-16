@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libuv.so:devel/libuv
 
-USES=		cmake:testing pathfix
+USES=		cmake:testing
 
 CMAKE_OFF=	ASAN \
 		BUILD_TESTING \
