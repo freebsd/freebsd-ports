@@ -597,6 +597,7 @@
     SUBDIR += py-transformers
     SUBDIR += py-tvm
     SUBDIR += py-uhi
+    SUBDIR += py-uuid-utils
     SUBDIR += py-vaderSentiment
     SUBDIR += py-wandb
     SUBDIR += py-wurlitzer
