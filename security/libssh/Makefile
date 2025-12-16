@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 TEST_DEPENDS=	cmocka>=0:sysutils/cmocka
 
-USES=		cmake:testing cpe pathfix tar:xz
+USES=		cmake:testing cpe tar:xz
 
 CMAKE_ARGS=	-DCMAKE_CTEST_ARGUMENTS="-E;'torture_config|torture_misc'" \
 		-DGLOBAL_BIND_CONFIG=${PREFIX}/etc/ssh/libssh_server_config \
