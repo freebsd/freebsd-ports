@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/osa
@@ -147,7 +147,7 @@ HTTP_DAV_CONFIGURE_ON=		--with-http_dav_module
 HTTP_DEGRADATION_CONFIGURE_ON=	--with-http_degradation_module
 HTTP_FLV_CONFIGURE_ON=		--with-http_flv_module
 HTTP_GEOIP_CONFIGURE_ON=	--with-http_geoip_module
-HTTP_GEOIP_LIB_DEPENDS=		libmaxmind.so:net/libmaxminddb
+HTTP_GEOIP_LIB_DEPENDS=		libmaxminddb.so:net/libmaxminddb
 HTTP_GEOIP_VARS=		DSO_BASEMODS+=http_geoip_module
 HTTP_GZIP_STATIC_CONFIGURE_ON=	--with-http_gzip_static_module
 HTTP_GUNZIP_FILTER_CONFIGURE_ON=--with-http_gunzip_module
@@ -195,7 +195,7 @@ MAIL_SSL_CONFIGURE_ON=		--with-mail_ssl_module
 STREAM_VARS=			DSO_BASEMODS+=stream
 STREAM_CONFIGURE_ON=		--with-stream
 STREAM_GEOIP_CONFIGURE_ON=	--with-stream_geoip_module
-STREAM_GEOIP_LIB_DEPENDS=	libmaxmind.so:net/libmaxminddb
+STREAM_GEOIP_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 STREAM_GEOIP_VARS=		DSO_BASEMODS+=stream_geoip_module
 STREAM_REALIP_CONFIGURE_ON=	--with-stream_realip_module
 STREAM_SSL_USES=		ssl
