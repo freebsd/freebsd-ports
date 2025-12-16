@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libsuperlu.so:math/superlu
 
-USES=		blaslapack:openblas cmake:testing compiler:c++11-lang pathfix pkgconfig tar:xz
+USES=		blaslapack:openblas cmake:testing compiler:c++11-lang pkgconfig tar:xz
 
 CMAKE_OFF=	ALLOW_BLAS_LAPACK_MACOS \
 		ALLOW_FLEXIBLAS_LINUX \
