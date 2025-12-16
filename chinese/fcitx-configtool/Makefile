@@ -11,7 +11,7 @@ WWW=		https://fcitx-im.org/wiki/Fcitx
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes \
+BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:devel/dbus-glib
 LIB_DEPENDS=	libfcitx-config.so:chinese/fcitx
 
