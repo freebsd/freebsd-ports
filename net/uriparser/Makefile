@@ -1,5 +1,5 @@
 PORTNAME=	uriparser
-DISTVERSION=	0.9.9
+DISTVERSION=	1.0.0
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/uriparser/uriparser/releases/download/uriparser-${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
