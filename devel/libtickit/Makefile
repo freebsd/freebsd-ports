@@ -15,9 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libtermkey.so:devel/libtermkey \
 		libunibilium.so:devel/unibilium
 
-USES=		compiler:c11 gmake libtool:build ncurses pathfix pkgconfig
+USES=		compiler:c11 gmake libtool:build ncurses pkgconfig
 
-PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 
 post-install:
