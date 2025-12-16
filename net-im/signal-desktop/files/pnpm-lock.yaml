@@ -11,8 +11,6 @@ overrides:
   jsdom: '-'
   thenify-all>thenify: 3.3.1
   '@electron/rebuild@3.7.2>@electron/node-gyp': 10.2.0-electron.2
-  react-contextmenu>react: 18.3.1
-  react-contextmenu>react-dom: 18.3.1
 
 pnpmfileChecksum: sha256-o+YmVibNtPcu3FSR1zxQU+b0Bi0bKdB6ADNIl+tjylA=
 
@@ -36,7 +34,7 @@ patchedDependencies:
     hash: e8a96f71e52bf903c9f1eadba4740489a0beb48da33db52354adca484fe1f495
     path: patches/@vitest+expect+2.0.5.patch
   app-builder-lib:
-    hash: b412b44a47bb3d2be98e6edffed5dc4286cc62ac3c02fef42d1557927baa2420
+    hash: a1775a435732fdbd3b69305053bea4776c854378984940cbd2a541d692902664
     path: patches/app-builder-lib.patch
   casual@1.6.2:
     hash: b88b5052437cbdc1882137778b76ca5037f71b2a030ae9ef39dc97f51670d599
@@ -71,9 +69,6 @@ patchedDependencies:
   qrcode-generator@1.4.4:
     hash: 1f10c592d849ed4cfc9f81301196d39857b79240997ef5772138218cb3717e80
     path: patches/qrcode-generator+1.4.4.patch
-  react-contextmenu@2.14.0:
-    hash: 0a61a588d4e16ca308a33d4765e00ccade23abac650b981439a128bd5be785d7
-    path: patches/react-contextmenu+2.14.0.patch
   websocket@1.0.34:
     hash: b8d361a6a73e44000bb51102dea0d841c22d2bb455dd6c54de566d0e0bd86355
     path: patches/websocket+1.0.34.patch
@@ -137,8 +132,8 @@ importers:
         specifier: 3.27.0
         version: 3.27.0(react@18.3.1)
       '@signalapp/libsignal-client':
-        specifier: 0.83.0
-        version: 0.83.0
+        specifier: 0.86.3
+        version: 0.86.3
       '@signalapp/minimask':
         specifier: 1.0.1
         version: 1.0.1
@@ -149,8 +144,8 @@ importers:
         specifier: 2.1.2
         version: 2.1.2
       '@signalapp/ringrtc':
-        specifier: 2.59.4
-        version: 2.59.4(patch_hash=16738d799318d4c5fe950f44ee7511dad758c4364ec26a25fb6b657203e9d8bf)
+        specifier: 2.60.7
+        version: 2.60.7(patch_hash=16738d799318d4c5fe950f44ee7511dad758c4364ec26a25fb6b657203e9d8bf)
       '@signalapp/sqlcipher':
         specifier: 2.4.4
         version: 2.4.4
@@ -208,6 +203,9 @@ importers:
       direction:
         specifier: 1.0.4
         version: 1.0.4
+      dom-accessibility-api:
+        specifier: 0.7.0
+        version: 0.7.0
       emoji-datasource:
         specifier: 16.0.0
         version: 16.0.0
@@ -340,9 +338,6 @@ importers:
       react-blurhash:
         specifier: 0.3.0
         version: 0.3.0(blurhash@2.0.5)(react@18.3.1)
-      react-contextmenu:
-        specifier: 2.14.0
-        version: 2.14.0(patch_hash=0a61a588d4e16ca308a33d4765e00ccade23abac650b981439a128bd5be785d7)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-dom:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
@@ -635,6 +630,9 @@ importers:
       babel-plugin-lodash:
         specifier: 3.3.4
         version: 3.3.4
+      better-blockmap:
+        specifier: 1.0.2
+        version: 1.0.2
       casual:
         specifier: 1.6.2
         version: 1.6.2(patch_hash=b88b5052437cbdc1882137778b76ca5037f71b2a030ae9ef39dc97f51670d599)
@@ -666,8 +664,8 @@ importers:
         specifier: 4.3.7
         version: 4.3.7(supports-color@8.1.1)
       electron:
-        specifier: 39.2.1
-        version: 39.2.1
+        specifier: 39.2.4
+        version: 39.2.4
       electron-builder:
         specifier: 26.0.14
         version: 26.0.14(patch_hash=4efee114d8c7e2a77c68ff826373a94a9678edfde006eeec4eccb386c32dae15)(electron-builder-squirrel-windows@26.0.14)
@@ -3496,8 +3494,8 @@ packages:
   '@signalapp/libsignal-client@0.76.7':
     resolution: {integrity: sha512-iGWTlFkko7IKlm96Iy91Wz5sIN089nj02ifOk6BWtLzeVi0kFaNj+jK26Sl1JRXy/VfXevcYtiOivOg43BPqpg==}
 
-  '@signalapp/libsignal-client@0.83.0':
-    resolution: {integrity: sha512-QaXviPAvj4PA2QDmN6YyPnlkp699BE3fIgaJmKrfvZMsvBfMGeJ3H3BHFt0CV2vUWMbc3oEgxbwdXu//f6oTrA==}
+  '@signalapp/libsignal-client@0.86.3':
+    resolution: {integrity: sha512-aN/pgT9YqacuABrtxBtBbQ0AMesZJIHVNqU8nUq75kRTleIU5aKeuOXt7ZHYUUJW7ot4O2n6O6eaMnMLbwBXFQ==}
 
   '@signalapp/minimask@1.0.1':
     resolution: {integrity: sha512-QAwo0joA60urTNbW9RIz6vLKQjy+jdVtH7cvY0wD9PVooD46MAjE40MLssp4xUJrph91n2XvtJ3pbEUDrmT2AA==}
@@ -3512,8 +3510,8 @@ packages:
     resolution: {integrity: sha512-y2sgqdivlrG41J4Zvt/82xtH/PZjDlgItqlD2g/Cv3ZbjlR6cGhTNXbfNygCJB8nXj+C7I28pjt1Zm3k0pv2mg==}
     engines: {npm: '>=8.2.3'}
 
-  '@signalapp/ringrtc@2.59.4':
-    resolution: {integrity: sha512-Ml9ArS8gi8RJvdat0AuLXggGWMGkOsBizKkz2MtI5XALK0o09wh0r/Qdr0fmp4ewJqnqWGJ31tfr+gXoelG8gQ==}
+  '@signalapp/ringrtc@2.60.7':
+    resolution: {integrity: sha512-qx3w64/cmml+ZGXL7L/DGrePmxU9ZEBIY+cWEuJ1MJOslx4zQ0HfGDlpNEeDd/OeBvyirU+q/DPucgGeJNVQjA==}
     hasBin: true
 
   '@signalapp/sqlcipher@2.4.4':
@@ -4154,8 +4152,8 @@ packages:
   '@types/node@22.13.4':
     resolution: {integrity: sha512-ywP2X0DYtX3y08eFVx5fNIw7/uIv8hYUKgXoK8oayJlLnKcRfEYCxWMVE1XagUdVtCJlZT1AU4LXEABW+L1Peg==}
 
-  '@types/node@22.18.8':
-    resolution: {integrity: sha512-pAZSHMiagDR7cARo/cch1f3rXy0AEXwsVsVH09FcyeJVAzCnGgmYis7P3JidtTUjyadhTeSo8TgRPswstghDaw==}
+  '@types/node@22.19.1':
+    resolution: {integrity: sha512-LCCV0HdSZZZb34qifBsyWlUmok6W7ouER+oQIGBScS8EsZsQbrtFTUrDX4hOl+CS6p7cnNC4td+qrSVGSCTUfQ==}
 
   '@types/normalize-path@3.0.2':
     resolution: {integrity: sha512-DO++toKYPaFn0Z8hQ7Tx+3iT9t77IJo/nDiqTXilgEP+kPNIYdpS9kh3fXuc53ugqwp9pxC1PVjCpV1tQDyqMA==}
@@ -5743,6 +5741,9 @@ packages:
   dom-accessibility-api@0.6.3:
     resolution: {integrity: sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==}
 
+  dom-accessibility-api@0.7.0:
+    resolution: {integrity: sha512-LjjdFmd9AITAet3Hy6Y6rwB7Sq1+x5NiwbOpnkLHC1bCXJqJKiV9DyppSSWobuSKvjKXt9G2u3hW402MPt6m+g==}
+
   dom-converter@0.2.0:
     resolution: {integrity: sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==}
 
@@ -5854,8 +5855,8 @@ packages:
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
-  electron@39.2.1:
-    resolution: {integrity: sha512-5oSki3qzLBsJAcXl0yWOLRArkufugbXd1qBb2UNZRrrKkYiVhM8GLE+KE3P16PC8UxGxGqCCfaB3Y1TK1dUuHg==}
+  electron@39.2.4:
+    resolution: {integrity: sha512-KxPtwpFceQKSxRtUY39piHLYhJMMyHfOhc70e6zRnKGrbRdK6hzEqssth8IGjlKOdkeT4KCvIEngnNraYk39+g==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -9193,13 +9194,6 @@ packages:
     peerDependencies:
       blurhash: ^2.0.3
       react: '>=15'
-
-  react-contextmenu@2.14.0:
-    resolution: {integrity: sha512-ktqMOuad6sCFNJs/ltEwppN8F0YeXmqoZfwycgtZR/MxOXMYx1xgYC44SzWH259HdGyshk1/7sXGuIRwj9hzbw==}
-    peerDependencies:
-      prop-types: ^15.0.0
-      react: 18.3.1
-      react-dom: 18.3.1
 
   react-devtools-core@6.0.1:
     resolution: {integrity: sha512-II3iSJhnR5nAscYDa9FCgPLq8mO5aEx/EKKtdXYTDnvdFEa3K7gs3jn1SKRXwQf9maOmIilmjnnx7Qy+3annPA==}
@@ -14289,7 +14283,7 @@ snapshots:
       type-fest: 4.26.1
       uuid: 11.0.2
 
-  '@signalapp/libsignal-client@0.83.0':
+  '@signalapp/libsignal-client@0.86.3':
     dependencies:
       node-gyp-build: 4.8.4
       type-fest: 4.26.1
@@ -14329,7 +14323,7 @@ snapshots:
       lodash: 4.17.21
       quill-delta: 5.1.0
 
-  '@signalapp/ringrtc@2.59.4(patch_hash=16738d799318d4c5fe950f44ee7511dad758c4364ec26a25fb6b657203e9d8bf)':
+  '@signalapp/ringrtc@2.60.7(patch_hash=16738d799318d4c5fe950f44ee7511dad758c4364ec26a25fb6b657203e9d8bf)':
     dependencies:
       https-proxy-agent: 7.0.6
       tar: 6.2.1
@@ -14440,7 +14434,7 @@ snapshots:
   '@storybook/builder-webpack5@8.4.4(@swc/core@1.10.16(@swc/helpers@0.5.15))(esbuild@0.25.9)(storybook@8.4.4(bufferutil@4.0.9)(prettier@3.3.3)(utf-8-validate@5.0.10))(typescript@5.6.3)(webpack-cli@5.1.4)':
     dependencies:
       '@storybook/core-webpack': 8.4.4(storybook@8.4.4(bufferutil@4.0.9)(prettier@3.3.3)(utf-8-validate@5.0.10))
-      '@types/node': 22.18.8
+      '@types/node': 22.13.4
       '@types/semver': 7.5.8
       browser-assert: 1.2.1
       case-sensitive-paths-webpack-plugin: 2.4.0
@@ -14497,7 +14491,7 @@ snapshots:
 
   '@storybook/core-webpack@8.4.4(storybook@8.4.4(bufferutil@4.0.9)(prettier@3.3.3)(utf-8-validate@5.0.10))':
     dependencies:
-      '@types/node': 22.18.8
+      '@types/node': 22.13.4
       storybook: 8.4.4(bufferutil@4.0.9)(prettier@3.3.3)(utf-8-validate@5.0.10)
       ts-dedent: 2.2.0
 
@@ -14542,7 +14536,7 @@ snapshots:
       '@storybook/core-webpack': 8.4.4(storybook@8.4.4(bufferutil@4.0.9)(prettier@3.3.3)(utf-8-validate@5.0.10))
       '@storybook/react': 8.4.4(@storybook/test@8.4.4(storybook@8.4.4(bufferutil@4.0.9)(prettier@3.3.3)(utf-8-validate@5.0.10)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.4(bufferutil@4.0.9)(prettier@3.3.3)(utf-8-validate@5.0.10))(typescript@5.6.3)
       '@storybook/react-docgen-typescript-plugin': 1.0.6--canary.9.0c3f3b7.0(typescript@5.6.3)(webpack@5.96.1)
-      '@types/node': 22.18.8
+      '@types/node': 22.13.4
       '@types/semver': 7.5.8
       find-up: 5.0.0
       magic-string: 0.30.17
@@ -15112,7 +15106,7 @@ snapshots:
     dependencies:
       undici-types: 6.20.0
 
-  '@types/node@22.18.8':
+  '@types/node@22.19.1':
     dependencies:
       undici-types: 6.21.0
 
@@ -15247,7 +15241,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 22.19.1
     optional: true
 
   '@typescript-eslint/eslint-plugin@5.62.0(@typescript-eslint/parser@5.62.0(eslint@8.56.0)(typescript@5.6.3))(eslint@8.56.0)(typescript@5.6.3)':
@@ -15668,7 +15662,7 @@ snapshots:
 
   app-builder-bin@5.0.0-alpha.12: {}
 
-  app-builder-lib@26.0.14(patch_hash=b412b44a47bb3d2be98e6edffed5dc4286cc62ac3c02fef42d1557927baa2420)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14):
+  app-builder-lib@26.0.14(patch_hash=a1775a435732fdbd3b69305053bea4776c854378984940cbd2a541d692902664)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14):
     dependencies:
       '@develar/schema-utils': 2.6.5
       '@electron/asar': 3.4.1
@@ -16887,7 +16881,7 @@ snapshots:
 
   dmg-builder@26.0.14(patch_hash=cb72ed47fa8d45513a36db33fcb41cb75c30cada4737da067bf3fa1f063725f2)(electron-builder-squirrel-windows@26.0.14):
     dependencies:
-      app-builder-lib: 26.0.14(patch_hash=b412b44a47bb3d2be98e6edffed5dc4286cc62ac3c02fef42d1557927baa2420)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14)
+      app-builder-lib: 26.0.14(patch_hash=a1775a435732fdbd3b69305053bea4776c854378984940cbd2a541d692902664)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14)
       builder-util: 26.0.13
       builder-util-runtime: 9.3.2
       fs-extra: 10.1.0
@@ -16927,6 +16921,8 @@ snapshots:
   dom-accessibility-api@0.5.16: {}
 
   dom-accessibility-api@0.6.3: {}
+
+  dom-accessibility-api@0.7.0: {}
 
   dom-converter@0.2.0:
     dependencies:
@@ -17031,7 +17027,7 @@ snapshots:
 
   electron-builder-squirrel-windows@26.0.14(dmg-builder@26.0.14):
     dependencies:
-      app-builder-lib: 26.0.14(patch_hash=b412b44a47bb3d2be98e6edffed5dc4286cc62ac3c02fef42d1557927baa2420)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14)
+      app-builder-lib: 26.0.14(patch_hash=a1775a435732fdbd3b69305053bea4776c854378984940cbd2a541d692902664)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14)
       builder-util: 26.0.13
       electron-winstaller: 5.4.0
     transitivePeerDependencies:
@@ -17041,7 +17037,7 @@ snapshots:
 
   electron-builder@26.0.14(patch_hash=4efee114d8c7e2a77c68ff826373a94a9678edfde006eeec4eccb386c32dae15)(electron-builder-squirrel-windows@26.0.14):
     dependencies:
-      app-builder-lib: 26.0.14(patch_hash=b412b44a47bb3d2be98e6edffed5dc4286cc62ac3c02fef42d1557927baa2420)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14)
+      app-builder-lib: 26.0.14(patch_hash=a1775a435732fdbd3b69305053bea4776c854378984940cbd2a541d692902664)(dmg-builder@26.0.14)(electron-builder-squirrel-windows@26.0.14)
       builder-util: 26.0.13
       builder-util-runtime: 9.3.2
       chalk: 4.1.2
@@ -17103,10 +17099,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  electron@39.2.1:
+  electron@39.2.4:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 22.18.8
+      '@types/node': 22.19.1
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -21220,14 +21216,6 @@ snapshots:
     dependencies:
       blurhash: 2.0.5
       react: 18.3.1
-
-  react-contextmenu@2.14.0(patch_hash=0a61a588d4e16ca308a33d4765e00ccade23abac650b981439a128bd5be785d7)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      classnames: 2.5.1
-      object-assign: 4.1.1
-      prop-types: 15.8.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   react-devtools-core@6.0.1(bufferutil@4.0.9)(utf-8-validate@5.0.10):
     dependencies:
