@@ -65,7 +65,7 @@ SHEBANG_FILES=			source3/script* source4/scripting/bin/* selftest/*
 
 CONFIGURE_LOG=			bin/config.log
 CONFIGURE_ARGS=			--mandir="${PREFIX}/share/man" \
-				--sysconfdir="${_CONFDIR}" \
+				--sysconfdir="${ETCDIR}" \
 				--includedir="${SAMBA_INCLUDEDIR}" \
 				--datadir="${DATADIR}" \
 				--libdir="${SAMBA_LIBDIR}" \
@@ -134,6 +134,7 @@ LDFLAGS+=			-Wl,--undefined-version
 
 CONFLICTS_INSTALL=		ldb2[0-9]-* samba4*
 
+ETCDIR=				${PREFIX}/etc
 EXTRA_PATCHES=			\
 				${PATCHDIR}/0001-Compact-and-simplify-modules-build-and-config-genera.patch:-p1 \
 				${PATCHDIR}/0002-Adjust-abi_gen.sh-script-to-run-under-FreeBSD-with-i.patch:-p1 \
@@ -405,14 +406,11 @@ _SAMBA_SUB=			SAMBA4_LOGDIR="${_LOGDIR}" \
 				SAMBA_LDB_MODULESDIR="${SAMBA_LDB_MODULESDIR}" \
 				SAMBA4_BINDDNSDIR="${_BINDDNSDIR}" \
 				SAMBA4_PRIVATEDIR="${_PRIVATEDIR}" \
-				SAMBA4_CONFDIR="${_CONFDIR}" \
 				SAMBA4_CONFIG="${_SAMBA_CONFIG}" \
 				SAMBA4_SERVICES="${_SAMBA_SERVICES}"
 
 _SAMBA_CONFIG=			smb4.conf
 
-# XXX: Instead of defining _CONFDIR we could probably just set ETCDIR.
-_CONFDIR=			${PREFIX}/etc
 _BINDDNSDIR=			${_LOCKDIR}/bind-dns
 _LOCKDIR=			${_VARDIR}/db/${_SAMBA_MAJVERNAME}
 _LOGDIR=			${_VARDIR}/log/${_SAMBA_MAJVERNAME}

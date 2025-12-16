@@ -15,7 +15,7 @@ Documentation
 FreeBSD specific information
 ============================
 
-* Your configuration is in: %%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%
+* Your configuration is in: %%ETCDIR%%/%%SAMBA4_CONFIG%%
 
 * All the logs are under: %%SAMBA4_LOGDIR%%
 
@@ -46,7 +46,7 @@ To run this port you need to perform the following steps:
 all the relevant files. That includes 'smb.conf' file and all the
 content of the '/var/db/samba/' directory.
 
-1a. Create new '%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%' file by running:
+1a. Create new '%%ETCDIR%%/%%SAMBA4_CONFIG%%' file by running:
 
     # samba-tool domain provision
 

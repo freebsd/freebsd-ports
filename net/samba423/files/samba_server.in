@@ -17,7 +17,7 @@
 # You need to enable winbindd separately, by adding:
 #winbindd_enable=YES
 # Configuration file can be set with:
-#samba_server_config=%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%
+#samba_server_config=%%ETCDIR%%/%%SAMBA4_CONFIG%%
 #
 # shellcheck disable=SC2034,SC2086,SC3043
 
@@ -45,7 +45,7 @@ reload_cmd=samba_server_reload_cmd
 rcvar_cmd=samba_server_rcvar_cmd
 stop_postcmd=samba_server_poststop
 # Defaults
-samba_server_config_default=%%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%
+samba_server_config_default=%%ETCDIR%%/%%SAMBA4_CONFIG%%
 smbcontrol_command=%%PREFIX%%/bin/smbcontrol
 
 samba_server_checkconfig()

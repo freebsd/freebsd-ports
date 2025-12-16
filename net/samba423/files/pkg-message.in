@@ -3,7 +3,7 @@
   message: <<EOM
 How to start: http://wiki.samba.org/index.php/Samba4/HOWTO
 
-* Your configuration is: %%SAMBA4_CONFDIR%%/%%SAMBA4_CONFIG%%
+* Your configuration is: %%ETCDIR%%/%%SAMBA4_CONFIG%%
 
 * All the relevant databases are under: %%SAMBA4_LOCKDIR%%
 
