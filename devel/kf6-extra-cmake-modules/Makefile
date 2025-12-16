@@ -41,8 +41,4 @@ MANPAGES_CMAKE_BOOL=	BUILD_MAN_DOCS
 
 TESTING_UNSAFE=		requires reuse-tool port
 
-.if exists(/usr/include/sys/inotify.h)
-EXTRA_PATCHES+=		${FILESDIR}/extrapatch-inotify
-.endif
-
 .include <bsd.port.mk>

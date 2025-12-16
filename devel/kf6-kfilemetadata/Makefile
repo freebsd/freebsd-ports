@@ -1,6 +1,5 @@
 PORTNAME=	kfilemetadata
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde kde-frameworks
 
 COMMENT=	Library for extracting the text and metadata from a number files
