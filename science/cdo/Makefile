@@ -12,7 +12,7 @@ WWW=		https://code.mpimet.mpg.de/projects/cdo
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++20-lang gmake libtool localbase pathfix python:build
+USES=		compiler:c++20-lang gmake libtool localbase python:build
 
 CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
