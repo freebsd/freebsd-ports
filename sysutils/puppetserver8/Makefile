@@ -1,5 +1,6 @@
 PORTNAME=	puppetserver
 PORTVERSION=	8.7.0
+PORTREVISION=	1
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	8
@@ -72,6 +73,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/web-routes.conf ${STAGEDIR}${ETCDIR}/conf.d/web-routes.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/webserver.conf ${STAGEDIR}${ETCDIR}/conf.d/webserver.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/auth.conf ${STAGEDIR}${ETCDIR}/conf.d/auth.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/ca.conf ${STAGEDIR}${ETCDIR}/conf.d/ca.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/metrics.conf ${STAGEDIR}${ETCDIR}/conf.d/metrics.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/config/services.d/ca.cfg ${STAGEDIR}${ETCDIR}/services.d/ca.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/ext/system-config/services.d/bootstrap.cfg ${STAGEDIR}${ETCDIR}/services.d/bootstrap.cfg.sample
