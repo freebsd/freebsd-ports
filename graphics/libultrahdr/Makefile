@@ -11,7 +11,7 @@ WWW=		https://developer.android.com/media/platform/hdr-image-format \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake jpeg pathfix
+USES=		cmake jpeg
 
 CMAKE_OFF=	UHDR_BUILD_BENCHMARK \
 		UHDR_BUILD_DEPS \
