@@ -1,5 +1,5 @@
 PORTNAME=	bullet_train-super_load_and_authorize_resource
-PORTVERSION=	1.7.23
+PORTVERSION=	1.37.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-cancancan>=0:security/rubygem-cancancan \
-		rubygem-rails71>=6.0.0:www/rubygem-rails71
+		rubygem-rails81>=6.0.0:www/rubygem-rails81
 
 USES=		gem
 
