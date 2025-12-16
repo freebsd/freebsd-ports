@@ -1,6 +1,7 @@
 %%DATADIR%%/rtl8192ee_fw.bin
 %%DATADIR%%/rtl8192eu_fw.bin
 %%DATADIR%%/rtl8723a_fw.bin
+%%DATADIR%%/rtl8723b_config.bin
 %%DATADIR%%/rtl8723b_fw.bin
 %%DATADIR%%/rtl8723bs_config-OBDA0623.bin
 %%DATADIR%%/rtl8723bs_config-OBDA8723.bin
@@ -15,6 +16,8 @@
 %%DATADIR%%/rtl8761b_fw.bin
 %%DATADIR%%/rtl8761bu_config.bin
 %%DATADIR%%/rtl8761bu_fw.bin
+%%DATADIR%%/rtl8761cu_config.bin
+%%DATADIR%%/rtl8761cu_fw.bin
 %%DATADIR%%/rtl8812ae_fw.bin
 %%DATADIR%%/rtl8821a_config.bin
 %%DATADIR%%/rtl8821a_fw.bin

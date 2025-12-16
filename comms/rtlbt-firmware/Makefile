@@ -1,6 +1,6 @@
 PORTNAME=	rtlbt-firmware
-DISTVERSION=	20240909
-DEB_REVISION=	2
+DISTVERSION=	20251111
+DEB_REVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	DEBIAN/pool/non-free-firmware/f/firmware-nonfree/
 DISTNAME=	firmware-realtek_${PORTVERSION}-${DEB_REVISION}_all
