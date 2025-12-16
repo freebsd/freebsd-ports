@@ -14,7 +14,7 @@ LICENSE_NAME=	NetCDF License
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-USES=		fortran gmake libtool mpi:${FLAVOR} pathfix perl5
+USES=		fortran gmake libtool mpi:${FLAVOR} perl5
 USE_PERL5=	build
 
 CFLAGS+=	-fPIC
