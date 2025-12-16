@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2025-05-09 15:00:04 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ requires = [
+ [build-system]
+ requires = [
+-    "setuptools>=39.2,<72",   # later versions do not read 'tests_require' from setup.cfg anymore
++    "setuptools>=39.2",   # later versions do not read 'tests_require' from setup.cfg anymore
+     "setuptools_scm",
+     "wheel"
+ ]
