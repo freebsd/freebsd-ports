@@ -13,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1<3:devel/py-poetry-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=59<76:devel/py-setuptools@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}setuptools>=59<81:devel/py-setuptools@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
