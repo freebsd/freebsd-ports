@@ -108,6 +108,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/JSON.pm
 %%SITE_PERL%%/Image/ExifTool/JVC.pm
 %%SITE_PERL%%/Image/ExifTool/Jpeg2000.pm
+%%SITE_PERL%%/Image/ExifTool/Kandao.pm
 %%SITE_PERL%%/Image/ExifTool/Kodak.pm
 %%SITE_PERL%%/Image/ExifTool/KyoceraRaw.pm
 %%SITE_PERL%%/Image/ExifTool/LIF.pm
@@ -317,6 +318,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::JSON.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JVC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Jpeg2000.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Kandao.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Kodak.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::KyoceraRaw.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::LIF.3.gz
