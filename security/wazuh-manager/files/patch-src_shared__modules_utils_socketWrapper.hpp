@@ -1,5 +1,5 @@
---- src/shared_modules/utils/socketWrapper.hpp.orig	2024-10-20 21:04:00.880393000 -0700
-+++ src/shared_modules/utils/socketWrapper.hpp	2024-10-20 21:07:41.992525000 -0700
+--- src/shared_modules/utils/socketWrapper.hpp	2025-09-23 06:59:40.000000000 -0700
++++ src/shared_modules/utils/socketWrapper.hpp	2025-10-11 22:55:35.847683000 -0700
 @@ -28,6 +28,11 @@
  #include <thread>
  #include <unistd.h>
@@ -9,6 +9,6 @@
 +#define SO_SNDBUFFORCE SO_SNDBUF
 +#endif
 +
- constexpr auto INVALID_SOCKET {-1};
- constexpr auto SOCKET_ERROR {-1};
- using PacketFieldType = uint32_t;
+ #ifdef INVALID_SOCKET
+ #undef INVALID_SOCKET
+ #endif

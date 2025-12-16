@@ -1,6 +1,6 @@
---- src/data_provider/src/sysInfoFreeBSD.cpp	2025-01-15 06:26:54.000000000 -0800
-+++ src/data_provider/src/sysInfoFreeBSD.cpp	2025-02-17 14:38:11.834720000 -0800
-@@ -11,6 +11,7 @@
+--- src/data_provider/src/sysInfoFreeBSD.cpp	2025-09-23 06:59:40.000000000 -0700
++++ src/data_provider/src/sysInfoFreeBSD.cpp	2025-10-16 15:42:56.638994000 -0700
+@@ -11,20 +11,23 @@
  #include "sysInfo.hpp"
  #include "cmdHelper.h"
  #include "stringHelper.h"
@@ -8,7 +8,9 @@
  #include "osinfo/sysOsParsers.h"
  #include <sys/sysctl.h>
  #include <sys/vmmeter.h>
-@@ -19,12 +20,13 @@
+ #include <sys/utsname.h>
+ #include "sharedDefs.h"
++#include <regex>
  
  static void getMemory(nlohmann::json& info)
  {
@@ -25,7 +27,7 @@
  
      if (ret)
      {
-@@ -52,11 +54,23 @@
+@@ -52,11 +55,23 @@
          };
      }
  
@@ -52,7 +54,7 @@
  
      if (ret)
      {
-@@ -64,11 +78,11 @@
+@@ -64,11 +79,11 @@
          {
              ret,
              std::system_category(),
@@ -66,7 +68,7 @@
      info["ram_free"] = ramFree;
      info["ram_usage"] = 100 - (100 * ramFree / ramTotal);
  }
-@@ -184,8 +198,12 @@
+@@ -184,8 +199,12 @@
  
  nlohmann::json SysInfo::getProcessesInfo() const
  {
@@ -81,7 +83,7 @@
  }
  
  nlohmann::json SysInfo::getOsInfo() const
-@@ -196,11 +214,12 @@
+@@ -196,11 +215,12 @@
  
      if (!spParser->parseUname(Utils::exec("uname -r"), ret))
      {
@@ -95,93 +97,148 @@
      if (uname(&uts) >= 0)
      {
          ret["sysname"] = uts.sysname;
-@@ -215,18 +234,145 @@
+@@ -215,18 +235,200 @@
  
  nlohmann::json SysInfo::getPorts() const
  {
 -    // Currently not supported for this OS.
 -    return nlohmann::json {};
-+    const auto query{Utils::exec(R"(sockstat -46qs)")};
-+
-+    /* USER COMMAND PID FD PROTO LOCAL_ADDRESS FOREIGN_ADDRESS PATH_STATE CONN_STATE */
-+
 +    nlohmann::json ports {};
++    
++    /* USER COMMAND PID FD PROTO LOCAL_ADDRESS FOREIGN_ADDRESS PATH_STATE CONN_STATE */
++    
++#if __FreeBSD_version > 1500045
++    const auto query{exec(R"(sockstat -46qs --libxo json)")};
 +
 +    if (!query.empty())
 +    {
-+        const auto lines{Utils::split(Utils::trimToOneSpace(query), '\n')};
++        nlohmann::json portsjson;
++        portsjson = nlohmann::json::parse(query);
++        auto &portsResult = portsjson["sockstat"]["socket"];
 +
-+        for (const auto& line : lines)
-+        {
++        for(auto &port : portsResult) {
 +            std::string localip = "";
 +            std::string localport = "";
 +            std::string remoteip = "";
 +            std::string remoteport = "";
 +            std::string statedata = "";
 +
-+            const auto data{Utils::split(line, ' ')};
-+            auto localdata{Utils::split(data[5], ':')};
-+            auto remotedata{Utils::split(data[6], ':')};
++            if (port["pid"] != nullptr) {
 +
-+            localip = localdata[0];
-+            localport = localdata[1];
-+            remoteip = remotedata[0];
-+            remoteport = remotedata[1];
++                localip = port["local"]["address"];
++                remoteip = port["foreign"]["address"];
++                statedata = port["conn-state"] != nullptr ? (port["conn-state"] == "LISTEN" ? "listening" : Utils::toLowerCase(port["conn-state"])) : statedata;
 +
-+            if((data[4] != "udp4") && (data[4] != "udp6") && (data[4] != "udp46")) {
-+              statedata = Utils::toLowerCase(data[7]);
-+            }
++                if (port["local"]["address"] == "*") {
++                    if ((port["proto"] == "udp4") || (port["proto"] == "tcp4")) {
++                        localip = "0.0.0.0";
++                    } else {
++                        localip = "::";
++                    }
++                }
 +
-+            if(statedata == "listen") {
-+              statedata = "listening";
-+            }
++                localport = port["local"]["port"];
 +
-+            if(localdata.size() == 4) {
-+              localip = localdata[0] + ":"+ localdata[1] + ":" + localdata[2];
-+              localport = localdata[3];
-+            }
++                if (port["foreign"]["address"] == "*") {
++                    if ((port["proto"] == "udp4") || (port["proto"] == "tcp4")) {
++                        remoteip = 0.0.0.0;
++                    } else {
++                        remoteip = "::";
++                    }
++                }
 +
-+            if(localip == "*") {
-+              if((data[4] == "tcp6") || (data[4] == "udp6")) {
-+                localip = "0:0:0:0:0:0:0:0";
-+              } else if((data[4] == "tcp4") || (data[4] == "udp4")) {
-+                localip = "0.0.0.0";
-+              }
-+            }
++                remoteport = port["foreign"]["port"];
 +
-+            if(localport == "*") {
-+              localport = "0";
-+            }
++                nlohmann::json portRecord {};
 +
-+            if(remotedata.size() == 4) {
-+              remoteip = remotedata[0] + ":"+ remotedata[1] + ":" + remotedata[2];
-+              remoteport = remotedata[3];
-+            }
++                portRecord["protocol"] = port["proto"];
++                portRecord["local_ip"] = localip;
++                portRecord["local_port"] = localport == "*" ? "0" : localport;
++                portRecord["remote_ip"] = remoteip;
++                portRecord["remote_port"] = remoteport == "*" ? "0" : remoteport;
++                portRecord["tx_queue"] = 0;
++                portRecord["rx_queue"] = 0;
++                portRecord["inode"] = port["fd"];
++                portRecord["state"] = statedata == "??" ? "" : statedata;
++                portRecord["pid"] = port["pid"];
++                portRecord["process"] = port["command"];
 +
-+            if(remoteport == "*") {
-+                remoteip = "";
-+                remoteport = "0";
-+            }
-+
-+            if(data[0] != "?") {
-+              nlohmann::json port {};
-+              port["protocol"] = data[4];
-+              port["local_ip"] = localip;
-+              port["local_port"] = localport;
-+              port["remote_ip"] = remoteip;
-+              port["remote_port"] = remoteport;
-+              port["tx_queue"] = 0;
-+              port["rx_queue"] = 0;
-+              port["inode"] = data[3];
-+              port["state"] = statedata;
-+              port["pid"] = data[2];
-+              port["process"] = data[1];
-+
-+              ports.push_back(port);
-+            }
++                ports.push_back(portRecord);
++             }
 +        }
 +    }
++#else
++    const auto query{Utils::exec(R"(sockstat -46qs)")};
 +
++    if (!query.empty())
++    {
++        const auto lines{Utils::split(Utils::trimToOneSpace(query), '\n')};
++
++        std::regex expression(R"(^(\S+)\s+(\S+)\s+(\d+)\s+(\d+)\s*(\S+)\s+(\S+)\s+(\S+)(?:\s+(\S+))?\s*$)");
++
++        for (const auto& line : lines)
++        {
++            std::smatch data;
++
++            if (std::regex_search(line, data, expression))
++            {
++                std::string localip = "";
++                std::string localport = "";
++                std::string remoteip = "";
++                std::string remoteport = "";
++                std::string statedata = "";
++
++                auto localdata{Utils::split(data[6], ':')};
++                auto remotedata{Utils::split(data[7], ':')};
++
++                if (data[8].matched ) {
++                  statedata = data[8] == "LISTEN" ? "listening" : Utils::toLowerCase(data[8]);
++                }
++
++                localport = localdata[localdata.size() - 1];
++                localdata.pop_back();
++                localip = Utils::join(localdata, ":");
++                remoteport = remotedata[remotedata.size() - 1];
++                remotedata.pop_back();
++                remoteip = Utils::join(remotedata, ":");
++
++                if(localip == "*") {
++                    if((data[5] == "tcp4") || (data[5] == "udp4")) {
++                        localip = "0.0.0.0";
++                    } else {
++                        localip = "::";
++                    }
++                 }
++
++                if(remoteip == "*") {
++                    if((data[5] == "tcp4") || (data[5] == "udp4")) {
++                        remoteip = "0.0.0.0";
++                    } else {
++                        remoteip = "::";
++                    }
++                 }
++
++                if(data[0] != "?") {
++                    nlohmann::json port {};
++
++                    port["protocol"] = data[5];
++                    port["local_ip"] = localip;
++                    port["local_port"] = localport == "*" ? "0" : localport;
++                    port["remote_ip"] = remoteip;
++                    port["remote_port"] = remoteport == "*" ? "0" : remoteport;
++                    port["tx_queue"] = 0;
++                    port["rx_queue"] = 0;
++                    port["inode"] = data[4];
++                    port["state"] = statedata == "??" ? "" : statedata;
++                    port["pid"] = data[3];
++                    port["process"] = data[2];
++
++                    ports.push_back(port);
++                }
++            }
++        }  
++    }
++#endif
 +    return ports;
  }
  
@@ -246,7 +303,7 @@
  
      if (!query.empty())
      {
-@@ -235,18 +381,22 @@
+@@ -235,6 +437,9 @@
          for (const auto& line : lines)
          {
              const auto data{Utils::split(line, '|')};
@@ -254,8 +311,11 @@
 +            const auto sectiondata{Utils::split(data[8], '/')};
 +
              nlohmann::json package;
+             std::string vendor       { UNKNOWN_VALUE };
+             std::string email        { UNKNOWN_VALUE };
+@@ -244,14 +449,15 @@
              package["name"] = data[0];
-             package["vendor"] = data[1];
+             package["vendor"] = vendor;
              package["version"] = data[2];
 -            package["install_time"] = UNKNOWN_VALUE;
 +            package["install_time"] = data[6];

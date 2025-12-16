@@ -1,5 +1,5 @@
---- src/Makefile	2025-04-30 02:30:26.000000000 -0700
-+++ src/Makefile	2025-05-09 19:40:18.856441000 -0700
+--- src/Makefile	2025-09-23 06:59:40.000000000 -0700
++++ src/Makefile	2025-10-12 08:02:29.393309000 -0700
 @@ -49,9 +49,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
@@ -12,7 +12,7 @@
  
  ARCH_FLAGS =
  
-@@ -110,7 +112,7 @@
+@@ -112,7 +114,7 @@
  USE_PRELUDE?=no
  USE_ZEROMQ?=no
  USE_GEOIP?=no
@@ -21,16 +21,16 @@
  USE_BIG_ENDIAN=no
  USE_AUDIT=no
  MINGW_HOST=unknown
-@@ -175,6 +177,8 @@
+@@ -177,6 +179,8 @@
  DEFINES+=-DUSER=\"${WAZUH_USER}\"
  DEFINES+=-DGROUPGLOBAL=\"${WAZUH_GROUP}\"
  
-+OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include -I${ROUTER}include -I${CONTENT_MANAGER}include -I${VULNERABILITY_SCANNER}include -I./shared_modules/
++OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include -I${ROUTER}include -I${CONTENT_MANAGER}include -I${VULNERABILITY_SCANNER}include -I${INVENTORY_HARVESTER}include -I./shared_modules/
 +
  ifneq (${TARGET},winagent)
  		DEFINES+=-D${uname_S}
  ifeq (${uname_S},Linux)
-@@ -269,10 +273,10 @@
+@@ -271,13 +275,14 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -43,15 +43,19 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -434,7 +438,6 @@
++		CC?=cc
+ else
+ ifeq (${uname_S},NetBSD)
+ 		DEFINES+=-DNetBSD
+@@ -436,7 +441,6 @@
  
  OSSEC_CFLAGS+=${DEFINES}
  OSSEC_CFLAGS+=-pipe -Wall -Wextra -std=gnu99
--OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include -I${ROUTER}include -I${CONTENT_MANAGER}include -I${VULNERABILITY_SCANNER}include -I./shared_modules/
+-OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include -I${ROUTER}include -I${CONTENT_MANAGER}include -I${VULNERABILITY_SCANNER}include -I${INVENTORY_HARVESTER}include -I./shared_modules/
  
  OSSEC_CFLAGS += ${CFLAGS}
  OSSEC_LDFLAGS += ${LDFLAGS}
-@@ -531,8 +534,8 @@
+@@ -533,8 +537,8 @@
  ifneq (,$(filter ${USE_INOTIFY},YES auto yes y Y 1))
  	DEFINES+=-DINOTIFY_ENABLED
  	ifeq (${uname_S},FreeBSD)
@@ -62,21 +66,21 @@
  		OSSEC_CFLAGS+=-I/usr/local/include
  	endif
  endif
-@@ -957,6 +960,8 @@
+@@ -960,6 +964,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
 +else ifeq (${uname_S},FreeBSD)
-+	EXTERNAL_LIBS += $(LIBCURL_LIB)
++       EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1186,9 +1191,13 @@
+@@ -1193,9 +1199,13 @@
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2 --without-zstd
  endif
  else
 +ifeq (${uname_S},FreeBSD)
-+	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-pthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp --without-zstd --without-libpsl
++	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-pthread" ./configure --with-ssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}"  --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp --without-zstd --without-libpsl
 +else
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-brotli --without-nghttp2 --without-librtmp --without-zstd --without-libpsl
  endif
@@ -85,7 +89,7 @@
  
  
  #### procps #########
-@@ -2295,7 +2304,7 @@
+@@ -2308,7 +2318,7 @@
  #### FIM ######
  
  wazuh-syscheckd: librootcheck.a libwazuh.a ${WAZUHEXT_LIB} build_shared_modules
@@ -94,7 +98,23 @@
  
  #### Monitor #######
  
-@@ -2473,7 +2482,7 @@
+@@ -2340,13 +2350,13 @@
+ os_auth_o := $(os_auth_c:.c=.o)
+ 
+ os_auth/%.o: os_auth/%.c
+-	${OSSEC_CC} ${OSSEC_CFLAGS} -I./os_auth -DARGV0=\"wazuh-authd\" -c $^ -o $@
++	${OSSEC_CC} -I${LOCALBASE}/include/libepoll-shim ${OSSEC_CFLAGS} -I./os_auth -DARGV0=\"wazuh-authd\" -c $^ -o $@
+ 
+ agent-auth: addagent/validate.o os_auth/main-client.o os_auth/ssl.o os_auth/check_cert.o
+ 	${OSSEC_CCBIN} ${OSSEC_LDFLAGS} $^ ${OSSEC_LIBS} -o $@
+ 
+ wazuh-authd: addagent/validate.o os_auth/main-server.o os_auth/local-server.o os_auth/ssl.o os_auth/check_cert.o os_auth/config.o os_auth/authcom.o os_auth/auth.o os_auth/key_request.o os_auth/generate_cert.o
+-	${OSSEC_CCBIN} ${OSSEC_LDFLAGS} $^ ${OSSEC_LIBS} -o $@
++	${OSSEC_CCBIN} ${OSSEC_LDFLAGS} $^ ${OSSEC_LIBS} -lepoll-shim -o $@
+ 
+ #### integratord #####
+ 
+@@ -2486,7 +2496,7 @@
  WPYTHON_DIR := ${INSTALLDIR}/framework/python
  OPTIMIZE_CPYTHON?=no
  WPYTHON_TAR=cpython.tar.gz
@@ -103,7 +123,7 @@
  
  ifneq (,$(filter ${OPTIMIZE_CPYTHON},YES yes y Y 1))
  CPYTHON_FLAGS=--enable-optimizations
-@@ -2487,22 +2496,45 @@
+@@ -2500,22 +2510,45 @@
  endif
  
  ifeq (,$(wildcard ${EXTERNAL_CPYTHON}/python))
@@ -151,7 +171,7 @@
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2519,6 +2551,7 @@
+@@ -2532,6 +2565,7 @@
  
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db

@@ -36,7 +36,7 @@ Wazuh Manager was installed
 
    https://github.com/alonsobsd/wazuh-freebsd
  
-   Decoders and rules are used for extract some /var/log/userlog and 
+   Decoders and rules are used to extract some /var/log/userlog and 
    /var/log/messages entries from FreeBSD agents. It is necessary add a localfile
    entry to /var/ossec/etc/ossec.conf
 
@@ -44,8 +44,34 @@ Wazuh Manager was installed
     <log_format>syslog</log_format>
     <location>/var/log/userlog</location>
   </localfile>
+
+7) Vulnerability detector and Indexer connector are disabled by default. If you
+   want to use them, don't forget to configure and enable them from 
+   /var/ossec/etc/ossec.conf file. Also, you will need download vd database file
+   to Wazuh tmp directory.
+
+  # cd /var/ossec/tmp && fetch http://packages.wazuh.com/deps/vulnerability_model_database/vd_1.0.0_vd_4.13.0.tar.xz
+  # chmod 640 /var/ossec/tmp/vd_1.0.0_vd_4.13.0.tar.xz
+  # chown wazuh:wazuh /var/ossec/tmp/vd_1.0.0_vd_4.13.0.tar.xz
+
+  Take on mind, a valid certificate is necessary to connect Indexer connector
+  (Wazuh manager) to Wazuh indexer (OpenSearch).
+
+8) Save Wazuh indexer username and password into the Wazuh keystore.
+
+  # export WAZUH_HOME=/var/ossec
+  # echo '<INDEXER_USERNAME>' | /var/ossec/bin/wazuh-keystore -f indexer -k username
+  # echo '<INDEXER_PASSWORD>' | /var/ossec/bin/wazuh-keystore -f indexer -k password
+
+  By default, INDEXER_USERNAME and INDEXER_PASSWORD are admin and admin.
+
+9) Use a certificate generated previously. For example, you can use logstash 
+   certificates. Otherwise, you can use a simplified certificates generator
+   script for this task. Download it from the following url:
+
+   https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz
   
-7) Add Wazuh manager to /etc/rc.conf
+10) Add Wazuh manager to /etc/rc.conf
 
   # sysrc wazuh_manager_enable="YES"
 
@@ -53,11 +79,11 @@ Wazuh Manager was installed
   
   # service wazuh-manager enable
 
-8) Start Wazuh manager
+11) Start Wazuh manager
 
   # service wazuh-manager start
 
-9) Enjoy it ;)
+12) Enjoy it ;)
 EOM
 }
 ]

@@ -1,9 +1,8 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.12.0
-PORTREVISION=	4
+DISTVERSION=	4.14.1
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/40/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/47/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -42,20 +41,23 @@ USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes OPTIMIZE_CPYTHON=no
 
+# WITH_CCACHE_BUILD=	yes
+# CCACHE_DIR=		/zdata/ccache
+
 WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
 WAZUH_EXTRAFILE=	alonsobsd-${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME}_GH0${EXTRACT_SUFX}
-WAZUH_EXTRAFILE_TAGNAME=cd0051b
+WAZUH_EXTRAFILE_TAGNAME=2f1307c
 
 EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			benchmark.tar.gz:wazuh_sources \
 			bzip2.tar.gz:wazuh_sources \
 			cJSON.tar.gz:wazuh_sources \
 			cpp-httplib.tar.gz:wazuh_sources \
-			cpython-3.11.13.tar.gz:wazuh_cache \
+			cpython-3.11.14.tar.gz:wazuh_cache \
 			curl.tar.gz:wazuh_sources \
 			flatbuffers.tar.gz:wazuh_sources \
 			googletest.tar.gz:wazuh_sources \
-			http-request.tar.gz:wazuh_cache \
+			http-request-cd50797.tar.gz:wazuh_cache \
 			jemalloc.tar.gz:wazuh_sources \
 			libarchive.tar.gz:wazuh_sources \
 			libdb.tar.gz:wazuh_sources \
@@ -71,6 +73,7 @@ EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			popt.tar.gz:wazuh_sources \
 			procps.tar.gz:wazuh_sources \
 			rocksdb.tar.gz:wazuh_sources \
+			simdjson.tar.gz:wazuh_sources \
 			sqlite.tar.gz:wazuh_sources \
 			zlib.tar.gz:wazuh_sources
 
@@ -101,7 +104,6 @@ USERS=		${WAZUH_USER}
 GROUPS=		${WAZUH_GROUP}
 
 SUB_FILES=	pkg-message
-PLIST_SUB+=	PYTHON_DISTVERSION=${PYTHON_REL:C|^([0-9])([0-9]{2})([0-9]+)|\1.\2.\3|}
 CONFLICTS=	ossec-* wazuh-agent
 
 WZBIN_FILES=	agent_control wazuh-logcollector wazuh-execd  manage_agents wazuh-modulesd \
@@ -113,7 +115,7 @@ WZARBIN_FILES=	default-firewall-drop pf npf ipfw firewalld-drop disable-account 
 		host-deny ip-customblock restart-wazuh route-null kaspersky wazuh-slack
 
 WZSHEBANG_FILES=chardetect connexion cygdb cython cythonize f2py fixup_pubsub_v1_keywords.py \
-		futurize httpx jp.py jsonschema normalizer openapi-spec-validator pasteurize \
+		httpx jp.py jsonschema normalizer openapi-spec-validator \
 		pyrsa-decrypt pyrsa-encrypt pyrsa-keygen pyrsa-priv2pub pyrsa-sign \
 		pyrsa-verify rstpep2html.py rst2s5.py rst2xetex.py rst2man.py rst2odt.py \
 		rst2latex.py rst2pseudoxml.py rst2odt_prepstyles.py rst2html.py rst2html5.py \
@@ -132,7 +134,7 @@ WAZUHMOD750=	/ /logs/wazuh /logs/archives /logs/alerts /logs/firewall \
 		/wodles/docker /wodles/gcloud /wodles/gcloud/buckets /wodles/gcloud/pubsub \
 		/stats /integrations
 
-WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
+WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/lists/malicious-ioc /etc/rootcheck \
 		/etc/rules /etc/shared/default /logs /queue/agent-groups \
 		/queue/alerts /queue/cluster /queue/fim /queue/fim/db \
 		/queue/rids /queue/sockets /queue/tasks /etc /etc/shared \
@@ -150,7 +152,7 @@ WZPYTHONWHEELS=	cffi-1.15.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.2.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		numpy-1.26.4-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-5.9.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
-		pyarrow-20.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-21.0.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		pyyaml-6.0.1-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		rpds_py-0.15.2-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.17.0-cp311-cp311-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
@@ -166,12 +168,12 @@ IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif
 
 .if ${ARCH} == "aarch64"
-FBSD14_PATCH_LEVEL=     _p2
+FBSD14_PATCH_LEVEL=	_p5
 .endif
 
 .if ${ARCH} != "aarch64"
-FBSD13_PATCH_LEVEL=	#
-FBSD14_PATCH_LEVEL=	_p2
+FBSD13_PATCH_LEVEL=	_p6
+FBSD14_PATCH_LEVEL=	_p5
 .endif
 
 .if ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
@@ -184,10 +186,15 @@ FBSD_VERSION_BASE=freebsd_14_3_release${FBSD14_PATCH_LEVEL}
 FBSD_MAJOR_VERSION=14
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
-.elif ${OSVERSION} >= 1500000
-FBSD_VERSION_BASE=freebsd_15_0_current
+.elif ${OSVERSION} >= 1500000 && ${OSVERSION} < 1600000
+FBSD_VERSION_BASE=freebsd_15_0_release
 FBSD_MAJOR_VERSION=15
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd15-${ARCH}-${DISTVERSION}
+DISTFILES+=     ${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
+.elif ${OSVERSION} >= 1600000
+FBSD_VERSION_BASE=freebsd_16_0_current
+FBSD_MAJOR_VERSION=16
+WAZUH_CACHENAME=${PORTNAME}-cache-fbsd16-${ARCH}-${DISTVERSION}
 DISTFILES+=     ${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .else
 IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
@@ -195,7 +202,7 @@ IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 
 post-extract:
 .for FILE in ${EXTERNAL_DISTFILES}
-.if ${FILE} == "http-request.tar.gz:wazuh_cache"
+.if ${FILE} == "http-request-cd50797.tar.gz:wazuh_cache"
 	@cd ${WRKSRC}/src/shared_modules && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_cache//} ${EXTRACT_AFTER_ARGS}
 .else
 	@cd ${WRKSRC}/src/external && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_sources//:S/:wazuh_cache//} ${EXTRACT_AFTER_ARGS}
@@ -216,6 +223,9 @@ post-extract:
 	@${MKDIR} ${WRKSRC}/ruleset/sca/freebsd
 	@cd ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/sca && ${CP} *.yml ${WRKSRC}/ruleset/sca/freebsd/
 	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${MV} "{}" "{}.disabled" \;
+
+	${CP} ${FILESDIR}/pthreads_portable.c ${WRKSRC}/src/shared/
+	${CP} ${FILESDIR}/pthreads_portable.h ${WRKSRC}/src/headers/
 
 post-patch:
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
@@ -290,6 +300,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/local_rules.xml ${STAGEDIR}${WAZUHPREFIX}/etc/rules/local_rules.xml.sample
 
 	${INSTALL_DATA} ${WRKSRC}/ruleset/lists/amazon/* ${STAGEDIR}${WAZUHPREFIX}/etc/lists/amazon/
+	${INSTALL_DATA} ${WRKSRC}/ruleset/lists/malicious-ioc/* ${STAGEDIR}${WAZUHPREFIX}/etc/lists/malicious-ioc/
 	${INSTALL_DATA} ${WRKSRC}/ruleset/lists/audit-keys ${STAGEDIR}${WAZUHPREFIX}/etc/lists/audit-keys
 	${INSTALL_DATA} ${WRKSRC}/ruleset/lists/security-eventchannel ${STAGEDIR}${WAZUHPREFIX}/etc/lists/security-eventchannel
 
@@ -368,6 +379,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/src/libwazuhshared.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/build/shared_modules/content_manager/libcontent_manager.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/build/shared_modules/indexer_connector/libindexer_connector.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/build/wazuh_modules/inventory_harvester/libinventory_harvester.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/build/shared_modules/router/librouter.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/build/wazuh_modules/vulnerability_scanner/libvulnerability_scanner.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/data_provider/build/lib/libsysinfo.so ${STAGEDIR}${WAZUHPREFIX}/lib
@@ -379,6 +391,8 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/src/wazuh_modules/syscollector/build/lib/libsyscollector.so ${STAGEDIR}${WAZUHPREFIX}/lib
 
 	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/vulnerability_scanner/indexer/template/index-template.json ${STAGEDIR}${WAZUHPREFIX}/templates/vd_states_template.json
+	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/vulnerability_scanner/indexer/template/update-mappings.json ${STAGEDIR}${WAZUHPREFIX}/templates/vd_states_update_mappings.json
+	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/inventory_harvester/indexer/template/wazuh-states-inventory-* ${STAGEDIR}${WAZUHPREFIX}/templates/
 
 	${INSTALL_DATA} ${WRKSRC}/VERSION.json ${STAGEDIR}${WAZUHPREFIX}
 

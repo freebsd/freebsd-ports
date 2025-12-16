@@ -1,5 +1,5 @@
---- src/shared_modules/router/CMakeLists.txt.orig	2024-10-21 18:20:47.157822000 -0700
-+++ src/shared_modules/router/CMakeLists.txt	2024-10-21 18:24:54.294400000 -0700
+--- src/shared_modules/router/CMakeLists.txt	2025-09-23 06:59:40.000000000 -0700
++++ src/shared_modules/router/CMakeLists.txt	2025-10-11 22:43:21.449602000 -0700
 @@ -19,6 +19,7 @@
  
  # Include directories
@@ -8,12 +8,12 @@
  
  include_directories(${SRC_FOLDER})
  include_directories(${SRC_FOLDER}/headers)
-@@ -39,7 +40,7 @@
+@@ -42,7 +43,7 @@
      ${ROUTER_SRC}
      )
  
--target_link_libraries(router gcc_s flatbuffers)
-+target_link_libraries(router gcc_s flatbuffers epoll-shim)
+-target_link_libraries(router gcc_s flatbuffers wazuhext simdjson)
++target_link_libraries(router gcc_s flatbuffers wazuhext simdjson epoll-shim)
  
  set_target_properties(router PROPERTIES
          BUILD_RPATH_USE_ORIGIN TRUE
