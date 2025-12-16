@@ -1,20 +1,23 @@
 PORTNAME=	jericho-html
-PORTVERSION=	3.2
+PORTVERSION=	3.4
 CATEGORIES=	www java
 MASTER_SITES=	SF/jerichohtml/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Java library to analyse and manipulate HTML
-WWW=		https://jerichohtml.sourceforge.net/doc/index.html
+WWW=		https://sourceforge.net/projects/jerichohtml/
+
+LICENSE=		APACHE20 EPL LGPL21+
+LICENSE_COMB=	dual
 
 USES=		java zip
 
-INTERFACES:=	"compile-time-dependencies/slf4j-api-1.6.1.jar:\
+INTERFACES:=	"compile-time-dependencies/slf4j-api-1.7.12.jar:\
 		compile-time-dependencies/commons-logging-api-1.1.1.jar:\
-		compile-time-dependencies/log4j-1.2.16.jar"
+		compile-time-dependencies/log4j-api-2.4.1.jar"
 
 PORTDOCS=	*
-PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_FILES+=	${JAVAJARDIR}/${PORTNAME}.jar
 
 OPTIONS_DEFINE=	DOCS
 
