@@ -10,7 +10,7 @@ WWW=		https://libexif.github.io/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe gmake libtool localbase pathfix pkgconfig tar:bzip2
+USES=		cpe gmake libtool localbase pkgconfig tar:bzip2
 
 CONFIGURE_ARGS=	--disable-docs
 GNU_CONFIGURE=	yes
