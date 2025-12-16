@@ -1,5 +1,6 @@
 PORTNAME=	cable_ready
 PORTVERSION=	5.0.6
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +12,11 @@ WWW=		https://cableready.stimulusreflex.com/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-actionpack71>=5.2:www/rubygem-actionpack71 \
-		rubygem-actionview71>=5.2:devel/rubygem-actionview71 \
-		rubygem-activesupport71>=5.2:devel/rubygem-activesupport71 \
+RUN_DEPENDS=	rubygem-actionpack81>=5.2:www/rubygem-actionpack81 \
+		rubygem-actionview81>=5.2:devel/rubygem-actionview81 \
+		rubygem-activesupport81>=5.2:devel/rubygem-activesupport81 \
 		rubygem-observer>=0.1<1:devel/rubygem-observer \
-		rubygem-railties71>=5.2:www/rubygem-railties71 \
+		rubygem-railties81>=5.2:www/rubygem-railties81 \
 		rubygem-thread-local>=1.1.0:devel/rubygem-thread-local
 
 USES=		gem
