@@ -15,7 +15,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libidn.so:dns/libidn \
 		libntlm.so:security/libntlm
 
-USES=		charsetfix libtool pathfix pkgconfig ssl
+USES=		charsetfix libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
