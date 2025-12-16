@@ -12,7 +12,7 @@ WWW=		https://htmlcxx.sourceforge.net/ \
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LGPL_V2
 
-USES=		bison:alias compiler:c++14-lang iconv libtool localbase:ldflags pathfix
+USES=		bison:alias compiler:c++14-lang iconv libtool localbase:ldflags
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
