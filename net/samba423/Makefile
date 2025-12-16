@@ -162,8 +162,7 @@ EXTRA_PATCHES=			\
 				${PATCHDIR}/0028-s3-lib-system-add-FreeBSD-proc_fd_pattern.patch \
 
 SUB_FILES=			pkg-message README.FreeBSD
-SUB_LIST=			PKGCONFIGDIR=${_PKGCONFIGDIR_REL} \
-				${_SAMBA_SUB}
+SUB_LIST=			${_SAMBA_SUB}
 
 # PLIST must be defined here explicitly as we append to PLIST later on to
 # handle extra pkg-plist files like pkg-plist.python.
@@ -172,8 +171,7 @@ PLIST_DIRS=			${SAMBA_MODULESDIR} \
 				${_MODULE_CLASSES:S|^|${SAMBA_MODULESDIR}/|}
 # ":C|_|/|:C|-|_|" is a workaround for turning "nss-info_*" modules into "nss_info/*".
 PLIST_FILES+=			${_SHARED_MODULES:C|_|/|:C|-|_|:S|^|${SAMBA_MODULESDIR}/|:S|$|.so|}
-PLIST_SUB=			PKGCONFIGDIR=${_PKGCONFIGDIR_REL} \
-				${_SAMBA_SUB}
+PLIST_SUB=			${_SAMBA_SUB}
 PORTDOCS=			README.FreeBSD
 
 OPTIONS_DEFINE=			AD_DC ADS CLUSTER CUPS DOCS FAM LDAP GPGME \
@@ -398,7 +396,8 @@ _SHARED_MODULES+=		vfs_acl_tdb vfs_acl_xattr vfs_aio_fork vfs_aio_pthread \
 				vfs_widelinks vfs_worm vfs_xattr_tdb vfs_zfsacl
 
 _SAMBA_MAJVERNAME=		samba4
-_SAMBA_SUB=			SAMBA4_LOGDIR="${_LOGDIR}" \
+_SAMBA_SUB=			PKGCONFIGDIR=${_PKGCONFIGDIR_REL} \
+				SAMBA4_LOGDIR="${_LOGDIR}" \
 				SAMBA4_RUNDIR="${_RUNDIR}" \
 				SAMBA4_LOCKDIR="${_LOCKDIR}" \
 				SAMBA4_LIBDIR="${SAMBA_LIBDIR}" \
