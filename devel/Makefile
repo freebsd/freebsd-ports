@@ -1070,6 +1070,7 @@
     SUBDIR += ittapi
     SUBDIR += ivykis
     SUBDIR += jam
+    SUBDIR += janet-lsp
     SUBDIR += jansson
     SUBDIR += java-findbugs
     SUBDIR += jclassinfo
