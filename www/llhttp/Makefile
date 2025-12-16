@@ -11,7 +11,7 @@ WWW=		https://llhttp.org/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
-USES=		cmake cpe pathfix
+USES=		cmake cpe
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
