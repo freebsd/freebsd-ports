@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcbor.so:devel/libcbor
 
-USES=		cmake:testing compiler:c11 pathfix pkgconfig ssl
+USES=		cmake:testing compiler:c11 pkgconfig ssl
 
 CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
 CMAKE_OFF=	BUILD_TESTS \
