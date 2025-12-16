@@ -1,3 +1,3 @@
-TIMESTAMP = 1764921123
-SHA256 (freebsd-pkg-2.4.99.1-daa6b447e_GH0.tar.gz) = 1f2e2c72c48939089f4ea460a2981bd9a63490f31dc1247be68bcc7cf20febf9
-SIZE (freebsd-pkg-2.4.99.1-daa6b447e_GH0.tar.gz) = 16475796
+TIMESTAMP = 1765891405
+SHA256 (freebsd-pkg-2.4.99.2-2d18505bf_GH0.tar.gz) = 05c3eeb5d394bf9fc545fd8aefff2a2f3f83d57468afa2bb98d226a350649e9d
+SIZE (freebsd-pkg-2.4.99.2-2d18505bf_GH0.tar.gz) = 16512097
