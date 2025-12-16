@@ -1,6 +1,6 @@
 PORTNAME=	vfc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.5
+DISTVERSION=	2.1.6
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +29,12 @@ CMAKE_TESTING_ON=	VFC_BUILD_TESTS
 
 CXXFLAGS+=	${CXXFLAGS_${ARCH}}
 CXXFLAGS_armv7=	-mfpu=neon-fp16
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tu}
+
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	*
 
 # 100% tests passed, 0 tests failed out of 4
 
