@@ -1,6 +1,6 @@
 --- pyproject.toml.orig	2025-07-02 15:55:37 UTC
 +++ pyproject.toml
-@@ -2,10 +2,10 @@ requires = [
+@@ -2,11 +2,11 @@ requires = [
  # These are strictly build requirements. Runtime requirements are listed in
  # INSTALL_REQUIRES in setup.py
  requires = [
@@ -9,8 +9,10 @@
      "cython>=3.0.10,<4",  # Sync with CYTHON_MIN_VER in setup
 -    "numpy>=2.0.0,<3",
 -    "scipy>=1.13,<2",
+-    "setuptools_scm[toml]>=8,<9"
 +    "numpy>=1.22.3,<3",
 +    "scipy>=1.8,<2",
-     "setuptools_scm[toml]>=8,<9"
++    "setuptools_scm[toml]>=8,<10"
  ]
  build-backend = "setuptools.build_meta"
+ 
