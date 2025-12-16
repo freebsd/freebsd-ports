@@ -12,7 +12,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
-		${LOCALBASE}/libdata/pkgconfig/bash-completion.pc:shells/bash-completion
+		bash-completion>=0:shells/bash-completion
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
 USES=		gettext gnome localbase meson pkgconfig python:build \

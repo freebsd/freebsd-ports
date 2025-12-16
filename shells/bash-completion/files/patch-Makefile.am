@@ -1,13 +1,11 @@
-Note that the pkgconfigdir line has been changed by USES=pathfix.
-
---- Makefile.am.orig	2020-07-25 08:25:49 UTC
+--- Makefile.am.orig	2025-10-31 14:03:32 UTC
 +++ Makefile.am
-@@ -6,7 +6,7 @@ pkgdata_DATA = bash_completion
+@@ -6,7 +6,7 @@ compat_DATA = bash_completion.d/000_bash_completion_co
  compatdir = $(sysconfdir)/bash_completion.d
- compat_DATA =
+ compat_DATA = bash_completion.d/000_bash_completion_compat.bash
  
 -profiledir = $(sysconfdir)/profile.d
 +profiledir = $(prefix)/share/bash-completion
  profile_DATA = bash_completion.sh
  
- pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfigdir = $(datadir)/pkgconfig

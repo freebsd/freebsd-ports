@@ -1,5 +1,4 @@
 etc/bash_completion.d/000_bash_completion_compat.bash
-libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/bash_completion
 %%DATADIR%%/bash_completion.sh
 %%DATADIR%%/completions/2to3
@@ -1079,3 +1078,4 @@ libdata/pkgconfig/bash-completion.pc
 %%DATADIR%%/helpers/python
 %%CMAKE_MODULES%%share/cmake/bash-completion/bash-completion-config-version.cmake
 %%CMAKE_MODULES%%share/cmake/bash-completion/bash-completion-config.cmake
+share/pkgconfig/bash-completion.pc

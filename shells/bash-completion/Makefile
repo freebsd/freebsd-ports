@@ -1,5 +1,6 @@
 PORTNAME=	bash-completion
 PORTVERSION=	2.17.0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/scop/bash-completion/releases/download/${PORTVERSION}/
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 TEST_DEPENDS=	runtest:misc/dejagnu \
 		${LOCALBASE}/lib/tcllib/cmdline/cmdline.tcl:devel/tcllib
 
-USES=		autoreconf gmake pathfix tar:xz
+USES=		autoreconf gmake tar:xz
 
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
