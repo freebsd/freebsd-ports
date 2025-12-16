@@ -1,5 +1,5 @@
 PORTNAME=	buku
-PORTVERSION=	5.0
+PORTVERSION=	5.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www python
 
@@ -23,8 +23,6 @@ USE_PYTHON=	autoplist cryptography noflavors pep517
 
 NO_ARCH=	yes
 
-PLIST_FILES=	share/man/man1/buku.1.gz
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun
 
@@ -41,9 +39,6 @@ ZSH_PLIST_FILES=	share/zsh/site-functions/_buku
 
 post-extract:
 	@${RM} -r ${WRKSRC}/bukuserver
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/buku.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 post-install-BASH-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d

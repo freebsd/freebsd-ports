@@ -1,0 +1,26 @@
+--- pyproject.toml.orig	2025-12-07 15:02:42 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ readme = "README.md"
+ description = "Bookmark manager like a text-based mini-web."
+ keywords = ["cli", "bookmarks", "tag", "utility"]
+ readme = "README.md"
+-license = "GPL-3.0-or-later"
++license = { text = "GPL-3.0-or-later" }
+ authors = [{ name = "Arun Prakash Jana", email = "engineerarun@gmail.com" }]
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+@@ -87,7 +87,6 @@ buku = "buku:main"
+ 
+ [project.scripts]
+ buku = "buku:main"
+-bukuserver = "bukuserver.server:cli"
+ 
+ [tool.setuptools]
+ py-modules = ["buku"]
+@@ -100,5 +99,5 @@ version = { attr = "buku.__version__" }
+ version = { attr = "buku.__version__" }
+ 
+ [build-system]
+-requires = ["setuptools>=77.0.3"]
++requires = ["setuptools>=61"]
+ build-backend = "setuptools.build_meta"
