@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-client
-PORTVERSION=	8.6.3
+PORTVERSION=	8.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,10 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.5:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-core>=4.12:devel/py-jupyter-core@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-core>=5.1:devel/py-jupyter-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.8.2:devel/py-python-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyzmq>=23.0:net/py-pyzmq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tornado>=6.2:www/py-tornado@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyzmq>=25.0:net/py-pyzmq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tornado>=6.4.1:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.3:devel/py-traitlets@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipykernel>=6.14:devel/py-ipykernel@${PY_FLAVOR} \
