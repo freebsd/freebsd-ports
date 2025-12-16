@@ -1,5 +1,5 @@
 PORTNAME=	tiledb
-PORTVERSION=	2.29.2
+PORTVERSION=	2.30.0
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,19 +10,17 @@ WWW=		https://tiledb.com/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	libcapnp.so:devel/capnproto1 \
+BUILD_DEPENDS=	capnproto1>=1.2.0<1.2.0_99:devel/capnproto1 \
+		clipp>=0:devel/clipp \
+		nlohmann-json>=0:devel/nlohmann-json
+LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2 \
+		libcapnp.so:devel/capnproto1 \
 		libcurl.so:ftp/curl \
 		libfmt.so:devel/libfmt \
 		liblz4.so:archivers/liblz4 \
 		libpng.so:graphics/png \
+		libspdlog.so:devel/spdlog \
 		libzstd.so:archivers/zstd
-RUN_DEPENDS=	capnproto1>=1.0.1:devel/capnproto1 \
-		clipp>=1.2.3_1:devel/clipp \
-		curl>=7.74.0:ftp/curl \
-		liblz4>=1.9.3,1:archivers/liblz4 \
-		spdlog>=1.11.0:devel/spdlog \
-		zstd>=1.4.8:archivers/zstd
 
 USES=		cmake compiler:c++17-lang localbase:ldflags pkgconfig ssl
 
