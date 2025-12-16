@@ -16,7 +16,7 @@ LICENSE_NAME=	ICU license
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES+=		compiler:c++11-lib cpe gmake pathfix python:build tar:tgz
+USES+=		compiler:c++11-lib cpe gmake python:build tar:tgz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-layoutex
