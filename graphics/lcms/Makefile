@@ -13,7 +13,7 @@ WWW=		https://www.littlecms.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe libtool localbase:ldflags pathfix
+USES=		cpe libtool localbase:ldflags
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
