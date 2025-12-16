@@ -1,5 +1,5 @@
 PORTNAME=	active_model_serializers
-PORTVERSION=	0.10.15
+PORTVERSION=	0.10.16
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
