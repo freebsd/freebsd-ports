@@ -15,6 +15,7 @@
 %%DATADIR%%/symbols/Analog_DAC.kicad_sym
 %%DATADIR%%/symbols/Analog_Switch.kicad_sym
 %%DATADIR%%/symbols/Audio.kicad_sym
+%%DATADIR%%/symbols/Auxiliary_Items.kicad_sym
 %%DATADIR%%/symbols/Battery_Management.kicad_sym
 %%DATADIR%%/symbols/Buffer.kicad_sym
 %%DATADIR%%/symbols/CPLD_Altera.kicad_sym
