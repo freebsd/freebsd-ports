@@ -1,6 +1,7 @@
 include/quic/QuicConstants.h
 include/quic/QuicException.h
 include/quic/QuicTLSException.h
+include/quic/QuicTypealiases.h
 include/quic/api/FollyQuicAsyncUDPSocket.h
 include/quic/api/FollyQuicEventBase.h
 include/quic/api/HighResQuicTimer.h
@@ -183,7 +184,6 @@ include/quic/state/QuicAckFrequencyFunctions.h
 include/quic/state/QuicConnectionStats.h
 include/quic/state/QuicPacingFunctions.h
 include/quic/state/QuicPathManager.h
-include/quic/state/QuicPriorityQueue.h
 include/quic/state/QuicStateFunctions.h
 include/quic/state/QuicStreamFunctions.h
 include/quic/state/QuicStreamGroupRetransmissionPolicy.h
