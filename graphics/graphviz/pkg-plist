@@ -169,7 +169,7 @@ lib/libcgraph.so.%%SH_VERSION_SHORT%%.0.4
 lib/libgvc.la
 lib/libgvc.so
 lib/libgvc.so.7
-lib/libgvc.so.7.0.4
+lib/libgvc.so.7.0.5
 lib/libgvpr.la
 lib/libgvpr.so
 lib/libgvpr.so.2
