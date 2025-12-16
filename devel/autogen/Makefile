@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		gmktemp:sysutils/coreutils
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake gnome guile:2.2 libtool pathfix perl5 pkgconfig shebangfix tar:xz
+USES=		gmake gnome guile:2.2 libtool perl5 pkgconfig shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_PERL5=	build
 
