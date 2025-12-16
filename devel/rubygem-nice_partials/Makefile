@@ -1,5 +1,6 @@
 PORTNAME=	nice_partials
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/bullet-train-co/nice_partials
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE.txt
 
-RUN_DEPENDS=	rubygem-actionview71>=4.2.6:devel/rubygem-actionview71
+RUN_DEPENDS=	rubygem-actionview81>=4.2.6:devel/rubygem-actionview81
 
 USES=		gem
 
