@@ -15,7 +15,7 @@ LICENSE_FILE_MPL11=	${WRKSRC}/docs/COPYING.MPL
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		cmake compiler:c11 cpe pathfix
+USES=		cmake compiler:c11 cpe
 
 CMAKE_OFF=	FORTIFY \
 		MSVC_STATIC_RUNTIME \
