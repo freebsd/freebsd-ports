@@ -14,7 +14,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		liburiparser.so:net/uriparser
 
-USES=		cmake compiler:c++11-lang minizip pathfix
+USES=		cmake compiler:c++11-lang minizip
 
 CMAKE_ARGS=	-DEXPAT_LIBRARY=${LOCALBASE}/lib/libexpat.so
 CMAKE_OFF=	BUILD_TESTING WITH_JAVA WITH_PYTHON WITH_SWIG
