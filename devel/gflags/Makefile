@@ -10,7 +10,7 @@ WWW=		https://github.com/gflags/gflags
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		cmake:testing compiler:c++11-lang pathfix shebangfix
+USES=		cmake:testing compiler:c++11-lang shebangfix
 
 CMAKE_ARGS=	-DGFLAGS_NAMESPACE:STRING=gflags
 CMAKE_OFF=	BUILD_TESTING \
