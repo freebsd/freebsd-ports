@@ -20,7 +20,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		cmake cpe localbase:ldflags jpeg pathfix pkgconfig
+USES=		cmake cpe localbase:ldflags jpeg pkgconfig
 
 CMAKE_OFF=	BUILD_DOC \
 		BUILD_JAVA \
