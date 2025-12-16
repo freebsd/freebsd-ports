@@ -10,7 +10,7 @@ WWW=		https://log4cpp.sourceforge.net/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pathfix
+USES=		autoreconf compiler:c++11-lang gmake libtool
 
 CONFIGURE_ARGS=	--disable-dot --disable-html-docs --disable-latex-docs
 GNU_CONFIGURE=	yes
