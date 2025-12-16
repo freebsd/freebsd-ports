@@ -11,7 +11,7 @@ WWW=		https://www.pell.portland.or.us/~orc/Code/discount/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		cpe pathfix pkgconfig tar:bz2
+USES=		cpe pkgconfig tar:bz2
 
 CFLAGS+=	-fPIC
 CONFIGURE_ARGS=	--prefix=${PREFIX} --shared
