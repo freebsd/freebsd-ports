@@ -1,5 +1,5 @@
 PORTNAME=	smart_proxy_salt
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	foreman-proxy>=1.8.0:net/foreman-proxy \
 		${PYTHON_PKGNAMEPREFIX}salt>0:sysutils/py-salt@${PY_FLAVOR} \
-		rubygem-smart_proxy_dynflow>=0.5.0<1:sysutils/rubygem-smart_proxy_dynflow
+		rubygem-smart_proxy_dynflow>=0.8<1:sysutils/rubygem-smart_proxy_dynflow
 
 USES=		cpe gem python shebangfix
 
