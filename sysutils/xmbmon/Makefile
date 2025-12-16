@@ -1,16 +1,18 @@
 PORTNAME=	xmbmon
-PORTVERSION=	205
+DISTVERSION=	205
 PORTREVISION=	16
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/${PORTNAME}/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	je3kmz
+DISTNAME=	${PORTNAME}${DISTVERSION}
 
 PATCH_SITES+=	${MASTER_SITES}
-PATCHFILES+=	${PORTNAME}${PORTVERSION}_fflush.patch
+PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
+PATCHFILES+=	${PORTNAME}${DISTVERSION}_fflush.patch
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	MB monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
-WWW=		http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/download.html
+WWW=		https://web.archive.org/web/20250329211339/http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/download.html
 
 LICENSE=	BSD2CLAUSE
 
@@ -27,7 +29,7 @@ ASUS_DESC=	Enable A7N8X-VM support
 CLI_DESC=	CLI support only
 SMB_DESC=	Enable smb(4) support
 
-ASUS_PATCHFILES=	${PORTNAME}${PORTVERSION}_A7N8X-VM.patch
+ASUS_PATCHFILES=	${PORTNAME}${DISTVERSION}_A7N8X-VM.patch
 CLI_PLIST_FILES=	"@mode 4555"\
 			bin/mbmon \
 			@mode\
