@@ -12,7 +12,7 @@ WWW=		https://libgeos.org/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing compiler:c++14-lang pathfix tar:bzip2
+USES=		cmake:testing compiler:c++14-lang tar:bzip2
 
 CMAKE_OFF=	BUILD_BENCHMARKS \
 		BUILD_TESTING \
