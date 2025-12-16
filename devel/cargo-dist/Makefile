@@ -1,6 +1,6 @@
 PORTNAME=	cargo-dist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.30.2
+DISTVERSION=	0.30.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,12 +24,12 @@ GH_ACCOUNT=	axodotdev
 CARGO_CRATES=	addr2line-0.25.1 \
 		adler2-2.0.0 \
 		aes-0.8.4 \
-		ahash-0.8.11 \
+		ahash-0.8.12 \
 		aho-corasick-1.1.3 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.14 \
-		anstyle-1.0.8 \
+		anstyle-1.0.13 \
 		anstyle-parse-0.2.4 \
 		anstyle-query-1.0.3 \
 		anstyle-wincon-3.0.3 \
@@ -56,21 +56,22 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		bzip2-0.6.0 \
 		camino-1.2.1 \
 		cargo-platform-0.1.8 \
+		cargo-platform-0.3.1 \
 		cargo-wix-0.3.9 \
 		cargo_metadata-0.18.1 \
-		cargo_metadata-0.19.2 \
-		cc-1.0.98 \
-		cfg-expr-0.18.0 \
-		cfg-if-1.0.0 \
+		cargo_metadata-0.23.1 \
+		cc-1.2.44 \
+		cfg-expr-0.20.3 \
+		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.38 \
 		cipher-0.4.4 \
-		clap-4.5.50 \
-		clap-cargo-0.17.1 \
-		clap_builder-4.5.50 \
+		clap-4.5.53 \
+		clap-cargo-0.18.3 \
+		clap_builder-4.5.53 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.4 \
-		color-backtrace-0.7.1 \
+		color-backtrace-0.7.2 \
 		colorchoice-1.0.1 \
 		comfy-table-7.2.1 \
 		console-0.15.10 \
@@ -107,9 +108,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		errno-0.3.13 \
 		fastrand-2.1.0 \
 		filetime-0.2.23 \
+		find-msvc-tools-0.1.4 \
 		fixedbitset-0.5.7 \
-		flate2-1.1.5 \
+		flate2-1.1.7 \
 		fnv-1.0.7 \
+		foldhash-0.1.5 \
 		form_urlencoded-1.2.2 \
 		futures-channel-0.3.30 \
 		futures-core-0.3.30 \
@@ -119,8 +122,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		getrandom-0.2.15 \
 		getrandom-0.3.3 \
 		gimli-0.32.3 \
-		goblin-0.8.2 \
-		guppy-0.17.13 \
+		goblin-0.10.4 \
+		guppy-0.17.23 \
 		guppy-workspace-hack-0.1.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.15.2 \
@@ -157,7 +160,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		indexmap-1.9.3 \
 		indexmap-2.11.4 \
 		inout-0.1.3 \
-		insta-1.43.2 \
+		insta-1.44.3 \
 		ipnet-2.9.0 \
 		is-terminal-0.4.12 \
 		is_ci-1.2.0 \
@@ -173,7 +176,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		libbz2-rs-sys-0.2.2 \
 		libc-0.2.174 \
 		libyml-0.0.4 \
-		libz-rs-sys-0.5.1 \
 		linux-raw-sys-0.4.14 \
 		linux-raw-sys-0.9.4 \
 		litemap-0.7.3 \
@@ -190,7 +192,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		miette-derive-5.10.0 \
 		miette-derive-7.6.0 \
 		mime-0.3.17 \
-		minijinja-2.12.0 \
+		minijinja-2.14.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.8.9 \
 		mio-1.0.1 \
@@ -204,7 +206,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		num-conv-0.1.0 \
 		num-traits-0.2.19 \
 		object-0.37.3 \
-		once_cell-1.20.2 \
+		once_cell-1.21.3 \
 		openssl-probe-0.1.5 \
 		oro-common-0.3.34 \
 		oro-package-spec-0.3.34 \
@@ -216,7 +218,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		pbkdf2-0.12.2 \
 		percent-encoding-2.3.2 \
 		peresil-0.3.0 \
-		petgraph-0.7.1 \
+		petgraph-0.8.3 \
 		pin-project-1.1.5 \
 		pin-project-internal-1.1.5 \
 		pin-project-lite-0.2.14 \
@@ -237,11 +239,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		rand_core-0.6.4 \
 		redox_syscall-0.4.1 \
 		redox_syscall-0.5.1 \
+		ref-cast-1.0.25 \
+		ref-cast-impl-1.0.25 \
 		regex-1.10.4 \
 		regex-automata-0.4.6 \
 		regex-syntax-0.8.3 \
 		reqwest-0.12.5 \
-		ring-0.17.8 \
+		ring-0.17.14 \
 		rustc-cfg-0.5.0 \
 		rustc-demangle-0.1.24 \
 		rustc-hash-1.1.0 \
@@ -256,11 +260,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ryu-1.0.18 \
 		same-file-1.0.6 \
 		schannel-0.1.23 \
-		schemars-0.8.22 \
-		schemars_derive-0.8.22 \
+		schemars-1.1.0 \
+		schemars_derive-1.1.0 \
 		scopeguard-1.2.0 \
-		scroll-0.12.0 \
-		scroll_derive-0.12.0 \
+		scroll-0.13.0 \
+		scroll_derive-0.13.1 \
 		security-framework-2.11.0 \
 		security-framework-sys-2.11.0 \
 		self-replace-1.5.0 \
@@ -279,6 +283,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		sha3-0.10.8 \
 		sharded-slab-0.1.7 \
 		shell-words-1.1.0 \
+		shlex-1.3.0 \
 		signal-hook-registry-1.4.2 \
 		simd-adler32-0.3.7 \
 		similar-2.7.0 \
@@ -286,8 +291,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		smallvec-1.15.1 \
 		socket2-0.5.7 \
 		socket2-0.6.0 \
-		spdx-0.12.0 \
-		spin-0.9.8 \
+		spdx-0.13.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
@@ -304,7 +308,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		synstructure-0.13.1 \
 		tar-0.4.44 \
 		target-lexicon-0.13.2 \
-		target-spec-3.4.2 \
+		target-spec-3.5.4 \
 		temp-dir-0.1.16 \
 		tempfile-3.10.1 \
 		termcolor-1.4.1 \
@@ -332,9 +336,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
-		tracing-0.1.41 \
-		tracing-attributes-0.1.28 \
-		tracing-core-0.1.33 \
+		tracing-0.1.43 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.35 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.20 \
 		try-lock-0.2.5 \
@@ -417,8 +421,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		xz2-0.1.7 \
 		yoke-0.7.4 \
 		yoke-derive-0.7.4 \
-		zerocopy-0.7.34 \
-		zerocopy-derive-0.7.34 \
+		zerocopy-0.8.27 \
+		zerocopy-derive-0.8.27 \
 		zerofrom-0.1.4 \
 		zerofrom-derive-0.1.4 \
 		zeroize-1.8.1 \
@@ -426,7 +430,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		zerovec-0.10.4 \
 		zerovec-derive-0.10.3 \
 		zip-4.5.0 \
-		zlib-rs-0.5.1 \
+		zlib-rs-0.5.3 \
 		zopfli-0.8.2 \
 		zstd-0.13.1 \
 		zstd-safe-7.1.0 \
