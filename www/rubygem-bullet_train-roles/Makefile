@@ -1,5 +1,5 @@
 PORTNAME=	bullet_train-roles
-PORTVERSION=	1.7.23
+PORTVERSION=	1.37.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/bullet-train-co/bullet_train-core/tree/main/bullet_trai
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-active_hash>=0:devel/rubygem-active_hash \
-		rubygem-activesupport71>=0:devel/rubygem-activesupport71 \
+RUN_DEPENDS=	rubygem-active_hash>=3.3.1:devel/rubygem-active_hash \
+		rubygem-activesupport81>=0:devel/rubygem-activesupport81 \
 		rubygem-cancancan>=0:security/rubygem-cancancan
 
 USES=		gem
