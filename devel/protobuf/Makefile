@@ -17,7 +17,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libjsoncpp.so:devel/jsoncpp
 TEST_DEPENDS=	googletest>=0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang cpe localbase pathfix pkgconfig
+USES=		cmake:testing compiler:c++17-lang cpe localbase pkgconfig
 
 CMAKE_ARGS=	-Dprotobuf_ABSL_PROVIDER=package \
 		-Dprotobuf_JSONCPP_PROVIDER=package
@@ -44,9 +44,7 @@ CMAKE_ON=	protobuf_ABSOLUTE_TEST_PLUGIN_PATH \
 		protobuf_VERBOSE \
 		protobuf_WITH_ZLIB \
 		utf8_range_ENABLE_INSTALL
-CMAKE_TESTING_ON=	\
-		protobuf_BUILD_TESTS
-PATHFIX_CMAKELISTSTXT=	CMakeLists.txt install.cmake
+CMAKE_TESTING_ON=	protobuf_BUILD_TESTS
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
