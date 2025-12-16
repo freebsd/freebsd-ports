@@ -1,5 +1,5 @@
 PORTNAME=	showcase-rails
-PORTVERSION=	0.4.6
+PORTVERSION=	0.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/bullet-train-co/showcase
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-rails71>=6.1.0:www/rubygem-rails71
+RUN_DEPENDS=	rubygem-rails81>=7.2:www/rubygem-rails81
 
 USES=		gem
 
