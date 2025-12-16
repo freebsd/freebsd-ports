@@ -15,7 +15,7 @@ BUILD_DEPENDS=	jansson>=2.0:devel/jansson
 LIB_DEPENDS=	libjansson.so:devel/jansson
 TEST_DEPENDS=	check>=0.9.4:devel/check
 
-USES=		gmake libtool pathfix pkgconfig ssl tar:bz2
+USES=		gmake libtool pkgconfig ssl tar:bz2
 
 CONFIGURE_ARGS=	--disable-doxygen-chi \
 		--disable-doxygen-chm \
