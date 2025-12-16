@@ -1,6 +1,6 @@
-TIMESTAMP = 1763942092
-SHA256 (freenginx-1.29.3.tar.gz) = 55989cea3352d937d6d96c9af8b943f3a3f3a0220f35ede7a5b605a3d86b029a
-SIZE (freenginx-1.29.3.tar.gz) = 1243956
+TIMESTAMP = 1765911692
+SHA256 (freenginx-1.29.4.tar.gz) = 51a596451e334b51ce8cef1291b576ed601ed557e1b500e6c1a77a469d603e27
+SIZE (freenginx-1.29.4.tar.gz) = 1249883
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (passenger-6.0.27.tar.gz) = 82c830aee98feece09e84309c2d0c6bb3f7b22a3c8e33cfe93b5e0d498615d0f

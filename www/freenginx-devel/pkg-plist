@@ -32,6 +32,7 @@
 %%DSO%%%%HTTP_EVAL%%libexec/freenginx/ngx_http_eval_module.so
 %%DSO%%%%HTTP_FANCYINDEX%%libexec/freenginx/ngx_http_fancyindex_module.so
 %%DSO%%%%HTTP_FOOTER%%libexec/freenginx/ngx_http_footer_filter_module.so
+%%DSO%%%%HTTP_GEOIP%%libexec/freenginx/ngx_http_geoip_module.so
 %%DSO%%%%HTTP_IMAGE_FILTER%%libexec/freenginx/ngx_http_image_filter_module.so
 %%DSO%%%%HTTP_IP2LOCATION%%libexec/freenginx/ngx_http_ip2location_module.so
 %%DSO%%%%HTTP_IP2PROXY%%libexec/freenginx/ngx_http_ip2proxy_module.so
@@ -113,9 +114,10 @@
 %%DSO%%%%SHIBBOLETH%%libexec/freenginx/ngx_http_shibboleth_module.so
 %%DSO%%%%SLOWFS_CACHE%%libexec/freenginx/ngx_http_slowfs_module.so
 %%DSO%%%%SRCACHE%%libexec/freenginx/ngx_http_srcache_filter_module.so
+%%DSO%%%%STREAM%%libexec/freenginx/ngx_stream_module.so
 %%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/freenginx/ngx_stream_geoip2_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/freenginx/ngx_stream_js_module.so
-%%DSO%%%%STREAM%%libexec/freenginx/ngx_stream_module.so
+%%DSO%%%%STREAM%%%%STREAM_GEOIP%%libexec/freenginx/ngx_stream_geoip_module.so
 %%DSO%%%%STS%%libexec/freenginx/ngx_http_stream_server_traffic_status_module.so
 %%DSO%%%%VOD%%libexec/freenginx/ngx_http_vod_module.so
 %%DSO%%%%VTS%%libexec/freenginx/ngx_http_vhost_traffic_status_module.so
