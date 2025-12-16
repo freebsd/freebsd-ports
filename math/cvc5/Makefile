@@ -1,6 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 CATEGORIES=	math java
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -39,12 +39,12 @@ CMAKE_TESTING_TARGET=	check # check target runs only quick tests (based on https
 
 PLIST_SUB=		VERSION=${DISTVERSION}
 
-OPTIONS_DEFINE=			COCOALIB EDITLINE JAVA
+OPTIONS_DEFINE=			COCOALIB EDITLINE GLPK JAVA POLY
 OPTIONS_GROUP=			SOLVERS
-OPTIONS_GROUP_SOLVERS=		CRYPTOMINISAT GLPK KISSAT
+OPTIONS_GROUP_SOLVERS=		CRYPTOMINISAT KISSAT
 OPTIONS_RADIO=			NUMLIB
 OPTIONS_RADIO_NUMLIB=		GMP CLN
-OPTIONS_DEFAULT=		CRYPTOMINISAT EDITLINE GMP KISSAT # COCOALIB # JAVA is broken
+OPTIONS_DEFAULT=		CRYPTOMINISAT EDITLINE GMP KISSAT # COCOALIB GLPK JAVA POLY are broken
 OPTIONS_SUB=			yes
 
 COCOALIB_DESC=			Use CoCoALib for further polynomial operations
@@ -63,11 +63,21 @@ EDITLINE_CMAKE_BOOL=		USE_EDITLINE
 EDITLINE_BUILD_DEPENDS=		libedit>0:devel/libedit
 EDITLINE_RUN_DEPENDS=		libedit>0:devel/libedit
 
+POLY_DESC=			Use LibPoly for polynomial arithmetic
+POLY_CMAKE_BOOL=		USE_POLY
+POLY_LIB_DEPENDS=		libpoly.so:math/libpoly
+POLY_BROKEN=		compilation fails with libpoly API mismatch, see poly_conversion.cpp:250
+
 # SOLVERS options
 
 CRYPTOMINISAT_DESC=		Use CryptoMiniSat as the SAT solver
 CRYPTOMINISAT_CMAKE_BOOL=	USE_CRYPTOMINISAT
 CRYPTOMINISAT_LIB_DEPENDS=	libcryptominisat5.so:math/cryptominisat
+
+GLPK_DESC=			Use GLPK simplex solver
+GLPK_CMAKE_BOOL=		USE_GLPK
+GLPK_LIB_DEPENDS=		libglpk.so:math/glpk
+GLPK_BROKEN=		requires GLPK-cut-log patch, see cmake/deps-utils/glpk-cut-log.patch
 
 KISSAT_DESC=			Use Kissat solver
 KISSAT_CMAKE_BOOL=		USE_KISSAT
@@ -93,5 +103,6 @@ CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 PORTSCOUT=	limit:^[1-9]\.[0-9]+\.[0-9]+ # prevent older generation versions like 1.8, 1.7, etc.
 
 # tests as of 1.3.1: 1 test fails, see https://github.com/cvc5/cvc5/issues/12215
+# tests as of 1.3.2: 100% tests passed, 0 tests failed out of 4115, see https://github.com/cvc5/cvc5/issues/12215
 
 .include <bsd.port.mk>
