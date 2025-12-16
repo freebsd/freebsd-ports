@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.12.7
+DISTVERSION=	2025.12.9
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -646,7 +646,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		signature-2.2.0 \
 		sigstore-0.12.1 \
 		sigstore-protobuf-specs-derive-0.0.1 \
-		sigstore-verification-0.1.7 \
+		sigstore-verification-0.1.8 \
 		sigstore_protobuf_specs-0.4.3 \
 		simd-adler32-0.3.7 \
 		similar-2.7.0 \
