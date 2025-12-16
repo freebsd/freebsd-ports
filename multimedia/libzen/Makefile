@@ -14,7 +14,7 @@ WWW=		https://mediaarea.net/en/MediaInfo \
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/../../../License.txt
 
-USES=		compiler:c++11-lang dos2unix libtool pathfix tar:xz
+USES=		compiler:c++11-lang dos2unix libtool tar:xz
 
 CONFIGURE_ARGS=	--enable-shared --enable-static
 GNU_CONFIGURE=	yes
