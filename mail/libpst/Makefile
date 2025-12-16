@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgsf-1.so:devel/libgsf
 
-USES=		gmake iconv libtool pathfix pkgconfig
+USES=		gmake iconv libtool pkgconfig
 
 CONFIGURE_ARGS=	--disable-python --enable-libpst-shared
 GNU_CONFIGURE=	yes
