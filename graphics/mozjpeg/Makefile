@@ -15,7 +15,7 @@ BROKEN_mips64=	does not configure: error: SIMD support cannot be enabled
 BUILD_DEPENDS=	nasm>=2.10,1:devel/nasm
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake cpe pathfix
+USES=		cmake cpe
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=${PREFIX}/share/man
 CMAKE_OFF=	REQUIRE_SIMD WITH_12BIT WITH_ARITH_DEC WITH_ARITH_ENC WITH_FUZZ WITH_JAVA WITH_JPEG7
