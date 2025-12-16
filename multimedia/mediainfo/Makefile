@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/../../../License.html
 LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 		libzen.so:multimedia/libzen
 
-USES=		compiler:c++11-lang cpe libtool pathfix pkgconfig tar:xz
+USES=		compiler:c++11-lang cpe libtool pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
 
