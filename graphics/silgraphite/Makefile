@@ -15,16 +15,17 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/license/License_LGPLv21.txt
 LICENSE_NAME_CPL05=	Common Public License Version 0.5
 LICENSE_PERMS_CPL05=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-OPTIONS_DEFINE=	FREETYPE
-OPTIONS_DEFAULT=FREETYPE
-OPTIONS_SUB=	yes
+USES=		libtool pkgconfig
 
 CONFIGURE_ARGS=	--without-xft --without-pangographite
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++98
 USE_LDCONFIG=	yes
-USES=		libtool pathfix pkgconfig
+
+OPTIONS_DEFINE=	FREETYPE
+OPTIONS_DEFAULT=FREETYPE
+OPTIONS_SUB=	yes
 
 FREETYPE_CONFIGURE_WITH=freetype
 FREETYPE_LIB_DEPENDS=	libfreetype.so:print/freetype2
