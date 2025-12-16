@@ -1,6 +1,6 @@
 PORTNAME=	pollinfo
 PORTVERSION=	0.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils devel
 
 MAINTAINER=	arrowd@FreeBSD.org

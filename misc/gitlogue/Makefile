@@ -1,6 +1,7 @@
 PORTNAME=	gitlogue
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0 # make patch cargo-crates
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	nxjoseph@protonmail.com

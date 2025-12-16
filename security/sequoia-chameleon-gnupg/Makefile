@@ -1,6 +1,6 @@
 PORTNAME=	sequoia-chameleon-gnupg
 DISTVERSION=	0.13.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
