@@ -1,7 +1,6 @@
 PORTNAME=	iso-codes
+PORTVERSION=	4.19.0
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.18.0
-PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://salsa.debian.org/iso-codes-team/iso-codes
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-tools gmake python:build tar:xz
+USES=		gettext-tools gmake python:build tar:bz2
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 GNU_CONFIGURE=	yes
