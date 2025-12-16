@@ -16,7 +16,7 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSERv3
 BUILD_DEPENDS=	gmp>=6.1.0:math/gmp
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		compiler:c11 cpe gmake localbase pathfix
+USES=		compiler:c11 cpe gmake localbase
 
 CONFIGURE_ARGS=	--enable-ld-version-script --enable-shared
 CONFIGURE_ENV=	M4="/usr/bin/m4 -g"
