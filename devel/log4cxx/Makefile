@@ -18,7 +18,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libfmt.so:devel/libfmt
 TEST_DEPENDS=	zip:archivers/zip
 
-USES=		cmake:testing compiler:c++17-lang pathfix
+USES=		cmake:testing compiler:c++17-lang
 
 CMAKE_OFF=	APACHE_MAINTAINER \
 		APR_STATIC \
