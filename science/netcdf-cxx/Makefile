@@ -18,7 +18,7 @@ LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 LIB_DEPENDS=	libnetcdf.so:science/netcdf
 
-USES=		libtool localbase pathfix
+USES=		libtool localbase
 
 CPPFLAGS+=	-fPIC -DPIC
 GNU_CONFIGURE=	yes
