@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libp8-platform.so:devel/p8-platform
 
-USES=		alias cmake compiler:c++11-lib pathfix pkgconfig shebangfix
+USES=		alias cmake compiler:c++11-lib pkgconfig shebangfix
 
 CMAKE_ARGS=	-DCMAKE_REQUIRED_INCLUDES=${LOCALBASE}/include \
 		-DCMAKE_REQUIRED_FLAGS=-L${LOCALBASE}/lib \
