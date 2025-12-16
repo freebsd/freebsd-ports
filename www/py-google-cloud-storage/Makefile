@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-storage
-PORTVERSION=	3.6.0
+PORTVERSION=	3.7.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +28,6 @@ USE_PYTHON=	autoplist concurrent pep517
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	PROTOBUF TRACING
-OPTIONS_DEFINE=	PROTOBUF
 PROTOBUF_DESC=	Protocol buffers support
 TRACING_DESC=	Generate traces using OpenTelemetry
 
