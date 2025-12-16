@@ -4893,3 +4893,4 @@ graphics/kdegraphics-mobipocket@qt6|graphics/kdegraphics-mobipocket|2025-12-12|U
 cad/meshlab||2025-12-12|Remove broken port
 math/octave-forge-onsas||2025-12-15|Incompatible with octave packaging structure
 devel/equinix-metal-cli||2025-12-15|Has expired: Equinix Platform EOL upstream
+lang/typstfmt||2025-12-15|Discontinued, upstream repository archived on June 8, 2024
