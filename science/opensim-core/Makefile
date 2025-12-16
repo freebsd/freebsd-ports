@@ -21,6 +21,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tl}-org
 GH_PROJECT=	${PORTNAME:tl}-core
 USE_GL=		gl glu glut
+JAVA_VERSION=	8
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
 
