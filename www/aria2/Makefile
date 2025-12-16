@@ -12,7 +12,7 @@ WWW=		https://aria2.github.io/ \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c++11-lang cpe libtool pathfix pkgconfig ssl tar:xz
+USES=		compiler:c++11-lang cpe libtool pkgconfig ssl tar:xz
 
 CONFIGURE_ARGS=	--disable-epoll \
 		--enable-bittorrent \
