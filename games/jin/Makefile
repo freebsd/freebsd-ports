@@ -1,6 +1,6 @@
 PORTNAME=	jin
 PORTVERSION=	2.14.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -27,6 +27,9 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 EXTRACT_AFTER_ARGS=	--exclude 'bsh*.jar'	\
 			--exclude os-specific/unix/jin	\
+			--exclude os-specific/macosx	\
+			--exclude SunAudioPlayer.java	\
+			--exclude *Applet*.java	\
 			--exclude jgoodies-windows.jar
 
 JINJAR=	${PORTNAME}.jar
