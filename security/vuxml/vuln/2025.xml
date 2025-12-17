@@ -1,3 +1,31 @@
+  <vuln vid="eca46635-db51-11f0-9b8d-40a6b7c3b3b8">
+    <topic>step-clie -- Authorization Bypass in ACME and SCEP Provisioners</topic>
+    <affects>
+<package>
+<name>step-cli</name>
+<range><lt>0.29.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>smallstep reports:</p>
+	<blockquote cite="https://github.com/smallstep/certificates/security/advisories/GHSA-h8cp-697h-8c8p">
+	  <p>An attacker can bypass authorization checks and force a Step CA
+	  ACME or SCEP provisioner to create certificates without completing
+	  certain protocol authorization checks.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-44005</cvename>
+      <url>https://github.com/advisories/ghsa-h8cp-697h-8c8p</url>
+    </references>
+    <dates>
+      <discovery>2025-12-03</discovery>
+      <entry>2025-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6c9318c7-dae9-11f0-80b8-bc241121aa0a">
     <topic>FreeBSD -- Remote code execution via ND6 Router Advertisements</topic>
     <affects>
