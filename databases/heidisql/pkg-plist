@@ -1,0 +1,9 @@
+bin/heidisql
+share/applications/heidisql.desktop
+%%DATADIR%%/functions-mariadb.ini
+%%DATADIR%%/functions-mysql.ini
+%%DATADIR%%/functions-mysql8.ini
+%%DATADIR%%/functions-postgresql.ini
+%%DATADIR%%/functions-redshift.ini
+%%DATADIR%%/functions-sqlite.ini
+share/icons/hicolor/256x256/apps/heidisql.png

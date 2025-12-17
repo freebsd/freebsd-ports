@@ -84,6 +84,7 @@
     SUBDIR += grass8
     SUBDIR += greptimedb
     SUBDIR += hashtypes
+    SUBDIR += heidisql
     SUBDIR += hiredis
     SUBDIR += hsqldb
     SUBDIR += immudb

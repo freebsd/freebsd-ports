@@ -1,0 +1,5 @@
+HeidiSQL is a graphical interface for managing MariaDB or MySQL servers,
+Microsoft SQL databases, PostgreSQL, SQLite, Interbase or Firebird. "Heidi"
+lets you browse and edit data, create and edit tables, views, procedures,
+triggers and scheduled events. Also, you can export structure and data, either
+to SQL file, clipboard or to other servers.
