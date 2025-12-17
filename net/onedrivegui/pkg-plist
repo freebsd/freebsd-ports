@@ -16,12 +16,12 @@ share/icons/hicolor/48x48/apps/onedrivegui.png
 %%DATADIR%%/resources/images/close-filled.png
 %%DATADIR%%/resources/images/folder.png
 %%DATADIR%%/resources/images/gear.png
-%%DATADIR%%/resources/images/icons8-cloud-cross-40_2.png
-%%DATADIR%%/resources/images/icons8-cloud-done-40_2.png
-%%DATADIR%%/resources/images/icons8-cloud-sync-40_2.png
+%%DATADIR%%/resources/images/icons8-cloud-80.png
+%%DATADIR%%/resources/images/icons8-cloud-done-80.png
+%%DATADIR%%/resources/images/icons8-cloud-error-80.png
+%%DATADIR%%/resources/images/icons8-cloud-stop-80.png
+%%DATADIR%%/resources/images/icons8-cloud-sync-80.png
 %%DATADIR%%/resources/images/icons8-clouds-48.ico
-%%DATADIR%%/resources/images/icons8-clouds-48.png
-%%DATADIR%%/resources/images/icons8-clouds-80-dark-edge.png
 %%DATADIR%%/resources/images/icons8-green-circle-48.png
 %%DATADIR%%/resources/images/icons8-red-circle-48.png
 %%DATADIR%%/resources/images/menu.png
@@ -60,6 +60,7 @@ share/icons/hicolor/48x48/apps/onedrivegui.png
 %%DATADIR%%/ui/ui_profile_settings_page.py
 %%DATADIR%%/ui/ui_profile_settings_window.py
 %%DATADIR%%/utils/__init__.py
+%%DATADIR%%/utils/autostart.py
 %%DATADIR%%/utils/utils.py
 %%DATADIR%%/wizard.py
 %%DATADIR%%/workers.py
