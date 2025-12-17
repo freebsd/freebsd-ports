@@ -1,5 +1,5 @@
 PORTNAME=	ode
-DISTVERSION=	0.16.2
+DISTVERSION=	0.16.6
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/odedevs/${PORTNAME}/downloads/
@@ -12,6 +12,20 @@ LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 USES=		cmake:testing
+
+FLAVORS=	single double
+FLAVOR?=	${FLAVORS:[1]}
+
+single_CONFLICTS=	odoo-double
+double_CONFLICTS=	odoo-single
+
+.if ${FLAVOR} == double
+PKGNAMESUFFIX=	-double
+CMAKE_ON=	ODE_DOUBLE_PRECISION
+.else
+PKGNAMESUFFIX=	-single
+CMAKE_OFF=	ODE_DOUBLE_PRECISION
+.endif
 
 CMAKE_OFF=	ODE_WITH_TESTS
 CMAKE_TESTING_ON=	ODE_WITH_TESTS
