@@ -5,7 +5,6 @@ bin/gbase64
 bin/gbasename
 bin/gbasenc
 bin/gcat
-bin/gchcon
 bin/gchgrp
 bin/gchmod
 bin/gchown
@@ -66,7 +65,6 @@ bin/greadlink
 bin/grealpath
 bin/grm
 bin/grmdir
-bin/gruncon
 bin/gseq
 bin/gsha1sum
 bin/gsha224sum
@@ -111,7 +109,6 @@ share/man/man1/gbase64.1.gz
 share/man/man1/gbasename.1.gz
 share/man/man1/gbasenc.1.gz
 share/man/man1/gcat.1.gz
-share/man/man1/gchcon.1.gz
 share/man/man1/gchgrp.1.gz
 share/man/man1/gchmod.1.gz
 share/man/man1/gchown.1.gz
@@ -172,7 +169,6 @@ share/man/man1/greadlink.1.gz
 share/man/man1/grealpath.1.gz
 share/man/man1/grm.1.gz
 share/man/man1/grmdir.1.gz
-share/man/man1/gruncon.1.gz
 share/man/man1/gseq.1.gz
 share/man/man1/gsha1sum.1.gz
 share/man/man1/gsha224sum.1.gz
