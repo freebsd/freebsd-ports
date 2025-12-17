@@ -181,6 +181,10 @@ jar/ngs-doc.jar
 jar/ngs-examples.jar
 jar/ngs-java.jar
 jar/ngs-src.jar
+lib64/libkapp-static.a
+lib64/libkapp.a
+lib64/libkapp.a.3
+lib64/libkapp.a.%%PORTVERSION%%
 lib64/libncbi-ngs-c++-static.a
 lib64/libncbi-ngs-c++.a
 lib64/libncbi-ngs-c++.a.3
