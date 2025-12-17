@@ -1,5 +1,5 @@
 PORTNAME=	irsim
-DISTVERSION=	9.7.119
+DISTVERSION=	9.7.121
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/irsim/archive/
 PKGNAMESUFFIX=	-${FLAVOR}
