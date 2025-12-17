@@ -1,0 +1,18 @@
+commit 66fb0f122ef1ddf961b333c8377b84b603d75b27
+Author: Christoph Moench-Tegeder <cmt@FreeBSD.org>
+
+    support FreeBSD as a host platform
+
+diff --git third_party/chromium/build/toolchain/toolchain.gni third_party/chromium/build/toolchain/toolchain.gni
+index 754f0e3bbd7e..238d79631ba8 100644
+--- third_party/chromium/build/toolchain/toolchain.gni
++++ third_party/chromium/build/toolchain/toolchain.gni
+@@ -75,7 +75,7 @@ if (host_os == "mac") {
+   host_shlib_extension = ".dylib"
+ } else if (host_os == "win") {
+   host_shlib_extension = ".dll"
+-} else if (host_os == "linux" || host_os == "aix" || host_os == "zos") {
++} else if (host_os == "linux" || host_os == "aix" || host_os == "freebsd" || host_os == "zos") {
+   host_shlib_extension = ".so"
+ } else {
+   assert(false, "Host platform not supported")
