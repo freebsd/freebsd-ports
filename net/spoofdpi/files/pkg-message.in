@@ -34,4 +34,10 @@ You can edit the config via being as root or adding your user to the ${PORTNAME}
 Config locations are: $SPOOFDPI_CONFIG environment variable, ${ETCDIR}/${PORTNAME}.toml, $XDG_CONFIG_HOME/${PORTNAME}/${PORTNAME}.toml and $HOME/.config/${PORTNAME}/${PORTNAME}.toml
 EOM
 }
+{ type: upgrade
+  maximum_version: "1.2.0"
+  message: << EOM
+The whole configuration file has changed, see the documentation for more details. I've updated the sample config in the port.
+EOM
+}
 ]

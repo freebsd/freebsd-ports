@@ -1,11 +1,37 @@
-dns-addr = "1.1.1.1"
-dns-port = "53"
+[general]
+
+# Available values are debug, trace, info, warn, error, and disabled. (default: "info")
+log-level = "info"
+
+# Don't print banner
+silent = true
+
+# This option is currently only supported on macOS.
+system-proxy = false
+
+[server]
 
 # If you want to run SpoofDPI remotely (e.g., on a physically separated machine), then you should set this value
 # to 0.0.0.0. Otherwise, it is recommended to leave this option as default.
-listen-addr = "127.0.0.1"
+listen-addr = "127.0.0.1:8080"
 
-# Port to listen on.
-listen-port = "8080"
+[dns]
 
-doh-endpoint = "https://dns.google/dns-query"
+# available options: udp/https/system (default: "udp")
+mode = "https"
+
+# DNS address and port number
+# this is used when dns-mode is set to udp.
+addr = "8.8.8.8:53"
+
+# This is used when dns-mode is set to https.
+https-url = "https://dns.google/dns-query"
+
+# Filters DNS queries by record type (A for IPv4, AAAA for IPv6).
+# Available values are "ipv4", "ipv6", and "all".
+# If your Internet Service Provider (ISP) doesn't support IPv6, it is recommended to set this option to "ipv4" for stability.
+qtype = "all"
+
+# If true, DNS records will be cached to improve performance and reduce latency.
+cache = false
+
