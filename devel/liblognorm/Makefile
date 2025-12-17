@@ -1,5 +1,5 @@
 PORTNAME=	liblognorm
-DISTVERSION=	2.0.8
+DISTVERSION=	2.0.9
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.liblognorm.com/download/files/download/
 
