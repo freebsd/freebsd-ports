@@ -1,3 +1,73 @@
+  <vuln vid="6c9318c7-dae9-11f0-80b8-bc241121aa0a">
+    <topic>FreeBSD -- Remote code execution via ND6 Router Advertisements</topic>
+    <affects>
+      <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_1</lt></range>
+	<range><ge>14.3</ge><lt>14.3_7</lt></range>
+	<range><ge>13.5</ge><lt>13.5_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>The rtsol(8) and rtsold(8) programs do not validate the domain
+	  search list options provided in router advertisement messages; the
+	  option body is passed to resolvconf(8) unmodified.</p>
+	  <p>resolvconf(8) is a shell script which does not validate its input.
+	  A lack of quoting meant that shell commands pass as input to
+	  resolvconf(8) may be executed.</p>
+	<h1>Impact:</h1>
+	  <p>Systems running rtsol(8) or rtsold(8) are vulnerable to remote
+	  code execution from systems on the same network segment.  In
+	  particular, router advertisement messages are not routable and
+	  should be dropped by routers, so the attack does not cross network
+	  boundaries.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14558</cvename>
+      <freebsdsa>SA-25:12.rtsold</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-12-16</discovery>
+      <entry>2025-12-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0b22e22a-dae9-11f0-80b8-bc241121aa0a">
+    <topic>FreeBSD -- ipfw denial of service</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>15.0</ge><lt>15.0_1</lt></range>
+	<range><ge>14.3</ge><lt>14.3_7</lt></range>
+	<range><ge>13.5</ge><lt>13.5_8</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>In some cases, the `tcp-setmss` handler may free the packet
+	  data and throw an error without halting the rule processing engine.
+	  A subsequent rule can then allow the traffic after the packet data
+	  is gone, resulting in a NULL pointer dereference.</p>
+	<h1>Impact:</h1>
+	  <p>Maliciously crafted packets sent from a remote host may result
+	  in a Denial of Service (DoS) if the `tcp-setmss` directive is used
+	  and a subsequent rule would allow the traffic to pass.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14769</cvename>
+      <freebsdsa>SA-25:11.ipfw</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2025-12-16</discovery>
+      <entry>2025-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3a59024c-d8cf-11f0-af8c-8447094a420f">
     <topic>Roundcube -- Multiple vulnerabilities</topic>
     <affects>
