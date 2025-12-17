@@ -1,6 +1,14 @@
---- swinglabs-build-impl.xml.orig	2011-09-15 11:34:02 UTC
+--- swinglabs-build-impl.xml.orig	2025-12-17 08:00:14 UTC
 +++ swinglabs-build-impl.xml
-@@ -211,7 +211,7 @@ ${build.branch} ${RELEASE_DSTAMP_LONG} $
+@@ -204,6 +204,7 @@ -->
+         </echo>
+         <mkdir dir="${dist.javadoc.dir}"/>
+         <javadoc destdir="${dist.javadoc.dir}"
++                 encoding="${javac.encoding}"
+                  source="${javac.source}"
+                  notree="${javadoc.notree}" use="${javadoc.use}"
+                  nonavbar="${javadoc.nonavbar}" noindex="${javadoc.noindex}"
+@@ -211,7 +212,7 @@ -->
                   version="${javadoc.version}" 	
                   windowtitle="${javadoc.windowtitle}"
                   private="${javadoc.private}"
