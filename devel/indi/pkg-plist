@@ -16,6 +16,7 @@ bin/indi_astrometry
 bin/indi_astrotrac_telescope
 bin/indi_baader_dome
 bin/indi_camelot_rotator
+bin/indi_celestron_dewpower
 bin/indi_celestron_gps
 bin/indi_celestron_sct_focus
 bin/indi_cheapodc
@@ -48,6 +49,8 @@ bin/indi_giotto
 bin/indi_gpusb
 bin/indi_hid_test
 bin/indi_hitecastrodc_focus
+bin/indi_hitech_weather
+bin/indi_iafscaa_focus
 bin/indi_ieaf_focus
 bin/indi_ieq_telescope
 bin/indi_ieqlegacy_telescope
@@ -99,7 +102,6 @@ bin/indi_onfocus_focus
 bin/indi_openweathermap_weather
 bin/indi_optec_wheel
 bin/indi_paramount_telescope
-bin/indi_pegasus_flatmaster
 bin/indi_pegasus_focuscube
 bin/indi_pegasus_focuscube3
 bin/indi_pegasus_ppb
@@ -107,7 +109,6 @@ bin/indi_pegasus_ppba
 bin/indi_pegasus_prodigyMF
 bin/indi_pegasus_scopsoag
 bin/indi_pegasus_spb
-bin/indi_pegasus_uch
 bin/indi_pegasus_upb
 bin/indi_pegasusindigo_wheel
 bin/indi_perfectstar_focus
@@ -126,6 +127,7 @@ bin/indi_rbfocus_focus
 bin/indi_rigel_dome
 bin/indi_robo_focus
 bin/indi_rolloff_dome
+bin/indi_safetymonitor
 bin/indi_scopedome_dome
 bin/indi_script_dome
 bin/indi_script_telescope
@@ -227,8 +229,10 @@ include/libindi/fits.h
 include/libindi/fits_extensions.h
 include/libindi/fitsidi.h
 include/libindi/fitskeyword.h
-include/libindi/hidapi.h
+include/libindi/hotplugcapabledevice.h
+include/libindi/hotplugmanager.h
 include/libindi/httplib.h
+include/libindi/indi_hidapi.h
 include/libindi/indiapi.h
 include/libindi/indibase.h
 include/libindi/indibasetypes.h
@@ -258,6 +262,7 @@ include/libindi/indilightboxinterface.h
 include/libindi/indilogger.h
 include/libindi/indimacros.h
 include/libindi/indioutputinterface.h
+include/libindi/indipowerinterface.h
 include/libindi/indiproperties.h
 include/libindi/indiproperty.h
 include/libindi/indipropertybasic.h
