@@ -1,6 +1,6 @@
 PORTNAME=	gptscript
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.7
+DISTVERSION=	0.9.8
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -33,4 +33,5 @@ GH_PROJECT=	py-gptscript
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+
 .include <bsd.port.mk>
