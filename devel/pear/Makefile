@@ -1,5 +1,5 @@
 PORTNAME=	pear
-PORTVERSION=	1.10.16
+PORTVERSION=	1.10.17
 CATEGORIES=	devel
 MASTER_SITES=	https://pear.php.net/:go \
 		https://download.pear.php.net/package/
