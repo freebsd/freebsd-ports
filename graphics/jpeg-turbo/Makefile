@@ -1,5 +1,5 @@
 PORTNAME=	jpeg-turbo
-DISTVERSION=	3.1.2
+DISTVERSION=	3.1.3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/lib${PORTNAME}/lib${PORTNAME}/releases/download/${DISTVERSION}/
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
@@ -25,14 +25,15 @@ USES=		cmake cpe pathfix
 CPE_PRODUCT=	libjpeg-turbo
 USE_LDCONFIG=	yes
 
+# See https://github.com/libjpeg-turbo/libjpeg-turbo/issues/705
+CFLAGS+=	-ffp-model=strict
+
 TEST_TARGET=	test
 
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/libjpeg-turbo
 
 CMAKE_ON=	WITH_JPEG8
-# See https://github.com/libjpeg-turbo/libjpeg-turbo/issues/705
-CMAKE_ARGS=	-DCMAKE_CTEST_ARGUMENTS="-E;'djpeg12-shared-3x2-float-prog-cmp|djpeg12-static-3x2-float-prog-cmp'"
 
 OPTIONS_DEFINE=		DOCS
 
