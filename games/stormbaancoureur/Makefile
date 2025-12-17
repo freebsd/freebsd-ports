@@ -1,6 +1,6 @@
 PORTNAME=	stormbaancoureur
 PORTVERSION=	2.1.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://www.stolk.org/stormbaancoureur/download/ \
 		https://mirror.amdmi3.ru/distfiles/
