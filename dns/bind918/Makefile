@@ -1,7 +1,7 @@
 # pkg-help formatted with fmt 59 63
 
 PORTNAME=	bind
-DISTVERSION=	9.18.42
+DISTVERSION=	9.18.43
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
 PKGNAMESUFFIX=	918
@@ -10,10 +10,8 @@ MAINTAINER=	mat@FreeBSD.org
 COMMENT=	BIND DNS suite with updated DNSSEC and DNS64
 WWW=		https://www.isc.org/bind/
 
-# Uncomment when bind920 comes of age. +3 years if ESV, +1year otherwise, see
-# https://kb.isc.org/docs/aa-00896
-# DEPRECATED=	End of life, please migrate to a newer version of BIND9
-# EXPIRATION_DATE=	2026-06-30
+DEPRECATED=	End of life, please migrate to a newer version of BIND9
+EXPIRATION_DATE=	2026-06-30
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
