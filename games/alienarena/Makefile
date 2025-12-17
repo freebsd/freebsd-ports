@@ -49,7 +49,7 @@ CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
-		libode.so:devel/ode
+		libode.so:devel/ode@double
 CLIENT_USES=		gl jpeg openal:soft,alut minizip xorg
 CLIENT_USE=		GL=glu XORG=x11,xxf86dga,xxf86vm
 
