@@ -2,6 +2,7 @@ PORTNAME=	base64
 PORTVERSION=	0.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
+PKGNAMEPREFIX=	lib
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast Base64 stream encoder/decoder in C99, with SIMD acceleration
