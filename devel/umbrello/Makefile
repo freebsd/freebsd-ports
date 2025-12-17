@@ -5,7 +5,7 @@ CATEGORIES=	devel kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	UML modeller for KDE
-WWW=		https://umbrello.kde.org/
+WWW=		https://apps.kde.org/umbrello/
 
 USES=		cmake compiler:c++17-lang desktop-file-utils \
 		gettext-tools gnome kde:6 qt:6 tar:xz xorg
