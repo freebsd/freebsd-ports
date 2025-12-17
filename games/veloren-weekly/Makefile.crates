@@ -1,4 +1,4 @@
-CARGO_CRATES=	ab_glyph-0.2.31 \
+CARGO_CRATES=	ab_glyph-0.2.32 \
 		ab_glyph_rasterizer-0.1.10 \
 		addr2line-0.24.2 \
 		addr2line-0.25.1 \
@@ -27,6 +27,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		approx-0.4.0 \
 		approx-0.5.1 \
 		arbitrary-1.4.2 \
+		arboard-3.6.1 \
 		arr_macro-0.2.1 \
 		arr_macro_impl-0.2.1 \
 		arrayref-0.3.9 \
@@ -62,8 +63,8 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		block2-0.5.1 \
 		block2-0.6.1 \
 		bumpalo-3.19.0 \
-		bytemuck-1.23.2 \
-		bytemuck_derive-1.10.1 \
+		bytemuck-1.24.0 \
+		bytemuck_derive-1.10.2 \
 		byteorder-1.5.0 \
 		byteorder-lite-0.1.0 \
 		bytes-1.10.1 \
@@ -190,14 +191,14 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		dpi-0.1.2 \
 		drop_guard-0.3.0 \
 		dyn-clone-1.0.20 \
-		ecolor-0.32.2 \
-		egui-0.32.2 \
-		egui_plot-0.33.0 \
-		egui_wgpu_backend-0.35.0 \
-		egui_winit_platform-0.27.0 \
+		ecolor-0.33.2 \
+		egui-0.33.2 \
+		egui-wgpu-0.33.2 \
+		egui-winit-0.33.2 \
+		egui_plot-0.34.0 \
 		either-1.15.0 \
 		elapsed-0.1.2 \
-		emath-0.32.2 \
+		emath-0.33.2 \
 		embedded-io-0.4.0 \
 		embedded-io-0.6.1 \
 		encode_unicode-1.0.0 \
@@ -209,8 +210,8 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		enumset-1.1.10 \
 		enumset_derive-0.14.0 \
 		env_home-0.1.0 \
-		epaint-0.32.2 \
-		epaint_default_fonts-0.32.2 \
+		epaint-0.33.2 \
+		epaint_default_fonts-0.33.2 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-chain-0.12.4 \
@@ -223,6 +224,8 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		fallible-streaming-iterator-0.1.9 \
 		fastbloom-0.14.0 \
 		fastrand-2.3.0 \
+		fax-0.2.6 \
+		fax_derive-0.2.0 \
 		fd-lock-4.0.4 \
 		fdeflate-0.3.7 \
 		filetime-0.2.26 \
@@ -383,7 +386,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		linux-raw-sys-0.11.0 \
 		litemap-0.8.0 \
 		litrs-0.4.2 \
-		lock_api-0.4.13 \
+		lock_api-0.4.14 \
 		log-0.4.28 \
 		loom-0.7.2 \
 		lru-0.12.5 \
@@ -414,7 +417,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		moka-0.12.10 \
 		moxcms-0.7.5 \
 		mumble-link-0.2.0 \
-		naga-26.0.0 \
+		naga-27.0.3 \
 		native-dialog-0.9.0 \
 		ndk-0.9.0 \
 		ndk-context-0.1.1 \
@@ -496,8 +499,8 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		ordered-float-5.0.0 \
 		owned_ttf_parser-0.25.1 \
 		parking-2.2.1 \
-		parking_lot-0.12.4 \
-		parking_lot_core-0.9.11 \
+		parking_lot-0.12.5 \
+		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		pastey-0.1.1 \
 		pathdiff-0.2.3 \
@@ -542,6 +545,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		pulley-interpreter-39.0.0 \
 		pulley-macros-39.0.0 \
 		pxfm-0.1.23 \
+		quick-error-2.0.1 \
 		quick-xml-0.37.5 \
 		quinn-0.11.9 \
 		quinn-proto-0.11.13 \
@@ -709,6 +713,7 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.17 \
 		thread_local-1.1.9 \
+		tiff-0.10.3 \
 		time-0.3.43 \
 		time-core-0.1.6 \
 		time-macros-0.2.24 \
@@ -837,16 +842,18 @@ CARGO_CRATES=	ab_glyph-0.2.31 \
 		wayland-sys-0.31.7 \
 		web-sys-0.3.78 \
 		web-time-1.1.0 \
+		webbrowser-1.0.6 \
 		webpki-root-certs-1.0.2 \
+		weezl-0.1.12 \
 		wfd-0.1.7 \
-		wgpu-26.0.1 \
-		wgpu-core-26.0.1 \
-		wgpu-core-deps-apple-26.0.0 \
-		wgpu-core-deps-emscripten-26.0.0 \
-		wgpu-core-deps-windows-linux-android-26.0.0 \
-		wgpu-hal-26.0.4 \
-		wgpu-profiler-0.24.0 \
-		wgpu-types-26.0.0 \
+		wgpu-27.0.1 \
+		wgpu-core-27.0.3 \
+		wgpu-core-deps-apple-27.0.0 \
+		wgpu-core-deps-emscripten-27.0.0 \
+		wgpu-core-deps-windows-linux-android-27.0.0 \
+		wgpu-hal-27.0.4 \
+		wgpu-profiler-0.25.0 \
+		wgpu-types-27.0.1 \
 		which-7.0.3 \
 		widestring-1.2.0 \
 		wiggle-39.0.0 \
