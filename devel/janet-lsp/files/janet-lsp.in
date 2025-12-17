@@ -1,0 +1,11 @@
+@comment | This file is normally created by `jpm install`. The problem is that
+@comment | it uses the path from --tree for janet and the full path to that tree
+@comment | for the image. Both wrong.
+@comment | See work/janet-lsp-*/jpm_tree/bin/janet-lsp for the version with the
+@comment | wrong paths that this replaces. It is this small.
+#!%%LOCALBASE%%/bin/janet
+(import janet-lsp)
+(put root-env :syspath "%%LOCALBASE%%/lib")
+
+(defn main [& args]
+  (janet-lsp/main ;args))
