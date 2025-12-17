@@ -1,5 +1,5 @@
 PORTNAME=	uv-dynamic-versioning
-DISTVERSION=	0.11.2
+DISTVERSION=	0.12.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dunamai>=1.23:devel/py-dunamai@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.3:textproc/py-tomlkit@${PY_FLAVOR} \
 		uv:devel/uv
-
 USES=		python
 USE_PYTHON=	autoplist pep517
 
