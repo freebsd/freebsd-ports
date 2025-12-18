@@ -1,6 +1,5 @@
 PORTNAME=	polkit
-DISTVERSION=	125
-PORTREVISION=	1
+DISTVERSION=	127
 CATEGORIES=	sysutils gnome
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -11,7 +10,8 @@ LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
-		libdbus-1.so:devel/dbus
+		libdbus-1.so:devel/dbus \
+		libduktape.so:lang/duktape-lib
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
 		${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2
@@ -19,13 +19,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
 USERS=		polkitd
 GROUPS=		polkitd
 
-USES=		compiler:c++17-lang cpe dbus-testing gettext gnome localbase \
-		meson pathfix pkgconfig python:test shebangfix tar:bz2
-USE_GNOME=	glib20 intltool introspection:build
+USES=		compiler:c++17-lang cpe dbus-testing gettext-tools gnome \
+		localbase meson pathfix perl5 pkgconfig python:test shebangfix
+USE_GNOME=	glib20 introspection:build
 SHEBANG_FILES=	src/polkitbackend/toarray.pl \
 		test/wrapper.py
-
 USE_LDCONFIG=	yes
+USE_PERL5=	build
 CPE_VENDOR=	polkit_project
 
 USE_GITHUB=	yes
@@ -38,30 +38,17 @@ MESON_ARGS=	-Dpam_include=system \
 		-Dsession_tracking=ConsoleKit \
 		-Dtests=true \
 		-Dintrospection=true \
-		-Dgtk_doc=false
+		-Dgtk_doc=false \
+		-Dgettext=true
 
 OPTIONS_DEFINE=		MANPAGES
-OPTIONS_DEFAULT=	DUKTAPE
 
-OPTIONS_SINGLE=		JS
-OPTIONS_SINGLE_JS=	DUKTAPE SPIDERMONKEY
-
-JS_DESC=		JavaScript engines
-DUKTAPE_DESC=		Duktape JavaScript backend
-SPIDERMONKEY_DESC=	SpiderMonkey JavaScript backend
-
-DUKTAPE_LIB_DEPENDS=	libduktape.so:lang/duktape-lib
-DUKTAPE_MESON_ON=	-Djs_engine='duktape'
-
-SPIDERMONKEY_LIB_DEPENDS=	libmozjs-115.so:lang/spidermonkey115
-SPIDERMONKEY_MESON_ON=		-Djs_engine='mozjs'
+OPTIONS_SUB=		yes
 
 MANPAGES_BUILD_DEPENDS=	docbook-sgml>0:textproc/docbook-sgml \
 			docbook-xsl>0:textproc/docbook-xsl
 MANPAGES_USE=		gnome=libxslt:build
 MANPAGES_MESON_TRUE=	man
-
-OPTIONS_SUB=		yes
 
 .ifdef ALLOW_SYSTEM_AFFECTING_TESTS
 TEST_ENV+=		ALLOW_SYSTEM_AFFECTING_TESTS=1

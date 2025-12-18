@@ -1,9 +1,9 @@
 FreeBSD ConsoleKit is patched to return proper IDs instead D-Bus paths, so
 adapt Polkit to this case.
 
---- src/polkitbackend/polkitbackendsessionmonitor.c.orig	2023-07-28 12:34:38 UTC
+--- src/polkitbackend/polkitbackendsessionmonitor.c.orig	2025-12-17 16:14:53 UTC
 +++ src/polkitbackend/polkitbackendsessionmonitor.c
-@@ -385,7 +385,7 @@ polkit_backend_session_monitor_get_session_for_subject
+@@ -384,7 +384,7 @@ polkit_backend_session_monitor_get_session_for_subject
  
    if (POLKIT_IS_UNIX_PROCESS (subject))
      {
@@ -12,7 +12,7 @@ adapt Polkit to this case.
        GVariant *result;
        result = g_dbus_connection_call_sync (monitor->system_bus,
                                              "org.freedesktop.ConsoleKit",
-@@ -400,14 +400,16 @@ polkit_backend_session_monitor_get_session_for_subject
+@@ -399,14 +399,16 @@ polkit_backend_session_monitor_get_session_for_subject
                                              error);
        if (result == NULL)
          goto out;
@@ -31,7 +31,7 @@ adapt Polkit to this case.
        GVariant *result;
  
        result = g_dbus_connection_call_sync (monitor->system_bus,
-@@ -439,8 +441,10 @@ polkit_backend_session_monitor_get_session_for_subject
+@@ -438,8 +440,10 @@ polkit_backend_session_monitor_get_session_for_subject
                                              error);
        if (result == NULL)
          goto out;

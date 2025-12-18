@@ -1,9 +1,9 @@
 FreeBSD ConsoleKit is patched to return proper IDs instead D-Bus paths, so
 adapt Polkit to this case.
 
---- src/polkit/polkitunixsession.c.orig	2023-07-28 12:34:38 UTC
+--- src/polkit/polkitunixsession.c.orig	2025-12-17 16:14:53 UTC
 +++ src/polkit/polkitunixsession.c
-@@ -364,6 +364,7 @@ polkit_unix_session_exists_sync (PolkitSubject   *subj
+@@ -360,6 +360,7 @@ polkit_unix_session_exists_sync (PolkitSubject   *subj
    PolkitUnixSession *session = POLKIT_UNIX_SESSION (subject);
    GDBusConnection *connection;
    GVariant *result;
@@ -11,7 +11,7 @@ adapt Polkit to this case.
    gboolean ret;
  
    ret = FALSE;
-@@ -372,9 +373,12 @@ polkit_unix_session_exists_sync (PolkitSubject   *subj
+@@ -368,9 +369,12 @@ polkit_unix_session_exists_sync (PolkitSubject   *subj
    if (connection == NULL)
      goto out;
  
@@ -25,7 +25,7 @@ adapt Polkit to this case.
                                          "org.freedesktop.ConsoleKit.Session",   /* interface name */
                                          "GetUser",                              /* method */
                                          NULL, /* parameters */
-@@ -383,6 +387,7 @@ polkit_unix_session_exists_sync (PolkitSubject   *subj
+@@ -379,6 +383,7 @@ polkit_unix_session_exists_sync (PolkitSubject   *subj
                                          -1,
                                          cancellable,
                                          error);
@@ -33,7 +33,7 @@ adapt Polkit to this case.
    if (result == NULL)
      goto out;
  
-@@ -472,6 +477,7 @@ polkit_unix_session_initable_init (GInitable     *init
+@@ -468,6 +473,7 @@ polkit_unix_session_initable_init (GInitable     *init
    PolkitUnixSession *session = POLKIT_UNIX_SESSION (initable);
    GDBusConnection *connection;
    GVariant *result;
@@ -41,7 +41,7 @@ adapt Polkit to this case.
    gboolean ret;
  
    connection = NULL;
-@@ -502,7 +508,8 @@ polkit_unix_session_initable_init (GInitable     *init
+@@ -498,7 +504,8 @@ polkit_unix_session_initable_init (GInitable     *init
    if (result == NULL)
      goto out;
  
