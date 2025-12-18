@@ -292,8 +292,8 @@ libexec/pyenv-plugins/python-build/share/python-build/3.14.2
 libexec/pyenv-plugins/python-build/share/python-build/3.14.2t
 libexec/pyenv-plugins/python-build/share/python-build/3.15t-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.15-dev
-libexec/pyenv-plugins/python-build/share/python-build/3.15.0a2
-libexec/pyenv-plugins/python-build/share/python-build/3.15.0a2t
+libexec/pyenv-plugins/python-build/share/python-build/3.15.0a3
+libexec/pyenv-plugins/python-build/share/python-build/3.15.0a3t
 libexec/pyenv-plugins/python-build/share/python-build/activepython-2.7.14
 libexec/pyenv-plugins/python-build/share/python-build/activepython-3.5.4
 libexec/pyenv-plugins/python-build/share/python-build/activepython-3.6.0
@@ -763,6 +763,8 @@ libexec/pyenv-plugins/python-build/share/python-build/miniforge3-25.3.0-1
 libexec/pyenv-plugins/python-build/share/python-build/miniforge3-25.3.0-2
 libexec/pyenv-plugins/python-build/share/python-build/miniforge3-25.3.0-3
 libexec/pyenv-plugins/python-build/share/python-build/miniforge3-25.3.1-0
+libexec/pyenv-plugins/python-build/share/python-build/miniforge3-25.9.1-0
+libexec/pyenv-plugins/python-build/share/python-build/miniforge3-25.11.0-1
 libexec/pyenv-plugins/python-build/share/python-build/miniforge3-latest
 libexec/pyenv-plugins/python-build/share/python-build/miniforge-pypy3
 libexec/pyenv-plugins/python-build/share/python-build/nogil-3.9.10
