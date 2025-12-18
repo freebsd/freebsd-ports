@@ -1,5 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	9.10.3
+PORTVERSION=	9.11.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/([0-9]).*/\1/1}/SAGA%20-%20${PORTVERSION}
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -35,7 +35,7 @@ DOS2UNIX_GLOB=	*.cpp *.h *.txt
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	4ddf18179
+GIT_TAGNAME=	10981b30c
 
 CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h \
 		-DWITH_TOOLS_PDAL:BOOL=TRUE
@@ -49,7 +49,6 @@ CMAKE_ON+=	WITH_SYSTEM_SVM
 CMAKE_ON+=	WITH_TOOLS_HPDF
 CMAKE_ON+=	WITH_TOOLS_OPENCV
 CMAKE_ON+=	WITH_PYTHON_PKG
-CMAKE_ON+=	WITH_TOOLS_PDAL
 CMAKE_ON+=	WITH_TOOLS_POSTGRES
 CMAKE_ON+=	WITH_TOOLS_PROJ
 CMAKE_OFF=	WITH_CLIPPER_ONE
@@ -102,6 +101,8 @@ post-install:
 	(cd ${WRKSRC}/src/accessories && ${RM} -R python)
 	(cd ${WRKSRC}/src/accessories && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
 	${RM} -R ${STAGEDIR}${DATADIR}/CMakeLists.txt
+	${RM} -R ${STAGEDIR}${DATADIR}/classification
+	${RM} -R ${STAGEDIR}${DATADIR}/color_ramps
 	${RM} -R ${STAGEDIR}${DATADIR}/templates/template4saga-tools/my_tool_library/Makefile.bak
 # library helper files are not needed and cripple some math/qgis extensions
 	@${RM} ${STAGEDIR}${PREFIX}/lib/saga/*.la
