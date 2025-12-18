@@ -1,0 +1,77 @@
+Backport of upstream patches to fix build with Qt 6.10.1.
+
+https://gitlab.kitware.com/paraview/paraview/-/commit/cd7e633df299c29e8e76c34df83d8c67dfb386a1
+https://gitlab.kitware.com/paraview/qttesting/-/commit/9ba0a2104840ac5ddf0b73a36d72b282bf6b03d9
+
+--- Qt/Core/pqFlatTreeViewEventTranslator.cxx.orig	2025-03-31 14:04:52 UTC
++++ Qt/Core/pqFlatTreeViewEventTranslator.cxx
+@@ -73,8 +73,8 @@ bool pqFlatTreeViewEventTranslator::translateEvent(QOb
+ 
+       QString info = QString("%1,%2,%3,%4,%5,%6")
+                        .arg(mouseEvent->button())
+-                       .arg(mouseEvent->buttons())
+-                       .arg(mouseEvent->modifiers())
++                       .arg(static_cast<int>(mouseEvent->buttons()))
++                       .arg(static_cast<int>(mouseEvent->modifiers()))
+                        .arg(relPt.x())
+                        .arg(relPt.y())
+                        .arg(idxStr);
+--- Qt/Core/pqQVTKWidgetEventTranslator.cxx.orig	2025-03-31 14:04:52 UTC
++++ Qt/Core/pqQVTKWidgetEventTranslator.cxx
+@@ -85,8 +85,8 @@ bool pqQVTKWidgetEventTranslator::translateEvent(
+               .arg(normalized_x)
+               .arg(normalized_y)
+               .arg(mouseEvent->button())
+-              .arg(mouseEvent->buttons())
+-              .arg(mouseEvent->modifiers()));
++              .arg(static_cast<int>(mouseEvent->buttons()))
++              .arg(static_cast<int>(mouseEvent->modifiers())));
+         }
+         return true;
+         break;
+@@ -108,15 +108,15 @@ bool pqQVTKWidgetEventTranslator::translateEvent(
+               .arg(normalized_x)
+               .arg(normalized_y)
+               .arg(mouseEvent->button())
+-              .arg(mouseEvent->buttons())
+-              .arg(mouseEvent->modifiers()));
++              .arg(static_cast<int>(mouseEvent->buttons()))
++              .arg(static_cast<int>(mouseEvent->modifiers())));
+           Q_EMIT recordEvent(widget, "mouseRelease",
+             QString("(%1,%2,%3,%4,%5)")
+               .arg(normalized_x)
+               .arg(normalized_y)
+               .arg(mouseEvent->button())
+-              .arg(mouseEvent->buttons())
+-              .arg(mouseEvent->modifiers()));
++              .arg(static_cast<int>(mouseEvent->buttons()))
++              .arg(static_cast<int>(mouseEvent->modifiers())));
+         }
+         return true;
+         break;
+--- ThirdParty/QtTesting/vtkqttesting/pqAbstractItemViewEventTranslator.cxx.orig	2025-03-31 14:04:52 UTC
++++ ThirdParty/QtTesting/vtkqttesting/pqAbstractItemViewEventTranslator.cxx
+@@ -118,8 +118,8 @@ bool pqAbstractItemViewEventTranslator::translateEvent
+ 
+       QString info = QString("%1,%2,%3,%4,%5,%6")
+                        .arg(mouseEvent->button())
+-                       .arg(mouseEvent->buttons())
+-                       .arg(mouseEvent->modifiers())
++                       .arg(static_cast<int>(mouseEvent->buttons()))
++                       .arg(static_cast<int>(mouseEvent->modifiers()))
+                        .arg(relPt.x())
+                        .arg(relPt.y())
+                        .arg(idxStr);
+--- ThirdParty/QtTesting/vtkqttesting/pqBasicWidgetEventTranslator.cxx.orig	2025-12-05 14:13:11 UTC
++++ ThirdParty/QtTesting/vtkqttesting/pqBasicWidgetEventTranslator.cxx
+@@ -78,8 +78,8 @@ bool pqBasicWidgetEventTranslator::translateEvent(
+         QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
+         QString info = QString("%1,%2,%3,%4,%5")
+                          .arg(mouseEvent->button())
+-                         .arg(mouseEvent->buttons())
+-                         .arg(mouseEvent->modifiers())
++                         .arg(static_cast<int>(mouseEvent->buttons()))
++                         .arg(static_cast<int>(mouseEvent->modifiers()))
+                          .arg(mouseEvent->x())
+                          .arg(mouseEvent->y());
+ 
