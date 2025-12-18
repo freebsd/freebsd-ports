@@ -1,3 +1,4 @@
+bin/opencsgexample
 include/opencsg.h
 lib/libopencsg.so
 lib/libopencsg.so.1
