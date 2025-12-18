@@ -2,6 +2,7 @@
 @dir(%%USER%%,%%GROUP%%,0700) /var/log/%%USER%%
 @dir(%%USER%%,%%GROUP%%,0700) /var/run/%%USER%%
 bin/hcks
+%%EXAMPLESDIR%%/uwsgi.ini
 %%HOMEDIR%%/CHANGELOG.md
 %%HOMEDIR%%/hc/__init__.py
 %%HOMEDIR%%/hc/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -92,6 +93,8 @@ bin/hcks
 %%HOMEDIR%%/hc/accounts/migrations/0047_profile_over_limit_date.py
 %%HOMEDIR%%/hc/accounts/migrations/0048_alter_profile_user.py
 %%HOMEDIR%%/hc/accounts/migrations/0049_convert_email_lowercase.py
+%%HOMEDIR%%/hc/accounts/migrations/0050_fix_legacy_timezones.py
+%%HOMEDIR%%/hc/accounts/migrations/0051_alter_profile_reports.py
 %%HOMEDIR%%/hc/accounts/migrations/__init__.py
 %%HOMEDIR%%/hc/accounts/migrations/__pycache__/0001_initial%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/migrations/__pycache__/0002_profile_ping_log_limit%%PYTHON_TAG%%.opt-1.pyc
@@ -142,6 +145,8 @@ bin/hcks
 %%HOMEDIR%%/hc/accounts/migrations/__pycache__/0047_profile_over_limit_date%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/migrations/__pycache__/0048_alter_profile_user%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/migrations/__pycache__/0049_convert_email_lowercase%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/accounts/migrations/__pycache__/0050_fix_legacy_timezones%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/accounts/migrations/__pycache__/0051_alter_profile_reports%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/migrations/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/accounts/models.py
 %%HOMEDIR%%/hc/accounts/tests/__init__.py
@@ -367,6 +372,7 @@ bin/hcks
 %%HOMEDIR%%/hc/api/migrations/0116_alter_check_badge_key.py
 %%HOMEDIR%%/hc/api/migrations/0117_fill_badge_key.py
 %%HOMEDIR%%/hc/api/migrations/0118_alter_check_badge_key.py
+%%HOMEDIR%%/hc/api/migrations/0119_check_filter_default_fail_check_filter_http_body_and_more.py
 %%HOMEDIR%%/hc/api/migrations/__init__.py
 %%HOMEDIR%%/hc/api/migrations/__pycache__/0001_initial%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/migrations/__pycache__/0002_auto_20150616_0732%%PYTHON_TAG%%.opt-1.pyc
@@ -486,6 +492,7 @@ bin/hcks
 %%HOMEDIR%%/hc/api/migrations/__pycache__/0116_alter_check_badge_key%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/migrations/__pycache__/0117_fill_badge_key%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/migrations/__pycache__/0118_alter_check_badge_key%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/api/migrations/__pycache__/0119_check_filter_default_fail_check_filter_http_body_and_more%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/migrations/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/models.py
 %%HOMEDIR%%/hc/api/tests/__init__.py
@@ -511,35 +518,6 @@ bin/hcks
 %%HOMEDIR%%/hc/api/tests/__pycache__/test_metrics%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/tests/__pycache__/test_notification_status%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_apprise%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_call%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_discord%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_email%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_github%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_googlechat%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_gotify%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_group%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_matrix%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_mattermost%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_msteams%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_msteamsw%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_ntfy%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_opsgenie%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_pagertree%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_pd%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_pushbullet%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_pushover%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_rocketchat%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_signal%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_slack%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_sms%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_spike%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_telegram%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_trello%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_victorops%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_webhook%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_whatsapp%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/api/tests/__pycache__/test_notify_zulip%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/tests/__pycache__/test_pause%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/tests/__pycache__/test_ping%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/api/tests/__pycache__/test_ping_by_slug%%PYTHON_TAG%%.opt-1.pyc
@@ -573,35 +551,6 @@ bin/hcks
 %%HOMEDIR%%/hc/api/tests/test_metrics.py
 %%HOMEDIR%%/hc/api/tests/test_notification_status.py
 %%HOMEDIR%%/hc/api/tests/test_notify.py
-%%HOMEDIR%%/hc/api/tests/test_notify_apprise.py
-%%HOMEDIR%%/hc/api/tests/test_notify_call.py
-%%HOMEDIR%%/hc/api/tests/test_notify_discord.py
-%%HOMEDIR%%/hc/api/tests/test_notify_email.py
-%%HOMEDIR%%/hc/api/tests/test_notify_github.py
-%%HOMEDIR%%/hc/api/tests/test_notify_googlechat.py
-%%HOMEDIR%%/hc/api/tests/test_notify_gotify.py
-%%HOMEDIR%%/hc/api/tests/test_notify_group.py
-%%HOMEDIR%%/hc/api/tests/test_notify_matrix.py
-%%HOMEDIR%%/hc/api/tests/test_notify_mattermost.py
-%%HOMEDIR%%/hc/api/tests/test_notify_msteams.py
-%%HOMEDIR%%/hc/api/tests/test_notify_msteamsw.py
-%%HOMEDIR%%/hc/api/tests/test_notify_ntfy.py
-%%HOMEDIR%%/hc/api/tests/test_notify_opsgenie.py
-%%HOMEDIR%%/hc/api/tests/test_notify_pagertree.py
-%%HOMEDIR%%/hc/api/tests/test_notify_pd.py
-%%HOMEDIR%%/hc/api/tests/test_notify_pushbullet.py
-%%HOMEDIR%%/hc/api/tests/test_notify_pushover.py
-%%HOMEDIR%%/hc/api/tests/test_notify_rocketchat.py
-%%HOMEDIR%%/hc/api/tests/test_notify_signal.py
-%%HOMEDIR%%/hc/api/tests/test_notify_slack.py
-%%HOMEDIR%%/hc/api/tests/test_notify_sms.py
-%%HOMEDIR%%/hc/api/tests/test_notify_spike.py
-%%HOMEDIR%%/hc/api/tests/test_notify_telegram.py
-%%HOMEDIR%%/hc/api/tests/test_notify_trello.py
-%%HOMEDIR%%/hc/api/tests/test_notify_victorops.py
-%%HOMEDIR%%/hc/api/tests/test_notify_webhook.py
-%%HOMEDIR%%/hc/api/tests/test_notify_whatsapp.py
-%%HOMEDIR%%/hc/api/tests/test_notify_zulip.py
 %%HOMEDIR%%/hc/api/tests/test_pause.py
 %%HOMEDIR%%/hc/api/tests/test_ping.py
 %%HOMEDIR%%/hc/api/tests/test_ping_by_slug.py
@@ -650,69 +599,28 @@ bin/hcks
 %%HOMEDIR%%/hc/front/templatetags/__init__.py
 %%HOMEDIR%%/hc/front/templatetags/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/templatetags/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/front/templatetags/__pycache__/asciitable%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/front/templatetags/__pycache__/asciitable%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/front/templatetags/__pycache__/hc_extras%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/templatetags/__pycache__/hc_extras%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/front/templatetags/__pycache__/linemode%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/templatetags/__pycache__/linemode%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/front/templatetags/asciitable.py
 %%HOMEDIR%%/hc/front/templatetags/hc_extras.py
 %%HOMEDIR%%/hc/front/templatetags/linemode.py
 %%HOMEDIR%%/hc/front/tests/__init__.py
 %%HOMEDIR%%/hc/front/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_apprise%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_call%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_add_check%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_discord%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_discord_complete%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_email%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_github%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_github_save%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_github_select%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_googlechat%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_gotify%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_group%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_matrix%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_mattermost%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_msteams%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_ntfy%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_opsgenie%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_pagerduty_complete%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_pagertree%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_pd%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_prometheus%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_pushbullet%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_pushbullet_complete%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_pushover%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_pushover_help%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_rocketchat%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_shell%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_signal%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_slack%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_slack_btn%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_slack_complete%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_slack_help%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_sms%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_spike%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_telegram%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_trello%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_victorops%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_webhook%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_whatsapp%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_add_zulip%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/front/tests/__pycache__/test_asciitable_tag%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_badges%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_basics%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_channel_checks%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_channels%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_clear_events%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/front/tests/__pycache__/test_contact_vcf%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_copy%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_cron_preview%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_details%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_edit_email%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_edit_group%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_edit_ntfy%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_edit_signal%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_edit_sms%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_edit_webhook%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_edit_whatsapp%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_filtering_rules%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_get_events%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_hc_extras%%PYTHON_TAG%%.opt-1.pyc
@@ -720,12 +628,9 @@ bin/hcks
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_linemode_tag%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_log%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_log_events%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_mattermost_help%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_metrics%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_my_checks%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_oncalendar_preview%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_pause%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_pd_help%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_ping_body%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_ping_details%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_projects_menu%%PYTHON_TAG%%.opt-1.pyc
@@ -735,77 +640,29 @@ bin/hcks
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_search%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_send_test_notification%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_serve_doc%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_signal_captcha%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_status%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_status_single%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_switch_channel%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_transfer%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_trello_settings%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_uncloak%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_unsubscribe_email%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_update_channel%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_update_channel_name%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_update_name%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_update_timeout%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_validate_schedule%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_verify_email%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/__pycache__/test_verify_signal_number%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/front/tests/__pycache__/test_webhook_validator%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/front/tests/test_add_apprise.py
-%%HOMEDIR%%/hc/front/tests/test_add_call.py
 %%HOMEDIR%%/hc/front/tests/test_add_check.py
-%%HOMEDIR%%/hc/front/tests/test_add_discord.py
-%%HOMEDIR%%/hc/front/tests/test_add_discord_complete.py
-%%HOMEDIR%%/hc/front/tests/test_add_email.py
-%%HOMEDIR%%/hc/front/tests/test_add_github.py
-%%HOMEDIR%%/hc/front/tests/test_add_github_save.py
-%%HOMEDIR%%/hc/front/tests/test_add_github_select.py
-%%HOMEDIR%%/hc/front/tests/test_add_googlechat.py
-%%HOMEDIR%%/hc/front/tests/test_add_gotify.py
-%%HOMEDIR%%/hc/front/tests/test_add_group.py
-%%HOMEDIR%%/hc/front/tests/test_add_matrix.py
-%%HOMEDIR%%/hc/front/tests/test_add_mattermost.py
-%%HOMEDIR%%/hc/front/tests/test_add_msteams.py
-%%HOMEDIR%%/hc/front/tests/test_add_ntfy.py
-%%HOMEDIR%%/hc/front/tests/test_add_opsgenie.py
-%%HOMEDIR%%/hc/front/tests/test_add_pagerduty_complete.py
-%%HOMEDIR%%/hc/front/tests/test_add_pagertree.py
-%%HOMEDIR%%/hc/front/tests/test_add_pd.py
-%%HOMEDIR%%/hc/front/tests/test_add_prometheus.py
-%%HOMEDIR%%/hc/front/tests/test_add_pushbullet.py
-%%HOMEDIR%%/hc/front/tests/test_add_pushbullet_complete.py
-%%HOMEDIR%%/hc/front/tests/test_add_pushover.py
-%%HOMEDIR%%/hc/front/tests/test_add_pushover_help.py
-%%HOMEDIR%%/hc/front/tests/test_add_rocketchat.py
-%%HOMEDIR%%/hc/front/tests/test_add_shell.py
-%%HOMEDIR%%/hc/front/tests/test_add_signal.py
-%%HOMEDIR%%/hc/front/tests/test_add_slack.py
-%%HOMEDIR%%/hc/front/tests/test_add_slack_btn.py
-%%HOMEDIR%%/hc/front/tests/test_add_slack_complete.py
-%%HOMEDIR%%/hc/front/tests/test_add_slack_help.py
-%%HOMEDIR%%/hc/front/tests/test_add_sms.py
-%%HOMEDIR%%/hc/front/tests/test_add_spike.py
-%%HOMEDIR%%/hc/front/tests/test_add_telegram.py
-%%HOMEDIR%%/hc/front/tests/test_add_trello.py
-%%HOMEDIR%%/hc/front/tests/test_add_victorops.py
-%%HOMEDIR%%/hc/front/tests/test_add_webhook.py
-%%HOMEDIR%%/hc/front/tests/test_add_whatsapp.py
-%%HOMEDIR%%/hc/front/tests/test_add_zulip.py
+%%HOMEDIR%%/hc/front/tests/test_asciitable_tag.py
 %%HOMEDIR%%/hc/front/tests/test_badges.py
 %%HOMEDIR%%/hc/front/tests/test_basics.py
 %%HOMEDIR%%/hc/front/tests/test_channel_checks.py
 %%HOMEDIR%%/hc/front/tests/test_channels.py
 %%HOMEDIR%%/hc/front/tests/test_clear_events.py
+%%HOMEDIR%%/hc/front/tests/test_contact_vcf.py
 %%HOMEDIR%%/hc/front/tests/test_copy.py
 %%HOMEDIR%%/hc/front/tests/test_cron_preview.py
 %%HOMEDIR%%/hc/front/tests/test_details.py
-%%HOMEDIR%%/hc/front/tests/test_edit_email.py
-%%HOMEDIR%%/hc/front/tests/test_edit_group.py
-%%HOMEDIR%%/hc/front/tests/test_edit_ntfy.py
-%%HOMEDIR%%/hc/front/tests/test_edit_signal.py
-%%HOMEDIR%%/hc/front/tests/test_edit_sms.py
-%%HOMEDIR%%/hc/front/tests/test_edit_webhook.py
-%%HOMEDIR%%/hc/front/tests/test_edit_whatsapp.py
 %%HOMEDIR%%/hc/front/tests/test_filtering_rules.py
 %%HOMEDIR%%/hc/front/tests/test_get_events.py
 %%HOMEDIR%%/hc/front/tests/test_hc_extras.py
@@ -813,12 +670,9 @@ bin/hcks
 %%HOMEDIR%%/hc/front/tests/test_linemode_tag.py
 %%HOMEDIR%%/hc/front/tests/test_log.py
 %%HOMEDIR%%/hc/front/tests/test_log_events.py
-%%HOMEDIR%%/hc/front/tests/test_mattermost_help.py
-%%HOMEDIR%%/hc/front/tests/test_metrics.py
 %%HOMEDIR%%/hc/front/tests/test_my_checks.py
 %%HOMEDIR%%/hc/front/tests/test_oncalendar_preview.py
 %%HOMEDIR%%/hc/front/tests/test_pause.py
-%%HOMEDIR%%/hc/front/tests/test_pd_help.py
 %%HOMEDIR%%/hc/front/tests/test_ping_body.py
 %%HOMEDIR%%/hc/front/tests/test_ping_details.py
 %%HOMEDIR%%/hc/front/tests/test_projects_menu.py
@@ -828,25 +682,728 @@ bin/hcks
 %%HOMEDIR%%/hc/front/tests/test_search.py
 %%HOMEDIR%%/hc/front/tests/test_send_test_notification.py
 %%HOMEDIR%%/hc/front/tests/test_serve_doc.py
-%%HOMEDIR%%/hc/front/tests/test_signal_captcha.py
 %%HOMEDIR%%/hc/front/tests/test_status.py
 %%HOMEDIR%%/hc/front/tests/test_status_single.py
 %%HOMEDIR%%/hc/front/tests/test_switch_channel.py
 %%HOMEDIR%%/hc/front/tests/test_transfer.py
-%%HOMEDIR%%/hc/front/tests/test_trello_settings.py
 %%HOMEDIR%%/hc/front/tests/test_uncloak.py
-%%HOMEDIR%%/hc/front/tests/test_unsubscribe_email.py
 %%HOMEDIR%%/hc/front/tests/test_update_channel.py
 %%HOMEDIR%%/hc/front/tests/test_update_channel_name.py
 %%HOMEDIR%%/hc/front/tests/test_update_name.py
 %%HOMEDIR%%/hc/front/tests/test_update_timeout.py
 %%HOMEDIR%%/hc/front/tests/test_validate_schedule.py
 %%HOMEDIR%%/hc/front/tests/test_verify_email.py
-%%HOMEDIR%%/hc/front/tests/test_verify_signal_number.py
 %%HOMEDIR%%/hc/front/tests/test_webhook_validator.py
 %%HOMEDIR%%/hc/front/urls.py
 %%HOMEDIR%%/hc/front/validators.py
 %%HOMEDIR%%/hc/front/views.py
+%%HOMEDIR%%/hc/integrations/__init__.py
+%%HOMEDIR%%/hc/integrations/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__init__.py
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/apps%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/apps%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/apps.py
+%%HOMEDIR%%/hc/integrations/apprise/forms.py
+%%HOMEDIR%%/hc/integrations/apprise/static/img/apprise.png
+%%HOMEDIR%%/hc/integrations/apprise/templates/add_apprise.html
+%%HOMEDIR%%/hc/integrations/apprise/templates/apprise_description.html
+%%HOMEDIR%%/hc/integrations/apprise/templates/apprise_title.html
+%%HOMEDIR%%/hc/integrations/apprise/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/apprise/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/apprise/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/apprise/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/apprise/transport.py
+%%HOMEDIR%%/hc/integrations/apprise/urls.py
+%%HOMEDIR%%/hc/integrations/apprise/views.py
+%%HOMEDIR%%/hc/integrations/call/__init__.py
+%%HOMEDIR%%/hc/integrations/call/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/call/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/call/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/call/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/call/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/call/static/img/call.png
+%%HOMEDIR%%/hc/integrations/call/templates/add_call.html
+%%HOMEDIR%%/hc/integrations/call/templates/call_message.html
+%%HOMEDIR%%/hc/integrations/call/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/call/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/call/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/call/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/call/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/call/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/call/transport.py
+%%HOMEDIR%%/hc/integrations/call/urls.py
+%%HOMEDIR%%/hc/integrations/call/views.py
+%%HOMEDIR%%/hc/integrations/discord/__init__.py
+%%HOMEDIR%%/hc/integrations/discord/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/discord/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/static/img/discord.png
+%%HOMEDIR%%/hc/integrations/discord/templates/add_discord.html
+%%HOMEDIR%%/hc/integrations/discord/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/discord/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/tests/__pycache__/test_add_complete%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/discord/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/discord/tests/test_add_complete.py
+%%HOMEDIR%%/hc/integrations/discord/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/discord/transport.py
+%%HOMEDIR%%/hc/integrations/discord/urls.py
+%%HOMEDIR%%/hc/integrations/discord/views.py
+%%HOMEDIR%%/hc/integrations/email/__init__.py
+%%HOMEDIR%%/hc/integrations/email/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/email/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/forms.py
+%%HOMEDIR%%/hc/integrations/email/static/img/email.png
+%%HOMEDIR%%/hc/integrations/email/templates/email_form.html
+%%HOMEDIR%%/hc/integrations/email/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/email/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/tests/__pycache__/test_unsubscribe%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/email/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/email/tests/test_edit.py
+%%HOMEDIR%%/hc/integrations/email/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/email/tests/test_unsubscribe.py
+%%HOMEDIR%%/hc/integrations/email/transport.py
+%%HOMEDIR%%/hc/integrations/email/urls.py
+%%HOMEDIR%%/hc/integrations/email/views.py
+%%HOMEDIR%%/hc/integrations/github/__init__.py
+%%HOMEDIR%%/hc/integrations/github/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/github/__pycache__/client%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/client.py
+%%HOMEDIR%%/hc/integrations/github/forms.py
+%%HOMEDIR%%/hc/integrations/github/static/img/github-white.png
+%%HOMEDIR%%/hc/integrations/github/static/img/github.png
+%%HOMEDIR%%/hc/integrations/github/templates/add_github.html
+%%HOMEDIR%%/hc/integrations/github/templates/add_github_form.html
+%%HOMEDIR%%/hc/integrations/github/templates/github_body.html
+%%HOMEDIR%%/hc/integrations/github/templates/github_title.html
+%%HOMEDIR%%/hc/integrations/github/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/github/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/tests/__pycache__/test_add_save%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/tests/__pycache__/test_add_select%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/github/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/github/tests/test_add_save.py
+%%HOMEDIR%%/hc/integrations/github/tests/test_add_select.py
+%%HOMEDIR%%/hc/integrations/github/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/github/transport.py
+%%HOMEDIR%%/hc/integrations/github/urls.py
+%%HOMEDIR%%/hc/integrations/github/views.py
+%%HOMEDIR%%/hc/integrations/googlechat/__init__.py
+%%HOMEDIR%%/hc/integrations/googlechat/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/static/img/googlechat.png
+%%HOMEDIR%%/hc/integrations/googlechat/static/img/setup_googlechat_1.png
+%%HOMEDIR%%/hc/integrations/googlechat/static/img/setup_googlechat_2.png
+%%HOMEDIR%%/hc/integrations/googlechat/static/img/setup_googlechat_3.png
+%%HOMEDIR%%/hc/integrations/googlechat/static/img/setup_googlechat_4.png
+%%HOMEDIR%%/hc/integrations/googlechat/templates/add_googlechat.html
+%%HOMEDIR%%/hc/integrations/googlechat/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/googlechat/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/googlechat/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/googlechat/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/googlechat/transport.py
+%%HOMEDIR%%/hc/integrations/googlechat/urls.py
+%%HOMEDIR%%/hc/integrations/googlechat/views.py
+%%HOMEDIR%%/hc/integrations/gotify/__init__.py
+%%HOMEDIR%%/hc/integrations/gotify/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/gotify/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/forms.py
+%%HOMEDIR%%/hc/integrations/gotify/static/img/gotify.png
+%%HOMEDIR%%/hc/integrations/gotify/static/img/setup_gotify_1.png
+%%HOMEDIR%%/hc/integrations/gotify/static/img/setup_gotify_2.png
+%%HOMEDIR%%/hc/integrations/gotify/templates/add_gotify.html
+%%HOMEDIR%%/hc/integrations/gotify/templates/gotify_message.html
+%%HOMEDIR%%/hc/integrations/gotify/templates/gotify_title.html
+%%HOMEDIR%%/hc/integrations/gotify/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/gotify/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/gotify/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/gotify/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/gotify/transport.py
+%%HOMEDIR%%/hc/integrations/gotify/urls.py
+%%HOMEDIR%%/hc/integrations/gotify/views.py
+%%HOMEDIR%%/hc/integrations/group/__init__.py
+%%HOMEDIR%%/hc/integrations/group/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/group/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/forms.py
+%%HOMEDIR%%/hc/integrations/group/static/img/group.png
+%%HOMEDIR%%/hc/integrations/group/templates/group_form.html
+%%HOMEDIR%%/hc/integrations/group/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/group/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/group/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/group/tests/test_edit.py
+%%HOMEDIR%%/hc/integrations/group/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/group/transport.py
+%%HOMEDIR%%/hc/integrations/group/urls.py
+%%HOMEDIR%%/hc/integrations/group/views.py
+%%HOMEDIR%%/hc/integrations/matrix/__init__.py
+%%HOMEDIR%%/hc/integrations/matrix/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/matrix/__pycache__/client%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/client.py
+%%HOMEDIR%%/hc/integrations/matrix/forms.py
+%%HOMEDIR%%/hc/integrations/matrix/static/img/matrix.png
+%%HOMEDIR%%/hc/integrations/matrix/static/img/mattermost.png
+%%HOMEDIR%%/hc/integrations/matrix/static/img/setup_matrix_1.png
+%%HOMEDIR%%/hc/integrations/matrix/static/img/setup_matrix_2.png
+%%HOMEDIR%%/hc/integrations/matrix/static/img/setup_matrix_3.png
+%%HOMEDIR%%/hc/integrations/matrix/static/img/setup_matrix_4.png
+%%HOMEDIR%%/hc/integrations/matrix/templates/add_matrix.html
+%%HOMEDIR%%/hc/integrations/matrix/templates/matrix_description.html
+%%HOMEDIR%%/hc/integrations/matrix/templates/matrix_description_formatted.html
+%%HOMEDIR%%/hc/integrations/matrix/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/matrix/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/matrix/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/matrix/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/matrix/transport.py
+%%HOMEDIR%%/hc/integrations/matrix/urls.py
+%%HOMEDIR%%/hc/integrations/matrix/views.py
+%%HOMEDIR%%/hc/integrations/mattermost/__init__.py
+%%HOMEDIR%%/hc/integrations/mattermost/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/static/img/setup_mattermost_1.png
+%%HOMEDIR%%/hc/integrations/mattermost/static/img/setup_mattermost_2.png
+%%HOMEDIR%%/hc/integrations/mattermost/static/img/setup_mattermost_3.png
+%%HOMEDIR%%/hc/integrations/mattermost/static/img/setup_mattermost_4.png
+%%HOMEDIR%%/hc/integrations/mattermost/static/img/setup_mattermost_5.png
+%%HOMEDIR%%/hc/integrations/mattermost/templates/add_mattermost.html
+%%HOMEDIR%%/hc/integrations/mattermost/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/mattermost/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/tests/__pycache__/test_help%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/mattermost/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/mattermost/tests/test_help.py
+%%HOMEDIR%%/hc/integrations/mattermost/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/mattermost/transport.py
+%%HOMEDIR%%/hc/integrations/mattermost/urls.py
+%%HOMEDIR%%/hc/integrations/mattermost/views.py
+%%HOMEDIR%%/hc/integrations/msteamsw/__init__.py
+%%HOMEDIR%%/hc/integrations/msteamsw/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/static/img/msteams.png
+%%HOMEDIR%%/hc/integrations/msteamsw/static/img/msteamsw.png
+%%HOMEDIR%%/hc/integrations/msteamsw/static/img/setup_msteamsw_1.png
+%%HOMEDIR%%/hc/integrations/msteamsw/static/img/setup_msteamsw_2.png
+%%HOMEDIR%%/hc/integrations/msteamsw/static/img/setup_msteamsw_3.png
+%%HOMEDIR%%/hc/integrations/msteamsw/static/img/setup_msteamsw_4.png
+%%HOMEDIR%%/hc/integrations/msteamsw/templates/add_msteams.html
+%%HOMEDIR%%/hc/integrations/msteamsw/templates/msteamsw_message.html
+%%HOMEDIR%%/hc/integrations/msteamsw/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/msteamsw/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/msteamsw/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/msteamsw/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/msteamsw/transport.py
+%%HOMEDIR%%/hc/integrations/msteamsw/urls.py
+%%HOMEDIR%%/hc/integrations/msteamsw/views.py
+%%HOMEDIR%%/hc/integrations/ntfy/__init__.py
+%%HOMEDIR%%/hc/integrations/ntfy/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/forms.py
+%%HOMEDIR%%/hc/integrations/ntfy/static/img/ntfy.png
+%%HOMEDIR%%/hc/integrations/ntfy/static/js/ntfy_form.js
+%%HOMEDIR%%/hc/integrations/ntfy/templates/ntfy_form.html
+%%HOMEDIR%%/hc/integrations/ntfy/templates/ntfy_message.html
+%%HOMEDIR%%/hc/integrations/ntfy/templates/ntfy_title.html
+%%HOMEDIR%%/hc/integrations/ntfy/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/ntfy/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/ntfy/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/ntfy/tests/test_edit.py
+%%HOMEDIR%%/hc/integrations/ntfy/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/ntfy/transport.py
+%%HOMEDIR%%/hc/integrations/ntfy/urls.py
+%%HOMEDIR%%/hc/integrations/ntfy/views.py
+%%HOMEDIR%%/hc/integrations/opsgenie/__init__.py
+%%HOMEDIR%%/hc/integrations/opsgenie/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/forms.py
+%%HOMEDIR%%/hc/integrations/opsgenie/static/img/opsgenie.png
+%%HOMEDIR%%/hc/integrations/opsgenie/static/img/setup_opsgenie_1.png
+%%HOMEDIR%%/hc/integrations/opsgenie/static/img/setup_opsgenie_2.png
+%%HOMEDIR%%/hc/integrations/opsgenie/static/img/setup_opsgenie_3.png
+%%HOMEDIR%%/hc/integrations/opsgenie/static/img/setup_opsgenie_4.png
+%%HOMEDIR%%/hc/integrations/opsgenie/templates/add_opsgenie.html
+%%HOMEDIR%%/hc/integrations/opsgenie/templates/opsgenie_message.html
+%%HOMEDIR%%/hc/integrations/opsgenie/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/opsgenie/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/opsgenie/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/opsgenie/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/opsgenie/transport.py
+%%HOMEDIR%%/hc/integrations/opsgenie/urls.py
+%%HOMEDIR%%/hc/integrations/opsgenie/views.py
+%%HOMEDIR%%/hc/integrations/pagertree/__init__.py
+%%HOMEDIR%%/hc/integrations/pagertree/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/static/img/pagertree.png
+%%HOMEDIR%%/hc/integrations/pagertree/static/img/setup_pagertree_1.png
+%%HOMEDIR%%/hc/integrations/pagertree/static/img/setup_pagertree_2.png
+%%HOMEDIR%%/hc/integrations/pagertree/static/img/setup_pagertree_3.png
+%%HOMEDIR%%/hc/integrations/pagertree/templates/add_pagertree.html
+%%HOMEDIR%%/hc/integrations/pagertree/templates/pagertree_description.html
+%%HOMEDIR%%/hc/integrations/pagertree/templates/pagertree_title.html
+%%HOMEDIR%%/hc/integrations/pagertree/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/pagertree/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pagertree/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/pagertree/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/pagertree/transport.py
+%%HOMEDIR%%/hc/integrations/pagertree/urls.py
+%%HOMEDIR%%/hc/integrations/pagertree/views.py
+%%HOMEDIR%%/hc/integrations/pd/__init__.py
+%%HOMEDIR%%/hc/integrations/pd/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/pd/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/forms.py
+%%HOMEDIR%%/hc/integrations/pd/static/img/pd.png
+%%HOMEDIR%%/hc/integrations/pd/static/img/setup_pd_s1.png
+%%HOMEDIR%%/hc/integrations/pd/static/img/setup_pd_s2.png
+%%HOMEDIR%%/hc/integrations/pd/static/img/setup_pd_simple_0.png
+%%HOMEDIR%%/hc/integrations/pd/static/img/setup_pd_simple_1.png
+%%HOMEDIR%%/hc/integrations/pd/static/img/setup_pd_simple_2.png
+%%HOMEDIR%%/hc/integrations/pd/static/img/setup_pd_simple_3.png
+%%HOMEDIR%%/hc/integrations/pd/templates/add_pd.html
+%%HOMEDIR%%/hc/integrations/pd/templates/add_pd_simple.html
+%%HOMEDIR%%/hc/integrations/pd/templates/pd_description.html
+%%HOMEDIR%%/hc/integrations/pd/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/pd/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/tests/__pycache__/test_add_complete%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/tests/__pycache__/test_help%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pd/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/pd/tests/test_add_complete.py
+%%HOMEDIR%%/hc/integrations/pd/tests/test_help.py
+%%HOMEDIR%%/hc/integrations/pd/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/pd/transport.py
+%%HOMEDIR%%/hc/integrations/pd/urls.py
+%%HOMEDIR%%/hc/integrations/pd/views.py
+%%HOMEDIR%%/hc/integrations/po/__init__.py
+%%HOMEDIR%%/hc/integrations/po/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/po/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/forms.py
+%%HOMEDIR%%/hc/integrations/po/static/img/po.png
+%%HOMEDIR%%/hc/integrations/po/static/img/setup_pushover_0.png
+%%HOMEDIR%%/hc/integrations/po/static/img/setup_pushover_1.png
+%%HOMEDIR%%/hc/integrations/po/static/img/setup_pushover_2.png
+%%HOMEDIR%%/hc/integrations/po/static/img/setup_pushover_3.png
+%%HOMEDIR%%/hc/integrations/po/static/js/add_pushover.js
+%%HOMEDIR%%/hc/integrations/po/templates/add_pushover.html
+%%HOMEDIR%%/hc/integrations/po/templates/add_pushover_help.html
+%%HOMEDIR%%/hc/integrations/po/templates/pushover_message.html
+%%HOMEDIR%%/hc/integrations/po/templates/pushover_title.html
+%%HOMEDIR%%/hc/integrations/po/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/po/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/tests/__pycache__/test_help%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/po/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/po/tests/test_help.py
+%%HOMEDIR%%/hc/integrations/po/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/po/transport.py
+%%HOMEDIR%%/hc/integrations/po/urls.py
+%%HOMEDIR%%/hc/integrations/po/views.py
+%%HOMEDIR%%/hc/integrations/prometheus/__init__.py
+%%HOMEDIR%%/hc/integrations/prometheus/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/prometheus/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/prometheus/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/prometheus/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/prometheus/static/img/prometheus.png
+%%HOMEDIR%%/hc/integrations/prometheus/static/img/setup_prometheus_1.png
+%%HOMEDIR%%/hc/integrations/prometheus/templates/add_prometheus.html
+%%HOMEDIR%%/hc/integrations/prometheus/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/prometheus/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/prometheus/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/prometheus/tests/__pycache__/test_metrics%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/prometheus/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/prometheus/tests/test_metrics.py
+%%HOMEDIR%%/hc/integrations/prometheus/urls.py
+%%HOMEDIR%%/hc/integrations/prometheus/views.py
+%%HOMEDIR%%/hc/integrations/pushbullet/__init__.py
+%%HOMEDIR%%/hc/integrations/pushbullet/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/static/img/pushbullet.png
+%%HOMEDIR%%/hc/integrations/pushbullet/templates/add_pushbullet.html
+%%HOMEDIR%%/hc/integrations/pushbullet/templates/pushbullet_message.html
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/__pycache__/test_add_complete%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/test_add_complete.py
+%%HOMEDIR%%/hc/integrations/pushbullet/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/pushbullet/transport.py
+%%HOMEDIR%%/hc/integrations/pushbullet/urls.py
+%%HOMEDIR%%/hc/integrations/pushbullet/views.py
+%%HOMEDIR%%/hc/integrations/rocketchat/__init__.py
+%%HOMEDIR%%/hc/integrations/rocketchat/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/static/img/rocketchat.png
+%%HOMEDIR%%/hc/integrations/rocketchat/static/img/setup_rocketchat_1.png
+%%HOMEDIR%%/hc/integrations/rocketchat/static/img/setup_rocketchat_2.png
+%%HOMEDIR%%/hc/integrations/rocketchat/static/img/setup_rocketchat_3.png
+%%HOMEDIR%%/hc/integrations/rocketchat/static/img/setup_rocketchat_4.png
+%%HOMEDIR%%/hc/integrations/rocketchat/static/img/setup_rocketchat_5.png
+%%HOMEDIR%%/hc/integrations/rocketchat/static/img/setup_rocketchat_6.png
+%%HOMEDIR%%/hc/integrations/rocketchat/templates/add_rocketchat.html
+%%HOMEDIR%%/hc/integrations/rocketchat/templates/rocketchat_message.html
+%%HOMEDIR%%/hc/integrations/rocketchat/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/rocketchat/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/rocketchat/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/rocketchat/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/rocketchat/transport.py
+%%HOMEDIR%%/hc/integrations/rocketchat/urls.py
+%%HOMEDIR%%/hc/integrations/rocketchat/views.py
+%%HOMEDIR%%/hc/integrations/shell/__init__.py
+%%HOMEDIR%%/hc/integrations/shell/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/shell/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/forms.py
+%%HOMEDIR%%/hc/integrations/shell/static/img/shell.png
+%%HOMEDIR%%/hc/integrations/shell/templates/add_shell.html
+%%HOMEDIR%%/hc/integrations/shell/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/shell/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/shell/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/shell/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/shell/transport.py
+%%HOMEDIR%%/hc/integrations/shell/urls.py
+%%HOMEDIR%%/hc/integrations/shell/views.py
+%%HOMEDIR%%/hc/integrations/signal/__init__.py
+%%HOMEDIR%%/hc/integrations/signal/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/signal/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/forms.py
+%%HOMEDIR%%/hc/integrations/signal/static/img/signal.png
+%%HOMEDIR%%/hc/integrations/signal/static/js/signal_form.js
+%%HOMEDIR%%/hc/integrations/signal/templates/signal_form.html
+%%HOMEDIR%%/hc/integrations/signal/templates/signal_message.html
+%%HOMEDIR%%/hc/integrations/signal/templates/signal_result.html
+%%HOMEDIR%%/hc/integrations/signal/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/signal/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/tests/__pycache__/test_signal_captcha%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/tests/__pycache__/test_verify_signal_number%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/signal/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/signal/tests/test_edit.py
+%%HOMEDIR%%/hc/integrations/signal/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/signal/tests/test_signal_captcha.py
+%%HOMEDIR%%/hc/integrations/signal/tests/test_verify_signal_number.py
+%%HOMEDIR%%/hc/integrations/signal/transport.py
+%%HOMEDIR%%/hc/integrations/signal/urls.py
+%%HOMEDIR%%/hc/integrations/signal/views.py
+%%HOMEDIR%%/hc/integrations/slack/__init__.py
+%%HOMEDIR%%/hc/integrations/slack/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/slack/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/static/img/add_to_slack.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/add_to_slack@2x.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_1.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_2.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_btn_0.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_btn_1.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_btn_2.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/setup_slack_btn_3.png
+%%HOMEDIR%%/hc/integrations/slack/static/img/slack.png
+%%HOMEDIR%%/hc/integrations/slack/templates/add_slack.html
+%%HOMEDIR%%/hc/integrations/slack/templates/add_slack_btn.html
+%%HOMEDIR%%/hc/integrations/slack/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/slack/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/tests/__pycache__/test_add_btn%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/tests/__pycache__/test_add_complete%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/tests/__pycache__/test_help%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/slack/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/slack/tests/test_add_btn.py
+%%HOMEDIR%%/hc/integrations/slack/tests/test_add_complete.py
+%%HOMEDIR%%/hc/integrations/slack/tests/test_help.py
+%%HOMEDIR%%/hc/integrations/slack/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/slack/transport.py
+%%HOMEDIR%%/hc/integrations/slack/urls.py
+%%HOMEDIR%%/hc/integrations/slack/views.py
+%%HOMEDIR%%/hc/integrations/sms/__init__.py
+%%HOMEDIR%%/hc/integrations/sms/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/sms/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/static/img/sms.png
+%%HOMEDIR%%/hc/integrations/sms/templates/sms_form.html
+%%HOMEDIR%%/hc/integrations/sms/templates/sms_message.html
+%%HOMEDIR%%/hc/integrations/sms/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/sms/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/sms/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/sms/tests/test_edit.py
+%%HOMEDIR%%/hc/integrations/sms/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/sms/transport.py
+%%HOMEDIR%%/hc/integrations/sms/urls.py
+%%HOMEDIR%%/hc/integrations/sms/views.py
+%%HOMEDIR%%/hc/integrations/spike/__init__.py
+%%HOMEDIR%%/hc/integrations/spike/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/spike/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/spike/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/spike/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/spike/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/spike/static/img/setup_spike_1.png
+%%HOMEDIR%%/hc/integrations/spike/static/img/setup_spike_2.png
+%%HOMEDIR%%/hc/integrations/spike/static/img/setup_spike_3.png
+%%HOMEDIR%%/hc/integrations/spike/static/img/setup_spike_4.png
+%%HOMEDIR%%/hc/integrations/spike/static/img/spike.png
+%%HOMEDIR%%/hc/integrations/spike/templates/add_spike.html
+%%HOMEDIR%%/hc/integrations/spike/templates/spike_description.html
+%%HOMEDIR%%/hc/integrations/spike/templates/spike_title.html
+%%HOMEDIR%%/hc/integrations/spike/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/spike/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/spike/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/spike/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/spike/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/spike/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/spike/transport.py
+%%HOMEDIR%%/hc/integrations/spike/urls.py
+%%HOMEDIR%%/hc/integrations/spike/views.py
+%%HOMEDIR%%/hc/integrations/telegram/__init__.py
+%%HOMEDIR%%/hc/integrations/telegram/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/telegram/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/forms.py
+%%HOMEDIR%%/hc/integrations/telegram/static/img/setup_telegram_1.png
+%%HOMEDIR%%/hc/integrations/telegram/static/img/setup_telegram_2.png
+%%HOMEDIR%%/hc/integrations/telegram/static/img/setup_telegram_3.png
+%%HOMEDIR%%/hc/integrations/telegram/static/img/telegram.png
+%%HOMEDIR%%/hc/integrations/telegram/templates/add_telegram.html
+%%HOMEDIR%%/hc/integrations/telegram/templates/telegram_invite.html
+%%HOMEDIR%%/hc/integrations/telegram/templates/telegram_message.html
+%%HOMEDIR%%/hc/integrations/telegram/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/telegram/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/telegram/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/telegram/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/telegram/transport.py
+%%HOMEDIR%%/hc/integrations/telegram/urls.py
+%%HOMEDIR%%/hc/integrations/telegram/views.py
+%%HOMEDIR%%/hc/integrations/trello/__init__.py
+%%HOMEDIR%%/hc/integrations/trello/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/trello/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/forms.py
+%%HOMEDIR%%/hc/integrations/trello/static/img/trello.png
+%%HOMEDIR%%/hc/integrations/trello/static/js/add_trello.js
+%%HOMEDIR%%/hc/integrations/trello/templates/add_trello.html
+%%HOMEDIR%%/hc/integrations/trello/templates/trello_desc.html
+%%HOMEDIR%%/hc/integrations/trello/templates/trello_name.html
+%%HOMEDIR%%/hc/integrations/trello/templates/trello_settings.html
+%%HOMEDIR%%/hc/integrations/trello/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/trello/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/tests/__pycache__/test_settings%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/trello/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/trello/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/trello/tests/test_settings.py
+%%HOMEDIR%%/hc/integrations/trello/transport.py
+%%HOMEDIR%%/hc/integrations/trello/urls.py
+%%HOMEDIR%%/hc/integrations/trello/views.py
+%%HOMEDIR%%/hc/integrations/victorops/__init__.py
+%%HOMEDIR%%/hc/integrations/victorops/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/victorops/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/victorops/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/victorops/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/victorops/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/victorops/static/img/setup_victorops_1.png
+%%HOMEDIR%%/hc/integrations/victorops/static/img/setup_victorops_2.png
+%%HOMEDIR%%/hc/integrations/victorops/static/img/victorops.png
+%%HOMEDIR%%/hc/integrations/victorops/templates/add_victorops.html
+%%HOMEDIR%%/hc/integrations/victorops/templates/victorops_description.html
+%%HOMEDIR%%/hc/integrations/victorops/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/victorops/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/victorops/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/victorops/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/victorops/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/victorops/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/victorops/transport.py
+%%HOMEDIR%%/hc/integrations/victorops/urls.py
+%%HOMEDIR%%/hc/integrations/victorops/views.py
+%%HOMEDIR%%/hc/integrations/webhook/__init__.py
+%%HOMEDIR%%/hc/integrations/webhook/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/webhook/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/forms.py
+%%HOMEDIR%%/hc/integrations/webhook/static/img/webhook.png
+%%HOMEDIR%%/hc/integrations/webhook/static/js/webhook.js
+%%HOMEDIR%%/hc/integrations/webhook/templates/webhook_form.html
+%%HOMEDIR%%/hc/integrations/webhook/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/webhook/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/webhook/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/webhook/tests/test_edit.py
+%%HOMEDIR%%/hc/integrations/webhook/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/webhook/transport.py
+%%HOMEDIR%%/hc/integrations/webhook/urls.py
+%%HOMEDIR%%/hc/integrations/webhook/views.py
+%%HOMEDIR%%/hc/integrations/whatsapp/__init__.py
+%%HOMEDIR%%/hc/integrations/whatsapp/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/__pycache__/apps%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/__pycache__/apps%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/apps.py
+%%HOMEDIR%%/hc/integrations/whatsapp/static/img/whatsapp.png
+%%HOMEDIR%%/hc/integrations/whatsapp/templates/whatsapp_form.html
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/__pycache__/test_edit%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/test_edit.py
+%%HOMEDIR%%/hc/integrations/whatsapp/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/whatsapp/transport.py
+%%HOMEDIR%%/hc/integrations/whatsapp/urls.py
+%%HOMEDIR%%/hc/integrations/whatsapp/views.py
+%%HOMEDIR%%/hc/integrations/zulip/__init__.py
+%%HOMEDIR%%/hc/integrations/zulip/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%HOMEDIR%%/hc/integrations/zulip/__pycache__/forms%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/__pycache__/transport%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/__pycache__/urls%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/__pycache__/views%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/forms.py
+%%HOMEDIR%%/hc/integrations/zulip/static/img/setup_zulip_1.png
+%%HOMEDIR%%/hc/integrations/zulip/static/img/setup_zulip_2.png
+%%HOMEDIR%%/hc/integrations/zulip/static/img/setup_zulip_3.png
+%%HOMEDIR%%/hc/integrations/zulip/static/img/setup_zulip_4.png
+%%HOMEDIR%%/hc/integrations/zulip/static/img/setup_zulip_5.png
+%%HOMEDIR%%/hc/integrations/zulip/static/img/zulip.png
+%%HOMEDIR%%/hc/integrations/zulip/static/js/add_zulip.js
+%%HOMEDIR%%/hc/integrations/zulip/templates/add_zulip.html
+%%HOMEDIR%%/hc/integrations/zulip/templates/zulip_content.html
+%%HOMEDIR%%/hc/integrations/zulip/templates/zulip_topic.html
+%%HOMEDIR%%/hc/integrations/zulip/tests/__init__.py
+%%HOMEDIR%%/hc/integrations/zulip/tests/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/tests/__pycache__/test_add%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/tests/__pycache__/test_notify%%PYTHON_TAG%%.opt-1.pyc
+%%HOMEDIR%%/hc/integrations/zulip/tests/test_add.py
+%%HOMEDIR%%/hc/integrations/zulip/tests/test_notify.py
+%%HOMEDIR%%/hc/integrations/zulip/transport.py
+%%HOMEDIR%%/hc/integrations/zulip/urls.py
+%%HOMEDIR%%/hc/integrations/zulip/views.py
 %%HOMEDIR%%/hc/lib/__init__.py
 %%HOMEDIR%%/hc/lib/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/__init__%%PYTHON_TAG%%.pyc
@@ -857,11 +1414,7 @@ bin/hcks
 %%HOMEDIR%%/hc/lib/__pycache__/date%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/emails%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/emails%%PYTHON_TAG%%.pyc
-%%HOMEDIR%%/hc/lib/__pycache__/github%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/lib/__pycache__/github%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/html%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/lib/__pycache__/html%%PYTHON_TAG%%.pyc
-%%HOMEDIR%%/hc/lib/__pycache__/matrix%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/s3%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/s3%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/signing%%PYTHON_TAG%%.opt-1.pyc
@@ -869,7 +1422,6 @@ bin/hcks
 %%HOMEDIR%%/hc/lib/__pycache__/statsd%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/statsd%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/string%%PYTHON_TAG%%.opt-1.pyc
-%%HOMEDIR%%/hc/lib/__pycache__/string%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/typealias%%PYTHON_TAG%%.opt-1.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/typealias%%PYTHON_TAG%%.pyc
 %%HOMEDIR%%/hc/lib/__pycache__/tz%%PYTHON_TAG%%.opt-1.pyc
@@ -880,9 +1432,7 @@ bin/hcks
 %%HOMEDIR%%/hc/lib/curl.py
 %%HOMEDIR%%/hc/lib/date.py
 %%HOMEDIR%%/hc/lib/emails.py
-%%HOMEDIR%%/hc/lib/github.py
 %%HOMEDIR%%/hc/lib/html.py
-%%HOMEDIR%%/hc/lib/matrix.py
 %%HOMEDIR%%/hc/lib/s3.py
 %%HOMEDIR%%/hc/lib/signing.py
 %%HOMEDIR%%/hc/lib/statsd.py
@@ -985,6 +1535,8 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/css/output.27d9190db11c.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.27fed4d96071.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.27fed4d96071.css.gz
+%%HOMEDIR%%/static-collected/CACHE/css/output.2d3cc72d730c.css
+%%HOMEDIR%%/static-collected/CACHE/css/output.2d3cc72d730c.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.338a92d956e0.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.338a92d956e0.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.3b9726e6757d.css
@@ -995,10 +1547,10 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/css/output.4118f003b752.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.48b942e160d8.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.48b942e160d8.css.gz
-%%HOMEDIR%%/static-collected/CACHE/css/output.4f48555496c9.css
-%%HOMEDIR%%/static-collected/CACHE/css/output.4f48555496c9.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.537f18b6ba12.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.537f18b6ba12.css.gz
+%%HOMEDIR%%/static-collected/CACHE/css/output.5781c954c7fe.css
+%%HOMEDIR%%/static-collected/CACHE/css/output.5781c954c7fe.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.5b5be2f67d28.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.5b5be2f67d28.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.5b9a3186b65a.css
@@ -1015,8 +1567,6 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/css/output.79bc4ba389df.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.85131bd6fe18.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.85131bd6fe18.css.gz
-%%HOMEDIR%%/static-collected/CACHE/css/output.92ca7578c1e1.css
-%%HOMEDIR%%/static-collected/CACHE/css/output.92ca7578c1e1.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.994ced6690f1.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.994ced6690f1.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.99b939d7a1fa.css
@@ -1035,8 +1585,8 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/css/output.b5314e6471ce.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.ba3a60f23b9a.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.ba3a60f23b9a.css.gz
-%%HOMEDIR%%/static-collected/CACHE/css/output.bc14245246d0.css
-%%HOMEDIR%%/static-collected/CACHE/css/output.bc14245246d0.css.gz
+%%HOMEDIR%%/static-collected/CACHE/css/output.be44bcfea48a.css
+%%HOMEDIR%%/static-collected/CACHE/css/output.be44bcfea48a.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.c2d1279dce0e.css
 %%HOMEDIR%%/static-collected/CACHE/css/output.c2d1279dce0e.css.gz
 %%HOMEDIR%%/static-collected/CACHE/css/output.ca025a6b1199.css
@@ -1097,6 +1647,8 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/js/output.9ce1f5e65e9a.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.9f0fa72b79a3.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.9f0fa72b79a3.js.gz
+%%HOMEDIR%%/static-collected/CACHE/js/output.ae529949a37e.js
+%%HOMEDIR%%/static-collected/CACHE/js/output.ae529949a37e.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.b4ba48ed4f66.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.b4ba48ed4f66.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.b85217576987.js
@@ -1109,16 +1661,14 @@ bin/hcks
 %%HOMEDIR%%/static-collected/CACHE/js/output.c4e367d31ce9.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.c56525d27da6.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.c56525d27da6.js.gz
-%%HOMEDIR%%/static-collected/CACHE/js/output.c653f0934335.js
-%%HOMEDIR%%/static-collected/CACHE/js/output.c653f0934335.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.c9c5c8413808.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.c9c5c8413808.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.cf866df012a0.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.cf866df012a0.js.gz
+%%HOMEDIR%%/static-collected/CACHE/js/output.d1a982a34e92.js
+%%HOMEDIR%%/static-collected/CACHE/js/output.d1a982a34e92.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.d1af18153f71.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.d1af18153f71.js.gz
-%%HOMEDIR%%/static-collected/CACHE/js/output.db93224f6407.js
-%%HOMEDIR%%/static-collected/CACHE/js/output.db93224f6407.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.deacfb4c1f0f.js
 %%HOMEDIR%%/static-collected/CACHE/js/output.deacfb4c1f0f.js.gz
 %%HOMEDIR%%/static-collected/CACHE/js/output.e9c76ee85b5e.js
@@ -1309,13 +1859,18 @@ bin/hcks
 %%HOMEDIR%%/static-collected/fonts/icomoon.svg
 %%HOMEDIR%%/static-collected/fonts/icomoon.ttf
 %%HOMEDIR%%/static-collected/fonts/icomoon.woff
+%%HOMEDIR%%/static-collected/img/add_to_slack.png
+%%HOMEDIR%%/static-collected/img/add_to_slack@2x.png
 %%HOMEDIR%%/static-collected/img/apple-touch-180.png
+%%HOMEDIR%%/static-collected/img/apprise.png
 %%HOMEDIR%%/static-collected/img/badges.png
 %%HOMEDIR%%/static-collected/img/badges@2x.png
+%%HOMEDIR%%/static-collected/img/call.png
 %%HOMEDIR%%/static-collected/img/check_details.png
 %%HOMEDIR%%/static-collected/img/check_details@2x.png
 %%HOMEDIR%%/static-collected/img/cron.png
 %%HOMEDIR%%/static-collected/img/cron@2x.png
+%%HOMEDIR%%/static-collected/img/discord.png
 %%HOMEDIR%%/static-collected/img/docs/add_check.png
 %%HOMEDIR%%/static-collected/img/docs/badges.png
 %%HOMEDIR%%/static-collected/img/docs/checks_durations.png
@@ -1349,116 +1904,112 @@ bin/hcks
 %%HOMEDIR%%/static-collected/img/docs/transfer_check.png
 %%HOMEDIR%%/static-collected/img/docs/transfer_project.png
 %%HOMEDIR%%/static-collected/img/down.png
+%%HOMEDIR%%/static-collected/img/email.png
 %%HOMEDIR%%/static-collected/img/favicon.ico
 %%HOMEDIR%%/static-collected/img/favicon.svg
 %%HOMEDIR%%/static-collected/img/favicon_down.svg
-%%HOMEDIR%%/static-collected/img/integrations/add_to_slack.png
-%%HOMEDIR%%/static-collected/img/integrations/add_to_slack@2x.png
-%%HOMEDIR%%/static-collected/img/integrations/apprise.png
-%%HOMEDIR%%/static-collected/img/integrations/call.png
-%%HOMEDIR%%/static-collected/img/integrations/discord.png
-%%HOMEDIR%%/static-collected/img/integrations/email.png
-%%HOMEDIR%%/static-collected/img/integrations/github-white.png
-%%HOMEDIR%%/static-collected/img/integrations/github.png
-%%HOMEDIR%%/static-collected/img/integrations/googlechat.png
-%%HOMEDIR%%/static-collected/img/integrations/gotify.png
-%%HOMEDIR%%/static-collected/img/integrations/group.png
-%%HOMEDIR%%/static-collected/img/integrations/linenotify.png
-%%HOMEDIR%%/static-collected/img/integrations/matrix.png
-%%HOMEDIR%%/static-collected/img/integrations/mattermost.png
-%%HOMEDIR%%/static-collected/img/integrations/missing.png
-%%HOMEDIR%%/static-collected/img/integrations/msteams.png
-%%HOMEDIR%%/static-collected/img/integrations/msteamsw.png
-%%HOMEDIR%%/static-collected/img/integrations/ntfy.png
-%%HOMEDIR%%/static-collected/img/integrations/opsgenie.png
-%%HOMEDIR%%/static-collected/img/integrations/pagertree.png
-%%HOMEDIR%%/static-collected/img/integrations/pd.png
-%%HOMEDIR%%/static-collected/img/integrations/pd_connect_button.png
-%%HOMEDIR%%/static-collected/img/integrations/po.png
-%%HOMEDIR%%/static-collected/img/integrations/prometheus.png
-%%HOMEDIR%%/static-collected/img/integrations/pushbullet.png
-%%HOMEDIR%%/static-collected/img/integrations/rocketchat.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_googlechat_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_googlechat_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_googlechat_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_googlechat_4.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_gotify_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_gotify_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_matrix_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_matrix_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_matrix_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_matrix_4.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_mattermost_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_mattermost_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_mattermost_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_mattermost_4.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_mattermost_5.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_msteamsw_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_msteamsw_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_msteamsw_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_msteamsw_4.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_opsgenie_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_opsgenie_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_opsgenie_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_opsgenie_4.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pagertree_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pagertree_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pagertree_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pd_s1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pd_s2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pd_simple_0.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pd_simple_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pd_simple_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pd_simple_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_prometheus_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pushover_0.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pushover_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pushover_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_pushover_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_rocketchat_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_rocketchat_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_rocketchat_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_rocketchat_4.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_rocketchat_5.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_rocketchat_6.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_slack_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_slack_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_slack_btn_0.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_slack_btn_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_slack_btn_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_slack_btn_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_spike_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_spike_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_spike_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_spike_4.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_telegram_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_telegram_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_telegram_3.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_victorops_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_victorops_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_zulip_1.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_zulip_2.png
-%%HOMEDIR%%/static-collected/img/integrations/setup_zulip_3.png
-%%HOMEDIR%%/static-collected/img/integrations/shell.png
-%%HOMEDIR%%/static-collected/img/integrations/signal.png
-%%HOMEDIR%%/static-collected/img/integrations/slack.png
-%%HOMEDIR%%/static-collected/img/integrations/sms.png
-%%HOMEDIR%%/static-collected/img/integrations/spike.png
-%%HOMEDIR%%/static-collected/img/integrations/telegram.png
-%%HOMEDIR%%/static-collected/img/integrations/trello.png
-%%HOMEDIR%%/static-collected/img/integrations/victorops.png
-%%HOMEDIR%%/static-collected/img/integrations/webhook.png
-%%HOMEDIR%%/static-collected/img/integrations/whatsapp.png
-%%HOMEDIR%%/static-collected/img/integrations/zulip.png
+%%HOMEDIR%%/static-collected/img/github-white.png
+%%HOMEDIR%%/static-collected/img/github.png
+%%HOMEDIR%%/static-collected/img/googlechat.png
+%%HOMEDIR%%/static-collected/img/gotify.png
+%%HOMEDIR%%/static-collected/img/group.png
+%%HOMEDIR%%/static-collected/img/linenotify.png
 %%HOMEDIR%%/static-collected/img/logo.png
+%%HOMEDIR%%/static-collected/img/matrix.png
+%%HOMEDIR%%/static-collected/img/mattermost.png
+%%HOMEDIR%%/static-collected/img/missing.png
+%%HOMEDIR%%/static-collected/img/msteams.png
+%%HOMEDIR%%/static-collected/img/msteamsw.png
 %%HOMEDIR%%/static-collected/img/my_checks.png
 %%HOMEDIR%%/static-collected/img/my_checks@2x.png
+%%HOMEDIR%%/static-collected/img/ntfy.png
+%%HOMEDIR%%/static-collected/img/opsgenie.png
+%%HOMEDIR%%/static-collected/img/pagertree.png
+%%HOMEDIR%%/static-collected/img/pd.png
 %%HOMEDIR%%/static-collected/img/period_grace.png
 %%HOMEDIR%%/static-collected/img/period_grace@2x.png
+%%HOMEDIR%%/static-collected/img/po.png
+%%HOMEDIR%%/static-collected/img/prometheus.png
+%%HOMEDIR%%/static-collected/img/pushbullet.png
+%%HOMEDIR%%/static-collected/img/rocketchat.png
+%%HOMEDIR%%/static-collected/img/setup_googlechat_1.png
+%%HOMEDIR%%/static-collected/img/setup_googlechat_2.png
+%%HOMEDIR%%/static-collected/img/setup_googlechat_3.png
+%%HOMEDIR%%/static-collected/img/setup_googlechat_4.png
+%%HOMEDIR%%/static-collected/img/setup_gotify_1.png
+%%HOMEDIR%%/static-collected/img/setup_gotify_2.png
+%%HOMEDIR%%/static-collected/img/setup_matrix_1.png
+%%HOMEDIR%%/static-collected/img/setup_matrix_2.png
+%%HOMEDIR%%/static-collected/img/setup_matrix_3.png
+%%HOMEDIR%%/static-collected/img/setup_matrix_4.png
+%%HOMEDIR%%/static-collected/img/setup_mattermost_1.png
+%%HOMEDIR%%/static-collected/img/setup_mattermost_2.png
+%%HOMEDIR%%/static-collected/img/setup_mattermost_3.png
+%%HOMEDIR%%/static-collected/img/setup_mattermost_4.png
+%%HOMEDIR%%/static-collected/img/setup_mattermost_5.png
+%%HOMEDIR%%/static-collected/img/setup_msteamsw_1.png
+%%HOMEDIR%%/static-collected/img/setup_msteamsw_2.png
+%%HOMEDIR%%/static-collected/img/setup_msteamsw_3.png
+%%HOMEDIR%%/static-collected/img/setup_msteamsw_4.png
+%%HOMEDIR%%/static-collected/img/setup_opsgenie_1.png
+%%HOMEDIR%%/static-collected/img/setup_opsgenie_2.png
+%%HOMEDIR%%/static-collected/img/setup_opsgenie_3.png
+%%HOMEDIR%%/static-collected/img/setup_opsgenie_4.png
+%%HOMEDIR%%/static-collected/img/setup_pagertree_1.png
+%%HOMEDIR%%/static-collected/img/setup_pagertree_2.png
+%%HOMEDIR%%/static-collected/img/setup_pagertree_3.png
+%%HOMEDIR%%/static-collected/img/setup_pd_s1.png
+%%HOMEDIR%%/static-collected/img/setup_pd_s2.png
+%%HOMEDIR%%/static-collected/img/setup_pd_simple_0.png
+%%HOMEDIR%%/static-collected/img/setup_pd_simple_1.png
+%%HOMEDIR%%/static-collected/img/setup_pd_simple_2.png
+%%HOMEDIR%%/static-collected/img/setup_pd_simple_3.png
+%%HOMEDIR%%/static-collected/img/setup_prometheus_1.png
+%%HOMEDIR%%/static-collected/img/setup_pushover_0.png
+%%HOMEDIR%%/static-collected/img/setup_pushover_1.png
+%%HOMEDIR%%/static-collected/img/setup_pushover_2.png
+%%HOMEDIR%%/static-collected/img/setup_pushover_3.png
+%%HOMEDIR%%/static-collected/img/setup_rocketchat_1.png
+%%HOMEDIR%%/static-collected/img/setup_rocketchat_2.png
+%%HOMEDIR%%/static-collected/img/setup_rocketchat_3.png
+%%HOMEDIR%%/static-collected/img/setup_rocketchat_4.png
+%%HOMEDIR%%/static-collected/img/setup_rocketchat_5.png
+%%HOMEDIR%%/static-collected/img/setup_rocketchat_6.png
+%%HOMEDIR%%/static-collected/img/setup_slack_1.png
+%%HOMEDIR%%/static-collected/img/setup_slack_2.png
+%%HOMEDIR%%/static-collected/img/setup_slack_btn_0.png
+%%HOMEDIR%%/static-collected/img/setup_slack_btn_1.png
+%%HOMEDIR%%/static-collected/img/setup_slack_btn_2.png
+%%HOMEDIR%%/static-collected/img/setup_slack_btn_3.png
+%%HOMEDIR%%/static-collected/img/setup_spike_1.png
+%%HOMEDIR%%/static-collected/img/setup_spike_2.png
+%%HOMEDIR%%/static-collected/img/setup_spike_3.png
+%%HOMEDIR%%/static-collected/img/setup_spike_4.png
+%%HOMEDIR%%/static-collected/img/setup_telegram_1.png
+%%HOMEDIR%%/static-collected/img/setup_telegram_2.png
+%%HOMEDIR%%/static-collected/img/setup_telegram_3.png
+%%HOMEDIR%%/static-collected/img/setup_victorops_1.png
+%%HOMEDIR%%/static-collected/img/setup_victorops_2.png
+%%HOMEDIR%%/static-collected/img/setup_zulip_1.png
+%%HOMEDIR%%/static-collected/img/setup_zulip_2.png
+%%HOMEDIR%%/static-collected/img/setup_zulip_3.png
+%%HOMEDIR%%/static-collected/img/setup_zulip_4.png
+%%HOMEDIR%%/static-collected/img/setup_zulip_5.png
+%%HOMEDIR%%/static-collected/img/shell.png
+%%HOMEDIR%%/static-collected/img/signal.png
+%%HOMEDIR%%/static-collected/img/slack.png
+%%HOMEDIR%%/static-collected/img/sms.png
+%%HOMEDIR%%/static-collected/img/spike.png
+%%HOMEDIR%%/static-collected/img/telegram.png
 %%HOMEDIR%%/static-collected/img/theme-dark.png
 %%HOMEDIR%%/static-collected/img/theme-light.png
 %%HOMEDIR%%/static-collected/img/theme-system.png
+%%HOMEDIR%%/static-collected/img/trello.png
 %%HOMEDIR%%/static-collected/img/up.png
+%%HOMEDIR%%/static-collected/img/victorops.png
+%%HOMEDIR%%/static-collected/img/webhook.png
+%%HOMEDIR%%/static-collected/img/whatsapp.png
+%%HOMEDIR%%/static-collected/img/zulip.png
 %%HOMEDIR%%/static-collected/js/adaptive-setinterval.js
 %%HOMEDIR%%/static-collected/js/add-check-modal.js
 %%HOMEDIR%%/static-collected/js/add_credential.js
@@ -1592,105 +2143,9 @@ bin/hcks
 %%HOMEDIR%%/static/img/favicon.ico
 %%HOMEDIR%%/static/img/favicon.svg
 %%HOMEDIR%%/static/img/favicon_down.svg
-%%HOMEDIR%%/static/img/integrations/add_to_slack.png
-%%HOMEDIR%%/static/img/integrations/add_to_slack@2x.png
-%%HOMEDIR%%/static/img/integrations/apprise.png
-%%HOMEDIR%%/static/img/integrations/call.png
-%%HOMEDIR%%/static/img/integrations/discord.png
-%%HOMEDIR%%/static/img/integrations/email.png
-%%HOMEDIR%%/static/img/integrations/github-white.png
-%%HOMEDIR%%/static/img/integrations/github.png
-%%HOMEDIR%%/static/img/integrations/googlechat.png
-%%HOMEDIR%%/static/img/integrations/gotify.png
-%%HOMEDIR%%/static/img/integrations/group.png
-%%HOMEDIR%%/static/img/integrations/linenotify.png
-%%HOMEDIR%%/static/img/integrations/matrix.png
-%%HOMEDIR%%/static/img/integrations/mattermost.png
-%%HOMEDIR%%/static/img/integrations/missing.png
-%%HOMEDIR%%/static/img/integrations/msteams.png
-%%HOMEDIR%%/static/img/integrations/msteamsw.png
-%%HOMEDIR%%/static/img/integrations/ntfy.png
-%%HOMEDIR%%/static/img/integrations/opsgenie.png
-%%HOMEDIR%%/static/img/integrations/pagertree.png
-%%HOMEDIR%%/static/img/integrations/pd.png
-%%HOMEDIR%%/static/img/integrations/pd_connect_button.png
-%%HOMEDIR%%/static/img/integrations/po.png
-%%HOMEDIR%%/static/img/integrations/prometheus.png
-%%HOMEDIR%%/static/img/integrations/pushbullet.png
-%%HOMEDIR%%/static/img/integrations/rocketchat.png
-%%HOMEDIR%%/static/img/integrations/setup_googlechat_1.png
-%%HOMEDIR%%/static/img/integrations/setup_googlechat_2.png
-%%HOMEDIR%%/static/img/integrations/setup_googlechat_3.png
-%%HOMEDIR%%/static/img/integrations/setup_googlechat_4.png
-%%HOMEDIR%%/static/img/integrations/setup_gotify_1.png
-%%HOMEDIR%%/static/img/integrations/setup_gotify_2.png
-%%HOMEDIR%%/static/img/integrations/setup_matrix_1.png
-%%HOMEDIR%%/static/img/integrations/setup_matrix_2.png
-%%HOMEDIR%%/static/img/integrations/setup_matrix_3.png
-%%HOMEDIR%%/static/img/integrations/setup_matrix_4.png
-%%HOMEDIR%%/static/img/integrations/setup_mattermost_1.png
-%%HOMEDIR%%/static/img/integrations/setup_mattermost_2.png
-%%HOMEDIR%%/static/img/integrations/setup_mattermost_3.png
-%%HOMEDIR%%/static/img/integrations/setup_mattermost_4.png
-%%HOMEDIR%%/static/img/integrations/setup_mattermost_5.png
-%%HOMEDIR%%/static/img/integrations/setup_msteamsw_1.png
-%%HOMEDIR%%/static/img/integrations/setup_msteamsw_2.png
-%%HOMEDIR%%/static/img/integrations/setup_msteamsw_3.png
-%%HOMEDIR%%/static/img/integrations/setup_msteamsw_4.png
-%%HOMEDIR%%/static/img/integrations/setup_opsgenie_1.png
-%%HOMEDIR%%/static/img/integrations/setup_opsgenie_2.png
-%%HOMEDIR%%/static/img/integrations/setup_opsgenie_3.png
-%%HOMEDIR%%/static/img/integrations/setup_opsgenie_4.png
-%%HOMEDIR%%/static/img/integrations/setup_pagertree_1.png
-%%HOMEDIR%%/static/img/integrations/setup_pagertree_2.png
-%%HOMEDIR%%/static/img/integrations/setup_pagertree_3.png
-%%HOMEDIR%%/static/img/integrations/setup_pd_s1.png
-%%HOMEDIR%%/static/img/integrations/setup_pd_s2.png
-%%HOMEDIR%%/static/img/integrations/setup_pd_simple_0.png
-%%HOMEDIR%%/static/img/integrations/setup_pd_simple_1.png
-%%HOMEDIR%%/static/img/integrations/setup_pd_simple_2.png
-%%HOMEDIR%%/static/img/integrations/setup_pd_simple_3.png
-%%HOMEDIR%%/static/img/integrations/setup_prometheus_1.png
-%%HOMEDIR%%/static/img/integrations/setup_pushover_0.png
-%%HOMEDIR%%/static/img/integrations/setup_pushover_1.png
-%%HOMEDIR%%/static/img/integrations/setup_pushover_2.png
-%%HOMEDIR%%/static/img/integrations/setup_pushover_3.png
-%%HOMEDIR%%/static/img/integrations/setup_rocketchat_1.png
-%%HOMEDIR%%/static/img/integrations/setup_rocketchat_2.png
-%%HOMEDIR%%/static/img/integrations/setup_rocketchat_3.png
-%%HOMEDIR%%/static/img/integrations/setup_rocketchat_4.png
-%%HOMEDIR%%/static/img/integrations/setup_rocketchat_5.png
-%%HOMEDIR%%/static/img/integrations/setup_rocketchat_6.png
-%%HOMEDIR%%/static/img/integrations/setup_slack_1.png
-%%HOMEDIR%%/static/img/integrations/setup_slack_2.png
-%%HOMEDIR%%/static/img/integrations/setup_slack_btn_0.png
-%%HOMEDIR%%/static/img/integrations/setup_slack_btn_1.png
-%%HOMEDIR%%/static/img/integrations/setup_slack_btn_2.png
-%%HOMEDIR%%/static/img/integrations/setup_slack_btn_3.png
-%%HOMEDIR%%/static/img/integrations/setup_spike_1.png
-%%HOMEDIR%%/static/img/integrations/setup_spike_2.png
-%%HOMEDIR%%/static/img/integrations/setup_spike_3.png
-%%HOMEDIR%%/static/img/integrations/setup_spike_4.png
-%%HOMEDIR%%/static/img/integrations/setup_telegram_1.png
-%%HOMEDIR%%/static/img/integrations/setup_telegram_2.png
-%%HOMEDIR%%/static/img/integrations/setup_telegram_3.png
-%%HOMEDIR%%/static/img/integrations/setup_victorops_1.png
-%%HOMEDIR%%/static/img/integrations/setup_victorops_2.png
-%%HOMEDIR%%/static/img/integrations/setup_zulip_1.png
-%%HOMEDIR%%/static/img/integrations/setup_zulip_2.png
-%%HOMEDIR%%/static/img/integrations/setup_zulip_3.png
-%%HOMEDIR%%/static/img/integrations/shell.png
-%%HOMEDIR%%/static/img/integrations/signal.png
-%%HOMEDIR%%/static/img/integrations/slack.png
-%%HOMEDIR%%/static/img/integrations/sms.png
-%%HOMEDIR%%/static/img/integrations/spike.png
-%%HOMEDIR%%/static/img/integrations/telegram.png
-%%HOMEDIR%%/static/img/integrations/trello.png
-%%HOMEDIR%%/static/img/integrations/victorops.png
-%%HOMEDIR%%/static/img/integrations/webhook.png
-%%HOMEDIR%%/static/img/integrations/whatsapp.png
-%%HOMEDIR%%/static/img/integrations/zulip.png
+%%HOMEDIR%%/static/img/linenotify.png
 %%HOMEDIR%%/static/img/logo.png
+%%HOMEDIR%%/static/img/missing.png
 %%HOMEDIR%%/static/img/my_checks.png
 %%HOMEDIR%%/static/img/my_checks@2x.png
 %%HOMEDIR%%/static/img/period_grace.png
@@ -1703,9 +2158,6 @@ bin/hcks
 %%HOMEDIR%%/static/js/add-check-modal.js
 %%HOMEDIR%%/static/js/add_credential.js
 %%HOMEDIR%%/static/js/add_project_modal.js
-%%HOMEDIR%%/static/js/add_pushover.js
-%%HOMEDIR%%/static/js/add_trello.js
-%%HOMEDIR%%/static/js/add_zulip.js
 %%HOMEDIR%%/static/js/appearance.js
 %%HOMEDIR%%/static/js/auto-submit.js
 %%HOMEDIR%%/static/js/badges.js
@@ -1723,7 +2175,6 @@ bin/hcks
 %%HOMEDIR%%/static/js/moment.min.js
 %%HOMEDIR%%/static/js/notifications.js
 %%HOMEDIR%%/static/js/nouislider.min.js
-%%HOMEDIR%%/static/js/ntfy_form.js
 %%HOMEDIR%%/static/js/ping_details.js
 %%HOMEDIR%%/static/js/profile.js
 %%HOMEDIR%%/static/js/project.js
@@ -1733,13 +2184,11 @@ bin/hcks
 %%HOMEDIR%%/static/js/search.js
 %%HOMEDIR%%/static/js/selectize.min.js
 %%HOMEDIR%%/static/js/set-password.js
-%%HOMEDIR%%/static/js/signal_form.js
 %%HOMEDIR%%/static/js/signup.js
 %%HOMEDIR%%/static/js/slug-suggestions.js
 %%HOMEDIR%%/static/js/snippet-copy.js
 %%HOMEDIR%%/static/js/update-timeout-modal.js
 %%HOMEDIR%%/static/js/webauthn-json.browser-global.js
-%%HOMEDIR%%/static/js/webhook.js
 %%HOMEDIR%%/static/js/zxcvbn.min.js
 %%HOMEDIR%%/templates/accounts/add_credential.html
 %%HOMEDIR%%/templates/accounts/add_project_modal.html
@@ -1773,6 +2222,7 @@ bin/hcks
 %%HOMEDIR%%/templates/base.html
 %%HOMEDIR%%/templates/base_bare.html
 %%HOMEDIR%%/templates/base_project.html
+%%HOMEDIR%%/templates/contact.vcf
 %%HOMEDIR%%/templates/docs/api.html-fragment
 %%HOMEDIR%%/templates/docs/api.md
 %%HOMEDIR%%/templates/docs/apiv1.html-fragment
@@ -1879,7 +2329,6 @@ bin/hcks
 %%HOMEDIR%%/templates/emails/sudo-code-body-html.html
 %%HOMEDIR%%/templates/emails/sudo-code-body-text.html
 %%HOMEDIR%%/templates/emails/sudo-code-subject.html
-%%HOMEDIR%%/templates/emails/summary-text.html
 %%HOMEDIR%%/templates/emails/transfer-request-body-html.html
 %%HOMEDIR%%/templates/emails/transfer-request-body-text.html
 %%HOMEDIR%%/templates/emails/transfer-request-subject.html
@@ -1956,73 +2405,6 @@ bin/hcks
 %%HOMEDIR%%/templates/front/update_name_modal.html
 %%HOMEDIR%%/templates/front/update_timeout_modal.html
 %%HOMEDIR%%/templates/front/verify_email_success.html
-%%HOMEDIR%%/templates/integrations/add_apprise.html
-%%HOMEDIR%%/templates/integrations/add_call.html
-%%HOMEDIR%%/templates/integrations/add_discord.html
-%%HOMEDIR%%/templates/integrations/add_github.html
-%%HOMEDIR%%/templates/integrations/add_github_form.html
-%%HOMEDIR%%/templates/integrations/add_googlechat.html
-%%HOMEDIR%%/templates/integrations/add_gotify.html
-%%HOMEDIR%%/templates/integrations/add_matrix.html
-%%HOMEDIR%%/templates/integrations/add_mattermost.html
-%%HOMEDIR%%/templates/integrations/add_msteams.html
-%%HOMEDIR%%/templates/integrations/add_opsgenie.html
-%%HOMEDIR%%/templates/integrations/add_pagertree.html
-%%HOMEDIR%%/templates/integrations/add_pd.html
-%%HOMEDIR%%/templates/integrations/add_pd_simple.html
-%%HOMEDIR%%/templates/integrations/add_prometheus.html
-%%HOMEDIR%%/templates/integrations/add_pushbullet.html
-%%HOMEDIR%%/templates/integrations/add_pushover.html
-%%HOMEDIR%%/templates/integrations/add_pushover_help.html
-%%HOMEDIR%%/templates/integrations/add_rocketchat.html
-%%HOMEDIR%%/templates/integrations/add_shell.html
-%%HOMEDIR%%/templates/integrations/add_slack.html
-%%HOMEDIR%%/templates/integrations/add_slack_btn.html
-%%HOMEDIR%%/templates/integrations/add_spike.html
-%%HOMEDIR%%/templates/integrations/add_telegram.html
-%%HOMEDIR%%/templates/integrations/add_trello.html
-%%HOMEDIR%%/templates/integrations/add_victorops.html
-%%HOMEDIR%%/templates/integrations/add_zulip.html
-%%HOMEDIR%%/templates/integrations/apprise_description.html
-%%HOMEDIR%%/templates/integrations/apprise_title.html
-%%HOMEDIR%%/templates/integrations/call_message.html
-%%HOMEDIR%%/templates/integrations/email_form.html
-%%HOMEDIR%%/templates/integrations/github_body.html
-%%HOMEDIR%%/templates/integrations/github_title.html
-%%HOMEDIR%%/templates/integrations/gotify_message.html
-%%HOMEDIR%%/templates/integrations/gotify_title.html
-%%HOMEDIR%%/templates/integrations/group_form.html
-%%HOMEDIR%%/templates/integrations/matrix_description.html
-%%HOMEDIR%%/templates/integrations/matrix_description_formatted.html
-%%HOMEDIR%%/templates/integrations/msteamsw_message.html
-%%HOMEDIR%%/templates/integrations/ntfy_form.html
-%%HOMEDIR%%/templates/integrations/ntfy_message.html
-%%HOMEDIR%%/templates/integrations/ntfy_title.html
-%%HOMEDIR%%/templates/integrations/opsgenie_message.html
-%%HOMEDIR%%/templates/integrations/pagertree_description.html
-%%HOMEDIR%%/templates/integrations/pagertree_title.html
-%%HOMEDIR%%/templates/integrations/pd_description.html
-%%HOMEDIR%%/templates/integrations/pushbullet_message.html
-%%HOMEDIR%%/templates/integrations/pushover_message.html
-%%HOMEDIR%%/templates/integrations/pushover_title.html
-%%HOMEDIR%%/templates/integrations/rocketchat_message.html
-%%HOMEDIR%%/templates/integrations/signal_form.html
-%%HOMEDIR%%/templates/integrations/signal_message.html
-%%HOMEDIR%%/templates/integrations/signal_result.html
-%%HOMEDIR%%/templates/integrations/sms_form.html
-%%HOMEDIR%%/templates/integrations/sms_message.html
-%%HOMEDIR%%/templates/integrations/spike_description.html
-%%HOMEDIR%%/templates/integrations/spike_title.html
-%%HOMEDIR%%/templates/integrations/telegram_invite.html
-%%HOMEDIR%%/templates/integrations/telegram_message.html
-%%HOMEDIR%%/templates/integrations/trello_desc.html
-%%HOMEDIR%%/templates/integrations/trello_name.html
-%%HOMEDIR%%/templates/integrations/trello_settings.html
-%%HOMEDIR%%/templates/integrations/victorops_description.html
-%%HOMEDIR%%/templates/integrations/webhook_form.html
-%%HOMEDIR%%/templates/integrations/whatsapp_form.html
-%%HOMEDIR%%/templates/integrations/zulip_content.html
-%%HOMEDIR%%/templates/integrations/zulip_topic.html
 %%HOMEDIR%%/templates/try_later.html
 @dir %%HOMEDIR%%/hc/__pycache__
 @dir %%HOMEDIR%%/hc/accounts/__pycache__
@@ -2057,6 +2439,224 @@ bin/hcks
 @dir %%HOMEDIR%%/hc/front/tests/__pycache__
 @dir %%HOMEDIR%%/hc/front/tests
 @dir %%HOMEDIR%%/hc/front
+@dir %%HOMEDIR%%/hc/integrations/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/apprise/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/apprise/static/img
+@dir %%HOMEDIR%%/hc/integrations/apprise/static
+@dir %%HOMEDIR%%/hc/integrations/apprise/templates
+@dir %%HOMEDIR%%/hc/integrations/apprise/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/apprise/tests
+@dir %%HOMEDIR%%/hc/integrations/apprise
+@dir %%HOMEDIR%%/hc/integrations/call/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/call/static/img
+@dir %%HOMEDIR%%/hc/integrations/call/static
+@dir %%HOMEDIR%%/hc/integrations/call/templates
+@dir %%HOMEDIR%%/hc/integrations/call/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/call/tests
+@dir %%HOMEDIR%%/hc/integrations/call
+@dir %%HOMEDIR%%/hc/integrations/discord/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/discord/static/img
+@dir %%HOMEDIR%%/hc/integrations/discord/static
+@dir %%HOMEDIR%%/hc/integrations/discord/templates
+@dir %%HOMEDIR%%/hc/integrations/discord/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/discord/tests
+@dir %%HOMEDIR%%/hc/integrations/discord
+@dir %%HOMEDIR%%/hc/integrations/email/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/email/static/img
+@dir %%HOMEDIR%%/hc/integrations/email/static
+@dir %%HOMEDIR%%/hc/integrations/email/templates
+@dir %%HOMEDIR%%/hc/integrations/email/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/email/tests
+@dir %%HOMEDIR%%/hc/integrations/email
+@dir %%HOMEDIR%%/hc/integrations/github/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/github/static/img
+@dir %%HOMEDIR%%/hc/integrations/github/static
+@dir %%HOMEDIR%%/hc/integrations/github/templates
+@dir %%HOMEDIR%%/hc/integrations/github/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/github/tests
+@dir %%HOMEDIR%%/hc/integrations/github
+@dir %%HOMEDIR%%/hc/integrations/googlechat/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/googlechat/static/img
+@dir %%HOMEDIR%%/hc/integrations/googlechat/static
+@dir %%HOMEDIR%%/hc/integrations/googlechat/templates
+@dir %%HOMEDIR%%/hc/integrations/googlechat/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/googlechat/tests
+@dir %%HOMEDIR%%/hc/integrations/googlechat
+@dir %%HOMEDIR%%/hc/integrations/gotify/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/gotify/static/img
+@dir %%HOMEDIR%%/hc/integrations/gotify/static
+@dir %%HOMEDIR%%/hc/integrations/gotify/templates
+@dir %%HOMEDIR%%/hc/integrations/gotify/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/gotify/tests
+@dir %%HOMEDIR%%/hc/integrations/gotify
+@dir %%HOMEDIR%%/hc/integrations/group/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/group/static/img
+@dir %%HOMEDIR%%/hc/integrations/group/static
+@dir %%HOMEDIR%%/hc/integrations/group/templates
+@dir %%HOMEDIR%%/hc/integrations/group/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/group/tests
+@dir %%HOMEDIR%%/hc/integrations/group
+@dir %%HOMEDIR%%/hc/integrations/matrix/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/matrix/static/img
+@dir %%HOMEDIR%%/hc/integrations/matrix/static
+@dir %%HOMEDIR%%/hc/integrations/matrix/templates
+@dir %%HOMEDIR%%/hc/integrations/matrix/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/matrix/tests
+@dir %%HOMEDIR%%/hc/integrations/matrix
+@dir %%HOMEDIR%%/hc/integrations/mattermost/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/mattermost/static/img
+@dir %%HOMEDIR%%/hc/integrations/mattermost/static
+@dir %%HOMEDIR%%/hc/integrations/mattermost/templates
+@dir %%HOMEDIR%%/hc/integrations/mattermost/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/mattermost/tests
+@dir %%HOMEDIR%%/hc/integrations/mattermost
+@dir %%HOMEDIR%%/hc/integrations/msteamsw/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/msteamsw/static/img
+@dir %%HOMEDIR%%/hc/integrations/msteamsw/static
+@dir %%HOMEDIR%%/hc/integrations/msteamsw/templates
+@dir %%HOMEDIR%%/hc/integrations/msteamsw/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/msteamsw/tests
+@dir %%HOMEDIR%%/hc/integrations/msteamsw
+@dir %%HOMEDIR%%/hc/integrations/ntfy/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/ntfy/static/img
+@dir %%HOMEDIR%%/hc/integrations/ntfy/static/js
+@dir %%HOMEDIR%%/hc/integrations/ntfy/static
+@dir %%HOMEDIR%%/hc/integrations/ntfy/templates
+@dir %%HOMEDIR%%/hc/integrations/ntfy/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/ntfy/tests
+@dir %%HOMEDIR%%/hc/integrations/ntfy
+@dir %%HOMEDIR%%/hc/integrations/opsgenie/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/opsgenie/static/img
+@dir %%HOMEDIR%%/hc/integrations/opsgenie/static
+@dir %%HOMEDIR%%/hc/integrations/opsgenie/templates
+@dir %%HOMEDIR%%/hc/integrations/opsgenie/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/opsgenie/tests
+@dir %%HOMEDIR%%/hc/integrations/opsgenie
+@dir %%HOMEDIR%%/hc/integrations/pagertree/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/pagertree/static/img
+@dir %%HOMEDIR%%/hc/integrations/pagertree/static
+@dir %%HOMEDIR%%/hc/integrations/pagertree/templates
+@dir %%HOMEDIR%%/hc/integrations/pagertree/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/pagertree/tests
+@dir %%HOMEDIR%%/hc/integrations/pagertree
+@dir %%HOMEDIR%%/hc/integrations/pd/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/pd/static/img
+@dir %%HOMEDIR%%/hc/integrations/pd/static
+@dir %%HOMEDIR%%/hc/integrations/pd/templates
+@dir %%HOMEDIR%%/hc/integrations/pd/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/pd/tests
+@dir %%HOMEDIR%%/hc/integrations/pd
+@dir %%HOMEDIR%%/hc/integrations/po/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/po/static/img
+@dir %%HOMEDIR%%/hc/integrations/po/static/js
+@dir %%HOMEDIR%%/hc/integrations/po/static
+@dir %%HOMEDIR%%/hc/integrations/po/templates
+@dir %%HOMEDIR%%/hc/integrations/po/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/po/tests
+@dir %%HOMEDIR%%/hc/integrations/po
+@dir %%HOMEDIR%%/hc/integrations/prometheus/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/prometheus/static/img
+@dir %%HOMEDIR%%/hc/integrations/prometheus/static
+@dir %%HOMEDIR%%/hc/integrations/prometheus/templates
+@dir %%HOMEDIR%%/hc/integrations/prometheus/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/prometheus/tests
+@dir %%HOMEDIR%%/hc/integrations/prometheus
+@dir %%HOMEDIR%%/hc/integrations/pushbullet/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/pushbullet/static/img
+@dir %%HOMEDIR%%/hc/integrations/pushbullet/static
+@dir %%HOMEDIR%%/hc/integrations/pushbullet/templates
+@dir %%HOMEDIR%%/hc/integrations/pushbullet/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/pushbullet/tests
+@dir %%HOMEDIR%%/hc/integrations/pushbullet
+@dir %%HOMEDIR%%/hc/integrations/rocketchat/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/rocketchat/static/img
+@dir %%HOMEDIR%%/hc/integrations/rocketchat/static
+@dir %%HOMEDIR%%/hc/integrations/rocketchat/templates
+@dir %%HOMEDIR%%/hc/integrations/rocketchat/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/rocketchat/tests
+@dir %%HOMEDIR%%/hc/integrations/rocketchat
+@dir %%HOMEDIR%%/hc/integrations/shell/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/shell/static/img
+@dir %%HOMEDIR%%/hc/integrations/shell/static
+@dir %%HOMEDIR%%/hc/integrations/shell/templates
+@dir %%HOMEDIR%%/hc/integrations/shell/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/shell/tests
+@dir %%HOMEDIR%%/hc/integrations/shell
+@dir %%HOMEDIR%%/hc/integrations/signal/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/signal/static/img
+@dir %%HOMEDIR%%/hc/integrations/signal/static/js
+@dir %%HOMEDIR%%/hc/integrations/signal/static
+@dir %%HOMEDIR%%/hc/integrations/signal/templates
+@dir %%HOMEDIR%%/hc/integrations/signal/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/signal/tests
+@dir %%HOMEDIR%%/hc/integrations/signal
+@dir %%HOMEDIR%%/hc/integrations/slack/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/slack/static/img
+@dir %%HOMEDIR%%/hc/integrations/slack/static
+@dir %%HOMEDIR%%/hc/integrations/slack/templates
+@dir %%HOMEDIR%%/hc/integrations/slack/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/slack/tests
+@dir %%HOMEDIR%%/hc/integrations/slack
+@dir %%HOMEDIR%%/hc/integrations/sms/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/sms/static/img
+@dir %%HOMEDIR%%/hc/integrations/sms/static
+@dir %%HOMEDIR%%/hc/integrations/sms/templates
+@dir %%HOMEDIR%%/hc/integrations/sms/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/sms/tests
+@dir %%HOMEDIR%%/hc/integrations/sms
+@dir %%HOMEDIR%%/hc/integrations/spike/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/spike/static/img
+@dir %%HOMEDIR%%/hc/integrations/spike/static
+@dir %%HOMEDIR%%/hc/integrations/spike/templates
+@dir %%HOMEDIR%%/hc/integrations/spike/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/spike/tests
+@dir %%HOMEDIR%%/hc/integrations/spike
+@dir %%HOMEDIR%%/hc/integrations/telegram/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/telegram/static/img
+@dir %%HOMEDIR%%/hc/integrations/telegram/static
+@dir %%HOMEDIR%%/hc/integrations/telegram/templates
+@dir %%HOMEDIR%%/hc/integrations/telegram/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/telegram/tests
+@dir %%HOMEDIR%%/hc/integrations/telegram
+@dir %%HOMEDIR%%/hc/integrations/trello/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/trello/static/img
+@dir %%HOMEDIR%%/hc/integrations/trello/static/js
+@dir %%HOMEDIR%%/hc/integrations/trello/static
+@dir %%HOMEDIR%%/hc/integrations/trello/templates
+@dir %%HOMEDIR%%/hc/integrations/trello/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/trello/tests
+@dir %%HOMEDIR%%/hc/integrations/trello
+@dir %%HOMEDIR%%/hc/integrations/victorops/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/victorops/static/img
+@dir %%HOMEDIR%%/hc/integrations/victorops/static
+@dir %%HOMEDIR%%/hc/integrations/victorops/templates
+@dir %%HOMEDIR%%/hc/integrations/victorops/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/victorops/tests
+@dir %%HOMEDIR%%/hc/integrations/victorops
+@dir %%HOMEDIR%%/hc/integrations/webhook/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/webhook/static/img
+@dir %%HOMEDIR%%/hc/integrations/webhook/static/js
+@dir %%HOMEDIR%%/hc/integrations/webhook/static
+@dir %%HOMEDIR%%/hc/integrations/webhook/templates
+@dir %%HOMEDIR%%/hc/integrations/webhook/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/webhook/tests
+@dir %%HOMEDIR%%/hc/integrations/webhook
+@dir %%HOMEDIR%%/hc/integrations/whatsapp/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/whatsapp/static/img
+@dir %%HOMEDIR%%/hc/integrations/whatsapp/static
+@dir %%HOMEDIR%%/hc/integrations/whatsapp/templates
+@dir %%HOMEDIR%%/hc/integrations/whatsapp/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/whatsapp/tests
+@dir %%HOMEDIR%%/hc/integrations/whatsapp
+@dir %%HOMEDIR%%/hc/integrations/zulip/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/zulip/static/img
+@dir %%HOMEDIR%%/hc/integrations/zulip/static/js
+@dir %%HOMEDIR%%/hc/integrations/zulip/static
+@dir %%HOMEDIR%%/hc/integrations/zulip/templates
+@dir %%HOMEDIR%%/hc/integrations/zulip/tests/__pycache__
+@dir %%HOMEDIR%%/hc/integrations/zulip/tests
+@dir %%HOMEDIR%%/hc/integrations/zulip
+@dir %%HOMEDIR%%/hc/integrations
 @dir %%HOMEDIR%%/hc/lib/__pycache__
 @dir %%HOMEDIR%%/hc/lib/tests/__pycache__
 @dir %%HOMEDIR%%/hc/lib/tests
@@ -2078,7 +2678,6 @@ bin/hcks
 @dir %%HOMEDIR%%/static/css
 @dir %%HOMEDIR%%/static/fonts
 @dir %%HOMEDIR%%/static/img/docs
-@dir %%HOMEDIR%%/static/img/integrations
 @dir %%HOMEDIR%%/static/img
 @dir %%HOMEDIR%%/static/js
 @dir %%HOMEDIR%%/static
@@ -2102,7 +2701,6 @@ bin/hcks
 @dir %%HOMEDIR%%/static-collected/css
 @dir %%HOMEDIR%%/static-collected/fonts
 @dir %%HOMEDIR%%/static-collected/img/docs
-@dir %%HOMEDIR%%/static-collected/img/integrations
 @dir %%HOMEDIR%%/static-collected/img
 @dir %%HOMEDIR%%/static-collected/js
 @dir %%HOMEDIR%%/static-collected
@@ -2114,6 +2712,4 @@ bin/hcks
 @dir %%HOMEDIR%%/templates/emails
 @dir %%HOMEDIR%%/templates/front/snippets
 @dir %%HOMEDIR%%/templates/front
-@dir %%HOMEDIR%%/templates/integrations
 @dir %%HOMEDIR%%/templates
-%%EXAMPLESDIR%%/uwsgi.ini
