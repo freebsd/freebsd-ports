@@ -1,8 +1,8 @@
   <vuln vid="eca46635-db51-11f0-9b8d-40a6b7c3b3b8">
-    <topic>step-clie -- Authorization Bypass in ACME and SCEP Provisioners</topic>
+    <topic>step-certificates -- Authorization Bypass in ACME and SCEP Provisioners</topic>
     <affects>
 <package>
-<name>step-cli</name>
+<name>step-certificates</name>
 <range><lt>0.29.0</lt></range>
 </package>
     </affects>
