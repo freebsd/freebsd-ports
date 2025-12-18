@@ -43,7 +43,6 @@ USES=		cmake:indirect gettext gnome libarchive meson pkgconfig python readline s
 USE_GITHUB=	yes
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-WITH_DEBUG=	yes
 USE_RC_SUBR=	fwupd
 
 OPTIONS_DEFINE=	DOCS TEST
