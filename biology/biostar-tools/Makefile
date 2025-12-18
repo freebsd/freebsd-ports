@@ -1,6 +1,5 @@
 PORTNAME=	biostar-tools
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	biology python
 MASTER_SITES=	# empty
 
@@ -23,7 +22,6 @@ RUN_DEPENDS=	wget>0:ftp/wget \
 		miller>0:textproc/miller \
 		ncbi-entrez-direct>0:biology/ncbi-entrez-direct \
 		readseq>0:biology/readseq \
-		snpeff>0:biology/snpeff \
 		picard-tools>0:biology/picard-tools \
 		bbmap>0:biology/bbmap \
 		minimap2>0:biology/minimap2 \
