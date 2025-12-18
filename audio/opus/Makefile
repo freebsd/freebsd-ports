@@ -1,5 +1,5 @@
 PORTNAME=	opus
-DISTVERSION=	1.5.2
+DISTVERSION=	1.6
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/opus/
 
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-custom-modes \
 		--enable-dred \
 		--enable-osce \
+		--enable-qext \
 		--disable-doc   # requires doxygen
 CONFIGURE_TARGET=${ARCH:S/amd64/x86_64/}-portbld-${OPSYS:tl}${OSREL}
 INSTALL_TARGET=	install-strip
