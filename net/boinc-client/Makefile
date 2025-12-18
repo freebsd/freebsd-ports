@@ -1,6 +1,6 @@
 PORTNAME=	boinc-client
 DISTVERSIONPREFIX=	client_release/8.2/
-DISTVERSION=	8.2.4
+DISTVERSION=	8.2.8
 CATEGORIES=	net
 
 MAINTAINER=	alven@FreeBSD.org
@@ -8,7 +8,8 @@ COMMENT=	Berkeley Open Infrastructure for Network Computing client
 WWW=		https://boinc.berkeley.edu/ \
 		https://github.com/BOINC/boinc/
 
-LICENSE=	LGPL3
+LICENSE=	LGPL3+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
@@ -34,6 +35,8 @@ SUB_LIST=	BOINC_CLIENT_GROUP="${BOINC_CLIENT_GROUP}" \
 
 USERS=		boinc
 GROUPS=		boinc
+
+PLIST_SUB=	SOVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=		CLIENT MANAGER NLS SKINS USER X11
 OPTIONS_DEFINE_aarch64=	LINUX
@@ -114,25 +117,6 @@ SUB_LIST+=	OPTION_USER=""
 post-patch:
 	@${REINPLACE_CMD} -e 's|client/scripts||' \
 		${WRKSRC}/Makefile.am
-# avoid build conflict with archivers/libzip
-	@${MV} ${WRKSRC}/zip/unzip/zip.h \
-		${WRKSRC}/zip/unzip/boinczip.h
-	@${MV} ${WRKSRC}/zip/zip/zip.h \
-		${WRKSRC}/zip/zip/boinczip.h
-	@${REINPLACE_CMD} -e 's|zip/zip.h|zip/boinczip.h|' \
-		${WRKSRC}/zip/boinc_zip.cpp
-	@${REINPLACE_CMD} -e 's|"zip.h"|"boinczip.h"|' \
-		${WRKSRC}/zip/unzip/crc32.c \
-		${WRKSRC}/zip/unzip/ttyio.c \
-		${WRKSRC}/zip/zip/deflate.c \
-		${WRKSRC}/zip/zip/trees.c \
-		${WRKSRC}/zip/zip/unix/z_unix.c \
-		${WRKSRC}/zip/zip/util.c \
-		${WRKSRC}/zip/zip/z_fileio.c \
-		${WRKSRC}/zip/zip/z_globals.c \
-		${WRKSRC}/zip/zip/zip.c \
-		${WRKSRC}/zip/zip/zipfile.c \
-		${WRKSRC}/zip/zip/zipup.c
 
 post-patch-X11-off:
 	@${REINPLACE_CMD} -e 's|enable_xss="yes"|enable_xss="no"|' \
@@ -147,8 +131,8 @@ post-install:
 
 post-install-MANAGER-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc
-.for name in 16 32 48
-	${INSTALL_DATA} ${WRKSRC}/packages/generic/sea/boincmgr.${name}x${name}.png \
+.for size in 16 32 48
+	${INSTALL_DATA} ${WRKSRC}/packages/generic/sea/boincmgr.${size}x${size}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
 .endfor
 .if ${PORT_OPTIONS:MSKINS}
@@ -168,8 +152,7 @@ post-install-X11-on:
 		${STAGEDIR}${PREFIX}/include/boinc
 .endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/boinc/ttf
-	(cd ${WRKSRC}/api/ttf/liberation-fonts-ttf-2.00.0 && \
-		${COPYTREE_SHARE} \*.ttf ${STAGEDIR}${PREFIX}/share/boinc/ttf/ \
-		)
+	cd ${WRKSRC}/api/ttf/liberation-fonts-ttf-2.00.0 && \
+		${COPYTREE_SHARE} \*.ttf ${STAGEDIR}${PREFIX}/share/boinc/ttf/
 
 .include <bsd.port.mk>
