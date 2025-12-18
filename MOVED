@@ -4895,3 +4895,5 @@ math/octave-forge-onsas||2025-12-15|Incompatible with octave packaging structure
 devel/equinix-metal-cli||2025-12-15|Has expired: Equinix Platform EOL upstream
 lang/typstfmt||2025-12-15|Discontinued, upstream repository archived on June 8, 2024
 www/py-requests-kerberos|security/py-requests-kerberos|2025-12-17|Remove duplicate port. Use security/py-requests-kerberos instead
+games/melonds@qt5|games/melonds|2025-12-19|Unflavorize port. Qt5 is defunct. Please use melonds based on Qt6 instead
+games/melonds@qt6|games/melonds|2025-12-19|Unflavorize port. Continue to use melonds based on Qt6
