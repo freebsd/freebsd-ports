@@ -1,6 +1,6 @@
---- src/model/modelbase.cpp.orig	2025-04-02 10:33:24 UTC
+--- src/model/modelbase.cpp.orig	2025-10-07 13:46:45 UTC
 +++ src/model/modelbase.cpp
-@@ -895,7 +895,7 @@ ModelPart * ModelBase::createOldSchematicPartAux(Model
+@@ -909,7 +909,7 @@ ModelPart * ModelBase::createOldSchematicPartAux(Model
  	}
  	QDomDocument oldDoc;
  	QDomDocument::ParseResult parseResult = oldDoc.setContent(&newFzp);

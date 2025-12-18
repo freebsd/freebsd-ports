@@ -1,6 +1,6 @@
---- src/utils/textutils.cpp.orig	2025-04-02 10:33:24 UTC
+--- src/utils/textutils.cpp.orig	2025-10-07 13:46:45 UTC
 +++ src/utils/textutils.cpp
-@@ -77,7 +77,7 @@ QList<double> PowerPrefixValues;
+@@ -80,7 +80,7 @@ QList<double> PowerPrefixValues;
  
  QList<QString> PowerPrefixes;
  QList<double> PowerPrefixValues;
@@ -9,7 +9,7 @@
  
  typedef QHash<QString /*brokenFont*/, QString /*replacementFont*/> FixedFontsHash;
  
-@@ -761,7 +761,7 @@ QString TextUtils::convertExtendedChars(const QString 
+@@ -763,7 +763,7 @@ QString TextUtils::convertExtendedChars(const QString 
  			result.append(c);
  		}
  		else {

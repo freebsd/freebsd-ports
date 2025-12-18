@@ -1,6 +1,6 @@
---- src/items/paletteitembase.cpp.orig	2025-04-02 10:33:24 UTC
+--- src/items/paletteitembase.cpp.orig	2025-10-07 13:46:45 UTC
 +++ src/items/paletteitembase.cpp
-@@ -626,7 +626,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLa
+@@ -653,7 +653,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLa
  
  	//DebugDialog::debug(QString("path: %1").arg(path));
  
@@ -9,7 +9,7 @@
  	if (!svg.isEmpty()) return svg;
  
  	SvgFileSplitter splitter;
-@@ -657,7 +657,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLa
+@@ -684,7 +684,7 @@ QString PaletteItemBase::retrieveSvg(ViewLayer::ViewLa
  		return "";
  	}
  	svg = splitter.elementString(xmlName);
