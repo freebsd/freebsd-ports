@@ -1,9 +1,9 @@
---- build/gulpfile.extensions.js.orig	2025-10-08 13:50:39 UTC
-+++ build/gulpfile.extensions.js
-@@ -236,7 +236,7 @@ const compileNonNativeExtensionsBuildTask = task.defin
+--- build/gulpfile.extensions.ts.orig	2025-12-14 06:36:07 UTC
++++ build/gulpfile.extensions.ts
+@@ -218,7 +218,7 @@ export const compileNonNativeExtensionsBuildTask = tas
   * @note this does not clean the directory ahead of it. See {@link cleanExtensionsBuildTask} for that.
   */
- const compileNonNativeExtensionsBuildTask = task.define('compile-non-native-extensions-build', task.series(
+ export const compileNonNativeExtensionsBuildTask = task.define('compile-non-native-extensions-build', task.series(
 -	bundleMarketplaceExtensionsBuildTask,
 +	// bundleMarketplaceExtensionsBuildTask,
  	task.define('bundle-non-native-extensions-build', () => ext.packageNonNativeLocalExtensionsStream(false, false).pipe(gulp.dest('.build')))

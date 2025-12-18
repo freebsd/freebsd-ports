@@ -1,0 +1,133 @@
+PORTNAME=	vscode
+DISTVERSION=	${VSCODE_VERSION}
+CATEGORIES=	editors
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
+PKGNAMESUFFIX=	-reh
+DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules
+DIST_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	tagattie@FreeBSD.org
+COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
+WWW=		https://code.visualstudio.com/
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+ONLY_FOR_ARCHS=	aarch64 amd64
+
+EXTRACT_DEPENDS=jq:textproc/jq \
+		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
+BUILD_DEPENDS=	jq:textproc/jq \
+		rg:textproc/ripgrep \
+		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
+LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
+		libcares.so:dns/c-ares \
+		libicui18n.so:devel/icu \
+		libllhttp.so:www/llhttp \
+		libnghttp2.so:www/libnghttp2 \
+		libnghttp3.so:www/libnghttp3 \
+		libngtcp2.so:net/libngtcp2 \
+		libsimdjson.so:devel/simdjson \
+		libuv.so:devel/libuv \
+		libzstd.so:archivers/zstd \
+		libsqlite3.so:databases/sqlite3 \
+		libsecret-1.so:security/libsecret
+RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
+
+USES=		gssapi:mit localbase:ldflags nodejs:22,build pkgconfig \
+		python:build shebangfix
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	microsoft
+
+SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
+PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
+
+MAKE_ENV=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH}
+
+BINARY_ALIAS=	python=${PYTHON_CMD}
+
+.include "Makefile.version"
+.include <bsd.port.pre.mk>
+
+NODEJS_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+NODEJS_DIR=	${PORTSDIR}/www/node${NODEJS_VERSION}
+.include "${NODEJS_DIR}/Makefile.version"
+
+post-extract:
+	@${CP} ${WRKSRC}/build/.moduleignore.linux \
+		${WRKSRC}/build/.moduleignore.freebsd
+	@${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}"
+	@${TAR} -xzf ${WRKDIR}/vscode-.-node-modules${EXTRACT_SUFX} -C ${WRKSRC}
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
+		if [ -f ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} ]; then \
+			${ECHO_MSG} "===>  Installing node modules in ${WRKSRC}/$${dir}"; \
+			${TAR} -xzf ${WRKDIR}/vscode-`echo $${dir} | tr _ __ | tr / _`-node-modules${EXTRACT_SUFX} \
+				-C ${WRKSRC}/$${dir}; \
+		fi; \
+	done
+
+post-patch:
+	@${REINPLACE_CMD} -E 's|^(target=").*(")$$|\1${NODEJS_PORTVERSION}\2|' \
+		${WRKSRC}/remote/.npmrc
+	@${REINPLACE_CMD} -e 's/%%DISTVERSION%%/${DISTVERSION}/g' \
+		${WRKSRC}/build/gulpfile.reh.ts \
+		${WRKSRC}/build/gulpfile.vscode.ts
+	@(cd ${WRKSRC} && \
+	${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
+		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
+	@(cd ${WRKSRC} && \
+	${FIND} ${PATHFIX_FILES} -type f \
+		-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
+	@${SETENV} FILESDIR=${FILESDIR} \
+		${SH} ${FILESDIR}/update-product-json.sh ${WRKSRC}
+
+pre-build:
+# rebuild native node modules in subdirectories
+	@for dir in `node --input-type=module -e "console.log(JSON.stringify((await import('${WRKSRC}/build/npm/dirs.ts')).dirs))" | jq -r '.[]'`; do \
+		for subdir in `${FIND} ${WRKSRC}/$${dir}/node_modules -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2> /dev/null`; do \
+			${ECHO_MSG} "===>   Rebuilding native modules in $${subdir}"; \
+			if [ "`${ECHO_CMD} $${subdir} | ${GREP} /build/`" ]; then \
+				cd $${subdir} && \
+				${SETENV} ${MAKE_ENV} \
+					npm_config_runtime=node \
+					npm_config_target=${NODEJS_PORTVERSION} \
+					npm_config_nodedir=${LOCALBASE} \
+					node-gyp --userconfig=${WRKSRC}/build/.npmrc rebuild; \
+			elif [ "`${ECHO_CMD} $${subdir} | ${GREP} /remote/`" ]; then \
+				cd $${subdir} && \
+				${SETENV} ${MAKE_ENV} \
+					npm_config_runtime=node \
+					npm_config_target=${NODEJS_PORTVERSION} \
+					npm_config_nodedir=${LOCALBASE} \
+					node-gyp --userconfig=${WRKSRC}/remote/.npmrc rebuild; \
+			fi; \
+		done; \
+	done
+# copy rg binary file to @vscode/ripgrep node module directory
+	@${MKDIR} ${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
+	@${CP} ${LOCALBASE}/bin/rg \
+		${WRKSRC}/build/node_modules/@vscode/ripgrep/bin
+	@${MKDIR} ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
+	@${CP} ${LOCALBASE}/bin/rg \
+		${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
+
+do-build:
+# setup download cache for node
+	@${MKDIR} ${WRKSRC}/.build/node/v${NODEJS_PORTVERSION}/linux-${NODEJS_ARCH}
+	@${CP} ${LOCALBASE}/bin/node \
+		${WRKSRC}/.build/node/v${NODEJS_PORTVERSION}/linux-${NODEJS_ARCH}
+# remove backup files so that they are not included in the package
+	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -o -name '*.orig' -o -name '*~' \) -delete
+# build vscode remote extension host
+	cd ${WRKSRC} && \
+	${SETENV} ${MAKE_ENV} \
+		npm_config_runtime=node \
+		npm_config_target=${NODEJS_PORTVERSION} \
+		npm_config_nodedir=${LOCALBASE} \
+		npm --userconfig=${WRKSRC}/remote/.npmrc run \
+			gulp vscode-reh-linux-${NODEJS_ARCH}-min
+	${TAR} -czf ${WRKDIR}/vscode-reh-${OPSYS:tl}-${NODEJS_ARCH}-${DISTVERSION}.tar.gz \
+		-C ${WRKDIR}/vscode-reh-linux-${NODEJS_ARCH} .
+
+.include <bsd.port.post.mk>

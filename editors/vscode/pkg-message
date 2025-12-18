@@ -1,0 +1,44 @@
+[
+{ type: install
+  message: <<EOM
+Remote development over ssh:
+
+If you want to use remote development over ssh, download and install
+Open Remote - SSH extension[1].
+
+It is a slightly modified version of the extension of the same name
+available at the Open VSX Registry[2]. The contents of the
+modification is available at the GitHub Pull Request[3].
+
+After installation of the extension, restart code-oss and it should
+work out of the box. Please note that the remote extension host will
+be downloaded from the following URL[4] to the remote host upon first
+connection from the local host.
+
+Supported combination of local and remote hosts is as follows:
+
+Local           Remote
+-------------   -------------
+FreeBSD amd64   FreeBSD amd64
+                Linux x86_64
+                Linux arm64
+
+The remote extension host is actually a Node.js-based server and make
+it sure that you have dependency packages installed when the remote
+host is FreeBSD.
+
+You can check which packages are necessary on the remote host at
+FreshPorts[5]. (Install library and runtime dependencies) In addition,
+you have to install misc/compat13x package if the remote host is
+FreeBSD 14 or later. The remote extension host has been built on
+FreeBSD 13 for compatibility reasons.
+
+[1] https://github.com/tagattie/FreeBSD-VSCode/releases/download/1.107.0/open-remote-ssh-0.0.49.vsix
+[2] https://open-vsx.org/extension/jeanp413/open-remote-ssh
+[3] https://github.com/jeanp413/open-remote-ssh/pull/244
+[4] https://github.com/tagattie/FreeBSD-VSCode/releases
+[5] https://www.freshports.org/www/node22/
+
+EOM
+}
+]

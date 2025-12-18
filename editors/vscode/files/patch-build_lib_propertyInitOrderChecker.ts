@@ -1,6 +1,6 @@
---- build/lib/propertyInitOrderChecker.ts.orig	2025-09-09 22:02:15 UTC
+--- build/lib/propertyInitOrderChecker.ts.orig	2025-12-10 18:02:22 UTC
 +++ build/lib/propertyInitOrderChecker.ts
-@@ -43,7 +43,7 @@ function createProgram(tsconfigPath: string): ts.Progr
+@@ -45,7 +45,7 @@ function createProgram(tsconfigPath: string): ts.Progr
  function createProgram(tsconfigPath: string): ts.Program {
  	const tsConfig = ts.readConfigFile(tsconfigPath, ts.sys.readFile);
  

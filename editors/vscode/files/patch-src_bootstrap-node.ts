@@ -1,6 +1,6 @@
---- src/bootstrap-node.ts.orig	2025-09-09 22:02:15 UTC
+--- src/bootstrap-node.ts.orig	2025-12-10 18:02:22 UTC
 +++ src/bootstrap-node.ts
-@@ -150,7 +150,7 @@ export function configurePortable(product: Partial<IPr
+@@ -155,7 +155,7 @@ export function configurePortable(product: Partial<IPr
  			return process.env['VSCODE_PORTABLE'];
  		}
  

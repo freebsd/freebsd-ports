@@ -1,6 +1,6 @@
---- build/lib/electron.ts.orig	2025-07-09 22:00:36 UTC
+--- build/lib/electron.ts.orig	2025-12-10 18:02:22 UTC
 +++ build/lib/electron.ts
-@@ -199,8 +199,9 @@ export const config = {
+@@ -201,8 +201,9 @@ export const config = {
  	winIcon: 'resources/win32/code.ico',
  	token: process.env['GITHUB_TOKEN'],
  	repo: product.electronRepository || undefined,

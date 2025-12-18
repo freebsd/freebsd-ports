@@ -1,6 +1,6 @@
---- build/lib/preLaunch.ts.orig	2024-09-27 21:08:28 UTC
+--- build/lib/preLaunch.ts.orig	2025-12-10 18:02:22 UTC
 +++ build/lib/preLaunch.ts
-@@ -35,9 +35,9 @@ async function ensureNodeModules() {
+@@ -32,9 +32,9 @@ async function ensureNodeModules() {
  	}
  }
  
@@ -13,7 +13,7 @@
  
  async function ensureCompiled() {
  	if (!(await exists('out'))) {
-@@ -47,7 +47,7 @@ async function main() {
+@@ -44,7 +44,7 @@ async function main() {
  
  async function main() {
  	await ensureNodeModules();
