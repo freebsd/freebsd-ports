@@ -1,6 +1,6 @@
 PORTNAME=		CuraEngine
 PORTVERSION=		5.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=		1
 CATEGORIES=		cad
 DIST_SUBDIR=		Ultimaker
@@ -41,7 +41,7 @@ CMAKE_ARGS+=	-DUSE_SYSTEM_LIBS:BOOL=ON \
 		-DStb_FOUND:BOOL=ON \
 		-DStb_INCLUDE_DIRS=${WRKSRC}/include/stb
 LDFLAGS+=	-L${LOCALBASE}/lib
-WITH_DEBUGINFO=	1 # Will segfault if Release
+#WITH_DEBUGINFO=	1 # Will segfault if Release
 
 PLIST_FILES=	bin/CuraEngine
 
