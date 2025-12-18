@@ -1,5 +1,6 @@
 PORTNAME=	ode
 DISTVERSION=	0.16.6
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/odedevs/${PORTNAME}/downloads/
@@ -13,7 +14,7 @@ LICENSE_COMB=	dual
 
 USES=		cmake:testing
 
-FLAVORS=	single double
+FLAVORS=	double single
 FLAVOR?=	${FLAVORS:[1]}
 
 single_CONFLICTS=	odoo-double
