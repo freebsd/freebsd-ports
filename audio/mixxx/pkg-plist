@@ -1,9 +1,5 @@
 bin/mixxx
 share/applications/org.mixxx.Mixxx.desktop
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/Mixxx-Keyboard-Shortcuts.pdf
-%%DOCSDIR%%/README.md
 share/icons/hicolor/128x128/apps/mixxx.png
 share/icons/hicolor/256x256/apps/mixxx.png
 share/icons/hicolor/32x32/apps/mixxx.png

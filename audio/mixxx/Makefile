@@ -1,5 +1,6 @@
 PORTNAME=	mixxx
 DISTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -33,7 +34,8 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libportmidi.so:audio/portmidi \
 		libupower-glib.so:sysutils/upower \
 		libkeyfinder.so:audio/libkeyfinder \
-		libmp3lame.so:audio/lame
+		libmp3lame.so:audio/lame \
+		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake:testing compiler:c++20-lang ebur128 gl iconv ninja pkgconfig \
 		sqlite ssl xorg
@@ -53,8 +55,8 @@ GH_ACCOUNT=	mixxxdj
 PKGNAMESUFFIX=  -qt6
 
 USES+=		qt:6
-USE_QT=		5compat base:run declarative:build tools:build shadertools \
-		sqldriver-sqlite:run svg
+USE_QT=		5compat base declarative shadertools \
+		sqldriver-sqlite:run svg tools:build
 CMAKE_ARGS+=	-DQT6=ON
 
 QTKEYCHAIN_LIB_DEPENDS=	libqt6keychain.so:security/qtkeychain@qt6
