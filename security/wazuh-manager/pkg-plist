@@ -4328,14 +4328,14 @@
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython/__pycache__/__init__%%PYTHON_TAG%%.pyc
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/INSTALLER
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/LICENSE.rst
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/METADATA
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/RECORD
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/REQUESTED
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/WHEEL
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/direct_url.json
-/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info/top_level.txt
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/INSTALLER
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/LICENSE.rst
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/METADATA
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/RECORD
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/REQUESTED
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/WHEEL
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/direct_url.json
+/var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info/top_level.txt
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.10.1.dist-info/AUTHORS.rst
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.10.1.dist-info/INSTALLER
 /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.10.1.dist-info/LICENSE
@@ -30791,7 +30791,7 @@
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython/__pycache__
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/Cython-0.29.36.dist-info
-@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/MarkupSafe-2.1.2.dist-info
+@dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/markupsafe-2.1.2.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/PyJWT-2.10.1.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/SQLAlchemy-2.0.23.dist-info
 @dir /var/ossec/framework/python/%%PYTHON_SITELIBDIR%%/__pycache__
