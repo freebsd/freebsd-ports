@@ -4,6 +4,9 @@ CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/Version-${DISTVERSION}/
 DISTNAME=	SuperCollider-${DISTVERSION}-Source
 
+PATCH_SITES=	https://github.com/supercollider/supercollider/commit/
+PATCHFILES+=	e997e47890a9cee137756dede664811a58dbf85a.patch:-p1 # Fix build with Qt 6.10.1
+
 MAINTAINER=	ports@nicandneal.net
 COMMENT=	Programming language for real time audio synthesis
 WWW=		https://supercollider.github.io
