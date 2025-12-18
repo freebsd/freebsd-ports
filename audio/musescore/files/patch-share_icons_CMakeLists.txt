@@ -1,11 +1,11 @@
---- share/icons/CMakeLists.txt.orig	2025-01-16 11:02:26 UTC
+--- share/icons/CMakeLists.txt.orig	2025-12-01 12:36:11 UTC
 +++ share/icons/CMakeLists.txt
 @@ -40,7 +40,7 @@ elseif(OS_IS_WIN)
-         install(FILES MscxIcon/MS4_MscxIcon.png RENAME mscx.png DESTINATION ${CMAKE_INSTALL_PREFIX}/../AppInfo/FileTypeIcons)
+         install(FILES MscxIcon/MS4_MscxIcon_512x512.png RENAME mscx.png DESTINATION ${CMAKE_INSTALL_PREFIX}/../AppInfo/FileTypeIcons)
      endif()
  
 -elseif(OS_IS_LIN)
 +elseif(OS_IS_LIN OR OS_IS_FBSD)
      foreach(SIZE 16 24 32 48 64 96 128 512)
-         install(FILES AppIcon/MS4_AppIcon_${SIZE}x${SIZE}.png RENAME mscore${MUSE_APP_INSTALL_SUFFIX}.png DESTINATION share/icons/hicolor/${SIZE}x${SIZE}/apps)
-     endforeach()
+         install(FILES AppIcon/MS4_AppIcon_${SIZE}x${SIZE}.png 
+                 RENAME mscore${MUSE_APP_INSTALL_SUFFIX}.png 

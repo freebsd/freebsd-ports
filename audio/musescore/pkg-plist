@@ -24,6 +24,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-musescore.svg
 %%DATADIR%%/autobotscripts/TC8_EngravingText.js
 %%DATADIR%%/autobotscripts/TC9_BigScore(perfomance).js
 %%DATADIR%%/autobotscripts/data/Big_Score.mscz
+%%DATADIR%%/autobotscripts/steps/Home.js
 %%DATADIR%%/autobotscripts/steps/Inspector.js
 %%DATADIR%%/autobotscripts/steps/Instruments.js
 %%DATADIR%%/autobotscripts/steps/Navigation.js
@@ -50,9 +51,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-musescore.svg
 %%DATADIR%%/extensions/example3/configure.qml
 %%DATADIR%%/extensions/example3/manifest.json
 %%DATADIR%%/extensions/example3/remove.js
-%%DATADIR%%/instruments/instruments.xml
-%%DATADIR%%/instruments/orders.xml
-%%DATADIR%%/instruments/string_tunings_presets.json
 %%DATADIR%%/locale/instruments_af.qm
 %%DATADIR%%/locale/instruments_ar.qm
 %%DATADIR%%/locale/instruments_ar_DZ.qm
@@ -237,15 +235,6 @@ share/icons/hicolor/scalable/mimetypes/application-x-musescore.svg
 %%DATADIR%%/styles/Modified Stave Notation/22mm_MSN.mss
 %%DATADIR%%/styles/Modified Stave Notation/25mm_MSN.mss
 %%DATADIR%%/styles/MuseJazz.mss
-%%DATADIR%%/styles/cchords_muse.xml
-%%DATADIR%%/styles/cchords_nrb.xml
-%%DATADIR%%/styles/cchords_rb.xml
-%%DATADIR%%/styles/cchords_sym.xml
-%%DATADIR%%/styles/chords.xml
-%%DATADIR%%/styles/chords_jazz.xml
-%%DATADIR%%/styles/chords_std.xml
-%%DATADIR%%/styles/jazzchords.xml
-%%DATADIR%%/styles/stdchords.xml
 %%DATADIR%%/tables/Es-Es-G0.utb
 %%DATADIR%%/tables/IPA-unicode-range.uti
 %%DATADIR%%/tables/IPA.utb
@@ -929,3 +918,4 @@ share/icons/hicolor/scalable/mimetypes/application-x-musescore.svg
 %%DATADIR%%/wallpapers/paper5.png
 %%DATADIR%%/wallpapers/paper6.png
 %%DATADIR%%/wallpapers/paper7.png
+%%DATADIR%%/workspaces/Default.mws
