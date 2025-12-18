@@ -432,6 +432,7 @@ lib/samba4/private/libsamba-python%%PYTHON_TAG%%-private-samba.so
 %%PYTHON_SITELIBDIR%%/samba/tests/messaging.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ndr/gkdi.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ndr/gmsa.py
+%%PYTHON_SITELIBDIR%%/samba/tests/ndr/sd.py
 %%PYTHON_SITELIBDIR%%/samba/tests/ndr/wbint.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join.py
 %%PYTHON_SITELIBDIR%%/samba/tests/net_join_no_spnego.py
