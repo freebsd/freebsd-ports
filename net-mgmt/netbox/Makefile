@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.8
+DISTVERSION=	4.4.9
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -32,7 +32,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.9<5.3:www/py-django52@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj52-django-prometheus>=2.4.1<2.5:www/py-dj52-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-redis>=6.0.0<7:www/py-dj52-django-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-rich>=2.2.0<3:www/py-dj52-django-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-django-rq>=3.0.1<3.3:devel/py-dj52-django-rq@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-django-rq>=3.2.1<3.3:devel/py-dj52-django-rq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-storages>=1.14.6<2:www/py-dj52-django-storages@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-tables2>=2.8.0<2.9:www/py-dj52-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-django-taggit>=6.1.0<7:www/py-dj52-django-taggit@${PY_FLAVOR} \
@@ -42,7 +42,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.9<5.3:www/py-django52@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj52-drf-spectacular-sidecar>=2025.12.1:www/py-dj52-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-social-auth-app-django>=5.6.0<6:www/py-dj52-social-auth-app-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-sorl-thumbnail>=12.11.0<13:graphics/py-dj52-sorl-thumbnail@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.287.2<0.300:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql>=0.287.3<0.300:devel/py-dj52-strawberry-graphql@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj52-strawberry-graphql-django>=0.70.1<1:www/py-dj52-strawberry-graphql-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.6<1:devel/py-colorama@${PY_FLAVOR} \
@@ -50,7 +50,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django52>=5.2.9<5.3:www/py-django52@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.6<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.25.1<5:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.9<3.11:textproc/py-markdown@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.7.0<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.7.1<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=1.0.0<2:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings-python>=2.0.1:textproc/py-mkdocstrings-python@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=1.3.0<2:net/py-netaddr@${PY_FLAVOR} \

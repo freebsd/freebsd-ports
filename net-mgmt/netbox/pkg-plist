@@ -1496,6 +1496,8 @@
 %%DATADIR%%/translations/it/LC_MESSAGES/django.po
 %%DATADIR%%/translations/ja/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/ja/LC_MESSAGES/django.po
+%%DATADIR%%/translations/lv/LC_MESSAGES/django.mo
+%%DATADIR%%/translations/lv/LC_MESSAGES/django.po
 %%DATADIR%%/translations/nl/LC_MESSAGES/django.mo
 %%DATADIR%%/translations/nl/LC_MESSAGES/django.po
 %%DATADIR%%/translations/pl/LC_MESSAGES/django.mo
