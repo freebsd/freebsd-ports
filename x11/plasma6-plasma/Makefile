@@ -4,7 +4,7 @@ CATEGORIES=	x11 kde
 PKGNAMEPREFIX=	plasma6-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE Plasma 6 (meta port)
+COMMENT=	KDE Plasma 6 Desktop (meta port)
 WWW=		https://www.kde.org/plasma-desktop
 
 USES=		kde:6 metaport qt:6
