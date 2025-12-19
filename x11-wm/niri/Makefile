@@ -4,7 +4,7 @@ DISTVERSION=	25.08
 PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scrollable-tiling Wayland compositor
 WWW=		https://github.com/YaLTeR/niri
 
