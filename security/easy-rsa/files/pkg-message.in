@@ -1,4 +1,6 @@
-
+[
+{
+  type: [install, upgrade], message: <<EOM
 NOTE: easyrsa will require you to initialize a PKI upon first use.
 
 ONLY for the very first run for a new PKI, do something such as this,
@@ -30,4 +32,6 @@ by using the   easyrsa set-pass ca   command.
 For details, see https://community.openvpn.net/openvpn/wiki/CVE-2024-13454.
 
 **** END SECURITY WARNING FOR PAST security/easy-rsa versions ****
-
+EOM
+}
+]
