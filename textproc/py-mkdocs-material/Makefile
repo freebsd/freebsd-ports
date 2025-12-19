@@ -1,5 +1,5 @@
 PORTNAME=	mkdocs-material
-DISTVERSION=	9.7.0
+DISTVERSION=	9.7.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.10:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paginate>=0.5:textproc/py-paginate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.16:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymdown-extensions>=10.2:textproc/py-pymdown-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.26:www/py-requests@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}requests>=2.30:www/py-requests@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
