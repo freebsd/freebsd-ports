@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine
 WWW=		https://suricata.io
 
