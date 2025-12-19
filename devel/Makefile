@@ -2964,6 +2964,7 @@
     SUBDIR += p5-Log-Report
     SUBDIR += p5-Log-Report-Lexicon
     SUBDIR += p5-Log-Report-Optional
+    SUBDIR += p5-Log-Report-Template
     SUBDIR += p5-Log-Simple
     SUBDIR += p5-Log-Trace
     SUBDIR += p5-Log-TraceMessages

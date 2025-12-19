@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Log/Report/Template.pm
+%%SITE_PERL%%/Log/Report/Template.pod
+%%SITE_PERL%%/Log/Report/Template/Extract.pm
+%%SITE_PERL%%/Log/Report/Template/Extract.pod
+%%SITE_PERL%%/Log/Report/Template/Textdomain.pm
+%%SITE_PERL%%/Log/Report/Template/Textdomain.pod
+%%PERL5_MAN3%%/Log::Report::Template.3.gz
+%%PERL5_MAN3%%/Log::Report::Template::Extract.3.gz
+%%PERL5_MAN3%%/Log::Report::Template::Textdomain.3.gz
