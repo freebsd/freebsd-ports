@@ -49,7 +49,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-drb-gitlab>=2.2.3<3:devel/rubygem-drb-gitlab \
 	rubygem-bootsnap-gitlab>=1.18.6<1.19:devel/rubygem-bootsnap-gitlab \
 	rubygem-ffi>=1.17.2<2:devel/rubygem-ffi \
-	rubygem-openssl>=3.3.2<3.4:security/rubygem-openssl \
+	rubygem-openssl3>=3.3.2<3.4:security/rubygem-openssl3 \
 	rubygem-gitlab-secret_detection>=0.38.0<1:security/rubygem-gitlab-secret_detection \
 	rubygem-responders-rails-gitlab>=3.0<4.0:www/rubygem-responders-rails-gitlab \
 	rubygem-sprockets-gitlab>=3.7.5<3.8:devel/rubygem-sprockets-gitlab \
@@ -198,7 +198,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-circuitbox>=2.0.0<2.1:www/rubygem-circuitbox \
 	rubygem-sanitize60>=6.0.2<6.1:textproc/rubygem-sanitize60 \
 	rubygem-babosa>=2.0<3:textproc/rubygem-babosa \
-	rubygem-loofah>=2.24.1<2.25:textproc/rubygem-loofah \
+	rubygem-loofah-gitlab>=2.24.1<2.25:textproc/rubygem-loofah-gitlab \
 	rubygem-licensee-gitlab>=9.16<10:devel/rubygem-licensee-gitlab \
 	rubygem-charlock_holmes>=0.7.9<0.8:textproc/rubygem-charlock_holmes \
 	rubygem-ruby-magic>=0.6<1:devel/rubygem-ruby-magic \
