@@ -1,3 +1,3 @@
-TIMESTAMP = 1765032746
-SHA256 (opentelemetry_instrumentation_django-0.60b0.tar.gz) = 461e6fca27936ba97eec26da38bb5f19310783370478c7ca3a3e40faaceac9cc
-SIZE (opentelemetry_instrumentation_django-0.60b0.tar.gz) = 26596
+TIMESTAMP = 1766036447
+SHA256 (opentelemetry_instrumentation_django-0.60b1.tar.gz) = 765b69c7ccdea7e9ebfd0b9e68387956b8f74816f3e39775d5b06a20f16b0522
+SIZE (opentelemetry_instrumentation_django-0.60b1.tar.gz) = 26599
