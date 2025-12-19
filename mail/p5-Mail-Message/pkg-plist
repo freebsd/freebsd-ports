@@ -2,6 +2,8 @@
 %%SITE_PERL%%/Mail/Box/FastScalar.pod
 %%SITE_PERL%%/Mail/Box/Parser.pm
 %%SITE_PERL%%/Mail/Box/Parser.pod
+%%SITE_PERL%%/Mail/Box/Parser/Lines.pm
+%%SITE_PERL%%/Mail/Box/Parser/Lines.pod
 %%SITE_PERL%%/Mail/Box/Parser/Perl.pm
 %%SITE_PERL%%/Mail/Box/Parser/Perl.pod
 %%SITE_PERL%%/Mail/Message.pm
@@ -119,6 +121,7 @@
 %%SITE_PERL%%/Mail/Reporter.pod
 %%PERL5_MAN3%%/Mail::Box::FastScalar.3.gz
 %%PERL5_MAN3%%/Mail::Box::Parser.3.gz
+%%PERL5_MAN3%%/Mail::Box::Parser::Lines.3.gz
 %%PERL5_MAN3%%/Mail::Box::Parser::Perl.3.gz
 %%PERL5_MAN3%%/Mail::Message.3.gz
 %%PERL5_MAN3%%/Mail::Message::Body.3.gz
