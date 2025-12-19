@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cognitoidentity
-PORTVERSION=	1.82.0
+PORTVERSION=	1.82.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
