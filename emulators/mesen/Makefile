@@ -2,7 +2,7 @@ PORTNAME=	mesen
 DISTVERSION=	0.9.9
 CATEGORIES=	emulators
 
-MAINTAINER=	cpetrik@proton.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform Nintendo Entertainment System (NES/Famicom) emulator
 WWW=		https://www.mesen.ca/
 
