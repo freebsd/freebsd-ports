@@ -63,8 +63,6 @@
 %%SITE_PERL%%/Mail/Box/Search.pod
 %%SITE_PERL%%/Mail/Box/Search/Grep.pm
 %%SITE_PERL%%/Mail/Box/Search/Grep.pod
-%%SITE_PERL%%/Mail/Box/Search/SpamAssassin.pm
-%%SITE_PERL%%/Mail/Box/Search/SpamAssassin.pod
 %%SITE_PERL%%/Mail/Box/Test.pm
 %%SITE_PERL%%/Mail/Box/Thread/Manager.pm
 %%SITE_PERL%%/Mail/Box/Thread/Manager.pod
@@ -84,8 +82,6 @@
 %%SITE_PERL%%/Mail/Message/Head/Delayed.pod
 %%SITE_PERL%%/Mail/Message/Head/Subset.pm
 %%SITE_PERL%%/Mail/Message/Head/Subset.pod
-%%SITE_PERL%%/Mail/Message/Wrapper/SpamAssassin.pm
-%%SITE_PERL%%/Mail/Message/Wrapper/SpamAssassin.pod
 %%SITE_PERL%%/Mail/Server.pm
 %%SITE_PERL%%/Mail/Server.pod
 %%PERL5_MAN3%%/Mail::Box-Cookbook.3.gz
@@ -122,7 +118,6 @@
 %%PERL5_MAN3%%/Mail::Box::Net::Message.3.gz
 %%PERL5_MAN3%%/Mail::Box::Search.3.gz
 %%PERL5_MAN3%%/Mail::Box::Search::Grep.3.gz
-%%PERL5_MAN3%%/Mail::Box::Search::SpamAssassin.3.gz
 %%PERL5_MAN3%%/Mail::Box::Thread::Manager.3.gz
 %%PERL5_MAN3%%/Mail::Box::Thread::Node.3.gz
 %%PERL5_MAN3%%/Mail::Box::Tie.3.gz
@@ -132,5 +127,4 @@
 %%PERL5_MAN3%%/Mail::Message::Dummy.3.gz
 %%PERL5_MAN3%%/Mail::Message::Head::Delayed.3.gz
 %%PERL5_MAN3%%/Mail::Message::Head::Subset.3.gz
-%%PERL5_MAN3%%/Mail::Message::Wrapper::SpamAssassin.3.gz
 %%PERL5_MAN3%%/Mail::Server.3.gz
