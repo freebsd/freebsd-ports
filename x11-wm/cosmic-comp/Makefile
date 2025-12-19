@@ -4,7 +4,7 @@ DISTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compositor for the COSMIC desktop environment
 WWW=		https://github.com/pop-os/cosmic-comp
 
