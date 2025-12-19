@@ -8,7 +8,7 @@ PATCHFILES=	49f64b0.patch:-p1 \
 		b62e33f.patch:-p1 \
 		6c298f2.patch:-p1
 
-MAINTAINER=	franco@opnsense.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Userland stateless NAT64 daemon
 WWW=		https://github.com/apalrd/tayga/
 
