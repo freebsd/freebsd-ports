@@ -1,5 +1,5 @@
-TIMESTAMP = 1760026734
-SHA256 (go/devel_oq/oq-v0.0.20/v0.0.20.mod) = 96631ba5496f9e8769763e7fb030778e2bc914f55bdb871d43503f7a9269a1b9
-SIZE (go/devel_oq/oq-v0.0.20/v0.0.20.mod) = 1411
-SHA256 (go/devel_oq/oq-v0.0.20/v0.0.20.zip) = d840d66196eb1d238991321ed9d11cfe674a17ef724a0e8561481fa72e4d5a71
-SIZE (go/devel_oq/oq-v0.0.20/v0.0.20.zip) = 920875
+TIMESTAMP = 1766110822
+SHA256 (go/devel_oq/oq-v0.0.21/v0.0.21.mod) = 96631ba5496f9e8769763e7fb030778e2bc914f55bdb871d43503f7a9269a1b9
+SIZE (go/devel_oq/oq-v0.0.21/v0.0.21.mod) = 1411
+SHA256 (go/devel_oq/oq-v0.0.21/v0.0.21.zip) = 76b7f5a3578278f02646aba5a5492454ec8ca249484c176325fb2089173ff376
+SIZE (go/devel_oq/oq-v0.0.21/v0.0.21.zip) = 921675
