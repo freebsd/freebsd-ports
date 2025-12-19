@@ -1,0 +1,11 @@
+--- omniauth-gitlab.gemspec.orig	2025-12-18 13:25:02 UTC
++++ omniauth-gitlab.gemspec
+@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<omniauth>.freeze, ["~> 2.0".freeze])
+-  s.add_runtime_dependency(%q<omniauth-oauth2>.freeze, ["~> 1.8.0".freeze])
++  s.add_runtime_dependency(%q<omniauth-oauth2>.freeze, ["~> 1.8".freeze])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.1".freeze])
+   s.add_development_dependency(%q<rspec-its>.freeze, ["~> 1.0".freeze])
+   s.add_development_dependency(%q<simplecov>.freeze, [">= 0".freeze])

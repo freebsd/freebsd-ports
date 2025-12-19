@@ -1,5 +1,6 @@
 PORTNAME=	omniauth-gitlab
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-omniauth>=2.0<3:security/rubygem-omniauth \
-		rubygem-omniauth-oauth2>=1.8.0<1.9:net/rubygem-omniauth-oauth2
+		rubygem-omniauth-oauth2>=1.8.0<2:net/rubygem-omniauth-oauth2
 
 USES=		gem
 
