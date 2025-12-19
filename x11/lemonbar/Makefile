@@ -1,10 +1,9 @@
 PORTNAME=	lemonbar
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.4
-PORTREVISION=	2
+DISTVERSION=	1.5
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nxjoseph@protonmail.com
 COMMENT=	Lightweight xcb based bar
 WWW=		https://github.com/LemonBoy/bar
 
@@ -16,10 +15,8 @@ USES=		compiler:c11 gmake localbase:ldflags perl5 xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	LemonBoy
 GH_PROJECT=	bar
-
 USE_PERL5=	build
 USE_XORG=	xcb
-CFLAGS+=	-D__BSD_VISIBLE # for memrchr(3)
 
 CONFLICTS_INSTALL=	lemonbar-xft
 
