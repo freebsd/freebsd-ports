@@ -24,6 +24,7 @@ include/log4cxx/fmtlayout.h
 include/log4cxx/helpers/absolutetimedateformat.h
 include/log4cxx/helpers/appenderattachableimpl.h
 include/log4cxx/helpers/aprinitializer.h
+include/log4cxx/helpers/asyncbuffer.h
 include/log4cxx/helpers/bufferedwriter.h
 include/log4cxx/helpers/bytearrayinputstream.h
 include/log4cxx/helpers/bytearrayoutputstream.h
@@ -42,6 +43,7 @@ include/log4cxx/helpers/datetimedateformat.h
 include/log4cxx/helpers/exception.h
 include/log4cxx/helpers/fileinputstream.h
 include/log4cxx/helpers/fileoutputstream.h
+include/log4cxx/helpers/filesystempath.h
 include/log4cxx/helpers/filewatchdog.h
 include/log4cxx/helpers/inetaddress.h
 include/log4cxx/helpers/inputstream.h
@@ -203,5 +205,5 @@ lib/cmake/log4cxx/log4cxxConfig.cmake
 lib/cmake/log4cxx/log4cxxConfigVersion.cmake
 lib/liblog4cxx.so
 lib/liblog4cxx.so.15
-lib/liblog4cxx.so.15.5.0
+lib/liblog4cxx.so.15.6.0
 libdata/pkgconfig/liblog4cxx.pc
