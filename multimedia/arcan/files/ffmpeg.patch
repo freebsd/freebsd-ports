@@ -1,0 +1,57 @@
+Index: src/frameserver/encode/default/encode_presets.c
+==================================================================
+--- src/frameserver/encode/default/encode_presets.c
++++ src/frameserver/encode/default/encode_presets.c
+@@ -61,11 +61,11 @@
+ 
+ 	if (avcodec_open2(dst->storage.video.context,
+ 		dst->storage.video.codec, NULL) != 0){
+ 		dst->storage.video.codec   = NULL;
+ 		dst->storage.video.context = NULL;
+-		avcodec_close(dst->storage.video.context);
++		avcodec_free_context(&dst->storage.video.context);
+ 		return false;
+ 	}
+ 
+ 	return true;
+ }
+@@ -89,11 +89,11 @@
+ 		"got %d kbit/s using %s\n", samplerate, abr,
+ 		(int)(ctx->bit_rate / 1000), codec->name);
+ 
+ 	if (avcodec_open2(
+ 		dst->storage.audio.context, dst->storage.audio.codec, NULL) != 0){
+-		avcodec_close(dst->storage.audio.context);
++		avcodec_free_context(&dst->storage.audio.context);
+ 		dst->storage.audio.context = NULL;
+ 		dst->storage.audio.codec   = NULL;
+ 		return false;
+ 	}
+ 
+@@ -179,11 +179,11 @@
+ 	LOG("(encode) video setup @ %d * %d, %f fps, %d kbit / s.\n",
+ 		width, height, fps, vbr / 1000);
+ 
+ 	if (avcodec_open2(dst->storage.video.context,
+ 		dst->storage.video.codec, &opts) != 0){
+-		avcodec_close(dst->storage.video.context);
++		avcodec_free_context(&dst->storage.video.context);
+ 		dst->storage.video.context = NULL;
+ 		dst->storage.video.codec   = NULL;
+ 		return false;
+ 	}
+ 
+@@ -245,11 +245,11 @@
+ 
+ 	LOG("(encode) video setup @ %d * %d, %f fps, %d kbit / s.\n",
+ 		width, height, fps, vbr / 1024);
+ 	if (avcodec_open2(dst->storage.video.context,
+ 		dst->storage.video.codec, &opts) != 0){
+-		avcodec_close(dst->storage.video.context);
++		avcodec_free_context(&dst->storage.video.context);
+ 		dst->storage.video.context = NULL;
+ 		dst->storage.video.codec   = NULL;
+ 		return false;
+ 	}
+ 
+
