@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/licensee/licensee/commit/6ea85b52fbaed51b01c706542600a21523660712
+
+--- licensee.gemspec.orig	2025-12-18 20:06:41 UTC
++++ licensee.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<dotenv>.freeze, [">= 2".freeze, "< 4".freeze])
+-  s.add_runtime_dependency(%q<octokit>.freeze, [">= 4.20".freeze, "< 10.0".freeze])
++  s.add_runtime_dependency(%q<octokit>.freeze, [">= 4.20".freeze, "< 11.0".freeze])
+   s.add_runtime_dependency(%q<reverse_markdown>.freeze, [">= 1".freeze, "< 4".freeze])
+   s.add_runtime_dependency(%q<rugged>.freeze, [">= 0.24".freeze, "< 2.0".freeze])
+   s.add_runtime_dependency(%q<thor>.freeze, [">= 0.19".freeze, "< 2.0".freeze])
