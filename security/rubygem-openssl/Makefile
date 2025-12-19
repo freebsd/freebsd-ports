@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	3.3.2
+PORTVERSION=	4.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
