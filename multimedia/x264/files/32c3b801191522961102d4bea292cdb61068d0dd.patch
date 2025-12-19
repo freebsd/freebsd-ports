@@ -1,0 +1,38 @@
+From 32c3b801191522961102d4bea292cdb61068d0dd Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Martin=20Storsj=C3=B6?= <martin@martin.st>
+Date: Fri, 4 Apr 2025 16:59:34 +0300
+Subject: [PATCH] lavf: Update the code to work with the latest libavutil API
+
+---
+ input/lavf.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/input/lavf.c b/input/lavf.c
+index 90f4cec5..e2489963 100644
+--- a/input/lavf.c
++++ b/input/lavf.c
+@@ -33,6 +33,7 @@
+ #include <libavutil/error.h>
+ #include <libavutil/mem.h>
+ #include <libavutil/pixdesc.h>
++#include <libavutil/version.h>
+ 
+ #define FAIL_IF_ERROR( cond, ... ) FAIL_IF_ERR( cond, "lavf", __VA_ARGS__ )
+ 
+@@ -141,8 +142,13 @@ static int read_frame_internal( cli_pic_t *p_pic, lavf_hnd_t *h, int i_frame, vi
+     if( info )
+     {
+         info->fullrange  = is_fullrange;
++#if LIBAVUTIL_VERSION_MAJOR < 60
+         info->interlaced = h->frame->interlaced_frame;
+         info->tff        = h->frame->top_field_first;
++#else
++        info->interlaced = !!(h->frame->flags & AV_FRAME_FLAG_INTERLACED);
++        info->tff        = !!(h->frame->flags & AV_FRAME_FLAG_TOP_FIELD_FIRST);
++#endif
+     }
+ 
+     if( h->vfr_input )
+-- 
+GitLab
+
