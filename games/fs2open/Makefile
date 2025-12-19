@@ -7,6 +7,9 @@ MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source video engine of FreeSpace 2
 WWW=		http://scp.indiegames.us
 
+# fix build with recent ffmpeg
+EXTRA_PATCHES=	${FILESDIR}/af833f059cc0cfc925792e019f6c2b754c6d53c1.patch:-p1
+
 LICENSE=	VOLITION
 LICENSE_NAME=	Volition Copyright
 LICENSE_FILE=	${WRKSRC}/Copying.md

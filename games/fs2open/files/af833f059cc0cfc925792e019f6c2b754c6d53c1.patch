@@ -1,0 +1,66 @@
+From af833f059cc0cfc925792e019f6c2b754c6d53c1 Mon Sep 17 00:00:00 2001
+From: Taylor Richards <taylor@notimaginative.com>
+Date: Sun, 17 Aug 2025 17:09:41 -0400
+Subject: [PATCH] fix avcodec deprecation warnings
+
+---
+ code/cutscene/ffmpeg/internal.cpp    | 9 ++++++---
+ code/sound/ffmpeg/FFmpegWaveFile.cpp | 3 ++-
+ 2 files changed, 8 insertions(+), 4 deletions(-)
+
+diff --git a/code/cutscene/ffmpeg/internal.cpp b/code/cutscene/ffmpeg/internal.cpp
+index be0920a5068..4f087d10191 100644
+--- a/code/cutscene/ffmpeg/internal.cpp
++++ b/code/cutscene/ffmpeg/internal.cpp
+@@ -12,9 +12,10 @@ DecoderStatus::~DecoderStatus() {
+ 	videoCodec = nullptr;
+ 
+ 	if (videoCodecCtx != nullptr) {
+-		avcodec_close(videoCodecCtx);
+ #if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(57, 24, 255)
+ 		avcodec_free_context(&videoCodecCtx);
++#else
++		avcodec_close(videoCodecCtx);
+ #endif
+ 		videoCodecCtx = nullptr;
+ 	}
+@@ -24,9 +25,10 @@ DecoderStatus::~DecoderStatus() {
+ 	audioCodec = nullptr;
+ 
+ 	if (audioCodecCtx != nullptr) {
+-		avcodec_close(audioCodecCtx);
+ #if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(57, 24, 255)
+ 		avcodec_free_context(&audioCodecCtx);
++#else
++		avcodec_close(audioCodecCtx);
+ #endif
+ 		audioCodecCtx = nullptr;
+ 	}
+@@ -36,9 +38,10 @@ DecoderStatus::~DecoderStatus() {
+ 	subtitleCodec = nullptr;
+ 
+ 	if (subtitleCodecCtx != nullptr) {
+-		avcodec_close(subtitleCodecCtx);
+ #if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(57, 24, 255)
+ 		avcodec_free_context(&subtitleCodecCtx);
++#else
++		avcodec_close(subtitleCodecCtx);
+ #endif
+ 		subtitleCodecCtx = nullptr;
+ 	}
+diff --git a/code/sound/ffmpeg/FFmpegWaveFile.cpp b/code/sound/ffmpeg/FFmpegWaveFile.cpp
+index ab1e0ddc520..77541d7b826 100644
+--- a/code/sound/ffmpeg/FFmpegWaveFile.cpp
++++ b/code/sound/ffmpeg/FFmpegWaveFile.cpp
+@@ -151,9 +151,10 @@ FFmpegWaveFile::~FFmpegWaveFile()
+ 	av_frame_free(&m_decodeFrame);
+ 
+ 	if (m_audioCodecCtx) {
+-		avcodec_close(m_audioCodecCtx);
+ #if LIBAVCODEC_VERSION_INT > AV_VERSION_INT(57, 24, 255)
+ 		avcodec_free_context(&m_audioCodecCtx);
++#else
++		avcodec_close(m_audioCodecCtx);
+ #endif
+ 		m_audioCodecCtx = nullptr;
+ 	}
