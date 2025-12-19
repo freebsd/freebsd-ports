@@ -1,6 +1,6 @@
 PORTNAME=	bitwarden-cli
 DISTVERSIONPREFIX=	cli-v
-DISTVERSION=	2025.11.0
+DISTVERSION=	2025.12.0
 CATEGORIES=	security
 MASTER_SITES=	https://nodejs.org/dist/v${PKG_NODE_VER}/:node
 DISTFILES=	node-v${PKG_NODE_VER}${EXTRACT_SUFX}:node \
@@ -45,6 +45,7 @@ MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 # don't strip executable upon install since it causes error
 STRIP=		# empty
+BINARY_ALIAS=	python=${PYTHON_CMD}
 
 BUILD_WRKSRC=	${WRKSRC}/apps/cli
 
@@ -149,8 +150,15 @@ pre-build:
 		${WRKDIR}/.pkg-cache/v${PKG_FETCH_VER}/built-v${PKG_NODE_VER}-freebsd-${NODE_ARCH}
 	${STRIP_CMD} ${WRKDIR}/.pkg-cache/v${PKG_FETCH_VER}/built-v${PKG_NODE_VER}-freebsd-${NODE_ARCH}
 	# rebuild node modules against patched node
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
-		npm rebuild --nodedir=${WRKDIR}/node-v${PKG_NODE_VER} --verbose
+	@for subdir in `${FIND} ${WRKSRC} -type f -name binding.gyp -exec ${DIRNAME} {} ';' 2>/dev/null`; do \
+		${ECHO_MSG} "===>   Rebuilding native modules in $${subdir}"; \
+		cd $${subdir} && \
+		${SETENV} ${MAKE_ENV} \
+			npm_config_runtime=node \
+			npm_config_target=${PKG_NODE_VER} \
+			npm_config_nodedir=${WRKDIR}/node-v${PKG_NODE_VER} \
+			node-gyp rebuild; \
+	done
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} \
