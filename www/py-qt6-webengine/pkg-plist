@@ -10,6 +10,8 @@
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginecookiestore.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginedesktopmediarequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginedownloadrequest.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineextensioninfo.sip
+%%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineextensionmanager.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefilesystemaccessrequest.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebenginefindtextresult.sip
 %%PYQT_SIPDIR%%/QtWebEngineCore/qwebengineframe.sip
@@ -49,3 +51,4 @@
 %%PYTHON_SITELIBDIR%%/pyqt6_webengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/INSTALLER
 %%PYTHON_SITELIBDIR%%/pyqt6_webengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/METADATA
 %%PYTHON_SITELIBDIR%%/pyqt6_webengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/pyqt6_webengine-%%PYQT_WEBENGINE_VERSION%%.dist-info/licenses/LICENSE

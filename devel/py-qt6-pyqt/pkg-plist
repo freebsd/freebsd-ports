@@ -149,6 +149,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpoint.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qprocess.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpropertyanimation.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_native_interface.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qhash.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qlist.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_qmap.sip
@@ -158,6 +159,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_std_pair.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpycore_virtual_error_handler.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qrandom.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qrangemodel.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qreadwritelock.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qrect.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qregularexpression.sip
@@ -255,6 +257,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/opengl_types.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qabstractfileiconprovider.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qabstracttextdocumentlayout.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qaccessibilityhints.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qaction.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qactiongroup.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qbackingstore.sip
@@ -311,6 +314,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpixmapcache.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpointingdevice.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpolygon.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_native_interface.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_qlist.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qpygui_vulkan.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qquaternion.sip
@@ -387,6 +391,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qmediaplayer.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qmediarecorder.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qmediatimerange.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qplaybackoptions.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qpymultimedia_qlist.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qscreencapture.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qsoundeffect.sip

@@ -1,6 +1,6 @@
---- sipbuild/project.py.orig	2024-07-12 11:20:17 UTC
+--- sipbuild/project.py.orig	2025-11-12 11:53:43 UTC
 +++ sipbuild/project.py
-@@ -408,9 +408,9 @@ class Project(AbstractProject, Configurable):
+@@ -432,9 +432,9 @@ class Project(AbstractProject, Configurable):
              generator=None, wheel_tag=None, generator_version=None):
          """ Return a sequence of command line arguments to invoke sip-distinfo.
          """
