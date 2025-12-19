@@ -2234,6 +2234,7 @@
     SUBDIR += p5-Daemon-Control
     SUBDIR += p5-Dancer-Debug
     SUBDIR += p5-Dancer-Logger-Syslog
+    SUBDIR += p5-Dancer2-Plugin-LogReport
     SUBDIR += p5-Danga-Socket
     SUBDIR += p5-Danga-Socket-Callback
     SUBDIR += p5-Data-ACL
