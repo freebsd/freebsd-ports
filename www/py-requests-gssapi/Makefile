@@ -20,4 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gssapi>=1.4.1:security/py-gssapi@${PY_FLAVOR
 USES=		python
 USE_PYTHON=	autoplist pep517
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
