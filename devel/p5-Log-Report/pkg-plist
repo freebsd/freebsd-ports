@@ -1,11 +1,3 @@
-%%SITE_PERL%%/Dancer/Logger/LogReport.pm
-%%SITE_PERL%%/Dancer/Logger/LogReport.pod
-%%SITE_PERL%%/Dancer2/Logger/LogReport.pm
-%%SITE_PERL%%/Dancer2/Logger/LogReport.pod
-%%SITE_PERL%%/Dancer2/Plugin/LogReport.pm
-%%SITE_PERL%%/Dancer2/Plugin/LogReport.pod
-%%SITE_PERL%%/Dancer2/Plugin/LogReport/Message.pm
-%%SITE_PERL%%/Dancer2/Plugin/LogReport/Message.pod
 %%SITE_PERL%%/Log/Report.pm
 %%SITE_PERL%%/Log/Report.pod
 %%SITE_PERL%%/Log/Report/DBIC/Profiler.pm
@@ -41,10 +33,6 @@
 %%SITE_PERL%%/Log/Report/messages/log-report/nl_NL.po
 %%SITE_PERL%%/MojoX/Log/Report.pm
 %%SITE_PERL%%/MojoX/Log/Report.pod
-%%PERL5_MAN3%%/Dancer2::Logger::LogReport.3.gz
-%%PERL5_MAN3%%/Dancer2::Plugin::LogReport.3.gz
-%%PERL5_MAN3%%/Dancer2::Plugin::LogReport::Message.3.gz
-%%PERL5_MAN3%%/Dancer::Logger::LogReport.3.gz
 %%PERL5_MAN3%%/Log::Report.3.gz
 %%PERL5_MAN3%%/Log::Report::DBIC::Profiler.3.gz
 %%PERL5_MAN3%%/Log::Report::Die.3.gz
