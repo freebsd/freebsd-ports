@@ -1,4 +1,4 @@
---- crates/zed/src/main.rs.orig	2025-12-11 21:24:05 UTC
+--- crates/zed/src/main.rs.orig	2025-12-18 17:41:26 UTC
 +++ crates/zed/src/main.rs
 @@ -8,6 +8,7 @@ use collections::HashMap;
  use client::{Client, ProxySettings, UserStore, parse_zed_link};
@@ -8,7 +8,7 @@
  use crashes::InitCrashHandler;
  use db::kvp::{GLOBAL_KEY_VALUE_STORE, KEY_VALUE_STORE};
  use editor::Editor;
-@@ -181,6 +182,7 @@ pub fn main() {
+@@ -183,6 +184,7 @@ pub fn main() {
      }
  
      // `zed --crash-handler` Makes zed operate in minidump crash handler mode
@@ -16,7 +16,7 @@
      if let Some(socket) = &args.crash_handler {
          crashes::crash_server(socket.as_path());
          return;
-@@ -294,6 +296,7 @@ pub fn main() {
+@@ -296,6 +298,7 @@ pub fn main() {
          .background_executor()
          .spawn(Session::new(session_id.clone()));
  
@@ -24,7 +24,7 @@
      app.background_executor()
          .spawn(crashes::init(InitCrashHandler {
              session_id,
-@@ -552,6 +555,7 @@ pub fn main() {
+@@ -554,6 +557,7 @@ pub fn main() {
          auto_update::init(client.clone(), cx);
          dap_adapters::init(cx);
          auto_update_ui::init(cx);
