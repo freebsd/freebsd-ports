@@ -1,12 +1,10 @@
 PORTNAME=	flock
-PORTVERPREFIX=	2.37
-PORTVERSION=	${PORTVERPREFIX}.2
-PORTREVISION=	1
+PORTVERSION=	2.41.3
 CATEGORIES=	sysutils
-MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERPREFIX}/
+MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${PORTVERSION:R}/
 DISTNAME=	util-linux-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Manage locks from shell scripts
 WWW=		https://www.kernel.org/pub/linux/utils/util-linux/
 
@@ -16,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		libtool pkgconfig
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-nls
+CONFIGURE_ARGS=	--disable-liblastlog2 --disable-nls
 
-CFLAGS=		-D_WITH_CPU_SET_T
+CFLAGS+=	-D_WITH_CPU_SET_T
 
 PLIST_FILES=	bin/flock share/man/man1/flock.1.gz \
 		etc/bash_completion.d/flock
