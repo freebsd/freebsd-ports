@@ -303,7 +303,7 @@ GPGME_CONFIGURE_WITH=		gpgme
 GSSAPI_BUILTIN_USES=		bison
 
 GSSAPI_MIT_USES=		bison gssapi:mit
-GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 ${GSSAPIBASEDIR} \
+GSSAPI_MIT_CONFIGURE_ON=	--with-system-mitkrb5 \
 				--with-system-mitkdc=${GSSAPIBASEDIR}/sbin/krb5kdc \
 				--with-experimental-mit-ad-dc
 GSSAPI_MIT_PLIST_FILES=		${SAMBA_MODULESDIR}/krb5/winbind_krb5_localauth.so \
