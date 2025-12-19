@@ -63,7 +63,7 @@ DOCS_VARS=		_RUST_BUILD_DOCS=true \
 			_COMPONENTS+="rust-docs-${_PACKAGE_VERS}-${_RUST_TARGET} rust-docs-json-${_PACKAGE_VERS}-${_RUST_TARGET}"
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
-PORT_LLVM_USES=		llvm:min=20,lib,noexport
+PORT_LLVM_USES=		llvm:min=${_LLVM_VERSION},lib,noexport
 PORT_LLVM_MAKE_ENV=	RUSTFLAGS="-Lnative=${LOCALBASE}/lib"
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
 			_RUST_TOOLS+=src
@@ -74,7 +74,7 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 BOOTSTRAPS_DATE?=		2025-10-30
 RUST_BOOTSTRAP_VERSION?=	1.91.0
 
-LLVM_VERSION=	20
+_LLVM_VERSION=	20
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
@@ -147,7 +147,7 @@ post-patch:
 
 post-patch-PORT_LLVM-on:
 # WASM target hardcodes bundled lld
-	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${LLVM_VERSION}"|' \
+	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${_LLVM_VERSION}"|' \
 		${WRKSRC}/compiler/rustc_target/src/spec/base/wasm.rs
 
 do-configure:
