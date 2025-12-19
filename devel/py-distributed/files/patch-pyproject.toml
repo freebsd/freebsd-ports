@@ -1,9 +1,18 @@
---- pyproject.toml.orig	2025-11-06 16:54:27 UTC
+--- pyproject.toml.orig	2025-12-12 14:53:57 UTC
 +++ pyproject.toml
-@@ -1,5 +1,5 @@
+@@ -1,13 +1,12 @@
  [build-system]
--requires = ["setuptools>=80", "setuptools-scm"]
-+requires = ["setuptools>=62.2", "setuptools-scm"]
+-requires = ["setuptools>=80", "setuptools-scm>=9"]
++requires = ["setuptools>=62.2", "setuptools-scm>=8"]
  build-backend = "setuptools.build_meta"
  
  [project]
+ name = "distributed"
+ description = "Distributed scheduler for Dask"
+ maintainers = [{ name = "Matthew Rocklin", email = "mrocklin@gmail.com" }]
+-license = "BSD-3-Clause"
+-license-files = ["LICENSE.txt"]
++license = {text = "BSD-3-Clause"}
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Intended Audience :: Developers",
