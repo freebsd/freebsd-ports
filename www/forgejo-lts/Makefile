@@ -1,6 +1,7 @@
 PORTNAME=	forgejo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	11.0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://codeberg.org/forgejo/forgejo/releases/download/${DISTVERSIONFULL}/
 PKGNAMESUFFIX=	-lts
@@ -10,7 +11,7 @@ MAINTAINER=	des@FreeBSD.org
 COMMENT=	Compact self-hosted Git forge
 WWW=		https://forgejo.org/
 
-LICENSE=	MIT
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
