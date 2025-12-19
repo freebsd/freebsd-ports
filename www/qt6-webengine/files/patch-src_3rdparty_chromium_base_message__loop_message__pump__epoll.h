@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/message_loop/message_pump_epoll.h.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/message_loop/message_pump_epoll.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/message_loop/message_pump_epoll.h
-@@ -51,7 +51,11 @@ namespace base {
+@@ -51,7 +51,11 @@ BASE_FEATURE(kUsePollForMessagePumpEpoll,
  // every call, don't do it when we have too many FDs.
  BASE_FEATURE(kUsePollForMessagePumpEpoll,
               "UsePollForMessagePumpEpoll",

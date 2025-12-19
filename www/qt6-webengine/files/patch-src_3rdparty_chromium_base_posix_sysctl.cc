@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/posix/sysctl.cc.orig	2023-12-17 20:01:00 UTC
+--- src/3rdparty/chromium/base/posix/sysctl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/posix/sysctl.cc
 @@ -4,6 +4,7 @@
  

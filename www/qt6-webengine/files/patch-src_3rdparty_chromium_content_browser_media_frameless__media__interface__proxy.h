@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/media/frameless_media_interface_proxy.h.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/content/browser/media/frameless_media_interface_proxy.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/media/frameless_media_interface_proxy.h
 @@ -19,7 +19,7 @@
  #include "mojo/public/cpp/bindings/receiver_set.h"

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/sandbox/linux/services/libc_interceptor.cc
 @@ -17,7 +17,9 @@
  #include <stddef.h>

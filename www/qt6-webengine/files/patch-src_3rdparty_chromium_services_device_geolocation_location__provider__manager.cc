@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/device/geolocation/location_provider_manager.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/services/device/geolocation/location_provider_manager.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/device/geolocation/location_provider_manager.cc
-@@ -47,7 +47,7 @@ LocationProviderManager::LocationProviderManager(
+@@ -86,7 +86,7 @@ LocationProviderManager::LocationProviderManager(
  #if BUILDFLAG(IS_ANDROID)
    // On Android, default to using the platform location provider.
    provider_manager_mode_ = LPMM::kPlatformOnly;

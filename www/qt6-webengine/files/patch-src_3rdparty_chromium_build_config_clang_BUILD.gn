@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/clang/BUILD.gn.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/build/config/clang/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/build/config/clang/BUILD.gn
-@@ -236,7 +236,12 @@ template("clang_lib") {
+@@ -213,7 +213,12 @@ clang_lib("compiler_builtins") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {

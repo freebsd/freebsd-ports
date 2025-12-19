@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/audio/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/media/audio/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/audio/BUILD.gn
-@@ -267,9 +267,23 @@ jumbo_source_set("audio") {
+@@ -272,9 +272,23 @@ jumbo_source_set("audio") {
      deps += [ "//media/base/android:media_jni_headers" ]
    }
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig	2023-05-31 08:12:17 UTC
+--- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/crash/core/common/BUILD.gn
-@@ -9,7 +9,7 @@ import("//components/gwp_asan/buildflags/buildflags.gn
+@@ -9,7 +9,7 @@ declare_args() {
  
  declare_args() {
    # If set to true, this will stub out and disable the entire crash key system.

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.cc
 @@ -18,12 +18,15 @@
  #include "media/gpu/v4l2/v4l2_device.h"

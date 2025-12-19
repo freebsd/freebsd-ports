@@ -7,7 +7,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt6 wrapper for Wayland
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
-LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake compiler:c++17-lang gl pkgconfig \

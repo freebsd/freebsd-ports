@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/tflite/features.gni.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/third_party/tflite/features.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/tflite/features.gni
 @@ -9,8 +9,8 @@ declare_args() {
    # This enables building TFLite with XNNPACK. Currently only available for

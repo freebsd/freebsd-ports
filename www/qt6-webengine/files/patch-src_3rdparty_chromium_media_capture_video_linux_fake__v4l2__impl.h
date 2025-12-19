@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/linux/fake_v4l2_impl.h.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/fake_v4l2_impl.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/fake_v4l2_impl.h
 @@ -8,7 +8,13 @@
  #include <map>

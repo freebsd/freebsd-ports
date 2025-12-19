@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/net/BUILD.gn.orig	2025-10-02 00:36:39 UTC
 +++ src/3rdparty/chromium/net/BUILD.gn
-@@ -130,7 +130,7 @@ net_configs = [
+@@ -131,7 +131,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
  ]
  
@@ -9,7 +9,7 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1281,10 +1281,6 @@ jumbo_component("net") {
+@@ -1313,10 +1313,6 @@ jumbo_component("net") {
        "base/network_interfaces_linux.h",
        "base/platform_mime_util_linux.cc",
      ]
@@ -20,7 +20,7 @@
    }
  
    if (is_linux) {
-@@ -1294,6 +1290,19 @@ jumbo_component("net") {
+@@ -1326,6 +1322,19 @@ jumbo_component("net") {
      ]
    }
  
@@ -40,7 +40,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1458,7 +1467,7 @@ jumbo_component("net") {
+@@ -1492,7 +1501,7 @@ jumbo_component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -49,7 +49,7 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2941,7 +2950,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3009,7 +3018,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -58,7 +58,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -3034,6 +3043,10 @@ target(_test_target_type, "net_unittests") {
+@@ -3103,6 +3112,10 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -69,7 +69,7 @@
    if (enable_websockets) {
      sources += [
        "server/http_connection_unittest.cc",
-@@ -3100,7 +3113,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3169,7 +3182,7 @@ target(_test_target_type, "net_unittests") {
      ]
    }
  
@@ -78,7 +78,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3239,7 +3252,7 @@ target(_test_target_type, "net_unittests") {
+@@ -3308,7 +3321,7 @@ target(_test_target_type, "net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

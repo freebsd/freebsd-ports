@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/files/file_path_watcher.h.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/base/files/file_path_watcher.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/files/file_path_watcher.h
 @@ -105,7 +105,7 @@ class BASE_EXPORT FilePathWatcher {
      Type type = Type::kNonRecursive;

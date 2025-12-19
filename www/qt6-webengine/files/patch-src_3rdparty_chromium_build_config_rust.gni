@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/config/rust.gni.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/build/config/rust.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/build/config/rust.gni
-@@ -277,6 +277,10 @@ if (is_linux || is_chromeos) {
+@@ -297,6 +297,10 @@ if (is_linux || is_chromeos) {
    }
  }
  

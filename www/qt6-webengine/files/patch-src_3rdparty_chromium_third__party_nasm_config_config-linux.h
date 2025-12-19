@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/nasm/config/config-linux.h.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/third_party/nasm/config/config-linux.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/nasm/config/config-linux.h
 @@ -160,7 +160,7 @@
  

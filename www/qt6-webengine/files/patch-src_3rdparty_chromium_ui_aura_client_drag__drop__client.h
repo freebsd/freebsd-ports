@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/aura/client/drag_drop_client.h.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/ui/aura/client/drag_drop_client.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/aura/client/drag_drop_client.h
 @@ -44,7 +44,7 @@ class AURA_EXPORT DragDropClient {
        int allowed_operations,

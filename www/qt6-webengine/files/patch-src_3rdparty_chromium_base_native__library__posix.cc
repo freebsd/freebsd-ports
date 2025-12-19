@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/native_library_posix.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/base/native_library_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/native_library_posix.cc
 @@ -34,7 +34,7 @@ NativeLibrary LoadNativeLibraryWithOptions(const FileP
    // http://crbug.com/17943, http://crbug.com/17557, http://crbug.com/36892,

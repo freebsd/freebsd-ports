@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/swiftshader/src/System/Configurator.cpp.orig	2022-06-17 14:20:10 UTC
+--- src/3rdparty/chromium/third_party/swiftshader/src/System/Configurator.cpp.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/swiftshader/src/System/Configurator.cpp
-@@ -38,6 +38,9 @@ namespace sw {
+@@ -38,6 +38,9 @@ Configurator::Configurator(const std::string &filePath
  
  Configurator::Configurator(const std::string &filePath)
  {

@@ -74,8 +74,8 @@ lib/cmake/Qt6QuickTimelinePrivate/Qt6QuickTimelinePrivateVersionlessTargets.cmak
 %%QT_LIBDIR%%/libQt6QuickTimelineBlendTrees.so
 %%QT_LIBDIR%%/libQt6QuickTimelineBlendTrees.so.6
 %%QT_LIBDIR%%/libQt6QuickTimelineBlendTrees.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6quicktimeline_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6quicktimelineblendtrees_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6quicktimeline_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6quicktimelineblendtrees_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_quicktimeline.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_quicktimeline_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_quicktimelineblendtrees.pri

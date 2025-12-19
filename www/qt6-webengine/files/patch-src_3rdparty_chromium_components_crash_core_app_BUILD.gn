@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/crash/core/app/BUILD.gn.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/crash/core/app/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/crash/core/app/BUILD.gn
 @@ -70,6 +70,10 @@ static_library("app") {
      ]
@@ -29,7 +29,7 @@
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
-@@ -233,11 +237,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
+@@ -235,11 +239,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
    # define custom UserStreamDataSources.
    executable("chrome_crashpad_handler") {
      sources = [ "chrome_crashpad_handler.cc" ]

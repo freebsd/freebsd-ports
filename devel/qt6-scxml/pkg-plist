@@ -225,10 +225,10 @@ lib/cmake/Qt6StateMachineQmlPrivate/Qt6StateMachineQmlPrivateVersionlessTargets.
 %%QT_LIBDIR%%/libQt6StateMachineQml.so
 %%QT_LIBDIR%%/libQt6StateMachineQml.so.6
 %%QT_LIBDIR%%/libQt6StateMachineQml.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6scxml_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6scxmlqml_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6statemachine_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6statemachineqml_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6scxml_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6scxmlqml_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6statemachine_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6statemachineqml_metatypes.json
 %%QT_MKSPECDIR%%/features/qscxmlc.prf
 %%QT_MKSPECDIR%%/modules/qt_lib_scxml.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_scxml_private.pri

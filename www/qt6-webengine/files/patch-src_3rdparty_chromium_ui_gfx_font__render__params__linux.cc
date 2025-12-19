@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/font_render_params_linux.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/ui/gfx/font_render_params_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gfx/font_render_params_linux.cc
-@@ -25,7 +25,7 @@
+@@ -24,7 +24,7 @@
  #include "ui/gfx/linux/fontconfig_util.h"
  #include "ui/gfx/switches.h"
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -212,7 +212,7 @@ FontRenderParams GetFontRenderParams(const FontRenderP
+@@ -222,7 +222,7 @@ FontRenderParams GetFontRenderParams(const FontRenderP
  
    // Start with the delegate's settings, but let Fontconfig have the final say.
    FontRenderParams params;

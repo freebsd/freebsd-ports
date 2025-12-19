@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/font_util.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/ui/gfx/font_util.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gfx/font_util.cc
 @@ -6,7 +6,7 @@
  

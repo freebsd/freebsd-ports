@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.cc
 @@ -10,20 +10,27 @@
  #include "base/path_service.h"

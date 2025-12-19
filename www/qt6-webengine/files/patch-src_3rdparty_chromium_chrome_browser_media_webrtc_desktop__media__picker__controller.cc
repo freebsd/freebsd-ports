@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/media/webrtc/desktop_media_picker_controller.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/chrome/browser/media/webrtc/desktop_media_picker_controller.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/media/webrtc/desktop_media_picker_controller.cc
 @@ -89,7 +89,7 @@ bool DesktopMediaPickerController::IsSystemAudioCaptur
  #if BUILDFLAG(IS_MAC)

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/thread_utils.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/include/perfetto/ext/base/thread_utils.h
-@@ -41,9 +41,10 @@
+@@ -41,9 +41,10 @@ namespace base {
  namespace perfetto {
  namespace base {
  

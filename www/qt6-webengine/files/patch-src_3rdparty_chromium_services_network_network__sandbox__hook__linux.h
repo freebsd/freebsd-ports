@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/network/network_sandbox_hook_linux.h.orig	2023-04-28 17:01:32 UTC
+--- src/3rdparty/chromium/services/network/network_sandbox_hook_linux.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/network/network_sandbox_hook_linux.h
 @@ -6,7 +6,11 @@
  #define SERVICES_NETWORK_NETWORK_SANDBOX_HOOK_LINUX_H_

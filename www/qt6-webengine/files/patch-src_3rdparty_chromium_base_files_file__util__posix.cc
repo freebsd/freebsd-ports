@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/files/file_util_posix.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/base/files/file_util_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/files/file_util_posix.cc
-@@ -889,36 +889,33 @@ bool CreateNewTempDirectory(const FilePath::StringType
+@@ -902,36 +902,33 @@ bool CreateDirectoryAndGetError(const FilePath& full_p
  bool CreateDirectoryAndGetError(const FilePath& full_path, File::Error* error) {
    ScopedBlockingCall scoped_blocking_call(
        FROM_HERE, BlockingType::MAY_BLOCK);  // For call to mkdir().

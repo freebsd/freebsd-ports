@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/password_manager/core/browser/password_manager_switches.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/components/password_manager/core/browser/password_manager_switches.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/password_manager/core/browser/password_manager_switches.cc
-@@ -6,7 +6,7 @@
+@@ -6,7 +6,7 @@ namespace password_manager {
  
  namespace password_manager {
  

@@ -3,6 +3,7 @@
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverhttp1protocolhandler_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverhttp2protocolhandler_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverliterals_p.h
+%%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverparser_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverrequest_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverrequestfilter_p.h
 %%QT_INCDIR%%/QtHttpServer/%%FULLVER%%/QtHttpServer/private/qhttpserverresponder_p.h
@@ -59,7 +60,7 @@ lib/cmake/Qt6HttpServerPrivate/Qt6HttpServerPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6HttpServer.so
 %%QT_LIBDIR%%/libQt6HttpServer.so.6
 %%QT_LIBDIR%%/libQt6HttpServer.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6httpserver_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6httpserver_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_httpserver.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_httpserver_private.pri
 %%QT_SBOMDIR%%/qthttpserver-%%FULLVER%%.spdx

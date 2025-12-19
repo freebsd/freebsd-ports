@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/storage_monitor/removable_device_constants.h.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/components/storage_monitor/removable_device_constants.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/storage_monitor/removable_device_constants.h
-@@ -14,7 +14,7 @@ namespace storage_monitor {
+@@ -14,7 +14,7 @@ extern const char kVendorModelSerialPrefix[];
  extern const char kFSUniqueIdPrefix[];
  extern const char kVendorModelSerialPrefix[];
  

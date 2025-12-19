@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/speech-dispatcher/speechd_types.h.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/third_party/speech-dispatcher/speechd_types.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/speech-dispatcher/speechd_types.h
 @@ -119,4 +119,139 @@ typedef struct {
  	SPDVoice voice;

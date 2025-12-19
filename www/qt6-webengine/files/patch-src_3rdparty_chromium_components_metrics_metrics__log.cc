@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/metrics/metrics_log.cc.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/components/metrics/metrics_log.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/metrics/metrics_log.cc
-@@ -56,7 +56,7 @@
+@@ -61,7 +61,7 @@
  #include "base/win/current_module.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #endif
-@@ -146,7 +146,7 @@ void RecordCurrentTime(
+@@ -157,7 +157,7 @@ void RecordCurrentTime(
    }
  }
  
@@ -18,16 +18,16 @@
  metrics::SystemProfileProto::OS::XdgSessionType ToProtoSessionType(
      base::nix::SessionType session_type) {
    switch (session_type) {
-@@ -415,7 +415,7 @@ void MetricsLog::RecordCoreSystemProfile(
+@@ -435,7 +435,7 @@ void MetricsLog::RecordCoreSystemProfile(
  // OperatingSystemVersion refers to the ChromeOS release version.
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #if BUILDFLAG(IS_CHROMEOS)
    os->set_kernel_version(base::SysInfo::KernelVersion());
--#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Linux operating system version is copied over into kernel version to be
    // consistent.
    os->set_kernel_version(base::SysInfo::OperatingSystemVersion());
-@@ -432,7 +432,7 @@ void MetricsLog::RecordCoreSystemProfile(
+@@ -452,7 +452,7 @@ void MetricsLog::RecordCoreSystemProfile(
    os->set_build_number(base::SysInfo::GetIOSBuildNumber());
  #endif
  

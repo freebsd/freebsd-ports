@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/screen_ai/public/cpp/utilities.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/services/screen_ai/public/cpp/utilities.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/screen_ai/public/cpp/utilities.cc
-@@ -18,7 +18,7 @@ namespace screen_ai {
+@@ -18,7 +18,7 @@ namespace {
  
  namespace {
  
@@ -18,7 +18,7 @@
  constexpr base::FilePath::CharType kScreenAIResourcePathForTests[] =
      FILE_PATH_LITERAL("third_party/screen-ai/linux/resources");
  #elif BUILDFLAG(IS_MAC)
-@@ -128,7 +128,7 @@ base::FilePath GetComponentBinaryPathForTests() {
+@@ -128,7 +128,7 @@ const char* GetBinaryPathSwitch() {
  
  const char* GetBinaryPathSwitch() {
    // This is only used on Linux and ChromeOS.

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/sandbox/policy/sandbox.h.orig	2023-04-28 17:01:32 UTC
+--- src/3rdparty/chromium/sandbox/policy/sandbox.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/sandbox/policy/sandbox.h
 @@ -12,6 +12,12 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
@@ -13,7 +13,7 @@
  namespace sandbox {
  namespace mojom {
  enum class Sandbox;
-@@ -32,7 +38,7 @@ namespace policy {
+@@ -32,7 +38,7 @@ class SANDBOX_POLICY_EXPORT Sandbox {
  
  class SANDBOX_POLICY_EXPORT Sandbox {
   public:

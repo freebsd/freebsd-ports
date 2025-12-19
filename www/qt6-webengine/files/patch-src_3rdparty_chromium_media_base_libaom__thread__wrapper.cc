@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/base/libaom_thread_wrapper.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/media/base/libaom_thread_wrapper.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/base/libaom_thread_wrapper.cc
 @@ -5,17 +5,21 @@
  #include "base/logging.h"

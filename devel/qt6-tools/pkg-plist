@@ -436,10 +436,10 @@ lib/cmake/Qt6UiToolsPrivate/Qt6UiToolsPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6UiTools.so
 %%QT_LIBDIR%%/libQt6UiTools.so.6
 %%QT_LIBDIR%%/libQt6UiTools.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6designer_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6designercomponentsprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6help_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6uitools_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6designer_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6designercomponentsprivate_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6help_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6uitools_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_designer.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_designer_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_designercomponents_private.pri

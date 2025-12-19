@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/ffmpeg/libavutil/cpu.c.orig	2022-07-22 17:30:31 UTC
+--- src/3rdparty/chromium/third_party/ffmpeg/libavutil/cpu.c.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/ffmpeg/libavutil/cpu.c
 @@ -38,10 +38,7 @@
  #if HAVE_GETPROCESSAFFINITYMASK || HAVE_WINRT

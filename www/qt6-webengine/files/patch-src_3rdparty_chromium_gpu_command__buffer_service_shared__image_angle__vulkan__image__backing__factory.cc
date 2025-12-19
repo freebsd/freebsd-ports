@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.cc
-@@ -20,7 +20,7 @@ namespace {
+@@ -20,7 +20,7 @@ constexpr SharedImageUsageSet kSupportedUsage =
  // TODO(penghuang): verify the scanout is the right usage for video playback.
  // crbug.com/1280798
  constexpr SharedImageUsageSet kSupportedUsage =

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/headless/lib/browser/headless_content_browser_client.cc
 @@ -56,7 +56,7 @@
  #include "content/public/common/content_descriptors.h"
@@ -9,7 +9,7 @@
  #include "components/os_crypt/sync/os_crypt.h"  // nogncheck
  #include "content/public/browser/network_service_util.h"
  #endif
-@@ -478,7 +478,7 @@ void HeadlessContentBrowserClient::HandleExplicitlyAll
+@@ -518,7 +518,7 @@ void HeadlessContentBrowserClient::SetEncryptionKey(
  
  void HeadlessContentBrowserClient::SetEncryptionKey(
      ::network::mojom::NetworkService* network_service) {

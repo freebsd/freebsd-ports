@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/supervised_user/core/common/features.h.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/supervised_user/core/common/features.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/supervised_user/core/common/features.h
-@@ -25,7 +25,7 @@ BASE_DECLARE_FEATURE(
+@@ -30,7 +30,7 @@ BASE_DECLARE_FEATURE(kUpdatedSupervisedUserExtensionAp
  // Applies new informative strings during the parental extension approval flow.
  BASE_DECLARE_FEATURE(kUpdatedSupervisedUserExtensionApprovalStrings);
  
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop);
  #endif
  
-@@ -59,11 +59,11 @@ BASE_DECLARE_FEATURE(kSupervisedUserProfileSigninIPH);
+@@ -60,7 +60,7 @@ BASE_DECLARE_FEATURE(kCustomProfileStringsForSupervise
  
  // Displays a Family Link kite badge on the supervised user avatar in various
  // surfaces.
@@ -18,17 +18,12 @@
  BASE_DECLARE_FEATURE(kShowKiteForSupervisedUsers);
  #endif
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- // This hides the following guest mode entry points for supervised users:
- //
- // * In the Profile menu for supervised profiles
-@@ -75,7 +75,7 @@ BASE_DECLARE_FEATURE(kHideGuestModeForSupervisedUsers)
+@@ -68,7 +68,7 @@ BASE_DECLARE_FEATURE(kForceSafeSearchForUnauthenticate
  // unauthenticated (e.g. signed out of the content area) account.
  BASE_DECLARE_FEATURE(kForceSafeSearchForUnauthenticatedSupervisedUsers);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- // Force re-authentication when an unauthenticated supervised user tries to
- // access YouTube, so that content restrictions can be applied.
- BASE_DECLARE_FEATURE(kForceSupervisedUserReauthenticationForYouTube);
+ // Uses supervised user strings on the signout dialog.
+ BASE_DECLARE_FEATURE(kEnableSupervisedUserVersionSignOutDialog);
+ 

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/profiler/thread_delegate_posix.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/base/profiler/thread_delegate_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/profiler/thread_delegate_posix.cc
 @@ -19,7 +19,7 @@
  #include "base/process/process_handle.h"
@@ -9,7 +9,7 @@
  #include "base/profiler/stack_base_address_posix.h"
  #endif
  
-@@ -28,7 +28,7 @@ namespace base {
+@@ -28,7 +28,7 @@ std::unique_ptr<ThreadDelegatePosix> ThreadDelegatePos
  std::unique_ptr<ThreadDelegatePosix> ThreadDelegatePosix::Create(
      SamplingProfilerThreadToken thread_token) {
    std::optional<uintptr_t> base_address;

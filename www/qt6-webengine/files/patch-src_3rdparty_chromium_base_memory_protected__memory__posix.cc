@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/memory/protected_memory_posix.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/memory/protected_memory_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/memory/protected_memory_posix.cc
 @@ -6,7 +6,7 @@
  
@@ -9,7 +9,7 @@
  #include <sys/resource.h>
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -34,7 +34,7 @@ bool SetMemory(void* start, void* end, int prot) {
+@@ -34,7 +34,7 @@ namespace internal {
  }  // namespace
  
  namespace internal {

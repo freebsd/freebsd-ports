@@ -1,6 +1,15 @@
---- src/3rdparty/chromium/build/rust/std/BUILD.gn.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/build/rust/std/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/build/rust/std/BUILD.gn
-@@ -100,7 +100,6 @@ if (toolchain_has_rust) {
+@@ -89,7 +89,7 @@ if (toolchain_has_rust) {
+     # These are no longer present in the Windows toolchain.
+     stdlib_files += [
+       "addr2line",
+-      "adler2",
++      "adler",
+       "gimli",
+       "libc",
+       "memchr",
+@@ -115,7 +115,6 @@ if (toolchain_has_rust) {
    # don't need to pass to the C++ linker because they're used for specialized
    # purposes.
    skip_stdlib_files = [

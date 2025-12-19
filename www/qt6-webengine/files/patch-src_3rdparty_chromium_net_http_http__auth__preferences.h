@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/http/http_auth_preferences.h.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/net/http/http_auth_preferences.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/http/http_auth_preferences.h
 @@ -50,7 +50,7 @@ class NET_EXPORT HttpAuthPreferences {
  #if BUILDFLAG(IS_ANDROID)

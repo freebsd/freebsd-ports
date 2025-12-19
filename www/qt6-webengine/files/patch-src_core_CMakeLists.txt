@@ -1,4 +1,4 @@
---- src/core/CMakeLists.txt.orig	2025-08-18 00:53:11 UTC
+--- src/core/CMakeLists.txt.orig	2025-08-15 18:30:00 UTC
 +++ src/core/CMakeLists.txt
 @@ -21,7 +21,7 @@ add_subdirectory(tools/qwebengine_convert_dict)
  #   TOOLCHAIN SETUP
@@ -9,16 +9,16 @@
      setup_toolchains()
  endif()
  
-@@ -205,7 +205,7 @@ foreach(arch ${archs})
+@@ -212,7 +212,7 @@ foreach(arch ${archs})
                  accessibility_activation_observer.cpp accessibility_activation_observer.h
          )
  
 -        extend_gn_target(${buildGn} CONDITION LINUX
 +        extend_gn_target(${buildGn} CONDITION LINUX OR FREEBSD
              SOURCES
-                 ozone/gl_ozone_angle_qt.cpp ozone/gl_ozone_angle_qt.h
+                 ozone/gl_ozone_qt.cpp ozone/gl_ozone_qt.h
                  ozone/ozone_util_qt.cpp ozone/ozone_util_qt.h
-@@ -213,17 +213,17 @@ foreach(arch ${archs})
+@@ -220,17 +220,17 @@ foreach(arch ${archs})
                  ozone/surface_factory_qt.cpp ozone/surface_factory_qt.h
          )
  
@@ -39,7 +39,7 @@
              SOURCES
                  ozone/egl_helper.cpp ozone/egl_helper.h
          )
-@@ -443,7 +443,7 @@ foreach(arch ${archs})
+@@ -462,7 +462,7 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webenginedriver
          )
  
@@ -48,7 +48,7 @@
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -510,6 +510,10 @@ foreach(arch ${archs})
+@@ -529,6 +529,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
                  ARGS use_pulseaudio
                  CONDITION QT_FEATURE_webengine_system_pulseaudio

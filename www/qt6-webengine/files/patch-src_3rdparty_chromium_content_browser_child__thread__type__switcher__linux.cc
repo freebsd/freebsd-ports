@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/child_thread_type_switcher_linux.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/content/browser/child_thread_type_switcher_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/child_thread_type_switcher_linux.cc
 @@ -20,6 +20,9 @@ void SetThreadTypeOnLauncherThread(base::ProcessId pee
                                     base::ThreadType thread_type) {

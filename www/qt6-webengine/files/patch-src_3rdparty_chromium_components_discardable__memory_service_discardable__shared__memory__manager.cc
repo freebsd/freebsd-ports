@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/components/discardable_memory/service/discardable_shared_memory_manager.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/discardable_memory/service/discardable_shared_memory_manager.cc
 @@ -172,7 +172,7 @@ uint64_t GetDefaultMemoryLimit() {
    // Limits the number of FDs used to 32, assuming a 4MB allocation size.

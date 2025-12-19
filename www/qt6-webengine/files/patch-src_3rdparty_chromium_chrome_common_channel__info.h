@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/common/channel_info.h.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/chrome/common/channel_info.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/common/channel_info.h
 @@ -12,7 +12,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  namespace base {
  class Environment;
  }
-@@ -100,7 +100,7 @@ void ClearChannelIdForTesting();
+@@ -100,7 +100,7 @@ std::string GetChannelSuffixForDataDir();
  std::string GetChannelSuffixForDataDir();
  #endif
  

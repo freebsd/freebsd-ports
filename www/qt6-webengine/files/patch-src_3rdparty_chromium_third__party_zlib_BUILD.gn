@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
 @@ -140,7 +140,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]

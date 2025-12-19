@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/posix/can_lower_nice_to.cc.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/base/posix/can_lower_nice_to.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/posix/can_lower_nice_to.cc
 @@ -11,8 +11,12 @@
  

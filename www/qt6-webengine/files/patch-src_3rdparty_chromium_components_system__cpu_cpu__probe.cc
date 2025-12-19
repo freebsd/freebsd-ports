@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/system_cpu/cpu_probe.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/components/system_cpu/cpu_probe.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/system_cpu/cpu_probe.cc
 @@ -30,6 +30,9 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
    return CpuProbeWin::Create();

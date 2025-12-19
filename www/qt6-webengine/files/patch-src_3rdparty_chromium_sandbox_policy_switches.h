@@ -1,19 +1,6 @@
---- src/3rdparty/chromium/sandbox/policy/switches.h.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/sandbox/policy/switches.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/sandbox/policy/switches.h
-@@ -58,10 +58,10 @@ SANDBOX_POLICY_EXPORT extern const char kWindowsSystem
- SANDBOX_POLICY_EXPORT extern const char kMirroringSandbox[];
- #endif  // BUILDFLAG(IS_MAC)
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
- SANDBOX_POLICY_EXPORT extern const char kHardwareVideoDecodingSandbox[];
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- SANDBOX_POLICY_EXPORT extern const char kHardwareVideoEncodingSandbox[];
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
- 
-@@ -83,7 +83,8 @@ SANDBOX_POLICY_EXPORT extern const char kDisableSetuid
+@@ -23,7 +23,8 @@ SANDBOX_POLICY_EXPORT extern const char kNoSandbox[];
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxAllowSysVShm[];
  SANDBOX_POLICY_EXPORT extern const char kGpuSandboxFailuresFatal[];
  SANDBOX_POLICY_EXPORT extern const char kNoSandbox[];

@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/net/disk_cache/simple/simple_file_tracker.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/net/disk_cache/simple/simple_file_tracker.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/disk_cache/simple/simple_file_tracker.cc
-@@ -35,7 +35,17 @@ void RecordFileDescripterLimiterOp(FileDescriptorLimit
- }  // namespace
+@@ -37,7 +37,17 @@ SimpleFileTracker::SimpleFileTracker(int file_limit)
+ }
  
  SimpleFileTracker::SimpleFileTracker(int file_limit)
 +#if defined(OS_OPENBSD)

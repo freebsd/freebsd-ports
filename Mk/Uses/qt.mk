@@ -23,8 +23,8 @@ _QT_MK_INCLUDED=	qt.mk
 # Qt versions currently supported by the framework.
 _QT_SUPPORTED?=		5 6
 QT5_VERSION?=		5.15.18
-QT6_VERSION?=		6.9.3
-PYSIDE6_VERSION?=	6.9.3
+QT6_VERSION?=		6.10.1
+PYSIDE6_VERSION?=	6.10.1
 
 # Support for intermediate Qt6 releases. This partially defines
 # _QT6_MASTER_SITE_SUBDIR and would probably be better in qt-dist.mk,
@@ -257,7 +257,7 @@ qt-languageserver_PORT=	devel/${_QT_RELNAME}-languageserver
 qt-languageserver_PATH=	${LOCALBASE}/${QT_LIBDIR_REL}/libQt6LanguageServer.a
 
 qt-lottie_PORT=		graphics/${_QT_RELNAME}-lottie
-qt-lottie_LIB=		libQt${_QT_LIBVER}Bodymovin.so
+qt-lottie_LIB=		libQt${_QT_LIBVER}Lottie.so
 
 qt-linguist_PORT=	devel/${_QT_RELNAME}-linguist
 qt-linguist_PATH=	${LOCALBASE}/${QT_BINDIR_REL}/linguist
@@ -407,7 +407,7 @@ qt-virtualkeyboard_PORT=	x11-toolkits/${_QT_RELNAME}-virtualkeyboard
 qt-virtualkeyboard_PATH=	${LOCALBASE}/${QT_PLUGINDIR_REL}/platforminputcontexts/libqtvirtualkeyboardplugin.so
 
 qt-wayland_PORT=	graphics/${_QT_RELNAME}-wayland
-qt-wayland_LIB=		libQt${_QT_LIBVER}WaylandClient.so
+qt-wayland_LIB=		libQt${_QT_LIBVER}WaylandCompositor.so
 
 qt-webchannel_PORT=	www/${_QT_RELNAME}-webchannel
 qt-webchannel_LIB=	libQt${_QT_LIBVER}WebChannel.so

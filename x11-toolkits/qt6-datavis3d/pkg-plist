@@ -221,8 +221,8 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6DataVisualizationQmlpluginTargets.cmake
 %%QT_LIBDIR%%/libQt6DataVisualizationQml.so
 %%QT_LIBDIR%%/libQt6DataVisualizationQml.so.6
 %%QT_LIBDIR%%/libQt6DataVisualizationQml.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6datavisualization_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6datavisualizationqml_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6datavisualization_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6datavisualizationqml_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_datavisualization.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_datavisualization_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_datavisualizationqml.pri

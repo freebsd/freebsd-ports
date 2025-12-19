@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/memory/platform_shared_memory_region.h.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/base/memory/platform_shared_memory_region.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/memory/platform_shared_memory_region.h
-@@ -17,7 +17,7 @@
+@@ -18,7 +18,7 @@
  #include "base/unguessable_token.h"
  #include "build/build_config.h"
  
@@ -9,7 +9,7 @@
  namespace content {
  class SandboxIPCHandler;
  }
-@@ -84,7 +84,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -85,7 +85,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
      kMaxValue = GET_SHMEM_TEMP_DIR_FAILURE
    };
  
@@ -18,7 +18,7 @@
    // Structure to limit access to executable region creation.
    struct ExecutableRegion {
     private:
-@@ -216,7 +216,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -217,7 +217,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
                             CheckPlatformHandlePermissionsCorrespondToMode);
    static PlatformSharedMemoryRegion Create(Mode mode,
                                             size_t size

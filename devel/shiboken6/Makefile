@@ -18,7 +18,7 @@ LIB_DEPENDS=	libxslt.so:textproc/libxslt
 USES=		cmake compiler:c++17-lang gnome llvm:lib,min=17,noexport pathfix \
 		python qt:6 tar:xz
 USE_GNOME=	libxml2
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/${PORTNAME}
 USE_PYTHON=	flavors
 USE_QT=		base
 

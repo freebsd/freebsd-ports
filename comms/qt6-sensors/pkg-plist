@@ -182,8 +182,8 @@ lib/cmake/Qt6SensorsQuickPrivate/Qt6SensorsQuickPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6SensorsQuick.so
 %%QT_LIBDIR%%/libQt6SensorsQuick.so.6
 %%QT_LIBDIR%%/libQt6SensorsQuick.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6sensors_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6sensorsquick_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6sensors_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6sensorsquick_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_sensors.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_sensors_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_sensorsquick.pri

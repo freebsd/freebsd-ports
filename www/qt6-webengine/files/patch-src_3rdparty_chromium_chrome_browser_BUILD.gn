@@ -1,16 +1,16 @@
---- src/3rdparty/chromium/chrome/browser/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/chrome/browser/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/BUILD.gn
-@@ -6897,6 +6897,13 @@ static_library("browser") {
+@@ -6751,6 +6751,13 @@ static_library("browser") {
+           [ "//third_party/webrtc/modules/desktop_capture:pipewire_config" ]
      }
-   }
  
-+  if (is_bsd) {
-+    sources -= [
-+      "metrics/bluetooth_metrics_provider.cc",
-+      "metrics/bluetooth_metrics_provider.h",
-+    ]
-+  }
++    if (is_bsd) {
++      sources -= [
++        "metrics/bluetooth_metrics_provider.cc",
++        "metrics/bluetooth_metrics_provider.h",
++      ]
++    }
 +
-   if (is_linux && use_dbus) {
-     sources += [
-       "dbus_memory_pressure_evaluator_linux.cc",
+     if (use_dbus) {
+       sources += [
+         "dbus_memory_pressure_evaluator_linux.cc",

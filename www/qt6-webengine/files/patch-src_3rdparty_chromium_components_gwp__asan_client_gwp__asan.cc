@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/gwp_asan/client/gwp_asan.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/components/gwp_asan/client/gwp_asan.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/gwp_asan/client/gwp_asan.cc
 @@ -75,7 +75,7 @@ namespace {
  // ProcessSamplingBoost is the multiplier to increase the

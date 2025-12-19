@@ -213,7 +213,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake
 %%QT_LIBDIR%%/libQt6Location.so
 %%QT_LIBDIR%%/libQt6Location.so.6
 %%QT_LIBDIR%%/libQt6Location.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6location_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6location_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_location.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_location_private.pri
 %%QT_PLUGINDIR%%/geoservices/libqtgeoservices_itemsoverlay.so

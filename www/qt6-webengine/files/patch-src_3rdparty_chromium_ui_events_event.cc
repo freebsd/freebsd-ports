@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/events/event.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/ui/events/event.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/events/event.cc
-@@ -366,7 +366,7 @@ std::string LocatedEvent::ToString() const {
+@@ -373,7 +373,7 @@ MouseEvent::MouseEvent(const PlatformEvent& native_eve
  MouseEvent::MouseEvent(const PlatformEvent& native_event)
      : LocatedEvent(native_event),
        changed_button_flags_(GetChangedMouseButtonFlagsFromNative(native_event)),
@@ -9,7 +9,7 @@
        movement_(GetMouseMovementFromNative(native_event)),
  #endif
        pointer_details_(GetMousePointerDetailsFromNative(native_event)) {
-@@ -622,7 +622,7 @@ std::unique_ptr<Event> MouseWheelEvent::Clone() const 
+@@ -629,7 +629,7 @@ std::unique_ptr<Event> MouseWheelEvent::Clone() const 
    return std::make_unique<MouseWheelEvent>(*this);
  }
  
@@ -18,7 +18,7 @@
  // This value matches Windows, Fuchsia WHEEL_DELTA, and (roughly) Firefox on
  // Linux.
  // static
-@@ -882,7 +882,7 @@ void KeyEvent::InitializeNative() {
+@@ -889,7 +889,7 @@ void KeyEvent::InitializeNative() {
    if (synthesize_key_repeat_enabled_ && IsRepeated(GetLastKeyEvent()))
      SetFlags(flags() | EF_IS_REPEAT);
  

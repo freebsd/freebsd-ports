@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/device_signals/core/browser/mock_signals_aggregator.h.orig	2023-07-16 15:47:57 UTC
+--- src/3rdparty/chromium/components/device_signals/core/browser/mock_signals_aggregator.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/device_signals/core/browser/mock_signals_aggregator.h
 @@ -17,7 +17,7 @@ class MockSignalsAggregator : public SignalsAggregator
    MockSignalsAggregator();

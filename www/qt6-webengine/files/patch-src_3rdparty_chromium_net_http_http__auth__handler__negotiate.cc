@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/http/http_auth_handler_negotiate.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/net/http/http_auth_handler_negotiate.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/http/http_auth_handler_negotiate.cc
 @@ -120,7 +120,7 @@ int HttpAuthHandlerNegotiate::Factory::CreateAuthHandl
  #elif BUILDFLAG(IS_POSIX)

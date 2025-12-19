@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/base/network_change_notifier_passive.cc.orig	2023-05-31 08:12:17 UTC
+--- src/3rdparty/chromium/net/base/network_change_notifier_passive.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/base/network_change_notifier_passive.cc
-@@ -107,7 +107,7 @@ NetworkChangeNotifierPassive::GetAddressMapOwnerIntern
+@@ -107,7 +107,7 @@ NetworkChangeNotifierPassive::NetworkChangeCalculatorP
  NetworkChangeNotifier::NetworkChangeCalculatorParams
  NetworkChangeNotifierPassive::NetworkChangeCalculatorParamsPassive() {
    NetworkChangeCalculatorParams params;

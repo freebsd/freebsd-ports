@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/views/controls/textfield/textfield.h.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/ui/views/controls/textfield/textfield.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/views/controls/textfield/textfield.h
 @@ -47,7 +47,7 @@
  #include "ui/views/view_observer.h"
@@ -9,7 +9,7 @@
  #include <vector>
  #endif
  
-@@ -463,7 +463,7 @@ class VIEWS_EXPORT Textfield : public View,
+@@ -474,7 +474,7 @@ class VIEWS_EXPORT Textfield : public View,
    // Set whether the text should be used to improve typing suggestions.
    void SetShouldDoLearning(bool value) { should_do_learning_ = value; }
  

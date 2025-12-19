@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/x/generated_protos/dri3.cc.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/ui/gfx/x/generated_protos/dri3.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gfx/x/generated_protos/dri3.cc
 @@ -27,6 +27,8 @@
  #include <xcb/xcb.h>

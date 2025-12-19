@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/ffmpeg/libavutil/x86/x86inc.asm.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/third_party/ffmpeg/libavutil/x86/x86inc.asm.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/ffmpeg/libavutil/x86/x86inc.asm
 @@ -46,6 +46,12 @@
      %endif

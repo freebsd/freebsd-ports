@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/paint_preview/common/proto/paint_preview.proto.orig	2021-12-14 11:45:03 UTC
+--- src/3rdparty/chromium/components/paint_preview/common/proto/paint_preview.proto.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/paint_preview/common/proto/paint_preview.proto
-@@ -82,8 +82,8 @@ message PaintPreviewFrameProto {
+@@ -82,8 +82,8 @@ message ChromeVersionProto {
  // Stores Chrome version.
  // NEXT_TAG = 5
  message ChromeVersionProto {

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_internal_posix.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_internal_posix.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/threading/platform_thread_internal_posix.h
-@@ -10,7 +10,7 @@
+@@ -10,7 +10,7 @@ namespace partition_alloc::internal::base::internal {
  
  namespace partition_alloc::internal::base::internal {
  

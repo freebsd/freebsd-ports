@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/content/browser/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/BUILD.gn
-@@ -2438,6 +2438,14 @@ jumbo_source_set("browser") {
+@@ -2529,6 +2529,14 @@ jumbo_source_set("browser") {
      ]
    }
  
@@ -13,9 +13,9 @@
 +  }
 +
    if (is_linux || is_chromeos) {
-     sources += [
-       "child_process_launcher_helper_linux.cc",
-@@ -2481,6 +2489,15 @@ jumbo_source_set("browser") {
+     sources -=
+         [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
+@@ -2574,6 +2582,15 @@ jumbo_source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/stable_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/cabac.h.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/cabac.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/ffmpeg/libavcodec/x86/cabac.h
 @@ -31,7 +31,8 @@
  

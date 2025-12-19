@@ -69,8 +69,8 @@ lib/cmake/Qt6WebChannelQuickPrivate/Qt6WebChannelQuickPrivateVersionlessTargets.
 %%QT_LIBDIR%%/libQt6WebChannelQuick.so
 %%QT_LIBDIR%%/libQt6WebChannelQuick.so.6
 %%QT_LIBDIR%%/libQt6WebChannelQuick.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6webchannel_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6webchannelquick_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6webchannel_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6webchannelquick_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_webchannel.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webchannel_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webchannelquick.pri

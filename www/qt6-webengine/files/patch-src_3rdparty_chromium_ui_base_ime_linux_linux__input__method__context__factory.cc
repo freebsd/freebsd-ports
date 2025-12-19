@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/ime/linux/linux_input_method_context_factory.cc.orig	2022-09-27 14:30:33 UTC
+--- src/3rdparty/chromium/ui/base/ime/linux/linux_input_method_context_factory.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/base/ime/linux/linux_input_method_context_factory.cc
 @@ -9,7 +9,7 @@
  #include "build/build_config.h"

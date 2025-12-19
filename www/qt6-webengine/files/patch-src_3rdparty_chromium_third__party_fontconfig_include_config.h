@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/fontconfig/include/config.h.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/third_party/fontconfig/include/config.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/fontconfig/include/config.h
 @@ -13,7 +13,7 @@
  

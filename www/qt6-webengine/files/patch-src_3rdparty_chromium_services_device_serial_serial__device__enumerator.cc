@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/serial/serial_device_enumerator.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/services/device/serial/serial_device_enumerator.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/device/serial/serial_device_enumerator.cc
 @@ -13,7 +13,7 @@
  #include "build/build_config.h"
@@ -9,7 +9,7 @@
  #include "services/device/serial/serial_device_enumerator_linux.h"
  #elif BUILDFLAG(IS_MAC)
  #include "services/device/serial/serial_device_enumerator_mac.h"
-@@ -26,7 +26,7 @@ namespace device {
+@@ -26,7 +26,7 @@ std::unique_ptr<SerialDeviceEnumerator> SerialDeviceEn
  // static
  std::unique_ptr<SerialDeviceEnumerator> SerialDeviceEnumerator::Create(
      scoped_refptr<base::SingleThreadTaskRunner> ui_task_runner) {

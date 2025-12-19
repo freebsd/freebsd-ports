@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/ffmpeg/scripts/build_ffmpeg.py.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/media/ffmpeg/scripts/build_ffmpeg.py.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/ffmpeg/scripts/build_ffmpeg.py
-@@ -33,7 +33,7 @@ NDK_ROOT_DIR = os.path.abspath(
+@@ -33,7 +33,7 @@ sys.path.append(os.path.join(CHROMIUM_ROOT_DIR, 'build
  SUCCESS_TOKEN = 'THIS_BUILD_WORKED'
  
  sys.path.append(os.path.join(CHROMIUM_ROOT_DIR, 'build'))
@@ -9,7 +9,7 @@
  
  BRANDINGS = [
      'Chrome',
-@@ -43,6 +43,8 @@ BRANDINGS = [
+@@ -43,6 +43,8 @@ ARCH_MAP = {
  ARCH_MAP = {
      'android': ['ia32', 'x64', 'arm-neon', 'arm64'],
      'linux': ['ia32', 'x64', 'noasm-x64', 'arm', 'arm-neon', 'arm64'],
@@ -18,7 +18,7 @@
      'mac': ['x64', 'arm64'],
      'win': ['ia32', 'x64', 'arm64'],
  }
-@@ -122,7 +124,7 @@ def PrintAndCheckCall(argv, *args, **kwargs):
+@@ -122,7 +124,7 @@ def GetDsoName(target_os, dso_name, dso_version):
  
  
  def GetDsoName(target_os, dso_name, dso_version):

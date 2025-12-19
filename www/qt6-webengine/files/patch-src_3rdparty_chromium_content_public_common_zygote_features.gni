@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/public/common/zygote/features.gni.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/content/public/common/zygote/features.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/public/common/zygote/features.gni
 @@ -2,4 +2,4 @@
  # Use of this source code is governed by a BSD-style license that can be

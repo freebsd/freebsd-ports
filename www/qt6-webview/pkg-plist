@@ -1,5 +1,5 @@
 %%QT_INCDIR%%/QtWebView/%%FULLVER%%/QtWebView/private/qabstractwebview_p.h
-%%QT_INCDIR%%/QtWebView/%%FULLVER%%/QtWebView/private/qnativeviewcontroller_p.h
+%%QT_INCDIR%%/QtWebView/%%FULLVER%%/QtWebView/private/qtwebview-config_p.h
 %%QT_INCDIR%%/QtWebView/%%FULLVER%%/QtWebView/private/qwebview_p.h
 %%QT_INCDIR%%/QtWebView/%%FULLVER%%/QtWebView/private/qwebviewfactory_p.h
 %%QT_INCDIR%%/QtWebView/%%FULLVER%%/QtWebView/private/qwebviewinterface_p.h
@@ -8,10 +8,10 @@
 %%QT_INCDIR%%/QtWebView/QtWebView
 %%QT_INCDIR%%/QtWebView/QtWebViewDepends
 %%QT_INCDIR%%/QtWebView/QtWebViewVersion
+%%QT_INCDIR%%/QtWebView/qtwebview-config.h
 %%QT_INCDIR%%/QtWebView/qtwebviewfunctions.h
 %%QT_INCDIR%%/QtWebView/qtwebviewversion.h
 %%QT_INCDIR%%/QtWebView/qwebview_global.h
-%%QT_INCDIR%%/QtWebViewQuick/%%FULLVER%%/QtWebViewQuick/private/qquickviewcontroller_p.h
 %%QT_INCDIR%%/QtWebViewQuick/%%FULLVER%%/QtWebViewQuick/private/qquickwebview_p.h
 %%QT_INCDIR%%/QtWebViewQuick/%%FULLVER%%/QtWebViewQuick/private/qquickwebviewloadrequest_p.h
 %%QT_INCDIR%%/QtWebViewQuick/%%FULLVER%%/QtWebViewQuick/private/qquickwebviewsettings_p.h
@@ -21,6 +21,7 @@
 %%QT_INCDIR%%/QtWebViewQuick/QtWebViewQuickVersion
 %%QT_INCDIR%%/QtWebViewQuick/qtwebviewquickexports.h
 %%QT_INCDIR%%/QtWebViewQuick/qtwebviewquickversion.h
+lib/cmake/Qt6/FindWebView2.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtWebViewTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtwebviewquickpluginConfig.cmake
@@ -77,8 +78,8 @@ lib/cmake/Qt6WebViewQuickPrivate/Qt6WebViewQuickPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6WebViewQuick.so
 %%QT_LIBDIR%%/libQt6WebViewQuick.so.6
 %%QT_LIBDIR%%/libQt6WebViewQuick.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6webview_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6webviewquick_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6webview_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6webviewquick_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_webview.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webview_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_webviewquick.pri

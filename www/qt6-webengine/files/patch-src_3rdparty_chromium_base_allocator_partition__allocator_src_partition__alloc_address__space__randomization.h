@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h
 @@ -38,7 +38,7 @@ AslrMask(uintptr_t bits) {
  

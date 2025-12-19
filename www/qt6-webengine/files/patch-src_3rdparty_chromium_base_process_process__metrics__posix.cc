@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/process/process_metrics_posix.cc.orig	2023-07-16 15:47:57 UTC
+--- src/3rdparty/chromium/base/process/process_metrics_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/process/process_metrics_posix.cc
 @@ -21,6 +21,8 @@
  
@@ -9,7 +9,7 @@
  #else
  #include <malloc.h>
  #endif
-@@ -134,7 +136,7 @@ size_t ProcessMetrics::GetMallocUsage() {
+@@ -136,7 +138,7 @@ size_t ProcessMetrics::GetMallocUsage() {
    return stats.size_in_use;
  #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
    return GetMallocUsageMallinfo();

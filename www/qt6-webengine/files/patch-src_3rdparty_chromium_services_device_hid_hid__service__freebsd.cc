@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/hid/hid_service_freebsd.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/services/device/hid/hid_service_freebsd.cc.orig	2025-09-01 08:52:32 UTC
 +++ src/3rdparty/chromium/services/device/hid/hid_service_freebsd.cc
 @@ -0,0 +1,395 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
@@ -106,7 +106,7 @@
 +
 +  bool HaveReadWritePermissions(std::string device_id) {
 +    std::string device_node = "/dev/" + device_id;
-+    base::internal::AssertBlockingAllowed();
++    base::AssertBlockingAllowed();
 +
 +    base::FilePath device_path(device_node);
 +    base::File device_file;
@@ -130,7 +130,7 @@
 +
 +    std::vector<uint8_t> report_descriptor;
 +
-+    base::internal::AssertBlockingAllowed();
++    base::AssertBlockingAllowed();
 +
 +    base::FilePath device_path(device_node);
 +    base::File device_file;
@@ -196,7 +196,7 @@
 + private:
 +
 +  void CheckPendingPermissionChange() {
-+    base::internal::AssertBlockingAllowed();
++    base::AssertBlockingAllowed();
 +    std::map<std::string, int>::iterator it;
 +    for (it = permissions_checks_attempts_.begin(); it != permissions_checks_attempts_.end();) {
 +      std::string device_name = it->first;
@@ -222,7 +222,7 @@
 +  }
 +
 +  void SetupDevdMonitor() {
-+    base::internal::AssertBlockingAllowed();
++    base::AssertBlockingAllowed();
 +
 +    int devd_fd = socket(AF_UNIX, SOCK_SEQPACKET, 0);
 +    if (devd_fd < 0)

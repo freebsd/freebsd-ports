@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/synchronization/lock_impl.h.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/base/synchronization/lock_impl.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/synchronization/lock_impl.h
 @@ -109,6 +109,10 @@ void LockImpl::Unlock() {
  }

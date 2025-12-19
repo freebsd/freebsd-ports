@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/base/features.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/net/base/features.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/base/features.cc
 @@ -28,7 +28,7 @@ BASE_FEATURE(kChromeStaticPinning,
               base::FEATURE_ENABLED_BY_DEFAULT);
@@ -9,15 +9,15 @@
  BASE_FEATURE(kAsyncDns,
               "AsyncDns",
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -535,7 +535,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
+@@ -566,7 +566,12 @@ BASE_FEATURE(kSpdyHeadersToHttpResponseUseBuilder,
               "SpdyHeadersToHttpResponseUseBuilder",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
 +#if BUILDFLAG(IS_OPENBSD)
 +// No IP_RECVTOS support
- BASE_FEATURE(kReportEcn, "ReportEcn", base::FEATURE_DISABLED_BY_DEFAULT);
-+#else
 +BASE_FEATURE(kReportEcn, "ReportEcn", base::FEATURE_DISABLED_BY_DEFAULT);
++#else
+ BASE_FEATURE(kReportEcn, "ReportEcn", base::FEATURE_ENABLED_BY_DEFAULT);
 +#endif
  
  BASE_FEATURE(kUseNewAlpsCodepointHttp2,

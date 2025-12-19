@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/dns/dns_util.cc.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/net/dns/dns_util.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/dns/dns_util.cc
 @@ -29,6 +29,8 @@
  #include "net/dns/public/util.h"

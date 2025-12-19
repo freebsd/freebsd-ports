@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/fake_video_capture_device_factory.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/media/capture/video/fake_video_capture_device_factory.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/capture/video/fake_video_capture_device_factory.cc
 @@ -231,7 +231,7 @@ void FakeVideoCaptureDeviceFactory::GetDevicesInfo(
    int entry_index = 0;

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/sandbox_host_linux.cc.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/content/browser/sandbox_host_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/sandbox_host_linux.cc
 @@ -45,6 +45,7 @@ void SandboxHostLinux::Init() {
    // Instead, it replies on a temporary socket provided by the caller.

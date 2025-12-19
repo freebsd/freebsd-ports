@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/paint_preview/player/player_compositor_delegate.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/components/paint_preview/player/player_compositor_delegate.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/paint_preview/player/player_compositor_delegate.cc
-@@ -434,8 +434,8 @@ void PlayerCompositorDelegate::ValidateProtoAndLoadAXT
+@@ -433,8 +433,8 @@ void PlayerCompositorDelegate::ValidateProtoAndLoadAXT
    auto chrome_version = capture_result_->proto.metadata().chrome_version();
    const auto& current_chrome_version = version_info::GetVersion();
    if (capture_result_->proto.metadata().has_chrome_version() &&

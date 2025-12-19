@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/capture_context.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/capture_context.h
 @@ -21,7 +21,8 @@
  #include <mach/mach.h>
@@ -10,7 +10,7 @@
  #include <ucontext.h>
  #endif  // BUILDFLAG(IS_APPLE)
  
-@@ -35,7 +36,8 @@ using NativeCPUContext = arm_unified_thread_state;
+@@ -35,7 +36,8 @@ using NativeCPUContext = CONTEXT;
  #endif
  #elif BUILDFLAG(IS_WIN)
  using NativeCPUContext = CONTEXT;

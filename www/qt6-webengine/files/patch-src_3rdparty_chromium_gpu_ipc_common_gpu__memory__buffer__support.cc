@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.cc
 @@ -26,7 +26,7 @@
  #include "ui/ozone/public/ozone_platform.h"

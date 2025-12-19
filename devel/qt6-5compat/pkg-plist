@@ -84,7 +84,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
 %%QT_LIBDIR%%/libQt6Core5Compat.so
 %%QT_LIBDIR%%/libQt6Core5Compat.so.6
 %%QT_LIBDIR%%/libQt6Core5Compat.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6core5compat_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6core5compat_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_core5compat.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_core5compat_private.pri
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/Blend.qml
@@ -113,7 +113,6 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/ThresholdMask.qml
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/ZoomBlur.qml
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/libqtgraphicaleffectsplugin.so
-%%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/plugins.qmltypes
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/DropShadowBase.qml
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/FastGlow.qml
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/FastInnerShadow.qml
@@ -125,6 +124,7 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/plugins.qmltypes
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/private/qmldir
 %%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/qmldir
+%%QT_QMLDIR%%/Qt5Compat/GraphicalEffects/qtgraphicaleffectsplugin.qmltypes
 %%QT_SBOMDIR%%/qt5compat-%%FULLVER%%.spdx
 libdata/pkgconfig/Qt6Core5Compat.pc
 %%QT_DATADIR%%/modules/Core5Compat.json

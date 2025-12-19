@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/gwp_asan/client/gwp_asan_features.cc.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/components/gwp_asan/client/gwp_asan_features.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/gwp_asan/client/gwp_asan_features.cc
-@@ -9,7 +9,7 @@
+@@ -9,7 +9,7 @@ namespace gwp_asan::internal {
  namespace gwp_asan::internal {
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

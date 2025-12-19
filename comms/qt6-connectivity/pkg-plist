@@ -162,8 +162,8 @@ lib/cmake/Qt6NfcPrivate/Qt6NfcPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Nfc.so
 %%QT_LIBDIR%%/libQt6Nfc.so.6
 %%QT_LIBDIR%%/libQt6Nfc.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6bluetooth_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6nfc_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6bluetooth_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6nfc_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_bluetooth.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_bluetooth_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_connectivity_private.pri

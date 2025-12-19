@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/controller/memory_usage_monitor_posix.h.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/controller/memory_usage_monitor_posix.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/controller/memory_usage_monitor_posix.h
 @@ -13,7 +13,7 @@
  #include "third_party/blink/renderer/controller/controller_export.h"
@@ -9,7 +9,7 @@
  #include "third_party/blink/public/mojom/memory_usage_monitor_linux.mojom-blink.h"
  #endif
  
-@@ -22,7 +22,7 @@ namespace blink {
+@@ -22,7 +22,7 @@ class CONTROLLER_EXPORT MemoryUsageMonitorPosix
  // MemoryUsageMonitor implementation for Android and Linux.
  class CONTROLLER_EXPORT MemoryUsageMonitorPosix
      : public MemoryUsageMonitor

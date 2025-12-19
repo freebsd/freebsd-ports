@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/toolchain/toolchain.gni.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/build/toolchain/toolchain.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/build/toolchain/toolchain.gni
-@@ -72,7 +72,7 @@ if (host_os == "mac") {
+@@ -75,7 +75,7 @@ if (host_os == "mac") {
    host_shlib_extension = ".dylib"
  } else if (host_os == "win") {
    host_shlib_extension = ".dll"

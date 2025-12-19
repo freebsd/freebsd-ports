@@ -1,18 +1,18 @@
---- src/plugins/tls/openssl/qsslcontext_openssl.cpp.orig	2025-02-19 13:05:34 UTC
+--- src/plugins/tls/openssl/qsslcontext_openssl.cpp.orig	2025-05-14 09:43:58 UTC
 +++ src/plugins/tls/openssl/qsslcontext_openssl.cpp
-@@ -49,9 +49,9 @@ extern "C" int q_verify_cookie_callback(SSL *ssl, cons
- }
- #endif // dtls
+@@ -36,9 +36,9 @@ int qt_OCSP_status_server_callback(SSL *ssl, void *);
+ int qt_OCSP_status_server_callback(SSL *ssl, void *);
+ #endif // ocsp
  
 -#ifdef TLS1_3_VERSION
 +#if defined(TLS1_3_VERSION) && !defined(LIBRESSL_VERSION_NUMBER)
- extern "C" int q_ssl_sess_set_new_cb(SSL *context, SSL_SESSION *session);
+ int q_ssl_sess_set_new_cb(SSL *context, SSL_SESSION *session);
 -#endif // TLS1_3_VERSION
-+#endif // TLS1_3_VERSION && LIBRESSL_VERSION_NUMBE
++#endif // TLS1_3_VERSION && LIBRESSL_VERSION_NUMBER
  
- static inline QString msgErrorSettingBackendConfig(const QString &why)
- {
-@@ -370,9 +370,11 @@ QT_WARNING_POP
+ } // namespace QTlsPrivate
+ 
+@@ -369,9 +369,11 @@ QT_WARNING_POP
          return;
      }
  
@@ -24,7 +24,7 @@
  
      const long anyVersion =
  #if QT_CONFIG(dtls)
-@@ -663,14 +665,14 @@ QT_WARNING_POP
+@@ -662,14 +664,14 @@ QT_WARNING_POP
          q_SSL_CTX_set_verify(sslContext->ctx, verificationMode, verificationCallback);
      }
  
@@ -32,7 +32,7 @@
 +#if defined(TLS1_3_VERSION) && !defined(LIBRESSL_VERSION_NUMBER)
      // NewSessionTicket callback:
      if (mode == QSslSocket::SslClientMode && !isDtls) {
-         q_SSL_CTX_sess_set_new_cb(sslContext->ctx, q_ssl_sess_set_new_cb);
+         q_SSL_CTX_sess_set_new_cb(sslContext->ctx, QTlsPrivate::q_ssl_sess_set_new_cb);
          q_SSL_CTX_set_session_cache_mode(sslContext->ctx, SSL_SESS_CACHE_CLIENT);
      }
  
@@ -41,7 +41,7 @@
  
  #if QT_CONFIG(dtls)
      // DTLS cookies:
-@@ -760,6 +762,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -759,6 +761,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -49,7 +49,7 @@
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -803,7 +806,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -802,7 +805,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }

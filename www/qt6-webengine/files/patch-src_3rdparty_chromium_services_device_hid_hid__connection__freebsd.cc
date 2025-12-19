@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/hid/hid_connection_freebsd.cc.orig	2024-07-30 19:22:51 UTC
+--- src/3rdparty/chromium/services/device/hid/hid_connection_freebsd.cc.orig	2025-09-01 08:52:32 UTC
 +++ src/3rdparty/chromium/services/device/hid/hid_connection_freebsd.cc
 @@ -0,0 +1,240 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
@@ -46,7 +46,7 @@
 +  // Must be called on a thread that has a base::MessageLoopForIO.
 +  void Start() {
 +    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
-+    base::internal::AssertBlockingAllowed();
++    base::AssertBlockingAllowed();
 +
 +    file_watcher_ = base::FileDescriptorWatcher::WatchReadable(
 +        fd_.get(), base::BindRepeating(&BlockingTaskRunnerHelper::OnFileCanReadWithoutBlocking,

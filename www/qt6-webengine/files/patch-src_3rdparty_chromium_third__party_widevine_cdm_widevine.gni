@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/widevine/cdm/widevine.gni.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/third_party/widevine/cdm/widevine.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/widevine/cdm/widevine.gni
 @@ -28,6 +28,8 @@ library_widevine_cdm_available =
      (is_chromeos &&

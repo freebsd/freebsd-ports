@@ -111,7 +111,6 @@
 %%QT_DOCDIR%%/qtdoc/images/addalarms.png
 %%QT_DOCDIR%%/qtdoc/images/alarms2.png
 %%QT_DOCDIR%%/qtdoc/images/alarms3.png
-%%QT_DOCDIR%%/qtdoc/images/android-single-abis.png
 %%QT_DOCDIR%%/qtdoc/images/android-source-folder.png
 %%QT_DOCDIR%%/qtdoc/images/android.webp
 %%QT_DOCDIR%%/qtdoc/images/animation-examples.png
@@ -155,6 +154,7 @@
 %%QT_DOCDIR%%/qtdoc/images/layout-examples.png
 %%QT_DOCDIR%%/qtdoc/images/lightningviewer.jpg
 %%QT_DOCDIR%%/qtdoc/images/logo.png
+%%QT_DOCDIR%%/qtdoc/images/lottietoqmlexample.png
 %%QT_DOCDIR%%/qtdoc/images/macos.webp
 %%QT_DOCDIR%%/qtdoc/images/mainscreen.png
 %%QT_DOCDIR%%/qtdoc/images/maintenancetool.png
@@ -171,6 +171,7 @@
 %%QT_DOCDIR%%/qtdoc/images/qml-application.png
 %%QT_DOCDIR%%/qtdoc/images/qt-android-architecture.drawio.svg
 %%QT_DOCDIR%%/qtdoc/images/qt-codesample.png
+%%QT_DOCDIR%%/qtdoc/images/qt-creator-sdks.webp
 %%QT_DOCDIR%%/qtdoc/images/qt-edu-apply.png
 %%QT_DOCDIR%%/qtdoc/images/qt-edu-browse-qbsp.png
 %%QT_DOCDIR%%/qtdoc/images/qt-edu-contribute.png
@@ -195,9 +196,7 @@
 %%QT_DOCDIR%%/qtdoc/images/qtcreator-clazy-checks-for-porting-to-qt6.png
 %%QT_DOCDIR%%/qtdoc/images/qtcreator-create-templates.png
 %%QT_DOCDIR%%/qtdoc/images/qtcreator-qt-quick-editors.png
-%%QT_DOCDIR%%/qtdoc/images/qtdesigner.png
-%%QT_DOCDIR%%/qtdoc/images/qtdesignstudio-examples.png
-%%QT_DOCDIR%%/qtdoc/images/qtdesignstudio.png
+%%QT_DOCDIR%%/qtdoc/images/qtdesignstudio.webp
 %%QT_DOCDIR%%/qtdoc/images/qthangman-example.png
 %%QT_DOCDIR%%/qtdoc/images/qthangman-store-example.png
 %%QT_DOCDIR%%/qtdoc/images/qtinstallercomponents.png
@@ -205,12 +204,14 @@
 %%QT_DOCDIR%%/qtdoc/images/qtjennydemo_overview.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-calqlatr.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-clocks-small.png
+%%QT_DOCDIR%%/qtdoc/images/qtquick-demo-graphs-csv.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-photosurface-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-rssnews-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-samegame-med-1.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-samegame-med-2.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-stocqt.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick3D.png
+%%QT_DOCDIR%%/qtdoc/images/quickeffectmaker.png
 %%QT_DOCDIR%%/qtdoc/images/rhiarch.png
 %%QT_DOCDIR%%/qtdoc/images/robotarm-example.png
 %%QT_DOCDIR%%/qtdoc/images/sa8155-target.png
@@ -219,11 +220,13 @@
 %%QT_DOCDIR%%/qtdoc/images/session.png
 %%QT_DOCDIR%%/qtdoc/images/small_dark.png
 %%QT_DOCDIR%%/qtdoc/images/small_light.png
+%%QT_DOCDIR%%/qtdoc/images/splash-screen-launch.webp
 %%QT_DOCDIR%%/qtdoc/images/sql-examples.png
 %%QT_DOCDIR%%/qtdoc/images/thread-examples.png
 %%QT_DOCDIR%%/qtdoc/images/threadsandobjects.png
+%%QT_DOCDIR%%/qtdoc/images/tiger.png
 %%QT_DOCDIR%%/qtdoc/images/tool-examples.png
-%%QT_DOCDIR%%/qtdoc/images/txtviewer_screenshot.png
+%%QT_DOCDIR%%/qtdoc/images/vectorimageexample.png
 %%QT_DOCDIR%%/qtdoc/images/vxwb-advanced-settings.png
 %%QT_DOCDIR%%/qtdoc/images/vxwb-cmake-rtp-project.png
 %%QT_DOCDIR%%/qtdoc/images/vxwb-connection.png
@@ -232,6 +235,8 @@
 %%QT_DOCDIR%%/qtdoc/images/wayland-multi-process.png
 %%QT_DOCDIR%%/qtdoc/images/wayland-single-process-develop.png
 %%QT_DOCDIR%%/qtdoc/images/wayland-single-process-eglfs.png
+%%QT_DOCDIR%%/qtdoc/images/weatherforecastexample.png
+%%QT_DOCDIR%%/qtdoc/images/webassembly.webp
 %%QT_DOCDIR%%/qtdoc/images/windows.webp
 %%QT_DOCDIR%%/qtdoc/images/wiring1.png
 %%QT_DOCDIR%%/qtdoc/images/wiring2.png
@@ -241,7 +246,6 @@
 %%QT_DOCDIR%%/qtdoc/images/xr_physicsbase_teleportation.jpg
 %%QT_DOCDIR%%/qtdoc/index.html
 %%QT_DOCDIR%%/qtdoc/inputs-linux-device.html
-%%QT_DOCDIR%%/qtdoc/install-qt-design-studio.html
 %%QT_DOCDIR%%/qtdoc/integrity-building-and-flashing-dd-project.html
 %%QT_DOCDIR%%/qtdoc/integrity-building-monolith.html
 %%QT_DOCDIR%%/qtdoc/integrity-building-qt-8155p-on-ubuntu.html
@@ -281,6 +285,7 @@
 %%QT_DOCDIR%%/qtdoc/namespaces.html
 %%QT_DOCDIR%%/qtdoc/newclasses60.html
 %%QT_DOCDIR%%/qtdoc/newclasses61.html
+%%QT_DOCDIR%%/qtdoc/newclasses610.html
 %%QT_DOCDIR%%/qtdoc/newclasses62.html
 %%QT_DOCDIR%%/qtdoc/newclasses63.html
 %%QT_DOCDIR%%/qtdoc/newclasses64.html
@@ -297,7 +302,6 @@
 %%QT_DOCDIR%%/qtdoc/plugins-howto.html
 %%QT_DOCDIR%%/qtdoc/porting-qt3d-to-qtquick3d.html
 %%QT_DOCDIR%%/qtdoc/porting-to-android.html
-%%QT_DOCDIR%%/qtdoc/porting-to-ios.html
 %%QT_DOCDIR%%/qtdoc/porting-to-qt6-using-clazy.html
 %%QT_DOCDIR%%/qtdoc/portingguide.html
 %%QT_DOCDIR%%/qtdoc/qmltypes.html
@@ -330,9 +334,16 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-colorpaletteclient.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-dice-roundcarpet.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-dice-table.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-attribution-graphs-csv-hedley.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-attribution-graphs-csv-mio.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-attribution-graphs-csv-row-json.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-attribution-graphs-csv-string-view.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-attribution-graphs-csv.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-thermostatexample-materialicons.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-thermostatexample-phosphoricons.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-attribution-todolistexample-materialicons.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-android-splashscreen-manifest-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-android-splashscreen-quick-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-calqlatr-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-car-configurator-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-clocks-example.html
@@ -340,8 +351,8 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-colorpaletteclient-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-dice-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-documentviewer-example.html
-%%QT_DOCDIR%%/qtdoc/qtdoc-demos-documentviewer-plugins-txtviewer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-fx-material-showroom-example.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-demos-graphs-csv-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-hangman-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-lightningviewer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-mediaplayer-example.html
@@ -357,7 +368,6 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-windowembedding-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-xr-physicsbase-teleportation-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-toc.html
-%%QT_DOCDIR%%/qtdoc/qtdoc-tutorials-alarms-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc.index
 %%QT_DOCDIR%%/qtdoc/qtdoc.qhp
 %%QT_DOCDIR%%/qtdoc/qtentrypoint.html
@@ -376,6 +386,7 @@
 %%QT_DOCDIR%%/qtdoc/qtpurchasing-baseclasses.html
 %%QT_DOCDIR%%/qtdoc/qtpurchasing-googleplay.html
 %%QT_DOCDIR%%/qtdoc/qtpurchasing-iosclasses.html
+%%QT_DOCDIR%%/qtdoc/qtquick-tutorial-alarms.html
 %%QT_DOCDIR%%/qtdoc/qundo.html
 %%QT_DOCDIR%%/qtdoc/rcc.html
 %%QT_DOCDIR%%/qtdoc/reference-overview.html
@@ -387,7 +398,6 @@
 %%QT_DOCDIR%%/qtdoc/sharedlibrary.html
 %%QT_DOCDIR%%/qtdoc/signalsandslots-syntaxes.html
 %%QT_DOCDIR%%/qtdoc/solutions-for-application-development.html
-%%QT_DOCDIR%%/qtdoc/solutions-for-ui-design.html
 %%QT_DOCDIR%%/qtdoc/style/offline-dark.css
 %%QT_DOCDIR%%/qtdoc/style/offline-simple.css
 %%QT_DOCDIR%%/qtdoc/style/offline.css
@@ -402,13 +412,14 @@
 %%QT_DOCDIR%%/qtdoc/threads-technologies.html
 %%QT_DOCDIR%%/qtdoc/threads.html
 %%QT_DOCDIR%%/qtdoc/tools-for-qt-quick-uis.html
-%%QT_DOCDIR%%/qtdoc/tools-for-qt-widget-based-uis.html
 %%QT_DOCDIR%%/qtdoc/topics-app-development.html
 %%QT_DOCDIR%%/qtdoc/topics-core.html
 %%QT_DOCDIR%%/qtdoc/topics-data-io.html
 %%QT_DOCDIR%%/qtdoc/topics-graphics.html
+%%QT_DOCDIR%%/qtdoc/topics-graphics2d.html
 %%QT_DOCDIR%%/qtdoc/topics-network-connectivity.html
 %%QT_DOCDIR%%/qtdoc/topics-ui.html
+%%QT_DOCDIR%%/qtdoc/topics-vectorimageformats.html
 %%QT_DOCDIR%%/qtdoc/touchinputexamples.html
 %%QT_DOCDIR%%/qtdoc/trademarks.html
 %%QT_DOCDIR%%/qtdoc/uic.html
@@ -422,6 +433,7 @@
 %%QT_DOCDIR%%/qtdoc/webos.html
 %%QT_DOCDIR%%/qtdoc/whatsnew60.html
 %%QT_DOCDIR%%/qtdoc/whatsnew61.html
+%%QT_DOCDIR%%/qtdoc/whatsnew610.html
 %%QT_DOCDIR%%/qtdoc/whatsnew62.html
 %%QT_DOCDIR%%/qtdoc/whatsnew63.html
 %%QT_DOCDIR%%/qtdoc/whatsnew64.html
@@ -436,6 +448,7 @@
 %%QT_DOCDIR%%/qtdoc/windows-deployment.html
 %%QT_DOCDIR%%/qtdoc/windows-graphics.html
 %%QT_DOCDIR%%/qtdoc/windows-issues.html
+%%QT_DOCDIR%%/qtdoc/windows-winappsdk.html
 %%QT_DOCDIR%%/qtdoc/windows.html
 %%QT_DOCDIR%%/qtdoc/xml-processing.html
 %%QT_DOCDIR%%/qtplatformintegration.qch

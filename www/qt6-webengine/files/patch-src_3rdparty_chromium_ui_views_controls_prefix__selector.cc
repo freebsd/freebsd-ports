@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/controls/prefix_selector.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/ui/views/controls/prefix_selector.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/views/controls/prefix_selector.cc
-@@ -178,7 +178,7 @@ bool PrefixSelector::ShouldDoLearning() {
+@@ -192,7 +192,7 @@ bool PrefixSelector::ShouldDoLearning() {
    return false;
  }
  

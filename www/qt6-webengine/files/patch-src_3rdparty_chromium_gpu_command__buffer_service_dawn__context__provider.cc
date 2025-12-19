@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/command_buffer/service/dawn_context_provider.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/service/dawn_context_provider.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/service/dawn_context_provider.cc
-@@ -307,7 +307,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
+@@ -341,7 +341,7 @@ wgpu::BackendType DawnContextProvider::GetDefaultBacke
    return base::FeatureList::IsEnabled(features::kSkiaGraphiteDawnUseD3D12)
               ? wgpu::BackendType::D3D12
               : wgpu::BackendType::D3D11;

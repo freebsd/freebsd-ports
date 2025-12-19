@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/skia/src/ports/SkMemory_malloc.cpp.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/third_party/skia/src/ports/SkMemory_malloc.cpp.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/skia/src/ports/SkMemory_malloc.cpp
 @@ -15,7 +15,7 @@
  

@@ -1,4 +1,5 @@
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qabstractgrpcchannel_p.h
+%%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qgrpccommonoptions_p.h
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qgrpcoperation_p.h
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qgrpcoperationcontext_p.h
 %%QT_INCDIR%%/QtGrpc/%%FULLVER%%/QtGrpc/private/qtgrpc-config_p.h
@@ -338,13 +339,13 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6protobufquickpluginTargets.cmake
 %%QT_LIBDIR%%/libQt6ProtobufWellKnownTypes.so
 %%QT_LIBDIR%%/libQt6ProtobufWellKnownTypes.so.6
 %%QT_LIBDIR%%/libQt6ProtobufWellKnownTypes.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6grpc_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6grpcquick_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6protobuf_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6protobufqtcoretypes_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6protobufqtguitypes_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6protobufquick_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6protobufwellknowntypes_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6grpc_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6grpcquick_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6protobuf_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6protobufqtcoretypes_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6protobufqtguitypes_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6protobufquick_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6protobufwellknowntypes_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_grpc.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_grpc_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_grpcquick.pri

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/swiftshader/src/Vulkan/VkSemaphoreExternalLinux.hpp
 @@ -49,13 +49,17 @@ class SharedSemaphore (public)
  	{

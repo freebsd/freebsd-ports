@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/dawn/src/dawn/common/Platform.h.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/third_party/dawn/src/dawn/common/Platform.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/dawn/src/dawn/common/Platform.h
 @@ -59,6 +59,11 @@
  #error "Unsupported Windows platform."

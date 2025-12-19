@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/detect_host_arch.py.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/build/detect_host_arch.py.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/build/detect_host_arch.py
 @@ -20,6 +20,8 @@ def HostArch():
      host_arch = 'ia32'

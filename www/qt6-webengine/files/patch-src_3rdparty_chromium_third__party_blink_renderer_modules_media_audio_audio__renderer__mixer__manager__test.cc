@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/modules/media/audio/audio_renderer_mixer_manager_test.cc
-@@ -813,7 +813,7 @@ TEST_F(AudioRendererMixerManagerTest, MixerParamsLaten
+@@ -873,7 +873,7 @@ TEST_F(AudioRendererMixerManagerTest, MixerParamsLaten
              mixer->get_output_params_for_testing().sample_rate());
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \

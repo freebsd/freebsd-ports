@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/metrics.cc.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/metrics.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/metrics.cc
 @@ -25,7 +25,7 @@
  #define METRICS_OS_NAME "Win"

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/resource/resource_bundle.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/ui/base/resource/resource_bundle.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/base/resource/resource_bundle.cc
-@@ -914,7 +914,7 @@ void ResourceBundle::ReloadFonts() {
+@@ -924,7 +924,7 @@ ResourceScaleFactor ResourceBundle::GetMaxResourceScal
  }
  
  ResourceScaleFactor ResourceBundle::GetMaxResourceScaleFactor() const {

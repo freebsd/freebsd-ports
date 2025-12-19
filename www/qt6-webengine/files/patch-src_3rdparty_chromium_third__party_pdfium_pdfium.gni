@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/pdfium/pdfium.gni.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/third_party/pdfium/pdfium.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/pdfium/pdfium.gni
 @@ -42,7 +42,7 @@ declare_args() {
    # PDFium will use PartitionAlloc partitions to separate strings, scalars,

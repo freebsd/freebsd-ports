@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/content/browser/scheduler/responsiveness/native_event_observer.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/scheduler/responsiveness/native_event_observer.cc
 @@ -15,7 +15,7 @@
  

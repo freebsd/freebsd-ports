@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/usb/usb_service_fake.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/services/device/usb/usb_service_fake.cc.orig	2025-09-01 08:52:32 UTC
 +++ src/3rdparty/chromium/services/device/usb/usb_service_fake.cc
 @@ -0,0 +1,49 @@
 +// Copyright 2014 The Chromium Authors

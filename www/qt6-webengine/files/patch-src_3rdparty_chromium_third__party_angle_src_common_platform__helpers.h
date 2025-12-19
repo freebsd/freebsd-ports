@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/angle/src/common/platform_helpers.h.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/third_party/angle/src/common/platform_helpers.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/common/platform_helpers.h
-@@ -62,7 +62,7 @@ inline constexpr bool IsIOS()
+@@ -62,7 +62,7 @@ inline constexpr bool IsLinux()
  
  inline constexpr bool IsLinux()
  {

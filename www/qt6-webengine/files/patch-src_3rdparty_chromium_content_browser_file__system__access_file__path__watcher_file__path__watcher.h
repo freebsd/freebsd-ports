@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/file_system_access/file_path_watcher/file_path_watcher.h.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/content/browser/file_system_access/file_path_watcher/file_path_watcher.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/file_system_access/file_path_watcher/file_path_watcher.h
-@@ -125,7 +125,7 @@ class CONTENT_EXPORT FilePathWatcher {
+@@ -126,7 +126,7 @@ class CONTENT_EXPORT FilePathWatcher {
      Type type = Type::kNonRecursive;
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

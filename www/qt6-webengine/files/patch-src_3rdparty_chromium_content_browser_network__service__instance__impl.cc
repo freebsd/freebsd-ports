@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/network_service_instance_impl.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/content/browser/network_service_instance_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/network_service_instance_impl.cc
-@@ -85,7 +85,7 @@
+@@ -84,7 +84,7 @@
  #include "content/browser/network/network_service_process_tracker_win.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "content/browser/system_dns_resolution/system_dns_resolver.h"
  #include "services/network/public/mojom/system_dns_resolution.mojom-forward.h"
  #endif
-@@ -369,7 +369,7 @@ void CreateInProcessNetworkService(
+@@ -368,7 +368,7 @@ void CreateInProcessNetworkService(
                                  std::move(receiver)));
  }
  
@@ -18,7 +18,7 @@
  // Runs a self-owned SystemDnsResolverMojoImpl. This is meant to run on a
  // high-priority thread pool.
  void RunSystemDnsResolverOnThreadPool(
-@@ -438,7 +438,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
+@@ -437,7 +437,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
    }
  #endif  // BUILDFLAG(IS_POSIX)
  

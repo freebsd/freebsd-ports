@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/services/paint_preview_compositor/paint_preview_compositor_collection_impl.cc
 @@ -22,7 +22,7 @@
  

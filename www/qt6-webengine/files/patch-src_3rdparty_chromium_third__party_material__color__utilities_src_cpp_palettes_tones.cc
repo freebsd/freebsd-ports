@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/material_color_utilities/src/cpp/palettes/tones.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/third_party/material_color_utilities/src/cpp/palettes/tones.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/material_color_utilities/src/cpp/palettes/tones.cc
 @@ -14,6 +14,8 @@
   * limitations under the License.

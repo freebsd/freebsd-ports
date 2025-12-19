@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/update_client/update_query_params.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/components/update_client/update_query_params.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/update_client/update_query_params.cc
-@@ -40,6 +40,8 @@ const char kOs[] =
+@@ -39,6 +39,8 @@ const char kOs[] =
      "fuchsia";
  #elif BUILDFLAG(IS_OPENBSD)
      "openbsd";

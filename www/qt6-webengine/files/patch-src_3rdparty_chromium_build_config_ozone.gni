@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/config/ozone.gni.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/build/config/ozone.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/build/config/ozone.gni
 @@ -87,7 +87,15 @@ declare_args() {
      } else if (is_chromeos_lacros) {

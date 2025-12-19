@@ -54,7 +54,7 @@ lib/cmake/Qt6WebSocketsPrivate/Qt6WebSocketsPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6WebSockets.so
 %%QT_LIBDIR%%/libQt6WebSockets.so.6
 %%QT_LIBDIR%%/libQt6WebSockets.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6websockets_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6websockets_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_websockets.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_websockets_private.pri
 %%QT_QMLDIR%%/QtWebSockets/libqmlwebsocketsplugin.so

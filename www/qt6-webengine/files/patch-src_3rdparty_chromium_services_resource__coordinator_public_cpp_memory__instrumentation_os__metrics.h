@@ -1,17 +1,17 @@
---- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/resource_coordinator/public/cpp/memory_instrumentation/os_metrics.h
-@@ -53,7 +53,7 @@ class COMPONENT_EXPORT(
-                                     mojom::RawOSMemDump*);
-   static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(base::ProcessId);
+@@ -57,7 +57,7 @@ class COMPONENT_EXPORT(
+   static std::vector<mojom::VmRegionPtr> GetProcessMemoryMaps(
+       base::ProcessHandle);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    static void SetProcSmapsForTesting(FILE*);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) ||
          // BUILDFLAG(IS_ANDROID)
-@@ -70,7 +70,7 @@ class COMPONENT_EXPORT(
-   static std::vector<mojom::VmRegionPtr> GetProcessModules(base::ProcessId);
- #endif
+@@ -79,7 +79,7 @@ class COMPONENT_EXPORT(
+   GetMemoryInfo(base::ProcessHandle handle);
+ #endif  // !BUILDFLAG(IS_APPLE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)

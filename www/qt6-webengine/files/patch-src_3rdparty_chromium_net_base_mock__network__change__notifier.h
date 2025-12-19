@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/base/mock_network_change_notifier.h.orig	2023-08-17 07:33:31 UTC
+--- src/3rdparty/chromium/net/base/mock_network_change_notifier.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/base/mock_network_change_notifier.h
 @@ -84,7 +84,7 @@ class MockNetworkChangeNotifier : public NetworkChange
    // use_default_connection_cost_implementation is set to true.

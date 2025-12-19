@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/include/v8-internal.h.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/v8/include/v8-internal.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/v8/include/v8-internal.h
-@@ -229,7 +229,7 @@ using SandboxedPointer_t = Address;
+@@ -232,7 +232,7 @@ using SandboxedPointer_t = Address;
  #ifdef V8_ENABLE_SANDBOX
  
  // Size of the sandbox, excluding the guard regions surrounding it.

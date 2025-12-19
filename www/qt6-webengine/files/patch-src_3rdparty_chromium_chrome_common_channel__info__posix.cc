@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/common/channel_info_posix.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/chrome/common/channel_info_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/common/channel_info_posix.cc
 @@ -95,7 +95,7 @@ std::string GetChannelSuffixForDataDir() {
    }

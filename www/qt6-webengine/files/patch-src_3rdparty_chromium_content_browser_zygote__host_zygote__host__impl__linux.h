@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/zygote_host/zygote_host_impl_linux.h
-@@ -47,12 +47,14 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
+@@ -46,12 +46,14 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
                       base::ScopedFD* control_fd,
                       base::FileHandleMappingVector additional_remapped_fds);
  
@@ -15,7 +15,7 @@
  
    bool HasZygote() { return !zygote_pids_.empty(); }
  
-@@ -67,9 +69,11 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
+@@ -66,9 +68,11 @@ class CONTENT_EXPORT ZygoteHostImpl : public ZygoteHos
  
    int renderer_sandbox_status_;
  

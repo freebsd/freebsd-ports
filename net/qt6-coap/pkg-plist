@@ -60,7 +60,7 @@ lib/cmake/Qt6CoapPrivate/Qt6CoapPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Coap.so
 %%QT_LIBDIR%%/libQt6Coap.so.6
 %%QT_LIBDIR%%/libQt6Coap.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6coap_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6coap_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_coap.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_coap_private.pri
 %%QT_SBOMDIR%%/qtcoap-%%FULLVER%%.spdx

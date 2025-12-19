@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.h.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.h
 @@ -322,7 +322,7 @@ struct COMPONENT_EXPORT(VULKAN) VulkanFunctionPointers
    VulkanFunction<PFN_vkGetSwapchainImagesKHR> vkGetSwapchainImagesKHR;

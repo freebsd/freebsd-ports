@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/power_metrics/energy_metrics_provider.cc.orig	2023-08-17 07:33:31 UTC
+--- src/3rdparty/chromium/components/power_metrics/energy_metrics_provider.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/power_metrics/energy_metrics_provider.cc
 @@ -9,6 +9,8 @@
  #include "components/power_metrics/energy_metrics_provider_win.h"

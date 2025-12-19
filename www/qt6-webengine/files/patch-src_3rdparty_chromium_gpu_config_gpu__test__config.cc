@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/config/gpu_test_config.cc.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_test_config.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_test_config.cc
 @@ -29,7 +29,7 @@ GPUTestConfig::OS GetCurrentOS() {
  #if BUILDFLAG(IS_CHROMEOS_ASH)

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/debug/stack_trace_posix.cc
-@@ -46,7 +46,7 @@
+@@ -51,7 +51,7 @@
  // execinfo.h and backtrace(3) are really only present in glibc and in macOS
  // libc.
  #if BUILDFLAG(IS_APPLE) || \
@@ -9,7 +9,7 @@
  #define HAVE_BACKTRACE
  #include <execinfo.h>
  #endif
-@@ -64,8 +64,10 @@
+@@ -69,8 +69,10 @@
  #include <AvailabilityMacros.h>
  #endif
  
@@ -21,7 +21,7 @@
  
  #include "base/debug/proc_maps_linux.h"
  #endif
-@@ -307,7 +309,7 @@ void PrintToStderr(const char* output) {
+@@ -329,7 +331,7 @@ void PrintToStderr(const char* output) {
    std::ignore = HANDLE_EINTR(write(STDERR_FILENO, output, strlen(output)));
  }
  
@@ -30,7 +30,7 @@
  void AlarmSignalHandler(int signal, siginfo_t* info, void* void_context) {
    // We have seen rare cases on AMD linux where the default signal handler
    // either does not run or a thread (Probably an AMD driver thread) prevents
-@@ -324,7 +326,11 @@ void AlarmSignalHandler(int signal, siginfo_t* info, v
+@@ -346,7 +348,11 @@ void AlarmSignalHandler(int signal, siginfo_t* info, v
        "Warning: Default signal handler failed to terminate process.\n");
    PrintToStderr("Calling exit_group() directly to prevent timeout.\n");
    // See: https://man7.org/linux/man-pages/man2/exit_group.2.html
@@ -42,7 +42,7 @@
  }
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -541,7 +547,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
+@@ -552,7 +558,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
      _exit(EXIT_FAILURE);
    }
  
@@ -51,7 +51,7 @@
    // Set an alarm to trigger in case the default handler does not terminate
    // the process. See 'AlarmSignalHandler' for more details.
    struct sigaction action;
-@@ -566,6 +572,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
+@@ -577,6 +583,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
    // signals that do not re-raise autonomously), such as signals delivered via
    // kill() and asynchronous hardware faults such as SEGV_MTEAERR, which would
    // otherwise be lost when re-raising the signal via raise().
@@ -59,7 +59,7 @@
    long retval = syscall(SYS_rt_tgsigqueueinfo, getpid(), syscall(SYS_gettid),
                          info->si_signo, info);
    if (retval == 0) {
-@@ -580,6 +587,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
+@@ -591,6 +598,7 @@ void StackDumpSignalHandler(int signal, siginfo_t* inf
    if (errno != EPERM) {
      _exit(EXIT_FAILURE);
    }
@@ -67,7 +67,7 @@
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_ANDROID) ||
          // BUILDFLAG(IS_CHROMEOS)
  
-@@ -769,6 +777,7 @@ class SandboxSymbolizeHelper {
+@@ -783,6 +791,7 @@ class SandboxSymbolizeHelper {
      return -1;
    }
  
@@ -75,7 +75,7 @@
    // This class is copied from
    // third_party/crashpad/crashpad/util/linux/scoped_pr_set_dumpable.h.
    // It aims at ensuring the process is dumpable before opening /proc/self/mem.
-@@ -861,11 +870,15 @@ class SandboxSymbolizeHelper {
+@@ -875,11 +884,15 @@ class SandboxSymbolizeHelper {
        r.base = cur_base;
      }
    }
@@ -91,7 +91,7 @@
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -883,6 +896,7 @@ class SandboxSymbolizeHelper {
+@@ -897,6 +910,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;

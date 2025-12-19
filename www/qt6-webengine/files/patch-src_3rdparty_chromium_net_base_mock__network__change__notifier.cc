@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/base/mock_network_change_notifier.cc.orig	2023-08-17 07:33:31 UTC
+--- src/3rdparty/chromium/net/base/mock_network_change_notifier.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/base/mock_network_change_notifier.cc
 @@ -103,7 +103,7 @@ MockNetworkChangeNotifier::GetCurrentConnectionCost() 
    return connection_cost_;

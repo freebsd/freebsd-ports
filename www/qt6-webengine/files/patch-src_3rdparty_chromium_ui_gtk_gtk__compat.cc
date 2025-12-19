@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gtk/gtk_compat.cc.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/ui/gtk/gtk_compat.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gtk/gtk_compat.cc
-@@ -62,27 +62,47 @@ auto DlCast(void* symbol) {
+@@ -62,27 +62,47 @@ void* GetLibGio() {
  }
  
  void* GetLibGio() {

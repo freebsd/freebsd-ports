@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/utility/utility_thread_impl.cc.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/content/utility/utility_thread_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/utility/utility_thread_impl.cc
 @@ -31,7 +31,7 @@
  #include "mojo/public/cpp/bindings/pending_receiver.h"

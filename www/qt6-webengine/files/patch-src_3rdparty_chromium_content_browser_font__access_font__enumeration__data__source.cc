@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/font_access/font_enumeration_data_source.cc.orig	2023-11-03 10:09:45 UTC
+--- src/3rdparty/chromium/content/browser/font_access/font_enumeration_data_source.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/font_access/font_enumeration_data_source.cc
 @@ -16,7 +16,7 @@
  #include "content/browser/font_access/font_enumeration_data_source_win.h"

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/zlib/cpu_features.c.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/third_party/zlib/cpu_features.c.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/zlib/cpu_features.c
 @@ -39,7 +39,8 @@ int ZLIB_INTERNAL riscv_cpu_enable_vclmul = 0;
  #ifndef CPU_NO_SIMD
@@ -21,14 +21,16 @@
  #elif !defined(_MSC_VER)
  #include <pthread.h>
  #else
-@@ -80,6 +85,7 @@ void ZLIB_INTERNAL cpu_check_features(void)
- }
+@@ -81,7 +86,8 @@ void ZLIB_INTERNAL cpu_check_features(void)
  #elif defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || \
      defined(ARMV8_OS_MACOS) || defined(ARMV8_OS_FUCHSIA) || \
-+    defined(ARMV8_OS_OPENBSD) || defined(ARMV8_OS_FREEBSD) || \
      defined(X86_NOT_WINDOWS) || defined(ARMV8_OS_IOS) || \
-     defined(RISCV_RVV) || defined(__ARM_NEON__) || defined(__ARM_NEON)
+-    defined(RISCV_RVV) || defined(__ARM_NEON__) || defined(__ARM_NEON)
++    defined(RISCV_RVV) || defined(ARMV8_OS_OPENBSD) || \
++    defined(ARMV8_OS_FREEBSD) || defined(__ARM_NEON__) || defined(__ARM_NEON)
  #if !defined(ARMV8_OS_MACOS)
+ // _cpu_check_features() doesn't need to do anything on mac/arm since all
+ // features are known at build time, so don't call it.
 @@ -122,6 +128,17 @@ static void _cpu_check_features(void)
      unsigned long features = getauxval(AT_HWCAP2);
      arm_cpu_enable_crc32 = !!(features & HWCAP2_CRC32);

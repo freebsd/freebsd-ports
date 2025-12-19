@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/components/supervised_user/core/common/features.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/components/supervised_user/core/common/features.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/supervised_user/core/common/features.cc
-@@ -67,7 +67,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
+@@ -68,7 +68,7 @@ BASE_FEATURE(kUpdatedSupervisedUserExtensionApprovalSt
               "UpdatedSupervisedUserExtensionApprovalStrings",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+              base::FEATURE_ENABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop,
               "EnableExtensionsPermissionsForSupervisedUsersOnDesktop",
-              base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -82,7 +82,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
+              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -83,7 +83,7 @@ bool IsSupervisedUserSkipParentApprovalToInstallExtens
  #if BUILDFLAG(IS_CHROMEOS)
    return base::FeatureList::IsEnabled(
        kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
@@ -18,12 +18,13 @@
    bool skipParentApprovalEnabled = base::FeatureList::IsEnabled(
        kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
    bool permissionExtensionsForSupervisedUsersEnabled =
-@@ -107,13 +107,13 @@ BASE_FEATURE(kSupervisedUserProfileSigninIPH,
-              "SupervisedUserProfileSigninIPH",
+@@ -104,14 +104,14 @@ BASE_FEATURE(kCustomProfileStringsForSupervisedUsers,
+              "CustomProfileStringsForSupervisedUsers",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ 
  BASE_FEATURE(kShowKiteForSupervisedUsers,
               "ShowKiteForSupervisedUsers",
               base::FEATURE_DISABLED_BY_DEFAULT);
@@ -31,15 +32,24 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kHideGuestModeForSupervisedUsers,
-              "HideGuestModeForSupervisedUsers",
-              base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -123,7 +123,7 @@ BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervi
+ BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervisedUsers,
               "ForceSafeSearchForUnauthenticatedSupervisedUsers",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -121,7 +121,7 @@ BASE_FEATURE(kForceSafeSearchForUnauthenticatedSupervi
               base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- BASE_FEATURE(kForceSupervisedUserReauthenticationForYouTube,
-              "ForceSupervisedUserReauthenticationForYouTube",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+ BASE_FEATURE(kEnableSupervisedUserVersionSignOutDialog,
+              "EnableSupervisedUserVersionSignOutDialog",
+              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -141,7 +141,7 @@ BASE_FEATURE(kExemptYouTubeInfrastructureFromBlocking,
+ // kUncredentialedFilteringFallbackForSupervisedUsers and
+ // kWaitUntilAccessTokenAvailableForClassifyUrl flags, by inlining the
+ // platform #defines.
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kUncredentialedFilteringFallbackForSupervisedUsers,
+              "UncredentialedFilteringFallbackForSupervisedUsers",
+              base::FEATURE_ENABLED_BY_DEFAULT);

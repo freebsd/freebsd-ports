@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/base/x/x11_cursor_factory.h.orig	2023-11-03 10:09:45 UTC
+--- src/3rdparty/chromium/ui/base/x/x11_cursor_factory.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/base/x/x11_cursor_factory.h
-@@ -20,7 +20,7 @@ namespace ui {
+@@ -20,7 +20,7 @@ class XCursorLoader;
  class X11Cursor;
  class XCursorLoader;
  

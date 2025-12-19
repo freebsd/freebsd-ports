@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_image.h.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_image.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_image.h
 @@ -87,7 +87,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanImage {
        VkImageUsageFlags usage,

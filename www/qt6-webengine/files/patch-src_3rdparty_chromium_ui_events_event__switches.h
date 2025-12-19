@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/events/event_switches.h.orig	2022-06-17 14:20:10 UTC
+--- src/3rdparty/chromium/ui/events/event_switches.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/events/event_switches.h
-@@ -13,7 +13,7 @@ namespace switches {
+@@ -13,7 +13,7 @@ EVENTS_BASE_EXPORT extern const char kTouchSlopDistanc
  EVENTS_BASE_EXPORT extern const char kCompensateForUnstablePinchZoom[];
  EVENTS_BASE_EXPORT extern const char kTouchSlopDistance[];
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/policy/core/common/cloud/cloud_policy_refresh_scheduler.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/policy/core/common/cloud/cloud_policy_refresh_scheduler.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/policy/core/common/cloud/cloud_policy_refresh_scheduler.cc
-@@ -25,7 +25,7 @@ namespace policy {
+@@ -25,7 +25,7 @@ namespace {
  
  namespace {
  

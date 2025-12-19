@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/password_manager/core/browser/password_store/login_database.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/password_manager/core/browser/password_store/login_database.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/password_manager/core/browser/password_store/login_database.cc
 @@ -1030,7 +1030,7 @@ bool ShouldDeleteUndecryptablePasswords(
      bool is_user_data_dir_policy_set,

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/named_mojo_ipc_server/connection_info.h.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/components/named_mojo_ipc_server/connection_info.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/named_mojo_ipc_server/connection_info.h
 @@ -12,7 +12,7 @@
  #include "base/win/scoped_handle.h"

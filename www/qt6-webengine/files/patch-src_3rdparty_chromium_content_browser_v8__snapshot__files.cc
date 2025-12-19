@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/v8_snapshot_files.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/content/browser/v8_snapshot_files.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/v8_snapshot_files.cc
-@@ -17,7 +17,7 @@ namespace content {
+@@ -17,7 +17,7 @@ GetV8SnapshotFilesToPreload(base::CommandLine& process
  std::map<std::string, absl::variant<base::FilePath, base::ScopedFD>>
  GetV8SnapshotFilesToPreload(base::CommandLine& process_command_line) {
    std::map<std::string, absl::variant<base::FilePath, base::ScopedFD>> files;

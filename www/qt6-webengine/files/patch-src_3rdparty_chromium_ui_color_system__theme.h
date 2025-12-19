@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/color/system_theme.h.orig	2022-11-30 08:12:58 UTC
+--- src/3rdparty/chromium/ui/color/system_theme.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/color/system_theme.h
-@@ -15,7 +15,7 @@ namespace ui {
+@@ -15,7 +15,7 @@ enum class SystemTheme {
  enum class SystemTheme {
    // Classic theme, used in the default or users' chosen theme.
    kDefault = 0,

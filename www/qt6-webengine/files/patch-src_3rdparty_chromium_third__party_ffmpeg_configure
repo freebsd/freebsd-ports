@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/ffmpeg/configure.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/third_party/ffmpeg/configure.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/ffmpeg/configure
-@@ -6818,8 +6818,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
+@@ -6850,8 +6850,8 @@ if ! disabled pthreads && ! enabled w32threads && ! en
          if enabled pthread_np_h; then
              hdrs="$hdrs pthread_np.h"
          fi

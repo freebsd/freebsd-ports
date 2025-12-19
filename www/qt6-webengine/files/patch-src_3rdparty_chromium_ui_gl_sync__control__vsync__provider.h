@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.h.orig	2022-05-19 14:06:27 UTC
+--- src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gl/sync_control_vsync_provider.h
 @@ -31,7 +31,7 @@ class SyncControlVSyncProvider : public gfx::VSyncProv
    bool SupportGetVSyncParametersIfAvailable() const override;

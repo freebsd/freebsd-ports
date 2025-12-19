@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/policy/tools/generate_policy_source.py.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/components/policy/tools/generate_policy_source.py.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/policy/tools/generate_policy_source.py
 @@ -38,9 +38,9 @@ PLATFORM_STRINGS = {
      'ios': ['ios'],

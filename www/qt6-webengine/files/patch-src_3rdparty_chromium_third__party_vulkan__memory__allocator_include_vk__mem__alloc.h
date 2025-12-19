@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h.orig	2023-12-10 07:19:51 UTC
+--- src/3rdparty/chromium/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
 @@ -2760,7 +2760,7 @@ void* vma_aligned_alloc(size_t alignment, size_t size)
  

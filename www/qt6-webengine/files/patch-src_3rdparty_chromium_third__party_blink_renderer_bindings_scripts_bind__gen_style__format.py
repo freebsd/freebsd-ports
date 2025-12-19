@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
 @@ -30,7 +30,7 @@ def init(root_src_dir, enable_style_format=True):
  

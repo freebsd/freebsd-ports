@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/common/media/cdm_registration.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/chrome/common/media/cdm_registration.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/common/media/cdm_registration.h
-@@ -16,7 +16,7 @@
+@@ -16,7 +16,7 @@ void RegisterCdmInfo(std::vector<content::CdmInfo>* cd
  void RegisterCdmInfo(std::vector<content::CdmInfo>* cdms);
  
  #if BUILDFLAG(ENABLE_WIDEVINE) && \

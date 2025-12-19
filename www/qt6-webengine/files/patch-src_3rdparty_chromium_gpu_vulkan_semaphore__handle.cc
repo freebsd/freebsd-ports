@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/vulkan/semaphore_handle.cc.orig	2023-11-03 10:09:45 UTC
+--- src/3rdparty/chromium/gpu/vulkan/semaphore_handle.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/semaphore_handle.cc
 @@ -39,7 +39,7 @@ SemaphoreHandle::SemaphoreHandle(gfx::GpuFenceHandle f
    // https://fuchsia.dev/reference/fidl/fuchsia.ui.scenic.

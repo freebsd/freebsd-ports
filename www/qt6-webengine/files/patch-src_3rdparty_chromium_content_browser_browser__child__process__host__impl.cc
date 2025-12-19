@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/browser_child_process_host_impl.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/content/browser/browser_child_process_host_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/browser_child_process_host_impl.cc
-@@ -328,6 +328,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
+@@ -326,6 +326,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
        switches::kLogBestEffortTasks,
        switches::kPerfettoDisableInterning,
        switches::kTraceToConsole,
@@ -8,7 +8,7 @@
    };
    cmd_line->CopySwitchesFrom(browser_command_line, kForwardSwitches);
  
-@@ -659,7 +660,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
+@@ -690,7 +691,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
            ->child_process());
  #endif
  

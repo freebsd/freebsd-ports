@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/base/video_frame.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/media/base/video_frame.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/base/video_frame.cc
-@@ -88,7 +88,7 @@ std::string VideoFrame::StorageTypeToString(
+@@ -92,7 +92,7 @@ std::string VideoFrame::StorageTypeToString(
        return "OWNED_MEMORY";
      case VideoFrame::STORAGE_SHMEM:
        return "SHMEM";
@@ -9,7 +9,7 @@
      case VideoFrame::STORAGE_DMABUFS:
        return "DMABUFS";
  #endif
-@@ -103,7 +103,7 @@ std::string VideoFrame::StorageTypeToString(
+@@ -106,7 +106,7 @@ bool VideoFrame::IsStorageTypeMappable(VideoFrame::Sto
  // static
  bool VideoFrame::IsStorageTypeMappable(VideoFrame::StorageType storage_type) {
    return
@@ -18,8 +18,8 @@
        // This is not strictly needed but makes explicit that, at VideoFrame
        // level, DmaBufs are not mappable from userspace.
        storage_type != VideoFrame::STORAGE_DMABUFS &&
-@@ -401,7 +401,7 @@ VideoFrame::CreateFrameForGpuMemoryBufferOrMappableSII
-                            : shared_image->GetStrideForVideoFrame(i);
+@@ -420,7 +420,7 @@ VideoFrame::CreateFrameForGpuMemoryBufferOrMappableSII
+         plane_size.width() * VideoFrame::BytesPerElement(*format, plane);
    }
    uint64_t modifier = gfx::NativePixmapHandle::kNoModifier;
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
@@ -27,7 +27,7 @@
    bool is_native_buffer =
        gpu_memory_buffer
            ? (gpu_memory_buffer->GetType() != gfx::SHARED_MEMORY_BUFFER)
-@@ -782,7 +782,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
+@@ -938,7 +938,7 @@ scoped_refptr<VideoFrame> VideoFrame::WrapExternalGpuM
    return frame;
  }
  
@@ -36,7 +36,7 @@
  // static
  scoped_refptr<VideoFrame> VideoFrame::WrapExternalDmabufs(
      const VideoFrameLayout& layout,
-@@ -1489,7 +1489,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
+@@ -1623,7 +1623,7 @@ scoped_refptr<gpu::ClientSharedImage> VideoFrame::shar
    return wrapped_frame_ ? wrapped_frame_->shared_image() : shared_image_;
  }
  

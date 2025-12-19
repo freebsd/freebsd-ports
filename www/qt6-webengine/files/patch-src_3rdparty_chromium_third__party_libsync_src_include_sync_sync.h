@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/libsync/src/include/sync/sync.h.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/libsync/src/include/sync/sync.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/libsync/src/include/sync/sync.h
 @@ -22,7 +22,9 @@
  #include <sys/cdefs.h>

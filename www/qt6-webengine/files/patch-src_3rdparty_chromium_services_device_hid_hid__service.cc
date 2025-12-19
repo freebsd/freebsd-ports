@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/hid/hid_service.cc.orig	2022-11-30 08:12:58 UTC
+--- src/3rdparty/chromium/services/device/hid/hid_service.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/device/hid/hid_service.cc
 @@ -20,6 +20,10 @@
  
@@ -11,7 +11,7 @@
  #elif BUILDFLAG(IS_MAC)
  #include "services/device/hid/hid_service_mac.h"
  #elif BUILDFLAG(IS_WIN)
-@@ -68,6 +72,10 @@ constexpr base::TaskTraits HidService::kBlockingTaskTr
+@@ -68,6 +72,10 @@ std::unique_ptr<HidService> HidService::Create() {
  std::unique_ptr<HidService> HidService::Create() {
  #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(USE_UDEV)
    return std::make_unique<HidServiceLinux>();

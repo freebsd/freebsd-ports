@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/device/usb/usb_service.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/services/device/usb/usb_service.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/device/usb/usb_service.cc
 @@ -21,12 +21,16 @@
  
@@ -18,7 +18,7 @@
  #endif
  
  namespace device {
-@@ -49,11 +53,13 @@ constexpr base::TaskTraits UsbService::kBlockingTaskTr
+@@ -49,11 +53,13 @@ std::unique_ptr<UsbService> UsbService::Create() {
  std::unique_ptr<UsbService> UsbService::Create() {
  #if BUILDFLAG(IS_ANDROID)
    return base::WrapUnique(new UsbServiceAndroid());

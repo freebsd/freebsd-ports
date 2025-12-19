@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/ipcz/src/reference_drivers/random.cc.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/third_party/ipcz/src/reference_drivers/random.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/ipcz/src/reference_drivers/random.cc
 @@ -14,7 +14,7 @@
  #include <windows.h>

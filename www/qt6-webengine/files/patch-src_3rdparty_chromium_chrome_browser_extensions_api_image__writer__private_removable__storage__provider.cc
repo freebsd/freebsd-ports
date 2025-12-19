@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc
-@@ -20,6 +20,7 @@ static base::LazyInstance<scoped_refptr<StorageDeviceL
+@@ -20,6 +20,7 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
  
  void RemovableStorageProvider::GetAllDevices(DeviceListReadyCallback callback) {
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);

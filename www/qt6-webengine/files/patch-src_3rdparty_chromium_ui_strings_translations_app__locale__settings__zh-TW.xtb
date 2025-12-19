@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/strings/translations/app_locale_settings_zh-TW.xtb.orig	2023-01-11 09:17:16 UTC
+--- src/3rdparty/chromium/ui/strings/translations/app_locale_settings_zh-TW.xtb.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/strings/translations/app_locale_settings_zh-TW.xtb
 @@ -12,7 +12,7 @@
  <if expr="is_ios">

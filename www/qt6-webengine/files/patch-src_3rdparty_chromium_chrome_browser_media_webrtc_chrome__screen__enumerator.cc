@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/chrome/browser/media/webrtc/chrome_screen_enumerator.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/media/webrtc/chrome_screen_enumerator.cc
 @@ -21,7 +21,7 @@
  #if BUILDFLAG(IS_CHROMEOS_ASH)

@@ -32,6 +32,7 @@
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qdatetimeaxis_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphanimation_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphpointanimation_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphs3dlogging_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphsglobal_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphsinputhandler_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qgraphstheme_p.h
@@ -47,13 +48,17 @@
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qpieseries_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qpieslice_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsbars_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsbarsnode_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsbarsseries_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphscolor_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsitem_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsnode_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsscatter_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsscatternode_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphsscatterseries_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphssplineseries_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphssurface_p.h
+%%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphssurfacenode_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphssurfaceseries_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qquickgraphstexturedata_p.h
 %%QT_INCDIR%%/QtGraphs/%%FULLVER%%/QtGraphs/private/qscatter3dseries_p.h
@@ -241,8 +246,8 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6GraphspluginTargets.cmake
 %%QT_LIBDIR%%/libQt6GraphsWidgets.so
 %%QT_LIBDIR%%/libQt6GraphsWidgets.so.6
 %%QT_LIBDIR%%/libQt6GraphsWidgets.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6graphs_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6graphswidgets_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6graphs_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6graphswidgets_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_graphs.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_graphs_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_graphswidgets.pri

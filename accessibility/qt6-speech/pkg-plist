@@ -64,7 +64,7 @@ lib/cmake/Qt6TextToSpeechPrivate/Qt6TextToSpeechPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6TextToSpeech.so
 %%QT_LIBDIR%%/libQt6TextToSpeech.so.6
 %%QT_LIBDIR%%/libQt6TextToSpeech.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6texttospeech_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6texttospeech_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_texttospeech.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_texttospeech_private.pri
 %%FLITE%%%%QT_PLUGINDIR%%/texttospeech/libqtexttospeech_flite.so

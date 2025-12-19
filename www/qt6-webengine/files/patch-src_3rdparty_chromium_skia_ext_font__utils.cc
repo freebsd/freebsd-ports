@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/skia/ext/font_utils.cc.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/skia/ext/font_utils.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/skia/ext/font_utils.cc
 @@ -19,7 +19,7 @@
  #include "third_party/skia/include/ports/SkFontMgr_mac_ct.h"

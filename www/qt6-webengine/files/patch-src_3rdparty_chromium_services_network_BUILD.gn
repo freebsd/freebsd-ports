@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/network/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/services/network/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/network/BUILD.gn
-@@ -396,7 +396,6 @@ if (is_linux || is_chromeos) {
+@@ -397,7 +397,6 @@ if (is_linux || is_chromeos) {
      ]
      deps = [
        "//base:base",

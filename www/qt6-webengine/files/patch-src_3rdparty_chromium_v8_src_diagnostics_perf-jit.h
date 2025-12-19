@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/diagnostics/perf-jit.h.orig	2022-06-17 14:20:10 UTC
+--- src/3rdparty/chromium/v8/src/diagnostics/perf-jit.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/v8/src/diagnostics/perf-jit.h
 @@ -31,7 +31,7 @@
  #include "include/v8config.h"

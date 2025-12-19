@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/debug/debugger_posix.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/base/debug/debugger_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/debug/debugger_posix.cc
 @@ -41,6 +41,10 @@
  #include <sys/sysctl.h>
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_FREEBSD)
  #include <sys/user.h>
  #endif
-@@ -100,32 +104,51 @@ bool BeingDebugged() {
+@@ -99,33 +103,52 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.
@@ -24,8 +24,9 @@
 +#endif
  
  #if BUILDFLAG(IS_OPENBSD)
-   if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0)
+   if (sysctl(mib, std::size(mib), NULL, &info_size, NULL, 0) < 0) {
      return -1;
+   }
  
 -  mib[5] = (info_size / sizeof(struct kinfo_proc));
 +  mib[5] = static_cast<int>((info_size / sizeof(struct kinfo_proc)));

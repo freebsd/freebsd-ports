@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/speech-dispatcher/libspeechd_version.h.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/third_party/speech-dispatcher/libspeechd_version.h.orig	2025-09-01 08:52:33 UTC
 +++ src/3rdparty/chromium/third_party/speech-dispatcher/libspeechd_version.h
 @@ -0,0 +1,29 @@
 +/*

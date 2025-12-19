@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/http/http_network_session.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/net/http/http_network_session.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/http/http_network_session.cc
 @@ -20,7 +20,9 @@
  #include "build/build_config.h"

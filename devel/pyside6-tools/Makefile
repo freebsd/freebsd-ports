@@ -27,37 +27,33 @@ USE_QT=		base declarative languageserver quick3d shadertools tools
 SHEBANG_FILES=	pyside_tool.py \
 		qtpy2cpp_lib/tests/baseline/basic_test.py
 
+# Starting with PySide 6.10.0, the includes are installed in ${PREFIX}/PySide6,
+# so this seems like a good home for the binaries, as well.
+CMAKE_INSTALL_PREFIX=	${PREFIX}/${PYSIDE6_RELNAME}
+
 WRKSRC_SUBDIR=	sources/pyside-tools
 
-PLIST_SUB=	PYSIDE_BINDIR_REL=${PYSIDE_BINDIR_REL}
+PLIST_SUB=	PYSIDE6_BINDIR_REL=${PYSIDE6_BINDIR_REL}
 
-PYSIDE_RELNAME=		${PORTNAME}
-PYSIDE_BINDIR_REL?=	bin/${PYSIDE_RELNAME}
+PYSIDE6_RELNAME=	PySide6
+PYSIDE6_BINDIR_REL=	${PYSIDE6_RELNAME}/bin
 
 post-install:
-# Move scripts into a dedicated directory. They're too generically named, e.g.:
-# deploy.py and project.py. Unversioned copies of Qt tools like lrelease and
-# rcc are also installed which we probably don't want in PATH by default.
-# Install to: ${PREFIX}/bin/pyside6 by default for now until there are
-# consumers of this and a more fitting location is deemed necessary.
-	@${MV} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${PREFIX}/${PYSIDE_RELNAME}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}
-	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_RELNAME} ${STAGEDIR}${PREFIX}/bin
 # These directories contain templates that should not be byte-compiled.
 # Temporarily relocate them to avoid errors.
-	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android/recipes ${WRKDIR}
+	@${MV} ${STAGEDIR}${PREFIX}/${PYSIDE6_BINDIR_REL}/deploy_lib/android/recipes ${WRKDIR}
 
 .for d in deploy_lib project_lib qtpy2cpp_lib
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		-f -d ${PREFIX}/${PYSIDE_BINDIR_REL}/${d} \
-		${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/${d}
+		-f -d ${PREFIX}/${PYSIDE6_BINDIR_REL}/${d} \
+		${STAGEDIR}${PREFIX}/${PYSIDE6_BINDIR_REL}/${d}
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		-f -d ${PREFIX}/${PYSIDE_BINDIR_REL}/${d} \
-		${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/${d}
+		-f -d ${PREFIX}/${PYSIDE6_BINDIR_REL}/${d} \
+		${STAGEDIR}${PREFIX}/${PYSIDE6_BINDIR_REL}/${d}
 .endfor
 
 # Move the aforementioned templates back into STAGEDIR after the byte-compiling
 # operation has finished.
-	@${MV} ${WRKDIR}/recipes ${STAGEDIR}${PREFIX}/${PYSIDE_BINDIR_REL}/deploy_lib/android
+	@${MV} ${WRKDIR}/recipes ${STAGEDIR}${PREFIX}/${PYSIDE6_BINDIR_REL}/deploy_lib/android
 
 .include <bsd.port.mk>

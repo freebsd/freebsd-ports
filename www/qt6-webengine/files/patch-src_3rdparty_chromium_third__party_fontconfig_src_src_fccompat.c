@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/fontconfig/src/src/fccompat.c.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/third_party/fontconfig/src/src/fccompat.c.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/fontconfig/src/src/fccompat.c
 @@ -184,7 +184,9 @@ FcRandom(void)
  {

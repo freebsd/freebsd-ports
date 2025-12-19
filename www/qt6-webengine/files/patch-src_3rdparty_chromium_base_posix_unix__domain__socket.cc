@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/posix/unix_domain_socket.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/base/posix/unix_domain_socket.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/posix/unix_domain_socket.cc
-@@ -56,7 +56,7 @@ bool CreateSocketPair(ScopedFD* one, ScopedFD* two) {
+@@ -47,7 +47,7 @@ bool UnixDomainSocket::EnableReceiveProcessId(int fd) 
  
  // static
  bool UnixDomainSocket::EnableReceiveProcessId(int fd) {
@@ -9,7 +9,7 @@
    const int enable = 1;
    return setsockopt(fd, SOL_SOCKET, SO_PASSCRED, &enable, sizeof(enable)) == 0;
  #else
-@@ -82,7 +82,7 @@ bool UnixDomainSocket::SendMsg(int fd,
+@@ -73,7 +73,7 @@ bool UnixDomainSocket::SendMsg(int fd,
  
      struct cmsghdr* cmsg;
      msg.msg_control = control_buffer;
@@ -18,7 +18,7 @@
      msg.msg_controllen = checked_cast<socklen_t>(control_len);
  #else
      msg.msg_controllen = control_len;
-@@ -90,7 +90,7 @@ bool UnixDomainSocket::SendMsg(int fd,
+@@ -81,7 +81,7 @@ bool UnixDomainSocket::SendMsg(int fd,
      cmsg = CMSG_FIRSTHDR(&msg);
      cmsg->cmsg_level = SOL_SOCKET;
      cmsg->cmsg_type = SCM_RIGHTS;
@@ -27,7 +27,7 @@
      cmsg->cmsg_len = checked_cast<u_int>(CMSG_LEN(sizeof(int) * fds.size()));
  #else
      cmsg->cmsg_len = CMSG_LEN(sizeof(int) * fds.size());
-@@ -154,7 +154,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -133,7 +133,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
  
    const size_t kControlBufferSize =
        CMSG_SPACE(sizeof(int) * kMaxFileDescriptors)
@@ -36,7 +36,7 @@
        // macOS does not support ucred.
        // macOS supports xucred, but this structure is insufficient.
        + CMSG_SPACE(sizeof(struct ucred))
-@@ -182,7 +182,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+@@ -162,7 +162,7 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
          wire_fds = reinterpret_cast<int*>(CMSG_DATA(cmsg));
          wire_fds_len = payload_len / sizeof(int);
        }
@@ -45,10 +45,10 @@
        // macOS does not support SCM_CREDENTIALS.
        if (cmsg->cmsg_level == SOL_SOCKET &&
            cmsg->cmsg_type == SCM_CREDENTIALS) {
-@@ -216,6 +216,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
-     socklen_t pid_size = sizeof(pid);
-     if (getsockopt(fd, SOL_LOCAL, LOCAL_PEERPID, &pid, &pid_size) != 0)
+@@ -199,6 +199,9 @@ ssize_t UnixDomainSocket::RecvMsgWithFlags(int fd,
+     if (getsockopt(fd, SOL_LOCAL, LOCAL_PEERPID, &pid, &pid_size) != 0) {
        pid = -1;
+     }
 +#elif BUILDFLAG(IS_BSD)
 +    NOTIMPLEMENTED();
 +    pid = -1;

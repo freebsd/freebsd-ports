@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.cc
 @@ -1297,7 +1297,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
      }

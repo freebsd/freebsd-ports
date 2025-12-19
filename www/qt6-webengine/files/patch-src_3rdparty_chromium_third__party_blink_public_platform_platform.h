@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/public/platform/platform.h.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/third_party/blink/public/platform/platform.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/blink/public/platform/platform.h
-@@ -370,7 +370,7 @@ class BLINK_PLATFORM_EXPORT Platform {
+@@ -371,7 +371,7 @@ class BLINK_PLATFORM_EXPORT Platform {
      return nullptr;
    }
  

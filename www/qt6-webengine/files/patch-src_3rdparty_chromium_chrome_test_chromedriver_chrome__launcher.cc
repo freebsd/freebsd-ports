@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/test/chromedriver/chrome_launcher.cc.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/chrome/test/chromedriver/chrome_launcher.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/test/chromedriver/chrome_launcher.cc
 @@ -73,6 +73,7 @@
  #include <fcntl.h>

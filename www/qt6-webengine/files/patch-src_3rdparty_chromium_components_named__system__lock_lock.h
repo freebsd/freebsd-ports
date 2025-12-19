@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/named_system_lock/lock.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/components/named_system_lock/lock.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/named_system_lock/lock.h
 @@ -38,7 +38,7 @@ class ScopedLock {
    // may acquire that lock. The lock name has different meanings per platform:

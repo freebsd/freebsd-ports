@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/dns/dns_config_service_posix.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/net/dns/dns_config_service_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/dns/dns_config_service_posix.cc
 @@ -39,6 +39,11 @@
  #include "net/dns/dns_config_watcher_mac.h"

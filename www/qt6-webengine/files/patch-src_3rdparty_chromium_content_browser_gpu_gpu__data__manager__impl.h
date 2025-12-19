@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/gpu/gpu_data_manager_impl.h.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/content/browser/gpu/gpu_data_manager_impl.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/gpu/gpu_data_manager_impl.h
 @@ -220,7 +220,7 @@ class CONTENT_EXPORT GpuDataManagerImpl : public GpuDa
    void OnDisplayMetricsChanged(const display::Display& display,

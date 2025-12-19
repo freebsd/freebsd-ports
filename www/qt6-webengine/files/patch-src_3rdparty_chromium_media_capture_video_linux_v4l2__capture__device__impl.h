@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device_impl.h.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device_impl.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_device_impl.h
 @@ -19,7 +19,7 @@ class CAPTURE_EXPORT V4L2CaptureDeviceImpl : public V4
   public:

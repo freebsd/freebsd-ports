@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/devtools/protocol/system_info_handler.cc
-@@ -51,7 +51,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
+@@ -52,7 +52,7 @@ std::unique_ptr<SystemInfo::Size> GfxSizeToSystemInfoS
  // 1046598, and 1153667.
  // Windows builds need more time -- see Issue 873112 and 1004472.
  // Mac builds need more time - see Issue angleproject:6182.

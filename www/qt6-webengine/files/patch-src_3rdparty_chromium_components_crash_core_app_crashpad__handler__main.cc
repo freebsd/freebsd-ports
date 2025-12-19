@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/crash/core/app/crashpad_handler_main.cc.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/components/crash/core/app/crashpad_handler_main.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/crash/core/app/crashpad_handler_main.cc
 @@ -10,7 +10,7 @@
  #include "third_party/crashpad/crashpad/handler/handler_main.h"

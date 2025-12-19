@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/ipc/service/gpu_memory_buffer_factory.cc
 @@ -14,7 +14,7 @@
  #include "gpu/ipc/service/gpu_memory_buffer_factory_io_surface.h"

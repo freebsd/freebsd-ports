@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/message_loop/message_pump_epoll.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/message_loop/message_pump_epoll.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/message_loop/message_pump_epoll.cc
-@@ -42,7 +42,7 @@ std::atomic_bool g_use_batched_version = false;
+@@ -47,7 +47,7 @@ constexpr std::pair<uint32_t, short int> kEpollToPollE
  std::atomic_bool g_use_poll = false;
  
  constexpr std::pair<uint32_t, short int> kEpollToPollEvents[] = {

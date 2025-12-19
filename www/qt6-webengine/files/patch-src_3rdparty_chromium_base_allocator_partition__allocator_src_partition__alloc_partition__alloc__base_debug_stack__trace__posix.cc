@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_base/debug/stack_trace_posix.cc
 @@ -13,11 +13,11 @@
  #include "partition_alloc/partition_alloc_base/posix/eintr_wrapper.h"
@@ -14,7 +14,7 @@
  #include <dlfcn.h>
  #endif
  
-@@ -25,7 +25,7 @@ namespace partition_alloc::internal::base::debug {
+@@ -25,7 +25,7 @@ namespace {
  
  namespace {
  

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/child/child_process.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/content/child/child_process.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/child/child_process.h
 @@ -79,7 +79,7 @@ class CONTENT_EXPORT ChildProcess {
      return io_thread_runner_.get();

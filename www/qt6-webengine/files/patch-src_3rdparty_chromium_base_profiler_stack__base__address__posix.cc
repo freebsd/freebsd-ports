@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/profiler/stack_base_address_posix.cc.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/base/profiler/stack_base_address_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/profiler/stack_base_address_posix.cc
 @@ -17,6 +17,10 @@
  #include "base/files/scoped_file.h"
@@ -11,7 +11,7 @@
  #if BUILDFLAG(IS_CHROMEOS)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -45,7 +49,21 @@ std::optional<uintptr_t> GetAndroidMainThreadStackBase
+@@ -47,7 +51,21 @@ uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthr
  
  #if !BUILDFLAG(IS_LINUX)
  uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthread_id) {
@@ -33,7 +33,7 @@
    // pthread_getattr_np will crash on ChromeOS & Linux if we are in the sandbox
    // and pthread_id refers to a different thread, due to the use of
    // sched_getaffinity().
-@@ -58,12 +76,14 @@ uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthr
+@@ -60,12 +78,14 @@ uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthr
                        << logging::SystemErrorCodeToString(result);
    // See crbug.com/617730 for limitations of this approach on Linux-like
    // systems.
@@ -48,7 +48,7 @@
    const uintptr_t base_address = reinterpret_cast<uintptr_t>(address) + size;
    return base_address;
  }
-@@ -80,7 +100,7 @@ std::optional<uintptr_t> GetThreadStackBaseAddress(Pla
+@@ -82,7 +102,7 @@ std::optional<uintptr_t> GetThreadStackBaseAddress(Pla
    // trying to work around the problem.
    return std::nullopt;
  #else

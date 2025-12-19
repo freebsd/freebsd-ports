@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.h.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/printing/sandbox/print_backend_sandbox_hook_linux.h
 @@ -5,8 +5,13 @@
  #ifndef PRINTING_SANDBOX_PRINT_BACKEND_SANDBOX_HOOK_LINUX_H_

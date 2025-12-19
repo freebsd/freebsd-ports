@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.h.orig	2023-10-11 18:22:24 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.h
-@@ -35,7 +35,7 @@ class Location;
+@@ -34,7 +34,7 @@ namespace media {
  
  namespace media {
  
@@ -9,16 +9,16 @@
  class V4L2CaptureDelegateGpuHelper;
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -86,7 +86,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+@@ -85,7 +85,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
    static bool IsBlockedControl(int control_id);
    static bool IsControllableControl(
        int control_id,
 -      const base::RepeatingCallback<int(int, void*)>& do_ioctl);
 +      const base::RepeatingCallback<int(unsigned int, void*)>& do_ioctl);
  
-   void SetGPUEnvironmentForTesting(
-       std::unique_ptr<gpu::GpuMemoryBufferSupport> gmb_support);
-@@ -100,10 +100,10 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+  private:
+   friend class V4L2CaptureDelegateTest;
+@@ -96,10 +96,10 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
    // device file descriptor or (re)starting streaming, can fail but works after
    // retrying (https://crbug.com/670262). Returns false if the |request| ioctl
    // fails too many times.
@@ -31,7 +31,7 @@
  
    // Check whether the control is controllable (and not changed automatically).
    bool IsControllableControl(int control_id);
-@@ -133,7 +133,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+@@ -129,7 +129,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
                       const base::Location& from_here,
                       const std::string& reason);
  
@@ -40,7 +40,7 @@
    // Systems which describe a "color space" usually map that to one or more of
    // {primary, matrix, transfer, range}. BuildColorSpaceFromv4l2() will use the
    // matched value as first priority. Otherwise, if there is no best matching
-@@ -167,7 +167,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+@@ -163,7 +163,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
    // Clockwise rotation in degrees. This value should be 0, 90, 180, or 270.
    int rotation_;
  

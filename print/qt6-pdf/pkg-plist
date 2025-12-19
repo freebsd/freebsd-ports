@@ -136,9 +136,9 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6PdfQuickpluginTargets.cmake
 %%QT_LIBDIR%%/libQt6PdfWidgets.so
 %%QT_LIBDIR%%/libQt6PdfWidgets.so.6
 %%QT_LIBDIR%%/libQt6PdfWidgets.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6pdf_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6pdfquick_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6pdfwidgets_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6pdf_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6pdfquick_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6pdfwidgets_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_pdf.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_pdf_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_pdfquick.pri

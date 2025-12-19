@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/dns/dns_reloader.cc.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/net/dns/dns_reloader.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/dns/dns_reloader.cc
 @@ -10,6 +10,7 @@
  // - there's not guarantee it exists at all. :(

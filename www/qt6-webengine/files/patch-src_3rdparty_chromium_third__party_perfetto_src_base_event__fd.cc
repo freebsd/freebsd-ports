@@ -1,21 +1,21 @@
---- src/3rdparty/chromium/third_party/perfetto/src/base/event_fd.cc.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/perfetto/src/base/event_fd.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/event_fd.cc
-@@ -22,7 +22,8 @@
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_WIN)
- #include <Windows.h>
+@@ -24,7 +24,8 @@
  #include <synchapi.h>
+ #elif PERFETTO_BUILDFLAG(PERFETTO_OS_QNX)
+ #include <unistd.h>
 -#elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
 +#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/eventfd.h>
  #include <unistd.h>
-@@ -57,7 +58,8 @@ void EventFd::Clear() {
+@@ -59,7 +60,8 @@ void EventFd::Clear() {
      PERFETTO_DFATAL("EventFd::Clear()");
  }
  
--#elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
-+#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) && \
+-#elif PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) || \
++#elif (PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX_BUT_NOT_QNX) && \
 +    !PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  

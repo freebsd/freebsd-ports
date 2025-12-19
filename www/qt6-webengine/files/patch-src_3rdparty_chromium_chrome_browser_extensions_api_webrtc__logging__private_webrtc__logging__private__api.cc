@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/extensions/api/webrtc_logging_private/webrtc_logging_private_api.cc
-@@ -31,7 +31,7 @@
+@@ -30,7 +30,7 @@
  #include "extensions/browser/process_manager.h"
  #include "extensions/common/error_utils.h"
  
@@ -9,7 +9,7 @@
  #include "extensions/common/permissions/permissions_data.h"
  #endif
  
-@@ -40,7 +40,7 @@ bool CanEnableAudioDebugRecordingsFromExtension(
+@@ -39,7 +39,7 @@ bool CanEnableAudioDebugRecordingsFromExtension(
  bool CanEnableAudioDebugRecordingsFromExtension(
      const extensions::Extension* extension) {
    bool enabled_by_permissions = false;
@@ -18,7 +18,7 @@
    if (extension) {
      enabled_by_permissions =
          extension->permissions_data()->active_permissions().HasAPIPermission(
-@@ -594,7 +594,7 @@ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
+@@ -593,7 +593,7 @@ WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {
  
  ExtensionFunction::ResponseAction
  WebrtcLoggingPrivateGetLogsDirectoryFunction::Run() {

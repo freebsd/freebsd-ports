@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/sandbox/policy/mojom/sandbox.mojom.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/sandbox/policy/mojom/sandbox.mojom.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/sandbox/policy/mojom/sandbox.mojom
-@@ -80,6 +80,12 @@ enum Sandbox {
-   [EnableIf=is_fuchsia]
-   kVideoCapture,
+@@ -74,6 +74,12 @@ enum Sandbox {
+   // Minimally privileged sandbox on Fuchsia.
+   [EnableIf=is_fuchsia] kVideoCapture,
  
 +  [EnableIf=is_openbsd]
 +  kVideoCapture,
@@ -12,4 +12,4 @@
 +
    // Allows access to file contents and Windows APIs for parsing icons from PE
    // files.
-   [EnableIf=is_win]
+   [EnableIf=is_win] kIconReader,

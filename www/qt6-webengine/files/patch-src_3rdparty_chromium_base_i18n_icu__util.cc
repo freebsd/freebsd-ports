@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/i18n/icu_util.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/base/i18n/icu_util.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/i18n/icu_util.cc
 @@ -52,7 +52,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"

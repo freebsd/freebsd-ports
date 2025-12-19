@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/viz/host/host_display_client.h.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/components/viz/host/host_display_client.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/viz/host/host_display_client.h
 @@ -52,7 +52,7 @@ class VIZ_HOST_EXPORT HostDisplayClient : public mojom
    void AddChildWindowToBrowser(gpu::SurfaceHandle child_window) override;

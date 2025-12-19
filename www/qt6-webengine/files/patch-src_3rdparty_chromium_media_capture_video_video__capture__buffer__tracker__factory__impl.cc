@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/video_capture_buffer_tracker_factory_impl.cc.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/media/capture/video/video_capture_buffer_tracker_factory_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/capture/video/video_capture_buffer_tracker_factory_impl.cc
 @@ -14,7 +14,7 @@
  #include "media/capture/video/chromeos/gpu_memory_buffer_tracker_cros.h"

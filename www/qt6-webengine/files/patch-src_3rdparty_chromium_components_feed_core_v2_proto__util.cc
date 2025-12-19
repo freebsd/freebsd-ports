@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/feed/core/v2/proto_util.cc.orig	2023-07-16 15:47:57 UTC
+--- src/3rdparty/chromium/components/feed/core/v2/proto_util.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/feed/core/v2/proto_util.cc
 @@ -93,8 +93,8 @@ feedwire::Version GetPlatformVersionMessage() {
  

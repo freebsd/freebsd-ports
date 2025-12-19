@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/devtools/devtools_frontend_host_impl.h.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/content/browser/devtools/devtools_frontend_host_impl.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/devtools/devtools_frontend_host_impl.h
 @@ -34,7 +34,7 @@ class DevToolsFrontendHostImpl : public DevToolsFronte
  

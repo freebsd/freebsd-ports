@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/spinning_mutex.cc
 @@ -17,7 +17,16 @@
  #endif
@@ -34,7 +34,7 @@
  
    if (err) {
      // These are programming error, check them.
-@@ -119,8 +136,16 @@ void SpinningMutex::FutexWait() {
+@@ -119,8 +136,16 @@ void SpinningMutex::FutexWake() {
  
  void SpinningMutex::FutexWake() {
    int saved_errno = errno;

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/policy/core/common/policy_utils.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/policy/core/common/policy_utils.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/policy/core/common/policy_utils.cc
 @@ -22,7 +22,7 @@ bool IsPolicyTestingEnabled(PrefService* pref_service,
      return true;

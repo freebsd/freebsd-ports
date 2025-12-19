@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/memory/discardable_memory.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/base/memory/discardable_memory.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/memory/discardable_memory.cc
 @@ -26,7 +26,7 @@ BASE_FEATURE(kMadvFreeDiscardableMemory,
               base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  BASE_FEATURE(kDiscardableMemoryBackingTrial,
               "DiscardableMemoryBackingTrial",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -39,7 +39,7 @@ BASE_FEATURE(kDiscardableMemoryBackingTrial,
+@@ -44,7 +44,7 @@ namespace {
  
  namespace {
  
@@ -18,7 +18,7 @@
  
  DiscardableMemoryBacking GetBackingForFieldTrial() {
    DiscardableMemoryTrialGroup trial_group =
-@@ -58,7 +58,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
+@@ -63,7 +63,7 @@ DiscardableMemoryBacking GetBackingForFieldTrial() {
  
  }  // namespace
  
@@ -27,7 +27,7 @@
  
  // Probe capabilities of this device to determine whether we should participate
  // in the discardable memory backing trial.
-@@ -88,7 +88,7 @@ DiscardableMemory::DiscardableMemory() = default;
+@@ -95,7 +95,7 @@ DiscardableMemoryBacking GetDiscardableMemoryBacking()
  DiscardableMemory::~DiscardableMemory() = default;
  
  DiscardableMemoryBacking GetDiscardableMemoryBacking() {

@@ -1,9 +1,9 @@
---- src/3rdparty/chromium/content/app/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/content/app/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/app/BUILD.gn
-@@ -97,9 +97,9 @@ source_set("content_main_runner_app") {
-       "//chromeos/startup:constants",
-     ]
-   }
+@@ -90,9 +90,9 @@ source_set("content_main_runner_app") {
+            "//third_party/tflite:buildflags",
+            "//tools/v8_context_snapshot:buildflags",
+          ]
 -  if (build_tflite_with_xnnpack) {
 -    deps += [ "//third_party/cpuinfo" ]
 -  }

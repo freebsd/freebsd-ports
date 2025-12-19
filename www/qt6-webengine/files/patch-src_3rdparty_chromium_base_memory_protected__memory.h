@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/memory/protected_memory.h.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/memory/protected_memory.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/memory/protected_memory.h
-@@ -119,12 +119,12 @@ __declspec(selectany) char __stop_protected_memory;
+@@ -120,12 +120,12 @@ __declspec(selectany) char __stop_protected_memory;
  
  #define DECLARE_PROTECTED_DATA constinit
  #define DEFINE_PROTECTED_DATA constinit __declspec(allocate("prot$mem"))
@@ -15,7 +15,7 @@
  // arm64 supports 4kb, 16kb, and 64kb pages. Set to the largest of 64kb as that
  // will guarantee the section is page aligned regardless of the choice.
  inline constexpr int kProtectedMemoryAlignment = 65536;
-@@ -339,7 +339,7 @@ class BASE_EXPORT AutoWritableMemoryBase {
+@@ -340,7 +340,7 @@ class BASE_EXPORT AutoWritableMemoryBase {
      // where an attacker could overwrite it with a large value and invoke code
      // that constructs and destructs an AutoWritableMemory. After such a call
      // protected memory would still be set writable because writers > 0.
@@ -24,7 +24,7 @@
      // On Linux, the protected memory section is not automatically page aligned.
      // This means that attempts to reset the protected memory region to readonly
      // will set some of the preceding section that is on the same page readonly
-@@ -353,7 +353,7 @@ class BASE_EXPORT AutoWritableMemoryBase {
+@@ -354,7 +354,7 @@ class BASE_EXPORT AutoWritableMemoryBase {
  #endif
      static inline size_t writers GUARDED_BY(writers_lock()) = 0;
  
@@ -33,7 +33,7 @@
      // On Linux, there is no guarantee the section following the protected
      // memory section is page aligned. This can result in attempts to change
      // the access permissions of the end of the protected memory section
-@@ -411,7 +411,7 @@ class BASE_EXPORT AutoWritableMemoryInitializer
+@@ -412,7 +412,7 @@ class BASE_EXPORT AutoWritableMemoryInitializer
      // the variable to something large before the section was read-only.
      WriterData::writers = 0;
      CHECK(SetProtectedSectionReadOnly());

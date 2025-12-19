@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h
-@@ -179,7 +179,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue
+@@ -182,7 +182,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue
  #endif
  
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/browser/scheduler/responsiveness/native_event_observer.h.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/content/browser/scheduler/responsiveness/native_event_observer.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/browser/scheduler/responsiveness/native_event_observer.h
 @@ -16,7 +16,7 @@
  #include "content/public/browser/native_event_processor_observer_mac.h"
@@ -9,7 +9,7 @@
  #include "ui/aura/window_event_dispatcher_observer.h"
  #endif
  
-@@ -41,7 +41,7 @@ namespace responsiveness {
+@@ -41,7 +41,7 @@ class CONTENT_EXPORT NativeEventObserver
  class CONTENT_EXPORT NativeEventObserver
  #if BUILDFLAG(IS_MAC)
      : public NativeEventProcessorObserver

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/angle/src/common/system_utils.cpp.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/third_party/angle/src/common/system_utils.cpp.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/common/system_utils.cpp
-@@ -25,7 +25,7 @@ namespace angle
+@@ -25,7 +25,7 @@ std::string GetExecutableName()
  {
  std::string GetExecutableName()
  {

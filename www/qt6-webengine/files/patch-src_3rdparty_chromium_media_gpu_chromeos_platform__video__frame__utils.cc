@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/gpu/chromeos/platform_video_frame_utils.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/media/gpu/chromeos/platform_video_frame_utils.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/gpu/chromeos/platform_video_frame_utils.cc
-@@ -68,7 +68,7 @@ static std::unique_ptr<ui::GbmDevice> CreateGbmDevice(
+@@ -67,7 +67,7 @@ static std::unique_ptr<ui::GbmDevice> CreateGbmDevice(
      const base::FilePath dev_path(FILE_PATH_LITERAL(
          base::StrCat({drm_node_file_prefix, base::NumberToString(i)})));
  
@@ -9,21 +9,3 @@
      const bool is_render_node = base::Contains(drm_node_file_prefix, "render");
  
      // TODO(b/313513760): don't guard base::File::FLAG_WRITE behind
-@@ -196,7 +196,7 @@ class GbmDeviceWrapper {
-     const bool is_intel_media_compression_enabled =
- #if BUILDFLAG(IS_CHROMEOS)
-         base::FeatureList::IsEnabled(features::kEnableIntelMediaCompression);
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-         false;
- #endif
-     if (is_intel_media_compression_enabled) {
-@@ -350,7 +350,7 @@ scoped_refptr<VideoFrame> CreateVideoFrameFromGpuMemor
-   const bool is_intel_media_compression_enabled =
- #if BUILDFLAG(IS_CHROMEOS)
-       base::FeatureList::IsEnabled(features::kEnableIntelMediaCompression);
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-       false;
- #endif
- 

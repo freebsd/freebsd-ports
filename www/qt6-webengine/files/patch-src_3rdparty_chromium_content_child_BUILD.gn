@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/child/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/content/child/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/child/BUILD.gn
-@@ -139,6 +139,13 @@ target(link_target_type, "child") {
+@@ -143,6 +143,13 @@ target(link_target_type, "child") {
      ]
    }
  
@@ -13,4 +13,4 @@
 +
    if (is_win) {
      sources += [
-       "dwrite_font_proxy/dwrite_font_proxy_init_impl_win.cc",
+       "child_process_sandbox_support_impl_win.cc",

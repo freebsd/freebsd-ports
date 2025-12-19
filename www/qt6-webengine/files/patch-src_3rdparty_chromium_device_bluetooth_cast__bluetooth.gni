@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/device/bluetooth/cast_bluetooth.gni.orig	2022-08-31 12:19:35 UTC
+--- src/3rdparty/chromium/device/bluetooth/cast_bluetooth.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/device/bluetooth/cast_bluetooth.gni
-@@ -2,5 +2,5 @@ import("//build/config/features.gni")
+@@ -2,5 +2,5 @@ declare_args() {
  
  declare_args() {
    force_cast_bluetooth = false

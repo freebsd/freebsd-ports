@@ -1,4 +1,4 @@
---- src/pdf/CMakeLists.txt.orig	2025-02-21 12:29:33 UTC
+--- src/pdf/CMakeLists.txt.orig	2025-08-15 18:30:00 UTC
 +++ src/pdf/CMakeLists.txt
 @@ -69,7 +69,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
  #   TOOLCHAIN SETUP
@@ -9,9 +9,9 @@
      setup_toolchains()
  endif()
  
-@@ -143,7 +143,7 @@ foreach(arch ${archs})
-           v8_use_external_startup_data=false
-   )
+@@ -144,7 +144,7 @@ foreach(arch ${archs})
+           webnn_use_tflite=false
+         )
  
 -        if(LINUX OR ANDROID)
 +        if(LINUX OR ANDROID OR FREEBSD)

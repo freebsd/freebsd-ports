@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.cc.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/v8/src/trap-handler/handler-inside-posix.cc
 @@ -61,6 +61,8 @@ namespace trap_handler {
  #define CONTEXT_REG(reg, REG) &uc->uc_mcontext->__ss.__##reg

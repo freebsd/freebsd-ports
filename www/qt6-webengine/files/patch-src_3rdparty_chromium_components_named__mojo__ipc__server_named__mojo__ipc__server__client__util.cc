@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/named_mojo_ipc_server/named_mojo_ipc_server_client_util.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/named_mojo_ipc_server/named_mojo_ipc_server_client_util.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/named_mojo_ipc_server/named_mojo_ipc_server_client_util.cc
-@@ -23,7 +23,7 @@ namespace named_mojo_ipc_server {
+@@ -23,7 +23,7 @@ mojo::PlatformChannelEndpoint ConnectToServer(
  // static
  mojo::PlatformChannelEndpoint ConnectToServer(
      const mojo::NamedPlatformChannel::ServerName& server_name) {

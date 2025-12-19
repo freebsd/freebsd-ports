@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/base_paths_posix.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/base_paths_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/base_paths_posix.cc
 @@ -15,6 +15,7 @@
  #include <ostream>
@@ -27,23 +27,22 @@
        *result = bin_dir;
        return true;
  #elif BUILDFLAG(IS_FREEBSD)
--      int name[] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
+-      int name[] = {CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1};
 -      std::optional<std::string> bin_dir = StringSysctl(name, std::size(name));
 +      std::optional<std::string> bin_dir = StringSysctl({ CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 });
        if (!bin_dir.has_value() || bin_dir.value().length() <= 1) {
          NOTREACHED() << "Unable to resolve path.";
        }
-@@ -62,13 +66,65 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -62,14 +66,65 @@ bool PathProviderPosix(int key, FilePath* result) {
        *result = FilePath(bin_dir);
        return true;
  #elif BUILDFLAG(IS_OPENBSD) || BUILDFLAG(IS_AIX)
 -      // There is currently no way to get the executable path on OpenBSD
 -      char* cpath;
--      if ((cpath = getenv("CHROME_EXE_PATH")) != NULL)
+-      if ((cpath = getenv("CHROME_EXE_PATH")) != NULL) {
 -        *result = FilePath(cpath);
--      else
+-      } else {
 -        *result = FilePath("/usr/local/chrome/chrome");
--      return true;
 +      char *cpath;
 +#if !BUILDFLAG(IS_AIX)
 +      struct kinfo_file *files;
@@ -71,7 +70,8 @@
 +        *result = FilePath(retval);
 +        VLOG(1) << "PathProviderPosix (sandbox) result: " << retval;
 +        goto out;
-+      }
+       }
+-      return true;
 +
 +      if ((kd = kvm_openfiles(NULL, NULL, NULL, (int)KVM_NO_FILES, errbuf)) == NULL)
 +        goto out;

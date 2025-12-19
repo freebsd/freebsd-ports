@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gl/BUILD.gn
-@@ -173,7 +173,6 @@ jumbo_component("gl") {
+@@ -174,7 +174,6 @@ jumbo_component("gl") {
    public_deps = [
      ":gl_enums",
      "//base",
@@ -8,7 +8,7 @@
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -325,7 +324,6 @@ jumbo_component("gl") {
+@@ -336,7 +335,6 @@ jumbo_component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -16,7 +16,7 @@
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -554,7 +552,6 @@ test("gl_unittests") {
+@@ -568,7 +566,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

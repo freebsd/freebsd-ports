@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/socket/tcp_socket_posix.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/net/socket/tcp_socket_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/socket/tcp_socket_posix.cc
 @@ -98,6 +98,17 @@ bool SetTCPKeepAlive(int fd, bool enable, int delay) {
        PLOG(ERROR) << "Failed to set TCP_KEEPALIVE on fd: " << fd;

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/ffmpeg/libavutil/random_seed.c.orig	2023-09-13 13:13:30 UTC
+--- src/3rdparty/chromium/third_party/ffmpeg/libavutil/random_seed.c.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/ffmpeg/libavutil/random_seed.c
 @@ -35,6 +35,11 @@
  #elif CONFIG_OPENSSL

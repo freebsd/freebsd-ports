@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/rand_util_posix.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/rand_util_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/rand_util_posix.cc
 @@ -28,7 +28,7 @@
  #include "base/time/time.h"
@@ -9,7 +9,7 @@
  #include "third_party/lss/linux_syscall_support.h"
  #elif BUILDFLAG(IS_MAC)
  // TODO(crbug.com/40641285): Waiting for this header to appear in the iOS SDK.
-@@ -44,6 +44,7 @@ namespace base {
+@@ -44,6 +44,7 @@ namespace {
  
  namespace {
  
@@ -30,7 +30,7 @@
  // TODO(pasko): Unify reading kernel version numbers in:
  // mojo/core/channel_linux.cc
  // chrome/browser/android/seccomp_support_detector.cc
-@@ -177,6 +179,7 @@ bool UseBoringSSLForRandBytes() {
+@@ -156,6 +158,7 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
  namespace {
  
  void RandBytesInternal(span<uint8_t> output, bool avoid_allocation) {
@@ -38,7 +38,7 @@
  #if !BUILDFLAG(IS_NACL)
    // The BoringSSL experiment takes priority over everything else.
    if (!avoid_allocation && internal::UseBoringSSLForRandBytes()) {
-@@ -213,6 +216,9 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
+@@ -190,6 +193,9 @@ void RandBytesInternal(span<uint8_t> output, bool avoi
    const int urandom_fd = GetUrandomFD();
    const bool success = ReadFromFD(urandom_fd, as_writable_chars(output));
    CHECK(success);
@@ -48,7 +48,7 @@
  }
  
  }  // namespace
-@@ -232,9 +238,11 @@ void RandBytes(span<uint8_t> output) {
+@@ -209,9 +215,11 @@ void RandBytes(span<uint8_t> output) {
    RandBytesInternal(output, /*avoid_allocation=*/false);
  }
  

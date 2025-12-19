@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/close_multiple.cc.orig	2023-12-10 06:10:27 UTC
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/close_multiple.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/util/posix/close_multiple.cc
-@@ -73,7 +73,7 @@ void CloseNowOrOnExec(int fd, bool ebadf_ok) {
+@@ -73,7 +73,7 @@ bool CloseMultipleNowOrOnExecUsingFDDir(int min_fd, in
  // This is an advantage over looping over all possible file descriptors, because
  // no attempt needs to be made to close file descriptors that are not open.
  bool CloseMultipleNowOrOnExecUsingFDDir(int min_fd, int preserve_fd) {

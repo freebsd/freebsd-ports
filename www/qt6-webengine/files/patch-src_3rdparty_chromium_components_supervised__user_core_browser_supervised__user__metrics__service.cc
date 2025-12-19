@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/components/supervised_user/core/browser/supervised_user_metrics_service.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/supervised_user/core/browser/supervised_user_metrics_service.cc
 @@ -47,7 +47,7 @@ SupervisedUserMetricsService::SupervisedUserMetricsSer
        extensions_metrics_delegate_(std::move(extensions_metrics_delegate)) {

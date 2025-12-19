@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/instrumentation/partition_alloc_memory_dump_provider.cc
-@@ -14,7 +14,9 @@
+@@ -14,7 +14,9 @@ namespace blink {
  
  namespace blink {
  
@@ -10,7 +10,7 @@
  
  PartitionAllocMemoryDumpProvider* PartitionAllocMemoryDumpProvider::Instance() {
    DEFINE_STATIC_LOCAL(PartitionAllocMemoryDumpProvider, instance, ());
-@@ -24,6 +26,7 @@ PartitionAllocMemoryDumpProvider* PartitionAllocMemory
+@@ -24,6 +26,7 @@ bool PartitionAllocMemoryDumpProvider::OnMemoryDump(
  bool PartitionAllocMemoryDumpProvider::OnMemoryDump(
      const base::trace_event::MemoryDumpArgs& args,
      base::trace_event::ProcessMemoryDump* memory_dump) {

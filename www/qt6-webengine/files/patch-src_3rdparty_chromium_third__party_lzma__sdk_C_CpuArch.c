@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c.orig	2025-02-19 07:43:18 UTC
+--- src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c
-@@ -854,7 +854,35 @@ BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYP
+@@ -854,6 +854,34 @@ BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYP
  BoolInt CPU_IsSupported_SHA2(void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  
 +#elif defined(__OpenBSD__)
- 
++
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <machine/cpu.h>
@@ -32,20 +32,6 @@
 +MY_HWCAP_CHECK_FUNC (SHA1)
 +MY_HWCAP_CHECK_FUNC (SHA2)
 +MY_HWCAP_CHECK_FUNC (AES)
-+
+ 
  #else // __APPLE__
  
- #if defined(__GLIBC__) && (__GLIBC__ * 100 + __GLIBC_MINOR__ >= 216)
-@@ -869,10 +897,12 @@ BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYP
-   #endif
- #endif
- 
-+#if !defined(__FreeBSD__)
- #ifdef Z7_GETAUXV_AVAILABLE
- // #pragma message("=== Z7_GETAUXV_AVAILABLE === ")
- #include <sys/auxv.h>
- #define USE_HWCAP
-+#endif
- #endif
- 
- #ifdef USE_HWCAP

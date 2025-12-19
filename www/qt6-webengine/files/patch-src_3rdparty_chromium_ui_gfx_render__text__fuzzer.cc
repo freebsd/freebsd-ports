@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/render_text_fuzzer.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/ui/gfx/render_text_fuzzer.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gfx/render_text_fuzzer.cc
 @@ -17,7 +17,7 @@
  #include "ui/gfx/canvas.h"

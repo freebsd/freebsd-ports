@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/angle/src/common/platform.h.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/angle/src/common/platform.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/common/platform.h
 @@ -26,7 +26,15 @@
  #elif defined(__linux__) || defined(EMSCRIPTEN)

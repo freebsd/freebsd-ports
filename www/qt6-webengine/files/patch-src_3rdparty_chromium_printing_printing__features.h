@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/printing/printing_features.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/printing/printing_features.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/printing/printing_features.h
-@@ -22,7 +22,7 @@ COMPONENT_EXPORT(PRINTING_BASE)
+@@ -22,7 +22,7 @@ BASE_DECLARE_FEATURE(kAddPrinterViaPrintscanmgr);
  BASE_DECLARE_FEATURE(kAddPrinterViaPrintscanmgr);
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

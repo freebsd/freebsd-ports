@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/content/utility/speech/speech_recognition_sandbox_hook_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/utility/speech/speech_recognition_sandbox_hook_linux.cc
 @@ -12,11 +12,14 @@
  #include "sandbox/linux/syscall_broker/broker_command.h"

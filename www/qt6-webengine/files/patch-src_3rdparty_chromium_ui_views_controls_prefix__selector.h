@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/controls/prefix_selector.h.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/ui/views/controls/prefix_selector.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/views/controls/prefix_selector.h
-@@ -85,7 +85,7 @@ class VIEWS_EXPORT PrefixSelector : public ui::TextInp
+@@ -91,7 +91,7 @@ class VIEWS_EXPORT PrefixSelector : public ui::TextInp
    ukm::SourceId GetClientSourceForMetrics() const override;
    bool ShouldDoLearning() override;
  

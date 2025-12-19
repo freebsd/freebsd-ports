@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_tool.cc
 @@ -35,7 +35,7 @@
  #include "third_party/boringssl/src/pki/trust_store.h"

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/network/public/cpp/features.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/services/network/public/cpp/features.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/network/public/cpp/features.cc
-@@ -125,7 +125,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
+@@ -123,7 +123,7 @@ BASE_FEATURE(kSplitAuthCacheByNetworkIsolationKey,
  
  // Enable usage of hardcoded DoH upgrade mapping for use in automatic mode.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

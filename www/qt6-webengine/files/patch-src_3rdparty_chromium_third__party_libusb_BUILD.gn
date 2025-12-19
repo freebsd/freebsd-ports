@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/libusb/BUILD.gn.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/third_party/libusb/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/libusb/BUILD.gn
 @@ -3,7 +3,7 @@
  # found in the LICENSE file.

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/src/sandbox/sandbox.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/v8/src/sandbox/sandbox.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/v8/src/sandbox/sandbox.cc
-@@ -48,7 +48,7 @@ static Address DetermineAddressSpaceLimit() {
+@@ -59,7 +59,7 @@ static Address DetermineAddressSpaceLimit() {
    }
  #endif  // V8_TARGET_ARCH_X64
  

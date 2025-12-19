@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/base/system/sys_info_openbsd.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_openbsd.cc
 @@ -12,6 +12,7 @@
  
@@ -8,7 +8,7 @@
  
  namespace {
  
-@@ -27,9 +28,14 @@ uint64_t AmountOfMemory(int pages_name) {
+@@ -28,9 +29,14 @@ namespace base {
  
  namespace base {
  
@@ -24,7 +24,7 @@
    int ncpu;
    size_t size = sizeof(ncpu);
    if (sysctl(mib, std::size(mib), &ncpu, &size, NULL, 0) < 0) {
-@@ -40,10 +46,26 @@ int SysInfo::NumberOfProcessors() {
+@@ -41,10 +47,26 @@ uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
  
  // static
  uint64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -52,7 +52,7 @@
  uint64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
    // We should add inactive file-backed memory also but there is no such
    // information from OpenBSD unfortunately.
-@@ -55,15 +77,27 @@ uint64_t SysInfo::MaxSharedMemorySize() {
+@@ -56,15 +78,27 @@ uint64_t SysInfo::MaxSharedMemorySize() {
    int mib[] = {CTL_KERN, KERN_SHMINFO, KERN_SHMINFO_SHMMAX};
    size_t limit;
    size_t size = sizeof(limit);

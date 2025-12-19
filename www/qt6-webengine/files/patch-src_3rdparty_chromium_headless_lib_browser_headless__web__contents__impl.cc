@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/headless/lib/browser/headless_web_contents_impl.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/headless/lib/browser/headless_web_contents_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/headless/lib/browser/headless_web_contents_impl.cc
-@@ -62,7 +62,7 @@ namespace headless {
+@@ -71,7 +71,7 @@ void UpdatePrefsFromSystemSettings(blink::RendererPref
  namespace {
  
  void UpdatePrefsFromSystemSettings(blink::RendererPreferences* prefs) {

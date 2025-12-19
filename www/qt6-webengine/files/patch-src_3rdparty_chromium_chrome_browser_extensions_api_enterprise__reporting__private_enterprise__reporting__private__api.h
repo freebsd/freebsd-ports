@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.h
 @@ -20,7 +20,7 @@
  #include "components/reporting/proto/synced/record.pb.h"

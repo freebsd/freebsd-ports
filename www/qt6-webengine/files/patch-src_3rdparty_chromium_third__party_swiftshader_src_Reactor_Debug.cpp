@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/swiftshader/src/Reactor/Debug.cpp.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/swiftshader/src/Reactor/Debug.cpp.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/swiftshader/src/Reactor/Debug.cpp
-@@ -46,7 +46,7 @@ namespace {
+@@ -46,7 +46,7 @@ bool IsUnderDebugger()
  
  bool IsUnderDebugger()
  {

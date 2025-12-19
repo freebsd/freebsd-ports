@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
 @@ -137,6 +137,13 @@ static_library("common") {
    if (crashpad_is_win) {

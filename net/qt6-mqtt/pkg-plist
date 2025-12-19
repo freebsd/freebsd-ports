@@ -59,7 +59,7 @@ lib/cmake/Qt6MqttPrivate/Qt6MqttPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Mqtt.so
 %%QT_LIBDIR%%/libQt6Mqtt.so.6
 %%QT_LIBDIR%%/libQt6Mqtt.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6mqtt_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6mqtt_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_mqtt.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_mqtt_private.pri
 %%QT_SBOMDIR%%/qtmqtt-%%FULLVER%%.spdx

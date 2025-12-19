@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/printing/backend/print_backend_cups.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/printing/backend/print_backend_cups.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/printing/backend/print_backend_cups.cc
-@@ -33,7 +33,7 @@
+@@ -29,7 +29,7 @@
  #include "printing/mojom/print.mojom.h"
  #include "url/gurl.h"
  
@@ -9,7 +9,7 @@
  #include "base/feature_list.h"
  #include "printing/backend/cups_connection.h"
  #include "printing/backend/print_backend_cups_ipp.h"
-@@ -63,7 +63,7 @@ int CaptureCupsDestCallback(void* data, unsigned flags
+@@ -59,7 +59,7 @@ int CaptureCupsDestCallback(void* data, unsigned flags
    return 1;  // Keep going.
  }
  
@@ -17,8 +17,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
  // This may be removed when Amazon Linux 2 reaches EOL (30 Jun 2025).
  bool AreNewerCupsFunctionsAvailable() {
-   return cupsFindDestDefault && cupsFindDestSupported && ippValidateAttributes;
-@@ -291,7 +291,7 @@ bool PrintBackendCUPS::IsValidPrinter(const std::strin
+   return cupsFindDestDefault && cupsFindDestSupported && cupsUserAgent &&
+@@ -292,7 +292,7 @@ scoped_refptr<PrintBackend> PrintBackend::CreateInstan
  #if !BUILDFLAG(IS_CHROMEOS)
  scoped_refptr<PrintBackend> PrintBackend::CreateInstanceImpl(
      const std::string& locale) {

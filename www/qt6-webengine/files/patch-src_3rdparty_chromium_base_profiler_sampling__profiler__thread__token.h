@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.h.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/profiler/sampling_profiler_thread_token.h
 @@ -13,7 +13,7 @@
  

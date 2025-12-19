@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/extensions/browser/api/management/management_api.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/extensions/browser/api/management/management_api.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/extensions/browser/api/management/management_api.cc
 @@ -285,7 +285,7 @@ bool PlatformSupportsApprovalFlowForExtensions() {
  #if BUILDFLAG(IS_CHROMEOS)

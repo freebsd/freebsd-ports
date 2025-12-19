@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service.cc.orig	2023-03-09 06:31:50 UTC
+--- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/proxy_resolution/proxy_config_service.cc
 @@ -19,20 +19,20 @@
  #include "net/proxy_resolution/proxy_config_service_ios.h"

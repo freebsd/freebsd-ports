@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gl/gl_fence.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/ui/gl/gl_fence.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gl/gl_fence.cc
 @@ -17,7 +17,7 @@
  #include "ui/gl/gl_surface_egl.h"

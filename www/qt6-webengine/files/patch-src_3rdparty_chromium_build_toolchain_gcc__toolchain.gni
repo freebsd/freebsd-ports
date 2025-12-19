@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
 @@ -56,6 +56,13 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
@@ -14,7 +14,7 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -918,22 +925,12 @@ template("clang_toolchain") {
+@@ -902,22 +909,12 @@ template("clang_toolchain") {
  # actually just be doing a native compile.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {

@@ -4,6 +4,7 @@
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvganimator_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgcssanimation_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgcsshandler_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgcssproperties_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgfilter_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgfont_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvggraphics_p.h
@@ -12,6 +13,7 @@
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgnode_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstructure_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstyle_p.h
+%%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgstyleselector_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgtinydocument_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgutils_p.h
 %%QT_INCDIR%%/QtSvg/%%FULLVER%%/QtSvg/private/qsvgvisitor_p.h
@@ -75,14 +77,6 @@ lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsTargets.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsVersionlessTargets.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateAdditionalTargetInfo.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateConfig.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateConfigVersion.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateConfigVersionImpl.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateDependencies.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateTargets.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateVersionlessAliasTargets.cmake
-lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6Svg.prl
 %%QT_LIBDIR%%/libQt6Svg.so
 %%QT_LIBDIR%%/libQt6Svg.so.6
@@ -91,12 +85,11 @@ lib/cmake/Qt6SvgWidgetsPrivate/Qt6SvgWidgetsPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6SvgWidgets.so
 %%QT_LIBDIR%%/libQt6SvgWidgets.so.6
 %%QT_LIBDIR%%/libQt6SvgWidgets.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6svg_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6svgwidgets_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6svg_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6svgwidgets_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_svg.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_svg_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_svgwidgets.pri
-%%QT_MKSPECDIR%%/modules/qt_lib_svgwidgets_private.pri
 %%QT_PLUGINDIR%%/iconengines/libqsvgicon.so
 %%QT_PLUGINDIR%%/imageformats/libqsvg.so
 %%QT_SBOMDIR%%/qtsvg-%%FULLVER%%.spdx

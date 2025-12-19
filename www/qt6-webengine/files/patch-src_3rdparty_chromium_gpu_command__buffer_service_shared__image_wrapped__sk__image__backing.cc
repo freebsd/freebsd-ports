@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/wrapped_sk_image_backing.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/service/shared_image/wrapped_sk_image_backing.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/service/shared_image/wrapped_sk_image_backing.cc
 @@ -214,7 +214,7 @@ bool WrappedSkImageBacking::Initialize(const std::stri
  

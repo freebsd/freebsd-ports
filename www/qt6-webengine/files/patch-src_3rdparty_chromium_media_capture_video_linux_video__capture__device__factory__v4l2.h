@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_v4l2.h.orig	2023-04-05 11:05:06 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_v4l2.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/video_capture_device_factory_v4l2.h
 @@ -51,7 +51,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryV4L2
  

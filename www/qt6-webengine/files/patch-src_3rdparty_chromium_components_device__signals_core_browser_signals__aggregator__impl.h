@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/device_signals/core/browser/signals_aggregator_impl.h.orig	2023-07-16 15:47:57 UTC
+--- src/3rdparty/chromium/components/device_signals/core/browser/signals_aggregator_impl.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/device_signals/core/browser/signals_aggregator_impl.h
 @@ -29,7 +29,7 @@ class SignalsAggregatorImpl : public SignalsAggregator
    ~SignalsAggregatorImpl() override;

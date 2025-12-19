@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui_constants.h.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui_constants.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/ui/webui/management/management_ui_constants.h
-@@ -8,14 +8,14 @@
+@@ -7,14 +7,14 @@
+ 
  #include "build/build_config.h"
- #include "build/chromeos_buildflags.h"
  
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

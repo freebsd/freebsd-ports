@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc
 @@ -11,7 +11,9 @@
  

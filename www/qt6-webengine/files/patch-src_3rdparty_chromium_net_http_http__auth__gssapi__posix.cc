@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/http/http_auth_gssapi_posix.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/net/http/http_auth_gssapi_posix.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/net/http/http_auth_gssapi_posix.cc
 @@ -375,8 +375,9 @@ base::NativeLibrary GSSAPISharedLibrary::LoadSharedLib
      static const char* const kDefaultLibraryNames[] = {

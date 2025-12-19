@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/trusted_vault/trusted_vault_connection_impl.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/trusted_vault/trusted_vault_connection_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/trusted_vault/trusted_vault_connection_impl.cc
 @@ -102,7 +102,7 @@ GetLocalPhysicalDeviceType() {
    // currently used or even built on all platforms.

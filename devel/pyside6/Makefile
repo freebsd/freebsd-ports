@@ -18,7 +18,7 @@ LIB_DEPENDS=	libshiboken6.abi${PYTHON_MAJOR_VER}.so:devel/shiboken6@${PY_FLAVOR}
 
 USES=		cmake gl llvm:lib,min=17,noexport python qt:6 tar:xz
 USE_GL=		opengl
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/PySide6
 USE_PYTHON=	flavors
 USE_QT=		3d base charts connectivity datavis3d declarative doc graphs \
 		httpserver imageformats location multimedia networkauth \

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/config.h.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/config.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/abseil-cpp/absl/base/config.h
 @@ -412,7 +412,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  #ifdef ABSL_HAVE_SCHED_YIELD

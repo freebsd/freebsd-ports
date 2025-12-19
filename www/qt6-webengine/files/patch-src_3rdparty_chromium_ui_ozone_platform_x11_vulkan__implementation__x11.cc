@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/ozone/platform/x11/vulkan_implementation_x11.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/ui/ozone/platform/x11/vulkan_implementation_x11.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/ozone/platform/x11/vulkan_implementation_x11.cc
 @@ -59,7 +59,11 @@ bool VulkanImplementationX11::InitializeVulkanInstance
  

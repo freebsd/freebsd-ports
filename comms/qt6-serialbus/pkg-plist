@@ -121,7 +121,7 @@ lib/cmake/Qt6SerialBusPrivate/Qt6SerialBusPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6SerialBus.so
 %%QT_LIBDIR%%/libQt6SerialBus.so.6
 %%QT_LIBDIR%%/libQt6SerialBus.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6serialbus_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6serialbus_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_serialbus.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_serialbus_private.pri
 %%QT_PLUGINDIR%%/canbus/libqtpassthrucanbus.so

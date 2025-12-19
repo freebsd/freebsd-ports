@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/libusb/src/libusb/core.c.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/libusb/src/libusb/core.c.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/libusb/src/libusb/core.c
 @@ -448,7 +448,7 @@ libusb_free_device_list(list, 1);
   * which grows when required. it can be freed once discovery has completed,

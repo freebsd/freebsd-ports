@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/brotli/common/platform.h.orig	2022-02-07 13:39:41 UTC
+--- src/3rdparty/chromium/third_party/brotli/common/platform.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/brotli/common/platform.h
 @@ -28,7 +28,7 @@
  #include <brotli/port.h>

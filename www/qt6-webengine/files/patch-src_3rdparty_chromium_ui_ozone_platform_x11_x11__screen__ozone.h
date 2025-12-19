@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/ozone/platform/x11/x11_screen_ozone.h.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/ui/ozone/platform/x11/x11_screen_ozone.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/ozone/platform/x11/x11_screen_ozone.h
 @@ -16,7 +16,7 @@
  #include "ui/gfx/x/event.h"
@@ -9,7 +9,7 @@
  #include "ui/linux/device_scale_factor_observer.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -29,7 +29,7 @@ class X11WindowManager;
+@@ -29,7 +29,7 @@ class X11ScreenOzone : public PlatformScreen,
  class X11ScreenOzone : public PlatformScreen,
                         public x11::EventObserver,
                         public XDisplayManager::Delegate

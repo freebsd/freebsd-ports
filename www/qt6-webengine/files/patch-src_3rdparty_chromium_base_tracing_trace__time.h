@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/tracing/trace_time.h.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/base/tracing/trace_time.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/tracing/trace_time.h
-@@ -12,7 +12,7 @@ namespace base {
+@@ -12,7 +12,7 @@ namespace tracing {
  namespace tracing {
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \

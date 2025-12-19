@@ -1,6 +1,6 @@
---- src/plugins/tls/openssl/qx509_openssl.cpp.orig	2024-03-19 15:46:43 UTC
+--- src/plugins/tls/openssl/qx509_openssl.cpp.orig	2025-05-14 09:43:58 UTC
 +++ src/plugins/tls/openssl/qx509_openssl.cpp
-@@ -190,7 +190,11 @@ QVariant x509UnknownExtensionToValue(X509_EXTENSION *e
+@@ -191,7 +191,11 @@ QVariant x509UnknownExtensionToValue(X509_EXTENSION *e
          QVariantList list;
          bool isMap = false;
  
@@ -12,7 +12,7 @@
              CONF_VALUE *nval = q_SKM_sk_value(CONF_VALUE, val, j);
              if (nval->name && nval->value) {
                  isMap = true;
-@@ -286,7 +290,11 @@ QVariant x509ExtensionToValue(X509_EXTENSION *ext)
+@@ -287,7 +291,11 @@ QVariant x509ExtensionToValue(X509_EXTENSION *ext)
              if (!info)
                  return {};
              QVariantMap result;

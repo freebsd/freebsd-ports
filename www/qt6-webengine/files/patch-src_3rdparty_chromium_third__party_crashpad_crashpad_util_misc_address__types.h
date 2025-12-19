@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/address_types.h.orig	2022-02-28 16:54:41 UTC
+--- src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/address_types.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/util/misc/address_types.h
 @@ -25,7 +25,7 @@
  #include <mach/mach_types.h>
@@ -9,7 +9,7 @@
  #include "util/linux/address_types.h"
  #elif BUILDFLAG(IS_FUCHSIA)
  #include <zircon/types.h>
-@@ -55,7 +55,7 @@ using VMSize = mach_vm_size_t;
+@@ -55,7 +55,7 @@ using VMSize = WinVMSize;
  using VMAddress = WinVMAddress;
  using VMSize = WinVMSize;
  

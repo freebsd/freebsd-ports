@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/visited_url_ranking/public/url_visit_util.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/visited_url_ranking/public/url_visit_util.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/visited_url_ranking/public/url_visit_util.cc
 @@ -66,7 +66,7 @@ PlatformType GetPlatformInput() {
    return PlatformType::kWindows;

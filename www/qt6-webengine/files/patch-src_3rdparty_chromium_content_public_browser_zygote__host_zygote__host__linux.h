@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/public/browser/zygote_host/zygote_host_linux.h.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/content/public/browser/zygote_host/zygote_host_linux.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/public/browser/zygote_host/zygote_host_linux.h
-@@ -35,11 +35,13 @@ class ZygoteHost {
+@@ -34,11 +34,13 @@ class ZygoteHost {
    // after the first render has been forked.
    virtual int GetRendererSandboxStatus() = 0;
  

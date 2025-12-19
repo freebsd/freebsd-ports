@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/network.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/network.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/network.cc
 @@ -290,7 +290,12 @@ AdapterType GetAdapterTypeFromName(absl::string_view n
    }

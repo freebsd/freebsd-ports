@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/mojo/core/embedder/features.h.orig	2023-04-28 17:01:32 UTC
+--- src/3rdparty/chromium/mojo/core/embedder/features.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/mojo/core/embedder/features.h
 @@ -16,7 +16,7 @@ namespace core {
  

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/gwp_asan/crash_handler/crash_analyzer.cc.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/components/gwp_asan/crash_handler/crash_analyzer.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/gwp_asan/crash_handler/crash_analyzer.cc
 @@ -35,7 +35,7 @@
  #include "third_party/crashpad/crashpad/snapshot/process_snapshot.h"
@@ -9,7 +9,7 @@
  #include <signal.h>
  #elif BUILDFLAG(IS_APPLE)
  #include <mach/exception_types.h>
-@@ -95,7 +95,7 @@ bool CrashAnalyzer::GetExceptionInfo(
+@@ -95,7 +95,7 @@ crashpad::VMAddress CrashAnalyzer::GetAccessAddress(
  
  crashpad::VMAddress CrashAnalyzer::GetAccessAddress(
      const crashpad::ExceptionSnapshot& exception) {

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/v8/src/flags/flags.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/v8/src/flags/flags.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/v8/src/flags/flags.cc
 @@ -16,6 +16,10 @@
  #include <set>
@@ -8,10 +8,10 @@
 +#include <sys/mman.h>
 +#endif
 +
- #include "src/base/functional.h"
+ #include "src/base/hashing.h"
  #include "src/base/lazy-instance.h"
  #include "src/base/platform/platform.h"
-@@ -807,6 +811,10 @@ void FlagList::FreezeFlags() {
+@@ -823,6 +827,10 @@ void FlagList::FreezeFlags() {
    // Note that for string flags we only protect the pointer itself, but not the
    // string storage. TODO(12887): Fix this.
    base::OS::SetDataReadOnly(&v8_flags, sizeof(v8_flags));

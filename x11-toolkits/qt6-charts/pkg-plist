@@ -334,8 +334,8 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Targets.cmake
 %%QT_LIBDIR%%/libQt6ChartsQml.so
 %%QT_LIBDIR%%/libQt6ChartsQml.so.6
 %%QT_LIBDIR%%/libQt6ChartsQml.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6charts_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6chartsqml_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6charts_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6chartsqml_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_charts.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_charts_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_chartsqml.pri

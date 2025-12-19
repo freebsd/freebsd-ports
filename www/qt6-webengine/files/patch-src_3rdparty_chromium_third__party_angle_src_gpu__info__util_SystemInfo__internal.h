@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_internal.h.orig	2023-05-31 08:12:17 UTC
+--- src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_internal.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/gpu_info_util/SystemInfo_internal.h
-@@ -15,6 +15,13 @@
+@@ -15,6 +15,13 @@ namespace angle
  namespace angle
  {
  

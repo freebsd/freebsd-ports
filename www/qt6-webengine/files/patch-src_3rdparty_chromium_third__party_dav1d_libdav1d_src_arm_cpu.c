@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/third_party/dav1d/libdav1d/src/arm/cpu.c.orig	2025-05-29 01:27:28 UTC
+--- src/3rdparty/chromium/third_party/dav1d/libdav1d/src/arm/cpu.c.orig	2025-10-02 00:36:39 UTC
 +++ src/3rdparty/chromium/third_party/dav1d/libdav1d/src/arm/cpu.c
 @@ -35,6 +35,20 @@
- #if defined(HAVE_GETAUXVAL) || defined(HAVE_ELF_AUX_INFO)
+ #if HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
  #include <sys/auxv.h>
  
 +#if defined(__FreeBSD__)

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/utility/speech/speech_recognition_sandbox_hook_linux.h.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/content/utility/speech/speech_recognition_sandbox_hook_linux.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/content/utility/speech/speech_recognition_sandbox_hook_linux.h
 @@ -5,7 +5,13 @@
  #ifndef CONTENT_UTILITY_SPEECH_SPEECH_RECOGNITION_SANDBOX_HOOK_LINUX_H_

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/x/xlib_support.cc.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/ui/gfx/x/xlib_support.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gfx/x/xlib_support.cc
 @@ -43,10 +43,18 @@ void InitXlib() {
      return;

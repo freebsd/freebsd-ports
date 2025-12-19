@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.cc.orig	2023-11-03 10:09:45 UTC
+--- src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.cc
 @@ -19,7 +19,7 @@
  #include "base/numerics/safe_conversions.h"

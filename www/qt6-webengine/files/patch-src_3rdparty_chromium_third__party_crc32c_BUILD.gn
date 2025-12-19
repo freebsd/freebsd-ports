@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/crc32c/BUILD.gn.orig	2023-04-28 17:01:32 UTC
+--- src/3rdparty/chromium/third_party/crc32c/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/crc32c/BUILD.gn
 @@ -46,7 +46,7 @@ config("crc32c_config") {
    }

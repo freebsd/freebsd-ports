@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/functional/unretained_traits.h.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/base/functional/unretained_traits.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/functional/unretained_traits.h
-@@ -93,7 +93,7 @@ struct SupportsUnretainedImpl {
+@@ -90,7 +90,7 @@ struct SupportsUnretainedImpl {
  // official builds, and then in non-test code as well.
  #if defined(FORCE_UNRETAINED_COMPLETENESS_CHECKS_FOR_TESTS) || \
      (!defined(UNIT_TEST) && !defined(OFFICIAL_BUILD) &&        \

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2024-09-30 07:45:04 UTC
+--- src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
-@@ -231,7 +231,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
+@@ -228,7 +228,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
    // See comments on `EvictionHandler`.
    EvictionHandler eviction_handler_;
  

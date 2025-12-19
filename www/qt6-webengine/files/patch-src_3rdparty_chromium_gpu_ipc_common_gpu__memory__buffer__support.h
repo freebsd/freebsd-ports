@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.h.orig	2023-08-17 07:33:31 UTC
+--- src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/gpu/ipc/common/gpu_memory_buffer_support.h
 @@ -21,7 +21,7 @@
  #include "ui/gfx/geometry/size.h"

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/platform_thread_types.cc.orig	2023-02-08 09:03:45 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/platform_thread_types.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/platform_thread_types.cc
 @@ -11,7 +11,9 @@
  #include "rtc_base/platform_thread_types.h"
@@ -19,7 +19,7 @@
  #elif defined(WEBRTC_LINUX)
    return syscall(__NR_gettid);
  #elif defined(__EMSCRIPTEN__)
-@@ -74,6 +78,7 @@ bool IsThreadRefEqual(const PlatformThreadRef& a, cons
+@@ -74,6 +78,7 @@ void SetCurrentThreadName(const char* name) {
  }
  
  void SetCurrentThreadName(const char* name) {

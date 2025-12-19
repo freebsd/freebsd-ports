@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/optimization_guide/core/optimization_guide_util.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/components/optimization_guide/core/optimization_guide_util.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/optimization_guide/core/optimization_guide_util.cc
-@@ -35,7 +35,7 @@ optimization_guide::proto::Platform GetPlatform() {
+@@ -37,7 +37,7 @@ optimization_guide::proto::Platform GetPlatform() {
    return optimization_guide::proto::PLATFORM_CHROMEOS;
  #elif BUILDFLAG(IS_ANDROID)
    return optimization_guide::proto::PLATFORM_ANDROID;

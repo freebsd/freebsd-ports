@@ -1,6 +1,6 @@
---- src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h.orig	2024-03-19 15:46:43 UTC
+--- src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h.orig	2025-05-14 09:43:58 UTC
 +++ src/plugins/tls/openssl/qsslsocket_openssl_symbols_p.h
-@@ -46,6 +46,13 @@ QT_BEGIN_NAMESPACE
+@@ -47,6 +47,13 @@ QT_BEGIN_NAMESPACE
  
  #define DUMMYARG
  
@@ -14,7 +14,7 @@
  #if !defined QT_LINKED_OPENSSL
  // **************** Shared declarations ******************
  // ret func(arg)
-@@ -203,15 +210,32 @@ int q_EVP_PKEY_up_ref(EVP_PKEY *a);
+@@ -204,15 +211,32 @@ int q_EVP_PKEY_up_ref(EVP_PKEY *a);
  void q_AUTHORITY_INFO_ACCESS_free(AUTHORITY_INFO_ACCESS *a);
  int q_EVP_CIPHER_CTX_reset(EVP_CIPHER_CTX *c);
  int q_EVP_PKEY_up_ref(EVP_PKEY *a);
@@ -47,7 +47,7 @@
  int q_SSL_session_reused(SSL *a);
  qssloptions q_SSL_CTX_set_options(SSL_CTX *ctx, qssloptions op);
  int q_OPENSSL_init_ssl(uint64_t opts, const OPENSSL_INIT_SETTINGS *settings);
-@@ -237,8 +261,13 @@ STACK_OF(X509) *q_X509_STORE_CTX_get0_chain(X509_STORE
+@@ -238,8 +262,13 @@ STACK_OF(X509) *q_X509_STORE_CTX_get0_chain(X509_STORE
  # define q_SSL_load_error_strings() q_OPENSSL_init_ssl(OPENSSL_INIT_LOAD_SSL_STRINGS \
                                                         | OPENSSL_INIT_LOAD_CRYPTO_STRINGS, NULL)
  
@@ -61,7 +61,7 @@
  
  #define q_OPENSSL_add_all_algorithms_conf()  q_OPENSSL_init_crypto(OPENSSL_INIT_ADD_ALL_CIPHERS \
                                                                     | OPENSSL_INIT_ADD_ALL_DIGESTS \
-@@ -423,12 +452,14 @@ X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a)
+@@ -424,12 +453,14 @@ X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a)
  int q_SSL_CTX_use_PrivateKey(SSL_CTX *a, EVP_PKEY *b);
  int q_SSL_CTX_use_PrivateKey_file(SSL_CTX *a, const char *b, int c);
  X509_STORE *q_SSL_CTX_get_cert_store(const SSL_CTX *a);
@@ -76,7 +76,7 @@
  void q_SSL_free(SSL *a);
  STACK_OF(SSL_CIPHER) *q_SSL_get_ciphers(const SSL *a);
  const SSL_CIPHER *q_SSL_get_current_cipher(SSL *a);
-@@ -537,14 +568,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
+@@ -538,14 +569,26 @@ void q_PKCS12_free(PKCS12 *pkcs12);
  #define q_BIO_get_mem_data(b, pp) (int)q_BIO_ctrl(b,BIO_CTRL_INFO,0,(char *)pp)
  #define q_BIO_pending(b) (int)q_BIO_ctrl(b,BIO_CTRL_PENDING,0,NULL)
  #define q_SSL_CTX_set_mode(ctx,op) q_SSL_CTX_ctrl((ctx),SSL_CTRL_MODE,(op),NULL)

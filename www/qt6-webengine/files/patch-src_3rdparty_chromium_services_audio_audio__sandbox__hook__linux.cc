@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc.orig	2024-06-17 12:56:06 UTC
+--- src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/audio/audio_sandbox_hook_linux.cc
 @@ -143,6 +143,7 @@ void AddPulseAudioFilePermissions(
  }

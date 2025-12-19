@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/device/gamepad/gamepad_provider.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/device/gamepad/gamepad_provider.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/device/gamepad/gamepad_provider.cc
-@@ -224,7 +224,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
+@@ -159,7 +159,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
  
    if (!polling_thread_)
      polling_thread_ = std::make_unique<base::Thread>("Gamepad polling thread");

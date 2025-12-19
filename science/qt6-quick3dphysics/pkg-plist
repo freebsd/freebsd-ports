@@ -107,8 +107,8 @@ lib/cmake/Qt6Quick3DPhysicsPrivate/Qt6Quick3DPhysicsPrivateVersionlessTargets.cm
 %%QT_LIBDIR%%/libQt6Quick3DPhysicsHelpers.so
 %%QT_LIBDIR%%/libQt6Quick3DPhysicsHelpers.so.6
 %%QT_LIBDIR%%/libQt6Quick3DPhysicsHelpers.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6quick3dphysics_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6quick3dphysicshelpers_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6quick3dphysics_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6quick3dphysicshelpers_metatypes.json
 %%QT_MKSPECDIR%%/modules/qt_lib_quick3dphysics.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_quick3dphysics_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_quick3dphysicshelpers.pri

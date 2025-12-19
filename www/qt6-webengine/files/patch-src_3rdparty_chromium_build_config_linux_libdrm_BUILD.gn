@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/build/config/linux/libdrm/BUILD.gn.orig	2025-08-15 18:30:00 UTC
++++ src/3rdparty/chromium/build/config/linux/libdrm/BUILD.gn
+@@ -15,7 +15,7 @@ if (use_system_libdrm) {
+ }
+ 
+ if (use_system_libdrm) {
+-  assert(!is_linux, "System libdrm is not supported in linux")
++#  assert(!is_linux, "System libdrm is not supported in linux")
+   pkg_config("libdrm_config") {
+     packages = [ "libdrm" ]
+   }

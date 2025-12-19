@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/sync_device_info/local_device_info_util_linux.cc.orig	2022-09-24 10:57:32 UTC
+--- src/3rdparty/chromium/components/sync_device_info/local_device_info_util_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/sync_device_info/local_device_info_util_linux.cc
 @@ -9,6 +9,11 @@
  

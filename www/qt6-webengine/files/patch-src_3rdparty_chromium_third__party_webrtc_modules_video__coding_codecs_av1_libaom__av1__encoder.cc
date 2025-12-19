@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/webrtc/modules/video_coding/codecs/av1/libaom_av1_encoder.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/third_party/webrtc/modules/video_coding/codecs/av1/libaom_av1_encoder.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/modules/video_coding/codecs/av1/libaom_av1_encoder.cc
 @@ -299,7 +299,9 @@ int LibaomAv1Encoder::InitEncode(const VideoCodec* cod
      SET_ENCODER_PARAM_OR_RETURN_ERROR(AV1E_SET_ENABLE_PALETTE, 0);

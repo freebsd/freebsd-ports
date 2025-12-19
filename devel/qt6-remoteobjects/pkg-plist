@@ -122,14 +122,6 @@ lib/cmake/Qt6RepParser/Qt6RepParserDependencies.cmake
 lib/cmake/Qt6RepParser/Qt6RepParserTargets.cmake
 lib/cmake/Qt6RepParser/Qt6RepParserVersionlessAliasTargets.cmake
 lib/cmake/Qt6RepParser/Qt6RepParserVersionlessTargets.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateAdditionalTargetInfo.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateConfig.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateConfigVersion.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateConfigVersionImpl.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateDependencies.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateTargets.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateVersionlessAliasTargets.cmake
-lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6RemoteObjects.prl
 %%QT_LIBDIR%%/libQt6RemoteObjects.so
 %%QT_LIBDIR%%/libQt6RemoteObjects.so.6
@@ -138,8 +130,8 @@ lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6RemoteObjectsQml.so
 %%QT_LIBDIR%%/libQt6RemoteObjectsQml.so.6
 %%QT_LIBDIR%%/libQt6RemoteObjectsQml.so.%%FULLVER%%
-%%QT_LIBDIR%%/metatypes/qt6remoteobjects_%%CMAKE_BUILD_TYPE%%_metatypes.json
-%%QT_LIBDIR%%/metatypes/qt6remoteobjectsqml_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6remoteobjects_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6remoteobjectsqml_metatypes.json
 %%QT_MKSPECDIR%%/features/remoteobjects_repc.prf
 %%QT_MKSPECDIR%%/features/repcclient.pri
 %%QT_MKSPECDIR%%/features/repccommon.pri
@@ -151,7 +143,6 @@ lib/cmake/Qt6RepParserPrivate/Qt6RepParserPrivateVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_remoteobjectsqml.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_remoteobjectsqml_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_repparser.pri
-%%QT_MKSPECDIR%%/modules/qt_lib_repparser_private.pri
 %%QT_QMLDIR%%/QtRemoteObjects/libdeclarative_remoteobjectsplugin.so
 %%QT_QMLDIR%%/QtRemoteObjects/plugins.qmltypes
 %%QT_QMLDIR%%/QtRemoteObjects/qmldir

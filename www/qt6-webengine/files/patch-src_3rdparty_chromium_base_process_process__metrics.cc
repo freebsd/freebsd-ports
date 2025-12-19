@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/process_metrics.cc.orig	2024-05-21 18:07:39 UTC
+--- src/3rdparty/chromium/base/process/process_metrics.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/base/process/process_metrics.cc
-@@ -17,7 +17,7 @@ namespace base {
+@@ -17,7 +17,7 @@ namespace {
  namespace {
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -35,7 +35,7 @@
  double ProcessMetrics::GetPlatformIndependentCPUUsage(
      TimeDelta cumulative_cpu) {
    TimeTicks time = TimeTicks::Now();
-@@ -129,10 +128,9 @@ ProcessMetrics::GetPlatformIndependentCPUUsage() {
+@@ -130,10 +129,9 @@ ProcessMetrics::GetPlatformIndependentCPUUsage() {
      return GetPlatformIndependentCPUUsage(cpu_usage);
    });
  }

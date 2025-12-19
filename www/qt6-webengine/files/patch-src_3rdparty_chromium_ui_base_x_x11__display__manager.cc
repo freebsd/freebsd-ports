@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/base/x/x11_display_manager.cc.orig	2024-03-22 08:19:40 UTC
+--- src/3rdparty/chromium/ui/base/x/x11_display_manager.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/base/x/x11_display_manager.cc
 @@ -16,7 +16,7 @@
  #include "ui/gfx/x/randr.h"

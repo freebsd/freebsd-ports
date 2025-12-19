@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/chrome/browser/accessibility/page_colors.cc.orig	2024-08-26 12:06:38 UTC
+--- src/3rdparty/chromium/chrome/browser/accessibility/page_colors.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/accessibility/page_colors.cc
 @@ -12,7 +12,7 @@
  #include "components/sync_preferences/pref_service_syncable.h"
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #include "ui/linux/linux_ui_factory.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -55,7 +55,7 @@ void PageColors::Init() {
+@@ -55,7 +55,7 @@ void PageColors::OnPageColorsChanged() {
  
  void PageColors::OnPageColorsChanged() {
    auto* native_theme = ui::NativeTheme::GetInstanceForNativeUi();

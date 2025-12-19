@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.cc
 @@ -16,7 +16,9 @@
  #include "media/gpu/vaapi/vaapi_wrapper.h"
@@ -10,7 +10,7 @@
  
  // TODO(b/195769334): the hardware video decoding sandbox is really only useful
  // when building with VA-API or V4L2 (otherwise, we're not really doing hardware
-@@ -32,6 +34,7 @@ using sandbox::syscall_broker::BrokerFilePermission;
+@@ -32,6 +34,7 @@ namespace {
  namespace media {
  namespace {
  
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -203,6 +207,7 @@ bool HardwareVideoDecodingPreSandboxHookForV4L2(
+@@ -203,6 +207,7 @@ bool HardwareVideoDecodingPreSandboxHook(
  //   (at least).
  bool HardwareVideoDecodingPreSandboxHook(
      sandbox::policy::SandboxLinux::Options options) {

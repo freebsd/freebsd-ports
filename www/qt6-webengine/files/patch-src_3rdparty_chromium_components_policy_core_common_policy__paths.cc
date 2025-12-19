@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/policy/core/common/policy_paths.cc.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/components/policy/core/common/policy_paths.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/policy/core/common/policy_paths.cc
-@@ -17,6 +17,8 @@ namespace policy {
+@@ -17,6 +17,8 @@ const char kPolicyPath[] = "/etc/opt/chrome_for_testin
  const char kPolicyPath[] = "/etc/opt/chrome/policies";
  #elif BUILDFLAG(GOOGLE_CHROME_FOR_TESTING_BRANDING)
  const char kPolicyPath[] = "/etc/opt/chrome_for_testing/policies";

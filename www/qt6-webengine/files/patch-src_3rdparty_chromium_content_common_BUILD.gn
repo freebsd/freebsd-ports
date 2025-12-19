@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/content/common/BUILD.gn.orig	2025-02-21 12:29:33 UTC
+--- src/3rdparty/chromium/content/common/BUILD.gn.orig	2025-10-02 00:36:39 UTC
 +++ src/3rdparty/chromium/content/common/BUILD.gn
-@@ -402,18 +402,27 @@ jumbo_source_set("common") {
+@@ -400,18 +400,27 @@ jumbo_source_set("common") {
    }
-   
+ 
    if (is_linux || is_chromeos) {
 -    sources += [
 -      "gpu_pre_sandbox_hook_linux.cc",

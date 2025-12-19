@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/safe_browsing/core/browser/realtime/url_lookup_service_base.cc.orig	2024-10-22 08:31:56 UTC
+--- src/3rdparty/chromium/components/safe_browsing/core/browser/realtime/url_lookup_service_base.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/safe_browsing/core/browser/realtime/url_lookup_service_base.cc
 @@ -110,7 +110,7 @@ RTLookupRequest::OSType GetRTLookupRequestOSType() {
    return RTLookupRequest::OS_TYPE_CHROME_OS;

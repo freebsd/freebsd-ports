@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/device_signals/core/browser/user_permission_service_impl.cc.orig	2024-07-30 11:12:21 UTC
+--- src/3rdparty/chromium/components/device_signals/core/browser/user_permission_service_impl.cc.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/components/device_signals/core/browser/user_permission_service_impl.cc
 @@ -87,7 +87,7 @@ bool UserPermissionServiceImpl::ShouldCollectConsent()
           consent_required_by_dependent_policy;

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gfx/switches.h.orig	2024-04-19 13:02:56 UTC
+--- src/3rdparty/chromium/ui/gfx/switches.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/ui/gfx/switches.h
-@@ -19,7 +19,7 @@ GFX_SWITCHES_EXPORT extern const char kForcePrefersRed
+@@ -18,7 +18,7 @@ GFX_SWITCHES_EXPORT extern const char kHeadless[];
  GFX_SWITCHES_EXPORT extern const char kForcePrefersNoReducedMotion[];
  GFX_SWITCHES_EXPORT extern const char kHeadless[];
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/device/hid/BUILD.gn.orig	2024-01-30 07:53:34 UTC
+--- src/3rdparty/chromium/services/device/hid/BUILD.gn.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/services/device/hid/BUILD.gn
-@@ -36,7 +36,26 @@ source_set("hid") {
+@@ -34,7 +34,26 @@ source_set("hid") {
      "//services/device/public/mojom",
    ]
  

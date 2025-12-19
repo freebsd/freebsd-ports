@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/chrome/browser/media/webrtc/chrome_screen_enumerator.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/browser/media/webrtc/chrome_screen_enumerator.h
-@@ -20,7 +20,7 @@ namespace aura {
+@@ -20,7 +20,7 @@ class Window;
  class Window;
  }
  

@@ -1,6 +1,6 @@
---- src/corelib/time/qtimezoneprivate_tz.cpp.orig	2025-03-11 12:45:59 UTC
+--- src/corelib/time/qtimezoneprivate_tz.cpp.orig	2025-05-14 09:43:58 UTC
 +++ src/corelib/time/qtimezoneprivate_tz.cpp
-@@ -1312,8 +1312,16 @@ class ZoneNameReader (public)
+@@ -1313,8 +1313,16 @@ class ZoneNameReader (public)
          const StatIdent local = identify("/etc/localtime");
          const StatIdent tz = identify("/etc/TZ");
          const StatIdent timezone = identify("/etc/timezone");

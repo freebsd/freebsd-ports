@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/src/base/atomicops.h.orig	2023-09-13 12:11:42 UTC
+--- src/3rdparty/chromium/v8/src/base/atomicops.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/v8/src/base/atomicops.h
-@@ -57,10 +57,10 @@ using Atomic64 = SbAtomic64;
+@@ -57,10 +57,10 @@ using Atomic32 = int32_t;
  using Atomic8 = char;
  using Atomic16 = int16_t;
  using Atomic32 = int32_t;

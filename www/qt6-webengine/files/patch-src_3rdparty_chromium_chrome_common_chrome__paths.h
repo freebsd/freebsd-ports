@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/chrome/common/chrome_paths.h.orig	2024-02-23 21:04:38 UTC
+--- src/3rdparty/chromium/chrome/common/chrome_paths.h.orig	2025-08-15 18:30:00 UTC
 +++ src/3rdparty/chromium/chrome/common/chrome_paths.h
-@@ -59,7 +59,7 @@ enum {
+@@ -62,7 +62,7 @@ enum {
  #if BUILDFLAG(IS_CHROMEOS_ASH) ||                              \
      ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) && \
       BUILDFLAG(CHROMIUM_BRANDING)) ||                          \
@@ -9,7 +9,7 @@
    DIR_USER_EXTERNAL_EXTENSIONS,  // Directory for per-user external extensions
                                   // on Chrome Mac and Chromium Linux.
                                   // On Chrome OS, this path is used for OEM
-@@ -67,7 +67,7 @@ enum {
+@@ -70,7 +70,7 @@ enum {
                                   // create it.
  #endif
  
@@ -18,7 +18,7 @@
    DIR_STANDALONE_EXTERNAL_EXTENSIONS,  // Directory for 'per-extension'
                                         // definition manifest files that
                                         // describe extensions which are to be
-@@ -126,7 +126,7 @@ enum {
+@@ -117,7 +117,7 @@ enum {
  
  #endif
  #if BUILDFLAG(ENABLE_EXTENSIONS) && \
