@@ -32,8 +32,15 @@ LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libogg.so:audio/libogg \
 		libdvdnav.so:multimedia/libdvdnav
 
-EXTRA_PATCHES=	${FILESDIR}/ffmpeg8-1.patch:-p1 \
-		${FILESDIR}/ffmpeg8-2.patch:-p1
+# patch obtain via hg export -r <rev>
+EXTRA_PATCHES=	\
+		${FILESDIR}/771f4ae27e582123ff3500444718fc8f96186d74.patch:-p1 \
+		${FILESDIR}/0a786d63bbdb2d780a9231f6772e84e743c72014.patch:-p1 \
+		${FILESDIR}/6f1000084f6084f49c95c202d12593e49916f58b.patch:-p1 \
+		${FILESDIR}/1e7b184008860c8be2289c3cefd9dee57f06193a.patch:-p1 \
+		${FILESDIR}/73b833e7fe356cd2d9490dda4ebc9bfe16fce958.patch:-p1 \
+		${FILESDIR}/9bb3977ea7e2b652742b3cdd200b0a4a72eb48bc.patch:-p1 \
+		${FILESDIR}/a8fffd1193b2247c7f732d4df83dcc03fce96dbe.patch:-p1
 
 USES=		compiler cpe gl gmake gnome iconv libtool:keepla jpeg \
 		localbase pathfix perl5 pkgconfig tar:xz xorg

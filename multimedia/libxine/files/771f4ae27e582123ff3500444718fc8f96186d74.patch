@@ -1,5 +1,50 @@
---- src/combined/ffmpeg/ff_audio_decoder.c.orig	2022-09-08 21:43:29 UTC
-+++ src/combined/ffmpeg/ff_audio_decoder.c
+# HG changeset patch
+# User Torsten Jager <t.jager@gmx.de>
+# Date 1674929040 -3600
+#      Sat Jan 28 19:04:00 2023 +0100
+# Node ID 771f4ae27e582123ff3500444718fc8f96186d74
+# Parent  250f1c09f4244c3e7ca7d414410c57bd387792c3
+ffmpeg compatibility update.
+
+diff -r 250f1c09f424 -r 771f4ae27e58 src/combined/ffmpeg/demux_avformat.c
+--- a/src/combined/ffmpeg/demux_avformat.c	Wed Jan 25 17:03:55 2023 +0100
++++ b/src/combined/ffmpeg/demux_avformat.c	Sat Jan 28 19:04:00 2023 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (C) 2013-2022 the xine project
++ * Copyright (C) 2013-2023 the xine project
+  * Copyright (C) 2013-2020 Petri Hintukainen <phintuka@users.sourceforge.net>
+  *
+  * This file is part of xine, a free video player.
+@@ -423,8 +423,13 @@
+     }
+ 
+ #ifdef XFF_CODECPAR
++#  if XFF_AUDIO_CHANNEL_LAYOUT < 2
+     if (st->codecpar && st->codecpar->codec_type == AVMEDIA_TYPE_AUDIO &&
+         st->codecpar->sample_rate != 0 && st->codecpar->channels != 0)
++#  else
++    if (st->codecpar && st->codecpar->codec_type == AVMEDIA_TYPE_AUDIO &&
++        st->codecpar->sample_rate != 0 && st->codecpar->ch_layout.nb_channels != 0)
++#  endif
+ #else
+     if (st->codec && st->codec->codec_type == AVMEDIA_TYPE_AUDIO &&
+         st->codec->sample_rate != 0 && st->codec->channels != 0)
+@@ -501,7 +506,11 @@
+   buf->size = extradata_size + sizeof(xine_waveformatex);
+   buf->decoder_info[1] = ctx->sample_rate;
+   buf->decoder_info[2] = ctx->bits_per_coded_sample;
++#if XFF_AUDIO_CHANNEL_LAYOUT < 2
+   buf->decoder_info[3] = ctx->channels;
++#else
++  buf->decoder_info[3] = ctx->ch_layout.nb_channels;
++#endif
+   buf->decoder_flags = BUF_FLAG_HEADER | BUF_FLAG_STDHEADER | BUF_FLAG_FRAME_END;
+ 
+   this->stream->audio_fifo->put (this->stream->audio_fifo, buf);
+diff -r 250f1c09f424 -r 771f4ae27e58 src/combined/ffmpeg/ff_audio_decoder.c
+--- a/src/combined/ffmpeg/ff_audio_decoder.c	Wed Jan 25 17:03:55 2023 +0100
++++ b/src/combined/ffmpeg/ff_audio_decoder.c	Sat Jan 28 19:04:00 2023 +0100
 @@ -1,5 +1,5 @@
  /*
 - * Copyright (C) 2001-2022 the xine project
@@ -7,7 +52,7 @@
   *
   * This file is part of xine, a free video player.
   *
-@@ -303,7 +303,11 @@ static void ff_audio_init_codec(ff_audio_decoder_t *th
+@@ -303,7 +303,11 @@
  
    this->context->bits_per_sample = this->ff_bits;
    this->context->sample_rate = this->ff_sample_rate;
@@ -19,7 +64,7 @@
    this->context->codec_id    = this->codec->id;
    this->context->codec_type  = this->codec->type;
    this->context->codec_tag   = _x_stream_info_get(this->stream, XINE_STREAM_INFO_AUDIO_FOURCC);
-@@ -527,17 +531,76 @@ static void ff_audio_output_close(ff_audio_decoder_t *
+@@ -527,16 +531,75 @@
    this->ao_mode = 0;
  }
  
@@ -49,11 +94,10 @@
 +#  ifdef AV_CH_FRONT_LEFT
    ff_map = this->context->channel_layout;
    if (!ff_map) /* wma2 bug */
--#endif
 +#  endif
-     ff_map = ((uint64_t)1 << this->context->channels) - 1;
++    ff_map = ((uint64_t)1 << this->context->channels) - 1;
 +  ff_num = ff_list_channels (ff_list, ff_map);
- 
++
 +#else /* XFF_AUDIO_CHANNEL_LAYOUT == 2 */
 +
 +  ff_num = this->context->ch_layout.nb_channels;
@@ -93,12 +137,12 @@
 +      ff_num = ff_list_channels (ff_list, ff_map);
 +  }
 +
-+#endif
-+
+ #endif
+-    ff_map = ((uint64_t)1 << this->context->channels) - 1;
+ 
    if ((caps != this->ao_caps) || (ff_map != this->ff_map)) {
      unsigned int i, j;
-     /* ff: see names[] below; xine: L R RL RR C LFE */
-@@ -562,7 +625,7 @@ static void ff_map_channels (ff_audio_decoder_t *this)
+@@ -562,7 +625,7 @@
  
      this->ao_caps     = caps;
      this->ff_map      = ff_map;
@@ -107,7 +151,7 @@
  
      /* silence out */
      for (i = 0; i < MAX_CHANNELS; i++)
-@@ -576,20 +639,23 @@ static void ff_map_channels (ff_audio_decoder_t *this)
+@@ -576,20 +639,23 @@
        this->left[0] = this->right[0] = 0;
        tries = wishlist + 0 * num_modes;
      } else if (this->ff_channels == 2) { /* stereo */
@@ -139,7 +183,7 @@
        }
        this->left[0]  = this->map[0] < 0 ? 0 : this->map[0];
        this->map[0]   = -1;
-@@ -641,8 +707,8 @@ static void ff_map_channels (ff_audio_decoder_t *this)
+@@ -641,8 +707,8 @@
          "rear center",
          "side left", "side right"
        };
