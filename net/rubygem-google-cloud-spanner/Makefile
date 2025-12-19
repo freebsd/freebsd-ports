@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-spanner
-PORTVERSION=	2.32.0
+PORTVERSION=	2.33.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
