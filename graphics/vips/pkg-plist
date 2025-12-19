@@ -60,11 +60,11 @@ include/vips/vips8
 lib/libvips-cpp.a
 lib/libvips-cpp.so
 lib/libvips-cpp.so.42
-lib/libvips-cpp.so.42.19.3
+lib/libvips-cpp.so.42.20.0
 lib/libvips.a
 lib/libvips.so
 lib/libvips.so.42
-lib/libvips.so.42.19.3
+lib/libvips.so.42.20.0
 libdata/pkgconfig/vips-cpp.pc
 libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/Combine.png
@@ -209,6 +209,8 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/const.META_PHOTOSHOP_NAME.html
 %%PORTDOCS%%%%DOCSDIR%%/const.META_RESOLUTION_UNIT.html
 %%PORTDOCS%%%%DOCSDIR%%/const.META_SEQUENTIAL.html
+%%PORTDOCS%%%%DOCSDIR%%/const.META_TILE_HEIGHT.html
+%%PORTDOCS%%%%DOCSDIR%%/const.META_TILE_WIDTH.html
 %%PORTDOCS%%%%DOCSDIR%%/const.META_XMP_NAME.html
 %%PORTDOCS%%%%DOCSDIR%%/const.MICRO_VERSION.html
 %%PORTDOCS%%%%DOCSDIR%%/const.MINOR_VERSION.html
@@ -239,6 +241,9 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.black.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.csvload.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.csvload_source.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.Image.dcrawload.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.Image.dcrawload_buffer.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.Image.dcrawload_source.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.eye.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.fitsload.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.fitsload_source.html
@@ -265,6 +270,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.logmat.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.magickload.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.magickload_buffer.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.Image.magickload_source.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.mask_butterworth.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.mask_butterworth_band.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.mask_butterworth_ring.html
@@ -328,6 +334,9 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.tiffload_buffer.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.tiffload_source.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.tonelut.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.Image.uhdrload.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.Image.uhdrload_buffer.html
+%%PORTDOCS%%%%DOCSDIR%%/ctor.Image.uhdrload_source.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.vipsload.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.vipsload_source.html
 %%PORTDOCS%%%%DOCSDIR%%/ctor.Image.webpload.html
@@ -378,6 +387,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/enum.ForeignHeifCompression.html
 %%PORTDOCS%%%%DOCSDIR%%/enum.ForeignHeifEncoder.html
 %%PORTDOCS%%%%DOCSDIR%%/enum.ForeignJpegSubsample.html
+%%PORTDOCS%%%%DOCSDIR%%/enum.ForeignPdfPageBox.html
 %%PORTDOCS%%%%DOCSDIR%%/enum.ForeignPpmFormat.html
 %%PORTDOCS%%%%DOCSDIR%%/enum.ForeignSubsample.html
 %%PORTDOCS%%%%DOCSDIR%%/enum.ForeignTiffCompression.html
@@ -444,6 +454,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/func.CLIP_USHORT.html
 %%PORTDOCS%%%%DOCSDIR%%/func.COUNT_PIXELS.html
 %%PORTDOCS%%%%DOCSDIR%%/func.DEG.html
+%%PORTDOCS%%%%DOCSDIR%%/func.DEPRECATED_ENUMERATOR_FOR.html
 %%PORTDOCS%%%%DOCSDIR%%/func.DEPRECATED_FOR.html
 %%PORTDOCS%%%%DOCSDIR%%/func.DEPRECATED_MACRO_FOR.html
 %%PORTDOCS%%%%DOCSDIR%%/func.FABS.html
@@ -790,8 +801,12 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.LabQ2sRGB.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.LabS2Lab.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.LabS2LabQ.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.Oklab2Oklch.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.Oklab2XYZ.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.Oklch2Oklab.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.XYZ2CMYK.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.XYZ2Lab.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.XYZ2Oklab.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.XYZ2Yxy.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.XYZ2scRGB.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.Yxy2XYZ.html
@@ -936,6 +951,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_fields.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_filename.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_format.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.get_gainmap.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_height.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_history.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_image.html
@@ -950,7 +966,9 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_page_height.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_scale.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_string.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.get_tile_height.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_tile_size.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.get_tile_width.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_typeof.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_width.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.get_xoffset.html
@@ -1178,6 +1196,10 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.tiffsave_target.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.tilecache.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.transpose3d.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.uhdr2scRGB.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.uhdrsave.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.uhdrsave_buffer.html
+%%PORTDOCS%%%%DOCSDIR%%/method.Image.uhdrsave_target.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.unpremultiply.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.vipssave.html
 %%PORTDOCS%%%%DOCSDIR%%/method.Image.vipssave_target.html
@@ -1412,6 +1434,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Image.switch.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Interpolate.bilinear_static.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Interpolate.nearest_static.html
+%%PORTDOCS%%%%DOCSDIR%%/type_func.Interpretation.bands.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Interpretation.max_alpha.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Object.get_property.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Object.map.html
@@ -1423,6 +1446,7 @@ libdata/pkgconfig/vips.pc
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Operation.block_set.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.Progress.set.html
 %%PORTDOCS%%%%DOCSDIR%%/type_func.ThreadState.set.html
+%%PORTDOCS%%%%DOCSDIR%%/uhdr.html
 %%PORTDOCS%%%%DOCSDIR%%/urlmap.js
 %%PORTDOCS%%%%DOCSDIR%%/using-from-c.html
 %%PORTDOCS%%%%DOCSDIR%%/using-from-cplusplus.html
