@@ -3,7 +3,7 @@ DISTVERSION=	20240126
 CATEGORIES=	www
 MASTER_SITES=	http://eterna23.net/bozohttpd/
 
-MAINTAINER=	cpetrik@proton.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bozotic HTTP server from NetBSD
 WWW=		http://eterna23.net/bozohttpd/
 
