@@ -1,3 +1,38 @@
+  <vuln vid="f99e70c2-dcb8-11f0-a15a-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>143.0.7499.146</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>143.0.7499.146</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop_16.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	    <li>[448294721] High CVE-2025-14765: Use after free in WebGPU. Reported by Anonymous on 2025-09-30</li>
+	    <li>[466786677] High CVE-2025-14766: Out of bounds read and write in V8. Reported by Shaheen Fazim on 2025-12-08</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14765</cvename>
+      <cvename>CVE-2025-14766</cvename>
+      <url>https://chromereleases.googleblog.com/2025/12/stable-channel-update-for-desktop_16.html</url>
+    </references>
+    <dates>
+      <discovery>2025-12-16</discovery>
+      <entry>2025-12-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eca46635-db51-11f0-9b8d-40a6b7c3b3b8">
     <topic>step-certificates -- Authorization Bypass in ACME and SCEP Provisioners</topic>
     <affects>
