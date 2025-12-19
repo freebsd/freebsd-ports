@@ -47,7 +47,6 @@ CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"	\
 CPPFLAGS+=	${CFLAGS} -fno-inline -DNPY_NO_DEPRECATED_API -DNPY_1_7_API_VERSION
 CXXFLAGS+=	-std=gnu++11
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-# Two tests fail - https://github.com/gnudatalanguage/gdl/issues/2158
 TEST_TARGET=	test
 
 SLAVEDIRS=	science/py-gnudatalanguage
