@@ -4,7 +4,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 
-MAINTAINER=	franco@opnsense.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multicast forwarding IGMP proxy
 WWW=		https://github.com/pali/igmpproxy
 
