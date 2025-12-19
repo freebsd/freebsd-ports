@@ -12,6 +12,7 @@ LICENSE=	GPLv2 EUPL11
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/usr/share/common-licenses/eupl-1.1.txt
 
+EXTRACT_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libnss3.so:security/nss
 
 USES=		desktop-file-utils java zip
@@ -34,7 +35,7 @@ WRKSRC=${WRKDIR}
 post-extract:
 	${TAR} -C ${WRKDIR} -xvzf ${WRKDIR}/autofirma_1_9.deb
 	${TAR} -C ${WRKDIR} -xvzf ${WRKDIR}/data.tar.gz
-	${ZIP_CMD} -d ${PORTNAME}.jar "nss/WINDOWS/*" "windows/*" "osx/*" "linux/*"
+	zip -d ${WRKDIR}/usr/lib/Autofirma/${PORTNAME}.jar "nss/WINDOWS/*" "windows/*" "osx/*" "linux/*"
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
