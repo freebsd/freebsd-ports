@@ -1,6 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20240301
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb

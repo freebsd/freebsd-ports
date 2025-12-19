@@ -1,5 +1,6 @@
 PORTNAME=	qt6ct
 DISTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://www.opencode.net/api/v4/projects/5459/packages/generic/${PORTNAME}/${DISTVERSION}/
 

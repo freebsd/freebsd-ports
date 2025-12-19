@@ -1,7 +1,7 @@
 PORTNAME=	hyprqt6engine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 
 PATCH_SITES=	https://github.com/hyprwm/hyprqt6engine/commit/
