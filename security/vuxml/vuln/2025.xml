@@ -1,3 +1,42 @@
+  <vuln vid="c32cb4b7-ddcb-11f0-902c-b42e991fc52e">
+    <topic>smb4k -- Critical vulnerabilities in Mount Helper</topic>
+    <affects>
+<package>
+<name>smb4k</name>
+<range><lt>4.0.4</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>vulndb reports:</p>
+	<blockquote cite="https://vuldb.com/?id.336198">
+	  <p>A vulnerability, which was classified as critical, was
+	  found in smb4k up to 4.0.4. Affected is some unknown
+	  functionality of the component Mount Helper. The
+	  manipulation with an unknown input leads to a access control
+	  vulnerability. CWE is classifying the issue as CWE-284. The
+	  product does not restrict or incorrectly restricts access to
+	  a resource from an unauthorized actor. This is going to have
+	  an impact on integrity, and availability.  The advisory is
+	  available at seclists.org. The exploitability is told to be
+	  easy. Local access is required to approach this attack. The
+	  technical details are unknown and an exploit is not
+	  available.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-66002</cvename>
+      <url>https://vuldb.com/?id.336198</url>
+      <cvename>CVE-2025-66003</cvename>
+      <url>https://vuldb.com/?id.336199</url>
+    </references>
+    <dates>
+      <discovery>2025-12-20</discovery>
+      <entry>2025-12-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2a33d28e-ddc0-11f0-902c-b42e991fc52e">
     <topic>Firefox -- Use-after-free</topic>
     <affects>
