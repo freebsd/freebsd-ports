@@ -1,3 +1,58 @@
+  <vuln vid="2a33d28e-ddc0-11f0-902c-b42e991fc52e">
+    <topic>Firefox -- Use-after-free</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.1,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2000597 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2000597">
+	  <p>Use-after-free in the Disability Access APIs component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14860</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14860</url>
+    </references>
+    <dates>
+      <discovery>2025-12-18</discovery>
+      <entry>2025-12-20</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="23437e07-ddc0-11f0-902c-b42e991fc52e">
+    <topic>Firefox -- Memory safety bugs</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>146.0.1,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/buglist.cgi?bug_id=1996570%2C1999700 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/buglist.cgi?bug_id=1996570%2C1999700">
+	  <p>Memory safety bugs present in Firefox 146.  Some of these
+	  bugs showed evidence of memory corruption and we presume
+	  that with enough effort some of these could have been
+	  exploited to run arbitrary code.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14861</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14861</url>
+    </references>
+    <dates>
+      <discovery>2025-12-18</discovery>
+      <entry>2025-12-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f99e70c2-dcb8-11f0-a15a-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
