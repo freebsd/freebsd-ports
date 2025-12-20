@@ -1,6 +1,6 @@
---- src/plugins/multimedia/ffmpeg/CMakeLists.txt.orig	2025-08-15 19:16:13 UTC
+--- src/plugins/multimedia/ffmpeg/CMakeLists.txt.orig	2025-11-13 22:23:51 UTC
 +++ src/plugins/multimedia/ffmpeg/CMakeLists.txt
-@@ -92,7 +92,7 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
+@@ -94,7 +94,7 @@ qt_internal_add_module(FFmpegMediaPluginImplPrivate
          ../../../3rdparty/signalsmith-stretch
  )
  
