@@ -3,9 +3,10 @@ include/nbdkit-common.h
 include/nbdkit-filter.h
 include/nbdkit-plugin.h
 include/nbdkit-version.h
+lib/nbdkit/filters/nbdkit-count-filter.so
+lib/nbdkit/filters/nbdkit-map-filter.so
 lib/nbdkit/filters/nbdkit-blocksize-filter.so
 lib/nbdkit/filters/nbdkit-cache-filter.so
-lib/nbdkit/filters/nbdkit-cacheextents-filter.so
 lib/nbdkit/filters/nbdkit-cow-filter.so
 lib/nbdkit/filters/nbdkit-delay-filter.so
 lib/nbdkit/filters/nbdkit-error-filter.so
@@ -38,7 +39,6 @@ lib/nbdkit/plugins/nbdkit-example3-plugin.so
 lib/nbdkit/plugins/nbdkit-file-plugin.so
 lib/nbdkit/plugins/nbdkit-floppy-plugin.so
 lib/nbdkit/plugins/nbdkit-full-plugin.so
-%%ZLIB%%lib/nbdkit/plugins/nbdkit-gzip-plugin.so
 lib/nbdkit/plugins/nbdkit-info-plugin.so
 %%LIBVIRT%%lib/nbdkit/plugins/nbdkit-libvirt-plugin.so
 lib/nbdkit/plugins/nbdkit-memory-plugin.so
@@ -80,12 +80,13 @@ lib/nbdkit/plugins/nbdkit-cdi-plugin.so
 lib/nbdkit/plugins/nbdkit-ondemand-plugin.so
 lib/nbdkit/plugins/nbdkit-ones-plugin.so
 lib/nbdkit/plugins/nbdkit-sparse-random-plugin.so
+%%ZLIB%%lib/nbdkit/filters/nbdkit-gzip-filter.so
+%%ZLIB%%lib/nbdkit/filters/nbdkit-indexed-gzip-filter.so
 libdata/pkgconfig/nbdkit.pc
 sbin/nbdkit
 share/bash-completion/completions/nbdkit
 %%MANPAGES%%share/man/man1/nbdkit-blocksize-filter.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-cache-filter.1.gz
-%%MANPAGES%%share/man/man1/nbdkit-cacheextents-filter.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-captive.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-cow-filter.1.gz
 %%MANPAGES%%%%CURL%%share/man/man1/nbdkit-curl-plugin.1.gz
@@ -103,7 +104,8 @@ share/bash-completion/completions/nbdkit
 %%MANPAGES%%share/man/man1/nbdkit-floppy-plugin.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-fua-filter.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-full-plugin.1.gz
-%%MANPAGES%%%%ZLIB%%share/man/man1/nbdkit-gzip-plugin.1.gz
+%%MANPAGES%%%%ZLIB%%share/man/man1/nbdkit-gzip-filter.1.gz
+%%MANPAGES%%%%ZLIB%%share/man/man1/nbdkit-indexed-gzip-filter.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-info-plugin.1.gz
 %%MANPAGES%%share/man/man1/nbdkit-ip-filter.1.gz
 %%MANPAGES%%%%LIBVIRT%%share/man/man1/nbdkit-libvirt-plugin.1.gz
@@ -232,3 +234,7 @@ share/bash-completion/completions/nbdkit
 %%MANPAGES%%share/man/man3/nbdkit_vdebug.3.gz
 %%MANPAGES%%share/man/man3/nbdkit_verror.3.gz
 %%MANPAGES%%share/man/man3/nbdkit_vprintf_intern.3.gz
+%%MANPAGES%%share/man/man1/nbdkit-count-filter.1.gz
+%%MANPAGES%%share/man/man1/nbdkit-map-filter.1.gz
+%%MANPAGES%%share/man/man1/nbdkit-release-notes-1.46.1.gz
+%%MANPAGES%%share/man/man3/nbdkit_debug_hexdump.3.gz
