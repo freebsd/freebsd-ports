@@ -12,8 +12,7 @@ See %%PREFIX%%/share/doc/easy-rsa/README.quickstart.md for further information.
 
 An on-line help is available, you can run:
 
-  easyrsa help          # for help on commands
-  easyrsa help options  # for help on options
+  easyrsa help          # for help on commands and options
 
 **** SECURITY WARNING FOR PAST security/easy-rsa versions ****
 **** easyrsa may have encrypted your CA private key with a weak cipher
