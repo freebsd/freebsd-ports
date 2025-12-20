@@ -3,7 +3,7 @@ DISTVERSION=	11.8
 CATEGORIES=	www
 MASTER_SITES=	https://hiawatha.leisink.net/files/
 
-MAINTAINER=	cpetrik@proton.me
+MAINTAINER=	pkaipila@gmail.com
 COMMENT=	Advanced and secure web server for Unix
 WWW=		https://hiawatha.leisink.net/
 
