@@ -2,5 +2,5 @@ include/mrss.h
 lib/libmrss.a
 lib/libmrss.so
 lib/libmrss.so.0
-lib/libmrss.so.0.19.2
+lib/libmrss.so.0.19.4
 libdata/pkgconfig/mrss.pc

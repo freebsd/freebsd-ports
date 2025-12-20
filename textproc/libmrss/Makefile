@@ -1,12 +1,10 @@
 PORTNAME=	libmrss
-PORTVERSION=	0.19.2
-PORTREVISION=	8
+DISTVERSION=	0.19.4
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	juw@posteo.de
 COMMENT=	C library for parsing, writing, and creating RSS
-WWW=		http://www2.autistici.org/bakunin/libmrss/doc/
+WWW=		https://github.com/bakulf/libmrss/
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -14,12 +12,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libnxml.so:textproc/libnxml
 
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-INSTALL_TARGET=	install-strip
-
-USES=		libtool pathfix pkgconfig
+USES=		autoreconf libtool localbase pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	bakulf
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
