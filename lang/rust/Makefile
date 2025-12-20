@@ -147,7 +147,7 @@ post-patch:
 
 post-patch-PORT_LLVM-on:
 # WASM target hardcodes bundled lld
-	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${_LLVM_VERSION}"|' \
+	@${REINPLACE_CMD} 's|"rust-lld"|"wasm-ld${LLVM_VERSION}"|' \
 		${WRKSRC}/compiler/rustc_target/src/spec/base/wasm.rs
 
 do-configure:
@@ -224,11 +224,17 @@ do-configure:
 	@${ECHO_CMD} 'cxx="${WRKDIR}/cxx-wrapper"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'linker="${CC}"' >> ${WRKSRC}/config.toml
 .else
-# use the builtin clang
+# use the builtin clang when not using PORT_LLVM
 .if ${_target} == "wasm32-unknown-unknown"
+.if ${PORT_OPTIONS:MPORT_LLVM}
+	@${ECHO_CMD} 'cc="${LOCALBASE}/bin/clang${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'cxx="${LOCALBASE}/bin/clang++${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
+	@${ECHO_CMD} 'linker="${LOCALBASE}/bin/clang${LLVM_VERSION}"' >> ${WRKSRC}/config.toml
+.else
 	@${ECHO_CMD} 'cc="${WRKDIR}/_build/${_RUST_TARGET}/llvm/bin/clang"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${WRKDIR}/_build/${_RUST_TARGET}/llvm/bin/clang++"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'linker="${WRKDIR}/_build/${_RUST_TARGET}/llvm/bin/clang"' >> ${WRKSRC}/config.toml
+.endif
 .else
 	@${ECHO_CMD} 'cc="${CC}"' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'cxx="${CXX}"' >> ${WRKSRC}/config.toml
