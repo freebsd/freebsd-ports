@@ -1,6 +1,6 @@
 PORTNAME=	easy-rsa
 DISTVERSION=	3.2.5
-PORTREVISION=	0  # leave in if 0 to avoid accidental PORTEPOCH bumps
+PORTREVISION=	1  # leave in if 0 to avoid accidental PORTEPOCH bumps
 PORTEPOCH=	1
 CATEGORIES=	security net-mgmt
 MASTER_SITES=	https://github.com/OpenVPN/easy-rsa/releases/download/v${DISTVERSION}/ \
