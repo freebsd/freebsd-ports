@@ -1,10 +1,9 @@
 PORTNAME=	ntl
-PORTVERSION=	11.5.1
-PORTREVISION=	1
+PORTVERSION=	11.6.0
 CATEGORIES=	math
 MASTER_SITES=	http://www.shoup.net/ntl/
 
-MAINTAINER=	ndowens04@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Victor Shoup's Number Theory Library
 WWW=		https://www.shoup.net/
 
@@ -25,9 +24,6 @@ WRKSRC_SUBDIR=	src
 MAKEFILE=	makefile
 TEST_TARGET=	check
 
-NTLDOCSDIR=	share/doc/NTL
-PLIST_SUB=	NTLDOCS=${NTLDOCSDIR}
-
 OPTIONS_DEFINE=		DOCS GF2X GMP NATIVE
 OPTIONS_DEFAULT=	GF2X GMP
 
@@ -43,6 +39,9 @@ GF2X_CONFIGURE_OFF=	NTL_GF2X_LIB=off
 NATIVE_DESC=		Build with native optimizations (-march=native)
 NATIVE_CONFIGURE_ON=	NATIVE=on
 NATIVE_CONFIGURE_OFF=	NATIVE=off
+
+post-configure:
+	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/makefile	# avoid install doc twice 
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
