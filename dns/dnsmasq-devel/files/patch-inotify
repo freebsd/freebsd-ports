@@ -1,0 +1,40 @@
+commit c1d456f4fbf1409b4aa61bbf4d358ddf616353e0
+Author: Matthias Andree <matthias.andree@gmx.de>
+Date:   Sat Dec 20 10:03:56 2025 +0100
+
+    Enable inotify support on FreeBSD 15.
+    
+    FreeBSD 15.0 has added Linux-compatible inotify support, so
+    enable it by looking if the version matches. Since FreeBSD inotify has
+    seen a few bug fixes in 2025H2, so only enable it if
+    __FreeBSD_version >= 1500068.  The latter can be checked through
+    osreldate.h or sys/param.h; the latter defines more macros that clash
+    with dnsmasq's, such as MIN and MAX, so use the former.
+
+diff --git a/src/config.h b/src/config.h
+index 0994f95..191c72e 100644
+--- a/src/config.h
++++ b/src/config.h
+@@ -142,7 +142,8 @@ HAVE_LOOP
+    include functionality to probe for and remove DNS forwarding loops.
+ 
+ HAVE_INOTIFY
+-   use the Linux inotify facility to efficiently re-read configuration files.
++   use the Linux and FreeBSD >= 15 inotify facility
++   to efficiently re-read configuration files.
+ 
+ NO_ID
+    Don't report *.bind CHAOS info to clients, forward such requests upstream instead.
+@@ -378,6 +379,12 @@ HAVE_SOCKADDR_SA_LEN
+ #if defined (HAVE_LINUX_NETWORK) && !defined(NO_INOTIFY)
+ #define HAVE_INOTIFY
+ #endif
++#if defined (__FreeBSD__) && __FreeBSD__ + 0 >= 15
++# include <osreldate.h>
++# if __FreeBSD_version >= 1500068 /* 15.0.0 */
++#  define HAVE_INOTIFY
++# endif
++#endif
+ 
+ /* This never compiles code, it's only used by the makefile to fingerprint builds. */
+ #ifdef DNSMASQ_COMPILE_FLAGS
