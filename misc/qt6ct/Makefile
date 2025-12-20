@@ -20,7 +20,7 @@ USE_QT=		base svg:run tools:build
 OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-	${INSTALL_DATA}	${WRKSRC}/README.md ${STAGEDIR}/${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA}	${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
