@@ -1,6 +1,6 @@
 bin/qt5ct
 lib/libqt5ct-common.so
-lib/libqt5ct-common.so.1.8
+lib/libqt5ct-common.so.1.9
 %%QT_PLUGINDIR%%/platformthemes/libqt5ct.so
 %%QT_PLUGINDIR%%/styles/libqt5ct-style.so
 share/applications/qt5ct.desktop
