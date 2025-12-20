@@ -1,0 +1,24 @@
+PORTNAME=	${GH_PROJECT:tl}
+PORTVERSION=	3.1.6
+DISTVERSIONPREFIX=	v
+CATEGORIES=	net
+
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	Open-source C++ library for RTP/SRTP media delivery
+WWW=		https://ultravideo.fi/uvgrtp.html
+
+LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		cmake compiler:c++17-lang pkgconfig
+CMAKE_ARGS=	-DPKG_CONFIG_PATH:STRING=libdata/pkgconfig
+CMAKE_ON=	UVGRTP_DISABLE_EXAMPLES UVGRTP_DISABLE_TESTS \
+		UVGRTP_RELEASE_COMMIT
+LDFLAGS_i386=	-Wl,-znotext
+USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	ultravideo
+GH_PROJECT=	uvgRTP
+
+.include <bsd.port.mk>

@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2025-03-20 09:59:25 UTC
++++ CMakeLists.txt
+@@ -49,7 +49,7 @@ include(cmake/FindDependencies.cmake)
+ include(cmake/Versioning.cmake)
+ 
+ 
+-add_library(${PROJECT_NAME})
++add_library(${PROJECT_NAME} SHARED)
+ set_target_properties(${PROJECT_NAME} PROPERTIES
+         SOVERSION "${PROJECT_VERSION_MAJOR}"
+         VERSION "${LIBRARY_VERSION}"
+@@ -239,7 +239,7 @@ if (UNIX)
+             list(APPEND UVGRTP_LINKER_FLAGS "-lpthread")
+         endif()
+         # Check PKG_CONFIG_PATH, if not defined, use lib/pkgconfig
+-        if(NOT DEFINED ENV{PKG_CONFIG_PATH})
++        if(NOT DEFINED PKG_CONFIG_PATH)
+             set(PKG_CONFIG_PATH "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+             message("PKG_CONFIG_PATH is not set. Setting it to ${PKG_CONFIG_PATH}")
+         endif(NOT DEFINED ENV{PKG_CONFIG_PATH})
