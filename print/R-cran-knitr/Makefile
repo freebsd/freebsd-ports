@@ -1,5 +1,5 @@
 PORTNAME=	knitr
-DISTVERSION=	1.50
+DISTVERSION=	1.51
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,12 +9,10 @@ WWW=		https://cran.r-project.org/package=knitr
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-evaluate>=0.15:devel/R-cran-evaluate \
+RUN_DEPENDS=	R-cran-evaluate>=0.15:devel/R-cran-evaluate \
 		R-cran-highr>=0.11:textproc/R-cran-highr \
-		R-cran-xfun>=0.51:misc/R-cran-xfun \
+		R-cran-xfun>=0.52:misc/R-cran-xfun \
 		R-cran-yaml>=2.1.19:textproc/R-cran-yaml
-BUILD_DEPENDS=	${CRAN_DEPENDS}
-RUN_DEPENDS=	${CRAN_DEPENDS}
 TEST_DEPENDS=	R-cran-bslib>0:www/R-cran-bslib \
 		R-cran-DBI>=0.4.1:databases/R-cran-DBI \
 		R-cran-digest>0:security/R-cran-digest \
@@ -26,6 +24,7 @@ TEST_DEPENDS=	R-cran-bslib>0:www/R-cran-bslib \
 		R-cran-markdown>=1.3:textproc/R-cran-markdown \
 		R-cran-png>0:graphics/R-cran-png \
 		R-cran-ragg>0:graphics/R-cran-ragg \
+		R-cran-rgl>=0.95.1201:graphics/R-cran-rgl \
 		R-cran-rlang>0:devel/R-cran-rlang \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \
