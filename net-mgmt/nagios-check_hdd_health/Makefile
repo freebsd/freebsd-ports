@@ -4,7 +4,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	portsFreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plug-in to check HDD health from S.M.A.R.T
 
 RUN_DEPENDS=	smartmontools>=0:sysutils/smartmontools
