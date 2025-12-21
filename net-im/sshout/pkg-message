@@ -1,3 +1,6 @@
+[
+{ type: install
+  message: <<EOM
 #### NOTES OF SSHOUT
 In order to start sshout service you need some more configuration:
 
@@ -10,3 +13,6 @@ Suggested ports:
 x11/xclip	For '/pasteimage' command to work in CLI frontend
 www/elinks	For HTML messages be properly displayed in CLI frontend
 #### END
+EOM
+}
+]
