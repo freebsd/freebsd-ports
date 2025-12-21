@@ -1,3 +1,37 @@
+  <vuln vid="91b9790e-de65-11f0-b893-5404a68ad561">
+    <topic>traefik -- Bypassing security controls via special characters</topic>
+    <affects>
+<package>
+<name>traefik</name>
+<range><lt>3.6.3</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The traefik project reports:</p>
+	<blockquote cite="https://github.com/traefik/traefik/security/advisories/GHSA-gm3x-23wp-hc2c">
+	  <p>There is a potential vulnerability in Traefik managing
+	  the requests using a PathPrefix, Path or PathRegex
+	  matcher.
+	  When Traefik is configured to route the requests to a
+	  backend using a matcher based on the path; if the
+	  request path contains an encoded restricted character
+	  from the following set ('/', '', 'Null', ';', '?', '#'),
+	  it is possible to target a backend, exposed using
+	  another router, by-passing the middlewares chain.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-66490</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-66490</url>
+    </references>
+    <dates>
+      <discovery>2025-12-08</discovery>
+      <entry>2025-12-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c32cb4b7-ddcb-11f0-902c-b42e991fc52e">
     <topic>smb4k -- Critical vulnerabilities in Mount Helper</topic>
     <affects>
