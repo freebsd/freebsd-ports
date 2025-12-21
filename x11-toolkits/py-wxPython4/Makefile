@@ -1,6 +1,5 @@
 PORTNAME=	wxPython
-PORTVERSION=	4.2.2
-PORTREVISION=	2
+PORTVERSION=	4.2.3
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,12 +16,16 @@ LICENSE_NAME_WXWINDOWS=	wxWindows Library Licence, Version 3.1
 LICENSE_FILE_WXWINDOWS=	${WRKSRC}/license/licence.txt
 LICENSE_PERMS_WXWINDOWS=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathlib2>0:devel/py-pathlib2@${PY_FLAVOR} \
+								${PKGNAMEPREFIX}requests>=2.28.1:www/py-requests@${PY_FLAVOR} \
+								${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+								${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=		${PKGNAMEPREFIX}requests>=2.28.1:www/py-requests@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib gl localbase pkgconfig python
 USE_GL=		glu
 USE_WX=		3.2
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=		NLS
 

@@ -1,6 +1,6 @@
 PORTNAME=	photofilmstrip
 DISTVERSION=	3.7.1
-PORTREVISION=	2
+PORTREVISION=	4
 CATEGORIES=	multimedia python
 MASTER_SITES=	https://github.com/PhotoFilmStrip/PFS/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
