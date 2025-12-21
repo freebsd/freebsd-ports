@@ -1,5 +1,6 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
@@ -70,7 +71,8 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_BOOL=	FEATURE_cups
 
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_CMAKE_BOOL=	FEATURE_wayland
+WAYLAND_CMAKE_BOOL=	FEATURE_qtwaylandscanner \
+			FEATURE_wayland
 
 X11_LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
 			libxcb-icccm.so:x11/xcb-util-wm \
