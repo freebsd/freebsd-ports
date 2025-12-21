@@ -467,7 +467,7 @@ bin/ldbsearch
 %%BUNDLED_TALLOC%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/talloc%%PYTHON_TAG%%.so
 %%BUNDLED_TALLOC%%%%PYTHON3%%%%SAMBA4_LIBDIR%%/private/libpytalloc-util%%PYTHON_TAG%%-private-samba.so
 %%BUNDLED_TALLOC%%%%SAMBA4_LIBDIR%%/private/libtalloc-private-samba.so
-%%BUNDLED_TALLOC%%share/man/man3/samba-talloc.3.gz
+%%MANPAGES%%%%BUNDLED_TALLOC%%share/man/man3/samba-talloc.3.gz
 %%BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/_tdb_text.py
 %%BUNDLED_TDB%%%%PYTHON3%%%%PYTHON_SITELIBDIR%%/tdb%%PYTHON_TAG%%.so
 %%BUNDLED_TDB%%bin/tdbbackup
