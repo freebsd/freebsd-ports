@@ -1,4 +1,6 @@
 %%WWWDIR%%/.htaccess
+%%WWWDIR%%/.perltidyrc
+%%WWWDIR%%/.readthedocs.yaml
 %%WWWDIR%%/Bugzilla.pm
 %%WWWDIR%%/Bugzilla/Attachment.pm
 %%WWWDIR%%/Bugzilla/Attachment/PatchReader.pm
@@ -56,10 +58,13 @@
 %%WWWDIR%%/Bugzilla/Config/UserMatch.pm
 %%WWWDIR%%/Bugzilla/Constants.pm
 %%WWWDIR%%/Bugzilla/DB.pm
+%%WWWDIR%%/Bugzilla/DB/MariaDB.pm
 %%WWWDIR%%/Bugzilla/DB/Mysql.pm
 %%WWWDIR%%/Bugzilla/DB/Oracle.pm
 %%WWWDIR%%/Bugzilla/DB/Pg.pm
+%%WWWDIR%%/Bugzilla/DB/QuoteIdentifier.pm
 %%WWWDIR%%/Bugzilla/DB/Schema.pm
+%%WWWDIR%%/Bugzilla/DB/Schema/MariaDB.pm
 %%WWWDIR%%/Bugzilla/DB/Schema/Mysql.pm
 %%WWWDIR%%/Bugzilla/DB/Schema/Oracle.pm
 %%WWWDIR%%/Bugzilla/DB/Schema/Pg.pm
@@ -150,8 +155,11 @@
 %%WWWDIR%%/Bugzilla/Whine.pm
 %%WWWDIR%%/Bugzilla/Whine/Query.pm
 %%WWWDIR%%/Bugzilla/Whine/Schedule.pm
+%%WWWDIR%%/Dockerfile
+%%WWWDIR%%/Dockerfile.mariadb
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README
+%%WWWDIR%%/SECURITY.md
 %%WWWDIR%%/admin.cgi
 %%WWWDIR%%/attachment.cgi
 %%WWWDIR%%/buglist.cgi
@@ -186,6 +194,7 @@
 %%CONTRIB%%%%WWWDIR%%/contrib/merge-users.pl
 %%CONTRIB%%%%WWWDIR%%/contrib/mysqld-watcher.pl
 %%CONTRIB%%%%WWWDIR%%/contrib/new-yui.sh
+%%CONTRIB%%%%WWWDIR%%/contrib/perl-fmt
 %%CONTRIB%%%%WWWDIR%%/contrib/recode.pl
 %%CONTRIB%%%%WWWDIR%%/contrib/sendbugmail.pl
 %%CONTRIB%%%%WWWDIR%%/contrib/sendunsentbugmail.pl
@@ -193,6 +202,7 @@
 %%WWWDIR%%/createaccount.cgi
 %%WWWDIR%%/describecomponents.cgi
 %%WWWDIR%%/describekeywords.cgi
+%%WWWDIR%%/docker-compose.yml
 %%WWWDIR%%/duplicates.cgi
 %%WWWDIR%%/editclassifications.cgi
 %%WWWDIR%%/editcomponents.cgi
@@ -425,6 +435,8 @@
 %%WWWDIR%%/showdependencygraph.cgi
 %%WWWDIR%%/showdependencytree.cgi
 %%WWWDIR%%/skins/README
+%%WWWDIR%%/skins/contrib/Dusk/admin.css
+%%WWWDIR%%/skins/contrib/Dusk/bug.css
 %%WWWDIR%%/skins/contrib/Dusk/buglist.css
 %%WWWDIR%%/skins/contrib/Dusk/global.css
 %%WWWDIR%%/skins/standard/admin.css

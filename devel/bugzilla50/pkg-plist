@@ -1,4 +1,5 @@
 %%WWWDIR%%/.htaccess
+%%WWWDIR%%/.readthedocs.yaml
 %%WWWDIR%%/Bugzilla.pm
 %%WWWDIR%%/Bugzilla/Attachment.pm
 %%WWWDIR%%/Bugzilla/Attachment/PatchReader.pm
