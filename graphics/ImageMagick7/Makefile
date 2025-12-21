@@ -1,6 +1,5 @@
 PORTNAME=	ImageMagick
-DISTVERSION=	7.1.1-45
-PORTREVISION=	5
+DISTVERSION=	7.1.2-11
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
 		https://mirror.dogado.de/imagemagick/releases/ \
@@ -37,7 +36,6 @@ CPE_PRODUCT=	imagemagick
 CPE_VENDOR=	imagemagick
 SHEBANG_FILES=	www/source/examples.pl
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ENV=	MAKE=${MAKE_CMD}
 CONFIGURE_ARGS=	--without-dps \
 		--with-zstd
