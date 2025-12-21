@@ -20,6 +20,8 @@
 name="xray"
 rcvar="xray_enable"
 
+load_rc_config "$name"
+
 : ${xray_enable="NO"}
 : ${xray_config="%%PREFIX%%/etc/${name}-core"}
 : ${xray_logdir="/var/log/${name}-core"}
@@ -43,5 +45,4 @@ xray_startprecmd() {
 	chown -R ${xray_user}:${xray_group} "${xray_logdir}"
 }
 
-load_rc_config "$name"
 run_rc_command "$1"
