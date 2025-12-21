@@ -1,11 +1,11 @@
 PORTNAME=	kvazaar
+PORTVERSION=	2.3.2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	H.265/HEVC encoder implemented in C
-WWW=		https://ultravideo.fi/#encoder_x
+WWW=		https://ultravideo.fi/kvazaar.html
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
