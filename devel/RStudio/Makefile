@@ -4,7 +4,7 @@
 PORTNAME=	RStudio
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2025.09.2+418
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel math java
 MASTER_SITES=	https://s3.amazonaws.com/rstudio-buildtools/dictionaries/:dictionaries \
 		https://rstudio-buildtools.s3.amazonaws.com/rstudio-buildtools/:gin \
@@ -115,7 +115,7 @@ NPM_TARBALL=	${PORTNAME}-desktop-node_modules-${DISTVERSION}${EXTRACT_SUFX}
 # quarto/panmirror dependencies (uses yarn workspaces)
 QUARTO_TARBALL=	${PORTNAME}-quarto-node_modules-${DISTVERSION}${EXTRACT_SUFX}
 # Add npm tarballs to DISTFILES for checksum verification
-DISTFILES+=	${PORTNAME}/${NPM_TARBALL}:prefetch \
+#DISTFILES+=	${PORTNAME}/${NPM_TARBALL}:prefetch \
 		${PORTNAME}/${QUARTO_TARBALL}:prefetch
 .endif
 

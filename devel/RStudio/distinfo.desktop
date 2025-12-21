@@ -1,4 +1,4 @@
-TIMESTAMP = 1764480214
+TIMESTAMP = 1766267269
 SHA256 (core-dictionaries.zip) = 4341a9630efb9dcf7f215c324136407f3b3d6003e1c96f2e5e1f9f14d5787494
 SIZE (core-dictionaries.zip) = 876339
 SHA256 (gin-2.1.2.zip) = b98e704164f54be596779696a3fcd11be5785c9907a99ec535ff6e9525ad5f9a
@@ -19,7 +19,3 @@ SHA256 (rstudio-rsconnect-03c379b_GH0.tar.gz) = d24b6ee49f32f650f6d10bbfc7b2f61a
 SIZE (rstudio-rsconnect-03c379b_GH0.tar.gz) = 220711
 SHA256 (trestletech-plumber-v0.4.6_GH0.tar.gz) = 7bcbfdf5a8a2e3a051d2c673ac5ac51a483ed888afe73116cba7741dbb5f63a6
 SIZE (trestletech-plumber-v0.4.6_GH0.tar.gz) = 83332
-SHA256 (RStudio/RStudio-desktop-node_modules-2025.09.2+418.tar.gz) = dd1f7f2577742977fbab47a34f0e0739b9242188f228bd40d7d46bedcde3869d
-SIZE (RStudio/RStudio-desktop-node_modules-2025.09.2+418.tar.gz) = 35017694
-SHA256 (RStudio/RStudio-quarto-node_modules-2025.09.2+418.tar.gz) = 83a3083b0144a0db3ba14d6283414d1e7c9243251b473535865b9010b3fe4ab0
-SIZE (RStudio/RStudio-quarto-node_modules-2025.09.2+418.tar.gz) = 229334450
