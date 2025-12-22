@@ -1,5 +1,5 @@
 PORTNAME=	evilwm
-DISTVERSION=	1.4.3
+DISTVERSION=	1.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
@@ -8,9 +8,9 @@ COMMENT=	Minimalist window manager based on 9wm
 WWW=		https://www.6809.org.uk/evilwm/
 
 LICENSE=	AEWM
+LICENSE_NAME=	AEWM License
 LICENSE_FILE=	${WRKSRC}/README
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
-LICENSE_NAME=	AEWM License
 
 USES=		gmake localbase:ldflags xorg
 USE_XORG=	x11 xpm xext xrandr xrender
