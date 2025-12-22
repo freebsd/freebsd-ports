@@ -1,7 +1,6 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER}
-PORTREVISION=	1
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	devel
@@ -11,8 +10,7 @@ PKGNAMESUFFIX=	${ELECTRON_VER_MAJOR}
 DISTFILES=	chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.0:chromium \
 		chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.1:chromium \
 		chromium-${CHROMIUM_VER}${EXTRACT_SUFX}.2:chromium \
-		pulseaudio-${PULSEV}.tar.gz:pulseaudio \
-		electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX}:prefetch
+		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:C/:[^:]+$//:C/chromium-${CHROMIUM_VER}${EXTRACT_SUFX}\.[0-9]//}
 
@@ -27,8 +25,6 @@ LICENSE_FILE=	${WRKSRC}/electron/LICENSE
 BROKEN_i386=	fetch fails: node process stalls during fetch phase and eats up all CPUs
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-FETCH_DEPENDS=	yarn${NODEJS_SUFFIX}>0:www/yarn${NODEJS_SUFFIX}
-EXTRACT_DEPENDS=yarn${NODEJS_SUFFIX}>0:www/yarn${NODEJS_SUFFIX}
 PATCH_DEPENDS=	git:devel/git \
 		jq:textproc/jq
 BUILD_DEPENDS=	gperf:devel/gperf \
@@ -69,12 +65,12 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils
 TEST_DEPENDS=	git:devel/git \
-		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
-		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
+		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR}
 
-USES=		bison compiler:c++17-lang cpe gettext-tools gl gmake gnome \
-		iconv:wchar_t jpeg localbase:ldflags ninja nodejs:22,build \
-		pkgconfig python:build,test qt:5 shebangfix tar:xz xorg
+USES=		bison compiler:c++17-lang cpe display:test electron:env \
+		gettext-tools gl gmake gnome iconv:wchar_t jpeg \
+		localbase:ldflags ninja nodejs:22,build pkgconfig \
+		python:build,test qt:5 shebangfix tar:xz xorg
 
 CPE_VENDOR=	electronjs
 USE_GITHUB=	yes
@@ -89,6 +85,8 @@ USE_GNOME=	atk cairo gdkpixbuf gtk30 libxml2 libxslt pango
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xrandr \
 		xrender xscrnsaver xtst
 USE_QT=		buildtools:build core:build widgets:build
+USE_ELECTRON=	npm:yarn4 prefetch extract
+NPM_EXTRACT_WRKSRC=	${WRKSRC:H}/${PORTNAME}-${ELECTRON_VER}
 
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper buildtools/linux64/clang-format
 
@@ -238,8 +236,6 @@ MANTLE_VER=			78d3966b3c331292ea29ec38661b25df0a245948
 # See ${WRKSRC}/electron/DEPS for ENGFLOW_RECLIENT_CONFIGS_VER
 ENGFLOW_RECLIENT_CONFIGS_VER=	955335c30a752e9ef7bff375baab5e0819b6c00d
 
-YARN_TIMESTAMP=	61171200
-
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
@@ -295,32 +291,16 @@ MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
 		rust_sysroot_absolute="${LOCALBASE}"
 
+TEST_ENV+=	${MAKE_ENV} \
+		ELECTRON_OUT_DIR=${BUILDTYPE} \
+		LOCAL_GIT_DIRECTORY=${LOCALBASE} \
+		DISABLE_CRASH_REPORTER_TESTS=1
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build electron, you should have around 2GB of memory"
 	@${ECHO_MSG} "and around ${WANTSPACE} of free disk space."
 	@${ECHO_MSG}
-
-pre-fetch:
-	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
-	if [ ! -f ${DISTDIR}/${DIST_SUBDIR}/electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX} ]; \
-		then ${MKDIR} ${WRKDIR}; \
-		${ECHO_CMD} 'yarn-offline-mirror "./yarn-offline-cache"' >> \
-			${WRKDIR}/.yarnrc; \
-		${CP} ${FILESDIR}/package.json ${FILESDIR}/yarn.lock ${WRKDIR}; \
-		cd ${WRKDIR} && ${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache \
-			yarn --frozen-lockfile --ignore-scripts; \
-		${MTREE_CMD} -cbnSp yarn-offline-cache | ${MTREE_CMD} -C | ${SED} \
-			-e 's:time=[0-9.]*:time=${YARN_TIMESTAMP}.000000000:' \
-			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
-			-e 's:mode=\([0-9]\)7[0-9][0-9]:mode=\1755:' \
-			-e 's:mode=\([0-9]\)6[0-9][0-9]:mode=\1644:' \
-			-e 's:flags=.*:flags=none:' \
-			-e 's:^\.:./yarn-offline-cache:' > yarn-offline-cache.mtree; \
-		${TAR} cJf ${DISTDIR}/${DIST_SUBDIR}/electron-yarn-cache-${ELECTRON_VER}${EXTRACT_SUFX} \
-			@yarn-offline-cache.mtree; \
-		${RM} -r ${WRKDIR}; \
-	fi
 
 pre-extract:
 # Chromium source tarball is splitted into multiple fragments. Concatenate them
@@ -347,13 +327,6 @@ post-extract:
 		${WRKSRC}/third_party/squirrel.mac/vendor/Mantle
 	${MV} ${WRKSRC:H}/${GH_PROJECT_reclient_configs}-${ENGFLOW_RECLIENT_CONFIGS_VER} \
 		${WRKSRC}/third_party/engflow-reclient-configs
-# Install node modules for electron
-	${MV} ${WRKSRC:H}/yarn-offline-cache ${WRKDIR}
-	${ECHO_CMD} 'yarn-offline-mirror "../../../yarn-offline-cache"' >> ${WRKSRC}/electron/.yarnrc
-	${MV} ${WRKSRC}/electron/package.json ${WRKSRC}/electron/package.json.bak
-	${CP} ${FILESDIR}/package.json ${WRKSRC}/electron
-	cd ${WRKSRC}/electron && \
-		${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache yarn --frozen-lockfile --offline
 
 pre-patch:
 	${SH} ${FILESDIR}/apply-electron-patches.sh ${WRKSRC}
@@ -454,10 +427,7 @@ post-install-DRIVER-on:
 		${STAGEDIR}${DATADIR}/chromedriver
 
 do-test:
-# Note 1: "npm install" will run before actual tests are executed
-# Note 2: Xvfb or something similar is necessary for headless testing
 	cd ${WRKSRC}/electron && \
-		${SETENV} ${TEST_ENV} ELECTRON_OUT_DIR=${BUILDTYPE} LOCAL_GIT_DIRECTORY=${LOCALBASE} \
-		npm run test -- --ci
+	${SETENV} ${TEST_ENV} npm run test -- --ci
 
 .include <bsd.port.post.mk>
