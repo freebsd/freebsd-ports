@@ -1,6 +1,6 @@
---- cmake/build_helpers.cmake.orig	2025-02-26 18:39:54 UTC
+--- cmake/build_helpers.cmake.orig	2025-12-06 21:24:07 UTC
 +++ cmake/build_helpers.cmake
-@@ -570,8 +570,12 @@ function(downloadImHexPatternsFiles dest)
+@@ -651,8 +651,12 @@ function(downloadImHexPatternsFiles dest)
  
          # Maybe patterns are cloned to a subdirectory
          if (NOT EXISTS ${imhex_patterns_SOURCE_DIR})
@@ -15,22 +15,22 @@
  
          # Or a sibling directory
          if (NOT EXISTS ${imhex_patterns_SOURCE_DIR})
-@@ -599,7 +603,11 @@ function(downloadImHexPatternsFiles dest)
-     else()
-         set(PATTERNS_FOLDERS_TO_INSTALL constants encodings includes patterns magic nodes)
-         foreach (FOLDER ${PATTERNS_FOLDERS_TO_INSTALL})
--            install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "${dest}" PATTERN "**/_schema.json" EXCLUDE)
-+            if (BSD AND BSD STREQUAL "FreeBSD")
-+                install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "share/imhex/" PATTERN "**/_schema.json" EXCLUDE)
-+            else()
-+                install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "${dest}" PATTERN "**/_schema.json" EXCLUDE)
-+            endif()
-         endforeach ()
+@@ -683,7 +687,11 @@ function(downloadImHexPatternsFiles dest)
+         if (NOT (imhex_patterns_SOURCE_DIR STREQUAL ""))
+             set(PATTERNS_FOLDERS_TO_INSTALL constants encodings includes patterns magic nodes)
+             foreach (FOLDER ${PATTERNS_FOLDERS_TO_INSTALL})
+-                install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "${dest}" PATTERN "**/_schema.json" EXCLUDE)
++                if (BSD AND BSD STREQUAL "FreeBSD")
++                    install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "share/imhex/" PATTERN "**/_schema.json" EXCLUDE)
++                else()
++                    install(DIRECTORY "${imhex_patterns_SOURCE_DIR}/${FOLDER}" DESTINATION "${dest}" PATTERN "**/_schema.json" EXCLUDE)
++                endif()
+             endforeach ()
+         endif()
      endif ()
- 
-@@ -928,13 +936,13 @@ function(generateSDKDirectory)
-     install(DIRECTORY ${CMAKE_SOURCE_DIR}/cmake/sdk/ DESTINATION "${SDK_PATH}")
+@@ -1006,13 +1014,13 @@ function(generateSDKDirectory)
      install(TARGETS libimhex ARCHIVE DESTINATION "${SDK_PATH}/lib")
+     install(TARGETS tracing ARCHIVE DESTINATION "${SDK_PATH}/lib")
  
 -    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/ui/include DESTINATION "${SDK_PATH}/lib/ui/include")
 +    install(DIRECTORY ${CMAKE_SOURCE_DIR}/plugins/ui/include DESTINATION "${SDK_PATH}/lib/ui/")

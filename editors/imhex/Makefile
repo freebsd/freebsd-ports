@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.37.4
+PORTVERSION=	1.38.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg \
@@ -42,7 +42,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		CLIUtils-CLI11-${GH_TAG_CLI11}_GH0${EXTRACT_SUFX} \
 		Martinsos-edlib-${GH_TAG_EDLIB}_GH0${EXTRACT_SUFX} \
 		fmtlib-fmt-${GH_TAG_FMT}_GH0${EXTRACT_SUFX} \
-		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
+		mity-md4c-${GH_TAG_MD4C}_GH0${EXTRACT_SUFX} \
 		rockdreamer-throwing_ptr-${GH_TAG_THROWING_PTR}_GH0${EXTRACT_SUFX} \
 		sammycage-plutovg-${GH_TAG_PLUTOVG}_GH0${EXTRACT_SUFX} \
 		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
@@ -63,7 +63,7 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 		CLIUtils:CLI11:${GH_TAG_CLI11}:cli11 \
 		Martinsos:edlib:${GH_TAG_EDLIB}:edlib \
 		fmtlib:fmt:${GH_TAG_FMT}:fmt \
-		josuttis:jthread:${GH_TAG_JTHREAD}:jthread \
+		mity:md4c:${GH_TAG_MD4C}:md4c \
 		rockdreamer:throwing_ptr:${GH_TAG_THROWING_PTR}:throwing_ptr \
 		sammycage:plutovg:${GH_TAG_PLUTOVG}:plutovg \
 		VirusTotal:yara:${GH_TAG_YARA}:yara \
@@ -75,33 +75,34 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 		WerWolv:libwolv:${GH_TAG_LIBWOLV}:libwolv \
 		WerWolv:lunasvg:${GH_TAG_LUNASVG}:lunasvg
 
-GH_TAG_CAPSTONE=	5cca005
-GH_TAG_CLI11=	6c7b07a
-GH_TAG_DISASSEMBLER=	a2217dd
-GH_TAG_EDLIB=	42aa8fa
-GH_TAG_FMT=	9cf9f38
+GH_TAG_CAPSTONE=	9a0a160
+GH_TAG_CLI11=	bfffd37
+GH_TAG_DISASSEMBLER=	7235352
+GH_TAG_EDLIB=	0ddc23e
+GH_TAG_FMT=	407c905
 GH_TAG_HASHLIBPLUS=	1823dd1
 GH_TAG_IMHEX_PATTERNS=	ImHex-v${PORTVERSION}
-GH_TAG_JTHREAD=	0fa8d39
-GH_TAG_LIBROMFS=	4f42f09
-GH_TAG_LIBWOLV=	0002167
-GH_TAG_LUNASVG=	5e968bd
+GH_TAG_LIBROMFS=	fa444f2
+GH_TAG_LIBWOLV=	b0c9416
+GH_TAG_LUNASVG=	83c58df
+GH_TAG_MD4C=	481fbfb
 GH_TAG_NATIVEFILEDIALOG=	86d5f20
 GH_TAG_PATTERN_LANGUAGE=	ImHex-v${PORTVERSION}
-GH_TAG_PLUTOVG=	9ef8e78
+GH_TAG_PLUTOVG=	57f82ac
 GH_TAG_THROWING_PTR=	cd28490
-GH_TAG_YARA=	688268d
+GH_TAG_YARA=	f44a895
 
 GL_TAG_IMHEX_BASTION_PATS=	e6deed4
 GL_TAG_IMHEX_FFX_PATS=	199879e
 
 CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include -fexperimental-library -D_LIBCPP_ENABLE_EXPERIMENTAL
 
 CMAKE_ARGS=	-DUSE_SYSTEM_NLOHMANN_JSON=OFF -DIMHEX_STRIP_RELEASE=OFF \
 		-DIMHEX_PLUGINS_IN_SHARE=ON -DIMHEX_OFFLINE_BUILD=ON \
 		-DIMHEX_USE_GTK_FILE_PICKER=ON -DIMHEX_IGNORE_BAD_CLONE=ON \
-		-DIMHEX_IGNORE_BAD_COMPILER=ON
+		-DIMHEX_IGNORE_BAD_COMPILER=ON -DIMHEX_BUNDLE_PLUGIN_SDK=OFF \
+		-DIMHEX_PLUGIN_LIBRARY_PLUGIN=OFF
 
 PORTDOCS=	README.md
 
@@ -109,16 +110,6 @@ OPTIONS_DEFINE=	DOCS NLS
 NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
-
-# Before LLVM 17 import into the base system
-.if (${OSREL:R} == 15 && ${OSVERSION} < 1500006)
-IGNORE=	requires libc++ of LLVM 17 on the base system
-.endif
-
-# After LLVM 18 import into the base system
-.if ${OSREL:R} == 16 || (${OSREL:R} == 15 && ${OSVERSION} >= 1500018) || ${OSREL:R} < 15
-CXXFLAGS+=	-fexperimental-library -D_LIBCPP_ENABLE_EXPERIMENTAL
-.endif
 
 post-extract:
 	${CP} -R ${WRKSRC_disassembler}/* ${WRKSRC}/lib/external/disassembler
@@ -135,16 +126,13 @@ post-extract:
 	${CP} -R ${WRKSRC_hashlibplus}/* ${WRKSRC}/lib/third_party/HashLibPlus
 	${CP} -R ${WRKSRC_lunasvg}/* ${WRKSRC}/lib/third_party/lunasvg
 	${CP} -R ${WRKSRC_plutovg}/* ${WRKSRC}/lib/third_party/lunasvg/plutovg
+	${CP} -R ${WRKSRC_md4c}/* ${WRKSRC}/lib/third_party/md4c
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/third_party/nativefiledialog
 	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/third_party/yara/yara
 	${MKDIR} ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKSRC_imhex_patterns}/* ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKDIR}/imhex-bastion-pats-${GL_TAG_IMHEX_BASTION_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/bastion
 	${CP} -R ${WRKDIR}/imhex-ffx-pats-${GL_TAG_IMHEX_FFX_PATS}/* ${WRKDIR}/.build/_deps/imhex_patterns_src/patterns/ffx
-# Before LLVM 18 import into the base system
-.if ${OSREL:R} == 15 && ${OSVERSION} < 1500018
-	${CP} -R ${WRKSRC_jthread}/* ${WRKSRC}/lib/third_party/jthread
-.endif
 
 post-patch:
 	${CP} -R ${WRKSRC}/lib/external/libwolv/* ${WRKSRC}/lib/external/pattern_language/external/libwolv
