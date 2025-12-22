@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-10-27 17:58:27 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2025-12-03 04:41:24 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -161,11 +161,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -41,7 +41,7 @@
    // Update font settings.
    static const gfx::FontRenderParams params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -2710,13 +2710,13 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -2713,13 +2713,13 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {
@@ -57,7 +57,7 @@
      CrashDumpHungChildProcess(rph->GetProcess().Handle());
  #endif
      rph->Shutdown(content::RESULT_CODE_HUNG);
-@@ -3400,7 +3400,7 @@ void WebContents::Focus() {
+@@ -3403,7 +3403,7 @@ void WebContents::Focus() {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -66,7 +66,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -4284,7 +4284,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -4294,7 +4294,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  

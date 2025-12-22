@@ -1,6 +1,6 @@
---- electron/spec/api-web-contents-spec.ts.orig	2025-11-13 22:50:46 UTC
+--- electron/spec/api-web-contents-spec.ts.orig	2025-12-03 04:41:24 UTC
 +++ electron/spec/api-web-contents-spec.ts
-@@ -2850,7 +2850,7 @@ describe('webContents module', () => {
+@@ -2888,7 +2888,7 @@ describe('webContents module', () => {
      });
  
      // TODO(codebytere): OOPIF printing is disabled on Linux at the moment due to crashes.
