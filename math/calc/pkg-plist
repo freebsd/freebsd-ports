@@ -64,12 +64,14 @@ lib/libcustcalc.so.%%VERSION%%
 %%HELP%%%%DATADIR%%/custhelp/argv
 %%HELP%%%%DATADIR%%/custhelp/devnull
 %%HELP%%%%DATADIR%%/custhelp/help
+%%HELP%%%%DATADIR%%/custhelp/pfe
 %%HELP%%%%DATADIR%%/custhelp/pmodm127
 %%HELP%%%%DATADIR%%/custhelp/pzasusb8
 %%HELP%%%%DATADIR%%/custhelp/register
 %%HELP%%%%DATADIR%%/custhelp/sysinfo
 %%FULL%%%%DATADIR%%/custom/argv.cal
 %%FULL%%%%DATADIR%%/custom/halflen.cal
+%%FULL%%%%DATADIR%%/custom/pfe.cal
 %%FULL%%%%DATADIR%%/custom/pmodm127.cal
 %%FULL%%%%DATADIR%%/custom/pzasusb8.cal
 %%FULL%%%%DATADIR%%/custom/register.cal

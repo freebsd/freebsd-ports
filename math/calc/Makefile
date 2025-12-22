@@ -1,5 +1,5 @@
 PORTNAME=	calc
-PORTVERSION=	2.16.0.0
+PORTVERSION=	2.16.0.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
@@ -10,17 +10,18 @@ WWW=		https://github.com/lcn2/calc
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING-LGPL
 
+FLAVORS=	default tiny
+
 USES=		gmake tar:bzip2 readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	lcn2
 
-CONFLICTS_INSTALL=	schilyutils # bin/calc
-
-MAKE_JOBS_UNSAFE=	yes
-PLIST_SUB+=	VERSION=${PORTVERSION} VERSION_R=${PORTVERSION:R}
-
 MAKE_ARGS=	DATADIR="${DATADIR}"
+MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	check
+
+CONFLICTS_INSTALL=	calc calc-tiny schilyutils
+PLIST_SUB+=	VERSION=${PORTVERSION} VERSION_R=${PORTVERSION:R}
 
 OPTIONS_DEFINE=	FULL HELP
 OPTIONS_DEFAULT=FULL HELP
@@ -28,7 +29,16 @@ OPTIONS_SUB=	yes
 FULL_DESC=	Install all funcs/scripts/headers (OFF: just basic calculator)
 HELP_DESC=	Install calc help files
 
-# We use Makefile.freebsd because Makefile.local is in .gitignore
+.if ${FLAVOR:U} == tiny
+OPTIONS_EXCLUDE=FULL HELP
+PKGNAMESUFFIX=	-tiny
+MAKE_ENV+=	BLD_TYPE=calc-static-only
+PLIST_FILES=	bin/calc
+PLIST=		# Use only PLIST_FILES
+.endif
+
+.include <bsd.port.pre.mk>
+# We use Makefile.freebsd because Makefile.local is in our .gitignore
 post-extract:
 	${SED} -e 's|%%CC%%|${CC}|; s|%%CFLAGS%%|${CFLAGS}|; s|%%SH%%|${SH}|' \
 		${FILESDIR}/Makefile.freebsd > ${WRKSRC}/Makefile.local
@@ -37,7 +47,13 @@ post-extract:
 	${FIND} ${WRKSRC} -name 'Makefile*' \
 		| ${XARGS} ${REINPLACE_CMD} -i '' -E -e '/SHELL:?=/s|bash|${SH}|'
 
+.if ${FLAVOR:U} == default
 post-install:
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} bin/calc lib/lib*.so
 
-.include <bsd.port.mk>
+.else
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/calc ${STAGEDIR}${PREFIX}/bin
+.endif
+
+.include <bsd.port.post.mk>
