@@ -1,7 +1,6 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.327
-PORTREVISION=	2
+DISTVERSION=	1.4.336
 CATEGORIES=	graphics
 
 MAINTAINER=	atanubiswas484@gmail.com
@@ -23,7 +22,7 @@ GH_PROJECT=	Vulkan-ValidationLayers
 # for GH_TAGNAME in GH_TUPLE
 # git clone --quiet https://github.com/KhronosGroup/SPIRV-Headers.git && git -C SPIRV-Headers describe <COMMIT_HASH>
 # for COMMIT_HASH see ${WRKSRC}/scripts/known_good.json
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-444-g402d0b3:headers/SPIRV-Headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:vulkan-sdk-1.4.335.0:headers/SPIRV-Headers
 CMAKE_OFF=	BUILD_TESTS
 
 PLIST_FILES=	lib/libVkLayer_khronos_validation.so \
