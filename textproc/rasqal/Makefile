@@ -1,43 +1,45 @@
 PORTNAME=	rasqal
 PORTVERSION=	0.9.33
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
-MASTER_SITES=	http://download.librdf.org/source/ \
-		SF/librdf/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	https://download.librdf.org/source/
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	High-level interface for RDF
-WWW=		https://librdf.org/
+COMMENT=	RDF Query Library
+WWW=		https://librdf.org/rasqal/
 
-# Even though GPLv3 is not explicitly mentioned in the port's LICENSE.html, one
-# of its licenses is "GPLv2 or newer", which includes GPLv3.
-LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
+LICENSE=	APACHE20 GPLv2+ LGPL21+
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libraptor2.so:textproc/raptor2 \
-		libpcre.so:devel/pcre
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
+		libgpg-error.so:security/libgpg-error \
+		libraptor2.so:textproc/raptor2
 
-USES=		gmake libtool pathfix perl5 pkgconfig ssl
-USE_PERL5=	build
-GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+USES=		gmake libtool localbase pathfix perl5 pkgconfig
 USE_LDCONFIG=	yes
+USE_PERL5=	build
 
-OPTIONS_RADIO=	DEC
-OPTIONS_RADIO_DEC=	GMP MPFR
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-pcre \
+		--with-digest-library=gcrypt \
+		--with-uuid-library=internal
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
+OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	MPFR
+OPTIONS_SINGLE=		DEC
+OPTIONS_SINGLE_DEC=	GMP MPFR NONE
+
+DEC_DESC=	Library to support XSD decimal type
 GMP_DESC=	Use GMP library for decimals
 MPFR_DESC=	Use MPFR library for decimals
+NONE_DESC=	Use IEEE double precision (nonconforming)
 
-GMP_CONFIGURE_ON=	--with-decimal=gmp --with-gmp=${LOCALBASE}
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
-MPFR_CONFIGURE_ON=	--with-decimal=mpfr --with-mpfr=${LOCALBASE}
+GMP_CONFIGURE_ON=	--with-decimal=gmp
 MPFR_LIB_DEPENDS=	libmpfr.so:math/mpfr
-
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MMPFR) && empty(PORT_OPTIONS:MGMP)
-CONFIGURE_ARGS+=--with-decimal=none
-.endif
+MPFR_CONFIGURE_ON=	--with-decimal=mpfr
+NONE_CONFIGURE_ON=	--with-decimal=none
 
 .include <bsd.port.mk>
