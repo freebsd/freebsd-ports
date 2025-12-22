@@ -1,3 +1,35 @@
+  <vuln vid="c1613867-df16-11f0-8870-b42e991fc52e">
+    <topic>MongoDB -- Improper Handling of Length Parameter Inconsistency</topic>
+    <affects>
+    <package>
+	<name>mongodb80</name>
+	<range><lt>8.2.3</lt></range>
+    </package>
+    <package>
+	<name>mongodb70</name>
+	<range><lt>7.0.28</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://jira.mongodb.org/browse/SERVER-115508 reports:</p>
+	<blockquote cite="https://jira.mongodb.org/browse/SERVER-115508">
+	<p>Mismatched length fields in Zlib compressed protocol
+	headers may allow a read of uninitialized heap memory by an
+	unauthenticated client.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-14847</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-14847</url>
+    </references>
+    <dates>
+      <discovery>2025-12-19</discovery>
+      <entry>2025-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dc7e30db-de67-11f0-b893-5404a68ad561">
     <topic>traefik -- Inverted TLS Verification Logic in Kubernetes NGINX Provider</topic>
     <affects>
