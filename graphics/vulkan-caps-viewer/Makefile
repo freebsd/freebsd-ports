@@ -1,21 +1,22 @@
 PORTNAME=	vulkan-caps-viewer
-DISTVERSION=	4.02
+DISTVERSION=	4.10
 CATEGORIES=	graphics
 
 MAINTAINER=	atanubiswas484@gmail.com
 COMMENT=	Vulkan Hardware Capability Viewer
 WWW=		https://vulkan.gpuinfo.org/
 
-LICENSE=	LGPL3 # based on license headers
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
-USES=		compiler:c++11-lib pkgconfig qmake qt:5
+USES=		compiler:c++11-lib desktop-file-utils pkgconfig qmake qt:6
 USE_GITHUB=	yes
 GH_ACCOUNT=	SaschaWillems
 GH_PROJECT=	VulkanCapsViewer
-USE_QT=		core gui network widgets buildtools:build qmake:build
+USE_QT=		base
 
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (GL, wayland)
 
@@ -30,7 +31,7 @@ OPTIONS_DEFAULT=	WAYLAND X11
 
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_USE=		QT=wayland:build
+WAYLAND_USE=		QT=wayland
 WAYLAND_QMAKE_ON=	DEFINES+=WAYLAND
 
 X11_USES=		xorg
@@ -46,7 +47,7 @@ post-patch:
 		-e '/bin|share/s,/usr,$$$$PREFIX,' \
 		${WRKSRC}/vulkanCapsViewer.pro
 	@${REINPLACE_CMD} -e 's/__linux/__unix/' \
-		${WRKSRC}/vulkancapsviewer.cpp
+		${WRKSRC}/vulkanCapsViewer.cpp
 	@${REINPLACE_CMD} -e 's|$$$$PWD/Vulkan-Headers/include/vulkan/vulkan.h|${LOCALBASE}/include/vulkan/vulkan.h|' \
 		${WRKSRC}/vulkanCapsViewer.pri
 
