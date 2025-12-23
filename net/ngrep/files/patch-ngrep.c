@@ -1,69 +1,75 @@
---- ngrep.c.orig	2006-11-28 17:38:43.000000000 +0400
-+++ ngrep.c	2014-12-12 11:14:13.000000000 +0400
-@@ -97,6 +97,10 @@
- #include "regex-0.12/regex.h"
+--- ngrep.c.orig	2025-11-07 06:35:47 UTC
++++ ngrep.c
+@@ -93,10 +93,15 @@
+ #include <sys/ioctl.h>
  #endif
  
-+#ifdef HAVE_CAPSICUM
-+#include <sys/capability.h>
-+#endif /* HAVE CAPSICUM */
+-#include <pcap.h>
+-
+ #include "config.h"
+ 
++#ifdef USE_CAPSICUM
++#include <sys/capsicum.h>
++#include <net/bpf.h>
++#endif /* USE_CAPSICUM */
 +
- #include "ngrep.h"
- 
- 
-@@ -186,6 +190,10 @@ uint32_t ws_row, ws_col = 80, ws_col_for
- int main(int argc, char **argv) {
++#include <pcap.h>
++
+ #if USE_IPv6 && !defined(_WIN32) && !defined(_WIN64)
+ #include <netinet/ip6.h>
+ #include <netinet/icmp6.h>
+@@ -217,6 +222,10 @@ int main(int argc, char **argv) {
      int32_t c;
+     const char *extra = "";
  
-+#ifdef HAVE_CAPSICUM
++#ifdef USE_CAPSICUM
 +    cap_rights_t rights;
-+#endif /* HAVE_CAPSICUM */
++#endif /* USE_CAPSICUM */
 +
      signal(SIGINT,   clean_exit);
      signal(SIGABRT,  clean_exit);
  
-@@ -416,6 +424,23 @@ int main(int argc, char **argv) {
-         clean_exit(-1);
+@@ -461,6 +470,22 @@ int main(int argc, char **argv) {
+         free(filter);
      }
  
-+#ifdef HAVE_CAPSICUM
++#ifdef USE_CAPSICUM
 +    cap_rights_init(&rights, CAP_IOCTL, CAP_READ);
 +    if (cap_rights_limit(pcap_fileno(pd), &rights) < 0 &&
 +        errno != ENOSYS) {
 +        fprintf(stderr, "unable to limit pcap descriptor");
-+        clean_exit(-1);  
-+        }
++        clean_exit(2);
++    }
 +
 +    static const unsigned long cmds[] = { BIOCGSTATS };
 +    if (cap_ioctls_limit(pcap_fileno(pd), cmds,
 +        sizeof(cmds) / sizeof(cmds[0])) < 0 && errno != ENOSYS) {
-+	fprintf(stderr, "unable to limit ioctls on pcap descriptor");
-+        clean_exit(-1);
-+	}
++        fprintf(stderr, "unable to limit ioctls on pcap descriptor");
++        clean_exit(2);
++    }
++#endif /* USE_CAPSICUM */
 +
-+#endif /* HAVE CAPSICUM */
-+
+     /* Setup matcher */
+ 
      if (match_data) {
-         if (bin_match) {
-             uint32_t i = 0, n;
-@@ -603,6 +628,20 @@ int main(int argc, char **argv) {
+@@ -491,6 +516,20 @@ int main(int argc, char **argv) {
+ #if !defined(_WIN32) && !defined(_WIN64) && USE_DROPPRIVS
      drop_privs();
  #endif
- 
-+#ifdef HAVE_CAPSICUM
++
++#ifdef USE_CAPSICUM
 +    cap_rights_init(&rights);
 +
-+   if (cap_rights_limit(STDIN_FILENO, &rights) < 0 && errno != ENOSYS) {
-+       fprintf(stderr, "can't limit stdin");
-+       clean_exit(-1);
-+   }
-+
-+   if (cap_enter() < 0 && errno != ENOSYS) {
-+       fprintf(stderr, "can't enter capability mode");
-+       clean_exit(-1);
++    if (cap_rights_limit(STDIN_FILENO, &rights) < 0 && errno != ENOSYS) {
++        fprintf(stderr, "can't limit stdin");
++        clean_exit(1);
 +    }
-+#endif /* HAVE_CAPSICUM */
 +
-     while (pcap_loop(pd, 0, (pcap_handler)process, 0));
++    if (cap_enter() < 0 && errno != ENOSYS) {
++        fprintf(stderr, "can't enter capability mode");
++        clean_exit(2);
++    }
++#endif /* USE_CAPSICUM */
  
-     clean_exit(0);
+     while (pcap_loop(pd, -1, (pcap_handler)process, 0));
+ 

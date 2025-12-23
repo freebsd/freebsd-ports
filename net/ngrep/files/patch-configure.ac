@@ -1,8 +1,8 @@
---- configure.in.orig	2006-11-15 07:43:56.000000000 +0400
-+++ configure.in	2014-12-12 00:01:00.000000000 +0400
-@@ -110,6 +110,34 @@ else
-    USE_IPv6="0"
- fi
+--- configure.ac.orig	2025-11-07 06:35:47 UTC
++++ configure.ac
+@@ -138,7 +138,35 @@ AS_IF([test $use_pcap_restart = yes], [
+     USE_PCAP_RESTART="0"
+ ])
  
 +AC_ARG_ENABLE(capsicum,
 +[  --enable-capsicum           enable capsicum support],
@@ -12,7 +12,7 @@
 +[ 
 +  use_capsicum="no"
 +])  
-+
+ 
 +#
 +# Check whether various functions are available.  If any are, set
 +# ac_lbl_capsicum_function_seen to yes; if any are not, set
@@ -27,19 +27,33 @@
 +fi
 +AC_MSG_CHECKING([whether to sandbox using capsicum])
 +if test "x$ac_lbl_capsicum_function_seen" = "xyes" -a "x$ac_lbl_capsicum_function_not_seen" != "xyes"; then
-+	HAVE_CAPSICUM="1"
++	USE_CAPSICUM="1"
 +	AC_MSG_RESULT(yes)
 +else
 +	AC_MSG_RESULT(no)
 +fi
- 
++
  dnl
  dnl Configure the regular expression library.
-@@ -390,6 +418,7 @@ AC_DEFINE_UNQUOTED(USE_PCAP_RESTART,    
- 
- AC_DEFINE_UNQUOTED(USE_PCRE,                  $USE_PCRE,                  [whether to use PCRE (default GNU Regex)])
+ dnl
+@@ -553,6 +581,7 @@ AC_DEFINE_UNQUOTED(USE_VLAN_HACK,             $USE_VLA
  AC_DEFINE_UNQUOTED(USE_IPv6,                  $USE_IPv6,                  [whether to use IPv6 (default off)])
-+AC_DEFINE_UNQUOTED(HAVE_CAPSICUM,	      $HAVE_CAPSICUM,		  [whether to use capsicum])
+ AC_DEFINE_UNQUOTED(USE_TCPKILL,               $USE_TCPKILL,               [whether to enable tcpkill functionality (default off)])
+ AC_DEFINE_UNQUOTED(USE_VLAN_HACK,             $USE_VLAN_HACK,             [whether to automatically include VLAN frames (default on)])
++AC_DEFINE_UNQUOTED(USE_CAPSICUM,              $USE_CAPSICUM,              [whether to use capsicum])
  
  AC_DEFINE_UNQUOTED(USE_DROPPRIVS,             $USE_DROPPRIVS,             [whether to use privileges dropping (default yes)])
  AC_DEFINE_UNQUOTED(DROPPRIVS_USER,           "$DROPPRIVS_USER",           [pseudo-user for running ngrep (default "nobody")])
+@@ -613,6 +642,12 @@ AS_IF([test "$USE_VLAN_HACK" = "1"], [
+     AC_MSG_RESULT(CONFIG: automatically including VLAN frames)
+ ], [
+     AC_MSG_RESULT(CONFIG: NOT automatically including VLAN frames)
++])
++
++AS_IF([test "$USE_CAPSICUM" = "1"], [
++    AC_MSG_RESULT(CONFIG: capsicum enabled)
++], [
++    AC_MSG_RESULT(CONFIG: capsicum disabled)
+ ])
+ 
+ dnl
