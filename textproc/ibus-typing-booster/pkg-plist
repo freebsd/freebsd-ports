@@ -362,6 +362,8 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/emoji_picker%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/factory%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/factory%%PYTHON_TAG%%.pyc
+%%DATADIR%%/engine/__pycache__/g_compat_helpers%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/engine/__pycache__/g_compat_helpers%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/get_clipboard_gtk4%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/get_clipboard_gtk4%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/hunspell_suggest%%PYTHON_TAG%%.opt-1.pyc
@@ -372,6 +374,8 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/itb_active_window%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_emoji%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/itb_emoji%%PYTHON_TAG%%.pyc
+%%DATADIR%%/engine/__pycache__/itb_gtk%%PYTHON_TAG%%.opt-1.pyc
+%%DATADIR%%/engine/__pycache__/itb_gtk%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_nltk%%PYTHON_TAG%%.opt-1.pyc
 %%DATADIR%%/engine/__pycache__/itb_nltk%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/__pycache__/itb_ollama%%PYTHON_TAG%%.opt-1.pyc
@@ -396,11 +400,13 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/engine/__pycache__/tabstatistics%%PYTHON_TAG%%.pyc
 %%DATADIR%%/engine/emoji_picker.py
 %%DATADIR%%/engine/factory.py
+%%DATADIR%%/engine/g_compat_helpers.py
 %%DATADIR%%/engine/get_clipboard_gtk4.py
 %%DATADIR%%/engine/hunspell_suggest.py
 %%DATADIR%%/engine/hunspell_table.py
 %%DATADIR%%/engine/itb_active_window.py
 %%DATADIR%%/engine/itb_emoji.py
+%%DATADIR%%/engine/itb_gtk.py
 %%DATADIR%%/engine/itb_nltk.py
 %%DATADIR%%/engine/itb_ollama.py
 %%DATADIR%%/engine/itb_pango.py
