@@ -1,5 +1,5 @@
 PORTNAME=	kphotoalbum
-DISTVERSION=	6.0.1
+DISTVERSION=	6.1.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/
 DIST_SUBDIR=	KDE
@@ -15,10 +15,10 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-tools \
 		gl jpeg kde:6 pkgconfig qt:6 shebangfix tar:xz xorg
-USE_GL=		gl opengl # GLX
+USE_GL=		opengl
 USE_KDE=	archive colorscheme completion config configwidgets coreaddons \
-		i18n iconthemes jobwidgets kio libkdcraw phonon purpose \
-		service solid sonnet textwidgets widgetsaddons xmlgui \
+		guiaddons i18n iconthemes jobwidgets kio libkdcraw phonon \
+		purpose service sonnet textwidgets widgetsaddons xmlgui \
 		ecm:build
 USE_QT=		5compat base
 USE_XORG=	x11
