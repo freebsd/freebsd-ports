@@ -1,6 +1,5 @@
 PORTNAME=	rankwidth	# Also known as: rw
-PORTVERSION=	0.9
-PORTREVISION=	2
+PORTVERSION=	0.10
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/
 DISTNAME=	rw-${PORTVERSION}
@@ -10,9 +9,6 @@ COMMENT=	Calculation of rank-width and rank-decompositions
 WWW=		https://sourceforge.net/projects/rankwidth/
 
 LICENSE=	GPLv2
-
-# See https://sourceforge.net/p/rankwidth/tickets/4/
-BROKEN=		does not support igraph>=1.0.0
 
 LIB_DEPENDS=	libigraph.so:math/igraph
 
