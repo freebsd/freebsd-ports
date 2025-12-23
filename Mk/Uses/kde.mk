@@ -227,6 +227,9 @@ DIST_SUBDIR?=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION}
 DIST_SUBDIR=		KDE/frameworks/${KDE_FRAMEWORKS_VERSION:R}
 DESCR=			${.CURDIR:H:H}/x11/kf6-frameworks/pkg-descr
 .        endif
+.        if ${_KDE_VERSION:M5}
+PORTSCOUT=	limit:^5\.
+.        endif
 .      else
 IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
 .      endif
