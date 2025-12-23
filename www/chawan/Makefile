@@ -2,8 +2,7 @@ PORTNAME=	chawan
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
 CATEGORIES=	www
-MASTER_SITES=	https://git.sr.ht/~bptato/chawan/archive/
-DISTNAME=	${DISTVERSIONFULL}
+MASTER_SITES=	https://git.sr.ht/~bptato/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	hoanga@gmail.com
 COMMENT=	Chawan is a text-mode web browser and pager
@@ -20,7 +19,5 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 USES=		gmake libtool pkgconfig ssl
 
 MAKE_ENV+=	PATH=${LOCALBASE}/nim/bin:${PATH}
-
-WRKSRC=		${WRKDIR}/chawan-${DISTVERSIONFULL}
 
 .include <bsd.port.mk>
