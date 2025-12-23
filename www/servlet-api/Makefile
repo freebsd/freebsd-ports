@@ -10,6 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Servlet API
 WWW=		http://java.sun.com/products/servlet/
 
+DEPRECATED=	Superseded upstream by newer versions many years ago
+EXPIRATION_DATE=	2025-12-31
+
 USES=		java
 
 NO_BUILD=	yes
