@@ -1,5 +1,5 @@
 PORTNAME=	veloren
-PORTVERSION=	s20251217
+PORTVERSION=	s20251229
 CATEGORIES=	games wayland
 PKGNAMESUFFIX=	-weekly
 
@@ -25,8 +25,11 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_TAGNAME=	v0.17.0-1463-g85e45ca0bd # git describe --match='v[0-9]*' weekly
-CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
+GL_TAGNAME=	v0.17.0-1531-g253b0afc73 # git describe --match='v[0-9]*' weekly
+GL_DATE=	$$(${AWK} '/TIMESTAMP/ { print $$3 }' ${DISTINFO_FILE})
+CARGO_ENV=	VELOREN_GIT_VERSION=${GL_TAGNAME:C,(.*)-.*-g(.{8}).*,\1/\2,}/${GL_DATE} \
+		VELOREN_USERDATA_STRATEGY=system \
+		SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
 		share/applications/net.veloren.veloren.desktop \
@@ -45,14 +48,6 @@ CARGO_ENV+=		RUSTC_BOOTSTRAP=1
 CARGO_INSTALL_PATH=	server-cli voxygen
 
 post-patch:
-# .git/ directory is missing, so don't abort if git binary is also missing
-	@${REINPLACE_CMD} -e 's/"git"/"${TRUE}"/' \
-		${WRKSRC}/common/build.rs
-# Extract (snapshot) version from the port instead of empty file
-	@${REINPLACE_CMD} -e '/GIT_HASH/s/=.*/= "${GL_TAGNAME:C/.*-g(.{8}).*/\1/}";/' \
-		-e "/GIT_DATE.*static/s/=.*/= \"$$(date -ur $$(${AWK} '/TIMESTAMP/ { print $$3 }' \
-			${DISTINFO_FILE}) +'%Y-%m-%d-%H:%M')\";/" \
-		${WRKSRC}/common/src/util/mod.rs
 # Respect PREFIX != /usr/local for system assets
 	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/common/assets/src/lib.rs

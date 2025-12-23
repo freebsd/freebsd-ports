@@ -10,8 +10,8 @@ error[E0658]: use of unstable library feature 'portable_simd'
    = help: add `#![feature(portable_simd)]` to the crate attributes to enable
    = note: this compiler was built on 2024-04-29; consider upgrading it if it is out of date
 
---- cargo-crates/vek-0.17.1/build.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/vek-0.17.1/build.rs
+--- cargo-crates/vek-0.17.2/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/vek-0.17.2/build.rs
 @@ -4,23 +4,6 @@ fn main() {
  fn main() {
      assert!(version().unwrap().major >= 1);

@@ -72,3 +72,14 @@ Relax Linux checks for the code works on any non-Windows platform.
                  let backends = &["opengl", "vulkan"];
                  #[cfg(target_os = "macos")]
                  let backends = &["metal"];
+--- voxygen/src/window.rs.orig	2025-12-23 19:58:44 UTC
++++ voxygen/src/window.rs
+@@ -250,7 +250,7 @@ impl Window {
+             ))
+             .with_maximized(window.maximised);
+ 
+-        #[cfg(target_os = "linux")]
++        #[cfg(not(any(target_os = "windows", target_os = "macos")))]
+         {
+             use winit::platform::wayland::WindowAttributesExtWayland;
+             attributes = attributes.with_name("net.veloren.veloren", "veloren");

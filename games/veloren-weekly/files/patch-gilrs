@@ -23,9 +23,18 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
    |                |      help: a similar name exists in the module: `event`
    |                no `epoll` in `sys`
 
---- Cargo.lock.orig	2025-09-10 09:49:58 UTC
+--- Cargo.lock.orig	2025-12-23 19:58:44 UTC
 +++ Cargo.lock
-@@ -2709,9 +2709,9 @@ dependencies = [
+@@ -407,7 +407,7 @@ dependencies = [
+  "bincode",
+  "crossbeam-channel",
+  "foldhash 0.2.0",
+- "hashbrown 0.15.5",
++ "hashbrown 0.16.0",
+  "log",
+  "notify",
+  "ron",
+@@ -2851,9 +2851,9 @@ dependencies = [
  
  [[package]]
  name = "gilrs"
@@ -37,14 +46,14 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "fnv",
   "gilrs-core",
-@@ -2723,24 +2723,23 @@ dependencies = [
+@@ -2865,24 +2865,23 @@ dependencies = [
  
  [[package]]
  name = "gilrs-core"
--version = "0.6.4"
+-version = "0.6.6"
 +version = "0.5.7"
  source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "a6d95ae10ce5aa99543a28cf74e41c11f3b9e3c14f0452bbde46024753cd683e"
+-checksum = "be11a71ac3564f6965839e2ed275bf4fcf5ce16d80d396e1dfdb7b2d80bd587e"
 +checksum = "5ccc99e9b8d63ffcaa334c4babfa31f46e156618a11f63efb6e8e6bcb37b830d"
  dependencies = [
 - "core-foundation 0.10.1",
@@ -55,19 +64,28 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
   "libc",
   "libudev-sys",
   "log",
-- "nix 0.29.0",
+- "nix 0.30.1",
 + "nix 0.26.4",
   "serde",
   "uuid",
   "vec_map",
   "wasm-bindgen",
   "web-sys",
-- "windows 0.61.3",
-+ "windows 0.48.0",
+- "windows 0.62.2",
++ "windows 0.51.1",
  ]
  
  [[package]]
-@@ -3525,9 +3524,9 @@ dependencies = [
+@@ -3003,7 +3002,7 @@ dependencies = [
+  "log",
+  "presser",
+  "thiserror 1.0.69",
+- "windows 0.58.0",
++ "windows 0.54.0",
+ ]
+ 
+ [[package]]
+@@ -3665,9 +3664,9 @@ dependencies = [
  
  [[package]]
  name = "io-kit-sys"
@@ -79,23 +97,66 @@ error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
  dependencies = [
   "core-foundation-sys",
   "mach2",
-@@ -4317,13 +4316,12 @@ dependencies = [
- 
- [[package]]
- name = "nix"
--version = "0.29.0"
-+version = "0.26.4"
- source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "71e2746dc3a24dd78b3cfcb7be93368c6de9963d30f43a6a73998a9cf4b17b46"
-+checksum = "598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b"
- dependencies = [
-- "bitflags 2.9.4",
-+ "bitflags 1.3.2",
-  "cfg-if 1.0.3",
-- "cfg_aliases",
-  "libc",
+@@ -4426,6 +4425,17 @@ dependencies = [
+  "memoffset 0.6.5",
  ]
  
++[[package]]
++name = "nix"
++version = "0.26.4"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "598beaf3cc6fdd9a5dfb1630c2800c7acd31df7aaf0f565796fba2b53ca1af1b"
++dependencies = [
++ "bitflags 1.3.2",
++ "cfg-if 1.0.4",
++ "libc",
++]
++
+ [[package]]
+ name = "nix"
+ version = "0.30.1"
+@@ -7779,7 +7789,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
+ checksum = "2fb391ac70462b3097a755618fbf9c8f95ecc1eb379a414f7b46f202ed10db1f"
+ dependencies = [
+  "cc",
+- "windows-targets 0.52.6",
++ "windows-targets 0.48.5",
+ ]
+ 
+ [[package]]
+@@ -9742,6 +9752,16 @@ dependencies = [
+  "thiserror 2.0.17",
+ ]
+ 
++[[package]]
++name = "windows"
++version = "0.51.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "ca229916c5ee38c2f2bc1e9d8f04df975b4bd93f9955dc69fabb5d91270045c9"
++dependencies = [
++ "windows-core 0.51.1",
++ "windows-targets 0.48.5",
++]
++
+ [[package]]
+ name = "windows"
+ version = "0.54.0"
+@@ -9762,6 +9782,15 @@ dependencies = [
+  "windows-targets 0.52.6",
+ ]
+ 
++[[package]]
++name = "windows-core"
++version = "0.51.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "f1f8cf84f35d2db49a46868f947758c7a1138116f7fac3bc844f43ade1292e64"
++dependencies = [
++ "windows-targets 0.48.5",
++]
++
+ [[package]]
+ name = "windows-core"
+ version = "0.54.0"
 --- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
 +++ cargo-crates/gilrs-0.10.2/examples/ev.rs
 @@ -9,6 +9,8 @@ use std::process;

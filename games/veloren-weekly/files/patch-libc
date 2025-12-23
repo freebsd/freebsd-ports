@@ -12,9 +12,9 @@ error[E0063]: missing field `ext` in initializer of `kevent`
 222 |         KEvent { kevent: libc::kevent {
     |                          ^^^^^^^^^^^^ missing `ext`
 
---- cargo-crates/libc-0.2.177/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/libc-0.2.177/build.rs
-@@ -55,7 +55,7 @@ fn main() {
+--- cargo-crates/libc-0.2.178/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/libc-0.2.178/build.rs
+@@ -60,7 +60,7 @@ fn main() {
      let target_arch = env::var("CARGO_CFG_TARGET_ARCH").unwrap_or_default();
  
      // The ABI of libc used by std is backward compatible with FreeBSD 12.
@@ -23,16 +23,14 @@ error[E0063]: missing field `ext` in initializer of `kevent`
      //
      // On CI, we detect the actual FreeBSD version and match its ABI exactly,
      // running tests to ensure that the ABI is correct.
-@@ -66,9 +66,11 @@ fn main() {
+@@ -71,9 +71,9 @@ fn main() {
          println!("cargo:warning=setting FreeBSD version to {vers}");
          vers
      } else if libc_ci {
 -        which_freebsd().unwrap_or(12)
--    } else {
 +        which_freebsd().unwrap_or(11)
-+    } else if rustc_dep_of_std {
-         12
-+    } else {
+     } else {
+-        12
 +        11
      };
  
