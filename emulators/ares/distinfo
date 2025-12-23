@@ -1,3 +1,5 @@
-TIMESTAMP = 1756454355
-SHA256 (ares-146/ares-source.tar.gz) = 0f0b878c19ce09dab57584235e9c639c4c14a0bd1de6cef50238f006bd797bf1
-SIZE (ares-146/ares-source.tar.gz) = 9021617
+TIMESTAMP = 1766567627
+SHA256 (ares/147/ares-source.tar.gz) = dcedffc1676d497cfe7889e424335a38cc587c87fffebb917775ee5042962f69
+SIZE (ares/147/ares-source.tar.gz) = 9074663
+SHA256 (ares/147/adfc78f9523adce9fef1d7ac282e08ab7fc66dd4.patch) = 4503bf48bfe67448e17b462fc6c99aab0dba780ae8f6a6059a04af2b59901b4f
+SIZE (ares/147/adfc78f9523adce9fef1d7ac282e08ab7fc66dd4.patch) = 563
