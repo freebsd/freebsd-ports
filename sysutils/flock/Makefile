@@ -21,6 +21,12 @@ CFLAGS+=	-D_WITH_CPU_SET_T
 PLIST_FILES=	bin/flock share/man/man1/flock.1.gz \
 		etc/bash_completion.d/flock
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == i386
+CONFIGURE_ARGS+=	--disable-year2038
+.endif
+
 do-build:
 	# skip building unneeded utils
 	${MAKE} -C ${WRKSRC} flock
