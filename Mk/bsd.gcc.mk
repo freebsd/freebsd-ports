@@ -22,10 +22,10 @@
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
-#   USE_GCC=	12 			# port requires GCC 12.
+#   USE_GCC=	13 			# port requires GCC 13.
 #   USE_GCC=	yes:build	# port requires a current version of GCC at
 #							# build time only.
-#   USE_GCC=	12:build	# port requires GCC 12 at build time only.
+#   USE_GCC=	13:build	# port requires GCC 13 at build time only.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
