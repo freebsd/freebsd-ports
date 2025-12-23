@@ -1,5 +1,3 @@
-TIMESTAMP = 1763025797
-SHA256 (KDE/Qt/qbs/qbs-src-3.1.1.tar.gz) = 95e8de11cd66710975d4225d35ee01fd43691e4b65609399de367cb8a1df3af9
-SIZE (KDE/Qt/qbs/qbs-src-3.1.1.tar.gz) = 5803914
-SHA256 (KDE/Qt/qbs/ee78fcb399ec5968a43dc0160ee40cdd5357cc1a.patch) = 1d3452e939676e45ebe990112b93d0384844ab33c001ce590e36d49f00aa43be
-SIZE (KDE/Qt/qbs/ee78fcb399ec5968a43dc0160ee40cdd5357cc1a.patch) = 1044
+TIMESTAMP = 1766293721
+SHA256 (KDE/Qt/qbs/qbs-src-3.1.2.tar.gz) = cb0a70eb33bee5a0122df3e6856b1b98d9b00c6f175f55cbb3442bbc9cc2cd6f
+SIZE (KDE/Qt/qbs/qbs-src-3.1.2.tar.gz) = 5803135
