@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Click extension to register CLI commands via setuptools
 WWW=		https://pypi.org/project/click-plugins/ \
 		https://github.com/click-contrib/click-plugins
