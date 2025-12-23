@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=	--disable-authlib
 .endif
 
 post-patch-INOTIFY-on:
-	@${REINPLACE_CMD} -e 's|LIBS = @LIBS@|& ${LOCALBASE}/lib/libinotify.a /usr/lib/libpthread.a|' \
+	@${REINPLACE_CMD} -e 's|LIBS = @LIBS@|& ${LOCALBASE}/lib/libinotify.a -lpthread|' \
 		${WRKSRC}/libs/maildir/Makefile.in
 
 post-configure-INOTIFY-on:
