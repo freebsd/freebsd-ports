@@ -550,6 +550,15 @@ share/knotifications5/kstars.notifyrc
 %%DATADIR%%/starlnum.idx
 %%DATADIR%%/starnames.dat
 %%DATADIR%%/stars.dat
+%%DATADIR%%/taskqueue/collections/observatory_shutdown.json
+%%DATADIR%%/taskqueue/collections/observatory_startup.json
+%%DATADIR%%/taskqueue/templates/README.md
+%%DATADIR%%/taskqueue/templates/system/camera.json
+%%DATADIR%%/taskqueue/templates/system/delay.json
+%%DATADIR%%/taskqueue/templates/system/dome.json
+%%DATADIR%%/taskqueue/templates/system/dustcap.json
+%%DATADIR%%/taskqueue/templates/system/mount.json
+%%DATADIR%%/taskqueue/templates/system/script.json
 %%DATADIR%%/textures/defaultflag.png
 %%DATADIR%%/textures/galaxy-cluster.png
 %%DATADIR%%/textures/galaxy.png
