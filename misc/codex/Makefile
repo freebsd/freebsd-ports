@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.73.0
+DISTVERSION=	0.77.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -17,10 +17,19 @@ RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cargo python:test ssl
+USES=		cargo python:test shebangfix ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openai
+
+SHEBANG_FILES=	codex-rs/core/src/skills/assets/samples/skill-creator/scripts/init_skill.py \
+		codex-rs/core/src/skills/assets/samples/skill-creator/scripts/package_skill.py \
+		codex-rs/core/src/skills/assets/samples/skill-creator/scripts/quick_validate.py \
+		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/github_utils.py \
+		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/install-skill-from-github.py \
+		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-curated-skills.py \
+		codex-rs/mcp-types/check_lib_rs.py \
+		codex-rs/mcp-types/generate_mcp_types.py
 
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock

@@ -111,10 +111,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ctor-proc-macro-0.0.6 \
 		darling-0.20.11 \
 		darling-0.21.3 \
+		darling-0.23.0 \
 		darling_core-0.20.11 \
 		darling_core-0.21.3 \
+		darling_core-0.23.0 \
 		darling_macro-0.20.11 \
 		darling_macro-0.21.3 \
+		darling_macro-0.23.0 \
 		dbus-0.9.9 \
 		dbus-secret-service-4.1.0 \
 		deadpool-0.12.3 \
@@ -247,6 +250,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ignore-0.4.23 \
 		image-0.25.9 \
 		impl-more-0.1.9 \
+		include_dir-0.7.4 \
+		include_dir_macros-0.7.4 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
 		indexmap-2.12.0 \
@@ -394,7 +399,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pretty_assertions-1.4.1 \
 		proc-macro-crate-3.4.0 \
 		proc-macro2-1.0.95 \
-		process-wrap-8.2.1 \
+		process-wrap-9.0.0 \
 		prost-0.13.5 \
 		prost-derive-0.13.5 \
 		pulldown-cmark-0.10.3 \
@@ -428,8 +433,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-syntax-0.8.5 \
 		reqwest-0.12.24 \
 		ring-0.17.14 \
-		rmcp-0.10.0 \
-		rmcp-macros-0.10.0 \
+		rmcp-0.12.0 \
+		rmcp-macros-0.12.0 \
 		rustc-demangle-0.1.25 \
 		rustc-hash-2.1.1 \
 		rustc_version-0.4.1 \
