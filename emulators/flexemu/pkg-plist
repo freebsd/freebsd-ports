@@ -107,15 +107,15 @@ share/icons/hicolor/256x256/apps/flexemu.png
 share/icons/hicolor/32x32/apps/flexemu-flexplorer.png
 share/icons/hicolor/32x32/apps/flexemu-fsetup.png
 share/icons/hicolor/32x32/apps/flexemu.png
+share/icons/hicolor/48x48/apps/application-x-flex-diskimage.png
 share/icons/hicolor/48x48/apps/flexemu-flexplorer.png
 share/icons/hicolor/48x48/apps/flexemu-fsetup.png
 share/icons/hicolor/48x48/apps/flexemu.png
-share/icons/hicolor/48x48/mimetypes/application-x-flex-diskimage.png
 share/icons/hicolor/64x64/apps/flexemu-flexplorer.png
 share/icons/hicolor/64x64/apps/flexemu-fsetup.png
 share/icons/hicolor/64x64/apps/flexemu.png
+share/icons/hicolor/scalable/apps/application-x-flex-diskimage.svg
 share/icons/hicolor/scalable/apps/flexemu-flexplorer.svg
 share/icons/hicolor/scalable/apps/flexemu-fsetup.svg
 share/icons/hicolor/scalable/apps/flexemu.svg
-share/icons/hicolor/scalable/mimetypes/application-x-flex-diskimage.svg
 share/mime/packages/flexemu.xml

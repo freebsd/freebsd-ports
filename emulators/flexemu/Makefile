@@ -1,7 +1,6 @@
 PORTNAME=	flexemu
 DISTVERSIONPREFIX=	V
-DISTVERSION=	3.30
-PORTREVISION=	1
+DISTVERSION=	3.31
 CATEGORIES=	emulators
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -14,7 +13,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl \
 		ncurses qt:6 shared-mime-info xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	aladur
-GH_TUPLE=	fmtlib:fmt:0c9fce2:fmt/fmt \
+GH_TUPLE=	fmtlib:fmt:e424e3f:fmt/fmt \
 		google:googletest:b514bdc:googletest/googletest \
 		open-source-parsers:jsoncpp:8214f71:jsoncpp/jsoncpp
 USE_GL=		gl opengl
@@ -25,5 +24,8 @@ USE_XORG=	ice sm x11
 CMAKE_ARGS+=	-DFLEXEMU_QT_MAJOR_VERSION=6 \
 		-DCLANG_TIDY=${LOCALBASE}/bin/clang-tidy${COMPILER_VERSION:C/.$//} \
 		-DRUN_CLANG_TIDY=${LOCALBASE}/llvm${COMPILER_VERSION:C/.$//}/bin/run-clang-tidy
+
+# test target should be executed as a regular user
+TEST_TARGET=	test
 
 .include <bsd.port.mk>
