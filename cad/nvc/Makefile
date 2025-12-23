@@ -1,5 +1,5 @@
 PORTNAME=	nvc
-DISTVERSION=	1.18.1
+DISTVERSION=	1.18.2
 CATEGORIES=	cad
 MASTER_SITES=	https://www.nickg.me.uk/files/
 
@@ -8,7 +8,7 @@ COMMENT=	VHDL compiler and simulator
 WWW=		https://www.nickg.me.uk/nvc/ \
 		https://github.com/nickg/nvc
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64
