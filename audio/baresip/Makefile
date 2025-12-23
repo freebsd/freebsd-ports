@@ -1,6 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.3.0
+DISTVERSION=	4.4.0
 CATEGORIES=	audio
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
@@ -24,18 +24,20 @@ GH_TUPLE=	baresip:baresip-apps:v4.3.0:e/baresip-apps
 PORTDOCS=	CONTRIBUTING.md ChangeLog THANKS
 
 OPTIONS_DEFINE=		AAC ALSA AMR AV1 AVCODEC AVFILTER AVFORMAT CODEC2 DBUS \
-			DOCS EVDEV EXAMPLES G711 G722 G726 GSTREAMER GTK3 JACK \
-			MQTT OPUS PIPEWIRE PLC PORTAUDIO PULSEAUDIO SDL \
-			SNAPSHOT SNDFILE SNDIO SWSCALE V4L VPX WEBRTC_AEC X11
+			DOCS EVDEV EXAMPLES G726 GSTREAMER GTK3 JACK MQTT OPUS \
+			PIPEWIRE PLC PORTAUDIO PULSEAUDIO SDL SNAPSHOT SNDFILE \
+			SNDIO SWSCALE V4L VPX WEBRTC_AEC X11
 OPTIONS_DEFAULT=	AAC ALSA AV1 AVCODEC AVFILTER AVFORMAT CODEC2 DBUS \
-			EVDEV G711 G722 G726 GSTREAMER GTK3 OPUS PLC PORTAUDIO \
-			SDL SNAPSHOT SNDFILE SWSCALE V4L VPX WEBRTC_AEC X11
+			EVDEV G722 G726 GSTREAMER GTK3 OPUS PLC SDL SNAPSHOT \
+			SNDFILE SWSCALE V4L VPX WEBRTC_AEC X11
 OPTIONS_GROUP=		EXTRAMODULES
+OPTIONS_RADIO=		G722
+OPTIONS_RADIO_G722=	G722 G722L
 .if ${FLAVOR:U} == nox11
 COMMENT+=		(without X11 and video calls)
 OPTIONS_EXCLUDE=	AAC AV1 AVCODEC AVFILTER AVFORMAT CODEC2 DBUS EVDEV \
-			GSTREAMER GTK3 SDL SNAPSHOT SWSCALE V4L VPX WEBRTC_AEC \
-			X11
+			G722 G726 GSTREAMER GTK3 OPUS PLC SDL SNAPSHOT SNDFILE \
+			SWSCALE V4L VPX WEBRTC_AEC X11
 .endif
 OPTIONS_SUB=		yes
 
@@ -47,7 +49,7 @@ AVFILTER_DESC=		Video filter using libavfilter
 AVFORMAT_DESC=		libavformat media-source
 CODEC2_DESC=		Codec2 low-bitrate speech codec
 EVDEV_DESC=		evdev input support
-G711_DESC=		G.711 audio codec
+G722L_DESC=		G.722 audio codec via libg722
 G722_DESC=		G.722 audio codec
 G726_DESC=		G.726 audio codec
 MQTT_DESC=		Message Queue Telemetry Transport (MQTT) client
@@ -57,7 +59,7 @@ SWSCALE_DESC=		Video filter for scaling and pixel conversion
 WEBRTC_AEC_DESC=	WebRTC Acoustic Echo Cancellation
 
 _MODULES_LIST=	account aubridge auconv aufile augain auresamp ausine cons \
-		contact ctrl_tcp debug_cmd dtls_srtp echo fakevideo httpd \
+		contact ctrl_tcp debug_cmd dtls_srtp echo fakevideo g711 httpd \
 		httpreq ice in_band_dtmf l16 menu mixausrc mixminus mwi natpmp \
 		netroam pcp presence rtcpsummary selfview serreg srtp stdio \
 		stun syslog turn uuid vidbridge vidinfo vumeter
@@ -86,8 +88,8 @@ DBUS_VARS=		_MODULES_LIST+=ctrl_dbus \
 			USE_GNOME+=glib20
 EVDEV_BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 EVDEV_VARS=		_MODULES_LIST+=evdev
-G711_LIB_DEPENDS=	libspandsp.so:comms/spandsp
-G711_VARS=		_MODULES_LIST+=g711
+G722L_LIB_DEPENDS=	libg722.so:audio/libg722
+G722L_VARS=		_MODULES_LIST+=libg722
 G722_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 G722_VARS=		_MODULES_LIST+=g722
 G726_LIB_DEPENDS=	libspandsp.so:comms/spandsp
@@ -171,7 +173,7 @@ post-patch:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:C|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

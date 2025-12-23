@@ -27,7 +27,7 @@ lib/baresip/modules/dtls_srtp.so
 lib/baresip/modules/echo.so
 %%EVDEV%%lib/baresip/modules/evdev.so
 lib/baresip/modules/fakevideo.so
-%%G711%%lib/baresip/modules/g711.so
+lib/baresip/modules/g711.so
 %%G722%%lib/baresip/modules/g722.so
 %%G726%%lib/baresip/modules/g726.so
 %%GSTREAMER%%lib/baresip/modules/gst.so
@@ -40,6 +40,7 @@ lib/baresip/modules/in_band_dtmf.so
 %%JACK%%lib/baresip/modules/jack.so
 %%KAOPTIONS%%lib/baresip/modules/kaoptions.so
 lib/baresip/modules/l16.so
+%%G722L%%lib/baresip/modules/libg722.so
 lib/baresip/modules/menu.so
 lib/baresip/modules/mixausrc.so
 lib/baresip/modules/mixminus.so
@@ -82,8 +83,8 @@ lib/baresip/modules/vumeter.so
 %%WEBRTC_AEC%%lib/baresip/modules/webrtc_aec.so
 %%X11%%lib/baresip/modules/x11.so
 lib/libbaresip.so
-lib/libbaresip.so.23
-lib/libbaresip.so.23.3.0
+lib/libbaresip.so.24
+lib/libbaresip.so.24.4.0
 libdata/pkgconfig/libbaresip.pc
 share/applications/com.github.baresip.desktop
 %%DATADIR%%/autoanswer.wav
