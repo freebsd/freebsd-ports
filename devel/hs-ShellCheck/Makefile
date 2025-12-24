@@ -1,5 +1,6 @@
 PORTNAME=	ShellCheck
 DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -16,7 +17,7 @@ USE_CABAL=	Diff-1.0.2 \
 		QuickCheck-2.16.0.0 \
 		StateVar-1.2.2 \
 		aeson-2.2.3.0_4 \
-		ansi-terminal-1.1.3 \
+		ansi-terminal-1.1.4 \
 		ansi-terminal-types-1.1.3 \
 		assoc-1.1.1_1 \
 		base-orphans-0.9.3 \
@@ -28,7 +29,7 @@ USE_CABAL=	Diff-1.0.2 \
 		data-fix-0.3.4_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
-		fgl-5.8.3.0_1 \
+		fgl-5.8.3.0_2 \
 		generically-0.1.1_4 \
 		hashable-1.5.0.0_1 \
 		indexed-traversable-0.1.4_1 \
@@ -37,7 +38,6 @@ USE_CABAL=	Diff-1.0.2 \
 		integer-logarithms-1.0.4 \
 		network-uri-2.6.4.2_1 \
 		optparse-applicative-0.19.0.0 \
-		os-string-2.0.8 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.9.1.0 \
@@ -49,7 +49,7 @@ USE_CABAL=	Diff-1.0.2 \
 		semigroupoids-6.0.1_2 \
 		splitmix-0.1.3.1 \
 		strict-0.5.1_1 \
-		tagged-0.8.9 \
+		tagged-0.8.10 \
 		tasty-1.5.3_2 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
@@ -58,7 +58,7 @@ USE_CABAL=	Diff-1.0.2 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
 		transformers-compat-0.7.2 \
-		unordered-containers-0.2.20.1 \
+		unordered-containers-0.2.21_1 \
 		uuid-types-1.0.6_3 \
 		vector-0.13.2.0_2 \
 		vector-stream-0.1.0.1_4 \
