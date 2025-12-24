@@ -1,5 +1,6 @@
 PORTNAME=	commons-daemon
 DISTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://archive.apache.org/dist/commons/daemon/source/:src \
 		https://archive.apache.org/dist/commons/daemon/binaries/:bin
