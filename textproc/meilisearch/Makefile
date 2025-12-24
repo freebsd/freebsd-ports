@@ -1,15 +1,15 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
-PORTREVISION=	15
+DISTVERSION=	1.31.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
-		https://dlwqk3ibdg1xh.cloudfront.net/:dic_upstream \
+		https://Lindera.dev/:dic_upstream \
 		https://milli-benchmarks.fra1.digitaloceanspaces.com/datasets/:benchmark
 DISTFILES=	${MINIDASHBOARDFILE}:mini_dashboard_assets \
 		mecab-ipadic-2.7.0-20070801.tar.gz:dic_upstream \
 		unidic-mecab-2.1.2.tar.gz:dic_upstream \
 		mecab-ko-dic-2.1.1-20180720.tar.gz:dic_upstream \
+		mecab-ipadic-neologd-0.0.7-20200820.tar.gz:dic_upstream \
 		smol-songs.csv.gz:benchmark \
 		smol-songs-1_2.csv.gz:benchmark \
 		smol-songs-3_4.csv.gz:benchmark \
@@ -42,9 +42,9 @@ USES=		cargo pkgconfig
 USE_GITHUB=	yes
 
 #GH_TUPLE=		meilisearch:lmdb:6a01c0a:lmdb/../lmdb-rs-501aa34a1ab7f092e3ff54a6c22ff6c55931a2d8/lmdb-sys/lmdb
-DASHBOARD_VERSION=	0.2.14
+DASHBOARD_VERSION=	0.2.22
 MINIDASHBOARDFILE=	meilisearch-mini-dashboard-build-${DASHBOARD_VERSION}.zip
-CARGO_INSTALL_PATH=	meilisearch
+CARGO_INSTALL_PATH=	crates/meilisearch
 CARGO_ENV=		LIBGIT2_SYS_USE_PKG_CONFIG=1 \
 			MILLI_BENCH_DATASETS_PATH=${WRKDIR}
 PLIST_FILES=		bin/${PORTNAME}
@@ -56,12 +56,9 @@ post-extract:
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%MINIDASHBOARDFILE%%,${DISTDIR}/${MINIDASHBOARDFILE},'  \
-		${WRKSRC}/meilisearch/build.rs
-	${REINPLACE_CMD} -e 's,%%DISTDIR%%,${DISTDIR},'  \
-		${CARGO_VENDOR_DIR}/lindera-unidic-0.31.0/build.rs \
-		${CARGO_VENDOR_DIR}/lindera-ipadic-0.31.0/build.rs \
-		${CARGO_VENDOR_DIR}/lindera-ko-dic-0.31.0/build.rs
-	${GREP} -F -R -l %%WRKDIR%% ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's,%%WRKDIR%%,${WRKDIR},'
+		${WRKSRC}/crates/meilisearch/build.rs
+	${GREP} -E -R -l '%%(WRK|DIST)DIR%%' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's,%%WRKDIR%%,${WRKDIR},' \
+		-e 's,%%DISTDIR%%,${DISTDIR},'
 
 .include <bsd.port.mk>
