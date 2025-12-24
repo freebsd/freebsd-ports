@@ -1,5 +1,5 @@
 PORTNAME=	rocinante
-DISTVERSION=	1.0.20250714
+DISTVERSION=	1.1.0.251222
 CATEGORIES=	sysutils
 
 MAINTAINER=	christer.edwards@gmail.com
