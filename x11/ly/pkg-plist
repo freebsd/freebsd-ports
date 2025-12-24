@@ -1,4 +1,10 @@
 bin/ly
+bin/ly_wrapper
+@sample %%ETCDIR%%/config.ini.sample
+@sample %%ETCDIR%%/setup.sh.sample
+%%ETCDIR%%/custom-sessions/README
+%%ETCDIR%%/lang/ar.ini
+%%ETCDIR%%/lang/bg.ini
 %%ETCDIR%%/lang/cat.ini
 %%ETCDIR%%/lang/cs.ini
 %%ETCDIR%%/lang/de.ini
@@ -6,6 +12,8 @@ bin/ly
 %%ETCDIR%%/lang/es.ini
 %%ETCDIR%%/lang/fr.ini
 %%ETCDIR%%/lang/it.ini
+%%ETCDIR%%/lang/ja_JP.ini
+%%ETCDIR%%/lang/lv.ini
 %%ETCDIR%%/lang/pl.ini
 %%ETCDIR%%/lang/pt.ini
 %%ETCDIR%%/lang/pt_BR.ini
@@ -15,7 +23,6 @@ bin/ly
 %%ETCDIR%%/lang/sv.ini
 %%ETCDIR%%/lang/tr.ini
 %%ETCDIR%%/lang/uk.ini
-@sample %%ETCDIR%%/config.ini.sample
-@sample %%ETCDIR%%/wsetup.sh.sample
-@sample %%ETCDIR%%/xsetup.sh.sample
+%%ETCDIR%%/lang/zh_CN.ini
 etc/pam.d/ly
+etc/pam.d/ly-autologin
