@@ -1,13 +1,10 @@
 PORTNAME=	bastille
-DISTVERSION=	1.3.0.251222
+DISTVERSION=	1.3.1.251223
 CATEGORIES=	sysutils
 MAINTAINER=	jdhurtado@orbiware.com
 # co-maintainer: snarfingcode666@gmail.com
 COMMENT=	Jail automation framework
 WWW=		https://bastillebsd.org
-
-PATCH_SITES=	https://github.com/michael-o/bastille/commit/
-PATCHFILES=		2ddb02f90a907075a41f41fc1ea861f83178acee.patch:-p1
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -19,7 +16,6 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 post-patch:
-	@${FIND} ${WRKSRC} -name *.orig -delete
 	@${REINPLACE_CMD} \
 		-e 's|/usr/local/etc/bastille|${ETCDIR}|g' \
 		-e 's|/usr/local|${PREFIX}|g' \
