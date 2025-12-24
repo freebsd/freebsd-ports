@@ -1,6 +1,5 @@
 PORTNAME=	ty
-DISTVERSION=	0.0.1a34
-PORTREVISION=	1
+DISTVERSION=	0.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=1.0<2.0:devel/py-maturin@${PY_FLAVOR}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo python
+USES=		cargo gmake python
 
 USE_PYTHON=	autoplist concurrent pep517
 
