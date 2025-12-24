@@ -1,8 +1,8 @@
 PORTNAME=	plank
-DISTVERSION=	0.11.157
+DISTVERSION=	0.11.158
 CATEGORIES=	x11
 
-MAINTAINER=	daniel@shafer.cc
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Elegant, simple, and clean dock
 WWW=		https://github.com/zquestz/plank-reloaded
 
