@@ -1,7 +1,7 @@
 PORTNAME=	cockroach
 DISTVERSIONPREFIX=	v
 DISTVERSION=	19.1.11
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	databases
 MASTER_SITES=	https://binaries.cockroachdb.com/
 EXTRACT_SUFX=	.src.tgz
@@ -12,6 +12,9 @@ WWW=		https://www.cockroachlabs.com/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/src/github.com/cockroachdb/cockroach/LICENSE
+
+DEPRECATED=	Current versions are fully-proprietary software, see PR 272257
+EXPIRATION_DATE=	2025-12-31
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	64-bit system is strongly recommended
