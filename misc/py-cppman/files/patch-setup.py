@@ -1,6 +1,6 @@
---- setup.py.orig	2025-07-22 07:20:26 UTC
+--- setup.py.orig	2025-12-19 04:26:41 UTC
 +++ setup.py
-@@ -9,10 +9,9 @@ _data_files = [
+@@ -20,10 +20,9 @@ _data_files = [
          ]
  
  _data_files = [
