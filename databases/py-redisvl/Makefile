@@ -1,5 +1,5 @@
 PORTNAME=	redisvl
-DISTVERSION=	0.12.1
+DISTVERSION=	0.13.2
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.4<7.0:devel/py-pyyaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}redis6>=5.0<7.0:databases/py-redis6@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}redis>=5.0<7.2:databases/py-redis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2<3:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=8.2.2:devel/py-tenacity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.4.0<1.0.0:math/py-ml-dtypes@${PY_FLAVOR} \
