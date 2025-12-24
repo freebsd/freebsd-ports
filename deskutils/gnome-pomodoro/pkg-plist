@@ -51,6 +51,7 @@ share/locale/el/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/es/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/fi/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/fr/LC_MESSAGES/gnome-pomodoro.mo
+share/locale/he/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/hr/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/id/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/it/LC_MESSAGES/gnome-pomodoro.mo
@@ -64,6 +65,7 @@ share/locale/pl/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/ru/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/sv/LC_MESSAGES/gnome-pomodoro.mo
+share/locale/ta/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/te/LC_MESSAGES/gnome-pomodoro.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-pomodoro.mo
 share/metainfo/org.gnome.Pomodoro.appdata.xml
