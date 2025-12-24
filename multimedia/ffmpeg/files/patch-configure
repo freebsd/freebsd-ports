@@ -1,0 +1,11 @@
+--- configure.orig	2025-12-24 07:09:43 UTC
++++ configure
+@@ -7667,7 +7667,7 @@ if enabled proper_dce; then
+ EOF
+ 
+ if enabled proper_dce; then
+-    echo "X { local: *; };" > $TMPV
++    echo "X { global: environ; __progname; local: *; };" > $TMPV
+     if test_ldflags -Wl,${version_script},$TMPV; then
+         append SHFLAGS '-Wl,${version_script},\$(SUBDIR)lib\$(NAME).ver'
+         quotes='""'
