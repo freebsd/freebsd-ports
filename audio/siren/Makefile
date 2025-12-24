@@ -1,5 +1,6 @@
 PORTNAME=	siren
 DISTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.kariliq.nl/${PORTNAME}/dist/
 

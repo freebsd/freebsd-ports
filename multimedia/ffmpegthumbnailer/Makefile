@@ -1,6 +1,7 @@
 PORTNAME=	ffmpegthumbnailer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	nxjoseph@protonmail.com

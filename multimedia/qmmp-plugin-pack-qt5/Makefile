@@ -1,5 +1,6 @@
 PORTNAME=	qmmp-plugin-pack
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/${PORTNAME}/${PORTVERSION:R}/ \
 	SF/qmmp-dev/${PORTNAME}/${PORTVERSION:R}/

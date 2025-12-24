@@ -1,6 +1,7 @@
 PORTNAME=	cantata
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES=	audio kde
 
 PATCH_SITES=	https://github.com/nullobsi/cantata/commit/

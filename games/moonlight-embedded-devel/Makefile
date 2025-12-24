@@ -1,5 +1,6 @@
 PORTNAME=	moonlight-embedded-devel
 DISTVERSION=	2.7.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/armin-25689/moonlight-embedded/releases/download/v${DISTVERSION}/
 

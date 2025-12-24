@@ -1,6 +1,7 @@
 PORTNAME=	tenacity
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4-alpha1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	freebsd@sysctl.cz

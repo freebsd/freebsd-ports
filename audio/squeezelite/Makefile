@@ -1,5 +1,6 @@
 PORTNAME=	squeezelite
 DISTVERSION=	2.0.0.1541
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jockl@pianojockl.org

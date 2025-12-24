@@ -1,6 +1,6 @@
 PORTNAME=	opencascade
 PORTVERSION=	7.4.0 # resurrected because science/chrono only builds with opencascade-7.4.0, see https://github.com/projectchrono/chrono/issues/359#issuecomment-1023478083
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad science
 PKGNAMESUFFIX=	740
 

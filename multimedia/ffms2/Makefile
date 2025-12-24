@@ -1,5 +1,6 @@
 PORTNAME=	ffms2
 DISTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

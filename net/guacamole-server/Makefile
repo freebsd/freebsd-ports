@@ -1,5 +1,6 @@
 PORTNAME=	guacamole-server
 DISTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	APACHE/guacamole/${DISTVERSION}/source/
 
