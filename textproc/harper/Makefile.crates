@@ -566,7 +566,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		utf-8-0.7.6 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.18.1 \
+		uuid-1.19.0 \
 		valuable-0.1.1 \
 		variadics_please-1.1.0 \
 		version_check-0.9.5 \
