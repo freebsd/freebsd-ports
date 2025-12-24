@@ -1,6 +1,7 @@
 PORTNAME=	libxkbcommon
 DISTVERSIONPREFIX=	xkbcommon-
 DISTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -43,5 +44,15 @@ WAYLAND_MESON_TRUE=	enable-wayland
 X11_USES=	xorg
 X11_USE=	XORG=xcb
 X11_MESON_TRUE=	enable-x11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEVDEV} || ${PORT_OPTIONS:MWAYLAND} || ${PORT_OPTIONS:MX11}
+PLIST_FILES+=	libexec/xkbcommon/xkbcli-interactive
+.endif
+
+.if ${PORT_OPTIONS:MWAYLAND} || ${PORT_OPTIONS:MX11}
+PLIST_FILES+=	libexec/xkbcommon/xkbcli-dump-keymap
+.endif
 
 .include <bsd.port.mk>
