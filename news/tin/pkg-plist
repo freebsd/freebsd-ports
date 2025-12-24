@@ -12,6 +12,7 @@ bin/w2r.pl
 %%NLS%%share/locale/es/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/et/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/tin.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/tin.mo
