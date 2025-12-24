@@ -11,6 +11,8 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Advanced FFmpeg-based subtitle editor
 WWW=		https://subtitlecomposer.kde.org
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

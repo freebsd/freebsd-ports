@@ -13,6 +13,8 @@ WWW=		https://www.zoneminder.com/
 
 LICENSE=	GPLv2
 
+BROKEN=		Does not build with ffmpeg > 6
+
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		${DBD_MYSQL} \
 		p5-Date-Manip>=0:devel/p5-Date-Manip \

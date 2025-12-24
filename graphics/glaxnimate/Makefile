@@ -9,6 +9,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple vector animation program
 WWW=		https://glaxnimate.mattbas.org/
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 

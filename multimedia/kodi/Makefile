@@ -12,6 +12,8 @@ MAINTAINER=	yzrh@noema.org
 COMMENT=	Award winning media center application
 WWW=		https://kodi.tv/
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	GPLv2+
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le

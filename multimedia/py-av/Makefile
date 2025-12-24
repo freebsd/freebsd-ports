@@ -12,6 +12,8 @@ WWW=		https://docs.mikeboers.com/pyav/develop/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
 USES=		python pkgconfig

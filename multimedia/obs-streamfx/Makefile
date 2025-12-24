@@ -10,6 +10,8 @@ WWW=		https://github.com/Xaymar/obs-StreamFX
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Does not build with ffmpeg > 6
+
 NOT_FOR_ARCHS=		i386
 NOT_FOR_ARCHS_REASON=	plugin requires a lot of memory for many of the filters to even run, physical or virtual memory can exceed 4GB
 

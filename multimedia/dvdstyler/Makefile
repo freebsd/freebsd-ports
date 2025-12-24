@@ -11,6 +11,8 @@ MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
 WWW=		https://www.dvdstyler.org/
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

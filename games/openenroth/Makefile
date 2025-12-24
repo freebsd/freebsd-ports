@@ -7,6 +7,8 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open reimplementation of Might and Magic VI-VIII game engine
 WWW=		https://github.com/OpenEnroth/OpenEnroth
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	LGPL3
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \

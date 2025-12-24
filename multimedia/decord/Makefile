@@ -11,6 +11,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Efficient video loader for deep learning
 WWW=		https://github.com/dmlc/decord
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

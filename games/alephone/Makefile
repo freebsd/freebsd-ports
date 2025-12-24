@@ -9,6 +9,8 @@ MAINTAINER=	fiziologus@gmail.com
 COMMENT=	Open source version of Bungies Marathon game
 WWW=		http://source.bungie.org/
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \

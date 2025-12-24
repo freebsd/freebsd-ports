@@ -8,6 +8,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	L-SMASH source plugin for VapourSynth
 WWW=		https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 

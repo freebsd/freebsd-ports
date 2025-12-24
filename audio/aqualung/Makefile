@@ -7,6 +7,8 @@ MAINTAINER=	portmaster@BSDforge.com
 COMMENT=	Music player with rich features
 WWW=		https://aqualung.jeremyevans.net/
 
+BROKEN=		Does not build with ffmpeg > 6
+
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a991c13d0df734a5d0fea7db6b181176858f3e58.patch:-p1 # Support newer audio/mac
 PATCHFILES+=	d2c88317b6042a05c236faf3c09f600337c6379e.patch:-p1 # Support newer audio/mac

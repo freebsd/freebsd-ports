@@ -13,6 +13,8 @@ MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT=	3D modeling/rendering/animation package
 WWW=		https://www.blender.org/
 
+BROKEN=		Does not build with ffmpeg > 6
+
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 
