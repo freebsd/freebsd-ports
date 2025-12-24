@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libavcodec.so.60:multimedia/ffmpeg \
+		libavcodec.so:multimedia/ffmpeg \
 		libfreetype.so:print/freetype2
 
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
