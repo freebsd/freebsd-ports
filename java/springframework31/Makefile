@@ -9,6 +9,9 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	The Spring Framework for Java
 WWW=		https://www.springframework.org/
 
+DEPRECATED=		Superseded upstream by newer versions many years ago
+EXPIRATION_DATE=	2025-12-31
+
 WRKSRC=		${WRKDIR}/spring-framework-${PORTVERSION}.RELEASE
 
 PKGNAMESUFFIX=	31
