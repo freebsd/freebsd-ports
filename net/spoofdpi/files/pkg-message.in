@@ -40,4 +40,15 @@ EOM
 The whole configuration file has changed, see the documentation for more details. I've updated the sample config in the port.
 EOM
 }
+{ type: upgrade
+  maximum_version: "1.2.1"
+  message: << EOM
+IMPORTANT CHANGE: Refactored Policy Matching
+The configuration structure for policy matching has changed to allow multiple domains and
+address ranges within a single rule. Users defining policies in config.toml must update their
+configuration.
+
+See the changelog URL for the details about it. The port-supplied config file does not use this feature, so if you didn't add it yourself, then no need to worry.
+EOM
+}
 ]
