@@ -1,5 +1,5 @@
 PORTNAME=	hpack
-DISTVERSION=	0.38.3
+DISTVERSION=	0.39.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +17,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		QuickCheck-2.16.0.0 \
 		StateVar-1.2.2 \
 		aeson-2.2.3.0_4 \
-		ansi-terminal-1.1.3 \
+		ansi-terminal-1.1.4 \
 		ansi-terminal-types-1.1.3 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
@@ -82,7 +82,6 @@ USE_CABAL=	Glob-0.10.2_3 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.19.0.0 \
-		os-string-2.0.8 \
 		pem-0.2.4 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
@@ -97,7 +96,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		splitmix-0.1.3.1 \
 		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
-		tagged-0.8.9 \
+		tagged-0.8.10 \
 		tasty-1.5.3_2 \
 		text-iso8601-0.1.1_2 \
 		text-metrics-0.3.3 \
@@ -106,11 +105,11 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-compat-0.1.6 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
-		tls-2.1.12 \
+		tls-2.1.13 \
 		transformers-compat-0.7.2 \
 		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20.1 \
+		unordered-containers-0.2.21_1 \
 		uuid-types-1.0.6_3 \
 		vector-0.13.2.0_2 \
 		vector-algorithms-0.9.1.0 \
