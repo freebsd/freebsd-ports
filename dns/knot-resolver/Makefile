@@ -1,6 +1,6 @@
 PORTNAME=	knot-resolver
 DISTVERSION=	5.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	https://knot-resolver.nic.cz/release/ \
 		https://dns.company/downloads/knot-resolver/
@@ -34,6 +34,7 @@ SHEBANG_FILES=	scripts/bench.sh \
 		scripts/build-in-obs.sh \
 		scripts/coverage_c_combine.sh \
 		scripts/coverage_env.sh \
+		scripts/enable-repo-cznic-labs.sh \
 		scripts/gen-cdefs.sh \
 		scripts/gen-pgp-keyblock.sh \
 		scripts/get-date.sh \
@@ -45,7 +46,8 @@ SHEBANG_FILES=	scripts/bench.sh \
 		scripts/test-config.sh \
 		scripts/test-integration-prepare.sh \
 		scripts/update-authors.sh \
-		scripts/update-root-hints.sh
+		scripts/update-root-hints.sh \
+		scripts/upstream-version.sh
 
 MESON_ARGS=	--buildtype=release \
 		--default-library=static \
@@ -116,11 +118,13 @@ STRIP_TARGETS=	sbin/kres-cache-gc \
 		sbin/kresc \
 		sbin/kresd \
 		lib/knot-resolver/ahocorasick.so \
+		lib/knot-resolver/debug_opensslkeylog.so \
 		lib/knot-resolver/kres_modules/bogus_log.so \
 		lib/knot-resolver/kres_modules/dnstap.so \
 		lib/knot-resolver/kres_modules/edns_keepalive.so \
+		lib/knot-resolver/kres_modules/extended_error.so \
 		lib/knot-resolver/kres_modules/hints.so \
-		lib/knot-resolver/kres_modules/lib/knot-resolver/kres_modules/nsid.so \
+		lib/knot-resolver/kres_modules/nsid.so \
 		lib/knot-resolver/kres_modules/refuse_nord.so \
 		lib/knot-resolver/kres_modules/stats.so
 
