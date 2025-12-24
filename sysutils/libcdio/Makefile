@@ -1,5 +1,5 @@
 PORTNAME=	libcdio
-DISTVERSION=	2.2.0
+DISTVERSION=	2.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -20,6 +20,7 @@ USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-cddb \
+		--disable-static \
 		--disable-vcd-info \
 		${ICONV_CONFIGURE_ARG}
 
