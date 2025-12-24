@@ -28,6 +28,8 @@ use IPC::Open2;
 use File::Basename;
 use Term::ANSIColor qw(:constants);
 use POSIX qw(strftime);
+use open qw(:std :utf8);
+use utf8;
 
 sub perror($$$$);
 our ($opt_a, $opt_A, $opt_b, $opt_C, $opt_c, $opt_g, $opt_h, $opt_m, $opt_t, $opt_v, $opt_M, $opt_N, $opt_B, $opt_V, @ALLOWED_FULL_PATHS);
@@ -51,8 +53,8 @@ $portdir = '.';
 
 # version variables
 my $major = 2;
-my $minor = 22;
-my $micro = 8;
+my $minor = 23;
+my $micro = 0;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1357,6 +1359,7 @@ sub checkmakefile {
 	my $optused = 0;
 	my $desktop_entries = '';
 	my $conflicts = "";
+	my %targ_hashes = ();
 
 	my $masterdir = $makevar{MASTERDIR};
 	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
@@ -1557,10 +1560,10 @@ sub checkmakefile {
 					"%%FOO%% variables.  Use make variables and logic instead");
 			}
 			if ($plist_file =~ m|\.desktop$| && $makevar{USES} !~ /\bdesktop-file-utils\b/) {
-				&perror("FATAL", "", -1, "PLIST_FILES: this port installs .desktop files. ".
-					"please add `desktop-file-utils` to USES.");
-			}
-
+            	&perror("WARN", "", -1, "this port installs .desktop files. ".
+                	"If the .desktop file(s) installed contain ``MimeType='', ".
+                	"you must add `desktop-file-utils` to USES.");
+            }
 		}
 	}
 
@@ -3221,6 +3224,9 @@ MAINTAINER COMMENT WWW
 		if (length($makevar{COMMENT}) > 70) {
 			&perror("WARN", $file, -1, "COMMENT exceeds 70 characters limit.");
 		}
+		if ($makevar{COMMENT} =~ /([^[:ascii:]])/) {
+			&perror("WARN", $file, -1, "COMMENT contains non-ASCII characters (e.g., $1).");
+		}
 	}
 
 	# check WWW
@@ -3292,6 +3298,15 @@ MAINTAINER COMMENT WWW
 				&perror("WARN", $file, -1, "if license ends with a '+', make sure ".
 					"LICENSE_FILE_$lfn is followed by a space before the '='.");
 			}
+		}
+
+		# Check for dups in LICENSE_PERMS
+		my @lic_perms = split(/\s+/, $makevar{LICENSE_PERMS});
+		my %lperm_seen;
+		foreach my $lic (@lic_perms) {
+    		if ($lperm_seen{$lic}++) {
+				&perror("WARN", $file, -1, "license permission $lic is duplicated in LICENSE_PERMS.");
+    		}
 		}
 
 		# Last-ditch check to make sure the license is sanely defined.
@@ -3585,6 +3600,40 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 		&perror("WARN", $file, -1, "USE_ANT is intended only for ports that ".
 			"build with Ant.  It is recommended not to override the default ".
 			"'do-build:' target when defining USE_ANT");
+	}
+
+	# Check the right sequence of pre-, do-, post-.
+	foreach my $targ_prefix ("pre", "do", "post") {
+		if ($tmp =~ /^${targ_prefix}-([^:]+):/m) {
+			my $targ_lineno = &linenumber($`);
+			my $targ = $1;
+			my $targ_hash;
+			if (!$targ_hashes{$targ}) {
+				$targ_hash = {};
+			} else {
+				$targ_hash = $targ_hashes{$targ};
+			}
+
+			if ($targ_hash->{$targ_prefix}) {
+				# Duplicate target!
+				&perror("FATAL", $file, -1, "Target ${targ_prefix}-${targ} is duplicated!");
+			} else {
+				$targ_hash->{$targ_prefix} = $targ_lineno;
+			}
+
+			$targ_hashes{$targ} = $targ_hash;
+		}
+	}
+
+	foreach my $targ (keys %targ_hashes) {
+		my $tpre = $targ_hashes{$targ}->{'pre'} // "-inf";
+		my $tdo = $targ_hashes{$targ}->{'do'} // $tpre + 1;
+		my $tpost = $targ_hashes{$targ}->{'post'} // $tdo + 1;
+
+		if ($tpre > $tdo || $tpre > $tpost || $tdo > $tpost) {
+			&perror("FATAL", $file, -1, "Target ``$targ'' violates the pre-${targ}, do-${targ}, ".
+				"post-${targ} order.")
+		}
 	}
 
 	#
