@@ -1,6 +1,5 @@
 PORTNAME=	vice
-PORTVERSION=	3.9
-PORTREVISION=	1
+PORTVERSION=	3.10
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -37,6 +36,8 @@ USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
 USE_XORG+=	xrender xinerama xi xrandr xcursor xcomposite xdamage xfixes
 HAS_CONFIGURE=	yes
 MAKE_ENV+=	XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
+MAKE_ENV+=	XDG_UTILS_INSTALL_MODE=system
+MAKE_ARGS+=	DESKTOP_PREFIX=${PREFIX}
 CFLAGS+=	-fcommon
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--with-lame \
@@ -105,9 +106,10 @@ pre-configure:
 	${REINPLACE_CMD} -e 's| doc||' ${WRKSRC}/Makefile.in
 .endif
 
-# workaround for xdg-desktop-menu
-pre-install-GTK3UI-on:
-	${MKDIR} ${STAGEDIR}/${PREFIX}/share/desktop-directories
+pre-install:
+.if ${PORT_OPTIONS:MGTK3UI}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor
+.endif
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
