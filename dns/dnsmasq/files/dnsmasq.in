@@ -56,7 +56,7 @@ load_rc_config "${name}"
 : ${dnsmasq_conf="%%PREFIX%%/etc/${name}.conf"}
 : ${dnsmasq_restart="YES"}
 
-command_args="-x $pidfile -C $dnsmasq_conf"
+command_args="-x $pidfile -u dnsmasq -C $dnsmasq_conf"
 
 required_files="${dnsmasq_conf}"
 extra_commands="reload logstats checkconfig"
