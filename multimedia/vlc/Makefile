@@ -1,6 +1,5 @@
 PORTNAME=	vlc
-DISTVERSION=	3.0.21
-PORTREVISION=	21
+DISTVERSION=	3.0.22
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
 MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -28,8 +27,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libebml.so:textproc/libebml
 RUN_DEPENDS=	ffmpeg>=3.4.1,1:multimedia/ffmpeg
 
-EXTRA_PATCHES=	${FILESDIR}/vlc-3.0.21-fedora_ffmpeg7-1.patch:-p1 \
-		${FILESDIR}/vlc-3.0.21-ffmpeg8-1.patch:-p1
+EXTRA_PATCHES=	${FILESDIR}/vlc-3.0.22-ffmpeg8.patch:-p1
 
 USES=		compiler:c++17-lang cpe desktop-file-utils elfctl gettext-tools \
 		gl gmake gnome iconv:wchar_t libtool localbase pathfix pkgconfig \
