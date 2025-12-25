@@ -54,7 +54,6 @@ CONFLICTS_INSTALL=	dnsmasq-devel
 SUB_FILES=	pkg-message
 
 SUB_LIST=	USER="${USERS}" GROUP="${GROUPS}"
-PLIST_SUB=	USER="${USERS}" GROUP="${GROUPS}"
 
 GROUPS=		dnsmasq
 USERS=		dnsmasq
