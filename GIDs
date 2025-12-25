@@ -325,7 +325,7 @@ hydroxide:*:381:
 _tlsrpt:*:382:
 cascade:*:383:
 omada:*:384:
-dnsmasq:*:385:385::0:0:dnsmasq Daemon:/nonexistent:/usr/sbin/nologin
+dnsmasq:*:385:
 # free: 386
 # free: 387
 # free: 388
