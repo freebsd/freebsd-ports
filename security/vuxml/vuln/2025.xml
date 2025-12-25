@@ -1,3 +1,36 @@
+  <vuln vid="bf854a37-e180-11f0-ac0c-5404a68ad561">
+    <topic>fluidsynth -- Use after free when using DLS files</topic>
+    <affects>
+<package>
+<name>fluidsynth</name>
+<range><lt>2.5.2</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The fluidsynth authors report:</p>
+	<blockquote cite="https://github.com/FluidSynth/fluidsynth/security/advisories/GHSA-ffw2-xvvp-39ch">
+	  <p>A race condition during unloading of a DLS file can trigger
+	  a heap-based use-after-free. A concurrently running thread may
+	  be pending to unload a DLS file, leading to use of freed memory, if
+	  the synthesizer is being concurrently destroyed, or samples of
+	  the (unloaded) DLS file are concurrently used to synthesize audio.
+	  Realistically, both scenarios will result in a denial of service.
+	  In worst cases, it may result in arbitrary code execution in the
+	  context of an application using FluidSynth.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-68617</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2025-68617</url>
+    </references>
+    <dates>
+      <discovery>2025-12-23</discovery>
+      <entry>2025-12-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c1613867-df16-11f0-8870-b42e991fc52e">
     <topic>MongoDB -- Improper Handling of Length Parameter Inconsistency</topic>
     <affects>
