@@ -1,1 +1,7 @@
-NATS is an open-source, cloud-native messaging system.
+NATS is an open-source, cloud-native messaging system written in Go.
+It provides high-performance pub/sub, request/reply, and distributed
+queue patterns for microservices, IoT, and cloud-native applications.
+
+Features include JetStream for persistence and streaming, NATS KV for
+key-value storage, NATS Object Store, and built-in security with TLS
+and authentication.
