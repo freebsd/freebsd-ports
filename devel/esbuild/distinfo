@@ -1,5 +1,5 @@
-TIMESTAMP = 1740402666
-SHA256 (go/devel_esbuild/esbuild-v0.25.0/v0.25.0.mod) = 2d48dbed6151e653adc9ab5d8869cba012d167f13352e45880e59104e1e02b9b
-SIZE (go/devel_esbuild/esbuild-v0.25.0/v0.25.0.mod) = 428
-SHA256 (go/devel_esbuild/esbuild-v0.25.0/v0.25.0.zip) = 76b9d47f39ec64367d4a10444e57f3a71e0426c5efb59331f885f22eca5c8e7d
-SIZE (go/devel_esbuild/esbuild-v0.25.0/v0.25.0.zip) = 2080350
+TIMESTAMP = 1765554278
+SHA256 (go/devel_esbuild/esbuild-v0.27.1/v0.27.1.mod) = 2d48dbed6151e653adc9ab5d8869cba012d167f13352e45880e59104e1e02b9b
+SIZE (go/devel_esbuild/esbuild-v0.27.1/v0.27.1.mod) = 428
+SHA256 (go/devel_esbuild/esbuild-v0.27.1/v0.27.1.zip) = d1a7f852f98b87bceeb4ad586ba614e80fe00f739ea472e60cea46c5dd7e9880
+SIZE (go/devel_esbuild/esbuild-v0.27.1/v0.27.1.zip) = 2136252
