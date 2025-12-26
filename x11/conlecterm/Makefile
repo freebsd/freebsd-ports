@@ -88,7 +88,6 @@ USE_CABAL=	OneTuple-0.4.2_1 \
 		network-uri-2.6.4.2_1 \
 		optics-core-0.4.1.1_1 \
 		optparse-applicative-0.19.0.0 \
-		os-string-2.0.8 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
