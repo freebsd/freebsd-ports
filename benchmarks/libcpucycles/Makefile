@@ -1,5 +1,5 @@
 PORTNAME=	libcpucycles
-DISTVERSION=	20250925
+DISTVERSION=	20251226
 CATEGORIES=	benchmarks devel
 MASTER_SITES=	https://cpucycles.cr.yp.to/
 
@@ -17,21 +17,13 @@ CONFIGURE_ARGS=	--host=${ARCH}
 ALL_TARGET=	default
 CFLAGS+=	-fPIC -fwrapv -fvisibility=hidden
 
-_STAGE=	${WRKSRC}/build/0/package
-
 pre-configure:
 	${ECHO} ${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS} >${WRKSRC}/compilers/default
 
-# no staging support for some reason
-do-install:
-	${INSTALL_MAN} ${_STAGE}/man/man1/cpucycles-info.1 ${STAGEDIR}${PREFIX}/share/man/man1/
-	${INSTALL_MAN} ${_STAGE}/man/man3/cpucycles.3 ${STAGEDIR}${PREFIX}/share/man/man3/
-	${INSTALL_DATA} ${_STAGE}/include/cpucycles.h ${STAGEDIR}${PREFIX}/include/
-	for lib in ${_STAGE}/lib/libcpucycles* ; \
-	do \
-		${INSTALL_LIB} $$lib ${STAGEDIR}${PREFIX}/lib/ ; \
-	done
-	${INSTALL_PROGRAM} ${_STAGE}/bin/cpucycles-info ${STAGEDIR}${PREFIX}/bin/
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/man/man1/* ${STAGEDIR}${PREFIX}/share/man/man1/
+	${MV} ${STAGEDIR}${PREFIX}/man/man3/* ${STAGEDIR}${PREFIX}/share/man/man3/
+	${RMDIR} ${STAGEDIR}${PREFIX}/man/man? ${STAGEDIR}${PREFIX}/man
 
 do-test:
 	${SETENVI} LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib ${STAGEDIR}${PREFIX}/bin/cpucycles-info

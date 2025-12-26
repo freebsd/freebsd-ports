@@ -1,7 +1,9 @@
 bin/cpucycles-info
+bin/cpucycles-open
 include/cpucycles.h
 lib/libcpucycles.a
 lib/libcpucycles.so
 lib/libcpucycles.so.1
 share/man/man1/cpucycles-info.1.gz
+share/man/man1/cpucycles-open.1.gz
 share/man/man3/cpucycles.3.gz
