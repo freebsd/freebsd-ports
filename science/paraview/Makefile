@@ -1,6 +1,6 @@
 PORTNAME=	paraview
 DISTVERSION=	${PARAVIEW_VER}.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}

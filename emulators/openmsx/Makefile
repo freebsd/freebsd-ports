@@ -1,5 +1,6 @@
 PORTNAME=	openmsx
 DISTVERSION=	20.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/openMSX/openMSX/releases/download/RELEASE_20_0/
 

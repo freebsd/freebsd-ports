@@ -1,5 +1,6 @@
 PORTNAME=	allegro
 DISTVERSION=	5.2.10.1
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	https://github.com/liballeg/${PORTNAME}${PKGNAMESUFFIX}/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	5

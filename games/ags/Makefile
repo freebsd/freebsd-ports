@@ -1,5 +1,6 @@
 PORTNAME=	ags
 DISTVERSION=	3.6.2.14
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/adventuregamestudio/ags/releases/download/v${PORTVERSION}/
 DISTNAME=	ags_${DISTVERSION}_source

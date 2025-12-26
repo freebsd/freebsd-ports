@@ -1,6 +1,6 @@
 PORTNAME=	gnash
 PORTVERSION=	0.8.11.20190130
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	https://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-583ccbc1275c7701dc4843ec12142ff86bb305b4

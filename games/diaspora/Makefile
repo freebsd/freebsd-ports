@@ -1,6 +1,6 @@
 PORTNAME=	diaspora
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://diaspora.fs2downloads.com/ \
 		http://sectorgame.com/fsfiles/uploads/Projects%20-%20Campaigns%20-%20TCs/Total%20Conversions/Diaspora/:sectorgame \

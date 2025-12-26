@@ -1,6 +1,6 @@
 PORTNAME=	etlegacy
 DISTVERSION=	2.81.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.etlegacy.com/geoip/:geoip \
 		https://mirror.etlegacy.com/wolfadmin/:wolfadmin

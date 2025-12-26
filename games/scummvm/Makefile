@@ -1,5 +1,6 @@
 PORTNAME=	scummvm
 DISTVERSION=	2.9.1
+PORTREVISION=	1
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 

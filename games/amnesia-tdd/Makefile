@@ -1,6 +1,7 @@
 PORTNAME=	amnesia-tdd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	shamaz.mazum@gmail.com
