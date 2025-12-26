@@ -1,11 +1,11 @@
---- Makefile.in.orig	2009-10-01 18:04:07.000000000 +0000
-+++ Makefile.in	2009-12-21 01:17:02.000000000 +0000
-@@ -200,7 +200,7 @@
- 	missing mkinstalldirs theora-uninstalled.pc.in theora.pc.in \
- 	theoradec-uninstalled.pc.in theoradec.pc.in \
- 	theoraenc-uninstalled.pc.in theoraenc.pc.in
+--- Makefile.in.orig	2025-03-29 06:07:40 UTC
++++ Makefile.in
+@@ -191,7 +191,7 @@ am__define_uniq_tagged_files = \
+   unique=`for i in $$list; do \
+     if test -f "$$i"; then echo $$i; else echo $(srcdir)/$$i; fi; \
+   done | $(am__uniquify_input)`
 -DIST_SUBDIRS = lib include doc tests m4 examples
 +DIST_SUBDIRS = lib include m4
- all: config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
- 
+ am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
+ 	$(srcdir)/libtheora.spec.in $(srcdir)/theora-uninstalled.pc.in \
+ 	$(srcdir)/theora.pc.in $(srcdir)/theoradec-uninstalled.pc.in \

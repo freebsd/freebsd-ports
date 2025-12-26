@@ -1,6 +1,5 @@
 PORTNAME=	libtheora
-PORTVERSION=	1.1.1
-PORTREVISION=	7
+PORTVERSION=	1.2.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://downloads.xiph.org/releases/theora/ \
 		https://ftp.osuosl.org/pub/xiph/releases/theora/
@@ -12,10 +11,9 @@ WWW=		https://www.theora.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libogg.so:audio/libogg \
-		libvorbis.so:audio/libvorbis
+LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		libtool localbase pathfix tar:bzip2
+USES=		libtool localbase pathfix tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-sdltest \
 		--disable-examples
