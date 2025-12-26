@@ -1,5 +1,5 @@
 PORTNAME=	hledger
-DISTVERSION=	1.50.4
+DISTVERSION=	1.51.1
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		StateVar-1.2.2 \
 		aeson-2.2.3.0_4 \
 		aeson-pretty-0.8.10 \
-		ansi-terminal-1.1.3 \
+		ansi-terminal-1.1.5 \
 		ansi-terminal-types-1.1.3 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
@@ -86,7 +86,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		half-0.3.3_1 \
 		hashable-1.5.0.0_1 \
 		hashtables-1.4.2 \
-		hledger-lib-1.50.4 \
+		hledger-lib-1.51.1 \
 		hourglass-0.2.12_1 \
 		hpke-0.0.0 \
 		hsc2hs-0.68.10_4 \
@@ -117,7 +117,6 @@ USE_CABAL=	Decimal-0.5.2 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.19.0.0 \
-		os-string-2.0.8 \
 		parser-combinators-1.3.0_1 \
 		pem-0.2.4 \
 		pretty-simple-4.1.4.0 \
@@ -145,7 +144,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
 		tabular-0.2.2.8_1 \
-		tagged-0.8.9 \
+		tagged-0.8.10 \
 		tasty-1.5.3_2 \
 		tasty-hunit-0.10.2 \
 		temporary-1.3 \
@@ -166,7 +165,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		uglymemo-0.1.0.1 \
 		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20.1 \
+		unordered-containers-0.2.21_1 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.17.2 \
 		uuid-types-1.0.6_3 \
