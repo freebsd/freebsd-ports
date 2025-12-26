@@ -1,6 +1,7 @@
 PORTNAME=	koka
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,8 +26,8 @@ USE_CABAL=	Diff-1.0.2 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.3 \
 		aeson-2.2.3.0_4 \
-		alex-3.5.3.0 \
-		ansi-terminal-1.1.3 \
+		alex-3.5.4.0 \
+		ansi-terminal-1.1.5 \
 		ansi-terminal-types-1.1.3 \
 		assoc-1.1.1_1 \
 		async-2.2.5_3 \
@@ -50,12 +51,12 @@ USE_CABAL=	Diff-1.0.2 \
 		data-fix-0.3.4_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
-		extra-1.8 \
+		extra-1.8.1 \
 		file-embed-0.0.16.0 \
 		free-5.2_7 \
 		generic-arbitrary-1.0.1.2 \
-		generic-lens-2.2.2.0_1 \
-		generic-lens-core-2.2.1.0_2 \
+		generic-lens-2.3.0.0 \
+		generic-lens-core-2.3.0.0 \
 		generically-0.1.1_4 \
 		hashable-1.5.0.0_1 \
 		hsc2hs-0.68.10_4 \
@@ -67,20 +68,19 @@ USE_CABAL=	Diff-1.0.2 \
 		invariant-0.6.4_1 \
 		isocline-1.0.9 \
 		kan-extensions-5.2.7 \
-		lens-5.3.5 \
+		lens-5.3.5_1 \
 		lens-aeson-1.2.3_2 \
 		lsp-2.7.0.1_1 \
 		lsp-types-2.3.0.1 \
-		mod-0.2.0.1_1 \
-		network-3.2.7.0 \
+		mod-0.2.1.0 \
+		network-3.2.8.0 \
 		network-bsd-2.8.1.0_6 \
 		network-simple-0.4.5 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.19.0.0 \
-		os-string-2.0.7_1 \
-		parallel-3.2.2.0_9 \
+		parallel-3.3.0.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.9.1.0 \
@@ -91,7 +91,7 @@ USE_CABAL=	Diff-1.0.2 \
 		regex-1.1.0.2 \
 		regex-base-0.94.0.3 \
 		regex-pcre-builtin-0.95.2.3.8.44_6 \
-		regex-tdfa-1.3.2.4 \
+		regex-tdfa-1.3.2.5 \
 		row-types-1.0.1.2_1 \
 		safe-0.3.21_1 \
 		safe-exceptions-0.1.7.4_1 \
@@ -105,7 +105,7 @@ USE_CABAL=	Diff-1.0.2 \
 		sorted-list-0.3.1.0 \
 		splitmix-0.1.3.1 \
 		strict-0.5.1_1 \
-		tagged-0.8.9 \
+		tagged-0.8.10 \
 		tasty-1.5.3_2 \
 		text-iso8601-0.1.1_2 \
 		text-rope-0.3 \
@@ -119,12 +119,12 @@ USE_CABAL=	Diff-1.0.2 \
 		transformers-compat-0.7.2 \
 		unliftio-0.2.25.1 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_4 \
+		unordered-containers-0.2.21_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_3 \
-		vector-0.13.2.0_1 \
-		vector-stream-0.1.0.1_3 \
-		void-0.7.3 \
+		vector-0.13.2.0_2 \
+		vector-stream-0.1.0.1_4 \
+		void-0.7.4 \
 		witherable-0.5_1
 
 CABAL_EXECUTABLES=	${PORTNAME}
