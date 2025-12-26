@@ -1,3 +1,3 @@
-TIMESTAMP = 1690221066
-SHA256 (octave-forge/sockets-1.4.1.tar.gz) = bb935bf4f572328474948cd710cb64667b576c17e9c97aed2c1f14f9d92062b7
-SIZE (octave-forge/sockets-1.4.1.tar.gz) = 321233
+TIMESTAMP = 1766761552
+SHA256 (octave-forge/gnu-octave-octave-sockets-release-1.5.0_GH0.tar.gz) = 9d8cc191af81832192aa7a854fe93569330b795027fae9eba586265a81fa6c4c
+SIZE (octave-forge/gnu-octave-octave-sockets-release-1.5.0_GH0.tar.gz) = 50081

@@ -1,9 +1,7 @@
 PORTNAME=	octave-forge-sockets
-PORTVERSION=	1.4.1
-PORTREVISION=	2
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	1.5.0
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
-DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
@@ -12,11 +10,11 @@ WWW=		https://packages.octave.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
-BUILD_DEPENDS+=	gsed:textproc/gsed
+USES=		octave
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnu-octave
+GH_PROJECT=	octave-sockets
 
-USES=		gmake octave
-
-post-patch:
-	${REINPLACE_CMD} 's/sed/gsed/g' ${WRKSRC}/Makefile
+OCTAVE_SRC=	${GH_PROJECT}-release-${DISTVERSION}
 
 .include <bsd.port.mk>
