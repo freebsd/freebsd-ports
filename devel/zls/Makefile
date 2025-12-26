@@ -1,24 +1,27 @@
 PORTNAME=	zls
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSION=	0.15.1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kenrap@kennethraplee.com
 COMMENT=	Zig LSP implementation + Zig Language Server
 WWW=		https://github.com/zigtools/zls
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig014>=0.14.0:lang/zig014
-RUN_DEPENDS=	zig014>=0.14.0:lang/zig014
+BUILD_DEPENDS=	zig>=0.15.1<0.16.0:lang/zig
+RUN_DEPENDS=	zig>=0.15.1<0.16.0:lang/zig
+
+USES=		zig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zigtools
-GH_TUPLE=	wolfpld:tracy:v0.11.1:tracy/../.cache/zig/p/N-V-__8AAMeOlQEipHjcyu0TCftdAi9AQe7EXUDJOoVe0k-t \
-		ziglibs:diffz:ef45c00:diffz/../.cache/zig/p/N-V-__8AABhrAQAQLLLGadghhPsdxTgBk9N9aLVOjXW3ay0V \
-		ziglibs:known-folders:0.7.0-57-gaa24df4:known_folders/../.cache/zig/p/known_folders-0.0.0-Fy-PJtLDAADGDOwYwMkVydMSTp_aN-nfjCZw6qPQ2ECL \
-		zigtools:zig-lsp-codegen:063a98c:zig_lsp_codegen/../.cache/zig/p/lsp_codegen-0.1.0-CMjjo0ZXCQB-rAhPYrlfzzpU0u0u2MeGvUucZ-_g32eg
+
+ZIG_TUPLE=	diffz:github.com/ziglibs/diffz/archive/a20dd1f11b10819a6f570f98b42e1c91e3704357.tar.gz:diffz-0.0.1-G2tlIQrOAQCfH15jdyaLyrMgV8eGPouFhkCeYFTmJaLk \
+		known_folders:github.com/ziglibs/known-folders/archive/92defaee76b07487769ca352fd0ba95bc8b42a2f.tar.gz:known_folders-0.0.0-Fy-PJkfRAAAVdptXWXBspIIC7EkVgLgWozU5zIk5Zgcy \
+		lsp_kit:github.com/zigtools/lsp-kit/archive/576e9405b1ab22c17c0f9318feed3278aa66b0ea.tar.gz:lsp_kit-0.1.0-bi_PL04yCgAxLsF0hH2a5sZKT84MGQaKXouw2jvCE8Nl \
+		tracy:github.com/wolfpld/tracy/archive/refs/tags/v0.11.1.tar.gz:N-V-__8AAMeOlQEipHjcyu0TCftdAi9AQe7EXUDJOoVe0k-t
+
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
 		-Dcpu=${CPUTYPE:Ubaseline} \
@@ -26,16 +29,5 @@ CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME}
-
-post-patch:
-# Respect PREFIX for global_configuration
-	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
-		${WRKSRC_known_folders}/known-folders.zig
-
-do-build:
-	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
-
-do-test:
-	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
 
 .include <bsd.port.mk>
