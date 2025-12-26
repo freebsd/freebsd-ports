@@ -62,7 +62,7 @@ python_OLD_CMD=	@python_interpreter@
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	gen-config.sh
-CONFIGURE_ARGS+=	${MOZJS_ARCH} \
+CONFIGURE_ARGS=		${MOZJS_ARCH} \
 			freebsd
 CONFIGURE_ENV+=		PYTHON3="${PYTHON_CMD}"
 

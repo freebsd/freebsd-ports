@@ -1,4 +1,4 @@
---- src/third_party/mozjs/gen-config.sh.orig	2025-05-13 16:37:03 UTC
+--- src/third_party/mozjs/gen-config.sh.orig	2025-12-22 19:50:59 UTC
 +++ src/third_party/mozjs/gen-config.sh
 @@ -1,4 +1,4 @@
 -#!/bin/bash
@@ -6,6 +6,15 @@
  
  set -e
  set -v
+@@ -7,7 +7,7 @@ then
+ if [ $# -ne 2 ]
+ then
+     echo "Please supply an arch: x86_64, i386, etc and a platform: osx, linux, windows, etc"
+-    exit 0;
++    exit 1;
+ fi
+ 
+ _BuiltPathPrefix="mozilla-release/js/src/_build/js/src"
 @@ -29,6 +29,9 @@ case "$_Path" in
  }
  
