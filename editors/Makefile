@@ -250,6 +250,7 @@
     SUBDIR += py-pynvim
     SUBDIR += py-vim-bridge
     SUBDIR += rehex
+    SUBDIR += remarkable
     SUBDIR += retext
     SUBDIR += rubygem-neovim
     SUBDIR += sam
