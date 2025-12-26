@@ -9,6 +9,7 @@ WWW=		https://awgn.github.io/cgrep/
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	ghc-9.8.4:lang/ghc98
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		cabal pkgconfig
