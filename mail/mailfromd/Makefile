@@ -1,5 +1,5 @@
 PORTNAME=	mailfromd
-PORTVERSION=	9.0
+PORTVERSION=	9.1
 CATEGORIES=	mail
 MASTER_SITES=	http://download.gnu.org.ua/pub/release/${PORTNAME}/ \
 		http://download.gnu.org.ua/pub/alpha/${PORTNAME}/
@@ -37,7 +37,7 @@ INFO=		${PORTNAME}
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS TODO
 
 OPTIONS_DEFINE=		DOCS EMACS NLS
-OPTIONS_DEFAULT=	GDBM
+OPTIONS_DEFAULT=	GDBM EMACS
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	BDB GDBM
 OPTIONS_SUB=		yes
@@ -63,12 +63,6 @@ GDBM_CONFIGURE_WITH=	gdbm
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^install-lispLISP:/s,lisp_LISP,&) $$(&:.el=.elc,' \
-		${WRKSRC}/elisp/Makefile.in
-	@${REINPLACE_CMD} -e '/^mfmodnew_LDADD =/s,),& $$(INTLLIBS),' \
-		${WRKSRC}/mfmod/Makefile.in
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATABASEDIR} ${STAGEDIR}${MFD_RUN_DIR}
