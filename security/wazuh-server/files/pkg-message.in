@@ -31,14 +31,21 @@ Wazuh server components were installed
    setup. For example host, ssl, filter, etc. Sample files can give you a good
    guide about that.
 
-7) Install logstash-output-opensearch plugin
+7) Install logstash-output-opensearch plugin. Fetch it from rubygems site or opensearch github
 
    # cd %%PREFIX%%/logstash/bin
-   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk11 ./logstash-plugin install logstash-output-opensearch"
+   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk17 ./logstash-plugin install /tmp/logstash-output-opensearch"
+
+   There are some issues installing this plugin on latest version of sysutils/logstash8.
+   Try installing gem file directly
+
+   # fetch https://rubygems.org/downloads/logstash-output-opensearch-2.0.3-java.gem -o \
+     /tmp/logstash-output-opensearch-2.0.3-java.gem
+   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk17 ./logstash-plugin install /tmp/logstash-output-opensearch-2.0.3-java.gem"
 
 8) Check if logstash-output-opensearch plugin was installed
 
-   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk11 ./logstash-plugin list | grep logstash-output-opensearch"
+   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk17 ./logstash-plugin list | grep logstash-output-opensearch"
 
 9) Add Filebeat and Logstash to /etc/rc.conf
 
