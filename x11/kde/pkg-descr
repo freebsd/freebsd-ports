@@ -1,8 +1,8 @@
 Plasma is a powerful and customizable Free Software graphical desktop
 environment for Unix workstations made by the KDE community.
 
-x11/kde contains a basic set of KDE Applications and the Plasma Desktop.
-A more minimal port of Plasma can be found at x11/plasma6-plasma. More
-KDE applications can be found in the kde-applications category:
+x11/kde contains minimal Plasma Desktop and a basic set of KDE Applications.
+Additional Plasma components can be install via x11/plasma6-plasma port.
+More KDE applications can be found in the kde-applications category:
 
 % pkg search -S origin kde-applications
