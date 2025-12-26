@@ -1,6 +1,6 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.2
+DISTVERSION=	2.6.1
 CATEGORIES=	net
 
 # JavaScripts
@@ -22,17 +22,18 @@ DISTFILES+=	chart.js-${_CHARTJS}.tgz:chartjs \
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		84codes-lz4.cr-${_LZ4}_GH0.tar.gz \
-		84codes-systemd.cr-v2.0.0_GH0.tar.gz \
+		84codes-systemd.cr-v${_SYSTEMD}_GH0.tar.gz \
 		cloudamqp-amq-protocol.cr-v${_AMQP_PROTO}_GH0.tar.gz \
 		cloudamqp-amqp-client.cr-v${_AMQP_CLIENT}_GH0.tar.gz \
-		84codes-mqtt-protocol.cr-${_MQTT}_GH0.tar.gz \
+		84codes-mqtt-protocol.cr-v${_MQTT}_GH0.tar.gz \
 		chart.js-${_CHARTJS}.tgz
 
 # Crystal library versions
-_AMQP_CLIENT=		1.3.2
-_AMQP_PROTO=		1.1.16
+_AMQP_CLIENT=	1.3.2
+_AMQP_PROTO=	1.1.20
 _LZ4=		96d714f7593c66ca7425872fd26c7b1286806d3d
-_MQTT=		5cf504b32313b3b63eecde22e2a136b9b9935b8b
+_MQTT=		0.3.0
+_SYSTEMD=	3.0.0
 
 # JavaScript library versions
 _AMQP_JS=		3.1.1
@@ -56,10 +57,10 @@ USES=		pkgconfig ssl:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudamqp
 GH_TUPLE=	84codes:lz4.cr:${_LZ4}:a/deps/lz4.cr \
-		84codes:systemd.cr:v2.0.0:systemd/deps/systemd.cr \
+		84codes:systemd.cr:v${_SYSTEMD}:systemd/deps/systemd.cr \
 		cloudamqp:amq-protocol.cr:v${_AMQP_PROTO}:proto/deps/amq-protocol.cr \
 		cloudamqp:amqp-client.cr:v${_AMQP_CLIENT}:client/deps/amqp-client.cr \
-		84codes:mqtt-protocol.cr:${_MQTT}:mqtt/deps/mqtt-protocol.cr
+		84codes:mqtt-protocol.cr:v${_MQTT}:mqtt/deps/mqtt-protocol.cr
 
 USE_RC_SUBR=	lavinmq
 
