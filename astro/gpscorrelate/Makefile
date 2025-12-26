@@ -3,7 +3,7 @@ PORTVERSION=	1.6.1
 PORTREVISION=	12
 CATEGORIES=	astro geography
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Correlate digital camera photos with GPS data in GPX format
 WWW=		http://freefoote.dview.net/linux_gpscorr.html
 
