@@ -19,6 +19,4 @@ OCTAVE_SRC=	${GH_PROJECT}-release-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 
-#MAKE_ENV+=	MKOCTFILE=mkoctfile
-
 .include <bsd.port.mk>
