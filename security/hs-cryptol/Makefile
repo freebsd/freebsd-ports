@@ -1,5 +1,6 @@
 PORTNAME=	cryptol
 DISTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	security lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,7 +28,7 @@ USE_CABAL=	BoundedChan-1.0.3.0 \
 		adjunctions-4.4.3 \
 		aeson-2.2.3.0_4 \
 		alex-3.5.4.0 \
-		ansi-terminal-1.1.3 \
+		ansi-terminal-1.1.5 \
 		ansi-terminal-types-1.1.3 \
 		arithmoi-0.13.2.0 \
 		assoc-1.1.1_1 \
@@ -65,9 +66,9 @@ USE_CABAL=	BoundedChan-1.0.3.0 \
 		dlist-1.0_2 \
 		erf-2.0.0.0 \
 		exact-pi-0.5.0.2 \
-		extra-1.8 \
+		extra-1.8.1 \
 		file-embed-0.0.16.0 \
-		fingertree-0.1.6.2 \
+		fingertree-0.1.6.3 \
 		free-5.2_7 \
 		generically-0.1.1_4 \
 		gitrev-1.3.1 \
@@ -78,15 +79,14 @@ USE_CABAL=	BoundedChan-1.0.3.0 \
 		haskell-lexer-1.2.1 \
 		hedgehog-1.7 \
 		heredoc-0.2.0.0 \
-		hgmp-0.1.2.1_2 \
 		hsc2hs-0.68.10_4 \
 		ieee754-0.8.0 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
-		infinite-list-0.1.2 \
+		infinite-list-0.1.3 \
 		integer-conversion-0.1.1_1 \
 		integer-logarithms-1.0.4 \
-		integer-roots-1.0.3.0 \
+		integer-roots-1.0.4.0 \
 		invariant-0.6.4_1 \
 		io-streams-1.5.2.2_6 \
 		kan-extensions-5.2.7 \
@@ -95,7 +95,6 @@ USE_CABAL=	BoundedChan-1.0.3.0 \
 		language-c99-util-0.2.0 \
 		lens-5.3.5_1 \
 		libBF-0.6.8 \
-		libffi-0.2.1 \
 		lifted-async-0.11.0 \
 		lifted-base-0.2.3.12 \
 		megaparsec-9.7.0 \
@@ -109,7 +108,6 @@ USE_CABAL=	BoundedChan-1.0.3.0 \
 		numtype-dk-0.5.0.3 \
 		optparse-applicative-0.19.0.0 \
 		ordered-containers-0.2.4 \
-		os-string-2.0.8 \
 		panic-0.4.0.1 \
 		parallel-3.3.0.0 \
 		parameterized-utils-2.1.11.0 \
@@ -136,7 +134,7 @@ USE_CABAL=	BoundedChan-1.0.3.0 \
 		splitmix-0.1.3.1 \
 		strict-0.5.1_1 \
 		syb-0.7.3 \
-		tagged-0.8.9 \
+		tagged-0.8.10 \
 		tasty-1.5.3_2 \
 		tasty-hedgehog-1.4.0.2_7 \
 		tasty-hunit-0.10.2 \
@@ -151,20 +149,20 @@ USE_CABAL=	BoundedChan-1.0.3.0 \
 		th-lift-instances-0.1.20 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
-		toml-parser-2.0.1.2_1 \
+		toml-parser-2.0.2.0 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		unbounded-delays-0.1.1.1 \
 		uniplate-1.6.13_1 \
 		unliftio-0.2.25.1 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20.1 \
+		unordered-containers-0.2.21_1 \
 		uuid-types-1.0.6_3 \
 		vector-0.13.2.0_2 \
 		vector-stream-0.1.0.1_4 \
 		versions-6.0.8 \
-		void-0.7.3 \
-		what4-1.7.1.0 \
+		void-0.7.4 \
+		what4-1.7.2 \
 		witherable-0.5_1 \
 		wl-pprint-annotated-0.1.0.1_4 \
 		zenc-0.1.2 \
