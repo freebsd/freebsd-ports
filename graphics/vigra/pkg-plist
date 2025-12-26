@@ -231,7 +231,7 @@ include/vigra/wigner-matrix.hxx
 include/vigra/windows.h
 lib/libvigraimpex.so
 lib/libvigraimpex.so.11
-lib/libvigraimpex.so.11.1.12.2
+lib/libvigraimpex.so.11.1.12.3
 lib/vigra/VigraConfig.cmake
 lib/vigra/VigraConfigVersion.cmake
 lib/vigra/vigra-targets-%%CMAKE_BUILD_TYPE%%.cmake
