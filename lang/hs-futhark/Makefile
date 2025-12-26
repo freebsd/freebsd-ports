@@ -1,6 +1,7 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.25.34
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -68,7 +69,7 @@ USE_CABAL=	Diff-1.0.2 \
 		exception-transformers-0.4.0.12 \
 		extra-1.8 \
 		fail-4.9.0.0 \
-		fgl-5.8.3.0_1 \
+		fgl-5.8.3.0_2 \
 		fgl-visualize-0.1.0.1 \
 		file-embed-0.0.16.0 \
 		fmlist-0.9.4 \
@@ -113,7 +114,6 @@ USE_CABAL=	Diff-1.0.2 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.19.0.0 \
-		os-string-2.0.8 \
 		parallel-3.3.0.0 \
 		parser-combinators-1.3.0_1 \
 		prettyprinter-1.7.1 \
