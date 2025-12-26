@@ -1,0 +1,5 @@
+[
+{ type: install
+  message: "One can install multimedia/clapper-enhancers package/port to obtain plugins for Clapper."
+}
+]
