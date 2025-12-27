@@ -6,6 +6,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/433dadebd0bf504f8b008985378086ce/kitty.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/a489ebbb52d84eeb19a12b2fda7debda/diff.conf
 %%PORTDOCS%%%%DOCSDIR%%/_downloads/f0a0de9ec8d9ff4456206db8e0814937/rowcolumn-diacritics.txt
+%%PORTDOCS%%%%DOCSDIR%%/_images/choose-files.webp
 %%PORTDOCS%%%%DOCSDIR%%/_images/diff.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/family-selection.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/font-fine-tune.png
@@ -18,7 +19,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_actions_1745a1bd.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_binary_478594b0.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_build_e554a463.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_dd5dbc1b.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_changelog_18b76604.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_clipboard_673291d1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_color-stack_b2e66ffc.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_conf_6d817f14.png
@@ -40,7 +41,7 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_invocation_05c40da8.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_keyboard-protocol_37967379.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_broadcast_4dfe59be.png
-%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_choose-files_08a7d242.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_choose-files_eb203c8f.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_choose-fonts_14869f23.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_clipboard_93006611.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/social_previews/summary_kittens_custom_264d6309.png
@@ -1021,6 +1022,6 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/terminfo/kitty.termcap
 %%DATADIR%%/terminfo/kitty.terminfo
 %%DATADIR%%/terminfo/x/xterm-kitty
-share/man/man1/kitty.1.gz
-share/man/man5/kitty.conf.5.gz
+%%PORTMANPAGES%%share/man/man1/kitty.1.gz
+%%PORTMANPAGES%%share/man/man5/kitty.conf.5.gz
 share/misc/kitty.terminfo

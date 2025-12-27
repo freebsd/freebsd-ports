@@ -1,7 +1,7 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.44.0
-PORTREVISION=	1
+DISTVERSION=	0.45.0
+PORTREVISION=	0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx-autobuild>=2025.8.25:textproc/py-sphinx-autobuild@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
@@ -90,6 +91,20 @@ USES+=		ncurses:port
 USES+=		ncurses
 .endif
 
+# PR291485
+# Temporarily disable build/installation of docs and man pages on FreeBSD >= 15.0
+# See:
+# https://pkg-status.freebsd.org/beefy23/data/150amd64-default/e05e2042985b/logs/kitty-0.44.0_1.log
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=291485
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+MAKE_ENV+=	BUILD_MANPAGES=yes
+PLIST_SUB+=	PORTMANPAGES=""
+.else
+DOCS_MAKE_ENV=	BUILD_DOCS=no
+MAKE_ENV+=	BUILD_MANPAGES=no
+PLIST_SUB+=	PORTMANPAGES="@comment "
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -E \
 		-e "s:'go':'${GO_CMD}':1" \
@@ -120,12 +135,20 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/terminfo/kitty.terminfo \
 		${STAGEDIR}${PREFIX}/share/misc/
 	${STRIP_CMD} ${_STRIP_TARGETS:S|^|${STAGEDIR}${DATADIR}/|}
+# PR291485: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=291485
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
 	${INSTALL_MAN} ${BUILD_DIR}/share/man/man1/kitty.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	${INSTALL_MAN} ${BUILD_DIR}/share/man/man5/kitty.conf.5 ${STAGEDIR}${PREFIX}/share/man/man5
+.endif
 
 do-install-DOCS-on:
+# PR291485: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=291485
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
 	cd ${BUILD_DIR}/share/doc/kitty/html && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
 			"-not ( -name .buildinfo -or -name .nojekyll )"
+.else
+	@${DO_NADA}
+.endif
 
 .include <bsd.port.mk>
