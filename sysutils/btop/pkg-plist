@@ -1,6 +1,5 @@
 bin/btop
 share/applications/btop.desktop
-%%DATADIR%%/README.md
 %%DATADIR%%/themes/HotPurpleTrafficLight.theme
 %%DATADIR%%/themes/adapta.theme
 %%DATADIR%%/themes/adwaita-dark.theme
@@ -14,6 +13,7 @@ share/applications/btop.desktop
 %%DATADIR%%/themes/everforest-light-medium.theme
 %%DATADIR%%/themes/flat-remix-light.theme
 %%DATADIR%%/themes/flat-remix.theme
+%%DATADIR%%/themes/gotham.theme
 %%DATADIR%%/themes/greyscale.theme
 %%DATADIR%%/themes/gruvbox_dark.theme
 %%DATADIR%%/themes/gruvbox_dark_v2.theme
