@@ -35,6 +35,10 @@
     <topic>MongoDB -- Improper Handling of Length Parameter Inconsistency</topic>
     <affects>
     <package>
+	<name>mongodb80</name>
+	<range><lt>8.0.17</lt></range>
+    </package>
+    <package>
 	<name>mongodb70</name>
 	<range><lt>7.0.28</lt></range>
     </package>
@@ -56,7 +60,7 @@
     <dates>
       <discovery>2025-12-19</discovery>
       <entry>2025-12-22</entry>
-      <modified>2025-12-24</modified>
+      <modified>2025-12-28</modified>
     </dates>
   </vuln>
 
