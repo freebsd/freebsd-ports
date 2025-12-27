@@ -12,7 +12,7 @@ USE_XORG+=	pixman xau xdmcp xfont2 xkbfile xorgproto xshmfence xtrans
 
 OPTIONS_DEFINE+=LIBUNWIND
 OPTIONS_DEFAULT+=LIBUNWIND
-LIBUNWIND_DESC= Enable libunwind for better stack traces in case of an error.
+LIBUNWIND_DESC= Enable libunwind. (For better stack traces in case of an error)
 
 SERVERS=	xorg xnest xephyr xvfb
 SERVERNAME=	${PORTNAME:S/^xlibre-/x/:S/xserver/xorg/}

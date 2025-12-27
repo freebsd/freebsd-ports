@@ -13,7 +13,7 @@
  
  #include "input.h"
 @@ -188,7 +189,21 @@ device_added(struct udev_device *udev_de
-         attrs.product = strdup(name);
+     char buf[128];
      input_options = input_option_new(input_options, "name", name);
      input_options = input_option_new(input_options, "path", path);
 -    input_options = input_option_new(input_options, "device", path);
@@ -32,9 +32,9 @@
 +    }
 +    else
 +        input_options = input_option_new(input_options, "device", path);
-     input_options = input_option_new(input_options, "major", itoa(major(devnum)));
-     input_options = input_option_new(input_options, "minor", itoa(minor(devnum)));
-     if (path)
+     sprintf(buf, "%u", major(devnum));
+     input_options = input_option_new(input_options, "major", buf);
+     sprintf(buf, "%u", minor(devnum));
 @@ -272,6 +287,18 @@ device_added(struct udev_device *udev_de
          }
      }
