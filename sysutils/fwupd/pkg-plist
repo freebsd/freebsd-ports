@@ -30,10 +30,10 @@ include/fwupd-3/libfwupd/fwupd-report.h
 include/fwupd-3/libfwupd/fwupd-request.h
 include/fwupd-3/libfwupd/fwupd-security-attr.h
 include/fwupd-3/libfwupd/fwupd-version.h
-lib/fwupd-2.0.18/libfu_plugin_flashrom.so
-lib/fwupd-2.0.18/libfwupdengine.so
-lib/fwupd-2.0.18/libfwupdplugin.so
-lib/fwupd-2.0.18/libfwupdutil.so
+lib/fwupd-2.0.19/libfu_plugin_flashrom.so
+lib/fwupd-2.0.19/libfwupdengine.so
+lib/fwupd-2.0.19/libfwupdplugin.so
+lib/fwupd-2.0.19/libfwupdutil.so
 lib/girepository-1.0/Fwupd-2.0.typelib
 lib/libfwupd.so
 lib/libfwupd.so.3
@@ -49,6 +49,7 @@ libexec/fwupd/fwupd
 %%TEST%%libexec/installed-tests/fwupd/fu-dfu-self-test
 %%TEST%%libexec/installed-tests/fwupd/fwupdplugin-self-test
 %%TEST%%libexec/installed-tests/fwupd/logitech-hidpp-self-test
+%%TEST%%libexec/installed-tests/fwupd/snap-self-test
 %%TEST%%libexec/installed-tests/fwupd/synaptics-prometheus-self-test
 %%TEST%%libexec/installed-tests/fwupd/uefi-dbx-self-test
 %%TEST%%libexec/installed-tests/fwupd/uefi-mok-self-test
@@ -1176,6 +1177,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/const.COSWID_ENTITY_ROLE_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.COSWID_TAG_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.CPU_VENDOR_LAST.html
+%%PORTDOCS%%share/doc/libfwupdplugin/const.CRC_KIND_LAST.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.DEVICE_ICON_AC_ADAPTER.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.DEVICE_ICON_APPLICATION_CERTIFICATE.html
 %%PORTDOCS%%share/doc/libfwupdplugin/const.DEVICE_ICON_AUDIO_CARD.html
@@ -1652,6 +1654,8 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.ProgressFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.QuirksLoadFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.SecurityAttrsFlags.html
+%%PORTDOCS%%share/doc/libfwupdplugin/flags.SmbiosBiosCharacteristics.html
+%%PORTDOCS%%share/doc/libfwupdplugin/flags.SmbiosBiosCharacteristicsExt.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.UsbDeviceClaimFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flags.UtfConvertFlags.html
 %%PORTDOCS%%share/doc/libfwupdplugin/flashrom-README.html
@@ -1711,7 +1715,10 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.crc8.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.crc8_bytes.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.crc_find.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.crc_kind_from_string.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.crc_kind_to_string.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.crc_misr16.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.crc_size.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.device_add_checksum.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.device_add_icon.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.device_add_issue.html
@@ -1868,7 +1875,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/func.plugin_remove_flag.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.power_state_is_ac.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.power_state_to_string.html
-%%PORTDOCS%%share/doc/libfwupdplugin/func.snap_is_in_snap.html
+%%PORTDOCS%%share/doc/libfwupdplugin/func.size_checked_add.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.strdup.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.string_strip.html
 %%PORTDOCS%%share/doc/libfwupdplugin/func.strjoin.html
@@ -2542,6 +2549,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.HidDevice.set_report.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.HidrawDevice.get_bus_type.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.HidrawDevice.get_feature.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.HidrawDevice.get_input.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.HidrawDevice.get_report.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.HidrawDevice.parse_descriptor.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.HidrawDevice.set_feature.html
@@ -2705,6 +2713,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_clear_results.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_coldplug.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_composite_cleanup.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_composite_peek_firmware.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_composite_prepare.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_detach.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.Plugin.runner_device_added.html
@@ -3554,6 +3563,17 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/method.StructShimHiveItem.set_key_length.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.StructShimHiveItem.set_value_length.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.StructShimHiveItem.unref.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_characteristics.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_characteristics_ext.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_handle.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_length.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_release_date.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_rom_size.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_starting_addr_segment.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_vendor.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.get_version.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.ref.html
+%%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosBiosInformation.unref.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosEp32.get_anchor_str.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosEp32.get_entry_point_csum.html
 %%PORTDOCS%%share/doc/libfwupdplugin/method.StructSmbiosEp32.get_entry_point_len.html
@@ -3903,6 +3923,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/signal.Progress.percentage-changed.html
 %%PORTDOCS%%share/doc/libfwupdplugin/signal.Progress.status-changed.html
 %%PORTDOCS%%share/doc/libfwupdplugin/signal.UdevDevice.changed.html
+%%PORTDOCS%%share/doc/libfwupdplugin/snapd-uefi-README.html
 %%PORTDOCS%%share/doc/libfwupdplugin/solarized-dark.css
 %%PORTDOCS%%share/doc/libfwupdplugin/solarized-light.css
 %%PORTDOCS%%share/doc/libfwupdplugin/steelseries-README.html
@@ -3986,6 +4007,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.StructSbatLevelSectionHeader.html
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.StructShimHive.html
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.StructShimHiveItem.html
+%%PORTDOCS%%share/doc/libfwupdplugin/struct.StructSmbiosBiosInformation.html
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.StructSmbiosEp32.html
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.StructSmbiosEp64.html
 %%PORTDOCS%%share/doc/libfwupdplugin/struct.StructSmbiosStructure.html
@@ -4197,6 +4219,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/type_func.StructShimHive.parse_stream.html
 %%PORTDOCS%%share/doc/libfwupdplugin/type_func.StructShimHiveItem.new.html
 %%PORTDOCS%%share/doc/libfwupdplugin/type_func.StructShimHiveItem.parse_stream.html
+%%PORTDOCS%%share/doc/libfwupdplugin/type_func.StructSmbiosBiosInformation.parse_bytes.html
 %%PORTDOCS%%share/doc/libfwupdplugin/type_func.StructSmbiosEp32.new.html
 %%PORTDOCS%%share/doc/libfwupdplugin/type_func.StructSmbiosEp32.parse.html
 %%PORTDOCS%%share/doc/libfwupdplugin/type_func.StructSmbiosEp64.new.html
@@ -4286,6 +4309,7 @@ share/dbus-1/system.d/org.freedesktop.fwupd.conf
 %%PORTDOCS%%share/doc/libfwupdplugin/vfunc.Plugin.clear_results.html
 %%PORTDOCS%%share/doc/libfwupdplugin/vfunc.Plugin.coldplug.html
 %%PORTDOCS%%share/doc/libfwupdplugin/vfunc.Plugin.composite_cleanup.html
+%%PORTDOCS%%share/doc/libfwupdplugin/vfunc.Plugin.composite_peek_firmware.html
 %%PORTDOCS%%share/doc/libfwupdplugin/vfunc.Plugin.composite_prepare.html
 %%PORTDOCS%%share/doc/libfwupdplugin/vfunc.Plugin.detach.html
 %%PORTDOCS%%share/doc/libfwupdplugin/vfunc.Plugin.device_added.html
@@ -4362,6 +4386,7 @@ share/icons/hicolor/scalable/apps/org.freedesktop.fwupd.svg
 %%TEST%%share/installed-tests/fwupd/device-tests/genesys-evb.json
 %%TEST%%share/installed-tests/fwupd/device-tests/genesys-servo-dock.json
 %%TEST%%share/installed-tests/fwupd/device-tests/genesys-zdn-chromebook.json
+%%TEST%%share/installed-tests/fwupd/device-tests/google-gid8.json
 %%TEST%%share/installed-tests/fwupd/device-tests/google-servo-micro.json
 %%TEST%%share/installed-tests/fwupd/device-tests/hp-dock-g5.json
 %%TEST%%share/installed-tests/fwupd/device-tests/hp-dock-g6-ultra.json

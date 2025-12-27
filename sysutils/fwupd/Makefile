@@ -1,6 +1,5 @@
 PORTNAME=	fwupd
-DISTVERSION=	2.0.18
-PORTREVISION=	1
+DISTVERSION=	2.0.19
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -14,7 +13,7 @@ BUILD_DEPENDS=	blkid:filesystems/libblkid \
 		flashrom>0:sysutils/flashrom \
 		help2man:misc/help2man \
 		${LOCALBASE}/libdata/pkgconfig/fwupd-efi.pc:sysutils/fwupd-efi \
-		open-sans>0:x11-fonts/open-sans \
+		noto-sans>0:x11-fonts/noto-sans \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pangocffi>0:x11-toolkits/py-pangocffi@${PY_FLAVOR} \
