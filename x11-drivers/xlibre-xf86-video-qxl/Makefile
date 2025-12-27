@@ -1,5 +1,5 @@
 PORTNAME=	xlibre-xf86-video-qxl
-DISTVERSION=	0.1.6.3
+DISTVERSION=	25.0.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	b-aazbsd@proton.me
@@ -8,8 +8,6 @@ WWW=		https://github.com/X11Libre/xf86-video-qxl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-CONFLICTS_INSTALL=	xf86-video-qxl
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		spice-protocol>=0.12.10:devel/spice-protocol
@@ -27,7 +25,7 @@ CONFIGURE_ARGS+=	--enable-xspice
 
 OPTIONS_DEFINE=	DOCS
 
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:C/xlibre-//}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d
