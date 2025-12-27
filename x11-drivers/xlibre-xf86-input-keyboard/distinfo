@@ -1,3 +1,3 @@
-TIMESTAMP = 1760816300
-SHA256 (xlibre/driver/X11Libre-xf86-input-keyboard-2.1.0.2-xlibre-xf86-input-keyboard-2.1.0.2_GH0.tar.gz) = 6e72dc5bde6215d1daa6970367caac27a7b8f491c1ea6b3030960a4736169110
-SIZE (xlibre/driver/X11Libre-xf86-input-keyboard-2.1.0.2-xlibre-xf86-input-keyboard-2.1.0.2_GH0.tar.gz) = 49451
+TIMESTAMP = 1766155967
+SHA256 (xlibre/driver/X11Libre-xf86-input-keyboard-25.0.0-xlibre-xf86-input-keyboard-25.0.0_GH0.tar.gz) = 2bc6d81090ce305645d24724252e8510e832cf252d4e1c53ecf86ff8cf7bdb4e
+SIZE (xlibre/driver/X11Libre-xf86-input-keyboard-25.0.0-xlibre-xf86-input-keyboard-25.0.0_GH0.tar.gz) = 48249

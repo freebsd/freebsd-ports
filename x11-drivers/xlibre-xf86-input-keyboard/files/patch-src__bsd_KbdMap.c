@@ -36,7 +36,7 @@ Submitted by:   Claude Buisson <clbuisson@orange.fr> (earlier version)
 -     0,    0,    0,    0,    0,    0,    0,    0,   /* 0x78 - 0x7f */
 -};
 -
--/* This table assumes the ibm code page 437 coding for characters 
+-/* This table assumes the ibm code page 437 coding for characters
 - * > 0x80. They are returned in this form by PCVT */
 -static KeySym eascii_to_x[512] = {
 -	NoSymbol,	NoSymbol,	NoSymbol,	NoSymbol,
@@ -104,7 +104,7 @@ Submitted by:   Claude Buisson <clbuisson@orange.fr> (earlier version)
 -	XK_degree,	NoSymbol,	NoSymbol,	XK_radical,
 -	XK_Greek_eta,	XK_twosuperior,	XK_periodcentered, NoSymbol,
 -
--	/* 
+-	/*
 -	 * special marked entries (256 + x)
 -	 */
 -
@@ -201,7 +201,7 @@ Submitted by:   Claude Buisson <clbuisson@orange.fr> (earlier version)
 -  case PCVT:
 -    {
 -      keymap_t keymap;
--    
+-
 -      if (ioctl(pInfo->fd, GIO_KEYMAP, &keymap) != -1) {
 -	for (i = 0; i < keymap.n_keys && i < NUM_KEYCODES; i++)
 -	  if (remap[i]) {
@@ -220,8 +220,8 @@ Submitted by:   Claude Buisson <clbuisson@orange.fr> (earlier version)
 -    }
 -    break;
 -#endif /* SYSCONS || PCVT */
--    
--  } 
+-
+-  }
 -#endif /* !bsdi */
 -
    /*
