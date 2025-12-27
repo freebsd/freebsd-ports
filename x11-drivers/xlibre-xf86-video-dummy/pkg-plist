@@ -1,1 +1,1 @@
-lib/xorg/modules/xlibre-25.0/drivers/dummy_drv.so
+%%MODULEDIR%%/drivers/dummy_drv.so
