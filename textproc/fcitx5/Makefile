@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5
-DISTVERSION=	5.1.16
+DISTVERSION=	5.1.17
 CATEGORIES=	textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:dict
@@ -15,6 +15,7 @@ WWW=		https://github.com/fcitx/fcitx5
 LICENSE=	LGPL21+
 
 BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
+		nlohmann-json>0:devel/nlohmann-json \
 		uthash>=0:devel/uthash
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libexpat.so:textproc/expat2 \
