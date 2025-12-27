@@ -1,6 +1,6 @@
---- cabal.project.orig	2024-12-14 12:46:58 UTC
+--- cabal.project.orig	2025-10-16 11:28:34 UTC
 +++ cabal.project
-@@ -1,34 +1,6 @@
+@@ -1,33 +1,6 @@
 -repository cardano-haskell-packages
 -  url: https://input-output-hk.github.io/cardano-haskell-packages
 -  secure: True
@@ -13,20 +13,19 @@
 -    d4a35cd3121aa00d18544bb0ac01c3e1691d618f462c46129271bccf39f7e8ee
 -
  index-state:
-   , hackage.haskell.org 2024-10-10T00:52:24Z
-   , cardano-haskell-packages 2024-10-30T10:23:17Z
+   , hackage.haskell.org 2025-09-11T07:59:00Z
+   , cardano-haskell-packages 2025-09-11T08:36:14Z
 -
 -constraints:
--  , any.cardano-node == 10.1.0
+-  , any.cardano-node == 10.5.1
 -
--  , any.cardano-ledger-core == 1.15.0.0
--  , any.cardano-ledger-shelley == 1.14.1.0
--  , any.cardano-ledger-conway == 1.17.2.0
+-  , any.cardano-ledger-core == 1.17.0.0
+-  , any.cardano-ledger-shelley == 1.16.0.0
+-  , any.cardano-ledger-conway == 1.19.0.0
 -
--  , any.ouroboros-consensus == 0.21.0.0
--  , any.ouroboros-consensus-cardano == 0.20.0.0
--  , any.ouroboros-consensus-diffusion == 0.18.0.0
--  , any.ouroboros-network == 0.17.1.2
+-  , any.ouroboros-consensus == 0.27.0.0
+-  , any.ouroboros-consensus-cardano == 0.25.1.0
+-  , any.ouroboros-network == 0.21.3.0
 -
 -  , any.io-classes == 1.5.0.0
 -  , any.io-classes-mtl == 0.1.2.0
