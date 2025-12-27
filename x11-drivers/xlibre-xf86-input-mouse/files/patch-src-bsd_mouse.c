@@ -362,7 +362,7 @@
  
      switch (what) {
      case DEVICE_INIT:
-@@ -518,40 +637,96 @@ usbMouseProc(DeviceIntPtr pPointer, int what)
+@@ -518,38 +637,96 @@ usbMouseProc(DeviceIntPtr pPointer, int what)
          for (nbuttons = 0; nbuttons < MSE_MAXBUTTONS; ++nbuttons)
              map[nbuttons + 1] = nbuttons + 1;
  
@@ -458,10 +458,8 @@
 -                pInfo->fd = -1;
 -            } else {
 -                xf86FlushInput(pInfo->fd);
--#if GET_ABI_MAJOR(ABI_XINPUT_VERSION) < 23
 -                if (!xf86InstallSIGIOHandler (pInfo->fd, usbSigioReadInput,
 -                                              pInfo))
--#endif
 -                    AddEnabledDevice(pInfo->fd);
 -            }
 +	if (pUsbMse->opened++ == 0) {
