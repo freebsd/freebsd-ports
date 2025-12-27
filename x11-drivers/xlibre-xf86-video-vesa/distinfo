@@ -1,3 +1,3 @@
-TIMESTAMP = 1760815702
-SHA256 (xlibre/driver/X11Libre-xf86-video-vesa-2.6.0.3-243d986_GH0.tar.gz) = f2d1de80df9421236806023e035fe78f3ae3a4f0d47ca0a8fcf05505d6e132cc
-SIZE (xlibre/driver/X11Libre-xf86-video-vesa-2.6.0.3-243d986_GH0.tar.gz) = 25528
+TIMESTAMP = 1766564931
+SHA256 (xlibre/driver/X11Libre-xf86-video-vesa-25.0.0-xlibre-xf86-video-vesa-25.0.0_GH0.tar.gz) = 8d517cbd93a42b202cf624e8f56b646aa5efacd44e001f809fea6c5c08f8dfe7
+SIZE (xlibre/driver/X11Libre-xf86-video-vesa-25.0.0-xlibre-xf86-video-vesa-25.0.0_GH0.tar.gz) = 23102
