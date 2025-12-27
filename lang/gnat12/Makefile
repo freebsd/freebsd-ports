@@ -1,6 +1,5 @@
 PORTNAME=	gnat12
-DISTVERSION=	12.3.0
-PORTREVISION=	1
+DISTVERSION=	12.4.0
 CATEGORIES=	lang
 MASTER_SITES=	http://gcc.gnu.org/pub/gcc/releases/gcc-${DISTVERSION}/:gcc \
 		LOCAL/thierry:gnat
