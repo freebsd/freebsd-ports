@@ -1,0 +1,2 @@
+This package contains the XLibre xf86-video-scfb driver.
+Framebuffer access via FreeBSD syscons.
