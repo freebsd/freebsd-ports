@@ -1,3 +1,3 @@
-TIMESTAMP = 1739113752
-SHA256 (corosync-3.1.9.tar.gz) = 203354bbddee1a97b3c50a076eae89c635f406dd674ccaefc94bb9092acd9535
-SIZE (corosync-3.1.9.tar.gz) = 1173752
+TIMESTAMP = 1766808551
+SHA256 (corosync-3.1.10.tar.gz) = be361c827f99b215b3bd3fa2fb071c03dac6831c2a351963d938caef62604bc8
+SIZE (corosync-3.1.10.tar.gz) = 1182565
