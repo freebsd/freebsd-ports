@@ -6,5 +6,5 @@
 %%UMS%%lib/libIntelXvMC.so.1
 %%UMS%%lib/libIntelXvMC.so
 %%UMS%%lib/libIntelXvMC.so.1.0.0
-lib/xorg/modules/xlibre-25.0/drivers/intel_drv.so
+%%MODULEDIR%%/drivers/intel_drv.so
 share/man/man4/intel.4x.gz
