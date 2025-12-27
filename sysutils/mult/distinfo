@@ -1,7 +1,7 @@
-TIMESTAMP = 1754584505
-SHA256 (go/sysutils_mult/dhth-mult-v0.2.0_GH0/v0.2.0.mod) = 6d652137122a510c8f13c81fcd54cb604266eb7014f2aaf29e808a8f8f24af39
-SIZE (go/sysutils_mult/dhth-mult-v0.2.0_GH0/v0.2.0.mod) = 1243
-SHA256 (go/sysutils_mult/dhth-mult-v0.2.0_GH0/v0.2.0.zip) = 4e11c9a4a128296e2c7bdbaa0127ba514e63c9b3da1c9884fe8003b7459ab069
-SIZE (go/sysutils_mult/dhth-mult-v0.2.0_GH0/v0.2.0.zip) = 20174
-SHA256 (go/sysutils_mult/dhth-mult-v0.2.0_GH0/dhth-mult-v0.2.0_GH0.tar.gz) = a962be7bfaea78cbfc71e9326c4931c942ebcd24d61c58910b77b899117d077e
-SIZE (go/sysutils_mult/dhth-mult-v0.2.0_GH0/dhth-mult-v0.2.0_GH0.tar.gz) = 12607
+TIMESTAMP = 1766850898
+SHA256 (go/sysutils_mult/dhth-mult-v0.3.0_GH0/v0.3.0.mod) = 1fdbf3a39b1f5656f5f27c7aeef28e1009b23fde5bd2884eea0f18af6f480615
+SIZE (go/sysutils_mult/dhth-mult-v0.3.0_GH0/v0.3.0.mod) = 1375
+SHA256 (go/sysutils_mult/dhth-mult-v0.3.0_GH0/v0.3.0.zip) = c8b135170160618706beb36887e24dda02f14efe46cd96aeb85ea2a6080d4efd
+SIZE (go/sysutils_mult/dhth-mult-v0.3.0_GH0/v0.3.0.zip) = 23867
+SHA256 (go/sysutils_mult/dhth-mult-v0.3.0_GH0/dhth-mult-v0.3.0_GH0.tar.gz) = b8115600e51155a8b2f639c90a4f50c1a019b3551e80b9c9843a729fd711b453
+SIZE (go/sysutils_mult/dhth-mult-v0.3.0_GH0/dhth-mult-v0.3.0_GH0.tar.gz) = 15495
