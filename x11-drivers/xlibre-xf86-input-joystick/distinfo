@@ -1,3 +1,3 @@
-TIMESTAMP = 1760819782
-SHA256 (xlibre/driver/X11Libre-xf86-input-joystick-1.6.4.1-931dbdb_GH0.tar.gz) = 166c8156dd50bbe4fa2b0406de48caa6a6af84109356814a0644eade8dba0a75
-SIZE (xlibre/driver/X11Libre-xf86-input-joystick-1.6.4.1-931dbdb_GH0.tar.gz) = 38524
+TIMESTAMP = 1766510513
+SHA256 (xlibre/driver/X11Libre-xf86-input-joystick-25.0.0-xlibre-xf86-input-joystick-25.0.0_GH0.tar.gz) = af821e11477d8c1bdb08ee2cbadfd556159d42b394699b2c980aa5c818441520
+SIZE (xlibre/driver/X11Libre-xf86-input-joystick-25.0.0-xlibre-xf86-input-joystick-25.0.0_GH0.tar.gz) = 36971
