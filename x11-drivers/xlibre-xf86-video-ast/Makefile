@@ -1,5 +1,5 @@
 PORTNAME=	xlibre-xf86-video-ast
-PORTVERSION=	1.2.0.1
+PORTVERSION=	25.0.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	b-aazbsd@proton.me
@@ -8,8 +8,6 @@ WWW=		https://github.com/X11Libre/xf86-video-ast/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-CONFLICTS_INSTALL=	xf86-video-ast
 
 USES=		xlibre-cat:driver
 INSTALL_TARGET=	install-strip
