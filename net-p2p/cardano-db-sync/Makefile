@@ -10,6 +10,7 @@ WWW=		https://cardano.org/
 
 LICENSE=	APACHE20
 
+BUILD_DEPENDS=	ghc-9.8.4:lang/ghc98
 LIB_DEPENDS=	libsecp256k1.so:math/secp256k1 \
 		libblst.so:security/blst \
 		libicuuc.so:devel/icu
