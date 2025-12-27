@@ -14,7 +14,7 @@
 @@ -324,7 +324,7 @@ static void MGAWaitForIdleDMA( ScrnInfoP
  
           /* if it's still busy just try quiescent */
-          if ( ret == -EBUSY ) { 
+          if ( ret == -EBUSY ) {
 -            lock.flags = DRM_LOCK_QUIESCENT;
 +            lock.flags = _DRM_LOCK_QUIESCENT;
              do {
