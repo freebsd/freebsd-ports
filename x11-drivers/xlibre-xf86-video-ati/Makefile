@@ -1,5 +1,5 @@
 PORTNAME=	xlibre-xf86-video-ati
-PORTVERSION=	22.0.0.4
+PORTVERSION=	25.0.0
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	b-aazbsd@proton.me
@@ -16,13 +16,10 @@ ONLY_FOR_ARCHS_REASON=	KMS is required and currently only available on x86/arm64
 LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess \
 		libdrm_radeon.so:graphics/libdrm
 
-CONFLICTS_INSTALL=	xf86-video-ati
-
 USES=		gl xlibre xlibre-cat:driver
 USE_GL=		gbm
 USE_XORG=	pciaccess
 
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS+=--disable-udev
 
 .include <bsd.port.mk>
