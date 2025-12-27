@@ -1,0 +1,5 @@
+Mbar scans the given mailbox folder mailboxes matching a supplied pattern.
+For each mailbox found, a set of criteria is applied to its messages.  All
+messages that matched the criteria are then picked and moved to the mailbox
+of the same name, located in the backup folder.  If the destination mailbox
+does not exist, it is created with the necessary intermediate directories.

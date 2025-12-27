@@ -1,0 +1,35 @@
+--- GNUmakefile.orig	2025-10-20 13:35:06 UTC
++++ GNUmakefile
+@@ -17,8 +17,7 @@
+ # Required version of Mailutils: major and minor numbers.  If patchlevel is
+ # needed, set the VPAT variable.
+ VMAJ = 3
+-VMIN = 20
+-VPAT = 92
++VMIN = 21
+ 
+ # Installation prefix
+ PREFIX = /usr/local
+@@ -49,7 +48,7 @@ ifneq (,$(wildcard config.mk))
+ endif
+ 
+ ifeq ($(DEVMAILUTILS),)
+-  CFLAGS  = $(O) $(shell mailutils cflags)
++  CFLAGS += $(O) $(shell mailutils cflags)
+   LDFLAGS = $(shell mailutils ldflags all sieve)
+   MU_INFO = mailutils info
+ else
+@@ -125,11 +124,11 @@ install: install-bin install-man
+ 
+ install-bin: mbar 
+ 	$(MKHIER) $(DESTDIR)$(BINDIR)
+-	$(INSTALL) mbar $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) mbar $(DESTDIR)$(BINDIR)
+ 
+ install-man:
+ 	$(MKHIER) $(DESTDIR)$(MAN1DIR)
+-	$(INSTALL) mbar.1 $(DESTDIR)$(MAN1DIR)
++	$(BSD_INSTALL_MAN) mbar.1 $(DESTDIR)$(MAN1DIR)
+ 
+ # ###################
+ # Distribution rules

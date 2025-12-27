@@ -217,6 +217,7 @@
     SUBDIR += mairix
     SUBDIR += masqmail
     SUBDIR += mb2md
+    SUBDIR += mbar
     SUBDIR += mblaze
     SUBDIR += mbox2imap
     SUBDIR += mbox2mdir
