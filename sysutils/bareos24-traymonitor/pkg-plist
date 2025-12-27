@@ -1,0 +1,8 @@
+bin/bareos-tray-monitor
+@sample %%ETCDIR%%/tray-monitor.d/client/FileDaemon-local.conf.sample
+@sample %%ETCDIR%%/tray-monitor.d/director/Director-local.conf.sample
+@sample %%ETCDIR%%/tray-monitor.d/monitor/bareos-mon.conf.sample
+@sample %%ETCDIR%%/tray-monitor.d/storage/StorageDaemon-local.conf.sample
+share/applications/bareos-tray-monitor.desktop
+share/icons/hicolor/128x128/apps/bareos-tray-monitor.png
+share/icons/hicolor/scalable/apps/bareos-tray-monitor.svg

@@ -83,6 +83,7 @@
     SUBDIR += bareos-webui
     SUBDIR += bareos22-webui
     SUBDIR += bareos23-webui
+    SUBDIR += bareos24-webui
     SUBDIR += beehive
     SUBDIR += bluefish
     SUBDIR += bombadillo

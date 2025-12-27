@@ -107,6 +107,9 @@
     SUBDIR += bareos23-client
     SUBDIR += bareos23-server
     SUBDIR += bareos23-traymonitor
+    SUBDIR += bareos24-client
+    SUBDIR += bareos24-server
+    SUBDIR += bareos24-traymonitor
     SUBDIR += barrier
     SUBDIR += bashtop
     SUBDIR += bastille
