@@ -41,3 +41,4 @@ libdata/pkgconfig/openal.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/altonegen.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/common/alhelpers.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/common/alhelpers.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/common/alhelpers.hpp

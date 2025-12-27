@@ -1,5 +1,5 @@
 PORTNAME=	openal-soft
-PORTVERSION=	1.24.3
+PORTVERSION=	1.25.0
 CATEGORIES=	audio
 MASTER_SITES=	https://openal-soft.org/openal-releases/
 
@@ -12,13 +12,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdbus-1.so:devel/dbus
 
-USES=		cmake compiler:c++17-lang pkgconfig tar:bzip2
+USES=		cmake compiler:c++20-lang pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DATADIR:STRING="${PREFIX}/etc"
 CMAKE_ON=	ALSOFT_BACKEND_WAVE
-CMAKE_OFF=	ALSOFT_BACKEND_ALSA ALSOFT_DLOPEN ALSOFT_EXAMPLES \
-		ALSOFT_REQUIRE_SOLARIS
+CMAKE_OFF=	ALSOFT_BACKEND_ALSA \
+		ALSOFT_DLOPEN \
+		ALSOFT_EXAMPLES \
+		ALSOFT_ENABLE_MODULES \
+		ALSOFT_REQUIRE_SOLARIS \
+		CMAKE_CXX_SCAN_FOR_MODULES
 
 # Use pthread instead of C11 threads
 CFLAGS+=	-D__STDC_NO_THREADS__
@@ -40,12 +44,12 @@ OPTIONS_DEFAULT_i386=	SIMD
 
 OPTIONS_SUB=		yes
 
-CONFIG_DESC=		Install configuration utility (needs Qt 5)
+CONFIG_DESC=		Install configuration utility (needs Qt6)
 UTILS_DESC=		Build and install utility programs
 
 CONFIG_IMPLIES=		UTILS
-CONFIG_USES=		qt:5
-CONFIG_USE=		QT=core,gui,widgets,buildtools:build,qmake:build
+CONFIG_USES=		qt:6
+CONFIG_USE=		QT=base
 CONFIG_CMAKE_BOOL_OFF=	ALSOFT_NO_CONFIG_UTIL
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
