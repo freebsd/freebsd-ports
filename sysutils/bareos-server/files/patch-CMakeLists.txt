@@ -1,6 +1,6 @@
---- CMakeLists.txt	2024-12-16 09:10:50.000000000 -0800
-+++ CMakeLists.txt	2024-12-31 23:52:42.840766000 -0800
-@@ -202,11 +202,8 @@
+--- CMakeLists.txt.orig	2025-12-04 05:19:30.000000000 -0800
++++ CMakeLists.txt	2025-12-17 22:33:08.301699000 -0800
+@@ -220,13 +220,9 @@
    if(ENABLE_WEBUI)
      add_subdirectory(webui)
    endif()
@@ -8,7 +8,10 @@
 -    if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 -      add_subdirectory(contrib)
 -    endif()
--    add_subdirectory(systemtests)
+-    if(ENABLE_SYSTEMTESTS)
+-      add_subdirectory(systemtests)
+-    endif()
++
 +  if(NOT ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
 +    add_subdirectory(contrib)
    endif()

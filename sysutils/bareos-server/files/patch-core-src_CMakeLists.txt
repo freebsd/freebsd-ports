@@ -1,17 +1,55 @@
---- core/src/CMakeLists.txt	2023-03-24 08:05:20.000000000 -0500
-+++ core/src/CMakeLists.txt	2023-04-07 16:15:16.297335000 -0500
-@@ -18,7 +18,9 @@
- #   02110-1301, USA.
- message("Entering ${CMAKE_CURRENT_SOURCE_DIR}")
+--- core/src/CMakeLists.txt	2025-12-04 05:19:30.000000000 -0800
++++ core/src/CMakeLists.txt	2025-12-20 18:26:16.808405000 -0800
+@@ -22,15 +22,42 @@
+ bareos_configure_file(FILES include/config.h.in)
+ include_directories(${CMAKE_CURRENT_BINARY_DIR})
+ 
+-if(${HAVE_LMDB})
+-  add_subdirectory(lmdb)
++if(NOT client-only)
++  add_library(Bareos::Lib IMPORTED SHARED)
++  set_target_properties(Bareos::Lib PROPERTIES
++    IMPORTED_LOCATION "${localbase}/lib/libbareos.so"
++    INTERFACE_INCLUDE_DIRECTORIES "${localbase}/include"
++    INTERFACE_LINK_LIBRARIES "" 
++  )
++
++  add_library(Bareos::Findlib IMPORTED SHARED)
++  set_target_properties(Bareos::Findlib PROPERTIES
++    IMPORTED_LOCATION "${localbase}/lib/libbareosfind.so"
++    INTERFACE_INCLUDE_DIRECTORIES "${localbase}/include"
++    INTERFACE_LINK_LIBRARIES "" 
++  )
++
++  add_library(Bareos::Fastlz IMPORTED SHARED)
++  set_target_properties(Bareos::Fastlz PROPERTIES
++    IMPORTED_LOCATION "${localbase}/lib/libbareosfastlz.so"
++    INTERFACE_INCLUDE_DIRECTORIES "${localbase}/include"
++    INTERFACE_LINK_LIBRARIES "" 
++  )
+ endif()
+-add_subdirectory(lib)
+-add_subdirectory(findlib)
+-add_subdirectory(fastlz)
  
 -add_subdirectory(filed)
 +if(client-only)
-+  add_subdirectory(filed)
++  if(${HAVE_LMDB})
++    add_subdirectory(lmdb)
++  endif()
++  add_subdirectory(lib)
++  add_subdirectory(findlib)
++  add_subdirectory(fastlz)
 +endif()
  
++if(client-only)
++  add_subdirectory(filed)
++endif()
++
  if(NOT client-only)
    add_subdirectory(tools)
-@@ -40,24 +42,28 @@
+   add_subdirectory(cats)
+@@ -51,17 +78,21 @@
  elseif(NOT GTest_FOUND)
    message(STATUS "Skipping unit tests as gtest was not found")
  else()
@@ -25,26 +63,13 @@
  
 -if(ENABLE_BCONSOLE)
 -  add_subdirectory(console)
--endif()
 +if(client-only)
 +  if(ENABLE_BCONSOLE)
 +    add_subdirectory(console)
 +  endif()
- 
--if(${HAVE_LMDB})
--  add_subdirectory(lmdb)
-+  if(${HAVE_LMDB})
-+    add_subdirectory(lmdb)
-+  endif()
-+  add_subdirectory(lib)
-+  add_subdirectory(findlib)
-+  add_subdirectory(fastlz)
  endif()
--add_subdirectory(lib)
--add_subdirectory(findlib)
 +
  add_subdirectory(plugins)
--add_subdirectory(fastlz)
 +
  if(${traymonitor})
    add_subdirectory(qt-tray-monitor)

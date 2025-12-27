@@ -1,6 +1,6 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
-DISTVERSION=	24.0.7
+DISTVERSION=	25.0.1
 CATEGORIES?=	www sysutils
 PKGNAMESUFFIX=	-webui
 
@@ -61,9 +61,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/webui/install/directors.ini ${STAGEDIR}${PREFIX}/${ETCDIRWEBUI}/directors.ini
 	${INSTALL_DATA} ${WRKSRC}/webui/install/configuration.ini ${STAGEDIR}${PREFIX}/${ETCDIRWEBUI}/configuration.ini
 	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/console/admin.conf.example ${STAGEDIR}${ETCDIR}/bareos-dir.d/console/admin.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/profile/webui-admin.conf ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile/webui-admin.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/profile/webui-limited.conf.example ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile/webui-limited.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/webui/install/bareos/bareos-dir.d/profile/webui-readonly.conf ${STAGEDIR}${ETCDIR}/bareos-dir.d/profile/webui-readonly.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/webui/install/apache/bareos-webui.conf ${STAGEDIR}${PREFIX}/${ETCDIRWEBUI}/apache-bareos-webui.conf
 	${INSTALL_DATA} ${WRKSRC}/webui/install/nginx/bareos-webui.conf ${STAGEDIR}${PREFIX}/${ETCDIRWEBUI}/nginx-bareos-webui.conf
 

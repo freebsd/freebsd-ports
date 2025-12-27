@@ -1,12 +1,12 @@
 post-patch:
-.if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
+.if ${PKGNAMESUFFIX} == "-traymonitor"
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|\@bindir\@|${LOCALBASE}/bin|g' ${WRKSRC}/core/src/qt-tray-monitor/bareos-tray-monitor.desktop.in
-	@${REINPLACE_CMD}  '207d' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD}  '217d' ${WRKSRC}/CMakeLists.txt
 .endif
 
 post-extract:
-.if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
+.if ${PKGNAMESUFFIX} == "-traymonitor"
 	@${MV} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/client/FileDaemon-local.conf.in \
 		${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/client/FileDaemon-local.conf
 	@${MV} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/director/Director-local.conf.in \
@@ -15,6 +15,14 @@ post-extract:
 		${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/monitor/bareos-mon.conf
 	@${MV} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/storage/StorageDaemon-local.conf.in \
 		${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/storage/StorageDaemon-local.conf
+	@${MV} ${WRKSRC}/contrib/misc/media_vault/media_vault.ini.example.in \
+		${WRKSRC}/contrib/misc/media_vault/media_vault.ini.in
+	@${MV} ${WRKSRC}/contrib/misc/media_vault/job_admin-media_vault.conf.example.in \
+		${WRKSRC}/contrib/misc/media_vault/job_admin-media_vault.conf.in
+	@${MV} ${WRKSRC}/contrib/misc/media_vault/console_media_vault.conf.example \
+		${WRKSRC}/contrib/misc/media_vault/console_media_vault.conf
+	@${MV} ${WRKSRC}/contrib/misc/media_vault/profile_media_vault.conf.example \
+		${WRKSRC}/contrib/misc/media_vault/profile_media_vault.conf
 .endif
 
 post-build:
@@ -23,7 +31,7 @@ post-build:
 .endif
 
 pre-install:
-.if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
+.if (${PKGNAMESUFFIX} == "-traymonitor")
 .	for d in client director monitor storage
 		${MKDIR} ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}
 		${FIND} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d} -type f -name '*.conf' -exec ${MV} -v {} {}.sample \;
@@ -40,7 +48,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/filed/static-bareos-fd ${STAGEDIR}${PREFIX}/sbin/bareos-fd-static
 	${INSTALL_PROGRAM} ${WRKSRC}/src/console/static-bconsole ${STAGEDIR}${PREFIX}/sbin/bconsole-static
 .endif
-.if (${PKGNAMESUFFIX} == "-traymonitor-qt5") || (${PKGNAMESUFFIX} == "-traymonitor-qt6")
+.if (${PKGNAMESUFFIX} == "-traymonitor")
 # Install config files and preserve existing ones
 .for d in client director monitor storage
 	${INSTALL_SCRIPT} ${WRKSRC}/core/src/defaultconfigs/tray-monitor.d/${d}/*.sample ${STAGEDIR}${ETCDIR}/tray-monitor.d/${d}/

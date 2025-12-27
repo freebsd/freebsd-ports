@@ -1,6 +1,6 @@
---- core/src/tools/CMakeLists.txt	2023-12-13 17:44:47.000000000 -0500
-+++ core/src/tools/CMakeLists.txt	2024-01-18 23:59:23.120490000 -0500
-@@ -69,10 +69,39 @@
+--- core/src/tools/CMakeLists.txt	2025-12-04 05:19:30.000000000 -0800
++++ core/src/tools/CMakeLists.txt	2025-12-18 18:54:26.372478000 -0800
+@@ -67,10 +67,39 @@
  endif()
  
  if(NOT client-only)
@@ -31,13 +31,13 @@
 +
 +  include_directories(../fastlz/include)
 +  add_library(fd_objects STATIC ${FDSRCS})
-+  target_link_libraries(fd_objects PRIVATE bareos bareosfastlz ${ZLIB_LIBRARIES})
++  target_link_libraries(fd_objects PRIVATE Bareos::Lib Bareos::Fastlz ${ZLIB_LIBRARIES} pthread)
 +
    set(TSTFNDSRCS testfind.cc testfind_fd.cc dummysockets.cc)
    add_executable(testfind ${TSTFNDSRCS})
    target_link_libraries(
--    testfind dird_objects fd_objects bareosfind CLI11::CLI11
-+    testfind dird_objects fd_objects bareosfind CLI11::CLI11 ${JANSSON_LIBRARIES}
+-    testfind Bareos::Dir Bareos::FD Bareos::Findlib CLI11::CLI11
++    testfind Bareos::Dir fd_objects Bareos::Findlib CLI11::CLI11 ${JANSSON_LIBRARIES}
    )
    list(APPEND TOOLS_SBIN testfind)
- endif()
+ 
