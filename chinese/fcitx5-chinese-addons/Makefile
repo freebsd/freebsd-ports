@@ -1,5 +1,5 @@
 PORTNAME=	fcitx5-chinese-addons
-DISTVERSION=	5.1.10
+DISTVERSION=	5.1.11
 CATEGORIES=	chinese textproc
 MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
 		https://download.fcitx-im.org/data/:py_stroke,py_table
