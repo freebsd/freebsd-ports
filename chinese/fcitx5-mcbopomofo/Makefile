@@ -1,4 +1,5 @@
 PORTNAME=	fcitx5-mcbopomofo
+PORTREVISION=	1
 DISTVERSION=	2.9.5
 CATEGORIES=	chinese textproc
 

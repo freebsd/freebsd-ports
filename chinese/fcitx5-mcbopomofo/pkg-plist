@@ -7,6 +7,10 @@ share/fcitx5/data/mcbopomofo-data.txt
 share/fcitx5/data/mcbopomofo-dictionary-service.json
 share/fcitx5/inputmethod/mcbopomofo-plain.conf
 share/fcitx5/inputmethod/mcbopomofo.conf
+share/icons/hicolor/16x16/apps/fcitx_mcbopomofo.png
+share/icons/hicolor/16x16/apps/org.fcitx.Fcitx5.fcitx_mcbopomofo.png
+share/icons/hicolor/22x22/apps/fcitx_mcbopomofo.png
+share/icons/hicolor/22x22/apps/org.fcitx.Fcitx5.fcitx_mcbopomofo.png
 share/icons/hicolor/24x24/apps/fcitx_mcbopomofo.png
 share/icons/hicolor/24x24/apps/org.fcitx.Fcitx5.fcitx_mcbopomofo.png
 share/icons/hicolor/32x32/apps/fcitx_mcbopomofo.png
