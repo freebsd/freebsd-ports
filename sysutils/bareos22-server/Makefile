@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
 DISTVERSION=	22.1.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	22-server
@@ -12,6 +12,9 @@ WWW=		https://www.bareos.org/
 
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
+
+DEPRECATED=	not supported upstream
+EXPIRATION_DATE=2026-01-27
 
 CONFLICTS?=	bareos-server bareos20-server bareos21-server
 
