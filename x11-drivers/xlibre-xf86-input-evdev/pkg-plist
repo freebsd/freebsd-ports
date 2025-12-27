@@ -1,5 +1,4 @@
 include/xorg/evdev-properties.h
-lib/xorg/modules/xlibre-25.0/input/evdev_drv.so
-libdata/pkgconfig/xorg-evdev.pc
+%%MODULEDIR%%/input/evdev_drv.so
 share/man/man4/evdev.4x.gz
 share/X11/xorg.conf.d/10-evdev.conf
