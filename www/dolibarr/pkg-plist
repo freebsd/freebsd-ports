@@ -2996,7 +2996,6 @@
 %%WWWDIR%%/htdocs/includes/mike42/escpos-php/autoload.php
 %%WWWDIR%%/htdocs/includes/mike42/escpos-php/composer.json
 %%WWWDIR%%/htdocs/includes/mike42/escpos-php/composer.lock
-%%WWWDIR%%/htdocs/includes/mike42/escpos-php/doc/FAQ.md
 %%WWWDIR%%/htdocs/includes/mike42/escpos-php/doc/Makefile
 %%WWWDIR%%/htdocs/includes/mike42/escpos-php/doc/escpos.doxyfile
 %%WWWDIR%%/htdocs/includes/mike42/escpos-php/phpunit.xml
@@ -14094,6 +14093,7 @@
 %%WWWDIR%%/htdocs/theme/dolistore_logo.jpg
 %%WWWDIR%%/htdocs/theme/dolistore_logo.png
 %%WWWDIR%%/htdocs/theme/dolistore_logo.svg
+%%WWWDIR%%/htdocs/theme/dolistore_squarred.svg
 %%WWWDIR%%/htdocs/theme/eldy/AUTHOR
 %%WWWDIR%%/htdocs/theme/eldy/badges.inc.php
 %%WWWDIR%%/htdocs/theme/eldy/btn.inc.php
