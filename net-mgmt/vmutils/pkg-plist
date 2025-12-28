@@ -50,3 +50,4 @@ bin/vmrestore
 %%PORTDOCS%%%%DOCSDIR%%/vmrestore.md
 %%PORTDOCS%%%%DOCSDIR%%/vmselect_flags.md
 %%PORTDOCS%%%%DOCSDIR%%/vmstorage_flags.md
+@dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VMAGENT_DATA%%
