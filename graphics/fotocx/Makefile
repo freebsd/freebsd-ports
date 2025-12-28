@@ -1,5 +1,5 @@
 PORTNAME=	fotocx
-PORTVERSION=	25.0
+PORTVERSION=	25.5
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -24,8 +24,6 @@ ALL_TARGET=	${PORTNAME}
 CXXFLAGS+=	-Wno-register -Wno-writable-strings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-
-PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 

@@ -1,14 +1,14 @@
---- Makefile.orig	2023-11-01 13:01:41 UTC
+--- Makefile.orig	2025-07-10 05:25:44 UTC
 +++ Makefile
 @@ -1,6 +1,7 @@
- #  fotoxx Makefile
+ #  fotocx Makefile
  #
  #  Following commands choose compiler and debug options
 +ifdef WANT_EXTRA_CXXFLAGS
  #  export CXX=g++          gnu compiler
  #  export CXX=clang++      clang compiler
  #  export DEBUG=x          debug build with address checking
-@@ -26,14 +27,15 @@ else                       #  GCC
+@@ -27,6 +28,7 @@ else                                                  
                    -Wno-format-truncation -Wno-stringop-truncation
     endif
  endif
@@ -16,13 +16,12 @@
  
  PKG_CONFIG ?= pkg-config
  
- CFLAGS = $(CXXFLAGS) $(CPPFLAGS) -c                                              \
--         `$(PKG_CONFIG) --cflags gtk+-3.0 --libs champlain-gtk-0.12`
-+         `$(PKG_CONFIG) --cflags gtk+-3.0 --cflags champlain-gtk-0.12`
+@@ -34,7 +36,7 @@ CFLAGS = $(CXXFLAGS) $(CPPFLAGS) -c                   
+          `$(PKG_CONFIG) --cflags gtk+-3.0 --cflags champlain-gtk-0.12`
  
- LIBS = `$(PKG_CONFIG) --libs gtk+-3.0`                                              \
--         -lrt -lpthread -ltiff -lpng -ljpeg                                         \
+ LIBS = `$(PKG_CONFIG) --libs gtk+-3.0`                                           \
+-         -lrt -lpthread -ltiff -lpng -ljpeg                                      \
 +         -lrt -lpthread -ltiff -lpng -ljpeg -lexecinfo \
-          -lclutter-1.0 -lclutter-gtk-1.0 -lchamplain-0.12 -lchamplain-gtk-0.12
+          -lclutter-1.0 -lclutter-gtk-1.0                                         \
+          -lchamplain-0.12 -lchamplain-gtk-0.12
  
- ALLFILES = fotoxx.o f.widgets.o f.file.o f.gallery.o f.albums.o f.select.o f.meta.o    \
