@@ -3,15 +3,15 @@ bin/bconsole
 %%PYTHON%%bin/bsmc
 %%PYTHON%%bin/chunk_check.py
 @group bareos
-@sample %%ETCDIR%%/bareos-dir.d/console/console_media_vault.conf.sample
-@sample %%ETCDIR%%/bareos-dir.d/job/job_admin-media_vault.conf.sample
-@sample %%ETCDIR%%/bareos-dir.d/profile/profile_media_vault.conf.sample
+%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/console/console_media_vault.conf.sample
+%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/job/job_admin-media_vault.conf.sample
+%%PYTHON%%@sample %%ETCDIR%%/bareos-dir.d/profile/profile_media_vault.conf.sample
 @sample %%ETCDIR%%/bareos-fd.d/client/myself.conf.sample
 @sample %%ETCDIR%%/bareos-fd.d/director/bareos-dir.conf.sample
 @sample %%ETCDIR%%/bareos-fd.d/director/bareos-mon.conf.sample
 @sample %%ETCDIR%%/bareos-fd.d/messages/Standard.conf.sample
 @sample %%ETCDIR%%/bconsole.d/bconsole.conf.sample
-@sample %%ETCDIR%%/media_vault.ini.sample
+%%PYTHON%%@sample %%ETCDIR%%/media_vault.ini.sample
 @group bareos
 %%PYTHON%%@sample(,bareos,640) %%ETCDIR%%/bsmc.conf.sample
 %%PYTHON%%lib/bareos/plugins/BareosFdPluginBaseclass.py
