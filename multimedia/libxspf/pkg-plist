@@ -24,8 +24,7 @@ include/xspf/XspfVersion.h
 include/xspf/XspfWriter.h
 include/xspf/XspfXmlFormatter.h
 include/xspf/xspf_c.h
-lib/libxspf.a
 lib/libxspf.so
 lib/libxspf.so.4
-lib/libxspf.so.4.0.1
+lib/libxspf.so.4.0.3
 libdata/pkgconfig/xspf.pc
