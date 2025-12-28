@@ -1,8 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-Some scripts provided by rsync, such as rrsync,
-require Python, which is not installed by default.
-EOM
-}
-]

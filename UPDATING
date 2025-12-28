@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20251228:
+  AFFECTS: users of net/rsync
+  AUTHOR: rodrigo@FreeBSD.org
+
+  Add a new option PYTHON that controls when the Python script
+  sbin/rrsync is installed and adds the necessary dependencies.
+  By default this option is off; updating the package will remove
+  the rrsync script.
+
 20251208:
   AFFECTS: users of net-mgmt/unifi{9,10}
   AUTHOR: otis@FreeBSD.org
