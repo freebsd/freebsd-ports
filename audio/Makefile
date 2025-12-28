@@ -428,11 +428,6 @@
     SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += littlefly-lv2
-    SUBDIR += logitechmediaserver
-    SUBDIR += logitechmediaserver-dynamicplaylist
-    SUBDIR += logitechmediaserver-lazysearch
-    SUBDIR += logitechmediaserver-sqlplaylist
-    SUBDIR += logitechmediaserver-trackstat
     SUBDIR += lollypop
     SUBDIR += lpcnet
     SUBDIR += lsp-plugins-lv2
@@ -443,6 +438,7 @@
     SUBDIR += lv2lint
     SUBDIR += lv2proc
     SUBDIR += lvtk
+    SUBDIR += lyrionmusicserver
     SUBDIR += mac
     SUBDIR += madfufw
     SUBDIR += madplay

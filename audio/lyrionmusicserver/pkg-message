@@ -1,16 +1,6 @@
 [
 { type: install
   message: <<EOM
-
-The 8.5.1 Server added a "Report Analytics Data plugin" that is
-enabled by default and sends analytics some minutes after it is first
-run. More information is available from the community.
-
-https://lyrion.org/analytics/learn-more/
-
-You can disable this, but it's recommended to keep on for help in
-determing future support.
-
 Note on security settings:
 
 The slimserver service is wide open, and by default there is no password.
@@ -33,6 +23,14 @@ To install the patch:
 Additionally, after installation you can install the plugin
 "Community Firmware for Touch/Radio/Controller" on LMS and get newer firmware
 for your devices!
+
+Upgrading from Logitech Media Server 8.5.x
+
+By default Lyrion Music Server expects to find its information in
+/var/db/lyrionmusicserver (not /var/db/logitechmediasever). If you
+wish to continue to use the same configuration, you can rebuild the
+port with setting the SLIMDBDIR variable.
+
 EOM
 }
 ]

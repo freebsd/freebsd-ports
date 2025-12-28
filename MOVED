@@ -4901,3 +4901,8 @@ sysutils/bareos-traymonitor@qt5|sysutils/bareos-traymonitor|2025-12-27|Unflavori
 sysutils/bareos-traymonitor@qt6|sysutils/bareos-traymonitor|2025-12-27|Unflavorize port. Qt5 is EoL. Please use bareos-traymonitor based on Qt6 instead
 audio/mixxx@qt5|audio/mixxx|2025-12-27|Unflavorize port. Qt5 is EoL. Please use mixxx based on Qt6 instead
 audio/mixxx@qt6|audio/mixxx|2025-12-27|Unflavorize port. Qt5 is EoL. Please use mixxx based on Qt6 instead
+audio/logitechmediaserver|audio/lyrionmusicserver|2025-12-28|With version 9, the project gets a new name
+audio/logitechmediaserver-dynamicplaylist||2025-12-28|unmaintained, unsure if working with lyrionmusicserver
+audio/logitechmediaserver-lazysearch||2025-12-28|unmaintained, unsure if working with lyrionmusicserver
+audio/logitechmediaserver-sqlplaylist||2025-12-28|unmaintained, unsure if working with lyrionmusicserver
+audio/logitechmediaserver-trackstat||2025-12-28|unmaintained, unsure if working with lyrionmusicserver
