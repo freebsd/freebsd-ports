@@ -2,6 +2,7 @@ bin/iroffer
 bin/iroffer-de
 bin/iroffer-fr
 bin/iroffer-it
+bin/iroffer-tr
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-de.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-de.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-en.html
@@ -10,12 +11,16 @@ bin/iroffer-it
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-it.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-it.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-tr.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-linux-tr.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-de.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-de.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-en.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-en.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-fr.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-tr.html
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL-vhost-tr.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/LIESMICH.modDinoex
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -26,6 +31,7 @@ bin/iroffer-it
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-en.txt
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-fr.txt
 %%PORTDOCS%%%%DOCSDIR%%/help-admin-it.txt
+%%PORTDOCS%%%%DOCSDIR%%/help-admin-tr.txt
 %%PORTDOCS%%%%DOCSDIR%%/iroffer.1.html
 %%PORTDOCS%%%%DOCSDIR%%/iroffer.1.ps
 %%PORTDOCS%%%%DOCSDIR%%/iroffer.1.txt
@@ -34,6 +40,7 @@ bin/iroffer-it
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/footer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/iroffer.cron
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/misal.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ruby-sample.rb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.config
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htdocs/info.txt.rb

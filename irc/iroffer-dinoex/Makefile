@@ -1,6 +1,6 @@
 PORTNAME=	iroffer
-PORTVERSION=	3.33
-PORTREVISION=	5
+PORTVERSION=	3.34
+PORTREVISION=	0
 CATEGORIES=	irc
 MASTER_SITES=	https://iroffer.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -18,8 +18,9 @@ USES=		ssl
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
-CONFIGURE_ENV=	LANG=en_EN.UTF-8
-MAKE_ENV=	LANG=en_EN.UTF-8
+CONFIGURE_ENV=	LANG=de_DE.UTF-8
+MAKE_ENV=	LANG=de_DE.UTF-8
+LDFLAGS+=	-Wno-unused-command-line-argument
 ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer
 
@@ -27,16 +28,20 @@ IROFFER_DOCS=	README README.modDinoex LIESMICH.modDinoex \
 		LICENSE THANKS TODO \
 		help-admin-de.txt help-admin-en.txt \
 		help-admin-fr.txt help-admin-it.txt \
+		help-admin-tr.txt \
 		doc/iroffer.1.txt doc/iroffer.1.html doc/iroffer.1.ps \
 		doc/INSTALL-linux-de.html doc/INSTALL-linux-de.txt \
 		doc/INSTALL-linux-en.html doc/INSTALL-linux-en.txt \
 		doc/INSTALL-linux-fr.html doc/INSTALL-linux-fr.txt \
 		doc/INSTALL-linux-it.html doc/INSTALL-linux-it.txt \
+		doc/INSTALL-linux-tr.html doc/INSTALL-linux-tr.txt \
 		doc/INSTALL-vhost-de.html doc/INSTALL-vhost-de.txt \
 		doc/INSTALL-vhost-en.html doc/INSTALL-vhost-en.txt \
-		doc/INSTALL-vhost-fr.html doc/INSTALL-vhost-fr.txt
+		doc/INSTALL-vhost-fr.html doc/INSTALL-vhost-fr.txt \
+		doc/INSTALL-vhost-tr.html doc/INSTALL-vhost-tr.txt
 IROFFER_EXAMPLES=	iroffer.cron \
 		sample.config beispiel.config exemple.config \
+		misal.config \
 		header.html footer.html ruby-sample.rb
 IROFFER_HTDOCS=	iroffer-state.css robots.txt \
 		info.txt.rb list.json.rb md5.txt.rb sfv.txt.rb
@@ -69,6 +74,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-de ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-it ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-fr ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/iroffer-tr ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/iroffer.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/xdcc.7 ${STAGEDIR}${PREFIX}/share/man/man7/
 
