@@ -1,7 +1,6 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	2
+DISTVERSION=	0.10.1
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules,no_targets sqlite:3
 USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.30.0:sys
+GH_TUPLE=	golang:sys:v0.35.0:sys
 
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_DEFINE=		DOCS
