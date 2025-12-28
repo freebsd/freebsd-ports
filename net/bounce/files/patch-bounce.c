@@ -1,5 +1,5 @@
---- bounce.c.orig	2009-03-08 23:05:57.000000000 +0900
-+++ bounce.c	2009-03-08 23:07:09.000000000 +0900
+--- bounce.c.orig	2025-12-28 00:57:20 UTC
++++ bounce.c
 @@ -1,5 +1,7 @@
  /* socket bouncer, by orabidoo  12 Feb '95 
     using code from mark@cairo.anu.edu.au's general purpose telnet server.
@@ -27,7 +27,7 @@
  
  void sigchld() {
    signal(SIGCHLD, sigchld);
-@@ -42,12 +47,15 @@
+@@ -42,12 +47,15 @@ void communicate(int sfd, int cfd) {
  
      struct itimerval itime;
  
@@ -44,7 +44,7 @@
  
      chead=ctail=cbuf;
      cpos=0;
-@@ -134,31 +142,66 @@
+@@ -134,31 +142,66 @@ void communicate(int sfd, int cfd) {
  }
  
  int main(int argc,char *argv[]) {
@@ -56,13 +56,13 @@
      char *myname;
 -    struct hostent *hp;
 +    struct hostent *hp, *hpLocal;
-+
+ 
 +    extern char *optarg;
 +    extern int optind;
 +    char *hostname = NULL;
 +    char *sourcename = NULL;
 +    char ch;
- 
++
      myname=argv[0];
 -    if (argc==5) {
 -	if (strcmp(argv[1],"-p")==0) {
@@ -128,7 +128,7 @@
  	fprintf(stderr, "Bad remote port number.\n");
  	exit(-1);
      }
-@@ -166,11 +209,12 @@
+@@ -166,11 +209,12 @@ int main(int argc,char *argv[]) {
      memset((char *) &rem_addr, 0, sizeof(rem_addr));
      memset((char *) &srv_addr, 0, sizeof(srv_addr));
      memset((char *) &cl_addr, 0, sizeof(cl_addr));
@@ -143,7 +143,7 @@
  	if (cl_addr.sin_addr.s_addr==-1) {
  	    fprintf(stderr, "Unknown host.\n");
  	    exit(-1);
-@@ -178,19 +222,43 @@
+@@ -178,19 +222,44 @@ int main(int argc,char *argv[]) {
      } else
  	cl_addr.sin_addr=*(struct in_addr *)(hp->h_addr_list[0]);
  
@@ -176,6 +176,7 @@
      srv_addr.sin_port=htons(myport);
      srv_fd=socket(PF_INET,SOCK_STREAM,0);
 -    if (bind(srv_fd,&srv_addr,sizeof(srv_addr))==-1) {
++    setsockopt(srv_fd, SOL_SOCKET, SO_REUSEPORT, &on, sizeof(on));
 +    if (bind(srv_fd,(struct sockaddr *)&srv_addr,sizeof(srv_addr))==-1) {
  	perror("bind");
          exit(-1);
@@ -190,7 +191,7 @@
      close(0); close(1); close(2);
      chdir("/");
  #ifdef TIOCNOTTY
-@@ -202,11 +270,15 @@
+@@ -202,11 +271,15 @@ int main(int argc,char *argv[]) {
      if (fork()) exit(0);
      while (1) {
  	len=sizeof(rem_addr);
@@ -207,10 +208,11 @@
  	switch(fork()) {
  	  case -1:
  	    /* we're in the background.. no-one to complain to */
-@@ -220,6 +292,17 @@
+@@ -219,6 +292,17 @@ int main(int argc,char *argv[]) {
+ 	    if ((cl_fd=socket(PF_INET, SOCK_STREAM, 0))<0) {
  		close(rem_fd);
  		exit(-1);
- 	    }
++	    }
 +	    if (b) { src_addr.sin_port=0;
 +	    if (bind(cl_fd,(struct sockaddr *)&src_addr,sizeof(src_addr))<0) {
 +		close(rem_fd);
@@ -221,7 +223,6 @@
 +	    if ((hp=gethostbyname(argv[0]))!=NULL) {
 +		cl_addr.sin_addr=*(struct in_addr *)(hp->h_addr_list[0]);
 +	    }
-+	    }
+ 	    }
  	    if (connect(cl_fd, (struct sockaddr *)&cl_addr, 
  	                sizeof(cl_addr))<0) {
- 		close(rem_fd);
