@@ -229,7 +229,7 @@ WITH=	SDK
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
 # nm: '../unxfbsdi.pro/slo/b2dcubicbezier.o': Invalid argument
-EXTRA_PATCHES+=         ${FILESDIR}/extra-patch-nm
+EXTRA_PATCHES+=		${FILESDIR}/extra-patch-nm
 .endif
 
 .if defined(WITH_DEBUG)
