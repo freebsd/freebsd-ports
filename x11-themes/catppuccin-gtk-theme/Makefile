@@ -1,5 +1,5 @@
 PORTNAME=	catppuccin-gtk-theme
-DISTVERSION=	g20251014
+DISTVERSION=	g20251023
 CATEGORIES=	x11-themes
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -21,7 +21,7 @@ USES=		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Fausto-Korpsvart
 GH_PROJECT=	Catppuccin-GTK-Theme
-GH_TAGNAME=	065ddb5ff22d0aa493ff89b0301c937fc071917a
+GH_TAGNAME=	f25d8cf688d8f224f0ce396689ffcf5767eb647e
 
 SHEBANG_FILES=	themes/build.sh \
 		themes/install.sh
@@ -52,7 +52,7 @@ do-install:
 	${SETENV} ${MAKE_ENV} ./install.sh ${INSTALL_FLAGS} --tweaks ${colorscheme}
 .endfor
 	@cd ${STAGEDIR}${PREFIX} && \
-		${FIND} share/themes -type f -o -type l >> ${TMPPLIST}
+	${FIND} share/themes -type f -o -type l >> ${TMPPLIST}
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
