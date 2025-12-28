@@ -1,5 +1,5 @@
 PORTNAME=	mecrisp-stellaris
-DISTVERSION=	3.0.0
+DISTVERSION=	3.0.1
 CATEGORIES=	lang
 MASTER_SITES=	SF/mecrisp \
 		http://fuz.su/pub/mecrisp/
