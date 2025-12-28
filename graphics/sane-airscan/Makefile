@@ -1,4 +1,5 @@
 PORTNAME=	sane-airscan
+PORTREVISION=	1
 DISTVERSION=	0.99.36
 CATEGORIES=	graphics
 
@@ -19,6 +20,8 @@ USES=		gnome jpeg meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexpevzner
 USE_GNOME=	libxml2
+
+CFLAGS+=	-D CONFIG_SANE_CONFIG_DIR="\\\"${PREFIX}/etc/sane.d\\\""
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/sane.d/airscan.conf \
