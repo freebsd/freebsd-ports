@@ -210,6 +210,8 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/Batch files.lcf
 %%DATADIR%%/data/lexlib/CSS.cuda-lexmap
 %%DATADIR%%/data/lexlib/CSS.lcf
+%%DATADIR%%/data/lexlib/Diff.cuda-lexmap
+%%DATADIR%%/data/lexlib/Diff.lcf
 %%DATADIR%%/data/lexlib/HTML style.cuda-lexmap
 %%DATADIR%%/data/lexlib/HTML style.lcf
 %%DATADIR%%/data/lexlib/HTML.cuda-lexmap
