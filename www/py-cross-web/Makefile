@@ -1,13 +1,13 @@
-PORTNAME=	lia-web
-DISTVERSION=	0.2.3
+PORTNAME=	cross-web
+DISTVERSION=	0.4.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	lia_web-${DISTVERSION}
+DISTNAME=	cross_web-${DISTVERSION}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Library for working with web frameworks
-WWW=		https://github.com/patrick91/lia
+WWW=		https://github.com/usecross/cross-web
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
