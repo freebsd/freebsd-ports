@@ -27,6 +27,9 @@ USE_PYTHON=	autoplist concurrent pep517
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
 NO_ARCH=	yes
+# Release 5.3.0 dropped support for Django 5.1
+PORTSCOUT=	limit:^5\.\2\.
+
 PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
