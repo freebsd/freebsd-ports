@@ -4906,3 +4906,4 @@ audio/logitechmediaserver-dynamicplaylist||2025-12-28|unmaintained, unsure if wo
 audio/logitechmediaserver-lazysearch||2025-12-28|unmaintained, unsure if working with lyrionmusicserver
 audio/logitechmediaserver-sqlplaylist||2025-12-28|unmaintained, unsure if working with lyrionmusicserver
 audio/logitechmediaserver-trackstat||2025-12-28|unmaintained, unsure if working with lyrionmusicserver
+deskutils/showdown||2025-12-28|Broken and unmaintained upstream since 2022

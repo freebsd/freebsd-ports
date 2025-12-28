@@ -260,7 +260,6 @@
     SUBDIR += rubygem-taskjuggler
     SUBDIR += rwpspread
     SUBDIR += semantik
-    SUBDIR += showdown
     SUBDIR += sigi
     SUBDIR += simpleagenda
     SUBDIR += skim
