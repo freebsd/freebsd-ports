@@ -1,5 +1,6 @@
 PORTNAME=	zls
 DISTVERSION=	0.15.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	kenrap@kennethraplee.com
@@ -22,5 +23,9 @@ ZIG_TUPLE=	diffz:github.com/ziglibs/diffz/archive/a20dd1f11b10819a6f570f98b42e1c
 		tracy:github.com/wolfpld/tracy/archive/refs/tags/v0.11.1.tar.gz:N-V-__8AAMeOlQEipHjcyu0TCftdAi9AQe7EXUDJOoVe0k-t
 
 PLIST_FILES=	bin/${PORTNAME}
+
+post-patch:
+# Respect PREFIX for global_configuration
+	${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' ${WRKSRC_known_folders}/known-folders.zig
 
 .include <bsd.port.mk>
