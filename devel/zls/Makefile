@@ -9,8 +9,7 @@ WWW=		https://github.com/zigtools/zls
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.15.1<0.16.0:lang/zig
-RUN_DEPENDS=	zig>=0.15.1<0.16.0:lang/zig
+RUN_DEPENDS=	${ZIG_CMD}:${ZIG_PORT}
 
 USES=		zig
 
@@ -22,12 +21,6 @@ ZIG_TUPLE=	diffz:github.com/ziglibs/diffz/archive/a20dd1f11b10819a6f570f98b42e1c
 		lsp_kit:github.com/zigtools/lsp-kit/archive/576e9405b1ab22c17c0f9318feed3278aa66b0ea.tar.gz:lsp_kit-0.1.0-bi_PL04yCgAxLsF0hH2a5sZKT84MGQaKXouw2jvCE8Nl \
 		tracy:github.com/wolfpld/tracy/archive/refs/tags/v0.11.1.tar.gz:N-V-__8AAMeOlQEipHjcyu0TCftdAi9AQe7EXUDJOoVe0k-t
 
-CONFIGURE_ARGS=	--prefix "${PREFIX}" \
-		${WITH_DEBUG:D:U-Doptimize=ReleaseFast} \
-		-Dcpu=${CPUTYPE:Ubaseline} \
-		--verbose
-MAKE_ENV=	DESTDIR="${STAGEDIR}"
-NO_INSTALL=	yes # strip(1) breaks runtime
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
