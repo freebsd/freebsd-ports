@@ -4899,3 +4899,5 @@ games/melonds@qt5|games/melonds|2025-12-19|Unflavorize port. Qt5 is defunct. Ple
 games/melonds@qt6|games/melonds|2025-12-19|Unflavorize port. Continue to use melonds based on Qt6
 sysutils/bareos-traymonitor@qt5|sysutils/bareos-traymonitor|2025-12-27|Unflavorize port. Qt5 is EoL. Please use bareos-traymonitor based on Qt6 instead
 sysutils/bareos-traymonitor@qt6|sysutils/bareos-traymonitor|2025-12-27|Unflavorize port. Qt5 is EoL. Please use bareos-traymonitor based on Qt6 instead
+audio/mixxx@qt5|audio/mixxx|2025-12-27|Unflavorize port. Qt5 is EoL. Please use mixxx based on Qt6 instead
+audio/mixxx@qt6|audio/mixxx|2025-12-27|Unflavorize port. Qt5 is EoL. Please use mixxx based on Qt6 instead
