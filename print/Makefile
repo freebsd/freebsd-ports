@@ -182,6 +182,7 @@
     SUBDIR += py-frescobaldi
     SUBDIR += py-glyphsets
     SUBDIR += py-glyphtools
+    SUBDIR += py-plutoprint
     SUBDIR += py-pollyreports
     SUBDIR += py-preppy
     SUBDIR += py-psautohint

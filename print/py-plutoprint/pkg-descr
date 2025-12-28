@@ -1,0 +1,5 @@
+PlutoPrint is a lightweight and easy-to-use Python library for generating
+high-quality PDFs and images directly from HTML or XML content. It is based on
+PlutoBook’s robust rendering engine and provides a simple API to convert ur
+HTML into crisp PDF documents or vibrant image files. This makes it ideal for
+reports, invoices, or visual snapshots.
