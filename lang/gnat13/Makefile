@@ -110,15 +110,9 @@ _TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GNAT12_PATH}:${PREFIX}/bin:${
 
 .include <bsd.port.options.mk>
 
-_PREV_ASSET_GCC=	${PREV_ASSET_VER:R:R}
 _PREV_ASSET_OSREL=	${OSREL:R}
-.if ${_PREV_ASSET_OSREL} == 16
-_PREV_ASSET_VER=	12.3.0
-_PREV_ASSET_REV=	_1
-.else
-_PREV_ASSET_VER=	12.2.0	# To be changed to ${DISTVERSION} when 13 assets exist
-_PREV_ASSET_REV=	_6
-.endif
+_PREV_ASSET_VER=	13.2.0
+_PREV_ASSET_REV=
 _PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
 
 .if ${ARCH} == i386 || ${ARCH} == aarch64
