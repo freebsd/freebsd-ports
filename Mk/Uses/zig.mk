@@ -70,7 +70,13 @@ zig-pre-extract:
 .  for z in ${ZIG_TUPLE}
 .    for group url dir in ${z:S/:/ /g:tw}
 	${MAKE} -C ${.CURDIR} do-extract EXTRACT_ONLY=${url:T} WRKDIR=${ZIG_TMPDEPSDIR}
-	${MV} ${ZIG_TMPDEPSDIR}/* ${ZIG_DEPSDIR}/${dir}
+	# In some cases the distfile holds files at the top level of the archive,
+	# s we have to move ${ZIG_TMPDEPSDIR} itself, not its contents.
+	if [ "$$(${FIND} ${ZIG_TMPDEPSDIR} -depth 1 -type f)" ]; then \
+		${MV} ${ZIG_TMPDEPSDIR} ${ZIG_DEPSDIR}/${dir}; \
+	else \
+		${MV} ${ZIG_TMPDEPSDIR}/* ${ZIG_DEPSDIR}/${dir}; \
+	fi
 .    endfor
 .  endfor
 	@${RMDIR} ${ZIG_TMPDEPSDIR}
