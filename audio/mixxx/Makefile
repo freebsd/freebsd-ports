@@ -38,8 +38,8 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 
 USES=		cmake:testing compiler:c++20-lang ebur128 gl iconv ninja pkgconfig \
 		qt:6 sqlite ssl xorg
-USE_QT=		5compat base:run declarative:build tools:build shadertools \
-		sqldriver-sqlite:run svg
+USE_QT=		5compat base declarative shadertools sqldriver-sqlite:run svg \
+		tools:build
 USE_XORG=	ice sm x11 xext
 USE_GL=		gl glu
 USE_GITHUB=	yes
