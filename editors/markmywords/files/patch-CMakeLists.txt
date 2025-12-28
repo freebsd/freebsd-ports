@@ -1,0 +1,66 @@
+--- CMakeLists.txt.orig	2020-07-22 18:10:30 UTC
++++ CMakeLists.txt
+@@ -2,26 +2,6 @@ project(MarkMyWords)
+ 
+ cmake_minimum_required(VERSION 2.6)
+ 
+-# build the markdown lib
+-include(ExternalProject)
+-set(DISCOUNT_DEP_PATH ${CMAKE_SOURCE_DIR}/deps/discount)
+-set(DISCOUNT_LIB_PATH ${CMAKE_BINARY_DIR}/libmarkdown.a)
+-set(DISCOUNT_INCLUDE_PATH ${DISCOUNT_DEP_PATH})
+-
+-ExternalProject_Add(discount
+-  PREFIX ${DISCOUNT_DEP_PATH}
+-  SOURCE_DIR ${DISCOUNT_DEP_PATH}
+-  CONFIGURE_COMMAND
+-      ${DISCOUNT_DEP_PATH}/configure.sh --src=${DISCOUNT_DEP_PATH}
+-                                        --prefix=${CMAKE_BINARY_DIR}
+-                                        --libdir=${CMAKE_BINARY_DIR}
+-                                        --with-fenced-code
+-  BUILD_COMMAND make install
+-  BUILD_IN_SOURCE 1
+-)
+-
+-include_directories(${DISCOUNT_INCLUDE_PATH})
+-
+ # build UI lib
+ list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
+ 
+@@ -39,6 +19,7 @@ pkg_check_modules(DEPS REQUIRED
+   gtksourceview-3.0>=3.10
+   gthread-2.0
+   gtk+-3.0>=3.9.10
++  libmarkdown
+ )
+ 
+ add_definitions(${DEPS_CFLAGS})
+@@ -73,7 +54,7 @@ set (DATADIR "${CMAKE_INSTALL_PREFIX}/share")
+ set (PKGDATADIR "${DATADIR}/markmywords")
+ set (GETTEXT_PACKAGE "markmywords")
+ set (RELEASE_NAME "TARS")
+-set (VERSION "0.7")
++set (VERSION "2020.07.22")
+ set (VERSION_INFO "Release")
+ set (CMAKE_C_FLAGS "-ggdb")
+ set (PREFIX ${CMAKE_INSTALL_PREFIX})
+@@ -108,19 +89,11 @@ PACKAGES
+   discount
+ OPTIONS
+   --vapidir=${CMAKE_SOURCE_DIR}/vapi
+-  --thread
+   --gresources=${CMAKE_SOURCE_DIR}/resources/mark-my-words.gresource.xml
+   --target-glib=2.38 # FIXME check before, and target the same version
+ )
+ 
+ add_executable(mark-my-words ${VALA_C} ${generated_resources})
+-
+-target_link_libraries(mark-my-words
+-  ${DISCOUNT_LIB_PATH})
+-
+-add_dependencies(mark-my-words
+-  discount
+-)
+ 
+ install(TARGETS mark-my-words RUNTIME
+   DESTINATION bin)

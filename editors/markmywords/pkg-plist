@@ -1,0 +1,7 @@
+bin/mark-my-words
+share/applications/mark-my-words.desktop
+share/icons/hicolor/scalable/apps/mark-my-words.svg
+share/mark-my-words/default-view.css
+share/mark-my-words/github-syntax.css
+share/mark-my-words/highlight.pack.js
+share/metainfo/com.github.voldyman.markmywords.appdata.xml
