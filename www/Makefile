@@ -103,7 +103,6 @@
     SUBDIR += carbonapi
     SUBDIR += cas
     SUBDIR += castget
-    SUBDIR += castor
     SUBDIR += cgi-lib
     SUBDIR += cgi-lib.pl
     SUBDIR += cgicc

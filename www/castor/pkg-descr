@@ -1,3 +1,0 @@
-Castor is a graphical browser for text-based protocols written in Rust with
-GTK+. As of version 0.8.16 it supports the Gemini, Gopher and Finger
-protocols.
