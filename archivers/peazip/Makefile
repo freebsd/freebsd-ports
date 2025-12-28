@@ -1,5 +1,5 @@
 PORTNAME=	peazip
-PORTVERSION=	10.7.0
+PORTVERSION=	10.8.0
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/giorgiotani/PeaZip/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -31,10 +31,11 @@ qt6_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
 
 ARCHIVER_FILES=		#
 
-OPTIONS_DEFINE=		7Z ARC ZPAQ UNACE
+OPTIONS_DEFINE=		7Z ARC BROTLI ZPAQ UNACE
 
 7Z_DESC=		7z file archiver support
 ARC_DESC=		Arc file archiver support
+BROTLI_DESC=		Brotli file archiver support
 ZPAQ_DESC=		Zpaq file archiver support
 UNACE_DESC=		Unace file archiver support
 
@@ -61,6 +62,14 @@ ARCHIVER_FILES+=arc
 PLIST_SUB+=	ARC=""
 .else
 PLIST_SUB+=	ARC="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MBROTLI}
+RUN_DEPENDS+=	brotli:archivers/brotli
+ARCHIVER_FILES+=brotli
+PLIST_SUB+=	BROTLI=""
+.else
+PLIST_SUB+=	BROTLI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MZPAQ}
