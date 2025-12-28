@@ -1,6 +1,6 @@
 PORTNAME=	klee
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1
+DISTVERSION=	3.2
 CATEGORIES=	security devel
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -14,7 +14,7 @@ NOT_FOR_ARCHS=	i386 powerpc
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tabulate>0:devel/py-tabulate@${PY_FLAVOR}
 
-USES=		cmake compiler:c++14-lang llvm:min=12,max=16,build,run,noexport localbase \
+USES=		cmake compiler:c++14-lang llvm:min=13,max=16,build,run,noexport localbase \
 		pkgconfig python:run shebangfix sqlite
 USE_GITHUB=	yes
 SHEBANG_FILES=	tools/klee-stats/klee-stats tools/ktest-tool/ktest-tool tools/klee-zesti/klee-zesti
