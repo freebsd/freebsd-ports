@@ -13,6 +13,8 @@ WWW=		https://gitlab.gnome.org/GNOME/fractal
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		Fails to build, error: failed to select a version for the requirement `syn = "^2"`
+
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libgmp.so:math/gmp \
 		libgspell-1.so:textproc/gspell \
