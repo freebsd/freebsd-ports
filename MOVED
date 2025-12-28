@@ -4897,3 +4897,5 @@ lang/typstfmt||2025-12-15|Discontinued, upstream repository archived on June 8, 
 www/py-requests-kerberos|security/py-requests-kerberos|2025-12-17|Remove duplicate port. Use security/py-requests-kerberos instead
 games/melonds@qt5|games/melonds|2025-12-19|Unflavorize port. Qt5 is defunct. Please use melonds based on Qt6 instead
 games/melonds@qt6|games/melonds|2025-12-19|Unflavorize port. Continue to use melonds based on Qt6
+sysutils/bareos-traymonitor@qt5|sysutils/bareos-traymonitor|2025-12-27|Unflavorize port. Qt5 is EoL. Please use bareos-traymonitor based on Qt6 instead
+sysutils/bareos-traymonitor@qt6|sysutils/bareos-traymonitor|2025-12-27|Unflavorize port. Qt5 is EoL. Please use bareos-traymonitor based on Qt6 instead
