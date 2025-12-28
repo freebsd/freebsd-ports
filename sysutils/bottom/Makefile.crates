@@ -299,7 +299,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
 		winnow-0.7.13 \
-		winprocinfo-0.1.2 \
 		winreg-0.10.1 \
 		wit-bindgen-0.46.0 \
 		wrapcenum-derive-0.4.1
