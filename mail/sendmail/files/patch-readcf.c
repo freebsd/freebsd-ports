@@ -1,7 +1,7 @@
---- sendmail/readcf.c.orig	2024-01-25 05:27:02 UTC
+--- sendmail/readcf.c.orig	2025-10-23 19:33:31 UTC
 +++ sendmail/readcf.c
-@@ -3208,6 +3208,10 @@ static struct optioninfo
- 	{ "CipherSuites",		O_CIPHERSUITES,	OI_NONE	},
+@@ -3213,6 +3213,10 @@ static struct optioninfo
+ 	{ "SameDomainOnly",		O_SAMEDOMAINONLY,	OI_NONE	},
  #endif
  
 +#if USE_BLACKLIST
@@ -11,10 +11,10 @@
  	{ NULL,				'\0',		OI_NONE	}
  };
  
-@@ -4943,6 +4947,12 @@ setoption(opt, val, safe, sticky, e)
+@@ -4944,6 +4948,12 @@ setoption(opt, val, safe, sticky, e)
  #if _FFR_MTA_STS
  	  case O_MTASTS:
- 		MTASTS = atobool(val);
+ 		StrictTransportSecurity = atobool(val);
 +		break;
 +#endif
 +
