@@ -1,3 +1,3 @@
-TIMESTAMP = 1753935962
-SHA256 (cmocka-1.1.8.tar.xz) = 58435b558766d7f4c729ba163bdf3aec38bed3bc766dab684e3526ed0aa7c780
-SIZE (cmocka-1.1.8.tar.xz) = 77872
+TIMESTAMP = 1765687059
+SHA256 (cmocka-2.0.0.tar.xz) = b5686c51ea92d142958d68e5dcb932f9bfc32cd3dd01c524f9d4aa863ebc3d9c
+SIZE (cmocka-2.0.0.tar.xz) = 120036

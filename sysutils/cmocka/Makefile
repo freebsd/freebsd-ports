@@ -1,15 +1,14 @@
 PORTNAME=	cmocka
-DISTVERSION=	1.1.8
+DISTVERSION=	2.0.0
 CATEGORIES=	sysutils
-MASTER_SITES=	https://cmocka.org/files/${DISTVERSION:R}/
+MASTER_SITES=	https://cmocka.org/files/2.0/
 
-MAINTAINER=	dteske@FreeBSD.org
+MAINTAINER=	diizzy@FreeBSD.org
 COMMENT=	Unit testing framework for C with support for mock objects
-WWW=		https://cmocka.org/ \
-		https://gitlab.com/cmocka/cmocka
+WWW=		https://cmocka.org/
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing pathfix tar:xz
 USE_LDCONFIG=	yes
