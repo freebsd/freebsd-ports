@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-Odoo 18 ERP was installed
+Odoo 19 ERP was installed
 
 1) The configuration file can be located at:
 

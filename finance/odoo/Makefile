@@ -1,6 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	18.0.20250719
-PORTREVISION=	4
+PORTVERSION=	19.0.20251227
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +10,7 @@ WWW=		https://www.odoo.com
 LICENSE=	LGPL3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	b284046d535c99a33cb0c4ec6a15e7536053ce0c
+GH_TAGNAME=	6f1d40b4f5383ed515aa502751139792e18c74f6
 
 LIB_DEPENDS=	libxslt.so:textproc/libxslt \
 		libevent.so:devel/libevent \
@@ -52,6 +51,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyserial>=0:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-ldap>=0:net/py-python-ldap@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-magic>0:devel/py-python-magic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyusb>=0:devel/py-pyusb@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qrcode>=0:textproc/py-qrcode@${PY_FLAVOR} \
@@ -85,7 +85,7 @@ GROUPS=		${USERS}
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 
-CONFLICTS=	odoo16 odoo17
+CONFLICTS=	odoo16 odoo17 odoo18
 
 ETCDIR=		${PREFIX}/etc/odoo
 
