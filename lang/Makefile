@@ -111,6 +111,7 @@
     SUBDIR += gluon
     SUBDIR += gnat12
     SUBDIR += gnat13
+    SUBDIR += gnat14
     SUBDIR += gnatcross-binutils-aarch64
     SUBDIR += gnatcross-sysroot-aarch64
     SUBDIR += gnatdroid-binutils
