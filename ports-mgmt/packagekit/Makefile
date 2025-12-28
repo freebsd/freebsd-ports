@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpkg.so:${PKG_ORIGIN}
 RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit2
 
-USES=		cpe gettext gnome meson pkgconfig \
+USES=		cpe dbus-testing gettext gnome meson pkgconfig \
 		python shebangfix sqlite:3 tar:xz
 
 USE_GNOME=	gtk30 glib20 intltool introspection
