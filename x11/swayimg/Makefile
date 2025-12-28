@@ -10,8 +10,7 @@ WWW=		https://github.com/artemsen/swayimg
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libinotify.so:devel/libinotify \
-		libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon.so:x11/libxkbcommon
 TEST_DEPENDS=	googletest>0:devel/googletest
@@ -29,6 +28,12 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/icons/hicolor/256x256/apps/${PORTNAME}.png \
 		${DATADIR}/${PORTNAME}rc \
 		${NULL}
+
+# XXX Drop after FreeBSD 14.* EOL around 2028-11-30
+# https://cgit.freebsd.org/src/commit/?id=3965de642c29
+.if !exists(/usr/include/sys/inotify.h)
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+.endif
 
 # XXX Drop after FreeBSD 13.5 EOL around 2026-04-30
 # https://cgit.freebsd.org/src/commit/?id=af93fea71038
