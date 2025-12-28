@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		gettext-tools gnome localbase meson pkgconfig tar:xz
+USES=		dbus-testing gettext-tools gnome localbase meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build libxml2:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Duse_systemd=false
