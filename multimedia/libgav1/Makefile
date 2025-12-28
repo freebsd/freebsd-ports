@@ -1,13 +1,12 @@
 PORTNAME=	libgav1
-DISTVERSION=	0.19.0
-PORTREVISION=	2
+DISTVERSION=	0.20.0
 CATEGORIES=	multimedia
 MASTER_SITES=	DEBIAN:DEFAULT \
 		https://github.com/google/googletest/releases/download/v1.15.2/:googletest
 DISTFILES=	${PORTNAME}_${DISTVERSION}.orig${EXTRACT_SUFX}:DEFAULT \
 		googletest-1.15.2.tar.gz:googletest
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Main profile (0) & High profile (1) compliant AV1 decoder
 WWW=		https://chromium.googlesource.com/codecs/libgav1
 
