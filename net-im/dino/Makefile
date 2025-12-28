@@ -11,6 +11,8 @@ WWW=		https://dino.im
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Fails to build, depends on shared library: libwebrtc-audio-processing.so - not found
+
 LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libassuan.so:security/libassuan \
 		libgcrypt.so:security/libgcrypt \
