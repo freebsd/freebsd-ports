@@ -13,7 +13,7 @@ WWW=		https://www.bareos.org/
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-CONFLICTS?=	bareos20-server bareos21-server bareos22-server bareos-server
+CONFLICTS?=	bareos22-server bareos24-server bareos-server
 
 BUILD_DEPENDS+=	utf8cpp>0:devel/utf8cpp
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
