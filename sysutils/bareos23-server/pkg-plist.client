@@ -54,7 +54,6 @@ bin/bconsole
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/xenserver/README.md
 %%PYTHON%%lib/bareos/plugins/bareos_tasks/xenserver/__init__.py
 lib/bareos/plugins/bpipe-fd.so
-%%GFAPI%%lib/bareos/plugins/gfapi-fd.so
 %%PYTHON%%lib/bareos/plugins/python3-fd.so
 %%PYTHON%%lib/bareos/plugins/openvz7/BareosFdPluginVz7CtFs.py
 %%PYTHON%%lib/bareos/plugins/openvz7/README.md

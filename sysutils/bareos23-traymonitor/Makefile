@@ -4,8 +4,7 @@ COMMENT=	Backup archiving recovery open sourced (traymonitor)
 
 LIB_DEPENDS+=	libbareos.so:sysutils/bareos23-client
 
-CONFLICTS=	bareos20-traymonitor bareos21-traymonitor bareos22-traymonitor \
-		bareos-traymonitor
+CONFLICTS=	bareos22-traymonitor bareos24-traymonitor bareos-traymonitor
 
 USES=		desktop-file-utils gettext-runtime pkgconfig
 
@@ -14,8 +13,8 @@ FLAVOR?=	${FLAVORS:[1]}
 
 CFLAGS+=	-Wno-unused-parameter
 
-qt5_CONFLICTS=		bareos-traymonitor-qt6
-qt6_CONFLICTS=		bareos-traymonitor-qt5
+qt5_CONFLICTS=		bareos23-traymonitor-qt6
+qt6_CONFLICTS=		bareos23-traymonitor-qt5
 
 .if ${FLAVOR} == qt6
 PKGNAMESUFFIX=	23-traymonitor-qt6

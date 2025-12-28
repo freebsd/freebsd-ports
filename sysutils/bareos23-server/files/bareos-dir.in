@@ -20,6 +20,8 @@ rcvar=${name}_enable
 
 load_rc_config $name
 
+export PATH="${PATH}:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin"
+
 : ${bareos_dir_enable="NO"}
 : ${bareos_dir_flags="-u bareos -g bareos -v"}
 : ${bareos_dir_config="%%PREFIX%%/etc/bareos/"}
