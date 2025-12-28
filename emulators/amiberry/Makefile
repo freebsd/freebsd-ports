@@ -1,6 +1,7 @@
 PORTNAME=	amiberry
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.1.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	polyduekes@proton.me

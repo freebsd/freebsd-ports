@@ -1,5 +1,6 @@
 PORTNAME=	mame
 DISTVERSION=	0.282
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	laurent.chardon@gmail.com
