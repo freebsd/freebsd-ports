@@ -1,5 +1,5 @@
 PORTNAME=	gnat14
-DISTVERSION=	13.3.0
+DISTVERSION=	14.2.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC:C|%SUBDIR%|${MASTER_SITE_SUBDIR}|}:gcc \
 		LOCAL/thierry:gnat
@@ -41,8 +41,8 @@ CONFIGURE_ARGS=		--disable-bootstrap \
 			--with-pkgversion="${OPSYS} Ports Collection" \
 			--with-system-zlib \
 			--without-zstd
-CONFIGURE_ENV+=		CC=${_GNAT12_PATH}/gcc \
-			CXX=${_GNAT12_PATH}/g++ \
+CONFIGURE_ENV+=		CC=${_GNAT13_PATH}/gcc \
+			CXX=${_GNAT13_PATH}/g++ \
 			PATH=${_TOOLCHAIN_PATHS}
 CONFIGURE_OUTSOURCE=	yes
 CONFIGURE_TARGET=	${_GNAT_ARCH}-portbld-${_PLATFORM}
@@ -64,7 +64,7 @@ OPTIONS_DEFINE_amd64+=	MULTILIB
 OPTIONS_DEFINE_powerpc64+=	MULTILIB
 .endif
 OPTIONS_RADIO=			BOOTSTRAP
-OPTIONS_RADIO_BOOTSTRAP=	GNAT12 PREVASSET
+OPTIONS_RADIO_BOOTSTRAP=	GNAT13 PREVASSET
 OPTIONS_DEFAULT=		PREVASSET
 .if defined(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=		ASSETS
@@ -76,15 +76,15 @@ OPTIONS_DEFAULT_amd64+=	MULTILIB
 OPTIONS_SUB=			yes
 
 ASSETS_DESC=	Build an asset for future bootstrap on the target platform
-GNAT12_DESC=	Bootstrap from lang/gnat12
+GNAT13_DESC=	Bootstrap from lang/gnat13
 .if exists(/usr/lib32/libc.so)
 MULTILIB_DESC=	Build support for 32-bit and 64-bit targets
 .endif
 PREVASSET_DESC=	Bootstrap from the previous asset (if available)
 
 ASSETS_VARS=			PKGMESSAGE=${WRKDIR}/pkg-message
-GNAT12_BUILD_DEPENDS=		gnat12>0:lang/gnat12
-GNAT12_VARS=			_GNAT12_PATH=${LOCALBASE}/gnat12/bin
+GNAT13_BUILD_DEPENDS=		gnat13>0:lang/gnat13
+GNAT13_VARS=			_GNAT13_PATH=${LOCALBASE}/gnat13/bin
 .if exists(/usr/lib32/libc.so)
 MULTILIB_CONFIGURE_ENABLE=	multilib
 .else
@@ -93,12 +93,12 @@ CONFIGURE_ARGS+=		--disable-multilib
 NLS_CONFIGURE_ON=		--enable-nls
 NLS_CONFIGURE_OFF=		--disable-nls
 PREVASSET_DISTFILES+=		${_PREV_ASSET_FILE}.tar.xz:gnat
-PREVASSET_VARS=			_GNAT12_PATH=${WRKDIR}/${_PREV_ASSET_FILE}/bin
+PREVASSET_VARS=			_GNAT13_PATH=${WRKDIR}/${_PREV_ASSET_FILE}/bin
 
 _ASSET_FILE=		gnat-${_GNAT_ARCH}-${OPSYS:tl}.${OSREL:R}-${PKGVERSION}
 _GCC_VER=		${DISTVERSION:R:R}
-_GNATBIND=		${_GNAT12_PATH}/gnatbind
-_GNATMAKE=		${_GNAT12_PATH}/gnatmake
+_GNATBIND=		${_GNAT13_PATH}/gnatbind
+_GNATMAKE=		${_GNAT13_PATH}/gnatmake
 _GNAT_ARCH=		${ARCH:S/amd64/x86_64/}
 _OS_LABEL4VERS=		[${OPSYS}${_GNAT_ARCH:S/amd//:S/x86_//:S/aarch/\/ARM/:S/i386/32/}]
 _PHASE_FILE=		${WRKSRC}/gcc/DEV-PHASE
@@ -106,12 +106,12 @@ _PKG_PREFIX=		${PREFIX}/${PORTNAME}
 _PLATFORM=		${OPSYS:tl}${OSREL}
 _REV_FILE=		${WRKSRC}/gcc/REVISION
 _TARGLIB=		${_PKG_PREFIX}/lib ${_PKG_PREFIX}/lib/gcc${_GCC_VER}
-_TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GNAT12_PATH}:${PREFIX}/bin:${LOCALBASE}/bin
+_TOOLCHAIN_PATHS=	/sbin:/bin:/usr/sbin:/usr/bin:${_GNAT13_PATH}:${PREFIX}/bin:${LOCALBASE}/bin
 
 .include <bsd.port.options.mk>
 
 _PREV_ASSET_OSREL=	${OSREL:R}
-_PREV_ASSET_VER=	13.2.0
+_PREV_ASSET_VER=	13.2.0	# To be updated when assets for 14 will be available
 _PREV_ASSET_REV=
 _PREV_ASSET_FILE=	gnat-${_GNAT_ARCH}-${OPSYS:tl}.${_PREV_ASSET_OSREL}-${_PREV_ASSET_VER}${_PREV_ASSET_REV}
 
