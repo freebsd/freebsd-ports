@@ -42,9 +42,8 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gl gnome jpeg \
-		llvm:build lua perl5 pkgconfig sdl shebangfix sqlite \
-		tar:xz xorg
+USES=		cmake desktop-file-utils gl gnome jpeg llvm:build lua perl5 \
+		pkgconfig sdl shebangfix sqlite tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -103,6 +102,13 @@ CXXFLAGS+=	-DGDK_DISABLE_DEPRECATED
 PLIST_SUB+=	NO_OPENCL="@comment "
 .else
 PLIST_SUB+=	NO_OPENCL=""
+.endif
+
+.if ${ARCH} == powerpc64le
+LDFLAGS+=	-lexecinfo
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lib
 .endif
 
 .include <bsd.port.pre.mk>
