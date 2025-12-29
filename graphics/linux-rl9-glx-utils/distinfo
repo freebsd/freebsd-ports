@@ -1,0 +1,7 @@
+TIMESTAMP = 1767001958
+SHA256 (rocky/g/glx-utils-8.4.0-12.20210504git0f9e7d9.el9.0.1.aarch64.rpm) = 731f9356ddfe2971dc07f157bf896752c0904b83a4a6e0a196bdcf386b99a224
+SIZE (rocky/g/glx-utils-8.4.0-12.20210504git0f9e7d9.el9.0.1.aarch64.rpm) = 39619
+SHA256 (rocky/g/glx-utils-8.4.0-12.20210504git0f9e7d9.el9.0.1.x86_64.rpm) = 4bca2a9207bf337a972d9da4cff424e84d9a5db33dbb3d43781ad7b6f040a779
+SIZE (rocky/g/glx-utils-8.4.0-12.20210504git0f9e7d9.el9.0.1.x86_64.rpm) = 41293
+SHA256 (rocky/m/mesa-demos-8.4.0-12.20210504git0f9e7d9.el9.0.1.src.rpm) = 185ff85bd81142564e1617a0bf33e7b689ad5ee3d8944ff1a655ca572435389e
+SIZE (rocky/m/mesa-demos-8.4.0-12.20210504git0f9e7d9.el9.0.1.src.rpm) = 17090529
