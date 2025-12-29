@@ -1,6 +1,7 @@
 PORTNAME=	dri
 PORTVERSION=	25.0.7
 DISTVERSIONSUFFIX=	-3.el9_7
+PORTREVISION=	1
 CATEGORIES=	graphics linux
 
 MAINTAINER=	emulation@FreeBSD.org
@@ -8,7 +9,7 @@ COMMENT=	Mesa libGL runtime libraries (Rocky Linux ${LINUX_DIST_VER})
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	elfutils-libelf expat libdrm libglvnd llvm wayland xorglibs
+USE_LINUX=	elfutils-libelf expat libdrm libglvnd llvm spirv-tools wayland xorglibs
 USE_LINUX_RPM=	yes
 WANT_LINUX32=	yes
 
