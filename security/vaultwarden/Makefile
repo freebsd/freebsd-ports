@@ -14,7 +14,8 @@ BROKEN_i386=    doesn't buld on pkg builder
 
 LIB_DEPENDS+=	libcapnp.so:devel/capnproto \
 		libgmp.so:math/gmp \
-		libnettle.so:security/nettle
+		libnettle.so:security/nettle \
+		libzstd.so:archivers/zstd
 
 USES=		cargo ssl
 
