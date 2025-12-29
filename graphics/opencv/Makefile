@@ -1,11 +1,9 @@
 PORTNAME=	opencv
-DISTVERSION=	4.11.0
-PORTREVISION=	5
+DISTVERSION=	4.12.0
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/opencv/opencv/commit/
-PATCHFILES=	97f3f390661f2fd1168336820b89eb4383ce8528.patch:-p1 \
-		86df53155411b3ade57d0213bf8dd63006bf248f.patch:-p1 \
+PATCHFILES=	86df53155411b3ade57d0213bf8dd63006bf248f.patch:-p1 \
 		443d0ae63fad6dfd8c485d609203db16c8bd0ec3.patch:-p1
 
 MAINTAINER=	desktop@FreeBSD.org
