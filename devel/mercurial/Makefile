@@ -1,5 +1,5 @@
 PORTNAME=	mercurial
-PORTVERSION=	6.9.5
+PORTVERSION=	7.1.2
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
@@ -11,7 +11,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools-scm@${PY_FLAVOR}
 
 USES=		cpe python shebangfix
 SHEBANG_FILES=	contrib/hgweb.fcgi hgweb.cgi
