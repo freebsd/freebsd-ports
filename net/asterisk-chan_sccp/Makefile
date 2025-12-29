@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-FLAVORS=	asterisk20 asterisk22
-FLAVOR?=	${FLAVORS:[2]}
+FLAVORS=	asterisk22 asterisk20
+FLAVOR?=	asterisk22
 
 ${FLAVOR}_PKGNAMEPREFIX=	${FLAVOR}-
 ${FLAVOR}_BUILD_DEPENDS=	asterisk:net/${FLAVOR}

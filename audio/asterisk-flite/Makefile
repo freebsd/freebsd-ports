@@ -11,8 +11,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libflite.so:audio/flite
 
-FLAVORS=	asterisk20 asterisk22
-FLAVOR?=	${FLAVORS:[2]}
+FLAVORS=	asterisk22 asterisk20
+FLAVOR?=	asterisk22
 
 ${FLAVOR}_PKGNAMEPREFIX=	${FLAVOR}-
 ${FLAVOR}_BUILD_DEPENDS=	asterisk:net/${FLAVOR}
