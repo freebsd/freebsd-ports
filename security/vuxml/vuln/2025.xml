@@ -1,3 +1,33 @@
+  <vuln vid="963f4e9d-e4d5-11f0-984f-b42e991fc52e">
+    <topic>Forgejo -- Symbolic Link (Symlink) Following</topic>
+    <affects>
+    <package>
+	<name>forgejo</name>
+	<range><lt>13.0.2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://codeberg.org/forgejo/forgejo/src/branch/forgejo/release-notes-published/13.0.2.md reports:</p>
+	<blockquote cite="https://codeberg.org/forgejo/forgejo/src/branch/forgejo/release-notes-published/13.0.2.md">
+	  <p>Forgejo before 13.0.2 allows attackers to write to
+	  unintended files, and possibly obtain server shell access,
+	  because of mishandling of out-of-repository symlink
+	  destinations for template repositories.  This is also fixed
+	  for 11 LTS in 11.0.7 and later.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-68937</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2025-68937</url>
+    </references>
+    <dates>
+      <discovery>2025-12-25</discovery>
+      <entry>2025-12-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bf854a37-e180-11f0-ac0c-5404a68ad561">
     <topic>fluidsynth -- Use after free when using DLS files</topic>
     <affects>
