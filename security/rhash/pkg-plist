@@ -16,7 +16,7 @@ include/rhash_torrent.h
 lib/librhash.a
 lib/librhash.so
 lib/librhash.so.1
-lib/librhash.so.1.4.4
+lib/librhash.so.1.4.6
 libdata/pkgconfig/librhash.pc
 %%NLS%%share/locale/ca/LC_MESSAGES/rhash.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rhash.mo
@@ -25,6 +25,7 @@ libdata/pkgconfig/librhash.pc
 %%NLS%%share/locale/fr/LC_MESSAGES/rhash.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/rhash.mo
 %%NLS%%share/locale/it/LC_MESSAGES/rhash.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/rhash.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/rhash.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/rhash.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/rhash.mo
