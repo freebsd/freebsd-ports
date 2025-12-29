@@ -9,6 +9,9 @@ WWW=		https://freeminer.org/
 
 LICENSE=	LGPL21
 
+DEPRECATED=	depends on deprecated games/freeminer
+EXPIRATION_DATE=	2026-01-31
+
 RUN_DEPENDS=	freeminer:games/freeminer
 
 USE_GITHUB=	yes

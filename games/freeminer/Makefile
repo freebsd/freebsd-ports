@@ -11,6 +11,9 @@ LICENSE=	LGPL21+ GPLv3+ # source mentions GPLv3+, LICENSE.txt LGPL21+
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING # don't remove space
 
+DEPRECATED=	dead upstream
+EXPIRATION_DATE=	2026-01-31
+
 BROKEN_armv7=			fails to configure: Looking for include file endian.h - not found
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
