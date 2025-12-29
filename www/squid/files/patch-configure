@@ -1,6 +1,44 @@
---- configure.orig	2025-02-01 11:08:28 UTC
+--- configure.orig	2025-10-28 20:25:31 UTC
 +++ configure
-@@ -43956,7 +43956,7 @@ BUILD_HELPER="NIS"
+@@ -32420,15 +32420,15 @@ then :
+       with_mit_krb5=yes
+       if test -d "$withval/lib64"
+ then :
+-  LIB_KRB5_PATH+="-L$withval/lib64"
++  LIBMIT_KRB5_LIBS="$LIBMIT_KRB5_LIBS -L$withval/lib64"
+ fi
+       if test -d "$withval/lib"
+ then :
+-  LIB_KRB5_PATH+="-L$withval/lib"
++  LIBMIT_KRB5_LIBS="$LIBMIT_KRB5_LIBS -L$withval/lib"
+ fi
+       if test -d "$withval/include"
+ then :
+-  LIB_KRB5_CFLAGS+="-I$withval/include"
++  LIBMIT_KRB5_CFLAGS="$LIBMIT_KRB5_CFLAGS -I$withval/include"
+ fi
+      ;;
+ esac
+@@ -35530,15 +35530,15 @@ then :
+       with_heimdal_krb5=yes
+       if test -d "$withval/lib64"
+ then :
+-  LIBHEIMDAL_KRB5_PATH+="-L$withval/lib64"
++  LIBHEIMDAL_KRB5_LIBS="$LIBHEIMDAL_KRB5_LIBS -L$withval/lib64"
+ fi
+       if test -d "$withval/lib"
+ then :
+-  LIBHEIMDAL_KRB5_PATH+="-L$withval/lib"
++  LIBHEIMDAL_KRB5_LIBS="$LIBHEIMDAL_KRB5_LIBS -L$withval/lib"
+ fi
+       if test -d "$withval/include"
+ then :
+-  LIBHEIMDAL_KRB5_CFLAGS+="-I$withval/include"
++  LIBHEIMDAL_KRB5_CFLAGS="$LIBHEIMDAL_KRB5_CFLAGS -I$withval/include"
+ fi
+      ;;
+ esac
+@@ -40801,7 +40801,7 @@ BUILD_HELPER="NIS"
  ##
  
  BUILD_HELPER="NIS"
@@ -9,7 +47,7 @@
  do :
    as_ac_Header=`printf "%s\n" "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
-@@ -50825,6 +50825,7 @@ ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type
+@@ -47289,6 +47289,7 @@ ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type
  
  ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type_cpu_set_t" "
  #if HAVE_SCHED_H
@@ -17,7 +55,7 @@
  #include <sched.h>
  #endif
  
-@@ -53793,6 +53794,7 @@ else $as_nop
+@@ -49806,6 +49807,7 @@ else $as_nop
  #       include <sys/ioccom.h>
  #       include <netinet/in.h>
  #undef minor_t

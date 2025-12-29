@@ -60,16 +60,14 @@ rcvar=squid_enable
 # Make sure that we invoke squid with "-f ${squid_conf}"; define this
 # variable early so reload_cmd and stop_precmd pick it up:
 
-# Workaround for https://bugs.squid-cache.org/show_bug.cgi?id=5390 until squid-7 is ported
-#extra_commands="reload configtest"
-#reload_cmd=squid_reload
+extra_commands="reload configtest"
+reload_cmd=squid_reload
 start_precmd=squid_prestart
 start_postcmd=squid_getpid
-# Workaround for https://bugs.squid-cache.org/show_bug.cgi?id=5390 until squid-7 is ported
-#stop_precmd=squid_prestop
-#configtest_cmd=squid_configtest
-#reload_precmd=squid_configtest
-#restart_precmd=squid_configtest
+stop_precmd=squid_prestop
+configtest_cmd=squid_configtest
+reload_precmd=squid_configtest
+restart_precmd=squid_configtest
 
 # squid(8) will not start if ${squid_conf} is not present so try
 # to catch that beforehand via ${required_files} rather than make
@@ -130,8 +128,7 @@ squid_prestart()
 		return 0
 	fi
 
-	# Workaround for https://bugs.squid-cache.org/show_bug.cgi?id=5390 until squid-7 is ported
-	#squid_configtest
+	squid_configtest
 }
 
 squid_reload()
