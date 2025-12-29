@@ -1827,6 +1827,7 @@ FreeCAD/Mod/Sketcher/ProfileLib/RegularPolygon.py
 FreeCAD/Mod/Sketcher/ProfileLib/__init__.py
 FreeCAD/Mod/Sketcher/Profiles.py
 FreeCAD/Mod/Sketcher/SketcherExample.py
+FreeCAD/Mod/Sketcher/SketcherTests/TestPlacementUpdate.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchExpression.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchFillet.py
 FreeCAD/Mod/Sketcher/SketcherTests/TestSketchValidateCoincidents.py
