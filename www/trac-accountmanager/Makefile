@@ -1,9 +1,11 @@
 PORTNAME=	accountmanager
 PORTVERSION=	0.6.${REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
-MASTER_SITES=	https://trac-hacks.org/browser/accountmanagerplugin/
+# trac-hacks.org now allows only browser based download, so using my mirror
+MASTER_SITES=	https://bsd.samm.cz/accountmanagerplugin/
 PKGNAMEPREFIX=	trac-
+DISTFILES=	trunk-${REV}.zip
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Account Manager Plugin for trac
@@ -14,18 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	tracd:www/trac
 
-FETCH_BEFORE_ARGS=	-o ${DISTFILES}
-REV=			18634
+REV=			18669
 WRKSRC=			${WRKDIR}/trunk
 USES=			python zip
 USE_PYTHON=		distutils autoplist
 NO_ARCH=		yes
-
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	cd ${DISTDIR} && \
-	${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\
-		'${MASTER_SITES}trunk?rev=${REV}&format=zip'; \
-	fi
 
 .include <bsd.port.mk>
