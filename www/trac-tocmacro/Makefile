@@ -1,8 +1,10 @@
 PORTNAME=	tocmacro
 PORTVERSION=	12.0.0r${REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel python
-MASTER_SITES=	https://trac-hacks.org/browser/tocmacro/
+# trac-hacks.org now allows only browser based download, so using my mirror
+MASTER_SITES=	https://bsd.samm.cz/tocmacro/
+
 PKGNAMEPREFIX=	trac-
 
 MAINTAINER=	samm@FreeBSD.org
@@ -14,18 +16,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	tracd:www/trac
 
-FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 REV=			18149
+DISTFILES=		0.11-${REV}.zip
 WRKSRC=			${WRKDIR}/0.11
 USES=			python zip
 USE_PYTHON=		distutils autoplist
 NO_ARCH=		yes
-
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
-	cd ${DISTDIR} && \
-	${FETCH_CMD} ${FETCH_BEFORE_ARGS}	\
-		'${MASTER_SITES}0.11?rev=${REV}&format=zip'; \
-	fi
 
 .include <bsd.port.mk>
