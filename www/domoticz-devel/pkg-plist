@@ -68,6 +68,7 @@ domoticz/dzVents/runtime/device-adapters/temperature_device.lua
 domoticz/dzVents/runtime/device-adapters/temperature_humidity_barometer_device.lua
 domoticz/dzVents/runtime/device-adapters/temperature_humidity_device.lua
 domoticz/dzVents/runtime/device-adapters/text_device.lua
+domoticz/dzVents/runtime/device-adapters/thermostat6_device.lua
 domoticz/dzVents/runtime/device-adapters/thermostat_operating_state_device.lua
 domoticz/dzVents/runtime/device-adapters/thermostat_setpoint_device.lua
 domoticz/dzVents/runtime/device-adapters/thermostat_type_3_device.lua
