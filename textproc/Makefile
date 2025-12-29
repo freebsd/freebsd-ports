@@ -84,6 +84,7 @@
     SUBDIR += bibutils
     SUBDIR += biodiff
     SUBDIR += bn-aspell
+    SUBDIR += bookokrat
     SUBDIR += br-aspell
     SUBDIR += bsd-spell
     SUBDIR += c2html
