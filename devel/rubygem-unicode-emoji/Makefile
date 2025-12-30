@@ -1,5 +1,5 @@
 PORTNAME=	unicode-emoji
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
