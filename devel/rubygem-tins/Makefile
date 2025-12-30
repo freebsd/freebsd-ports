@@ -1,5 +1,5 @@
 PORTNAME=	tins
-PORTVERSION=	1.48.0
+PORTVERSION=	1.51.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
 		rubygem-mize>=0.6<1:devel/rubygem-mize \
+		rubygem-readline>=0:devel/rubygem-readline \
 		rubygem-sync>=0:devel/rubygem-sync
 
 USES=		gem
