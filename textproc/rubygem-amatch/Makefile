@@ -1,5 +1,5 @@
 PORTNAME=	amatch
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ WWW=		https://github.com/flori/amatch
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-debug>=0:devel/rubygem-debug \
-		rubygem-mize>=0:devel/rubygem-mize \
+RUN_DEPENDS=	rubygem-mize>=0:devel/rubygem-mize \
 		rubygem-tins>=1<2:devel/rubygem-tins
 
 USES=		gem
