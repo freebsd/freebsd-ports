@@ -31,6 +31,7 @@
     SUBDIR += cego
     SUBDIR += cegobridge
     SUBDIR += clickhouse
+    SUBDIR += clickhouse-cpp
     SUBDIR += closql
     SUBDIR += cockroach
     SUBDIR += couchdb3
