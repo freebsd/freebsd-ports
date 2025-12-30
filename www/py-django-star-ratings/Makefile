@@ -11,6 +11,9 @@ WWW=		https://github.com/wildfish/django-star-ratings
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Upstream repository has been archived on May 21, 2025
+EXPIRATION_DATE=2026-03-31
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django42>=0:www/py-django42@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-braces>=0:www/py-django-braces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-model-utils>=0:www/py-django-model-utils@${PY_FLAVOR} \
