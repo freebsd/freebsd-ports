@@ -1,8 +1,9 @@
 PORTNAME=	sphinx-theme-builder
-PORTVERSION=	0.2.0b2
+PORTVERSION=	0.3.2
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	sphinx_theme_builder-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for authoring Sphinx themes with a simple (opinionated) workflow
@@ -13,9 +14,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nodeenv>=0:devel/py-nodeenv@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}diagnostic>=2:devel/py-diagnostic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}nodeenv>=0:devel/py-nodeenv@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyproject-metadata>=0:devel/py-pyproject-metadata@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproject-metadata>=0.10.0:devel/py-pyproject-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=0:textproc/py-rich@${PY_FLAVOR} \
 		${PY_TOMLI}
 
