@@ -1,0 +1,14 @@
+--- pyproject.toml.orig	2025-12-19 16:48:42 UTC
++++ pyproject.toml
+@@ -6,10 +6,7 @@ name = "typer"
+ 
+ [project]
+ name = "typer"
+-license = "MIT"
+-license-files = [
+-    "LICENSE",
+-]
++license = { text = "MIT" }
+ dynamic = []
+ description = "Typer, build great CLIs. Easy to code. Based on Python type hints."
+ authors = [
