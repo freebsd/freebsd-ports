@@ -1,7 +1,7 @@
 PORTNAME=	dbmail
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent \
 		libgmime-3.0.so:mail/gmime30 \
 		libmhash.so:security/mhash \
-		libzdb.so.17:databases/libzdb
+		libzdb.so.18:databases/libzdb
 
 USES=		autoreconf gmake gnome libtool localbase pkgconfig shebangfix \
 		ssl
