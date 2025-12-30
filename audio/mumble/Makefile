@@ -1,6 +1,5 @@
 PORTNAME=	mumble
-DISTVERSION=	1.5.735
-PORTREVISION=	3
+DISTVERSION=	1.5.857
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
 
