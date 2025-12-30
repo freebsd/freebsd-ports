@@ -1,9 +1,9 @@
 Remove redundant check for libao which causes it to always be required even if
 mp3 and ogg support are disabled.
 
---- configure.ac.orig	2023-02-03 14:46:06 UTC
+--- configure.ac.orig	2025-12-05 11:17:35 UTC
 +++ configure.ac
-@@ -314,8 +314,10 @@ dnl Check for libao
+@@ -319,8 +319,10 @@ dnl Check for libao
  esac
  
  dnl Check for libao
@@ -14,7 +14,7 @@ mp3 and ogg support are disabled.
  
  dnl Check for OGG support
  if test "$with_ogg_support" = yes; then
-@@ -339,12 +341,6 @@ if test "$with_mp3_support" = yes; then
+@@ -344,12 +346,6 @@ if test "$with_mp3_support" = yes; then
  	                echo "MP3 support disabled"; with_mp3_support=no
  		fi
  	fi

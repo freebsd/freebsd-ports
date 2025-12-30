@@ -1,6 +1,5 @@
 PORTNAME=	cdrdao
-DISTVERSION=	1_2_5
-PORTREVISION=	2
+DISTVERSION=	1_2_6
 CATEGORIES=	sysutils audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/rel_${DISTVERSION}/ \
 		SF/${PORTNAME}/rel_${DISTVERSION}
@@ -13,9 +12,8 @@ WWW=		https://cdrdao.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias autoreconf compiler:c++11-lang gettext-tools gmake iconv \
+USES=		autoreconf compiler:c++14-lang gettext-tools gmake iconv \
 		localbase tar:bzip2
-USE_CXXSTD=	c++11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gcdmaster=no \
@@ -28,10 +26,10 @@ OPTIONS_DEFINE=		DOCS TOC2MP3 MP3OGG
 OPTIONS_DEFAULT=	MP3OGG
 OPTIONS_SUB=		yes
 
-MP3OGG_DESC=		Build with MP3/Ogg support (for sysutils/gcdmaster)
+MP3OGG_DESC=		Build with MP3/Ogg
 MP3OGG_LIB_DEPENDS=	libao.so:audio/libao \
 			libmad.so:audio/libmad \
-			libvorbis.so:audio/libvorbis
+			libvorbisfile.so:audio/libvorbis
 MP3OGG_USES=		pkgconfig
 MP3OGG_CONFIGURE_OFF=	--with-mp3-support=no --with-ogg-support=no
 
