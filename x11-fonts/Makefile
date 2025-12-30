@@ -302,8 +302,8 @@
     SUBDIR += py-glyphsLib
     SUBDIR += py-opentype-sanitizer
     SUBDIR += py-opentypespec
-    SUBDIR += py-shaperglot
     SUBDIR += py-rendercv-fonts
+    SUBDIR += py-shaperglot
     SUBDIR += py-ufo2ft
     SUBDIR += py-ufoLib
     SUBDIR += py-ufolint
