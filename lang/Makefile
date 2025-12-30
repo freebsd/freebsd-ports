@@ -42,6 +42,7 @@
     SUBDIR += crystal
     SUBDIR += csharp-mode.el
     SUBDIR += cython
+    SUBDIR += cython0
     SUBDIR += cython3
     SUBDIR += dhall
     SUBDIR += dlang-tools
