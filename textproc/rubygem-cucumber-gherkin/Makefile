@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-gherkin
-PORTVERSION=	37.0.0
+PORTVERSION=	37.0.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
