@@ -15,6 +15,9 @@ WWW=		https://paperless.readthedocs.io
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream repository archived since 2021 and no compatibility for Django 5+. Please migrate to deskutils/py-paperless-ngx
+EXPIRATION_DATE=2026-03-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateparser>=1.1.0:devel/py-dateparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-cors-headers>=2.4.0:www/py-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-crispy-forms>=1.7.2:www/py-django-crispy-forms@${PY_FLAVOR} \
