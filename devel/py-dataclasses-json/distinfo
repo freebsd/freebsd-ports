@@ -1,3 +1,3 @@
-TIMESTAMP = 1688902097
-SHA256 (dataclasses-json-0.5.9.tar.gz) = e9ac87b73edc0141aafbce02b44e93553c3123ad574958f0fe52a534b6707e8e
-SIZE (dataclasses-json-0.5.9.tar.gz) = 43145
+TIMESTAMP = 1766953360
+SHA256 (dataclasses_json-0.6.7.tar.gz) = b6b3e528266ea45b9535223bc53ca645f5208833c29229e847b3f26a1cc55fc0
+SIZE (dataclasses_json-0.6.7.tar.gz) = 32227
