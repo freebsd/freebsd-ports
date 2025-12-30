@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.17.4
+PORTVERSION=	3.17.5
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -61,7 +61,7 @@ MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.4.0<1.6.0:textproc/py-
 MARKDOWN_VARS=		MANPAGES+="md2po po2md"
 PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.6<1.3:devel/py-phply@${PY_FLAVOR}
 PHP_VARS=		MANPAGES+="php2po po2php"
-RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0<3.3:devel/py-pyparsing@${PY_FLAVOR}
+RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.14.1<1.16:textproc/py-aeidon@${PY_FLAVOR}
