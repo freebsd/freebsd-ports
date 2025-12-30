@@ -1,0 +1,9 @@
+Obtained from:	https://github.com/fsspec/s3fs/commit/d565be0903387c972e837c425e16eb99ba2196b5
+
+--- requirements.txt.orig	2025-12-03 15:33:26 UTC
++++ requirements.txt
+@@ -1,3 +1,3 @@
+-aiobotocore>=2.5.4,<3.0.0
++aiobotocore>=2.5.4,<4.0.0
+ fsspec==2025.12.0
+ aiohttp!=4.0.0a0, !=4.0.0a1
