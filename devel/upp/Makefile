@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/uppsrc/Core/Copying
 BROKEN=		Fails to build with freetype 2.14+
 #BROKEN_powerpc=		Does not compile on ${ARCH}: error Unknown CPU architecture
 #BROKEN_powerpc64=	Does not compile on ${ARCH}: error Unknown CPU architecture
-EXPIRATION_DATE=2025-01-31
+EXPIRATION_DATE=2026-01-31
 
 USES=		compiler:c++14-lang dos2unix pkgconfig:both tar:xz
 DOS2UNIX_FILES=	uppsrc/Core/config.h
