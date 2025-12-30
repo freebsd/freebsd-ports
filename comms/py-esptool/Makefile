@@ -1,6 +1,6 @@
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.9.0
+DISTVERSION=	4.10.0
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,10 +11,10 @@ WWW=		https://github.com/espressif/esptool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.3:comms/py-pyserial@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>=0.16.0:security/py-ecdsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bitstring>=3.1.6:devel/py-bitstring@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}reedsolo>=1.5.3,<1.8:devel/py-reedsolo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}reedsolo>=1.5.3:devel/py-reedsolo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.1:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}intelhex>0:devel/py-intelhex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}argcomplete>=3:devel/py-argcomplete@${PY_FLAVOR}
