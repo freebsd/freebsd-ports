@@ -1,6 +1,5 @@
 PORTNAME=	libxfce4windowing
-DISTVERSION=	4.20.4
-PORTREVISION=	2
+DISTVERSION=	4.20.5
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE
 DIST_SUBDIR=	xfce4
@@ -44,10 +43,6 @@ WAYLAND_BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 WAYLAND_RUN_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 WAYLAND_MESON_ENABLED=	wayland
-
-post-patch:
-	@${CP} ${FILESDIR}/libxfce4windowing-docs.xml.in ${WRKSRC}/docs/reference/libxfce4windowing
-	@${CP} ${FILESDIR}/libxfce4windowingui-docs.xml.in ${WRKSRC}/docs/reference/libxfce4windowingui
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
