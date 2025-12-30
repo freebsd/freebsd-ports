@@ -1,12 +1,13 @@
 PORTNAME=	flatbuffers
-PORTVERSION=	25.2.10
+PORTVERSION=	25.9.23
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	FlatBuffers serialization format for Python
-WWW=		https://google.github.io/flatbuffers/ \
+WWW=		https://flatbuffers.dev/ \
+		https://github.com/google/flatbuffers/tree/master/python \
 		https://github.com/google/flatbuffers
 
 LICENSE=	APACHE20
