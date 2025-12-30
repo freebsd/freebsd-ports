@@ -1,6 +1,5 @@
 PORTNAME=	llfuse
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.5.2
 CATEGORIES=	filesystems devel python
 MASTER_SITES=	PYPI \
 		https://github.com/python-llfuse/python-llfuse/releases/download/release-${PORTVERSION}/
@@ -13,9 +12,8 @@ WWW=		https://github.com/python-llfuse/python-llfuse
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-
 LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs
 
 USES=		compiler:c++11-lang fuse pkgconfig python
