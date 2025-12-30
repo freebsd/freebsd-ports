@@ -1,5 +1,5 @@
 PORTNAME=	openapi-core
-PORTVERSION=	0.20.0
+PORTVERSION=	0.22.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=0:devel/py-more-itertools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator>=0.6.0<0.7:devel/py-openapi-schema-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.7.1<0.8:devel/py-openapi-spec-validator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}parse>=0:textproc/py-parse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.8.0<5:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=2.1.0:www/py-werkzeug@${PY_FLAVOR}
 
