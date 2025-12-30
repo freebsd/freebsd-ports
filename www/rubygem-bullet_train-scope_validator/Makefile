@@ -1,5 +1,5 @@
 PORTNAME=	bullet_train-scope_validator
-PORTVERSION=	1.37.1
+PORTVERSION=	1.38.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
