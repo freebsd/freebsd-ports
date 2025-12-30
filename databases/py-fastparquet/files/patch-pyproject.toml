@@ -1,6 +1,9 @@
---- pyproject.toml.orig	2024-11-12 19:40:57 UTC
+--- pyproject.toml.orig	2025-09-29 15:22:39 UTC
 +++ pyproject.toml
-@@ -1,2 +1,2 @@
+@@ -1,5 +1,5 @@
  [build-system]
--requires = ["setuptools", "setuptools_scm", "Cython >= 0.29.23", "numpy>=2.0.0rc1"]
-+requires = ["setuptools", "setuptools_scm", "Cython >= 0.29.23", "numpy"]
+-requires = ["setuptools", "setuptools_scm", "Cython >= 0.29.31", "numpy>=2.0.0rc1"]
++requires = ["setuptools", "setuptools_scm", "Cython >= 0.29.31", "numpy"]
+ build-backend = "setuptools.build_meta"
+ 
+ [tool.setuptools_scm]
