@@ -29,10 +29,4 @@ CPE_VENDOR=	python
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 31000
-EXTRA_PATCHES+=	${PATCHDIR}/py39
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
