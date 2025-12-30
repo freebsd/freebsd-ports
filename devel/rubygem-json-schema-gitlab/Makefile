@@ -1,5 +1,6 @@
 PORTNAME=	json-schema
 PORTVERSION=	5.2.2
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -12,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
-		rubygem-bigdecimal>=3.1<4:math/rubygem-bigdecimal
+		rubygem-bigdecimal>=3.1<5:math/rubygem-bigdecimal
 
 USES=		gem
 
