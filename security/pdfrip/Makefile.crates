@@ -1,4 +1,3 @@
-===> /usr/ports-head/security/pdfrip/work/pdfrip-2.0.1/Cargo.lock not found.  Trying to generate it...
 CARGO_CRATES=	adler32-1.2.0 \
 		aes-0.8.4 \
 		aho-corasick-1.1.3 \

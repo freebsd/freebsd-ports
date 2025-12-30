@@ -1,9 +1,3 @@
-===>  License GPLv3 accepted by the user
-===>   vaultwarden-1.35.0_4 depends on file: /usr/local/sbin/pkg - found
-===> Fetching all distfiles required by vaultwarden-1.35.0_4 for building
-===>  Extracting for vaultwarden-1.35.0_4
-=> SHA256 Checksum OK for dani-garcia-vaultwarden-1.35.0_GH0.tar.gz.
-===>  Moving crates to /ram/usr/ports/security/vaultwarden/work/vaultwarden-1.35.0//cargo-crates
 CARGO_CRATES=	adler2-2.0.1 \
 		aes-0.8.4 \
 		ahash-0.8.12 \
