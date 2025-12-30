@@ -1,6 +1,7 @@
     COMMENT = Ports to help disabled users
 
     SUBDIR += accerciser
+    SUBDIR += accesskit-c
     SUBDIR += at-spi2-core
     SUBDIR += atkmm
     SUBDIR += caribou
