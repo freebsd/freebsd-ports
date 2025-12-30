@@ -1,38 +1,38 @@
---- src/lib/Makefile.in.orig	2024-08-07 09:36:14 UTC
+--- src/lib/Makefile.in.orig	2025-11-17 08:11:53 UTC
 +++ src/lib/Makefile.in
-@@ -14,13 +14,7 @@ includedir = @includedir@/ndpi
- PREFIX     = @prefix@
- libdir     = @libdir@
+@@ -23,13 +23,7 @@ PREFIX = $(prefix)
  includedir = @includedir@/ndpi
+ # For backwards compatibility
+ PREFIX = $(prefix)
 -ifneq ($(OS),Windows_NT)
 -OS := $(shell uname)
 -endif
 -ifneq ($(OS),Windows_NT)
 -CFLAGS     += -fPIC -DPIC
 -endif
--CFLAGS     += -I. -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
-+CFLAGS     += -fPIC -DPIC -I. -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
+-CFLAGS     += -I$(srcdir) -I$(top_srcdir)/src/include -I$(top_builddir)/src/include -I$(srcdir)/third_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
++CFLAGS     += -fPIC -DPIC -I$(srcdir) -I$(top_srcdir)/src/include -I$(top_builddir)/src/include -I$(srcdir)/third_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
  CFLAGS_ndpi_bitmap.c := -Wno-unused-function
  CFLAGS_ndpi_bitmap64_fuse.c := -Wno-unused-function
- CFLAGS_third_party/src/gcrypt_light.c := -Wno-unused-function -Wno-unused-parameter
-@@ -29,8 +23,8 @@ LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
+ CFLAGS_gcrypt_light.c := -Wno-unused-function -Wno-unused-parameter
+@@ -38,8 +32,8 @@ LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  LDFLAGS    += @NDPI_LDFLAGS@
  LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  
--OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) $(patsubst third_party/src/hll/%.c, third_party/src/hll/%.o, $(wildcard third_party/src/hll/*.c)) $(patsubst ./%.c, ./%.o, $(wildcard ./*.c))
--HEADERS   = $(wildcard ../include/*.h) $(wildcard *.h)
-+OBJECTS   != ls protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls third_party/src/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' -e '/gcrypt_light/d' && ls third_party/src/hll/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' && ls ./*.c | sed 's/\(.*\)\.c$$/\1.o/'
-+HEADERS   != ls ../include/*.h
+-OBJECTS   = $(patsubst $(srcdir)/protocols/%.c, %.o, $(wildcard $(srcdir)/protocols/*.c)) $(patsubst $(srcdir)/third_party/src/%.c, %.o, $(wildcard $(srcdir)/third_party/src/*.c)) $(patsubst $(srcdir)/third_party/src/hll/%.c, %.o, $(wildcard $(srcdir)/third_party/src/hll/*.c)) $(patsubst $(srcdir)/%.c, %.o, $(wildcard $(srcdir)/*.c))
+-HEADERS   = $(wildcard $(top_srcdir)/src/include/*.h) $(wildcard $(top_builddir)/src/include/*.h) $(wildcard $(srcdir)/*.h)
++OBJECTS   != ls $(srcdir)/protocols/*.c | sed 's/\(.*\)\.c$$/\1.o/' && ls $(srcdir)/third_party/src/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' -e '/gcrypt_light/d' && ls $(srcdir)/third_party/src/hll/*.c | sed -e 's/\(.*\)\.c$$/\1.o/' && ls $(srcdir)/*.c | sed 's/\(.*\)\.c$$/\1.o/'
++HEADERS   != ls $(top_srcdir)/src/include/*.h && ls $(top_builddir)/src/include/*.h && ls $(srcdir)/include/*.h
  NDPI_VERSION_MAJOR   = @NDPI_MAJOR@
  NDPI_LIB_STATIC      = libndpi.a
  NDPI_LIB_SHARED_BASE = libndpi.so
-@@ -38,24 +32,7 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
+@@ -47,24 +41,7 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
  USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  
 -ifneq ($(USE_HOST_LIBGCRYPT),0)
 -TMP_OBJS := $(OBJECTS)
--OBJECTS   = $(filter-out third_party/src/gcrypt_light.o,$(TMP_OBJS))
+-OBJECTS   = $(filter-out gcrypt_light.o,$(TMP_OBJS))
 -endif
 -
 -BUILD_MINGW    		 = @BUILD_MINGW@

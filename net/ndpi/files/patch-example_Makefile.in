@@ -1,6 +1,6 @@
---- example/Makefile.in.orig	2024-12-17 13:59:14 UTC
+--- example/Makefile.in.orig	2025-11-17 08:11:53 UTC
 +++ example/Makefile.in
-@@ -1,57 +1,28 @@ CXX=@CXX@
+@@ -7,57 +7,28 @@ CXX=@CXX@
  AR=@AR@
  CC=@CC@
  CXX=@CXX@
@@ -14,14 +14,14 @@
  BUILD_MINGW_X64=@BUILD_MINGW_X64@
  DISABLE_NPCAP=@DISABLE_NPCAP@
  EXE_SUFFIX=@EXE_SUFFIX@
- SRCHOME=../src
+ SRCHOME=$(top_srcdir)/src
 -ifneq ($(OS),Windows_NT)
 -CFLAGS+=-fPIC -DPIC
 -endif
--CFLAGS+=-I$(SRCHOME)/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
-+CFLAGS+=-fPIC -DPIC -I$(SRCHOME)/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
+-CFLAGS+=-I$(SRCHOME)/include -I$(top_builddir)/src/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
++CFLAGS+=-fPIC -DPIC -I$(SRCHOME)/include -I$(top_builddir)/src/include @NDPI_CFLAGS@ @PCAP_INC@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
  LDFLAGS+=@NDPI_LDFLAGS@
- LIBNDPI=$(SRCHOME)/lib/libndpi.a
+ LIBNDPI=$(top_builddir)/src/lib/libndpi.a
  LIBS=$(LIBNDPI) @PCAP_LIB@ @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  HEADERS=reader_util.h $(SRCHOME)/include/ndpi_api.h \
          $(SRCHOME)/include/ndpi_typedefs.h $(SRCHOME)/include/ndpi_protocol_ids.h
@@ -56,23 +56,22 @@
  all: ndpiReader$(EXE_SUFFIX) @DPDK_TARGET@
  
  EXECUTABLE_SOURCES := ndpiReader.c ndpiSimpleIntegration.c
--COMMON_SOURCES := $(filter-out $(EXECUTABLE_SOURCES),$(wildcard *.c ))
+-COMMON_SOURCES := $(filter-out $(EXECUTABLE_SOURCES),$(notdir $(wildcard $(srcdir)/*.c)))
 +COMMON_SOURCES = reader_util.c
  
  libndpiReader.a: $(COMMON_SOURCES:%.c=%.o) $(LIBNDPI)
  	$(AR) rsv libndpiReader.a $(COMMON_SOURCES:%.c=%.o)
-@@ -67,10 +38,11 @@ install: ndpiReader$(EXE_SUFFIX)
+@@ -73,10 +44,10 @@ install: ndpiReader$(EXE_SUFFIX)
  
  install: ndpiReader$(EXE_SUFFIX)
  	mkdir -p $(DESTDIR)$(PREFIX)/bin/
 -	mkdir -p $(DESTDIR)$(PREFIX)/share/ndpi
 +	mkdir -p $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/
  	cp ndpiReader$(EXE_SUFFIX) $(DESTDIR)$(PREFIX)/bin/
--	cp protos.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiProtos.txt
--	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiCustomCategory.txt
+-	cp $(srcdir)/protos.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiProtos.txt
+-	cp $(srcdir)/mining_hosts.txt $(DESTDIR)$(PREFIX)/share/ndpi/ndpiCustomCategory.txt
 +	cp protos.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiProtos.txt
 +	cp mining_hosts.txt $(DESTDIR)$(PREFIX)/$(EXAMPLESDIR)/ndpiCustomCategory.txt
-+
  	[ -f ndpiSimpleIntegration$(EXE_SUFFIX) ] && cp ndpiSimpleIntegration$(EXE_SUFFIX) $(DESTDIR)$(PREFIX)/bin/ndpiSimpleIntegration$(EXE_SUFFIX) || true
  	[ -f build/app/ndpiReader.dpdk ] && cp build/app/ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
  	[ -f ndpiReader.dpdk ] && cp ndpiReader.dpdk $(DESTDIR)$(PREFIX)/bin/ || true
