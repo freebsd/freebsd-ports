@@ -11,7 +11,7 @@ WWW=		https://github.com/util-linux/util-linux
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake pkgconfig shebangfix tar:xz
+USES=		pkgconfig shebangfix tar:xz
 
 CONFIGURE_ARGS=	--disable-asciidoc \
 		--disable-all-programs \
