@@ -4828,6 +4828,7 @@
     SUBDIR += py-deptry
     SUBDIR += py-devtools
     SUBDIR += py-dexml2
+    SUBDIR += py-diagnostic
     SUBDIR += py-diff-cover
     SUBDIR += py-dill
     SUBDIR += py-dirspec

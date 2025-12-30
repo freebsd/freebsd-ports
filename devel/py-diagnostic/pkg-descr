@@ -1,0 +1,9 @@
+diagnostic makes it easier to build command line tools with great error
+reporting.
+
+Features:
+- Unique codes on every Diagnostic
+- Tooling to help ensure all codes in the codebase are documented
+- Fancy graphical output, built on top of rich, with graceful fallbacks to ASCII
+  and plain strings
+- Present a causal chain if needed
