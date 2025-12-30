@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
 DISTVERSION=	25.0.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	-server
@@ -26,10 +26,11 @@ LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
 		libfmt.so:devel/libfmt \
 		libxxhash.so:devel/xxhash
 
-USES+=		cmake compiler:c++11-lang cpe localbase:ldflags perl5 pkgconfig readline \
+USES+=		cmake compiler:c++20-lang cpe localbase:ldflags perl5 pkgconfig readline \
 		shebangfix
 USE_GITHUB=	yes
 USE_PERL5=	run
+USE_CXXSTD?=	c++20
 
 USERS=		bareos
 GROUPS=		${USERS}
@@ -196,6 +197,7 @@ post-patch:
 .if ${PKGNAMESUFFIX} == "-client"
 	@${REINPLACE_CMD} -e 's|-Werror -Wall|-Wall|g' ${PATCH_WRKSRC}/core/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|enable_testing()||g' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|CMAKE_CXX_STANDARD 20|CMAKE_CXX_STANDARD 17|g' ${WRKSRC}/core/CMakeLists.txt
 .endif
 
 	@${REINPLACE_CMD} -e 's/CMAKE_INSTALL_FULL_DATAROOTDIR/CMAKE_INSTALL_DATAROOTDIR/g' \

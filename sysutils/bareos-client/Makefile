@@ -1,12 +1,12 @@
 PORTNAME=	bareos
 
-PORTREVISION=	0
-
 PKGNAMESUFFIX=	-client
 
 COMMENT=	Backup archiving recovery open sourced (client)
 
 CONFLICTS=	bareos22-client bareos23-client bareos24-client
+
+USE_CXXSTD=	c++17
 
 WITH_CLIENT_ONLY=yes
 USE_RC_SUBR=	bareos-fd
