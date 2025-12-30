@@ -1,11 +1,11 @@
 PORTNAME=	opencolorio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
+DISTVERSION=	2.5.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-opencolorio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -27,8 +27,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	OpenColorIO
 
-#GH_TUPLE+=	madler:zlib:v1.2.13:zlib/ext/dist/zlib
-
 CMAKE_OFF=	OCIO_BUILD_GPU_TESTS OCIO_BUILD_JAVA OCIO_BUILD_JNIGLUE \
 		OCIO_BUILD_NUKE OCIO_BUILD_TESTS
 
@@ -37,6 +35,11 @@ PLIST_SUB=	SHL2=${PORTVERSION:R} \
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
+
+# docs currently failing with Unhandled Doxygen XML element(s) found: 'zwj'
+# prevent pkg building from enabling docs
+graphics_opencolorio_UNSET_FORCE=	DOCS
+
 DOCS_BUILD_DEPENDS=	doxygen>0:devel/doxygen
 DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
 

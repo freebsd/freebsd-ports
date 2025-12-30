@@ -15,8 +15,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery-3.6.0.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/ocio_b.svg
