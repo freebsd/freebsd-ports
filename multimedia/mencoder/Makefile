@@ -44,7 +44,7 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 		subedit.pl subsearch.sh vobshift.py \
 		w32codec_dl.pl wma2ogg.pl
 
-USES+=		alias iconv pkgconfig python shebangfix
+USES+=		iconv pkgconfig python shebangfix
 SHEBANG_FILES=	TOOLS/calcbpp.pl TOOLS/checktree.sh TOOLS/countquant.pl	\
 		TOOLS/divx2svcd.sh TOOLS/dvd2divxscript.pl TOOLS/mencvcd.sh \
 		TOOLS/mphelp_check.py TOOLS/plotpsnr.pl TOOLS/psnr-video.sh \

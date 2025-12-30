@@ -12,7 +12,7 @@ WWW=		https://www.mltframework.org/
 LICENSE?=	GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=	multi
 
-USES+=		alias cmake compiler:c++11-lang eigen:3 localbase \
+USES+=		cmake compiler:c++11-lang eigen:3 localbase \
 		pathfix pkgconfig
 USE_LDCONFIG=	yes
 

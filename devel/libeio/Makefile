@@ -13,7 +13,7 @@ CONFLICTS_INSTALL=	efl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	scunningham
-USES=		alias autoreconf libtool
+USES=		autoreconf libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

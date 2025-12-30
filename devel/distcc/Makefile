@@ -21,7 +21,7 @@ gtk_PKGNAMESUFFIX=	-gtk
 gtk_DESCR=	${.CURDIR}/pkg-descr.gtk
 gtk_COMMENT=	(gtk monitor)
 
-USES=		alias autoreconf cpe gmake libtool localbase pkgconfig
+USES=		autoreconf cpe gmake libtool localbase pkgconfig
 USE_GITHUB=	yes
 USE_RC_SUBR=	distccd
 

@@ -9,7 +9,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOD/S3M player
 WWW=		http://dj1.willowmail.com/~jeske/s3mod.html
 
-USES=		alias
 ALL_TARGET=	freebsd
 PLIST_FILES=	bin/s3mod
 

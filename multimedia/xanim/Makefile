@@ -18,7 +18,7 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 # clang's cpp destroys whitespace, particularly hard tabs in makefiles,
 # which is fatal for imake.
-USES=		alias imake xorg
+USES=		imake xorg
 USE_GCC=	yes
 USE_CSTD=	gnu99
 USE_XORG=	xext xt sm ice xext x11

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libexpat.so:textproc/expat2 \
 		libcurl.so:ftp/curl
 
-USES=		alias cmake compiler:c++17-lang cpe gl jpeg openal:al,alut \
+USES=		cmake compiler:c++17-lang cpe gl jpeg openal:al,alut \
 		tar:bzip2 xorg
 
 USE_GITLAB=	yes

@@ -16,7 +16,7 @@ LICENSE_PERMS_BuildLic=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-acc
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 		libfluidsynth.so:audio/fluidsynth
 
-USES=		alias compiler:c++11-lang dos2unix gl gmake gnome \
+USES=		compiler:c++11-lang dos2unix gl gmake gnome \
 		perl5 pkgconfig:build sdl
 USE_GL=		gl
 USE_GNOME=	gtk20

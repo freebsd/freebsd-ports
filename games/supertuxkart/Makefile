@@ -17,7 +17,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libangelscript.so:lang/angelscript \
 		libmcpp.so:devel/mcpp
 
-USES=		alias cmake compiler:c++11-lib pkgconfig sqlite ssl
+USES=		cmake compiler:c++11-lib pkgconfig sqlite ssl
 CMAKE_OFF=	USE_WIIUSE
 CMAKE_OFF+=	BUILD_RECORDER
 CMAKE_OFF+=	USE_SYSTEM_ENET  # bundled enet is required for IPv6 support

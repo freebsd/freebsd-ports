@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libavahi-client.so:net/avahi-app
 
-USES=		alias iconv pkgconfig python shebangfix gnome xorg
+USES=		iconv pkgconfig python shebangfix gnome xorg
 USE_GNOME=	glib20
 SHEBANG_FILES=	cfg-data/Utils/all-in-1.py
 GNU_CONFIGURE=	yes

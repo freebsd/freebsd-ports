@@ -11,7 +11,7 @@ MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Dungeon exploration game
 WWW=		http://remarque.org/~grabiner/moria.html
 
-USES=		alias ncurses
+USES=		ncurses
 WRKSRC=		${WRKDIR}/umoria
 ALL_TARGET=	moria
 MAKE_ARGS=	CURSES="${LDFLAGS} -lncurses"

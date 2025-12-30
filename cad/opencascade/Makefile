@@ -27,7 +27,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
 RUN_DEPENDS=	bash:shells/bash
 
 # Check ${WRKSRC}/dox/build/build_occt/building_occt.md
-USES=		alias:10 cmake compiler:c++17-lang eigen:3 gettext-runtime	\
+USES=		cmake compiler:c++17-lang eigen:3 gettext-runtime	\
 		gl gnome localbase python qt:5 shebangfix tk xorg
 USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xi xmu xrender xscrnsaver xt
 USE_GL=		egl gl glesv2 glu

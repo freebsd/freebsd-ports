@@ -17,7 +17,7 @@ LIB_DEPENDS=	libao.so:audio/libao \
 		libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl
 
-USES=		alias gmake localbase pkgconfig tar:bzip2
+USES=		gmake localbase pkgconfig tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	PromyLOPh

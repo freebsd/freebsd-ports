@@ -24,7 +24,7 @@ GH_PROJECT=	ValyriaTear
 GH_TUPLE=	ValyriaTear:luabind:76d4061:luabind/src/luabind \
 		ValyriaTear:vt-utils:299411e:utils/src/utils
 
-USES=		alias cmake compiler:c++11-lang gettext-tools gl gnome iconv \
+USES=		cmake compiler:c++11-lang gettext-tools gl gnome iconv \
 		lua:51 openal sdl xorg
 CMAKE_ARGS=	-DUSE_PCH_COMPILATION=OFF
 USE_SDL=	sdl2 image2 ttf2

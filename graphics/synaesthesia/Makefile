@@ -11,7 +11,7 @@ WWW=		https://www.logarithmic.net/pfh/synaesthesia
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias cpe gmake sdl
+USES=		cpe gmake sdl
 USE_CXXSTD=	c++14
 USE_SDL=	sdl
 

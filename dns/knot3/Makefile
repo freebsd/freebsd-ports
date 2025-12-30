@@ -17,7 +17,7 @@ BUILD_DEPENDS=	gsed:textproc/gsed \
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb
 
-USES=		alias compiler:c11 libtool localbase pkgconfig tar:xz
+USES=		compiler:c11 libtool localbase pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 HAS_CONFIGURE=	yes

@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg \
 		libexpat.so:textproc/expat2
 
-USES=		alias cmake compiler:c++11-lang pkgconfig python:build tar:bzip2 ssl
+USES=		cmake compiler:c++11-lang pkgconfig python:build tar:bzip2 ssl
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		VTK

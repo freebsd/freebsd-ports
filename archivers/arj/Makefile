@@ -23,7 +23,7 @@ IGNORE_PATCHES=	002_no_remove_static_const.patch  \
 		hurd_no_fcntl_getlk.patch \
 		reproducible_help_archive.patch
 
-USES=		alias autoreconf gmake
+USES=		autoreconf gmake
 
 EXTRA_PATCHES=	${WRKDIR}/debian/patches/*.patch
 PATCH_STRIP=	-p1

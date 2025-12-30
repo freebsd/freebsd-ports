@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/readme.txt
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		alias cpe dos2unix gl gmake jpeg zip xorg
+USES=		cpe dos2unix gl gmake jpeg zip xorg
 USE_CXXSTD=	gnu++11
 DOS2UNIX_GLOB=	Makefile *.cpp *.h *.txt
 USE_GL=		gl

@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim
 
-USES=		alias cmake compiler:c++11-lib cpe desktop-file-utils \
+USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
 		localbase:ldflags pathfix pkgconfig ssl xorg
 
 BROKEN_SSL=	libressl-devel

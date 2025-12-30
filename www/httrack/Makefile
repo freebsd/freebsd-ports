@@ -13,7 +13,7 @@ WWW=		https://www.httrack.com/ \
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		alias cpe gmake iconv libtool shebangfix ssl
+USES=		cpe gmake iconv libtool shebangfix ssl
 
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} --with-zlib=/usr
 GNU_CONFIGURE=	yes

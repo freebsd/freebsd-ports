@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 		libgraphene-1.0.so:graphics/graphene
 RUN_DEPENDS=	polkit>0:sysutils/polkit
 
-USES=		alias compiler:c++20-lang gettext gnome localbase meson \
+USES=		compiler:c++20-lang gettext gnome localbase meson \
 		pkgconfig tar:xz
 USE_CXXSTD=	c++20
 USE_GNOME=	glib20 glibmm26 gtkmm40 libadwaita librsvg2 libxml2

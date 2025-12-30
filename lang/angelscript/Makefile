@@ -10,7 +10,7 @@ WWW=		https://www.angelcode.com/angelscript/
 
 LICENSE=	ZLIB
 
-USES=		alias compiler:c11 dos2unix gmake zip
+USES=		compiler:c11 dos2unix gmake zip
 USE_LDCONFIG=	yes
 
 DOS2UNIX_FILES=	../../source/as_config.h

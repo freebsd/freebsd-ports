@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-CDDB-File>=0:audio/p5-CDDB-File  \
 		p5-Moo>=0:devel/p5-Moo
 
-USES=		alias perl5
+USES=		perl5
 USE_PERL5=	configure
 
 post-install:

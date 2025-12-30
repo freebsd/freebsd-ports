@@ -18,7 +18,7 @@ NO_BUILD=	yes
 NO_INSTALL=	yes
 .endif
 
-USES+=		alias dos2unix gmake zip
+USES+=		dos2unix gmake zip
 
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/${COMPONENT_SUBDIR}

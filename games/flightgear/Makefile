@@ -28,7 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib \
 		${LOCALBASE}/share/flightgear/version:games/flightgear-data
 
 # Disable ninja, see https://sourceforge.net/p/flightgear/codetickets/2118/
-USES=		alias cmake:noninja compiler:c++17-lang cpe dos2unix gl jpeg \
+USES=		cmake:noninja compiler:c++17-lang cpe dos2unix gl jpeg \
 		openal:al,alut sqlite tar:bzip2 xorg
 
 USE_GITLAB=	yes

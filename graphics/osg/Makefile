@@ -16,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		alias cmake compiler:c11 jpeg gl pkgconfig xorg
+USES=		cmake compiler:c11 jpeg gl pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	yes

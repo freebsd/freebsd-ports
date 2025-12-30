@@ -11,7 +11,7 @@ WWW=		https://www.dockapps.net/wmsmixer
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		alias imake xorg
+USES=		imake xorg
 USE_XORG=	x11 xext xpm
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 

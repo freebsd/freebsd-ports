@@ -16,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libtspi.so:security/trousers \
 		libepoll-shim.so:devel/libepoll-shim
 
-USES=		alias autoreconf bison gmake ldap libtool localbase ssl tar:tgz
+USES=		autoreconf bison gmake ldap libtool localbase ssl tar:tgz
 USE_LDCONFIG=	${PREFIX}/lib/opencryptoki
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes

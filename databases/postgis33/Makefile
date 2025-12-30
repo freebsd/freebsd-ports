@@ -18,7 +18,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libgdal.so:graphics/gdal \
 		libpcre2-8.so:devel/pcre2
 
-USES=		alias compiler:c++14-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
+USES=		compiler:c++14-lang cpe gmake gnome iconv:wchar_t libtool:keepla \
 		localbase perl5 pkgconfig pgsql:11+ shebangfix
 USE_GNOME=	libxml2
 USE_PERL5=	build

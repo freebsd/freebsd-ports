@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		alias bison cmake:insource compiler:c++0x libedit ssl
+USES=		bison cmake:insource compiler:c++0x libedit ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga
 

@@ -10,7 +10,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	libvncserver.so:net/libvncserver \
 		libxcb-image.so:x11/xcb-util-image
 
-USES=		alias cmake compiler:c++11-lib gettext jpeg kde:6 pkgconfig \
+USES=		cmake compiler:c++11-lib gettext jpeg kde:6 pkgconfig \
 		qt:6 tar:xz xorg
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons dnssd doctools i18n notifications \

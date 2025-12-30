@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libtre.so:textproc/libtre
 
-USES=		alias localbase
+USES=		localbase
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 SUB_FILES=	pkg-message

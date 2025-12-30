@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.* openssh-portable-devel
 
-USES=			alias autoreconf compiler:c11 cpe localbase ncurses \
+USES=			autoreconf compiler:c11 cpe localbase ncurses \
 			pkgconfig ssl
 GNU_CONFIGURE=		yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share

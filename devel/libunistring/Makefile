@@ -13,7 +13,7 @@ LICENSE_FILE_GFDL=	${WRKSRC}/doc/libunistring.texi
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LIB
 
-USES=		alias charsetfix cpe iconv libtool tar:xz
+USES=		charsetfix cpe iconv libtool tar:xz
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 

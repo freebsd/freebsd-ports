@@ -13,7 +13,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	libtinyxml.so:textproc/tinyxml \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		alias cmake compiler:c++11-lang pkgconfig \
+USES=		cmake compiler:c++11-lang pkgconfig \
 		python:build shebangfix
 
 USE_GITHUB=	yes

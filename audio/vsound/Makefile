@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	sox:audio/sox
 RUN_DEPENDS=	sox:audio/sox
 
-USES=		alias libtool
+USES=		libtool
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS

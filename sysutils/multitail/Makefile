@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgnuregex.so:devel/libgnuregex
 
-USES=		alias cmake ncurses pkgconfig
+USES=		cmake ncurses pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/multitail etc/multitail.conf.sample \

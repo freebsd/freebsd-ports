@@ -62,7 +62,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
 		${PYTHON_SITELIBDIR}/matplotlib/pyplot.py:math/py-matplotlib@${PY_FLAVOR}
 
-USES=		alias cmake compiler:c++17-lang desktop-file-utils eigen:3 fortran gl gnome	\
+USES=		cmake compiler:c++17-lang desktop-file-utils eigen:3 fortran gl gnome	\
 		jpeg localbase llvm:min=19 pkgconfig python qt:6 shebangfix sqlite tar:xz xorg
 USE_GL=		glew opengl
 USE_GNOME=	libxml2
