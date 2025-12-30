@@ -12,6 +12,9 @@ WWW=		https://github.com/marksweb/django-bleach
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream has been archived on November 5, 2024
+EXPIRATION_DATE=2026-03-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bleach>=5:www/py-bleach@${PY_FLAVOR} \
