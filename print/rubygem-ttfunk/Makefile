@@ -1,5 +1,6 @@
 PORTNAME=	ttfunk
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	print rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/GPLv2
 LICENSE_FILE_GPLv3=	${WRKSRC}/GPLv3
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-bigdecimal>=3.1<4:math/rubygem-bigdecimal
+RUN_DEPENDS=	rubygem-bigdecimal>=3.1<5:math/rubygem-bigdecimal
 
 USES=		gem
 
