@@ -1,7 +1,7 @@
 PORTNAME=	distcc
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel python
 
 MAINTAINER=	laurent.chardon@gmail.com
@@ -55,7 +55,6 @@ AVAHI_CONFIGURE_WITH=	avahi
 IPV6_CONFIGURE_ENABLE=	rfc2553
 PUMP_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 PUMP_USES=		python
-PUMP_USE_PYTHON=	flavors
 PUMP_CONFIGURE_ENABLE=	pump-mode
 
 # Leave CCLINKDIR without a leading underscore as it is a variable, which could
@@ -63,7 +62,7 @@ PUMP_CONFIGURE_ENABLE=	pump-mode
 CCLINKDIR?=		libexec/distcc
 _DISTCC_COMPILERS=	CC c++ cc
 
-GNU_COMPILERS=		10 11 12 13 14 15 6
+GNU_COMPILERS=		12 13 14 15 16 6
 _DISTCC_COMPILERS+=	gcc g++ ${GNU_COMPILERS:S|^|g++|} \
 			${GNU_COMPILERS:S|^|gcc|} \
 			${EXTRA_COMPILERS}
@@ -81,14 +80,8 @@ PLIST_SUB+=	GTK="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MPUMP}
-.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
-PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
-.endif
-.endif
-
 .if ${PORT_OPTIONS:MCLANGLINK}
-CLANG_COMPILERS=	-devel 11 12 13 14 15 16 17 18 19
+CLANG_COMPILERS=	-devel 11 12 13 14 15 16 17 18 19 20 21
 _DISTCC_COMPILERS+=	clang++ clang ${CLANG_COMPILERS:S|^|clang++|} \
 			${CLANG_COMPILERS:S|^|clang|}
 .endif
