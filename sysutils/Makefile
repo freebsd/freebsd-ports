@@ -740,6 +740,7 @@
     SUBDIR += mmve
     SUBDIR += modman
     SUBDIR += modules
+    SUBDIR += mods
     SUBDIR += mog
     SUBDIR += mongodb_exporter
     SUBDIR += monit
