@@ -1,4 +1,4 @@
---- autogen.sh.orig	2022-07-19 08:13:10 UTC
+--- autogen.sh.orig	2025-12-28 10:02:12 UTC
 +++ autogen.sh
 @@ -8,31 +8,6 @@ PKG_CONFIG=$(command -v pkg-config)
  AUTORECONF=$(command -v autoreconf)
@@ -32,13 +32,20 @@
  ##########################################
  
  TODAY=`date +%y%m%d`
-@@ -74,13 +49,3 @@ rm -f config.h config.h.in *~ #*
+@@ -74,20 +49,3 @@ rm -f config.h config.h.in *~ #*
      > configure.ac
  
  rm -f config.h config.h.in *~ #*
 -
 -git submodule init
 -git submodule update --remote
+-
+-if test -d "pro"; then
+-N=`grep __FreeBSD__ third-party/clickhouse-cpp/clickhouse/base/platform.h|wc -l|tr -d "[[:space:]]"`
+-if test "${N}" = "0"; then
+- cd third-party/clickhouse-cpp/; cat ../../clickhouse/clickhouse-cpp.diff | patch -p1 ; cd ../..
+-fi
+-fi
 -
 -# git submodule update --init --recursive
 -
