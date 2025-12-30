@@ -1,0 +1,94 @@
+commit b050b744be4c35cb6743e2e4d55935fdff56a01b
+Author: Simon Marchi <simon.marchi@efficios.com>
+Date:   2024-05-30T16:28:20-04:00
+
+    gdb, gdbsupport: use `using` in enum flags code
+    
+    I think that `using` is easier to read than `typedef`, and it's the
+    modern C++ thing anyway.
+    
+    Change-Id: Iccb62dc3869cddfb6a684ef3023dcd5b799f3ab2
+
+diff --git gdb/unittests/enum-flags-selftests.c gdb/unittests/enum-flags-selftests.c
+index b55d8c31406..154a473dd48 100644
+--- gdb/unittests/enum-flags-selftests.c
++++ gdb/unittests/enum-flags-selftests.c
+@@ -85,7 +85,7 @@ static EF ef ATTRIBUTE_UNUSED;
+ #define CHECK_VALID(VALID, EXPR_TYPE, EXPR)		\
+   CHECK_VALID_EXPR_6 (EF, RE, EF2, RE2, UEF, URE, VALID, EXPR_TYPE, EXPR)
+ 
+-typedef std::underlying_type<RE>::type und;
++using und = std::underlying_type<RE>::type;
+ 
+ /* Test construction / conversion from/to different types.  */
+ 
+@@ -253,7 +253,7 @@ CHECK_VALID (true,  int,  true ? RE2 () : EF ())
+ 
+ /* Same, but with an unsigned enum.  */
+ 
+-typedef unsigned int uns;
++using uns = unsigned int;
+ 
+ CHECK_VALID (true,  uns,  true ? EF () : UEF ())
+ CHECK_VALID (true,  uns,  true ? UEF () : EF ())
+diff --git gdbsupport/enum-flags.h gdbsupport/enum-flags.h
+index 56e0c524f00..764d5219663 100644
+--- gdbsupport/enum-flags.h
++++ gdbsupport/enum-flags.h
+@@ -55,7 +55,7 @@
+    enum_flags wrapper class for ENUM, and enables the global operator
+    overloads for ENUM.  */
+ #define DEF_ENUM_FLAGS_TYPE(enum_type, flags_type)	\
+-  typedef enum_flags<enum_type> flags_type;		\
++  using flags_type = enum_flags<enum_type>;		\
+   void is_enum_flags_enum_type (enum_type *)
+ 
+ /* To enable the global enum_flags operators for enum, declare an
+@@ -76,24 +76,24 @@
+ /* Note that std::underlying_type<enum_type> is not what we want here,
+    since that returns unsigned int even when the enum decays to signed
+    int.  */
+-template<int size, bool sign> class integer_for_size { typedef void type; };
+-template<> struct integer_for_size<1, 0> { typedef uint8_t type; };
+-template<> struct integer_for_size<2, 0> { typedef uint16_t type; };
+-template<> struct integer_for_size<4, 0> { typedef uint32_t type; };
+-template<> struct integer_for_size<8, 0> { typedef uint64_t type; };
+-template<> struct integer_for_size<1, 1> { typedef int8_t type; };
+-template<> struct integer_for_size<2, 1> { typedef int16_t type; };
+-template<> struct integer_for_size<4, 1> { typedef int32_t type; };
+-template<> struct integer_for_size<8, 1> { typedef int64_t type; };
++template<int size, bool sign> class integer_for_size { using type = void; };
++template<> struct integer_for_size<1, 0> { using type = uint8_t; };
++template<> struct integer_for_size<2, 0> { using type = uint16_t; };
++template<> struct integer_for_size<4, 0> { using type = uint32_t; };
++template<> struct integer_for_size<8, 0> { using type = uint64_t; };
++template<> struct integer_for_size<1, 1> { using type = int8_t; };
++template<> struct integer_for_size<2, 1> { using type = int16_t; };
++template<> struct integer_for_size<4, 1> { using type = int32_t; };
++template<> struct integer_for_size<8, 1> { using type = int64_t; };
+ 
+ template<typename T>
+ struct enum_underlying_type
+ {
+   DIAGNOSTIC_PUSH
+   DIAGNOSTIC_IGNORE_ENUM_CONSTEXPR_CONVERSION
+-  typedef typename
+-    integer_for_size<sizeof (T), static_cast<bool>(T (-1) < T (0))>::type
+-    type;
++  using type
++    = typename integer_for_size<sizeof (T),
++				static_cast<bool>(T (-1) < T (0))>::type;
+   DIAGNOSTIC_POP
+ };
+ 
+@@ -128,8 +128,8 @@ template <typename E>
+ class enum_flags
+ {
+ public:
+-  typedef E enum_type;
+-  typedef typename enum_underlying_type<enum_type>::type underlying_type;
++  using enum_type = E;
++  using underlying_type = typename enum_underlying_type<enum_type>::type;
+ 
+   /* For to_string.  Maps one enumerator of E to a string.  */
+   struct string_mapping
