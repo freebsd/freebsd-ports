@@ -1870,7 +1870,7 @@ This issue has been patched in version 2.25.2.</p>
        <name>py313-pdfminer.six</name>
        <name>py313t-pdfminer.six</name>
        <name>py314-pdfminer.six</name>
-       <range><lt>20251107</lt></range>
+       <range><lt>20251230</lt></range>
      </package>
     </affects>
     <description>
@@ -1888,6 +1888,7 @@ This issue has been patched in version 2.25.2.</p>
     <dates>
       <discovery>2025-11-07</discovery>
       <entry>2025-11-17</entry>
+      <modified>2025-12-30</modified>
     </dates>
   </vuln>
 
