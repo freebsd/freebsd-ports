@@ -1,0 +1,11 @@
+--- rdf.gemspec.orig	2025-12-29 04:17:38 UTC
++++ rdf.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<bcp47_spec>.freeze, ["~> 0.2".freeze])
+-  s.add_runtime_dependency(%q<bigdecimal>.freeze, ["~> 3.1".freeze, ">= 3.1.5".freeze])
++  s.add_runtime_dependency(%q<bigdecimal>.freeze, [">= 3.1.5".freeze, "< 5".freeze])
+   s.add_runtime_dependency(%q<link_header>.freeze, ["~> 0.0".freeze, ">= 0.0.8".freeze])
+   s.add_runtime_dependency(%q<logger>.freeze, ["~> 1.5".freeze])
+   s.add_runtime_dependency(%q<ostruct>.freeze, ["~> 0.6".freeze])
