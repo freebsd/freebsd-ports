@@ -7,22 +7,23 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Object-oriented interpreted scripting language
-WWW=		https://www.ruby-lang.org/en/
+WWW=		https://www.ruby-lang.org/en/ \
+		https://github.com/ruby/ruby
 
 LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
-LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/BSDL
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
-LIB_DEPENDS=	libyaml.so:textproc/libyaml
-RUN_DEPENDS=	libffi>=0:devel/libffi
+LIB_DEPENDS=	libffi.so:devel/libffi \
+		libyaml.so:textproc/libyaml
 
 USES=		autoreconf cpe localbase ruby:none ssl tar:xz
+
 CPE_VENDOR=	ruby-lang
 CPE_UPDATE=	p0
-USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
@@ -33,19 +34,19 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
 CONFIGURE_ENV=	debugflags=
+EXTRACT_AFTER_ARGS=	\
+		--exclude ${DISTNAME}/bin/gem \
+		--exclude ${DISTNAME}/ext/win32* \
+		--exclude ${DISTNAME}/lib/bundler* \
+		--exclude ${DISTNAME}/libexec/bundler \
+		--exclude ${DISTNAME}/man/erb.1 \
+		--exclude ${DISTNAME}/man/irb.1 \
+		--exclude ${DISTNAME}/man/ri.1 \
+		--no-same-owner --no-same-permissions
 GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
 LIBS+=		-lpthread
-
-# We get these from other ports
-EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/bin/gem \
-			--exclude ${DISTNAME}/ext/win32* \
-			--exclude ${DISTNAME}/lib/bundler* \
-			--exclude ${DISTNAME}/libexec/bundler \
-			--exclude ${DISTNAME}/man/erb.1 \
-			--exclude ${DISTNAME}/man/irb.1 \
-			--exclude ${DISTNAME}/man/ri.1 \
-			--no-same-owner --no-same-permissions
+USE_LDCONFIG=	yes
 
 RUBY_VER=	3.3
 
@@ -53,12 +54,11 @@ EXTDOCS=	ripper/README stringio/README.md syslog/syslog.txt
 EXTSAMPLES=	bigdecimal/sample/*.rb
 INSTALLED_MANUALS=	ruby
 INSTALLED_SCRIPTS=	ruby
-
 # Macros to change variables in rbconfig.rb
 # NOTE: The last argument RB_SET_CONF_VAR is a dummy argument. See bug 222872.
-RB_SET_CONF_VAR=	${SH} -c \
-			'${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' \
-			RB_SET_CONF_VAR
+RB_SET_CONF_VAR=${SH} -c \
+		'${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' \
+		RB_SET_CONF_VAR
 
 OPTIONS_DEFINE=	CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC YJIT
 OPTIONS_DEFAULT=RDOC
@@ -149,13 +149,13 @@ pre-install-RDOC-on:
 post-install:
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 #
-# Link just installed "ruby" to "rubyXX", etc.
+# Link just installed "ruby" to "ruby33", etc.
 #
 . for FILE in ${INSTALLED_SCRIPTS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
 . endfor
 #
-# Link "ruby.1.gz" to "ruby31.1.gz", etc.
+# Link "ruby.1.gz" to "ruby33.1.gz", etc.
 #
 . for FILE in ${INSTALLED_MANUALS}
 	${LN} -fs ${FILE}${RUBY_SUFFIX}.1.gz ${STAGEDIR}${PREFIX}/share/man/man1/${FILE}.1.gz
