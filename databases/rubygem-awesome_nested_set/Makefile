@@ -1,5 +1,5 @@
 PORTNAME=	awesome_nested_set
-PORTVERSION=	3.8.0
+PORTVERSION=	3.9.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/collectiveidea/awesome_nested_set
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-activerecord4>=4.0.0<8.1:databases/rubygem-activerecord4
+RUN_DEPENDS=	rubygem-activerecord81>=4.0.0<8.2:databases/rubygem-activerecord81
 
 USES=		gem
 
