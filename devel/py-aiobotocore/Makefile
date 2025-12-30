@@ -1,5 +1,5 @@
 PORTNAME=	aiobotocore
-PORTVERSION=	2.26.0
+PORTVERSION=	3.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,20 +21,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.9.2<4.0.0:www/py-aiohttp@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}multidict>=6.0.0<7.0.0:www/py-multidict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dateutil>=2.1<3.0.0:devel/py-python-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.4,1<3,1:net/py-urllib3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wrapt>=1.10.10<2.0.0:devel/py-wrapt@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}wrapt>=1.10.10<3.0.0:devel/py-wrapt@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	AWSCLI BOTO3 HTTPX
-AWSCLI_DESC=	Use awscli
-BOTO3_DESC=	Use boto3
+OPTIONS_DEFINE=	HTTPX
 HTTPX_DESC=	Use httpx
 
-AWSCLI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscli>=1.42.44:devel/py-awscli@${PY_FLAVOR}
-BOTO3_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.41.0:www/py-boto3@${PY_FLAVOR}
 HTTPx_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.25.1<0.29:www/py-httpx@${PY_FLAVOR}
 
 .include <bsd.port.mk>
