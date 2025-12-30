@@ -11,6 +11,9 @@ WWW=		https://github.com/ncw/stressdisk
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	dead upstream
+EXPIRATION_DATE=	2026-01-31
+
 BROKEN_FreeBSD_15=	error: SHT_STRTAB string table section [index 3] is non-null terminated, https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270962
 
 USES=		go:modules
