@@ -75,7 +75,16 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1193,9 +1199,13 @@
+@@ -1032,7 +1038,7 @@ endif
+ 
+ #### OpenSSL ##########
+ 
+-OPENSSL_FLAGS = enable-weak-ssl-ciphers no-shared
++OPENSSL_FLAGS = enable-weak-ssl-ciphers no-shared $(OSSL_TARGET)
+ 
+ ifeq (${uname_M}, i386)
+ ifeq ($(findstring BSD,${uname_S}), BSD)
+@@ -1196,9 +1202,13 @@ else
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2 --without-zstd
  endif
  else
