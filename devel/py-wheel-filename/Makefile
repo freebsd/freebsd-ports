@@ -1,7 +1,8 @@
 PORTNAME=	wheel-filename
-PORTVERSION=	1.4.2
+PORTVERSION=	2.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI \
+		https://github.com/wheelodex/wheel-filename/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	wheel_filename-${PORTVERSION}
 
