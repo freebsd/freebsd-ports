@@ -1,12 +1,12 @@
 PORTNAME=	marshmallow
-PORTVERSION=	3.26.1
+PORTVERSION=	3.26.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simplified object serialization for Python
-WWW=		https://marshmallow.readthedocs.io/en/stable/ \
+WWW=		https://marshmallow.readthedocs.io/en/latest/ \
 		https://github.com/marshmallow-code/marshmallow
 
 LICENSE=	MIT
