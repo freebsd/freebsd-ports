@@ -1,5 +1,5 @@
 PORTNAME=	notebook
-PORTVERSION=	7.5.0
+PORTVERSION=	7.5.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/notebook/releases/download/v${PORTVERSION}/
@@ -16,9 +16,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-jupyter-builder>=0.5:devel/py-hatch-jupyter-builder@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=1.11:devel/py-hatchling@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.5.0<4.6:devel/py-jupyterlab@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.5.1<4.6:devel/py-jupyterlab@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jupyter-server>=2.4.0<3:devel/py-jupyter-server@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.5.0<4.6:devel/py-jupyterlab@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyterlab>=4.5.1<4.6:devel/py-jupyterlab@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyterlab-server>=2.28.0<3:devel/py-jupyterlab-server@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}notebook-shim>=0.2<0.3:devel/py-notebook-shim@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=6.2.0:www/py-tornado@${PY_FLAVOR}
