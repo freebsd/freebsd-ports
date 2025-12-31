@@ -30,6 +30,14 @@ CMAKE_ARGS+=	-DCLIP_X11_WITH_PNG=OFF \
 
 SHEBANG_FILES=	src/compose
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc || ${ARCH} == powerpc64
+PLIST_SUB+=	LITTLE_ENDIAN="@comment "
+.else
+PLIST_SUB+=	LITTLE_ENDIAN=""
+.endif
+
 post-install:
 	(cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s libtgchat.so libtgchat)
 

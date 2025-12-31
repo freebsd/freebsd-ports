@@ -1,9 +1,9 @@
 bin/nchat
 lib/libduchat.so
 lib/libncutil.so
-lib/libtdclientshared.so
+%%LITTLE_ENDIAN%%lib/libtdclientshared.so
 lib/libtgchat
-lib/libtgchat.so
+%%LITTLE_ENDIAN%%lib/libtgchat.so
 libexec/nchat/compose
 share/man/man1/nchat.1.gz
 %%DATADIR%%/themes/basic-color/color.conf
