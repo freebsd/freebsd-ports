@@ -1550,7 +1550,6 @@
     SUBDIR += py-dj51-django-choices-field
     SUBDIR += py-dj51-django-htmx
     SUBDIR += py-dj51-django-tables2
-    SUBDIR += py-dj51-django-timezone-field
     SUBDIR += py-dj51-djangorestframework
     SUBDIR += py-dj51-drf-spectacular-sidecar
     SUBDIR += py-dj52-channels
