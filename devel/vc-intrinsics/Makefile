@@ -10,7 +10,7 @@ WWW=		https://github.com/intel/vc-intrinsics
 
 LICENSE=	MIT
 
-FLAVORS=	${15 14 13 12 11:L:S/^/llvm/}
+FLAVORS=	${15 14 13 12:L:S/^/llvm/}
 
 BUILD_DEPENDS=	${FLAVOR}>0:devel/${FLAVOR}
 
