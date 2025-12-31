@@ -82,6 +82,7 @@
     SUBDIR += chrony-lite
     SUBDIR += citrix_ica
     SUBDIR += cjdns
+    SUBDIR += claws
     SUBDIR += cloud-init
     SUBDIR += cloud-init-devel
     SUBDIR += cloudflared
