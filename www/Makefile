@@ -1544,7 +1544,6 @@
     SUBDIR += py-ddgs
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj51-channels
-    SUBDIR += py-dj51-django-allauth
     SUBDIR += py-dj51-django-auditlog
     SUBDIR += py-dj51-django-auth-ldap
     SUBDIR += py-dj51-django-choices-field
