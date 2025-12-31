@@ -2516,7 +2516,6 @@
     SUBDIR += selenium
     SUBDIR += serendipity
     SUBDIR += serf
-    SUBDIR += servlet-api
     SUBDIR += sfeed
     SUBDIR += shiori
     SUBDIR += silicon
