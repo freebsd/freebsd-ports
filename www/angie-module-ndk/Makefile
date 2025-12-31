@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-ndk
 MODULE_VERSION=	0.3.4
-MODULE_PORTREVISION=	0
+MODULE_PORTREVISION=	1
 GH_TUPLE=	vision5:ngx_devel_kit:v${MODULE_VERSION}:module
 
 COMMENT=	Angie NDK dynamic module

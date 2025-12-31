@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-dav-ext
 MODULE_VERSION=	3.0.0
-MODULE_PORTREVISION=	0
+MODULE_PORTREVISION=	1
 GH_TUPLE=	arut:nginx-dav-ext-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie dav-ext dynamic module

@@ -1,5 +1,5 @@
 PORTNAME?=	angie
-ANGIE_VERSION=	1.10.3
+ANGIE_VERSION=	1.11.1
 ANGIE_PORTREVISION=	0
 CATEGORIES+=	www
 MASTER_SITES+=	https://download.angie.software/files/:angie

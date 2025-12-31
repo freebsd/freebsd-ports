@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-brotli
 MODULE_VERSION=	1.0.0rc
-MODULE_PORTREVISION=	0
+MODULE_PORTREVISION=	1
 GH_TUPLE=	google:ngx_brotli:v${MODULE_VERSION}:module
 
 COMMENT=	Angie Brotli dynamic module

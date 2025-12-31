@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-cache-purge
 MODULE_VERSION= 2.5.4
-MODULE_PORTREVISION=	0
+MODULE_PORTREVISION=	1
 GH_TUPLE=	nginx-modules:ngx_cache_purge:${MODULE_VERSION}:module
 
 COMMENT=	Angie cache_purge dynamic module
