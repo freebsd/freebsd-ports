@@ -5002,3 +5002,4 @@ www/servlet-api||2025-12-31|Has expired: Superseded upstream by newer versions m
 databases/cockroach||2025-12-31|Has expired: Current versions are fully-proprietary software, see PR 272257
 java/springframework31||2025-12-31|Has expired: Superseded upstream by newer versions many years ago
 java/springframework||2025-12-31|Has expired: Superseded upstream by newer versions many years ago
+devel/llvm11||2025-12-31|Has expired: obsolete with few dependencies

@@ -1576,7 +1576,6 @@
     SUBDIR += llvm-cheriot
     SUBDIR += llvm-devel
     SUBDIR += llvm-morello
-    SUBDIR += llvm11
     SUBDIR += llvm12
     SUBDIR += llvm13
     SUBDIR += llvm14
