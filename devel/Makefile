@@ -1041,7 +1041,6 @@
     SUBDIR += imake
     SUBDIR += immer
     SUBDIR += imtui
-    SUBDIR += inastemp
     SUBDIR += include-what-you-use
     SUBDIR += indi
     SUBDIR += indicators
