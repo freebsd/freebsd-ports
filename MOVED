@@ -4955,3 +4955,4 @@ security/tls-check||2025-12-31|Has expired: Obsolete tool and relies on deprecat
 www/unit-python||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
 audio/traverso||2025-12-31|Has expired: unfetchable
 ftp/net2ftp||2025-12-31|Has expired: unfetchable
+graphics/stamp||2025-12-31|Has expired: historical tool, use imagemagick instead

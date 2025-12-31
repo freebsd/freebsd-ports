@@ -1204,7 +1204,6 @@
     SUBDIR += squish
     SUBDIR += ssocr
     SUBDIR += sswf
-    SUBDIR += stamp
     SUBDIR += svgalib
     SUBDIR += svgbob
     SUBDIR += svgpp
