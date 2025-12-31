@@ -1,9 +1,14 @@
 PORTNAME=	sidekiq
 PORTVERSION=	7.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
+
+PATCH_SITES=	https://gitlab.com/gitlab-org/gitlab/-/raw/18-7-stable-ee/vendor/gems/sidekiq/patches/
+PATCHFILES+=	0001-Update-zrange-calls-to-be-Redis-6.0-compatible.patch:-p1 # 
+#PATCHFILES+=	0002-Update-Sidekiq-gemspec-to-avoid-use-of-git.patch:-p1
+PATCHFILES+=	0003-Add-support-for-configuring-Web-UI-asset-paths.patch:-p1 # https://github.com/sidekiq/sidekiq/pull/6865
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Simple, efficient background processing for Ruby
