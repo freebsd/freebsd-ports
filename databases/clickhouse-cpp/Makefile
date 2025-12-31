@@ -31,11 +31,4 @@ OPTIONS_SUB=		yes
 TEST_RUN_DEPENDS=	expect>0:lang/expect
 TEST_CMAKE_BOOL=	ENABLE_TESTS
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:min=21
-CFLAGS+=-Wno-error=int-conversion
-.endif
-
 .include <bsd.port.mk>
