@@ -4631,7 +4631,6 @@
     SUBDIR += py-cacheyou
     SUBDIR += py-cachier
     SUBDIR += py-cachy
-    SUBDIR += py-cadquery-pywrap
     SUBDIR += py-calver
     SUBDIR += py-camel-converter
     SUBDIR += py-canonicaljson
