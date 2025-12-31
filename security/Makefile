@@ -1124,7 +1124,6 @@
     SUBDIR += rhash
     SUBDIR += ridl
     SUBDIR += rifiuti2
-    SUBDIR += rkhunter
     SUBDIR += rndpassw
     SUBDIR += rnp
     SUBDIR += rotate
