@@ -4983,3 +4983,4 @@ archivers/py-borgbackup12|archivers/py-borgbackup|2025-12-31|Has expired: Likely
 devel/fastcrc||2025-12-31|Has expired: dead upstream
 graphics/osgearth||2025-12-31|Has expired: fails to build
 security/nextcloud-passman||2025-12-31|Has expired: Upstream unmaintained
+net-mgmt/hastmon||2025-12-31|Has expired: broken, dead upstream

@@ -1,5 +1,0 @@
-hastmon is a monitoring daemon that allows a couple of hosts to run a
-service providing automatic failover. Those machines will be called a
-cluster and each machine is one cluster node. hastmon is designed for
-clusters that work in Primary-Secondary configuration, which means
-that only one of the cluster nodes can be active at any given time.
