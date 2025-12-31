@@ -4979,3 +4979,4 @@ devel/py-cadquery-pywrap||2025-12-31|Has expired: This port was part of an effor
 www/unit-ruby||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
 www/unitc||2025-12-31|Removed, part of expired www/unit
 www/unit||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
+archivers/py-borgbackup12|archivers/py-borgbackup|2025-12-31|Has expired: Likely the final 1.2.x release, please migrate to using 1.4.x (it is quite similar)
