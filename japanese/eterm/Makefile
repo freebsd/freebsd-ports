@@ -5,6 +5,9 @@ MASTERDIR=	${.CURDIR}/../../x11/eterm
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports Japanese
 
+DEPRECATED=	Depends on expired x11/eterm
+EXPIRATION_DATE=2026-03-31
+
 EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure \
 		${.CURDIR}/files/extra-patch-src_command.c \
 		${.CURDIR}/files/extra-patch-src_defaultfont.h \
