@@ -1,4 +1,0 @@
-Module provides HLS and MPEG-DASH live streaming capabilities for those who
-want a lightweight solution based on the HTTP protocol.
-The stream is published in the MPEG-TS format over HTTP.
-MPEG-TS is a widely adopted, well known and well documented streaming format.

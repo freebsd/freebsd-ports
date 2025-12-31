@@ -4988,3 +4988,4 @@ www/py-django51||2025-12-31|Has expired: Extended support of Django 5.1 ends Dec
 sysutils/ipfs-go-fs-repo-migrations||2025-12-31|Has expired: Obsolete port, no longer required for migrations
 devel/inastemp||2025-12-31|Has expired: unfetchable
 www/moodle44||2025-12-31|Has expired: Upstream EOL
+www/angie-module-rtmp||2025-12-31|Has expired: Upstream development has slowed down and there are a lot of unresolved issues and PRs upstream, consider migrating to multimedia/mediamtx
