@@ -273,7 +273,6 @@
     SUBDIR += kpkpass
     SUBDIR += kpmenu
     SUBDIR += krb5
-    SUBDIR += krb5-120
     SUBDIR += krb5-121
     SUBDIR += krb5-122
     SUBDIR += krb5-devel
