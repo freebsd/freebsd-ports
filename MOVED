@@ -4943,3 +4943,4 @@ www/py-dj51-django-auth-ldap||2025-12-31|Has expired: Extended support of Django
 www/py-dj51-django-choices-field||2025-12-31|Has expired: Extended support of Django 5.1 ends December 2025, upgrade to the Django 5.2+ version of this port. See https://www.djangoproject.com/download/
 devel/py-dj51-strawberry-graphql||2025-12-31|Has expired: Extended support of Django 5.1 ends December 2025, upgrade to the Django 5.2+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj51-channels||2025-12-31|Has expired: Extended support of Django 5.1 ends December 2025, upgrade to the Django 5.2+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj51-django-htmx||2025-12-31|Has expired: Extended support of Django 5.1 ends December 2025, upgrade to the Django 5.2+ version of this port. See https://www.djangoproject.com/download/
