@@ -1543,7 +1543,6 @@
     SUBDIR += py-dash
     SUBDIR += py-ddgs
     SUBDIR += py-dj-database-url
-    SUBDIR += py-dj51-djangorestframework
     SUBDIR += py-dj52-channels
     SUBDIR += py-dj52-channels-redis
     SUBDIR += py-dj52-django-allauth
