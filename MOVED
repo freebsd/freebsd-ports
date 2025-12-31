@@ -4996,3 +4996,4 @@ textproc/xsv-rs||2025-12-31|Has expired: Abandoned, repo archived on Apr 24, 202
 lang/spidermonkey102||2025-12-31|Has expired: Old version, no more users in the ports tree
 devel/unit-otel||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
 devel/electron36||2025-12-31|Has expired: EOLed upstream, switch to newer version
+x11/xwaylandvideobridge||2025-12-31|Has expired: Project has been discontinued
