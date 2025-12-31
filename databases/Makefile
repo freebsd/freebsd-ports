@@ -33,7 +33,6 @@
     SUBDIR += clickhouse
     SUBDIR += clickhouse-cpp
     SUBDIR += closql
-    SUBDIR += cockroach
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql
     SUBDIR += courier-authlib-pgsql

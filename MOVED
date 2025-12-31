@@ -4999,3 +4999,4 @@ devel/electron36||2025-12-31|Has expired: EOLed upstream, switch to newer versio
 x11/xwaylandvideobridge||2025-12-31|Has expired: Project has been discontinued
 x11/hyprland-qtutils|x11/hyprland-guiutils|2025-12-31|Has expired: Superceded by hyprland-guiutils. Use x11/hyprland-guiutils instead
 www/servlet-api||2025-12-31|Has expired: Superseded upstream by newer versions many years ago
+databases/cockroach||2025-12-31|Has expired: Current versions are fully-proprietary software, see PR 272257
