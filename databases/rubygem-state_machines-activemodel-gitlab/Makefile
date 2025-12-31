@@ -1,5 +1,5 @@
 PORTNAME=	state_machines-activemodel
-PORTVERSION=	0.31.0
+PORTVERSION=	0.100.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-gitlab
@@ -11,8 +11,8 @@ WWW=		https://github.com/state-machines/state_machines-activemodel
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-activemodel-gitlab>=7.1:databases/rubygem-activemodel-gitlab \
-		rubygem-state_machines>=0.31.0:devel/rubygem-state_machines
+RUN_DEPENDS=	rubygem-activemodel-gitlab>=7.2:databases/rubygem-activemodel-gitlab \
+		rubygem-state_machines-gitlab>=0.100.0:devel/rubygem-state_machines-gitlab
 
 USES=		gem
 
