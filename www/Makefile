@@ -1550,7 +1550,6 @@
     SUBDIR += py-dj51-django-choices-field
     SUBDIR += py-dj51-django-compression-middleware
     SUBDIR += py-dj51-django-debug-toolbar
-    SUBDIR += py-dj51-django-guardian
     SUBDIR += py-dj51-django-htmx
     SUBDIR += py-dj51-django-tables2
     SUBDIR += py-dj51-django-timezone-field
