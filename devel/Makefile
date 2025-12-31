@@ -211,7 +211,6 @@
     SUBDIR += appstream-glib
     SUBDIR += appstream-qt
     SUBDIR += apr1
-    SUBDIR += arachne-pnr
     SUBDIR += arcanist
     SUBDIR += arcanist-lib
     SUBDIR += arduino

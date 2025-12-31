@@ -4971,3 +4971,4 @@ misc/openhab2-addons|misc/openhab-addons|2025-12-31|Has expired: superseeded by 
 misc/openhab2|misc/openhab|2025-12-31|Has expired: superseeded by misc/openhab
 www/unit-java||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
 deskutils/znotes||2025-12-31|Has expired: Abandonware, depends on legacy QT 5 and last release in 2011
+devel/arachne-pnr|devel/nextpnr|2025-12-31|Has expired: Superseded by devel/nextpnr
