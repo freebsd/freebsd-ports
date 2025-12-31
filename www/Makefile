@@ -1560,7 +1560,6 @@
     SUBDIR += py-dj51-djangorestframework
     SUBDIR += py-dj51-drf-spectacular
     SUBDIR += py-dj51-drf-spectacular-sidecar
-    SUBDIR += py-dj51-social-auth-app-django
     SUBDIR += py-dj51-strawberry-graphql-django
     SUBDIR += py-dj52-channels
     SUBDIR += py-dj52-channels-redis
