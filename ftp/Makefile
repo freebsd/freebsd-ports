@@ -36,7 +36,6 @@
     SUBDIR += linux-rl9-wget
     SUBDIR += mirror
     SUBDIR += ncftp3
-    SUBDIR += net2ftp
     SUBDIR += netdumpd
     SUBDIR += ocaml-ocurl
     SUBDIR += oftpd
