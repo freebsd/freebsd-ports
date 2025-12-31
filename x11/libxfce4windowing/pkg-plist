@@ -85,6 +85,7 @@ libdata/pkgconfig/libxfce4windowingui-0.pc
 %%NLS%%share/locale/el/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/libxfce4windowing.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/es/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/et/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/libxfce4windowing.mo
@@ -115,8 +116,11 @@ libdata/pkgconfig/libxfce4windowingui-0.pc
 %%NLS%%share/locale/sq/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/libxfce4windowing.mo
+%%NLS%%share/locale/th/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/libxfce4windowing.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/libxfce4windowing.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/libxfce4windowing.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/libxfce4windowing.mo
 %%VAPI%%share/vala/vapi/libxfce4windowing-0.deps
