@@ -4953,3 +4953,4 @@ x11-fonts/powerline-fonts|x11-fonts/nerd-fonts|2025-12-31|Has expired: Use x11-f
 math/rapid||2025-12-31|Has expired: unfetchable
 security/tls-check||2025-12-31|Has expired: Obsolete tool and relies on deprecated libraries
 www/unit-python||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
+audio/traverso||2025-12-31|Has expired: unfetchable

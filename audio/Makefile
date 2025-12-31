@@ -809,7 +809,6 @@
     SUBDIR += tkeca
     SUBDIR += toccata-lv2
     SUBDIR += tosha
-    SUBDIR += traverso
     SUBDIR += triceratops-lv2
     SUBDIR += tse3
     SUBDIR += tta
