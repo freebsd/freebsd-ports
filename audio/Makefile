@@ -583,7 +583,6 @@
     SUBDIR += pavucontrol
     SUBDIR += pavucontrol-qt
     SUBDIR += pavumeter
-    SUBDIR += pc-mixer
     SUBDIR += pcaudiolib
     SUBDIR += pd
     SUBDIR += pd-cyclone
