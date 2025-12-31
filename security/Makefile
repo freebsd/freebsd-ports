@@ -1377,7 +1377,6 @@
     SUBDIR += tinc
     SUBDIR += tinc-devel
     SUBDIR += tinyca
-    SUBDIR += tls-check
     SUBDIR += tlsc
     SUBDIR += tor
     SUBDIR += totp-cli
