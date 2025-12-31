@@ -7351,6 +7351,7 @@
     SUBDIR += rubygem-excon0
     SUBDIR += rubygem-excon1-gitlab
     SUBDIR += rubygem-execjs
+    SUBDIR += rubygem-execjs-gitlab
     SUBDIR += rubygem-extlib
     SUBDIR += rubygem-extpp
     SUBDIR += rubygem-extras
@@ -7452,6 +7453,7 @@
     SUBDIR += rubygem-gitlab-labkit
     SUBDIR += rubygem-gitlab-license
     SUBDIR += rubygem-gitlab-pygments.rb
+    SUBDIR += rubygem-gitlab_query_language
     SUBDIR += rubygem-gitlab-sdk
     SUBDIR += rubygem-gitlab-security_report_schemas
     SUBDIR += rubygem-gitlab_chronic_duration
@@ -7526,6 +7528,7 @@
     SUBDIR += rubygem-grpc-google-iam-v1
     SUBDIR += rubygem-grpc-google-iam-v1-gitlab
     SUBDIR += rubygem-guess_html_encoding
+    SUBDIR += rubygem-gvltools
     SUBDIR += rubygem-gyoku
     SUBDIR += rubygem-hamster
     SUBDIR += rubygem-hana
@@ -8079,6 +8082,7 @@
     SUBDIR += rubygem-stackprof
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-state_machines
+    SUBDIR += rubygem-state_machines-gitlab
     SUBDIR += rubygem-statsd
     SUBDIR += rubygem-statsd-instrument
     SUBDIR += rubygem-statsd-ruby
