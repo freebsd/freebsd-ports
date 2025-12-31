@@ -157,7 +157,7 @@ share/man/man7/qemu-storage-daemon-qmp-ref.7.gz
 %%DATADIR%%/qemu_vga.ndrv
 %%DATADIR%%/s390-ccw.img
 %%DATADIR%%/slof.bin
-%%DATADIR%%/u-boot-sam460-20100605.bin
+%%DATADIR%%/u-boot-sam460.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-ati.bin
 %%DATADIR%%/vgabios-cirrus.bin
