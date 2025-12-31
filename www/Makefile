@@ -1697,7 +1697,6 @@
     SUBDIR += py-django-webpack-loader
     SUBDIR += py-django-widget-tweaks
     SUBDIR += py-django42
-    SUBDIR += py-django51
     SUBDIR += py-django52
     SUBDIR += py-django60
     SUBDIR += py-django_compressor
