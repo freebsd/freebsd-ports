@@ -701,7 +701,6 @@
     SUBDIR += expected
     SUBDIR += f77flow
     SUBDIR += fam
-    SUBDIR += fastcrc
     SUBDIR += fatal
     SUBDIR += fbthrift
     SUBDIR += fc++
