@@ -4974,3 +4974,4 @@ deskutils/znotes||2025-12-31|Has expired: Abandonware, depends on legacy QT 5 an
 devel/arachne-pnr|devel/nextpnr|2025-12-31|Has expired: Superseded by devel/nextpnr
 graphics/jpgtn||2025-12-31|Has expired: obsolete historical tool, use imagemagick instead
 security/rkhunter||2025-12-31|Has expired: Project abandoned in 2009
+graphics/tumble||2025-12-31|Has expired: historical tool, use imagemagick instead

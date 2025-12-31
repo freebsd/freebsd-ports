@@ -1,7 +1,0 @@
-Tumble is a utility to construct PDF files from one or more image
-files.  Supported input image file formats are JPEG, and black and
-white TIFF (single- or multi-page).  Black and white images will be
-encoded in the PDF output using lossless Group 4 fax compression
-(ITU-T recommendation T.6).  This provides a very good compression
-ratio for text and line art.  JPEG images will be preserved with the
-original coding.
