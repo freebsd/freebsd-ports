@@ -685,7 +685,6 @@
     SUBDIR += optar
     SUBDIR += optipng
     SUBDIR += osg
-    SUBDIR += osgearth
     SUBDIR += ospray
     SUBDIR += ospray-studio
     SUBDIR += ossim
