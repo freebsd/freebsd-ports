@@ -99,7 +99,6 @@
     SUBDIR += clamav-unofficial-sigs
     SUBDIR += clamd-stream-client
     SUBDIR += clamsmtp
-    SUBDIR += clamtk
     SUBDIR += cloak
     SUBDIR += cops
     SUBDIR += cosign
