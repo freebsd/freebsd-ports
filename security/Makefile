@@ -404,7 +404,6 @@
     SUBDIR += netbird
     SUBDIR += nettle
     SUBDIR += nextcloud-end_to_end_encryption
-    SUBDIR += nextcloud-passman
     SUBDIR += nextcloud-twofactor_admin
     SUBDIR += nextcloud-twofactor_webauthn
     SUBDIR += nflib

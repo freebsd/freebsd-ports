@@ -4982,3 +4982,4 @@ www/unit||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
 archivers/py-borgbackup12|archivers/py-borgbackup|2025-12-31|Has expired: Likely the final 1.2.x release, please migrate to using 1.4.x (it is quite similar)
 devel/fastcrc||2025-12-31|Has expired: dead upstream
 graphics/osgearth||2025-12-31|Has expired: fails to build
+security/nextcloud-passman||2025-12-31|Has expired: Upstream unmaintained
