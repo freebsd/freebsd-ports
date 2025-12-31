@@ -322,7 +322,6 @@
     SUBDIR += zanshin
     SUBDIR += zim
     SUBDIR += zk
-    SUBDIR += znotes
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>

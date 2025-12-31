@@ -4970,3 +4970,4 @@ games/keeperrl||2025-12-31|Has expired: Very outdated, fails to build and unmain
 misc/openhab2-addons|misc/openhab-addons|2025-12-31|Has expired: superseeded by misc/openhab-addons
 misc/openhab2|misc/openhab|2025-12-31|Has expired: superseeded by misc/openhab
 www/unit-java||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
+deskutils/znotes||2025-12-31|Has expired: Abandonware, depends on legacy QT 5 and last release in 2011
