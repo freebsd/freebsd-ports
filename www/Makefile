@@ -1548,7 +1548,6 @@
     SUBDIR += py-dj51-django-auditlog
     SUBDIR += py-dj51-django-auth-ldap
     SUBDIR += py-dj51-django-choices-field
-    SUBDIR += py-dj51-django-debug-toolbar
     SUBDIR += py-dj51-django-htmx
     SUBDIR += py-dj51-django-tables2
     SUBDIR += py-dj51-django-timezone-field
