@@ -98,7 +98,6 @@
     SUBDIR += proguard
     SUBDIR += sigar
     SUBDIR += springframework
-    SUBDIR += springframework31
     SUBDIR += sqlitejdbc
     SUBDIR += trove4j
     SUBDIR += veditor
