@@ -1,0 +1,54 @@
+PORTNAME=	manifold
+DISTVERSIONPREFIX=v
+DISTVERSION=	3.3.2
+CATEGORIES=	math cad graphics
+
+MAINTAINER=	FreeBSD@Shaneware.biz
+COMMENT=	Geometry library for topological robustness
+WWW=		https://github.com/elalish/manifold
+
+LICENSE=	APACHE20
+
+TEST_DEPENDS=	googletest>0:devel/googletest
+
+USES=		cmake:testing compiler:c++17-lang
+USE_GITHUB=	yes
+GH_ACCOUNT=	elalish
+USE_LDCONFIG=	yes
+
+CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	MANIFOLD_DOWNLOADS \
+		MANIFOLD_FUZZ \
+		MANIFOLD_JSBIND \
+		TRACY_ENABLE
+
+CMAKE_TESTING_ON=MANIFOLD_TEST
+TEST_TARGET=	test/manifold_test
+
+PLIST_SUB+=	VERS=${DISTVERSION}
+
+OPTIONS_DEFINE=		CBIND CROSS PARA PYBIND TEST_EXPORT
+OPTIONS_DEFAULT=	CBIND CROSS PARA
+OPTIONS_SUB=		yes
+
+CBIND_DESC=		Enable C FFI binding
+CROSS_DESC=		Enable CrossSection for 2D support
+PARA_DESC=		Enable multi-thread parallelization
+PYBIND_DESC=		Enable python binding
+TEST_EXPORT_DESC=	Enable export of models from tests
+
+CBIND_IMPLIES=		CROSS
+CBIND_CMAKE_BOOL=	MANIFOLD_CBIND
+CROSS_LIB_DEPENDS=	libClipper2.so:cad/Clipper2
+CROSS_CMAKE_BOOL=	MANIFOLD_CROSS_SECTION
+PARA_LIB_DEPENDS=	libtbb.so:devel/onetbb
+PARA_CMAKE_BOOL=	MANIFOLD_PAR
+PYBIND_IMPLIES=		CROSS
+PYBIND_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nanobind>0:devel/py-nanobind@${PY_FLAVOR}
+PYBIND_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nanobind>0:devel/py-nanobind@${PY_FLAVOR}
+PYBIND_USES=		python
+PYBIND_CMAKE_BOOL=	MANIFOLD_PYBIND
+TEST_EXPORT_LIB_DEPENDS=libassimp.so:multimedia/assimp
+TEST_EXPORT_CMAKE_BOOL=	MANIFOLD_EXPORT
+
+.include <bsd.port.mk>
