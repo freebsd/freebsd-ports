@@ -398,7 +398,6 @@
     SUBDIR += jpeg-turbo
     SUBDIR += jpeginfo
     SUBDIR += jpegoptim
-    SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += kamera
     SUBDIR += kamerka
