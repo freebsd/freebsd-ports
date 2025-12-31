@@ -47,7 +47,6 @@
     SUBDIR += edyvalue
     SUBDIR += eijiro-fpw
     SUBDIR += epwutil
-    SUBDIR += eterm
     SUBDIR += fcitx-anthy
     SUBDIR += fcitx-mozc
     SUBDIR += fcitx-skk
