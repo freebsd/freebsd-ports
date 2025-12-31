@@ -1560,7 +1560,6 @@
     SUBDIR += py-dj51-django-prometheus
     SUBDIR += py-dj51-django-redis
     SUBDIR += py-dj51-django-rich
-    SUBDIR += py-dj51-django-soft-delete
     SUBDIR += py-dj51-django-tables2
     SUBDIR += py-dj51-django-timezone-field
     SUBDIR += py-dj51-djangorestframework
