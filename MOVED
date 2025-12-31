@@ -4958,3 +4958,4 @@ ftp/net2ftp||2025-12-31|Has expired: unfetchable
 graphics/stamp||2025-12-31|Has expired: historical tool, use imagemagick instead
 japanese/eterm||2025-12-31|Has expired: unmaintained upstream, use x11/terminology instead
 x11/eterm||2025-12-31|Has expired: unmaintained upstream, use x11/terminology instead
+databases/pgpool-II-42||2025-12-31|Has expired: Upstream EOL reaches on 2025-11-30
