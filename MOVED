@@ -4987,3 +4987,4 @@ net-mgmt/hastmon||2025-12-31|Has expired: broken, dead upstream
 www/py-django51||2025-12-31|Has expired: Extended support of Django 5.1 ends December 2025, upgrade to a newer version of Django. See https://www.djangoproject.com/download/
 sysutils/ipfs-go-fs-repo-migrations||2025-12-31|Has expired: Obsolete port, no longer required for migrations
 devel/inastemp||2025-12-31|Has expired: unfetchable
+www/moodle44||2025-12-31|Has expired: Upstream EOL
