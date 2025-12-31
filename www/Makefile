@@ -1552,7 +1552,6 @@
     SUBDIR += py-dj51-django-compression-middleware
     SUBDIR += py-dj51-django-cors-headers
     SUBDIR += py-dj51-django-debug-toolbar
-    SUBDIR += py-dj51-django-extensions
     SUBDIR += py-dj51-django-guardian
     SUBDIR += py-dj51-django-htmx
     SUBDIR += py-dj51-django-js-asset
