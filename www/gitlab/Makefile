@@ -334,7 +334,8 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-google-cloud-storage_transfer-gitlab>=1.2.0<1.3:net/rubygem-google-cloud-storage_transfer-gitlab \
 	rubygem-minitest>=5.11<6:devel/rubygem-minitest \
 	rubygem-grpc-tools>=1.69.0<1.70:net/rubygem-grpc-tools \
-	rubygem-opensearch-ruby-gitlab>=0:textproc/rubygem-opensearch-ruby-gitlab
+	rubygem-opensearch-ruby-gitlab>=0:textproc/rubygem-opensearch-ruby-gitlab \
+	rubygem-bigdecimal-gitlab>=3.1<4:math/rubygem-bigdecimal-gitlab
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}

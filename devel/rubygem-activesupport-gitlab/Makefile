@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-base64>=0:converters/rubygem-base64 \
 		rubygem-benchmark>=0.3:benchmarks/rubygem-benchmark \
-		rubygem-bigdecimal>=0:math/rubygem-bigdecimal \
+		rubygem-bigdecimal-gitlab>=0:math/rubygem-bigdecimal-gitlab \
 		rubygem-concurrent-ruby>=1.3.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-connection_pool>=2.2.5:net/rubygem-connection_pool \
 		rubygem-drb>=0:devel/rubygem-drb \
