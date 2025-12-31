@@ -1,6 +1,5 @@
 PORTNAME=	openvox-agent
-PORTVERSION=	8.22.0
-PORTREVISION=	2
+PORTVERSION=	8.24.2
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
@@ -128,7 +127,7 @@ post-install:
 	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/puppet -type f | \
 		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications
-	${INSTALL_DATA} ${WRKSRC}/openvox.gemspec ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications/openvox-${PORTVERSION}.gemspec
+	${RUBY} -e "puts Gem::Specification.load('${WRKSRC}/openvox.gemspec').to_ruby" > ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER}/specifications/openvox-${PORTVERSION}.gemspec
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
