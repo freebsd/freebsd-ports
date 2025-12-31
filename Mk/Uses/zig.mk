@@ -51,6 +51,7 @@ DIST_SUBDIR?=	zig
 .    for group url dir in ${z:S/:/ /g:tw}
 MASTER_SITES+=	https://${url:H}/:${group}
 DISTFILES+=	${url:T}:${group}
+WRKSRC_${group}=${ZIG_DEPSDIR}/${dir}
 .    endfor
 .  endfor
 
