@@ -2235,7 +2235,6 @@
     SUBDIR += xorg-sgml-doctools
     SUBDIR += xslide.el
     SUBDIR += xstream
-    SUBDIR += xsv-rs
     SUBDIR += xwindiff
     SUBDIR += xxdiff
     SUBDIR += xxdiff-scripts
