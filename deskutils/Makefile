@@ -31,7 +31,6 @@
     SUBDIR += calindori
     SUBDIR += cartotheque
     SUBDIR += cfiles
-    SUBDIR += charmtimetracker
     SUBDIR += chart
     SUBDIR += cherrytree
     SUBDIR += clipit
