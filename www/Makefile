@@ -1551,7 +1551,6 @@
     SUBDIR += py-dj51-django-htmx
     SUBDIR += py-dj51-django-tables2
     SUBDIR += py-dj51-djangorestframework
-    SUBDIR += py-dj51-drf-spectacular-sidecar
     SUBDIR += py-dj52-channels
     SUBDIR += py-dj52-channels-redis
     SUBDIR += py-dj52-django-allauth
