@@ -2649,7 +2649,6 @@
     SUBDIR += unit-java
     SUBDIR += unit-perl
     SUBDIR += unit-php
-    SUBDIR += unit-python
     SUBDIR += unit-ruby
     SUBDIR += unit-wasm
     SUBDIR += unitc
