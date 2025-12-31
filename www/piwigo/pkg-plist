@@ -386,6 +386,7 @@
 %%WWWDIR%%/admin/themes/default/template/tags.tpl
 %%WWWDIR%%/admin/themes/default/template/themes_installed.tpl
 %%WWWDIR%%/admin/themes/default/template/themes_new.tpl
+%%WWWDIR%%/admin/themes/default/template/themes_standard_pages.tpl
 %%WWWDIR%%/admin/themes/default/template/updates_ext.tpl
 %%WWWDIR%%/admin/themes/default/template/updates_pwg.tpl
 %%WWWDIR%%/admin/themes/default/template/upgrade.tpl
@@ -426,6 +427,7 @@
 %%WWWDIR%%/admin/themes/roma/themeconf.inc.php
 %%WWWDIR%%/admin/themes_installed.php
 %%WWWDIR%%/admin/themes_new.php
+%%WWWDIR%%/admin/themes_standard_pages.php
 %%WWWDIR%%/admin/updates.php
 %%WWWDIR%%/admin/updates_ext.php
 %%WWWDIR%%/admin/updates_pwg.php
@@ -1016,10 +1018,12 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/ca_ES/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/cs_CZ/common.lang.php
@@ -1247,11 +1251,13 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/help/search.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/help/synchronize.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/whats_new_15.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/whats_new_16.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/es_MX.jpg
@@ -1314,6 +1320,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/help/help_misc.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/help/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/help/user_list.html
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/help_quick_search.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/fa_IR/iso.txt
@@ -3993,6 +4000,7 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/header.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/identification.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/include/colorbox.inc.tpl
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/include/selected_tags.inc.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/index.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/infos_errors.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/mainpage_categories.tpl
@@ -4019,13 +4027,45 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/template/thumbnails.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/theme.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/smartpocket/themeconf.inc.php
-@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/css/standard_pages.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/fonts/OpenSans-VariableFont_wdth,wght.ttf
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/images/piwigo_logo.svg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/images/piwigo_logo_dark.svg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/js/profile.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/js/standard_pages.js
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/js/toaster.js
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/cadmium.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/cobalt.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-cadmium.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-cobalt.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-default.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-fuchsia.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-green.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-lime.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-purple.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-red.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-sienna.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-silver.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/dark-teal.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/default.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/fuchsia.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/green.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-cadmium.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-cobalt.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-default.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-fuchsia.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-green.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-lime.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-purple.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-red.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-sienna.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-silver.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/light-teal.jpg
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/lime.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/purple.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/red.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/sienna.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/silver.css
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/skins/teal.css
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/footer.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/identification.tpl
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/standard_pages/template/password.tpl
