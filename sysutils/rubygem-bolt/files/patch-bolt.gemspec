@@ -1,4 +1,4 @@
---- bolt.gemspec.orig	2025-10-18 03:48:23 UTC
+--- bolt.gemspec.orig	2025-12-27 20:08:53 UTC
 +++ bolt.gemspec
 @@ -27,10 +27,10 @@ Gem::Specification.new do |s|
    s.add_runtime_dependency(%q<CFPropertyList>.freeze, [">= 2.2".freeze])
@@ -18,11 +18,11 @@
    s.add_runtime_dependency(%q<puppetfile-resolver>.freeze, [">= 0.6.2".freeze, "< 1.0".freeze])
    s.add_runtime_dependency(%q<puppet-resource_api>.freeze, [">= 1.8.1".freeze])
 -  s.add_runtime_dependency(%q<puppet-strings>.freeze, [">= 2.3.0".freeze, "< 5.0".freeze])
--  s.add_runtime_dependency(%q<r10k>.freeze, ["~> 3.10".freeze])
+-  s.add_runtime_dependency(%q<r10k>.freeze, [">= 3.10".freeze, "< 5".freeze])
 -  s.add_runtime_dependency(%q<ruby_smb>.freeze, ["~> 1.0".freeze])
 +  s.add_runtime_dependency(%q<puppet-strings>.freeze, [">= 2.3.0".freeze])
 +  s.add_runtime_dependency(%q<r10k>.freeze, [">= 3.10".freeze])
-+  s.add_runtime_dependency(%q<ruby_smb>.freeze, [">= 1.0".freeze, "< 4.0".freeze])
++  s.add_runtime_dependency(%q<ruby_smb>.freeze, [">= 1.0".freeze])
    s.add_runtime_dependency(%q<terminal-table>.freeze, ["~> 3.0".freeze])
    s.add_runtime_dependency(%q<winrm>.freeze, ["~> 2.0".freeze])
    s.add_runtime_dependency(%q<winrm-fs>.freeze, ["~> 1.3".freeze])
