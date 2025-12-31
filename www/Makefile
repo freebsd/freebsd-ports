@@ -207,7 +207,6 @@
     SUBDIR += foreign-cdm
     SUBDIR += forgejo
     SUBDIR += forgejo-lts
-    SUBDIR += forgejo7
     SUBDIR += formication
     SUBDIR += foswiki
     SUBDIR += free-sa-devel
