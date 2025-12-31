@@ -1,11 +1,11 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.12.0
+DISTVERSION=	1.14.8.0
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-openimageio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	5
+PORTREVISION?=	0
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -20,6 +20,7 @@ BROKEN_riscv64=	fails to build: /usr/include/c++/v1/__threading_support:135:3: U
 ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	fails static_assert(sizeof(ustringhash) == sizeof(size_t)
 
+BUILD_DEPENDS=	${LOCALBASE}/include/tsl/robin_map.h:devel/robin-map
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libImath.so:math/Imath \
 		libOpenEXR.so:graphics/openexr \
