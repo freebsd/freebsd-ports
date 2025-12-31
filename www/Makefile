@@ -2644,7 +2644,6 @@
     SUBDIR += ufdbguard
     SUBDIR += ulfius
     SUBDIR += ungoogled-chromium
-    SUBDIR += unit
     SUBDIR += urlfinder
     SUBDIR += uwebsockets
     SUBDIR += uwsgi
