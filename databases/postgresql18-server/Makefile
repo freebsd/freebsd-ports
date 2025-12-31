@@ -103,7 +103,7 @@ LLVM_DESC=		Build with support for JIT-compiling expressions
 LLVM_CONFIGURE_WITH=	llvm
 LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG} \
 			CLANG=${LOCALBASE}/bin/clang${LLVM_VERSION}
-LLVM_USES=		llvm:min=11,lib
+LLVM_USES=		llvm:lib
 
 CONFIGURE_ARGS+=	--with-icu
 LIB_DEPENDS+=		libicudata.so:devel/icu
