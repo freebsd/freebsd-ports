@@ -2645,7 +2645,6 @@
     SUBDIR += ulfius
     SUBDIR += ungoogled-chromium
     SUBDIR += unit
-    SUBDIR += unit-java
     SUBDIR += unit-ruby
     SUBDIR += unitc
     SUBDIR += urlfinder
