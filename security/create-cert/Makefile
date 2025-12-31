@@ -1,11 +1,12 @@
 PORTNAME=	create-cert
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	security
 MASTER_SITES=	https://ee.lbl.gov/downloads/create-cert/ \
 		LOCAL/leres/create-cert
 
 MAINTAINER=	leres@FreeBSD.org
 COMMENT=	Create openssl client key and certificates
+WWW=		https://ee.lbl.gov/downloads/create-cert/
 
 LICENSE=	BSD3CLAUSE
 
