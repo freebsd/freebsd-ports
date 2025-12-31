@@ -1485,7 +1485,6 @@
     SUBDIR += libunicode-contour
     SUBDIR += libuninum
     SUBDIR += libunistring
-    SUBDIR += libunit
     SUBDIR += libunwind
     SUBDIR += libuutil
     SUBDIR += libuv
