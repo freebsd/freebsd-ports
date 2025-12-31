@@ -153,7 +153,9 @@ SUB_LIST=	BAREOS_USER=${BAREOS_USER} \
 		BAREOS_DIR=${BAREOS_DIR}
 
 NLS_USES=		gettext
-NLS_CMAKE_ON=		-Dnls=ON
+NLS_CMAKE_ON=		-Dnls=ON \
+			-DENABLE_NLS=ON
+NLS_CMAKE_OFF=		-DENABLE_NLS=OFF
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
