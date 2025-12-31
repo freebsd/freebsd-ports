@@ -1554,7 +1554,6 @@
     SUBDIR += py-dj51-django-tables2
     SUBDIR += py-dj51-django-timezone-field
     SUBDIR += py-dj51-djangorestframework
-    SUBDIR += py-dj51-drf-spectacular
     SUBDIR += py-dj51-drf-spectacular-sidecar
     SUBDIR += py-dj51-strawberry-graphql-django
     SUBDIR += py-dj52-channels
