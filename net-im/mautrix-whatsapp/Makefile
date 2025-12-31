@@ -1,7 +1,6 @@
 PORTNAME=	mautrix-whatsapp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.4
-PORTREVISION=	5
+DISTVERSION=	0.2512.0
 CATEGORIES=	net-im
 
 MAINTAINER=	juw@posteo.de
@@ -21,7 +20,7 @@ GO_MODULE=	go.mau.fi/mautrix-whatsapp
 WRKSRC_SUBDIR=	cmd/${PORTNAME}
 
 post-install:
-	${MKDIR} ${STAGEDIR}/${ETCDIR}
-	${MKDIR} ${STAGEDIR}/var/log/mautrix-whatsapp
+	${MKDIR} ${STAGEDIR}/${ETCDIR} \
+		 ${STAGEDIR}/var/log/mautrix-whatsapp
 
 .include <bsd.port.mk>
