@@ -10,6 +10,7 @@
 %%KABYLAKE%%/%%KMODDIR%%/i915_kbl_guc_33_0_0_bin.ko
 %%KABYLAKE%%/%%KMODDIR%%/i915_kbl_guc_62_0_0_bin.ko
 %%KABYLAKE%%/%%KMODDIR%%/i915_kbl_guc_70_1_1_bin.ko
+%%KABYLAKE%%/%%KMODDIR%%/i915_kbl_huc_ver02_00_1810_bin.ko
 %%KABYLAKE%%/%%KMODDIR%%/i915_kbl_huc_4_0_0_bin.ko
 %%KABYLAKE%%/%%KMODDIR%%/i915_cml_guc_33_0_0_bin.ko
 %%KABYLAKE%%/%%KMODDIR%%/i915_cml_guc_62_0_0_bin.ko
