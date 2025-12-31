@@ -13,7 +13,7 @@ LICENSE=	GPLv3+
 USES=		cpe php:flavors shebangfix zip
 # php pcre extension is required but it's statically linked in default php
 USE_PHP=	calendar curl dom filter gd iconv pdo_mysql session xml
-IGNORE_WITH_PHP=	81 82
+IGNORE_WITH_PHP=	82
 
 SHEBANG_FILES=	webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php
 

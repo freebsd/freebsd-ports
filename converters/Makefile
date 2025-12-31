@@ -138,8 +138,6 @@
     SUBDIR += pear-Services_JSON
     SUBDIR += pecl-igbinary
     SUBDIR += php-bsdconv
-    SUBDIR += php81-iconv
-    SUBDIR += php81-mbstring
     SUBDIR += php82-iconv
     SUBDIR += php82-mbstring
     SUBDIR += php83-iconv

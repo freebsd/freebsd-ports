@@ -15,7 +15,6 @@ LICENSE=	BSD3CLAUSE
 USES=		cpe php:flavors
 USE_PHP=	ctype dom mbstring phar tokenizer xml xmlwriter
 
-IGNORE_WITH_PHP=81
 NO_ARCH=	yes
 NO_BUILD=	yes
 

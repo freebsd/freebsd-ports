@@ -22,7 +22,6 @@ GH_ACCOUNT=	pavetheway91
 GH_PROJECT=	tarbsd
 USE_PHP=	ctype filter mbstring pcntl phar zlib
 
-IGNORE_WITH_PHP=	81
 NO_ARCH=	yes
 
 _TARBSD_COMPILE_ARGS=	--ports --version-tag=${PORTVERSION} --np-iconv

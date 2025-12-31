@@ -827,8 +827,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php81-filter
-    SUBDIR += php81-sodium
     SUBDIR += php82-filter
     SUBDIR += php82-sodium
     SUBDIR += php83-filter

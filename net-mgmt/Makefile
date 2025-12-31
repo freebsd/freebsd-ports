@@ -298,7 +298,6 @@
     SUBDIR += peering-manager
     SUBDIR += pftabled
     SUBDIR += php-fpm_exporter
-    SUBDIR += php81-snmp
     SUBDIR += php82-snmp
     SUBDIR += php83-snmp
     SUBDIR += php84-snmp

@@ -472,7 +472,6 @@
     SUBDIR += perdition
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
-    SUBDIR += php81-imap
     SUBDIR += php82-imap
     SUBDIR += php83-imap
     SUBDIR += phplist

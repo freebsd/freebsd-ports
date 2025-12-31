@@ -16,7 +16,6 @@ USES=		cpe php:web,flavors shebangfix
 # php openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter gd intl mbstring pdo session \
 		simplexml tokenizer xml zip zlib
-IGNORE_WITH_PHP=	81
 
 SHEBANG_GLOB=	*.php *.sh
 NO_ARCH=	yes

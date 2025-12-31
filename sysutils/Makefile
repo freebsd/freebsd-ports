@@ -958,8 +958,6 @@
     SUBDIR += pfstat
     SUBDIR += pftables
     SUBDIR += pftop
-    SUBDIR += php81-fileinfo
-    SUBDIR += php81-posix
     SUBDIR += php82-fileinfo
     SUBDIR += php82-posix
     SUBDIR += php83-fileinfo

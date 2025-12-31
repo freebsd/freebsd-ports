@@ -110,7 +110,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	81 82 83 84 85
+_ALL_PHP_VERSIONS=	82 83 84 85
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -191,9 +191,6 @@ PHP_EXT_INC=    hash json openssl pcre random spl
 .    elif ${PHP_VER} == 82
 PHP_EXT_DIR=   20220829
 PHP_EXT_INC=    hash json openssl pcre random spl
-.    elif ${PHP_VER} == 81
-PHP_EXT_DIR=   20210902
-PHP_EXT_INC=    hash json openssl pcre spl
 .    else
 # (rene) default to DEFAULT_VERSIONS
 PHP_EXT_DIR=   20240924
@@ -386,7 +383,6 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zephir_parser \
 		zip zlib
 # version specific components
-_USE_PHP_VER81=	${_USE_PHP_ALL} opcache
 _USE_PHP_VER82=	${_USE_PHP_ALL} opcache
 _USE_PHP_VER83=	${_USE_PHP_ALL} opcache
 _USE_PHP_VER84=	${_USE_PHP_ALL} opcache

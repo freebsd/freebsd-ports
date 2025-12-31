@@ -996,9 +996,6 @@
     SUBDIR += pecl-smbclient
     SUBDIR += pecl-xmlrpc
     SUBDIR += pen
-    SUBDIR += php81-ldap
-    SUBDIR += php81-soap
-    SUBDIR += php81-sockets
     SUBDIR += php82-ldap
     SUBDIR += php82-soap
     SUBDIR += php82-sockets
