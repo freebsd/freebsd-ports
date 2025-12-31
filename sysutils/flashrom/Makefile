@@ -12,6 +12,7 @@ WWW=		https://www.flashrom.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+IGNORE_FreeBSD_13=	Requires OpenSSL 3+
 NOT_FOR_ARCHS=	riscv64
 NOT_FOR_ARCHS_REASON=	Unable to determine endianness.
 
