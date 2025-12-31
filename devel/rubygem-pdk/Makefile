@@ -1,6 +1,5 @@
 PORTNAME=	pdk
-PORTVERSION=	3.3.0
-PORTREVISION=	3
+PORTVERSION=	3.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -21,8 +20,9 @@ RUN_DEPENDS=	rubygem-bundler>=2.1.0,1<3.0.0,1:sysutils/rubygem-bundler \
 		rubygem-hitimes>=2.0.0:devel/rubygem-hitimes \
 		rubygem-json_pure>=2.6.3:devel/rubygem-json_pure \
 		rubygem-json-schema>=4.0:devel/rubygem-json-schema \
-		rubygem-minitar0>=0.8<1:archivers/rubygem-minitar0 \
+		rubygem-minitar>=0.8:archivers/rubygem-minitar \
 		rubygem-pathspec>=1.1:devel/rubygem-pathspec \
+		rubygem-puppet_forge>=5.0:sysutils/rubygem-puppet_forge \
 		rubygem-puppet-modulebuilder>=1.0,<3.0:devel/rubygem-puppet-modulebuilder \
 		rubygem-tty-prompt>=0.23<1:devel/rubygem-tty-prompt \
 		rubygem-tty-spinner>=0.9<1:devel/rubygem-tty-spinner \
