@@ -1,6 +1,5 @@
 PORTNAME=	pandoc
-DISTVERSION=	3.8.2.1
-PORTREVISION=	1
+DISTVERSION=	3.8.3
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -22,9 +21,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		aeson-2.2.3.0_4 \
 		aeson-pretty-0.8.10 \
 		alex-3.5.4.0 \
-		ansi-terminal-1.1.3 \
+		ansi-terminal-1.1.5 \
 		ansi-terminal-types-1.1.3 \
 		appar-0.1.8 \
+		asciidoc-0.1 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
@@ -47,14 +47,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		boring-0.2.2_1 \
 		bsb-http-chunked-0.0.0.4_4 \
 		byteorder-1.0.4 \
-		cabal-doctest-1.0.11 \
+		cabal-doctest-1.0.12 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
 		cassava-0.5.4.1 \
 		cborg-0.2.10.0_3 \
 		cereal-0.5.8.3 \
 		character-ps-0.1 \
-		citeproc-0.11 \
+		citeproc-0.12 \
 		cmdargs-0.10.22 \
 		colour-2.3.6 \
 		commonmark-0.2.6.1 \
@@ -70,7 +70,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		crypton-connection-0.4.5 \
 		crypton-socks-0.6.2 \
 		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.11 \
+		crypton-x509-store-1.6.12_1 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.14 \
 		data-default-0.8.0.1 \
@@ -79,7 +79,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		dec-0.0.6_1 \
 		digest-0.0.2.1 \
 		distributive-0.6.2.1_1 \
-		djot-0.1.2.3 \
+		djot-0.1.2.4 \
 		dlist-1.0_2 \
 		doclayout-0.5.0.1 \
 		doctemplates-0.11.0.1 \
@@ -122,9 +122,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		http-client-tls-0.3.6.4_2 \
 		http-date-0.0.11 \
 		http-media-0.8.1.1_2 \
-		http-semantics-0.3.0 \
+		http-semantics-0.4.0 \
 		http-types-0.12.4 \
-		http2-5.3.10 \
+		http2-5.4.0 \
 		indexed-traversable-0.1.4_1 \
 		indexed-traversable-instances-0.1.2_1 \
 		integer-conversion-0.1.1_1 \
@@ -136,7 +136,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		libyaml-0.1.4 \
 		libyaml-clib-0.2.5 \
 		lpeg-1.1.0 \
-		lua-2.3.3 \
+		lua-2.3.4 \
 		memory-0.18.0_1 \
 		mime-types-0.1.2.0 \
 		mmorph-1.2.1_1 \
@@ -150,18 +150,17 @@ USE_CABAL=	Glob-0.10.2_3 \
 		old-time-1.1.0.4 \
 		optparse-applicative-0.19.0.0 \
 		ordered-containers-0.2.4 \
-		os-string-2.0.8 \
-		pandoc-3.8.2.1 \
-		pandoc-lua-engine-0.5.0.1 \
+		pandoc-3.8.3 \
+		pandoc-lua-engine-0.5.0.2 \
 		pandoc-lua-marshal-0.3.1 \
 		pandoc-server-0.1.1 \
-		pandoc-types-1.23.1_4 \
+		pandoc-types-1.23.1.1 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.1.0 \
-		psqueues-0.2.8.2 \
+		primitive-0.9.1.0_1 \
+		psqueues-0.2.8.3 \
 		random-1.3.1 \
 		recv-0.1.1 \
 		regex-base-0.94.0.3 \
@@ -187,14 +186,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		sop-core-0.5.0.2_5 \
 		split-0.2.5 \
 		splitmix-0.1.3.1 \
-		streaming-commons-0.2.3.0 \
+		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
 		syb-0.7.3 \
-		tagged-0.8.9 \
+		tagged-0.8.10 \
 		tagsoup-0.14.8 \
 		tasty-1.5.3_2 \
 		temporary-1.3 \
-		texmath-0.13.0.1 \
+		texmath-0.13.0.2 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1_2 \
 		text-short-0.1.6_3 \
@@ -204,14 +203,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		th-lift-instances-0.1.20 \
 		these-1.2.1_2 \
 		time-compat-1.9.8 \
-		time-manager-0.2.3 \
-		tls-2.1.11 \
-		toml-parser-2.0.1.2_1 \
+		time-manager-0.3.0 \
+		tls-2.1.13 \
+		toml-parser-2.0.2.0 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.13.0 \
-		typst-0.8.0.2 \
-		typst-symbols-0.1.8.1 \
+		typst-0.8.1 \
+		typst-symbols-0.1.9.1 \
 		unicode-collation-0.1.3.6_2 \
 		unicode-data-0.8.0 \
 		unicode-transforms-0.4.0.1_8 \
@@ -219,10 +218,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		unix-compat-0.7.4.1 \
 		unix-time-0.4.17 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20.1 \
+		unordered-containers-0.2.21_2 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_3 \
-		vault-0.3.1.5_10 \
+		vault-0.3.1.6 \
 		vector-0.13.2.0_2 \
 		vector-algorithms-0.9.1.0 \
 		vector-stream-0.1.0.1_4 \
@@ -231,11 +230,11 @@ USE_CABAL=	Glob-0.10.2_3 \
 		wai-cors-0.2.7 \
 		wai-extra-3.1.18 \
 		wai-logger-2.5.0 \
-		warp-3.4.9 \
-		witherable-0.5_1 \
+		warp-3.4.11_1 \
+		witherable-0.5_2 \
 		word8-0.1.3 \
 		xml-1.3.14_2 \
-		xml-conduit-1.10.0.1 \
+		xml-conduit-1.10.1.0 \
 		xml-types-0.3.8 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.2_1 \
