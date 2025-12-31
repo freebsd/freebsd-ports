@@ -1,0 +1,13 @@
+#! /bin/sh
+
+export NODE_ENV=production
+export ELECTRON_FORCE_IS_PACKAGED=true
+export ELECTRON_IS_DEV=0
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+# workaround Chromium bug https://bugs.chromium.org/p/chromium/issues/detail?id=918234
+if [ "${DBUS_SESSION_BUS_ADDRESS}" = "" ]; then
+    export DBUS_SESSION_BUS_ADDRESS="autolaunch:"
+fi
+
+exec electron%%ELECTRON_VER_MAJOR%% %%DATADIR%%/resources/app.asar $@
