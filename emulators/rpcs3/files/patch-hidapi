@@ -5,7 +5,7 @@ CMake Error at /usr/local/share/cmake/Modules/FindPkgConfig.cmake:645 (message):
 
    - hidapi-hidraw
 
---- 3rdparty/hidapi/CMakeLists.txt.orig	2025-09-30 21:49:18 UTC
+--- 3rdparty/hidapi/CMakeLists.txt.orig	2025-12-31 22:53:44 UTC
 +++ 3rdparty/hidapi/CMakeLists.txt
 @@ -1,10 +1,10 @@ if(USE_SYSTEM_HIDAPI)
  # hidapi
@@ -15,9 +15,9 @@ CMake Error at /usr/local/share/cmake/Modules/FindPkgConfig.cmake:645 (message):
 +	pkg_check_modules(hidapi REQUIRED IMPORTED_TARGET hidapi)
  	add_library(3rdparty_hidapi INTERFACE)
 -	target_link_libraries(3rdparty_hidapi INTERFACE PkgConfig::hidapi-hidraw)
--	target_include_directories(3rdparty_hidapi INTERFACE PkgConfig::hidapi-hidraw)
+-	target_include_directories(3rdparty_hidapi SYSTEM INTERFACE PkgConfig::hidapi-hidraw)
 +	target_link_libraries(3rdparty_hidapi INTERFACE PkgConfig::hidapi)
-+	target_include_directories(3rdparty_hidapi INTERFACE PkgConfig::hidapi)
++	target_include_directories(3rdparty_hidapi SYSTEM INTERFACE PkgConfig::hidapi)
  else()
  	set(BUILD_SHARED_LIBS FALSE CACHE BOOL "Don't build shared libs")
  	set(HIDAPI_INSTALL_TARGETS FALSE CACHE BOOL "Don't install anything")

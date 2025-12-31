@@ -1,13 +1,8 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.38 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-18170-g23b339d410
-PORTREVISION=	4
+DISTVERSION=	0.0.39 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-18592-gc5511200d5
 CATEGORIES=	emulators wayland
-
-PATCH_SITES=	https://github.com/RPCS3/rpcs3/commit/
-PATCHFILES+=	a053abfba479.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/17585
-PATCHFILES+=	038ee090b731bf63917371a3586c2f7d7cf4e585.patch:-p1 # Fix build with Qt 6.10
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
@@ -42,9 +37,9 @@ GH_TUPLE=	RPCS3:soundtouch:2.3.1-78-g3982730:soundtouch/3rdparty/SoundTouch/soun
 		Megamouse:VulkanMemoryAllocator:1d8f600:vkalloc/3rdparty/GPUOpen/VulkanMemoryAllocator \
 		nothings:stb:013ac3b:stb/3rdparty/stblib/stb \
 		wolfSSL:wolfssl:v5.8.0-stable:wolfssl/3rdparty/wolfssl/wolfssl \
-		xioTechnologies:Fusion:v1.2.8:fusion/3rdparty/fusion/fusion
+		xioTechnologies:Fusion:v1.2.11:fusion/3rdparty/fusion/fusion
 
-USES=		cmake gl iconv:wchar_t llvm:min=19,lib localbase:ldflags \
+USES=		cmake gl iconv:wchar_t llvm:min=20,lib localbase:ldflags \
 		openal:soft pkgconfig python:build qt:6 xorg
 USE_GL=		gl glew
 USE_QT=		base multimedia svg
