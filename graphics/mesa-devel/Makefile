@@ -1,6 +1,6 @@
 PORTNAME=	mesa
-DISTVERSION=	25.3-branchpoint-2836
-DISTVERSIONSUFFIX=	-gb3c983b8ddc
+DISTVERSION=	25.3-branchpoint-2892
+DISTVERSIONSUFFIX=	-g7ed6679361f
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -69,8 +69,7 @@ crocus_DESC=		Broadwater, Eaglelake, Ironlake, Sandybridge, Ivybridge, Haswell
 iris_DESC=		Broadwell and newer (implies OPENCL)
 iris_IMPLIES=		OPENCL
 panfrost_DESC=		Midgard, Bifrost
-r600_DESC=		R600, R700, Evergreen, Northern Islands (implies LLVM)
-r600_IMPLIES=		LLVM
+r600_DESC=		R600, R700, Evergreen, Northern Islands
 radeonsi_DESC=		Southern Islands and newer
 
 VULKAN_DESC=		Vulkan drivers
