@@ -276,7 +276,6 @@
     SUBDIR += paratype
     SUBDIR += pcf2bdf
     SUBDIR += plex-ttf
-    SUBDIR += powerline-fonts
     SUBDIR += prociono
     SUBDIR += profont
     SUBDIR += proggy_fonts
