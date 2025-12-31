@@ -2647,7 +2647,6 @@
     SUBDIR += ungoogled-chromium
     SUBDIR += unit
     SUBDIR += unit-java
-    SUBDIR += unit-perl
     SUBDIR += unit-php
     SUBDIR += unit-ruby
     SUBDIR += unit-wasm
