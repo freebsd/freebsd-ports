@@ -4993,3 +4993,4 @@ www/mediawiki139||2025-12-31|Has expired: Upstream EOL
 www/forgejo7||2025-12-31|Has expired: Obsolete, please switch to www/forgejo-lts
 lang/spidermonkey78||2025-12-31|Has expired: Legacy version
 textproc/xsv-rs||2025-12-31|Has expired: Abandoned, repo archived on Apr 24, 2025. Consider migrating to textproc/xan or textproc/miller
+lang/spidermonkey102||2025-12-31|Has expired: Old version, no more users in the ports tree
