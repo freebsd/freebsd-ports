@@ -2648,7 +2648,6 @@
     SUBDIR += unit
     SUBDIR += unit-java
     SUBDIR += unit-ruby
-    SUBDIR += unit-wasm
     SUBDIR += unitc
     SUBDIR += urlfinder
     SUBDIR += uwebsockets
