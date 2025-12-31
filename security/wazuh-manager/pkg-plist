@@ -29886,6 +29886,7 @@
 /var/ossec/lib/libvulnerability_scanner.so
 /var/ossec/lib/libwazuhext.so
 /var/ossec/lib/libwazuhshared.so
+@(root,wheel,4755) /var/ossec/libexec/check_pid
 @mode 660
 @owner wazuh
 @group wazuh
@@ -33161,6 +33162,7 @@
 @dir /var/ossec/framework
 @dir /var/ossec/integrations
 @dir /var/ossec/lib
+@dir(root,wazuh,750) /var/ossec/libexec
 @dir /var/ossec/logs/alerts
 @dir /var/ossec/logs/api
 @dir /var/ossec/logs/archives

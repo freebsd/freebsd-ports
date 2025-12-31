@@ -1,6 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.14.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/47/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -234,12 +235,14 @@ post-patch:
 		${WRKSRC}/framework/wazuh/rbac/decorators.py
 
 do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o check_pid ${FILESDIR}/check_pid.c
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \
 		${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/bin
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/lib
+	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/libexec
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/tmp
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/templates
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/.ssh
@@ -255,6 +258,8 @@ do-install:
 .for DIRE in ${WAZUHMOD770}
 	${MKDIR} -m 0770 ${STAGEDIR}${WAZUHPREFIX}${DIRE}
 .endfor
+
+	${INSTALL_PROGRAM} ${WRKSRC}/check_pid ${STAGEDIR}${WAZUHPREFIX}/libexec/check_pid
 
 	${INSTALL_DATA} /dev/null ${STAGEDIR}${WAZUHPREFIX}/logs/ossec.log
 	${INSTALL_DATA} /dev/null ${STAGEDIR}${WAZUHPREFIX}/logs/ossec.json
