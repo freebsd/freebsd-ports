@@ -20,7 +20,7 @@ LIB_DEPENDS=	libLLVM-${FLAVOR:S/llvm//}.so:devel/${FLAVOR} \
 		libopencl-clang.so.${FLAVOR:S/llvm//}:devel/opencl-clang@${FLAVOR} \
 		libLLVMSPIRVLib.so.${FLAVOR:S/llvm//}:devel/spirv-llvm-translator@${FLAVOR}
 
-FLAVORS=	${14 13 12 11:L:S/^/llvm/}
+FLAVORS=	${14 13 12:L:S/^/llvm/}
 
 CONFLICTS_INSTALL=	${PORTNAME}-llvm*
 
