@@ -4977,3 +4977,4 @@ security/rkhunter||2025-12-31|Has expired: Project abandoned in 2009
 graphics/tumble||2025-12-31|Has expired: historical tool, use imagemagick instead
 devel/py-cadquery-pywrap||2025-12-31|Has expired: This port was part of an effort to port CadQuery. This has been abandoned, so this port is no longer needed as it serves no other purpose
 www/unit-ruby||2025-12-31|Has expired: Upstream repo archived on Oct 8 2025
+www/unitc||2025-12-31|Removed, part of expired www/unit
