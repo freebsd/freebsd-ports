@@ -79,7 +79,6 @@
     SUBDIR += elementary-terminal
     SUBDIR += emprint
     SUBDIR += erun
-    SUBDIR += eterm
     SUBDIR += evilvte
     SUBDIR += evtest
     SUBDIR += eww
