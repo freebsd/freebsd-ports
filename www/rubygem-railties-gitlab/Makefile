@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-actionpack-gitlab>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actionpack-gitlab \
 		rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport-gitlab \
 		rubygem-cgi>=0:www/rubygem-cgi \
-		rubygem-irb-gitlab>=0:devel/rubygem-irb-gitlab \
+		rubygem-irb-gitlab>=1.13:devel/rubygem-irb-gitlab \
 		rubygem-rackup10>=1.0.0:www/rubygem-rackup10 \
 		rubygem-rake>=12.2:devel/rubygem-rake \
 		rubygem-thor>=1.2.2<2:devel/rubygem-thor \
@@ -30,7 +30,7 @@ CONFLICTS_INSTALL=	rubygem-railties[0-9] rubygem-railties[0-9][0-9]
 
 NO_ARCH=	yes
 
-PORTSCOUT=	limit:^7\.1\.
+PORTSCOUT=	limit:^7\.2\.
 
 PLIST_FILES=	bin/rails
 

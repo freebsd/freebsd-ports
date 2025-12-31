@@ -33,7 +33,7 @@ CPE_PRODUCT=	ruby_on_rails
 
 NO_ARCH=	yes
 
-PORTSCOUT=	limit:^7\.1\.
+PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>

@@ -17,17 +17,18 @@ RUN_DEPENDS=	rubygem-actionview-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/r
 		rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri \
 		rubygem-racc>=0:devel/rubygem-racc \
-		rubygem-rack22>=2.2.4,3:www/rubygem-rack22 \
+		rubygem-rack22>=2.2.4,3<3.3,3:www/rubygem-rack22 \
 		rubygem-rack-session10>=1.0.1:www/rubygem-rack-session10 \
 		rubygem-rack-test>=0.6.3:www/rubygem-rack-test \
 		rubygem-rails-dom-testing-rails-gitlab>=2.2<3:textproc/rubygem-rails-dom-testing-rails-gitlab \
-		rubygem-rails-html-sanitizer>=1.6<2:textproc/rubygem-rails-html-sanitizer
+		rubygem-rails-html-sanitizer>=1.6<2:textproc/rubygem-rails-html-sanitizer \
+		rubygem-useragent>=0.16<1:devel/rubygem-useragent
 
 USES=		gem
 
 NO_ARCH=	yes
 
-PORTSCOUT=	limit:^7\.1\.
+PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>

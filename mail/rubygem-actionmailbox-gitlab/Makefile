@@ -17,16 +17,13 @@ RUN_DEPENDS=	rubygem-actionpack-gitlab>=${PORTVERSION}<${PORTVERSION}_99:www/rub
 		rubygem-activerecord-gitlab>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-activerecord-gitlab \
 		rubygem-activestorage-gitlab>=${PORTVERSION}<${PORTVERSION}_99:net/rubygem-activestorage-gitlab \
 		rubygem-activesupport-gitlab>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport-gitlab \
-		rubygem-mail>=2.7.1,2:mail/rubygem-mail \
-		rubygem-net-imap>=0:mail/rubygem-net-imap \
-		rubygem-net-pop>=0:mail/rubygem-net-pop \
-		rubygem-net-smtp>=0:mail/rubygem-net-smtp
+		rubygem-mail>=2.8.0,2:mail/rubygem-mail
 
 USES=		gem
 
 NO_ARCH=	yes
 
-PORTSCOUT=	limit:^7\.1\.
+PORTSCOUT=	limit:^7\.2\.
 
 .include "${.CURDIR}/../../www/gitlab/Makefile.common"
 .include <bsd.port.mk>
