@@ -1,5 +1,5 @@
 PORTNAME=	openfact
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
