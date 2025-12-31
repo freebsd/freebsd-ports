@@ -4968,3 +4968,4 @@ www/shellinabox|sysutils/ttyd|2025-12-31|Has expired: Abandonware and outdated, 
 security/krb5-120||2025-12-31|Has expired: Now that MIT KRB5 1.22 is GA 1.20 is EOL
 games/keeperrl||2025-12-31|Has expired: Very outdated, fails to build and unmaintained in tree for years
 misc/openhab2-addons|misc/openhab-addons|2025-12-31|Has expired: superseeded by misc/openhab-addons
+misc/openhab2|misc/openhab|2025-12-31|Has expired: superseeded by misc/openhab

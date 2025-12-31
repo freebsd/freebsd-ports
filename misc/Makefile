@@ -319,7 +319,6 @@
     SUBDIR += opencyc
     SUBDIR += openhab
     SUBDIR += openhab-addons
-    SUBDIR += openhab2
     SUBDIR += openhantek
     SUBDIR += openhmd
     SUBDIR += openmvg
