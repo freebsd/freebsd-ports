@@ -1,0 +1,20 @@
+--- JXGrabKey/Java/nbproject/build-impl.xml.orig	2025-12-29 19:23:44 UTC
++++ JXGrabKey/Java/nbproject/build-impl.xml
+@@ -165,7 +165,7 @@ is divided into following sections:
+             <sequential>
+                 <property location="${build.dir}/empty" name="empty.dir"/>
+                 <mkdir dir="${empty.dir}"/>
+-                <javac debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" includeantruntime="false" includes="@{includes}" source="${javac.source}" sourcepath="@{sourcepath}" srcdir="@{srcdir}" target="${javac.target}">
++                <javac debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" includeantruntime="false" includes="@{includes}" sourcepath="@{sourcepath}" srcdir="@{srcdir}">
+                     <src>
+                         <dirset dir="@{gensrcdir}" erroronmissingdir="false">
+                             <include name="*"/>
+@@ -537,7 +537,7 @@ is divided into following sections:
+             -->
+     <target depends="init" name="-javadoc-build">
+         <mkdir dir="${dist.javadoc.dir}"/>
+-        <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" source="${javac.source}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
++        <javadoc additionalparam="${javadoc.additionalparam}" author="${javadoc.author}" charset="UTF-8" destdir="${dist.javadoc.dir}" docencoding="UTF-8" encoding="${javadoc.encoding.used}" failonerror="true" noindex="${javadoc.noindex}" nonavbar="${javadoc.nonavbar}" notree="${javadoc.notree}" private="${javadoc.private}" splitindex="${javadoc.splitindex}" use="${javadoc.use}" useexternalfile="true" version="${javadoc.version}" windowtitle="${javadoc.windowtitle}">
+             <classpath>
+                 <path path="${javac.classpath}"/>
+             </classpath>
