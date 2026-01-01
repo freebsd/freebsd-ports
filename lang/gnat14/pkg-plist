@@ -5327,7 +5327,7 @@ gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-aoinar.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-aomoar.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-aotase.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-aridou.ali
-gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-arit128.ali
+%%64BITS%%gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-arit128.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-arit32.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-arit64.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-assert.ali
@@ -5721,8 +5721,8 @@ gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vs_int.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vs_lli.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vs_llu.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vs_uns.ali
-gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vsllli.ali
-gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vslllu.ali
+%%64BITS%%gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vsllli.ali
+%%64BITS%%gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-vslllu.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-wchcnv.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-wchcon.ali
 gnat14/lib/gcc/%%CONFTRGT%%/%%VER%%/adalib/s-wchjis.ali
