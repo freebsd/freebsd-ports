@@ -12,24 +12,23 @@
 #   Flag that determines whether Logstash is enabled.
 #
 # logstash_home (string):
-#   Default value: "/usr/local/logstash"
+#   Default value: "%%LOGSTASH_HOME%%"
 #   Logstash installation directory.
 #
 # logstash_config (string):
-#   Default value: /usr/local/etc/${name}
+#   Default value: "%%ETCDIR%%"
 #   Logstash configuration path.
 #
 # logstash_log (bool):
-#   Set to "NO" by default.
-#   Set it to "YES" to enable logstash logging to file
-#   Default output to /var/log/logstash.log
+#   Set to "YES" by default.
+#   Set it to "YES" to enable logstash logging to file.
 #
-# logstash_log_file (string):
-#   Default value: "${logdir}/${name}.log"
-#   Log file path.
+# logstash_log_dir (string):
+#   Default value: "${logdir}/${name}"
+#   Default output to /var/log/logstash/
 #
 # logstash_java_home (string):
-#   Default value: "/usr/local/openjdk8"
+#   Default value: "%%JAVA_HOME%%"
 #   Root directory of the desired Java SDK.
 #   The JAVA_HOME environment variable is set with the contents of this
 #   variable.
@@ -92,9 +91,9 @@ command="/usr/sbin/daemon"
 command_args="-f -p ${pidfile} ${logstash_cmd} ${logstash_args}"
 required_files="${logstash_home} ${logstash_java_home} ${logstash_cmd} ${logstash_config}"
 
-# Include /usr/local/bin in path because Logstash startup scripts
+# Include %%LOCALBASE%%/bin in path because Logstash startup scripts
 # assume bash is in path.
-PATH=/usr/local/bin:$PATH
+PATH=%%LOCALBASE%%/bin:$PATH
 
 logstash_precmd()
 {
@@ -112,10 +111,7 @@ configtest()
 {
     echo "${name} configtest:"
     echo "WARNING: this does not check validity of Grok patterns!"
-    echo "WARNING: this does not check validity of Grok patterns!"
-    echo "WARNING: this does not check validity of Grok patterns!"
     ${logstash_cmd} --path.settings ${logstash_config} --config.test_and_exit
 }
-
 
 run_rc_command "$1"
