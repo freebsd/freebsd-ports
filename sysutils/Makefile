@@ -725,6 +725,7 @@
     SUBDIR += memtester
     SUBDIR += metalog
     SUBDIR += mfid
+    SUBDIR += michaelo-periodic
     SUBDIR += minikube
     SUBDIR += minimunin
     SUBDIR += minipot
