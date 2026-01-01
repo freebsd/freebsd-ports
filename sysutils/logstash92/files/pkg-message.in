@@ -1,0 +1,25 @@
+[
+{ type: install
+  message: <<EOM
+Logstash 9.2 was installed.
+
+1) To start Logstash as an agent during system startup, run:
+
+    sysrc logstash_enable="YES"
+
+2) Extra options can be found in the startup script.
+
+3) WARNING: In order for Logstash to work properly,
+   procfs needs to be mounted on /proc.
+   
+   If you have not done it yet, please do the following:
+   
+           mount -t procfs proc /proc
+   
+   To make it permanent, you need the following lines in /etc/fstab:
+   
+           proc    /proc           procfs          rw      0       0
+   
+EOM
+}
+]
