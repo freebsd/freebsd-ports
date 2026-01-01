@@ -4,7 +4,7 @@ DISTVERSION=	4.10.0
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	loader@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to communicate with Espressif ESP8266 & ESP32 chips
 WWW=		https://github.com/espressif/esptool
 
