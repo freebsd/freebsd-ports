@@ -4,7 +4,7 @@ DISTVERSION=	2.0.5
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	loader@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pure-Python Reed Solomon encoder/decoder
 WWW=		https://github.com/tomerfiliba-org/reedsolomon
 
