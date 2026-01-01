@@ -1,8 +1,8 @@
 PORTNAME=	pydev
-PORTVERSION=	12.0.0
+PORTVERSION=	13.1.0
 PORTREVISION=	1
 CATEGORIES=	java devel python
-MASTER_SITES=	https://github.com/fabioz/Pydev/releases/download/${PORTNAME}_12_0_0/
+MASTER_SITES=	https://github.com/fabioz/Pydev/releases/download/${PORTNAME}_13_1_0/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	PyDev.${PORTVERSION}
 
@@ -20,7 +20,7 @@ JAVA_OS=	native
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES
 
-PLIST_SUB+=     PYDEV_VER=12.0.0.202402010911
+PLIST_SUB+=     PYDEV_VER=13.1.0.202509210817
 
 OPTIONS_DEFINE=	JYTHON
 
