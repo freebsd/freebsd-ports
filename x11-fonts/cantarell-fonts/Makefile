@@ -1,7 +1,7 @@
 PORTNAME=	cantarell-fonts
-DISTVERSION=	0.303.1
+DISTVERSION=	0.310
 CATEGORIES=	x11-fonts gnome
-MASTER_SITES=	GNOME
+MASTER_SITES=	https://cantarell.gnome.org/releases/
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -11,10 +11,7 @@ WWW=		https://cantarell.gnome.org/
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	appstream-util:devel/appstream-glib
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
-
-USES=		gettext-tools fonts meson tar:xz
+USES=		fonts gettext-tools meson tar:xz
 FONTSDIR=	share/fonts/cantarell
 NO_ARCH=	yes
 
