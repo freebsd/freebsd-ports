@@ -1,0 +1,24 @@
+--- build.xml.orig	2025-01-04 19:11:17 UTC
++++ build.xml
+@@ -132,8 +132,8 @@
+         <echo message="Compiling Kotlin generator..." level="info" taskname="Generator" unless:set="generator-uptodate"/>
+         <mkdir dir="${bin.generator}"/>
+         <kotlinc moduleName="generator" output="${bin.generator}" printVersion="true" unless:set="generator-uptodate">
+-            <compilerarg line="-language-version 2.1"/>
+-            <compilerarg line="-api-version 2.1"/>
++            <compilerarg line="-language-version 2.2"/>
++            <compilerarg line="-api-version 2.2"/>
+             <compilerarg value="-progressive"/>
+             <compilerarg value="-Xno-call-assertions"/>
+             <compilerarg value="-Xno-param-assertions"/>
+@@ -200,8 +200,8 @@
+                 <pathelement location="${bin.generator}"/>
+             </classpath>
+ 
+-            <compilerarg line="-language-version 2.1"/>
+-            <compilerarg line="-api-version 2.1"/>
++            <compilerarg line="-language-version 2.2"/>
++            <compilerarg line="-api-version 2.2"/>
+             <compilerarg value="-progressive"/>
+             <compilerarg value="-Xno-call-assertions"/>
+             <compilerarg value="-Xno-param-assertions"/>

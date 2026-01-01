@@ -1,6 +1,6 @@
 PORTNAME=	lwjgl
 DISTVERSION=	3.3.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games java
 MASTER_SITES=	https://repo1.maven.org/:source1
 PKGNAMESUFFIX=	3
@@ -31,7 +31,7 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Upstream support FreeBSD on amd64 only: https://github.com/LWJGL/lwjgl3/issues/421
 
 BUILD_DEPENDS=		${LOCALBASE}/openjdk8/bin/java:java/openjdk8 \
-			kotlinc-jvm:lang/kotlin
+			kotlinc-jvm:lang/kotlin22
 LIB_DEPENDS=		libdraco.so:archivers/draco \
 			libopenal.so:audio/openal-soft \
 			libopus.so:audio/opus \
@@ -49,12 +49,12 @@ LIB_DEPENDS=		libdraco.so:archivers/draco \
 			libharfbuzz.so:print/harfbuzz
 
 USES=		gl gnome java:ant,run
-JAVA_VERSION=	17+
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME:tu}
 GH_PROJECT=	${PORTNAME}${PKGNAMESUFFIX}
 USE_GL=		gl
 USE_GNOME=	glib20 gtk30
+JAVA_VERSION=	17+
 
 MAKE_ARGS=	-Dbuild.offline=true \
 		-Djavadoc.skip=true \
@@ -112,13 +112,11 @@ post-patch:
 
 do-install:
 	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${ANT} release ${MAKE_ARGS}
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
-.for x in ${WRKSRC}/bin/RELEASE/lwjgl*/*.jar
-	${INSTALL_DATA} ${WRKSRC}${x} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX}/
-.endfor
-.for x in ${LIBSDIR}/liblwjgl.so ${LIBSDIR}/*/liblwjgl*.so
-	${INSTALL_LIB} ${WRKSRC}${x} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}/
-.endfor
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX} \
+		 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/bin/RELEASE/lwjgl*/*.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}${PKGNAMESUFFIX}
+	${INSTALL_LIB} ${LIBSDIR}/liblwjgl.so ${LIBSDIR}/*/liblwjgl*.so \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
 .include <bsd.port.post.mk>

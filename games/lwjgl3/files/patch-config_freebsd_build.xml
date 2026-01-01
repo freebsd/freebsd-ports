@@ -1,6 +1,6 @@
---- config/freebsd/build.xml.orig	2023-12-18 14:22:59 UTC
+--- config/freebsd/build.xml.orig	2025-01-04 19:11:17 UTC
 +++ config/freebsd/build.xml
-@@ -159,16 +159,18 @@
+@@ -158,16 +158,18 @@
                      <include name="${module.lwjgl}/jawt/src/generated/c/*.c" if:true="${binding.jawt}"/>
                  </fileset>
              </source>
@@ -21,7 +21,7 @@
              </link>
          </build>
  
-@@ -410,7 +412,7 @@
+@@ -424,7 +426,7 @@
          </build>
  
          <!-- zstd -->
