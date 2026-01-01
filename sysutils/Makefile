@@ -754,6 +754,7 @@
     SUBDIR += msiklm
     SUBDIR += msktutil
     SUBDIR += mstflint
+    SUBDIR += mtail
     SUBDIR += mtm
     SUBDIR += mtxorbd
     SUBDIR += mult

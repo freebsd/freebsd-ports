@@ -331,7 +331,7 @@ hydroxide:*:381:381::0:0:Hydroxide Daemon:/var/db/hydroxide:/usr/sbin/nologin
 _tlsrpt:*:382:382::0:0:TLSRPT Daemon:/nonexistent:/usr/sbin/nologin
 cascade:*:383:383::0:0:Cascade Daemon:/var/db/cascade:/usr/sbin/nologin
 omada:*:384:384::0:0:Omada Wireless Controller:/nonexistent:/usr/sbin/nologin
-# free: 385
+mtail:*:385:385::0:0:mtail:/nonexistent:/usr/sbin/nologin
 # free: 386
 # free: 387
 # free: 388

@@ -1,0 +1,23 @@
+GH_TUPLE=	\
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+		census-ecosystem:opencensus-go-exporter-jaeger:v0.2.1:census_ecosystem_opencensus_go_exporter_jaeger/vendor/contrib.go.opencensus.io/exporter/jaeger \
+		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
+		cespare:xxhash:v2.2.0:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
+		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
+		golang:glog:v1.2.2:golang_glog/vendor/github.com/golang/glog \
+		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
+		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sync:v0.7.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.24.0:golang_sys/vendor/golang.org/x/sys \
+		google:go-cmp:v0.6.0:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-genproto:daa745c078e1:google_go_genproto/vendor/google.golang.org/genproto \
+		googleapis:google-api-go-client:v0.105.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		grpc:grpc-go:v1.56.3:grpc_grpc_go/vendor/google.golang.org/grpc \
+		munnerz:goautoneg:a7dc8b61c822:munnerz_goautoneg/vendor/github.com/munnerz/goautoneg \
+		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		prometheus:client_golang:v1.19.1:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:v0.6.1:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.55.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.15.1:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		protocolbuffers:protobuf-go:v1.34.2:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		uber:jaeger-client-go:v2.25.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go

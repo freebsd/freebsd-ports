@@ -1,0 +1,31 @@
+[
+{ type: install
+  message: <<EOM
+To use mtail you will need to provide the service flags you want to
+enable via the mtail_args setting in rc.conf. Most important is that
+you need to specify a path for -progs and a comma separated list for
+-logs which indicates the log files to monitor. The progs directory will
+contain the .mtail files which define the rules and patterns it uses to
+generate metrics from your log files. You can find examples for some
+common services in %%EXAMPLESDIR%%. 
+
+A working example for Apache might look like the following:
+
+mkdir -p %%ETCDIR%%
+cp %%EXAMPLESDIR%%/apache_common.mtail %%ETCDIR%%/
+
+In rc.conf:
+mtail_enable="YES"
+mtail_args="-address 127.0.0.1 -port 3903 -progs %%ETCDIR%% -logs /var/log/httpd-access.log"
+
+Now you can start the mtail service and it should begin providing the
+Prometheus style metrics on http://127.0.0.1:3903/metrics.
+
+The documentation explaining the syntax can be found in %%DOCSDIR%%.
+You may find examples for other common services on the internet.
+
+It is important to ensure the mtail service user can read the log files.
+
+EOM
+}
+]
