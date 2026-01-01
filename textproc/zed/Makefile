@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	fails to build: cannot use math.MaxUint32 (untyped int constant 4294967295) as int value in assignment (overflows)
 
-USES=		go:modules,1.21
+USES=		go:modules
 
 GO_MODULE?=	github.com/brimdata/zed
 GO_PKGNAME?=	github.com/brimdata/zed/cmd/zed
