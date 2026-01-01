@@ -11,7 +11,6 @@ WWW=		https://zed.brimdata.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BROKEN=		Depends on expired lang/go121
 BROKEN_i386=	fails to build: cannot use math.MaxUint32 (untyped int constant 4294967295) as int value in assignment (overflows)
 
 USES=		go:modules,1.21
