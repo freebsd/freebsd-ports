@@ -11,6 +11,9 @@ WWW=		https://people.eecs.berkeley.edu/~alanmi/abc/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/copyright.txt
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	__int128 is not supported on this target
+
 BUILD_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake
