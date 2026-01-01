@@ -12,8 +12,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	npm esbuild fails: "Unsupported platform: freebsd ia32 LE"
-BROKEN_arm64=	npm esbuild fails: Failed to find package \
-		"@esbuild/freebsd-arm64"
 
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
@@ -198,7 +196,7 @@ pre-fetch:
 
 pre-build:
 	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} npm run build
-	cp ${FILESDIR}/modules.txt ${WRKSRC}/vendor/
+	${CP} ${FILESDIR}/modules.txt ${WRKSRC}/vendor/
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
