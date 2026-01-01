@@ -238,7 +238,6 @@
     SUBDIR += gupnp-igd
     SUBDIR += gupnp-tools
     SUBDIR += gutenfetch
-    SUBDIR += gwhois
     SUBDIR += h323plus
     SUBDIR += hanstunnel
     SUBDIR += haproxy
