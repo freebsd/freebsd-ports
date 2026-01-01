@@ -72,7 +72,7 @@ PLIST=		${PKGDIR}/pkg-plist-pybind
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/oslquery.so ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_LIB} ${BUILD_WRKSRC}/lib/python/site-packages/oslquery${PYTHON_SOABI}.so ${STAGEDIR}${PYTHON_SITELIBDIR}
 .else # SLAVE_PORT != yes
 # using python:env as this port doesn't need to use python
 # a python util script is installed for user consumption
