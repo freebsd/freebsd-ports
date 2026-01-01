@@ -1,9 +1,10 @@
-The BVM is a Bhyve virtual machine management tool
-based on FreeBSD that allows you to easily manage virtual machines.
+BVM is a powerful and easy-to-use command-line manager for Bhyve VM on FreeBSD.
 
-1. The supported operating systems are:
-   FreeBSD,OpenBSD,NetBSD,Debian,OpenSuse,Ubuntu Windows10 etc.
-2. Supports multiple network cards and multiple hard disks.
-3. There are two kinds of network modes: Bridged and NAT
-4. Support grub and uefi boot
-5. Support for ZFS
+Main features include:
+- Wide OS support: FreeBSD, OpenBSD, NetBSD, Linux, and Windows 10/11.
+- Flexible storage/network: Supports VirtIO/NVMe, ZFS snapshots, NAT with
+  port forwarding, bridging, and built-in DHCP.
+- Advanced capabilities: Supports UEFI (with persistence), TPM 2.0, PCI
+  passthrough, and VirtIO-9P shared folders.
+- Management tools: VNC remote access, VM encryption, CPU topology control,
+  autoboot configuration, and snapshot rollback.
