@@ -1,6 +1,6 @@
-- Add logic so slave ports can build without installing base plugins.
+- Add logic so extra plugins can build without installing base components.
 
---- src/filter/CMakeLists.txt.orig	2025-10-07 14:15:56 UTC
+--- src/filter/CMakeLists.txt.orig	2025-12-02 16:23:47 UTC
 +++ src/filter/CMakeLists.txt
 @@ -15,6 +15,7 @@ endif (${Cairo_FOUND})
    add_subdirectory (mirr0r)
@@ -10,7 +10,7 @@
  add_subdirectory (3dflippo)
  add_subdirectory (aech0r)
  add_subdirectory (alpha0ps)
-@@ -102,3 +103,4 @@ add_subdirectory (vignette)
+@@ -103,3 +104,4 @@ add_subdirectory (vignette)
  add_subdirectory (twolay0r)
  add_subdirectory (vertigo)
  add_subdirectory (vignette)

@@ -1,4 +1,4 @@
-- Add logic so slave ports can build without installing base plugins.
+- Add logic so extra plugins can build without installing base components.
 
 --- src/mixer2/CMakeLists.txt.orig	2025-09-03 14:34:34 UTC
 +++ src/mixer2/CMakeLists.txt
