@@ -5061,5 +5061,4 @@ databases/php81-odbc|databases/php82-odbc|2025-12-31|Has expired: Security suppo
 security/php81-sodium|security/php82-sodium|2025-12-31|Has expired: Security support ended on 2025-12-31
 security/php81-filter|security/php82-filter|2025-12-31|Has expired: Security support ended on 2025-12-31
 lang/go120||2026-01-01|Has expired: Old version, unsupported upstream
-lang/go121||2026-01-01|Has expired: Old version, unsupported upstream
 net/gwhois||2026-01-01|Has expired: source and WWW is gone. Hasn't been updated for 12yrs
