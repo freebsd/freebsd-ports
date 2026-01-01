@@ -1,18 +1,17 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.38 # git rev-list --count HEAD
-PORTREVISION=	3
 DISTVERSIONSUFFIX=	-18170-g23b339d410
+PORTREVISION=	4
 CATEGORIES=	emulators wayland
 
 PATCH_SITES=	https://github.com/RPCS3/rpcs3/commit/
+PATCHFILES+=	a053abfba479.patch:-p1 # https://github.com/RPCS3/rpcs3/pull/17585
 PATCHFILES+=	038ee090b731bf63917371a3586c2f7d7cf4e585.patch:-p1 # Fix build with Qt 6.10
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	PS3 emulator/debugger
 WWW=		https://rpcs3.net/
-
-BROKEN=		Does not build with ffmpeg > 6
 
 LICENSE=	APACHE20 ISCL GPLv2 MIT ZLIB
 LICENSE_COMB=	multi
