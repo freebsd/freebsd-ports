@@ -1,0 +1,21 @@
+#!/bin/sh
+
+PREFIX=${PKG_PREFIX:-%%LOCALBASE%%}
+
+err() {
+    echo "$@" >&2
+    exit 1
+}
+
+case $2 in
+    POST-INSTALL)
+        DOMAIN=$(hostname -d)
+        HOSTNAME=$(hostname -f)
+        PRIMARY_IF=$(route -n get default | awk '/interface:/{print $2}')
+        [ -z "$PRIMARY_IF" ] && err "Could not determine primary interface (no default route)"
+        PRIMARY_IP=$(ifconfig "$PRIMARY_IF" inet | awk '/inet /{print $2; exit}')
+        [ -z "$PRIMARY_IP" ] && err "No IPv4 address found on $PRIMARY_IF"
+        echo "Updating $PREFIX/etc/%%PORTNAME%%.nsupdate with your hostname ($HOSTNAME) and primary IPv4 address ($PRIMARY_IP)"
+        sed -i "" -e "s#%%ZONE%%#$DOMAIN#" -e "s#%%HOSTNAME%%#$HOSTNAME#" -e "s#%%PRIMARY_IP%%#$PRIMARY_IP#" $PREFIX/etc/%%PORTNAME%%.nsupdate
+        ;;
+esac

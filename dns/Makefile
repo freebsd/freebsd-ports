@@ -209,6 +209,7 @@
     SUBDIR += rbllookup
     SUBDIR += rbllookup-ng
     SUBDIR += rdap
+    SUBDIR += register-dnsclient
     SUBDIR += renewck
     SUBDIR += rpsl2acl
     SUBDIR += rubygem-dnsruby

@@ -1,0 +1,2 @@
+Dynamically register hostnames with a DNS server like Active Directory DNS
+using GSS-TSIG.
