@@ -107,7 +107,7 @@ TESSERACT_CMAKE_BOOL=	WITH_TESSERACT
 ###
 
 # GUI group options (GTK3 VTK)
-GTK3_USE=		cairo,gdkpixbuf,gnome=gtk30
+GTK3_USE=		GNOME=cairo,gdkpixbuf,gtk30
 GTK3_CMAKE_BOOL=	WITH_GTK
 
 VTK_DESC=		Include VTK library support (build opencv_viz module)
