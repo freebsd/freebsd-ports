@@ -1,0 +1,11 @@
+--- ruff/crates/ty/Cargo.toml.orig	2025-12-31 06:46:07 UTC
++++ ruff/crates/ty/Cargo.toml
+@@ -56,7 +56,7 @@ default = []
+ [features]
+ default = []
+ 
+-[target.'cfg(all(not(target_os = "macos"), not(target_os = "windows"), not(target_os = "openbsd"), not(target_os = "aix"), not(target_os = "android"), any(target_arch = "x86_64", target_arch = "aarch64", target_arch = "powerpc64", target_arch = "riscv64")))'.dependencies]
++[target.'cfg(all(not(target_os = "macos"), not(target_os = "windows"), not(target_os = "openbsd"), not(target_os = "freebsd"), not(target_os = "aix"), not(target_os = "android"), any(target_arch = "x86_64", target_arch = "aarch64", target_arch = "powerpc64", target_arch = "riscv64")))'.dependencies]
+ tikv-jemallocator = { workspace = true }
+ 
+ [lints]
