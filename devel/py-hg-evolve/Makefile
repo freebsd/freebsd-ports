@@ -1,5 +1,5 @@
 PORTNAME=	hg-evolve
-DISTVERSION=	11.1.9
+DISTVERSION=	11.1.10
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	hg_evolve-${DISTVERSION}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Changeset Evolution with Mercurial
-WWW=		https://www.mercurial-scm.org/doc/evolution/
+WWW=		https://wiki.mercurial-scm.org/EvolveExtension
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
