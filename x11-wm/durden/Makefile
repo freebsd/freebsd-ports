@@ -1,9 +1,9 @@
 PORTNAME=	durden
-DISTVERSION=	0.6.1
-PORTREVISION=	1
+DISTVERSION=	0.6.3
 CATEGORIES=	x11-wm
+MASTER_SITES=	https://codeberg.org/letoram/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hoanga@gmail.com
 COMMENT=	Desktop Environment for Arcan
 WWW=		https://durden.arcan-fe.com/
 
@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	arcan:multimedia/arcan
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	letoram
 NO_ARCH=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
