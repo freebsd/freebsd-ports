@@ -18,13 +18,14 @@ bin/sftpgo
 %%MANPAGES%%share/man/man1/sftpgo-revertprovider.1.gz
 %%MANPAGES%%share/man/man1/sftpgo-serve.1.gz
 %%MANPAGES%%share/man/man1/sftpgo-smtptest.1.gz
-%%MANPAGES%%share/man/man1/sftpgo-startsubsys.1.gz
 %%MANPAGES%%share/man/man1/sftpgo.1.gz
 %%FISH%%share/fish/completions/sftpgo.fish
 %%DATADIR%%/static/assets/css/style.bundle.css
 %%DATADIR%%/static/assets/js/scripts.bundle.js
 %%DATADIR%%/static/assets/plugins/custom/datatables/datatables.bundle.css
 %%DATADIR%%/static/assets/plugins/custom/datatables/datatables.bundle.js
+%%DATADIR%%/static/assets/plugins/custom/flatpickr/l10n/de.js
+%%DATADIR%%/static/assets/plugins/custom/flatpickr/l10n/fr.js
 %%DATADIR%%/static/assets/plugins/custom/flatpickr/l10n/it.js
 %%DATADIR%%/static/assets/plugins/custom/formrepeater/formrepeater.bundle.js
 %%DATADIR%%/static/assets/plugins/global/fonts/keenicons/keenicons-duotone.eot
@@ -41,13 +42,16 @@ bin/sftpgo
 %%DATADIR%%/static/assets/plugins/global/fonts/keenicons/keenicons-solid.woff
 %%DATADIR%%/static/assets/plugins/global/plugins.bundle.css
 %%DATADIR%%/static/assets/plugins/global/plugins.bundle.js
-%%DATADIR%%/static/favicon.ico
+%%DATADIR%%/static/favicon.png
 %%DATADIR%%/static/img/login_image.png
 %%DATADIR%%/static/img/logo.png
 %%DATADIR%%/static/img/openid-logo.png
+%%DATADIR%%/static/locales/de/translation.json
 %%DATADIR%%/static/locales/en/translation.json
+%%DATADIR%%/static/locales/fr/translation.json
 %%DATADIR%%/static/locales/it/translation.json
 %%DATADIR%%/static/vendor/codemirror/cm6.bundle.min.js
+%%DATADIR%%/static/vendor/file-saver/FileSaver.min.js
 %%DATADIR%%/static/vendor/fonts/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa0ZL7SUc.woff2
 %%DATADIR%%/static/vendor/fonts/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7.woff2
 %%DATADIR%%/static/vendor/fonts/inter/v12/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1pL7SUc.woff2
@@ -64,6 +68,7 @@ bin/sftpgo
 %%DATADIR%%/static/vendor/i18next/i18nextHttpBackend.min.js
 %%DATADIR%%/static/vendor/i18next/i18nextLocalStorageBackend.min.js
 %%DATADIR%%/static/vendor/i18next/jquery-i18next.min.js
+%%DATADIR%%/static/vendor/papaparse/papaparse.min.js
 %%DATADIR%%/static/vendor/pdfobject/pdfobject.min.js
 %%DATADIR%%/templates/common/base.html
 %%DATADIR%%/templates/common/baselogin.html
@@ -95,7 +100,6 @@ bin/sftpgo
 %%DATADIR%%/templates/webadmin/groups.html
 %%DATADIR%%/templates/webadmin/iplist.html
 %%DATADIR%%/templates/webadmin/iplists.html
-%%DATADIR%%/templates/webadmin/login.html
 %%DATADIR%%/templates/webadmin/maintenance.html
 %%DATADIR%%/templates/webadmin/mfa.html
 %%DATADIR%%/templates/webadmin/profile.html
@@ -115,4 +119,4 @@ bin/sftpgo
 %%DATADIR%%/templates/webclient/shares.html
 %%DATADIR%%/templates/webclient/shareupload.html
 %%DATADIR%%/templates/webclient/viewpdf.html
-%%ZSH%%share/zsh/site-functions/_sftpgo
+share/zsh/site-functions/_sftpgo
