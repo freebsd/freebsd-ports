@@ -7924,11 +7924,18 @@ This issue has been patched in version 2.25.2.</p>
 	  <a href="https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt">
 	    https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt</a>
 	</p>
-	</body>
+	<p>Iván Chavero reports vs. v1.1.44:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxslt/-/blob/v1.1.45/NEWS?ref_type=tags#L23">
+	  <p>[CVE-2025-11731] Fix: End function node ancestor search at document</p>
+	</blockquote>
+      </body>
     </description>
     <references>
-      <cvename>CVE-2025-7424</cvename>
-      <cvename>CVE-2025-7425</cvename>
+      <cvename>CVE-2025-7424</cvename> <!-- fixed in libxslt 1.1.44 -->
+      <cvename>CVE-2025-7425</cvename> <!-- fixed in libxml2 2.15.0 -->
+      <cvename>CVE-2025-9714</cvename> <!-- false positive, .../issues/148 -->
+      <cvename>CVE-2025-11731</cvename> <!-- added 2026-01-02 -->
+      <url>https://gitlab.gnome.org/GNOME/libxslt/-/blob/v1.1.45/NEWS?ref_type=tags#L1</url>
       <url>https://gitlab.gnome.org/Teams/Releng/security/-/wikis/2025#libxml2-and-libxslt</url>
       <url>https://gitlab.gnome.org/GNOME/libxslt/-/issues/139</url>
       <url>https://gitlab.gnome.org/GNOME/libxslt/-/issues/140</url>
@@ -7939,6 +7946,7 @@ This issue has been patched in version 2.25.2.</p>
     <dates>
       <discovery>2025-04-10</discovery>
       <entry>2025-07-12</entry>
+      <modified>2026-01-02</modified>
     </dates>
   </vuln>
 
