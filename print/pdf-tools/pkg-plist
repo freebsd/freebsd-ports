@@ -22,6 +22,8 @@
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-occur.elc
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-outline.el
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-outline.elc
+%%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-roll.el
+%%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-roll.elc
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-sync.el
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-sync.elc
 %%EMACS_SITE_LISPDIR%%/pdf-tools/pdf-tools-init.el
