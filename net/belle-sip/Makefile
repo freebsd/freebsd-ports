@@ -1,10 +1,10 @@
 PORTNAME=	belle-sip
-DISTVERSION=	5.4.28
+DISTVERSION=	5.4.72
 CATEGORIES=	net java
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SIP (RFC 3261) implementation written in C
-WWW=		https://www.linphone.org/technical-corner/belle-sip.html
+WWW=		https://gitlab.linphone.org/BC/public/belle-sip
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
