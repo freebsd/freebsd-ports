@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++17-lang cpe gmake localbase:ldflags perl5 \
-		shebangfix tar:xz
+		pkgconfig shebangfix tar:xz
 CPE_VENDOR=	squid-cache
 USE_RC_SUBR=	squid
 
@@ -122,7 +122,6 @@ AUTH_SQL_VARS=			EXTERNAL_ACL+=SQL_session
 CACHE_DIGESTS_CONFIGURE_ENABLE=	cache-digests
 DELAY_POOLS_CONFIGURE_ENABLE=	delay-pools
 ECAP_LIB_DEPENDS=		libecap.so:www/libecap
-ECAP_USES=			pkgconfig:build
 ECAP_CONFIGURE_ENABLE=		ecap
 FOLLOW_XFF_CONFIGURE_ENABLE=	follow-x-forwarded-for
 FS_AUFS_CONFIGURE_WITH=		pthreads
@@ -183,7 +182,7 @@ STACKTRACES_LDFLAGS=		-lunwind
 STACKTRACES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-gen-stacktrace
 STACKTRACES_VARS=		STRIP=""
 TDB_LIB_DEPENDS=		libtdb.so:${SAMBA_TDB_PORT}
-TDB_USES=			pkgconfig:build samba:env
+TDB_USES=			samba:env
 TDB_CONFIGURE_WITH=		tdb
 TDB_VARS=			EXTERNAL_ACL+="time_quota session"
 TP_IPFW_CONFIGURE_ENABLE=	ipfw-transparent
