@@ -12,7 +12,7 @@ WWW=		https://github.com/MHNightCat/superfile
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.25
+USES=		go:1.25+,modules
 
 GO_MODULE=	github.com/MHNightCat/superfile
 

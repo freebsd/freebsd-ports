@@ -11,7 +11,7 @@ WWW=		https://github.com/ricardobranco777/xhash/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.24
+USES=		go:1.24+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	ricardobranco777
 GH_TUPLE=	golang:crypto:v0.37.0:golang_crypto/vendor/golang.org/x/crypto \

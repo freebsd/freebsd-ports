@@ -9,7 +9,7 @@ WWW=		https://github.com/projectdiscovery/dnsx
 
 LICENSE=	MIT
 
-USES=		go:1.24,modules
+USES=		go:1.24+,modules
 
 GO_MODULE=	github.com/projectdiscovery/dnsx
 GO_TARGET=	./cmd/${PORTNAME}

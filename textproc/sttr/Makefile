@@ -10,7 +10,7 @@ WWW=		https://github.com/abhimanyu003/sttr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.24
+USES=		go:1.24+,modules
 GO_MODULE=	github.com/abhimanyu003/sttr
 
 PLIST_FILES=	bin/sttr

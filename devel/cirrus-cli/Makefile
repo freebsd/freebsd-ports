@@ -10,7 +10,7 @@ WWW=		https://github.com/cirruslabs/cirrus-cli
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.25,modules
+USES=		go:1.25+,modules
 
 USE_RC_SUBR=	${PORTNAME}
 

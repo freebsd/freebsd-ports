@@ -11,7 +11,7 @@ WWW=		https://github.com/google/codesearch
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules,1.23
+USES=		go:modules
 
 GO_MODULE=	github.com/google/codesearch
 GO_TARGET=	./cmd/cgrep \

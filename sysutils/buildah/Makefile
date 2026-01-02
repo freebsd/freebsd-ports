@@ -19,7 +19,7 @@ RUN_DEPENDS=	containernetworking-plugins>=0:net/containernetworking-plugins \
 		containers-common>=0:sysutils/containers-common \
 		ocijail:sysutils/ocijail
 
-USES=		gmake go:no_targets,1.24 pkgconfig
+USES=		gmake go:1.24+,no_targets pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers

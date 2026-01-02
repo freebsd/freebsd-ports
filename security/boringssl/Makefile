@@ -11,7 +11,7 @@ WWW=		https://boringssl.googlesource.com/boringssl/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:insource cpe go:no_targets,1.24 localbase perl5
+USES=		cmake:insource cpe go:1.24+,no_targets localbase perl5
 
 CONFLICTS_INSTALL=	libressl libressl-devel openssl openssl111 \
 			openssl3[23456] openssl-quictls openssl33-quictls
