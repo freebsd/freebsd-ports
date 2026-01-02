@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 DISTVERSION=	10.1.20251130
+PORTREVISION=	1
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -18,7 +19,8 @@ BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libinotify.so:devel/libinotify \
 		liblzo2.so:archivers/lzo2 \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libslirp.so:net/libslirp
 
 USES=		bison compiler:c11 cpe gmake gnome iconv:wchar_t localbase:ldflags \
 		ninja perl5 pkgconfig python:build shebangfix tar:xz xorg
