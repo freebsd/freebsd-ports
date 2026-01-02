@@ -1,10 +1,10 @@
 PORTNAME=	bzrtp
-DISTVERSION=	5.4.28
+DISTVERSION=	5.4.72
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	ZRTP support library (RFC 6189)
-WWW=		https://www.linphone.org
+WWW=		https://gitlab.linphone.org/BC/public/bzrtp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
