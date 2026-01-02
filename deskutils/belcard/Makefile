@@ -1,10 +1,10 @@
 PORTNAME=	belcard
-DISTVERSION=	5.4.28
+DISTVERSION=	5.4.72
 CATEGORIES=	deskutils
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	vCard support library
-WWW=		https://www.linphone.org/
+WWW=		https://gitlab.linphone.org/BC/public/belcard
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
