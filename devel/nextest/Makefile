@@ -1,7 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.115
-PORTREVISION=	1
+DISTVERSION=	0.9.117
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,20 +48,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		base64ct-1.7.3 \
 		bit-set-0.8.0 \
 		bit-vec-0.8.0 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		block-buffer-0.10.4 \
 		borsh-1.5.7 \
 		bstr-1.12.1 \
 		bumpalo-3.19.0 \
 		byteorder-1.5.0 \
 		bytes-1.11.0 \
-		camino-1.2.1 \
+		camino-1.2.2 \
 		camino-tempfile-1.4.1 \
 		camino-tempfile-ext-0.3.3 \
 		cargo-platform-0.3.0 \
 		cargo_metadata-0.23.1 \
 		cc-1.2.30 \
-		cfg-expr-0.20.3 \
+		cfg-expr-0.20.5 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
@@ -75,7 +74,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		colorchoice-1.0.3 \
 		config-0.15.19 \
 		console-0.15.11 \
-		console-0.16.1 \
+		console-0.16.2 \
 		console-api-0.9.0 \
 		console-subscriber-0.5.0 \
 		const-oid-0.9.6 \
@@ -130,7 +129,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.2 \
-		fs-err-3.2.0 \
+		fs-err-3.2.2 \
 		future-queue-0.4.0 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
@@ -148,7 +147,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		globset-0.4.18 \
 		globwalk-0.9.1 \
 		goblin-0.10.3 \
-		guppy-0.17.23 \
+		guppy-0.17.24 \
 		guppy-workspace-hack-0.1.0 \
 		h2-0.4.10 \
 		hashbrown-0.15.5 \
@@ -156,8 +155,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		hdrhistogram-7.5.4 \
 		heck-0.5.0 \
 		hex-0.4.3 \
-		home-0.5.11 \
-		http-1.3.1 \
+		home-0.5.12 \
+		http-1.4.0 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
@@ -177,13 +176,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		ignore-0.4.23 \
 		include_dir-0.7.4 \
 		include_dir_macros-0.7.4 \
-		indent_write-2.2.0 \
 		indenter-0.3.4 \
 		indexmap-2.12.1 \
 		indicatif-0.17.11 \
 		indicatif-0.18.3 \
 		indoc-2.0.7 \
-		insta-1.44.3 \
+		insta-1.45.1 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
 		is_ci-1.2.0 \
@@ -304,10 +302,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_ignored-0.1.14 \
-		serde_json-1.0.145 \
+		serde_json-1.0.148 \
 		serde_path_to_error-0.1.20 \
-		serde_spanned-0.6.9 \
-		serde_spanned-1.0.3 \
+		serde_spanned-1.0.4 \
 		serde_tokenstream-0.2.2 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.9 \
@@ -341,8 +338,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		syn-2.0.106 \
 		sync_wrapper-1.0.2 \
 		tar-0.4.44 \
-		target-lexicon-0.13.2 \
-		target-spec-3.5.4 \
+		target-lexicon-0.13.3 \
+		target-spec-3.5.5 \
 		target-spec-miette-0.4.5 \
 		tempfile-3.20.0 \
 		terminal_size-0.4.2 \
@@ -365,24 +362,20 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tokio-rustls-0.26.2 \
 		tokio-stream-0.1.17 \
 		tokio-util-0.7.15 \
-		toml-0.8.23 \
-		toml-0.9.8 \
-		toml_datetime-0.6.11 \
-		toml_datetime-0.7.3 \
-		toml_edit-0.22.27 \
-		toml_edit-0.23.9 \
-		toml_parser-1.0.4 \
-		toml_write-0.1.2 \
-		toml_writer-1.0.4 \
+		toml-0.9.10+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_edit-0.24.0+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
+		toml_writer-1.0.6+spec-1.1.0 \
 		tonic-0.14.2 \
 		tonic-prost-0.14.2 \
 		tower-0.5.2 \
 		tower-http-0.6.6 \
 		tower-layer-0.3.3 \
 		tower-service-0.3.3 \
-		tracing-0.1.43 \
+		tracing-0.1.44 \
 		tracing-attributes-0.1.31 \
-		tracing-core-0.1.35 \
+		tracing-core-0.1.36 \
 		tracing-error-0.2.1 \
 		tracing-log-0.2.0 \
 		tracing-subscriber-0.3.22 \
@@ -477,6 +470,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		zerocopy-derive-0.8.27 \
 		zeroize-1.8.1 \
 		zipsign-api-0.1.5 \
+		zmij-1.0.0 \
 		zstd-0.13.3 \
 		zstd-safe-7.2.4 \
 		zstd-sys-2.0.15+zstd.1.5.7
