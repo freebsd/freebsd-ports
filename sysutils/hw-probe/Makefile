@@ -1,5 +1,6 @@
 PORTNAME=	hw-probe
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -12,7 +13,8 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	curl:ftp/curl \
 		hwstat:sysutils/hwstat \
 		lsblk:sysutils/lsblk \
-		smartctl:sysutils/smartmontools
+		smartctl:sysutils/smartmontools \
+		p5-LWP-UserAgent-Cached>0:www/p5-LWP-UserAgent-Cached
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	linuxhw
