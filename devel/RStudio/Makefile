@@ -145,20 +145,21 @@ WITH_QUARTO_CMAKE_BOOL=	QUARTO_ENABLED
 post-fetch:
 	@if ! [ -f ${NPM_DISTDIR}/${NPM_TARBALL} ]; then \
 		${MKDIR} ${NPM_DISTDIR} && \
-		${ECHO_MSG} "====> Fetching npm dependencies for desktop..." && \
+		${ECHO_MSG} "====> Fetching npm dependencies for desktop into the tarball ${NPM_DISTDIR}/${NPM_TARBALL} ..." && \
 		${MKDIR} ${WRKDIR}/tmp/rstudio-npm-fetch && \
 		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package.json" -o ${WRKDIR}/tmp/rstudio-npm-fetch/package.json && \
-		${FETCH_CMD} -q "https://raw.githubusercontent.com/rstudio/rstudio/v${DISTVERSION}/src/node/desktop/package-lock.json" -o ${WRKDIR}/tmp/rstudio-npm-fetch/package-lock.json && \
 		cd ${WRKDIR}/tmp/rstudio-npm-fetch && \
-		HOME=${WRKDIR}/tmp/rstudio-npm-fetch npm ci --ignore-scripts && \
+		HOME=${WRKDIR}/tmp/rstudio-npm-fetch npm install --ignore-scripts && \
 		${FIND} node_modules -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; 2>/dev/null; \
 		${TAR} -czf ${NPM_DISTDIR}/${NPM_TARBALL} node_modules && \
 		${RM} -rf ${WRKDIR}/tmp/rstudio-npm-fetch && \
 		${ECHO_MSG} "====> Created npm dependencies tarball ${NPM_DISTDIR}/${NPM_TARBALL}"; \
+	else \
+		${ECHO_MSG} "====> Using previously fetched npm dependencies tarball ${NPM_DISTDIR}/${NPM_TARBALL}"; \
 	fi
 	@if ! [ -f ${NPM_DISTDIR}/${QUARTO_TARBALL} ]; then \
 		${MKDIR} ${NPM_DISTDIR} && \
-		${ECHO_MSG} "====> Fetching quarto/panmirror npm dependencies..." && \
+		${ECHO_MSG} "====> Fetching quarto/panmirror npm dependencies into the tarball ${NPM_DISTDIR}/${QUARTO_TARBALL} ..." && \
 		${MKDIR} ${WRKDIR}/tmp/rstudio-quarto-fetch && \
 		cd ${WRKDIR}/tmp/rstudio-quarto-fetch && \
 		${FETCH_CMD} -q "https://github.com/quarto-dev/quarto/archive/${QUARTO_MONO_COMMIT}.tar.gz" -o quarto.tar.gz && \
@@ -169,7 +170,9 @@ post-fetch:
 		${FIND} node_modules apps/*/node_modules packages/*/node_modules apps/panmirror/dist-rstudio -exec ${TOUCH} -h -d 1970-01-01T00:00:00Z {} \; 2>/dev/null; \
 		${TAR} -czf ${NPM_DISTDIR}/${QUARTO_TARBALL} node_modules apps/*/node_modules packages/*/node_modules apps/panmirror/dist-rstudio && \
 		${RM} -rf ${WRKDIR}/tmp/rstudio-quarto-fetch && \
-		${ECHO_MSG} "====> Created quarto npm dependencies tarball"; \
+		${ECHO_MSG} "====> Created quarto npm dependencies tarball ${NPM_DISTDIR}/${NPM_TARBALL}"; \
+	else \
+		${ECHO_MSG} "====> Using previously fetched quarto npm dependencies tarball ${NPM_DISTDIR}/${QUARTO_TARBALL}"; \
 	fi
 .endif
 
