@@ -34,7 +34,7 @@ Wazuh server components were installed
 7) Install logstash-output-opensearch plugin. Fetch it from rubygems site or opensearch github
 
    # cd %%PREFIX%%/logstash/bin
-   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk17 ./logstash-plugin install /tmp/logstash-output-opensearch"
+   # sh -c "JAVA_HOME=%%PREFIX%%/openjdk21 ./logstash-plugin install /tmp/logstash-output-opensearch"
 
    There are some issues installing this plugin on latest version of sysutils/logstash8.
    Try installing gem file directly

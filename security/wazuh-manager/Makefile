@@ -1,7 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.14.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/47/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -33,7 +33,7 @@ LIB_DEPENDS+=	libarrow.so:databases/arrow \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	bash>0:shells/bash
 
-USES=		cpe gmake perl5 python:3.11 readline shebangfix sqlite:3 uidfix
+USES=		cpe dos2unix gmake perl5 python:3.11 readline shebangfix sqlite:3 uidfix
 
 USE_GITHUB=	yes
 GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh
@@ -41,6 +41,8 @@ GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
 MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes OPTIMIZE_CPYTHON=no
+
+DOS2UNIX_FILES=	${WRKSRC}/api/api/configuration/api.yaml
 
 # WITH_CCACHE_BUILD=	yes
 # CCACHE_DIR=		/zdata/ccache

@@ -1,5 +1,5 @@
---- src/data_provider/src/sysInfoFreeBSD.cpp.orig	2025-12-29 18:29:38.128837000 -0400
-+++ src/data_provider/src/sysInfoFreeBSD.cpp	2025-12-30 01:04:57.828191000 -0400
+--- src/data_provider/src/sysInfoFreeBSD.cpp	2025-11-07 00:46:03.000000000 -0800
++++ src/data_provider/src/sysInfoFreeBSD.cpp	2026-01-01 13:18:42.411755000 -0800
 @@ -11,20 +11,28 @@
  #include "sysInfo.hpp"
  #include "cmdHelper.h"
@@ -102,7 +102,7 @@
      if (uname(&uts) >= 0)
      {
          ret["sysname"] = uts.sysname;
-@@ -215,44 +240,257 @@
+@@ -215,43 +240,256 @@
  
  nlohmann::json SysInfo::getPorts() const
  {
@@ -119,23 +119,19 @@
 -void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> /*callback*/) const
 -{
 -    // Currently not supported for this OS.
--}
 +    if (!query.empty())
 +    {
 +        nlohmann::json portsjson;
 +        portsjson = nlohmann::json::parse(query);
 +        auto &portsResult = portsjson["sockstat"]["socket"];
- 
--void SysInfo::getPackages(std::function<void(nlohmann::json&)> callback) const
--{
--    const auto query{Utils::exec(R"(pkg query -a "%n|%m|%v|%q|%c")")};
++
 +        for(auto &port : portsResult) {
 +            std::string localip = "";
 +            std::string localport = "";
 +            std::string remoteip = "";
 +            std::string remoteport = "";
 +            std::string statedata = "";
- 
++
 +            if (port["pid"] != nullptr) {
 +
 +                localip = port["local"]["address"];
@@ -183,32 +179,16 @@
 +#else
 +    const auto query{Utils::exec(R"(sockstat -46qs)")};
 +
-     if (!query.empty())
-     {
--        const auto lines{Utils::split(query, '\n')};
++    if (!query.empty())
++    {
 +        const auto lines{Utils::split(Utils::trimToOneSpace(query), '\n')};
- 
++
 +        std::regex expression(R"(^(\S+)\s+(\S+)\s+(\d+)\s+(\d+)\s*(\S+)\s+(\S+)\s+(\S+)(?:\s+(\S+))?\s*$)");
 +
-         for (const auto& line : lines)
-         {
--            const auto data{Utils::split(line, '|')};
--            nlohmann::json package;
++        for (const auto& line : lines)
++        {
 +            std::smatch data;
- 
--            package["name"] = data[0];
--            package["vendor"] = data[1];
--            package["version"] = data[2];
--            package["install_time"] = UNKNOWN_VALUE;
--            package["location"] = UNKNOWN_VALUE;
--            package["architecture"] = data[3];
--            package["groups"] = UNKNOWN_VALUE;
--            package["description"] = data[4];
--            package["size"] = 0;
--            package["priority"] = UNKNOWN_VALUE;
--            package["source"] = UNKNOWN_VALUE;
--            package["format"] = "pkg";
--            // The multiarch field won't have a default value
++
 +            if (std::regex_search(line, data, expression))
 +            {
 +                std::string localip = "";
@@ -216,8 +196,7 @@
 +                std::string remoteip = "";
 +                std::string remoteport = "";
 +                std::string statedata = "";
- 
--            callback(package);
++
 +                auto localdata{Utils::split(data[6], ':')};
 +                auto remotedata{Utils::split(data[7], ':')};
 +
@@ -270,18 +249,22 @@
 +    }
 +#endif
 +    return ports;
-+}
-+
+ }
+ 
+-void SysInfo::getPackages(std::function<void(nlohmann::json&)> callback) const
 +void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> callback) const
-+{
+ {
+-    const auto query{Utils::exec(R"(pkg query -a "%n|%m|%v|%q|%c")")};
 +    const auto query{Utils::exec(R"(ps -ax -w -o pid,comm,state,ppid,usertime,systime,user,ruser,svuid,group,rgroup,svgid,pri,nice,ssiz,vsz,rss,pmem,etimes,sid,pgid,tpgid,tty,cpu,nlwp,args --libxo json)")};
-+
-+    if (!query.empty())
-+    {
+ 
+     if (!query.empty())
+     {
+-        const auto lines{Utils::split(query, '\n')};
 +      nlohmann::json psjson;
 +      psjson = nlohmann::json::parse(query);
 +      auto &processes = psjson["process-information"]["process"];
-+
+ 
+-        for (const auto& line : lines)
 +      for(auto &process : processes) {
 +          std::string user_time{""};
 +          std::string system_time{""};
@@ -329,15 +312,31 @@
 +    if (Utils::existsRegular(PKG_DB_PATHNAME))
 +    {
 +        try
-+        {
-+            std::shared_ptr<SQLite::IConnection> sqliteConnection = std::make_shared<SQLite::Connection>(PKG_DB_PATHNAME);
-+
+         {
+-            const auto data{Utils::split(line, '|')};
+-            nlohmann::json package;
++            std::shared_ptr<SQLite::IConnection> sqliteConnection = std::make_shared<SQLite::Connection>(PKG_DB_PATHNAME, SQLITE_OPEN_READONLY);
+ 
+-            package["name"] = data[0];
+-            package["vendor"] = data[1];
+-            package["version"] = data[2];
+-            package["install_time"] = UNKNOWN_VALUE;
+-            package["location"] = UNKNOWN_VALUE;
+-            package["architecture"] = data[3];
+-            package["groups"] = UNKNOWN_VALUE;
+-            package["description"] = data[4];
+-            package["size"] = 0;
+-            package["priority"] = UNKNOWN_VALUE;
+-            package["source"] = UNKNOWN_VALUE;
+-            package["format"] = "pkg";
+-            // The multiarch field won't have a default value
 +            SQLite::Statement stmt
 +            {
 +                sqliteConnection,
 +                PKG_QUERY
 +            };
-+
+ 
+-            callback(package);
 +            while (SQLITE_ROW == stmt.step())
 +            {
 +                try
@@ -379,11 +378,10 @@
 +                    std::cerr << e.what() << std::endl;
 +                }
 +            }
-         }
++        }
 +        catch (const std::exception& e)
 +        {
 +            std::cerr << e.what() << std::endl;
-+        }
+         }
      }
  }
- 
