@@ -1,6 +1,6 @@
---- lib/Xm/MenuShell.c.orig	2023-02-15 16:42:34.000000000 -0800
-+++ lib/Xm/MenuShell.c	2023-12-04 15:33:32.718284000 -0800
-@@ -988,6 +988,7 @@
+--- lib/Xm/MenuShell.c.orig	2023-02-16 00:42:34 UTC
++++ lib/Xm/MenuShell.c
+@@ -988,6 +988,7 @@ ForceMenuPaneOnScreen(
     if (bottomEdgeOfMenu >= (Position)dispHeight)
     {
        if (pulldown_button && XtParent(pulldown_button) &&

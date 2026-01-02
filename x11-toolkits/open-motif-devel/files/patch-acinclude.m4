@@ -1,6 +1,6 @@
---- acinclude.m4.orig	2023-02-15 16:42:34.000000000 -0800
-+++ acinclude.m4	2023-12-04 15:48:14.815249000 -0800
-@@ -50,7 +50,12 @@
+--- acinclude.m4.orig	2023-02-16 00:42:34 UTC
++++ acinclude.m4
+@@ -50,7 +50,12 @@ AC_DEFUN([AM_FUNC_VOID_SPRINTF],
  AC_DEFUN([AM_FUNC_VOID_SPRINTF],
  [AC_CACHE_CHECK(whether sprintf returns void, ac_cv_func_void_sprintf,
  [AC_TRY_RUN([#include <stdio.h>

@@ -1,6 +1,6 @@
---- lib/Xm/DragC.c.orig	2023-02-15 16:42:34.000000000 -0800
-+++ lib/Xm/DragC.c	2023-12-04 15:58:13.960304000 -0800
-@@ -846,35 +846,18 @@
+--- lib/Xm/DragC.c.orig	2023-02-16 00:42:34 UTC
++++ lib/Xm/DragC.c
+@@ -846,35 +846,18 @@ ValidateDragOver(
    if (newStyle != oldStyle) 
      {
        /*
@@ -45,7 +45,7 @@
      }
  }
  
-@@ -1687,23 +1670,13 @@
+@@ -1687,23 +1670,13 @@ NewScreen(
    /* Build a new one */
    i = 0;
    /*

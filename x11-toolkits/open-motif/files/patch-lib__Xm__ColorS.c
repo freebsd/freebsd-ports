@@ -1,6 +1,6 @@
---- lib/Xm/ColorS.c.orig	2005-12-17 16:54:03.000000000 +0300
-+++ lib/Xm/ColorS.c	2011-01-16 00:48:05.000000000 +0300
-@@ -41,6 +41,10 @@
+--- lib/Xm/ColorS.c.orig	2017-12-05 12:46:16 UTC
++++ lib/Xm/ColorS.c
+@@ -56,6 +56,10 @@
  
  #define SUPERCLASS ((WidgetClass) &xmManagerClassRec)
  
@@ -11,7 +11,7 @@
  /************************************************************
   *       MACROS
   ************************************************************/
-@@ -131,7 +135,7 @@
+@@ -146,7 +150,7 @@ static XtResource resources[] =
    {
      XmNrgbFile, XmCString, XmRString,
      sizeof(String), XtOffsetOf(XmColorSelectorRec, cs.rgb_file),

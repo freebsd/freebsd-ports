@@ -1,6 +1,6 @@
---- lib/Xm/XmRenderT.c.orig	2017-03-27 15:24:31.000000000 -0700
-+++ lib/Xm/XmRenderT.c	2023-12-04 15:42:22.406098000 -0800
-@@ -2091,10 +2091,9 @@
+--- lib/Xm/XmRenderT.c.orig	2017-12-05 12:46:16 UTC
++++ lib/Xm/XmRenderT.c
+@@ -2091,10 +2091,9 @@ ValidateAndLoadFont(XmRendition rend, Display *display
  						  static int count_rend=0, num_rend;
  						  num_rend = GetSameRenditions(rend_cache, rend, count_rend);
  
