@@ -2,9 +2,9 @@ Fix compilation error:
 
 src/core/core.cpp:428:2: error: void function 'doLater' should not return a
 value [-Wreturn-type]
---- CMakeLists.txt.orig	2025-03-20 22:21:32 UTC
+--- CMakeLists.txt.orig	2025-12-22 14:02:00 UTC
 +++ CMakeLists.txt
-@@ -115,8 +115,10 @@ find_package(BelleSIP 5.3.0 REQUIRED OPTIONAL_COMPONEN
+@@ -117,8 +117,10 @@ find_package(BelleSIP 5.3.0 REQUIRED OPTIONAL_COMPONEN
  endif()
  
  find_package(BelleSIP 5.3.0 REQUIRED OPTIONAL_COMPONENTS tester)
@@ -15,7 +15,7 @@ value [-Wreturn-type]
  find_package(BCToolbox 5.3.0 REQUIRED OPTIONAL_COMPONENTS tester)
  #Mandatory to init default compilation flags
  bc_init_compilation_flags(STRICT_OPTIONS_CPP STRICT_OPTIONS_C STRICT_OPTIONS_CXX ENABLE_STRICT)
-@@ -306,7 +308,7 @@ else()
+@@ -309,7 +311,7 @@ else()
  	list(APPEND STRICT_OPTIONS_CPP
  		"-Wall"
  		"-Wconversion"

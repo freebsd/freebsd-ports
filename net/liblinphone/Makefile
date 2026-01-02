@@ -1,10 +1,10 @@
 PORTNAME=	liblinphone
-DISTVERSION=	5.4.26
+DISTVERSION=	5.4.72
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SIP library supporting voice/video calls and text messaging
-WWW=		https://www.linphone.org/technical-corner/liblinphone.html
+WWW=		https://gitlab.linphone.org/BC/public/liblinphone
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -15,11 +15,17 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pystache>=0:textproc/py-pystache@${PY_FLAV
 		v4l_compat>=1.0.20120501:multimedia/v4l_compat \
 		xsd>0:devel/xsd
 LIB_DEPENDS=	\
+		libbctoolbox.so:net/bctoolbox \
 		libbelcard.so:deskutils/belcard \
 		libbelle-sip.so:net/belle-sip \
+		libbelr.so:textproc/belr \
+		libbzrtp.so:security/bzrtp \
+		libjsoncpp.so:devel/jsoncpp \
 		liblime.so:security/lime \
 		libmediastreamer2.so:net/mediastreamer \
-		libsoci_core.so:databases/soci
+		libortp.so:net/ortp \
+		libsoci_core.so:databases/soci \
+		libxerces-c-3.3.so:textproc/xerces-c3
 
 USES=		cmake compiler:c++17-lang gnome iconv pkgconfig python:build \
 		sqlite xorg
