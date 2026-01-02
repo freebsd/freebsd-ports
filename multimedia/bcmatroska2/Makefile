@@ -1,10 +1,10 @@
 PORTNAME=	bcmatroska2
-DISTVERSION=	5.4.29
+DISTVERSION=	5.4.72
 CATEGORIES=	multimedia
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Belledonne Communications Matroska media container support
-WWW=		https://www.linphone.org/
+WWW=		https://gitlab.linphone.org/BC/public/bcmatroska2
 
 LICENSE=	BSD3CLAUSE
 
