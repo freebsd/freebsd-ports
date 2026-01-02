@@ -119,7 +119,6 @@
     SUBDIR += battray
     SUBDIR += bchunk
     SUBDIR += beadm
-    SUBDIR += beats7
     SUBDIR += beats8
     SUBDIR += bfs
     SUBDIR += bhyve-firmware

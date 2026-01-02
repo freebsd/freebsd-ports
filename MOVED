@@ -5063,3 +5063,4 @@ security/php81-filter|security/php82-filter|2025-12-31|Has expired: Security sup
 lang/go120||2026-01-01|Has expired: Old version, unsupported upstream
 net/gwhois||2026-01-01|Has expired: source and WWW is gone. Hasn't been updated for 12yrs
 lang/go121||2026-01-01|Has expired: Old version, unsupported upstream
+sysutils/beats7|sysutils/beats8|2026-01-02|Has expired: Only works with expired go1.22
