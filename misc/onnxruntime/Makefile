@@ -35,6 +35,7 @@ CMAKE_ARGS=	-Donnx_SOURCE_DIR=${WRKSRC}/cmake/external/onnx
 CMAKE_TESTING_ON=	onnxruntime_BUILD_UNIT_TESTS
 
 CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxruntime/issues/23410
+CXXFLAGS+=	-Wno-deprecated-declarations #fixes error: 'vec_lvsl' is deprecated: use assignment for unaligned little endian loads/stores
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
 CXXFLAGS+=	-frtti # fixes error: onnxruntime/test/contrib_ops/gather_block_quantized_op_test.cc:85:77: error: use of typeid requires -frtti
 
