@@ -1,5 +1,5 @@
-TIMESTAMP = 1767238989
-SHA256 (go/net_claws/claws-v0.4.0/v0.4.0.mod) = 9d7df7d1622117c2b78a7e9e645637204ca75d494485eb7f07540c69f047ae97
-SIZE (go/net_claws/claws-v0.4.0/v0.4.0.mod) = 6476
-SHA256 (go/net_claws/claws-v0.4.0/v0.4.0.zip) = 1b6500a6841eb4bfc9d449519ec2395831f271dcf45ecf8f0980c2bebf4ef317
-SIZE (go/net_claws/claws-v0.4.0/v0.4.0.zip) = 3100020
+TIMESTAMP = 1767306940
+SHA256 (go/net_claws/claws-v0.5.2/v0.5.2.mod) = 9d7df7d1622117c2b78a7e9e645637204ca75d494485eb7f07540c69f047ae97
+SIZE (go/net_claws/claws-v0.5.2/v0.5.2.mod) = 6476
+SHA256 (go/net_claws/claws-v0.5.2/v0.5.2.zip) = 7e37ff6ad792dda9050ac8d49ad98987ed735c188f6036f4909289eaf022750c
+SIZE (go/net_claws/claws-v0.5.2/v0.5.2.zip) = 3101717
