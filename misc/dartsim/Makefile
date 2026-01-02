@@ -1,7 +1,6 @@
 PORTNAME=	dartsim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.15.0
-PORTREVISION=	11
+DISTVERSION=	6.16.3
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,8 @@ LIB_DEPENDS=	libassimp.so:multimedia/assimp \
 		libpagmo.so:science/pagmo2 \
 		libtinyxml2.so:textproc/tinyxml2 \
 		liburdfdom_world.so:devel/ros-urdfdom
-TEST_DEPENDS=	googletest>0:devel/googletest
+TEST_DEPENDS=	benchmark>0:devel/benchmark \
+		googletest>0:devel/googletest
 
 USES=		cmake:testing compiler:c++17-lang eigen:3,build,run gl localbase:ldflags \
 		pkgconfig python xorg
@@ -47,7 +47,7 @@ GH_PROJECT=	dart
 
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # because of pagmo2 headers include <IpReturnCodes.hpp>
 
-CMAKE_ON=	BUILD_SHARED_LIBS DART_USE_SYSTEM_GOOGLETEST # DART_VERBOSE
+CMAKE_ON=	BUILD_SHARED_LIBS DART_USE_SYSTEM_GOOGLETEST DART_USE_SYSTEM_GOOGLEBENCHMARK # DART_VERBOSE
 CMAKE_OFF=	BUILD_TESTING
 CMAKE_OFF+=	DART_TREAT_WARNINGS_AS_ERRORS # workaround for https://github.com/dartsim/dart/issues/1799
 CMAKE_ARGS=	-DODE_DIR=${LOCALBASE} \
@@ -69,8 +69,12 @@ PORTDOCS=	*
 CFLAGS+=	-Wno-error=unused-but-set-variable
 .endif
 
-post-test: # run tests: 8 tests fail, see https://github.com/dartsim/dart/issues/1797#issuecomment-2191988407
+post-test:
 	@cd ${BUILD_WRKSRC} && \
 		${SETENVI} ${WRK_ENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+
+# tests as of : 93% tests passed, 5 tests failed out of 73
+# * https://github.com/dartsim/dart/issues/2369: 2 tests fail with the error: Unknown URDF Shape type
+# * https://github.com/dartsim/dart/issues/2370: 3 tests fail with various messages: test_Collision, test_Collision, test_DartLoader
 
 .include <bsd.port.mk>
