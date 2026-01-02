@@ -1,67 +1,55 @@
-PORTNAME?=	libxml2
-DISTVERSION=	2.14.6
-CATEGORIES?=	textproc gnome
-MASTER_SITES=	GNOME
-DISTNAME=	libxml2-${DISTVERSION}
-DIST_SUBDIR=	gnome
+PORTNAME=	libxml2
+PORTREVISION=	0
+CATEGORIES=	textproc gnome python
+PKGNAMESUFFIX=
 
-MAINTAINER=	desktop@FreeBSD.org
-COMMENT?=	XML parser library for GNOME
-WWW=		http://xmlsoft.org/
+COMMENT=	Documentation package for XML parser library for GNOME
 
-LICENSE=	MIT
+BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
+		libxml2-core=${PORTVERSION}:textproc/libxml2-core \
+		xsltproc:textproc/libxslt
+# not an actual dependency but required to keep the many
+# other ports that declare a depends on textproc/libxml2 building
+LIB_DEPENDS=	libxml2.so:textproc/libxml2-core
 
-# Upstream recommends autotools on Unix-like systems
-USES+=		cpe gmake iconv libtool localbase pathfix pkgconfig tar:xz
-CPE_VENDOR=	xmlsoft
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-# Don't build with Python support unless requested
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/share/ \
-			--with-lzma=/usr \
-			--${LIBXML2_SLAVE:Dwith:Uwithout}-python${LIBXML2_SLAVE:D=${PYTHON_CMD}:U}
+USES=		shebangfix
 
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+DOCSDIR=	${PREFIX}/share/doc/libxml2-docs
+EXAMPLESDIR=	${PREFIX}/share/examples/libxml2-docs
+FILESDIR=	${.CURDIR}/files
+MASTERDIR=	${.CURDIR}/../libxml2-core
 
-OPTIONS_DEFINE=	DOCS ICU READLINE STATIC THREAD_ALLOC
-OPTIONS_GROUP=	LEGACY
-OPTIONS_GROUP_LEGACY=	HTTP LZMA ZLIB
-OPTIONS_DEFAULT=	HTTP LZMA READLINE STATIC ZLIB
-OPTIONS_SUB=		yes
+NO_ARCH=	yes
 
-HTTP_DESC=		HTTP support
-LEGACY_DESC=		Enable legacy API compatibility
-READLINE_DESC=		History for xmllint
-THREAD_ALLOC_DESC=	Per-thread memory (DEVELOPERS ONLY!)
+BUILD_WRKSRC=	${WRKSRC}/doc
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+TEST_WRKSRC=	${BUILD_WRKSRC}
 
-HTTP_CONFIGURE_WITH=		http
-ICU_LIB_DEPENDS=		libicuuc.so:devel/icu
-ICU_CONFIGURE_WITH=		icu
-LZMA_CONFIGURE_WITH=		lzma
-READLINE_LIB_DEPENDS=		libreadline.so:devel/readline
-READLINE_CONFIGURE_WITH=	history \
-				readline
-STATIC_CONFIGURE_ENABLE=	static
-THREAD_ALLOC_CONFIGURE_WITH=	thread-alloc
-ZLIB_CONFIGURE_WITH=		zlib
+DESCR=		${.CURDIR}/pkg-descr
+PLIST=		${.CURDIR}/pkg-plist
+PORTDOCS=	*
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/etc/xml/catalog|${LOCALBASE}/share/xml/catalog|g; \
-		 s|/etc/sgml/catalog|${LOCALBASE}/share/sgml/catalog|g' \
-		${WRKSRC}/doc/xmllint.1
+OPTIONS_EXCLUDE=	${OPTIONS_DEFINE:NDOCS} ${OPTIONS_GROUP_LEGACY}
+OPTIONS_SLAVE=		DOCS
+
+pre-everything::
+	@if ${PKG_INFO} -e ${PORTNAME} && \
+	    test "<" = $$(${PKG_VERSION} -t $$(${PKG_QUERY} %v $$(${PKG_INFO} -q -O ${PORTNAME})) 2.15) ; then \
+	        ${ECHO_CMD} "=== libxml2 < 2.15 detected, you must deinstall first ===" ; \
+		${ECHO_CMD} "=== because you cannot install libxml2-core otherwise ===" ; \
+		${ECHO_CMD} "=== In case of more trouble, try make clean-depends.  ===" ; \
+		exit 1; \
+	fi
 
 post-install:
-.if !defined(LIBXML2_SLAVE)
 # Documentation should be in DOCSDIR
-	@${MV} ${STAGEDIR}${PREFIX}/share/gtk-doc/html/libxml2 \
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/devhelp
+	${MV} ${STAGEDIR}${PREFIX}/share/doc/libxml2/html/ \
 		${STAGEDIR}${DOCSDIR}/devhelp
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/gtk-doc
+	${RM} -rv ${STAGEDIR}${PREFIX}/share/gtk-doc
+	${MV} ${STAGEDIR}${PREFIX}/share/doc/libxml2 \
+		${STAGEDIR}${DOCSDIR}
 # Install remaining documentation that's not connected to autotools
 	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
-.else
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_LIBDIR}/site-packages/libxml2mod${PYTHON_SOABI}.so
-.endif
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

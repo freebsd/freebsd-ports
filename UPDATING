@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260126:
+  AFFECTS: users of textproc/libxml2
+  AUTHOR: mandree@FreeBSD.org
+
+  The libxml2 port has been split in two, to avoid a new circular dependency
+  through libxslt when building the documentation.  The libxml2-core port
+  now contains the library and libxml2 the documentation.
+  This should be mostly automatically handled by the framework;
+  if installing libxml2-core now causes trouble in ports,
+  build libxml2-core, then pkg delete -f libxml2, then install
+  libxml2-core, and then proceed with your updates.
+
 20260125:
   AFFECTS: users of dns/ddclient
   AUTHOR: mjl@luckie.org.nz

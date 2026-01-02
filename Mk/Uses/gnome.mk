@@ -204,9 +204,9 @@ libidl_USE_GNOME_IMPL=	glib20
 libglade2_LIB_DEPENDS=	libglade-2.0.so:devel/libglade2
 libglade2_USE_GNOME_IMPL=libxml2 gtk20
 
-libxml2_BUILD_DEPENDS=	xml2-config:textproc/libxml2
-libxml2_LIB_DEPENDS=	libxml2.so:textproc/libxml2
-libxml2_RUN_DEPENDS=	xml2-config:textproc/libxml2
+libxml2_BUILD_DEPENDS=	xml2-config:textproc/libxml2-core
+libxml2_LIB_DEPENDS=	libxml2.so:textproc/libxml2-core
+libxml2_RUN_DEPENDS=	libxml2>=0:textproc/libxml2
 
 libxslt_BUILD_DEPENDS=	xsltproc:textproc/libxslt
 libxslt_LIB_DEPENDS=	libxslt.so:textproc/libxslt
