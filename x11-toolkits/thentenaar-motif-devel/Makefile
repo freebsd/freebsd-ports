@@ -1,4 +1,4 @@
-PORTNAME=	open-motif
+PORTNAME=	thentenaar-motif
 PORTVERSION=	${COMMIT_DATE}
 PORTREVISION=	7
 CATEGORIES=	x11-toolkits
@@ -6,10 +6,10 @@ PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
-WWW=		https://motif.ics.com/
+WWW=		https://github.com/thentenaar/motif
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	cschuber
+GH_ACCOUNT=	thentenaar
 GH_PROJECT=	motif
 GH_TAGNAME=	0f556b08
 COMMIT_DATE=	2023.02.16
@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif
-CONFLICTS_INSTALL=	open-motif
+CONFLICTS_INSTALL=	open-motif thentenaar-motif
 
 USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig xorg
 USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
