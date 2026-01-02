@@ -1,5 +1,5 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	0.0.366
+DISTVERSION=	0.0.373
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${NODE_HEADERS}${EXTRACT_SUFX}
@@ -134,7 +134,7 @@ do-install:
 		-e "s|#!/usr/bin/env node|#!${PREFIX}/bin/node|" \
 		${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/index.js
 	# set exec bit
-	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/index.js
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/lib/node_modules/${PACKAGE_NAME}/npm-loader.js
 	# create symlink in bin
 	@${RLN} -s ${STAGEDIR}${PREFIX}/lib/node_modules/.bin/copilot ${STAGEDIR}${PREFIX}/bin/copilot
 	# strip binaries
