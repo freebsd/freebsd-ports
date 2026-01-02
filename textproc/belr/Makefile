@@ -1,10 +1,10 @@
 PORTNAME=	belr
-DISTVERSION=	5.4.28
+DISTVERSION=	5.4.72
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Language recognition library
-WWW=		https://www.linphone.org/
+WWW=		https://gitlab.linphone.org/BC/public/belr
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
