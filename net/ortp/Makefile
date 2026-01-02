@@ -1,10 +1,10 @@
 PORTNAME=	ortp
-DISTVERSION=	5.4.28
+DISTVERSION=	5.4.72
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Real-time Transport Protocol (RTP) library
-WWW=		https://www.linphone.org/technical-corner/ortp.html
+WWW=		https://gitlab.linphone.org/BC/public/ortp
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
