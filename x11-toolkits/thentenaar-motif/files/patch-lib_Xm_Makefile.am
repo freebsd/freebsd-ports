@@ -1,0 +1,11 @@
+--- lib/Xm/Makefile.am.orig	2025-12-29 15:39:04 UTC
++++ lib/Xm/Makefile.am
+@@ -11,7 +11,7 @@ xmdir = $(includedir)/Xm
+               $(XFT_CFLAGS) $(XCURSOR_CFLAGS) $(X_CFLAGS)
+ xmdir = $(includedir)/Xm
+ 
+-libXm_la_LDFLAGS = -version-info @ABI_VERSION@ -no-undefined
++libXm_la_LDFLAGS = -version-info @ABI_VERSION@ -lm -lfontconfig
+ libXm_la_LIBADD  = $(XFT_LIBS) $(XRANDR_LIBS) $(XINERAMA_LIBS) \
+                    $(XCURSOR_LIBS) $(XRENDER_LIBS) $(X_LIBS)
+ lib_LTLIBRARIES  = libXm.la

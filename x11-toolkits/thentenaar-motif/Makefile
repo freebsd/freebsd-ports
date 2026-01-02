@@ -1,6 +1,5 @@
 PORTNAME=	thentenaar-motif
-DISTVERSION=	2.3.8
-PORTREVISION=	8
+DISTVERSION=	2.4.0
 CATEGORIES=	x11-toolkits
 DISTNAME=	motif-${PORTVERSION}
 DISTVERSIONPREFIX=	v
@@ -14,7 +13,7 @@ GH_ACCOUNT=	thentenaar
 GH_PROJECT=	motif
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif
@@ -22,6 +21,7 @@ CONFLICTS_INSTALL=	open-motif-devel thentenaar-motif-devel
 
 USES=		autoreconf gmake iconv jpeg libtool:keepla pkgconfig xorg
 USE_XORG=	x11 xaw xbitmaps xext xft xt xmu xrender sm ice
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
@@ -35,6 +35,9 @@ USE_CSTD=	gnu89
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS
+
+xxx-pre-configure:
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh
 
 post-patch:
 # fix sections
@@ -51,8 +54,6 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in BUGREPORT README RELNOTES
-	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
