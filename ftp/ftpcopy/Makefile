@@ -1,6 +1,6 @@
 PORTNAME=	ftpcopy
 PORTVERSION=	0.6.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
@@ -18,10 +18,6 @@ WRKSRC=		${WRKDIR}/web/${DISTNAME}
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} != amd64 && ${ARCH} != i386
-USES+=		compiler:gcc-c++11-lib
-.endif
 
 pre-build:
 	${ECHO} "${CC}" >${WRKSRC}/src/conf-cc

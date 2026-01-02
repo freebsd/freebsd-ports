@@ -1,6 +1,6 @@
---- src/typesize.sh.orig	Tue Jul 27 13:24:17 2004
-+++ src/typesize.sh	Thu Aug 19 18:30:43 2004
-@@ -21,7 +21,7 @@
+--- src/typesize.sh.orig	2004-07-27 11:24:17 UTC
++++ src/typesize.sh
+@@ -21,7 +21,7 @@ for i in "short" "int" "long " "unsigned short" "unsig
  	:
        else
  	x=$?
