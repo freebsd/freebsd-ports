@@ -1,11 +1,10 @@
 PORTNAME=	mediastreamer
-DISTVERSION=	5.4.26
-PORTREVISION=	2
+DISTVERSION=	5.4.72
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Real-time audio and video streaming and processing
-WWW=		https://www.linphone.org/technical-corner/mediastreamer2
+WWW=		https://gitlab.linphone.org/BC/public/mediastreamer2
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
