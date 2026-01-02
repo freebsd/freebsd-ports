@@ -1,6 +1,7 @@
 PORTNAME=	ly
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://codeberg.org/AnErrupTion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -47,6 +48,6 @@ post-install:
 		s,$$CONFIG_DIRECTORY/csh.login,/etc/csh.login,g ; \
 		s,"$$CONFIG_DIRECTORY",${PREFIX}/etc,g ;' \
 		${WRKSRC}/res/setup.sh
-	${INSTALL_DATA} ${WRKSRC}/res/setup.sh ${STAGEDIR}${ETCDIR}/setup.sh.sample
+	${INSTALL_SCRIPT} ${WRKSRC}/res/setup.sh ${STAGEDIR}${ETCDIR}/setup.sh.sample
 
 .include <bsd.port.mk>
