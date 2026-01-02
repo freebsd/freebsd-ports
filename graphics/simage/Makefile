@@ -1,32 +1,40 @@
 PORTNAME=	simage
-PORTVERSION=	1.7.0
-PORTREVISION=	12
+DISTVERSION=	1.8.4
 CATEGORIES=	graphics
-MASTER_SITES=	https://bitbucket.org/Coin3D/coin/downloads/
+MASTER_SITES=	https://github.com/coin3d/${PORTNAME}/releases/download/v${DISTVERSION}/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	florianmarx@free.fr
 COMMENT=	Library with image format loaders and front-ends
-WWW=		https://bitbucket.org/Coin3D/coin/wiki/Home
+WWW=		https://github.com/coin3d/simage/
 
-LICENSE=	MIT unknown
-LICENSE_COMB=	dual
-LICENSE_NAME_unknown=	mpeg2enc
-LICENSE_TEXT_unknown=	${FILESDIR}/LICENSE.mpeg2enc
-LICENSE_PERMS_unknown=	no-dist-sell no-pkg-sell
+LICENSE=		ISC MPEG2ENC
+LICENSE_COMB=		multi
+LICENSE_NAME_ISC=	ISC License
+LICENSE_NAME_MPEG2ENC=	mpeg2enc license
+LICENSE_FILE_ISC=	${WRKSRC}/LICENSE
+LICENSE_FILE_MPEG2ENC=	${WRKSRC}/LICENSE.mpeg2enc
+LICENSE_PERMS_ISC=	dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_PERMS_MPEG2ENC=	no-dist-sell no-pkg-sell
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
 		libvorbis.so:audio/libvorbis \
-		libjasper.so:graphics/jasper \
+		libFLAC.so:audio/flac \
+		libogg.so:audio/libogg \
+		libopus.so:audio/opus \
+		libzstd.so:archivers/zstd \
 		libgif.so:graphics/giflib \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libtiff.so:graphics/tiff \
+		libjasper.so:graphics/jasper
 
-USES=		jpeg libtool pathfix
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-mpeg2enc
-INSTALL_TARGET=	install-strip
+USES=		cmake jpeg localbase:ldflags
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CMAKE_ON=	SIMAGE_MPEG2ENC_SUPPORT
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PLIST_SUB=	VERSION="${DISTVERSION}"
 
 .include <bsd.port.mk>
