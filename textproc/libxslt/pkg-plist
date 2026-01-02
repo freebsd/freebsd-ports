@@ -17,6 +17,7 @@ include/libxslt/preproc.h
 include/libxslt/security.h
 include/libxslt/templates.h
 include/libxslt/transform.h
+include/libxslt/transformInternals.h
 include/libxslt/variables.h
 include/libxslt/xslt.h
 include/libxslt/xsltInternals.h
@@ -29,7 +30,7 @@ lib/cmake/libxslt/libxslt-config.cmake
 %%STATIC%%lib/libexslt.a
 lib/libexslt.so
 lib/libexslt.so.0
-lib/libexslt.so.0.8.24
+lib/libexslt.so.0.8.25
 %%STATIC%%lib/libxslt.a
 lib/libxslt.so
 lib/libxslt.so.1
