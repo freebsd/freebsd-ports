@@ -6,8 +6,6 @@ MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
 PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
-PATCHFILES+=	61983cd6dcb86097d91b7ef405abc1266444a368.patch:-p1 # ffmpeg6 support: AVPicture
-								   # https://github.com/FreeRDP/FreeRDP/pull/8941
 PATCHFILES+=	78cdb555c57c33b7f331cb280ac2f615cb87fa74.patch:-p1 # add additional neon check
 								   # https://github.com/FreeRDP/FreeRDP/issues/9746
 
