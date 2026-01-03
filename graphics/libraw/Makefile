@@ -1,5 +1,5 @@
 PORTNAME=	libraw
-PORTVERSION=	0.21.4
+PORTVERSION=	0.21.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.org/data/
 DISTNAME=	LibRaw-${PORTVERSION}
