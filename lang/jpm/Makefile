@@ -1,9 +1,10 @@
 PORTNAME=	jpm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	lang
 
-MAINTAINER=	hsw@bitmark.com
+MAINTAINER=	bsd.hsw@gmail.com
 COMMENT=	Janet Project Manager tool
 WWW=		https://github.com/janet-lang/jpm
 
@@ -11,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	janet>=1.17.2:lang/janet
+RUN_DEPENDS=	janet>=1.17.2:lang/janet \
+		git:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	janet-lang
