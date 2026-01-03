@@ -1,30 +1,12 @@
---- src/ggml-cpu/CMakeLists.txt.orig	2025-09-16 11:42:24 UTC
+--- src/ggml-cpu/CMakeLists.txt.orig	2026-01-03 04:49:29 UTC
 +++ src/ggml-cpu/CMakeLists.txt
-@@ -127,10 +127,6 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
-                 if (NOT ARM_MCPU_RESULT)
-                     string(REGEX MATCH "-mcpu=[^ ']+" ARM_MCPU_FLAG "${ARM_MCPU}")
+@@ -137,8 +137,7 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
                  endif()
--                if ("${ARM_MCPU_FLAG}" STREQUAL "")
--                    set(ARM_MCPU_FLAG -mcpu=native)
--                    message(STATUS "ARM -mcpu not found, -mcpu=native will be used")
--                endif()
  
-                 include(CheckCXXSourceRuns)
- 
-@@ -382,13 +378,13 @@ function(ggml_add_cpu_backend_variant_impl tag_name)
-             string(REGEX REPLACE "POWER *([0-9]+)" "\\1" EXTRACTED_NUMBER "${MATCHED_STRING}")
- 
-             if (EXTRACTED_NUMBER GREATER_EQUAL 10)
--                list(APPEND ARCH_FLAGS -mcpu=power10 -mpowerpc64)
-+                list(APPEND ARCH_FLAGS -mcpu=power10)
-             elseif (EXTRACTED_NUMBER EQUAL 9)
--                list(APPEND ARCH_FLAGS -mcpu=power9 -mpowerpc64)
-+                list(APPEND ARCH_FLAGS -mcpu=power9)
-             elseif (${CMAKE_SYSTEM_PROCESSOR} MATCHES "ppc64le")
-                 list(APPEND ARCH_FLAGS -mcpu=powerpc64le -mtune=native)
-             else()
--                list(APPEND ARCH_FLAGS -mcpu=native -mtune=native -mpowerpc64)
-+                list(APPEND ARCH_FLAGS -mcpu=native -mtune=native)
-             endif()
-         elseif(GGML_CPU_ALL_VARIANTS)
-             # Begin with the lowest baseline
+                 if ("${ARM_NATIVE_FLAG}" STREQUAL "")
+-                    set(ARM_NATIVE_FLAG -mcpu=native)
+-                    message(WARNING "ARM -march/-mcpu not found, -mcpu=native will be used")
++                    message(WARNING "ARM: CPUTYPE will be used")
+                 else()
+                     message(STATUS "ARM detected flags: ${ARM_NATIVE_FLAG}")
+                 endif()
