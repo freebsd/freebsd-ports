@@ -1,10 +1,9 @@
 PORTNAME=	ncgopher
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	17
+DISTVERSION=	0.8.0
 CATEGORIES=	www
 
-MAINTAINER=	beastieboy@beastieboy.net
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Fast and modern Gopher, Gemini and finger terminal client
 WWW=		https://github.com/jansc/ncgopher
 
@@ -15,156 +14,8 @@ USES=		cargo ssl sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jansc
-
-CARGO_CRATES=	addr2line-0.17.0 \
-		adler-1.0.2 \
-		ahash-0.7.6 \
-		aho-corasick-0.7.18 \
-		asn1-rs-0.3.1 \
-		asn1-rs-derive-0.1.0 \
-		asn1-rs-impl-0.1.0 \
-		atty-0.2.14 \
-		autocfg-1.1.0 \
-		backtrace-0.3.65 \
-		base64-0.13.0 \
-		bitflags-1.3.2 \
-		block-buffer-0.10.2 \
-		cc-1.0.73 \
-		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		clap-3.1.18 \
-		clap_derive-3.1.18 \
-		clap_lex-0.2.0 \
-		core-foundation-0.9.3 \
-		core-foundation-sys-0.8.3 \
-		cpufeatures-0.2.2 \
-		crossbeam-channel-0.5.4 \
-		crossbeam-utils-0.8.8 \
-		crypto-common-0.1.3 \
-		cursive-0.18.0 \
-		cursive_core-0.3.2 \
-		darling-0.13.4 \
-		darling_core-0.13.4 \
-		darling_macro-0.13.4 \
-		data-encoding-2.3.2 \
-		der-parser-7.0.0 \
-		digest-0.10.3 \
-		dirs-4.0.0 \
-		dirs-sys-0.3.7 \
-		displaydoc-0.2.3 \
-		enum-map-2.1.0 \
-		enum-map-derive-0.8.0 \
-		enumset-1.0.11 \
-		enumset_derive-0.6.0 \
-		fallible-iterator-0.2.0 \
-		fallible-streaming-iterator-0.1.9 \
-		fastrand-1.7.0 \
-		fnv-1.0.7 \
-		foreign-types-0.3.2 \
-		foreign-types-shared-0.1.1 \
-		form_urlencoded-1.0.1 \
-		gemtext-0.2.1 \
-		generic-array-0.14.5 \
-		getrandom-0.2.6 \
-		gimli-0.26.1 \
-		hashbrown-0.11.2 \
-		hashlink-0.7.0 \
-		heck-0.4.0 \
-		hermit-abi-0.1.19 \
-		ident_case-1.0.1 \
-		idna-0.2.3 \
-		indexmap-1.8.1 \
-		instant-0.1.12 \
-		itoa-1.0.2 \
-		lazy_static-1.4.0 \
-		libc-0.2.125 \
-		libsqlite3-sys-0.24.2 \
-		log-0.4.17 \
-		maplit-1.0.2 \
-		matches-0.1.9 \
-		memchr-2.5.0 \
-		mime-0.3.16 \
-		minimal-lexical-0.2.1 \
-		miniz_oxide-0.5.1 \
-		native-tls-0.2.10 \
-		ncurses-5.101.0 \
-		nom-7.1.1 \
-		num-0.4.0 \
-		num-bigint-0.4.3 \
-		num-complex-0.4.1 \
-		num-integer-0.1.45 \
-		num-iter-0.1.43 \
-		num-rational-0.4.0 \
-		num-traits-0.2.15 \
-		num_threads-0.1.6 \
-		object-0.28.4 \
-		oid-registry-0.4.0 \
-		once_cell-1.10.0 \
-		openssl-0.10.40 \
-		openssl-macros-0.1.0 \
-		openssl-probe-0.1.5 \
-		openssl-sys-0.9.73 \
-		os_str_bytes-6.0.1 \
-		owning_ref-0.4.1 \
-		pancurses-0.17.0 \
-		pdcurses-sys-0.7.1 \
-		percent-encoding-2.1.0 \
-		pkg-config-0.3.25 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.38 \
-		quote-1.0.18 \
-		redox_syscall-0.2.13 \
-		redox_users-0.4.3 \
-		regex-1.5.6 \
-		regex-syntax-0.6.26 \
-		remove_dir_all-0.5.3 \
-		rusqlite-0.27.0 \
-		rustc-demangle-0.1.21 \
-		rusticata-macros-4.1.0 \
-		schannel-0.1.19 \
-		security-framework-2.6.1 \
-		security-framework-sys-2.6.1 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
-		sha2-0.10.2 \
-		signal-hook-0.3.14 \
-		signal-hook-registry-1.4.0 \
-		smallvec-1.8.0 \
-		stable_deref_trait-1.2.0 \
-		strsim-0.10.0 \
-		syn-1.0.94 \
-		synstructure-0.12.6 \
-		tempfile-3.3.0 \
-		term_size-0.3.2 \
-		termcolor-1.1.3 \
-		textwrap-0.15.0 \
-		thiserror-1.0.31 \
-		thiserror-impl-1.0.31 \
-		time-0.1.44 \
-		time-0.3.9 \
-		time-macros-0.2.4 \
-		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.0 \
-		toml-0.5.9 \
-		typenum-1.15.0 \
-		unicode-bidi-0.3.8 \
-		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.9.0 \
-		unicode-width-0.1.9 \
-		unicode-xid-0.2.3 \
-		url-2.2.2 \
-		urlencoding-2.1.0 \
-		vcpkg-0.2.15 \
-		version_check-0.9.4 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		winreg-0.5.1 \
-		x509-parser-0.13.2 \
-		xi-unicode-0.3.0
+PLIST_FILES=	bin/ncgopher \
+		share/man/man1/ncgopher.1.gz
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/ncgopher.1 ${STAGEDIR}${PREFIX}/share/man/man1
