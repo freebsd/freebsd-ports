@@ -1,11 +1,11 @@
 PORTNAME=	sonivox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.16
+DISTVERSION=	4.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Fork of the AOSP 'platform_external_sonivox' to use out of Android
-WWW=		https://github.com/pedrolcl/sonivox
+COMMENT=	Evolution of the AOSP 'platform_external_sonivox'
+WWW=		https://github.com/EmbeddedSynth/sonivox
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,7 +16,7 @@ USES=		cmake:testing
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	pedrolcl
+GH_ACCOUNT=	EmbeddedSynth
 
 CXXFLAGS+=	-DO_LARGEFILE=0 # workaround for linuxism in tests
 
@@ -24,6 +24,6 @@ CMAKE_OFF=	BUILD_TESTING
 
 CONFIGURE_ENV=	${MAKE_ENV} TEMP=${BUILD_WRKSRC}
 
-# tests as of 3.6.16: 45% tests passed, 18 tests failed out of 33, see https://github.com/pedrolcl/sonivox/issues/102
+# tests as of 4.0.0: 75% tests passed, 3 tests failed out of 12, see https://github.com/EmbeddedSynth/sonivox/issues/5
 
 .include <bsd.port.mk>
