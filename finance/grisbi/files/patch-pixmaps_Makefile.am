@@ -1,0 +1,10 @@
+--- pixmaps/Makefile.am.orig	2025-12-31 17:02:12 UTC
++++ pixmaps/Makefile.am
+@@ -1,6 +1,6 @@ SUBDIRS = flags
+ SUBDIRS = flags
+ 
+-grisbi_pixmapsdir = $(datadir)/pixmaps/$(PACKAGE)
++grisbi_pixmapsdir = $(pkgdatadir)/pixmaps
+ 
+ grisbi_pixmaps_DATA = \
+ 	grisbi.svg \
