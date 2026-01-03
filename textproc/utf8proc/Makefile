@@ -1,5 +1,5 @@
 PORTNAME=	utf8proc
-DISTVERSION=	2.11.2
+DISTVERSION=	2.11.3
 CATEGORIES=	textproc devel
 MASTER_SITES=	https://github.com/JuliaStrings/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://www.unicode.org/Public/17.0.0/ucd/:testfiles1 \
