@@ -19,7 +19,47 @@
  fi
       ;;
  esac
-@@ -35530,15 +35530,15 @@ then :
+@@ -33791,9 +33791,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -33871,9 +33868,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -35197,9 +35191,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -35277,9 +35268,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -35530,15 +35518,15 @@ then :
        with_heimdal_krb5=yes
        if test -d "$withval/lib64"
  then :
@@ -38,7 +78,47 @@
  fi
       ;;
  esac
-@@ -40801,7 +40801,7 @@ BUILD_HELPER="NIS"
+@@ -36777,9 +36765,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -36857,9 +36842,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -37250,9 +37232,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -37329,9 +37308,6 @@ else $as_nop
+ #elif HAVE_GSSAPI_H
+ #include <gssapi.h>
+ #endif
+-#if HAVE_GSSAPI_GSSAPI_KRB5_H
+-#include <gssapi/gssapi_krb5.h>
+-#endif
+ #if HAVE_GSSAPI_GSSAPI_GENERIC_H
+ #include <gssapi/gssapi_generic.h>
+ #endif
+@@ -40801,7 +40777,7 @@ BUILD_HELPER="NIS"
  ##
  
  BUILD_HELPER="NIS"
@@ -47,7 +127,7 @@
  do :
    as_ac_Header=`printf "%s\n" "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
-@@ -47289,6 +47289,7 @@ ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type
+@@ -47289,6 +47265,7 @@ ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type
  
  ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type_cpu_set_t" "
  #if HAVE_SCHED_H
@@ -55,7 +135,7 @@
  #include <sched.h>
  #endif
  
-@@ -49806,6 +49807,7 @@ else $as_nop
+@@ -49806,6 +49783,7 @@ else $as_nop
  #       include <sys/ioccom.h>
  #       include <netinet/in.h>
  #undef minor_t
