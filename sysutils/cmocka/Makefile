@@ -1,5 +1,5 @@
 PORTNAME=	cmocka
-DISTVERSION=	2.0.0
+DISTVERSION=	2.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://cmocka.org/files/2.0/
 

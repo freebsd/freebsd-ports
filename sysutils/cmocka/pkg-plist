@@ -7,5 +7,5 @@ lib/cmake/cmocka/cmocka-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/cmocka/cmocka-targets.cmake
 lib/libcmocka.so
 lib/libcmocka.so.0
-lib/libcmocka.so.1.0.0
+lib/libcmocka.so.1.0.1
 libdata/pkgconfig/cmocka.pc
