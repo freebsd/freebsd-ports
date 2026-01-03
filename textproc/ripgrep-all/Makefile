@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.10
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	eduardo@freebsd.org
 COMMENT=	Improved search capacities of ripgrep
 WWW=		https://github.com/phiresky/ripgrep-all/
 
@@ -11,7 +11,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rg:textproc/ripgrep
-LIB_DEPENDS+=	libzstd.so:archivers/zstd
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo
 USE_GITHUB=	yes
