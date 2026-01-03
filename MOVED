@@ -5064,3 +5064,6 @@ lang/go120||2026-01-01|Has expired: Old version, unsupported upstream
 net/gwhois||2026-01-01|Has expired: source and WWW is gone. Hasn't been updated for 12yrs
 lang/go121||2026-01-01|Has expired: Old version, unsupported upstream
 sysutils/beats7|sysutils/beats8|2026-01-02|Has expired: Only works with expired go1.22
+devel/gwenhywfar-fox16||2026-01-03|Leaf library not used in the ports tree
+devel/gwenhywfar-gtk2||2026-01-03|Leaf library not used in the ports tree
+devel/gwenhywfar-qt5||2026-01-03|Leaf library not used in the ports tree

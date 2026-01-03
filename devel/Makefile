@@ -964,10 +964,7 @@
     SUBDIR += gum
     SUBDIR += gumbo
     SUBDIR += gwenhywfar
-    SUBDIR += gwenhywfar-fox16
-    SUBDIR += gwenhywfar-gtk2
     SUBDIR += gwenhywfar-gtk3
-    SUBDIR += gwenhywfar-qt5
     SUBDIR += gwenhywfar-qt6
     SUBDIR += gzstream
     SUBDIR += hapy

@@ -1,5 +1,4 @@
-Hunk 1: Fix detection of fox libs.
-Hunk 2: Avoid linking to unneeded Qt components (yet again) which were re-added
+Hunk 1: Avoid linking to unneeded Qt components (yet again) which were re-added
         in 5.12.1, and re-add widgets which was removed for some reason. This
         only needs core, gui, and widgets.
         Use pkgconf to define QT_LIBS. The other method produces the full path
@@ -7,15 +6,6 @@ Hunk 2: Avoid linking to unneeded Qt components (yet again) which were re-added
 
 --- configure.orig	2025-07-06 17:51:09 UTC
 +++ configure
-@@ -24831,7 +24831,7 @@ then :
- # Check whether --with-fox-libs was given.
- if test ${with_fox_libs+y}
- then :
--  withval=$with_fox_libs; fox_libs="$withval"
-+  withval=$with_fox_libs; local_fox_libs="$withval"
- else $as_nop
- 
-       ac_ext=cpp
 @@ -26583,42 +26583,20 @@ win32 {
      CONFIG -= debug_and_release
      CONFIG += release
