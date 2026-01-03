@@ -1,6 +1,6 @@
 NUGET_GROUPS=	NUGET
 NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
-		AngleSharp:1.3.0 \
+		AngleSharp:1.3.1 \
 		Autofac.Extensions.DependencyInjection:9.0.0 \
 		Autofac:8.0.0 \
 		BencodeNET:4.0.0 \
@@ -32,7 +32,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.AspNetCore.Http:2.3.0 \
 		Microsoft.AspNetCore.HttpOverrides:2.3.0 \
 		Microsoft.AspNetCore.JsonPatch:2.3.0 \
-		Microsoft.AspNetCore.JsonPatch:9.0.9 \
+		Microsoft.AspNetCore.JsonPatch:9.0.11 \
 		Microsoft.AspNetCore.Localization:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Abstractions:2.3.0 \
 		Microsoft.AspNetCore.Mvc.ApiExplorer:2.3.0 \
@@ -41,7 +41,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.AspNetCore.Mvc.DataAnnotations:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Formatters.Json:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Localization:2.3.0 \
-		Microsoft.AspNetCore.Mvc.NewtonsoftJson:9.0.9 \
+		Microsoft.AspNetCore.Mvc.NewtonsoftJson:9.0.11 \
 		Microsoft.AspNetCore.Mvc.Razor.Extensions:2.3.0 \
 		Microsoft.AspNetCore.Mvc.Razor:2.3.0 \
 		Microsoft.AspNetCore.Mvc.RazorPages:2.3.0 \
@@ -66,19 +66,19 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.AspNetCore.StaticFiles:2.3.0 \
 		Microsoft.AspNetCore.WebUtilities:2.3.0 \
 		Microsoft.AspNetCore:2.3.0 \
-		Microsoft.Bcl.AsyncInterfaces:9.0.9 \
+		Microsoft.Bcl.AsyncInterfaces:9.0.11 \
 		Microsoft.Bcl.TimeProvider:8.0.0 \
-		Microsoft.CodeAnalysis.Analyzers:1.1.0 \
-		Microsoft.CodeAnalysis.Common:2.8.2 \
-		Microsoft.CodeAnalysis.CSharp:2.8.2 \
-		Microsoft.CodeAnalysis.Razor:2.3.0 \
 		Microsoft.CSharp:4.7.0 \
+		Microsoft.CodeAnalysis.Analyzers:1.1.0 \
+		Microsoft.CodeAnalysis.CSharp:2.8.2 \
+		Microsoft.CodeAnalysis.Common:2.8.2 \
+		Microsoft.CodeAnalysis.Razor:2.3.0 \
 		Microsoft.DiaSymReader.Native:1.7.0 \
 		Microsoft.DotNet.PlatformAbstractions:2.1.0 \
 		Microsoft.Extensions.Caching.Abstractions:8.0.0 \
 		Microsoft.Extensions.Caching.Memory:8.0.1 \
 		Microsoft.Extensions.Configuration.Abstractions:8.0.0 \
-		Microsoft.Extensions.Configuration.Abstractions:9.0.9 \
+		Microsoft.Extensions.Configuration.Abstractions:9.0.11 \
 		Microsoft.Extensions.Configuration.Binder:8.0.2 \
 		Microsoft.Extensions.Configuration.CommandLine:8.0.0 \
 		Microsoft.Extensions.Configuration.EnvironmentVariables:8.0.0 \
@@ -86,7 +86,7 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.Extensions.Configuration.Json:8.0.1 \
 		Microsoft.Extensions.Configuration.UserSecrets:8.0.1 \
 		Microsoft.Extensions.Configuration:8.0.0 \
-		Microsoft.Extensions.Configuration:9.0.9 \
+		Microsoft.Extensions.Configuration:9.0.11 \
 		Microsoft.Extensions.DependencyInjection.Abstractions:8.0.0 \
 		Microsoft.Extensions.DependencyInjection.Abstractions:8.0.2 \
 		Microsoft.Extensions.DependencyInjection:8.0.0 \
@@ -111,25 +111,28 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		Microsoft.Extensions.Options.ConfigurationExtensions:8.0.0 \
 		Microsoft.Extensions.Options:8.0.2 \
 		Microsoft.Extensions.Primitives:8.0.0 \
-		Microsoft.Extensions.Primitives:9.0.9 \
+		Microsoft.Extensions.Primitives:9.0.11 \
 		Microsoft.Extensions.WebEncoders:8.0.11 \
-		Microsoft.Net.Http.Headers:2.3.0 \
 		Microsoft.NETCore.Platforms:1.1.0 \
 		Microsoft.NETCore.Platforms:5.0.0 \
+		Microsoft.NETCore.Targets:1.1.0 \
 		Microsoft.NETFramework.ReferenceAssemblies.net471:1.0.3 \
 		Microsoft.NETFramework.ReferenceAssemblies:1.0.3 \
+		Microsoft.Net.Http.Headers:2.3.0 \
+		Microsoft.Win32.Primitives:4.3.0 \
 		Microsoft.Win32.Registry:4.5.0 \
 		MimeMapping:1.0.1.50 \
 		Mono.Posix:7.1.0-final.1.21458.1 \
 		Mono.Unix:7.1.0-final.1.21458.1 \
+		NETStandard.Library:1.6.1 \
 		NETStandard.Library:2.0.3 \
-		Newtonsoft.Json.Bson:1.0.2 \
-		Newtonsoft.Json:13.0.4 \
 		NLog.Extensions.Logging:5.4.0 \
 		NLog.Web.AspNetCore:5.4.0 \
 		NLog:5.4.0 \
-		Polly.Core:8.6.3 \
-		Polly:8.6.3 \
+		Newtonsoft.Json.Bson:1.0.2 \
+		Newtonsoft.Json:13.0.4 \
+		Polly.Core:8.6.5 \
+		Polly:8.6.5 \
 		SharpZipLib:1.4.2 \
 		System.AppContext:4.3.0 \
 		System.Buffers:4.6.0 \
@@ -141,62 +144,131 @@ NUGET_NUPKGS=	AngleSharp.Xml:1.0.0 \
 		System.Diagnostics.Debug:4.3.0 \
 		System.Diagnostics.DiagnosticSource:7.0.2 \
 		System.Diagnostics.DiagnosticSource:8.0.1 \
-		System.Diagnostics.EventLog:9.0.9 \
+		System.Diagnostics.EventLog:9.0.11 \
 		System.Diagnostics.FileVersionInfo:4.3.0 \
 		System.Diagnostics.StackTrace:4.3.0 \
 		System.Diagnostics.Tools:4.3.0 \
+		System.Diagnostics.Tracing:4.3.0 \
 		System.Dynamic.Runtime:4.3.0 \
+		System.Formats.Asn1:9.0.11 \
+		System.Globalization.Calendars:4.3.0 \
+		System.Globalization.Extensions:4.3.0 \
 		System.Globalization:4.3.0 \
+		System.IO.Compression.ZipFile:4.3.0 \
 		System.IO.Compression:4.3.0 \
 		System.IO.FileSystem.AccessControl:5.0.0 \
 		System.IO.FileSystem.Primitives:4.3.0 \
 		System.IO.FileSystem:4.3.0 \
 		System.IO.Pipelines:4.6.0 \
 		System.IO.Pipelines:5.0.1 \
+		System.IO.Pipelines:9.0.11 \
 		System.IO.Pipelines:9.0.9 \
 		System.IO:4.3.0 \
 		System.Linq.Expressions:4.3.0 \
 		System.Linq:4.3.0 \
 		System.Memory:4.5.5 \
 		System.Memory:4.6.0 \
+		System.Net.Http:4.3.0 \
+		System.Net.NameResolution:4.3.0 \
+		System.Net.Primitives:4.3.0 \
+		System.Net.Sockets:4.3.0 \
 		System.Numerics.Vectors:4.4.0 \
 		System.Numerics.Vectors:4.6.0 \
+		System.ObjectModel:4.3.0 \
+		System.Private.Uri:4.3.0 \
+		System.Reflection.Emit.ILGeneration:4.3.0 \
+		System.Reflection.Emit.Lightweight:4.3.0 \
+		System.Reflection.Emit:4.3.0 \
+		System.Reflection.Extensions:4.3.0 \
 		System.Reflection.Metadata:8.0.1 \
+		System.Reflection.Primitives:4.3.0 \
+		System.Reflection.TypeExtensions:4.3.0 \
 		System.Reflection:4.3.0 \
 		System.Resources.ResourceManager:4.3.0 \
 		System.Runtime.CompilerServices.Unsafe:6.0.0 \
 		System.Runtime.CompilerServices.Unsafe:6.1.0 \
 		System.Runtime.Extensions:4.3.0 \
+		System.Runtime.Handles:4.3.0 \
 		System.Runtime.InteropServices.RuntimeInformation:4.3.0 \
 		System.Runtime.InteropServices:4.3.0 \
 		System.Runtime.Numerics:4.3.0 \
 		System.Runtime:4.3.0 \
 		System.Security.AccessControl:5.0.0 \
+		System.Security.Cryptography.Algorithms:4.3.0 \
 		System.Security.Cryptography.Algorithms:4.3.1 \
+		System.Security.Cryptography.Cng:4.3.0 \
 		System.Security.Cryptography.Cng:5.0.0 \
+		System.Security.Cryptography.Csp:4.3.0 \
 		System.Security.Cryptography.Encoding:4.3.0 \
+		System.Security.Cryptography.OpenSsl:4.3.0 \
 		System.Security.Cryptography.Primitives:4.3.0 \
-		System.Security.Cryptography.ProtectedData:9.0.9 \
+		System.Security.Cryptography.ProtectedData:9.0.11 \
 		System.Security.Cryptography.X509Certificates:4.3.0 \
 		System.Security.Cryptography.Xml:8.0.2 \
 		System.Security.Principal.Windows:5.0.0 \
-		System.ServiceProcess.ServiceController:9.0.9 \
-		System.Text.Encoding.CodePages:9.0.9 \
+		System.ServiceProcess.ServiceController:9.0.11 \
+		System.Text.Encoding.CodePages:9.0.11 \
 		System.Text.Encoding.Extensions:4.3.0 \
 		System.Text.Encoding:4.3.0 \
 		System.Text.Encodings.Web:8.0.0 \
-		System.Text.Encodings.Web:9.0.9 \
-		System.Text.Json:9.0.9 \
+		System.Text.Encodings.Web:9.0.11 \
+		System.Text.Json:9.0.11 \
+		System.Text.RegularExpressions:4.3.0 \
+		System.Threading.Tasks.Extensions:4.3.0 \
 		System.Threading.Tasks.Extensions:4.5.4 \
 		System.Threading.Tasks.Extensions:4.6.0 \
 		System.Threading.Tasks.Parallel:4.3.0 \
 		System.Threading.Tasks:4.3.0 \
 		System.Threading.Thread:4.3.0 \
+		System.Threading.ThreadPool:4.3.0 \
+		System.Threading.Timer:4.3.0 \
 		System.Threading:4.3.0 \
 		System.ValueTuple:4.5.0 \
 		System.Xml.ReaderWriter:4.3.0 \
 		System.Xml.XDocument:4.3.0 \
-		System.Xml.XmlDocument:4.3.0 \
 		System.Xml.XPath.XDocument:4.3.0 \
 		System.Xml.XPath:4.3.0 \
+		System.Xml.XmlDocument:4.3.0 \
+		runtime.any.System.Collections:4.3.0 \
+		runtime.any.System.Diagnostics.Tools:4.3.0 \
+		runtime.any.System.Diagnostics.Tracing:4.3.0 \
+		runtime.any.System.Globalization.Calendars:4.3.0 \
+		runtime.any.System.Globalization:4.3.0 \
+		runtime.any.System.IO:4.3.0 \
+		runtime.any.System.Reflection.Extensions:4.3.0 \
+		runtime.any.System.Reflection.Primitives:4.3.0 \
+		runtime.any.System.Reflection:4.3.0 \
+		runtime.any.System.Resources.ResourceManager:4.3.0 \
+		runtime.any.System.Runtime.Handles:4.3.0 \
+		runtime.any.System.Runtime.InteropServices:4.3.0 \
+		runtime.any.System.Runtime:4.3.0 \
+		runtime.any.System.Text.Encoding.Extensions:4.3.0 \
+		runtime.any.System.Text.Encoding:4.3.0 \
+		runtime.any.System.Threading.Tasks:4.3.0 \
+		runtime.any.System.Threading.Timer:4.3.0 \
+		runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.native.System.IO.Compression:4.3.0 \
+		runtime.native.System.Net.Http:4.3.0 \
+		runtime.native.System.Security.Cryptography.Apple:4.3.0 \
+		runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.native.System:4.3.0 \
+		runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple:4.3.0 \
+		runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl:4.3.0 \
+		runtime.unix.Microsoft.Win32.Primitives:4.3.0 \
+		runtime.unix.System.Console:4.3.0 \
+		runtime.unix.System.Diagnostics.Debug:4.3.0 \
+		runtime.unix.System.IO.FileSystem:4.3.0 \
+		runtime.unix.System.Net.Primitives:4.3.0 \
+		runtime.unix.System.Net.Sockets:4.3.0 \
+		runtime.unix.System.Private.Uri:4.3.0 \
+		runtime.unix.System.Runtime.Extensions:4.3.0 \
 		YamlDotNet:16.3.0
+
