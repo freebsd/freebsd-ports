@@ -1,8 +1,7 @@
 PORTNAME=	rosegarden
-DISTVERSION=	22.12.1
-PORTREVISION=	1
+DISTVERSION=	25.12
 CATEGORIES=	audio
-MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${DISTVERSION:R}/
+MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite
@@ -15,6 +14,7 @@ BUILD_DEPENDS=	dssi_osc_update:audio/dssi \
 		${LOCALBASE}/include/fftw3.h:math/fftw3
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libfftw3f.so:math/fftw3-float \
+		liblilv-0.so:audio/lilv \
 		liblrdf.so:textproc/liblrdf \
 		liblo.so:audio/liblo \
 		libsamplerate.so:audio/libsamplerate \
@@ -27,15 +27,15 @@ RUN_DEPENDS=	dssi_osc_update:audio/dssi \
 		lilypond:print/lilypond
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		localbase:ldflags pkgconfig shared-mime-info tar:bzip2 \
-		qt:5 xorg
-USE_QT=		core gui network printsupport testlib widgets xml \
-		buildtools:build linguisttools:build qmake:build
-USE_XORG=	ice sm x11 xext
+		localbase:ldflags pkgconfig shared-mime-info tar:xz \
+		qt:6
+USE_QT=		base 5compat tools:build
 
 OPTIONS_DEFINE=		LIRC
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
 LIRC_CMAKE_ON=		-DENABLE_LIRC:BOOL=ON
+
+CMAKE_ON=	USE_QT6
 
 .include <bsd.port.mk>
