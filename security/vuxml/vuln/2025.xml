@@ -7883,11 +7883,11 @@ This issue has been patched in version 2.25.2.</p>
   </vuln>
 
   <vuln vid="b0a3466f-5efc-11f0-ae84-99047d0a6bcc">
-    <topic>libxslt -- unmaintained, with multiple unfixed vulnerabilities</topic>
+    <topic>libxslt -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>libxslt</name>
-	<range><lt>1.1.43_2</lt></range> <!-- adjust should libxslt ever be fixed -->
+	<range><lt>1.1.44</lt></range> <!-- may not fix all issues -->
       </package>
       <package>
 	<name>linux-c7-libxslt</name>
