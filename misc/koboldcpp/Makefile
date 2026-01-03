@@ -1,6 +1,6 @@
 PORTNAME=	koboldcpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.102.3
+DISTVERSION=	1.105
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
