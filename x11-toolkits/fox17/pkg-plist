@@ -228,6 +228,7 @@ include/fox-%%MAJORVER%%/FXPacker.h
 include/fox-%%MAJORVER%%/FXParallel.h
 include/fox-%%MAJORVER%%/FXParseBuffer.h
 include/fox-%%MAJORVER%%/FXPath.h
+include/fox-%%MAJORVER%%/FXPathBox.h
 include/fox-%%MAJORVER%%/FXPerformance.h
 include/fox-%%MAJORVER%%/FXPicker.h
 include/fox-%%MAJORVER%%/FXPipe.h
@@ -378,11 +379,11 @@ include/fox-%%MAJORVER%%/xincs.h
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.so
 lib/libCHART-%%MAJORVER%%.so.0
-lib/libCHART-%%MAJORVER%%.so.0.0.86
+lib/libCHART-%%MAJORVER%%.so.0.0.%%PATCHVER%%
 lib/libFOX-%%MAJORVER%%.a
 lib/libFOX-%%MAJORVER%%.so
 lib/libFOX-%%MAJORVER%%.so.0
-lib/libFOX-%%MAJORVER%%.so.0.0.86
+lib/libFOX-%%MAJORVER%%.so.0.0.%%PATCHVER%%
 libdata/pkgconfig/fox17.pc
 share/man/man1/ControlPanel-17.1.gz
 %%PORTEXAMPLES%%share/man/man1/PathFinder-17.1.gz
