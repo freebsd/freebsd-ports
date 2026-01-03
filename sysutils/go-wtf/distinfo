@@ -1,5 +1,5 @@
-TIMESTAMP = 1763468368
-SHA256 (go/sysutils_go-wtf/wtf-v0.47.1/v0.47.1.mod) = b3a652c2a0f1cb5fcf390bff792fc0aa92e10df08cb92af4b73278e90c9ee690
-SIZE (go/sysutils_go-wtf/wtf-v0.47.1/v0.47.1.mod) = 13426
-SHA256 (go/sysutils_go-wtf/wtf-v0.47.1/v0.47.1.zip) = 4d4afbf55c16ca6beb330e5dbfb8e0afe29a10ec6b7f9726554f5bd5da264ed4
-SIZE (go/sysutils_go-wtf/wtf-v0.47.1/v0.47.1.zip) = 2924578
+TIMESTAMP = 1766990606
+SHA256 (go/sysutils_go-wtf/wtf-v0.48.0/v0.48.0.mod) = a377ba302d2249f7f70c43cd4d4b4b9a0650af399cafe297b79eef2e1a219694
+SIZE (go/sysutils_go-wtf/wtf-v0.48.0/v0.48.0.mod) = 13364
+SHA256 (go/sysutils_go-wtf/wtf-v0.48.0/v0.48.0.zip) = 0ae666400cd000dc21ed01333c6d440bdffd7b15a4f8e26ca1f6ead55e56110e
+SIZE (go/sysutils_go-wtf/wtf-v0.48.0/v0.48.0.zip) = 2921302
