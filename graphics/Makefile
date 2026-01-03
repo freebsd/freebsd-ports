@@ -169,6 +169,7 @@
     SUBDIR += ebsynth
     SUBDIR += edje_viewer
     SUBDIR += egl-wayland
+    SUBDIR += egl-x11
     SUBDIR += eglexternalplatform
     SUBDIR += elastix
     SUBDIR += elementary-photos

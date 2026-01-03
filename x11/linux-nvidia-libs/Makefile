@@ -93,6 +93,11 @@ LINUX_DATA+=	20_nvidia_xcb.json /usr/share/egl/egl_external_platform.d \
 PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json,d'\
 		'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json,d'
 .endif
+.if ${NVVERSION} >= 590.00000
+LINUX_DATA+=	99_nvidia_wayland2.json /usr/share/egl/egl_external_platform.d
+.else
+PLIST_RE+=	'\,${LINUXBASE}/usr/share/egl/egl_external_platform.d/99_nvidia_wayland2.json,d'
+.endif
 
 .if ${NVVERSION} >= 361.016
 LINUX_LIBS+=	libEGL_nvidia.so.${PORTVERSION}
@@ -143,7 +148,12 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-compiler\.so,d'
 LINUX_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 LINUX32_LIBS+=	libnvidia-compiler.so.${PORTVERSION}
 .endif
-
+.if ${NVVERSION} >= 590.00000 # 590.000.00
+LINUX_LIBS+=	libnvidia-tileiras.so.${PORTVERSION}
+LINUX32_LIBS+=	libnvidia-tileiras.so.${PORTVERSION}
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-tileiras\.so,d'
+.endif
 
 ## graphics/egl-wayland supports
 ## Estimated to be upgraded often.
@@ -168,7 +178,7 @@ LINUX_LINKS+=   libnvidia-egl-wayland.so.${NV_EGL_W_VERSION} libnvidia-egl-wayla
 .  if ${NVVERSION} >= 570.12400 # 570.124 added 32bit version supports
 LINUX32_LIBS+=	libnvidia-egl-wayland.so.${NV_EGL_W_VERSION}
 LINUX32_LINKS+=	libnvidia-egl-wayland.so.${NV_EGL_W_VERSION} libnvidia-egl-wayland.so.1
-.else
+.  else
 PLIST_RE+=	'\,${LINUXBASE}.*lib\/libnvidia-egl-wayland\.so,d'
 .  endif # 570.124
 PLIST_RE+=      '\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.${NV_EGL_W_VERSION}/'
@@ -176,6 +186,25 @@ PLIST_RE+=      '\,${LINUXBASE},s/(libnvidia-egl-wayland\.so)\.X/\1.${NV_EGL_W_V
 PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-egl-wayland\.so,d'
 .endif # 364.012
 # End of graphics/egl-wayland supports
+
+## graphics/egl-wayland2 supports
+## Estimated to be upgraded often.
+.if ${NVVERSION} >= 590.00000
+NV_EGL_W2_VERSION=	1.0.1
+.else # Fool proof (Poka-yoke)
+NV_EGL_W2_VERSION=	""
+.endif
+
+.if ${NVVERSION} >= 590.00000 # Start graphics/egl-wayland2 support
+LINUX_LIBS+=    libnvidia-egl-wayland2.so.${NV_EGL_W2_VERSION}
+LINUX_LINKS+=   libnvidia-egl-wayland2.so.${NV_EGL_W2_VERSION} libnvidia-egl-wayland2.so.1
+LINUX32_LIBS+=	libnvidia-egl-wayland2.so.${NV_EGL_W2_VERSION}
+LINUX32_LINKS+=	libnvidia-egl-wayland2.so.${NV_EGL_W2_VERSION} libnvidia-egl-wayland2.so.1
+PLIST_RE+=      '\,${LINUXBASE},s/(libnvidia-egl-wayland2\.so)\.X/\1.${NV_EGL_W2_VERSION}/'
+.else
+PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-egl-wayland2\.so,d'
+.endif # 590.000.00
+# End of graphics/egl-wayland2 supports
 
 
 .if ${NVVERSION} >= 331.013 && ${NVVERSION} < 495.02905
@@ -316,7 +345,9 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-(egl-xcb|egl-xlib),d'
 
 
 # nvidia-egl-gbm supports.
-.if ${NVVERSION} >= 565.00000 # 565.00
+.if ${NVVERSION} >= 590.04801 # 590.48.01
+NV_EGL_G_VERSION=	1.1.3
+.elif ${NVVERSION} >= 565.00000 # 565.00
 NV_EGL_G_VERSION=	1.1.2
 .elif ${NVVERSION} >= 550.00000 # 550.00
 NV_EGL_G_VERSION=	1.1.1

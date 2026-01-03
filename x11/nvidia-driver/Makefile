@@ -14,7 +14,7 @@
 PORTNAME?=	nvidia-driver
 DISTVERSION?=	${NVIDIA_DISTVERSION}
 # Always try to set PORTREVISION as it can be overridden by the slave ports
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11
 MASTER_SITES=	NVIDIA/XFree86/FreeBSD-${ARCH_SUFX}/${DISTVERSION}
 DISTNAME=	NVIDIA-FreeBSD-${ARCH_SUFX}-${DISTVERSION}
@@ -54,6 +54,10 @@ RUN_DEPENDS=	${KMODDIR}/nvidia.ko:x11/nvidia-kmod${PKGNAMESUFFIX}
 
 .if ${NVVERSION} >= 415.013
 LIB_DEPENDS+=	libnvidia-egl-wayland.so:graphics/egl-wayland
+.endif
+
+.if ${NVVERSION} >= 580.00000
+LIB_DEPENDS+=	libnvidia-egl-xcb.so:graphics/egl-x11
 .endif
 
 USES=		uidfix xorg

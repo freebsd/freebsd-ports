@@ -1,4 +1,4 @@
-NVIDIA_DISTVERSION?=	580.119.02
+NVIDIA_DISTVERSION?=	590.48.01
 # Explicitly set PORTREVISION as it can be overridden by the master port
 PORTREVISION=	0
 MASTERDIR=	${.CURDIR}/../nvidia-drm-515-kmod

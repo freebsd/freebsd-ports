@@ -5,6 +5,45 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260103:
+  AFFECTS: users of x11/nvidia-{driver, kmod}-devel variants
+  AUTHOR: junchoon@dec.sakura.ne.jp
+
+  x11/nvidia-driver-devel and x11-nvidia-kmod-devel are upgraded to
+  latest New Feature Branch [NFB] of upstream driver package.
+
+  This version drops support for a bunch of old (pre-Turing generations
+  of architecture) GPUs.
+
+  You can find still supported GPUs below.
+    https://us.download.nvidia.com/XFree86/FreeBSD-x86_64/590.48.01/README/supportedchips.html
+
+  So anyone using -devel variants of related ports
+    x11/nvidia-kmod-devel
+    x11/nvidia-driver-devel
+    graphics/nvidia-drm-{510|515|61|66|latest}-kmod-devel
+    x11/linux-nvidia-libs-devel
+  with dropped GPUs needs to switch to non-devel master ports.
+    x11/nvidia-kmod
+    x11/nvidia-driver
+    graphics/nvidia-drm-{510|515|61|66|latest}-kmod
+    x11/linux-nvidia-libs
+
+  Deinstalling -devel variants above and reinstalling master ports
+  above would do the right things.
+
+  If any of above hesitates to upgrade with version conflicts
+  of graphics/eglexternalplatform, upgrade it first and retrying
+  failed ones should help.
+
+  At the same time, 580.* and 590.* series of drivers for FreeBSD
+  now work with 2 additional libraries installed via graphics/egl-x11.
+  This is now one of the dependencies of x11/nvidia-driver{-devel}.
+  It would be automatically pulled in on upgrades.
+
+  Note that new legacy branch -580 would be created once Production
+  Branch of upstream driver package switches to 590 series or later.
+
 20251228:
   AFFECTS: users of net/rsync
   AUTHOR: rodrigo@FreeBSD.org

@@ -50,6 +50,8 @@
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-gbm.so.X
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-wayland.so.1
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-wayland.so.X
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-wayland2.so.1
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-wayland2.so.X
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so.1
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-egl-xcb.so.X
@@ -80,6 +82,7 @@
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ptxjitcompiler.so
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ptxjitcompiler.so.1
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-ptxjitcompiler.so.%%SHLIB_VERSION%%
+%%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-tileiras.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-tls.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libvdpau_nvidia.so.%%SHLIB_VERSION%%
 %%LINUX32%%%%LINUXBASE%%/usr/lib/libnvidia-nvvm.so
@@ -136,6 +139,8 @@
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-gbm.so.X
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland.so.1
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland.so.X
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland2.so.1
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-wayland2.so.X
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xcb.so
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xcb.so.1
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-egl-xcb.so.X
@@ -171,6 +176,7 @@
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so.1
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-ptxjitcompiler.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-rtcore.so.%%SHLIB_VERSION%%
+%%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-tileiras.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvidia-tls.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libvdpau_nvidia.so.%%SHLIB_VERSION%%
 %%LINUXBASE%%%%LINUX_LIBDIR%%/libnvoptix.so
@@ -186,6 +192,7 @@
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/10_nvidia_wayland.json
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json
 %%LINUXBASE%%/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json
+%%LINUXBASE%%/usr/share/egl/egl_external_platform.d/99_nvidia_wayland2.json
 %%LINUXBASE%%/usr/share/glvnd/egl_vendor.d/10_nvidia.json
 %%LINUXBASE%%/usr/share/man/man1/nvidia-cuda-mps-control.1.gz
 %%LINUXBASE%%/usr/share/man/man1/nvidia-persistenced.1.gz
