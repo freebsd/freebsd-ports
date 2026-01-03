@@ -10,10 +10,10 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Interpreted object-oriented programming language
 WWW=		https://www.python.org/
 
-DEPRECATED=	Python 3.10 is an old version in the last year of security support, see to it that your favorite ports get updated for newer Python releases in due time
-EXPIRATION_DATE=2026-09-30
-
 LICENSE=	PSFL
+
+DEPRECATED=	Python 3.10 is an old version and security support, while formally available, has been incomplete recently. Please migrate to 3.14 or 3.13.
+EXPIRATION_DATE=2026-03-31
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
