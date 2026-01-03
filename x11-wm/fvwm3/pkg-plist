@@ -1,5 +1,4 @@
 bin/FvwmCommand
-%%GO%%bin/FvwmPrompt
 %%PERL%%bin/fvwm-convert-2.6
 bin/fvwm-menu-desktop
 %%PERL%%bin/fvwm-menu-directory
@@ -11,9 +10,9 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmAnimate
 libexec/fvwm3/%%DISTVERSION%%/FvwmAuto
 libexec/fvwm3/%%DISTVERSION%%/FvwmBacker
 libexec/fvwm3/%%DISTVERSION%%/FvwmButtons
-%%GO%%libexec/fvwm3/%%DISTVERSION%%/FvwmCommandS
-%%NO_GO%%libexec/fvwm3/%%DISTVERSION%%/FvwmConsole
-%%NO_GO%%libexec/fvwm3/%%DISTVERSION%%/FvwmConsoleC
+libexec/fvwm3/%%DISTVERSION%%/FvwmCommandS
+libexec/fvwm3/%%DISTVERSION%%/FvwmConsole
+libexec/fvwm3/%%DISTVERSION%%/FvwmConsoleC
 libexec/fvwm3/%%DISTVERSION%%/FvwmEvent
 libexec/fvwm3/%%DISTVERSION%%/FvwmForm
 libexec/fvwm3/%%DISTVERSION%%/FvwmIconMan
@@ -28,8 +27,8 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmTalk
 %%MANPAGES%%share/man/man1/FvwmAuto.1.gz
 %%MANPAGES%%share/man/man1/FvwmBacker.1.gz
 %%MANPAGES%%share/man/man1/FvwmButtons.1.gz
-%%MANPAGES%%%%GO%%share/man/man1/FvwmCommand.1.gz
-%%NO_GO%%%%MANPAGES%%share/man/man1/FvwmConsole.1.gz
+%%MANPAGES%%share/man/man1/FvwmCommand.1.gz
+%%MANPAGES%%share/man/man1/FvwmConsole.1.gz
 %%MANPAGES%%share/man/man1/FvwmEvent.1.gz
 %%MANPAGES%%share/man/man1/FvwmForm.1.gz
 %%MANPAGES%%share/man/man1/FvwmIconMan.1.gz
@@ -37,7 +36,6 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmTalk
 %%MANPAGES%%share/man/man1/FvwmMFL.1.gz
 %%MANPAGES%%share/man/man1/FvwmPager.1.gz
 %%MANPAGES%%share/man/man1/FvwmPerl.1.gz
-%%MANPAGES%%share/man/man1/FvwmPrompt.1.gz
 %%MANPAGES%%share/man/man1/FvwmRearrange.1.gz
 %%MANPAGES%%share/man/man1/FvwmScript.1.gz
 %%MANPAGES%%share/man/man1/fvwm-convert-2.6.1.gz
