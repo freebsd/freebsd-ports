@@ -1,6 +1,7 @@
 PORTNAME=	gitlab_query_language
 PORTVERSION=	0.20.11
 CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Library  to compile GitLab Query Language (GLQL) queries to GraphQL
