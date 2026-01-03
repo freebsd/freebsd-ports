@@ -1,4 +1,4 @@
---- src/rendercv/schema/models/cv/social_network.py.orig	2025-12-19 21:44:26 UTC
+--- src/rendercv/schema/models/cv/social_network.py.orig	1970-01-01 00:00:00 UTC
 +++ src/rendercv/schema/models/cv/social_network.py
 @@ -10,7 +10,7 @@ url_validator = pydantic.TypeAdapter(pydantic.HttpUrl)
  from ..base import BaseModelWithoutExtraKeys
@@ -9,9 +9,9 @@
      "LinkedIn",
      "GitHub",
      "GitLab",
-@@ -27,7 +27,7 @@ type SocialNetworkName = Literal[
-     "Leetcode",
+@@ -28,7 +28,7 @@ type SocialNetworkName = Literal[
      "X",
+     "Bluesky",
  ]
 -available_social_networks = get_args(SocialNetworkName.__value__)
 +#available_social_networks = get_args(SocialNetworkName.__value__)

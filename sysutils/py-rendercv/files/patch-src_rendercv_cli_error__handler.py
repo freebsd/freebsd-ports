@@ -1,4 +1,4 @@
---- src/rendercv/cli/error_handler.py.orig	2025-12-20 00:46:25 UTC
+--- src/rendercv/cli/error_handler.py.orig	2026-01-03 20:10:58 UTC
 +++ src/rendercv/cli/error_handler.py
 @@ -8,7 +8,7 @@ from rendercv.exception import RenderCVUserError
  from rendercv.exception import RenderCVUserError

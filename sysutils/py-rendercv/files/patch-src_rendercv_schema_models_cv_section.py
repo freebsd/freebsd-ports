@@ -1,4 +1,4 @@
---- src/rendercv/schema/models/cv/section.py.orig	2025-12-19 21:43:39 UTC
+--- src/rendercv/schema/models/cv/section.py.orig	1970-01-01 00:00:00 UTC
 +++ src/rendercv/schema/models/cv/section.py
 @@ -21,7 +21,7 @@ from .entries.reversed_numbered import ReversedNumbere
  # Below needs to be updated when new entry types are added.
@@ -30,8 +30,8 @@
  available_entry_type_names: tuple[str, ...] = tuple(
      [entry_type.__name__ for entry_type in available_entry_models] + ["TextEntry"]
  )
--type ListOfEntries = list[str] | reduce(  # pyright: ignore[reportInvalidTypeForm]
-+ListOfEntries = list[str] | reduce(  # pyright: ignore[reportInvalidTypeForm]
+-type ListOfEntries = list[str] | reduce(  # ty: ignore[invalid-type-form]
++ListOfEntries = list[str] | reduce(  # ty: ignore[invalid-type-form]
      or_, [list[entry_type] for entry_type in available_entry_models]
  )
  
