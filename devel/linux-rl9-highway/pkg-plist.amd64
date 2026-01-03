@@ -1,7 +1,7 @@
 usr/lib64/libhwy.so.1
-usr/lib64/libhwy.so.1.2.0
+usr/lib64/libhwy.so.%%LIBVERSION%%
 usr/lib64/libhwy_contrib.so.1
-usr/lib64/libhwy_contrib.so.1.2.0
+usr/lib64/libhwy_contrib.so.%%LIBVERSION%%
 usr/lib64/libhwy_test.so.1
-usr/lib64/libhwy_test.so.1.2.0
+usr/lib64/libhwy_test.so.%%LIBVERSION%%
 usr/share/licenses/highway/LICENSE
