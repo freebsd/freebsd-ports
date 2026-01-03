@@ -1,6 +1,5 @@
 PORTNAME=	bitcoin
-PORTVERSION=	29.1
-PORTREVISION=	1
+PORTVERSION=	30.1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://bitcoincore.org/bin/bitcoin-core-${PORTVERSION}/ \
 		LOCAL/swills:icon
@@ -15,20 +14,23 @@ WWW=		https://www.bitcoin.org/
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
+BUILD_DEPENDS=	boost-libs>=1.74:devel/boost-libs
+
+LIB_DEPENDS=	libcapnp.so:devel/capnproto \
 		libevent.so:devel/libevent
 
 SLAVE_PORT?=	no
 
 USES=		cmake compiler:c++20-lang cpe pkgconfig
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
-USES+=		desktop-file-utils qt:5
-USE_QT=		core gui network widgets buildtools:build linguisttools:build \
-		qmake:build
+USES+=		desktop-file-utils gl qt:6
+USE_QT=		base tools:build
+USE_GL=		opengl
 .endif
 GH_ACCOUNT=	bitcoin
 
 CMAKE_ARGS?=	-DBUILD_GUI=ON \
+		-DBUILD_BITCOIN_BIN=OFF \
 		-DBUILD_CLI=OFF \
 		-DBUILD_DAEMON=OFF \
 		-DBUILD_SHARED_LIBS=OFF \
@@ -37,6 +39,7 @@ CMAKE_ARGS?=	-DBUILD_GUI=ON \
 		-DBUILD_WALLET_TOOL=OFF
 
 PLIST_FILES?=	bin/bitcoin-qt \
+		libexec/bitcoin-gui \
 		share/applications/bitcoin-qt.desktop \
 		share/man/man1/bitcoin-qt.1.gz \
 		share/pixmaps/bitcoin128.png
@@ -51,7 +54,6 @@ TESTS_DESC=	Build test binary and unit tests
 WALLET_DESC=	Wallet Management Support
 ZMQ_DESC=	Block and transaction broadcasting with ZeroMQ
 
-DBUS_USE=		QT=dbus
 DBUS_CMAKE_BOOL=	WITH_DBUS
 
 DEBUG_CMAKE_ON=		-DCMAKE_BUILD_TYPE=Debug
@@ -62,20 +64,15 @@ HARDENING_CMAKE_BOOL=	ENABLE_HARDENING
 QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 QRCODES_CMAKE_BOOL=	WITH_QRENCODE
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
-TESTS_USE=		QT=testlib
-.endif
 TESTS_CMAKE_BOOL=	BUILD_BENCH BUILD_TESTS SECP256K1_BUILD_TESTS
-TESTS_PLIST_FILES=	bin/bench_bitcoin \
-			bin/test_bitcoin
+TESTS_PLIST_FILES=	libexec/bench_bitcoin \
+			libexec/test_bitcoin
 .if defined(SLAVE_PORT) && ${SLAVE_PORT} == "no"
-TESTS_PLIST_FILES+=	bin/test_bitcoin-qt
+TESTS_PLIST_FILES+=	libexec/test_bitcoin-qt
 .endif
 
-WALLET_USES=		bdb:5 sqlite:3
-WALLET_CMAKE_ON=	-DENABLE_WALLET=ON \
-			-DWARN_INCOMPATIBLE_BDB=OFF \
-			-DWITH_BDB=ON
+WALLET_USES=		sqlite:3
+WALLET_CMAKE_ON=	-DENABLE_WALLET=ON
 WALLET_CMAKE_OFF=	-DENABLE_WALLET=OFF
 
 ZMQ_BUILD_DEPENDS=	libzmq4>0:net/libzmq4
