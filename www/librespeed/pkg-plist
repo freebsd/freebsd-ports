@@ -5,6 +5,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-chart.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-customSettings.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-gauges.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-modern.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-pretty.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example-singleServer-progressBar.html
 @owner %%LIBRESPEED_USERNAME%%
