@@ -247,3 +247,6 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/why-do-i-need-a-shaping-engine.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/why-is-it-called-harfbuzz.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/working-with-harfbuzz-clusters.html
+%%DOCS%%share/man/man1/hb-info.1.gz
+%%DOCS%%share/man/man1/hb-shape.1.gz
+%%DOCS%%share/man/man1/hb-subset.1.gz

@@ -1,5 +1,5 @@
 PORTNAME=	harfbuzz
-DISTVERSION=	12.2.0
+DISTVERSION=	12.3.0
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
@@ -25,7 +25,7 @@ MESON_ARGS=	-Dgraphite2=enabled \
 		-Dchafa=disabled \
 		-Dtests=disabled
 
-PLIST_SUB+=	LIBVER=0.61220.0
+PLIST_SUB+=	LIBVER=0.61230.0
 
 HARFBUZZ_SLAVE?=	no
 
@@ -33,7 +33,8 @@ HARFBUZZ_SLAVE?=	no
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
-DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
+DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc \
+			help2man:misc/help2man
 DOCS_MESON_ENABLED=	docs
 .endif
 
