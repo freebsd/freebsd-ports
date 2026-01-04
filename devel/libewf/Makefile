@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsmdev.so:devel/libsmdev \
 		libsmraw.so:devel/libsmraw \
 		libuuid.so:misc/libuuid
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
 USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
