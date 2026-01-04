@@ -1,5 +1,5 @@
 PORTNAME=	imlib2_loaders
-DISTVERSION=	1.12.5
+DISTVERSION=	1.12.6
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	SF/enlightenment/imlib2-src/${DISTVERSION}
