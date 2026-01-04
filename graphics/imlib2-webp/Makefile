@@ -10,6 +10,10 @@ WWW=		https://www.hauweele.net/~gawen/imlib2-webp.html
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	webp support is handled by graphics/imlib2 and it is enabled by default.
+EXPIRATION_DATE=	2026-02-28
+BROKEN=		pkg-static: imlib2-webp-20230222_3 conflicts with imlib2-1.12.6,2 (installs files into the same place).  Problematic file: /usr/local/lib/imlib2/loaders/webp.so
+
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libwebp.so:graphics/webp
 

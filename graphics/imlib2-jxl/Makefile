@@ -14,6 +14,10 @@ WWW=		https://github.com/alistair7/imlib2-jxl
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE-BSD-ab
 
+DEPRECATED=	jxl support is handled by graphics/imlib2 and it is enabled by default.
+EXPIRATION_DATE=	2026-02-28
+BROKEN=		pkg-static: imlib2-jxl-0.2.0_4 conflicts with imlib2-1.12.6,2 (installs files into the same place).  Problematic file: /usr/local/lib/imlib2/loaders/jxl.so
+
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2 \
 		libjxl.so:graphics/libjxl
 
