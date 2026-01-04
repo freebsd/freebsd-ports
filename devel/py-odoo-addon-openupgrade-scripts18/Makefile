@@ -16,7 +16,7 @@ LICENSE=	AGPLv3
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}odoo-addon-openupgrade-framework18>=0:devel/py-odoo-addon-openupgrade-framework18@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}odoo>=18.0.20250719<19.0.0:finance/odoo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}odoo18>=18.0.20250719<19.0.0:finance/odoo18@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openupgradelib>=0:devel/py-openupgradelib@${PY_FLAVOR}
 
 USES=		python
