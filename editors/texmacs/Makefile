@@ -12,7 +12,7 @@ WWW=		https://www.texmacs.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	Kernel/Containers/hashtree.cpp:97:14: error: no member named 'contains' in 'hashtree<K, V>'
+BROKEN=		Kernel/Containers/hashtree.cpp:97:14: error: no member named 'contains' in 'hashtree<K, V>'
 
 RUN_DEPENDS=	fig2dev:print/transfig
 
