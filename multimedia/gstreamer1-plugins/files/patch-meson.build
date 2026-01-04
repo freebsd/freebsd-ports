@@ -1,4 +1,4 @@
---- meson.build.orig	2025-03-11 20:14:44 UTC
+--- meson.build.orig	2025-12-25 14:44:26 UTC
 +++ meson.build
 @@ -17,6 +17,8 @@ gst_version_is_dev = gst_version_minor % 2 == 1 and gs
  gst_version_is_stable = gst_version_minor.is_even()
@@ -21,7 +21,7 @@
  # Set whether the audioresampling method should be detected at runtime
  core_conf.set('AUDIORESAMPLE_FORMAT_' + get_option('audioresample_format').to_upper(), true)
  
-@@ -521,6 +525,7 @@ pkgconfig_plugins_base_libs_variables = [
+@@ -530,6 +534,7 @@ pkgconfig_plugins_base_libs_variables = [
    'libraries=' + ' '.join(base_libraries),
  ]
  
@@ -29,7 +29,7 @@
  pkgconfig.generate(
    libraries : [gst_dep],
    variables : pkgconfig_variables + pkgconfig_plugins_base_libs_variables,
-@@ -534,6 +539,7 @@ run_command(meson_pkg_config_file_fixup_script,
+@@ -543,6 +548,7 @@ run_command(meson_pkg_config_file_fixup_script,
  run_command(meson_pkg_config_file_fixup_script,
    'gstreamer-plugins-base-1.0', 'libraries',
    check: true)
