@@ -1404,6 +1404,7 @@
     SUBDIR += vigenere
     SUBDIR += vlock
     SUBDIR += vm-to-tor
+    SUBDIR += voa
     SUBDIR += vouch-proxy
     SUBDIR += vpnc
     SUBDIR += vuls
