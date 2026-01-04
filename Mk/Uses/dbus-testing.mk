@@ -53,5 +53,8 @@ dbus-testing-post-test:
 	@[ ! -f ${_ALREADY_STARTED_COOKIE} ] && \
 		/usr/sbin/service dbus onestop || ${TRUE}
 	@${RM} ${_ALREADY_STARTED_COOKIE}
+.  if defined(PACKAGE_BUILDING) && ${UID} == 0
+	${RM} ${_DBUS_LOCAL_CONF_DST}
+.  endif
 
 .endif
