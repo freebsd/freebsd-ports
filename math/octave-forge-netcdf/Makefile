@@ -1,8 +1,7 @@
 PORTNAME=	octave-forge-netcdf
-PORTVERSION=	1.0.18
+DISTVERSIONPREFIX=	v
+DISTVERSION=	1.0.19
 CATEGORIES=	math
-MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
-DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
@@ -13,10 +12,12 @@ LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
 LIB_DEPENDS+=	libnetcdf.so:science/netcdf
 
-USES=		octave
-
+USES=		octave autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnu-octave
+GH_PROJECT=	octave-netcdf
 GNU_CONFIGURE=	yes
 
-NO_ARCH=	yes
+OCTAVE_SRC=	${GH_PROJECT}-${DISTVERSION}
 
 .include <bsd.port.mk>
