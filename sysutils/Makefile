@@ -291,6 +291,7 @@
     SUBDIR += devd-mount
     SUBDIR += devedeng
     SUBDIR += devstat
+    SUBDIR += devtui
     SUBDIR += dfc
     SUBDIR += di
     SUBDIR += diffoci
