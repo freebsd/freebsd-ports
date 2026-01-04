@@ -57,9 +57,8 @@ USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xau xcb xdmcp xext
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=${LOCALBASE}/lib/libopenblas.so \
-		-DOPENTURNS_EXAMPLE_PATH:STRING=share/examples/openturns \
-		-DOPENTURNS_DOC_PATH:STRING=share/doc/openturns
+CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=${LOCALBASE}/lib/libopenblas.so
+
 CMAKE_OFF=	USE_DOXYGEN USE_SPHINX
 CMAKE_OFF+=	USE_HMAT # broken with hmat-oss-1.7.1: https://github.com/openturns/openturns/issues/1868
 CMAKE_OFF+=	USE_CERES # ceres-solver-2.2.0 fails to be found by cmake, see https://github.com/ceres-solver/ceres-solver/issues/1023
