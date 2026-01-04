@@ -1,6 +1,6 @@
 PORTNAME=	stack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.7.1
+DISTVERSION=	3.9.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,6 +10,7 @@ WWW=		https://www.haskellstack.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libinotify.so:devel/libinotify
 RUN_DEPENDS=	${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321 \
 		${LOCALBASE}/lib/compat/libffi.so.7:devel/libffi33 \
 		ca_root_nss>0:security/ca_root_nss \
@@ -20,21 +21,25 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	commercialhaskell
 USE_PERL5=	run
 
-USE_CABAL=	Glob-0.10.2_3 \
-		OneTuple-0.4.2_1 \
-		QuickCheck-2.14.3 \
+USE_CABAL=	Cabal-3.16.1.0 \
+		Cabal-syntax-3.16.1.0 \
+		Glob-0.10.2_3 \
+		OneTuple-0.4.2.1 \
+		QuickCheck-2.16.0.0 \
 		StateVar-1.2.2 \
 		aeson-2.2.3.0_4 \
 		aeson-warning-parser-0.1.1 \
+		alex-3.5.4.0 \
 		annotated-wl-pprint-0.7.0_1 \
-		ansi-terminal-1.1.2 \
-		ansi-terminal-types-1.1 \
+		ansi-terminal-1.1.5 \
+		ansi-terminal-types-1.1.3 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.1.1_1 \
+		assoc-1.1.1_2 \
 		async-2.2.5_3 \
+		atomic-counter-0.1.2.4 \
 		attoparsec-0.14.4_6 \
 		attoparsec-aeson-2.2.2.0 \
 		auto-update-0.2.6 \
@@ -42,14 +47,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base16-bytestring-1.0.2.0_1 \
 		base64-bytestring-1.2.1.0_1 \
 		basement-0.0.16 \
-		bifunctors-5.6.2_2 \
+		bifunctors-5.6.3 \
 		bitvec-1.1.5.0_3 \
-		blaze-builder-0.4.3 \
+		blaze-builder-0.4.4.1 \
 		blaze-html-0.9.2.0_1 \
 		blaze-markup-0.8.3.0_2 \
 		byteorder-1.0.4 \
-		casa-client-0.0.2 \
-		casa-types-0.0.2 \
+		casa-client-0.0.3 \
+		casa-types-0.0.3 \
 		case-insensitive-1.2.1.0 \
 		cborg-0.2.10.0_3 \
 		cereal-0.5.8.3 \
@@ -61,49 +66,52 @@ USE_CABAL=	Glob-0.10.2_3 \
 		companion-0.1.0 \
 		conduit-1.3.6.1 \
 		conduit-combinators-1.3.0 \
-		conduit-extra-1.3.7 \
+		conduit-extra-1.3.8_1 \
 		contravariant-1.5.5 \
 		cookie-0.5.1 \
 		cryptohash-sha256-0.11.102.1_6 \
 		crypton-1.0.4 \
 		crypton-conduit-0.2.3 \
-		crypton-connection-0.4.4 \
+		crypton-connection-0.4.5 \
+		crypton-socks-0.6.2 \
 		crypton-x509-1.7.7 \
-		crypton-x509-store-1.6.10 \
+		crypton-x509-store-1.6.12_1 \
 		crypton-x509-system-1.6.7 \
 		crypton-x509-validation-1.6.14 \
-		data-default-0.7.1.3 \
-		data-default-class-0.1.2.2 \
-		data-default-instances-containers-0.1.0.3 \
-		data-default-instances-dlist-0.0.1.2 \
-		data-default-instances-old-locale-0.0.1.2 \
-		data-fix-0.3.4_1 \
+		data-default-0.8.0.1_1 \
+		data-default-class-0.2.0.0 \
+		data-fix-0.3.4_2 \
 		digest-0.0.2.1 \
+		directory-ospath-streaming-0.3_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0_2 \
 		easy-file-0.2.5 \
+		ech-config-0.0.1 \
 		echo-0.1.4 \
 		ed25519-0.0.5.0_9 \
-		extra-1.7.16_1 \
-		fast-logger-3.2.5 \
+		extra-1.8.1 \
+		fast-logger-3.2.6 \
 		file-embed-0.0.16.0 \
-		filelock-0.1.1.7 \
-		fsnotify-0.4.3.0 \
-		generic-deriving-1.14.6_1 \
-		generically-0.1.1_4 \
+		file-io-0.1.5 \
+		filelock-0.1.1.8 \
+		fsnotify-0.4.4.0 \
+		generic-deriving-1.14.7 \
+		generically-0.1.1_5 \
 		githash-0.1.7.0 \
-		hackage-security-0.6.3.0 \
-		half-0.3.2_1 \
-		happy-2.1.6 \
-		happy-lib-2.1.6 \
-		hashable-1.4.7.0 \
+		hackage-security-0.6.3.2_1 \
+		half-0.3.3_1 \
+		happy-2.1.7 \
+		happy-lib-2.1.7 \
+		hashable-1.5.1.0 \
 		haskell-src-exts-1.23.1 \
 		haskell-src-meta-0.8.15 \
-		hi-file-parser-0.1.7.0 \
+		hi-file-parser-0.1.8.0 \
+		hinotify-0.4.2 \
 		hourglass-0.2.12_1 \
-		hpack-0.38.1 \
+		hpack-0.39.1 \
+		hpke-0.0.0 \
 		hsc2hs-0.68.10_4 \
-		http-api-data-0.6.2 \
+		http-api-data-0.7 \
 		http-client-0.7.19 \
 		http-client-tls-0.3.6.4_2 \
 		http-conduit-2.3.9.1 \
@@ -113,18 +121,18 @@ USE_CABAL=	Glob-0.10.2_3 \
 		indexed-traversable-instances-0.1.2_1 \
 		infer-license-0.2.0 \
 		integer-conversion-0.1.1_1 \
-		integer-logarithms-1.0.4 \
+		integer-logarithms-1.0.5 \
 		iproute-1.7.15 \
 		libyaml-0.1.4 \
 		libyaml-clib-0.2.5 \
 		lift-type-0.1.2.0 \
 		lifted-base-0.2.3.12 \
-		megaparsec-9.6.1 \
+		megaparsec-9.7.0_1 \
 		memory-0.18.0_1 \
-		microlens-0.4.13.1_1 \
-		microlens-mtl-0.2.0.3_1 \
-		microlens-th-0.4.3.17 \
-		mime-types-0.1.2.0 \
+		microlens-0.5.0.0 \
+		microlens-mtl-0.2.1.1 \
+		microlens-th-0.4.3.18 \
+		mime-types-0.1.2.1 \
 		monad-control-1.0.3.1 \
 		monad-logger-0.3.42 \
 		monad-loops-0.4.3 \
@@ -132,33 +140,33 @@ USE_CABAL=	Glob-0.10.2_3 \
 		mtl-compat-0.2.2 \
 		mustache-2.4.3.1 \
 		neat-interpolation-0.5.1.4 \
-		network-3.2.7.0 \
+		network-3.2.8.0 \
+		network-byte-order-0.1.7 \
 		network-uri-2.6.4.2_1 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.4 \
-		open-browser-0.2.1.1 \
-		optparse-applicative-0.18.1.0_1 \
+		open-browser-0.4.0.0 \
+		optparse-applicative-0.19.0.0 \
 		optparse-simple-0.1.1.4 \
-		os-string-2.0.7_1 \
-		pantry-0.10.1 \
+		pantry-0.11.2 \
 		parser-combinators-1.3.0_1 \
-		path-0.9.5 \
-		path-io-1.8.2 \
+		path-0.9.6_1 \
+		path-io-1.8.2_1 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
-		persistent-2.17.0.0 \
-		persistent-sqlite-2.13.3.0 \
+		persistent-2.18.0.0 \
+		persistent-sqlite-2.13.3.1 \
 		persistent-template-2.12.0.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.9.1.0 \
+		primitive-0.9.1.0_1 \
 		project-template-0.2.1.0 \
-		random-1.2.1.3 \
+		random-1.3.1 \
 		replace-megaparsec-1.5.0.1 \
-		resource-pool-0.4.0.0 \
+		resource-pool-0.5.0.0 \
 		resourcet-1.3.0 \
 		retry-0.9.3.1 \
-		rio-0.1.22.0 \
+		rio-0.1.24.0 \
 		rio-orphans-0.1.2.0 \
 		rio-prettyprint-0.1.8.0 \
 		safe-0.3.21_1 \
@@ -168,52 +176,51 @@ USE_CABAL=	Glob-0.10.2_3 \
 		semigroupoids-6.0.1_2 \
 		serialise-0.2.6.1_5 \
 		silently-1.2.5.4 \
-		socks-0.6.1 \
 		split-0.2.5 \
-		splitmix-0.1.1 \
+		splitmix-0.1.3.2 \
 		static-bytes-0.1.1 \
 		stm-chans-3.0.0.9 \
-		streaming-commons-0.2.3.0 \
+		streaming-commons-0.2.3.1 \
 		strict-0.5.1_1 \
 		string-interpolate-0.3.4.0_3 \
-		syb-0.7.2.4 \
-		tagged-0.8.8_1 \
-		tar-0.6.3.0_1 \
+		syb-0.7.3 \
+		tagged-0.8.10_1 \
+		tar-0.7.0.0_2 \
 		tar-conduit-0.4.1 \
 		tasty-1.5.3_2 \
 		temporary-1.3 \
 		text-conversions-0.3.1.1 \
 		text-iso8601-0.1.1_2 \
-		text-metrics-0.3.3 \
-		text-short-0.1.6_3 \
-		th-abstraction-0.7.1.0_1 \
-		th-compat-0.1.6 \
+		text-metrics-0.3.3_1 \
+		text-short-0.1.6.1 \
+		th-abstraction-0.7.2.0 \
+		th-compat-0.1.7 \
 		th-expand-syns-0.4.12.0 \
-		th-lift-0.8.6 \
+		th-lift-0.8.7 \
 		th-lift-instances-0.1.20 \
 		th-orphans-0.13.16 \
 		th-reify-many-0.1.10 \
 		these-1.2.1_2 \
-		time-compat-1.9.7_2 \
-		tls-2.1.8 \
+		time-compat-1.9.8 \
+		tls-2.1.13 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.13.0 \
-		unix-compat-0.7.4 \
-		unix-time-0.4.16 \
+		unix-compat-0.7.4.1 \
+		unix-time-0.4.17 \
 		unliftio-0.2.25.1 \
 		unliftio-core-0.2.1.0_4 \
-		unordered-containers-0.2.20_4 \
+		unordered-containers-0.2.21_2 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.6_3 \
-		vault-0.3.1.5_10 \
-		vector-0.13.2.0_1 \
+		vault-0.3.1.6 \
+		vector-0.13.2.0_2 \
 		vector-algorithms-0.9.1.0 \
-		vector-stream-0.1.0.1_3 \
-		witherable-0.5_1 \
+		vector-stream-0.1.0.1_4 \
+		witherable-0.5_2 \
 		yaml-0.11.11.2_2 \
 		zip-archive-0.4.3.2_1 \
-		zlib-0.7.1.0_2
+		zlib-0.7.1.1
 
 CABAL_FLAGS=	-support_aesni
 CABAL_PROJECT=	remove
