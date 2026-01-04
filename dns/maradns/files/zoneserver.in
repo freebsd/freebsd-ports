@@ -4,19 +4,18 @@
 # REQUIRE: SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown
-#
 
 . /etc/rc.subr
 
 : ${zoneserver_enable="NO"}
 : ${maradns_conf="%%ETCDIR%%/mararc"}
+: ${zoneserver_svcj_options:="net_basic"}
 
 name="zoneserver"
-rcvar=zoneserver_enable
+rcvar="${name}_enable"
 command="%%PREFIX%%/bin/duende"
 pidfile="/var/run/${name}.pid"
 command_args="--pid=${pidfile} %%PREFIX%%/sbin/zoneserver -f ${maradns_conf}"
 
 load_rc_config $name
-
 run_rc_command "$1"

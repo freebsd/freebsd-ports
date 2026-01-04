@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# PROVIDE: deadwood
+# REQUIRE: SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+: ${deadwood_enable="NO"}
+: ${deadwood_conf="%%ETCDIR%%/dwood3rc"}
+: ${deadwood_svcj_options:="net_basic"}
+
+name="deadwood"
+rcvar="${name}_enable"
+command="%%PREFIX%%/bin/duende"
+pidfile="/var/run/${name}.pid"
+command_args="--pid=${pidfile} %%PREFIX%%/sbin/Deadwood -f ${deadwood_conf}"
+
+set_rcvar_obsolete dwood_enable  deadwood_enable
+set_rcvar_obsolete dwood_conf    deadwood_conf
+set_rcvar_obsolete dwood3_enable deadwood_enable
+set_rcvar_obsolete dwood3_conf   deadwood_conf
+
+load_rc_config $name
+run_rc_command "$1"

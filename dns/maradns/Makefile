@@ -1,67 +1,85 @@
 PORTNAME=	maradns
-PORTVERSION=	2.0.15
-PORTREVISION=	1
+PORTVERSION=	3.5.0036
 CATEGORIES=	dns
-MASTER_SITES=	http://maradns.samiam.org/download/2.0/${PORTVERSION}/
+MASTER_SITES=	https://maradns.samiam.org/download/3.5/${PORTVERSION}/
 
-MAINTAINER=	je3kmz@FreeBSD.org
+MAINTAINER=	takefu@airport.fm
 COMMENT=	DNS server with focus on security and simplicity
-WWW=		https://maradns.org/
+WWW=		https://maradns.samiam.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe tar:bz2
-USE_RC_SUBR=	${PORTNAME} zoneserver Deadwood
-USERS=		bind
-GROUPS=		bind
-INSTALL_TARGET=	install PREFIX=${STAGEDIR}${PREFIX}
+LIB_DEPENDS=	libeditline.so:devel/editline
+
+USES=		cpe shebangfix tar:xz
+USE_RC_SUBR=	${PORTNAME} zoneserver deadwood
+
+SHEBANG_FILES=	${WRKSRC}/doc/en/tutorial/make.index
+
 HAS_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	IPV6 DOCS EXAMPLES
+USERS=		bind
+GROUPS=		bind
+
+OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 MANPAGES
 OPTIONS_SUB=	yes
 
-IPV6_CONFIGURE_ON=	--ipv6
+IPV6_CONFIGURE_OFF=	--noipv6
+DEADWOOD_VER=	deadwood-${PORTVERSION}
+EXAMPLES=	auth_mararc csv2 full_mararc mararc recursive_mararc \
+		simple_csv1
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-REINPLACE_ARGS=	-i ""
-DEADWOOD_VER=	3.2.11
+post-extract:
+	${RM} ${WRKSRC}/doc/en/man/mqhash.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make |\$$\{MAKE\} |' ${WRKSRC}/build/Makefile.freebsd
-	@${FIND} ${WRKSRC} -type f ! -name "*.orig" | ${XARGS} ${REINPLACE_CMD} -e \
+	cd ${PATCH_WRKSRC} && \
+	    ${CAT} ${FILESDIR}/localbase | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/etc/maradns|${ETCDIR}|g; s|/etc/mararc|${ETCDIR}|g; \
 		 s|/etc/deadwood|${ETCDIR}|g; s| = 99| = 53|g'
 
+post-patch-IPV6-on:
+	${ECHO_MSG} ipv6_bind_address = \"::1\" \
+	    >> ${WRKSRC}/doc/en/examples/example_full_mararc
+	${REINPLACE_CMD} -e 's|127.0.0.1/16|127.0.0.1/16,\ ::1/128|' \
+	    ${WRKSRC}/${DEADWOOD_VER}/doc/dwood3rc
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/deadwood-${DEADWOOD_VER}/src/Deadwood ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/server/maradns ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/tcp/fetchzone ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tcp/getzone ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tcp/zoneserver ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/askmara ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/duende ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/misc/mqhash ${STAGEDIR}${PREFIX}/bin
-
-	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.1 ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.8 ${STAGEDIR}${PREFIX}/share/man/man8
-	${INSTALL_MAN} ${WRKSRC}/doc/en/man/*.5 ${STAGEDIR}${PREFIX}/share/man/man5
-
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_full_mararc ${STAGEDIR}${ETCDIR}/mararc.sample
-	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_csv2 ${STAGEDIR}${ETCDIR}/csv2.sample
-	${INSTALL_DATA} ${WRKSRC}/deadwood-${DEADWOOD_VER}/doc/dwood3rc ${STAGEDIR}${ETCDIR}/dwood3rc.sample
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} \
+	    tools/askmara tools/duende tcp/fetchzone tcp/getzone \
+	    coLunacyDNS/lunacy/lunacy \
+	    ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} \
+	    coLunacyDNS/coLunacyDNS server/maradns tcp/zoneserver \
+	    ${DEADWOOD_VER}/src/Deadwood \
+	    ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_full_mararc \
+	    ${STAGEDIR}${ETCDIR}/mararc.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/en/examples/example_csv2 \
+	    ${STAGEDIR}${ETCDIR}/csv2.sample
+	${INSTALL_DATA} ${WRKSRC}/${DEADWOOD_VER}/doc/dwood3rc \
+	    ${STAGEDIR}${ETCDIR}/dwood3rc.sample
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc/en && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-	@${RM} -r ${STAGEDIR}${DOCSDIR}/man \
-		${STAGEDIR}${DOCSDIR}/source \
-		${STAGEDIR}${DOCSDIR}/pdf
-	@${FIND} ${STAGEDIR}${DOCSDIR} -name Makefile -delete
+	cd ${WRKSRC}/doc/en/text/ && \
+	    ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "! -name Makefile"
+	cd ${WRKSRC} && ${INSTALL_DATA} \
+	    coLunacyDNS/doc/coLunacyDNS.txt maradns.gpg.key \
+	    ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
-	${MV} ${STAGEDIR}${DOCSDIR}/examples ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/doc/en/source && \
+	    ${INSTALL_DATA} ${EXAMPLES:S/^/example_/g} ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-MANPAGES-on:
+.for N in 1 5 8
+	cd ${WRKSRC}/doc/en/man && \
+	    ${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man${N} && \
+	    ${INSTALL_MAN} *.${N} ${STAGEDIR}${PREFIX}/share/man/man${N}
+.endfor
 
 .include <bsd.port.mk>
