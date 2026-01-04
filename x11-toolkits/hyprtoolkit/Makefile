@@ -1,7 +1,6 @@
 PORTNAME=	hyprtoolkit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -17,7 +16,6 @@ BUILD_DEPENDS=	googletest>0:devel/googletest \
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
 		libiniparser.so:devel/iniparser \
-		libinotify.so:devel/libinotify \
 		libhyprgraphics.so:graphics/hyprgraphics \
 		libdrm.so:graphics/libdrm \
 		libwayland-client.so:graphics/wayland \
@@ -36,12 +34,16 @@ USE_XORG=	pixman
 LDFLAGS+=	-pthread
 
 PLIST_SUB=	SOVERSION_FULL=${DISTVERSION} \
-		SOVERSION_MAJOR=4
+		SOVERSION_MAJOR=5
 
 # XXX Drop after FreeBSD 13.5 EOL around 2026-04-30
 # https://cgit.freebsd.org/src/commit/?id=af93fea71038
 .if !exists(/usr/include/sys/timerfd.h)
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
+.endif
+
+.if !exists(/usr/include/sys/inotify.h)
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
 .endif
 
 .include <bsd.port.mk>
