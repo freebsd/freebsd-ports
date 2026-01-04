@@ -1,0 +1,27 @@
+  <vuln vid="500cc49c-e93b-11f0-b8d8-4ccc6adda413">
+    <topic>gstreamer1-plugins-bad -- Out-of-bounds reads in MIDI parser</topic>
+    <affects>
+<package>
+<name>gstreamer1-plugins-bad</name>
+<range><lt>1.26.10</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The GStreamer Security Center reports:</p>
+	<blockquote cite="https://gstreamer.freedesktop.org/security/sa-2025-0009.html">
+	  <p>Multiple out-of-bounds reads in the MIDI parser that can cause
+	  crashes for certain input files.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-67326</cvename>
+      <cvename>CVE-2025-67327</cvename>
+      <url>https://gstreamer.freedesktop.org/security/sa-2025-0009.html</url>
+    </references>
+    <dates>
+      <discovery>2025-12-27</discovery>
+      <entry>2026-01-04</entry>
+    </dates>
+  </vuln>
