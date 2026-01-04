@@ -14,6 +14,8 @@ LIB_DEPENDS+=	libatk-1.0.so:accessibility/at-spi2-core \
 		libexiv2.so:graphics/exiv2 \
 		libharfbuzz.so:print/harfbuzz
 
+# WARNING: we need desktop-file-utils for the port's Makefile,
+# although it does not use MimeTypes, it wants to use the tools
 USES=		desktop-file-utils gmake gnome pkgconfig tar:xz
 
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 libxml2 pango
