@@ -12,13 +12,14 @@ bin/vercmp
 @sample etc/makepkg.conf.d/fortran.conf.sample
 @sample etc/makepkg.conf.d/rust.conf.sample
 @sample etc/makepkg.conf.sample
+@dir etc/makepkg.d
 @sample etc/pacman.conf.sample
 @dir %%ETCDIR%%.d
 include/alpm.h
 include/alpm_list.h
 lib/libalpm.so
-lib/libalpm.so.15
-lib/libalpm.so.15.0.0
+lib/libalpm.so.16
+lib/libalpm.so.16.0.0
 libdata/pkgconfig/libalpm.pc
 libdata/pkgconfig/libmakepkg.pc
 share/bash-completion/completions/makepkg
@@ -174,7 +175,10 @@ share/makepkg/integrity/generate_signature.sh
 share/makepkg/integrity/verify_checksum.sh
 share/makepkg/integrity/verify_signature.sh
 share/makepkg/lint_config.sh
+share/makepkg/lint_config/buildenv.sh
 share/makepkg/lint_config/ext.sh
+share/makepkg/lint_config/nproc.sh
+share/makepkg/lint_config/packager.sh
 share/makepkg/lint_config/paths.sh
 share/makepkg/lint_config/source_date_epoch.sh
 share/makepkg/lint_config/variable.sh
@@ -200,7 +204,6 @@ share/makepkg/lint_pkgbuild/options.sh
 share/makepkg/lint_pkgbuild/package_function.sh
 share/makepkg/lint_pkgbuild/package_function_variable.sh
 share/makepkg/lint_pkgbuild/pkgbase.sh
-share/makepkg/lint_pkgbuild/pkglist.sh
 share/makepkg/lint_pkgbuild/pkgname.sh
 share/makepkg/lint_pkgbuild/pkgrel.sh
 share/makepkg/lint_pkgbuild/pkgver.sh
@@ -208,8 +211,9 @@ share/makepkg/lint_pkgbuild/provides.sh
 share/makepkg/lint_pkgbuild/source.sh
 share/makepkg/lint_pkgbuild/util.sh
 share/makepkg/lint_pkgbuild/variable.sh
+share/makepkg/lint_pkgbuild/xdata.sh
 share/makepkg/reproducible.sh
-share/makepkg/reproducible/python.sh
+share/makepkg/reproducible/source_date_epoch.sh
 share/makepkg/source.sh
 share/makepkg/source/bzr.sh
 share/makepkg/source/file.sh
@@ -220,13 +224,13 @@ share/makepkg/source/local.sh
 share/makepkg/source/svn.sh
 share/makepkg/srcinfo.sh
 share/makepkg/tidy.sh
-share/makepkg/tidy/docs.sh
-share/makepkg/tidy/emptydirs.sh
-share/makepkg/tidy/libtool.sh
-share/makepkg/tidy/purge.sh
-share/makepkg/tidy/staticlibs.sh
-share/makepkg/tidy/strip.sh
-share/makepkg/tidy/zipman.sh
+share/makepkg/tidy/10-docs.sh
+share/makepkg/tidy/10-libtool.sh
+share/makepkg/tidy/10-staticlibs.sh
+share/makepkg/tidy/50-purge.sh
+share/makepkg/tidy/50-strip.sh
+share/makepkg/tidy/50-zipman.sh
+share/makepkg/tidy/90-emptydirs.sh
 share/makepkg/util.sh
 share/makepkg/util/compress.sh
 share/makepkg/util/config.sh
@@ -262,8 +266,10 @@ share/makepkg/util/util.sh
 share/zsh/site-functions/_pacman
 @dir share/libalpm/hooks
 @dir share/makepkg-template
-@dir %%PACMAN_ROOT%%
 @dir %%PACMAN_ROOT%%/var/cache/pacman/pkg
 @dir %%PACMAN_ROOT%%/var/cache/pacman
+@dir %%PACMAN_ROOT%%/var/cache
 @dir %%PACMAN_ROOT%%/var/lib/pacman
 @dir %%PACMAN_ROOT%%/var/lib
+@dir %%PACMAN_ROOT%%/var
+@dir %%PACMAN_ROOT%%
