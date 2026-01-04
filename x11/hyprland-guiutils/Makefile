@@ -1,7 +1,6 @@
 PORTNAME=	hyprland-guiutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION=	2
+DISTVERSION=	0.2.1
 CATEGORIES=	x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -25,8 +24,6 @@ GH_ACCOUNT=	hyprwm
 USE_XORG=	pixman
 
 LDFLAGS+=	-Wl,--as-needed
-
-CONFLICTS_INSTALL=	hyprland-qtutils
 
 PLIST_FILES=	bin/hyprland-dialog \
 		bin/hyprland-donate-screen \
