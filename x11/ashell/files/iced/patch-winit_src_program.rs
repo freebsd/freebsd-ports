@@ -1,6 +1,6 @@
---- winit/src/program.rs.orig	2025-09-19 07:04:16 UTC
+--- winit/src/program.rs.orig	2025-12-02 15:56:28 UTC
 +++ winit/src/program.rs
-@@ -773,7 +773,7 @@ async fn run_instance<'a, P, C>(
+@@ -776,7 +776,7 @@ async fn run_instance<'a, P, C>(
  
      let mut platform_specific_handler =
          crate::platform_specific::PlatformSpecific::default();

@@ -1,6 +1,5 @@
 PORTNAME=	ashell
-DISTVERSION=	0.6.0
-PORTREVISION=	2
+DISTVERSION=	0.7.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,17 +10,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
-		libinotify.so:devel/libinotify \
 		libudev.so:devel/libudev-devd \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cargo llvm localbase:ldflags
+USES=		cargo llvm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MalpenZibo
-
-LDFLAGS+=	-linotify
 
 PORTSCOUT=	limit:^[0-9]\.
 
@@ -29,6 +25,12 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS
+
+.if !exists(/usr/include/sys/inotify.h)
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+USES+=		localbase:ldflags
+LDFLAGS+=	-linotify
+.endif
 
 post-patch:
 	@${BSDMAKE} PATCHDIR=${PATCHDIR}/iced WRKSRC=${WRKSRC_crate_iced} \
@@ -38,10 +40,9 @@ post-patch:
 		${WRKSRC_crate_fontdb-0.18.0}/src/lib.rs \
 		${WRKSRC_crate_fontdb-0.23.0}/src/lib.rs
 # temporary hack to avoid the following error in configure phase
-# error: failed to select a version for the requirement `redox_syscall = "^0.4.1"`
+# error: failed to select a version for the requirement `redox_syscall = "^0.4"`
 	@${REINPLACE_CMD} -E '/redox_syscall =/s/0\.4(\.[0-9])?/0\.5/' \
-		${WRKSRC_crate_softbuffer}/Cargo.toml \
-		${WRKSRC_crate_winit}/Cargo.toml
+		${WRKSRC_crate_softbuffer}/Cargo.toml
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

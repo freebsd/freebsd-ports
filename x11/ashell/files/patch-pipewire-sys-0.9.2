@@ -26,8 +26,8 @@ See Also:
 * https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284719
 * https://github.com/freebsd/freebsd-ports/blob/87adc7e46597e5e28eb6139946530029f9363f79/multimedia/pipewire/files/patch-src_pipewire_pipewire_init
 
---- cargo-crates/pipewire-sys-0.8.0/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/pipewire-sys-0.8.0/build.rs
+--- cargo-crates/pipewire-sys-0.9.2/build.rs.orig	2026-01-04 13:17:55 UTC
++++ cargo-crates/pipewire-sys-0.9.2/build.rs
 @@ -20,6 +20,11 @@ fn main() {
          .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
          .size_t_is_usize(true)
@@ -40,9 +40,9 @@ See Also:
          .allowlist_type("pw_.*")
          .allowlist_var("pw_.*")
          .allowlist_var("PW_.*")
---- cargo-crates/pipewire-sys-0.8.0/src/lib.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/pipewire-sys-0.8.0/src/lib.rs
-@@ -13,6 +13,14 @@ pub use bindings::*;
+--- cargo-crates/pipewire-sys-0.9.2/src/lib.rs.orig	2026-01-04 13:20:39 UTC
++++ cargo-crates/pipewire-sys-0.9.2/src/lib.rs
+@@ -11,6 +11,14 @@ pub use bindings::*;
  }
  pub use bindings::*;
  
