@@ -12,14 +12,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libdbus-1.so:devel/dbus
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
+		${LOCALBASE}/sbin/console-kit-daemon:sysutils/consolekit2
 
 USERS=		polkitd
 GROUPS=		polkitd
 
-USES=		compiler:c++17-lang cpe gettext gnome localbase meson \
-		pathfix pkgconfig shebangfix tar:bz2
+USES=		compiler:c++17-lang cpe dbus-testing gettext gnome localbase \
+		meson pathfix pkgconfig python:test shebangfix tar:bz2
 USE_GNOME=	glib20 intltool introspection:build
-SHEBANG_FILES=	${WRKSRC}/src/polkitbackend/toarray.pl
+SHEBANG_FILES=	src/polkitbackend/toarray.pl \
+		test/wrapper.py
+
 USE_LDCONFIG=	yes
 CPE_VENDOR=	polkit_project
 
@@ -31,7 +36,7 @@ MESON_ARGS=	-Dpam_include=system \
 		-Dpolkitd_user=${USERS} \
 		-Dexamples=false \
 		-Dsession_tracking=ConsoleKit \
-		-Dtests=false \
+		-Dtests=true \
 		-Dintrospection=true \
 		-Dgtk_doc=false
 
@@ -58,6 +63,10 @@ MANPAGES_MESON_TRUE=	man
 
 OPTIONS_SUB=		yes
 
+.ifdef ALLOW_SYSTEM_AFFECTING_TESTS
+TEST_ENV+=		ALLOW_SYSTEM_AFFECTING_TESTS=1
+.endif
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -78,5 +87,14 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/polkit-1/localauthority/${i}
 	${MKDIR} ${STAGEDIR}/var/lib/polkit-1/localauthority/${i}
 .endfor
+
+.if !defined(ALLOW_SYSTEM_AFFECTING_TESTS)
+post-test:
+	@${ECHO_CMD}
+	@${ECHO_CMD} "===> Polkit tests were skipped, because they create system users and groups"
+	@${ECHO_CMD} "and are only safe to run inside a discardable jail. If that's the case, run"
+	@${ECHO_CMD} "make test ALLOW_SYSTEM_AFFECTING_TESTS=yes"
+	@${ECHO_CMD}
+.endif
 
 .include <bsd.port.post.mk>
