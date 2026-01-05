@@ -1,5 +1,5 @@
 PORTNAME=	langchain
-DISTVERSION=	0.3.27
+DISTVERSION=	1.2.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,16 +11,11 @@ WWW=		https://python.langchain.com/docs/introduction/ \
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>=1.4:databases/py-sqlalchemy20@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0.0:devel/py-async_timeout@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-core>=0.3.72:misc/py-langchain-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langchain-text-splitters>=0.3.9:misc/py-langchain-text-splitters@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}langsmith>=0.1.17:misc/py-langsmith@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=1.2.1:misc/py-langchain-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}langgraph>=1.0.2:misc/py-langgraph@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 autoplist pytest
