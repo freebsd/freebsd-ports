@@ -1,6 +1,6 @@
 PORTNAME=	gdstk
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.61
+DISTVERSION=	0.9.62
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +20,6 @@ GH_ACCOUNT=	heitzmann
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
-CONFLICTS_INSTALL=	misc/vxl # both install lib/libclipper.so
+CONFLICTS_INSTALL=	vxl # both install lib/libclipper.so
 
 .include <bsd.port.mk>
