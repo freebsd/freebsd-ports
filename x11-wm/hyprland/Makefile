@@ -1,7 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.52.2
-PORTREVISION=	1
+DISTVERSION=	0.53.1
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
@@ -21,12 +20,13 @@ BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.45:graphics/wayland-protocols
 LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libhyprutils.so:devel/hyprutils \
-		libinotify.so:devel/libinotify \
+		libhyprwire.so:devel/hyprwire \
 		libre2.so:devel/re2 \
 		libtomlplusplus.so:devel/tomlplusplus \
 		libhyprgraphics.so:graphics/hyprgraphics \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
+		libmuparser.so:math/muparser \
 		libuuid.so:misc/libuuid \
 		libaquamarine.so:x11-toolkits/aquamarine \
 		libhyprcursor.so:x11/hyprcursor \
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libhyprlang.so:devel/hyprlang \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	hyprland-dialog:x11/hyprland-guiutils
 
-USES=		cmake compiler:c++23-lang gl gnome pkgconfig xorg
+USES=		cmake:testing compiler:c++23-lang gl gnome pkgconfig xorg
 
 USE_GL=		egl gbm opengl
 USE_GNOME=	cairo glib20 pango
@@ -42,9 +42,9 @@ USE_XORG=	pixman xcursor
 
 CMAKE_ON=	NO_SYSTEMD
 CMAKE_OFF=	CMAKE_CXX_SCAN_FOR_MODULES # avoid devel/llvm*
-CMAKE_OFF+=	BUILD_TESTING
 
 LDFLAGS+=	-Wl,--as-needed # GL, pango deps
+LDFLAGS+=	-pthread
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-source
 
@@ -52,6 +52,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-source
 # https://cgit.freebsd.org/src/commit/?id=af93fea71038
 .if !exists(/usr/include/sys/timerfd.h)
 LIB_DEPENDS+=	libepoll-shim.so:devel/libepoll-shim
+.endif
+
+.if !exists(/usr/include/sys/inotify.h)
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
 .endif
 
 OPTIONS_DEFINE=		X11
@@ -67,7 +71,7 @@ X11_CMAKE_BOOL_OFF=	NO_XWAYLAND
 post-patch:
 # Respect consolekit2 as XDG_RUNTIME_DIR fallback
 	@${REINPLACE_CMD} 's|/run/user|/var&|' \
-		${WRKSRC}/hyprctl/main.cpp \
+		${WRKSRC}/hyprctl/src/main.cpp \
 		${WRKSRC}/hyprpm/src/core/HyprlandSocket.cpp \
 		${WRKSRC}/hyprtester/src/hyprctlCompat.cpp \
 		${WRKSRC}/src/Compositor.cpp
@@ -77,9 +81,9 @@ post-patch:
 # XXX Replace linprocfs(4) with sysctl(3)
 	@${REINPLACE_CMD} -e 's|/proc|${LINUXBASE}&|g' \
 		${WRKSRC}/hyprtester/src/tests/main/exec.cpp \
-		${WRKSRC}/src/debug/CrashReporter.cpp \
 		${WRKSRC}/src/debug/HyprCtl.cpp \
-		${WRKSRC}/src/desktop/Window.cpp \
+		${WRKSRC}/src/debug/crash/CrashReporter.cpp \
+		${WRKSRC}/src/desktop/view/Window.cpp \
 		${WRKSRC}/src/helpers/MiscFunctions.cpp \
 		${WRKSRC}/src/plugins/HookSystem.cpp \
 		${WRKSRC}/src/plugins/PluginAPI.cpp
