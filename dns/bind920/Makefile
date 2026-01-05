@@ -84,6 +84,8 @@ EXTRA_PATCHES=		${PATCHDIR}/extrapatch-no-bind-tools
 PORTDOCS=	*
 .endif # BIND_TOOLS_SLAVE
 
+TEST_TARGET=		check
+
 OPTIONS_DEFINE=		DNSTAP DOCS FIXED_RRSET GEOIP IDN LARGE_FILE LMDB \
 			OVERRIDECACHE QUERYTRACE START_LATE TCP_FASTOPEN
 OPTIONS_DEFAULT=	DNSTAP GSSAPI_NONE IDN LMDB STATS_JSON STATS_XML \
@@ -205,6 +207,10 @@ post-patch:
 		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}
 .endfor
+	# Make skipping python tests non-fatal
+	# We don't run python tests, because they require setting up network
+	# interface aliases, which doesn't work in Poudriere jail out of the box
+	@${REINPLACE_CMD} -e 's#exit 1#exit 0#g' ${WRKSRC}/bin/tests/system/Makefile.am
 
 .if !defined(BIND_TOOLS_SLAVE)
 post-install:
