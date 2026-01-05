@@ -373,7 +373,6 @@ include/thrift/lib/cpp2/gen/module_constants_cpp.h
 include/thrift/lib/cpp2/gen/module_constants_h.h
 include/thrift/lib/cpp2/gen/module_data_cpp.h
 include/thrift/lib/cpp2/gen/module_data_h.h
-include/thrift/lib/cpp2/gen/module_metadata_cpp.h
 include/thrift/lib/cpp2/gen/module_metadata_h.h
 include/thrift/lib/cpp2/gen/module_method_decorator_h.h
 include/thrift/lib/cpp2/gen/module_sinit_cpp.h
