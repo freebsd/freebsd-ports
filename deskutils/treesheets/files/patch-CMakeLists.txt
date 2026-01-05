@@ -1,7 +1,7 @@
 Build with system wx workaround:
 https://github.com/aardappel/treesheets/issues/1083
 
---- CMakeLists.txt.orig	2025-12-23 17:42:28 UTC
+--- CMakeLists.txt.orig	2026-01-03 13:46:06 UTC
 +++ CMakeLists.txt
 @@ -7,7 +7,7 @@ endif()
      set(TREESHEETS_VERSION "${timestamp}")
@@ -12,10 +12,10 @@ https://github.com/aardappel/treesheets/issues/1083
      DESCRIPTION "A free-form hierarchical data organizer"
      HOMEPAGE_URL "https://github.com/aardappel/treesheets"
      VERSION "${TREESHEETS_VERSION}")
-@@ -32,13 +32,6 @@ include(FetchContent)
- ### Thirdparty dependencies
+@@ -37,15 +37,6 @@ include(FetchContent)
  
  include(FetchContent)
+ 
 -FetchContent_Declare(
 -    wxwidgets
 -    GIT_REPOSITORY https://github.com/wxWidgets/wxWidgets
@@ -23,21 +23,12 @@ https://github.com/aardappel/treesheets/issues/1083
 -    GIT_SHALLOW ON
 -    FIND_PACKAGE_ARGS 3.2.9 NAMES wxWidgets
 -)
+-FetchContent_MakeAvailable(wxwidgets)
+-
  if(ENABLE_LOBSTER)
      FetchContent_Declare(
          lobster
-@@ -46,9 +39,7 @@ if(ENABLE_LOBSTER)
-         GIT_TAG v2025.4
-         GIT_SHALLOW ON
-     )
--    FetchContent_MakeAvailable(wxwidgets lobster)
--else(ENABLE_LOBSTER)
--    FetchContent_MakeAvailable(wxwidgets)
-+    FetchContent_MakeAvailable(lobster)
- endif(ENABLE_LOBSTER)
- 
- 
-@@ -131,7 +122,12 @@ target_precompile_headers(TreeSheets PUBLIC src/stdafx
+@@ -130,7 +121,12 @@ target_precompile_headers(TreeSheets PUBLIC src/stdafx
  target_precompile_headers(TreeSheets PUBLIC src/stdafx.h)
  
  ## Link wxWidgets and lobster-impl into TreeSheets
@@ -51,7 +42,7 @@ https://github.com/aardappel/treesheets/issues/1083
  if(ENABLE_LOBSTER)
      list(APPEND TREESHEETS_LIBS lobster-impl)
  endif(ENABLE_LOBSTER)
-@@ -181,7 +177,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
+@@ -180,7 +176,7 @@ install(FILES ${treesheets_readme_files} DESTINATION $
  install(DIRECTORY TS/docs DESTINATION ${TREESHEETS_DOCDIR})
  file(GLOB treesheets_readme_files "TS/readme*.html")
  install(FILES ${treesheets_readme_files} DESTINATION ${TREESHEETS_DOCDIR})
