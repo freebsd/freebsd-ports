@@ -1100,7 +1100,6 @@ include/folly/synchronization/StripedThrottledLifoSem.h
 include/folly/synchronization/ThrottledLifoSem.h
 include/folly/synchronization/WaitOptions.h
 include/folly/synchronization/detail/AtomicUtils.h
-include/folly/synchronization/detail/Hardware.h
 include/folly/synchronization/detail/HazptrUtils.h
 include/folly/synchronization/detail/InlineFunctionRef.h
 include/folly/synchronization/detail/Sleeper.h
@@ -1121,6 +1120,7 @@ include/folly/system/Pid.h
 include/folly/system/Shell.h
 include/folly/system/ThreadId.h
 include/folly/system/ThreadName.h
+include/folly/system/arch/x86.h
 include/folly/test/DeterministicSchedule.h
 include/folly/test/TestUtils.h
 include/folly/testing/TestUtil.h
