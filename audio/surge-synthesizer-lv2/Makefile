@@ -55,6 +55,7 @@ GH_TUPLE=	\
 		steinbergmedia:vst3_public_sdk:ced72c00d5c1365a4cca16cdbfb871be2496848b:steinbergmedia_vst3_public_sdk/vst3sdk/public.sdk \
 
 LDFLAGS+=	-lexecinfo
+LDFLAGS+=	-lfreetype # fix link breakage that appeared all of a sudden
 
 CMAKE_ARGS_aarch64=	-DLINUX_ON_ARM:BOOL=ON
 CMAKE_ARGS_armv7=	-DLINUX_ON_ARM:BOOL=ON
