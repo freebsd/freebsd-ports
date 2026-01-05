@@ -1,10 +1,11 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.9
+DISTVERSION=	1.5.11
 CATEGORIES=	audio
 MASTER_SITES=	https://download.steinberg.net/sdk_downloads/:vst3sdk
 DISTFILES=	${VST3_SDK_ARCHIVE}:vst3sdk
-EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
+EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX} \
+		breakfastquay-minibpm-43de991_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio/MIDI multi-track sequencer
@@ -41,6 +42,7 @@ USE_QT=		core gui svg widgets x11extras xml buildtools:build linguisttools:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
+GH_TUPLE=	breakfastquay:minibpm:43de991:minibpm/src/minibpm
 
 CMAKE_OFF=	CONFIG_CLAP # for audio/clap, but it doesn't install anything
 CMAKE_OFF+=	CONFIG_QT6 # breaks with Qt6: Gtk-ERROR **: 21:10:56.939: GTK 2.x symbols detected. Using GTK 2.x and GTK 3 in the same process is not supported
