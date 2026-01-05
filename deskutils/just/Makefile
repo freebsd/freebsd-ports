@@ -1,6 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.43.1
-PORTREVISION=	1
+DISTVERSION=	1.46.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,8 +22,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.4 \
-		anstyle-wincon-3.0.10 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
 		arrayref-0.3.9 \
 		arrayvec-0.7.6 \
 		autocfg-1.5.0 \
@@ -33,14 +32,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		block-buffer-0.10.4 \
 		block2-0.6.2 \
 		bstr-1.12.1 \
-		bumpalo-3.19.0 \
-		camino-1.2.1 \
-		cc-1.2.45 \
+		bumpalo-3.19.1 \
+		camino-1.2.2 \
+		cc-1.2.51 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
-		clap-4.5.51 \
-		clap_builder-4.5.51 \
+		clap-4.5.53 \
+		clap_builder-4.5.53 \
 		clap_complete-4.5.48 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.6 \
@@ -66,7 +65,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		errno-0.3.14 \
 		executable-path-1.0.0 \
 		fastrand-2.3.0 \
-		find-msvc-tools-0.1.4 \
+		find-msvc-tools-0.1.6 \
 		generic-array-0.14.7 \
 		getopts-0.2.24 \
 		getrandom-0.2.16 \
@@ -77,13 +76,13 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		iana-time-zone-haiku-0.1.2 \
 		is_executable-1.0.5 \
 		is_terminal_polyfill-1.70.2 \
-		itoa-1.0.15 \
-		js-sys-0.3.82 \
+		itoa-1.0.17 \
+		js-sys-0.3.83 \
 		lexiclean-0.0.1 \
-		libc-0.2.177 \
-		libredox-0.1.10 \
+		libc-0.2.178 \
+		libredox-0.1.12 \
 		linux-raw-sys-0.11.0 \
-		log-0.4.28 \
+		log-0.4.29 \
 		memchr-2.7.6 \
 		memmap2-0.9.9 \
 		nix-0.30.1 \
@@ -97,7 +96,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		percent-encoding-2.3.2 \
 		ppv-lite86-0.2.21 \
 		pretty_assertions-1.4.1 \
-		proc-macro2-1.0.103 \
+		proc-macro2-1.0.104 \
 		pulldown-cmark-0.9.6 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.42 \
@@ -111,14 +110,13 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.8 \
 		roff-0.2.2 \
-		rustix-1.1.2 \
+		rustix-1.1.3 \
 		rustversion-1.0.22 \
-		ryu-1.0.20 \
 		semver-1.0.27 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.145 \
+		serde_json-1.0.148 \
 		sha2-0.10.9 \
 		shellexpand-3.1.1 \
 		shlex-1.3.0 \
@@ -128,9 +126,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
 		strum_macros-0.27.2 \
-		syn-2.0.110 \
+		syn-2.0.112 \
 		target-2.1.0 \
-		tempfile-3.23.0 \
+		tempfile-3.24.0 \
 		temptree-0.2.0 \
 		terminal_size-0.4.3 \
 		thiserror-2.0.17 \
@@ -142,14 +140,14 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		unicode-segmentation-1.12.0 \
 		unicode-width-0.2.2 \
 		utf8parse-0.2.2 \
-		uuid-1.18.1 \
+		uuid-1.19.0 \
 		version_check-0.9.5 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
 		wasip2-1.0.1+wasi-0.2.4 \
-		wasm-bindgen-0.2.105 \
-		wasm-bindgen-macro-0.2.105 \
-		wasm-bindgen-macro-support-0.2.105 \
-		wasm-bindgen-shared-0.2.105 \
+		wasm-bindgen-0.2.106 \
+		wasm-bindgen-macro-0.2.106 \
+		wasm-bindgen-macro-support-0.2.106 \
+		wasm-bindgen-shared-0.2.106 \
 		which-8.0.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -174,8 +172,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		winsafe-0.0.19 \
 		wit-bindgen-0.46.0 \
 		yansi-1.0.1 \
-		zerocopy-0.8.27 \
-		zerocopy-derive-0.8.27
+		zerocopy-0.8.31 \
+		zerocopy-derive-0.8.31 \
+		zmij-1.0.7
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=		COMPLETIONS
