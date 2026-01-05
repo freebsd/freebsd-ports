@@ -22,8 +22,8 @@
 #
 # COMPILER_TYPE:	can be gcc or clang
 # ALT_COMPILER_TYPE:	can be gcc or clang depending on COMPILER_TYPE, only set if the base system has 2 compilers
-# COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 47 for gcc 4.7.*
-# ALT_COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 47 for gcc 4.7.* of the ALT_COMPILER_TYPE
+# COMPILER_VERSION:	major version and first digit of minor version: 33 for clang 3.3.*, 47 for gcc 4.7.*
+# ALT_COMPILER_VERSION:	major version and first digit of minor version: 33 for clang 3.3.*, 47 for gcc 4.7.* of the ALT_COMPILER_TYPE
 #
 # COMPILER_FEATURES:	the list of features supported by the compiler includes the standard C++ library.
 # CHOSEN_COMPILER_TYPE:	can be gcc or clang (type of compiler chosen by the framework)
