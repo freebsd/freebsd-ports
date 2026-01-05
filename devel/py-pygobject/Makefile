@@ -1,5 +1,5 @@
 PORTNAME=	pygobject
-DISTVERSION=	3.50.2
+DISTVERSION=	3.54.5
 PORTREVISION?=	0
 CATEGORIES=	devel python
 MASTER_SITES=	GNOME
@@ -39,6 +39,28 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>=1.16:graphics/py-cairo@${PY_FLAVOR} \
 		${LOCALBASE}/libdata/pkgconfig/pygobject-3.0.pc:devel/pygobject-common
 USE_GNOME=	cairo glib20 introspection
 USE_PYTHON=	autoplist concurrent pep517
+
+OPTIONS_DEFINE=	TEST
+
+TEST_TEST_DEPENDS=	bash:shells/bash
+TEST_USE=	python=pytest
+# PYTEST_BROKEN_TESTS may have infinite loops
+# test_subprocess_communicate_stdout has caused kernel panics
+TEST_VARS=	PEP517_BUILD_CONFIG_SETTING="-Csetup-args=-Dtests=true -Cbuild-dir=_build" \
+		TEST_ARGS=--import-mode=importlib \
+		PYTEST_BROKEN_TESTS="test_pytest_capture_error_in_closure test_sigint test_finalize test_idle_data test_idle_method_callback_no_data test_idle_method_callback_with_data test_idle_multidata test_idle_no_data" \
+		PYTEST_IGNORED_TESTS=test_subprocess_communicate_stdout
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|setuptools<74|setuptools|' \
+		${WRKSRC}/pyproject.toml
+
+post-patch-TEST-on:
+	@${REINPLACE_CMD} -e 's|"-Dtests=false", ||' \
+		${WRKSRC}/pyproject.toml
+
+pre-test-TEST-on:
+	${CP} -a ${WRKSRC}/_build/ ${WRKSRC}
 .endif
 
 .include <bsd.port.mk>
