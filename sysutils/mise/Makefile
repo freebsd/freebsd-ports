@@ -1,6 +1,6 @@
 PORTNAME=	mise
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.12.9
+DISTVERSION=	2025.12.13
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -423,6 +423,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		luajit-src-210.6.4+e17ee83 \
 		lzma-rs-0.3.0 \
 		lzma-rust-0.1.7 \
+		lzma-rust2-0.13.0 \
 		lzma-rust2-0.15.2 \
 		lzma-sys-0.1.20 \
 		matchers-0.2.0 \
@@ -524,6 +525,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		portable-atomic-util-0.2.4 \
 		potential_utf-0.1.4 \
 		powerfmt-0.2.0 \
+		ppmd-rust-1.3.0 \
 		ppv-lite86-0.2.21 \
 		pretty_assertions-1.4.1 \
 		prettyplease-0.2.37 \
@@ -842,7 +844,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		x509-cert-0.2.5 \
 		x509-parser-0.18.0 \
 		xattr-1.6.1 \
-		xx-2.1.1 \
+		xx-2.3.0 \
 		xz2-0.1.7 \
 		yansi-1.0.1 \
 		yoke-0.8.1 \
@@ -858,6 +860,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		zerovec-derive-0.11.2 \
 		zip-2.4.2 \
 		zip-3.0.0 \
+		zip-6.0.0 \
 		zipsign-api-0.1.5 \
 		zlib-rs-0.5.2 \
 		zopfli-0.8.3 \
