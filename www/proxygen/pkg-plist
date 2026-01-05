@@ -281,6 +281,7 @@ include/proxygen/lib/http/structuredheaders/StructuredHeadersUtilities.h
 include/proxygen/lib/http/webtransport/FlowController.h
 include/proxygen/lib/http/webtransport/HTTPWebTransport.h
 include/proxygen/lib/http/webtransport/QuicWebTransport.h
+include/proxygen/lib/http/webtransport/StreamPriorityQueue.h
 include/proxygen/lib/http/webtransport/WebTransport.h
 include/proxygen/lib/http/webtransport/WebTransportImpl.h
 include/proxygen/lib/http/webtransport/WtEgressContainer.h
@@ -373,3 +374,4 @@ lib/libproxygenhqserver.so.1.34.6
 lib/libproxygenhttpserver.so
 lib/libproxygenhttpserver.so.1.34.6
 lib/libquicwebtransport.so
+lib/libwt_stream_manager.so
