@@ -1,5 +1,3 @@
-TIMESTAMP = 1762679687
-SHA256 (highfive-devs-highfive-v3.2.0_GH0.tar.gz) = 01ea2eed7dbce1cf5dfff59476cfa113a7822b641aecbd99c674592fe7a4e630
-SIZE (highfive-devs-highfive-v3.2.0_GH0.tar.gz) = 216218
-SHA256 (catchorg-catch2-fa43b77_GH0.tar.gz) = ec3b3ca270338c35dfed8673050c159476b85c6f788776cbdbde281adb682d04
-SIZE (catchorg-catch2-fa43b77_GH0.tar.gz) = 1193121
+TIMESTAMP = 1767599884
+SHA256 (highfive-devs-highfive-v3.3.0_GH0.tar.gz) = 325cfbcf0c0296a6dd26f3b088801b7ebb8d6f109c0565c11d2d8c4af3253bff
+SIZE (highfive-devs-highfive-v3.3.0_GH0.tar.gz) = 221613

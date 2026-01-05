@@ -71,6 +71,7 @@ include/highfive/h5easy_bits/H5Easy_scalar.hpp
 include/highfive/h5easy_bits/default_io_impl.hpp
 include/highfive/half_float.hpp
 include/highfive/highfive.hpp
+include/highfive/mdspan.hpp
 include/highfive/span.hpp
 include/highfive/xtensor.hpp
 lib/cmake/HighFive/HighFiveConfig.cmake
