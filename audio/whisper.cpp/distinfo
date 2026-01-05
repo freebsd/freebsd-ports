@@ -1,3 +1,3 @@
-TIMESTAMP = 1756961106
-SHA256 (ggerganov-whisper.cpp-v1.7.6_GH0.tar.gz) = 166140e9a6d8a36f787a2bd77f8f44dd64874f12dd8359ff7c1f4f9acb86202e
-SIZE (ggerganov-whisper.cpp-v1.7.6_GH0.tar.gz) = 7307730
+TIMESTAMP = 1767631037
+SHA256 (ggerganov-whisper.cpp-v1.8.2-407-g679bdb53_GH0.tar.gz) = ab11b56d1f68cce8051f711117c3cd64f363c74633a0d8bbc6ac277e37dee3d6
+SIZE (ggerganov-whisper.cpp-v1.8.2-407-g679bdb53_GH0.tar.gz) = 7844956

@@ -8,5 +8,5 @@ lib/cmake/whisper/whisper-config.cmake
 lib/cmake/whisper/whisper-version.cmake
 lib/libwhisper.so
 lib/libwhisper.so.1
-lib/libwhisper.so.1.7.6
+lib/libwhisper.so.1.8.2
 libdata/pkgconfig/whisper.pc
