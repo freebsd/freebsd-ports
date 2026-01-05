@@ -1,5 +1,6 @@
 PORTNAME=	mangowc
 DISTVERSION=	0.10.8
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -43,7 +44,18 @@ SUB_FILES=	pkg-message
 
 PLIST_FILES=	bin/mango \
 		bin/mmsg \
-		etc/mango/config.conf \
+		"@sample etc/mango/config.conf.sample" \
 		share/wayland-sessions/mango.desktop
+
+post-patch:
+# Fix C flags
+# https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=275328
+	@${REINPLACE_CMD} -e 's/_POSIX_C_SOURCE=200809L/_XOPEN_SOURCE=700/' \
+		${WRKSRC}/meson.build
+
+# Install a sample copy of configuration file
+post-install:
+	@${CP} ${WRKSRC}/config.conf \
+		${STAGEDIR}${PREFIX}/etc/mango/config.conf.sample
 
 .include <bsd.port.mk>
