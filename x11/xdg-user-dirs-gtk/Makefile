@@ -1,6 +1,5 @@
 PORTNAME=	xdg-user-dirs-gtk
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.16
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xdg-user-dir:devel/xdg-user-dirs
 
-USES=		gettext gnome meson pkgconfig tar:xz
+USES=		gettext-tools gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 gtk30
 
 .include <bsd.port.mk>
