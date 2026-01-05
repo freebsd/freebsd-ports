@@ -1,6 +1,6 @@
 PORTNAME=	nextest
 DISTVERSIONPREFIX=	cargo-nextest-
-DISTVERSION=	0.9.117
+DISTVERSION=	0.9.118
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -65,8 +65,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
 		chrono-0.4.42 \
-		clap-4.5.53 \
-		clap_builder-4.5.53 \
+		clap-4.5.54 \
+		clap_builder-4.5.54 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.4 \
 		color-eyre-0.6.5 \
@@ -116,6 +116,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		equivalent-1.0.2 \
 		errno-0.3.12 \
 		escape8259-0.5.3 \
+		etcetera-0.11.0 \
 		eyre-0.6.12 \
 		fancy-regex-0.14.0 \
 		fastrand-2.3.0 \
@@ -181,7 +182,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		indicatif-0.17.11 \
 		indicatif-0.18.3 \
 		indoc-2.0.7 \
-		insta-1.45.1 \
+		insta-1.46.0 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
 		is_ci-1.2.0 \
@@ -191,7 +192,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		jobserver-0.1.33 \
 		js-sys-0.3.77 \
 		lazy_static-1.5.0 \
-		libc-0.2.178 \
+		libc-0.2.179 \
 		libredox-0.1.3 \
 		libtest-mimic-0.8.1 \
 		linux-raw-sys-0.4.15 \
@@ -356,11 +357,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		thread_local-1.1.8 \
 		tinyvec-1.9.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.48.0 \
+		tokio-1.49.0 \
 		tokio-macros-2.6.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.26.2 \
-		tokio-stream-0.1.17 \
+		tokio-stream-0.1.18 \
 		tokio-util-0.7.15 \
 		toml-0.9.10+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
