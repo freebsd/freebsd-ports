@@ -1,5 +1,5 @@
 PORTNAME=	langchain-anthropic
-DISTVERSION=	0.3.20
+DISTVERSION=	1.3.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ WWW=		https://github.com/langchain-ai/langchain/tree/master/libs/partners/anthro
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-backend>0:devel/py-pdm-backend@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anthropic>0:misc/py-anthropic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}langchain-core>=0.3.76:misc/py-langchain-core@${PY_FLAVOR} \
