@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	doceng@FreeBSD.org
-COMMENT=	Meta-port for the FreeBSD Documentation Project
+COMMENT=	FreeBSD Documentation Project toolchain
 WWW=		https://www.freebsd.org/docproj
 
 RUN_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor \
