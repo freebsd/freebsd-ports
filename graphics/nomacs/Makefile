@@ -1,11 +1,6 @@
 PORTNAME=	nomacs
-PORTVERSION=	3.16
-DISTVERSIONSUFFIX=	.224
-PORTREVISION=	12
+DISTVERSION=	3.22.0
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/nomacs/nomacs/commit/
-PATCHFILES=	8c44e10ae48a88ed2ea885f432c65a0859013011.patch:-p1
 
 MAINTAINER=	vidar@karlsen.tech
 COMMENT=	Small, fast, and free image viewer
@@ -14,39 +9,40 @@ WWW=		https://www.nomacs.org/
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
-		libopencv_highgui.so:graphics/opencv \
-		libopencv_core.so:graphics/opencv \
 		liblcms2.so:graphics/lcms2 \
-		libquazip1-qt5.so:archivers/quazip@qt5
+		libopencv_core.so:graphics/opencv \
+		libopencv_imgproc.so:graphics/opencv \
+		libquazip1-qt6.so:archivers/quazip@qt6
 
-USES=		cmake compiler:c++11-lang cpe desktop-file-utils \
-		dos2unix pkgconfig qt:5
-USE_QT=		concurrent core gui network printsupport svg widgets \
-		buildtools:build linguisttools:build qmake:build
+USES=		cmake compiler:c++17-lang cpe desktop-file-utils dos2unix gl \
+		kde:6 pkgconfig qt:6
 DOS2UNIX_FILES=	ImageLounge/plugins/PaintPlugin/src/DkPaintPlugin.cpp \
 		ImageLounge/src/DkGui/DkWidgets.cpp
-
-USE_LDCONFIG=	yes
-
 USE_GITHUB=	yes
+USE_GL=		opengl
+USE_KDE=	kimageformats
+USE_LDCONFIG=	yes
+USE_QT=		5compat base imageformats svg tools
 
-CMAKE_ARGS=		-DUSE_SYSTEM_QUAZIP=ON
+CMAKE_ARGS=		-DENABLE_QUAZIP=ON \
+			-DUSE_SYSTEM_QUAZIP=ON
 CMAKE_SOURCE_PATH=	${WRKSRC}/ImageLounge
 
-OPTIONS_DEFINE=		RAW TIFF TRANSLATIONS PLUGINS
-OPTIONS_DEFAULT=	RAW TIFF TRANSLATIONS PLUGINS
+PLIST_SUB=	SOVER=${DISTVERSION:R:R} \
+		VERSION=${DISTVERSION}
+
+OPTIONS_DEFINE=		NLS PLUGINS RAW TIFF
+OPTIONS_DEFAULT=	PLUGINS RAW TIFF
 OPTIONS_SUB=		yes
+
+NLS_CMAKE_BOOL=		ENABLE_TRANSLATIONS
+
+PLUGINS_CMAKE_ON=	ENABLE_PLUGINS
 
 RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
 RAW_CMAKE_BOOL=		ENABLE_RAW
 
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CMAKE_BOOL=	ENABLE_TIFF
-
-TRANSLATIONS_CMAKE_BOOL=	ENABLE_TRANSLATIONS
-TRANSLATIONS_DESC=		Install translations
-
-PLUGINS_GH_TUPLE=	nomacs:nomacs-plugins:3.16:plugins/ImageLounge/plugins
-PLUGINS_CMAKE_ON=	ENABLE_PLUGINS
 
 .include <bsd.port.mk>
