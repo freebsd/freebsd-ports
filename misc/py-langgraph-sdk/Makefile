@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-sdk
-DISTVERSION=	0.2.9
+DISTVERSION=	0.3.1
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
-# tests as of 0.2.9: 6 failed, 8 passed, 3 warnings in 0.64s (the file api/openapi.json is missing)
+# tests as of 0.3.1: 4 failed, 41 passed, 1 warning in 0.41s (docs/cloud/reference/api/openapi.json missing, see https://github.com/langchain-ai/langgraph/issues/6647)
 
 .include <bsd.port.mk>
