@@ -1,0 +1,11 @@
+--- meson.build.orig	2025-12-13 22:01:10 UTC
++++ meson.build
+@@ -35,7 +35,7 @@ configure_file(
+     configuration: {
+         'bindir': bindir,
+     },
+-    install: true,
++    install: false,
+     install_dir: systemd_user_unit_dir,
+ )
+ 

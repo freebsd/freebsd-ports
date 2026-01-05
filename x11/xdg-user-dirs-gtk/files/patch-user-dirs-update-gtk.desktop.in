@@ -1,11 +1,13 @@
---- user-dirs-update-gtk.desktop.in.orig	2025-01-18 20:38:12 UTC
+--- user-dirs-update-gtk.desktop.in.orig	2025-12-13 22:01:10 UTC
 +++ user-dirs-update-gtk.desktop.in
-@@ -4,7 +4,7 @@ Terminal=false
+@@ -3,9 +3,8 @@ Terminal=false
  Name=User folders update
  Comment=Update common folders names to match current locale
  Terminal=false
 -OnlyShowIn=GNOME;LXDE;Unity;
-+OnlyShowIn=GNOME;LXDE;XFCE;MATE;X-Cinnamon;Pantheon;
++OnlyShowIn=GNOME;GNOME-Flashback;LXDE;XFCE;MATE;X-Cinnamon;Pantheon;
  NoDisplay=true
  Type=Application
  StartupNotify=false
+ X-KDE-autostart-after=panel
+-X-systemd-skip=true

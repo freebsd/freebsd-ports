@@ -1,3 +1,3 @@
-TIMESTAMP = 1737471282
-SHA256 (gnome/xdg-user-dirs-gtk-0.14.tar.xz) = 537fbe142b24736ed7894e4a01f69fd758cb6c7a677a382879529d217f4a2873
-SIZE (gnome/xdg-user-dirs-gtk-0.14.tar.xz) = 49564
+TIMESTAMP = 1767614521
+SHA256 (gnome/xdg-user-dirs-gtk-0.16.tar.xz) = be825de7f89175db5ead0cd3744d2761109c70943251a87092259163025520a9
+SIZE (gnome/xdg-user-dirs-gtk-0.16.tar.xz) = 50112
