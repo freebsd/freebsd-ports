@@ -1,0 +1,160 @@
+diff -ruN a/discover/cpu_freebsd.go b/discover/cpu_freebsd.go
+--- a/discover/cpu_freebsd.go	1969-12-31 16:00:00.000000000 -0800
++++ b/discover/cpu_freebsd.go	2026-01-04 13:08:45.255018000 -0800
+@@ -0,0 +1,122 @@
++package discover
++
++/*
++#include <stdlib.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
++*/
++import "C"
++
++import (
++	"log/slog"
++	"strings"
++	"syscall"
++	"unsafe"
++)
++
++func sysctlUint64(name string) (uint64, error) {
++	cname := C.CString(name)
++	defer C.free(unsafe.Pointer(cname))
++	
++	var value C.uint64_t
++	size := C.size_t(unsafe.Sizeof(value))
++	
++	ret := C.sysctlbyname(cname, unsafe.Pointer(&value), &size, nil, 0)
++	if ret != 0 {
++		return 0, syscall.Errno(ret)
++	}
++	
++	return uint64(value), nil
++}
++
++func GetCPUMem() (memInfo, error) {
++	var mem memInfo
++
++	// Get page size - this is a 32-bit value
++	pageSize32, err := syscall.SysctlUint32("vm.stats.vm.v_page_size")
++	if err != nil {
++		return mem, err
++	}
++	pageSize := uint64(pageSize32)
++
++	// Get physical memory - use sysctlUint64
++	physmem, err := sysctlUint64("hw.physmem")
++	if err != nil {
++		return mem, err
++	}
++
++	// Get free page count - this is also a 32-bit value
++	freeCount32, err := syscall.SysctlUint32("vm.stats.vm.v_free_count")
++	if err != nil {
++		return mem, err
++	}
++	freeCount := uint64(freeCount32)
++
++	// Get swap total - use sysctlUint64
++	swapTotal, err := sysctlUint64("vm.swap_total")
++	if err != nil {
++		// Swap may not be configured, default to 0
++		swapTotal = 0
++	}
++
++	mem.TotalMemory = physmem
++	mem.FreeMemory = freeCount * pageSize
++	mem.FreeSwap = swapTotal
++
++	slog.Debug("GetCPUMem", "total_memory", mem.TotalMemory, "free_memory", mem.FreeMemory, "free_swap", mem.FreeSwap)
++
++	return mem, nil
++}
++
++func GetCPUDetails() []CPU {
++	var cpus []CPU
++
++	// Get CPU model name - this is a string
++	modelName, err := syscall.Sysctl("hw.model")
++	if err != nil {
++		slog.Warn("failed to get CPU model", "error", err)
++		modelName = "Unknown"
++	}
++
++	// Get number of physical cores - this is a 32-bit integer
++	cores32, err := syscall.SysctlUint32("kern.smp.cores")
++	if err != nil {
++		slog.Warn("failed to get CPU cores", "error", err)
++		return nil
++	}
++	cores := int(cores32)
++
++	// Get number of logical CPUs (threads) - this is a 32-bit integer
++	threads32, err := syscall.SysctlUint32("hw.ncpu")
++	if err != nil {
++		slog.Warn("failed to get CPU threads", "error", err)
++		return nil
++	}
++	threads := int(threads32)
++
++	// Extract vendor ID from model name if possible
++	vendorID := ""
++	modelNameLower := strings.ToLower(modelName)
++	if strings.Contains(modelNameLower, "intel") {
++		vendorID = "GenuineIntel"
++	} else if strings.Contains(modelNameLower, "amd") {
++		vendorID = "AuthenticAMD"
++	}
++
++	// For FreeBSD, we assume a single socket for now
++	// In the future, this could be enhanced to detect multi-socket systems
++	cpu := CPU{
++		ID:                  "0",
++		VendorID:            vendorID,
++		ModelName:           strings.TrimSpace(modelName),
++		CoreCount:           cores,
++		EfficiencyCoreCount: 0, // FreeBSD doesn't distinguish efficiency cores
++		ThreadCount:         threads,
++	}
++
++	cpus = append(cpus, cpu)
++
++	slog.Debug("GetCPUDetails", "cpus", cpus)
++
++	return cpus
++}
+diff -ruN a/go.mod b/go.mod
+--- a/go.mod	2026-01-04 13:08:38.543919000 -0800
++++ b/go.mod	2026-01-04 13:08:45.213194000 -0800
+@@ -36,6 +36,7 @@
+ 
+ require (
+ 	github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40 // indirect
++	github.com/blabber/go-freebsd-sysctl v0.0.0-20201130114544-503969f39d8f // indirect
+ 	github.com/bytedance/sonic/loader v0.1.1 // indirect
+ 	github.com/chewxy/hm v1.0.0 // indirect
+ 	github.com/chewxy/math32 v1.11.0 // indirect
+diff -ruN a/go.sum b/go.sum
+--- a/go.sum	2026-01-04 13:08:38.572637000 -0800
++++ b/go.sum	2026-01-04 13:08:45.221946000 -0800
+@@ -14,6 +14,8 @@
+ github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40/go.mod h1:Q7yQnSMnLvcXlZ8RV+jwz/6y1rQTqbX6C82SndT52Zs=
+ github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0 h1:jfIu9sQUG6Ig+0+Ap1h4unLjW6YQJpKZVmUzxsD4E/Q=
+ github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0/go.mod h1:t2tdKJDJF9BV14lnkjHmOQgcvEKgtqs5a1N3LNdJhGE=
++github.com/blabber/go-freebsd-sysctl v0.0.0-20201130114544-503969f39d8f h1:gMH+lz/KRpSqdoL+IQjgd91bP1LB8vrVEfNxr47GYC8=
++github.com/blabber/go-freebsd-sysctl v0.0.0-20201130114544-503969f39d8f/go.mod h1:cTRyHktEaXkKTTEyZ0hAgS7H4V0AVoKhB8Dx0tVr/tY=
+ github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
+ github.com/bytedance/sonic v1.11.6 h1:oUp34TzMlL+OY1OUWxHqsdkgC/Zfc85zGqw9siXjrc0=
+ github.com/bytedance/sonic v1.11.6/go.mod h1:LysEHSvpvDySVdC2f87zGWf6CIKJcAvqab1ZaiQtds4=
+diff -ruN a/llm/llm_freebsd.go b/llm/llm_freebsd.go
+--- a/llm/llm_freebsd.go	1969-12-31 16:00:00.000000000 -0800
++++ b/llm/llm_freebsd.go	2026-01-04 13:08:45.214499000 -0800
+@@ -0,0 +1,7 @@
++package llm
++
++import (
++	"syscall"
++)
++
++var LlamaServerSysProcAttr = &syscall.SysProcAttr{}

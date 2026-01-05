@@ -1,7 +1,7 @@
 PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1-rc0
-PORTREVISION=	2
+DISTVERSION=	0.13.5
+DISTVERSIONSUFFIX=	-x1 # x1 because it doesn't seem possible to update the cached tag on GoLang servers
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -50,9 +50,12 @@ VULKAN_PLIST_FILES=	lib/ollama/libggml-vulkan.so
 
 _CMAKE_FLAGS=	-DCMAKE_BUILD_TYPE=Release -DGGML_BACKEND_DL=ON -DGGML_BACKEND_DIR=${PREFIX}/lib/ollama
 
-post-patch: # change import path to the fork
+post-patch:
+	# change import path to the fork
 	@cd ${WRKSRC} && \
 		(${GREP} -rl ollama/ollama | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|ollama/ollama|yurivict/ollama|g')
+	@${REINPLACE_CMD} -e 's|var Version string = "0.0.0"|var Version string = "${PORTVERSION}"|g' \
+		${WRKSRC}/go.mod ${WRKSRC}/version/version.go
 
 pre-build-CPU-on:
 	@${MKDIR} ${WRKSRC}/build && \
