@@ -4,9 +4,9 @@ PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nginx/nginx-${PORTNAME}/releases/download/v${PORTVERSION}/:acme \
 		https://nginx.org/download/:nginx
-PKGNAMEPREFIX=	nginx-devel-
 DISTFILES=	nginx-${PORTNAME}-${DISTVERSION}.tar.gz:acme \
-		nginx-${NGINX_VERSION}.tar.gz
+		nginx-${NGINX_VERSION_DEFAULT}.tar.gz:nginx \
+	        nginx-${NGINX_VERSION_DEVEL}.tar.gz:nginx
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	ACME module for NGINX
@@ -17,24 +17,39 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
-#FLAVORS=	default devel
-#FLAVOR?=	${FLAVORS:[2]}
-#default_PKGNAMEPREFIX=	nginx-
-#devel_PKGNAMEPREFIX=	nginx-devel-
-#default_CONFLICTS_INSTALL=	nginx-devel-${PORTNAME}
-#devel_CONFLICTS_INSTALL=	nginx-${PORTNAME}
+FLAVORS=	default devel
+FLAVOR?=	default
+
+USES=           cargo cpe llvm:lib,noexport ssl
+
+default_PKGNAMEPREFIX=  nginx-
+devel_PKGNAMEPREFIX=    nginx-devel-
+PKGNAMEPREFIX=          ${${FLAVOR}_PKGNAMEPREFIX}
 
 WRKSRC=		${WRKDIR}/nginx-${PORTNAME}-${PORTVERSION}
 
-#.if ${FLAVOR} == devel
-.include "${.CURDIR}/../nginx-devel/version.mk"
-RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/nginx-devel
-#.else
-#.include "${.CURDIR}/../nginx/version.mk"
-#RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/nginx
-#.endif
+default_CONFLICTS_INSTALL=      nginx-devel-${PORTNAME}
+devel_CONFLICTS_INSTALL=        nginx-${PORTNAME}
+CONFLICTS_INSTALL=              ${${FLAVOR}_CONFLICTS_INSTALL}
 
-USES=		cargo cpe llvm:lib,noexport ssl
+.include "${.CURDIR}/../nginx/version.mk"
+NGINX_VERSION_DEFAULT:= ${NGINX_VERSION}
+
+.undef NGINX_VERSION
+.include "${.CURDIR}/../nginx-devel/version.mk"
+NGINX_VERSION_DEVEL:=   ${NGINX_VERSION}
+
+.if ${FLAVOR} == devel
+RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/nginx-devel
+.else
+RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/nginx
+.endif
+
+.if ${FLAVOR} == devel
+NGINX_VERSION=  ${NGINX_VERSION_DEVEL}
+.else
+NGINX_VERSION=  ${NGINX_VERSION_DEFAULT}
+.endif
 
 CPE_VENDOR=	f5
 CPE_PRODUCT=	nginx-acme
