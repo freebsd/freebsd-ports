@@ -122,10 +122,10 @@
 %%DATADIR%%/lib/error_prone_annotations-2.18.0.jar
 %%DATADIR%%/lib/failureaccess-1.0.1.jar
 %%DATADIR%%/lib/guava-32.0.1-jre.jar
-%%DATADIR%%/lib/hsqldb-2.7.1.jar
+%%DATADIR%%/lib/hsqldb-2.7.4.jar
 %%DATADIR%%/lib/httpclient-4.5.13.jar
 %%DATADIR%%/lib/httpcore-4.4.13.jar
-%%DATADIR%%/lib/i18n-5.0.2.jar
+%%DATADIR%%/lib/i18n-5.0.3.jar
 %%DATADIR%%/lib/imageio-bmp-3.9.4.jar
 %%DATADIR%%/lib/imageio-core-3.9.4.jar
 %%DATADIR%%/lib/istack-commons-runtime-3.0.11.jar
@@ -180,7 +180,7 @@
 %%DATADIR%%/lib/log4j-core-2.20.0.jar
 %%DATADIR%%/lib/log4j-slf4j2-impl-2.20.0.jar
 %%DATADIR%%/lib/log4j2.xml
-%%DATADIR%%/lib/mssql-jdbc-9.4.1.jre11.jar
+%%DATADIR%%/lib/mssql-jdbc-10.2.4.jre11.jar
 %%DATADIR%%/lib/mysql-connector-j-8.2.0.jar
 %%DATADIR%%/lib/netty-all-4.1.118.Final.jar
 %%DATADIR%%/lib/netty-buffer-4.1.118.Final.jar
@@ -221,7 +221,7 @@
 %%DATADIR%%/lib/ons-23.7.0.25.01.jar
 %%DATADIR%%/lib/oraclepki-23.7.0.25.01.jar
 %%DATADIR%%/lib/orai18n-23.7.0.25.01.jar
-%%DATADIR%%/lib/postgresql-42.7.7.jar
+%%DATADIR%%/lib/postgresql-42.7.8.jar
 %%DATADIR%%/lib/rsi-23.7.0.25.01.jar
 %%DATADIR%%/lib/shaj-0.5.jar
 %%DATADIR%%/lib/simplefan-23.7.0.25.01.jar
@@ -234,7 +234,7 @@
 %%DATADIR%%/lib/txw2-2.3.3.jar
 %%DATADIR%%/lib/ucp-23.7.0.25.01.jar
 %%DATADIR%%/lib/xdb-23.7.0.25.01.jar
-%%DATADIR%%/lib/xmppserver-5.0.2.jar
+%%DATADIR%%/lib/xmppserver-5.0.3.jar
 %%DATADIR%%/lib/xpp3-1.1.4c.0.jar
 %%DATADIR%%/logs
 %%DATADIR%%/plugins/admin/plugin.xml
@@ -283,8 +283,6 @@
 %%DATADIR%%/plugins/admin/webapp/images/header-title_new.gif
 %%DATADIR%%/plugins/admin/webapp/images/icon_update-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/icon_warning-small.gif
-%%DATADIR%%/plugins/admin/webapp/images/icq-gray.gif
-%%DATADIR%%/plugins/admin/webapp/images/icq.gif
 %%DATADIR%%/plugins/admin/webapp/images/im_available.gif
 %%DATADIR%%/plugins/admin/webapp/images/im_away.gif
 %%DATADIR%%/plugins/admin/webapp/images/im_dnd.gif
@@ -317,8 +315,6 @@
 %%DATADIR%%/plugins/admin/webapp/images/login_header.gif
 %%DATADIR%%/plugins/admin/webapp/images/login_logo.gif
 %%DATADIR%%/plugins/admin/webapp/images/mark-16x16.gif
-%%DATADIR%%/plugins/admin/webapp/images/msn-gray.gif
-%%DATADIR%%/plugins/admin/webapp/images/msn.gif
 %%DATADIR%%/plugins/admin/webapp/images/orange-dash_16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/outgoing_32x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/page-background_new.gif
@@ -372,8 +368,6 @@
 %%DATADIR%%/plugins/admin/webapp/images/warning-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/working-16x16.gif
 %%DATADIR%%/plugins/admin/webapp/images/x.gif
-%%DATADIR%%/plugins/admin/webapp/images/yahoo-gray.gif
-%%DATADIR%%/plugins/admin/webapp/images/yahoo.gif
 %%DATADIR%%/plugins/admin/webapp/index.html
 %%DATADIR%%/plugins/admin/webapp/js/behaviour.js
 %%DATADIR%%/plugins/admin/webapp/js/connection-settings-advanced.js

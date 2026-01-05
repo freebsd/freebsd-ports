@@ -1,11 +1,9 @@
 PORTNAME=	openfire
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.2
+DISTVERSION=	5.0.3
 PORTEPOCH=	1
 CATEGORIES=	net-im java
-
-MASTER_SITES=	LOCAL/fernape:maven \
-		LOCAL/vvd:maven
+MASTER_SITES=	LOCAL/vvd:maven
 
 MAINTAINER=	nikita@druba.su
 COMMENT=	Enterprise instant messaging server
@@ -46,7 +44,7 @@ MAVEN_DESC=		Source of Maven build plugins
 MAVEN_LOCAL_DESC=	Use prefetch plugins from FreeBSD repository
 MAVEN_ONLINE_DESC=	Download last plugins during build process and store them into ~/.m2
 
-MAVEN_LOCAL_DISTFILES=	${PORTNAME}-${DISTVERSION}-deps${EXTRACT_SUFX}:maven
+MAVEN_LOCAL_DISTFILES=	${PORTNAME}-${DISTVERSION}-deps.tar.zst:maven
 
 MVN=		mvn
 MVN_TARGET=	package
