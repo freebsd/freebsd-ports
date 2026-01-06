@@ -35,7 +35,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/async-profiler/amd64/libasyncProfiler.so
 %%DATADIR%%/lib/async-profiler/amd64/symsrv.dll
 %%DATADIR%%/lib/async-profiler/libasyncProfiler.dylib
-%%DATADIR%%/lib/build-marker-PY-253.28294.336
+%%DATADIR%%/lib/build-marker-PY-253.29346.142
 %%DATADIR%%/lib/eclipse.lsp4j.debug.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jar
 %%DATADIR%%/lib/eclipse.lsp4j.jsonrpc.debug.jar
@@ -271,6 +271,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/lib/modules/intellij.platform.tasks.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.tasks.jar
 %%DATADIR%%/lib/modules/intellij.platform.tips.jar
+%%DATADIR%%/lib/modules/intellij.platform.trace.consent.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.impl.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.impl.shared.jar
 %%DATADIR%%/lib/modules/intellij.platform.vcs.dvcs.jar
@@ -478,6 +479,9 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.completion.backend.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.completion.common.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.completion.frontend.split.jar
+%%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.credentialStore.backend.split.jar
+%%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.credentialStore.common.jar
+%%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.credentialStore.frontend.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.execution.frontend.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.identifiers.highlighting.frontend.split.jar
 %%DATADIR%%/plugins/cwm-plugin/lib/modules/intellij.platform.inline.completion.backend.split.jar
@@ -509,8 +513,6 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/dataWrangler-plugin/lib/jetbrains.kotlinx.dataframe.core.jar
 %%DATADIR%%/plugins/dataWrangler-plugin/lib/modules/intellij.dataWrangler.jar
 %%DATADIR%%/plugins/dataWrangler-plugin/lib/modules/intellij.dataWrangler.llm.jar
-%%DATADIR%%/plugins/dataspell-jupyter-customCells/lib/dataspell-jupyter-customCells.jar
-%%DATADIR%%/plugins/dataspell-jupyter-customCells/lib/jetbrains.lets.plot.vega.lite.jar
 %%DATADIR%%/plugins/dev/lib/dev.jar
 %%DATADIR%%/plugins/dotenv/lib/dotenv.jar
 %%DATADIR%%/plugins/editorconfig-plugin/lib/editorconfig-plugin.jar
@@ -557,6 +559,8 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.text.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.xml.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.fullLine.yaml.jar
+%%DATADIR%%/plugins/fullLine/lib/modules/intellij.llmInstaller.frontend.jar
+%%DATADIR%%/plugins/fullLine/lib/modules/intellij.llmInstaller.shared.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.chat.completion.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.completion.trigger.model.jar
 %%DATADIR%%/plugins/fullLine/lib/modules/intellij.ml.llm.cpp.completion.jar
@@ -628,6 +632,10 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/grazie/lib/tech.units-indriya.jar
 %%DATADIR%%/plugins/grazie/lib/tech.uom.lib-uom-lib-common.jar
 %%DATADIR%%/plugins/grid-plugin/lib/grid-plugin.jar
+%%DATADIR%%/plugins/grid-plugin/lib/modules/intellij.grid.charts.impl.jar
+%%DATADIR%%/plugins/grid-plugin/lib/modules/intellij.grid.images.impl.jar
+%%DATADIR%%/plugins/grid-plugin/lib/modules/intellij.grid.json.impl.jar
+%%DATADIR%%/plugins/grid-plugin/lib/modules/intellij.grid.scripting.impl.jar
 %%DATADIR%%/plugins/grid-plugin/lib/modules/intellij.grid.scripting.rt.jar
 %%DATADIR%%/plugins/html-tools/lib/html-tools.jar
 %%DATADIR%%/plugins/indexing-shared-ultimate-plugin-bundled/lib/indexing-shared-ultimate-plugin-bundled.jar
@@ -701,8 +709,8 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter-v3-plus.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-plugin/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-c7e53b3be11b.ijx
-%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-c7e53b3be11b.txt
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9b0f141eb926.ijx
+%%DATADIR%%/plugins/javascript-plugin/js/js-predefined-d6986cc7102b-9b0f141eb926.txt
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/!HowToUpdateBundledTypeScript.md
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_tsserver.js
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/_typingsInstaller.js
@@ -800,12 +808,15 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.decorators.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.disposable.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.error.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.float16.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.full.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.intl.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.iterator.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.object.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.promise.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.regexp.d.ts
+%%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.sharedmemory.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.esnext.string.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.scripthost.d.ts
 %%DATADIR%%/plugins/javascript-plugin/jsLanguageServicesImpl/external/lib.webworker.asynciterable.d.ts
@@ -1280,6 +1291,9 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/jupyter-plugin/jupyter-web/word.svg
 %%DATADIR%%/plugins/jupyter-plugin/jupyter-web/yaml.svg
 %%DATADIR%%/plugins/jupyter-plugin/lib/jupyter-plugin.jar
+%%DATADIR%%/plugins/jupyter-plugin/lib/modules/intellij.dataspell.jupyter.customCells.sql.backend.jar
+%%DATADIR%%/plugins/jupyter-plugin/lib/modules/intellij.dataspell.jupyter.customCells.sql.common.jar
+%%DATADIR%%/plugins/jupyter-plugin/lib/modules/intellij.dataspell.jupyter.customCells.sql.frontend.jar
 %%DATADIR%%/plugins/jupyter-plugin/lib/modules/intellij.jupyter.core.jar
 %%DATADIR%%/plugins/jupyter-plugin/lib/modules/intellij.jupyter.execution.jar
 %%DATADIR%%/plugins/jupyter-plugin/lib/modules/intellij.jupyter.py.completion.ml.ranking.jar
@@ -1435,6 +1449,9 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/puppet/lib/stubs/builtin.pp
 %%DATADIR%%/plugins/puppet/lib/stubs/builtin_variables.pp
 %%DATADIR%%/plugins/puppet/lib/stubs/stub_functions.rb
+%%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.ide.nonModalWelcomeScreen.backend.jar
+%%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.ide.nonModalWelcomeScreen.frontend.jar
+%%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.ide.nonModalWelcomeScreen.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.platform.whatsNew.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.pycharm.community.ide.impl.jar
 %%DATADIR%%/plugins/pycharm-community-customization-shared/lib/modules/intellij.pycharm.community.ide.implTraining.jar
@@ -1446,8 +1463,8 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/pycharm-pro-customization.jar
 %%DATADIR%%/plugins/pycharm-pro-customization/lib/tips-pycharm-pro.jar
 %%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/lib/pycharm-pro-sharedIndexes-bundled.jar
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-0978a7220b69-9867c7d4c0a4.ijx
-%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-0978a7220b69-9867c7d4c0a4.txt
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-f2b7a9f6281b-6e1f45a539f7.ijx
+%%DATADIR%%/plugins/pycharm-pro-sharedIndexes-bundled/python-sdk/python-sdk-f2b7a9f6281b-6e1f45a539f7.txt
 %%DATADIR%%/plugins/python-ce/helpers/.gitignore
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/MathJax.js
 %%DATADIR%%/plugins/python-ce/helpers/MathJax/config/TeX-AMS_HTML-full.js
@@ -9741,9 +9758,6 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/helpers/uv/uv_sync_proxy.py
 %%DATADIR%%/plugins/python-ce/helpers/virtualenv-20.13.0.pyz
 %%DATADIR%%/plugins/python-ce/helpers/virtualenv-py3.pyz
-%%DATADIR%%/plugins/python-ce/lib/modules/intellij.platform.ide.nonModalWelcomeScreen.backend.jar
-%%DATADIR%%/plugins/python-ce/lib/modules/intellij.platform.ide.nonModalWelcomeScreen.frontend.jar
-%%DATADIR%%/plugins/python-ce/lib/modules/intellij.platform.ide.nonModalWelcomeScreen.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.ast.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.common.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.aliasProvider.jar
@@ -9756,7 +9770,10 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.installer.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.pipenv.jar
-%%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.poetry.jar
+%%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.poetry.backend.jar
+%%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.poetry.common.jar
+%%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.uv.backend.jar
+%%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.uv.common.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.impl.venv.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.interpreters.jar
 %%DATADIR%%/plugins/python-ce/lib/modules/intellij.python.community.jar
@@ -9792,6 +9809,7 @@ share/applications/pycharm.desktop
 %%DATADIR%%/plugins/python-ce/lib/python-ce.jar
 %%DATADIR%%/plugins/python-dap/lib/python-dap.jar
 %%DATADIR%%/plugins/python-django/lib/python-django.jar
+%%DATADIR%%/plugins/python-lsp/lib/python-lsp.jar
 %%DATADIR%%/plugins/python-pyscript/lib/python-pyscript.jar
 %%DATADIR%%/plugins/python-sharedIndexes/lib/python-sharedIndexes.jar
 %%DATADIR%%/plugins/python/debugger-eggs-output/pydevd-pycharm.egg
