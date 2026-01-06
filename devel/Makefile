@@ -6225,6 +6225,7 @@
     SUBDIR += py-vsts
     SUBDIR += py-vsts-cd-manager
     SUBDIR += py-vulture
+    SUBDIR += py-wadler-lindig
     SUBDIR += py-wadllib
     SUBDIR += py-wait-for2
     SUBDIR += py-warlock
