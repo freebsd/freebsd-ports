@@ -4,6 +4,7 @@ include/s2n/unstable/cert_authorities.h
 include/s2n/unstable/cleanup.h
 include/s2n/unstable/crl.h
 include/s2n/unstable/custom_x509_extensions.h
+include/s2n/unstable/events.h
 include/s2n/unstable/fingerprint.h
 include/s2n/unstable/ktls.h
 include/s2n/unstable/npn.h
