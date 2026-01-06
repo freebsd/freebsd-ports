@@ -10,6 +10,7 @@
 %%LUA_MODSHAREDIR%%/ngx/semaphore.lua
 %%LUA_MODSHAREDIR%%/ngx/ssl.lua
 %%LUA_MODSHAREDIR%%/ngx/ssl/clienthello.lua
+%%LUA_MODSHAREDIR%%/ngx/ssl/proxysslverify.lua
 %%LUA_MODSHAREDIR%%/ngx/ssl/session.lua
 %%LUA_MODSHAREDIR%%/resty/core.lua
 %%LUA_MODSHAREDIR%%/resty/core/base.lua

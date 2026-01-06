@@ -1,4 +1,4 @@
-TIMESTAMP = 1762717379
+TIMESTAMP = 1767700035
 SHA256 (freenginx-1.28.0.tar.gz) = 28651bf51ff95de027262d7af23000e5862fb3d1b2252ac83d97ce4c9a4a18a2
 SIZE (freenginx-1.28.0.tar.gz) = 1228344
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -93,8 +93,8 @@ SHA256 (baysao-nginx-let-module-c1f23aa_GH0.tar.gz) = 7393809d5d8877812da1bd5b5f
 SIZE (baysao-nginx-let-module-c1f23aa_GH0.tar.gz) = 20617
 SHA256 (Taymindis-nginx-link-function-3.2.4_GH0.tar.gz) = 20c3679199ba7efe1598f03b2fa0b13591226363c8dd7930d7f02702cd5abada
 SIZE (Taymindis-nginx-link-function-3.2.4_GH0.tar.gz) = 139656
-SHA256 (openresty-lua-nginx-module-v0.10.27_GH0.tar.gz) = a0a5e616c4a0a32e48899d12242fed5a371f69a85f11ff274a87a2f02f419876
-SIZE (openresty-lua-nginx-module-v0.10.27_GH0.tar.gz) = 758952
+SHA256 (openresty-lua-nginx-module-v0.10.29_GH0.tar.gz) = ca2c2122b909529bf9d1a89e9a5763835a2bd2629def8cb279c550f638f0a78f
+SIZE (openresty-lua-nginx-module-v0.10.29_GH0.tar.gz) = 892502
 SHA256 (openresty-stream-lua-nginx-module-v0.0.15_GH0.tar.gz) = ecf5c2afd345149cef19bf2e3e196bf1c514ca85e778f853f80a379284b70de1
 SIZE (openresty-stream-lua-nginx-module-v0.0.15_GH0.tar.gz) = 394192
 SHA256 (openresty-memc-nginx-module-v0.19_GH0.tar.gz) = 8c2bdbe875e4f5225d0778bfb09a2668f9281d7de6218c7b462a7ba2cee06fe8
