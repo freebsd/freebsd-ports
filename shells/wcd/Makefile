@@ -1,10 +1,9 @@
 PORTNAME=	wcd
-DISTVERSION=	6.0.5
-PORTREVISION=	1
+DISTVERSION=	6.0.6
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jishanalam9128@gmail.com
 COMMENT=	Command-line program to change directory fast
 WWW=		http://wcd.sourceforge.net/
 
@@ -30,6 +29,6 @@ post-patch:
 		${WRKSRC}/src/Makefile
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wcd
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
