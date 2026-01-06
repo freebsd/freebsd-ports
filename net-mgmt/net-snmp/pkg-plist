@@ -211,6 +211,8 @@ include/net-snmp/system/openbsd.h
 include/net-snmp/system/openbsd4.h
 include/net-snmp/system/openbsd5.h
 include/net-snmp/system/openbsd6.h
+include/net-snmp/system/openbsd7.h
+include/net-snmp/system/openbsd8.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.3.h
