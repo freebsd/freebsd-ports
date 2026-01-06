@@ -5,7 +5,7 @@
 PORTNAME=	owasp-dependency-check
 PORTVERSION=	3.1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security java
 MASTER_SITES=	LOCAL/pi/:source2
 DISTFILES+=	owasp-dependency-check-${PORTVERSION}-maven-repository.tar.gz:source2
@@ -17,6 +17,8 @@ WWW=		https://jeremylong.github.io/DependencyCheck \
 		https://jeremylong.github.io/DependencyCheck/dependency-check-cli/
 
 LICENSE=	APACHE20
+DEPRECATED=	This port is 9 major versions and almost 8 years behind on upstream. No maintainer. No users in the ports tree. Does not compile with jdk11+.
+EXPIRATION_DATE=	2026-02-28
 
 BUILD_DEPENDS=	maven>0:devel/maven
 
@@ -24,6 +26,7 @@ USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	jeremylong
 GH_PROJECT=	DependencyCheck
+JAVA_VERSION=	8
 
 NO_ARCH=	yes
 SUB_FILES=	owasp-dependency-check
