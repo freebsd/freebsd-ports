@@ -1,7 +1,6 @@
 PORTNAME=	reproxy
-PORTVERSION=	1.2.3
+PORTVERSION=	1.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://reproxy.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.25+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	umputun
 
