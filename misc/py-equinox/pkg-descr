@@ -1,0 +1,12 @@
+JAX library for neural networks and PyTree manipulations.
+
+Equinox is a JAX library that provides everything you need that isn't already
+in core JAX:
+- neural networks (or more generally any model), with easy-to-use
+  PyTorch-like syntax;
+- filtered APIs for transformations;
+- useful PyTree manipulation routines;
+- advanced features like runtime errors;
+
+Equinox isn't a framework: everything you write in Equinox is compatible with
+anything else in JAX or the ecosystem.
