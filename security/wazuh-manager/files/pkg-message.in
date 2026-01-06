@@ -70,8 +70,12 @@ Wazuh Manager was installed
    script for this task. Download it from the following url:
 
    https://people.freebsd.org/~acm/ports/wazuh/wazuh-gen-certs.tar.gz
+
+10) The sysctl 'kern.hostuuid' is used as a serial number. If you are in a jail,
+    you should have at least started the 'hostid' rc script to uniquely identify
+    this device.
   
-10) Add Wazuh manager to /etc/rc.conf
+11) Add Wazuh manager to /etc/rc.conf
 
   # sysrc wazuh_manager_enable="YES"
 
@@ -79,11 +83,11 @@ Wazuh Manager was installed
   
   # service wazuh-manager enable
 
-11) Start Wazuh manager
+12) Start Wazuh manager
 
   # service wazuh-manager start
 
-12) Enjoy it ;)
+13) Enjoy it ;)
 EOM
 }
 ]

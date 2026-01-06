@@ -1,5 +1,5 @@
---- src/data_provider/src/sysInfoFreeBSD.cpp	2025-11-07 00:46:03.000000000 -0800
-+++ src/data_provider/src/sysInfoFreeBSD.cpp	2026-01-01 13:18:42.411755000 -0800
+--- src/data_provider/src/sysInfoFreeBSD.cpp.orig	2025-11-07 04:46:03.000000000 -0400
++++ src/data_provider/src/sysInfoFreeBSD.cpp	2026-01-06 19:37:15.309352000 -0400
 @@ -11,20 +11,28 @@
  #include "sysInfo.hpp"
  #include "cmdHelper.h"
@@ -73,7 +73,52 @@
      info["ram_free"] = ramFree;
      info["ram_usage"] = 100 - (100 * ramFree / ramTotal);
  }
-@@ -184,8 +204,12 @@
+@@ -96,7 +116,43 @@
+ 
+ static std::string getSerialNumber()
+ {
+-    return UNKNOWN_VALUE;
++    size_t len{0};
++    auto ret{sysctlbyname("kern.hostuuid", nullptr, &len, nullptr, 0)};
++
++    if (ret)
++    {
++        throw std::system_error
++        {
++            ret,
++            std::system_category(),
++            "Error reading serial number (aka hostuuid)."
++        };
++    }
++
++    const auto spBuff{std::make_unique<char[]>(len + 1)};
++
++    if (!spBuff)
++    {
++        throw std::runtime_error
++        {
++            "Error allocating memory to read the serial number (aka hostuuid)."
++        };
++    }
++
++    ret = sysctlbyname("kern.hostuuid", spBuff.get(), &len, nullptr, 0);
++
++    if (ret)
++    {
++        throw std::system_error
++        {
++            ret,
++            std::system_category(),
++            "Error reading serial number (aka hostuuid)."
++        };
++    }
++
++    spBuff.get()[len] = 0;
++    return std::string{reinterpret_cast<const char*>(spBuff.get())};
+ }
+ 
+ static int getCpuCores()
+@@ -184,8 +240,12 @@
  
  nlohmann::json SysInfo::getProcessesInfo() const
  {
@@ -88,7 +133,7 @@
  }
  
  nlohmann::json SysInfo::getOsInfo() const
-@@ -196,11 +220,12 @@
+@@ -196,11 +256,12 @@
  
      if (!spParser->parseUname(Utils::exec("uname -r"), ret))
      {
@@ -102,7 +147,7 @@
      if (uname(&uts) >= 0)
      {
          ret["sysname"] = uts.sysname;
-@@ -215,43 +240,256 @@
+@@ -215,44 +276,257 @@
  
  nlohmann::json SysInfo::getPorts() const
  {
@@ -119,19 +164,23 @@
 -void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> /*callback*/) const
 -{
 -    // Currently not supported for this OS.
+-}
 +    if (!query.empty())
 +    {
 +        nlohmann::json portsjson;
 +        portsjson = nlohmann::json::parse(query);
 +        auto &portsResult = portsjson["sockstat"]["socket"];
-+
+ 
+-void SysInfo::getPackages(std::function<void(nlohmann::json&)> callback) const
+-{
+-    const auto query{Utils::exec(R"(pkg query -a "%n|%m|%v|%q|%c")")};
 +        for(auto &port : portsResult) {
 +            std::string localip = "";
 +            std::string localport = "";
 +            std::string remoteip = "";
 +            std::string remoteport = "";
 +            std::string statedata = "";
-+
+ 
 +            if (port["pid"] != nullptr) {
 +
 +                localip = port["local"]["address"];
@@ -179,16 +228,32 @@
 +#else
 +    const auto query{Utils::exec(R"(sockstat -46qs)")};
 +
-+    if (!query.empty())
-+    {
+     if (!query.empty())
+     {
+-        const auto lines{Utils::split(query, '\n')};
 +        const auto lines{Utils::split(Utils::trimToOneSpace(query), '\n')};
-+
+ 
 +        std::regex expression(R"(^(\S+)\s+(\S+)\s+(\d+)\s+(\d+)\s*(\S+)\s+(\S+)\s+(\S+)(?:\s+(\S+))?\s*$)");
 +
-+        for (const auto& line : lines)
-+        {
+         for (const auto& line : lines)
+         {
+-            const auto data{Utils::split(line, '|')};
+-            nlohmann::json package;
 +            std::smatch data;
-+
+ 
+-            package["name"] = data[0];
+-            package["vendor"] = data[1];
+-            package["version"] = data[2];
+-            package["install_time"] = UNKNOWN_VALUE;
+-            package["location"] = UNKNOWN_VALUE;
+-            package["architecture"] = data[3];
+-            package["groups"] = UNKNOWN_VALUE;
+-            package["description"] = data[4];
+-            package["size"] = 0;
+-            package["priority"] = UNKNOWN_VALUE;
+-            package["source"] = UNKNOWN_VALUE;
+-            package["format"] = "pkg";
+-            // The multiarch field won't have a default value
 +            if (std::regex_search(line, data, expression))
 +            {
 +                std::string localip = "";
@@ -196,7 +261,8 @@
 +                std::string remoteip = "";
 +                std::string remoteport = "";
 +                std::string statedata = "";
-+
+ 
+-            callback(package);
 +                auto localdata{Utils::split(data[6], ':')};
 +                auto remotedata{Utils::split(data[7], ':')};
 +
@@ -249,22 +315,18 @@
 +    }
 +#endif
 +    return ports;
- }
- 
--void SysInfo::getPackages(std::function<void(nlohmann::json&)> callback) const
++}
++
 +void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> callback) const
- {
--    const auto query{Utils::exec(R"(pkg query -a "%n|%m|%v|%q|%c")")};
++{
 +    const auto query{Utils::exec(R"(ps -ax -w -o pid,comm,state,ppid,usertime,systime,user,ruser,svuid,group,rgroup,svgid,pri,nice,ssiz,vsz,rss,pmem,etimes,sid,pgid,tpgid,tty,cpu,nlwp,args --libxo json)")};
- 
-     if (!query.empty())
-     {
--        const auto lines{Utils::split(query, '\n')};
++
++    if (!query.empty())
++    {
 +      nlohmann::json psjson;
 +      psjson = nlohmann::json::parse(query);
 +      auto &processes = psjson["process-information"]["process"];
- 
--        for (const auto& line : lines)
++
 +      for(auto &process : processes) {
 +          std::string user_time{""};
 +          std::string system_time{""};
@@ -312,31 +374,15 @@
 +    if (Utils::existsRegular(PKG_DB_PATHNAME))
 +    {
 +        try
-         {
--            const auto data{Utils::split(line, '|')};
--            nlohmann::json package;
++        {
 +            std::shared_ptr<SQLite::IConnection> sqliteConnection = std::make_shared<SQLite::Connection>(PKG_DB_PATHNAME, SQLITE_OPEN_READONLY);
- 
--            package["name"] = data[0];
--            package["vendor"] = data[1];
--            package["version"] = data[2];
--            package["install_time"] = UNKNOWN_VALUE;
--            package["location"] = UNKNOWN_VALUE;
--            package["architecture"] = data[3];
--            package["groups"] = UNKNOWN_VALUE;
--            package["description"] = data[4];
--            package["size"] = 0;
--            package["priority"] = UNKNOWN_VALUE;
--            package["source"] = UNKNOWN_VALUE;
--            package["format"] = "pkg";
--            // The multiarch field won't have a default value
++
 +            SQLite::Statement stmt
 +            {
 +                sqliteConnection,
 +                PKG_QUERY
 +            };
- 
--            callback(package);
++
 +            while (SQLITE_ROW == stmt.step())
 +            {
 +                try
@@ -378,10 +424,11 @@
 +                    std::cerr << e.what() << std::endl;
 +                }
 +            }
-+        }
+         }
 +        catch (const std::exception& e)
 +        {
 +            std::cerr << e.what() << std::endl;
-         }
++        }
      }
  }
+ 
