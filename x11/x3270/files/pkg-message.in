@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-If using x3270, You may wish to add  "/usr/local/share/fonts/x3270/" to your X11
+If using x3270, You may wish to add  "%%LOCALBASE%%/share/fonts/x3270/" to your X11
 FontPath. See "Using Fonts in Xorg" in the FreeBSD handbook.
 
 'x3270a' will automatically scale the interface for high DPI displays.
