@@ -1,3 +1,35 @@
+  <vuln vid="df33c83b-eb4f-11f0-a46f-0897988a1c07">
+    <topic>mail/mailpit -- Server-Side Request Forgery</topic>
+    <affects>
+<package>
+<name>mailpit</name>
+<range><lt>1.28.1</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-8v65-47jx-7mfr">
+	  <p>A Server-Side Request Forgery (SSRF) vulnerability
+	  exists in Mailpit's /proxy endpoint that allows attackers
+	  to make requests to internal network resources.</p>
+	  <p>The /proxy endpoint allows requests to internal network
+	  resources. While it validates http:// and https:// schemes,
+	  it does not block internal IP addresses, allowing attackers
+	  to access internal services and APIs.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-21859</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-8v65-47jx-7mfr</url>
+    </references>
+    <dates>
+      <discovery>2026-01-06</discovery>
+      <entry>2026-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e2cd20fd-eb10-11f0-a1c0-0050569f0b83">
     <topic>net-mgmt/net-snmp -- Remote Code Execution (snmptrapd)</topic>
     <affects>
