@@ -266,10 +266,3 @@ share/makepkg/util/util.sh
 share/zsh/site-functions/_pacman
 @dir share/libalpm/hooks
 @dir share/makepkg-template
-@dir %%PACMAN_ROOT%%/var/cache/pacman/pkg
-@dir %%PACMAN_ROOT%%/var/cache/pacman
-@dir %%PACMAN_ROOT%%/var/cache
-@dir %%PACMAN_ROOT%%/var/lib/pacman
-@dir %%PACMAN_ROOT%%/var/lib
-@dir %%PACMAN_ROOT%%/var
-@dir %%PACMAN_ROOT%%

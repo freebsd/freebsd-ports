@@ -36,6 +36,13 @@ USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PACMAN_ROOT="${PACMAN_ROOT}" PREFIX="${PREFIX}"
 PLIST_SUB=	PACMAN_ROOT="${PACMAN_ROOT:C,^${PREFIX}/,,}"
+PLIST_DIRS=	%%PACMAN_ROOT%%/var/cache/pacman/pkg \
+		%%PACMAN_ROOT%%/var/cache/pacman \
+		%%PACMAN_ROOT%%/var/cache \
+		%%PACMAN_ROOT%%/var/lib/pacman \
+		%%PACMAN_ROOT%%/var/lib \
+		%%PACMAN_ROOT%%/var \
+		%%PACMAN_ROOT%%
 
 PORTEXAMPLES=	*
 PKGMESSAGE=	${PKGDIR}/pkg-message-${FLAVOR:U}
