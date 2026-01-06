@@ -52,6 +52,7 @@
     SUBDIR += dosage
     SUBDIR += dstask
     SUBDIR += easystroke
+    SUBDIR += ekphos
     SUBDIR += elementary-calendar
     SUBDIR += elementary-iconbrowser
     SUBDIR += fasd

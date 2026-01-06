@@ -1,0 +1,14 @@
+Ekphos is an open-source, terminal-based markdown research tool inspired by
+Obsidian. Built with Rust for performance, it provides a fast and intuitive way
+to manage markdown notes directly from your terminal.
+
+Features
+
+    - Three-panel layout - Sidebar, content view, and outline navigation
+    - Vim keybindings - Full vim-style navigation and editing
+    - Wiki links - Obsidian-style [[note]] linking with autocomplete
+    - Graph view - Visualize note connections with interactive graph (Ctrl+g)
+    - Syntax highlighting - 50+ languages supported in code blocks
+    - Inline images - Preview images in compatible terminals
+    - Fast search - Fuzzy search across all notes
+    - Customizable themes - TOML-based theming system
