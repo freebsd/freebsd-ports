@@ -1,39 +1,43 @@
 PORTNAME=	ja2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.0
-PORTREVISION=	18
+DISTVERSION=	0.22.1
 CATEGORIES=	games
 
 MAINTAINER=	timp87@gmail.com
 COMMENT=	Port of "Jagged Alliance 2" using SDL
 WWW=		https://ja2-stracciatella.github.io/
 
-LICENSE=		PD SFI-SCLA
-LICENSE_COMB=		multi
+LICENSE=	PD SFI-SCLA
+LICENSE_COMB=	multi
 LICENSE_NAME_SFI-SCLA=	Strategy First Inc. Source Code License Agreement
 LICENSE_FILE_SFI-SCLA=	${WRKSRC}/SFI\ Source\ Code\ license\ agreement.txt
-LICENSE_PERMS_SFI-SCLA=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
-			auto-accept
+LICENSE_PERMS_SFI-SCLA=		dist-mirror no-dist-sell pkg-mirror no-pkg-sell \
+				auto-accept
 LICENSE_DISTFILES_SFI-SCLA=	${DISTNAME}${EXTRACT_SUFX}
 
 # Ignore this if you feel adventurous
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64le
 ONLY_FOR_ARCHS_REASON=	requires little endian environment
-BROKEN_FreeBSD_15=	clang crashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=276701
 
-BUILD_DEPENDS=	string_theory>=3.8:devel/string_theory \
-		magic_enum>-0.8.2:devel/magic_enum \
-		sol2>=3.2.2:devel/sol2 \
-		miniaudio>=0.11:audio/miniaudio
+BUILD_DEPENDS=	magic_enum>=0.8.2:devel/magic_enum \
+		miniaudio>=0.11:audio/miniaudio \
+		sol2>=3.5.0:devel/sol2 \
+		string_theory>=3.9:devel/string_theory
 LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
-USES=		cargo cmake compiler:c++20-lang pkgconfig sdl xorg gl lua:53+
+USES=		cargo cmake compiler:c++20-lang gl lua:53+ pkgconfig sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	ja2-stracciatella
 GH_PROJECT=	ja2-stracciatella
-USE_SDL=	sdl2
 USE_GL=		gl
+USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext
+
+CMAKE_ARGS=	-DEXTRA_DATA_DIR:PATH="${DATADIR}" \
+		-DMAGICENUM_INCLUDE_DIR="${PREFIX}/include/magic_enum" \
+		-DMINIAUDIO_INCLUDE_DIR="${PREFIX}/include/miniaudio"
+CMAKE_OFF=	LOCAL_LUA_LIB LOCAL_MAGICENUM_LIB LOCAL_MINIAUDIO_LIB \
+		LOCAL_SOL_LIB LOCAL_STRING_THEORY_LIB WITH_UNITTESTS
 
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
@@ -49,6 +53,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
+		bitflags-2.5.0 \
 		block-buffer-0.10.3 \
 		bytecount-0.6.3 \
 		byteorder-1.4.3 \
@@ -73,28 +78,35 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		dirs-sys-0.3.7 \
 		dunce-1.0.2 \
 		either-1.6.1 \
+		equivalent-1.0.1 \
+		errno-0.3.8 \
 		error-chain-0.12.4 \
 		fancy-regex-0.8.0 \
-		fastrand-1.7.0 \
+		fastrand-2.0.2 \
+		fluent-uri-0.1.4 \
 		form_urlencoded-1.1.0 \
 		fraction-0.10.0 \
 		generic-array-0.14.5 \
 		getopts-0.2.21 \
-		getrandom-0.2.6 \
+		getrandom-0.2.12 \
 		gimli-0.26.1 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.5 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		hex-0.4.3 \
 		idna-0.3.0 \
 		indexmap-1.9.2 \
-		instant-0.1.12 \
+		indexmap-2.3.0 \
 		iso8601-0.4.2 \
 		itoa-1.0.1 \
+		json-patch-2.0.0 \
 		json_comments-0.2.1 \
+		jsonptr-0.4.7 \
 		jsonschema-0.16.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.124 \
+		libc-0.2.153 \
+		linux-raw-sys-0.4.13 \
 		lock_api-0.4.9 \
 		log-0.4.16 \
 		lru-0.8.1 \
@@ -122,8 +134,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		parking_lot_core-0.9.7 \
 		percent-encoding-2.2.0 \
 		proc-macro-crate-1.1.3 \
-		proc-macro2-1.0.51 \
-		quote-1.0.18 \
+		proc-macro2-1.0.86 \
+		quote-1.0.36 \
 		raw-window-handle-0.5.0 \
 		rayon-1.6.1 \
 		rayon-core-1.10.2 \
@@ -131,25 +143,26 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		redox_users-0.4.3 \
 		regex-1.7.1 \
 		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
 		rustc-demangle-0.1.21 \
+		rustix-0.38.32 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.93 \
+		serde-1.0.204 \
+		serde_derive-1.0.204 \
+		serde_json-1.0.122 \
 		serde_yaml-0.9.17 \
 		simplelog-0.12.0 \
 		slug-0.1.4 \
 		smallvec-1.10.0 \
 		strsim-0.8.0 \
 		syn-1.0.107 \
-		tempfile-3.3.0 \
+		syn-2.0.72 \
+		tempfile-3.10.1 \
 		termcolor-1.1.3 \
 		textwrap-0.11.0 \
-		thiserror-1.0.30 \
-		thiserror-impl-1.0.30 \
+		thiserror-1.0.63 \
+		thiserror-impl-1.0.63 \
 		time-0.3.15 \
 		time-macros-0.2.4 \
 		tinyvec-1.6.0 \
@@ -162,27 +175,36 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.9 \
 		unreachable-1.0.0 \
-		unsafe-libyaml-0.2.5 \
+		unsafe-libyaml-0.2.10 \
 		url-2.3.1 \
 		uuid-0.8.2 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		void-1.0.2 \
 		walkdir-2.3.2 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.45.0 \
+		windows-sys-0.52.0 \
 		windows-targets-0.42.1 \
+		windows-targets-0.52.4 \
 		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_gnullvm-0.52.4 \
 		windows_aarch64_msvc-0.42.1 \
+		windows_aarch64_msvc-0.52.4 \
 		windows_i686_gnu-0.42.1 \
+		windows_i686_gnu-0.52.4 \
 		windows_i686_msvc-0.42.1 \
+		windows_i686_msvc-0.52.4 \
 		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnu-0.52.4 \
 		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1
+		windows_x86_64_gnullvm-0.52.4 \
+		windows_x86_64_msvc-0.42.1 \
+		windows_x86_64_msvc-0.52.4
 
 CARGO_CARGOLOCK=	${WRKSRC}/rust/Cargo.lock
 CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
@@ -193,16 +215,8 @@ CARGO_TEST=		no
 MAKE_ENV=	${CARGO_ENV:NCARGO_TARGET_DIR=*}
 LDFLAGS+=	-Wl,--as-needed
 
-CMAKE_OFF=	LOCAL_LUA_LIB \
-		LOCAL_MAGICENUM_LIB \
-		LOCAL_MINIAUDIO_LIB \
-		LOCAL_SOL_LIB \
-		LOCAL_STRING_THEORY_LIB \
-		WITH_UNITTESTS
-
-CMAKE_ARGS=	-DEXTRA_DATA_DIR:PATH="${DATADIR}" \
-		-DMAGICENUM_INCLUDE_DIR="${PREFIX}/include/magic_enum" \
-		-DMINIAUDIO_INCLUDE_DIR="${PREFIX}/include/miniaudio"
+SUB_FILES=	pkg-message
+SUB_LIST=	DATADIR=${DATADIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/some/place/where/the/data/is|${DATADIR}|' \

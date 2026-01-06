@@ -1,6 +1,6 @@
---- rust/stracciatella/Cargo.toml.orig	2023-11-24 17:51:52.279301000 -0700
-+++ rust/stracciatella/Cargo.toml	2023-11-24 17:52:13.332719000 -0700
-@@ -34,24 +34,6 @@
+--- rust/stracciatella/Cargo.toml.orig	2025-10-05 09:24:39 UTC
++++ rust/stracciatella/Cargo.toml
+@@ -35,24 +35,6 @@ simplelog = "0.12"
  slug = "0.1.4"
  simplelog = "0.12"
  

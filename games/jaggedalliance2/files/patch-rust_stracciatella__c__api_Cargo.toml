@@ -1,6 +1,6 @@
---- rust/stracciatella_c_api/Cargo.toml.orig	2023-11-24 17:51:07.152093000 -0700
-+++ rust/stracciatella_c_api/Cargo.toml	2023-11-24 17:51:15.128699000 -0700
-@@ -18,8 +18,5 @@
+--- rust/stracciatella_c_api/Cargo.toml.orig	2025-10-05 09:24:39 UTC
++++ rust/stracciatella_c_api/Cargo.toml
+@@ -18,8 +18,5 @@ serde_json = { version = "1", features = ["preserve_or
  serde = { version = "1", features = ["derive"] }
  serde_json = { version = "1", features = ["preserve_order"] }
  

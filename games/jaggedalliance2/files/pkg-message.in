@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+This Jagged Alliance 2 port requires data files from the original
+game CD and installation, see https://ja2-stracciatella.github.io/how-to-run/.
+
+Basically to make it run you need "Data" dir from installed game root dir.
+Copy it as %%DATADIR%%/data.
+Or copy it as "data" dir under "game_dir" dir set in your ~/.ja2/ja2.json.
+EOM
+}
+]
