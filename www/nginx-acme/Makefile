@@ -47,6 +47,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/nginx:www/nginx
 
 .if ${FLAVOR} == devel
 NGINX_VERSION=  ${NGINX_VERSION_DEVEL}
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_conf_order.rs-devel
 .else
 NGINX_VERSION=  ${NGINX_VERSION_DEFAULT}
 .endif
