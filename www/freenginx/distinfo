@@ -1,4 +1,4 @@
-TIMESTAMP = 1767700035
+TIMESTAMP = 1767729768
 SHA256 (freenginx-1.28.0.tar.gz) = 28651bf51ff95de027262d7af23000e5862fb3d1b2252ac83d97ce4c9a4a18a2
 SIZE (freenginx-1.28.0.tar.gz) = 1228344
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -107,8 +107,8 @@ SHA256 (libinjection-libinjection-4aa3894_GH0.tar.gz) = ededea133e89e238ef2e60d0
 SIZE (libinjection-libinjection-4aa3894_GH0.tar.gz) = 2218294
 SHA256 (nginx-njs-0.9.4_GH0.tar.gz) = 7b3a9f14b0f09311d9031c2a252cb0e23c06baac2e586a7d12c75aa6cba4ca0e
 SIZE (nginx-njs-0.9.4_GH0.tar.gz) = 939082
-SHA256 (osokin-nginx-otel-8f0857d_GH0.tar.gz) = bbf93813928460bdaf78f752f74ecc6c34d13078e97fdffcaa29dbd8689314fc
-SIZE (osokin-nginx-otel-8f0857d_GH0.tar.gz) = 30197
+SHA256 (osokin-nginx-otel-51273ec_GH0.tar.gz) = a2107ba0be94c8561ae50773163c7946a58e508be46920f588d05a347c867d9c
+SIZE (osokin-nginx-otel-51273ec_GH0.tar.gz) = 28076
 SHA256 (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = c69ad4495de7c7883ebc23e1e6c4cc83a4ac6a7fddd4d5c12e49d33b65f7c50b
 SIZE (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = 48544
 SHA256 (openresty-rds-csv-nginx-module-v0.09_GH0.tar.gz) = 896be99c0cad50218417800a159e43ec088d6b58c099472ed3b3d7f179d6c0ea
