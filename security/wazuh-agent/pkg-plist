@@ -41,7 +41,7 @@
 /var/ossec/bin/wazuh-modulesd
 /var/ossec/bin/wazuh-syscheckd
 @mode 640
-@owner root
+@owner wazuh
 @group wazuh
 @sample /var/ossec/etc/client.keys.sample
 /var/ossec/etc/internal_options.conf
