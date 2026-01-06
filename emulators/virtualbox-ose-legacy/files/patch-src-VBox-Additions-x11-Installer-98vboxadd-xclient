@@ -9,10 +9,11 @@
 -  /usr/bin/VBoxClient --display
 -  /usr/bin/VBoxClient --seamless
 -  /usr/bin/VBoxClient --draganddrop
+-  /usr/bin/VBoxClient --vmsvga-x11  # In case VMSVGA emulation is enabled
 +  /usr/local/bin/VBoxClient --clipboard
 +  /usr/local/bin/VBoxClient --checkhostversion
 +  /usr/local/bin/VBoxClient --display
 +  /usr/local/bin/VBoxClient --seamless
 +  /usr/local/bin/VBoxClient --draganddrop
-   /usr/bin/VBoxClient --vmsvga-x11  # In case VMSVGA emulation is enabled
++  /usr/local/bin/VBoxClient --vmsvga-x11  # In case VMSVGA emulation is enabled
  fi
