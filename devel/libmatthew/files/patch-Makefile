@@ -1,6 +1,6 @@
---- Makefile.orig	2020-03-25 12:08:05 UTC
+--- Makefile.orig	2018-05-05 20:58:21 UTC
 +++ Makefile
-@@ -6,13 +6,13 @@ GCJ?=gcj
+@@ -6,13 +6,12 @@ JPPFLAGS+=-C -P
  CC?=gcc
  LD?=gcc
  JPPFLAGS+=-C -P
@@ -9,14 +9,14 @@
  CSTD?=-std=c99
  CSHAREFLAG+=-fpic -fno-stack-protector
  GCJJNIFLAG=-fjni
- JVERCFLAGS+=-source 1.5
+-JVERCFLAGS+=-source 1.5
  JCFLAGS+=
 -INCLUDES+=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
 +INCLUDES+=-I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/freebsd
  JAVADOCFLAGS?=-quiet -author -link http://java.sun.com/j2se/1.4.2/docs/api/
  
  LDVER?=$(shell ld -v | cut -d' ' -f1)
-@@ -91,11 +91,11 @@ libmatthew-java-$(MATTVER).tar.gz: Makefile cx cgi-jav
+@@ -91,11 +90,11 @@ debug-enable-$(DEBUGVER).jar: cx/ath/matthew/debug/Deb
  	tar zcf $@ libmatthew-java-$(MATTVER)
  
  debug-enable-$(DEBUGVER).jar: cx/ath/matthew/debug/Debug.jpp
