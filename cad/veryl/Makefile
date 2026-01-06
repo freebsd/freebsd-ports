@@ -1,7 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.1
-PORTREVISION=	1
+DISTVERSION=	0.17.2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	dalance
 
-GH_TUPLE=	veryl-lang:doc:52363272:doc/doc \
+GH_TUPLE=	veryl-lang:doc:2ae62fa:doc/doc \
 		veryl-lang:rouge:86eb7159:rouge/support/rouge \
 		veryl-lang:sourcemap-resolver:380f8c18:sourcemapresolver/support/sourcemap-resolver \
 		veryl-lang:veryl.vim:597048f6:verylvim/support/vim
