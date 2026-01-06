@@ -1,3 +1,30 @@
+  <vuln vid="e2cd20fd-eb10-11f0-a1c0-0050569f0b83">
+    <topic>net-mgmt/net-snmp -- Remote Code Execution (snmptrapd)</topic>
+    <affects>
+<package>
+<name>net-snmp</name>
+<range><lt>5.9.5</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>net-snmp development team reports:</p>
+	<blockquote cite="https://github.com/net-snmp/net-snmp/security/advisories/GHSA-4389-rwqf-q9gq">
+	  <p>A specially crafted packet to an net-snmp snmptrapd daemon can cause a buffer overflow and
+	   the daemon to crash.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-68615</cvename>
+      <url>https://github.com/net-snmp/net-snmp/security/advisories/GHSA-4389-rwqf-q9gq</url>
+    </references>
+    <dates>
+      <discovery>2025-12-23</discovery>
+      <entry>2026-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="500cc49c-e93b-11f0-b8d8-4ccc6adda413">
     <topic>gstreamer1-plugins-bad -- Out-of-bounds reads in MIDI parser</topic>
     <affects>
