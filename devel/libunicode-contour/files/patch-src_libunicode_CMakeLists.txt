@@ -1,0 +1,17 @@
+--- src/libunicode/CMakeLists.txt.orig	2025-12-22 21:10:19 UTC
++++ src/libunicode/CMakeLists.txt
+@@ -97,9 +97,13 @@ target_link_libraries(unicode_loader PUBLIC  unicode::
+ 
+ # =========================================================================================================
+ 
++string(TOLOWER "${CMAKE_SYSTEM_PROCESSOR}" SYSTEM_PROCESSOR_LOWER)
+ 
+ if(LIBUNICODE_SIMD_IMPLEMENTATION STREQUAL "std" OR LIBUNICODE_SIMD_IMPLEMENTATION STREQUAL "intrinsics")
+-    if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64" OR CMAKE_SYSTEM_PROCESSOR STREQUAL "AMD64")
++    if(SYSTEM_PROCESSOR_LOWER STREQUAL "x86_64" OR
++       SYSTEM_PROCESSOR_LOWER STREQUAL "amd64" OR
++       SYSTEM_PROCESSOR_LOWER STREQUAL "aarch64" OR
++       SYSTEM_PROCESSOR_LOWER STREQUAL "arm64")
+         set(LIBUNICODE_SIMD_SOURCES
+             simd_detector.cpp
+             scan256.cpp

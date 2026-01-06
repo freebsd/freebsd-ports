@@ -25,11 +25,11 @@ lib/cmake/libunicode/libunicode-config.cmake
 lib/cmake/libunicode/libunicode-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libunicode/libunicode-targets.cmake
 lib/contour/libunicode.so
-lib/contour/libunicode.so.0.6
-lib/contour/libunicode.so.0.6.0
+lib/contour/libunicode.so.%%SOVERSION_MAJOR_MINOR%%
+lib/contour/libunicode.so.%%SOVERSION_FULL%%
 lib/contour/libunicode_loader.so
-lib/contour/libunicode_loader.so.0.6
-lib/contour/libunicode_loader.so.0.6.0
+lib/contour/libunicode_loader.so.%%SOVERSION_MAJOR_MINOR%%
+lib/contour/libunicode_loader.so.%%SOVERSION_FULL%%
 lib/contour/libunicode_ucd.so
-lib/contour/libunicode_ucd.so.0.6
-lib/contour/libunicode_ucd.so.0.6.0
+lib/contour/libunicode_ucd.so.%%SOVERSION_MAJOR_MINOR%%
+lib/contour/libunicode_ucd.so.%%SOVERSION_FULL%%
