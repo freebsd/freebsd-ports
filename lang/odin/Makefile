@@ -1,6 +1,6 @@
 PORTNAME=	odin
 DISTVERSIONPREFIX=	dev-
-DISTVERSION=	2025-12
+DISTVERSION=	2026-01
 CATEGORIES=	lang devel
 PKGNAMESUFFIX=	-lang
 
@@ -57,9 +57,9 @@ do-test:
 		 ${SETENV} ${TEST_ENV} ./odin test tests/vendor -all-packages -define:ODIN_TEST_FANCY=false && \
 		 ${SETENV} ${TEST_ENV} ./odin test tests/internal -all-packages -define:ODIN_TEST_FANCY=false
 
-# tests as of 2025-11:
-# Finished 469 tests in 1.630261463s. All tests were successful.
-# Finished 58 tests in 550.15546ms. All tests were successful.
-# Finished 36 tests in 1.646077846s. All tests were successful.
+# tests as of 2026-01:
+# Finished 470 tests in 1.634790591s. All tests were successful.
+# Finished 58 tests in 566.009413ms. All tests were successful.
+# Finished 36 tests in 1.574317511s. All tests were successful.
 
 .include <bsd.port.mk>

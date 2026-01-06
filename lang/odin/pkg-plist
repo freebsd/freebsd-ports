@@ -104,6 +104,7 @@ lib/odin/core/container/rbtree/rbtree.odin
 lib/odin/core/container/small_array/doc.odin
 lib/odin/core/container/small_array/small_array.odin
 lib/odin/core/container/topological_sort/topological_sort.odin
+lib/odin/core/container/xar/xar.odin
 lib/odin/core/crypto/README.md
 lib/odin/core/crypto/_aes/aes.odin
 lib/odin/core/crypto/_aes/ct64/api.odin
@@ -614,6 +615,7 @@ lib/odin/core/sys/darwin/Foundation/NSBitmapImageRep.odin
 lib/odin/core/sys/darwin/Foundation/NSBlock.odin
 lib/odin/core/sys/darwin/Foundation/NSBundle.odin
 lib/odin/core/sys/darwin/Foundation/NSColor.odin
+lib/odin/core/sys/darwin/Foundation/NSCursor.odin
 lib/odin/core/sys/darwin/Foundation/NSData.odin
 lib/odin/core/sys/darwin/Foundation/NSDate.odin
 lib/odin/core/sys/darwin/Foundation/NSDictionary.odin
@@ -632,10 +634,12 @@ lib/odin/core/sys/darwin/Foundation/NSPanel.odin
 lib/odin/core/sys/darwin/Foundation/NSPasteboard.odin
 lib/odin/core/sys/darwin/Foundation/NSProcessInfo.odin
 lib/odin/core/sys/darwin/Foundation/NSRange.odin
+lib/odin/core/sys/darwin/Foundation/NSRunLoop.odin
 lib/odin/core/sys/darwin/Foundation/NSSavePanel.odin
 lib/odin/core/sys/darwin/Foundation/NSScreen.odin
 lib/odin/core/sys/darwin/Foundation/NSSet.odin
 lib/odin/core/sys/darwin/Foundation/NSString.odin
+lib/odin/core/sys/darwin/Foundation/NSTimer.odin
 lib/odin/core/sys/darwin/Foundation/NSToolbar.odin
 lib/odin/core/sys/darwin/Foundation/NSTypes.odin
 lib/odin/core/sys/darwin/Foundation/NSURL.odin
@@ -978,11 +982,11 @@ lib/odin/vendor/compress/lz4/lz4.odin
 lib/odin/vendor/compress/lz4/src/lz4.h
 lib/odin/vendor/compress/lz4/src/lz4frame.h
 lib/odin/vendor/compress/lz4/src/lz4hc.h
+lib/odin/vendor/curl/LICENSE
 lib/odin/vendor/curl/c/curl.h
 lib/odin/vendor/curl/c/curlver.h
 lib/odin/vendor/curl/c/easy.h
 lib/odin/vendor/curl/c/header.h
-lib/odin/vendor/curl/c/libcurl_a.lib
 lib/odin/vendor/curl/c/mprintf.h
 lib/odin/vendor/curl/c/multi.h
 lib/odin/vendor/curl/c/options.h
@@ -1000,7 +1004,7 @@ lib/odin/vendor/curl/curl_posix.odin
 lib/odin/vendor/curl/curl_urlapi.odin
 lib/odin/vendor/curl/curl_websockets.odin
 lib/odin/vendor/curl/curl_windows.odin
-lib/odin/vendor/curl/lib/libcurl_a.lib
+lib/odin/vendor/curl/lib/libcurl.lib
 lib/odin/vendor/darwin/CoreVideo/CVDisplayLink.odin
 lib/odin/vendor/darwin/Foundation/dummy.odin
 lib/odin/vendor/darwin/Metal/MetalClasses.odin
@@ -1048,6 +1052,7 @@ lib/odin/vendor/glfw/native_linux.odin
 lib/odin/vendor/glfw/native_windows.odin
 lib/odin/vendor/glfw/types.odin
 lib/odin/vendor/glfw/wrapper.odin
+lib/odin/vendor/kb_text_shape/doc.odin
 lib/odin/vendor/kb_text_shape/kb_text_shape_procs.odin
 lib/odin/vendor/kb_text_shape/kb_text_shape_types.odin
 lib/odin/vendor/kb_text_shape/lib/kb_text_shape.lib
@@ -1296,6 +1301,7 @@ lib/odin/vendor/sdl3/include/SDL_close_code.h
 lib/odin/vendor/sdl3/include/SDL_copying.h
 lib/odin/vendor/sdl3/include/SDL_cpuinfo.h
 lib/odin/vendor/sdl3/include/SDL_dialog.h
+lib/odin/vendor/sdl3/include/SDL_dlopennote.h
 lib/odin/vendor/sdl3/include/SDL_egl.h
 lib/odin/vendor/sdl3/include/SDL_endian.h
 lib/odin/vendor/sdl3/include/SDL_error.h
