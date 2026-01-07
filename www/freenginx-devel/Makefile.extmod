@@ -27,7 +27,7 @@ BROTLI_GH_TUPLE=	google:ngx_brotli:a71f931:brotli
 BROTLI_VARS=		DSO_EXTMODS+=brotli
 BROTLI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_brotli_filter_config
 
-CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:a84b0f3:cache_purge
+CACHE_PURGE_GH_TUPLE=	nginx-modules:ngx_cache_purge:2.5.5:cache_purge
 CACHE_PURGE_VARS=	DSO_EXTMODS+=cache_purge
 
 ECHO_GH_TUPLE=		openresty:echo-nginx-module:b0f344b:echo

@@ -1,4 +1,4 @@
-TIMESTAMP = 1765911692
+TIMESTAMP = 1767802988
 SHA256 (freenginx-1.29.4.tar.gz) = 51a596451e334b51ce8cef1291b576ed601ed557e1b500e6c1a77a469d603e27
 SIZE (freenginx-1.29.4.tar.gz) = 1249883
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -11,8 +11,8 @@ SHA256 (openresty-array-var-nginx-module-v0.06_GH0.tar.gz) = 2c3577265d1d51a2d06
 SIZE (openresty-array-var-nginx-module-v0.06_GH0.tar.gz) = 12005
 SHA256 (google-ngx_brotli-a71f931_GH0.tar.gz) = b3312a045d5303a40d02beb34711b8ca27f7b72d647e9ee2012a8eddd14d9b22
 SIZE (google-ngx_brotli-a71f931_GH0.tar.gz) = 16376
-SHA256 (nginx-modules-ngx_cache_purge-a84b0f3_GH0.tar.gz) = ddfd4fdd99075d906b7b75c49f56ec96b76df7951dfa54502e0f83890447031f
-SIZE (nginx-modules-ngx_cache_purge-a84b0f3_GH0.tar.gz) = 17162
+SHA256 (nginx-modules-ngx_cache_purge-2.5.5_GH0.tar.gz) = 93068d9c5a2a6ebe4966b763cb0033bb5d065210ab96290acc6bf8275625a0a6
+SIZE (nginx-modules-ngx_cache_purge-2.5.5_GH0.tar.gz) = 17299
 SHA256 (vision5-ngx_devel_kit-v0.3.4_GH0.tar.gz) = 14a28063294f645d457b1eb10e3c23bbba44398f1c5f021421b58b6f8ab31662
 SIZE (vision5-ngx_devel_kit-v0.3.4_GH0.tar.gz) = 66474
 SHA256 (openresty-drizzle-nginx-module-c631276_GH0.tar.gz) = 215ebeb3bad3a907f13fbdae66a25939b6820bdba2f339394cbb9c8b8557308a
