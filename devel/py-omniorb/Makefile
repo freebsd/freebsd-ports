@@ -1,5 +1,5 @@
 PORTNAME=	omniorb
-DISTVERSION=	4.3.3
+DISTVERSION=	4.3.4
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/omniORBpy/omniORBpy-${DISTVERSION:S/-2//}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:devel/omniORB:patch
 LIB_DEPENDS=	libomniORB4.so:devel/omniORB
 RUN_DEPENDS=	omniidl:devel/omniORB
 
-USES=		gmake python shebangfix ssl tar:bzip2
+USES=		gmake pkgconfig python shebangfix ssl tar:bzip2
 USE_PYTHON=	py3kplist
 
 SHEBANG_FILES=	examples/ami/*.py examples/echo/*.py examples/embed/*.py \
