@@ -1,7 +1,7 @@
 # XXX: see below (post-patch target) before updating
 PORTNAME=	mdformat
 DISTVERSION=	0.7.22
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
