@@ -19,6 +19,8 @@ ONLY_FOR_ARCHS=	i386 amd64 powerpc64 powerpc64le
 
 USES=		compiler java:ant,run tar:xz xorg
 USE_XORG=	x11 xcursor xrandr xrender xxf86vm
+# jdk11+ does not have /usr/local/openjdk8/jre/lib/rt.jar: jogamp-env.xml:186: No target.rt.jar specified not found.
+JAVA_VERSION=	8
 
 PATCH_WRKSRC=	${WRKDIR}
 BUILD_WRKSRC=	${WRKDIR}/jogl/make
