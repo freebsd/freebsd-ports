@@ -1,4 +1,4 @@
-TIMESTAMP = 1767124788
+TIMESTAMP = 1767777777
 SHA256 (angie-1.11.1.tar.gz) = 2ddbe707adca14875e3a128d988466346d0406b60a72ee197038538b4a6f90f2
 SIZE (angie-1.11.1.tar.gz) = 1881648
 SHA256 (61131-nginx-http-auth-totp-1.1.0_GH0.tar.gz) = d36d2b75a3b239e63ec060ef9ccfa6b89acbceb74b7c93e47550c1f75ac4857e
@@ -9,8 +9,8 @@ SHA256 (stnoonan-spnego-http-auth-nginx-module-v1.1.3_GH0.tar.gz) = 0e1e54f8ab7d
 SIZE (stnoonan-spnego-http-auth-nginx-module-v1.1.3_GH0.tar.gz) = 32975
 SHA256 (google-ngx_brotli-v1.0.0rc_GH0.tar.gz) = c85cdcfd76703c95aa4204ee4c2e619aa5b075cac18f428202f65552104add3b
 SIZE (google-ngx_brotli-v1.0.0rc_GH0.tar.gz) = 16207
-SHA256 (nginx-modules-ngx_cache_purge-2.5.4_GH0.tar.gz) = 5bd04373d818b1aa0f3ba0b31b54149207a17815b026f222c537daf587b0cbda
-SIZE (nginx-modules-ngx_cache_purge-2.5.4_GH0.tar.gz) = 17174
+SHA256 (nginx-modules-ngx_cache_purge-2.5.5_GH0.tar.gz) = 93068d9c5a2a6ebe4966b763cb0033bb5d065210ab96290acc6bf8275625a0a6
+SIZE (nginx-modules-ngx_cache_purge-2.5.5_GH0.tar.gz) = 17299
 SHA256 (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = d2499d94d82d4e4eac8425d799e52883131ae86a956524040ff2fd230ef9f859
 SIZE (arut-nginx-dav-ext-module-v3.0.0_GH0.tar.gz) = 14558
 SHA256 (openresty-echo-nginx-module-v0.64_GH0.tar.gz) = 6f43f56d7e7e8526716bbda06b300f0119912eede47b3a48bb948252a1fb38c8
