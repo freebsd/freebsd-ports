@@ -1,3 +1,36 @@
+  <vuln vid="8826fb1c-ebd8-11f0-a15a-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>143.0.7499.192</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>143.0.7499.192</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[463155954] High CVE-2026-0628: Insufficient policy enforcement in WebView tag. Reported by Gal Weizman on 2025-11-23</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0628</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-06</discovery>
+      <entry>2026-01-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="583b63f5-ebae-11f0-939f-47e3830276dd">
 	  <topic>security/libsodium -- crypto_core_ed25519_is_valid_point mishandles checks for whether an elliptic curve point is valid</topic>
     <affects>
