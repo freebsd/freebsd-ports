@@ -1,6 +1,6 @@
 PORTNAME=	java-simple-serial-connector
 PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	comms java
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/scream3r/java-simple-serial-connector
 
 LICENSE=	LGPL3
 
-USES=		java:ant,run
+USES=		java:ant,build
 USE_GITHUB=	yes
 GH_ACCOUNT=	scream3r
 
@@ -19,7 +19,7 @@ ALL_TARGET=	dist
 CXXFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 WRKSRC_LIBS=	${WRKSRC}/src/java/libs
 
-PLIST_FILES=	${JAVA_HOME}/jre/lib/ext/jssc-${PORTVERSION}.jar
+PLIST_FILES=	${JAVAJARDIR}/jssc-${PORTVERSION}.jar
 
 .include <bsd.port.pre.mk>
 
@@ -40,7 +40,6 @@ pre-build:
 	${STRIP_CMD} ${WRKSRC_LIBS}/freebsd/libjSSC-${MAJOR_MINOR}_${JSSC_ARCH}.so
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${JAVA_HOME}/jre/lib/ext
-	${CP} ${WRKSRC}/build/jssc-${PORTVERSION}.jar ${STAGEDIR}${JAVA_HOME}/jre/lib/ext
+	${INSTALL_DATA} ${WRKSRC}/build/jssc-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/
 
 .include <bsd.port.post.mk>
