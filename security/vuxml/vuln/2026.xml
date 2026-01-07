@@ -1,3 +1,32 @@
+  <vuln vid="583b63f5-ebae-11f0-939f-47e3830276dd">
+	  <topic>security/libsodium -- crypto_core_ed25519_is_valid_point mishandles checks for whether an elliptic curve point is valid</topic>
+    <affects>
+<package>
+<name>libsodium</name>
+<range><lt>1.0.21</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Libsodium maintainer reports:</p>
+	<blockquote cite="https://00f.net/2025/12/30/libsodium-vulnerability/">
+	  <p>The function crypto_core_ed25519_is_valid_point(), a low-level function
+	  used to check if a given elliptic curve point is valid, was supposed to
+	  reject points that aren't in the main cryptographic group,
+	  but some points were slipping through.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-69277</cvename>
+      <url>https://00f.net/2025/12/30/libsodium-vulnerability/</url>
+    </references>
+    <dates>
+      <discovery>2025-12-30</discovery>
+      <entry>2026-01-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="df33c83b-eb4f-11f0-a46f-0897988a1c07">
     <topic>mail/mailpit -- Server-Side Request Forgery</topic>
     <affects>
