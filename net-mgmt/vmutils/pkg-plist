@@ -25,6 +25,7 @@ bin/vmrestore
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_ts_data_delay.gif
 %%PORTDOCS%%%%DOCSDIR%%/vmalert_ts_normal.gif
 %%PORTDOCS%%%%DOCSDIR%%/vmauth.md
+%%PORTDOCS%%%%DOCSDIR%%/vmauth_flags.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackup.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager.md
 %%PORTDOCS%%%%DOCSDIR%%/vmbackupmanager_latest_folder.webp
