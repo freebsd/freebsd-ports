@@ -1,5 +1,6 @@
 PORTNAME=	jupyterlab
 PORTVERSION=	4.5.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyterlab/jupyterlab/releases/download/v${PORTVERSION}/

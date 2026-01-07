@@ -1,5 +1,6 @@
 PORTNAME=	mkp224o
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/cathugger/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src

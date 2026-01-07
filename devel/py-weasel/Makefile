@@ -1,5 +1,6 @@
 PORTNAME=	weasel
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/weasel/releases/download/release-v${PORTVERSION}/

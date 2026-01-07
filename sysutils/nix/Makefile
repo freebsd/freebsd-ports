@@ -1,5 +1,6 @@
 PORTNAME=	nix
 DISTVERSION=	2.32.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/NixOS/nix/commit/2636f50dd41fe357ec64430aeeb772328ab2d7cb.patch?dummy=/

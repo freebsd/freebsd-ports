@@ -1,5 +1,6 @@
 PORTNAME=	cospend
 PORTVERSION=	3.1.6
+PORTREVISION=	4
 CATEGORIES=	finance www editors
 MASTER_SITES=	https://github.com/julien-nc/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	nextcloud
 PORTVERSION=	32.0.3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/server/releases/download/v${PORTVERSION} \
 		https://download.nextcloud.com/server/releases/

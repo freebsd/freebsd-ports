@@ -1,5 +1,6 @@
 PORTNAME=	jitsi-meet-full
 PORTVERSION=	2.0.9955
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	acm@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	suitecrm
 PORTVERSION=	8.7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://suitecrm.com/download/148/suite87/564667/
 DISTNAME=	${PORTNAME}-8-7-1

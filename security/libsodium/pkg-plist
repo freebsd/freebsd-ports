@@ -15,6 +15,7 @@ include/sodium/crypto_box_curve25519xsalsa20poly1305.h
 include/sodium/crypto_core_ed25519.h
 include/sodium/crypto_core_hchacha20.h
 include/sodium/crypto_core_hsalsa20.h
+include/sodium/crypto_core_keccak1600.h
 include/sodium/crypto_core_ristretto255.h
 include/sodium/crypto_core_salsa20.h
 include/sodium/crypto_core_salsa2012.h
@@ -24,6 +25,7 @@ include/sodium/crypto_generichash_blake2b.h
 include/sodium/crypto_hash.h
 include/sodium/crypto_hash_sha256.h
 include/sodium/crypto_hash_sha512.h
+include/sodium/crypto_ipcrypt.h
 include/sodium/crypto_kdf.h
 include/sodium/crypto_kdf_blake2b.h
 include/sodium/crypto_kdf_hkdf_sha256.h
@@ -58,6 +60,10 @@ include/sodium/crypto_stream_xsalsa20.h
 include/sodium/crypto_verify_16.h
 include/sodium/crypto_verify_32.h
 include/sodium/crypto_verify_64.h
+include/sodium/crypto_xof_shake128.h
+include/sodium/crypto_xof_shake256.h
+include/sodium/crypto_xof_turboshake128.h
+include/sodium/crypto_xof_turboshake256.h
 include/sodium/export.h
 include/sodium/randombytes.h
 include/sodium/randombytes_internal_random.h
@@ -68,7 +74,7 @@ include/sodium/version.h
 lib/libsodium.a
 lib/libsodium.so
 lib/libsodium.so.26
-lib/libsodium.so.26.1.0
+lib/libsodium.so.26.3.0
 libdata/pkgconfig/libsodium.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README.markdown

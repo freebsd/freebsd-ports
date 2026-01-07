@@ -1,5 +1,5 @@
 PORTNAME=	mod_sql_sqlite
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases ftp
 PKGNAMEPREFIX=	proftpd-
 

@@ -1,6 +1,7 @@
 PORTNAME=	peering-manager
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	bofh@FreeBSD.org

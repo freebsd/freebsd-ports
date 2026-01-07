@@ -1,6 +1,6 @@
 PORTNAME=	gdnsd
 PORTVERSION=	3.8.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	dns
 MASTER_SITES=	https://github.com/gdnsd/gdnsd/releases/download/v${PORTVERSION}/ \
 		ZI \

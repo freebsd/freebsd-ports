@@ -5,6 +5,7 @@ DISTVERSION=	0.14.1
 # and uncomment the following two lines (use for example -gf8d8348c where f8d8348c is a commit hash)
 #DISTVERSION=	0
 #DISTVERSIONSUFFIX=	-g0673c50e7
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 .if defined(DISTVERSIONSUFFIX)
 PKGNAMESUFFIX=	-devel

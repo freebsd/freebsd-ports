@@ -1,6 +1,7 @@
 PORTNAME=	lycheeorg
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.7.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/LycheeOrg/Lychee/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	Lychee

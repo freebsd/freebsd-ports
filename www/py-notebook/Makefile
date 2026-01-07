@@ -1,5 +1,6 @@
 PORTNAME=	notebook
 PORTVERSION=	7.5.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter/notebook/releases/download/v${PORTVERSION}/

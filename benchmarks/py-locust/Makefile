@@ -1,6 +1,6 @@
 PORTNAME=	locust
 DISTVERSION=	2.37.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks www python
 MASTER_SITES=	PYPI \
 		https://github.com/locustio/locust/archive/refs/tags/:EXTRA

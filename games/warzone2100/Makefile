@@ -1,6 +1,6 @@
 PORTNAME=	warzone2100
 DISTVERSION=	4.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/Warzone2100/warzone2100/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}_src

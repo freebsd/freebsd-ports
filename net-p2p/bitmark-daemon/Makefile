@@ -1,4 +1,4 @@
-PORTREVISION=	10
+PORTREVISION=	11
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Bitmark distributed property system daemon
