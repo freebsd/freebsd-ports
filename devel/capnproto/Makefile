@@ -1,5 +1,5 @@
 PORTNAME=	capnproto
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	https://capnproto.org/
 DISTNAME=	${PORTNAME}-c++-${DISTVERSION}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		cmake:testing compiler:c++14-lang cpe pathfix ssl
 USE_LDCONFIG=	yes
 
-CONFLICTS_INSTALL=	capnproto080
+CONFLICTS_INSTALL=	capnproto1
 
 PLIST_SUB=	DISTVERSION="${DISTVERSION}"
 
