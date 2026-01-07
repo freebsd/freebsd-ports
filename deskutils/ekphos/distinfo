@@ -1,4 +1,4 @@
-TIMESTAMP = 1767713836
+TIMESTAMP = 1767778334
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
@@ -681,5 +681,5 @@ SHA256 (rust/crates/zune-jpeg-0.4.21.crate) = 29ce2c8a9384ad323cf564b67da86e21d3
 SIZE (rust/crates/zune-jpeg-0.4.21.crate) = 68268
 SHA256 (rust/crates/zune-jpeg-0.5.7.crate) = 51d915729b0e7d5fe35c2f294c5dc10b30207cc637920e5b59077bfa3da63f28
 SIZE (rust/crates/zune-jpeg-0.5.7.crate) = 83651
-SHA256 (hanebox-ekphos-v0.10.0_GH0.tar.gz) = fcbd1d5c7cb24f9dbfe68cfcd41791f295008683cb3cf340cb72e8e9226d406d
-SIZE (hanebox-ekphos-v0.10.0_GH0.tar.gz) = 1013356
+SHA256 (hanebox-ekphos-v0.15.0_GH0.tar.gz) = b7ac48edd5b106e58048b1170192430942b23520e62720d20d0b729952f7c7fe
+SIZE (hanebox-ekphos-v0.15.0_GH0.tar.gz) = 1036793
