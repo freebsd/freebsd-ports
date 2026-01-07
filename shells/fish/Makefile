@@ -1,6 +1,5 @@
 PORTNAME=	fish
-DISTVERSION=	4.2.1
-PORTREVISION=	1
+DISTVERSION=	4.3.3
 CATEGORIES=	shells
 MASTER_SITES=	https://github.com/fish-shell/fish-shell/releases/download/${PORTVERSION}/
 
@@ -36,7 +35,7 @@ OPTIONS_DEFAULT=	MANPAGES NLS
 OPTIONS_SUB=		yes
 
 DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx@${PY_FLAVOR}
-DOCS_CMAKE_BOOL=	BUILD_DOCS
+DOCS_CMAKE_BOOL=	WITH_DOCS
 DOCS_VARS=		MAKE_JOBS_UNSAFE=yes
 
 NLS_USES=	gettext
