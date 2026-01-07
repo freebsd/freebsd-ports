@@ -1,26 +1,31 @@
 PORTNAME=	hackrf
-PORTVERSION=	2024.02.1
+DISTVERSION=	2026.01.1
 CATEGORIES=	comms devel hamradio science security
+MASTER_SITES=	https://github.com/greatscottgadgets/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	tomek@cedro.info
 COMMENT=	Low cost open source hardware software radio platform
 WWW=		https://greatscottgadgets.com/hackrf/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
-		libfftw3.so:math/fftw3
+LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libfftw3f.so:math/fftw3-float
 
-USES=		cmake
-USE_GITHUB=	YES
-GH_ACCOUNT=	greatscottgadgets
-GH_TAGNAME=	18b485e
+USES=		cmake tar:xz
+USE_LDCONFIG=	yes
+
+CMAKE_ARGS=	-DLIBUSB_LIBRARIES=/usr/lib/libusb.so
+CMAKE_SOURCE_PATH=	${WRKSRC}/host
 
 CONFLICTS=	hackrf-devel
 
-CMAKE_SOURCE_PATH=	${WRKSRC}/host
-CMAKE_ARGS=	-DLIBUSB_LIBRARIES=/usr/lib/libusb.so
+PORTDOCS=	*
 
-USE_LDCONFIG=	yes
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
