@@ -1,7 +1,6 @@
 PORTNAME=	solarus
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -22,7 +21,6 @@ USES=		cmake:noninja compiler:c++11-lib gl openal sdl xorg
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	solarus-games
-GL_TAGNAME=	e70e3df7369d690615fc4c9b3f8dfa00066c5e87
 
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
