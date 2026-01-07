@@ -126,6 +126,7 @@ do-build:
 		--with-packages ${WRKDIR}/packages \
 		${DOTNET_BUILD_SH_EXTRA_FLAGS} \
 		-- \
+		/p:MinimalConsoleLogOutput=false \
 		-maxcpucount:${MAKE_JOBS_NUMBER} \
 		${PORTABLE_BUILD_FLAG}
 
