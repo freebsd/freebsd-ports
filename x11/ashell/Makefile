@@ -26,6 +26,8 @@ PORTDOCS=	CHANGELOG.md README.md
 
 OPTIONS_DEFINE=	DOCS
 
+# XXX Drop after FreeBSD 14.* EOL around 2028-11-30
+# https://cgit.freebsd.org/src/commit/?id=3965de642c29
 .if !exists(/usr/include/sys/inotify.h)
 LIB_DEPENDS+=	libinotify.so:devel/libinotify
 USES+=		localbase:ldflags
