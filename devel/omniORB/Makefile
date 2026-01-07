@@ -44,7 +44,7 @@ STATIC_CONFIGURE_OFF=	--disable-static
 
 ABI_VER=		4
 ABI_MAJOR_VER=		3
-ABI_MINOR_VER=		3
+ABI_MINOR_VER=		4
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-O2#${CFLAGS}#g' ${WRKSRC}/mk/beforeauto.mk.in
@@ -61,20 +61,7 @@ post-install:
 	genior
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-.for i in libomniConnectionMgmt4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomniORB4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libCOSDynamic4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomnihttpTP4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomnihttpCrypto4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomnisslTP4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomniDynamic4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libCOS4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomniCodeSets4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomniZIOPDynamic4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER} \
-	libomnithread.so.${ABI_VER}.${ABI_MAJOR_VER} \
-	libomniZIOP4.so.${ABI_MAJOR_VER}.${ABI_MINOR_VER}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${i}
-.endfor
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/*.so
 
 post-install-DOCS-on:
