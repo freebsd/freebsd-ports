@@ -14,6 +14,9 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake java libtool zip
+# jdk11: javah: not found
+# jdk17+: error: invalid use of a restricted identifier 'yield'
+JAVA_VERSION=	8
 
 JAVA_OS=	native
 GNU_CONFIGURE=	yes
