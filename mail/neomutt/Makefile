@@ -1,5 +1,5 @@
 PORTNAME=	neomutt
-PORTVERSION=	20250905
+PORTVERSION=	20260105
 CATEGORIES=	mail
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -22,7 +22,7 @@ MAKE_JOBS_UNSAFE=	yes
 HAS_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
-SHEBANG_FILES=	contrib/smime_keys \
+SHEBANG_FILES=	smime/smime_keys \
 		contrib/oauth2/mutt_oauth2.py \
 		data/account-command/macos-keychain/keychain.py
 
