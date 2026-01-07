@@ -4,7 +4,7 @@ DISTVERSION=	1.16.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Super fast C++ logging library
 WWW=		https://github.com/gabime/spdlog
 
