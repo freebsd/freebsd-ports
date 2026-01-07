@@ -1,6 +1,5 @@
 PORTNAME=	libthai
-DISTVERSION=	0.1.29
-PORTREVISION=	2
+DISTVERSION=	0.1.30
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tlwg/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://linux.thai.net/pub/thailinux/software/libthai/
@@ -14,15 +13,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libdatrie.so:devel/libdatrie
 
-USES=		gmake libtool pathfix pkgconfig tar:xz
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
+USES=		libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOXYGEN
-OPTIONS_SUB=	yes
+GNU_CONFIGURE=	yes
 
-DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOXYGEN_CONFIGURE_ENABLE=	doxygen-doc
+TEST_TARGET=	check
+
+INSTALL_TARGET=	install-strip
+
+CONFIGURE_ARGS=	--disable-static \
+		--disable-doxygen-doc
 
 .include <bsd.port.mk>
