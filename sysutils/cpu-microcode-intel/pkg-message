@@ -1,8 +1,11 @@
 [
 { type: install
   message: <<EOM
-Refer to the cpu-microcode-rc installation notes to enable Intel
-microcode updates.
+To enable microcode updates at boot time:
+cat << EOF >> /boot/loader.conf
+cpu_microcode_load="YES"
+cpu_microcode_name="/boot/firmware/intel-ucode.bin"
+EOF
 EOM
 }
 ]
