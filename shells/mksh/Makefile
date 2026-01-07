@@ -1,7 +1,7 @@
 PORTNAME=	mksh
 PORTVERSION=	59c
 DISTVERSIONPREFIX=	R
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	shells
 MASTER_SITES=	https://www.mirbsd.org/MirOS/dist/mir/mksh/ \
 		https://pub.allbsd.org/MirOS/dist/mir/mksh/
