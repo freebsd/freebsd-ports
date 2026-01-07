@@ -109,6 +109,7 @@ do-build:
 		--with-packages ${WRKDIR}/packages \
 		--source-build \
 		-- \
+		/p:MinimalConsoleLogOutput=false \
 		-maxcpucount:${MAKE_JOBS_NUMBER} \
 		${PORTABLE_BUILD_FLAG}
 
