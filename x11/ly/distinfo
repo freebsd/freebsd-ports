@@ -1,6 +1,6 @@
-TIMESTAMP = 1766585822
-SHA256 (zig/ly-ly-v1.3.0_GH0.tar.gz) = ced87076b513bda7687a0983238d18d316fbf2382c5bbd9b25b686fc6bf63bb4
-SIZE (zig/ly-ly-v1.3.0_GH0.tar.gz) = 106238
+TIMESTAMP = 1767771560
+SHA256 (zig/ly-ly-v1.3.1_GH0.tar.gz) = 4d1742691abf8f43ecde389760ddd69140996eeacc0485728f09b27d8f99c6d7
+SIZE (zig/ly-ly-v1.3.1_GH0.tar.gz) = 106624
 SHA256 (zig/Hejsil-zig-clap-5289e0753cd274d65344bef1c114284c6_GH0.tar.gz) = 9e3501c9015315a90cbf9c014edad69f37b541df848a92a2d8ff56e93970ebc9
 SIZE (zig/Hejsil-zig-clap-5289e0753cd274d65344bef1c114284c6_GH0.tar.gz) = 25748
 SHA256 (zig/AnErrupTion-termbox2-290ac6b8225aacfd16851224682b851b6_GH0.tar.gz) = 8a913d4921b1400e878b3d7cb49e55a81deac0c67d2245ee5fef88ade70aa177
