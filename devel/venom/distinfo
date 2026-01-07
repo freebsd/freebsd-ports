@@ -1,5 +1,5 @@
-TIMESTAMP = 1711703192
-SHA256 (go/devel_venom/venom-v1.2.0/v1.2.0.mod) = 494cf21d1b8fd84af689bf23ad1cce2f984153f9efb4b01cc64d4ffd14da6132
-SIZE (go/devel_venom/venom-v1.2.0/v1.2.0.mod) = 5294
-SHA256 (go/devel_venom/venom-v1.2.0/v1.2.0.zip) = 4cbabd5c826f09dbaff1d83852dee6f6ce8af86ec6adcd5df4d1a584d416ff93
-SIZE (go/devel_venom/venom-v1.2.0/v1.2.0.zip) = 687085
+TIMESTAMP = 1767772383
+SHA256 (go/devel_venom/venom-v1.3.0/v1.3.0.mod) = 0665f7ebb06dd385f00ca27bd4935275b5d5c6319788ac80b0a6cee0e9fad7a7
+SIZE (go/devel_venom/venom-v1.3.0/v1.3.0.mod) = 6027
+SHA256 (go/devel_venom/venom-v1.3.0/v1.3.0.zip) = 2c71e361fdc489fe4981e6476caa284adef9ad6ddc99334586bf0b5e08f634e5
+SIZE (go/devel_venom/venom-v1.3.0/v1.3.0.zip) = 758065
