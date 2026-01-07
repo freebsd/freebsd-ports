@@ -1,28 +1,31 @@
 PORTNAME=	tayga
-DISTVERSION=	0.9.5
+DISTVERSION=	0.9.6
 CATEGORIES=	net
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	49f64b0.patch:-p1 \
-		32cd0a7.patch:-p1 \
-		b62e33f.patch:-p1 \
-		6c298f2.patch:-p1
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Userland stateless NAT64 daemon
 WWW=		https://github.com/apalrd/tayga/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	apalrd
-MAKE_ENV=	RELEASE=${DISTVERSION}
+
+TEST_TARGET=	test
+
 CFLAGS+=	-DTAYGA_CONF_PATH='\"${PREFIX}/etc/tayga.conf\"'
+
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/tayga
 	${INSTALL_DATA} ${WRKSRC}/tayga.conf.example ${STAGEDIR}${PREFIX}/etc
+
+post-install-DOCS-on:
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
