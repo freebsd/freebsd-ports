@@ -1,5 +1,5 @@
 PORTNAME=	zapzap
-DISTVERSION=	6.2.4
+DISTVERSION=	6.2.5
 CATEGORIES=	net-im python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,9 +22,5 @@ USE_PYQT=	webengine
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
-
-post-patch:
-	 @${REINPLACE_CMD} -e '/^__version__ =/s/6\.2\.3/${PORTVERSION}/1' \
-		 ${WRKSRC}/zapzap/__init__.py
 
 .include <bsd.port.mk>
