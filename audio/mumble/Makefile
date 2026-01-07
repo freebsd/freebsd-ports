@@ -3,6 +3,12 @@ DISTVERSION=	1.5.857
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/releases/download/v${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/${PORTNAME}-voip/${PORTNAME}/commit/
+# Disable overlay xcompile on ARM64:
+# https://github.com/mumble-voip/mumble/issues/6971
+# https://github.com/mumble-voip/mumble/pull/6978
+PATCHFILES+=	3265e3e20728387f3bc81c82bbc6ed483f1f37eb.patch:-p1
+
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
 WWW=		https://www.mumble.info/
