@@ -31,6 +31,8 @@ USE_XORG=	x11 xau xdamage xdmcp xext xfixes xorgproto xt xxf86vm
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_LOCALE=	en_US.UTF-8
+# gluegen/src/java/net/highteq/nativetaglet/NativeTaglet.java:3: error: package com.sun.tools.doclets does not exist
+JAVA_VERSION=	8
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 BUILD_BINPATH=	${WRKSRC}/bin
