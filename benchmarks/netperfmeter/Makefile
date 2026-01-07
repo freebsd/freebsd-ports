@@ -18,12 +18,16 @@ RUN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-R.utils>0:devel/R-cran-R.utils
 
-USES=		cmake desktop-file-utils ghostscript shebangfix tar:xz
+USES=		cmake ghostscript shared-mime-info shebangfix tar:xz
 
 SHEBANG_FILES=	src/pdfembedfonts src/plot-netperfmeter-results \
 		src/setpdfmetadata
 
-CMAKE_OFF=	WITH_TEST_PROGRAMS
 CMAKE_ON=	WITH_ICONS WITH_PLOT_PROGRAMS
+CMAKE_OFF=	WITH_TEST_PROGRAMS
+
+# Work-around for build issue on ARM:
+# https://bugs.freebsd.org/285706 https://bugs.freebsd.org/292237
+MAKE_ENV=	OMP_NUM_THREADS=1
 
 .include <bsd.port.mk>
