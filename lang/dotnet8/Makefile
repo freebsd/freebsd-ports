@@ -69,6 +69,11 @@ LIB_DEPENDS+=	libcrypto.so.111:misc/compat13x
 BROKEN=		"crossgen2" exited with code 139
 .endif
 
+# https://github.com/dotnet/dotnet/issues/4037
+post-patch:
+	${CP} ${PATCHDIR}/0003-Fix-assembly-version-calculation-in-2026.patch \
+		${WRKSRC}/src/source-build-externals/patches/azure-activedirectory-identitymodel-extensions-for-dotnet/
+
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/release.json-${PORTVERSION} ${WRKSRC}/release.json
 
