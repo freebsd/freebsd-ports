@@ -1,5 +1,5 @@
 PORTNAME=	gcli
-DISTVERSION=	2.9.1
+DISTVERSION=	2.10.0
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 
@@ -12,9 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpdjson.so:textproc/pdjson
-TEST_DEPENDS=	kyua:devel/kyua
 
-USES=		libtool pathfix pkgconfig ssl tar:xz
+USES=		libtool pathfix perl5 pkgconfig ssl tar:xz
+USE_PERL5=	test
 
 HAS_CONFIGURE=	yes
 .if defined(WITH_DEBUG)
