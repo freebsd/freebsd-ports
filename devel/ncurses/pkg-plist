@@ -79,7 +79,9 @@ libdata/pkgconfig/tinfo.pc
 %%MANPAGES%%share/man/man1/toe.1m.gz
 %%MANPAGES%%share/man/man1/tput.1.gz
 %%MANPAGES%%share/man/man1/tset.1.gz
+%%MANPAGES%%share/man/man3/A_COLOR.3x.gz
 %%MANPAGES%%share/man/man3/BC.3x.gz
+%%MANPAGES%%share/man/man3/CCHARW_MAX.3x.gz
 %%MANPAGES%%share/man/man3/COLORS.3x.gz
 %%MANPAGES%%share/man/man3/COLOR_BLACK.3x.gz
 %%MANPAGES%%share/man/man3/COLOR_BLUE.3x.gz
@@ -96,6 +98,7 @@ libdata/pkgconfig/tinfo.pc
 %%MANPAGES%%share/man/man3/ESCDELAY.3x.gz
 %%MANPAGES%%share/man/man3/FALSE.3x.gz
 %%MANPAGES%%share/man/man3/LINES.3x.gz
+%%MANPAGES%%share/man/man3/MEVENT.3x.gz
 %%MANPAGES%%share/man/man3/NCURSES_SCREEN_CB.3x.gz
 %%MANPAGES%%share/man/man3/NCURSES_WINDOW_CB.3x.gz
 %%MANPAGES%%share/man/man3/OK.3x.gz
@@ -534,6 +537,7 @@ libdata/pkgconfig/tinfo.pc
 %%MANPAGES%%share/man/man3/mitem_userptr.3x.gz
 %%MANPAGES%%share/man/man3/mitem_value.3x.gz
 %%MANPAGES%%share/man/man3/mitem_visible.3x.gz
+%%MANPAGES%%share/man/man3/mmask_t.3x.gz
 %%MANPAGES%%share/man/man3/mouse_trafo.3x.gz
 %%MANPAGES%%share/man/man3/mouseinterval.3x.gz
 %%MANPAGES%%share/man/man3/mouseinterval_sp.3x.gz
