@@ -1,7 +1,6 @@
 PORTNAME=	solarus-quest-editor
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -24,13 +23,14 @@ USES=		cmake compiler:c++11-lib gl localbase:ldflags openal qt:6 sdl
 USE_GITLAB=	yes
 GL_ACCOUNT=	solarus-games
 GL_PROJECT=	solarus
-GL_TAGNAME=	e70e3df7369d690615fc4c9b3f8dfa00066c5e87
 
 USE_GL=		opengl
 USE_QT=		base svg tools:build
 USE_SDL=	sdl2 ttf2 image2
 
-CMAKE_ARGS+=	-DSOLARUS_FETCHCONTENT=OFF
+CMAKE_ARGS+=	-DSOLARUS_FETCHCONTENT=OFF \
+		-DSOLARUS_INSTALL_DATADIR=${DATADIR} \
+		-DSOLARUSEDITOR_ASSETS_DIR=${DATADIR}
 
 DESKTOP_ENTRIES=	"Solarus Quest Editor" "${COMMENT}" \
 			"${PREFIX}/share/pixmaps/org.solarus-games.solarus-editor.png" \
