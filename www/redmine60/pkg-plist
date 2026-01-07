@@ -1677,6 +1677,8 @@
 %%WWWDIR%%/test/fixtures/files/configuration/no_default.yml
 %%WWWDIR%%/test/fixtures/files/configuration/overrides.yml
 %%WWWDIR%%/test/fixtures/files/hello.js
+%%WWWDIR%%/test/fixtures/files/hello.pdf
+%%WWWDIR%%/test/fixtures/files/hello.ps
 %%WWWDIR%%/test/fixtures/files/hg-export.diff
 %%WWWDIR%%/test/fixtures/files/import_dates.csv
 %%WWWDIR%%/test/fixtures/files/import_dates_ja.csv
@@ -1700,6 +1702,7 @@
 %%WWWDIR%%/test/fixtures/files/testfile.textile
 %%WWWDIR%%/test/fixtures/files/testfile.txt
 %%WWWDIR%%/test/fixtures/files/unclosed_quoted_field.csv
+%%WWWDIR%%/test/fixtures/files/with_pdf_magic.ps
 %%WWWDIR%%/test/fixtures/groups_users.yml
 %%WWWDIR%%/test/fixtures/issue_categories.yml
 %%WWWDIR%%/test/fixtures/issue_relations.yml
@@ -2094,6 +2097,7 @@
 %%WWWDIR%%/test/unit/lib/redmine/search_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/syntax_highlighting/rouge_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/themes_test.rb
+%%WWWDIR%%/test/unit/lib/redmine/thumbnail_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/unified_diff_test.rb
 %%WWWDIR%%/test/unit/lib/redmine/utils/date_calculation.rb
 %%WWWDIR%%/test/unit/lib/redmine/views/builders/json_test.rb

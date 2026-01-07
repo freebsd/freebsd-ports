@@ -1,6 +1,5 @@
 PORTNAME=	redmine
-PORTVERSION=	6.0.7
-PORTREVISION=	1
+PORTVERSION=	6.0.8
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 PKGNAMESUFFIX=	60
@@ -16,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/doc/COPYING
 RUN_DEPENDS=	rubygem-actionpack-xml_parser-rails72>=0:textproc/rubygem-actionpack-xml_parser-rails72 \
 		rubygem-addressable>0:www/rubygem-addressable \
 		rubygem-bundler>=1.12.0:sysutils/rubygem-bundler \
+		rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-csv>=3.2.6:devel/rubygem-csv \
 		rubygem-debug>=0:devel/rubygem-debug \
 		rubygem-erb>0:devel/rubygem-erb \
@@ -96,7 +96,7 @@ post-extract:
 	@${MV} ${WRKSRC}/config/settings.yml ${WRKSRC}/config/settings.yml.sample
 	@${MV} ${WRKSRC}/config/database.yml.example ${WRKSRC}/config/database.yml.sample
 
-post-patch:
+Xpost-patch:
 	@${RM} ${WRKSRC}/Gemfile.orig
 
 do-install:

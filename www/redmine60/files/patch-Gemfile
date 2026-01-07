@@ -1,11 +1,11 @@
---- Gemfile.orig	2025-09-21 10:15:05 UTC
+--- Gemfile.orig	2026-01-06 02:25:03 UTC
 +++ Gemfile
 @@ -2,26 +2,26 @@ ruby '>= 3.1.0', '< 3.4.0'
  
  ruby '>= 3.1.0', '< 3.4.0'
  
--gem 'rails', '7.2.2.2'
-+gem 'rails', '~> 7.2.2.2'
+-gem 'rails', '7.2.3'
++gem 'rails', '~> 7.2.3'
  gem 'rouge', '~> 4.5'
  gem 'mini_mime', '~> 1.1.0'
  gem "actionpack-xml_parser"
@@ -78,6 +78,6 @@
 +  gem 'rubocop-ast', '>= 1.40.0', require: false
 +  gem 'rubocop-performance', '>= 1.22.0', require: false
 +  gem 'rubocop-rails', '>= 2.27.0', require: false
+   # `bin/rails test` fails at startup with minitest >= 6.0
+   gem 'minitest', '< 6.0'
  end
- 
- local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
