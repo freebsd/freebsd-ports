@@ -22,4 +22,9 @@ PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 PLIST=		${.CURDIR}/pkg-plist
 
+# https://github.com/dotnet/dotnet/issues/4037
+post-patch:
+	${CP} ${PATCHDIR}/0003-Fix-assembly-version-calculation-in-2026.patch \
+		${WRKSRC}/src/source-build-externals/patches/azure-activedirectory-identitymodel-extensions-for-dotnet/
+
 .include	"${MASTERDIR}/Makefile"
