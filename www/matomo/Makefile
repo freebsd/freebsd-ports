@@ -1,10 +1,10 @@
 PORTNAME=	matomo
-PORTVERSION=	5.5.1
+PORTVERSION=	5.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://builds.matomo.org/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	marko.cupac@mimar.rs
 COMMENT=	Open Source Web Analytics Software Program
 WWW=		https://www.matomo.org/
 
