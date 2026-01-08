@@ -142,7 +142,7 @@ HTTP_PUSH_VARS=			DSO_EXTMODS+=push
 HTTP_PUSH_STREAM_GH_TUPLE=	wandenberg:nginx-push-stream-module:0.6.0:pushstream
 HTTP_PUSH_STREAM_VARS=		DSO_EXTMODS+=pushstream
 
-HTTP_REDIS_GH_TUPLE=		osokin:ngx_http_redis:0.4.0:redis
+HTTP_REDIS_GH_TUPLE=		osokin:ngx_http_redis:0.4.1:redis
 HTTP_REDIS_VARS=		DSO_EXTMODS+=redis
 
 HTTP_SLICE_AHEAD_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_http_modules_ngx_http_slice_read_ahead.c
