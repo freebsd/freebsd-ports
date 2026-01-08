@@ -74,6 +74,7 @@ CONFIGURE_ARGS+=--with-defaults
 .endif
 
 TLS_CONFIGURE_ON=	--with-security-modules=tsm --with-transports=TLSTCP,DTLSUDP
+MYSQL_BROKEN=		ISO C99 and later do not support implicit int
 
 .include <bsd.port.options.mk>
 
