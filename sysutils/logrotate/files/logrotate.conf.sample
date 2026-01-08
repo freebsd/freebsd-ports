@@ -17,6 +17,7 @@ include __PREFIX__/etc/logrotate.d
 /var/log/lastlog {
     monthly
     rotate 1
+    missingok
 }
 
 # system-specific logs may be configured here
