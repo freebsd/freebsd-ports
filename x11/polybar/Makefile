@@ -1,8 +1,11 @@
 PORTNAME=	polybar
 DISTVERSION=	3.7.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/polybar/polybar/releases/download/${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/polybar/${PORTNAME}/commit/
+PATCHFILES=	455d63611a695ffe4fe372272be28f4f6d9b90d3.patch:-p1 # https://github.com/polybar/polybar/pull/3221
 
 MAINTAINER=	jbo@FreeBSD.org
 COMMENT=	Fast and easy-to-use status bar
