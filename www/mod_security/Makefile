@@ -10,6 +10,8 @@ WWW=		https://www.modsecurity.org/
 
 LICENSE=	APACHE20
 
+PORTSCOUT=	limit:^2\.
+
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2 \
 		libapr-1.so:devel/apr1 \
 		libyajl.so:devel/yajl \
