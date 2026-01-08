@@ -1,5 +1,5 @@
-TIMESTAMP = 1653829990
-SHA256 (nginx-1.22.0.tar.gz) = b33d569a6f11a01433a57ce17e83935e953ad4dc77cdd4d40f896c88ac26eb53
-SIZE (nginx-1.22.0.tar.gz) = 1073322
-SHA256 (SpiderLabs-ModSecurity-nginx-v1.0.1_GH0.tar.gz) = c969a78659bb47c84929de0b9adc1f8c512a51ec9dd3b162cb568ae228d3d59e
-SIZE (SpiderLabs-ModSecurity-nginx-v1.0.1_GH0.tar.gz) = 31920
+TIMESTAMP = 1767868159
+SHA256 (nginx-1.28.0.tar.gz) = c6b5c6b086c0df9d3ca3ff5e084c1d0ef909e6038279c71c1c3e985f576ff76a
+SIZE (nginx-1.28.0.tar.gz) = 1280111
+SHA256 (SpiderLabs-ModSecurity-nginx-v1.0.4_GH0.tar.gz) = bb596d146ad0650014168dda9dc8d07c50a070010044c95ed0d167a9a78e63a1
+SIZE (SpiderLabs-ModSecurity-nginx-v1.0.4_GH0.tar.gz) = 1160677
