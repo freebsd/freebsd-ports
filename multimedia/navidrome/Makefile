@@ -2,7 +2,6 @@ PORTNAME=	navidrome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.59.0
 CATEGORIES=	multimedia
-DISTFILES+=	${PREFETCH_FILE}:prefetch
 
 MAINTAINER=	kbowling@FreeBSD.org
 COMMENT=	Modern Music Server and Streamer compatible with Subsonic/Airsonic
@@ -11,7 +10,7 @@ WWW=		https://www.navidrome.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	npm esbuild fails: "Unsupported platform: freebsd ia32 LE"
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
 FETCH_DEPENDS=	npm:www/npm${NODEJS_SUFFIX}
@@ -148,7 +147,6 @@ GH_TUPLE=	\
 		yaml:go-yaml:v3.0.4:yaml_go_yaml_1/vendor/go.yaml.in/yaml/v3 \
 		zeebo:xxh3:v1.0.2:zeebo_xxh3/vendor/github.com/zeebo/xxh3
 
-PREFETCH_FILE=	${PORTNAME}-${DISTVERSION}-node${NODEJS_VERSION}-modules${EXTRACT_SUFX}
 PREFETCH_TIMESTAMP=	61171200
 USE_RC_SUBR=	${PORTNAME}
 
@@ -164,6 +162,7 @@ SUB_LIST+=	NAVIDROMEGROUP=${GROUPS} \
 USERS=		www
 GROUPS=		www
 
+# We need ARCH to be defined, which can only happen after options.mk
 .include <bsd.port.options.mk>
 
 # Compiler runs out of memory when compiling the ui on 32-bit platforms:
@@ -172,27 +171,46 @@ GROUPS=		www
 MAKE_ENV+=	NODE_OPTIONS='--max-old-space-size=1492'
 .endif
 
-pre-fetch:
-	if [ ! -f ${DISTDIR}/${PREFETCH_FILE} ]; then \
-		${MKDIR} ${WRKDIR}/ui/node-modules-cache; \
-		${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/ui/node-modules-cache; \
-		cd ${WRKDIR}/ui/node-modules-cache && \
-		${SETENV} HOME=${WRKDIR} \
-			npm ci --ignore-scripts --no-progress --no-audit --no-fund; \
-		${FIND} ${WRKDIR}/ui/node-modules-cache -depth 1 -print | \
-			${GREP} -v node_modules | ${XARGS} ${RM} -r; \
-		${FIND} ${WRKDIR}/ui/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
-		cd ${WRKDIR}//ui/node-modules-cache && \
-		${MTREE_CMD} -cbnSp node_modules | ${MTREE_CMD} -C | ${SED} \
-			-e 's:time=[0-9.]*:time=${PREFETCH_TIMESTAMP}.000000000:' \
-			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
-			-e 's:flags=.*:flags=none:' \
-			-e 's:^\.:./node_modules:' > node-modules-cache.mtree; \
-		${TAR} -cz --options 'gzip:!timestamp' \
-			-f ${DISTDIR}/${PREFETCH_FILE} \
-			@node-modules-cache.mtree; \
-		${RM} -r ${WRKDIR}; \
-	fi
+.if ${ARCH} == amd64 || make(makesum)
+FILE_AMD64=		${PORTNAME}-${DISTVERSION}-node${NODEJS_VERSION}-amd64-modules.tar.gz
+DISTFILES+=	${FILE_AMD64}:prefetch
+COMBIARCH+=	x64 ${FILE_AMD64}
+.endif
+
+.if ${ARCH} == aarch64 || make(makesum)
+FILE_ARM64=		${PORTNAME}-${DISTVERSION}-node${NODEJS_VERSION}-arm64-modules.tar.gz
+DISTFILES+=	${FILE_ARM64}:prefetch
+COMBIARCH+=	arm64 ${FILE_ARM64}
+.endif
+
+# We need NODEJS_VERSION to be expanded before assigning it so MAKESUM_DEP and NODEJS_VERSION
+# is only expanded after pre.mk
+.include <bsd.port.pre.mk>
+
+.for c f in ${COMBIARCH}
+${DISTDIR}/$f:
+	${MKDIR} ${WRKDIR}/ui/node-modules-cache; \
+	${CP} -R ${FILESDIR}/packagejsons/* ${WRKDIR}/ui/node-modules-cache; \
+	cd ${WRKDIR}/ui/node-modules-cache && \
+	${SETENV} HOME=${WRKDIR} \
+		npm ci --ignore-scripts --no-progress --no-audit --no-fund --cpu=$c; \
+	${FIND} ${WRKDIR}/ui/node-modules-cache -depth 1 -print | \
+		${GREP} -v node_modules | ${XARGS} ${RM} -r; \
+	${FIND} ${WRKDIR}/ui/node-modules-cache -type d -exec ${CHMOD} 755 {} ';'; \
+	cd ${WRKDIR}//ui/node-modules-cache && \
+	${MTREE_CMD} -cbnSp node_modules | ${MTREE_CMD} -C | ${SED} \
+		-e 's:time=[0-9.]*:time=${PREFETCH_TIMESTAMP}.000000000:' \
+		-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
+		-e 's:flags=.*:flags=none:' \
+		-e 's:^\.:./node_modules:' > node-modules-cache.mtree; \
+	${TAR} -cz --options 'gzip:!timestamp' \
+		-f ${DISTDIR}/$f \
+		@node-modules-cache.mtree; \
+	${RM} -r ${WRKDIR}; \
+
+pre-fetch: ${DISTDIR}/$f
+MAKESUM_DEP+= ${DISTDIR}/$f
+.endfor
 
 pre-build:
 	cd ${WRKSRC}/ui && ${SETENV} ${MAKE_ENV} npm run build
@@ -206,3 +224,5 @@ post-install:
 		${STAGEDIR}${ETCDIR}/config.toml.sample
 
 .include <bsd.port.mk>
+
+makesum: ${MAKESUM_DEP}

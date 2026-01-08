@@ -1,6 +1,8 @@
-TIMESTAMP = 1767090628
-SHA256 (navidrome-0.59.0-node24-modules.tar.gz) = 9955267d1928787b3e65a7affb3f37d65da6f3128077e9c33f809081365ff084
-SIZE (navidrome-0.59.0-node24-modules.tar.gz) = 85602594
+TIMESTAMP = 1767858101
+SHA256 (navidrome-0.59.0-node24-amd64-modules.tar.gz) = 9955267d1928787b3e65a7affb3f37d65da6f3128077e9c33f809081365ff084
+SIZE (navidrome-0.59.0-node24-amd64-modules.tar.gz) = 85602594
+SHA256 (navidrome-0.59.0-node24-arm64-modules.tar.gz) = 3bbdf65d4d73afe015850c50039423a3edde2127efb1ec29b24c2f7895093230
+SIZE (navidrome-0.59.0-node24-arm64-modules.tar.gz) = 85216583
 SHA256 (navidrome-navidrome-v0.59.0_GH0.tar.gz) = b2a61c975029e59981cc2b443d9382ef92526325dcf26f82c9dd4b004454736d
 SIZE (navidrome-navidrome-v0.59.0_GH0.tar.gz) = 7777061
 SHA256 (Masterminds-semver-v3.4.0_GH0.tar.gz) = 47f43127587cd7750f2054c9ebab8851a3ea2011aefd7cc5319624dac8810799
