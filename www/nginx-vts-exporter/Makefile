@@ -11,6 +11,9 @@ WWW=		https://github.com/hnlq715/nginx-vts-exporter
 LICENSE=			MIT
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream is unmaintained; use www/nginx-prometheus-exporter instead
+EXPIRATION_DATE=	2026-02-28
+
 USES=				gmake go
 USE_RC_SUBR=		nginx_vts_exporter
 USE_GITHUB=			yes
