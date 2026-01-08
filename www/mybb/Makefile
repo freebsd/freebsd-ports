@@ -2,7 +2,7 @@ PORTNAME=	mybb
 DISTVERSION=	1.8.39
 CATEGORIES=	www
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based bulletin board / discussion forum system
 WWW=		https://mybboard.net/
 
