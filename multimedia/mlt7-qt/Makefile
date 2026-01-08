@@ -1,11 +1,8 @@
-MASTERDIR=	${.CURDIR:H}/mlt7
-SLAVEPORT=	qt
-
 PORTREVISION=	0
-PKGNAMESUFFIX=	-${FLAVOR}
+CATEGORIES=	multimedia kde
+PKGNAMESUFFIX=	-qt6
 
 COMMENT=	Qt plugin for the MLT multimedia framework
-CATEGORIES=	multimedia kde
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	multi
@@ -13,43 +10,30 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libfftw3.so:math/fftw3
 
-FLAVORS=	qt5 qt6
-FLAVOR?=	qt5
-
-USES=		gl qt:${FLAVOR:S/qt//} xorg
-USE_GL=		${_USE_GL_${FLAVOR}}
-USE_QT=		${_USE_QT_${FLAVOR}}
+USES=		compiler:c++17-lang gl mlt:7 qt:6 xorg
+USE_GL=		opengl
+USE_QT=		5compat base svg
 USE_XORG=	x11
 
-# Flavor handling
-_USE_GL_qt6=	opengl
-_USE_QT_qt5=	core gui svg widgets xml \
-		buildtools:build qmake:build
-_USE_QT_qt6=	5compat base svg
-_CMAKE_ON_qt5=	MOD_QT
-_CMAKE_ON_qt6=	MOD_QT6
-_CMAKE_OFF_qt5=	MOD_QT6
-_CMAKE_OFF_qt6=	MOD_QT
-_PLIST_SUB_qt5=	QT_VERSION_SUFFIX=
-_PLIST_SUB_qt6=	QT_VERSION_SUFFIX=6
-
 # Only enable Qt binding, and disable everything else
-CMAKE_ON=	${_CMAKE_ON_${FLAVOR}}
+CMAKE_ON=	MOD_QT6
 CMAKE_OFF=	MOD_AVFORMAT MOD_DECKLINK MOD_FEEDS MOD_FREI0R MOD_GDK MOD_GTK2 \
-		MOD_JACKRACK MOD_KDENLIVE MOD_LUMAS MOD_MOTION_EST MOD_NORMALIZE \
+		MOD_JACKRACK MOD_KDENLIVE MOD_LUMAS MOD_MOTION_EST MOD_MOVIT MOD_NORMALIZE \
 		MOD_OLDFILM MOD_OPENCV MOD_OPENGL MOD_PLUSGPL MOD_PLUS MOD_RESAMPLE \
 		MOD_RTAUDIO MOD_RUBBERBAND MOD_SDL2 MOD_SOX MOD_VIDSTAB MOD_VMFX \
 		MOD_VORBIS MOD_XINE MOD_XML \
 		SWIG_CSHARP SWIG_JAVA SWIG_LUA SWIG_NODEJS SWIG_PERL \
 		SWIG_PHP SWIG_PYTHON SWIG_RUBY SWIG_TCL \
-		${_CMAKE_OFF_${FLAVOR}}
+		USE_LV2 USE_VST2
 
-PLIST_SUB+=	${_PLIST_SUB_${FLAVOR}}
+MASTERDIR=	${.CURDIR:H}/mlt7
+PORTSCOUT=	ignore:1
 
 BUILD_WRKSRC=	${WRKDIR}/.build/src/modules/qt
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-# Dummy placeholder target.
-common-post-install:
-	@${TRUE}
+PLIST=		${.CURDIR}/pkg-plist
+
+_MLT_EXTRA_MOD=	qt
 
 .include "${MASTERDIR}/Makefile"

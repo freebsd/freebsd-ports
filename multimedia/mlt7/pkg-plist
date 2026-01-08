@@ -72,11 +72,11 @@ lib/libmlt-7.so.7
 lib/libmlt-7.so.%%MLT_VERSION%%
 %%AVFORMAT%%lib/mlt-7/libmltavformat.so
 lib/mlt-7/libmltcore.so
-%%DECKLINK%%lib/mlt-7/libmltdecklink.so
 %%FREI0R%%lib/mlt-7/libmltfrei0r.so
 %%GDK%%lib/mlt-7/libmltgdk.so
 %%JACKRACK%%lib/mlt-7/libmltjackrack.so
 %%KDENLIVE%%lib/mlt-7/libmltkdenlive.so
+%%JACKRACK%%lib/mlt-7/libmltladspa.so
 %%MOVIT%%lib/mlt-7/libmltmovit.so
 %%NORMALIZE%%lib/mlt-7/libmltnormalize.so
 %%OLDFILM%%lib/mlt-7/libmltoldfilm.so
@@ -100,6 +100,7 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_avcolour_space.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_avdeinterlace.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_swresample.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/filter_sws_colortransform.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/filter_swscale.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/link_avdeinterlace.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/link_swresample.yml
@@ -119,6 +120,7 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/filter_brightness.yml
 %%DATADIR%%/core/filter_channelcopy.yml
 %%DATADIR%%/core/filter_choppy.yml
+%%DATADIR%%/core/filter_color_transform.yml
 %%DATADIR%%/core/filter_crop.yml
 %%DATADIR%%/core/filter_fieldorder.yml
 %%DATADIR%%/core/filter_gamma.yml
@@ -155,9 +157,8 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/transition_luma.yml
 %%DATADIR%%/core/transition_matte.yml
 %%DATADIR%%/core/transition_mix.yml
-%%DECKLINK%%%%DATADIR%%/decklink/consumer_decklink.yml
-%%DECKLINK%%%%DATADIR%%/decklink/producer_decklink.yml
 %%FREI0R%%%%DATADIR%%/frei0r/aliases.yaml
+%%FREI0R%%%%DATADIR%%/frei0r/alpha_only.txt
 %%FREI0R%%%%DATADIR%%/frei0r/blacklist.txt
 %%FREI0R%%%%DATADIR%%/frei0r/filter_cairoblend_mode.yml
 %%FREI0R%%%%DATADIR%%/frei0r/not_thread_safe.txt

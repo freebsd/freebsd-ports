@@ -1,6 +1,6 @@
---- src/melt/CMakeLists.txt.orig	2022-07-29 16:08:23 UTC
+--- src/melt/CMakeLists.txt.orig	2026-01-07 06:47:08 UTC
 +++ src/melt/CMakeLists.txt
-@@ -24,13 +24,5 @@ endif()
+@@ -30,13 +30,5 @@ endif()
      )
  endif()
  

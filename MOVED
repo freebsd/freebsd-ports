@@ -5067,3 +5067,7 @@ sysutils/beats7|sysutils/beats8|2026-01-02|Has expired: Only works with expired 
 devel/gwenhywfar-fox16||2026-01-03|Leaf library not used in the ports tree
 devel/gwenhywfar-gtk2||2026-01-03|Leaf library not used in the ports tree
 devel/gwenhywfar-qt5||2026-01-03|Leaf library not used in the ports tree
+multimedia/mlt7-glaxnimate@qt5||2026-01-08|Qt5 support has been dropped by upstream
+multimedia/mlt7-glaxnimate@qt6|multimedia/mlt7-glaxnimate|2026-01-08|Unflavorize; only Qt6 is supported
+multimedia/mlt7-qt@qt5||2026-01-08|Qt5 support has been dropped by upstream
+multimedia/mlt7-qt@qt6|multimedia/mlt7-qt|2026-01-08|Unflavorize; only Qt6 is supported
