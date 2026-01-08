@@ -1,5 +1,6 @@
 PORTNAME=	mediastreamer
 DISTVERSION=	5.4.72
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org

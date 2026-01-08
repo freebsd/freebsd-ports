@@ -1,6 +1,7 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	zarychtam@plan-b.pwste.edu.pl
