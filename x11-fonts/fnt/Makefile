@@ -3,7 +3,7 @@ PORTVERSION=	1.9
 PORTREVISION=	1
 CATEGORIES=	x11-fonts sysutils
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Missing font manager for UNIX
 WWW=		https://github.com/alexmyczko/fnt
 
