@@ -1,10 +1,10 @@
 PORTNAME=	pmwiki
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.pmwiki.org/pub/pmwiki/
 
-MAINTAINER=	joneum@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WikiWikiWeb clone using PHP
 WWW=		https://www.pmwiki.org
 
