@@ -1,15 +1,16 @@
---- src/mdformat/_conf.py.orig	2025-01-30 17:57:20 UTC
+--- src/mdformat/_conf.py.orig	2025-10-16 12:00:48 UTC
 +++ src/mdformat/_conf.py
-@@ -1,6 +1,6 @@ from __future__ import annotations
+@@ -1,7 +1,7 @@ from collections.abc import Mapping
  from __future__ import annotations
  
+ from collections.abc import Mapping
 -import functools
 +import functools, os
  from pathlib import Path
  from types import MappingProxyType
- from typing import Mapping
+ 
 @@ -35,7 +35,10 @@ def read_toml_opts(conf_dir: Path) -> tuple[Mapping, P
- @functools.lru_cache()
+ @functools.lru_cache
  def read_toml_opts(conf_dir: Path) -> tuple[Mapping, Path | None]:
      conf_path = conf_dir / ".mdformat.toml"
 -    if not conf_path.is_file():
