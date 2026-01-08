@@ -1,9 +1,8 @@
 PORTNAME=	exult
-DISTVERSION=	1.12.0
-PORTREVISION=	1
+DISTVERSION=	1.12.1
 PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/exult/exult-all-versions/${DISTVERSION:R}/
+MASTER_SITES=	SF/exult/exult-all-versions/${DISTVERSION}/
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Engine for Ultima VII (BG, FOV, SI, SS)
