@@ -36,8 +36,10 @@ CMAKE_TESTING_ON=	onnxruntime_BUILD_UNIT_TESTS
 
 CXXFLAGS+=	-Wno-array-bounds # workaround for https://github.com/microsoft/onnxruntime/issues/23410
 CXXFLAGS+=	-Wno-deprecated-declarations #fixes error: 'vec_lvsl' is deprecated: use assignment for unaligned little endian loads/stores
+#CXXFLAGS+=	-Wno-deprecated-altivec-src-compat #fixes error: current handling of vector bool and vector pixel types in this context are deprecated; the default behaviour will soon change to that implied by the '-altivec-compat=xl' option
 CXXFLAGS+=	-I${WRKSRC}/include/onnxruntime/core/common/logging # otherwise logging.h isn't found
 CXXFLAGS+=	-frtti # fixes error: onnxruntime/test/contrib_ops/gather_block_quantized_op_test.cc:85:77: error: use of typeid requires -frtti
+CXXFLAGS_powerpc64=	-mvsx
 
 BINARY_ALIAS=	patch=gpatch
 
