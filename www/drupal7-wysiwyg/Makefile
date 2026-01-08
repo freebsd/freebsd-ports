@@ -1,5 +1,5 @@
 PORTNAME=	wysiwyg
-DISTVERSION=	7.x-2.9
+DISTVERSION=	7.x-2.10
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org
