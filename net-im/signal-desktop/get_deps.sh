@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v7.82.0
+SIGNAL_VERS=v7.84.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
 node_version=$(awk /'"node":'/'{print $2}' /tmp/package.json | head -n 1 | sed 's/"//g')
