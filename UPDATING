@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260109:
+  AFFECTS: users of net-mgmt/librenms
+  AUTHOR: dvl@FreeBSD.org
+
+  mysql-client is no longer a dependency. This allows users to select
+  mysql or mariadb at run time. This was not poossible before.
+
 20260103:
   AFFECTS: users of x11/nvidia-{driver, kmod}-devel variants
   AUTHOR: junchoon@dec.sakura.ne.jp

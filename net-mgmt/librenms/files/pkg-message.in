@@ -94,6 +94,9 @@ started:
 cd %%WWWDIR%%
 echo ./validate.php | sudu su -fm www
 
+NOTE: The mysql client is no longer a run-time dependency.
+      If needed, you must install it.
+
 EOM
 }
 { type: upgrade
@@ -133,6 +136,9 @@ does not properly start. Monitor /var/log/librenms/*.log and if you see
 'Unable to launch a new process', then restart the service via:
 
  service librenms restart
+
+NOTE: The mysql client is no longer a run-time dependency.
+      If needed, you must install it.
 
 EOM
 }

@@ -1,5 +1,6 @@
 PORTNAME=	librenms
 PORTVERSION=	25.12.0
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -104,7 +105,6 @@ FPING_RUN_DEPENDS=	fping:net/fping
 IPMITOOL_RUN_DEPENDS=	ipmitool:sysutils/ipmitool
 LIBVIRT_RUN_DEPENDS=	virsh:devel/libvirt
 MYSQLD_USES=		mysql:server
-MYSQLD_USES_OFF=	mysql:client
 NAGPLUGINS_RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:net-mgmt/nagios-plugins
 NMAP_RUN_DEPENDS=	nmap:security/nmap
 WMIC_RUN_DEPENDS=	wmic:net-mgmt/wmi-client
