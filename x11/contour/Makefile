@@ -50,6 +50,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_crispy_read__selector.h
 BUILD_DEPENDS+=	tic:devel/ncurses
 .endif
 
+.if ${ARCH:Mpowerpc*}
+USES+=		compiler:gcc-c++11-lib
+.endif
+
 post-install:
 	@${RM} -r ${STAGEDIR}${DATADIR}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
