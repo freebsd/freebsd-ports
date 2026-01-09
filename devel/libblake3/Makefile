@@ -1,5 +1,5 @@
 PORTNAME=	libblake3
-DISTVERSION=	1.8.2
+DISTVERSION=	1.8.3
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
