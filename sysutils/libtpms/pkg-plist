@@ -7,7 +7,7 @@ include/libtpms/tpm_types.h
 lib/libtpms.a
 lib/libtpms.so
 lib/libtpms.so.0
-lib/libtpms.so.0.10.1
+lib/libtpms.so.%%DISTVERSION%%
 libdata/pkgconfig/libtpms.pc
 share/man/man3/TPMLIB_CancelCommand.3.gz
 share/man/man3/TPMLIB_ChooseTPMVersion.3.gz
