@@ -1,8 +1,7 @@
 PORTNAME=	libopusenc
-PORTVERSION=	0.2.1
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	audio
-MASTER_SITES=	MOZILLA/opus
+MASTER_SITES=	https://downloads.xiph.org/releases/opus/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	High-level API for encoding .opus files
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libopus.so:audio/opus
 
-USES=		gmake libtool pkgconfig
+USES=		libtool pkgconfig
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
