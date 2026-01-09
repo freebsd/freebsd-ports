@@ -1,6 +1,6 @@
 PORTNAME=	multicat
 PORTVERSION=	2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net multimedia
 MASTER_SITES=	https://get.videolan.org/multicat/${PORTVERSION}/
 

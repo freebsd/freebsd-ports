@@ -1,0 +1,13 @@
+https://github.com/videolan/bitstream/pull/65
+
+--- Makefile.orig	2025-11-22 17:18:36 UTC
++++ Makefile
+@@ -72,7 +72,7 @@ HEADER_LIST = $$(find * -name '*.h')
+ 
+ HEADER_LIST = $$(find * -name '*.h')
+ 
+-FLAGS = -I. -Werror -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -Wformat=2
++FLAGS = -I. -Wall -Wextra -Wno-unused-parameter -Wno-sign-compare -Wformat=2
+ 
+ compiler_c = $(CC) $(FLAGS) $(CFLAGS) -std=gnu99
+ compiler_c++ = $(CXX) $(FLAGS) $(CXXFLAGS)

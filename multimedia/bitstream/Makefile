@@ -1,8 +1,7 @@
 PORTNAME=	bitstream
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	multimedia
-MASTER_SITES=	https://get.videolan.org/bitstream/${PORTVERSION}/ \
-		http://get.videolan.org/bitstream/${PORTVERSION}/
+MASTER_SITES=	https://get.videolan.org/bitstream/${PORTVERSION}/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Binary MPEG, DVB, IETF, etc. structures access library
