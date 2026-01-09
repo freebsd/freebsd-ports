@@ -10,6 +10,9 @@ WWW=		https://github.com/charmbracelet/mods
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	Requires Go module modernc.org/libc, which only supports FreeBSD aarch64 and amd64
+
 USES=		go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
