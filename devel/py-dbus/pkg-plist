@@ -1,3 +1,4 @@
+include/dbus-1.0/dbus/dbus-python.h
 %%PYTHON_SITELIBDIR%%/_dbus_bindings.so
 %%PYTHON_SITELIBDIR%%/_dbus_glib_bindings.so
 %%PYTHON_SITELIBDIR%%/dbus/__init__.py
@@ -51,3 +52,4 @@
 %%PYTHON_SITELIBDIR%%/dbus/server.py
 %%PYTHON_SITELIBDIR%%/dbus/service.py
 %%PYTHON_SITELIBDIR%%/dbus/types.py
+libdata/pkgconfig/dbus-python.pc
