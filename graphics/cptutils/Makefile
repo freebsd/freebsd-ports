@@ -1,6 +1,5 @@
 PORTNAME=	cptutils
-PORTVERSION=	1.84
-PORTREVISION=	1
+PORTVERSION=	1.85
 CATEGORIES=	graphics
 MASTER_SITES=	https://jjg.gitlab.io/src/
 
