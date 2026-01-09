@@ -1,5 +1,5 @@
 PORTNAME=	rebar3
-PORTVERSION=	3.25.1
+PORTVERSION=	3.26.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES+=	https://repo.hex.pm/tarballs/:hex
