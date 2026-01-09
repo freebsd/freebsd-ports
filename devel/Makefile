@@ -6342,7 +6342,6 @@
     SUBDIR += pycharm
     SUBDIR += pycos
     SUBDIR += pycount
-    SUBDIR += pydbus-common
     SUBDIR += pydeps
     SUBDIR += pyderasn
     SUBDIR += pyenv
