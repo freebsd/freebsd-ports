@@ -2,8 +2,6 @@
 %%PRIVOXY_TOOLS%%bin/privoxy-regression-test.pl
 %%PRIVOXY_TOOLS%%bin/uagen.pl
 %%PRIVOXY_TOOLS%%bin/url-pattern-translator.pl
-sbin/privoxy
-share/man/man8/privoxy.8.gz
 etc/privoxy/default.action
 etc/privoxy/default.filter
 etc/privoxy/regression-tests.action
@@ -46,6 +44,7 @@ etc/privoxy/templates/toggle-mini
 etc/privoxy/templates/untrusted
 etc/privoxy/templates/url-info-osd.xml
 etc/privoxy/templates/wpad.dat
+sbin/privoxy
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/actions-file.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/appendix.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/config.html
@@ -70,3 +69,4 @@ etc/privoxy/templates/wpad.dat
 %%EXAMPLESDIR%%/match-all.action
 %%EXAMPLESDIR%%/trust
 %%EXAMPLESDIR%%/user.action
+share/man/man8/privoxy.8.gz
