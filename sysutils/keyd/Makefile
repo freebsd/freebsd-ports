@@ -1,33 +1,32 @@
 PORTNAME=	keyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.6.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Key remapping daemon for evdev
 WWW=		https://github.com/rvaiya/keyd
-
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
-LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
+LIB_DEPENDS=	libinotify.so:devel/libinotify
+
 USES=		gmake python:env shebangfix
 USE_GITHUB=	yes
-USE_RC_SUBR=	${PORTNAME}
 GH_ACCOUNT=	rvaiya
+USE_RC_SUBR=	${PORTNAME}
 SHEBANG_FILES=	scripts/*
 MAKE_ARGS=	VERSION="${DISTVERSIONFULL}" COMMIT=""
+USERS=		${PORTNAME}
+GROUPS=		${PORTNAME}
+PLIST_DIRS=	${ETCDIR}
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-application-mapper
-PLIST_DIRS=	${ETCDIR}
 PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
-
-USERS=		${PORTNAME}
-GROUPS=		${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES MANPAGES
 OPTIONS_DEFAULT=MANPAGES
