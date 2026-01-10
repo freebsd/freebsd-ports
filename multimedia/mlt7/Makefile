@@ -77,7 +77,7 @@ KDENLIVE_CMAKE_BOOL=	MOD_KDENLIVE
 MOVIT_DESC=		Enable Movit module
 MOVIT_LIB_DEPENDS=	libmovit.so:graphics/movit \
 			libepoxy.so:graphics/libepoxy
-MOVIT_USES=		gl xorg
+MOVIT_USES=		eigen:3 gl xorg
 MOVIT_USE=		gl=opengl xorg=x11
 MOVIT_CMAKE_BOOL=	MOD_MOVIT
 
