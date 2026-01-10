@@ -530,6 +530,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/EventFacet/Trace.pm
 %%PRIV_LIB%%/Test2/Formatter.pm
 %%PRIV_LIB%%/Test2/Formatter/TAP.pm
+%%PRIV_LIB%%/Test2/Handle.pm
 %%PRIV_LIB%%/Test2/Hub.pm
 %%PRIV_LIB%%/Test2/Hub/Interceptor.pm
 %%PRIV_LIB%%/Test2/Hub/Interceptor/Terminator.pm
@@ -627,6 +628,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/Test2/Util/Times.pm
 %%PRIV_LIB%%/Test2/Util/Trace.pm
 %%PRIV_LIB%%/Test2/V0.pm
+%%PRIV_LIB%%/Test2/V1.pm
+%%PRIV_LIB%%/Test2/V1/Base.pm
+%%PRIV_LIB%%/Test2/V1/Handle.pm
 %%PRIV_LIB%%/Test2/Workflow.pm
 %%PRIV_LIB%%/Test2/Workflow/BlockBase.pm
 %%PRIV_LIB%%/Test2/Workflow/Build.pm
@@ -1134,6 +1138,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN1%%/perl5433delta.1.gz
 %%MAN1%%/perl5434delta.1.gz
 %%MAN1%%/perl5435delta.1.gz
+%%MAN1%%/perl5436delta.1.gz
 %%MAN1%%/perl561delta.1.gz
 %%MAN1%%/perl56delta.1.gz
 %%MAN1%%/perl581delta.1.gz
@@ -1799,6 +1804,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::EventFacet::Trace.3.gz
 %%MAN3%%/Test2::Formatter.3.gz
 %%MAN3%%/Test2::Formatter::TAP.3.gz
+%%MAN3%%/Test2::Handle.3.gz
 %%MAN3%%/Test2::Hub.3.gz
 %%MAN3%%/Test2::Hub::Interceptor.3.gz
 %%MAN3%%/Test2::Hub::Interceptor::Terminator.3.gz
@@ -1894,6 +1900,9 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%MAN3%%/Test2::Util::Times.3.gz
 %%MAN3%%/Test2::Util::Trace.3.gz
 %%MAN3%%/Test2::V0.3.gz
+%%MAN3%%/Test2::V1.3.gz
+%%MAN3%%/Test2::V1::Base.3.gz
+%%MAN3%%/Test2::V1::Handle.3.gz
 %%MAN3%%/Test2::Workflow.3.gz
 %%MAN3%%/Test2::Workflow::BlockBase.3.gz
 %%MAN3%%/Test2::Workflow::Build.3.gz
@@ -2090,6 +2099,7 @@ etc/man.d/perl%%PKGNAMESUFFIX%%.conf
 %%PRIV_LIB%%/pod/perl5433delta.pod
 %%PRIV_LIB%%/pod/perl5434delta.pod
 %%PRIV_LIB%%/pod/perl5435delta.pod
+%%PRIV_LIB%%/pod/perl5436delta.pod
 %%PRIV_LIB%%/pod/perl561delta.pod
 %%PRIV_LIB%%/pod/perl56delta.pod
 %%PRIV_LIB%%/pod/perl581delta.pod
