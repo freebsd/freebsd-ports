@@ -1,7 +1,5 @@
 bin/goldendict-ng
 share/applications/io.github.xiaoyifang.goldendict_ng.desktop
-share/metainfo/io.github.xiaoyifang.goldendict_ng.metainfo.xml
-share/pixmaps/goldendict-ng.png
 %%DATADIR%%/locale/ar.qm
 %%DATADIR%%/locale/ay.qm
 %%DATADIR%%/locale/be.qm
@@ -11,6 +9,7 @@ share/pixmaps/goldendict-ng.png
 %%DATADIR%%/locale/de.qm
 %%DATADIR%%/locale/de_CH.qm
 %%DATADIR%%/locale/el.qm
+%%DATADIR%%/locale/en.qm
 %%DATADIR%%/locale/eo.qm
 %%DATADIR%%/locale/es.qm
 %%DATADIR%%/locale/es_AR.qm
@@ -35,8 +34,8 @@ share/pixmaps/goldendict-ng.png
 %%DATADIR%%/locale/qu.qm
 %%DATADIR%%/locale/ru.qm
 %%DATADIR%%/locale/sk.qm
-%%DATADIR%%/locale/sr.qm
 %%DATADIR%%/locale/sq.qm
+%%DATADIR%%/locale/sr.qm
 %%DATADIR%%/locale/sv.qm
 %%DATADIR%%/locale/tg.qm
 %%DATADIR%%/locale/tk.qm
@@ -45,3 +44,5 @@ share/pixmaps/goldendict-ng.png
 %%DATADIR%%/locale/vi.qm
 %%DATADIR%%/locale/zh_CN.qm
 %%DATADIR%%/locale/zh_TW.qm
+share/metainfo/io.github.xiaoyifang.goldendict_ng.metainfo.xml
+share/pixmaps/goldendict-ng.png
