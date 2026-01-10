@@ -1,7 +1,6 @@
 PORTNAME=	contour
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1.7494
-PORTREVISION=	2
+DISTVERSION=	0.6.2.8008
 CATEGORIES=	x11
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -23,19 +22,20 @@ LIB_DEPENDS=	libunicode.so:devel/libunicode-contour \
 		libfontconfig.so:x11-fonts/fontconfig
 TEST_DEPENDS=	${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2
 
-USES=		cmake:testing desktop-file-utils gl pkgconfig qt:6 xorg
+USES=		cmake:testing desktop-file-utils gl gnome pkgconfig qt:6 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	contour-terminal
 
 USE_XORG=	xcb
-USE_GL=		gl opengl
-USE_QT=		5compat base declarative multimedia tools:build
+USE_GL=		opengl
+USE_GNOME=	cairo
+USE_QT=		base declarative multimedia tools:build
 
 CMAKE_ON=		CONTOUR_INSTALL_TOOLS
 CMAKE_TESTING_ON=	CONTOUR_TESTING
 
-PORTDOCS=	README.md SECURITY.md TODO.md
+PORTDOCS=	README.md SECURITY.md
 
 OPTIONS_DEFINE=	DOCS
 
