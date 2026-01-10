@@ -623,6 +623,7 @@ bin/imstat
 bin/imupsam
 bin/init_user_dotfiles.py
 bin/inspec
+bin/install_bootcamp_data.tcsh
 bin/lesion_align
 bin/lib_dataTable.R
 bin/make_pq_script.py
