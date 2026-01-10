@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.68.20
 CATEGORIES=	lang
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Compact, efficient Prolog interpreter written in plain-old C
 WWW=		https://github.com/trealla-prolog/trealla/
 

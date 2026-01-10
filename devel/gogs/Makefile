@@ -4,7 +4,7 @@ DISTVERSION=	0.13.3
 PORTREVISION=	8
 CATEGORIES=	devel www
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Painless self-hosted Git service
 WWW=		https://gogs.io/
 

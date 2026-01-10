@@ -5,7 +5,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:YANICK
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Perl API to Houdini, a zero-dependency C web escaping library
 WWW=		https://metacpan.org/dist/Escape-Houdini
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	7.0.1
 CATEGORIES=	math
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Library of routines for performing sparse factorization
 WWW=		https://portal.nersc.gov/project/sparse/superlu/
 

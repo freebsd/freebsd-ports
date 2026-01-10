@@ -4,7 +4,7 @@ CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Library for setting up self-contained Kerberos 5 environments
 WWW=		https://github.com/pythongssapi/k5test
 

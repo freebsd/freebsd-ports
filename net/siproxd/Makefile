@@ -3,7 +3,7 @@ DISTVERSION=	0.8.3
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	me@svmhdvn.name
+MAINTAINER=	siva@FreeBSD.org
 COMMENT=	Proxy/masquerading daemon for the SIP protocol
 WWW=		http://siproxd.sourceforge.net/
 
