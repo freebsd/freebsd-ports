@@ -1,3 +1,39 @@
+  <vuln vid="d822839e-ee4f-11f0-b53e-0897988a1c07">
+    <topic>mail/mailpit -- Cross-Site WebSocket Hijacking</topic>
+    <affects>
+<package>
+<name>mailpit</name>
+<range><lt>1.28.2</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/security/advisories/GHSA-524m-q5m7-79mm">
+	  <p>The Mailpit WebSocket server is configured to accept
+	  connections from any origin. This lack of Origin header
+	  validation introduces a Cross-Site WebSocket Hijacking
+	  (CSWSH) vulnerability.</p>
+
+	  <p>An attacker can host a malicious website that, when
+	  visited by a developer running Mailpit locally, establishes
+	  a WebSocket connection to the victim's Mailpit instance
+	  (default ws://localhost:8025). This allows the attacker
+	  to intercept sensitive data such as email contents,
+	  headers, and server statistics in real-time.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-22689</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-524m-q5m7-79mm</url>
+    </references>
+    <dates>
+      <discovery>2026-01-10</discovery>
+      <entry>2026-01-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79c3c751-ee20-11f0-b17e-50ebf6bdf8e9">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
