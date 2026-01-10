@@ -1,5 +1,5 @@
 PORTNAME=	scribus
-DISTVERSION=	1.7.1
+DISTVERSION=	1.7.2
 CATEGORIES=	print editors
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/${PORTVERSION}/ \
 		http://www.scribus.net/downloads/${PORTVERSION}/

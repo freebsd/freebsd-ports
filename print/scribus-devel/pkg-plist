@@ -2294,6 +2294,7 @@ share/pixmaps/scribus.png
 %%DATADIR%%/icons/1_7_0/16/tabulator-dot.svg
 %%DATADIR%%/icons/1_7_0/16/tabulator-left.svg
 %%DATADIR%%/icons/1_7_0/16/tabulator-right.svg
+%%DATADIR%%/icons/1_7_0/16/text-background-color.svg
 %%DATADIR%%/icons/1_7_0/16/text-on-path-distance.svg
 %%DATADIR%%/icons/1_7_0/16/text-on-path-offset.svg
 %%DATADIR%%/icons/1_7_0/16/text-wrap-boundingbox.svg
