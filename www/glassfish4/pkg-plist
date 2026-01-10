@@ -29,25 +29,26 @@
 %%DATADIR%%/glassfish/docs/features.html
 %%DATADIR%%/glassfish/docs/graphics/logo_sun.gif
 %%DATADIR%%/glassfish/docs/quickstart.html
-%%DATADIR%%/glassfish/domains/domain1/config/admin-keyfile
-%%DATADIR%%/glassfish/domains/domain1/config/cacerts.jks
-%%DATADIR%%/glassfish/domains/domain1/config/default-logging.properties
-%%DATADIR%%/glassfish/domains/domain1/config/default-web.xml
-%%DATADIR%%/glassfish/domains/domain1/config/domain-passwords
-%%DATADIR%%/glassfish/domains/domain1/config/domain.xml
-%%DATADIR%%/glassfish/domains/domain1/config/glassfish-acc.xml
-%%DATADIR%%/glassfish/domains/domain1/config/javaee.server.policy
-%%DATADIR%%/glassfish/domains/domain1/config/keyfile
-%%DATADIR%%/glassfish/domains/domain1/config/keystore.jks
-%%DATADIR%%/glassfish/domains/domain1/config/logging.properties
-%%DATADIR%%/glassfish/domains/domain1/config/login.conf
-%%DATADIR%%/glassfish/domains/domain1/config/restrict.server.policy
-%%DATADIR%%/glassfish/domains/domain1/config/server.policy
-%%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-1.0.xml
-%%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-2.0.xml
+@sample %%DATADIR%%/glassfish/domains/domain1/config/admin-keyfile.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/cacerts.jks.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/default-logging.properties.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/default-web.xml.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/domain-passwords.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/domain.xml.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/glassfish-acc.xml.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/javaee.server.policy.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/keyfile.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/keystore.jks.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/logging.properties.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/login.conf.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/restrict.server.policy.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/server.policy.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-1.0.xml.sample
+@sample %%DATADIR%%/glassfish/domains/domain1/config/wss-server-config-2.0.xml.sample
 %%DATADIR%%/glassfish/domains/domain1/docroot/index.html
 %%DATADIR%%/glassfish/domains/domain1/init-info/domain-info.xml
 %%DATADIR%%/glassfish/legal/3RD-PARTY-LICENSE-WEB-PROFILE.txt
+%%DATADIR%%/glassfish/legal/3RD-PARTY-LICENSE.txt
 %%DATADIR%%/glassfish/legal/LICENSE.txt
 %%DATADIR%%/glassfish/lib/appclient/appclientlogin.conf
 %%DATADIR%%/glassfish/lib/appclient/client.policy
@@ -137,7 +138,7 @@
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-4.0.2.10.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-suntheme-4.0.2.10.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/faces-config.xml
-%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-4.1.jar
+%%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-4.1.2.jar
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/sun-web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/WEB-INF/web.xml
 %%DATADIR%%/glassfish/lib/install/applications/__admingui/index.jsf
@@ -200,6 +201,14 @@
 %%DATADIR%%/glassfish/lib/install/databases/jsr352-oracle.sql
 %%DATADIR%%/glassfish/lib/install/databases/jsr352-postgresql.sql
 %%DATADIR%%/glassfish/lib/install/databases/jsr352-sybase-ace.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/checkpoint_data_ddl.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/create-all-tables.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/drop-all-tables.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/execution_instance_data_ddl.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/job_instance_data_ddl.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/job_status_ddl.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/step_execution_instance_data_ddl.sql
+%%DATADIR%%/glassfish/lib/install/databases/oracle/step_status_ddl.sql
 %%DATADIR%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_db2.sql
 %%DATADIR%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_derby.sql
 %%DATADIR%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_mssqlserver.sql
@@ -536,8 +545,8 @@
 %%DATADIR%%/glassfish/modules/cmp-support-ejb.jar
 %%DATADIR%%/glassfish/modules/cmp-support-sqlstore.jar
 %%DATADIR%%/glassfish/modules/cmp-utility.jar
-%%DATADIR%%/glassfish/modules/com.ibm.jbatch-ri-spi.jar
-%%DATADIR%%/glassfish/modules/com.ibm.jbatch-runtime-all.jar
+%%DATADIR%%/glassfish/modules/com.ibm.jbatch.container.jar
+%%DATADIR%%/glassfish/modules/com.ibm.jbatch.spi.jar
 %%DATADIR%%/glassfish/modules/common-util.jar
 %%DATADIR%%/glassfish/modules/concurrent-connector.jar
 %%DATADIR%%/glassfish/modules/concurrent-impl.jar
@@ -563,7 +572,6 @@
 %%DATADIR%%/glassfish/modules/console-updatecenter-plugin.jar
 %%DATADIR%%/glassfish/modules/console-web-plugin.jar
 %%DATADIR%%/glassfish/modules/container-common.jar
-%%DATADIR%%/glassfish/modules/core.jar
 %%DATADIR%%/glassfish/modules/dataprovider.jar
 %%DATADIR%%/glassfish/modules/dbschema-repackaged.jar
 %%DATADIR%%/glassfish/modules/deployment-admin.jar
@@ -573,6 +581,7 @@
 %%DATADIR%%/glassfish/modules/deployment-javaee-core.jar
 %%DATADIR%%/glassfish/modules/deployment-javaee-full.jar
 %%DATADIR%%/glassfish/modules/dol.jar
+%%DATADIR%%/glassfish/modules/ejb-client.jar
 %%DATADIR%%/glassfish/modules/ejb-container.jar
 %%DATADIR%%/glassfish/modules/ejb-full-container.jar
 %%DATADIR%%/glassfish/modules/ejb-internal-api.jar
@@ -619,6 +628,7 @@
 %%DATADIR%%/glassfish/modules/ha-shoal-cache-store.jar
 %%DATADIR%%/glassfish/modules/hk2-api.jar
 %%DATADIR%%/glassfish/modules/hk2-config.jar
+%%DATADIR%%/glassfish/modules/hk2-core.jar
 %%DATADIR%%/glassfish/modules/hk2-locator.jar
 %%DATADIR%%/glassfish/modules/hk2-runlevel.jar
 %%DATADIR%%/glassfish/modules/hk2-utils.jar
@@ -670,15 +680,18 @@
 %%DATADIR%%/glassfish/modules/jdbc-config.jar
 %%DATADIR%%/glassfish/modules/jdbc-runtime.jar
 %%DATADIR%%/glassfish/modules/jersey-bean-validation.jar
+%%DATADIR%%/glassfish/modules/jersey-cdi1x-servlet.jar
+%%DATADIR%%/glassfish/modules/jersey-cdi1x-transaction.jar
+%%DATADIR%%/glassfish/modules/jersey-cdi1x.jar
 %%DATADIR%%/glassfish/modules/jersey-client.jar
 %%DATADIR%%/glassfish/modules/jersey-common.jar
 %%DATADIR%%/glassfish/modules/jersey-container-grizzly2-http.jar
 %%DATADIR%%/glassfish/modules/jersey-container-servlet-core.jar
 %%DATADIR%%/glassfish/modules/jersey-container-servlet.jar
 %%DATADIR%%/glassfish/modules/jersey-entity-filtering.jar
-%%DATADIR%%/glassfish/modules/jersey-gf-cdi.jar
 %%DATADIR%%/glassfish/modules/jersey-gf-ejb.jar
 %%DATADIR%%/glassfish/modules/jersey-guava.jar
+%%DATADIR%%/glassfish/modules/jersey-media-jaxb.jar
 %%DATADIR%%/glassfish/modules/jersey-media-json-jackson.jar
 %%DATADIR%%/glassfish/modules/jersey-media-json-jettison.jar
 %%DATADIR%%/glassfish/modules/jersey-media-json-processing.jar
@@ -830,8 +843,10 @@
 %%DATADIR%%/mq/bin/imqkeytool
 %%DATADIR%%/mq/bin/imqobjmgr
 %%DATADIR%%/mq/bin/imqusermgr
+%%DATADIR%%/mq/etc/imqbrokerd.conf
 %%DATADIR%%/mq/etc/imqenv.conf
 %%DATADIR%%/mq/etc/passfile.sample
+%%DATADIR%%/mq/etc/rc/imq
 %%DATADIR%%/mq/etc/registry/servicetag.xml
 %%DATADIR%%/mq/etc/xml/com.sun.cmm.mq.xml
 %%DATADIR%%/mq/etc/xml/template/com.sun.cmm.mq.xml
@@ -951,46 +966,6 @@
 %%DATADIR%%/mq/lib/props/broker/default.properties
 %%DATADIR%%/mq/lib/props/broker/install.properties
 %%DATADIR%%/mq/lib/tyrus-standalone-client.jar
-%%DATADIR%%/pkg/javadocs/allclasses-frame.html
-%%DATADIR%%/pkg/javadocs/allclasses-noframe.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/AbstractFileAction.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Action.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/DependAction.Type.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/DependAction.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/DirAction.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/FileAction.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Fmri.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Image.FmriState.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Image.ImagePlan.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Image.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/ImagePlanProgressTracker.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/LicenseAction.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/LinkAction.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Manifest.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/SetAction.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/SystemInfo.UpdateCheckFrequency.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/SystemInfo.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Variant.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Version.DotSequence.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/Version.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/package-frame.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/package-summary.html
-%%DATADIR%%/pkg/javadocs/com/sun/pkg/client/package-tree.html
-%%DATADIR%%/pkg/javadocs/constant-values.html
-%%DATADIR%%/pkg/javadocs/deprecated-list.html
-%%DATADIR%%/pkg/javadocs/help-doc.html
-%%DATADIR%%/pkg/javadocs/index-all.html
-%%DATADIR%%/pkg/javadocs/index.html
-%%DATADIR%%/pkg/javadocs/overview-tree.html
-%%DATADIR%%/pkg/javadocs/package-list
-%%DATADIR%%/pkg/javadocs/resources/background.gif
-%%DATADIR%%/pkg/javadocs/resources/tab.gif
-%%DATADIR%%/pkg/javadocs/resources/titlebar.gif
-%%DATADIR%%/pkg/javadocs/resources/titlebar_end.gif
-%%DATADIR%%/pkg/javadocs/stylesheet.css
-%%DATADIR%%/pkg/lib/pkg-bootstrap.jar
-%%DATADIR%%/pkg/lib/pkg-bootstub.sh
-%%DATADIR%%/pkg/lib/pkg-client.jar
 @dir %%DATADIR%%/glassfish/domains/domain1/applications
 @dir %%DATADIR%%/glassfish/domains/domain1/autodeploy/.autodeploystatus
 @dir %%DATADIR%%/glassfish/domains/domain1/autodeploy/bundles
@@ -1001,5 +976,4 @@
 @dir %%DATADIR%%/glassfish/domains/domain1/lib/ext
 @dir %%DATADIR%%/glassfish/domains/domain1/logs
 @dir %%DATADIR%%/glassfish/lib/endorsed
-@dir %%DATADIR%%/glassfish/osgi/felix/conf
 @dir %%DATADIR%%/mq/lib/install

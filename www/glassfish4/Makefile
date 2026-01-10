@@ -1,40 +1,43 @@
 PORTNAME=	glassfish
-PORTVERSION=	4.1
+DISTVERSION=	4.1.2
 CATEGORIES=	www java
-MASTER_SITES=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
+MASTER_SITES=	https://download.java.net/${PORTNAME}/${DISTVERSION}/release/ \
+		https://download.oracle.com/${PORTNAME}/${DISTVERSION}/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation of the Java EE application server
-WWW=		https://glassfish.java.net/
+WWW=		https://javaee.github.io/glassfish/
+
+LICENSE=	CDDL
+LICENSE_FILE=	${WRKSRC}/glassfish/legal/LICENSE.txt
+
+DEPRECATED=	Very old version reached EoL, use www/glassfish7 instead
+EXPIRATION_DATE=	2026-03-31
 
 USES=		cpe java zip
 CPE_VENDOR=	oracle
+USE_RC_SUBR=	${PORTNAME}
 
+CONFLICTS_INSTALL=	${PORTNAME}
+
+DATADIR=	${PREFIX}/${PORTNAME}-${DISTVERSION}
+EXTRACT_BEFORE_ARGS=	-qo -x '*.bat' -x '*.exe'
+
+NO_ARCH=	yes
 NO_BUILD=	yes
-
-WRKSRC=		${WRKDIR}/glassfish4
-DATADIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 
 # Since we USES=java, we propagate the received JAVA_HOME variable to the
 # template files, since it is used by the rc script.
-SUB_LIST=	GLASSFISHVERSION=${PORTVERSION} \
+SUB_LIST=	GLASSFISHVERSION=${DISTVERSION} \
 		JAVA_HOME=${JAVA_HOME}
 
-DOWNLOAD_URL=	http://dlc.sun.com.edgesuite.net/glassfish/${PORTVERSION}/release/
-
-USE_RC_SUBR=	glassfish
-GLASSFISH_BIN_FILES=	appclient asadmin capture-schema jspc package-appclient schemagen startserv stopserv wscompile wsdeploy wsgen wsimport xjc
-
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}${DISTVERSION:R:R}
 
 do-install:
-	@${FIND} ${WRKSRC} -name '*.bat' -delete
-	@${FIND} ${WRKSRC} -name '*.exe' -delete
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
-	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/*
-	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/mq/bin/*
-.for x in ${GLASSFISH_BIN_FILES}
-	@${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/glassfish/bin/${x}
-.endfor
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR})
+	${FIND} ${STAGEDIR}${DATADIR}/glassfish/domains -path "*/config/*" -type f -exec ${MV} {} {}.sample \;
+	${CHMOD} ${BINMODE} ${STAGEDIR}${DATADIR}/bin/* \
+		${STAGEDIR}${DATADIR}/mq/bin/* \
+		${STAGEDIR}${DATADIR}/glassfish/bin/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
