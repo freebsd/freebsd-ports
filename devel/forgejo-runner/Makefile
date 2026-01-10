@@ -1,44 +1,53 @@
 PORTNAME=	act_runner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.1.0
-PORTREVISION=	6
+DISTVERSION=	12.5.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	forgejo-
-
-PATCH_SITES=	https://code.forgejo.org/forgejo/runner/commit/
-PATCHFILES=	34731a41be456d5b6328d8c118ba8e0b6c6a226b.diff:-p1
 
 MAINTAINER=	daniel@morante.net
 COMMENT=	Act runner is a runner for Forgejo based on the Gitea Act runner
 WWW=		https://code.forgejo.org/forgejo/runner
 
-LICENSE=	MIT APACHE20
+LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/act/container/DOCKER_LICENSE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-USES=	go:modules
+USES=		go:1.25+,modules
 USE_RC_SUBR=	${PORTNAME}
 
-GO_MODULE=	code.forgejo.org/forgejo/runner/v9
+GO_MODULE=	code.forgejo.org/forgejo/runner/v${DISTVERSION:R:R}
 GO_BUILDFLAGS=	-ldflags "${LD_FLAG_STRING}"
 
-LD_FLAG_STRING=	-s ${LD_FLAG_X_PREFIX}.version=${DISTVERSION}
+LD_FLAG_STRING=		-s ${LD_FLAG_X_PREFIX}.version=${DISTVERSION}
 LD_FLAG_X_PREFIX=	-X ${GO_MODULE}/internal/pkg/ver
 
 DATADIR=	/var/db/${PORTNAME}
+LOGDIR=		/var/log/${PORTNAME}
+PIDDIR=		/var/run/${PORTNAME}
+SUB_LIST=	ACT_RUNNER_USER=${ACT_RUNNER_USER} \
+		LOGDIR=${LOGDIR} \
+		PIDDIR=${PIDDIR}
 
 ACT_RUNNER_USER?=	${PORTNAME}
 ACT_RUNNER_GROUP?=	${PORTNAME}
 .if ${ACT_RUNNER_USER} == ${PORTNAME}
-USERS=	${ACT_RUNNER_USER}
+USERS=		${ACT_RUNNER_USER}
 .endif
 .if ${ACT_RUNNER_GROUP} == ${PORTNAME}
-GROUPS=	${ACT_RUNNER_GROUP}
+GROUPS=		${ACT_RUNNER_GROUP}
 .endif
 
+PLIST_SUB=	ACT_RUNNER_GROUP=${ACT_RUNNER_GROUP} \
+		ACT_RUNNER_USER=${ACT_RUNNER_USER} \
+		LOGDIR=${LOGDIR} \
+		PIDDIR=${PIDDIR}
+
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${DATADIR} \
+		 ${STAGEDIR}${ETCDIR} \
+		 ${STAGEDIR}${LOGDIR} \
+		 ${STAGEDIR}${PIDDIR}
 	${INSTALL_DATA} ${BUILD_WRKSRC}/internal/pkg/config/config.example.yaml \
 		${STAGEDIR}${ETCDIR}/act_runner.conf.sample
 
