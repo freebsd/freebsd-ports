@@ -1,10 +1,7 @@
 PORTNAME=	ormar
-DISTVERSION=	0.20.2
+DISTVERSION=	0.21.0
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/mekanix/ormar/commit/
-PATCHFILES+=	7268dfe2d6287607cc9ae0e37ac62b942c9574ef.patch:-p1
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Simple async ORM with fastapi in mind and pydantic validation
@@ -34,11 +31,12 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	collerek
 USE_PYTHON=	autoplist concurrent cryptography pep517 pytest
-PYTEST_BROKEN_TESTS=	test_read_main test_signal_functions \
-			test_multiple_signals test_static_methods_as_signals \
-			test_methods_as_signals test_multiple_senders_signal \
-			test_modifing_the_instance test_custom_signal \
-			test_relation_signal_functions
+PYTEST_BROKEN_TESTS=	test_benchmark_aggregate test_benchmark_bulk_create \
+			test_benchmark_bulk_update test_benchmark_create \
+			test_benchmark_delete test_benchmark_get \
+			test_benchmark_init test_benchmark_iterate \
+			test_benchmark_save test_benchmark_update \
+			test_benchmark_values
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}
 
