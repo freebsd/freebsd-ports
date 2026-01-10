@@ -1,5 +1,5 @@
 PORTNAME=	serd
-DISTVERSION=	0.32.4
+DISTVERSION=	0.32.6
 CATEGORIES=	devel
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -16,6 +16,6 @@ USE_LDCONFIG=	yes
 MESON_ARGS=	-Ddocs=disabled
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-PLIST_SUB=	VERSION=${PORTVERSION}
+PLIST_SUB=	VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>
