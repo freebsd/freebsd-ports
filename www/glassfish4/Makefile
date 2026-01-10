@@ -11,7 +11,7 @@ WWW=		https://javaee.github.io/glassfish/
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/glassfish/legal/LICENSE.txt
 
-DEPRECATED=	Very old version reached EoL, use www/glassfish7 instead
+DEPRECATED=	Very old version reached EoL, use www/glassfish 7.x instead
 EXPIRATION_DATE=	2026-03-31
 
 USES=		cpe java zip
