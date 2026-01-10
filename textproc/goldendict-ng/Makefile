@@ -38,7 +38,6 @@ OPTIONS_DEFINE=		EPWING SPEECH
 EPWING_DESC=	Japanese EPWING dictionary format support
 SPEECH_DESC=	Text to speech support
 
-EPWING_BROKEN=		unfetchable
 EPWING_LIB_DEPENDS=	libeb.so:japanese/eb
 EPWING_CMAKE_OFF=	-DWITH_EPWING_SUPPORT=OFF
 SPEECH_USE=		QT=speech
