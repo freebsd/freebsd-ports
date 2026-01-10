@@ -1,4 +1,4 @@
-TIMESTAMP = 1767168759
+TIMESTAMP = 1768038687
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aes-0.8.4.crate) = b169f7a6d4742236a0a00c541b845991d0ac43e546831af1249753ab4c3aa3a0
@@ -1247,5 +1247,5 @@ SHA256 (rust/crates/zstd-safe-7.2.4.crate) = 8f49c4d5f0abb602a93fb8736af2a4f4dd9
 SIZE (rust/crates/zstd-safe-7.2.4.crate) = 29350
 SHA256 (rust/crates/zstd-sys-2.0.16+zstd.1.5.7.crate) = 91e19ebc2adc8f83e43039e79776e3fda8ca919132d68a1fed6a5faca2683748
 SIZE (rust/crates/zstd-sys-2.0.16+zstd.1.5.7.crate) = 775620
-SHA256 (dani-garcia-vaultwarden-1.35.1_GH0.tar.gz) = d5b1fd5a16987db04d57d5adf2317fd76c273fa7eac82bb104bc95333132fda8
-SIZE (dani-garcia-vaultwarden-1.35.1_GH0.tar.gz) = 733619
+SHA256 (dani-garcia-vaultwarden-1.35.2_GH0.tar.gz) = b976b1af5de9c382bbe50e2219ad9ff56396d3a0a50742c935665284ca64146b
+SIZE (dani-garcia-vaultwarden-1.35.2_GH0.tar.gz) = 734205
