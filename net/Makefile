@@ -19,6 +19,7 @@
     SUBDIR += aluminum
     SUBDIR += amnezia-kmod
     SUBDIR += amnezia-tools
+    SUBDIR += amneziawg-go
     SUBDIR += amqpcat
     SUBDIR += aoe
     SUBDIR += apache-commons-net
