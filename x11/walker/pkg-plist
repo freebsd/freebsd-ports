@@ -7,6 +7,7 @@ etc/xdg/walker/themes/default/item_bookmarks.xml
 etc/xdg/walker/themes/default/item_calc.xml
 etc/xdg/walker/themes/default/item_clipboard.xml
 etc/xdg/walker/themes/default/item_dmenu.xml
+etc/xdg/walker/themes/default/item_dnfpackages.xml
 etc/xdg/walker/themes/default/item_files.xml
 etc/xdg/walker/themes/default/item_providerlist.xml
 etc/xdg/walker/themes/default/item_symbols.xml
