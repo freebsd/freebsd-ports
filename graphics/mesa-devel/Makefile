@@ -4,8 +4,6 @@ DISTVERSIONSUFFIX=	-g5ac41be6777
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	https://github.com/mesa3d/${GL_PROJECT}/commit/:github
-PATCHFILES+=	700efacda59c.patch:-p1:github
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	de5cf0a44b50.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/22246
 
