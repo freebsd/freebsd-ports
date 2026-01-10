@@ -1,3 +1,32 @@
+  <vuln vid="79c3c751-ee20-11f0-b17e-50ebf6bdf8e9">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq-php82</name>
+	<name>phpmyfaq-php83</name>
+	<name>phpmyfaq-php84</name>
+	<name>phpmyfaq-php85</name>
+	<range><lt>4.0.16</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyFAQ team reports:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2025-12-29/">
+	  <p>Stored cross-site scripting (XSS) and unauthenticated config backup
+	    download vulnerability</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://www.phpmyfaq.de/security/advisory-2025-12-29/</url>
+    </references>
+    <dates>
+      <discovery>2025-12-29</discovery>
+      <entry>2026-01-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8826fb1c-ebd8-11f0-a15a-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
