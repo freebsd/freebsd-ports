@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	gpac-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Tool for merge mpg4 from Gpac
 WWW=		https://gpac.sourceforge.net/
 

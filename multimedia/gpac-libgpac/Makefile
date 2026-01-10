@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	multimedia
 PKGNAMESUFFIX=	-libgpac
 
-MAINTAINER=	multimedia@FreeBSD.org
+MAINTAINER=	olivier@FreeBSD.org
 COMMENT=	Gpac MPEG-4 Systems library and headers
 WWW=		https://gpac.sourceforge.net/
 
