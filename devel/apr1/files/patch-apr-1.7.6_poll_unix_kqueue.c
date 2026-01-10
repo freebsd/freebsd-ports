@@ -1,8 +1,8 @@
 # upstram PR: https://bz.apache.org/bugzilla/show_bug.cgi?id=59914
 # FreeBSD PR: 211430
 ========================================================================
---- apr-1.7.5/poll/unix/kqueue.c.orig	2022-01-19 23:17:18 UTC
-+++ apr-1.7.5/poll/unix/kqueue.c
+--- apr-1.7.6/poll/unix/kqueue.c.orig	2022-01-19 23:17:18 UTC
++++ apr-1.7.6/poll/unix/kqueue.c
 @@ -25,21 +25,40 @@
  
  #ifdef HAVE_KQUEUE

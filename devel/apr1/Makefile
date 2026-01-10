@@ -1,10 +1,9 @@
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/apr
-DISTFILES=	apr-${APR_VERSION}.tar.gz \
-		apr-util-${APU_VERSION}.tar.gz
+DISTFILES=	apr-${APR_VERSION}.tar.bz2 \
+		apr-util-${APU_VERSION}.tar.bz2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache Portability Library
@@ -14,11 +13,11 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-USES=		autoreconf iconv pathfix libtool cpe
+USES=		autoreconf iconv pathfix libtool cpe tar:bz2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-APR_VERSION=	1.7.5
+APR_VERSION=	1.7.6
 APU_VERSION=	1.6.3
 
 CPE_VENDOR=	apache
