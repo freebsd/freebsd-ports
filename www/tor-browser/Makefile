@@ -1,6 +1,6 @@
 PORTNAME=	tor-browser
 DISTVERSION=	16.0a1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www net security wayland
 TAG_BASE=	d366318349af0977ff23b492fa87e436e8672fdd
 TAG_TOR=	45b67d3be52f79e8a4b361fd04ab12f342ab0016
@@ -81,13 +81,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 
 MOZ_EXPORT=	MOZ_TELEMETRY_REPORTING="" \
 		MOZILLA_OFFICIAL="1" \
-		MOZ_OFFICIAL_BRANDING="1" \
 		MOZ_APP_DISPLAYNAME="Tor Browser" \
 		MOZ_APP_NAME="tor-browser" \
+		MOZ_BRANDING_DIRECTORY="browser/branding/tb-release" \
 		MOZ_CHROME_MULTILOCALE="${LOCALES}"
 
 MOZ_OPTIONS=	--with-base-browser-version=${DISTVERSION} \
-		--enable-official-branding \
 		--enable-optimize \
 		--enable-bundled-fonts \
 		--disable-tests \
