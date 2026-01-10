@@ -1,6 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.282
-PORTREVISION=	1
+DISTVERSION=	0.284
 CATEGORIES=	emulators games
 
 MAINTAINER=	laurent.chardon@gmail.com
@@ -38,7 +37,7 @@ USES=		compiler:c++17-lang gmake jpeg llvm:min=16 localbase \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
-GH_TAGNAME=	mame${DISTVERSION:S/.//}
+GH_TAGNAME=	${PORTNAME}${DISTVERSION:S/.//}
 USE_SDL=	sdl2
 USE_XORG=	x11 xext xi xinerama xrender
 
@@ -73,9 +72,6 @@ MAKE_ENV=	FORCE_DRC_C_BACKEND=1 \
 CFLAGS_aarch64=	-march=armv8-a+crc+crypto
 
 EXTRACT_AFTER_ARGS=	${_DIST_EXCLUDES:S,^,--exclude ,}
-
-PORTSCOUT=	site:https://github.com/mamedev/mame/releases \
-		limit:0\.[0-9]+
 
 SUB_FILES=	mame.ini pkg-message plugin.ini ui.ini
 
