@@ -14,6 +14,7 @@ BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg2:security/gnupg \
 		wget:ftp/wget
 LIB_DEPENDS=	libcourier-unicode.so:devel/courier-unicode \
+		libfam.so.0:devel/gamin \
 		libgdbm.so:databases/gdbm \
 		libidn2.so:dns/libidn2 \
 		libpcre2-8.so:devel/pcre2
@@ -53,7 +54,7 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-USES=		fam gettext gmake libtool localbase perl5 pkgconfig shebangfix \
+USES=		gettext gmake libtool localbase perl5 pkgconfig shebangfix \
 		ssl tar:bzip2
 USE_RC_SUBR=	courier
 USE_SUBMAKE=	yes

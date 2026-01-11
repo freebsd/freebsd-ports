@@ -8,7 +8,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Gamin (File Access Monitor implementation)
 
-USES=		fam perl5
+LIB_DEPENDS=	libfam.so.0:devel/gamin
+
+USES=		perl5
 USE_PERL5=	configure
 
 pre-configure:

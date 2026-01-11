@@ -23,7 +23,7 @@ INOTIFY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_INOTIFY
 
 # TODO: FAM is broken, and hangs on NFS
 FAM_DESC=		Filesystem alteration notifications using fam (broken: hangs on NFS)
-FAM_USES=		fam
+FAM_LIB_DEPENDS=	libfam.so.0:devel/gamin
 FAM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_FAM
 
 CMAKE_ARGS=	-DACCOUNTS_SERVICE_ICON_DIR:PATH=/var/db/AccountsService/icons

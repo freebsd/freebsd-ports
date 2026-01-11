@@ -31,7 +31,7 @@ HTTPS_LOGIN_DESC=	Generate https:// URLs only for login
 MIMETYPES_DESC=	search for a mime.types file
 SENTRENAME_DESC=	Periodic rename the Sent folder
 CHARSET_DESC=	charsets
-FAM_USES=	fam
+FAM_LIB_DEPENDS=	libfam.so.0:devel/gamin
 
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
 

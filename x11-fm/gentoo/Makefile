@@ -18,7 +18,7 @@ CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
 
 OPTIONS_DEFINE=	FAM DOCS
 
-FAM_USES=		fam
+FAM_LIB_DEPENDS=	libfam.so.0:devel/gamin
 FAM_CONFIGURE_ENABLE=	fam
 
 post-patch:

@@ -286,7 +286,7 @@ DEVELOPER_VARS=			_SHARED_MODULES+="auth_skel pdb_test gpext_security gpext_regi
 DEVELOPER_VARS_OFF=		_GDB_CMD=true
 
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
-FAM_USES=			fam
+FAM_LIB_DEPENDS=		libfam.so.0:devel/gamin
 FAM_CONFIGURE_WITH=		fam
 
 FRUIT_PREVENTS=			ZEROCONF_NONE

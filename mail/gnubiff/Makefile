@@ -8,11 +8,12 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	Mail notification program for Gnome
 WWW=		https://gnubiff.sourceforge.net/
 
-LIB_DEPENDS=	libpopt.so:devel/popt
+LIB_DEPENDS=	libfam.so.0:devel/gamin \
+		libpopt.so:devel/popt
 
 OPTIONS_DEFINE=	NLS
 
-USES=		compiler:c++11-lang cpe fam gmake gnome pkgconfig
+USES=		compiler:c++11-lang cpe gmake gnome pkgconfig
 USE_GNOME=	intlhack libglade2
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
