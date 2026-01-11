@@ -1,5 +1,5 @@
-TIMESTAMP = 1767627232
-SHA256 (go/devel_air-go/air-v1.63.6/v1.63.6.mod) = d4164ed6027ba747c0e0ef088d4f130e895c876d8a37fdeffeec192c3316cc0e
-SIZE (go/devel_air-go/air-v1.63.6/v1.63.6.mod) = 1146
-SHA256 (go/devel_air-go/air-v1.63.6/v1.63.6.zip) = 6bbcca5a7a736449054db5212c628a418240b949e983c3b172dd0f97ef626e5b
-SIZE (go/devel_air-go/air-v1.63.6/v1.63.6.zip) = 1067845
+TIMESTAMP = 1768097584
+SHA256 (go/devel_air-go/air-v1.63.7/v1.63.7.mod) = d4164ed6027ba747c0e0ef088d4f130e895c876d8a37fdeffeec192c3316cc0e
+SIZE (go/devel_air-go/air-v1.63.7/v1.63.7.mod) = 1146
+SHA256 (go/devel_air-go/air-v1.63.7/v1.63.7.zip) = a97d860bef1b39231aa88fae68bd84fb5bac57f33da863e4958af4bfab57fa9b
+SIZE (go/devel_air-go/air-v1.63.7/v1.63.7.zip) = 1067919
