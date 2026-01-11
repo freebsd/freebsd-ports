@@ -1,5 +1,5 @@
-TIMESTAMP = 1757523527
-SHA256 (go/devel_gomigrate/migrate-v4.19.0/v4.19.0.mod) = cdb17f47bf3c505feedc14d89b69dcbe8f944a41e5623ad34dcbec6257650b0e
-SIZE (go/devel_gomigrate/migrate-v4.19.0/v4.19.0.mod) = 10644
-SHA256 (go/devel_gomigrate/migrate-v4.19.0/v4.19.0.zip) = 142f0a3537bed5acfb408d75c548aa8fffaed914566127d4ff1a8be239d166fd
-SIZE (go/devel_gomigrate/migrate-v4.19.0/v4.19.0.zip) = 376462
+TIMESTAMP = 1768116116
+SHA256 (go/devel_gomigrate/migrate-v4.19.1/v4.19.1.mod) = 55a6dc7daf19ba47ba71b0d896d85387430ab2a3c0e4a8ea9b638da7f8da7f17
+SIZE (go/devel_gomigrate/migrate-v4.19.1/v4.19.1.mod) = 11188
+SHA256 (go/devel_gomigrate/migrate-v4.19.1/v4.19.1.zip) = 6ef44c4cada159a88e57ea15ace548f3a2a25332ef6383a1d35eb1c07ab709e0
+SIZE (go/devel_gomigrate/migrate-v4.19.1/v4.19.1.zip) = 417129
