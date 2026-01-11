@@ -16,7 +16,7 @@ BUILD_DEPENDS=	git>=2.38.1:devel/git
 #		libicuuc.so:devel/icu
 #RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
-USES=		gmake go:1.24+,modules,no_targets pkgconfig
+USES=		gmake go:modules,no_targets pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
