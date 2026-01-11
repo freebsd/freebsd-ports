@@ -1,5 +1,5 @@
---- src/Makefile	2025-09-23 06:59:40.000000000 -0700
-+++ src/Makefile	2025-10-12 08:02:29.393309000 -0700
+--- src/Makefile	2025-11-07 00:46:03.000000000 -0800
++++ src/Makefile	2026-01-10 15:39:06.768699000 -0800
 @@ -49,9 +49,11 @@
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
@@ -12,7 +12,7 @@
  
  ARCH_FLAGS =
  
-@@ -112,7 +114,7 @@
+@@ -113,7 +115,7 @@
  USE_PRELUDE?=no
  USE_ZEROMQ?=no
  USE_GEOIP?=no
@@ -21,25 +21,25 @@
  USE_BIG_ENDIAN=no
  USE_AUDIT=no
  MINGW_HOST=unknown
-@@ -177,6 +179,8 @@
+@@ -178,6 +180,8 @@
  DEFINES+=-DUSER=\"${WAZUH_USER}\"
  DEFINES+=-DGROUPGLOBAL=\"${WAZUH_GROUP}\"
  
-+OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include -I${ROUTER}include -I${CONTENT_MANAGER}include -I${VULNERABILITY_SCANNER}include -I${INVENTORY_HARVESTER}include -I./shared_modules/
++OSSEC_CFLAGS+=-I./ -I./headers/ -I${EXTERNAL_OPENSSL}include -I$(EXTERNAL_JSON) -I${EXTERNAL_LIBYAML}include -I${EXTERNAL_CURL}include -I${EXTERNAL_MSGPACK}include -I${EXTERNAL_BZIP2} -I${SHARED_MODULES}common -I${DBSYNC}include -I${RSYNC}include -I${SYSCOLLECTOR}include  -I${SYSINFO}include  -I${EXTERNAL_LIBPCRE2}include -I${EXTERNAL_RPM}/builddir/output/include -I${SYSCHECK}include -I${ROUTER}include -I${CONTENT_MANAGER}include -I${VULNERABILITY_SCANNER}include -I${INVENTORY_HARVESTER}include -I./shared_modules/ -I${LOCALBASE}/include/libepoll-shim
 +
  ifneq (${TARGET},winagent)
  		DEFINES+=-D${uname_S}
  ifeq (${uname_S},Linux)
-@@ -271,13 +275,14 @@
+@@ -272,13 +276,14 @@
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
 -		OSSEC_LDFLAGS+=-pthread
-+		OSSEC_LDFLAGS+=-pthread -lnghttp2
++		OSSEC_LDFLAGS+=-pthread -lnghttp2 -lepoll-shim
  		OSSEC_LDFLAGS+=-L/usr/local/lib
  		OSSEC_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../lib'
 -		AR_LDFLAGS+=-pthread
-+		AR_LDFLAGS+=-pthread -lnghttp2
++		AR_LDFLAGS+=-pthread -lnghttp2 -lepoll-shim
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
@@ -47,7 +47,7 @@
  else
  ifeq (${uname_S},NetBSD)
  		DEFINES+=-DNetBSD
-@@ -436,7 +441,6 @@
+@@ -437,7 +442,6 @@
  
  OSSEC_CFLAGS+=${DEFINES}
  OSSEC_CFLAGS+=-pipe -Wall -Wextra -std=gnu99
@@ -55,7 +55,7 @@
  
  OSSEC_CFLAGS += ${CFLAGS}
  OSSEC_LDFLAGS += ${LDFLAGS}
-@@ -533,8 +537,8 @@
+@@ -534,8 +538,8 @@
  ifneq (,$(filter ${USE_INOTIFY},YES auto yes y Y 1))
  	DEFINES+=-DINOTIFY_ENABLED
  	ifeq (${uname_S},FreeBSD)
@@ -66,7 +66,7 @@
  		OSSEC_CFLAGS+=-I/usr/local/include
  	endif
  endif
-@@ -960,6 +964,8 @@
+@@ -962,6 +966,8 @@
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
@@ -75,7 +75,7 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -1193,9 +1199,13 @@
+@@ -1196,9 +1202,13 @@
  	cd $(EXTERNAL_CURL) && CPPFLAGS="-fPIC -I${ROUTE_PATH}/${EXTERNAL_OPENSSL}include" LDFLAGS="-L${ROUTE_PATH}/${EXTERNAL_OPENSSL}" LIBS="-ldl -lpthread" ./configure --with-openssl="${ROUTE_PATH}/${EXTERNAL_OPENSSL}" --disable-ldap --without-libidn2 --without-libpsl --without-brotli --without-nghttp2 --without-zstd
  endif
  else
@@ -89,7 +89,7 @@
  
  
  #### procps #########
-@@ -2308,7 +2318,7 @@
+@@ -2307,7 +2317,7 @@
  #### FIM ######
  
  wazuh-syscheckd: librootcheck.a libwazuh.a ${WAZUHEXT_LIB} build_shared_modules
@@ -98,7 +98,7 @@
  
  #### Monitor #######
  
-@@ -2340,13 +2350,13 @@
+@@ -2339,13 +2349,13 @@
  os_auth_o := $(os_auth_c:.c=.o)
  
  os_auth/%.o: os_auth/%.c
@@ -114,7 +114,7 @@
  
  #### integratord #####
  
-@@ -2486,7 +2496,7 @@
+@@ -2485,7 +2495,7 @@
  WPYTHON_DIR := ${INSTALLDIR}/framework/python
  OPTIMIZE_CPYTHON?=no
  WPYTHON_TAR=cpython.tar.gz
@@ -123,7 +123,7 @@
  
  ifneq (,$(filter ${OPTIMIZE_CPYTHON},YES yes y Y 1))
  CPYTHON_FLAGS=--enable-optimizations
-@@ -2500,22 +2510,45 @@
+@@ -2499,22 +2509,45 @@
  endif
  
  ifeq (,$(wildcard ${EXTERNAL_CPYTHON}/python))
@@ -171,7 +171,7 @@
  install_dependencies: install_python
  ifneq (,$(wildcard ${EXTERNAL_CPYTHON}))
  	${WPYTHON_DIR}/bin/python3 -m pip install --upgrade pip --index-url=file://${ROUTE_PATH}/${EXTERNAL_CPYTHON}/Dependencies/simple
-@@ -2532,6 +2565,7 @@
+@@ -2531,6 +2564,7 @@
  
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db

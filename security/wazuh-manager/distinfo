@@ -75,5 +75,5 @@ SHA256 (wazuh-4.14.1/wazuh-cache-fbsd16-amd64-4.14.1.tar.gz) = 03e92ad3b8cc1d06f
 SIZE (wazuh-4.14.1/wazuh-cache-fbsd16-amd64-4.14.1.tar.gz) = 26653557
 SHA256 (wazuh-4.14.1/wazuh-wazuh-v4.14.1_GH0.tar.gz) = aa59cb2baa7e7d38d8bb4ff6a22afbf2945de4fb555f9b8bb2657b6f89a773ed
 SIZE (wazuh-4.14.1/wazuh-wazuh-v4.14.1_GH0.tar.gz) = 19810038
-SHA256 (wazuh-4.14.1/alonsobsd-wazuh-freebsd-2f1307c_GH0.tar.gz) = a955c569217122779ab5b6b58bdfabbfa1cd452b4719cc35c791f7047b1f364f
-SIZE (wazuh-4.14.1/alonsobsd-wazuh-freebsd-2f1307c_GH0.tar.gz) = 221983
+SHA256 (wazuh-4.14.1/alonsobsd-wazuh-freebsd-830a911_GH0.tar.gz) = 4babef38a076f8be886d7190e18f6432f72671753ec96aaedc7e8d25b5c90259
+SIZE (wazuh-4.14.1/alonsobsd-wazuh-freebsd-830a911_GH0.tar.gz) = 221974
