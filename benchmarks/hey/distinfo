@@ -1,5 +1,5 @@
-TIMESTAMP = 1613741284
-SHA256 (go/benchmarks_hey/hey-v0.1.4/v0.1.4.mod) = f1feccb468f6348d8a610d14ef3d85bda6c39027fb1914f08b4155068fef3550
-SIZE (go/benchmarks_hey/hey-v0.1.4/v0.1.4.mod) = 142
-SHA256 (go/benchmarks_hey/hey-v0.1.4/v0.1.4.zip) = 28e551e1cb37a42e41e1385cbb5cd82c53816637c14fc734404c372ac0b21cc3
-SIZE (go/benchmarks_hey/hey-v0.1.4/v0.1.4.zip) = 22220
+TIMESTAMP = 1768097373
+SHA256 (go/benchmarks_hey/hey-v0.1.5/v0.1.5.mod) = 8c9ededd188b1f534da87ab4dca9c887b635d343c434876a07851021fac034fb
+SIZE (go/benchmarks_hey/hey-v0.1.5/v0.1.5.mod) = 121
+SHA256 (go/benchmarks_hey/hey-v0.1.5/v0.1.5.zip) = f5354b335ebda92ca7829cab90b6134daae4bf4e1d90ebc705fd3d7a529bcf0a
+SIZE (go/benchmarks_hey/hey-v0.1.5/v0.1.5.zip) = 23091
