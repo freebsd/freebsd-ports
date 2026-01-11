@@ -1,3 +1,31 @@
+  <vuln vid="7e63d0dd-eeff-11f0-b135-c01803b56cc4">
+    <topic>libtasn1 -- Stack-based buffer overflow</topic>
+    <affects>
+<package>
+<name>libtasn1</name>
+<range><lt>4.21.0</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oss-security@ list reports:</p>
+	<blockquote cite="https://www.openwall.com/lists/oss-security/2026/01/08/5">
+	<p>Stack-based buffer overflow in libtasn1 version: v4.20.0.
+	The function fails to validate the size of input data resulting
+	in a buffer overflow in asn1_expend_octet_string.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13151</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2025-13151</url>
+    </references>
+    <dates>
+      <discovery>2026-01-07</discovery>
+      <entry>2026-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c9b610e9-eebc-11f0-b051-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
