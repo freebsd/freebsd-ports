@@ -1,61 +1,54 @@
 PORTNAME=	gamin
-PORTVERSION=	0.1.10
-PORTREVISION?=	10
-CATEGORIES?=	devel
-MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
+DISTVERSION=	0.1.10
+PORTREVISION=	10
+CATEGORIES=	devel
+MASTER_SITES=	GNOME
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	File and directory monitoring system
-WWW=		http://people.gnome.org/~veillard/gamin/index.html
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	File and directory monitoring system
+WWW=		https://gitlab.gnome.org/Archive/gamin
 
-USES+=		gettext gnome libtool pathfix pkgconfig
-USE_GNOME?=	glib20
+USES=		gettext gnome libtool localbase pathfix pkgconfig
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
-		--without-python
-CPPFLAGS+=	-DHAVE_LINUX -I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+
+CPPFLAGS+=	-DHAVE_LINUX
+
 INSTALL_TARGET=	install-strip
 
-CONFLICTS=	fam
+CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
+		--without-python
 
-.if !defined(GAMIN_SLAVE)
-OPTIONS_DEFINE=	GAM_POLLER LIBINOTIFY RUN_AS_EUID
-OPTIONS_DEFAULT=RUN_AS_EUID
-GAM_POLLER_DESC=Use gamin's poller instead of kqueue's
-LIBINOTIFY_DESC=Use libinotify as the FAM backend
-RUN_AS_EUID_DESC=Drop privileges to effective user
-.endif
+OPTIONS_DEFINE=		GAM_POLLER LIBINOTIFY RUN_AS_EUID
+OPTIONS_DEFAULT=	RUN_AS_EUID
+
+GAM_POLLER_DESC=	Use gamin's poller instead of kqueue's
+LIBINOTIFY_DESC=	Use libinotify as the FAM backend
+RUN_AS_EUID_DESC=	Drop privileges to effective user
+
+GAM_POLLER_CPPFLAGS=	-DUSE_GAMIN_POLLER=1
+GAM_POLLER_CONFIGURE_ON=	--disable-kqueue
+
+RUN_AS_EUID_CPPFLAGS=	-DRUN_AS_EUID=1
+
+LIBINOTIFY_LDFLAGS=		-linotify
+LIBINOTIFY_CONFIGURE_ENABLE=	inotify
 
 .include <bsd.port.options.mk>
 
-.if !defined(GAMIN_SLAVE)
-.if ${PORT_OPTIONS:MGAM_POLLER}
-CPPFLAGS+=	-DUSE_GAMIN_POLLER=1
-.endif
-
 .if ${PORT_OPTIONS:MLIBINOTIFY}
-CONFIGURE_ARGS+=--enable-inotify
-LIBS+=		-linotify
+.  if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500050
 LIB_DEPENDS+=	libinotify.so:devel/libinotify
-.else
-CONFIGURE_ARGS+=--disable-inotify
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MRUN_AS_EUID}
-CPPFLAGS+=	-DRUN_AS_EUID=1
+.  endif
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/server/gam_conf.c
 
-.if !defined(GAMIN_SLAVE)
-regression-test: build
-	@${ECHO_MSG} "===> Running gamin regression tests"
+do-test:
 	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} tests)
-.endif
 
 .include <bsd.port.mk>
