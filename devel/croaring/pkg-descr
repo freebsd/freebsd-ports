@@ -1,0 +1,3 @@
+Roaring bitmaps in C (and C++), with SIMD (AVX2, AVX-512 and NEON)
+optimizations: used by Apache Doris, ClickHouse, Alibaba Tair, Redpanda, YDB
+and StarRocks

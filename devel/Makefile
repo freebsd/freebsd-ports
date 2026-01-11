@@ -534,6 +534,7 @@
     SUBDIR += creduce
     SUBDIR += critcl
     SUBDIR += criterion
+    SUBDIR += croaring
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csfml
