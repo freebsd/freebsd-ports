@@ -1,6 +1,6 @@
 PORTNAME=	pyenv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.17
+DISTVERSION=	2.6.18
 CATEGORIES=	devel python
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -16,7 +16,8 @@ USES=		cpe python shebangfix
 CPE_VENDOR=	pyenv_project
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	plugins/python-build/scripts/add_miniconda.py \
+SHEBANG_FILES=	plugins/python-build/scripts/add_cpython.py \
+		plugins/python-build/scripts/add_miniconda.py \
 		plugins/python-build/scripts/add_miniforge.py
 
 REINPLACE_ARGS=	-i ''
