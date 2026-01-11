@@ -20,14 +20,11 @@ CONFIGURE_ENV+=	NCURSES_CFLAGS="-I${NCURSESINC}" NCURSES_LIBS="-lncursesw"
 
 PLIST_FILES=	bin/${PORTNAME} share/man/man1/${PORTNAME}.1.gz
 
-OPTIONS_DEFINE=	ADNS FAM PCRE2
+OPTIONS_DEFINE=	ADNS PCRE2
 
 ADNS_DESC=	Asynchronous-capable DNS support
 ADNS_LIB_DEPENDS=	libadns.so:dns/adns
 ADNS_CONFIGURE_WITH=	adns=${LOCALBASE}
-
-FAM_LIB_DEPENDS=	libfam.so:devel/fam
-FAM_CONFIGURE_WITH=	fam=${LOCALBASE}
 
 PCRE2_DESC=	Use Perl Compatible Regular Expressions (v2)
 PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
