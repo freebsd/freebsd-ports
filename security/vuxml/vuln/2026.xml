@@ -1,3 +1,44 @@
+  <vuln vid="c9b610e9-eebc-11f0-b051-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<name>gitlab-ee</name>
+	<range><ge>18.7.0</ge><lt>18.7.1</lt></range>
+	<range><ge>18.6.0</ge><lt>18.6.3</lt></range>
+	<range><ge>8.3.0</ge><lt>18.5.5</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2026/01/07/patch-release-gitlab-18-7-1-released/">
+	  <p>Stored Cross-site Scripting issue in GitLab Flavored Markdown placeholders impacts GitLab CE/EE</p>
+	  <p>Cross-site Scripting issue in Web IDE impacts GitLab CE/EE</p>
+	  <p>Missing Authorization issue in Duo Workflows API impacts GitLab EE</p>
+	  <p>Missing Authorization issue in AI GraphQL mutation impacts GitLab EE</p>
+	  <p>Denial of Service issue in import functionality impacts GitLab CE/EE</p>
+	  <p>Insufficient Access Control Granularity issue in GraphQL runnerUpdate mutation impacts GitLab CE/EE</p>
+	  <p>Information Disclosure issue in Mermaid diagram rendering impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-9222</cvename>
+      <cvename>CVE-2025-13761</cvename>
+      <cvename>CVE-2025-13772</cvename>
+      <cvename>CVE-2025-13781</cvename>
+      <cvename>CVE-2025-10569</cvename>
+      <cvename>CVE-2025-11246</cvename>
+      <cvename>CVE-2025-3950</cvename>
+      <url>https://about.gitlab.com/releases/2026/01/07/patch-release-gitlab-18-7-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-01-07</discovery>
+      <entry>2026-01-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d822839e-ee4f-11f0-b53e-0897988a1c07">
     <topic>mail/mailpit -- Cross-Site WebSocket Hijacking</topic>
     <affects>
