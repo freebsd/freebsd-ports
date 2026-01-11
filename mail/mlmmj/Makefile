@@ -1,7 +1,7 @@
 PORTNAME=	mlmmj
-PORTVERSION=	1.6.0
+PORTVERSION=	1.7.0
 CATEGORIES=	mail
-MASTER_SITES=	https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${PORTVERSION}/
+MASTER_SITES=	https://codeberg.org/mlmmj/mlmmj/releases/download/RELEASE_${PORTVERSION:C/\./_/g}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple and slim mailing list manager
