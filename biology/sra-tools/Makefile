@@ -1,5 +1,6 @@
 PORTNAME=	sra-tools
 DISTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -23,7 +24,7 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	${PREFIX}/lib64
 
 # Builds with earlier versions, but ngs-doc plist differs if jdk17 is present
-JAVA_VERSION=	17+
+JAVA_VERSION=	17
 
 OPTIONS_DEFINE=	EXAMPLES
 
