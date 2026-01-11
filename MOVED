@@ -5072,3 +5072,4 @@ multimedia/mlt7-glaxnimate@qt6|multimedia/mlt7-glaxnimate|2026-01-08|Unflavorize
 multimedia/mlt7-qt@qt5||2026-01-08|Qt5 support has been dropped by upstream
 multimedia/mlt7-qt@qt6|multimedia/mlt7-qt|2026-01-08|Unflavorize; only Qt6 is supported
 devel/pydbus-common|devel/py-dbus|2026-01-09|Merged into devel/py-dbus
+devel/fam||2026-01-11|Remove obsolete and unmaintained port

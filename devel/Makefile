@@ -699,7 +699,6 @@
     SUBDIR += exomizer
     SUBDIR += expected
     SUBDIR += f77flow
-    SUBDIR += fam
     SUBDIR += fatal
     SUBDIR += fbthrift
     SUBDIR += fc++
