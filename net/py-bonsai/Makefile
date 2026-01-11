@@ -1,6 +1,5 @@
 PORTNAME=	bonsai
-DISTVERSION=	1.5.3
-PORTREVISION=	1
+DISTVERSION=	1.5.4
 CATEGORIES=	net devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +12,16 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MY_DEPENDS=	openldap26-client>=0:net/openldap26-client
-BUILD_DEPENDS=	${MY_DEPENDS}
+BUILD_DEPENDS=	${MY_DEPENDS} \
+		${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${MY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=0:devel/py-gevent@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tornado>=0:www/py-tornado@${PY_FLAVOR}
 
 USES=		localbase python
-USE_PYTHON=	autoplist concurrent distutils pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 PYTEST_IGNORED_TESTS=	TornadoLDAPConnectionTest.test_connection test_abandon \
 			test_acl_from_binary test_acl_to_binary \
 			test_add_and_delete test_async_close_remove_pendig_ops \
@@ -54,7 +55,9 @@ PYTEST_IGNORED_TESTS=	TornadoLDAPConnectionTest.test_connection test_abandon \
 			test_vlv_attrvalue test_vlv_offset \
 			test_vlv_without_sort_order test_whoami \
 			test_wrong_add_param test_wrong_conn_param \
-			test_wrong_delete_param test_wrong_search_param
+			test_wrong_delete_param test_wrong_search_param \
+			test_bind_gssapi
+TEST_ENV=	PYTHONPATH="${WRKSRC}/build/lib.${OPSYS:tl}-${_OSRELEASE}-${ARCH}-cpython-${PYTHON_SUFFIX}"
 
 OPTIONS_DEFINE=	GEVENT TORNADO TRIO
 
@@ -64,5 +67,8 @@ TORNADO_DESC=		Support for async IO using tornado
 TORNADO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=0:www/py-tornado@${PY_FLAVOR}
 TRIO_DESC=		Support for async IO using trio
 TRIO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}trio>=0:net/py-trio@${PY_FLAVOR}
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/_${PORTNAME}.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.mk>
