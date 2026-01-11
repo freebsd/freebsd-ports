@@ -1,6 +1,6 @@
 PORTNAME=	sra-tools
 DISTVERSION=	3.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology java
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -36,6 +36,8 @@ GH_ACCOUNT=	ncbi
 GH_TUPLE+=	ncbi:ncbi-vdb:${DISTVERSION}:vdb/ncbi-vdb
 
 CMAKE_ARGS+=	-DVDB_LIBDIR:STRING=${WRKSRC}/ncbi-vdb/build/lib
+# Prevent cmake from using a later Java version, if present
+CMAKE_ARGS+=	-DJAVA_HOME:PATH=${JAVA_HOME}
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
