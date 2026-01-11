@@ -2,12 +2,12 @@ https://github.com/eclipse/openvsx/issues/543
 https://github.com/termux/termux-packages/issues/24739
 https://github.com/termux/termux-packages/pull/24757
 
---- src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts.orig	2025-08-20 15:13:53 UTC
+--- src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts.orig	2026-01-08 12:59:30 UTC
 +++ src/vs/platform/extensionManagement/node/extensionSignatureVerificationService.ts
-@@ -35,7 +35,7 @@ declare module vsceSign {
+@@ -35,7 +35,7 @@ declare namespace vsceSign {
  }
  
- declare module vsceSign {
+ declare namespace vsceSign {
 -	export function verify(vsixFilePath: string, signatureArchiveFilePath: string, verbose: boolean): Promise<ExtensionSignatureVerificationResult>;
 +	export function verify(vsixFilePath: string, signatureArchiveFilePath: string, verbose: boolean): Promise<boolean>;
  }

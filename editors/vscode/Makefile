@@ -1,6 +1,5 @@
 PORTNAME=	vscode
 DISTVERSION=	${VSCODE_VERSION}
-PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:node_modules
 DISTFILES=	vscode-node-modules-${DISTVERSION}${EXTRACT_SUFX}:node_modules \
@@ -19,10 +18,8 @@ ONLY_FOR_ARCHS=	amd64
 EXTRACT_DEPENDS=jq:textproc/jq \
 		node${NODEJS_VERSION}>0:www/node${NODEJS_VERSION}
 BUILD_DEPENDS=	zip:archivers/zip \
-		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		jq:textproc/jq \
-		rg:textproc/ripgrep \
-		npm${NODEJS_SUFFIX}>0:www/npm${NODEJS_SUFFIX}
+		rg:textproc/ripgrep
 LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libasound.so:audio/alsa-lib \
@@ -58,12 +55,11 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		bash:shells/bash
-TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
-		bash:shells/bash
+TEST_DEPENDS=	bash:shells/bash
 
-USES=		desktop-file-utils display:test gl gmake gnome gssapi:mit \
-		iconv:wchar_t jpeg localbase:ldflags nodejs:22,build pkgconfig \
-		python:build shebangfix xorg
+USES=		desktop-file-utils display:test electron:39,build,test gl \
+		gmake gnome gssapi:mit iconv:wchar_t jpeg localbase:ldflags \
+		nodejs:22,build pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
@@ -74,6 +70,7 @@ USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xtst
 USE_GL=		gbm gl glesv2
 USE_GNOME=	atk cairo pango gdkpixbuf gtk30 libxml2 libxslt
+USE_ELECTRON=	npm:npm
 
 SHEBANG_REGEX=	./(extensions|node_modules|resources|scripts|src)/.*(\.(pl|py|sh)|makeBlacker|makeFF)$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
@@ -83,27 +80,18 @@ TMPDIR=		${WRKDIR}
 BUNDLE_LIBS=	yes
 
 MAKE_ENV+=	BUILD_SOURCEVERSION=${SOURCE_COMMIT_HASH}
-# Don't download electron binary distribution on electron node_modules installation
-MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
-# Don't download browser binaries on playwright node_modules installation
-MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
-		PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 # Don't create __pycache__ directory when executing node-gyp
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 TEST_ENV=	${MAKE_ENV:C/TMPDIR=.*//}
+
+UPSTREAM_ELECTRON_VER=	${ELECTRON_VER}
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>
 
 NODEJS_DIR=	${.CURDIR:H:H}/www/node${NODEJS_VERSION}
 .include "${NODEJS_DIR}/Makefile.version"
-ELECTRON_DIR=	${.CURDIR:H:H}/devel/electron39
-.include "${ELECTRON_DIR}/Makefile.version"
-
-ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}
-ELECTRON_DOWNLOAD_URL_HASH!=	/sbin/sha256 -q -s ${ELECTRON_DOWNLOAD_URL}
-ELECTRON_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/}
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -211,10 +199,6 @@ pre-build:
 	@${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
 
 do-build:
-# setup download cache for gulp-atom-electron
-	@${MKDIR} ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH}
-	@cd ${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} && \
-		zip -q -r ${WRKDIR}/.cache/electron/${ELECTRON_DOWNLOAD_URL_HASH}/electron-v${ELECTRON_VER}-linux-${ELECTRON_ARCH}.zip .
 # remove backup files so that they are not included in the package
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -o -name '*.orig' -o -name '*~' \) -delete
 # build and package vscode
