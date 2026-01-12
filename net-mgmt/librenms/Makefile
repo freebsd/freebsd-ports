@@ -1,6 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	25.12.0
-PORTREVISION=	1
+PORTVERSION=	26.1.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -68,7 +67,7 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/paragonie/random_compat/buil
 		scripts/Migration/XML_Conversion/mkdir.sh scripts/new-os.php \
 		scripts/pre-commit.php scripts/purge-port.php \
 		scripts/removespikes.php scripts/removespikes.pl \
-		scripts/rename-mibs.php scripts/rrdstep.php \
+		scripts/rename-mibs.php \
 		scripts/save-test-data.php scripts/syslog-notify-oxidized.php \
 		scripts/test-alert.php scripts/test-template.php \
 		scripts/watchmaillog/watchmaillog.pl snmp-scan.py snmptrap.php \
@@ -125,7 +124,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1765807513
+_RELEASE_TIMESTAMP=	1546180156
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes lang licenses mibs misc resources routes \
 			scripts tests
