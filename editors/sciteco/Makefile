@@ -1,12 +1,12 @@
 PORTNAME=	sciteco
-DISTVERSION=	2.2.0
+DISTVERSION=	2.5.2
 CATEGORIES=	editors textproc devel
-MASTER_SITES=	https://github.com/rhaberkorn/${PORTNAME}/releases/download/v${DISTVERSION}/ \
+MASTER_SITES=	https://sciteco.fmsbw.de/downloads/v${DISTVERSION}/ \
 		SOURCEFORGE/${PORTNAME}/v${DISTVERSION}/
 
-MAINTAINER=	robin.haberkorn@googlemail.com
+MAINTAINER=	rhaberkorn@fmsbw.de
 COMMENT=	Scintilla-based Text Editor and Corrector
-WWW=		https://rhaberkorn.github.io/sciteco/
+WWW=		https://sciteco.fmsbw.de/
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -61,17 +61,23 @@ PLIST_SUB+=		GTK="" \
 			PROGRAM_PREFIX=g
 .endif
 
-OPTIONS_DEFINE=		LEXILLA MALLOC_REPLACEMENT TECO_INTEGER_32
-OPTIONS_DEFAULT=	LEXILLA
+OPTIONS_DEFINE=		LEXILLA MALLOC_REPLACEMENT TECO_INTEGER_32 LTO
+OPTIONS_DEFAULT=	LEXILLA MALLOC_REPLACEMENT
 OPTIONS_SUB=		yes
 
 LEXILLA_DESC=			Build with Lexilla lexer support (larger)
-MALLOC_REPLACEMENT_DESC=	Force replacement of system malloc()
+MALLOC_REPLACEMENT_DESC=	Replace system malloc() for memory limiting
 TECO_INTEGER_32_DESC=		Use 32-bit TECO integers
+LTO_DESC=			Apply Link-Time Optimizations (significantly faster)
 
 LEXILLA_CONFIGURE_OFF=			--without-lexilla
 MALLOC_REPLACEMENT_CONFIGURE_ON=	--enable-malloc-replacement
 TECO_INTEGER_32_CONFIGURE_ON=		--with-teco-integer=32
+
+# Once we support an --enable-lto site-config-option, we should rather use that.
+LTO_CFLAGS=	-flto=thin
+LTO_CXXFLAGS=	-flto=thin
+LTO_LDFLAGS=	-flto=thin
 
 .include <bsd.port.pre.mk>
 
