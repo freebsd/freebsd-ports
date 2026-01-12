@@ -1,6 +1,5 @@
 PORTNAME=	phabricator
-PORTVERSION=	20211218
-PORTREVISION=	6
+PORTVERSION=	20231113
 CATEGORIES=	devel
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -20,7 +19,7 @@ CPE_VENDOR=	phacility
 DOS2UNIX_FILES=	externals/phpmailer/class.smtp.php externals/phpqrcode/phpqrcode.php
 USE_GITHUB=	yes
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	dec9522
+GH_TAGNAME=	5720a38
 USE_PHP=	ctype curl fileinfo filter iconv mbstring mysqli pcntl posix \
 		zip
 USE_RC_SUBR=	phd

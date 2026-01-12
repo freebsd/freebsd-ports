@@ -41,13 +41,13 @@ phd_user="root" to /etc/rc.conf.
 
 Phabricator daemons and ssh-git requires setting up sudo, see
 
-  %%PREFIX%%lib/php/phabricator/resources/sshd/phabricator-sudoers.sample
+  %%PREFIX%%/lib/php/phabricator/resources/sshd/phabricator-sudoers.sample
 
 for an example.
 
 A phabricator example configuration installed here:
 
-  %%PREFIX%%lib/php/phabricator/conf/local/local.json.sample
+  %%PREFIX%%/lib/php/phabricator/conf/local/local.json.sample
 
 If you want to access phabricator hosted git repositories via git,
 you can add the following configuration snippet to /etc/sshd_config
