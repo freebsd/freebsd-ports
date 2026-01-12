@@ -1,13 +1,13 @@
---- src/future/http/HTTPSFuture.php.orig	2022-05-17 23:20:14 UTC
+--- src/future/http/HTTPSFuture.php.orig	2025-12-15 18:12:56 UTC
 +++ src/future/http/HTTPSFuture.php
-@@ -375,31 +375,24 @@ final class HTTPSFuture extends BaseHTTPFuture {
+@@ -379,31 +379,24 @@ final class HTTPSFuture extends BaseHTTPFuture {
        //   means that the user wants to override everything (also because the
        //   user might not have access to change the box's php.ini to add
        //   curl.cainfo).
 -      // - Otherwise, try using curl.cainfo. If it's set explicitly, it's
 -      //   probably reasonable to try using it before we fall back to what
--      //   libphutil ships with.
--      // - Lastly, try the default that libphutil ships with. If it doesn't
+-      //   Arcanist ships with.
+-      // - Lastly, try the default that Arcanist ships with. If it doesn't
 -      //   work, give up and yell at the user.
  
        if (!$this->getCABundle()) {
