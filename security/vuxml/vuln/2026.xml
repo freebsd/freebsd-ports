@@ -1,3 +1,41 @@
+  <vuln vid="fd3855b8-efbc-11f0-9e3f-b0416f0c4c67">
+    <topic>virtualenv -- CWE-59: Improper Link Resolution Before File Access ('Link Following')</topic>
+    <affects>
+    <package>
+	<name>py310-virtualenv</name>
+	<name>py311-virtualenv</name>
+	<name>py312-virtualenv</name>
+	<name>py313-virtualenv</name>
+	<name>py313t-virtualenv</name>
+	<name>py314-virtualenv</name>
+	<range><lt>20.36.1</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://github.com/pypa/virtualenv/security/advisories/GHSA-597g-3phw-6986 reports:</p>
+	<blockquote cite="https://github.com/pypa/virtualenv/security/advisories/GHSA-597g-3phw-6986">
+	  <p>virtualenv is a tool for creating isolated virtual python environments.
+Prior to version 20.36.1, TOCTOU (Time-of-Check-Time-of-Use)
+vulnerabilities in virtualenv allow local attackers to perform
+symlink-based attacks on directory creation operations.  An attacker
+with local access can exploit a race condition between directory
+existence checks and creation to redirect virtualenv's app_data and
+lock file operations to attacker-controlled locations.  This issue
+has been patched in version 20.36.1.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-22702</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-22702</url>
+    </references>
+    <dates>
+      <discovery>2026-01-10</discovery>
+      <entry>2026-01-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7e63d0dd-eeff-11f0-b135-c01803b56cc4">
     <topic>libtasn1 -- Stack-based buffer overflow</topic>
     <affects>
