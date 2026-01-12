@@ -1,3 +1,4 @@
+include/QtNodes/AbstractConnectionPainter
 include/QtNodes/AbstractGraphModel
 include/QtNodes/AbstractNodePainter
 include/QtNodes/BasicGraphicsScene
@@ -16,6 +17,7 @@ include/QtNodes/NodeGeometry
 include/QtNodes/NodeState
 include/QtNodes/NodeStyle
 include/QtNodes/StyleCollection
+include/QtNodes/internal/AbstractConnectionPainter.hpp
 include/QtNodes/internal/AbstractGraphModel.hpp
 include/QtNodes/internal/AbstractNodeGeometry.hpp
 include/QtNodes/internal/AbstractNodePainter.hpp
@@ -28,11 +30,15 @@ include/QtNodes/internal/ConnectionState.hpp
 include/QtNodes/internal/ConnectionStyle.hpp
 include/QtNodes/internal/DataFlowGraphModel.hpp
 include/QtNodes/internal/DataFlowGraphicsScene.hpp
+include/QtNodes/internal/DefaultConnectionPainter.hpp
+include/QtNodes/internal/DefaultHorizontalNodeGeometry.hpp
 include/QtNodes/internal/DefaultNodePainter.hpp
+include/QtNodes/internal/DefaultVerticalNodeGeometry.hpp
 include/QtNodes/internal/Definitions.hpp
 include/QtNodes/internal/Export.hpp
 include/QtNodes/internal/GraphicsView.hpp
 include/QtNodes/internal/GraphicsViewStyle.hpp
+include/QtNodes/internal/NodeConnectionInteraction.hpp
 include/QtNodes/internal/NodeData.hpp
 include/QtNodes/internal/NodeDelegateModel.hpp
 include/QtNodes/internal/NodeDelegateModelRegistry.hpp
@@ -45,6 +51,7 @@ include/QtNodes/internal/QUuidStdHash.hpp
 include/QtNodes/internal/Serializable.hpp
 include/QtNodes/internal/Style.hpp
 include/QtNodes/internal/StyleCollection.hpp
+include/QtNodes/internal/UndoCommands.hpp
 include/QtNodes/internal/locateNode.hpp
 lib/cmake/QtNodes/QtNodesConfig.cmake
 lib/cmake/QtNodes/QtNodesTargets-%%CMAKE_BUILD_TYPE%%.cmake
