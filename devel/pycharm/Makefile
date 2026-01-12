@@ -1,5 +1,6 @@
 PORTNAME=	pycharm
 DISTVERSION=	2025.3.1
+PORTREVISION=	1
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/
 DIST_SUBDIR=	jetbrains
@@ -20,7 +21,8 @@ RUN_DEPENDS=	intellij-fsnotifier>0:java/intellij-fsnotifier \
 		jetbrains-sqlite>=232.8660.185:devel/jetbrains-sqlite
 
 USES=		cpe desktop-file-utils java python:run shebangfix
-SHEBANG_FILES=	plugins/python-ce/helpers/pycodestyle.py \
+SHEBANG_FILES=	plugins/python-ce/helpers/debugpy/_vendored/pydevd/pydevd_attach_to_process/linux_and_mac/compile_mac.sh \
+		plugins/python-ce/helpers/pycodestyle.py \
 		plugins/python-ce/helpers/pycodestyle-2.10.0.py \
 		plugins/python-ce/helpers/py3only/docutils/utils/math/math2html.py \
 		plugins/python-ce/helpers/py3only/docutils/utils/smartquotes.py \
