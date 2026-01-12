@@ -15,6 +15,7 @@ USES=		cmake dos2unix zip
 
 DOS2UNIX_FILES=	Shared/*.h \
 		Source/Console/*.cpp \
+		Source/MACLib/Prepare.cpp \
 		Source/Shared/*.cpp \
 		Source/Shared/*.h
 
