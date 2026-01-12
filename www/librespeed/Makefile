@@ -1,5 +1,6 @@
 PORTNAME=	librespeed
-DISTVERSION=	5.5.0
+DISTVERSIONPREFIX=	v
+DISTVERSION=	5.5.1
 CATEGORIES=	www net
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -12,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:flavors,web
 
-USE_PHP=	ctype pdo session
-
 USE_GITHUB=	YES
 GH_PROJECT=	speedtest
+
+USE_PHP=	ctype pdo session
 
 NO_ARCH=	YES
 NO_BUILD=	YES
