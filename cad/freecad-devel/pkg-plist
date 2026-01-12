@@ -1918,7 +1918,7 @@ FreeCAD/Mod/Tux/NavigationIndicatorGui.py
 FreeCAD/Mod/Tux/PersistentToolbars.py
 FreeCAD/Mod/Tux/PersistentToolbarsGui.py
 FreeCAD/Mod/Tux/Tux_rc.py
-FreeCAD/Mod/Web/Init.py
+%%WEBENGINE%%FreeCAD/Mod/Web/Init.py
 FreeCAD/bin/FreeCAD
 FreeCAD/bin/FreeCADCmd
 FreeCAD/bin/freecad-thumbnailer
@@ -2317,7 +2317,7 @@ FreeCAD/lib/Surface.so
 FreeCAD/lib/SurfaceGui.so
 FreeCAD/lib/TechDraw.so
 FreeCAD/lib/TechDrawGui.so
-FreeCAD/lib/Web.so
+%%WEBENGINE%%FreeCAD/lib/Web.so
 FreeCAD/lib/_PartDesign.so
 FreeCAD/lib/area.so
 FreeCAD/lib/cmake/E57Format/E57Format-export-%%CMAKE_BUILD_TYPE%%.cmake
