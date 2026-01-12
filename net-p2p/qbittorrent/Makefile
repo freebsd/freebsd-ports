@@ -1,5 +1,6 @@
 PORTNAME=	qbittorrent
 DISTVERSION=	5.1.4
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -25,7 +26,8 @@ USE_GITHUB=		nodefault
 GH_ACCOUNT=		qBittorrent
 GH_PROJECT=		qBittorrent
 
-CMAKE_ON=		QT6
+# temporary workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=291988
+WITH_DEBUG=		yes
 
 .if ${FLAVOR} == default
 USES+=			desktop-file-utils gl
