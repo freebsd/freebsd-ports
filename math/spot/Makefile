@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.14.3
+DISTVERSION=	2.14.5
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -34,5 +34,16 @@ PORTDOCS=	tl.pdf
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+
+# ============================================================================
+# Testsuite summary for spot 2.14.5
+# ============================================================================
+# TOTAL: 211
+# PASS:  189
+# SKIP:  20
+# XFAIL: 0
+# FAIL:  2
+# XPASS: 0
+# ERROR: 0
 
 .include <bsd.port.mk>
