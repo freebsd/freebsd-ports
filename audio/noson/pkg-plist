@@ -45,5 +45,5 @@ lib/cmake/noson/nosonTargets-release.cmake
 lib/cmake/noson/nosonTargets.cmake
 lib/libnoson.so
 lib/libnoson.so.2
-lib/libnoson.so.2.12.10
+lib/libnoson.so.2.12.11
 libdata/pkgconfig/noson.pc
