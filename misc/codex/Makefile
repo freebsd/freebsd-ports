@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.79.0
+DISTVERSION=	0.80.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,7 +11,8 @@ WWW=		https://openai.com/codex \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libdbus-1.so:devel/dbus \
 		libonig.so:devel/oniguruma
 RUN_DEPENDS=	bash:shells/bash \
 		rg:textproc/ripgrep
