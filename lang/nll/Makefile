@@ -1,5 +1,5 @@
 PORTNAME=	nll
-PORTVERSION=	20250805a
+PORTVERSION=	20260110a
 CATEGORIES=	lang
 MASTER_SITES=	https://kozos.jp/nlux/archive/
 DISTNAME=	nlux-alpha-${PORTVERSION:C|[a-zA-Z]*$||}
@@ -92,13 +92,14 @@ post-install:
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S/^/${WRKSRC}\//} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\//} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\/graphic\//} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\/audio\//} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S/^/${WRKSRC}\/samples\/network\//} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/samples/|} \
+			${PORTEXAMPLES:S|^|${WRKSRC}/samples/graphic/|} \
+			${PORTEXAMPLES:S|^|${WRKSRC}/samples/audio/|} \
+			${PORTEXAMPLES:S|^|${WRKSRC}/samples/network/|} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
