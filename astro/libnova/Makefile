@@ -1,17 +1,18 @@
 PORTNAME=	libnova
 DISTVERSION=	0.16.0
+PORTREVISION=	1
 CATEGORIES=	astro
-MASTER_SITES=	https://sourceforge.net/code-snapshots/git/l/li/${PORTNAME}/${PORTNAME}.git/
-DISTNAME=	${PORTNAME}-${PORTNAME}-${GIT_HASH}
+# Pull from Gentoo repo because upstream stopped tarball releases after v0.15
+MASTER_SITES=	https://dev.gentoo.org/~asturm/distfiles/
 
 MAINTAINER=	alven@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 WWW=		https://libnova.sourceforge.net/
 
-LICENSE=	GPLv2
+LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf libtool zip
+USES=		autoreconf libtool tar:xz
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -19,8 +20,6 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
 PLIST_SUB=	SOVERSION=${DISTVERSION:R}
-
-GIT_HASH=	edbf65abe27ef1a2520eb9e839daaf58f15a6941
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure.ac
