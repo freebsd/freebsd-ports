@@ -1,6 +1,6 @@
 PORTNAME=	openxpki-clca
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.19
+DISTVERSION=	1.20
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -40,15 +40,12 @@ pre-configure:
 		${WRKSRC}/README.keyceremony-shared-interactive.md
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/clca ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/change-quorum.sh ${STAGEDIR}${PREFIX}/bin
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/clca ${WRKSRC}/bin/change-quorum.sh \
+		${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "bin etc lib" ${STAGEDIR}${EXAMPLESDIR} \
 		"! -name *\.orig ! -name *\.bak")
 
 post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} "-name *\.md")
 
 .include <bsd.port.mk>
