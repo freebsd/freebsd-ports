@@ -1,7 +1,6 @@
 PORTNAME=	neuralrack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0-2
-DISTVERSIONSUFFIX=	-gaa4278e
+DISTVERSION=	0.3.0
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -24,7 +23,7 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_TUPLE=	\
-		brummer10:libxputty:3f41e69:brummer10_libxputty/libxputty \
+		brummer10:libxputty:a4ca80c:brummer10_libxputty/libxputty \
 		HiFi-LoFi:FFTConvolver:f2cdeb04c42141d2caec19ca4f137398b2a76b85:HiFi_LoFi_FFTConvolver/FFTConvolver \
 		mikeoliphant:NeuralAudio:02b6f79:neural_audio/NeuralAudio \
 			mikeoliphant:RTNeural:5909c44:RTNeural/NeuralAudio/deps/RTNeural \
