@@ -1,0 +1,15 @@
+--- meson.build.orig	2018-01-17 11:04:28 UTC
++++ meson.build
+@@ -20,12 +20,3 @@ subdir('backgrounds')
+ 
+ # Sub directories
+ subdir('backgrounds')
+-
+-# Extra-dist files
+-extra_dist = [
+-  'AUTHORS',
+-  'COPYING',
+-  'LICENSE_CC_BY_SA4'
+-]
+-
+-install_data(extra_dist, install_dir: backgrounddir)
