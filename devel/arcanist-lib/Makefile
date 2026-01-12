@@ -1,6 +1,5 @@
 PORTNAME?=	arcanist
-PORTVERSION?=	20220518
-PORTREVISION?=	11
+PORTVERSION?=	20230530
 CATEGORIES?=	devel
 PKGNAMESUFFIX=	${SLAVE_PKGNAMESUFFIX}${PHP_PKGNAMESUFFIX}
 
@@ -15,7 +14,7 @@ USES=		php:cli,flavors python:env shebangfix
 IGNORE_WITH_PHP=	85
 USE_GITHUB=	yes
 GH_ACCOUNT=	phacility
-GH_TAGNAME=	85c953e
+GH_TAGNAME=	e50d1bc
 USE_PHP=	curl dom simplexml zlib
 
 SHEBANG_FILES=	bin/arc bin/phage scripts/*.php scripts/hgdaemon/*.php \
