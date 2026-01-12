@@ -1,4 +1,4 @@
-TIMESTAMP = 1767885483
+TIMESTAMP = 1768249468
 SHA256 (freenginx-1.29.4.tar.gz) = 51a596451e334b51ce8cef1291b576ed601ed557e1b500e6c1a77a469d603e27
 SIZE (freenginx-1.29.4.tar.gz) = 1249883
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -137,8 +137,8 @@ SHA256 (vozlt-nginx-module-sts-3c10d42_GH0.tar.gz) = 748b67ceb82b3b843ae915bf786
 SIZE (vozlt-nginx-module-sts-3c10d42_GH0.tar.gz) = 352431
 SHA256 (kaltura-nginx-vod-module-26f0687_GH0.tar.gz) = 7c098d4b1c0f0a3d694ece364fa190d5c88a920352e4c3e9377ae3b38904a08b
 SIZE (kaltura-nginx-vod-module-26f0687_GH0.tar.gz) = 475372
-SHA256 (vozlt-nginx-module-vts-c382342_GH0.tar.gz) = 1252c7fe0636d658172055d7e2598487479a54adc00e90af6b23ddb4b6641952
-SIZE (vozlt-nginx-module-vts-c382342_GH0.tar.gz) = 184988
+SHA256 (vozlt-nginx-module-vts-37d319f_GH0.tar.gz) = 9ffe9ac5cd3716bb12832926bb78cd12d4e47b4c9e78a64658e0bf13a4cacfde
+SIZE (vozlt-nginx-module-vts-37d319f_GH0.tar.gz) = 185334
 SHA256 (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = aca454bffcee2476dc92682ebfb8c0378a271fda178be7e945d648419d220758
 SIZE (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = 14646
 SHA256 (openresty-xss-nginx-module-de2d87a_GH0.tar.gz) = f830c9300d751046e2592c74d09f39ac4b4b4567078c96c24951de5554861b5e

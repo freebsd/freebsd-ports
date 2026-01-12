@@ -316,9 +316,8 @@ VOD_LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 VOD_USES=		iconv
 VOD_VARS=		DSO_EXTMODS+=vod
 
-VTS_GH_TUPLE=		vozlt:nginx-module-vts:c382342:vts
+VTS_GH_TUPLE=		vozlt:nginx-module-vts:37d319f:vts
 VTS_VARS=		DSO_EXTMODS+=vts
-VTS_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_vhost_traffic_status_module.c
 
 XSS_GH_TUPLE=		openresty:xss-nginx-module:de2d87a:xss
 XSS_VARS=		DSO_EXTMODS+=xss
