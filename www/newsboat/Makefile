@@ -1,6 +1,5 @@
 PORTNAME=	newsboat
-DISTVERSION=	2.41
-PORTREVISION=	2
+DISTVERSION=	2.42
 CATEGORIES=	www
 MASTER_SITES=	https://newsboat.org/releases/${DISTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -22,8 +21,9 @@ USES=		cargo compiler:c++11-lang gettext gmake gnome iconv:translit \
 USE_GNOME=	libxml2
 
 SHEBANG_FILES=	contrib/bookmark-evernote.sh contrib/exportOPMLWithTags.py \
-		contrib/feedgrabber.rb contrib/getpocket.com/send-to-pocket.sh \
-		contrib/heise.rb contrib/image-pager/bootstrap_image_pager.sh \
+		contrib/feedgrabber.rb contrib/fltr-substack/make-fltr-substack.sh \
+		contrib/getpocket.com/send-to-pocket.sh contrib/heise.rb \
+		contrib/image-pager/bootstrap_image_pager.sh \
 		contrib/image-preview/nbparser contrib/move_url.py \
 		contrib/newsboat_reorganize.py contrib/slashdot.rb \
 		doc/examples/example-exec-script.py
