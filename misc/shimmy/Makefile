@@ -1,14 +1,13 @@
 PORTNAME=	shimmy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.2
-PORTREVISION=	1
+DISTVERSION=	1.9.0
 CATEGORIES=	misc
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Privacy-first alternative to Ollama
 WWW=		https://github.com/Michael-A-Kuykendall/shimmy
 
-LICENSE=	MIT
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo llvm
@@ -28,11 +27,14 @@ PLIST_FILES=	bin/create_realistic_safetensors \
 PORTDOCS=	CHANGELOG.md CONTRIBUTING.md DEVELOPERS.md README.md \
 		ROADMAP.md SECURITY.md
 
-OPTIONS_DEFINE=		DOCS VULKAN
-OPTIONS_DEFAULT=	VULKAN
+OPTIONS_DEFINE=		DOCS VISION VULKAN
+OPTIONS_DEFAULT=	VISION VULKAN
 # i386 build with VULKAN fails with: LLVM ERROR: out of memory
 OPTIONS_EXCLUDE_i386=	VULKAN
 
+VISION_DESC=	Visual image/web analysis support
+
+VISION_VARS=	CARGO_FEATURES+=vision
 VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
 			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
