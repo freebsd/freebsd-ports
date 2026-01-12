@@ -35,13 +35,13 @@ highlighting.
 
 Phorge daemons and ssh-git requires setting up sudo, see
 
-  %%PREFIX%%lib/php/phorge/resources/sshd/phorge-sudoers.sample
+  %%PREFIX%%/lib/php/phorge/resources/sshd/phorge-sudoers.sample
 
 for an example.
 
 A phorge example configuration installed here:
 
-  %%PREFIX%%lib/php/phorge/conf/local/local.json.sample
+  %%PREFIX%%/lib/php/phorge/conf/local/local.json.sample
 
 If you want to access phorge hosted git repositories via git,
 you can add the following configuration snippet to /etc/sshd_config

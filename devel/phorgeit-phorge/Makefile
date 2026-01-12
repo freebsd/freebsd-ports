@@ -1,6 +1,5 @@
 PORTNAME=	phorge
-PORTVERSION=	2025.18
-PORTREVISION=	1
+PORTVERSION=	2025.51
 PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	phorgeit
@@ -21,7 +20,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	phorgeit
 USE_PHP=	ctype curl fileinfo filter iconv mbstring mysqli pcntl posix \
 		zip
-IGNORE_WITH_PHP=	84 85
+IGNORE_WITH_PHP=	85
 USE_RC_SUBR=	phd
 
 SHEBANG_FILES=	resources/timezones/*.php scripts/*.php scripts/almanac/*.php \
