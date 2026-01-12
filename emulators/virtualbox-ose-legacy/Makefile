@@ -103,7 +103,7 @@ DEBUG_CONFIGURE_ON=	--build-debug
 NLS_IMPLIES=		QT5
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
-PYTHON_USES=		python
+PYTHON_USES=		python:3.10-3.11
 PYTHON_USES_OFF=	python:build
 PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
