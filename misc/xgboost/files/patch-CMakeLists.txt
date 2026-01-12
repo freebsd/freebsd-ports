@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2024-06-19 18:31:39 UTC
+--- CMakeLists.txt.orig	2026-01-08 13:54:31 UTC
 +++ CMakeLists.txt
-@@ -148,11 +148,11 @@ endif()
+@@ -162,11 +162,11 @@ endif()
  if(PLUGIN_RMM AND NOT (CMAKE_SYSTEM_NAME STREQUAL "Linux"))
    message(SEND_ERROR "`PLUGIN_RMM` must be used with Linux.")
  endif()
@@ -17,7 +17,7 @@
  if(BUILD_STATIC_LIB AND (R_LIB OR JVM_BINDINGS))
    message(SEND_ERROR "Cannot build a static library libxgboost.a when R or JVM packages are enabled.")
  endif()
-@@ -266,7 +266,7 @@ set(DMLC_FORCE_SHARED_CRT ${FORCE_SHARED_CRT})
+@@ -289,7 +289,7 @@ set(DMLC_FORCE_SHARED_CRT ${FORCE_SHARED_CRT})
  
  # dmlc-core
  set(DMLC_FORCE_SHARED_CRT ${FORCE_SHARED_CRT})
@@ -26,7 +26,7 @@
  
  if(MSVC)
    if(TARGET dmlc_unit_tests)
-@@ -279,7 +279,7 @@ add_subdirectory(${xgboost_SOURCE_DIR}/src)
+@@ -302,7 +302,7 @@ add_subdirectory(${xgboost_SOURCE_DIR}/src)
  
  # core xgboost
  add_subdirectory(${xgboost_SOURCE_DIR}/src)
@@ -35,16 +35,16 @@
  
  # Link -lstdc++fs for GCC 8.x
  if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS "9.0")
-@@ -341,7 +341,7 @@ if(BUILD_DEPRECATED_CLI)
+@@ -391,7 +391,7 @@ if(BUILD_DEPRECATED_CLI)
    target_include_directories(runxgboost
      PRIVATE
      ${xgboost_SOURCE_DIR}/include
 -    ${xgboost_SOURCE_DIR}/dmlc-core/include
 +    #${xgboost_SOURCE_DIR}/dmlc-core/include
-     ${xgboost_SOURCE_DIR}/rabit/include
    )
    set_target_properties(runxgboost PROPERTIES OUTPUT_NAME xgboost)
-@@ -358,7 +358,7 @@ endif()
+   xgboost_target_properties(runxgboost)
+@@ -407,7 +407,7 @@ endif()
  #-- End CLI for xgboost
  
  # Common setup for all targets
@@ -53,7 +53,7 @@
    xgboost_target_properties(${target})
    xgboost_target_link_libraries(${target})
    xgboost_target_defs(${target})
-@@ -420,9 +420,9 @@ if(BUILD_STATIC_LIB)
+@@ -469,9 +469,9 @@ if(BUILD_STATIC_LIB)
  # https://github.com/dmlc/xgboost/issues/6085
  if(BUILD_STATIC_LIB)
    if(BUILD_DEPRECATED_CLI)
