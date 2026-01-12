@@ -1,6 +1,7 @@
 PORTNAME=	ghostty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 DIST_SUBDIR=	${PORTNAME}
 
@@ -22,13 +23,10 @@ GH_ACCOUNT=	ghostty-org
 
 USE_GNOME=	glib20 gtk40 libadwaita libxml2
 
-ZIG_ARGS=	-Dapp-runtime=gtk \
-		-Dgtk-wayland=true \
-		-Dgtk-x11=true \
-		-fsys=simdutf \
-		-fno-sys=spirv-cross
+ZIG_ARGS=	-Dapp-runtime=gtk -Dgtk-wayland=true -Dgtk-x11=true \
+		-fsys=simdutf -fno-sys=spirv-cross
 
-OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	pandoc:textproc/hs-pandoc
 DOCS_ZIG_BOOL=		emit-docs

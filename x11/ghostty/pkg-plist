@@ -1,9 +1,6 @@
 bin/ghostty
-@comment lib/systemd/user/app-com.mitchellh.ghostty.service
-share/applications/com.mitchellh.ghostty.desktop
 share/bash-completion/completions/ghostty.bash
 share/bat/syntaxes/ghostty.sublime-syntax
-share/dbus-1/services/com.mitchellh.ghostty.service
 share/fish/vendor_completions.d/ghostty.fish
 %%PORTDOCS%%%%DATADIR%%/doc/ghostty.1.html
 %%PORTDOCS%%%%DATADIR%%/doc/ghostty.1.md
@@ -15,8 +12,6 @@ share/fish/vendor_completions.d/ghostty.fish
 %%DATADIR%%/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish
 %%DATADIR%%/shell-integration/zsh/.zshenv
 %%DATADIR%%/shell-integration/zsh/ghostty-integration
-%%DATADIR%%/terminfo/g/ghostty
-%%DATADIR%%/terminfo/x/xterm-ghostty
 %%DATADIR%%/themes/0x96f
 %%DATADIR%%/themes/12-bit Rainbow
 %%DATADIR%%/themes/3024 Day
@@ -447,25 +442,14 @@ share/fish/vendor_completions.d/ghostty.fish
 %%DATADIR%%/themes/iTerm2 Solarized Light
 %%DATADIR%%/themes/iTerm2 Tango Dark
 %%DATADIR%%/themes/iTerm2 Tango Light
-share/icons/hicolor/1024x1024/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/128x128/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/128x128@2/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/16x16/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/16x16@2/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/256x256/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/256x256@2/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/32x32/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/32x32@2/apps/com.mitchellh.ghostty.png
-share/icons/hicolor/512x512/apps/com.mitchellh.ghostty.png
-share/kio/servicemenus/com.mitchellh.ghostty.desktop
 %%PORTDOCS%%share/man/man1/ghostty.1.gz
 %%PORTDOCS%%share/man/man5/ghostty.5.gz
-share/metainfo/com.mitchellh.ghostty.metainfo.xml
-share/nautilus-python/extensions/ghostty.py
 share/nvim/site/compiler/ghostty.vim
 share/nvim/site/ftdetect/ghostty.vim
 share/nvim/site/ftplugin/ghostty.vim
 share/nvim/site/syntax/ghostty.vim
+share/site-terminfo/g/ghostty
+share/site-terminfo/x/xterm-ghostty
 share/vim/vimfiles/compiler/ghostty.vim
 share/vim/vimfiles/ftdetect/ghostty.vim
 share/vim/vimfiles/ftplugin/ghostty.vim
