@@ -1,6 +1,6 @@
 PORTNAME=	xmlsec1
-DISTVERSION=	1.3.6
-PORTREVISION=	1
+DISTVERSION=	1.3.9
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/lsh123/xmlsec/releases/download/xmlsec_${DISTVERSION:S,.,_,g}/ \
 		https://www.aleksey.com/xmlsec/download/
@@ -21,13 +21,14 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
-PORTDOCS=	*
+
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS
+OPTIONS_DEFAULT=	OPENSSL NSS
 OPTIONS_MULTI=		SSL
 OPTIONS_MULTI_SSL=	GNUTLS NSS OPENSSL
-OPTIONS_DEFAULT=	OPENSSL NSS
 OPTIONS_SUB=		yes
 
 GNUTLS_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
@@ -39,8 +40,8 @@ NSS_LIB_DEPENDS=	libnspr4.so:devel/nspr \
 NSS_CONFIGURE_WITH=	nspr nss
 
 OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_OFF=	--without-openssl
 OPENSSL_CONFIGURE_ON=	--with-openssl="${OPENSSLBASE}"
+OPENSSL_CONFIGURE_OFF=	--without-openssl
 
 post-patch:
 	cd ${PATCH_WRKSRC} && ${REINPLACE_CMD} \
@@ -67,5 +68,6 @@ post-patch-NSS-on:
 
 post-install:
 	${RMDIR} ${STAGEDIR}${DOCSDIR}/css
+	${RM} ${STAGEDIR}${PREFIX}/bin/xmlsec_unit_tests
 
 .include <bsd.port.mk>
