@@ -1,5 +1,5 @@
 PORTNAME=	shandy-sqlfmt
-PORTVERSION=	0.28.2
+PORTVERSION=	0.29.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.4<5.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.0<5.0:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.10+
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
