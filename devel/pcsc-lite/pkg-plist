@@ -6,7 +6,6 @@ include/PCSC/pcsclite.h
 include/PCSC/reader.h
 include/PCSC/winscard.h
 include/PCSC/wintypes.h
-lib/libpcsclite.a
 lib/libpcsclite.so
 lib/libpcsclite.so.1
 lib/libpcsclite_real.so
