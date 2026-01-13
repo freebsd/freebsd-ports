@@ -18,6 +18,7 @@ LDB_DEPENDS=	talloc>=2.2.0:devel/talloc tevent>=0.10.0:devel/tevent \
 		tdb>=1.4.0:databases/tdb lmdb>=0.9.23:databases/lmdb \
 		popt>=0:devel/popt
 BUILD_DEPENDS=	${LDB_DEPENDS} \
+		${PY_SETUPTOOLS} \
 		cmocka>=1.1.3:sysutils/cmocka
 TEST_DEPENDS=	${LDB_DEPENDS} \
 		cmocka>=1.1.3:sysutils/cmocka
