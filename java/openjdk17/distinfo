@@ -1,3 +1,13 @@
-TIMESTAMP = 1762108077
+TIMESTAMP = 1766161758
+SHA256 (openjdk17-17.0.17+10.1.aarch64.tar.xz) = 15285f7a33da05352ad12e6ae3a5725759ab0ce3aef809f91ca7f06d72c00e1e
+SIZE (openjdk17-17.0.17+10.1.aarch64.tar.xz) = 160197680
+SHA256 (openjdk17-17.0.17+10.1.ppc64.tar.xz) = e4f222b0639315d5048e9a84a4063417421e4fef1568445a282edec247dfaadd
+SIZE (openjdk17-17.0.17+10.1.ppc64.tar.xz) = 158892048
+SHA256 (openjdk17-17.0.17+10.1.ppc64le.tar.xz) = d64ebe83f85509cb58cbe1c55a66a6ca4fa20dbead8267b96cfccd3d6e9b76fb
+SIZE (openjdk17-17.0.17+10.1.ppc64le.tar.xz) = 159761048
+SHA256 (openjdk17-17.0.17+10.1.x86.tar.xz) = 3c99a629188105c62765c6a48ff86cbc2e8a86d2a3b5e990a56d1ec1377b1f6c
+SIZE (openjdk17-17.0.17+10.1.x86.tar.xz) = 156124440
+SHA256 (openjdk17-17.0.17+10.1.x86_64.tar.xz) = 7f3097c84becab1ea66a78504b8c86a8df8cbc76c652b161166a2879f06e8a7f
+SIZE (openjdk17-17.0.17+10.1.x86_64.tar.xz) = 161722892
 SHA256 (battleblow-jdk17u-jdk-17.0.17+10-1_GH0.tar.gz) = 99bd33ce8cc618576e8693b9af1bb48059cb5011286009d46a0fabd2d8d36ba8
 SIZE (battleblow-jdk17u-jdk-17.0.17+10-1_GH0.tar.gz) = 108082578

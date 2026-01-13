@@ -1,8 +1,10 @@
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${JDK_UPDATE_VERSION}.${JDK_BUILD_NUMBER}.${BSD_JDK_VERSION}
+PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	LOCAL/jkim:jtreg
+MASTER_SITES=	LOCAL/jkim:jtreg LOCAL/openjdk:boot
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
+DISTFILES=	${BOOTSTRAPJDKFILE}:boot
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
@@ -47,8 +49,15 @@ JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2sdk-image/jre
 JRE_IMAGEDIR=	${JDK_BUILDDIR}/images/j2re-image
 .endif
 JDK_JVMDIR=	lib/${ARCH:C/armv.*/arm/:S/powerpc/ppc/}
-JDK_OSARCH=	bsd-${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/i386/x86/:S/powerpc/ppc/}
+JDK_ARCH=	${ARCH:S/amd64/x86_64/:C/armv.*/arm/:S/i386/x86/:S/powerpc/ppc/}
+.if ${JDK_ARCH} == arm
+BOOTSTRAPJDKFILE=	openjdk8-8.462.08.1.${JDK_ARCH}.tar.xz
+.else
+BOOTSTRAPJDKFILE=	openjdk8-8.472.08.1.${JDK_ARCH}.tar.xz
+.endif
+JDK_OSARCH=	bsd-${JDK_ARCH}
 INSTALLDIR=	${PREFIX}/${PKGBASE}
+BOOTSTRAPJDKDIR=	${WRKDIR}/boot-jdk
 
 NOPRECIOUSMAKEVARS=	yes
 
@@ -164,23 +173,6 @@ CONFIGURE_ARGS+=	--with-tools-dir="${TOOLS_DIR:u:S/ /:/g}"
 .endif
 
 .include <bsd.port.pre.mk>
-
-BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk8 \
-		${LOCALBASE}/openjdk7 \
-		${LOCALBASE}/bootstrap-openjdk8
-
-# do we have valid native jdk installed?
-.for BJDK in ${BOOTSTRAP_JDKS}
-.  if !defined(BOOTSTRAPJDKDIR) && exists(${BJDK}/bin/javac)
-BOOTSTRAPJDKDIR=	${BJDK}
-.  endif
-.endfor
-
-# if no valid jdk found, set dependency
-.if !defined(BOOTSTRAPJDKDIR)
-BOOTSTRAPJDKDIR?=	${LOCALBASE}/bootstrap-openjdk8
-BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:java/bootstrap-openjdk8
-.endif
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
 # XXX We must limit max heap size for 32-bit targets.

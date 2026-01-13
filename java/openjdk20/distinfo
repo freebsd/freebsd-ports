@@ -1,3 +1,13 @@
-TIMESTAMP = 1696177744
+TIMESTAMP = 1766157633
+SHA256 (openjdk20-20.0.2+9.1_3.aarch64.tar.xz) = 4f2cbd343d102ce64e074f6cdba2576314e4333034d73cde0fe862c60f116850
+SIZE (openjdk20-20.0.2+9.1_3.aarch64.tar.xz) = 165170468
+SHA256 (openjdk20-20.0.2+9.1_3.ppc64.tar.xz) = d4bb08c5d5cd14fd46a5d008d0abc06fa81e197738fdf85da285e547bf3fff7d
+SIZE (openjdk20-20.0.2+9.1_3.ppc64.tar.xz) = 164279232
+SHA256 (openjdk20-20.0.2+9.1_3.ppc64le.tar.xz) = fa1443a9a5b5c111ff6e47ae5cc310cde307b740ed84ee7dfcd3f5dfecb64e7c
+SIZE (openjdk20-20.0.2+9.1_3.ppc64le.tar.xz) = 165194700
+SHA256 (openjdk20-20.0.2+9.1_3.x86.tar.xz) = e282998ba34489b30563d49d19dca155c8b982cb400af0eaa71f683cb4506faf
+SIZE (openjdk20-20.0.2+9.1_3.x86.tar.xz) = 161116020
+SHA256 (openjdk20-20.0.2+9.1_3.x86_64.tar.xz) = a9f76e7f51497ea06ca83076c879d38c5586464be83bdac6585495b6ce0b5c9f
+SIZE (openjdk20-20.0.2+9.1_3.x86_64.tar.xz) = 167203788
 SHA256 (battleblow-jdk20u-jdk-20.0.2+9-1_GH0.tar.gz) = 61b32462e53841dd8641e6b21de91bae9a141ed58a41972f6a6cfba45ac8c4a2
 SIZE (battleblow-jdk20u-jdk-20.0.2+9-1_GH0.tar.gz) = 109736899
