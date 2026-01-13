@@ -1,14 +1,14 @@
---- crates/arti/Cargo.toml.orig	2023-08-02 07:30:41 UTC
+--- crates/arti/Cargo.toml.orig	2026-01-13 15:58:28 UTC
 +++ crates/arti/Cargo.toml
-@@ -16,7 +16,6 @@ default = [
-     "tokio",
-     "native-tls",
+@@ -20,7 +20,6 @@ default = [
+ default = [
+     "default-runtime",
      "dns-proxy",
 -    "harden",
      "compression",
      "bridge-client",
      "pt-client",
-@@ -31,7 +30,6 @@ full = [
+@@ -40,7 +39,6 @@ full = [
      "journald",
      "arti-client/full",
      "dns-proxy",
