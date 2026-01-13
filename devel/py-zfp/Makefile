@@ -12,7 +12,8 @@ WWW=		https://computing.llnl.gov/projects/zfp \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/scikit-build-cmake/LICENSE
 
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libzfp.so:devel/zfp
 RUN_DEPENDS=	${PYNUMPY}
 
