@@ -90,6 +90,7 @@
     SUBDIR += darknet
     SUBDIR += dartsim
     SUBDIR += ddate
+    SUBDIR += deark
     SUBDIR += deco
     SUBDIR += dejagnu
     SUBDIR += delay
