@@ -1,5 +1,5 @@
 PORTNAME=	libhomfly
-DISTVERSION=	1.02r6
+DISTVERSION=	1.03
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/miguelmarco/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -24,6 +24,7 @@ PLIST_FILES=	include/homfly.h	\
 		lib/libhomfly.a		\
 		lib/libhomfly.so	\
 		lib/libhomfly.so.0	\
-		lib/libhomfly.so.0.0.0
+		lib/libhomfly.so.0.0.0	\
+		libdata/pkgconfig/libhomfly.pc
 
 .include <bsd.port.mk>
