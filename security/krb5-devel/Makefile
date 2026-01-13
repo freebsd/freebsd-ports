@@ -1,5 +1,5 @@
 PORTNAME=		krb5
-PORTVERSION=		1.22.${MIT_COMMIT_DATE}
+PORTVERSION=		1.23.${MIT_COMMIT_DATE}
 CATEGORIES=		security
 .if !defined(MASTERDIR)
 PKGNAME_X=		-${FLAVOR:S/default//}-devel
@@ -8,8 +8,8 @@ PKGNAME_X=		-${FLAVOR:S/default//}
 .endif
 PKGNAMESUFFIX=		${PKGNAME_X:S/--/-/:C/-$//}
 
-HASH=			04816024a
-MIT_COMMIT_DATE=	2025.11.11
+HASH=			fb83387bb
+MIT_COMMIT_DATE=	2025.11.21
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
