@@ -9,6 +9,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Systems administration tool for networks
 WWW=		https://cfengine.com/
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=2026-05-01
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 LICENSE=	GPLv3

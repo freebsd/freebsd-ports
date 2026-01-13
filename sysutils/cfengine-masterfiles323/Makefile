@@ -7,6 +7,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	cfengine sample policies for installations and upgrades
 WWW=		https://cfengine.com/
 
+DEPRECATED=	No longer supported by upstream
+EXPIRATION_DATE=2026-05-01
+
 LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
