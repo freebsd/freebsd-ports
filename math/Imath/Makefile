@@ -2,7 +2,7 @@
 
 PORTNAME=	Imath
 PORTVERSION=	3.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math devel graphics
 MASTER_SITES=	https://github.com/AcademySoftwareFoundation/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		LOCAL/mandree/
@@ -33,6 +33,7 @@ PLIST_SUB=	MAJORVER=${_MAJORVER} \
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS LARGE_STACK PYTHON
+OPTIONS_DEFAULT=DOCS PYTHON
 OPTIONS_SUB=	yes
 
 LARGE_STACK_DESC=	Enable sys-dependent large stack optimizations
