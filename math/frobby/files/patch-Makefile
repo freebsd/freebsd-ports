@@ -1,6 +1,6 @@
---- Makefile.orig	2022-05-03 16:32:53 UTC
+--- Makefile.orig	2026-01-09 18:30:01 UTC
 +++ Makefile
-@@ -107,7 +107,6 @@ ifeq ($(MODE), release)
+@@ -106,7 +106,6 @@ ifeq ($(MODE), release)
  MATCH=false
  ifeq ($(MODE), release)
    outdir = bin/release/
@@ -8,7 +8,7 @@
    MATCH=true
  endif
  ifeq ($(MODE), debug)
-@@ -119,13 +118,13 @@ ifeq ($(MODE), shared)
+@@ -118,13 +117,13 @@ ifeq ($(MODE), shared)
  endif
  ifeq ($(MODE), shared)
    outdir = bin/shared/
@@ -24,7 +24,7 @@
    ldflags += -pg
    MATCH=true
    benchArgs = _profile $(FROBBYARGS)
-@@ -306,11 +305,11 @@ develDocPdf: bin/develDoc/
+@@ -326,11 +325,11 @@ develDocPdf: bin/develDoc/
  	rm -rf bin/develDoc/latexPdf bin/develDoc/warningLog
  	cat doc/doxygen.conf doc/doxPdf|doxygen -
  	cd bin/develDoc/latexPdf; for f in `ls *.eps`; do epstopdf $$f; done # Cygwin fix

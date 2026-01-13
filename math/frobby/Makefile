@@ -1,11 +1,7 @@
 PORTNAME=	frobby
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.5
-PORTREVISION=	3
+DISTVERSION=	0.9.7
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	5b9e4ac4057f5693f53c321eeb5bfb387f6b69fb.patch:-p1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software system and project for computations with monomial ideals
@@ -56,7 +52,7 @@ PLIST_SUB+=	LIBRARY="@comment " \
 # that can be found in ${WRKSRC}/Makefile
 FROBBY_SOVERSION=	1
 FROBBY_AGE=		0
-FROBBY_REVISION=	0
+FROBBY_REVISION=	2
 FROBBY_VERSION=		${FROBBY_SOVERSION}.${FROBBY_AGE}.${FROBBY_REVISION}
 
 do-build-DOCS-on:
