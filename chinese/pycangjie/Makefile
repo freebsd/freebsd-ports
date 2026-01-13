@@ -11,6 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcangjie.so:chinese/libcangjie
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 
 USES=		autoreconf gmake libtool pkgconfig sqlite python
 USE_PYTHON=	cython
