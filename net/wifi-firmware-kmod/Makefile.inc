@@ -79,7 +79,7 @@ DIST_SUBDIR=	linux-firmware/${FWDRV}fw
 EXTRACT_ONLY=
 
 .if !defined(NOT_FOR_ARCHS)
-ONLY_FOR_ARCHS?=	aarch64 amd64 i386
+ONLY_FOR_ARCHS?=	aarch64 amd64 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	LinuxKPI driver only available for these architectures
 .endif
 
