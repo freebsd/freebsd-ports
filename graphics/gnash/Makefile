@@ -2,8 +2,6 @@ PORTNAME=	gnash
 PORTVERSION=	0.8.11.20190130
 PORTREVISION=	4
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	https://cgit.git.savannah.gnu.org/cgit/gnash.git/snapshot/
-DISTNAME=	gnash-583ccbc1275c7701dc4843ec12142ff86bb305b4
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Flash movie player
@@ -33,12 +31,16 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg localbase:ldflags
 CPE_VENDOR=	gnu
+USE_GITHUB=	yes
 USE_CSTD=	gnu11
 USE_CXXSTD=	c++11
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_GNOME=	atk gdkpixbuf gtk20 libxml2 pango
 USE_GL=		egl
 USE_SDL=	sound2
+GH_ACCOUNT=	GitMirroring
+GH_PROJECT=	gnash
+GH_TAGNAME=	583ccbc1
 GNU_CONFIGURE=	yes
 
 SYSCONFIGDIR=	${PREFIX}/etc
@@ -63,12 +65,11 @@ CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--disable-jemalloc \
 		--without-gconf
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
-#MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/ffmpeg"
+#MAKE_ARGS+=	INCLUDES="-I${LOCALBASE}/include/ffmpeg4"
 
 GNASHVER=	0.8.11dev
 CONFIG_FILES=	gnashpluginrc gnashrc
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_SUB+=	GNASHVER="${GNASHVER}"
 
 USE_LDCONFIG=	${PREFIX}/lib/gnash
