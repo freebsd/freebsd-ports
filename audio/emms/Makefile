@@ -1,5 +1,5 @@
 PORTNAME=	emms
-DISTVERSION=	24
+DISTVERSION=	25
 CATEGORIES=	audio elisp
 MASTER_SITES=	https://elpa.gnu.org/packages/
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
@@ -8,7 +8,7 @@ MAINTAINER=	alven@FreeBSD.org
 COMMENT=	GNU/Emacs Multimedia System
 WWW=		https://www.gnu.org/software/emms/ \
 		https://elpa.gnu.org/packages/emms.html \
-		https://git.savannah.gnu.org/cgit/emms.git/
+		https://cgit.git.savannah.gnu.org/cgit/emms.git/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
