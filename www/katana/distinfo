@@ -1,5 +1,5 @@
-TIMESTAMP = 1765336272
-SHA256 (go/www_katana/katana-v1.3.0/v1.3.0.mod) = 45395dde9b943efc527182640351fbe5b95b8ccbd9edb7593ac68eac14e3b10a
-SIZE (go/www_katana/katana-v1.3.0/v1.3.0.mod) = 7992
-SHA256 (go/www_katana/katana-v1.3.0/v1.3.0.zip) = 3321a432f0b4db6f50475b72c5d9ca5072ba4868442751c52ed7227ae4dd34c0
-SIZE (go/www_katana/katana-v1.3.0/v1.3.0.zip) = 164680
+TIMESTAMP = 1768198802
+SHA256 (go/www_katana/katana-v1.4.0/v1.4.0.mod) = 102518171cf647cf8114f140126b94e31f28c915e0633df3c8123b01611d0e79
+SIZE (go/www_katana/katana-v1.4.0/v1.4.0.mod) = 8195
+SHA256 (go/www_katana/katana-v1.4.0/v1.4.0.zip) = fc7a7335a8a3689635e772eaabb15b2f92d5a4621947e9f5baa59fea4128421a
+SIZE (go/www_katana/katana-v1.4.0/v1.4.0.zip) = 265904
