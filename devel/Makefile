@@ -7450,12 +7450,12 @@
     SUBDIR += rubygem-gitlab-labkit
     SUBDIR += rubygem-gitlab-license
     SUBDIR += rubygem-gitlab-pygments.rb
-    SUBDIR += rubygem-gitlab_query_language
     SUBDIR += rubygem-gitlab-sdk
     SUBDIR += rubygem-gitlab-security_report_schemas
     SUBDIR += rubygem-gitlab_chronic_duration
     SUBDIR += rubygem-gitlab_git
     SUBDIR += rubygem-gitlab_meta
+    SUBDIR += rubygem-gitlab_query_language
     SUBDIR += rubygem-glib2
     SUBDIR += rubygem-gobject-introspection
     SUBDIR += rubygem-google-api-client

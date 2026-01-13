@@ -1747,8 +1747,8 @@
     SUBDIR += py-zensical
     SUBDIR += py-zope.i18nmessageid
     SUBDIR += py-zpt
-    SUBDIR += qprint
     SUBDIR += qo
+    SUBDIR += qprint
     SUBDIR += qr
     SUBDIR += qrcodegen
     SUBDIR += qstardict
