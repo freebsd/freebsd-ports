@@ -1,6 +1,6 @@
-VERSIONS=		321 324
+VERSIONS=		324 327
 # Upgrade to LTS versions only: https://cfengine.com/supported-versions/
-CFENGINE_VERSION?=	324
+CFENGINE_VERSION?=	327
 PKGNAMESUFFIX=		-lts
 
 MASTERDIR=		${.CURDIR}/../cfengine-masterfiles${CFENGINE_VERSION}
