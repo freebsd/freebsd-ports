@@ -56,6 +56,8 @@ X11_CMAKE_BOOL=		X11
 
 GIT_COMMIT_HASH=a1a150fab00a93ea983aaca5df55304bc837f51b
 
+.include <bsd.port.options.mk>
+
 .if ${OPSYS} == FreeBSD && ${ARCH} == i386
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_wayland_buffer_dmabuf.cpp
 .endif
