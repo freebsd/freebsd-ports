@@ -1,6 +1,6 @@
 PORTNAME=	fail2ban
 DISTVERSION=	1.1.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -50,9 +50,6 @@ MAN_FILES=	${WRKSRC}/man/fail2ban-client.1 \
 FAIL2BAN_DBDIR=	/var/db/${PORTNAME}
 PLIST_SUB=	FAIL2BAN_DBDIR=${FAIL2BAN_DBDIR}
 
-PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
-PY2TO3_ARG=	--no-diffs --write --nobackups --fix=all
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g' ${FILES}
 	@${REINPLACE_CMD} -e 's,paths-debian.conf,paths-freebsd.conf,g' \
@@ -63,10 +60,6 @@ post-patch:
 		${MAN_FILES}
 	@${REINPLACE_CMD} -e 's, sed , ${SED} ,g' \
 		${WRKSRC}/config/action.d/hostsdeny.conf
-
-	# XXX Ideally this should be in do-build but it only works in
-	# XXX post-patch
-	(cd ${WRKSRC}/ && ${PY2TO3_CMD} ${PY2TO3_ARG} bin/* fail2ban)
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${FAIL2BAN_DBDIR} ${STAGEDIR}/var/run/fail2ban
