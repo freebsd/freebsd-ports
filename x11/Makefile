@@ -374,6 +374,7 @@
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
     SUBDIR += qterminal
+    SUBDIR += quickshell
     SUBDIR += remontoire
     SUBDIR += rendercheck
     SUBDIR += rgb
