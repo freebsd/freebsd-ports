@@ -1,4 +1,4 @@
-TIMESTAMP = 1768024263
+TIMESTAMP = 1768308808
 SHA256 (rust/crates/addr2line-0.25.1.crate) = 1b5d307320b3181d6d7954e663bd7c774a838b8220fe0593c86d9fb09f498b4b
 SIZE (rust/crates/addr2line-0.25.1.crate) = 43134
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -1585,8 +1585,8 @@ SHA256 (rust/crates/ptr_meta_derive-0.1.4.crate) = 16b845dbfca988fa33db069c0e230
 SIZE (rust/crates/ptr_meta_derive-0.1.4.crate) = 2302
 SHA256 (rust/crates/pulldown-cmark-0.10.3.crate) = 76979bea66e7875e7509c4ec5300112b316af87fa7a252ca91c448b32dfe3993
 SIZE (rust/crates/pulldown-cmark-0.10.3.crate) = 141746
-SHA256 (rust/crates/pulldown-cmark-0.12.2.crate) = f86ba2052aebccc42cbbb3ed234b8b13ce76f75c3551a303cb2bcffcff12bb14
-SIZE (rust/crates/pulldown-cmark-0.12.2.crate) = 149070
+SHA256 (rust/crates/pulldown-cmark-0.13.0.crate) = 1e8bbe1a966bd2f362681a44f6edce3c2310ac21e4d5067a6e7ec396297a6ea0
+SIZE (rust/crates/pulldown-cmark-0.13.0.crate) = 154023
 SHA256 (rust/crates/pulldown-cmark-escape-0.10.1.crate) = bd348ff538bc9caeda7ee8cad2d1d48236a1f443c1fa3913c6a02fe0043b1dd3
 SIZE (rust/crates/pulldown-cmark-escape-0.10.1.crate) = 6672
 SHA256 (rust/crates/pulley-interpreter-29.0.1.crate) = 62d95f8575df49a2708398182f49a888cf9dc30210fb1fd2df87c889edcee75d
@@ -2809,5 +2809,5 @@ SHA256 (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a
 SIZE (zed-industries-tree-sitter-yaml-baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a_GH0.tar.gz) = 145319
 SHA256 (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 8698ebc194a6c3ee377cde94f4fdff590f6a7973bc7987c880801fa7fd69e5c3
 SIZE (zed-industries-calloop-eb6b4fd17b9af5ecc226546bdd04185391b3e265_GH0.tar.gz) = 94768
-SHA256 (zed-industries-zed-v0.218.6_GH0.tar.gz) = 4192fc27529937f5fb7f3a8a95f021f04acdeadd4d205b0239fc90fc008c325a
-SIZE (zed-industries-zed-v0.218.6_GH0.tar.gz) = 22450669
+SHA256 (zed-industries-zed-v0.218.7_GH0.tar.gz) = 0dad83a6c3055a2dcba4d35ccb3a5ee63c08053df2332f7a87dce3f619e7167a
+SIZE (zed-industries-zed-v0.218.7_GH0.tar.gz) = 22450028

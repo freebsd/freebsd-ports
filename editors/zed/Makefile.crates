@@ -791,7 +791,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
 		pulldown-cmark-0.10.3 \
-		pulldown-cmark-0.12.2 \
+		pulldown-cmark-0.13.0 \
 		pulldown-cmark-escape-0.10.1 \
 		pulley-interpreter-29.0.1 \
 		pulp-0.18.22 \
