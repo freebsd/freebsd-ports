@@ -72,6 +72,10 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}${DISTVERSIONSUFFIX} \
 
 .include <bsd.port.pre.mk>
 
+.if ${PGSQL_VER} > 17
+IGNORE=		Only supported up to pgsql 17
+.endif
+
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 post-patch:
 	${REINPLACE_CMD} -e '/^#pragma GCC diagnostic/d' \
