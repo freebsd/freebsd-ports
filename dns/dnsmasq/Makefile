@@ -1,11 +1,11 @@
 PORTNAME=	dnsmasq
-DISTVERSION=	2.91
+DISTVERSION=	2.92
 # Leave the PORTREVISION in even if 0 to avoid accidental PORTEPOCH bumps:
-PORTREVISION=	2
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	dns
-MASTER_SITES=	https://www.thekelleys.org.uk/dnsmasq/ \
-		LOCAL/mandree/
+MASTER_SITES=	LOCAL/mandree/ \
+		https://thekelleys.org.uk/dnsmasq/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP, and TFTP server
@@ -28,7 +28,7 @@ MAKE_ARGS=	CC="${CC}" \
 CFLAGS+=	-Wall
 # https://best.openssf.org/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C++.html
 # Note there are ${ARCH}-dependent options below after .include <bsd.port.pre.mk>
-# Note that these are enforced for now (2025-09-16), and we can't subject them to PIE/FORTIFY/SSP_UNSAFE or WITHOUT_ options for now.
+# Note that these are enforced, and we won't subject them to PIE/FORTIFY/SSP_UNSAFE or WITHOUT_ options.
 CFLAGS+=	-Wall -Wformat -Wformat=2 \
 		-Werror=format-security \
 		-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 \
