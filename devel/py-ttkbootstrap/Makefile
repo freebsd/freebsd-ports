@@ -1,6 +1,6 @@
 PORTNAME=	ttkbootstrap
-DISTVERSION=	1.14.2
-PORTREVISION=	1
+DISTVERSION=	1.20.0
+PORTREVISION=	0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,5 +20,10 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e 's/^(license = )("[^"]+")/\1{ text = \2 }/1' \
+		${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
