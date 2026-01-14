@@ -125,8 +125,6 @@
     SUBDIR += gnustep-base
     SUBDIR += go
     SUBDIR += go-devel
-    SUBDIR += go122
-    SUBDIR += go123
     SUBDIR += go124
     SUBDIR += go125
     SUBDIR += gomacro
