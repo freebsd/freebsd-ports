@@ -13,13 +13,14 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
+		libfam.so.0:devel/gamin \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libhunspell-1.7.so:textproc/hunspell \
 		libtinyxml.so:textproc/tinyxml
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils \
-		fam:gamin gettext-runtime gnome libtool localbase \
+		gettext-runtime gnome libtool localbase \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
 USE_CXXSTD=	c++11
 USE_GNOME=	gtk30 cairo
