@@ -305,7 +305,7 @@ _USE_FRAMEWORKS6_ALL=	apidox archive attica auth baloo bookmarks \
 			jobwidgets kcmutils kdav kdeclarative kded kdesu \
 			kimageformats kio kirigami2 kquickcharts newstuff \
 			networkmanagerqt notifications notifyconfig package parts \
-			people plasma-wayland-protocols plotting prison pty purpose \
+			people plotting prison pty purpose \
 			qqc2-desktop-style runner service solid sonnet \
 			statusnotifieritem svg syndication \
 			syntaxhighlighting texteditor texttemplate \
