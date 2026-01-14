@@ -9,11 +9,11 @@
 #				and non existing users will cause the
 #				installed package to miss files.
 # MAILDROP_TRUSTED_USERS=<user> Specify users allowed to use the -d option
-# MAILDROP_LOG_COLUMNS	lenght of 'File:' line in log - 8; default: 72
+# MAILDROP_LOG_COLUMNS		lenght of 'File:' line in log - 8; default: 72
 # MAILDROP_MBOX_DIR=<dir>	Specify DEFAULT mailbox location
 
 PORTNAME=	maildrop
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.0
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
