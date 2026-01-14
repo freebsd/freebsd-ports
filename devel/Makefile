@@ -1334,6 +1334,7 @@
     SUBDIR += libibuddy
     SUBDIR += libical
     SUBDIR += libiec61850
+    SUBDIR += libigloo
     SUBDIR += libindicator
     SUBDIR += libinjection
     SUBDIR += libinotify
