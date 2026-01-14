@@ -1,7 +1,7 @@
-TIMESTAMP = 1767878825
-SHA256 (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.1_GH0/v0.17.1.mod) = 7738ffd51e54b85422ab99865f5e90cbad04be4a6ce1398051513994d12c0b71
-SIZE (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.1_GH0/v0.17.1.mod) = 142
-SHA256 (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.1_GH0/v0.17.1.zip) = 7b347455a1ff5912f8dbb1d2e437945402b60bfabffcd98501ebf9198c2a82b7
-SIZE (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.1_GH0/v0.17.1.zip) = 20903
-SHA256 (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.1_GH0/hickford-git-credential-oauth-v0.17.1_GH0.tar.gz) = 61a79ffcb51c2e3a37ec56c99c4d9a738322e0f47fdd6ffaf456a38589f27877
-SIZE (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.1_GH0/hickford-git-credential-oauth-v0.17.1_GH0.tar.gz) = 16741
+TIMESTAMP = 1768420968
+SHA256 (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.2_GH0/v0.17.2.mod) = 7738ffd51e54b85422ab99865f5e90cbad04be4a6ce1398051513994d12c0b71
+SIZE (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.2_GH0/v0.17.2.mod) = 142
+SHA256 (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.2_GH0/v0.17.2.zip) = 2f3fcb450dffc25309b4d1bf1e4b87e1cf55b57c13e6be34e63595630bb03f3b
+SIZE (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.2_GH0/v0.17.2.zip) = 20939
+SHA256 (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.2_GH0/hickford-git-credential-oauth-v0.17.2_GH0.tar.gz) = 23769afc87f82fe21b5519d059bb5ce56b2fad2c4abc7ecde9bff49a4e065ab6
+SIZE (go/security_git-credential-oauth/hickford-git-credential-oauth-v0.17.2_GH0/hickford-git-credential-oauth-v0.17.2_GH0.tar.gz) = 16774
