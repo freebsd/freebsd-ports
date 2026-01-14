@@ -23,6 +23,7 @@ LLVM_MAN1SRCS= \
 	llvm-extract.1 \
 	llvm-ifs.1 \
 	llvm-install-name-tool.1 \
+	llvm-ir2vec.1 \
 	llvm-lib.1 \
 	llvm-libtool-darwin.1 \
 	llvm-lipo.1 \
@@ -33,6 +34,7 @@ LLVM_MAN1SRCS= \
 	llvm-nm.1 \
 	llvm-objcopy.1 \
 	llvm-objdump.1 \
+	llvm-offload-binary.1 \
 	llvm-opt-report.1 \
 	llvm-otool.1 \
 	llvm-pdbutil.1 \
