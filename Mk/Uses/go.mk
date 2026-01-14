@@ -17,18 +17,17 @@
 # run		Indicates that Go is needed at run time and adds it to
 #		RUN_DEPENDS.
 #
-# Note about Go versions:
-#   The use of a version specifier (i.e. go:N.NN) should be reserved only for
-#   when a port absolutely cannot build with any other version. This is very
-#   rare. If a port builds in both supported Go versions with just USES=go
-#   (or USES=go:modules etc.), then stick with just USES=go and drop the version
-#   specifier.
+# Note about Go version specifiers (i.e. USES=go:1.20+):
+#   Try to use a range (USES=go:1.20+) rather than a single-version pin
+#   (USES=go:1.20) when possible.
 #
-#   Each go version is supported for about one year, so ports pinned to an
-#   old version will have to be removed when its Go version is removed.
+#   When you pin to a single version, you're saying that it only builds with
+#   that one version and nothing else. Go minors have a one-year lifecycle,
+#   so a single version pin creates a dependency that must be resolved next
+#   year. If your port really does need that, please let the Go team know so
+#   that we can work out how to support your port.
 #
-#   DO NOT treat the version specified in go.mod as a hard requirement. In most
-#   cases it's just a hint to the compiler.
+#   When go.mod says "go 1.20", it's usually fine to say USES=go:1.20+.
 #
 # You can set the following variables to control the process.
 #
