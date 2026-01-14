@@ -3,13 +3,12 @@ PORTVERSION=	${SNAPSHOT}
 PORTREVISION=	${MAIN_PR}
 PORTEPOCH=	1
 CATEGORIES=	lang
-MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
-		LOCAL/marino:boot LOCAL/ericbsd:boot GCC/${MS_SUBDIR}
+MASTER_SITES=	LOCAL/fluffy:boot GCC/${MS_SUBDIR}
 DISTFILES=	${IDENTIFICATION}.tar.xz
 
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
-WWW=		http://www.dragonlace.net/
+WWW=		https://github.com/jrmarino/draco
 
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
@@ -51,11 +50,7 @@ BOOTSTRAP_DESC=		Create bootstrap compiler (overrides other options)
 .if ${OPSYS} == FreeBSD
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 MODERN_BINUTILS=	yes
-BOOTSTRAP_COMPILER=	ada-bootstrap.${GARCH}.freebsd.120.tar.bz2
-.endif
-.if ${OPSYS} == DragonFly
-ONLY_FOR_ARCHS=		x86_64
-BOOTSTRAP_COMPILER=	ada-bootstrap.x86_64.dragonfly.41.tar.bz2
+BOOTSTRAP_COMPILER=	ada-bootstrap-${GARCH}-freebsd-13-${GCC_VERSION}.tar.bz2
 .endif
 
 .if defined(MODERN_BINUTILS)
@@ -78,7 +73,7 @@ PHASEFILE=		${WRKSRC}/gcc/DEV-PHASE
 BOOTSTRAP_PREFIX=	${WRKDIR}/bootstrap
 PKG_PREFIX=		${PREFIX}/${PORTNAME}
 MANDIRS=		${PREFIX}/${PORTNAME}/share
-BSFILENAME=		ada-bootstrap.${GARCH}.${OPSYS:tl}.${OSREL:S/.//}.tar.bz2
+BSFILENAME=		ada-bootstrap-${GARCH}-${OPSYS:tl}-${OSREL:R}-${GCC_VERSION}.tar.bz2
 
 # If we find gnatmake and friends in a standard location, then we'll use this
 # compiler instead of downloading the bootstrap.
@@ -109,12 +104,9 @@ DISTFILES+=	${BOOTSTRAP_COMPILER}:boot
 .if defined(PLUS_BOOTSTRAPS)
 DISTFILES=	\
    ${IDENTIFICATION}.tar.xz \
-   ada-bootstrap.i386.freebsd.100B.tar.bz2:boot \
-   ada-bootstrap.i386.freebsd.120.tar.bz2:boot \
-   ada-bootstrap.x86_64.dragonfly.41.tar.bz2:boot \
-   ada-bootstrap.x86_64.freebsd.100B.tar.bz2:boot \
-   ada-bootstrap.x86_64.freebsd.120.tar.bz2:boot \
-   ada-bootstrap.aarch64.freebsd.120.tar.bz2:boot
+   ada-bootstrap-aarch64-freebsd-13-${GCC_VERSION}.tar.bz2:boot \
+   ada-bootstrap-x86_64-freebsd-13-${GCC_VERSION}.tar.bz2:boot \
+   ada-bootstrap-i386-freebsd-13-${GCC_VERSION}.tar.bz2:boot
 .endif
 
 .if ${PORT_OPTIONS:MFORTRAN} && !${PORT_OPTIONS:MBOOTSTRAP}
