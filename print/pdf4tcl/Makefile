@@ -1,7 +1,6 @@
 PORTNAME=	pdf4tcl
-PORTVERSION=	0.8
-PORTREVISION=	1
-CATEGORIES=	print
+PORTVERSION=	0.94
+CATEGORIES=	print devel
 MASTER_SITES=	SF/${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
@@ -9,33 +8,27 @@ MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Pure Tcl library to generate PDF files
 WWW=		https://sourceforge.net/projects/pdf4tcl/
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/licence.terms
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	dtplite:devel/tcllib
-RUN_DEPENDS=	${LOCALBASE}/lib/tcllib/snit/snit.tcl:devel/tcllib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//}
 
-PORTDOCS=	*
-PLIST_FILES=	lib/${PKGNAME}/glyph2uni.tcl \
-		lib/${PKGNAME}/pkgIndex.tcl \
-		lib/${PKGNAME}/pdf4tcl.tcl \
-		lib/${PKGNAME}/stdmetrics.tcl \
+PLIST_FILES=	lib/${PORTNAME}/glyph2uni.tcl \
+		lib/${PORTNAME}/pkgIndex.tcl \
+		lib/${PORTNAME}/pdf4tcl.tcl \
+		lib/${PORTNAME}/stdmetrics.tcl \
 		share/man/mann/pdf4tcl.n.gz
 
-.include <bsd.port.options.mk>
-
 do-build:
-#	Generate manpage
-	cd ${WRKSRC} && ${LOCALBASE}/bin/dtplite -o pdf4tcl.n nroff pdf4tcl.man
+	${LOCALBASE}/bin/dtplite -o ${WRKSRC}/pdf4tcl.n nroff ${WRKSRC}/pdf4tcl.man
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PKGNAME}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \*.tcl ${STAGEDIR}${PREFIX}/lib/${PKGNAME}
-	${INSTALL_DATA} ${WRKSRC}/pdf4tcl.n ${STAGEDIR}${PREFIX}/share/man/mann
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${STAGEDIR}${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.tcl ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
+	${INSTALL_MAN} ${WRKSRC}/pdf4tcl.n ${STAGEDIR}${PREFIX}/share/man/mann/
 
 .include <bsd.port.mk>
