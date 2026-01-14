@@ -1,6 +1,6 @@
 PORTNAME=	pam_worker
 DISTVERSION=	0.1
-CATEGORIES=	mail www
+CATEGORIES=	security
 MASTER_SITES=	https://fossil.nours.eu/${PORTNAME}/tarball/?r=${DISTVERSION}&name=./
 
 MAINTAINER=	bapt@FreeBSD.org
