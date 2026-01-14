@@ -330,6 +330,10 @@ share/locale/fr/LC_MESSAGES/kdeconnect-plugins.mo
 share/locale/fr/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/fr/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
+share/locale/ga/LC_MESSAGES/kdeconnect-cli.mo
+share/locale/ga/LC_MESSAGES/kdeconnect-core.mo
+share/locale/ga/LC_MESSAGES/kdeconnect-indicator.mo
+share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-app.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-cli.mo
 share/locale/gl/LC_MESSAGES/kdeconnect-core.mo

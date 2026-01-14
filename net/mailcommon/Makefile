@@ -32,4 +32,6 @@ USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+KDE_APPLICATIONS_SHLIB_VER=	6.6.41
+
 .include <bsd.port.mk>

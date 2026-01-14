@@ -719,11 +719,13 @@ share/locale/ga/LC_MESSAGES/kgetplugin.mo
 share/locale/ga/LC_MESSAGES/khtmlsettingsplugin.mo
 share/locale/ga/LC_MESSAGES/khtmltts.mo
 share/locale/ga/LC_MESSAGES/kio6_bookmarks.mo
+share/locale/ga/LC_MESSAGES/konqsidebar.mo
 share/locale/ga/LC_MESSAGES/konqueror.mo
 share/locale/ga/LC_MESSAGES/kshellcmdplugin.mo
 share/locale/ga/LC_MESSAGES/libkonq.mo
 share/locale/ga/LC_MESSAGES/searchbarplugin.mo
 share/locale/ga/LC_MESSAGES/uachangerplugin.mo
+share/locale/ga/LC_MESSAGES/webarchiver.mo
 share/locale/ga/LC_MESSAGES/webenginepart.mo
 share/locale/gl/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/gl/LC_MESSAGES/autorefresh.mo

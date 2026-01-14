@@ -367,6 +367,7 @@ share/locale/ga/LC_MESSAGES/kio6_fish.mo
 share/locale/ga/LC_MESSAGES/kio6_info.mo
 share/locale/ga/LC_MESSAGES/kio6_man.mo
 share/locale/ga/LC_MESSAGES/kio6_nfs.mo
+share/locale/ga/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ga/LC_MESSAGES/kio6_sftp.mo
 share/locale/ga/LC_MESSAGES/kio6_smb.mo
 share/locale/ga/LC_MESSAGES/kio6_thumbnail.mo
