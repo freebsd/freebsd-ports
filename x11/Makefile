@@ -128,6 +128,7 @@
     SUBDIR += habak
     SUBDIR += hamclock
     SUBDIR += hhpc
+    SUBDIR += histui
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
     SUBDIR += hybrid-bar
