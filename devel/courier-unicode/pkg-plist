@@ -3,8 +3,8 @@ include/courier-unicode-script-tab.h
 include/courier-unicode.h
 lib/libcourier-unicode.a
 lib/libcourier-unicode.so
-lib/libcourier-unicode.so.10
-lib/libcourier-unicode.so.10.0.0
+lib/libcourier-unicode.so.11
+lib/libcourier-unicode.so.11.0.0
 share/man/man3/unicode::bidi.3.gz
 share/man/man3/unicode::bidi_calc.3.gz
 share/man/man3/unicode::bidi_calc_types.3.gz
