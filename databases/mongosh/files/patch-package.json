@@ -1,5 +1,14 @@
 --- package.json.orig	2025-07-02 13:57:45 UTC
 +++ package.json
+@@ -29,7 +29,7 @@
+     "pretest-smoke": "npm run compile-cli",
+     "test-smoke": "npm run test-smoke -w @mongosh/cli-repl",
+     "compile": "npm run compile --workspaces --if-present",
+-    "compile-cli": "lerna run compile --scope @mongosh/cli-repl --include-dependencies",
++    "compile-cli": "lerna --loglevel silly run compile --scope @mongosh/cli-repl --include-dependencies",
+     "prestart-cli": "npm run compile-cli",
+     "start-cli": "npm run start -w @mongosh/cli-repl",
+     "start-browser": "npm run start --workspace @mongosh/browser-repl",
 @@ -69,7 +69,6 @@
      "postcreate-static-analysis-report": "mongodb-sbom-tools sarif-to-markdown --sarif=.sbom/codeql.sarif.json --md=.sbom/codeql.md",
      "where": "monorepo-where",

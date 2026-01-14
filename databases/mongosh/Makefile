@@ -1,7 +1,7 @@
 PORTNAME=	mongosh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases shells net
 MASTER_SITES=	https://registry.npmjs.org/mongodb-client-encryption/-/:mongocrypt \
 		https://registry.npmjs.org/kerberos/-/:kerberos \
@@ -42,7 +42,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libmongocrypt.so:databases/libmongocrypt
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		compiler:c++11-lang gmake gssapi:mit localbase nodejs:lts,build pkgconfig python:build ssl tar:xz
+USES=		compiler:c++11-lang gmake gssapi:mit localbase nodejs:22,build pkgconfig python:build ssl tar:xz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	VultureProject
@@ -114,7 +114,7 @@ do-build:
 	${RM} -v \
 		${WRKSRC}/scripts/nodejs-patches/005-windows-escape-product-dir-abs-in-openssl-node-56111.patch \
 		${WRKSRC}/scripts/nodejs-patches/006-windows-virtual-terminal-input-libuv-4688.patch
-	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/npm run compile-exec
+	cd ${WRKSRC} && ${MAKE_ENV} ${LOCALBASE}/bin/npm run compile-exec || (cat ${WRKSRC}/lerna-debug.log && false)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dist/mongosh ${STAGEDIR}${PREFIX}/bin
