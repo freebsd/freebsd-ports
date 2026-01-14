@@ -553,6 +553,7 @@
     SUBDIR += pg_similarity
     SUBDIR += pg_stat_kcache
     SUBDIR += pg_store_plans
+    SUBDIR += pg_textsearch
     SUBDIR += pg_tileserv
     SUBDIR += pgaccess
     SUBDIR += pgactive
