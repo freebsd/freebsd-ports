@@ -1,3 +1,4 @@
+etc/libmap.d/Prowlarr.conf
 %%DATADIR%%/bin/AngleSharp.Xml.dll
 %%DATADIR%%/bin/AngleSharp.dll
 %%DATADIR%%/bin/Azure.Core.dll
@@ -465,10 +466,10 @@
 %%DATADIR%%/bin/UI/194-74921861e81ae7f57cdf.js
 %%DATADIR%%/bin/UI/194-74921861e81ae7f57cdf.js.LICENSE.txt
 %%DATADIR%%/bin/UI/194-74921861e81ae7f57cdf.js.map
-%%DATADIR%%/bin/UI/195-cdf8e899db76587e6548.js
-%%DATADIR%%/bin/UI/195-cdf8e899db76587e6548.js.map
-%%DATADIR%%/bin/UI/Content/195-aafb80b0148c52b32193.css
-%%DATADIR%%/bin/UI/Content/195-aafb80b0148c52b32193.css.map
+%%DATADIR%%/bin/UI/195-9b5e92c9172ec7406271.js
+%%DATADIR%%/bin/UI/195-9b5e92c9172ec7406271.js.map
+%%DATADIR%%/bin/UI/Content/195-429be677181e931bd77f.css
+%%DATADIR%%/bin/UI/Content/195-429be677181e931bd77f.css.map
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.ttf
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff
 %%DATADIR%%/bin/UI/Content/Fonts/Roboto-Light.woff2
@@ -510,8 +511,8 @@
 %%DATADIR%%/bin/UI/Content/robots.txt
 %%DATADIR%%/bin/UI/Content/styles.css
 %%DATADIR%%/bin/UI/Content/styles.css.map
-%%DATADIR%%/bin/UI/index-fdea170d79864b2a3b0b.js
-%%DATADIR%%/bin/UI/index-fdea170d79864b2a3b0b.js.map
+%%DATADIR%%/bin/UI/index-080df03727d73fef7848.js
+%%DATADIR%%/bin/UI/index-080df03727d73fef7848.js.map
 %%DATADIR%%/bin/UI/index.html
 %%DATADIR%%/bin/UI/login.html
 %%DATADIR%%/bin/UI/oauth.html
