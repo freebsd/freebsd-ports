@@ -1127,6 +1127,7 @@
     SUBDIR += tiledb
     SUBDIR += timescaledb
     SUBDIR += timescaledb-backup
+    SUBDIR += timescaledb-parallel-copy
     SUBDIR += timescaledb-tune
     SUBDIR += tinycdb
     SUBDIR += tkrzw
