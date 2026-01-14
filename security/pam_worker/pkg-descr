@@ -1,0 +1,4 @@
+pam_worker utility is a helper program designed to perform PAM (Pluggable
+Authentication Modules) authentication for a given profile.
+It is intended to be used in combination with pam_exec(8) to allow non-setuid
+programs to perform authentication.
