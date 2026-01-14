@@ -71,6 +71,7 @@ share/locale/et/LC_MESSAGES/spectacle.mo
 share/locale/eu/LC_MESSAGES/spectacle.mo
 share/locale/fi/LC_MESSAGES/spectacle.mo
 share/locale/fr/LC_MESSAGES/spectacle.mo
+share/locale/ga/LC_MESSAGES/spectacle.mo
 share/locale/gl/LC_MESSAGES/spectacle.mo
 share/locale/he/LC_MESSAGES/spectacle.mo
 share/locale/hi/LC_MESSAGES/spectacle.mo
@@ -114,6 +115,7 @@ share/man/es/man1/spectacle.1.gz
 share/man/it/man1/spectacle.1.gz
 share/man/man1/spectacle.1.gz
 share/man/nl/man1/spectacle.1.gz
+share/man/pt_BR/man1/spectacle.1.gz
 share/man/sl/man1/spectacle.1.gz
 share/man/sv/man1/spectacle.1.gz
 share/man/tr/man1/spectacle.1.gz
