@@ -571,7 +571,7 @@ kde-plasma-framework_PORT=	x11/kf${_KDE_VERSION}-plasma-framework
 kde-plasma-framework_LIB=	libKF${_KDE_VERSION}Plasma.so
 
 kde-plasma-wayland-protocols_PORT=	x11/plasma-wayland-protocols
-kde-plasma-wayland-protocols_PATH=	${KDE_PREFIX}/lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake
+kde-plasma-wayland-protocols_PATH=	${KDE_PREFIX}/share/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfig.cmake
 
 kde-plotting_PORT=		graphics/kf${_KDE_VERSION}-kplotting
 kde-plotting_LIB=		libKF${_KDE_VERSION}Plotting.so
