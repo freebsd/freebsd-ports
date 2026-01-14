@@ -1147,6 +1147,10 @@ share/man/nl/man1/checkXML6.1.gz
 share/man/nl/man1/meinproc6.1.gz
 share/man/nl/man7/kf6options.7.gz
 share/man/nl/man7/qt6options.7.gz
+share/man/pt_BR/man1/checkXML6.1.gz
+share/man/pt_BR/man1/meinproc6.1.gz
+share/man/pt_BR/man7/kf6options.7.gz
+share/man/pt_BR/man7/qt6options.7.gz
 share/man/sl/man1/checkXML6.1.gz
 share/man/sl/man1/meinproc6.1.gz
 share/man/sl/man7/kf6options.7.gz
