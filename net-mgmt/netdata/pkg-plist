@@ -592,7 +592,7 @@ sbin/systemd-cat-native
 %%DASHBOARD%%%%DATADIR%%/web/v3/2108.8c4693350e92a987785c.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/2117.556697628ab0ce0f51b2.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/2143.bf8feb264171ce59ee58.chunk.js
-%%DASHBOARD%%%%DATADIR%%/web/v3/2177.%%PYTHON_SUFFIX%%3a31caa24200c1f32.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/2177.3113a31caa24200c1f32.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/2201.0958e54c6f9c5330add5.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/2248.18b187ede523a9fa61e9.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/2436.9066b1b9cbd2763a52ef.chunk.js
@@ -628,7 +628,7 @@ sbin/systemd-cat-native
 %%DASHBOARD%%%%DATADIR%%/web/v3/3961.859c0524a24d1b21e938.chunk.js.LICENSE.txt
 %%DASHBOARD%%%%DATADIR%%/web/v3/399.35123f9121b0d02555c7.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/3D_PARTY_LICENSES.txt
-%%DASHBOARD%%%%DATADIR%%/web/v3/4142.89c7894aaef%%PYTHON_SUFFIX%%04d21c.chunk.js
+%%DASHBOARD%%%%DATADIR%%/web/v3/4142.89c7894aaef31104d21c.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/4211.0de89edfff61d6f67625.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/4265.4b3c6e16e1b61d4b30a0.chunk.js
 %%DASHBOARD%%%%DATADIR%%/web/v3/4277.76010c5a5ab91891d22a.chunk.js
