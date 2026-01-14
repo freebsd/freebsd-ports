@@ -520,6 +520,7 @@ share/locale/eu/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katefiletree.mo
 share/locale/eu/LC_MESSAGES/kategdbplugin.mo
 share/locale/eu/LC_MESSAGES/kategitblameplugin.mo
+share/locale/eu/LC_MESSAGES/kategpgplugin.mo
 share/locale/eu/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/eu/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/eu/LC_MESSAGES/kateproject.mo
@@ -615,6 +616,7 @@ share/locale/ga/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/ga/LC_MESSAGES/kate.mo
 share/locale/ga/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ga/LC_MESSAGES/katebuild-plugin.mo
+share/locale/ga/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ga/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ga/LC_MESSAGES/kategdbplugin.mo
 share/locale/ga/LC_MESSAGES/katekonsoleplugin.mo

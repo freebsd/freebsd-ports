@@ -1739,6 +1739,7 @@ share/locale/fr/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/ga/LC_MESSAGES/kdevappwizard.mo
 share/locale/ga/LC_MESSAGES/kdevbazaar.mo
 share/locale/ga/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/ga/LC_MESSAGES/kdevclazy.mo
 share/locale/ga/LC_MESSAGES/kdevcmake.mo
 share/locale/ga/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/ga/LC_MESSAGES/kdevcodeutils.mo
@@ -1753,12 +1754,14 @@ share/locale/ga/LC_MESSAGES/kdevexecute.mo
 share/locale/ga/LC_MESSAGES/kdevexecutescript.mo
 share/locale/ga/LC_MESSAGES/kdevexternalscript.mo
 share/locale/ga/LC_MESSAGES/kdevfilemanager.mo
+share/locale/ga/LC_MESSAGES/kdevfiletemplates.mo
 share/locale/ga/LC_MESSAGES/kdevgdb.mo
 share/locale/ga/LC_MESSAGES/kdevgit.mo
 share/locale/ga/LC_MESSAGES/kdevgrepview.mo
 share/locale/ga/LC_MESSAGES/kdevkonsole.mo
 share/locale/ga/LC_MESSAGES/kdevmakebuilder.mo
 share/locale/ga/LC_MESSAGES/kdevmanpage.mo
+share/locale/ga/LC_MESSAGES/kdevmesonmanager.mo
 share/locale/ga/LC_MESSAGES/kdevninja.mo
 share/locale/ga/LC_MESSAGES/kdevokteta.mo
 share/locale/ga/LC_MESSAGES/kdevopenwith.mo
@@ -1766,6 +1769,7 @@ share/locale/ga/LC_MESSAGES/kdevpatchreview.mo
 share/locale/ga/LC_MESSAGES/kdevperforce.mo
 share/locale/ga/LC_MESSAGES/kdevplatform.mo
 share/locale/ga/LC_MESSAGES/kdevproblemreporter.mo
+share/locale/ga/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/ga/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/ga/LC_MESSAGES/kdevqmakebuilder.mo
 share/locale/ga/LC_MESSAGES/kdevqmakemanager.mo
@@ -1774,6 +1778,7 @@ share/locale/ga/LC_MESSAGES/kdevquickopen.mo
 share/locale/ga/LC_MESSAGES/kdevstandardoutputview.mo
 share/locale/ga/LC_MESSAGES/kdevsubversion.mo
 share/locale/ga/LC_MESSAGES/kdevswitchtobuddy.mo
+share/locale/ga/LC_MESSAGES/kdevtestview.mo
 share/locale/ga/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/ga/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
@@ -1844,6 +1849,7 @@ share/locale/gl/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/he/LC_MESSAGES/kdevandroid.mo
 share/locale/he/LC_MESSAGES/kdevappwizard.mo
+share/locale/he/LC_MESSAGES/kdevastyle.mo
 share/locale/he/LC_MESSAGES/kdevbazaar.mo
 share/locale/he/LC_MESSAGES/kdevclang.mo
 share/locale/he/LC_MESSAGES/kdevclangtidy.mo
@@ -1852,10 +1858,12 @@ share/locale/he/LC_MESSAGES/kdevcodeutils.mo
 share/locale/he/LC_MESSAGES/kdevcompileanalyzercommon.mo
 share/locale/he/LC_MESSAGES/kdevcontextbrowser.mo
 share/locale/he/LC_MESSAGES/kdevcustommake.mo
+share/locale/he/LC_MESSAGES/kdevcustomscript.mo
 share/locale/he/LC_MESSAGES/kdevdocker.mo
 share/locale/he/LC_MESSAGES/kdevdocumentswitcher.mo
 share/locale/he/LC_MESSAGES/kdevdocumentview.mo
 share/locale/he/LC_MESSAGES/kdevexecute.mo
+share/locale/he/LC_MESSAGES/kdevexecuteplasmoid.mo
 share/locale/he/LC_MESSAGES/kdevexecutescript.mo
 share/locale/he/LC_MESSAGES/kdevfilemanager.mo
 share/locale/he/LC_MESSAGES/kdevflatpak.mo
@@ -1867,6 +1875,7 @@ share/locale/he/LC_MESSAGES/kdevninja.mo
 share/locale/he/LC_MESSAGES/kdevokteta.mo
 share/locale/he/LC_MESSAGES/kdevopenwith.mo
 share/locale/he/LC_MESSAGES/kdevoutlineview.mo
+share/locale/he/LC_MESSAGES/kdevproblemreporter.mo
 share/locale/he/LC_MESSAGES/kdevprojectfilter.mo
 share/locale/he/LC_MESSAGES/kdevprojectmanagerview.mo
 share/locale/he/LC_MESSAGES/kdevqmakebuilder.mo
