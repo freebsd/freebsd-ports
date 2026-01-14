@@ -196,8 +196,10 @@ share/locale/fr/LC_MESSAGES/powerdevil.mo
 share/locale/fy/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/fy/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/fy/LC_MESSAGES/powerdevil.mo
+share/locale/ga/LC_MESSAGES/kcm_mobile_power.mo
 share/locale/ga/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
+share/locale/ga/LC_MESSAGES/plasma_applet_org.kde.plasma.brightness.mo
 share/locale/ga/LC_MESSAGES/plasma_runner_powerdevil.mo
 share/locale/ga/LC_MESSAGES/powerdevil.mo
 share/locale/gl/LC_MESSAGES/kcm_mobile_power.mo
