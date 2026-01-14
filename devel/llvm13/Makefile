@@ -15,6 +15,8 @@ WWW=		https://llvm.org/
 LICENSE_FILE_BSD3CLAUSE=${LICENSE_DIR}/utils/unittest/googletest/LICENSE.TXT
 .include "${.CURDIR}/../llvm-devel/Makefile.LICENSE"
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
+
 LLVM_RELEASE=	${DISTVERSION:C/rc.*//}
 LLVM_MAJOR=	${LLVM_RELEASE:C/\.[0-9]\.[0-9]$//}
 LLVM_SUFFIX=	${LLVM_MAJOR}
