@@ -118,6 +118,7 @@ include/snort/mime/decode_b64.h
 include/snort/mime/decode_base.h
 include/snort/mime/file_mime_config.h
 include/snort/mime/file_mime_decode.h
+include/snort/mime/file_mime_form_data.h
 include/snort/mime/file_mime_log.h
 include/snort/mime/file_mime_paf.h
 include/snort/mime/file_mime_process.h
@@ -196,6 +197,7 @@ include/snort/pub_sub/daq_message_event.h
 include/snort/pub_sub/data_decrypt_event.h
 include/snort/pub_sub/dcerpc_events.h
 include/snort/pub_sub/detection_events.h
+include/snort/pub_sub/deviceinfo_events.h
 include/snort/pub_sub/domain_fronting.h
 include/snort/pub_sub/dhcp_events.h
 include/snort/pub_sub/dns_events.h
@@ -211,6 +213,7 @@ include/snort/pub_sub/ftp_events.h
 include/snort/pub_sub/http_body_event.h
 include/snort/pub_sub/http_event_ids.h
 include/snort/pub_sub/http_events.h
+include/snort/pub_sub/http_form_data_event.h
 include/snort/pub_sub/http_publish_length_event.h
 include/snort/pub_sub/http_request_body_event.h
 include/snort/pub_sub/http_transaction_end_event.h
