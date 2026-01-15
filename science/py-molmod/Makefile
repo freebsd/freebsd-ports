@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python shebangfix
 SHEBANG_GLOB=	*.py
-USE_PYTHON=	distutils cython cython_run autoplist
+USE_PYTHON=	autoplist cython0 cython0_run distutils
 
 do-test: # Tests fail: https://github.com/molmod/molmod/issues/27
 	@cd ${WRKSRC} && \
