@@ -15,6 +15,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	autoconf>0:devel/autoconf
 
 USES=		python
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	autoplist cython0 distutils
 
 .include <bsd.port.mk>
