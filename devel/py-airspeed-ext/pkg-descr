@@ -1,0 +1,7 @@
+This is a fork of the original airspeed library, with some extensions used in
+LocalStack.
+
+Note: This fork of airspeed focuses on providing maximum parity with AWS'
+implementation of Velocity templates (used in, e.g., API Gateway or AppSync). In
+some cases, the behavior may diverge from the VTL spec, or from the Velocity
+reference implementation.
