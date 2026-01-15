@@ -1,5 +1,6 @@
 PORTNAME=	pdk
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/puppetlabs/pdk
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-bundler>=2.1.0,1<3.0.0,1:sysutils/rubygem-bundler \
+RUN_DEPENDS=	rubygem-bundler>=2.1.0,1:sysutils/rubygem-bundler \
 		rubygem-childprocess>=5.0.0:devel/rubygem-childprocess \
 		rubygem-cri>=2.15.11<3:devel/rubygem-cri \
 		rubygem-deep_merge>=1.2.2<2:devel/rubygem-deep_merge \
