@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260115:
+  AFFECTS: users of lang/cython* and USE_PYTHON=cython*
+  AUTHOR: sunpoet@FreeBSD.org
+
+  lang/cython has been updated to 3.2.4.
+
+  To support ports that still require the legacy 0.x branch, lang/cython0
+  has been added (version 0.29.37). lang/cython3 has been removed as it
+  is now redundant with lang/cython.
+
+  Port maintainers should note the following changes:
+  - Ports requiring Cython 0.x now use USE_PYTHON=cython0{,_run}.
+  - Ports previously using cython3{,_run,_test} now use
+    USE_PYTHON=cython{,_run,_test}.
+
 20260109:
   AFFECTS: users of net-mgmt/librenms
   AUTHOR: dvl@FreeBSD.org
