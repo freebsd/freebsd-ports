@@ -46,7 +46,8 @@ OPTIONS_SUB=			yes
 PYTHON_CONFIGURE_WITH=		python
 PYTHON_CONFIGURE_ENABLE=	maintainer-mode
 PYTHON_USES=			python
-PYTHON_BUILD_DEPENDS=		swig:devel/swig
+PYTHON_BINARY_ALIAS=		swig=swig40
+PYTHON_BUILD_DEPENDS=		swig40:devel/swig40
 PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}autograd>0:math/py-autograd@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 				${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
