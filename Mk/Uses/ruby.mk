@@ -47,7 +47,6 @@
 #			  ruby-gdbm, etc.).
 # RUBY_PORTVERSION	- PORTVERSION for the standard ruby ports (ruby,
 #			  ruby-gdbm, etc.).
-# RUBY_PORTREVISION	- PORTREVISION for the standard ruby ports.
 # RUBY_PORTEPOCH	- PORTEPOCH for the standard ruby ports.
 # RUBY_DISTNAME		- DISTNAME for the standard ruby ports, i.e. the
 #			  basename of the ruby distribution tarball.
@@ -148,30 +147,24 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 # Ruby 3.2
 #
 RUBY_DISTVERSION=	3.2.9
-RUBY_PORTREVISION=	0
 
 .      elif ${RUBY_VER} == 3.3
 #
 # Ruby 3.3
 #
 RUBY_DISTVERSION=	3.3.10
-RUBY_PORTREVISION=	0
-
 
 .      elif ${RUBY_VER} == 3.4
 #
 # Ruby 3.4
 #
 RUBY_DISTVERSION=	3.4.8
-RUBY_PORTREVISION=	0
-
 
 .      elif ${RUBY_VER} == 4.0
 #
 # Ruby 4.0
 #
 RUBY_DISTVERSION=	4.0.0
-RUBY_PORTREVISION=	0
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
