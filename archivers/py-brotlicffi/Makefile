@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python CFFI bindings to the Brotli library
-WWW=		https://github.com/python-hyper/brotlicffi
+WWW=		https://python-hyper.org/projects/brotlipy/en/stable/ \
+		https://github.com/python-hyper/brotlicffi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
