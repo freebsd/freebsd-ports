@@ -1,6 +1,6 @@
---- src/data_provider/src/sysInfoFreeBSD.cpp.orig	2025-11-07 04:46:03.000000000 -0400
-+++ src/data_provider/src/sysInfoFreeBSD.cpp	2026-01-06 19:37:15.309352000 -0400
-@@ -11,20 +11,28 @@
+--- src/data_provider/src/sysInfoFreeBSD.cpp	2025-11-07 08:46:03.000000000 +0000
++++ src/data_provider/src/sysInfoFreeBSD.cpp	2026-01-14 16:59:37.014537000 +0000
+@@ -11,20 +11,33 @@
  #include "sysInfo.hpp"
  #include "cmdHelper.h"
  #include "stringHelper.h"
@@ -13,6 +13,11 @@
  #include <sys/utsname.h>
  #include "sharedDefs.h"
 +#include <regex>
++#include "groups_freebsd.hpp"
++#include "user_groups_freebsd.hpp"
++#include "logged_in_users_freebsd.hpp"
++#include "sudoers_unix.hpp"
++#include "users_freebsd.hpp"
  
 +const std::string PKG_DB_PATHNAME {"/var/db/pkg/local.sqlite"};
 +const std::string PKG_QUERY {"SELECT p.name, p.maintainer, p.version, p.arch, p.comment, p.flatsize, p.time, v.annotation AS repository,p.origin FROM packages p LEFT JOIN (SELECT pa.package_id, pa.value_id FROM pkg_annotation pa JOIN annotation t ON t.annotation_id = pa.tag_id AND t.annotation = 'repository') pr ON pr.package_id = p.id LEFT JOIN annotation v ON v.annotation_id = pr.value_id;"};
@@ -32,7 +37,7 @@
  
      if (ret)
      {
-@@ -52,11 +60,23 @@
+@@ -52,11 +65,23 @@
          };
      }
  
@@ -59,7 +64,7 @@
  
      if (ret)
      {
-@@ -64,11 +84,11 @@
+@@ -64,11 +89,11 @@
          {
              ret,
              std::system_category(),
@@ -73,7 +78,7 @@
      info["ram_free"] = ramFree;
      info["ram_usage"] = 100 - (100 * ramFree / ramTotal);
  }
-@@ -96,7 +116,43 @@
+@@ -96,7 +121,43 @@
  
  static std::string getSerialNumber()
  {
@@ -118,7 +123,7 @@
  }
  
  static int getCpuCores()
-@@ -184,8 +240,12 @@
+@@ -184,8 +245,12 @@
  
  nlohmann::json SysInfo::getProcessesInfo() const
  {
@@ -133,7 +138,7 @@
  }
  
  nlohmann::json SysInfo::getOsInfo() const
-@@ -196,11 +256,12 @@
+@@ -196,11 +261,12 @@
  
      if (!spParser->parseUname(Utils::exec("uname -r"), ret))
      {
@@ -147,7 +152,7 @@
      if (uname(&uts) >= 0)
      {
          ret["sysname"] = uts.sysname;
-@@ -215,44 +276,257 @@
+@@ -215,44 +281,260 @@
  
  nlohmann::json SysInfo::getPorts() const
  {
@@ -164,23 +169,19 @@
 -void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> /*callback*/) const
 -{
 -    // Currently not supported for this OS.
--}
 +    if (!query.empty())
 +    {
 +        nlohmann::json portsjson;
 +        portsjson = nlohmann::json::parse(query);
 +        auto &portsResult = portsjson["sockstat"]["socket"];
- 
--void SysInfo::getPackages(std::function<void(nlohmann::json&)> callback) const
--{
--    const auto query{Utils::exec(R"(pkg query -a "%n|%m|%v|%q|%c")")};
++
 +        for(auto &port : portsResult) {
 +            std::string localip = "";
 +            std::string localport = "";
 +            std::string remoteip = "";
 +            std::string remoteport = "";
 +            std::string statedata = "";
- 
++
 +            if (port["pid"] != nullptr) {
 +
 +                localip = port["local"]["address"];
@@ -228,32 +229,16 @@
 +#else
 +    const auto query{Utils::exec(R"(sockstat -46qs)")};
 +
-     if (!query.empty())
-     {
--        const auto lines{Utils::split(query, '\n')};
++    if (!query.empty())
++    {
 +        const auto lines{Utils::split(Utils::trimToOneSpace(query), '\n')};
- 
++
 +        std::regex expression(R"(^(\S+)\s+(\S+)\s+(\d+)\s+(\d+)\s*(\S+)\s+(\S+)\s+(\S+)(?:\s+(\S+))?\s*$)");
 +
-         for (const auto& line : lines)
-         {
--            const auto data{Utils::split(line, '|')};
--            nlohmann::json package;
++        for (const auto& line : lines)
++        {
 +            std::smatch data;
- 
--            package["name"] = data[0];
--            package["vendor"] = data[1];
--            package["version"] = data[2];
--            package["install_time"] = UNKNOWN_VALUE;
--            package["location"] = UNKNOWN_VALUE;
--            package["architecture"] = data[3];
--            package["groups"] = UNKNOWN_VALUE;
--            package["description"] = data[4];
--            package["size"] = 0;
--            package["priority"] = UNKNOWN_VALUE;
--            package["source"] = UNKNOWN_VALUE;
--            package["format"] = "pkg";
--            // The multiarch field won't have a default value
++
 +            if (std::regex_search(line, data, expression))
 +            {
 +                std::string localip = "";
@@ -261,8 +246,7 @@
 +                std::string remoteip = "";
 +                std::string remoteport = "";
 +                std::string statedata = "";
- 
--            callback(package);
++
 +                auto localdata{Utils::split(data[6], ':')};
 +                auto remotedata{Utils::split(data[7], ':')};
 +
@@ -315,21 +299,28 @@
 +    }
 +#endif
 +    return ports;
-+}
-+
+ }
+ 
+-void SysInfo::getPackages(std::function<void(nlohmann::json&)> callback) const
 +void SysInfo::getProcessesInfo(std::function<void(nlohmann::json&)> callback) const
-+{
+ {
+-    const auto query{Utils::exec(R"(pkg query -a "%n|%m|%v|%q|%c")")};
 +    const auto query{Utils::exec(R"(ps -ax -w -o pid,comm,state,ppid,usertime,systime,user,ruser,svuid,group,rgroup,svgid,pri,nice,ssiz,vsz,rss,pmem,etimes,sid,pgid,tpgid,tty,cpu,nlwp,args --libxo json)")};
-+
-+    if (!query.empty())
-+    {
+ 
+     if (!query.empty())
+     {
+-        const auto lines{Utils::split(query, '\n')};
 +      nlohmann::json psjson;
++      int64_t agenttime = {Utils::getSecondsFromEpoch()};
++      int64_t etimes{0};
 +      psjson = nlohmann::json::parse(query);
 +      auto &processes = psjson["process-information"]["process"];
-+
+ 
+-        for (const auto& line : lines)
 +      for(auto &process : processes) {
 +          std::string user_time{""};
 +          std::string system_time{""};
++          etimes = std::stoll(process["elapsed-times"].get<std::string>());
 +
 +          user_time = process["user-time"].get<std::string>();
 +          system_time = process["system-time"].get<std::string>();
@@ -356,7 +347,7 @@
 +          jsProcessInfo["vm_size"]    = process["virtual-size"].get<std::string>();
 +          jsProcessInfo["resident"]   = process["rss"].get<std::string>();
 +          //jsProcessInfo["share"]      = process["percent-memory"].get<std::string>();
-+          jsProcessInfo["start_time"] = process["elapsed-times"].get<std::string>() == "-" ? "0" : process["elapsed-times"].get<std::string>();
++          jsProcessInfo["start_time"] = agenttime - etimes;
 +          jsProcessInfo["pgrp"]       = process["process-group"].get<std::string>();
 +          jsProcessInfo["session"]    = process["sid"].get<std::string>();
 +          jsProcessInfo["tgid"]       = process["terminal-process-gid"].get<std::string>();
@@ -374,15 +365,31 @@
 +    if (Utils::existsRegular(PKG_DB_PATHNAME))
 +    {
 +        try
-+        {
+         {
+-            const auto data{Utils::split(line, '|')};
+-            nlohmann::json package;
 +            std::shared_ptr<SQLite::IConnection> sqliteConnection = std::make_shared<SQLite::Connection>(PKG_DB_PATHNAME, SQLITE_OPEN_READONLY);
-+
+ 
+-            package["name"] = data[0];
+-            package["vendor"] = data[1];
+-            package["version"] = data[2];
+-            package["install_time"] = UNKNOWN_VALUE;
+-            package["location"] = UNKNOWN_VALUE;
+-            package["architecture"] = data[3];
+-            package["groups"] = UNKNOWN_VALUE;
+-            package["description"] = data[4];
+-            package["size"] = 0;
+-            package["priority"] = UNKNOWN_VALUE;
+-            package["source"] = UNKNOWN_VALUE;
+-            package["format"] = "pkg";
+-            // The multiarch field won't have a default value
 +            SQLite::Statement stmt
 +            {
 +                sqliteConnection,
 +                PKG_QUERY
 +            };
-+
+ 
+-            callback(package);
 +            while (SQLITE_ROW == stmt.step())
 +            {
 +                try
@@ -432,3 +439,196 @@
      }
  }
  
+@@ -264,14 +546,188 @@
+ 
+ nlohmann::json SysInfo::getGroups() const
+ {
+-    //TODO: Pending implementation.
+-    return nlohmann::json();
++    nlohmann::json result;
++    GroupsProvider groupsProvider;
++    UserGroupsProvider userGroupsProvider;
++
++    auto collectedGroups = groupsProvider.collect({});
++
++    for (auto& group : collectedGroups)
++    {
++        nlohmann::json groupItem {};
++
++        groupItem["group_id"] = group["gid"];
++        groupItem["group_name"] = (group.contains("groupname") && !group["groupname"].get<std::string>().empty()) ? group["groupname"] : UNKNOWN_VALUE;
++        groupItem["group_description"] = UNKNOWN_VALUE;
++        groupItem["group_id_signed"] = group["gid_signed"];
++        groupItem["group_uuid"] = UNKNOWN_VALUE;
++        groupItem["group_is_hidden"] = 0;
++
++        std::set<gid_t> gids {static_cast<gid_t>(group["gid"].get<int>())};
++        auto collectedUsersGroups = userGroupsProvider.getUserNamesByGid(gids);
++
++        if (collectedUsersGroups.empty())
++        {
++            groupItem["group_users"] = UNKNOWN_VALUE;
++        }
++        else
++        {
++            std::string usersConcatenated;
++
++            for (const auto& user : collectedUsersGroups)
++            {
++                if (!usersConcatenated.empty())
++                {
++                    usersConcatenated += secondaryArraySeparator;
++                }
++
++                usersConcatenated += user.get<std::string>();
++            }
++
++            groupItem["group_users"] = usersConcatenated;
++        }
++
++        result.push_back(std::move(groupItem));
++
++    }
++
++    return result;
+ }
+ 
+ nlohmann::json SysInfo::getUsers() const
+ {
+-    //TODO: Pending implementation.
+-    return nlohmann::json();
++    nlohmann::json result;
++
++    UsersProvider usersProvider;
++    auto collectedUsers = usersProvider.collect();
++
++    LoggedInUsersProvider loggedInUserProvider;
++    auto collectedLoggedInUser = loggedInUserProvider.collect();
++
++    UserGroupsProvider userGroupsProvider;
++
++    for (auto& user : collectedUsers)
++    {
++        nlohmann::json userItem {};
++
++        std::string username = (user.contains("username") && !user["username"].get<std::string>().empty()) ? user["username"] : UNKNOWN_VALUE;
++
++        userItem["user_id"] = user["uid"];
++        userItem["user_full_name"] = user["description"];
++        userItem["user_home"] = user["directory"];
++        userItem["user_is_remote"] = user["include_remote"];
++        userItem["user_name"] = username;
++        userItem["user_shell"] = user["shell"];
++        userItem["user_uid_signed"] = user["uid_signed"];
++        userItem["user_group_id_signed"] = user["gid_signed"];
++        userItem["user_group_id"] = user["gid"];
++
++        std::set<uid_t> uid {static_cast<uid_t>(user["uid"].get<int>())};
++        auto collectedUsersGroups = userGroupsProvider.getGroupNamesByUid(uid);
++
++        if (collectedUsersGroups.empty())
++        {
++            userItem["user_groups"] = UNKNOWN_VALUE;
++        }
++        else
++        {
++            std::string accumGroups;
++
++            for (const auto& group : collectedUsersGroups)
++            {
++                if (!accumGroups.empty())
++                {
++                    accumGroups += secondaryArraySeparator;
++                }
++
++                accumGroups += group.get<std::string>();
++            }
++
++            userItem["user_groups"] = accumGroups;
++        }
++
++        // Only in windows
++        userItem["user_type"] = UNKNOWN_VALUE;
++
++        // Macos or windows
++        userItem["user_uuid"] = UNKNOWN_VALUE;
++
++        // Macos
++        userItem["user_is_hidden"] = 0;
++        userItem["user_created"] = 0;
++        userItem["user_auth_failed_count"] = 0;
++        userItem["user_auth_failed_timestamp"] = 0;
++
++        auto matched = false;
++        auto lastLogin = 0;
++
++        userItem["host_ip"] = UNKNOWN_VALUE;
++
++        //TODO: Avoid this iteration, move logic to LoggedInUsersProvider
++        for (auto& item : collectedLoggedInUser)
++        {
++            // By default, user is not logged in.
++            userItem["login_status"] = 0;
++
++            // tty,host,time and pid can take more than one value due to different logins.
++            if (item["user"] == username)
++            {
++                matched = true;
++                userItem["login_status"] = 1;
++
++                auto newDate = item["time"].get<int32_t>();
++
++                if (newDate > lastLogin)
++                {
++                    lastLogin = newDate;
++                    userItem["user_last_login"] = newDate;
++                    userItem["login_tty"] = item["tty"].get<std::string>();
++                    userItem["login_type"] = item["type"].get<std::string>();
++                    userItem["process_pid"] = item["pid"].get<int32_t>();
++                }
++
++                const auto& hostStr = item["host"].get_ref<const std::string&>();
++
++                if (!hostStr.empty())
++                {
++                    userItem["host_ip"] = userItem["host_ip"].get<std::string>() == UNKNOWN_VALUE
++                                          ? hostStr
++                                          : (userItem["host_ip"].get<std::string>() + primaryArraySeparator + hostStr);
++                }
++            }
++        }
++
++        if (!matched)
++        {
++            userItem["login_status"] = 0;
++            userItem["login_tty"] = UNKNOWN_VALUE;
++            userItem["login_type"] = UNKNOWN_VALUE;
++            userItem["process_pid"] = 0;
++            userItem["user_last_login"] = 0;
++        }
++
++        matched = false;
++
++        if (!matched)
++        {
++            userItem["user_password_expiration_date"] = 0;
++            userItem["user_password_hash_algorithm"] = UNKNOWN_VALUE;
++            userItem["user_password_inactive_days"] = 0;
++            userItem["user_password_last_change"] = 0;
++            userItem["user_password_max_days_between_changes"] = 0;
++            userItem["user_password_min_days_between_changes"] = 0;
++            userItem["user_password_status"] = UNKNOWN_VALUE;
++            userItem["user_password_warning_days_before_expiration"] = 0;
++        }
++
++
++        // By default, user is not sudoer.
++        userItem["user_roles"] = UNKNOWN_VALUE;
++
++        result.push_back(std::move(userItem));
++    }
++
++    return result;
+ }
+ 
+ nlohmann::json SysInfo::getServices() const

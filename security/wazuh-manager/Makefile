@@ -1,7 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.14.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/47/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
@@ -224,6 +224,7 @@ post-extract:
 	@${RM} ${WRKSRC}/src/external/cpython/python ${WRKSRC}/src/external/cpython/libpython* ${WRKSRC}/src/external/cpython/Modules/*.o
 
 	@${MKDIR} ${WRKSRC}/ruleset/sca/freebsd
+	@${MKDIR} ${WRKSRC}/src/data_provider/src/extended_sources/wrappers/unix/freebsd
 	@cd ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/sca && ${CP} *.yml ${WRKSRC}/ruleset/sca/freebsd/
 	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${MV} "{}" "{}.disabled" \;
 
