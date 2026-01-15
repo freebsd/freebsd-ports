@@ -1,0 +1,2 @@
+ndonnx provides an ONNX-backed array library that is compliant with the Array
+API standard.

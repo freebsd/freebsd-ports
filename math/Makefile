@@ -1047,6 +1047,7 @@
     SUBDIR += py-munkres
     SUBDIR += py-narwhals
     SUBDIR += py-ndindex
+    SUBDIR += py-ndonnx
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
     SUBDIR += py-nlopt
