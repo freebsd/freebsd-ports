@@ -1,9 +1,9 @@
---- pxr/usd/usd/clip.cpp.orig	2021-11-01 17:10:51 UTC
+--- pxr/usd/usd/clip.cpp.orig	2025-10-24 16:21:56 UTC
 +++ pxr/usd/usd/clip.cpp
-@@ -44,6 +44,7 @@
+@@ -28,6 +28,7 @@
+ #include "pxr/base/tf/stringUtils.h"
  
- #include <boost/optional.hpp>
- 
+ #include <optional>
 +#include <array>
  #include <ostream>
  #include <string>
