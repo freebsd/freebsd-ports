@@ -170,7 +170,7 @@ RUBY_PORTREVISION=	0
 #
 # Ruby 4.0
 #
-RUBY_DISTVERSION=	4.0.0-preview2
+RUBY_DISTVERSION=	4.0.0
 RUBY_PORTREVISION=	0
 
 # When adding a version, please keep the comment in

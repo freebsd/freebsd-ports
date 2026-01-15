@@ -1,5 +1,5 @@
 PORTNAME=	ruby
-DISTVERSION=	${RUBY_DISTVERSION}
+PORTVERSION=	${RUBY_DISTVERSION}
 PORTREVISION=	${RUBY_PORTREVISION}
 PORTEPOCH=	${RUBY_PORTEPOCH}
 CATEGORIES=	lang ruby
@@ -26,17 +26,12 @@ USES=		autoreconf cpe localbase ruby:none ssl tar:xz
 CPE_VENDOR=	ruby-lang
 CPE_UPDATE=	p0
 
-# Upstream says "+0" is intentionally added to ruby version string
-# ("3.5+0" for example ) with pre-release version.
-# So use --with-ruby-version="${RUBY_VER}" rather than
-# --with-ruby-version=minor until 3.5.0 is released.
-# Reference; https://bugs.ruby-lang.org/issues/21278
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
 		--enable-install-static-library \
 		--enable-pthread \
 		--enable-shared \
-		--with-ruby-version="${RUBY_VER}" \
+		--with-ruby-version=minor \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
 CONFIGURE_ENV=	debugflags=
