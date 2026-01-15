@@ -1,5 +1,5 @@
 PORTNAME=	niquests
-PORTVERSION=	3.15.2
+PORTVERSION=	3.16.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI \
 		https://github.com/jawah/niquests/releases/download/v${PORTVERSION}/
