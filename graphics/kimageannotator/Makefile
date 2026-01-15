@@ -1,6 +1,6 @@
 PORTNAME=	kImageAnnotator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.1
+DISTVERSION=	0.7.2
 CATEGORIES=	graphics kde
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/ksnip/kImageAnnotator
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-FLAVORS=		qt5 qt6
+FLAVORS=		qt6 qt5
 FLAVOR?=		${FLAVORS:[1]}
 qt5_LIB_DEPENDS=	libkColorPicker-Qt5.so:graphics/kcolorpicker@qt5
 qt6_LIB_DEPENDS=	libkColorPicker-Qt6.so:graphics/kcolorpicker@qt6
@@ -32,11 +32,11 @@ USE_XORG=	x11
 CMAKE_ON=	BUILD_SHARED_LIBS BUILD_WITH_${FLAVOR:tu}
 CMAKE_OFF=	BUILD_EXAMPLE
 
-_QT5_ONLY_qt5=	#
-_QT5_ONLY_qt6=	"@comment "
+_QT6_ONLY_qt5=	"@comment "
+_QT6_ONLY_qt6=	#
 
-PLIST_SUB=	QT5_ONLY=${_QT5_ONLY_${FLAVOR}} \
-		QT_VER=${FLAVOR:S/qt//} \
+PLIST_SUB=	QT6_ONLY=${_QT6_ONLY_${FLAVOR}} \
+		QT_VER=${FLAVOR:S/qt/Qt/} \
 		SHLIB_VER=${DISTVERSION} \
 		SHLIB_VER_MAJ=${DISTVERSION:R:R}
 
