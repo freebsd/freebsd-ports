@@ -1,13 +1,13 @@
 PORTNAME=		plutobook
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.12.0
+DISTVERSION=		0.13.0
 CATEGORIES=		print
 
 MAINTAINER=		jbo@FreeBSD.org
 COMMENT=		Paged HTML rendering library
 WWW=			https://github.com/plutoprint/plutobook
 
-LICENSE=		MIT
+LICENSE=		MPL20
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
 LIB_DEPENDS=		libcurl.so:ftp/curl \
