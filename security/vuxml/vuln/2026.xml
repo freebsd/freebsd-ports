@@ -1,3 +1,127 @@
+  <vuln vid="ff20d3a3-f211-11f0-9ca3-b42e991fc52e">
+    <topic>Mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>147.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>147.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>
+	Memory safety bugs present in Firefox 146 and Thunderbird
+	146. Some of these bugs showed evidence of memory corruption
+	and we presume that with enough effort some of these could
+	have been exploited to run arbitrary code.
+	</p>
+	<p>Denial-of-service in the DOM: Service Workers component.</p>
+	<p>Information disclosure in the XML component.</p>
+	<p>Sandbox escape in the Messaging System component.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0892</cvename>
+      <cvename>CVE-2026-0889</cvename>
+      <cvename>CVE-2026-0888</cvename>
+      <cvename>CVE-2026-0881</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="085101eb-f212-11f0-9ca3-b42e991fc52e">
+    <topic>Mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>147.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.7.0</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>147</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Memory safety bugs present in firefox-esr 140.6,
+	Thunderbird ESR 140.6, Firefox 146 and Thunderbird 146.</p>
+	<p>Spoofing issue in the DOM: Copy &amp; Paste and Drag &amp;
+	Drop component.</p>
+	<p>Clickjacking issue and information disclosure in the PDF
+	Viewer component.</p>
+	<p>Use-after-free in the JavaScript: GC component.</p>
+	<p>Use-after-free in the JavaScript Engine component.</p>
+	<p>Information disclosure in the Networking component.</p>
+	<p>Sandbox escape due to incorrect boundary conditions in the
+	Graphics: CanvasWebGL component.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0891</cvename>
+      <cvename>CVE-2026-0890</cvename>
+      <cvename>CVE-2026-0887</cvename>
+      <cvename>CVE-2026-0885</cvename>
+      <cvename>CVE-2026-0884</cvename>
+      <cvename>CVE-2026-0883</cvename>
+      <cvename>CVE-2026-0878</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="06061c59-f212-11f0-9ca3-b42e991fc52e">
+    <topic>Mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><lt>147.0.0,2</lt></range>
+      </package>
+      <package>
+	<name>firefox-esr</name>
+	<range><lt>140.7</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>147.0.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Incorrect boundary conditions in the Graphics
+	component.</p>
+	<p>Use-after-free in the IPC component.</p>
+	<p>Sandbox escape due to integer overflow in the Graphics
+	component.</p>
+	<p>Sandbox escape due to incorrect boundary conditions in the
+	Graphics component.</p>
+	<p>Mitigation bypass in the DOM: Security component.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0886</cvename>
+      <cvename>CVE-2026-0882</cvename>
+      <cvename>CVE-2026-0880</cvename>
+      <cvename>CVE-2026-0879</cvename>
+      <cvename>CVE-2026-0877</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f76a1db-f124-11f0-85c5-a8a1599412c6">
     <topic>chromium -- multiple security fixes</topic>
     <affects>
