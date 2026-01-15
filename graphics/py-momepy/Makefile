@@ -1,5 +1,5 @@
 PORTNAME=	momepy
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI \
 		https://github.com/pysal/momepy/releases/download/v${PORTVERSION}/
