@@ -1,5 +1,5 @@
 PORTNAME=	array-api-compat
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/data-apis/array-api-compat/releases/download/${PORTVERSION}/
