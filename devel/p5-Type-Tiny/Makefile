@@ -1,5 +1,5 @@
 PORTNAME=	Type-Tiny
-PORTVERSION=	2.008006
+PORTVERSION=	2.010000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -16,6 +16,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Exporter-Tiny>=1.006000:devel/p5-Exporter-Tiny
 TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
+		p5-Devel-Hide>=0:devel/p5-Devel-Hide \
 		p5-Function-Parameters>=0:devel/p5-Function-Parameters \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Moo>=1.006000:devel/p5-Moo \
@@ -28,10 +29,12 @@ TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-Sub-Exporter-Lexical>=0:devel/p5-Sub-Exporter-Lexical \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
+		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-Requires>=0:devel/p5-Test-Requires \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings \
 		p5-Validation-Class>=0:devel/p5-Validation-Class \
-		p5-match-simple>=0:devel/p5-match-simple
+		p5-match-simple>=0:devel/p5-match-simple \
+		p5-namespace-clean>=0:devel/p5-namespace-clean
 
 USES=		perl5
 USE_PERL5=	configure
