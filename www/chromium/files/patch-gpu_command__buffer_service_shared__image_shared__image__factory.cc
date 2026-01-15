@@ -1,4 +1,4 @@
---- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2025-12-05 10:12:50 UTC
+--- gpu/command_buffer/service/shared_image/shared_image_factory.cc.orig	2026-01-14 08:33:23 UTC
 +++ gpu/command_buffer/service/shared_image/shared_image_factory.cc
 @@ -52,7 +52,7 @@
  #include "gpu/command_buffer/service/shared_image/angle_vulkan_image_backing_factory.h"
@@ -27,12 +27,12 @@
    return gfx::GpuMemoryBufferType::NATIVE_PIXMAP;
  #elif BUILDFLAG(IS_WIN)
    return gfx::GpuMemoryBufferType::DXGI_SHARED_HANDLE;
-@@ -316,7 +316,7 @@ SharedImageFactory::SharedImageFactory(
-         context_state_, workarounds_);
+@@ -305,7 +305,7 @@ SharedImageFactory::SharedImageFactory(
      factories_.push_back(std::move(ozone_factory));
    }
+ 
 -#if BUILDFLAG(ENABLE_VULKAN) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA))
 +#if BUILDFLAG(ENABLE_VULKAN) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD))
-   if (gr_context_type_ == GrContextType::kVulkan) {
-     auto external_vk_image_factory =
-         std::make_unique<ExternalVkImageBackingFactory>(context_state_);
+   if (gr_context_type_ == GrContextType::kVulkan
+ #if BUILDFLAG(USE_WEBGPU_ON_VULKAN_VIA_GL_INTEROP)
+       /* We support GL context for WebGPU gl-vulkan interop (on linux).*/

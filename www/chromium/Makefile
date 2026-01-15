@@ -1,5 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	143.0.7499.192
+PORTVERSION=	144.0.7559.59
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -7,6 +7,7 @@ MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official
 		https://nerd.hu/distfiles/:external \
 		https://freedesktop.org/software/pulseaudio/releases/:pulseaudio
 DISTFILES=	${DISTNAME}-lite${EXTRACT_SUFX} \
+		${DISTNAME}-profdata${EXTRACT_SUFX}:external \
 		pulseaudio-${PULSEV}.tar.gz:pulseaudio
 
 MAINTAINER=	chromium@FreeBSD.org
@@ -287,13 +288,15 @@ pre-configure:
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
 		dav1d flac fontconfig harfbuzz-ng libdrm libpng \
 		libusb libwebp libxml libxslt openh264 opus || ${FALSE}
+	@cd ${WRKSRC}/chrome/build/pgo_profiles && _p=$$(echo *.profdata) && \
+		${LOCALBASE}/bin/llvm-profdata${LLVM_DEFAULT} merge $${_p}.txt --output=$${_p}
 	# Chromium uses an unreleased version of FFmpeg, so configure it
 	cd ${WRKSRC}/media/ffmpeg && \
 		${PYTHON_CMD} scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \
 		--config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${MKDIR} ${FFMPEG_CDIR}
-.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+.for _e in config.h config.asm config_components.asm config_components.h libavcodec libavformat libavutil
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h

@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils.cc.orig	2025-12-05 10:12:50 UTC
+--- components/embedder_support/user_agent_utils.cc.orig	2026-01-14 08:33:23 UTC
 +++ components/embedder_support/user_agent_utils.cc
 @@ -317,7 +317,7 @@ std::string GetUserAgentPlatform() {
    return "";
@@ -36,7 +36,7 @@
    // TODO(crbug.com/40245146): Remove this Blink feature
    if (base::FeatureList::IsEnabled(
            blink::features::kReduceUserAgentDataLinuxPlatformVersion)) {
-@@ -661,6 +661,9 @@ std::string GetPlatformForUAMetadata() {
+@@ -663,6 +663,9 @@ std::string GetPlatformForUAMetadata() {
  #else
    return "Chromium OS";
  #endif
@@ -46,7 +46,7 @@
  #else
    return std::string(version_info::GetOSType());
  #endif
-@@ -868,6 +871,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
+@@ -870,6 +873,16 @@ std::string BuildOSCpuInfoFromOSVersionAndCpuType(cons
                        "Android %s", os_version.c_str()
  #elif BUILDFLAG(IS_FUCHSIA)
                        "Fuchsia"

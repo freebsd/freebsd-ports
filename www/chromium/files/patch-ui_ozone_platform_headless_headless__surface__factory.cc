@@ -1,4 +1,4 @@
---- ui/ozone/platform/headless/headless_surface_factory.cc.orig	2025-12-05 10:12:50 UTC
+--- ui/ozone/platform/headless/headless_surface_factory.cc.orig	2026-01-14 08:33:23 UTC
 +++ ui/ozone/platform/headless/headless_surface_factory.cc
 @@ -35,7 +35,7 @@
  #include "ui/ozone/platform/headless/headless_window_manager.h"
@@ -9,7 +9,7 @@
  #include "ui/ozone/platform/headless/vulkan_implementation_headless.h"
  #endif
  
-@@ -285,7 +285,7 @@ std::unique_ptr<gpu::VulkanImplementation>
+@@ -282,7 +282,7 @@ std::unique_ptr<gpu::VulkanImplementation>
  HeadlessSurfaceFactory::CreateVulkanImplementation(
      bool use_swiftshader,
      bool allow_protected_memory) {

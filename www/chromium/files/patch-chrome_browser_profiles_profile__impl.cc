@@ -1,6 +1,6 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2025-12-05 10:12:50 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2026-01-14 08:33:23 UTC
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -265,6 +265,10 @@
+@@ -263,6 +263,10 @@
  #include "chrome/browser/safe_browsing/safe_browsing_service.h"
  #endif
  
@@ -11,7 +11,7 @@
  using bookmarks::BookmarkModel;
  using content::BrowserThread;
  using content::DownloadManagerDelegate;
-@@ -599,7 +603,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
+@@ -598,7 +602,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
    policy_provider = GetUserCloudPolicyManagerAsh();
  #else  // !BUILDFLAG(IS_CHROMEOS)
    {
@@ -20,7 +20,7 @@
      ProfileManager* profile_manager = g_browser_process->profile_manager();
      ProfileAttributesEntry* entry =
          profile_manager->GetProfileAttributesStorage()
-@@ -871,7 +875,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -868,7 +872,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

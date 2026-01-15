@@ -1,6 +1,6 @@
---- printing/backend/cups_jobs.cc.orig	2025-09-06 10:01:20 UTC
+--- printing/backend/cups_jobs.cc.orig	2026-01-14 08:33:23 UTC
 +++ printing/backend/cups_jobs.cc
-@@ -31,7 +31,7 @@
+@@ -26,7 +26,7 @@
  #include "printing/backend/cups_ipp_helper.h"
  #include "printing/printer_status.h"
  

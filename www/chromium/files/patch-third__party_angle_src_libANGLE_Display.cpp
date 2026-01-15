@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/Display.cpp.orig	2025-10-02 04:28:32 UTC
+--- third_party/angle/src/libANGLE/Display.cpp.orig	2026-01-14 08:33:23 UTC
 +++ third_party/angle/src/libANGLE/Display.cpp
-@@ -62,7 +62,7 @@
+@@ -64,7 +64,7 @@
  #        include "libANGLE/renderer/gl/wgl/DisplayWGL.h"
  #    elif ANGLE_ENABLE_CGL
  #        include "libANGLE/renderer/gl/cgl/DisplayCGL.h"
@@ -9,7 +9,7 @@
  #        include "libANGLE/renderer/gl/egl/DisplayEGL.h"
  #        if defined(ANGLE_USE_X11)
  #            include "libANGLE/renderer/gl/glx/DisplayGLX_api.h"
-@@ -426,7 +426,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+@@ -427,7 +427,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
              impl = new rx::DisplayCGL(state);
              break;
  
@@ -18,7 +18,7 @@
  #        if defined(ANGLE_USE_GBM) || defined(ANGLE_USE_WAYLAND)
              if (platformType == 0)
              {
-@@ -477,7 +477,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+@@ -478,7 +478,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
  #if defined(ANGLE_ENABLE_OPENGL)
  #    if defined(ANGLE_PLATFORM_WINDOWS)
              impl = new rx::DisplayWGL(state);
@@ -27,7 +27,7 @@
  #        if defined(ANGLE_USE_GBM) || defined(ANGLE_USE_WAYLAND)
              if (platformType == 0)
              {
-@@ -533,7 +533,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
+@@ -534,7 +534,7 @@ rx::DisplayImpl *CreateDisplayFromAttribs(EGLAttrib di
                  impl = rx::CreateVulkanWin32Display(state);
              }
              break;
@@ -36,7 +36,7 @@
  #        if defined(ANGLE_USE_GBM)
              if (platformType == EGL_PLATFORM_GBM_KHR && rx::IsVulkanGbmDisplayAvailable())
              {
-@@ -2150,7 +2150,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2183,7 +2183,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.platformWaylandEXT = true;
  #endif
  
@@ -45,7 +45,7 @@
      extensions.platformSurfacelessMESA = true;
  #endif
  
-@@ -2197,7 +2197,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2230,7 +2230,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  
