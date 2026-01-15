@@ -4467,6 +4467,7 @@
     SUBDIR += py-awscli
     SUBDIR += py-awscrt
     SUBDIR += py-azure-ai-agents
+    SUBDIR += py-azure-ai-projects
     SUBDIR += py-azure-appconfiguration
     SUBDIR += py-azure-batch
     SUBDIR += py-azure-core
