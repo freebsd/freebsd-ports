@@ -5238,6 +5238,7 @@
     SUBDIR += py-llvmcpy
     SUBDIR += py-llvmlite
     SUBDIR += py-lml
+    SUBDIR += py-localstack
     SUBDIR += py-localstack-client
     SUBDIR += py-locket
     SUBDIR += py-lockfile
