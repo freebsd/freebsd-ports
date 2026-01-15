@@ -3,7 +3,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		adler2-2.0.1 \
 		ahash-0.8.12 \
 		aho-corasick-1.1.4 \
-		annotate-snippets-0.12.8 \
+		annotate-snippets-0.12.9 \
 		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
@@ -17,10 +17,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bitflags-2.9.4 \
 		bstr-1.12.1 \
 		cfg-if-1.0.3 \
-		clap-4.5.51 \
+		clap-4.5.53 \
 		clap-cargo-0.18.3 \
 		clap-verbosity-flag-3.0.4 \
-		clap_builder-4.5.51 \
+		clap_builder-4.5.53 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.5 \
 		codegenrs-3.0.2 \
@@ -64,14 +64,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		glob-0.3.3 \
 		globset-0.4.18 \
 		globwalk-0.9.1 \
-		hashbrown-0.16.0 \
+		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		human-panic-2.0.4 \
 		humantime-2.3.0 \
 		humantime-serde-1.1.1 \
 		ident_case-1.0.1 \
 		ignore-0.4.25 \
-		indexmap-2.12.0 \
+		indexmap-2.12.1 \
 		is_terminal_polyfill-1.70.1 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
@@ -122,8 +122,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		same-file-1.0.6 \
 		schemafy_core-0.6.0 \
 		schemafy_lib-0.6.0 \
-		schemars-1.0.5 \
-		schemars_derive-1.0.5 \
+		schemars-1.1.0 \
+		schemars_derive-1.1.0 \
 		semver-1.0.27 \
 		serde-1.0.228 \
 		serde-sarif-0.8.0 \
@@ -160,7 +160,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		toml_edit-0.23.6 \
 		toml_parser-1.0.4 \
 		toml_writer-1.0.4 \
-		trycmd-0.15.10 \
+		trycmd-0.15.11 \
 		typed-arena-2.0.2 \
 		typed-builder-0.21.2 \
 		typed-builder-macro-0.21.2 \
@@ -198,7 +198,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_gnullvm-0.53.0 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
-		winnow-0.7.13 \
+		winnow-0.7.14 \
 		wit-bindgen-0.45.1 \
 		zerocopy-0.8.27 \
 		zerocopy-derive-0.8.27
