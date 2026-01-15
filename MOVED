@@ -5078,3 +5078,4 @@ lang/go123||2026-01-14|Has expired: Old version, unsupported upstream
 devel/py-confusable_homoglyphs|devel/py-confusable-homoglyphs|2026-01-15|Rename to match upstream naming
 devel/py-pyyaml_env_tag|devel/py-pyyaml-env-tag|2026-01-15|Rename to match upstream naming
 www/py-aiohttp_cors|www/py-aiohttp-cors|2026-01-15|Rename to match upstream naming
+lang/cython3|lang/cython|2026-01-15|Remove obsoleted port. Use lang/cython instead
