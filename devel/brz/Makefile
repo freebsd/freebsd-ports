@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>=0:devel/py-testtools@${PY_FLAVOR}
 
 USES=		gettext python shebangfix
-USE_PYTHON=	autoplist cython concurrent distutils
+USE_PYTHON=	autoplist concurrent cython0 distutils
 
 SHEBANG_FILES=	brz
 MAKE_ENV=	BRZ_LOG=/dev/null
