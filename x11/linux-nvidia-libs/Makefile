@@ -345,7 +345,7 @@ PLIST_RE+=	'\,${LINUXBASE}.*libnvidia-(egl-xcb|egl-xlib),d'
 
 
 # nvidia-egl-gbm supports.
-.if ${NVVERSION} >= 590.04801 # 590.48.01
+.if ${NVVERSION} >= 580.12609 # 580.126.09
 NV_EGL_G_VERSION=	1.1.3
 .elif ${NVVERSION} >= 565.00000 # 565.00
 NV_EGL_G_VERSION=	1.1.2
