@@ -1,5 +1,5 @@
 PORTNAME=	pkg_replace
-DISTVERSION=	20240819
+DISTVERSION=	20260115
 CATEGORIES=	ports-mgmt
 
 MAINTAINER=	kdeguchi@sz.tokoha-u.ac.jp
@@ -23,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%ETCDIR%%|${ETCDIR}|g;s|%%PKGCOMPATDIR%%|${PKGCOMPATDIR}|g' \
-		${WRKSRC}/${PORTNAME}.sh
+		${WRKSRC}/${PORTNAME}.sh ${WRKSRC}/${PORTNAME}.1
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.sh \
