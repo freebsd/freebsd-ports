@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
 USES=		fortran gmake localbase:ldflags python shebangfix
-USE_PYTHON=	autoplist cython3 pep517
+USE_PYTHON=	autoplist cython pep517
 
 TEST_TARGET=	test
 

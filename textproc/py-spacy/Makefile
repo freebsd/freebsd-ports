@@ -40,7 +40,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}catalogue>=2.0.6<2.1.0:devel/py-catalogue@${
 		${PYTHON_PKGNAMEPREFIX}weasel>=0.4.2<0.5.0:devel/py-weasel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +

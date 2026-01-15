@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	pep517 cython3 autoplist pytest
+USE_PYTHON=	autoplist cython pep517 pytest
 
 post-install:
 	# strip binaries

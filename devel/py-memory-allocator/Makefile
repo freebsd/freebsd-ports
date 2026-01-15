@@ -11,6 +11,6 @@ WWW=		https://pypi.org/project/memory-allocator/
 LICENSE=	GPLv3
 
 USES=		meson python
-USE_PYTHON=	cython3
+USE_PYTHON=	cython
 
 .include <bsd.port.mk>

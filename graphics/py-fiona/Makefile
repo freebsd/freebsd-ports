@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cligj>=0.5:devel/py-cligj@${PY_FLAVOR} \
 LIB_DEPENDS+=	libgdal.so:graphics/gdal
 
 USES=		compiler python
-USE_PYTHON=	autoplist pep517 cython3
+USE_PYTHON=	autoplist cython pep517
 
 CONFLICTS_INSTALL=	fio
 

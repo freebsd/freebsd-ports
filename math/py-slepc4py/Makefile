@@ -22,7 +22,7 @@ LIB_DEPENDS=	libmpich.so:net/mpich \
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		fortran python
-USE_PYTHON=	autoplist cython3 distutils pytest
+USE_PYTHON=	autoplist cython distutils pytest
 
 MAKE_ENV=	PETSC_DIR=${LOCALBASE} SLEPC_DIR=${LOCALBASE}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}unyt>=2.8.0:math/py-unyt@${PY_FLAVOR}
 
 USES=		dos2unix localbase python
-USE_PYTHON=	autoplist concurrent cython3 distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|check_for_pyembree() is not None|False|" \

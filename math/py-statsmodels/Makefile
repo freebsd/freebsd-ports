@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.22.3,1<3,1:math/py-numpy@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.8,1:science/py-scipy@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 SHEBANG_GLOB=	*.py
 

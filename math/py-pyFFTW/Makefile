@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python localbase:ldflags
-USE_PYTHON=	autoplist cython3 distutils pytest # tests fail with "attempted relative import with no known parent package", see https://github.com/pyFFTW/pyFFTW/issues/405
+USE_PYTHON=	autoplist cython distutils pytest # tests fail with "attempted relative import with no known parent package", see https://github.com/pyFFTW/pyFFTW/issues/405
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests

@@ -29,7 +29,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}libplist>=2.2.0:devel/py-libplist@${PY_FL
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}libplist>=2.2.0:devel/py-libplist@${PY_FLAVOR}
 
 USES+=		python
-USE_PYTHON=	cython3 flavors
+USE_PYTHON=	cython flavors
 
 CONFIGURE_ENV+=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 

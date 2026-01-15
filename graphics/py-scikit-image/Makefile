@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tifffile>=2022.8.12:graphics/py-tifffile@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python shebangfix
-USE_PYTHON=	autoplist cython3 pep517
+USE_PYTHON=	autoplist cython pep517
 
 BINARY_ALIAS=	python=${PYTHON_CMD} \
 		python3=${PYTHON_CMD}

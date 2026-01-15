@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 
 USES=		compiler cpe gnome python
 USE_GNOME=	libxml2 libxslt
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib
 

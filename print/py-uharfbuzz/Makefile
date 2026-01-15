@@ -19,7 +19,7 @@ BUILD_DEPENDS=	harfbuzz>=12.3.0:print/harfbuzz \
 LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 MAKE_ENV=	CYTHON_ANNOTATE=0 CYTHON_LINETRACE=0 USE_SYSTEM_LIBS=1
 

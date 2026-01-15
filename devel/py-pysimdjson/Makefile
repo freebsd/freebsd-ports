@@ -17,7 +17,7 @@ LICENSE=	MIT
 #		${PYTHON_PKGNAMEPREFIX}pytest-benchmark>=0:devel/py-pytest-benchmark@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	cython3 distutils
+USE_PYTHON=	cython distutils
 
 CFLAGS_powerpc64=	-mpower8-vector
 

@@ -29,7 +29,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.10.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	autoplist cython3 pep517 pytest
+USE_PYTHON=	autoplist cython pep517 pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or

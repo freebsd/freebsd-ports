@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	cython3 distutils autoplist unittest # 2 tests fail, see https://github.com/dwavesystems/dwave-samplers/issues/66
+USE_PYTHON=	autoplist cython distutils unittest # 2 tests fail, see https://github.com/dwavesystems/dwave-samplers/issues/66
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems

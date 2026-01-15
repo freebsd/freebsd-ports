@@ -8,7 +8,7 @@ COMMENT=	Python bindings for libplist
 LIB_DEPENDS=	libplist-2.0.so:${MASTER_PORT}
 
 USES+=		localbase:ldflags python
-USE_PYTHON=	cython3 flavors
+USE_PYTHON=	cython flavors
 
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"
 

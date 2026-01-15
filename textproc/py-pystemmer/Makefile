@@ -15,7 +15,7 @@ LICENSE=	MIT BSD3CLAUSE
 LICENSE_COMB=	dual
 
 USES=		python
-USE_PYTHON=	autoplist cython3 distutils
+USE_PYTHON=	autoplist cython distutils
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Stemmer*.so

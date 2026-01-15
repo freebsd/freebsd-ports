@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=5.3:devel/py-coverage@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}xdoctest>=1.1.3:devel/py-xdoctest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist cython3 distutils pytest # 7 tests fail, see https://github.com/pyutils/line_profiler/issues/266
+USE_PYTHON=	autoplist cython distutils pytest # 7 tests fail, see https://github.com/pyutils/line_profiler/issues/266
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

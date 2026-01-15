@@ -30,7 +30,7 @@ TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 #GH_ACCOUNT=	fplll
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	cython3 distutils
+USE_PYTHON=	cython distutils
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif

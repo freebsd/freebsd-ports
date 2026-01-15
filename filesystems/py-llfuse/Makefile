@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FL
 LIB_DEPENDS=	libfuse.so:filesystems/fusefs-libs
 
 USES=		compiler:c++11-lang fuse pkgconfig python
-USE_PYTHON=	autoplist concurrent cython3 pep517 pytest
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 

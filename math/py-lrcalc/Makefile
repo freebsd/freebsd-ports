@@ -15,7 +15,7 @@ LIB_DEPENDS=	liblrcalc.so:math/lrcalc
 
 USES=		localbase python
 
-USE_PYTHON=	cython3 distutils
+USE_PYTHON=	cython distutils
 
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s

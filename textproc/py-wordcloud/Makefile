@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	cython3 pep517
+USE_PYTHON=	cython pep517
 
 PLIST_SUB+=	VER=${PORTVERSION}
 

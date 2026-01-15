@@ -29,7 +29,7 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 		fakeroot:security/fakeroot
 
 USES=		pkgconfig python ssl
-USE_PYTHON=	autoplist cython3 distutils
+USE_PYTHON=	autoplist cython distutils
 MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
 
 OPTIONS_DEFINE=		FUSE

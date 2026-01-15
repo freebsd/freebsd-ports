@@ -16,7 +16,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}parameterized>0:devel/py-parameterized@${PY
 		${PYTHON_PKGNAMEPREFIX}mypy>0:devel/py-mypy@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	autoplist cython3 distutils unittest
+USE_PYTHON=	autoplist cython distutils unittest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems

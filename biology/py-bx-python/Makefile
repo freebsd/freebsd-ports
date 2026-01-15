@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PY_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}pyparsing>0:devel/py-pyparsing@${PY_FLAVOR}
 
 USES=		compiler python
-USE_PYTHON=	pep517 cython3 autoplist
+USE_PYTHON=	autoplist cython pep517
 
 post-patch:
 	# force cythonization, compilation fails otherwise for some reason

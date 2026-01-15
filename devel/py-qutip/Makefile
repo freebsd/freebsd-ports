@@ -1,6 +1,6 @@
 PORTNAME=	qutip
 DISTVERSION=	5.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 # the optional graphics/py-mayavi dependency is omitted because it is python-2.7 -only
 
 USES=		python
-USE_PYTHON=	autoplist cython3 cython3_run pep517
+USE_PYTHON=	autoplist cython cython_run pep517
 
 post-install:
 	@${STRIP_CMD} \

@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}	\
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang localbase python
-USE_PYTHON=	cython3 pep517
+USE_PYTHON=	cython pep517
 
 CFLAGS+=	-std=c++14
 

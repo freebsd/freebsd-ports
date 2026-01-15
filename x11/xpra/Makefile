@@ -48,7 +48,7 @@ USES=		desktop-file-utils gettext-runtime gnome localbase pkgconfig \
 		python shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf gtk30 pygobject3
-USE_PYTHON=	cryptography cython3 distutils noflavors
+USE_PYTHON=	cryptography cython distutils noflavors
 USE_XORG=	x11 xcomposite xcursor xdamage xext xfixes xi xkbfile xrandr \
 		xres xtst
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \

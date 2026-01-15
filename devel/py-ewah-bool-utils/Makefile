@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	autoplist cython3 pep517 pytest
+USE_PYTHON=	autoplist cython pep517 pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} # tests fail to run, see https://github.com/yt-project/ewah_bool_utils/issues/41
 TEST_WRKSRC=	${WRKSRC}/tests

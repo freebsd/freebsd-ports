@@ -17,7 +17,7 @@ BROKEN=		Does not build with ffmpeg > 6
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg
 
 USES=		python pkgconfig
-USE_PYTHON=	autoplist concurrent cython3 distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 

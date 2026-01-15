@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}astropy-iers-data>=0:astro/py-astropy-iers-data@${PY_FLAVOR}
 
 USES=		compiler:c11 python
-USE_PYTHON=	autoplist cython3 distutils
+USE_PYTHON=	autoplist cython distutils
 
 CONFLICTS_INSTALL=	p5-Data-ShowTable # bin/showtable
 

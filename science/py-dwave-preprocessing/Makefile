@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.20:science/py-dimod@${PY_FLAVOR}
 		${PYNUMPY}
 
 USES=		localbase:ldflags python
-USE_PYTHON=	cython3 distutils unittest # 1 test fails, see https://github.com/dwavesystems/dwave-preprocessing/issues/74
+USE_PYTHON=	cython distutils unittest # 1 test fails, see https://github.com/dwavesystems/dwave-preprocessing/issues/74
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dwavesystems

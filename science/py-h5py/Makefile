@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpi4py>=3.1.2:net/py-mpi4py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>=3.4.4:devel/py-tables@${PY_FLAVOR}
 
 USES=		localbase pkgconfig python
-USE_PYTHON=	autoplist concurrent cython3 pep517 pytest
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 TEST_WRKSRC=	${STAGEDIR}${PYTHON_SITELIBDIR}

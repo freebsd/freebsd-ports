@@ -34,7 +34,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray>=0.13:devel/py-xarray@${PY_FLAVOR}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist cython3 distutils pytest # 14 tests fail, see https://github.com/bashtage/linearmodels/issues/550
+USE_PYTHON=	autoplist cython distutils pytest # 14 tests fail, see https://github.com/bashtage/linearmodels/issues/550
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

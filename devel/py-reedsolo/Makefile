@@ -19,7 +19,7 @@ USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomerfiliba-org
 GH_PROJECT=	reedsolomon
-USE_PYTHON=	autoplist cython3 distutils pytest
+USE_PYTHON=	autoplist cython distutils pytest
 
 TEST_ENV+=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 

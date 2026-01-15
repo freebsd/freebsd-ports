@@ -12,7 +12,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 USES=		pkgconfig python
-USE_PYTHON=	autoplist concurrent cython3 distutils
+USE_PYTHON=	autoplist concurrent cython distutils
 
 LDFLAGS+=	${MPI_LIBS}
 

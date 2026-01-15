@@ -16,7 +16,7 @@ LIB_DEPENDS=	librdata.so:math/librdata
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.2.0,1:math/py-pandas@${PY_FLAVOR}
 
 USES=		localbase python
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 post-patch:
 # Clean up bundled libraries

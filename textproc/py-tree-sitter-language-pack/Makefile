@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tree-sitter023==0.23.2:devel/py-tree-sitter023@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 cython3 autoplist pytest
+USE_PYTHON=	autoplist cython pep517 pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests

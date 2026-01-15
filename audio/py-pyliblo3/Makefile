@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FL
 LIB_DEPENDS=	liblo.so:audio/liblo
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|g' ${WRKSRC}/setup.py

@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python shebangfix
-USE_PYTHON=	autoplist cython3 pep517
+USE_PYTHON=	autoplist cython pep517
 
 SHEBANG_FILES=	pywt/data/create_dat.py
 

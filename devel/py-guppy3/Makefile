@@ -14,7 +14,7 @@ LICENSE=	MIT
 #GH_ACCOUNT=	zhuyifei1999
 
 USES=		python
-USE_PYTHON=	cython3 distutils
+USE_PYTHON=	cython distutils
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
