@@ -1,0 +1,22 @@
+--- pyproject.toml.orig	2025-12-26 21:02:03 UTC
++++ pyproject.toml
+@@ -1,9 +1,7 @@ requires = [
+ [build-system]
+ requires = [
+-	"setuptools>=77",
++	"setuptools>=61",
+ 	"setuptools_scm[toml]>=3.4.1",
+-	# jaraco/skeleton#174
+-	"coherent.licensed",
+ ]
+ build-backend = "setuptools.build_meta"
+ 
+@@ -22,7 +20,7 @@ requires-python = ">=3.9"
+ 	"Framework :: Pytest",
+ ]
+ requires-python = ">=3.9"
+-license = "MIT"
++license = { text = "MIT" }
+ dependencies = [
+ 	"docutils >= 0.15",
+ 	"jaraco.packaging >= 9.5",
