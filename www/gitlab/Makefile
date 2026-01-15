@@ -419,7 +419,7 @@ do-install:
 	#(cd ${WRKSRC} && bundle config set --local without development test)
 	#(cd ${WRKSRC} && cat .bundle/config)
 	(cd ${WRKSRC} && ${RM} Gemfile.lock && ${WRK_ENV} ${GEM_ENV} bundle install --local)
-	(cd ${WRKSRC} && bundle binstubs --all --path .bin)
+	(cd ${WRKSRC} && bundle binstubs --all)
 	${RM} -R ${WRKSRC}/workhorse
 	# remove vendored sidekiq gem as it breaks gitlab 17.1.0 for FreeBSD
 	# See also: https://gitlab.com/gitlab-org/gitlab/-/issues/468435
