@@ -3,7 +3,7 @@ PORTREVISION=	3
 COMMENT=	Subtitle extractor
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
-		libgpac.so:multimedia/gpac-libgpac \
+		libgpac.so:multimedia/gpac \
 		libpng.so:graphics/png \
 		libprotobuf-c.so:devel/protobuf-c \
 		libutf8proc.so:textproc/utf8proc
