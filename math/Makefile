@@ -1132,6 +1132,7 @@
     SUBDIR += py-splot
     SUBDIR += py-spopt
     SUBDIR += py-spot
+    SUBDIR += py-spox
     SUBDIR += py-spreg
     SUBDIR += py-squarify
     SUBDIR += py-ssm
