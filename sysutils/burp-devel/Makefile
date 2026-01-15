@@ -13,6 +13,9 @@ LICENSE=	AGPLv3 PD
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	3.2.0 is the new stable version based on 3.1.4. Use sysutils/burp instead
+EXPIRATION_DATE=2026-01-31
+
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash \
 		${LOCALBASE}/include/yajl/yajl_common.h:devel/yajl
 LIB_DEPENDS=	librsync.so:net/librsync
