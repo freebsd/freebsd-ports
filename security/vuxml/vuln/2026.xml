@@ -1,3 +1,54 @@
+  <vuln vid="6f76a1db-f124-11f0-85c5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.59</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.59</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_13.html">
+	 <p>This update includes 10 security fixes:</p>
+	 <ul>
+	    <li>[458914193] High CVE-2026-0899: Out of bounds memory access in V8. Reported by @p1nky4745 on 2025-11-08</li>
+	    <li>[465730465] High CVE-2026-0900: Inappropriate implementation in V8. Reported by Google on 2025-12-03</li>
+	    <li>[40057499] High CVE-2026-0901: Inappropriate implementation in Blink. Reported by Irvan Kurniawan (sourc7) on 2021-10-04</li>
+	    <li>[469143679] Medium CVE-2026-0902: Inappropriate implementation in V8. Reported by 303f06e3 on 2025-12-16</li>
+	    <li>[444803530] Medium CVE-2026-0903: Insufficient validation of untrusted input in Downloads. Reported by Azur on 2025-09-13</li>
+	    <li>[452209495] Medium CVE-2026-0904: Incorrect security UI in Digital Credentials. Reported by Hafiizh on 2025-10-15</li>
+	    <li>[465466773] Medium CVE-2026-0905: Insufficient policy enforcement in Network. Reported by Google on 2025-12-02</li>
+	    <li>[467448811] Low CVE-2026-0906: Incorrect security UI. Reported by Khalil Zhani on 2025-12-10</li>
+	    <li>[444653104] Low CVE-2026-0907: Incorrect security UI in Split View. Reported by Hafiizh on 2025-09-12</li>
+	    <li>[452209503] Low CVE-2026-0908: Use after free in ANGLE. Reported by Glitchers BoB 14th. on 2025-10-15</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-0899</cvename>
+      <cvename>CVE-2026-0900</cvename>
+      <cvename>CVE-2026-0901</cvename>
+      <cvename>CVE-2026-0902</cvename>
+      <cvename>CVE-2026-0903</cvename>
+      <cvename>CVE-2026-0904</cvename>
+      <cvename>CVE-2026-0905</cvename>
+      <cvename>CVE-2026-0906</cvename>
+      <cvename>CVE-2026-0907</cvename>
+      <cvename>CVE-2026-0908</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-13</discovery>
+      <entry>2026-01-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fd3855b8-efbc-11f0-9e3f-b0416f0c4c67">
     <topic>virtualenv -- CWE-59: Improper Link Resolution Before File Access ('Link Following')</topic>
     <affects>
