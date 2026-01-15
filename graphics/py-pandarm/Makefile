@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}geopandas>=0:graphics/py-geopandas@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}tables>=3.1:devel/py-tables@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	autoplist concurrent cython3 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
