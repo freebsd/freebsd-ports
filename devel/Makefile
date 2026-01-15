@@ -4530,6 +4530,7 @@
     SUBDIR += py-azure-mgmt-netapp
     SUBDIR += py-azure-mgmt-network
     SUBDIR += py-azure-mgmt-policyinsights
+    SUBDIR += py-azure-mgmt-postgresqlflexibleservers
     SUBDIR += py-azure-mgmt-privatedns
     SUBDIR += py-azure-mgmt-rdbms
     SUBDIR += py-azure-mgmt-recoveryservices
