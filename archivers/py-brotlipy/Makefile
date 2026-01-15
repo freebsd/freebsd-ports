@@ -12,6 +12,9 @@ WWW=		https://github.com/python-hyper/brotlicffi
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	This project has been archived. The maintainers of this project have marked this project as archived. No new releases are expected. Use archivers/py-brotlicffi instead
+EXPIRATION_DATE=2026-01-31
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
