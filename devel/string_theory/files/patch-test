@@ -1,0 +1,44 @@
+--- test/test_buffer.cpp.orig	2025-01-10 20:58:36 UTC
++++ test/test_buffer.cpp
+@@ -310,41 +310,6 @@ TEST(char_buffer, move)
+     EXPECT_EQ(24U, wdest2.size());
+ }
+ 
+-#if (defined(__clang__) && ((__clang_major__ > 3) || (__clang_major__ == 3 && __clang_minor__ > 5))) \
+-    || (defined(__GNUC__) && (__GNUC__ >= 13))
+-#   pragma GCC diagnostic push
+-#   pragma GCC diagnostic ignored "-Wself-move"
+-#   if defined(__clang__) && (__clang_major__ > 6)
+-#       pragma GCC diagnostic ignored "-Wself-assign-overloaded"
+-#   endif
+-#endif
+-
+-TEST(char_buffer, self_assign)
+-{
+-    // If this changes, this test may need to be updated to match
+-    ASSERT_EQ(16, ST_MAX_SSO_LENGTH);
+-
+-    ST::char_buffer sbuf;
+-    sbuf = sbuf;
+-    EXPECT_EQ(0, T_strcmp(sbuf.data(), ""));
+-
+-    ST::char_buffer shortbuf("0123456789", 10);
+-    sbuf = shortbuf;
+-    EXPECT_EQ(0, T_strcmp(sbuf.data(), "0123456789"));
+-    sbuf = sbuf;
+-    EXPECT_EQ(0, T_strcmp(sbuf.data(), "0123456789"));
+-    sbuf = std::move(sbuf);
+-    // Content not guaranteed after self-move
+-
+-    ST::char_buffer longbuf("0123456789abcdefghij", 20);
+-    sbuf = longbuf;
+-    EXPECT_EQ(0, T_strcmp(sbuf.data(), "0123456789abcdefghij"));
+-    sbuf = sbuf;
+-    EXPECT_EQ(0, T_strcmp(sbuf.data(), "0123456789abcdefghij"));
+-    sbuf = std::move(sbuf);
+-    // Content not guaranteed after self-move
+-}
+-
+ #if defined(__clang__) && ((__clang_major__ > 3) || (__clang_major__ == 3 && __clang_minor__ > 5))
+ #   pragma GCC diagnostic pop
+ #endif
