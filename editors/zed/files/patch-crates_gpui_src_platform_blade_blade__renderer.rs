@@ -1,6 +1,6 @@
---- crates/gpui/src/platform/blade/blade_renderer.rs.orig	2025-11-15 06:23:16 UTC
+--- crates/gpui/src/platform/blade/blade_renderer.rs.orig	2026-01-14 15:30:09 UTC
 +++ crates/gpui/src/platform/blade/blade_renderer.rs
-@@ -436,7 +436,7 @@ impl BladeRenderer {
+@@ -477,7 +477,7 @@ impl BladeRenderer {
              && !self.gpu.wait_for(&last_sp, MAX_FRAME_TIME_MS)
          {
              log::error!("GPU hung");

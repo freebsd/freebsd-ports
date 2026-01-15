@@ -1,16 +1,26 @@
---- crates/remote_server/Cargo.toml.orig	2026-01-08 00:39:18 UTC
+--- crates/remote_server/Cargo.toml.orig	2026-01-14 15:30:09 UTC
 +++ crates/remote_server/Cargo.toml
-@@ -70,12 +70,16 @@ rayon.workspace = true
+@@ -27,7 +27,6 @@ collections.workspace = true
+ clap.workspace = true
+ client.workspace = true
+ collections.workspace = true
+-crashes.workspace = true
+ dap_adapters.workspace = true
+ debug_adapter_extension.workspace = true
+ env_logger.workspace = true
+@@ -71,11 +70,18 @@ rayon.workspace = true
  thiserror.workspace = true
  rayon.workspace = true
  
 -[target.'cfg(not(windows))'.dependencies]
 +[target.'cfg(not(any(windows, target_os = "freebsd")))'.dependencies]
- crashes.workspace = true
  crash-handler.workspace = true
  fork.workspace = true
  libc.workspace = true
  minidumper.workspace = true
++
++[target.'cfg(not(target_os = "freebsd"))'.dependencies]
++crashes.workspace = true
 +
 +[target.'cfg(target_os = "freebsd")'.dependencies]
 +fork.workspace = true
