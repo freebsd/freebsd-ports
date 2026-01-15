@@ -22,7 +22,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}testfixtures>0:devel/py-testfixtures@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang python
-USE_PYTHON=	pep517 cython autoplist pytest # tests fail unde PyTest, see https://github.com/RaRe-Technologies/gensim/issues/3561
+USE_PYTHON=	autoplist cython0 pep517 pytest # tests fail unde PyTest, see https://github.com/RaRe-Technologies/gensim/issues/3561
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/gensim/test
