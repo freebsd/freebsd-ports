@@ -1,0 +1,10 @@
+--- pry-byebug.gemspec.orig	2025-12-31 13:03:27 UTC
++++ pry-byebug.gemspec
+@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<byebug>.freeze, ["~> 12.0".freeze])
+-  s.add_runtime_dependency(%q<pry>.freeze, [">= 0.13".freeze, "< 0.16".freeze])
++  s.add_runtime_dependency(%q<pry>.freeze, [">= 0.13".freeze, "< 0.17".freeze])
+ end
+ 
