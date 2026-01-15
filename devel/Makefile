@@ -5897,6 +5897,7 @@
     SUBDIR += py-raven
     SUBDIR += py-rchitect
     SUBDIR += py-re-assert
+    SUBDIR += py-readerwriterlock
     SUBDIR += py-readme-renderer
     SUBDIR += py-rebulk
     SUBDIR += py-recordclass
