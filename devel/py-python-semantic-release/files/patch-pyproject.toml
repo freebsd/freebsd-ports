@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-05-05 04:21:19 UTC
+--- pyproject.toml.orig	2025-12-14 22:27:36 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@
  # Ref: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
@@ -9,3 +9,12 @@
  build-backend = "setuptools.build_meta"
  
  [project]
+@@ -32,7 +32,7 @@ dependencies = [
+   "gitpython ~= 3.0",
+   "requests ~= 2.25",
+   "jinja2 ~= 3.1",
+-  "python-gitlab >= 4.0.0, < 7.0.0",
++  "python-gitlab >= 4.0.0, < 8.0.0",
+   "tomlkit ~= 0.13.0",
+   "dotty-dict ~= 1.3",
+   "importlib-resources ~= 6.0",
