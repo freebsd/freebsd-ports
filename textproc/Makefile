@@ -346,6 +346,7 @@
     SUBDIR += jshon
     SUBDIR += json-yaml
     SUBDIR += json2yaml
+    SUBDIR += jsonfmt
     SUBDIR += jtc
     SUBDIR += kdiff3
     SUBDIR += kepubify

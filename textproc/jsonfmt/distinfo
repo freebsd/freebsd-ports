@@ -1,0 +1,5 @@
+TIMESTAMP = 1767157555
+SHA256 (go/textproc_jsonfmt/jsonfmt-v0.5.2/v0.5.2.mod) = e206aae9a3f676dcd48fe7a3e751959b02a11988ed104a201ed31a882f74eb3a
+SIZE (go/textproc_jsonfmt/jsonfmt-v0.5.2/v0.5.2.mod) = 414
+SHA256 (go/textproc_jsonfmt/jsonfmt-v0.5.2/v0.5.2.zip) = f5d3cbbdef99bca75b76f31d2db5d0aed4bc9f25f9b74ca70e54b94d39071e0c
+SIZE (go/textproc_jsonfmt/jsonfmt-v0.5.2/v0.5.2.zip) = 10132
