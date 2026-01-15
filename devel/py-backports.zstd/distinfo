@@ -1,3 +1,3 @@
-TIMESTAMP = 1765895712
-SHA256 (backports_zstd-1.2.0.tar.gz) = 6c3fc19342db750b52fde793e4440a93575761b1493bb4a1d3b26033d2bd3452
-SIZE (backports_zstd-1.2.0.tar.gz) = 997263
+TIMESTAMP = 1767157619
+SHA256 (backports_zstd-1.3.0.tar.gz) = e8b2d68e2812f5c9970cabc5e21da8b409b5ed04e79b4585dbffa33e9b45ebe2
+SIZE (backports_zstd-1.3.0.tar.gz) = 997138
