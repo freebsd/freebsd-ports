@@ -1,5 +1,5 @@
 PORTNAME=	cryptography-vectors
-PORTVERSION=	45.0.7
+PORTVERSION=	46.0.3
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_F
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
+MAKE_ENV=	SOURCE_DATE_EPOCH=315532800 # 1980-01-01 00:00:00 UTC
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
