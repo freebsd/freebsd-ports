@@ -1756,6 +1756,8 @@ share/applications/emacsclient.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/nadvice.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/oclosure.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/oclosure.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-activate.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-activate.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-vc.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package-vc.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/emacs-lisp/package.el.gz
