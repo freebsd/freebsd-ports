@@ -1,6 +1,6 @@
 % sed -i .orig 's|, "ports/[^"]*".freeze||g; /mini_portile2/d' sqlite3.gemspec
 
---- sqlite3.gemspec.orig	2025-12-06 21:40:37 UTC
+--- sqlite3.gemspec.orig	2025-12-31 09:51:38 UTC
 +++ sqlite3.gemspec
 @@ -14,7 +14,7 @@ Gem::Specification.new do |s|
    s.description = "Ruby library to interface with the SQLite3 database engine (http://www.sqlite.org). Precompiled\nbinaries are available for common platforms for recent versions of Ruby.\n".freeze
