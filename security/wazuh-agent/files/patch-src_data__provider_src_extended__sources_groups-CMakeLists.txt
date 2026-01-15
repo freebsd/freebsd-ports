@@ -1,0 +1,22 @@
+--- src/data_provider/src/extended_sources/groups/CMakeLists.txt	2026-01-13 15:01:19.871247000 +0000
++++ src/data_provider/src/extended_sources/groups/CMakeLists.txt	2026-01-13 15:07:52.828437000 +0000
+@@ -18,6 +18,8 @@
+     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../wrappers/unix/linux)
+   elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../wrappers/unix/darwin)
++  elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../wrappers/unix/freebsd)
+   endif()
+ endif()
+ 
+@@ -35,6 +37,10 @@
+         list(APPEND SRC_FILES
+           src/groups_linux.cpp
+           src/user_groups_linux.cpp)
++    elseif(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
++        list(APPEND SRC_FILES
++          src/groups_freebsd.cpp
++          src/user_groups_freebsd.cpp)
+     elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+         find_library(OPEN_DIRECTORY OpenDirectory)
+         find_library(FOUNDATION Foundation)
