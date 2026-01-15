@@ -1,0 +1,12 @@
+Airspeed is a powerful and easy-to-use templating engine for Python that aims
+for a high level of compatibility with the popular Velocity library for Java.
+
+Selling points:
+- Compatible with Velocity templates
+- Compatible with Python 2.7 and greater, including Jython
+- Features include macros definitions, conditionals, sub-templates and much more
+- Airspeed is already being put to serious use
+- Comprehensive set of unit tests; the entire library was written test-first
+- Reasonably fast
+- A single Python module of a few kilobytes, and not the 500kb of Velocity
+- Liberal licence (BSD-style)
