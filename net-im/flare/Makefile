@@ -1,6 +1,5 @@
 PORTNAME=	flare
-DISTVERSION=	0.17.5
-PORTREVISION=	1
+DISTVERSION=	0.18.0
 CATEGORIES=	net-im
 
 MAINTAINER=	nxjoseph@protonmail.com
