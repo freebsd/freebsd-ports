@@ -1,8 +1,9 @@
-PORTNAME=	pyyaml_env_tag
+PORTNAME=	pyyaml-env-tag
 PORTVERSION=	1.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	pyyaml_env_tag-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Custom YAML tag for referencing environment variables in YAML files
