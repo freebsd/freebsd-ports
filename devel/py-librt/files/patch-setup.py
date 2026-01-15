@@ -1,6 +1,6 @@
 --- setup.py.orig	2025-12-05 21:07:15 UTC
 +++ setup.py
-@@ -172,21 +172,11 @@ else:
+@@ -116,21 +116,11 @@ else:
                  "librt.base64",
                  [
                      "librt_base64.c",
