@@ -1,11 +1,16 @@
 PORTNAME=	loki
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}-lib/Loki/Loki%20${PORTVERSION}
 
 MAINTAINER=	snnn119@gmail.com
 COMMENT=	C++ library of common design patterns
 WWW=		https://sourceforge.net/projects/loki-lib/
+
+BROKEN=		error: a template argument list is expected after a name prefixed by the template keyword
+DEPRECATED=	dead upstream, sole consumer removed from tree long ago
+EXPIRATION_DATE=	2026-03-31
 
 USES=		gmake dos2unix
 USE_CXXSTD=	c++14
