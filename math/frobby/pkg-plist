@@ -1,5 +1,5 @@
 bin/frobby
-%%LIBRARY%%include/frobby.h
+include/frobby.h
 %%STATIC%%lib/libfrobby.a
 lib/libfrobby.so
 lib/libfrobby.so.1
