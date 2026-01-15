@@ -1,6 +1,6 @@
---- src/sitestore.c.orig	Mon Jun 19 12:07:52 2006
-+++ src/sitestore.c	Mon Jun 19 12:08:24 2006
-@@ -340,8 +340,8 @@
+--- src/sitestore.c.orig	2006-02-04 10:18:08 UTC
++++ src/sitestore.c
+@@ -340,8 +340,8 @@ static int end_element(void *userdata, int state,
  	}
  	break;
      case SITE_ELM_size:
