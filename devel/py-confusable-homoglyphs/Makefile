@@ -1,9 +1,10 @@
-PORTNAME=	confusable_homoglyphs
+PORTNAME=	confusable-homoglyphs
 PORTVERSION=	3.3.1
 PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	confusable_homoglyphs-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Detect confusable usage of unicode homoglyphs

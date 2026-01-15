@@ -4723,7 +4723,7 @@
     SUBDIR += py-configobj
     SUBDIR += py-configparser
     SUBDIR += py-configupdater
-    SUBDIR += py-confusable_homoglyphs
+    SUBDIR += py-confusable-homoglyphs
     SUBDIR += py-confuse
     SUBDIR += py-connection_pool
     SUBDIR += py-connexion
