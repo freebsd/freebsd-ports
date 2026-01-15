@@ -1,5 +1,5 @@
 PORTNAME=	pdm
-PORTVERSION=	2.26.2
+PORTVERSION=	2.26.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dep-logic>=0.5:devel/py-dep-logic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.13:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}findpython>=0.7.0<1.0.0:devel/py-findpython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hishel0>=0.0.32<1.0.0:devel/py-hishel0@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hishel>=1.0.0:devel/py-hishel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpcore>=1.0.6:www/py-httpcore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx>=0.20<1:www/py-httpx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}id>=1.5.0:devel/py-id@${PY_FLAVOR} \
@@ -43,16 +43,14 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	COOKIECUTTER COPIER KEYRING MSGPACK
-OPTIONS_DEFAULT=KEYRING MSGPACK
+OPTIONS_DEFINE=	COOKIECUTTER COPIER KEYRING
+OPTIONS_DEFAULT=KEYRING
 COOKIECUTTER_DESC=	Use cookiecutter to generate project
 COPIER_DESC=		Use copier to generate project
 KEYRING_DESC=		Use keyring to save credentials
-MSGPACK_DESC=		Use msgpack to process serializer
 
 COOKIECUTTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cookiecutter>=0:devel/py-cookiecutter@${PY_FLAVOR} \
 COPIER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}copier>=8.0.0:devel/py-copier@${PY_FLAVOR} \
 KEYRING_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keyring>=0,1:security/py-keyring@${PY_FLAVOR} \
-MSGPACK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR} \
 
 .include <bsd.port.mk>
