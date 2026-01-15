@@ -1,5 +1,5 @@
 PORTNAME=	openjph
-PORTVERSION=	0.25.3
+PORTVERSION=	0.26.0
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -11,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++14-lang
 
 CMAKE_OFF=	OJPH_BUILD_STREAM_EXPAND \
 		OJPH_BUILD_TESTS
