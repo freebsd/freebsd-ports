@@ -1,5 +1,5 @@
 PORTNAME=	burp
-PORTVERSION=	2.4.0
+PORTVERSION=	3.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/grke/burp/releases/download/${PORTVERSION}/
 
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash \
 LIB_DEPENDS=	librsync.so:net/librsync
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cpe libtool ncurses pkgconfig ssl tar:bz2
+USES=		compiler:c11 cpe libtool ncurses pkgconfig ssl tar:bz2
 
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
 GNU_CONFIGURE=	yes
@@ -29,8 +29,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFLICTS_INSTALL=	burp-devel
 
 CPE_VENDOR=	burp_project
-
-PORTSCOUT=	limit:^2\.4\.
 
 OPTIONS_DEFINE=	IPV6
 IPV6_CONFIGURE_ENABLE=	ipv6
