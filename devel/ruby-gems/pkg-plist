@@ -27,7 +27,6 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/commands/owner_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/pristine_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/push_command.rb
-%%RUBY_SITELIBDIR%%/rubygems/commands/query_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/rdoc_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/rebuild_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/search_command.rb
@@ -43,7 +42,6 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/commands/update_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/which_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/yank_command.rb
-%%RUBY_SITELIBDIR%%/rubygems/compatibility.rb
 %%RUBY_SITELIBDIR%%/rubygems/config_file.rb
 %%RUBY_SITELIBDIR%%/rubygems/core_ext/kernel_gem.rb
 %%RUBY_SITELIBDIR%%/rubygems/core_ext/kernel_require.rb
@@ -72,7 +70,6 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities/webauthn_listener/response.rb
 %%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities/webauthn_poller.rb
 %%RUBY_SITELIBDIR%%/rubygems/gemspec_helpers.rb
-%%RUBY_SITELIBDIR%%/rubygems/install_default_message.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_message.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_update_options.rb
 %%RUBY_SITELIBDIR%%/rubygems/installer.rb
@@ -251,6 +248,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/vendored_tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/version.rb
 %%RUBY_SITELIBDIR%%/rubygems/version_option.rb
+%%RUBY_SITELIBDIR%%/rubygems/win_platform.rb
 %%RUBY_SITELIBDIR%%/rubygems/yaml_serializer.rb
 @dir lib/ruby/gems/%%RUBY_VER%%/build_info
 @dir %%CACHE_DIR%%
