@@ -1,5 +1,5 @@
 PORTNAME=	ipython
-PORTVERSION=	8.37.0
+PORTVERSION=	9.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,20 +13,20 @@ WWW=		https://ipython.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.rst
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.2:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=0:devel/py-decorator@${PY_FLAVOR} \
-		${PY_EXCEPTIONGROUP} \
-		${PYTHON_PKGNAMEPREFIX}jedi>=0.16:devel/py-jedi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib-inline>0:math/py-matplotlib-inline@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=4.3.2:devel/py-decorator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ipython-pygments-lexers>=1.0.0:devel/py-ipython-pygments-lexers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jedi>=0.18.1:devel/py-jedi@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib-inline>=0.1.5:math/py-matplotlib-inline@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=4.3:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.41<3.1.0:devel/py-prompt-toolkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pygments>=2.4.0:textproc/py-pygments@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pygments>=2.11.0:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}stack-data>=0:devel/py-stack-data@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitlets>=5.13.0:devel/py-traitlets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}stack-data>=0.6.0:devel/py-stack-data@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>=5.13.0:devel/py-traitlets@${PY_FLAVOR}
 
-USES=		cpe python
+USES=		cpe python:3.11+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
