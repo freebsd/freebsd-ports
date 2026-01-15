@@ -1925,6 +1925,7 @@
     SUBDIR += py-rfc3987-syntax
     SUBDIR += py-robot-detection
     SUBDIR += py-rollbar
+    SUBDIR += py-rolo
     SUBDIR += py-routes
     SUBDIR += py-rules
     SUBDIR += py-scgi
