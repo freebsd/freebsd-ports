@@ -18,7 +18,7 @@ GH_TAGNAME=	c1bd4a0
 
 HAS_CONFIGURE=	yes
 USES=		compiler:c11 python
-USE_PYTHON=	autoplist distutils cython
+USE_PYTHON=	autoplist cython0 distutils
 
 CONFIGURE_ENV=	freebsd_src=${SRC_BASE}
 MAKE_ENV=	freebsd_src=${SRC_BASE}
