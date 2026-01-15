@@ -4466,6 +4466,7 @@
     SUBDIR += py-aws-xray-sdk
     SUBDIR += py-awscli
     SUBDIR += py-awscrt
+    SUBDIR += py-azure-ai-agents
     SUBDIR += py-azure-appconfiguration
     SUBDIR += py-azure-batch
     SUBDIR += py-azure-core
