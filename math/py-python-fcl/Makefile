@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY}
 
 USES=		compiler:c++11-lang eigen:3 python
 
-USE_PYTHON=	distutils autoplist concurrent cython
+USE_PYTHON=	autoplist concurrent cython0 distutils
 
 PYDISTUTILS_BUILD_TARGET=	build_ext
 
