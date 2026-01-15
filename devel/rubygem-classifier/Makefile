@@ -1,5 +1,5 @@
 PORTNAME=	classifier
-PORTVERSION=	1.4.4
+PORTVERSION=	2.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,11 +11,10 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-fast-stemmer>=1.0<2:devel/rubygem-fast-stemmer \
+		rubygem-matrix>=0:math/rubygem-matrix \
 		rubygem-mutex_m>=0.2<1:devel/rubygem-mutex_m \
 		rubygem-rake>=0:devel/rubygem-rake
 
 USES=		gem
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
