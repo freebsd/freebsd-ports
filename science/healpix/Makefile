@@ -29,7 +29,9 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
+.if exists(/usr/include/omp.h)
 LDFLAGS+=	-lomp
+.endif
 
 WRKSRC=			${WRKDIR}/Healpix_${DISTVERSION}
 AUTORECONF_WRKSRC=	${WRKSRC}/src/${FLAVOR:S/^c$/C/}/autotools
