@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.1:math/py-networkx@${PY_FLAVOR} 
 		${BACKEND_DEPENDS}
 
 USES=		python localbase
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	autoplist cython0 distutils
 
 WRKSRC_SUBDIR=	python
 
