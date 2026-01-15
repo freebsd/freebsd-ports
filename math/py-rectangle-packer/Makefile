@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		python
-USE_PYTHON=	distutils cython autoplist unittest
+USE_PYTHON=	autoplist cython0 distutils unittest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Penlect
