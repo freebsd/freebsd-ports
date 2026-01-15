@@ -23,9 +23,6 @@ USES=		cpe python
 USE_PYTHON=	autoplist concurrent cryptography pep517 pytest pythonprefix
 
 NO_ARCH=	yes
-
-CPE_VENDOR=	jean-paul_calderone
-
 # These tests will be skipped due the following reasons:
 #
 # * test_connect_refused: Avoid stalling in build environments that don't have
@@ -38,10 +35,11 @@ CPE_VENDOR=	jean-paul_calderone
 # The system clock must be in sync otherwise the test "test_verify_with_time"
 # will fail.
 PYTEST_IGNORED_TESTS=	test_connect_ex \
-			test_connect_refused \
-			test_set_verify_callback_exception
+			test_connect_refused
 TEST_ENV=	LC_ALL=en_US.UTF-8 \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+CPE_VENDOR=	jean-paul_calderone
 
 .include <bsd.port.pre.mk>
 
