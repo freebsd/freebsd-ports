@@ -7,7 +7,8 @@ DISTNAME=	azure_keyvault_certificates-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Microsoft Corporation Key Vault Certificates Client Library for Python
-WWW=		https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/keyvault/azure-keyvault-certificates \
+WWW=		https://azure.github.io/azure-sdk-for-python/ \
+		https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/keyvault/azure-keyvault-certificates \
 		https://github.com/Azure/azure-sdk-for-python
 
 LICENSE=	MIT
