@@ -1,0 +1,11 @@
+--- configure.orig	2026-01-10 11:12:40 UTC
++++ configure
+@@ -942,7 +942,7 @@ EOF
+ 
+     FreeBSD)
+         make="gmake"
+-        LDFLAGS="$LDFLAGS -export-dynamic"
++	LDFLAGS="$LDFLAGS -rdynamic"
+         PTHREAD_CFLAGS=-pthread
+         PTHREAD_LDFLAGS=-pthread
+         freebsd="yes"
