@@ -1,7 +1,6 @@
 PORTNAME=	mail
-PORTVERSION=	5.6.5
+PORTVERSION=	5.6.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	mail
 
 MAINTAINER=	brnrd@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://apps.nextcloud.com/apps/mail
 
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NEXTCLOUD_RUN_DEPENDS=	30
+NEXTCLOUD_RUN_DEPENDS=	31
 
 USES=		cpe gettext nextcloud php:flavors
 USE_PHP=	imap
