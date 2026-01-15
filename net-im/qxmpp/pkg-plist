@@ -32,6 +32,7 @@ include/QXmppQt6/QXmppClientExtension.h
 include/QXmppQt6/QXmppColorGeneration.h
 include/QXmppQt6/QXmppConfiguration.h
 include/QXmppQt6/QXmppConstants_p.h
+include/QXmppQt6/QXmppContactAddresses.h
 include/QXmppQt6/QXmppCredentials.h
 include/QXmppQt6/QXmppDataForm.h
 include/QXmppQt6/QXmppDataFormBase.h
@@ -86,8 +87,10 @@ include/QXmppQt6/QXmppMixIq_p.h
 include/QXmppQt6/QXmppMixManager.h
 include/QXmppQt6/QXmppMixParticipantItem.h
 include/QXmppQt6/QXmppMovedManager.h
+include/QXmppQt6/QXmppMucForms.h
 include/QXmppQt6/QXmppMucIq.h
 include/QXmppQt6/QXmppMucManager.h
+include/QXmppQt6/QXmppMucManagerV2.h
 include/QXmppQt6/QXmppNonSASLAuth.h
 include/QXmppQt6/QXmppNonza.h
 include/QXmppQt6/QXmppOutOfBandUrl.h
@@ -168,9 +171,9 @@ lib/cmake/QXmppQt6/QXmpp.cmake
 lib/cmake/QXmppQt6/QXmppQt6Config.cmake
 lib/cmake/QXmppQt6/QXmppQt6ConfigVersion.cmake
 lib/libQXmppOmemoQt6.so
-lib/libQXmppOmemoQt6.so.6
+lib/libQXmppOmemoQt6.so.7
 lib/libQXmppOmemoQt6.so.%%SOVERSION%%
 lib/libQXmppQt6.so
-lib/libQXmppQt6.so.6
+lib/libQXmppQt6.so.7
 lib/libQXmppQt6.so.%%SOVERSION%%
 libdata/pkgconfig/QXmppQt6.pc
