@@ -91,5 +91,5 @@ lib/cmake/igraph/igraph-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/igraph/igraph-targets.cmake
 lib/libigraph.so
 lib/libigraph.so.4
-lib/libigraph.so.4.0.0
+lib/libigraph.so.4.0.1
 libdata/pkgconfig/igraph.pc
