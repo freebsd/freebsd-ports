@@ -1,3 +1,3 @@
-TIMESTAMP = 1712607915
-SHA256 (jaraco.context-5.3.0.tar.gz) = c2f67165ce1f9be20f32f650f25d8edfc1646a8aeee48ae06fb35f90763576d2
-SIZE (jaraco.context-5.3.0.tar.gz) = 13345
+TIMESTAMP = 1767157633
+SHA256 (jaraco_context-6.0.2.tar.gz) = 953ae8dddb57b1d791bf72ea1009b32088840a7dd19b9ba16443f62be919ee57
+SIZE (jaraco_context-6.0.2.tar.gz) = 14994
