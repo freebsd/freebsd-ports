@@ -1,0 +1,19 @@
+--- Makefile.orig	2026-01-15 21:20:05 UTC
++++ Makefile
+@@ -29,14 +29,14 @@
+ # THE POSSIBILITY OF SUCH DAMAGES.
+ #
+ 
+-.PATH:	${.CURDIR}/../../dev/gpioshutdown
++.PATH:	${SYSDIR}/dev/gpioshutdown
+ 
+ KMOD=	gpioshutdown
+ SRCS=	gpioshutdown.c
+ SRCS+=	device_if.h bus_if.h gpio_if.h gpiobus_if.h \
+         opt_platform.h ofw_bus_if.h
+ 
+-CFLAGS+=  -I. -I${.CURDIR}/../../dev/gpio/
++CFLAGS+=  -I. -I${SYSDIR}/dev/gpio/
+ 
+ .include <bsd.kmod.mk>
+ 
