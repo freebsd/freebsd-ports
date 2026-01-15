@@ -4540,6 +4540,7 @@
     SUBDIR += py-azure-mgmt-relay
     SUBDIR += py-azure-mgmt-reservations
     SUBDIR += py-azure-mgmt-resource
+    SUBDIR += py-azure-mgmt-resource-deployments
     SUBDIR += py-azure-mgmt-search
     SUBDIR += py-azure-mgmt-security
     SUBDIR += py-azure-mgmt-servicebus
