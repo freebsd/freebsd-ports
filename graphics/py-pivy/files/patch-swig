@@ -1,0 +1,35 @@
+--- interfaces/coin.i.orig	2025-02-17 18:58:05 UTC
++++ interfaces/coin.i
+@@ -80,7 +80,11 @@ if (init_file_emulator() < 0) {
+ %init %{
+ #if PY_MAJOR_VERSION >= 3
+ if (init_file_emulator() < 0) {
++#if (SWIG_VERSION < 0x040400)
+     return NULL;
++#else
++    return 0;
++#endif
+ }
+ #endif
+ %}
+@@ -106,4 +110,4 @@ for key in list(locals()):
+       thing = x.__dict__[name]
+       if isinstance(thing, property):
+         delattr(x, name)
+-%}
+\ No newline at end of file
++%}
+--- interfaces/soqt.i.orig	2025-02-17 18:58:05 UTC
++++ interfaces/soqt.i
+@@ -52,7 +52,11 @@ if (init_file_emulator() < 0) {
+ %init %{
+ #if PY_MAJOR_VERSION >= 3
+ if (init_file_emulator() < 0) {
++#if (SWIG_VERSION < 0x040400)
+     return NULL;
++#else
++    return 0;
++#endif
+ }
+ #endif
+ %}
