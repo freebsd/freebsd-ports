@@ -1,4 +1,4 @@
-TIMESTAMP = 1765032668
+TIMESTAMP = 1768192922
 SHA256 (texinfo/texinfo-7.2.tar.xz) = 0329d7788fbef113fa82cb80889ca197a344ce0df7646fe000974c5d714363a6
 SIZE (texinfo/texinfo-7.2.tar.xz) = 6408432
 SHA256 (texinfo/htmlxref.cnf-20250626) = 3ffecc1d8941daabd2eec93697a3ced02d68d84425dba6a2e693dffd67cb5cb8
@@ -7,5 +7,5 @@ SHA256 (texinfo/texi2dvi-20241223) = cb8a5fed2801350c093aa5ccb082aa9c315717ec3e8
 SIZE (texinfo/texi2dvi-20241223) = 52733
 SHA256 (texinfo/texi2pdf-20241223) = cf2aa65ef663811755ff97caffb0e6df7cd65d605779996272fcae8f1886c705
 SIZE (texinfo/texi2pdf-20241223) = 1163
-SHA256 (texinfo/texinfo.tex-20251206) = 59dd97dfa0c29b9ae2f9cd979555bed37ce0587f6ddf418db03f49119e16cc18
-SIZE (texinfo/texinfo.tex-20251206) = 392471
+SHA256 (texinfo/texinfo.tex-20260110) = 6b42efe8832ebd37856e36076c87ce9e6d2be19cdab5c41faa13055d47c2a513
+SIZE (texinfo/texinfo.tex-20260110) = 392846
