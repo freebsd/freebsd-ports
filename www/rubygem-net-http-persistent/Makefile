@@ -1,5 +1,5 @@
 PORTNAME=	net-http-persistent
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 CATEGORIES=	www net rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/drbrain/net-http-persistent
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-connection_pool>=2.2.4<3:net/rubygem-connection_pool
+RUN_DEPENDS=	rubygem-cgi>=0.5.1<0.6:www/rubygem-cgi \
+		rubygem-connection_pool>=2.2.4<4:net/rubygem-connection_pool
 
 USES=		gem
 
