@@ -1,5 +1,5 @@
 PORTNAME=	re2c
-DISTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/skvadrik/re2c/releases/download/${DISTVERSION}/
 
