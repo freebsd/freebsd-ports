@@ -1,6 +1,6 @@
---- src/include/misc.h.orig	1993-04-25 21:37:48.000000000 +0000
-+++ src/include/misc.h	2011-06-24 16:37:44.000000000 +0000
-@@ -86,9 +86,11 @@
+--- src/include/misc.h.orig	1993-04-25 21:37:48 UTC
++++ src/include/misc.h
+@@ -86,9 +86,11 @@ extern int errno;
  extern char *realloc();
  extern char *getenv();
  extern int errno;
@@ -12,7 +12,7 @@
  extern int rand();
  extern int srand();
  extern int atoi();
-@@ -100,7 +102,7 @@
+@@ -100,7 +102,7 @@ extern void exit();
  #  endif
  
  #  ifdef HAS_GETCWD
@@ -21,7 +21,16 @@
  #  endif
  
  #  ifdef HAS_CLEARERR
-@@ -154,7 +156,9 @@
+@@ -145,16 +147,15 @@ extern void perror();
+ #endif
+ 
+ #ifdef HAS_TIME_
+-#  ifdef HAS_BSDTIME
+-extern char *timezone();
+-#  endif
+ extern char *asctime();
+ extern struct tm *localtime();
+ #endif
  
  #ifndef HAS_MEMAVL
  #  ifdef HAS_RLIMIT_
