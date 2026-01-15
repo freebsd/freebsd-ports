@@ -13,5 +13,5 @@ SDL_gpu, a library for making hardware-accelerated 2D graphics easy.
  - Compatible with either SDL 1.2 or 2.0
  - Loads BMP, TGA, and PNG files via stb-image
  - Rotates and scales about the center of images, making reasoning
-   about the resulting corner coordinates more obvious (adjustable 
+   about the resulting corner coordinates more obvious (adjustable
    via anchor settings)
