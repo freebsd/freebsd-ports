@@ -6,7 +6,7 @@ MASTER_SITES=	LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Decoder for RAW files from digital cameras
-WWW=		https://www.dechifro.org/dcraw/
+WWW=		https://dechifro.org/dcraw/
 
 LICENSE=	GPLv2+
 
