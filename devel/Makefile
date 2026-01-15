@@ -5240,6 +5240,7 @@
     SUBDIR += py-lml
     SUBDIR += py-localstack
     SUBDIR += py-localstack-client
+    SUBDIR += py-localstack-core
     SUBDIR += py-locket
     SUBDIR += py-lockfile
     SUBDIR += py-logan
