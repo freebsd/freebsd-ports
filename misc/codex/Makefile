@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.80.0
+DISTVERSION=	0.84.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -65,7 +65,6 @@ post-patch:
 		${BUILD_WRKSRC}/core/src/shell_snapshot.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/shell.rs \
 		${BUILD_WRKSRC}/core/src/tools/handlers/unified_exec.rs \
-		${BUILD_WRKSRC}/core/src/tools/spec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
@@ -80,7 +79,8 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
-		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs
+		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs \
+		${BUILD_WRKSRC}/utils/pty/src/tests.rs
 
 post-build-COMPLETIONS-on:
 	@${MKDIR} ${WRKSRC}/completions
