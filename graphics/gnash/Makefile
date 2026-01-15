@@ -42,6 +42,7 @@ GH_ACCOUNT=	GitMirroring
 GH_PROJECT=	gnash
 GH_TAGNAME=	583ccbc1
 GNU_CONFIGURE=	yes
+PORTSCOUT=	limit:^0\.
 
 SYSCONFIGDIR=	${PREFIX}/etc
 
