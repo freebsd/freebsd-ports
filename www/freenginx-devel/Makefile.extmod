@@ -35,9 +35,9 @@ ECHO_VARS=		DSO_EXTMODS+=echo
 
 DRIZZLE_GH_TUPLE=	openresty:drizzle-nginx-module:c631276:drizzle
 DRIZZLE_CONFIGURE_ENV=	LIBDRIZZLE_INC=${LOCALBASE}/include \
+			LIBDRIZZLE_LIB=${LOCALBASE}/lib
 DRIZZLE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-openresty-drizzle-nginx-module-config
 DRIZZLE_LIB_DEPENDS=	libdrizzle.so:databases/libdrizzle
-			LIBDRIZZLE_LIB=${LOCALBASE}/lib
 DRIZZLE_VARS=		DSO_EXTMODS+=drizzle
 
 DYNAMIC_UPSTREAM_GH_TUPLE=	ZigzagAK:ngx_dynamic_upstream:ab67fe7:dynamic_upstream
@@ -206,10 +206,10 @@ LUA_VARS=		DSO_EXTMODS+=lua
 
 LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.17:luastream
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
+			LUAJIT_LIB=${LOCALBASE}/lib
 LUASTREAM_IMPLIES=	DEVEL_KIT
 LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
-			LUAJIT_LIB=${LOCALBASE}/lib
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
