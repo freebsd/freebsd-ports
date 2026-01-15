@@ -1,0 +1,2117 @@
+--- fitz/fitz.i.orig	2025-12-02 15:57:25 UTC
++++ fitz/fitz.i
+@@ -26,7 +26,7 @@
+         } else {
+             PyErr_SetString(JM_Exc_FileDataError, MSG_BAD_DOCUMENT);
+         }
+-        return NULL;
++        return _RETURN_VALUE;
+     }
+ }
+ %enddef
+@@ -66,6 +66,12 @@ EnsureOwnership(self)%}
+ %include "mupdf/fitz/version.h"
+ 
+ %{
++#if (SWIG_VERSION < 0x040400)
++#define _RETURN_VALUE NULL
++#else
++#define _RETURN_VALUE 0
++#endif
++
+ #define MEMDEBUG 0
+ #if MEMDEBUG == 1
+     #define DEBUGMSG1(x) PySys_WriteStderr("[DEBUG] free %s ", x)
+@@ -196,7 +202,7 @@ static PyObject *JM_Exc_CurrentException;
+     if(!gctx)
+     {
+         PyErr_SetString(PyExc_RuntimeError, "Fatal error: cannot create global context.");
+-        return NULL;
++        return _RETURN_VALUE;
+     }
+     fz_register_document_handlers(gctx);
+ 
+@@ -524,7 +530,7 @@ struct Document
+             }
+             fz_catch(gctx) {
+                 JM_mupdf_show_errors = old_msg_option;
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             if (w > 0 && h > 0) {
+                 fz_layout_document(gctx, doc, w, h, fontsize);
+@@ -586,7 +592,7 @@ struct Document
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             PyErr_Clear();
+             return (struct Page *) page;
+@@ -601,7 +607,7 @@ struct Document
+                 remove_dest_range(gctx, pdf, numbers);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -616,7 +622,7 @@ struct Document
+                 ol = fz_load_outline(gctx, doc);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Outline *) ol;
+         }
+@@ -645,7 +651,7 @@ struct Document
+                             0, 0, 0, 0, 0, -1);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return value;
+         }
+@@ -673,7 +679,7 @@ struct Document
+             }
+             fz_catch(gctx) {
+                 Py_DECREF(xrefs);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return xrefs;
+         }
+@@ -714,7 +720,7 @@ struct Document
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -799,7 +805,7 @@ struct Document
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -860,7 +866,7 @@ struct Document
+                 PyErr_Clear();
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -954,7 +960,7 @@ struct Document
+                 PyErr_Clear();
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -987,7 +993,7 @@ struct Document
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -1008,7 +1014,7 @@ struct Document
+                 pdf_array_delete(gctx, names, idx);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -1064,7 +1070,7 @@ struct Document
+                 DICT_SETITEM_DROP(infodict, dictkey_length, Py_BuildValue("i", len));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xref);
+         }
+@@ -1119,7 +1125,7 @@ struct Document
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx)
+-                return NULL;
++                return _RETURN_VALUE;
+             
+             return Py_BuildValue("i", xref);
+         }
+@@ -1150,7 +1156,7 @@ struct Document
+                 fz_drop_buffer(gctx, buf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return cont;
+         }
+@@ -1201,7 +1207,7 @@ struct Document
+                 fz_drop_buffer(gctx, data);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             return Py_BuildValue("i", xref);
+@@ -1364,7 +1370,7 @@ struct Document
+                 } 
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             if (doc) {
+                 return doc;
+@@ -1384,7 +1390,7 @@ struct Document
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return ret;
+         }
+@@ -1399,7 +1405,7 @@ struct Document
+                 ret = PyLong_FromLong((long) fz_count_chapters(gctx, (fz_document *) $self));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return ret;
+         }
+@@ -1415,7 +1421,7 @@ struct Document
+                 last_loc = fz_last_page(gctx, this_doc);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("ii", last_loc.chapter, last_loc.page);
+         }
+@@ -1434,7 +1440,7 @@ struct Document
+                 pages = (long) fz_count_chapter_pages(gctx, (fz_document *) $self, chapter);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return PyLong_FromLong(pages);
+         }
+@@ -1482,7 +1488,7 @@ struct Document
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("ii", prev_loc.chapter, prev_loc.page);
+         }
+@@ -1531,7 +1537,7 @@ struct Document
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("ii", next_loc.chapter, next_loc.page);
+         }
+@@ -1552,7 +1558,7 @@ struct Document
+                 loc = fz_location_from_page_number(gctx, this_doc, pno);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("ii", loc.chapter, loc.page);
+         }
+@@ -1601,7 +1607,7 @@ struct Document
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return PyLong_FromLong(page_n);
+         }
+@@ -1667,7 +1673,7 @@ struct Document
+                 pdf_set_document_language(gctx, pdf, lang);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_TRUE;
+         }
+@@ -1728,7 +1734,7 @@ struct Document
+                 fz_layout_document(gctx, doc, w, h, fontsize);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -1753,7 +1759,7 @@ struct Document
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return PyLong_FromVoidPtr((void *) mark);
+         }
+@@ -1770,7 +1776,7 @@ struct Document
+                 location = fz_lookup_bookmark(gctx, doc, mark);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("ii", location.chapter, location.page);
+         }
+@@ -1797,7 +1803,7 @@ struct Document
+                 pdf_delete_object(gctx, pdf, xref);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             Py_RETURN_NONE;
+@@ -1817,7 +1823,7 @@ struct Document
+                 xref = pdf_to_num(gctx, root);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xref);
+         }
+@@ -1961,7 +1967,7 @@ struct Document
+                 pdf_save_snapshot(gctx, pdf, filename);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2059,7 +2065,7 @@ struct Document
+                 fz_drop_output(gctx, out);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2176,7 +2182,7 @@ struct Document
+                 JM_merge_range(gctx, pdfout, pdfsrc, fp, tp, sa, rotate, links, annots, show_progress, (pdf_graft_map *) _gmap);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2239,7 +2245,7 @@ struct Document
+                 pdf_drop_obj(gctx, resources);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             Py_RETURN_NONE;
+@@ -2279,7 +2285,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             Py_RETURN_NONE;
+@@ -2301,7 +2307,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2350,7 +2356,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 pdf_enable_journal(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2373,7 +2379,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2389,7 +2395,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 pdf_end_operation(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2406,7 +2412,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 rc = pdf_undoredo_state(gctx, pdf, &steps);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("ii", rc, steps);
+         }
+@@ -2423,7 +2429,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 name = pdf_undoredo_step(gctx, pdf, step);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             if (name) {
+                 return PyUnicode_FromString(name);
+@@ -2445,7 +2451,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 redo = pdf_can_redo(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("{s:N,s:N}", "undo", JM_BOOL(undo), "redo", JM_BOOL(redo));
+         }
+@@ -2461,7 +2467,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 pdf_undo(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_TRUE;
+         }
+@@ -2477,7 +2483,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 pdf_redo(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_TRUE;
+         }
+@@ -2502,7 +2508,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 fz_drop_output(gctx, out);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2533,7 +2539,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -2549,7 +2555,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 enabled = pdf && pdf->journal;
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_BOOL(enabled);
+         }
+@@ -2609,7 +2615,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 fz_drop_font(gctx, font);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return wlist;
+         }
+@@ -2633,7 +2639,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 xref = pdf_to_num(gctx, pdf_lookup_page_obj(gctx, pdf, n));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xref);
+         }
+@@ -2657,7 +2663,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 annots = JM_get_annot_xref_list(gctx, pdf_lookup_page_obj(gctx, pdf, n));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return annots;
+         }
+@@ -2683,7 +2689,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 pageref = pdf_lookup_page_obj(gctx, pdf, n);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_py_from_rect(JM_cropbox(gctx, pageref));
+         }
+@@ -2721,7 +2727,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(liste);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return liste;
+         }
+@@ -2736,7 +2742,7 @@ if len(pyliste) == 0 or min(pyliste) not in range(len(
+                 ASSERT_PDF(pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+ 
+             fz_buffer *buffer = NULL;
+@@ -3168,7 +3174,7 @@ if not self.is_form_pdf:
+                 pdf_drop_obj(gctx, olroot2);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", ret);
+         }
+@@ -3189,7 +3195,7 @@ if not self.is_form_pdf:
+                 xref = pdf_create_object(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xref);
+         }
+@@ -3207,7 +3213,7 @@ if not self.is_form_pdf:
+                 if (pdf) xreflen = pdf_xref_len(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xreflen);
+         }
+@@ -3279,7 +3285,7 @@ if not self.is_form_pdf:
+                 if (root) pdf_dict_del(gctx, root, PDF_NAME(Metadata));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             Py_RETURN_NONE;
+@@ -3315,7 +3321,7 @@ if not self.is_form_pdf:
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             Py_RETURN_NONE;
+@@ -3401,7 +3407,7 @@ if not self.is_form_pdf:
+             fz_catch(gctx)
+             {
+                 Py_CLEAR(r);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             if (!r) Py_RETURN_NONE;
+             return r;
+@@ -3447,7 +3453,7 @@ if not self.is_form_pdf:
+             fz_catch(gctx)
+             {
+                 Py_CLEAR(r);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return r;
+         }
+@@ -3478,7 +3484,7 @@ if not self.is_form_pdf:
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             Py_RETURN_NONE;
+@@ -3519,7 +3525,7 @@ if not self.is_form_pdf:
+                 pdf_drop_obj(gctx, obj);
+             }
+             fz_catch(gctx)
+-                return NULL;
++                return _RETURN_VALUE;
+             
+             Py_RETURN_NONE;
+         }
+@@ -3539,7 +3545,7 @@ if not self.is_form_pdf:
+                 pdf_load_page_tree(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", pdf->map_page_count);
+         }
+@@ -3623,7 +3629,7 @@ if not self.is_form_pdf:
+                 fz_drop_buffer(gctx, contents_buffer);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -3709,7 +3715,7 @@ if not self.is_form_pdf:
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -3735,7 +3741,7 @@ if not self.is_form_pdf:
+                 pdf_drop_obj(gctx, item);
+             }
+             fz_catch(gctx){
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -3784,7 +3790,7 @@ if not self.is_form_pdf:
+                 pdf_drop_obj(gctx, item);
+             }
+             fz_catch(gctx){
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -3850,7 +3856,7 @@ if not self.is_form_pdf:
+             }
+             fz_catch(gctx){
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -3880,7 +3886,7 @@ if not self.is_form_pdf:
+                 pdf_drop_obj(gctx, pagelabels);
+             }
+             fz_catch(gctx){
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -3917,7 +3923,7 @@ if not self.is_form_pdf:
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -3946,7 +3952,7 @@ if not self.is_form_pdf:
+                 finished:;
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -3982,7 +3988,7 @@ if not self.is_form_pdf:
+             fz_catch(gctx) {
+                 Py_CLEAR(rc);
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -4061,7 +4067,7 @@ if basestate:
+                 finished:;
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -4078,7 +4084,7 @@ if basestate:
+                 pdf_read_ocg(gctx, pdf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -4125,7 +4131,7 @@ if basestate:
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -4162,7 +4168,7 @@ if basestate:
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -4224,7 +4230,7 @@ if basestate:
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -4332,7 +4338,7 @@ if basestate:
+                 pdf_drop_obj(gctx, ci_name);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xref);
+         }
+@@ -5026,7 +5032,7 @@ struct Page {
+                 fz_run_page(gctx, (fz_page *) $self, dw->device, JM_matrix_from_py(m), NULL);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -5054,7 +5060,7 @@ struct Page {
+                 fz_drop_device(gctx, dev);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -5087,7 +5093,7 @@ struct Page {
+                 fz_drop_device(gctx, dev);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct TextPage *) tpage;
+         }
+@@ -5125,7 +5131,7 @@ struct Page {
+                 textpage = JM_new_stext_page_ocr_from_page(gctx, (fz_page *) $self, rect, flags, language, tessdata);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct TextPage *) textpage;
+         }
+@@ -5168,7 +5174,7 @@ struct Page {
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_TRUE;
+         }
+@@ -5211,7 +5217,7 @@ struct Page {
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return text;
+         }
+@@ -5262,7 +5268,7 @@ struct Page {
+             fz_always(gctx) {
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("s", gstate);
+         }
+@@ -5289,7 +5295,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5338,7 +5344,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5362,7 +5368,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5395,7 +5401,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5456,7 +5462,7 @@ struct Page {
+             fz_catch(gctx) {
+                 Py_CLEAR(p);
+                 Py_CLEAR(sublist);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5498,7 +5504,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5554,7 +5560,7 @@ struct Page {
+                 fz_drop_buffer(gctx, filebuf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5607,7 +5613,7 @@ struct Page {
+             }
+             fz_catch(gctx) {
+                 pdf_drop_annot(gctx, annot);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5633,7 +5639,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5669,7 +5675,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -5747,7 +5753,7 @@ struct Page {
+                 JM_add_annot_id(gctx, annot, "A");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -6025,7 +6031,7 @@ struct Page {
+                     annot = JM_get_annot_by_xref(gctx, page, xref);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -6059,7 +6065,7 @@ struct Page {
+                 annot = JM_get_widget_by_xref(gctx, page, xref);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -6079,7 +6085,7 @@ struct Page {
+                 rc = JM_get_resource_properties(gctx, page->obj);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -6098,7 +6104,7 @@ struct Page {
+                 JM_set_resource_property(gctx, page->obj, name, xref);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -6238,7 +6244,7 @@ def get_oc_items(self) -> list:
+                 JM_add_annot_id(gctx, annot, "W");
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Annot *) annot;
+         }
+@@ -6266,7 +6272,7 @@ def get_oc_items(self) -> list:
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct DisplayList *) dl;
+         }
+@@ -6497,7 +6503,7 @@ def get_oc_items(self) -> list:
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             if (PyCallable_Check(callback) || method != Py_None) {
+                 Py_RETURN_NONE;
+@@ -6534,7 +6540,7 @@ def get_oc_items(self) -> list:
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -6570,7 +6576,7 @@ def get_oc_items(self) -> list:
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -6592,7 +6598,7 @@ def get_oc_items(self) -> list:
+                 success = pdf_redact_page(gctx, page->doc, page, &opts);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_BOOL(success);
+         }
+@@ -6615,7 +6621,7 @@ def get_oc_items(self) -> list:
+                 pix = JM_pixmap_from_page(gctx, (fz_document *) doc, (fz_page *) $self, ctm, (fz_colorspace *) cs, alpha, annots, clip);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pix;
+         }
+@@ -6643,7 +6649,7 @@ def get_oc_items(self) -> list:
+                 pdf_dict_del(gctx, page->obj, PDF_NAME(TrimBox));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -6673,7 +6679,7 @@ def get_oc_items(self) -> list:
+                 l = fz_load_links(gctx, (fz_page *) $self);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Link *) l;
+         }
+@@ -6967,7 +6973,7 @@ def get_oc_items(self) -> list:
+                 pdf_dict_put_int(gctx, page->obj, PDF_NAME(Rotate), (int64_t) rot);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -7021,7 +7027,7 @@ def get_oc_items(self) -> list:
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -7154,7 +7160,7 @@ if not sanitize and not self.is_wrapped:
+                 pdf_drop_obj(gctx, xobj2);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", rc_xref);
+         }
+@@ -7328,7 +7334,7 @@ if not sanitize and not self.is_wrapped:
+                 fz_drop_buffer(gctx, nres);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+ 
+             if (rc_digest) {
+@@ -7472,7 +7478,7 @@ def insert_font(self, fontname="helv", fontfile=None, 
+                 ;
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             return value;
+@@ -7532,7 +7538,7 @@ def insert_font(self, fontname="helv", fontfile=None, 
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             if (list) {
+                 return list;
+@@ -7744,7 +7750,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 pm = fz_new_pixmap_with_bbox(gctx, (fz_colorspace *) cs, JM_irect_from_py(bbox), NULL, alpha);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pm;
+         }
+@@ -7773,7 +7779,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pm;
+         }
+@@ -7798,7 +7804,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) dst;
+         }
+@@ -7823,7 +7829,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pm;
+         }
+@@ -7872,7 +7878,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pm;
+         }
+@@ -7905,7 +7911,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pm;
+         }
+@@ -7954,7 +7960,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pm;
+         }
+@@ -7992,7 +7998,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+             }
+             fz_catch(gctx) {
+                 fz_drop_pixmap(gctx, pix);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pix;
+         }
+@@ -8020,7 +8026,7 @@ Pixmap(PDFdoc, xref) - from an image xref in a PDF doc
+                 dst = fz_warp_pixmap(gctx, (fz_pixmap *) $self, points, width, height);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) dst;
+         }
+@@ -8113,7 +8119,7 @@ if not self.colorspace or self.colorspace.n > 3:
+                 fz_copy_pixmap_rect(gctx, pm, src_pix, JM_irect_from_py(bbox), NULL);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -8214,7 +8220,7 @@ Args:
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -8267,7 +8273,7 @@ Args:
+             }
+ 
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return barray;
+         }
+@@ -8338,7 +8344,7 @@ def tobytes(self, output="png", jpg_quality=95):
+                 fz_drop_output(gctx, out);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -8403,7 +8409,7 @@ def tobytes(self, output="png", jpg_quality=95):
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -8527,7 +8533,7 @@ Includes alpha byte if applicable.""")
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return p;
+         }
+@@ -8567,7 +8573,7 @@ Includes alpha byte if applicable.""")
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -8624,7 +8630,7 @@ Includes alpha byte if applicable.""")
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -8674,7 +8680,7 @@ Includes alpha byte if applicable.""")
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             if (!colors) {
+                 Py_ssize_t len = PyDict_Size(rc);
+@@ -8967,7 +8973,7 @@ struct DeviceWrapper
+                     dw->device = fz_new_draw_device_with_bbox(gctx, fz_identity, (fz_pixmap *) pm, &bbox);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return dw;
+         }
+@@ -8980,7 +8986,7 @@ struct DeviceWrapper
+                 fz_keep_display_list(gctx, (fz_display_list *) dl);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return dw;
+         }
+@@ -8993,7 +8999,7 @@ struct DeviceWrapper
+                 dw->device = fz_new_stext_device(gctx, (fz_stext_page *) tp, &opts);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return dw;
+         }
+@@ -9046,7 +9052,7 @@ struct Outline {
+         {
+             fz_outline *ol = (fz_outline *) $self;
+             fz_outline *next_ol = ol->next;
+-            if (!next_ol) return NULL;
++            if (!next_ol) return _RETURN_VALUE;
+             next_ol = fz_keep_outline(gctx, next_ol);
+             return (struct Outline *) next_ol;
+         }
+@@ -9057,7 +9063,7 @@ struct Outline {
+         {
+             fz_outline *ol = (fz_outline *) $self;
+             fz_outline *down_ol = ol->down;
+-            if (!down_ol) return NULL;
++            if (!down_ol) return _RETURN_VALUE;
+             down_ol = fz_keep_outline(gctx, down_ol);
+             return (struct Outline *) down_ol;
+         }
+@@ -9231,7 +9237,7 @@ struct Annot
+                 pdf_dict_put_drop(gctx, annot_obj, PDF_NAME(IRT), irt);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9298,7 +9304,7 @@ struct Annot
+                 pdf_dict_put_matrix(gctx, ap, PDF_NAME(Matrix), mat);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9332,7 +9338,7 @@ struct Annot
+                 pdf_dict_put_rect(gctx, ap, PDF_NAME(BBox), rect);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9402,7 +9408,7 @@ struct Annot
+                 pdf_dict_put_name(gctx, annot_obj, PDF_NAME(BM), blend_mode);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9425,7 +9431,7 @@ struct Annot
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", oc);
+         }
+@@ -9443,7 +9449,7 @@ struct Annot
+                 pdf_set_annot_is_open(gctx, annot, is_open);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9464,7 +9470,7 @@ struct Annot
+                 is_open = pdf_annot_is_open(gctx, annot);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_BOOL(is_open);
+         }
+@@ -9487,7 +9493,7 @@ struct Annot
+                 if (obj) has_popup = 1;
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_BOOL(has_popup);
+         }
+@@ -9509,7 +9515,7 @@ struct Annot
+                 pdf_set_annot_popup(gctx, annot, r);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9536,7 +9542,7 @@ struct Annot
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_py_from_rect(rect);
+         }
+@@ -9561,7 +9567,7 @@ struct Annot
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xref);
+         }
+@@ -9585,7 +9591,7 @@ struct Annot
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9619,7 +9625,7 @@ struct Annot
+                 pdf_set_annot_language(gctx, this_annot, lang);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9691,7 +9697,7 @@ struct Annot
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9746,7 +9752,7 @@ struct Annot
+             }
+             fz_catch(gctx) {
+                 Py_DECREF(values);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return values;
+         }
+@@ -9771,7 +9777,7 @@ struct Annot
+                 textpage = pdf_new_stext_page_from_annot(gctx, annot, &options);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct TextPage *) textpage;
+         }
+@@ -9791,7 +9797,7 @@ struct Annot
+                 pdf_dict_put_name(gctx, annot_obj, PDF_NAME(Name), name);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -9822,7 +9828,7 @@ struct Annot
+                 pdf_set_annot_rect(gctx, annot, r);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -10524,7 +10530,7 @@ struct Annot
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+ 
+             fs = pdf_dict_get(gctx, annot_obj, PDF_NAME(FS));
+@@ -10586,7 +10592,7 @@ struct Annot
+                 fz_drop_buffer(gctx, buf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return res;
+         }
+@@ -10651,7 +10657,7 @@ struct Annot
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(res);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return res;
+         }
+@@ -10724,7 +10730,7 @@ CheckParent(self)%}
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             
+             Py_RETURN_NONE;
+@@ -10825,7 +10831,7 @@ CheckParent(self)%}
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -10933,7 +10939,7 @@ CheckParent(self)%}
+                 pdf_filter_annot_contents(gctx, pdf, annot, &filter);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -10989,7 +10995,7 @@ CheckParent(self)%}
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -11063,7 +11069,7 @@ if dpi:
+                 pix = pdf_new_pixmap_from_annot(gctx, (pdf_annot *) $self, ctm, cs, NULL, alpha);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pix;
+         }
+@@ -11143,7 +11149,7 @@ struct Link
+                 pdf_drop_obj(gctx, link_obj);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return b;
+         }
+@@ -11280,7 +11286,7 @@ struct Link
+         {
+             fz_link *this_link = (fz_link *) $self;
+             fz_link *next_link = this_link->next;
+-            if (!next_link) return NULL;
++            if (!next_link) return _RETURN_VALUE;
+             next_link = fz_keep_link(gctx, next_link);
+             return (struct Link *) next_link;
+         }
+@@ -11324,7 +11330,7 @@ struct DisplayList {
+                 dl = fz_new_display_list(gctx, JM_rect_from_py(mediabox));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct DisplayList *) dl;
+         }
+@@ -11336,7 +11342,7 @@ struct DisplayList {
+                     JM_matrix_from_py(m), JM_rect_from_py(area), NULL);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -11373,7 +11379,7 @@ struct DisplayList {
+                            alpha, clip, NULL);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Pixmap *) pix;
+         }
+@@ -11393,7 +11399,7 @@ struct DisplayList {
+                 tp = fz_new_stext_page_from_display_list(gctx, this_dl, &stext_options);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct TextPage *) tp;
+         }
+@@ -11429,7 +11435,7 @@ struct TextPage {
+                 tp = fz_new_stext_page(gctx, JM_rect_from_py(mediabox));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct TextPage *) tp;
+         }
+@@ -11470,7 +11476,7 @@ struct TextPage {
+                 liste = JM_search_stext_page(gctx, (fz_stext_page *) $self, needle);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return liste;
+         }
+@@ -11487,7 +11493,7 @@ struct TextPage {
+                 JM_make_textpage_dict(gctx, (fz_stext_page *) $self, page_dict, raw);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -11567,7 +11573,7 @@ struct TextPage {
+                 Py_CLEAR(rc);
+                 Py_CLEAR(block_dict);
+                 fz_drop_pixmap(gctx, pix);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -11648,7 +11654,7 @@ struct TextPage {
+             }
+             fz_catch(gctx) {
+                 Py_CLEAR(lines);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return lines;
+         }
+@@ -11725,7 +11731,7 @@ struct TextPage {
+                 PyErr_Clear();
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return lines;
+         }
+@@ -11794,7 +11800,7 @@ struct TextPage {
+                 fz_drop_output(gctx, out);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return text;
+         }
+@@ -11964,7 +11970,7 @@ struct Graftmap
+                 map = pdf_new_graft_map(gctx, dst);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Graftmap *) map;
+         }
+@@ -12018,7 +12024,7 @@ struct TextWriter
+                 text = fz_new_text(gctx);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct TextWriter *) text;
+         }
+@@ -12061,7 +12067,7 @@ struct TextWriter
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_py_from_matrix(trm);
+         }
+@@ -12282,7 +12288,7 @@ struct TextWriter
+                 fz_drop_device(gctx, dev);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return result;
+         }
+@@ -12358,7 +12364,7 @@ struct Font
+                            is_bold, is_italic, is_serif, embed);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Font *) font;
+         }
+@@ -12410,7 +12416,7 @@ struct Font
+             }
+             fz_catch(gctx) {
+                 PyErr_Clear();
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             rc *= fontsize;
+             return PyFloat_FromDouble(rc);
+@@ -12449,7 +12455,7 @@ struct Font
+             fz_catch(gctx) {
+                 PyErr_Clear();
+                 Py_CLEAR(rc);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -12744,7 +12750,7 @@ struct DocumentWriter
+             }
+ 
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct DocumentWriter*) ret;
+         }
+@@ -12821,7 +12827,7 @@ struct Archive
+                 arch = fz_new_multi_archive(gctx);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Archive *) arch;
+         }
+@@ -12833,7 +12839,7 @@ struct Archive
+                 arch = fz_new_multi_archive(gctx);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Archive *) arch;
+         }
+@@ -12847,7 +12853,7 @@ struct Archive
+                 ret = fz_has_archive_entry(gctx, arch, name);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_BOOL(ret);
+         }
+@@ -12866,7 +12872,7 @@ struct Archive
+                 fz_drop_buffer(gctx, buff);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return ret;
+         }
+@@ -12887,7 +12893,7 @@ struct Archive
+                 fz_drop_archive(gctx, sub);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -12904,7 +12910,7 @@ struct Archive
+                 fz_mount_multi_archive(gctx, arch, sub, path);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -12929,7 +12935,7 @@ struct Archive
+                 fz_drop_archive(gctx, sub);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -12960,7 +12966,7 @@ struct Archive
+                 fz_drop_archive(gctx, sub);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -12994,7 +13000,7 @@ struct Archive
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -13181,7 +13187,7 @@ struct Xml
+                 fz_drop_buffer(gctx, buff);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml(gctx, ret);
+             return (struct Xml*) ret;
+@@ -13196,7 +13202,7 @@ struct Xml
+                 ret = fz_xml_root((fz_xml_doc *) $self);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Xml*) ret;
+         }
+@@ -13209,7 +13215,7 @@ struct Xml
+                 ret = fz_keep_xml( gctx, fz_dom_body( gctx, (fz_xml *) $self));
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return (struct Xml*) ret;
+         }
+@@ -13221,7 +13227,7 @@ struct Xml
+                 fz_dom_append_child( gctx, (fz_xml *) $self, (fz_xml *) child);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -13234,7 +13240,7 @@ struct Xml
+                 ret = fz_dom_create_text_node( gctx,(fz_xml *) $self, text);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13248,7 +13254,7 @@ struct Xml
+                 ret = fz_dom_create_element( gctx, (fz_xml *)$self, tag);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13259,7 +13265,7 @@ struct Xml
+             fz_xml* ret=NULL;
+             ret = fz_dom_find( gctx, (fz_xml *)$self, tag, att, match);
+             if (!ret) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13270,7 +13276,7 @@ struct Xml
+             fz_xml* ret=NULL;
+             ret = fz_dom_find_next( gctx, (fz_xml *)$self, tag, att, match);
+             if (!ret) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13282,7 +13288,7 @@ struct Xml
+             fz_xml* ret=NULL;
+             ret = fz_dom_next( gctx, (fz_xml *)$self);
+             if (!ret) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13294,7 +13300,7 @@ struct Xml
+             fz_xml* ret=NULL;
+             ret = fz_dom_previous( gctx, (fz_xml *)$self);
+             if (!ret) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13310,7 +13316,7 @@ struct Xml
+                 fz_dom_add_attribute(gctx, (fz_xml *)$self, key, value);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -13326,7 +13332,7 @@ struct Xml
+                 fz_dom_remove_attribute(gctx, elt, key);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -13344,7 +13350,7 @@ struct Xml
+                 ret=fz_dom_attribute(gctx, elt, key);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("s", ret);
+         }
+@@ -13375,7 +13381,7 @@ struct Xml
+             }
+             fz_catch(gctx) {
+                 Py_DECREF(result);
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return result;
+         }
+@@ -13391,7 +13397,7 @@ struct Xml
+                 fz_dom_insert_before(gctx, existing, what);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -13406,7 +13412,7 @@ struct Xml
+                 fz_dom_insert_after(gctx, existing, what);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -13419,7 +13425,7 @@ struct Xml
+                 ret = fz_dom_clone( gctx, (fz_xml *)$self);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13431,7 +13437,7 @@ struct Xml
+             fz_xml* ret = NULL;
+             ret = fz_dom_parent( gctx, (fz_xml *)$self);
+             if (!ret) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13443,11 +13449,11 @@ struct Xml
+             fz_xml* ret = NULL;
+             fz_xml *this = (fz_xml *)$self;
+             if (fz_xml_text(this)) { // a text node has no child
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             ret = fz_dom_first_child( gctx, (fz_xml *)$self);
+             if (!ret) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, ret);
+             return (struct Xml*) ret;
+@@ -13461,7 +13467,7 @@ struct Xml
+                 fz_dom_remove( gctx, (fz_xml *)$self);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14037,7 +14043,7 @@ struct Story
+             }
+             fz_catch(gctx)
+             {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             struct Story* ret = (struct Story *) story;
+             return ret;
+@@ -14052,7 +14058,7 @@ struct Story
+             }
+             fz_catch(gctx)
+             {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14072,7 +14078,7 @@ struct Story
+             }
+             fz_catch(gctx)
+             {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return ret;
+         }
+@@ -14088,7 +14094,7 @@ struct Story
+             }
+             fz_catch(gctx)
+             {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14101,7 +14107,7 @@ struct Story
+                 dom = fz_story_document( gctx, (fz_story*) $self);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             fz_keep_xml( gctx, dom);
+             return (struct Xml*) dom;
+@@ -14135,7 +14141,7 @@ struct Story
+                 Py_CLEAR(callarg);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14406,7 +14412,7 @@ struct Tools
+                 }
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14561,7 +14567,7 @@ struct Tools
+                 rc = JM_image_profile(gctx, stream, keep_image);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return rc;
+         }
+@@ -14623,7 +14629,7 @@ struct Tools
+                 JM_get_widget_properties(gctx, (pdf_annot *) annot, widget);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14636,7 +14642,7 @@ struct Tools
+                 JM_set_widget_properties(gctx, (pdf_annot *) annot, widget);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14652,7 +14658,7 @@ struct Tools
+                 pdf_field_reset(gctx, pdf, this_annot_obj);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14694,7 +14700,7 @@ struct Tools
+                 pdf_drop_obj(gctx, PDFNAME_CO);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14748,7 +14754,7 @@ struct Tools
+                 da_str = (char *) pdf_to_text_string(gctx, da);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return JM_UnicodeFromStr(da_str);
+         }
+@@ -14765,7 +14771,7 @@ struct Tools
+                 pdf_dict_del(gctx, this_annot_obj, PDF_NAME(RC)); /* not supported */
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             Py_RETURN_NONE;
+         }
+@@ -14788,7 +14794,7 @@ struct Tools
+                 fz_drop_buffer(gctx, res);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return result;
+         }
+@@ -14812,7 +14818,7 @@ struct Tools
+                 fz_drop_buffer(gctx, contbuf);
+             }
+             fz_catch(gctx) {
+-                return NULL;
++                return _RETURN_VALUE;
+             }
+             return Py_BuildValue("i", xref);
+         }
