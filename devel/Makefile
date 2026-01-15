@@ -5099,6 +5099,7 @@
     SUBDIR += py-ipykernel
     SUBDIR += py-ipympl
     SUBDIR += py-ipyparallel
+    SUBDIR += py-ipython-pygments-lexers
     SUBDIR += py-ipython_genutils
     SUBDIR += py-ipywidgets
     SUBDIR += py-iso8601
