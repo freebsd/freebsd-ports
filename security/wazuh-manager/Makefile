@@ -1,9 +1,8 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.14.1
-PORTREVISION=	7
+DISTVERSION=	4.14.2
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/47/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/48/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -36,7 +35,9 @@ RUN_DEPENDS=	bash>0:shells/bash
 USES=		cpe dos2unix gmake perl5 python:3.11 readline shebangfix sqlite:3 uidfix
 
 USE_GITHUB=	yes
-GH_TUPLE=	alonsobsd:wazuh-freebsd:${WAZUH_EXTRAFILE_TAGNAME}:wazuh
+GH_ACCOUNT=	alonsobsd
+GH_PROJECT=	wazuh-freebsd
+GH_TAGNAME=	e3b7f4ccbb4cf0004ca58b1e56e4fe2d1b7474a7
 
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
@@ -44,12 +45,10 @@ MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LI
 
 DOS2UNIX_FILES=	${WRKSRC}/api/api/configuration/api.yaml
 
-#WITH_CCACHE_BUILD=	yes
-#CCACHE_DIR=		/zdata/ccache
+WITH_CCACHE_BUILD=	yes
+CCACHE_DIR=		/zdata/ccache
 
 WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
-WAZUH_EXTRAFILE=	alonsobsd-${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME}_GH0${EXTRACT_SUFX}
-WAZUH_EXTRAFILE_TAGNAME=830a911
 
 EXTERNAL_DISTFILES=	audit-userspace.tar.gz:wazuh_sources \
 			benchmark.tar.gz:wazuh_sources \
@@ -211,8 +210,6 @@ post-extract:
 	@cd ${WRKSRC}/src/external && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${FILE:S/:wazuh_sources//:S/:wazuh_cache//} ${EXTRACT_AFTER_ARGS}
 .endif
 .endfor
-	@cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_EXTRAFILE} ${EXTRACT_AFTER_ARGS}
-	@${MV} ${WRKDIR}/${PORTNAME}-freebsd-${WAZUH_EXTRAFILE_TAGNAME} ${WRKDIR}/wazuh-freebsd
 
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHEFILE} ${EXTRACT_AFTER_ARGS}
 	@cd ${WRKSRC}/src && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${WAZUH_CACHENAME}${EXTRACT_SUFX} ${EXTRACT_AFTER_ARGS}
@@ -223,13 +220,7 @@ post-extract:
 .	endfor
 	@${RM} ${WRKSRC}/src/external/cpython/python ${WRKSRC}/src/external/cpython/libpython* ${WRKSRC}/src/external/cpython/Modules/*.o
 
-	@${MKDIR} ${WRKSRC}/ruleset/sca/freebsd
-	@${MKDIR} ${WRKSRC}/src/data_provider/src/extended_sources/wrappers/unix/freebsd
-	@cd ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/sca && ${CP} *.yml ${WRKSRC}/ruleset/sca/freebsd/
 	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${MV} "{}" "{}.disabled" \;
-
-	${CP} ${FILESDIR}/pthreads_portable.c ${WRKSRC}/src/shared/
-	${CP} ${FILESDIR}/pthreads_portable.h ${WRKSRC}/src/headers/
 
 post-patch:
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
@@ -238,7 +229,7 @@ post-patch:
 		${WRKSRC}/framework/wazuh/rbac/decorators.py
 
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -o check_pid ${FILESDIR}/check_pid.c
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -o check_pid ${WRKSRC}/libexec/check_pid.c
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \
 		${MAKE_CMD} ${MAKE_ARGS}
 
@@ -296,11 +287,9 @@ do-install:
 
 # Install rules files
 	${INSTALL_DATA} ${WRKSRC}/ruleset/rules/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/rules
-	${INSTALL_DATA} ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/rules/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/rules
 
 # Install decoders files
 	${INSTALL_DATA} ${WRKSRC}/ruleset/decoders/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/decoders
-	${INSTALL_DATA} ${WRKDIR}/wazuh-freebsd/var/ossec/ruleset/decoders/*.xml ${STAGEDIR}${WAZUHPREFIX}/ruleset/decoders
 
 	${INSTALL_DATA} ${WRKSRC}/ruleset/rootcheck/db/*.txt ${STAGEDIR}${WAZUHPREFIX}/etc/rootcheck
 
