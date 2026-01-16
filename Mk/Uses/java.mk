@@ -29,7 +29,7 @@
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #			port. An optional "+" allows you to specify a range of
-#			versions. (allowed values: 8[+] 11[+] 17[+] 18[+] 19[+]
+#			versions. (allowed values: 8[+] 11[+] 17[+] 19[+]
 #			20[+] 21[+] 22[+] 23[+] 24[+] 25[+])
 #
 # JAVA_OS		List of space-separated suitable JDK port operating systems
@@ -201,7 +201,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .  endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	8 11 17 18 19 20 21 22 23 24 25
+__JAVA_VERSION_LIST=	8 11 17 19 20 21 22 23 24 25
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle
@@ -214,8 +214,6 @@ _JAVA_PORT_NATIVE_OPENJDK_JDK_11_INFO=		PORT=java/openjdk11			HOME=${LOCALBASE}/
 											VERSION=11	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_17_INFO=		PORT=java/openjdk17			HOME=${LOCALBASE}/openjdk17 \
 											VERSION=17	OS=native	VENDOR=openjdk
-_JAVA_PORT_NATIVE_OPENJDK_JDK_18_INFO=		PORT=java/openjdk18			HOME=${LOCALBASE}/openjdk18 \
-											VERSION=18	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_19_INFO=		PORT=java/openjdk19			HOME=${LOCALBASE}/openjdk19 \
 											VERSION=19	OS=native	VENDOR=openjdk
 _JAVA_PORT_NATIVE_OPENJDK_JDK_20_INFO=		PORT=java/openjdk20			HOME=${LOCALBASE}/openjdk20 \
@@ -246,7 +244,6 @@ __JAVA_PORTS_ALL=	\
 					JAVA_PORT_NATIVE_OPENJDK_JDK_8  \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_11 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_17 \
-					JAVA_PORT_NATIVE_OPENJDK_JDK_18 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_19 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_20 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_21 \
@@ -317,7 +314,7 @@ check-makevars::
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .  if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/^8+/8 11+/:S/^11+/11 17+/:S/^17+/17 18+/:S/^18+/18 19+/:S/^19+/19 20+/:S/^20+/20 21+/:S/^21+/21 22+/:S/^22+/22 23+/:S/^23+/23 24+/:S/^24+/24 25+/:S/^25+/25/}
+_JAVA_VERSION=	${JAVA_VERSION:S/^8+/8 11+/:S/^11+/11 17+/:S/^17+/17 19+/:S/^19+/19 20+/:S/^20+/20 21+/:S/^21+/21 22+/:S/^22+/22 23+/:S/^23+/23 24+/:S/^24+/24 25+/:S/^25+/25/}
 .  else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .  endif
