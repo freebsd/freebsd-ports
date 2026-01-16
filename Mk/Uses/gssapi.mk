@@ -3,10 +3,10 @@
 # Feature:	gssapi
 # Usage:	USES=gssapi or USES=gssapi:ARGS
 # Valid ARGS:	base (default, implicit), heimdal, mit.
-#		"bootstrap" is a special prefix only for krb5 or heimdal ports.
-#		("bootstrap,mit")
-#		flags is a special suffix to define CFLAGS, LDFLAGS, and LDADD.
-#		("base,flags")
+#		"bootstrap" is a special prefix only for krb5 or heimdal ports,
+#		i.e. "bootstrap,mit".
+#		flags is a special suffix to define CFLAGS, LDFLAGS, and LDADD,
+#		i.e. "base,flags".
 #
 # MAINTAINER:	hrs@FreeBSD.org, cy@FreeBSD.org
 #
