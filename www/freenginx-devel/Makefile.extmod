@@ -204,12 +204,17 @@ LUA_IMPLIES=		DEVEL_KIT
 LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_VARS=		DSO_EXTMODS+=lua
 
-LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.17:luastream
+LUASTREAM_GH_TUPLE=	openresty:stream-lua-nginx-module:v0.0.17R4:luastream \
+			openresty:lua-resty-core:0b61f61:luarc \
+			openresty:lua-resty-lrucache:1759068:luarl
 LUASTREAM_CONFIGURE_ENV=LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
+LUASTREAM_EXTRA_PATCHES=${PATCHDIR}/extra-patch-ngx_stream_lua_module.c \
+			${PATCHDIR}/extra-patch-ngx_stream_lua_socket_tcp.c \
+			${PATCHDIR}/extra-patch-ngx_stream_lua_ssl_certby.c \
+			${PATCHDIR}/extra-patch-ngx_stream_lua_ssl_client_helloby.c \
+			${PATCHDIR}/extra-patch-ngx_stream_lua_time.c
 LUASTREAM_IMPLIES=	DEVEL_KIT
-LUASTREAM_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-LUASTREAM_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUASTREAM_VARS=		DSO_EXTMODS+=luastream
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link

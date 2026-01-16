@@ -1,7 +1,7 @@
 PORTNAME=	freenginx
 PORTVERSION=	${NGINX_VERSION}
 .include "version.mk"
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 MASTER_SITES=	https://freenginx.org/download/ \
 		LOCAL/osa
@@ -242,8 +242,6 @@ IGNORE=		required at least GSSAPI_HEIMDAL or \
 		GSSAPI_MIT to be defined. Please do \
 		'make config' again
 .endif
-
-.include "Makefile.ignore"
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 191
 CFLAGS+=	-Wno-error=cast-function-type-mismatch

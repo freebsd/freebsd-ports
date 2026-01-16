@@ -1,3 +1,0 @@
-.if ${PORT_OPTIONS:MLUASTREAM}
-IGNORE=		lua stream module: patching is required
-.endif
