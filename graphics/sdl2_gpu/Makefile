@@ -1,7 +1,7 @@
 PORTNAME=	sdl2_gpu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -22,14 +22,15 @@ GH_PROJECT=	sdl-gpu
 CMAKE_ON=	USE_SYSTEM_GLEW DYNAMIC_GLES_3
 CFLAGS+=	-Wno-incompatible-function-pointer-types
 
-OPTIONS_DEFINE=	DOCS
-# OOM condition running dot?!
-OPTIONS_EXCLUDE=	DOCS
-DOCS_CMAKE_BOOL=	BUILD_DOCS
-DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
-DOCS_ALL_TARGET=	doc
+OPTIONS_SUB=	yes
 
-do-install-DOCS-on:
+# investigate: OOM condition when running dot during docs build
+OPTIONS_DEFINE=	DOXYGEN
+DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOXYGEN_CMAKE_BOOL=	BUILD_DOCS
+DOXYGEN_ALL_TARGET=	doc
+
+do-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${BUILD_WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
