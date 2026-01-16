@@ -1229,6 +1229,7 @@
     SUBDIR += tslib
     SUBDIR += ttygif
     SUBDIR += ttyplot
+    SUBDIR += tulip
     SUBDIR += tweeny
     SUBDIR += ufraw
     SUBDIR += unpaper
