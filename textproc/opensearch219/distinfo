@@ -1,5 +1,5 @@
-TIMESTAMP = 1760381825
-SHA256 (opensearch-2.19.3-linux-arm64.tar.gz) = 9a99b505ae04dd41201cd6cf53890c6f0e80898248ce17ab0a2f1c218ae5b4cd
-SIZE (opensearch-2.19.3-linux-arm64.tar.gz) = 713970235
-SHA256 (opensearch-2.19.3-linux-x64.tar.gz) = 484165b353de37bda750aac3b70cfcdfc25ebcee31502939e249a2432ae3ca4c
-SIZE (opensearch-2.19.3-linux-x64.tar.gz) = 962578831
+TIMESTAMP = 1768527211
+SHA256 (opensearch-2.19.4-linux-arm64.tar.gz) = 036a670e0b516738af66f4068f59e28b208bb17f07ae22e3520d809177945950
+SIZE (opensearch-2.19.4-linux-arm64.tar.gz) = 730293173
+SHA256 (opensearch-2.19.4-linux-x64.tar.gz) = 48fb0aa6e5e37dddfb23685d61e53b943c2ce82a4556ff174bac5017234d3c75
+SIZE (opensearch-2.19.4-linux-x64.tar.gz) = 978906594
