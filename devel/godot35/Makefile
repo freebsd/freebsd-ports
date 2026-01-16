@@ -14,6 +14,9 @@ LICENSE_COMB=		multi
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.md
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Legacy version should have been removed with devel/godot35-tools, consider migrating to devel/godot
+EXPIRATION_DATE=	2026-02-28
+
 BUILD_DEPENDS=	yasm:devel/yasm
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpcre2-8.so:devel/pcre2 \
