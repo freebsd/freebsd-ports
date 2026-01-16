@@ -1,5 +1,5 @@
 PORTNAME=	prismlauncher
-DISTVERSION=	9.4
+DISTVERSION=	10.0.2
 CATEGORIES=	games java
 
 MAINTAINER=	Alexander88207@protonmail.com
@@ -10,6 +10,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
+		libqrencode.so:graphics/libqrencode \
 		libquazip1-qt6.so:archivers/quazip@qt6 \
 		libtomlplusplus.so:devel/tomlplusplus
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
@@ -18,16 +19,16 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		openjdk21>0:java/openjdk21 \
 		xrandr:x11/xrandr
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl java kde:6 qt:6 \
-		shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils gl java kde:6 \
+		pkgconfig qt:6 shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	PrismLauncher
 GH_PROJECT=	${GH_ACCOUNT}
-GH_TUPLE=	gulrak:filesystem:9fda7b0a:filesystem/libraries/filesystem \
-		PrismLauncher:libnbtplusplus:23b95512:libnbtplusplus/libraries/libnbtplusplus
+GH_TUPLE=	gulrak:filesystem:0e72911:filesystem/libraries/filesystem \
+		PrismLauncher:libnbtplusplus:531449b:libnbtplusplus/libraries/libnbtplusplus
 USE_GL=		opengl
 USE_KDE=	ecm:build
-USE_QT=		5compat base networkauth
+USE_QT=		base networkauth
 
 CMAKE_ARGS=	-DJAVA_HOME=${JAVA_HOME} -DJava_JAVAC_EXECUTABLE=${JAVAC} \
 		-DLauncher_BUILD_PLATFORM=FreeBSD

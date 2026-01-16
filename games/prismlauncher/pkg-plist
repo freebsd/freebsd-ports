@@ -4,6 +4,7 @@ share/PrismLauncher/NewLaunch.jar
 share/PrismLauncher/NewLaunchLegacy.jar
 share/PrismLauncher/qtlogging.ini
 share/applications/org.prismlauncher.PrismLauncher.desktop
+share/icons/hicolor/256x256/apps/org.prismlauncher.PrismLauncher.png
 share/icons/hicolor/scalable/apps/org.prismlauncher.PrismLauncher.svg
 share/metainfo/org.prismlauncher.PrismLauncher.metainfo.xml
 share/mime/packages/modrinth-mrpack-mime.xml
