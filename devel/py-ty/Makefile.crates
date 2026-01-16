@@ -48,8 +48,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
 		clang-sys-1.8.1 \
-		clap-4.5.53 \
-		clap_builder-4.5.53 \
+		clap-4.5.54 \
+		clap_builder-4.5.54 \
 		clap_complete-4.5.58 \
 		clap_complete_command-0.6.1 \
 		clap_complete_nushell-4.5.8 \
@@ -159,13 +159,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		idna_adapter-1.2.1 \
 		ignore-0.4.25 \
 		imara-diff-0.1.8 \
-		imperative-1.0.6 \
+		imperative-1.0.7 \
 		indexmap-2.12.1 \
 		indicatif-0.18.3 \
 		indoc-2.0.7 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
-		insta-1.45.1 \
+		insta-1.46.0 \
 		insta-cmd-0.6.0 \
 		interpolator-0.5.0 \
 		intrusive-collections-0.9.7 \
@@ -189,7 +189,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		kqueue-1.1.1 \
 		kqueue-sys-1.0.4 \
 		lazy_static-1.5.0 \
-		libc-0.2.178 \
+		libc-0.2.179 \
 		libcst-1.8.6 \
 		libcst_derive-1.8.6 \
 		libloading-0.8.9 \
@@ -254,9 +254,11 @@ CARGO_CRATES=	adler2-2.0.1 \
 		pest_generator-2.8.2 \
 		pest_meta-2.8.2 \
 		phf-0.11.3 \
+		phf-0.13.1 \
 		phf_codegen-0.11.3 \
 		phf_generator-0.11.3 \
 		phf_shared-0.11.3 \
+		phf_shared-0.13.1 \
 		pin-project-lite-0.2.16 \
 		pkg-config-0.3.32 \
 		portable-atomic-1.11.1 \
@@ -337,7 +339,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		strum-0.27.2 \
 		strum_macros-0.27.2 \
 		supports-hyperlinks-3.2.0 \
-		syn-2.0.111 \
+		syn-2.0.113 \
 		synstructure-0.13.2 \
 		tap-1.0.1 \
 		tempfile-3.24.0 \
