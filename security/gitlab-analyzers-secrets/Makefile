@@ -1,7 +1,7 @@
 PORTNAME=	secrets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	7.20.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://gitlab.com/api/v4/projects/60960406/packages/generic/secret-detection-rules/${SECRET_DETECTION_RULES_VERSION}/:rules \
 		https://gitlab.com/gitlab-org/security-products/post-analyzers/scripts/-/raw/v${POST_ANALYZER_SCRIPTS_VERSION}/:script

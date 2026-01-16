@@ -2,6 +2,7 @@ PORTNAME=	ollama
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.5
 DISTVERSIONSUFFIX=	-x1 # x1 because it doesn't seem possible to update the cached tag on GoLang servers
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

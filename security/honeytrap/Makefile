@@ -1,6 +1,6 @@
 PORTNAME=	honeytrap
 DISTVERSION=	g20210510
-PORTREVISION=	34
+PORTREVISION=	35
 CATEGORIES=	security
 
 MAINTAINER=	ezri.mudde@dutchsec.com
