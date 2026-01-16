@@ -1,0 +1,610 @@
+From 4b2f03af22bfb19168e71092d075c649e942604f Mon Sep 17 00:00:00 2001
+From: Peter Varga <pvarga@inf.u-szeged.hu>
+Date: Mon, 20 Oct 2025 10:43:49 +0200
+Subject: [PATCH] Move GPU info logging to the GPU thread
+
+Accessing certain GPU information (eg. GPU feature status values) from
+the browser thread requires extra API on top of Chromium, such as
+content::GpuChildThread::gpu_channel_manager().
+
+This change moves the logging to the GPU thread, allowing use of
+existing APIs like content::GpuDataManager::GetFeatureStatus().
+
+Task-number: QTBUG-139335
+Fixes: QTBUG-142497
+Fixes: QTBUG-142720
+Change-Id: I4e4471a78258a1502ec0e11683cae3936e170ce1
+Reviewed-by: Moss Heim <moss.heim@qt.io>
+(cherry picked from commit 0b65b0754d1534280acc3fe48be61127ce24ac93)
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+
+diff --git a/src/core/CMakeLists.txt b/src/core/CMakeLists.txt
+index 64ef09f..eb83a82 100644
+--- src/core/CMakeLists.txt
++++ src/core/CMakeLists.txt
+@@ -132,6 +132,7 @@
+                 file_system_access/file_system_access_permission_request_manager_qt.cpp file_system_access/file_system_access_permission_request_manager_qt.h
+                 find_text_helper.cpp find_text_helper.h
+                 global_descriptors_qt.h
++                gpu/content_gpu_client_qt.cpp gpu/content_gpu_client_qt.h
+                 javascript_dialog_controller.cpp javascript_dialog_controller.h javascript_dialog_controller_p.h
+                 javascript_dialog_manager_qt.cpp javascript_dialog_manager_qt.h
+                 login_delegate_qt.cpp login_delegate_qt.h
+diff --git a/src/core/content_client_qt.cpp b/src/core/content_client_qt.cpp
+index 4d81e39..ed63980 100644
+--- src/core/content_client_qt.cpp
++++ src/core/content_client_qt.cpp
+@@ -4,8 +4,6 @@
+ 
+ #include "content_client_qt.h"
+ 
+-#include "compositor/compositor.h"
+-
+ #include "base/command_line.h"
+ #include "base/files/file_util.h"
+ #include "base/json/json_string_value_serializer.h"
+@@ -13,15 +11,11 @@
+ #include "base/strings/string_util.h"
+ #include "base/values.h"
+ #include "base/version.h"
+-#include "content/gpu/gpu_child_thread.h"
+ #include "content/public/common/cdm_info.h"
+ #include "content/public/common/content_constants.h"
+ #include "content/public/common/content_switches.h"
+ #include "extensions/buildflags/buildflags.h"
+ #include "extensions/common/constants.h"
+-#include "gpu/config/gpu_feature_info.h"
+-#include "gpu/config/gpu_preferences.h"
+-#include "gpu/ipc/service/gpu_channel_manager.h"
+ #include "media/base/media_switches.h"
+ #include "media/base/video_codecs.h"
+ #include "media/cdm/supported_audio_codecs.h"
+@@ -34,10 +28,8 @@
+ #include <QCoreApplication>
+ #include <QFile>
+ #include <QLibraryInfo>
+-#include <QRegularExpression>
+ #include <QString>
+ #include <QSysInfo>
+-#include <QThread>
+ 
+ #if BUILDFLAG(IS_WIN)
+ #include "ui/gl/gl_utils.h"
+@@ -497,165 +489,4 @@
+     return origin_trial_policy_.get();
+ }
+ 
+-void ContentClientQt::SetGpuInfo(const gpu::GPUInfo &gpu_info)
+-{
+-    base::CommandLine *commandLine = base::CommandLine::ForCurrentProcess();
+-    const bool isBrowserProcess = !commandLine->HasSwitch(switches::kProcessType);
+-    const bool isMainThread = QThread::currentThread() == qApp->thread();
+-
+-    // Limit this to the main thread of the browser process for now.
+-    if (!isBrowserProcess || !isMainThread)
+-        return;
+-
+-    if (!gpu_info.IsInitialized()) {
+-        // This is probably not an issue but suspicious.
+-        qWarning("Failed to initialize GPUInfo.");
+-        return;
+-    }
+-
+-    const gpu::GPUInfo::GPUDevice &primary = gpu_info.gpu;
+-
+-    // Do not print the info again if the device hasn't been changed.
+-    // Change of the device is unexpected: we don't support or implement fallback yet.
+-    // It is suspicious if the info is logged twice.
+-    if (m_gpuInfo && m_gpuInfo->gpu.device_string == primary.device_string)
+-        return;
+-    m_gpuInfo = gpu_info;
+-
+-    auto *gpuChannelManager = content::GpuChildThread::instance()->gpu_channel_manager();
+-    const gpu::GpuFeatureStatus gpuCompositingStatus =
+-            gpuChannelManager->gpu_feature_info()
+-                    .status_values[gpu::GPU_FEATURE_TYPE_ACCELERATED_GL];
+-
+-#if BUILDFLAG(IS_OZONE)
+-    if (gpuCompositingStatus == gpu::kGpuFeatureStatusEnabled) {
+-        // See entry 3 in //gpu/config/software_rendering_list.json
+-        QRegularExpression filter(u"software|llvmpipe|softpipe"_s,
+-                                  QRegularExpression::CaseInsensitiveOption);
+-        if (filter.match(QLatin1StringView(gpu_info.gl_renderer)).hasMatch()) {
+-            qWarning("Hardware rendering is enabled but it is not supported with Mesa software "
+-                     "rasterizer. Expect troubles.");
+-
+-            if (gpuChannelManager->gpu_preferences().ignore_gpu_blocklist)
+-                qWarning("Rendering may fail because --ignore-gpu-blocklist is set.");
+-        }
+-    }
+-#endif
+-
+-    if (Q_LIKELY(!lcWebEngineCompositor().isDebugEnabled()))
+-        return;
+-
+-    auto deviceToString = [](const gpu::GPUInfo::GPUDevice &device) -> QString {
+-        if (device.vendor_id == 0x0)
+-            return "Disabled"_L1;
+-
+-        QString log;
+-
+-        // TODO: Factor vendor translation out from QtWebEngineCore::GPUInfo.
+-        // Only name the most common desktop GPU hardware vendors for now.
+-        switch (device.vendor_id) {
+-        case 0x1002:
+-            log += "AMD"_L1;
+-            break;
+-        case 0x10DE:
+-            log += "Nvidia"_L1;
+-            break;
+-        case 0x8086:
+-            log += "Intel"_L1;
+-            break;
+-        default:
+-            log += "vendor id: 0x"_L1 + QString::number(device.vendor_id, 16);
+-        }
+-
+-        log += ", device id: 0x"_L1 + QString::number(device.device_id, 16);
+-
+-        if (!device.driver_vendor.empty()) {
+-            log += ", driver: "_L1 + QLatin1StringView(device.driver_vendor) + u' '
+-                    + QLatin1StringView(device.driver_version);
+-        }
+-        log += ", system device id: 0x"_L1 + QString::number(device.system_device_id, 16);
+-
+-        log += ", preference: "_L1;
+-        switch (device.gpu_preference) {
+-        case gl::GpuPreference::kNone:
+-            log += "None"_L1;
+-            break;
+-        case gl::GpuPreference::kDefault:
+-            log += "Default"_L1;
+-            break;
+-        case gl::GpuPreference::kLowPower:
+-            log += "LowPower"_L1;
+-            break;
+-        case gl::GpuPreference::kHighPerformance:
+-            log += "HighPerformance"_L1;
+-            break;
+-        }
+-
+-        log += ", active: "_L1 + (device.active ? "yes"_L1 : "no"_L1);
+-        return log;
+-    };
+-
+-    QString log;
+-
+-    log = "GPU Compositing: ";
+-    switch (gpuCompositingStatus) {
+-    case gpu::kGpuFeatureStatusEnabled:
+-        log += "Enabled"_L1;
+-        break;
+-    case gpu::kGpuFeatureStatusBlocklisted:
+-        log += "Blocklisted"_L1;
+-        break;
+-    case gpu::kGpuFeatureStatusDisabled:
+-        log += "Disabled"_L1;
+-        break;
+-    case gpu::kGpuFeatureStatusSoftware:
+-        log += "Software"_L1;
+-        break;
+-    case gpu::kGpuFeatureStatusUndefined:
+-        log += "Undefined"_L1;
+-        break;
+-    case gpu::kGpuFeatureStatusMax:
+-        log += "Max"_L1;
+-        break;
+-    }
+-    qCDebug(lcWebEngineCompositor, "%ls", qUtf16Printable(log));
+-
+-    if (gpu_info.gl_vendor.empty() || gpu_info.gl_vendor == "Disabled") {
+-        log = "ANGLE is disabled:\n"_L1;
+-        log += "  GL Renderer: "_L1 + QLatin1StringView(gpu_info.gl_renderer) + u'\n';
+-        log += "  Software Renderer: "_L1 + (primary.IsSoftwareRenderer() ? "yes"_L1 : "no"_L1)
+-                + u'\n';
+-        log += "  Primary GPU: "_L1 + deviceToString(primary) + u'\n';
+-    } else {
+-        log = QLatin1StringView(gpu_info.display_type) + " display is initialized:\n"_L1;
+-        log += "  GL Renderer: "_L1 + QLatin1StringView(gpu_info.gl_renderer) + u'\n';
+-        log += "  "_L1 + QString::number(gpu_info.GpuCount()) + " GPU(s) detected:\n"_L1;
+-        log += "    "_L1 + deviceToString(primary) + u'\n';
+-        for (auto &secondary : gpu_info.secondary_gpus)
+-            log += "    "_L1 + deviceToString(secondary) + u'\n';
+-
+-        log += "  NVIDIA Optimus: "_L1 + (gpu_info.optimus ? "enabled"_L1 : "disabled"_L1) + u'\n';
+-        log += "  AMD Switchable: "_L1 + (gpu_info.amd_switchable ? "enabled"_L1 : "disabled"_L1);
+-    }
+-
+-    qCDebug(lcWebEngineCompositor, "%ls", qUtf16Printable(log));
+-
+-#if BUILDFLAG(IS_WIN)
+-    log = "Windows specific driver information:\n"_L1;
+-
+-    log += "  Direct Composition: "_L1;
+-    if (gpu_info.overlay_info.direct_composition)
+-        log += "enabled\n"_L1;
+-    else if (gl::GetGlWorkarounds().disable_direct_composition)
+-        log += "disabled by workaround\n"_L1;
+-    else
+-        log += "disabled\n"_L1;
+-
+-    log += "  Supports Overlays: "_L1
+-            + (gpu_info.overlay_info.supports_overlays ? "yes"_L1 : "no"_L1) + u'\n';
+-    log += "  Supports D3D Shared Images: "_L1 + (gpu_info.shared_image_d3d ? "yes"_L1 : "no"_L1);
+-    qCDebug(lcWebEngineCompositor, "%ls", qUtf16Printable(log));
+-#endif
+-}
+-
+ } // namespace QtWebEngineCore
+diff --git a/src/core/content_client_qt.h b/src/core/content_client_qt.h
+index 2936c23..d5f9e71 100644
+--- src/core/content_client_qt.h
++++ src/core/content_client_qt.h
+@@ -10,11 +10,9 @@
+ #include "base/synchronization/lock.h"
+ #include "components/embedder_support/origin_trials/origin_trial_policy_impl.h"
+ #include "content/public/common/content_client.h"
+-#include "gpu/config/gpu_info.h"
+ #include "ui/base/layout.h"
+ 
+ #include <memory>
+-#include <optional>
+ 
+ namespace QtWebEngineCore {
+ 
+@@ -32,13 +30,11 @@
+     gfx::Image &GetNativeImageNamed(int resource_id) override;
+     std::u16string GetLocalizedString(int message_id) override;
+     blink::OriginTrialPolicy *GetOriginTrialPolicy() override;
+-    void SetGpuInfo(const gpu::GPUInfo &gpu_info) override;
+ 
+ private:
+     // Used to lock when |origin_trial_policy_| is initialized.
+     base::Lock origin_trial_policy_lock_;
+     std::unique_ptr<embedder_support::OriginTrialPolicyImpl> origin_trial_policy_;
+-    std::optional<gpu::GPUInfo> m_gpuInfo;
+ };
+ 
+ } // namespace QtWebEngineCore
+diff --git a/src/core/content_main_delegate_qt.cpp b/src/core/content_main_delegate_qt.cpp
+index 6c61c7a..1512f9a 100644
+--- src/core/content_main_delegate_qt.cpp
++++ src/core/content_main_delegate_qt.cpp
+@@ -194,6 +194,12 @@
+     return m_browserClient.get();
+ }
+ 
++content::ContentGpuClient *ContentMainDelegateQt::CreateContentGpuClient()
++{
++    m_gpuClient.reset(new ContentGpuClientQt);
++    return m_gpuClient.get();
++}
++
+ content::ContentRendererClient *ContentMainDelegateQt::CreateContentRendererClient()
+ {
+ #if BUILDFLAG(IS_LINUX)
+diff --git a/src/core/content_main_delegate_qt.h b/src/core/content_main_delegate_qt.h
+index cb320ec..b725d88 100644
+--- src/core/content_main_delegate_qt.h
++++ src/core/content_main_delegate_qt.h
+@@ -10,6 +10,7 @@
+ #include "content_browser_client_qt.h"
+ #include "content_client_qt.h"
+ #include "content_utility_client_qt.h"
++#include "gpu/content_gpu_client_qt.h"
+ 
+ namespace QtWebEngineCore {
+ 
+@@ -23,6 +24,7 @@
+ 
+     content::ContentClient *CreateContentClient() override;
+     content::ContentBrowserClient* CreateContentBrowserClient() override;
++    content::ContentGpuClient* CreateContentGpuClient() override;
+     content::ContentRendererClient* CreateContentRendererClient() override;
+     content::ContentUtilityClient* CreateContentUtilityClient() override;
+     std::optional<int> BasicStartupComplete() override;
+@@ -30,6 +32,7 @@
+ private:
+     ContentClientQt m_contentClient;
+     std::unique_ptr<ContentBrowserClientQt> m_browserClient;
++    std::unique_ptr<ContentGpuClientQt> m_gpuClient;
+     std::unique_ptr<ContentUtilityClientQt> m_utilityClient;
+ };
+ 
+diff --git a/src/core/gpu/content_gpu_client_qt.cpp b/src/core/gpu/content_gpu_client_qt.cpp
+new file mode 100644
+index 0000000..3b0b3e9
+--- /dev/null
++++ src/core/gpu/content_gpu_client_qt.cpp
+@@ -0,0 +1,238 @@
++// Copyright (C) 2025 The Qt Company Ltd.
++// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
++// Qt-Security score:significant reason:default
++
++#include "content_gpu_client_qt.h"
++
++#include "compositor/compositor.h"
++
++#include "content/public/browser/browser_thread.h"
++#include "content/public/browser/gpu_data_manager.h"
++#include "content/public/browser/gpu_data_manager_observer.h"
++#include "gpu/config/gpu_driver_bug_workarounds.h"
++#include "gpu/config/gpu_info.h"
++#include "mojo/public/cpp/bindings/binder_map.h"
++
++#include <QtCore/qregularexpression.h>
++#include <QtCore/qstring.h>
++
++#include <optional>
++#include <tuple>
++
++#if BUILDFLAG(IS_WIN)
++#include "ui/gl/gl_utils.h"
++#endif
++
++using namespace Qt::StringLiterals;
++
++namespace QtWebEngineCore {
++
++namespace {
++static inline bool isSameDevice(const gpu::GPUInfo::GPUDevice &d1,
++                                const gpu::GPUInfo::GPUDevice &d2)
++{
++    return std::tie(d1.vendor_id, d1.device_id, d1.system_device_id, d1.vendor_string,
++                    d1.device_string, d1.driver_vendor, d1.driver_version)
++            == std::tie(d2.vendor_id, d2.device_id, d2.system_device_id, d2.vendor_string,
++                        d2.device_string, d2.driver_vendor, d2.driver_version);
++}
++
++static QString gpuDeviceToString(const gpu::GPUInfo::GPUDevice &device)
++{
++    if (device.vendor_id == 0x0)
++        return "Disabled"_L1;
++
++    QString deviceString;
++
++    // TODO: Factor vendor translation out from QtWebEngineCore::GPUInfo.
++    // Only name the most common desktop GPU hardware vendors for now.
++    switch (device.vendor_id) {
++    case 0x1002:
++        deviceString += "AMD"_L1;
++        break;
++    case 0x10DE:
++        deviceString += "Nvidia"_L1;
++        break;
++    case 0x8086:
++        deviceString += "Intel"_L1;
++        break;
++    default:
++        deviceString += "vendor id: 0x"_L1 + QString::number(device.vendor_id, 16);
++    }
++
++    deviceString += ", device id: 0x"_L1 + QString::number(device.device_id, 16);
++
++    if (!device.driver_vendor.empty()) {
++        deviceString += ", driver: "_L1 + QLatin1StringView(device.driver_vendor) + u' '
++                + QLatin1StringView(device.driver_version);
++    }
++    deviceString += ", system device id: 0x"_L1 + QString::number(device.system_device_id, 16);
++
++    deviceString += ", preference: "_L1;
++    switch (device.gpu_preference) {
++    case gl::GpuPreference::kNone:
++        deviceString += "None"_L1;
++        break;
++    case gl::GpuPreference::kDefault:
++        deviceString += "Default"_L1;
++        break;
++    case gl::GpuPreference::kLowPower:
++        deviceString += "LowPower"_L1;
++        break;
++    case gl::GpuPreference::kHighPerformance:
++        deviceString += "HighPerformance"_L1;
++        break;
++    }
++
++    deviceString += ", active: "_L1 + (device.active ? "yes"_L1 : "no"_L1);
++    return deviceString;
++}
++
++static inline const char *gpuFeatureStatusToString(const gpu::GpuFeatureStatus &status)
++{
++    switch (status) {
++    case gpu::kGpuFeatureStatusEnabled:
++        return "Enabled";
++    case gpu::kGpuFeatureStatusBlocklisted:
++        return "Blocklisted";
++    case gpu::kGpuFeatureStatusDisabled:
++        return "Disabled";
++    case gpu::kGpuFeatureStatusSoftware:
++        return "Software";
++    case gpu::kGpuFeatureStatusUndefined:
++        return "Undefined";
++    case gpu::kGpuFeatureStatusMax:
++        return "Max";
++    }
++}
++
++static QString angleInfo(const gpu::GPUInfo &gpuInfo)
++{
++    QString info;
++
++    if (gpuInfo.gl_vendor.empty() || gpuInfo.gl_vendor == "Disabled") {
++        info = "ANGLE is disabled:\n"_L1;
++        info += "  GL Renderer: "_L1 + QLatin1StringView(gpuInfo.gl_renderer) + u'\n';
++        info += "  Software Renderer: "_L1 + (gpuInfo.gpu.IsSoftwareRenderer() ? "yes"_L1 : "no"_L1)
++                + u'\n';
++        info += "  Primary GPU: "_L1 + gpuDeviceToString(gpuInfo.gpu) + u'\n';
++        return info;
++    }
++
++    info = QLatin1StringView(gpuInfo.display_type) + " display is initialized:\n"_L1;
++    info += "  GL Renderer: "_L1 + QLatin1StringView(gpuInfo.gl_renderer) + u'\n';
++    info += "  "_L1 + QString::number(gpuInfo.GpuCount()) + " GPU(s) detected:\n"_L1;
++    info += "    "_L1 + gpuDeviceToString(gpuInfo.gpu) + u'\n';
++    for (auto &secondary : gpuInfo.secondary_gpus)
++        info += "    "_L1 + gpuDeviceToString(secondary) + u'\n';
++
++    info += "  NVIDIA Optimus: "_L1 + (gpuInfo.optimus ? "enabled"_L1 : "disabled"_L1) + u'\n';
++    info += "  AMD Switchable: "_L1 + (gpuInfo.amd_switchable ? "enabled"_L1 : "disabled"_L1);
++
++    return info;
++}
++
++#if BUILDFLAG(IS_WIN)
++static QString windowsInfo(const gpu::GPUInfo &gpuInfo)
++{
++    QString info;
++    info = "Windows specific driver information:\n"_L1;
++
++    info += "  Direct Composition: "_L1;
++    if (gpuInfo.overlay_info.direct_composition)
++        info += "enabled\n"_L1;
++    else if (gl::GetGlWorkarounds().disable_direct_composition)
++        info += "disabled by workaround\n"_L1;
++    else
++        info += "disabled\n"_L1;
++
++    info += "  Supports Overlays: "_L1
++            + (gpuInfo.overlay_info.supports_overlays ? "yes"_L1 : "no"_L1) + u'\n';
++    info += "  Supports D3D Shared Images: "_L1 + (gpuInfo.shared_image_d3d ? "yes"_L1 : "no"_L1);
++    return info;
++}
++#endif
++} // namespace
++
++class GpuObserver : public content::GpuDataManagerObserver
++{
++public:
++    GpuObserver(ContentGpuClientQt *client) : m_client(client)
++    {
++        content::GpuDataManager *manager = content::GpuDataManager::GetInstance();
++        if (manager->IsEssentialGpuInfoAvailable())
++            OnGpuInfoUpdate();
++    }
++
++    ~GpuObserver() { content::GpuDataManager::GetInstance()->RemoveObserver(this); }
++
++    void OnGpuInfoUpdate() override
++    {
++        Q_ASSERT(!content::BrowserThread::CurrentlyOn(content::BrowserThread::UI));
++
++        content::GpuDataManager *manager = content::GpuDataManager::GetInstance();
++        Q_ASSERT(manager->IsEssentialGpuInfoAvailable());
++
++        const gpu::GPUInfo &gpuInfo = manager->GetGPUInfo();
++        Q_ASSERT(gpuInfo.IsInitialized());
++
++        // Avoid logging the info again if the device hasn't changed.
++        // A change in the device is unexpected, as we currently don't support or implement
++        // fallback. Logging the info multiple times may indicate a problem.
++        if (m_gpuInfo && isSameDevice(m_gpuInfo->gpu, gpuInfo.gpu))
++            return;
++        m_gpuInfo = gpuInfo;
++
++        const gpu::GpuFeatureStatus gpuCompositingStatus =
++                manager->GetFeatureStatus(gpu::GPU_FEATURE_TYPE_ACCELERATED_GL);
++        qCDebug(lcWebEngineCompositor, "GPU Compositing: %s",
++                gpuFeatureStatusToString(gpuCompositingStatus));
++
++#if BUILDFLAG(IS_OZONE)
++        if (gpuCompositingStatus == gpu::kGpuFeatureStatusEnabled) {
++            // See entry 3 in //gpu/config/software_rendering_list.json
++            QRegularExpression filter(u"software|llvmpipe|softpipe"_s,
++                                      QRegularExpression::CaseInsensitiveOption);
++            if (filter.match(QLatin1StringView(gpuInfo.gl_renderer)).hasMatch()) {
++                qWarning("Hardware rendering is enabled but it is not supported with Mesa software "
++                         "rasterizer. Expect troubles.");
++
++                if (m_client->gpuPreferences().ignore_gpu_blocklist)
++                    qWarning("Rendering may fail because --ignore-gpu-blocklist is set.");
++            }
++        }
++#endif
++
++        qCDebug(lcWebEngineCompositor, "%ls", qUtf16Printable(angleInfo(gpuInfo)));
++#if BUILDFLAG(IS_WIN)
++        qCDebug(lcWebEngineCompositor, "%ls", qUtf16Printable(windowsInfo(gpuInfo)));
++#endif
++    }
++
++private:
++    ContentGpuClientQt *m_client;
++    std::optional<gpu::GPUInfo> m_gpuInfo;
++};
++
++ContentGpuClientQt::ContentGpuClientQt() = default;
++ContentGpuClientQt::~ContentGpuClientQt() = default;
++
++void ContentGpuClientQt::GpuServiceInitialized()
++{
++    // This is expected to be called on the GPU thread.
++    Q_ASSERT(!content::BrowserThread::CurrentlyOn(content::BrowserThread::UI));
++
++    m_gpuObserver.reset(new GpuObserver(this));
++    content::GpuDataManager::GetInstance()->AddObserver(m_gpuObserver.get());
++}
++
++void ContentGpuClientQt::ExposeInterfacesToBrowser(
++        const gpu::GpuPreferences &gpu_preferences,
++        const gpu::GpuDriverBugWorkarounds &gpu_workarounds, mojo::BinderMap *binders)
++{
++    Q_UNUSED(gpu_workarounds);
++    Q_UNUSED(binders);
++    m_gpuPreferences = gpu_preferences;
++}
++
++} // namespace QtWebEngineCore
+diff --git a/src/core/gpu/content_gpu_client_qt.h b/src/core/gpu/content_gpu_client_qt.h
+new file mode 100644
+index 0000000..51b3a0d
+--- /dev/null
++++ src/core/gpu/content_gpu_client_qt.h
+@@ -0,0 +1,46 @@
++// Copyright (C) 2025 The Qt Company Ltd.
++// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
++// Qt-Security score:significant reason:default
++
++#ifndef CONTENT_GPU_CLIENT_QT_H
++#define CONTENT_GPU_CLIENT_QT_H
++
++#include "content/public/gpu/content_gpu_client.h"
++#include "gpu/config/gpu_preferences.h"
++
++#include <QtCore/qscopedpointer.h>
++
++namespace gpu {
++class GpuDriverBugWorkarounds;
++}
++
++namespace mojo {
++class BinderMap;
++}
++
++namespace QtWebEngineCore {
++
++class GpuObserver;
++
++class ContentGpuClientQt : public content::ContentGpuClient
++{
++public:
++    ContentGpuClientQt();
++    ~ContentGpuClientQt();
++
++    gpu::GpuPreferences gpuPreferences() const { return m_gpuPreferences; }
++
++    // Overridden from content::ContentGpuClient:
++    void GpuServiceInitialized() override;
++    void ExposeInterfacesToBrowser(const gpu::GpuPreferences &gpu_preferences,
++                                   const gpu::GpuDriverBugWorkarounds &gpu_workarounds,
++                                   mojo::BinderMap *binders) override;
++
++private:
++    QScopedPointer<GpuObserver> m_gpuObserver;
++    gpu::GpuPreferences m_gpuPreferences;
++};
++
++} // namespace QtWebEngineCore
++
++#endif // CONTENT_GPU_CLIENT_QT_H
