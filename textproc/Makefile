@@ -1551,6 +1551,7 @@
     SUBDIR += py-pygccxml
     SUBDIR += py-pygments
     SUBDIR += py-pygtail
+    SUBDIR += py-pygtkspellcheck
     SUBDIR += py-pyhamcrest
     SUBDIR += py-pykwalify
     SUBDIR += py-pylatexenc
