@@ -3,14 +3,11 @@ PORTVERSION=	0.22.20210424
 PORTREVISION=	11
 CATEGORIES=	graphics
 
-MAINTAINER=	rodrigo@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Read and manipulate raw images from various digital cameras
 WWW=		https://ufraw.sourceforge.net/
 
 LICENSE=	GPLv2
-
-DEPRECATED=	Unmaintained since 2015, use graphics/rawtherapee instead
-EXPIRATION_DATE=	2026-03-01
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
