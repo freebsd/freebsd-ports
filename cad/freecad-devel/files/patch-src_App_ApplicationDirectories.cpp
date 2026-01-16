@@ -1,6 +1,6 @@
---- src/App/ApplicationDirectories.cpp.orig	2025-09-10 20:44:18 UTC
+--- src/App/ApplicationDirectories.cpp.orig	2026-01-01 15:27:46 UTC
 +++ src/App/ApplicationDirectories.cpp
-@@ -33,6 +33,7 @@
+@@ -32,6 +32,7 @@
  
  #if defined(FC_OS_LINUX) || defined(FC_OS_MACOSX) || defined(FC_OS_BSD)
  #include <pwd.h>

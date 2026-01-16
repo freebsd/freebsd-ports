@@ -2374,8 +2374,6 @@ FreeCAD/share/Gui/PreferencePacks/FreeCAD Classic/post.FCMacro
 FreeCAD/share/Gui/PreferencePacks/FreeCAD Dark/FreeCAD Dark.cfg
 FreeCAD/share/Gui/PreferencePacks/FreeCAD Light/FreeCAD Light.cfg
 FreeCAD/share/Gui/PreferencePacks/package.xml
-FreeCAD/share/Gui/Stylesheets/FreeCAD Dark.qss
-FreeCAD/share/Gui/Stylesheets/FreeCAD Light.qss
 FreeCAD/share/Gui/Stylesheets/FreeCAD.qss
 FreeCAD/share/Gui/Stylesheets/defaults.qss
 FreeCAD/share/Gui/Stylesheets/images_classic/arrow-double-leftright-black.png
@@ -2850,11 +2848,7 @@ FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_disabled_dark.svg
 FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_disabled_light.svg
 FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_light.svg
 FreeCAD/share/Gui/Stylesheets/images_dark-light/up_arrow_lighter.svg
-FreeCAD/share/Gui/Stylesheets/overlay/Dark Theme + Dark Background.qss
-FreeCAD/share/Gui/Stylesheets/overlay/Dark Theme + Light Background.qss
 FreeCAD/share/Gui/Stylesheets/overlay/Freecad Overlay.qss
-FreeCAD/share/Gui/Stylesheets/overlay/Light Theme + Dark Background.qss
-FreeCAD/share/Gui/Stylesheets/overlay/Light Theme + Light Background.qss
 FreeCAD/share/Gui/Stylesheets/overlay/icons/autohide.svg
 FreeCAD/share/Gui/Stylesheets/overlay/icons/autohide_light.svg
 FreeCAD/share/Gui/Stylesheets/overlay/icons/autohide_lighter.svg

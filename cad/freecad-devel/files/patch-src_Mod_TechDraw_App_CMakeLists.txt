@@ -1,10 +1,10 @@
---- src/Mod/TechDraw/App/CMakeLists.txt.orig	2025-03-24 09:38:26 UTC
+--- src/Mod/TechDraw/App/CMakeLists.txt.orig	2026-01-01 15:27:46 UTC
 +++ src/Mod/TechDraw/App/CMakeLists.txt
-@@ -24,6 +24,7 @@ include_directories(
+@@ -284,6 +284,7 @@ target_include_directories(
      ${QtCore_INCLUDE_DIR}
      ${QtGui_INCLUDE_DIR}
      ${QtWidgets_INCLUDE_DIRS}
 +    ${pybind11_INCLUDE_DIR}
  )
  
- list(APPEND TechDrawLIBS
+ target_link_libraries(TechDraw ${TechDrawLIBS} ${TechDraw})
