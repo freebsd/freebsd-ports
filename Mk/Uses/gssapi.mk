@@ -2,7 +2,7 @@
 #
 # Feature:	gssapi
 # Usage:	USES=gssapi or USES=gssapi:ARGS
-# Valid ARGS:	base (default, implicit), heimdal, mit.
+# Valid ARGS:	base (default, implicit), heimdal, mit, mit-devel.
 #		"bootstrap" is a special prefix only for krb5 or heimdal ports,
 #		i.e. "bootstrap,mit".
 #		flags is a special suffix to define CFLAGS, LDFLAGS, and LDADD,
@@ -39,7 +39,7 @@
 #  A typical example:
 #
 #   OPTIONS_SINGLE= GSSAPI
-#   OPTIONS_SINGLE_GSSAPI= GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
+#   OPTIONS_SINGLE_GSSAPI= GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_MIT_DEVEL GSSAPI_NONE
 #
 #   GSSAPI_BASE_USES=	gssapi
 #   GSSAPI_BASE_CONFIGURE_ON= \
@@ -51,6 +51,10 @@
 #
 #   GSSAPI_MIT_USES=	gssapi:mit
 #   GSSAPI_MIT_CONFIGURE_ON= \
+#	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
+#
+#   GSSAPI_MIT_DEVEL_USES=	gssapi:mit-devel
+#   GSSAPI_MIT_DEVEL_CONFIGURE_ON= \
 #	--with-gssapi=${GSSAPIBASEDIR} ${GSSAPI_CONFIGURE_ARGS}
 #
 #   GSSAPI_NONE_CONFIGURE_ON= --without-gssapi
@@ -124,7 +128,7 @@ GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
-.    elif ${_local} == "mit"
+.    elif ${_local} == "mit" -o ${_local} == "mit-devel"
 	# MIT KRB5 port selected
 KRB5_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${KRB5_HOME}
@@ -132,6 +136,9 @@ GSSAPILIBDIR=	${GSSAPIBASEDIR}/lib
 GSSAPIINCDIR=	${GSSAPIBASEDIR}/include
 _HEADERS+=	gssapi/gssapi.h gssapi/gssapi_krb5.h krb5/krb5.h
 .      if !defined(_KRB_BOOTSTRAP)
+.        if ${_local} == "mit-devel"
+_MITKRB5_DEPENDS=${_MITKRB5_DEPENDS}-devel
+.        endif
 BUILD_DEPENDS+=	${_MITKRB5_DEPENDS}
 RUN_DEPENDS+=	${_MITKRB5_DEPENDS}
 .      else

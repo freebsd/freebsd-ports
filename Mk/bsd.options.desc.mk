@@ -148,6 +148,7 @@ GSSAPI_BASE_DESC?=	GSSAPI support via base system (needs Kerberos)
 GSSAPI_DESC?=		GSSAPI Security API support
 GSSAPI_HEIMDAL_DESC?=	GSSAPI support via security/heimdal
 GSSAPI_MIT_DESC?=	GSSAPI support via security/krb5
+GSSAPI_MIT_DEVEL_DESC?=	GSSAPI support via security/krb5-devel
 GSSAPI_NONE_DESC?=	Disable GSSAPI support
 GSTREAMER_DESC?=	Multimedia support via GStreamer
 GTA_DESC?=		Generic Tagged Array (GTA) support
