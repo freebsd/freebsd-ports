@@ -5080,3 +5080,4 @@ devel/py-pyyaml_env_tag|devel/py-pyyaml-env-tag|2026-01-15|Rename to match upstr
 www/py-aiohttp_cors|www/py-aiohttp-cors|2026-01-15|Rename to match upstream naming
 lang/cython3|lang/cython|2026-01-15|Remove obsoleted port. Use lang/cython instead
 multimedia/gpac-mp4box|multimedia/gpac|2026-01-15|Merge mp4box and libgpac and add gpac
+java/openjdk18||2026-01-16|Has expired: No longer supported by upstream
