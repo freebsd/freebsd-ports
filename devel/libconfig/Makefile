@@ -1,5 +1,5 @@
 PORTNAME=	libconfig
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	devel
 MASTER_SITES=	https://hyperrealm.github.io/${PORTNAME}/dist/
 
