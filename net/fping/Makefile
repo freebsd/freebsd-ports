@@ -1,5 +1,5 @@
 PORTNAME=	fping
-DISTVERSION=	5.3
+DISTVERSION=	5.5
 CATEGORIES=	net
 MASTER_SITES=	http://fping.org/dist/ \
 		https://github.com/schweikert/${PORTNAME}/releases/download/v${DISTVERSION}/
