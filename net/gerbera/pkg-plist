@@ -6,6 +6,7 @@ bin/gerbera
 %%DATADIR%%/js/import.js
 %%DATADIR%%/js/metadata.js
 %%DATADIR%%/js/playlists.js
+%%DATADIR%%/js/shared.js
 %%DATADIR%%/js/trailer.js
 %%DATADIR%%/js/video.js
 %%DATADIR%%/mysql-drop.sql
