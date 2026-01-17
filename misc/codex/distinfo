@@ -1,4 +1,4 @@
-TIMESTAMP = 1768531370
+TIMESTAMP = 1768612303
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/actix-codec-0.5.2.crate) = 5f7b0a21988c1bf877cf4759ef5ddaac04c1c9fe808c9142ecb78ba97d97a28a
@@ -1535,5 +1535,5 @@ SHA256 (nornagon-ratatui-9b2ad1298408c45918ee9f8241a6f95498cdbed2_GH0.tar.gz) = 
 SIZE (nornagon-ratatui-9b2ad1298408c45918ee9f8241a6f95498cdbed2_GH0.tar.gz) = 566574
 SHA256 (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995_GH0.tar.gz) = b49ac342e6b5d9c015f5384690c2a61d6f31c0c3c34aaf1cc22be4956122294c
 SIZE (nornagon-crossterm-87db8bfa6dc99427fd3b071681b07fc31c6ce995_GH0.tar.gz) = 129254
-SHA256 (openai-codex-rust-v0.86.0_GH0.tar.gz) = affd839ee51462bf833500319a5d6dfeb30c76e862be1e6fb6fe170fcfc49cf4
-SIZE (openai-codex-rust-v0.86.0_GH0.tar.gz) = 3720836
+SHA256 (openai-codex-rust-v0.87.0_GH0.tar.gz) = 657806324e2abeb9afb9058cd50fc70f5bd2e153dac6e58e74a5f5c0bc6301ce
+SIZE (openai-codex-rust-v0.87.0_GH0.tar.gz) = 3727020
