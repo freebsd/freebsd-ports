@@ -1,11 +1,8 @@
 PORTNAME=	leptonica
-DISTVERSION=	1.86.0
+DISTVERSION=	1.87.0
 CATEGORIES=	graphics
-MASTER_SITES=	https://github.com/user-attachments/files/22412990/ \
+MASTER_SITES=	https://github.com/DanBloomberg/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		http://www.${PORTNAME}.org/source/
-
-PATCH_SITES=   https://github.com/DanBloomberg/leptonica/commit/
-PATCHFILES=    e0936377f9094b72f7f2ea6bc34311ccc69b2f71.patch:-p1
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
