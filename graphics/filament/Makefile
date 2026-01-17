@@ -1,6 +1,6 @@
 PORTNAME=	filament
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.62.2
+DISTVERSION=	1.68.4
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -56,6 +56,6 @@ post-install:
 	# remove files installed by the improperly bundled spirv-tools package, see https://github.com/google/filament/issues/8965
 	@${FIND} ${STAGEDIR}${PREFIX} -iname "*spirv*" -delete
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/spirv-tools # workaround for the find(1) -delete bug, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=288277
-	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/cmake
+	#@${RMDIR} ${STAGEDIR}${PREFIX}/lib/cmake
 
 .include <bsd.port.mk>
