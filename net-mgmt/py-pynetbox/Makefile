@@ -1,6 +1,5 @@
 PORTNAME=	pynetbox
-DISTVERSION=	7.5.0
-PORTREVISION=	1
+DISTVERSION=	7.6.0
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,17 +29,8 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0<2.0.0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
-
-post-build-DOCS-on:
-	${SETENV} PYTHONPATH=${WRKSRC} ${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} \
-		-d ${WRKDIR} -b html ${WRKSRC}/docs ${WRKSRC}/build/sphinx/html
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/build/sphinx/html && \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} \
-			"! -name .buildinfo -and ! -name objects.inv")
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
