@@ -10,6 +10,9 @@ WWW=		https://threadingbuildingblocks.org/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Project moved to devel/onetbb
+EXPIRATION_DATE=	2026-03-01
+
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le powerpcspe
 ONLY_FOR_ARCHS_REASON=	has not been ported to this platform
 
