@@ -1,5 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.44.6
+DISTVERSION=	3.44.7
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -49,7 +49,6 @@ LIB_DEPENDS=	libabsl_log_internal_check_op.so:devel/abseil \
 		libproj.so:graphics/proj \
 		libprotobuf-lite.so:devel/protobuf \
 		libqca-qt5.so:devel/qca@qt5 \
-		libqjson-qt5.so:devel/qjson \
 		libqscintilla2_qt5.so:devel/qscintilla2@qt5 \
 		libqt5keychain.so:security/qtkeychain@qt5 \
 		libqwt.so:x11-toolkits/qwt6@qt5 \
