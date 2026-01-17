@@ -1,10 +1,9 @@
 PORTNAME=	librewolf
-DISTVERSION=	146.0.1
-PORTREVISION=	1
+DISTVERSION=	147.0.1
 LWPATCH=	-1
 DISTVERSIONSUFFIX=	${LWPATCH}.source
 CATEGORIES=	www wayland
-MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/${PORTNAME}-source/${DISTVERSION}${LWPATCH}/
+MASTER_SITES=	https://codeberg.org/api/packages/librewolf/generic/librewolf-source/${DISTVERSION}${LWPATCH}/
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Custom version of Firefox, focused on privacy, security and freedom
