@@ -1,0 +1,11 @@
+--- intercept-preload/Cargo.toml.orig	2026-01-17 08:20:31 UTC
++++ intercept-preload/Cargo.toml
+@@ -26,7 +26,7 @@ ctor = { version = "0.4" }
+ env_logger.workspace = true
+ ctor = { version = "0.4" }
+ 
+-[target.'cfg(target_os = "linux")'.dependencies]
++[target.'cfg(any(target_os = "linux", target_os = "freebsd"))'.dependencies]
+ libc.workspace = true
+ 
+ [build-dependencies]
