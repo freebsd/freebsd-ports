@@ -1,6 +1,6 @@
---- chrome/browser/ui/sad_tab.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/ui/sad_tab.cc.orig	2026-01-16 13:40:34 UTC
 +++ chrome/browser/ui/sad_tab.cc
-@@ -180,7 +180,7 @@ std::vector<int> SadTab::GetSubMessages() {
+@@ -178,7 +178,7 @@ std::vector<int> SadTab::GetSubMessages() {
        if (!web_contents_->GetBrowserContext()->IsOffTheRecord()) {
          message_ids.insert(message_ids.begin(), IDS_SAD_TAB_RELOAD_INCOGNITO);
        }

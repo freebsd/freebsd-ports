@@ -1,6 +1,6 @@
---- chrome/browser/ui/startup/startup_tab_provider.cc.orig	2025-12-06 13:30:52 UTC
+--- chrome/browser/ui/startup/startup_tab_provider.cc.orig	2026-01-16 13:40:34 UTC
 +++ chrome/browser/ui/startup/startup_tab_provider.cc
-@@ -66,7 +66,7 @@
+@@ -68,7 +68,7 @@
  #include "extensions/common/manifest_handlers/chrome_url_overrides_handler.h"
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/headless/headless_mode_util.h"
  #endif
  
-@@ -124,7 +124,7 @@ bool ValidateUrl(const GURL& url) {
+@@ -137,7 +137,7 @@ bool ValidateUrl(const GURL& url) {
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
    bool url_scheme_is_chrome = false;

@@ -1,4 +1,4 @@
---- mojo/core/channel.cc.orig	2025-12-06 13:30:52 UTC
+--- mojo/core/channel.cc.orig	2026-01-16 13:40:34 UTC
 +++ mojo/core/channel.cc
 @@ -81,7 +81,11 @@ const size_t kMaxAttachedHandles = 64;
  const size_t kMaxAttachedHandles = 253;
@@ -21,7 +21,7 @@
  
  namespace {
  
-@@ -1306,7 +1310,7 @@ bool Channel::OnControlMessage(Message::MessageType me
+@@ -1309,7 +1313,7 @@ bool Channel::OnControlMessage(Message::MessageType me
  }
  
  // Currently only CrOs, Linux, and Android support upgrades.

@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.h.orig	2025-12-06 13:30:52 UTC
+--- chrome/browser/flag_descriptions.h.orig	2026-01-16 13:40:34 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -8590,6 +8590,18 @@ inline constexpr char kHandleMdmErrorsForDasherAccount
+@@ -8622,6 +8622,18 @@ inline constexpr char kHandleMdmErrorsForDasherAccount
  inline constexpr char kHandleMdmErrorsForDasherAccountsDescription[] =
      "Enables the mdm error handling feature for dasher accounts";
  

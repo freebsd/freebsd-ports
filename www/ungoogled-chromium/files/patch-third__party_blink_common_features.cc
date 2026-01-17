@@ -1,15 +1,15 @@
---- third_party/blink/common/features.cc.orig	2025-12-06 13:30:52 UTC
+--- third_party/blink/common/features.cc.orig	2026-01-16 13:40:34 UTC
 +++ third_party/blink/common/features.cc
-@@ -597,7 +597,7 @@ BASE_FEATURE_PARAM(base::TimeDelta,
- BASE_FEATURE(kDevToolsImprovedNetworkError, base::FEATURE_DISABLED_BY_DEFAULT);
+@@ -604,7 +604,7 @@ BASE_FEATURE(kDevToolsImprovedNetworkError, base::FEAT
  
  BASE_FEATURE(kDirectCompositorThreadIpc,
--#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
+-    BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1955,7 +1955,7 @@ BASE_FEATURE(kPrefetchFontLookupTables,
+@@ -1913,7 +1913,7 @@ BASE_FEATURE(kPrefetchFontLookupTables,
  // currently out of scope.
  BASE_FEATURE(kPreloadingEagerHoverHeuristics,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,4 +1,4 @@
---- sandbox/policy/sandbox_type.cc.orig	2025-12-06 13:30:52 UTC
+--- sandbox/policy/sandbox_type.cc.orig	2026-01-16 13:40:34 UTC
 +++ sandbox/policy/sandbox_type.cc
 @@ -12,7 +12,7 @@
  #include "sandbox/policy/mojom/sandbox.mojom.h"
@@ -18,7 +18,7 @@
  constexpr char kPrintBackendSandbox[] = "print_backend";
  constexpr char kScreenAISandbox[] = "screen_ai";
  #endif
-@@ -52,11 +52,11 @@ constexpr char kWindowsSystemProxyResolverSandbox[] = 
+@@ -52,11 +52,11 @@ constexpr char kProxyResolverSandbox[] = "proxy_resolv
  constexpr char kMirroringSandbox[] = "mirroring";
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -36,10 +36,10 @@
  constexpr char kNearbySandbox[] = "nearby";
  #endif  // BUILDFLAG(IS_CHROMEOS)
  
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  constexpr char kOnDeviceTranslationSandbox[] = "on_device_translation";
- #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
  
 @@ -124,7 +124,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
      case Sandbox::kCdm:
@@ -52,7 +52,7 @@
  #if BUILDFLAG(IS_WIN)
 @@ -135,7 +135,7 @@ void SetCommandLineFlagsForSandboxType(base::CommandLi
      case Sandbox::kMediaFoundationCdm:
-     case Sandbox::kWindowsSystemProxyResolver:
+     case Sandbox::kProxyResolver:
  #endif  // BUILDFLAG(IS_WIN)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
@@ -69,8 +69,8 @@
      case Sandbox::kScreenAI:
  #endif
      case Sandbox::kSpeechRecognition:
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      case Sandbox::kOnDeviceTranslation:
  #endif
        DCHECK(command_line->GetSwitchValueASCII(switches::kProcessType) ==
@@ -112,8 +112,8 @@
      case Sandbox::kScreenAI:
        return kScreenAISandbox;
  #endif
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
      case Sandbox::kOnDeviceTranslation:
        return kOnDeviceTranslationSandbox;
  #endif
@@ -148,8 +148,8 @@
      return Sandbox::kScreenAI;
    }
  #endif
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    if (sandbox_string == kOnDeviceTranslationSandbox) {
      return Sandbox::kOnDeviceTranslation;
    }

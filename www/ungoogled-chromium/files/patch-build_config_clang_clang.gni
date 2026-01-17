@@ -1,6 +1,6 @@
---- build/config/clang/clang.gni.orig	2025-11-01 06:40:37 UTC
+--- build/config/clang/clang.gni.orig	2026-01-16 13:40:34 UTC
 +++ build/config/clang/clang.gni
-@@ -88,7 +88,7 @@ declare_args() {
+@@ -90,7 +90,7 @@ declare_args() {
    #
    # TODO(https://crbug.com/440260716): Enable for Cronet in AOSP once gn2bp
    # supports copy targets.

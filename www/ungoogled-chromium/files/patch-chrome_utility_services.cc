@@ -1,6 +1,6 @@
---- chrome/utility/services.cc.orig	2025-12-06 13:30:52 UTC
+--- chrome/utility/services.cc.orig	2026-01-16 13:40:34 UTC
 +++ chrome/utility/services.cc
-@@ -50,7 +50,7 @@
+@@ -51,7 +51,7 @@
  #include "chrome/services/system_signals/mac/mac_system_signals_service.h"
  #endif  // BUILDFLAG(IS_MAC)
  

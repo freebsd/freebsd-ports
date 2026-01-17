@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/policy/web_app_policy_manager.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/web_applications/policy/web_app_policy_manager.cc.orig	2026-01-16 13:40:34 UTC
 +++ chrome/browser/web_applications/policy/web_app_policy_manager.cc
-@@ -135,7 +135,7 @@ GetPreinstalledWebAppsMappingForTesting() {
+@@ -136,7 +136,7 @@ GetPreinstalledWebAppsMappingForTesting() {
  namespace web_app {
  
  BASE_FEATURE(kDesktopPWAsForceUnregisterOSIntegration,

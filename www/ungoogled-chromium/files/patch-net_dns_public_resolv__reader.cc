@@ -1,6 +1,6 @@
---- net/dns/public/resolv_reader.cc.orig	2025-09-10 13:22:16 UTC
+--- net/dns/public/resolv_reader.cc.orig	2026-01-16 13:40:34 UTC
 +++ net/dns/public/resolv_reader.cc
-@@ -34,7 +34,7 @@ std::unique_ptr<ScopedResState> ResolvReader::GetResSt
+@@ -30,7 +30,7 @@ std::unique_ptr<ScopedResState> ResolvReader::GetResSt
  }
  
  bool ResolvReader::IsLikelySystemdResolved() {

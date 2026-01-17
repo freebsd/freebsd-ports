@@ -1,4 +1,4 @@
---- base/threading/platform_thread_posix.cc.orig	2025-10-21 16:57:35 UTC
+--- base/threading/platform_thread_posix.cc.orig	2026-01-16 13:40:34 UTC
 +++ base/threading/platform_thread_posix.cc
 @@ -80,6 +80,7 @@ void* ThreadFunc(void* params) {
        base::DisallowSingleton();
@@ -35,47 +35,26 @@
    if (from >= to) {
      // Decreasing thread priority on POSIX is always allowed.
      return true;
-@@ -372,12 +379,18 @@ bool PlatformThreadBase::CanChangeThreadType(ThreadTyp
+@@ -372,10 +379,15 @@ bool PlatformThreadBase::CanChangeThreadType(ThreadTyp
    }
  
    return internal::CanLowerNiceTo(internal::ThreadTypeToNiceValue(to));
 +#endif
  }
  
- namespace internal {
- 
- void SetCurrentThreadTypeImpl(ThreadType thread_type,
-                               MessagePumpType pump_type_hint) {
-+#if BUILDFLAG(IS_BSD)
-+  // pledge(2) violation
-+  NOTIMPLEMENTED();
-+  return;
-+#else
-   if (internal::SetCurrentThreadTypeForPlatform(thread_type, pump_type_hint)) {
-     return;
-   }
-@@ -393,12 +406,17 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
-     DVPLOG(1) << "Failed to set nice value of thread ("
-               << PlatformThread::CurrentId() << ") to " << nice_setting;
-   }
-+#endif
- }
- 
- }  // namespace internal
- 
  // static
- ThreadPriorityForTest PlatformThreadBase::GetCurrentThreadPriorityForTest() {
+ ThreadType PlatformThreadBase::GetCurrentEffectiveThreadTypeForTest() {
 +#if BUILDFLAG(IS_BSD)
 +  NOTIMPLEMENTED();
-+  return ThreadPriorityForTest::kNormal;
++  return ThreadType::kDefault;
 +#else
    // Mirrors SetCurrentThreadPriority()'s implementation.
    auto platform_specific_priority =
-       internal::GetCurrentThreadPriorityForPlatformForTest();  // IN-TEST
-@@ -409,6 +427,7 @@ ThreadPriorityForTest PlatformThreadBase::GetCurrentTh
+       internal::GetCurrentEffectiveThreadTypeForPlatformForTest();  // IN-TEST
+@@ -386,6 +398,7 @@ ThreadType PlatformThreadBase::GetCurrentEffectiveThre
    int nice_value = internal::GetCurrentThreadNiceValue();
  
-   return internal::NiceValueToThreadPriorityForTest(nice_value);  // IN-TEST
+   return internal::NiceValueToThreadTypeForTest(nice_value);  // IN-TEST
 +#endif
  }
  

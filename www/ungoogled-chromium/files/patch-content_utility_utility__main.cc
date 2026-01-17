@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2025-12-06 13:30:52 UTC
+--- content/utility/utility_main.cc.orig	2026-01-16 13:40:34 UTC
 +++ content/utility/utility_main.cc
 @@ -38,22 +38,31 @@
  #include "services/on_device_model/public/mojom/on_device_model_service.mojom.h"
@@ -33,16 +33,16 @@
  #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION)
  #include "gpu/config/gpu_info_collector.h"
  #include "media/gpu/sandbox/hardware_video_encoding_sandbox_hook_linux.h"
-@@ -111,7 +120,7 @@
- sandbox::TargetServices* g_utility_target_services = nullptr;
+@@ -112,7 +121,7 @@ sandbox::TargetServices* g_utility_target_services = n
  #endif  // BUILDFLAG(IS_WIN)
  
--#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
+ #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
  #include "components/services/on_device_translation/sandbox_hook.h"
- #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && BUILDFLAG(IS_LINUX)
- 
-@@ -119,7 +128,7 @@ namespace content {
+ #endif  // BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) &&  (BUILDFLAG(IS_LINUX) ||
+         // BUILDFLAG(IS_CHROMEOS))
+@@ -121,7 +130,7 @@ namespace content {
  
  namespace {
  
@@ -51,7 +51,7 @@
  std::vector<std::string> GetNetworkContextsParentDirectories() {
    base::MemoryMappedFile::Region region;
    base::ScopedFD read_pipe_fd = base::FileDescriptorStore::GetInstance().TakeFD(
-@@ -275,7 +284,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -277,7 +286,7 @@ int UtilityMain(MainFunctionParams parameters) {
      CHECK(on_device_model::PreSandboxInit());
    }
  
@@ -60,7 +60,7 @@
  
  #if BUILDFLAG(USE_LINUX_VIDEO_ACCELERATION) && BUILDFLAG(USE_VAAPI)
    // Regardless of the sandbox status, the VaapiWrapper needs to be initialized
-@@ -290,7 +299,10 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -292,7 +301,10 @@ int UtilityMain(MainFunctionParams parameters) {
    // thread type change in ChildProcess constructor. It also needs to be
    // registered before the process has multiple threads, which may race with
    // application of the sandbox.
@@ -71,16 +71,16 @@
  
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
-@@ -322,7 +334,7 @@ int UtilityMain(MainFunctionParams parameters) {
-       pre_sandbox_hook =
+@@ -325,7 +337,7 @@ int UtilityMain(MainFunctionParams parameters) {
            base::BindOnce(&speech::SpeechRecognitionPreSandboxHook);
        break;
--#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))
+ #if BUILDFLAG(ENABLE_ON_DEVICE_TRANSLATION) && \
+-    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
++    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
      case sandbox::mojom::Sandbox::kOnDeviceTranslation:
        pre_sandbox_hook = base::BindOnce(
            &on_device_translation::OnDeviceTranslationSandboxHook);
-@@ -338,7 +350,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -342,7 +354,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #else
        NOTREACHED();
  #endif
@@ -89,7 +89,7 @@
      case sandbox::mojom::Sandbox::kShapeDetection:
        pre_sandbox_hook =
            base::BindOnce(&shape_detection::ShapeDetectionPreSandboxHook);
-@@ -367,6 +379,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -371,6 +383,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -97,7 +97,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox_options.use_amd_specific_policies =
-@@ -374,6 +387,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -378,6 +391,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

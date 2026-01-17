@@ -1,6 +1,6 @@
---- chrome/browser/platform_util_linux.cc.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/platform_util_linux.cc.orig	2026-01-16 13:40:34 UTC
 +++ chrome/browser/platform_util_linux.cc
-@@ -301,7 +301,9 @@ void OnLaunchOptionsCreated(const std::string& command
+@@ -297,7 +297,9 @@ void OnLaunchOptionsCreated(const std::string& command
    argv.push_back(command);
    argv.push_back(arg);
    options.current_directory = working_directory;

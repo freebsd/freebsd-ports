@@ -1,4 +1,4 @@
---- net/socket/udp_socket_unittest.cc.orig	2025-10-21 16:57:35 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2026-01-16 13:40:34 UTC
 +++ net/socket/udp_socket_unittest.cc
 @@ -396,7 +396,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);
@@ -36,7 +36,7 @@
  #define MAYBE_SharedMulticastAddress DISABLED_SharedMulticastAddress
  #else
  #define MAYBE_SharedMulticastAddress SharedMulticastAddress
-@@ -849,7 +849,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
+@@ -846,7 +846,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
                                  NetLogSource());
    ASSERT_THAT(client_socket.Connect(send_address), IsOk());
  

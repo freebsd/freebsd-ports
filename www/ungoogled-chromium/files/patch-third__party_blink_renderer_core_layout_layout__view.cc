@@ -1,4 +1,4 @@
---- third_party/blink/renderer/core/layout/layout_view.cc.orig	2025-09-10 13:22:16 UTC
+--- third_party/blink/renderer/core/layout/layout_view.cc.orig	2026-01-16 13:40:34 UTC
 +++ third_party/blink/renderer/core/layout/layout_view.cc
 @@ -75,7 +75,7 @@
  #include "ui/display/screen_info.h"
@@ -9,7 +9,7 @@
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -790,7 +790,7 @@ void LayoutView::LayoutRoot() {
+@@ -801,7 +801,7 @@ void LayoutView::LayoutRoot() {
      intrinsic_logical_widths_ = LogicalWidth();
    }
  
