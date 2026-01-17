@@ -1,11 +1,12 @@
 PORTNAME=	miniaudio
-DISTVERSION=	0.11.21 # upstream sometimes doesn't tag the repository
+DISTVERSION=	0.11.24 # upstream sometimes doesn't tag the repository
 PORTEPOCH=	1
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C single header audio playback and capture library
-WWW=		https://miniaud.io/
+WWW=		https://miniaud.io/ \
+		https://github.com/mackron/miniaudio
 
 LICENSE=	PD MIT
 LICENSE_COMB=	dual
@@ -20,7 +21,8 @@ GH_ACCOUNT=	mackron
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	include/miniaudio/miniaudio.h include/miniaudio/extras/stb_vorbis.c
+PLIST_FILES=	include/miniaudio/miniaudio.h \
+		include/miniaudio/extras/stb_vorbis.c
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}/extras
