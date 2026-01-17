@@ -1,6 +1,6 @@
---- chrome/browser/first_run/first_run_internal_linux.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/first_run/first_run_internal_linux.cc.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/first_run/first_run_internal_linux.cc
-@@ -21,7 +21,13 @@ bool IsOrganicFirstRun() {
+@@ -20,7 +20,13 @@ bool IsOrganicFirstRun() {
  base::FilePath InitialPrefsPath() {
    // The standard location of the initial prefs is next to the chrome binary.
    base::FilePath dir_exe;

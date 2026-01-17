@@ -1,4 +1,4 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2025-12-10 15:04:57 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2026-01-16 14:21:21 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
 @@ -152,7 +152,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
    ASSERT_EQ("CrOS", pieces[0]);
@@ -18,7 +18,7 @@
          "X11; Linux x86_64";
  #elif BUILDFLAG(IS_MAC)
          "Macintosh; Intel Mac OS X 10_15_7";
-@@ -720,7 +720,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
+@@ -722,7 +722,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
  #endif
  #elif BUILDFLAG(IS_ANDROID)
    EXPECT_EQ(metadata.platform, "Android");

@@ -1,5 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2026.01.143.4
+PORTVERSION=	2026.01.144
 PULSEMV=	16
 PULSEV=		${PULSEMV}.1
 CATEGORIES=	www wayland
@@ -276,7 +276,7 @@ pre-configure:
 		--config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
 	${MKDIR} ${FFMPEG_CDIR}
-.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+.for _e in config.h config.asm config_components.asm config_components.h libavcodec libavformat libavutil
 	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 	touch ${WRKDIR}/pulseaudio-${PULSEV}/src/pulse/version.h

@@ -1,6 +1,6 @@
---- chrome/browser/intranet_redirect_detector.h.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/intranet_redirect_detector.h.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/intranet_redirect_detector.h
-@@ -25,7 +25,7 @@ class SimpleURLLoader;
+@@ -26,7 +26,7 @@ class SimpleURLLoader;
  class PrefRegistrySimple;
  
  #if !(BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \

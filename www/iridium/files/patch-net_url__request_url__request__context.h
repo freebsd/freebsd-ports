@@ -1,6 +1,6 @@
---- net/url_request/url_request_context.h.orig	2025-12-10 15:04:57 UTC
+--- net/url_request/url_request_context.h.orig	2026-01-16 14:21:21 UTC
 +++ net/url_request/url_request_context.h
-@@ -86,7 +86,7 @@ class NET_EXPORT URLRequestContext final {
+@@ -89,7 +89,7 @@ class NET_EXPORT URLRequestContext final {
    // session.
    const HttpNetworkSessionContext* GetNetworkSessionContext() const;
  

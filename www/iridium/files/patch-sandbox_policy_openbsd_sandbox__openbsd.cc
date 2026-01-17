@@ -1,6 +1,6 @@
---- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2025-12-10 15:04:57 UTC
+--- sandbox/policy/openbsd/sandbox_openbsd.cc.orig	2026-01-16 14:21:21 UTC
 +++ sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,396 @@
+@@ -0,0 +1,403 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -73,6 +73,7 @@
 +#define _UNVEIL_UTILITY_NETWORK	"/etc/iridium/unveil.utility_network";
 +#define _UNVEIL_UTILITY_AUDIO	"/etc/iridium/unveil.utility_audio";
 +#define _UNVEIL_UTILITY_VIDEO	"/etc/iridium/unveil.utility_video";
++#define _UNVEIL_CDM		"/etc/iridium/unveil.cdm";
 +
 +namespace sandbox {
 +namespace policy {
@@ -218,6 +219,9 @@
 +    case sandbox::mojom::Sandbox::kVideoCapture:
 +      ufile = _UNVEIL_UTILITY_VIDEO;
 +      break;
++    case sandbox::mojom::Sandbox::kCdm:
++      ufile = _UNVEIL_CDM;
++      break;
 +    default:
 +      unveil("/dev/null", "r");
 +      goto done;
@@ -353,6 +357,9 @@
 +      break;
 +    case sandbox::mojom::Sandbox::kVideoCapture:
 +      SetPledge(NULL, "/etc/iridium/pledge.utility_video");
++      break;
++    case sandbox::mojom::Sandbox::kCdm:
++      SetPledge("stdio rpath flock recvfd sendfd", NULL);
 +      break;
 +    case sandbox::mojom::Sandbox::kUtility:
 +    case sandbox::mojom::Sandbox::kService:

@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2025-12-10 15:04:57 UTC
+--- content/browser/BUILD.gn.orig	2026-01-16 14:21:21 UTC
 +++ content/browser/BUILD.gn
-@@ -89,6 +89,7 @@ source_set("browser") {
+@@ -88,6 +88,7 @@ source_set("browser") {
    frameworks = []
    ldflags = []
  
@@ -8,7 +8,7 @@
    deps = [
      "//base",
      "//base:base_static",
-@@ -102,6 +103,7 @@ source_set("browser") {
+@@ -101,6 +102,7 @@ source_set("browser") {
      "//cc/animation",
      "//cc/mojo_embedder",
      "//cc/paint",
@@ -16,7 +16,7 @@
      "//components/attribution_reporting:data_host_mojom",
      "//components/attribution_reporting:mojom",
      "//components/back_forward_cache:enum",
-@@ -132,6 +134,7 @@ source_set("browser") {
+@@ -130,6 +132,7 @@ source_set("browser") {
      "//components/optimization_guide/core",
      "//components/optimization_guide/core:features",
      "//components/optimization_guide/public/mojom",
@@ -24,7 +24,7 @@
      "//components/payments/content/icon",
      "//components/payments/mojom",
      "//components/performance_manager/scenario_api",
-@@ -2612,6 +2615,14 @@ source_set("browser") {
+@@ -2607,6 +2610,14 @@ source_set("browser") {
      ]
    }
  
@@ -39,7 +39,7 @@
    if (is_linux || is_chromeos) {
      sources -=
          [ "file_system_access/file_path_watcher/file_path_watcher_stub.cc" ]
-@@ -2660,6 +2671,15 @@ source_set("browser") {
+@@ -2656,6 +2667,15 @@ source_set("browser") {
    if (allow_oop_video_decoder) {
      sources += [ "media/oop_video_decoder_factory.cc" ]
      deps += [ "//media/mojo/mojom" ]

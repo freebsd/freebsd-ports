@@ -1,6 +1,6 @@
---- components/metrics/drive_metrics_provider.cc.orig	2025-12-10 15:04:57 UTC
+--- components/metrics/drive_metrics_provider.cc.orig	2026-01-16 14:21:21 UTC
 +++ components/metrics/drive_metrics_provider.cc
-@@ -21,7 +21,7 @@
+@@ -20,7 +20,7 @@
  namespace metrics {
  
  namespace {
@@ -9,7 +9,7 @@
  void RecordTriStateMetric(const char* name, std::optional<bool> sample) {
    base::UmaHistogramEnumeration(
        name, !sample.has_value()
-@@ -106,7 +106,7 @@ void DriveMetricsProvider::FillDriveMetrics(
+@@ -105,7 +105,7 @@ void DriveMetricsProvider::FillDriveMetrics(
      drive->set_has_seek_penalty(*response.has_seek_penalty);
    }
  

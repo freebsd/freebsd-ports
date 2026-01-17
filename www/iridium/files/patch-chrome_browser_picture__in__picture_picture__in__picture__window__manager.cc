@@ -1,4 +1,4 @@
---- chrome/browser/picture_in_picture/picture_in_picture_window_manager.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/picture_in_picture/picture_in_picture_window_manager.cc.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/picture_in_picture/picture_in_picture_window_manager.cc
 @@ -21,7 +21,7 @@
  #include "ui/gfx/geometry/resize_utils.h"
@@ -9,7 +9,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -585,7 +585,7 @@ void PictureInPictureWindowManager::SetWindowParams(Na
+@@ -581,7 +581,7 @@ void PictureInPictureWindowManager::SetWindowParams(Na
  bool PictureInPictureWindowManager::IsSupportedForDocumentPictureInPicture(
      const GURL& url) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

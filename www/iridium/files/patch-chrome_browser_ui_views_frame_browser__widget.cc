@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_widget.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/views/frame/browser_widget.cc.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/ui/views/frame/browser_widget.cc
 @@ -52,7 +52,7 @@
  #include "ui/aura/window.h"
@@ -36,7 +36,7 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -531,7 +531,7 @@ void BrowserWidget::OnMenuClosed() {
+@@ -535,7 +535,7 @@ void BrowserWidget::OnMenuClosed() {
  }
  
  void BrowserWidget::SelectNativeTheme() {
@@ -45,7 +45,7 @@
    // Use the regular NativeTheme instance if running incognito mode, regardless
    // of system theme (gtk, qt etc).
    ui::NativeTheme* native_theme = ui::NativeTheme::GetInstanceForNativeUi();
-@@ -572,7 +572,7 @@ void BrowserWidget::OnTouchUiChanged() {
+@@ -576,7 +576,7 @@ void BrowserWidget::OnTouchUiChanged() {
  bool BrowserWidget::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

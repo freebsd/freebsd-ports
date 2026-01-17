@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2025-12-10 15:04:57 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2026-01-16 14:21:21 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -32,7 +32,7 @@ bool IsOnDeviceStorageEnabled() {
  }
@@ -9,7 +9,25 @@
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
  BASE_FEATURE(kEsbDownloadRowPromoFeature,
               "EsbDownloadRowPromo",
-@@ -847,7 +847,7 @@ BASE_FEATURE(kIPHiOSAIHubNewBadge,
+@@ -226,7 +226,7 @@ BASE_FEATURE(kIPHShoppingCollectionFeature,
+ BASE_FEATURE(kIPHSideBySidePinnableFeature,
+              "IPH_SideBySidePinnableFeature",
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -234,7 +234,7 @@ BASE_FEATURE(kIPHSideBySidePinnableFeature,
+ );
+ BASE_FEATURE(kIPHSideBySideTabSwitchFeature,
+              "IPH_SideBySideTabSwitchFeature",
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT
+@@ -872,7 +872,7 @@ BASE_FEATURE(kIPHiOSGeminiContextualCueChip,
  
  #endif  // BUILDFLAG(IS_IOS)
  
@@ -18,7 +36,7 @@
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA)
  BASE_FEATURE(kIPHAutofillBnplAffirmOrZipSuggestionFeature,
               "IPH_AutofillBnplAffirmOrZipSuggestion",
-@@ -1006,7 +1006,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
+@@ -1031,7 +1031,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

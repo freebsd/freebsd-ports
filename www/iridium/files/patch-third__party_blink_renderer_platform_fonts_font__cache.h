@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2025-12-10 15:04:57 UTC
+--- third_party/blink/renderer/platform/fonts/font_cache.h.orig	2026-01-16 14:21:21 UTC
 +++ third_party/blink/renderer/platform/fonts/font_cache.h
 @@ -55,7 +55,7 @@
  #include "third_party/skia/include/core/SkFontMgr.h"
@@ -9,7 +9,7 @@
  #include "ui/gfx/font_fallback_linux.h"
  #endif
  
-@@ -170,7 +170,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -168,7 +168,7 @@ class PLATFORM_EXPORT FontCache final {
  
    static void MaybePreloadSystemFonts();
  
@@ -18,7 +18,7 @@
    // These are needed for calling QueryRenderStyleForStrike, since
    // gfx::GetFontRenderParams makes distinctions based on DSF.
    static float DeviceScaleFactor() { return device_scale_factor_; }
-@@ -246,7 +246,7 @@ class PLATFORM_EXPORT FontCache final {
+@@ -244,7 +244,7 @@ class PLATFORM_EXPORT FontCache final {
        const char* locale_family_name);
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -27,17 +27,8 @@
    static bool GetFontForCharacter(UChar32,
                                    const char* preferred_locale,
                                    gfx::FallbackFontData*);
-@@ -319,7 +319,7 @@ class PLATFORM_EXPORT FontCache final {
-                                    const FontFaceCreationParams&,
-                                    std::string& name);
- 
--#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   static const FontPlatformData* CreateFontPlatformDataForCharacter(
-       SkFontMgr*,
-       UChar32,
-@@ -354,7 +354,7 @@ class PLATFORM_EXPORT FontCache final {
-   bool is_test_font_mgr_ = false;
+@@ -346,7 +346,7 @@ class PLATFORM_EXPORT FontCache final {
+   static int32_t status_font_height_;
  #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

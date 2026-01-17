@@ -1,14 +1,11 @@
---- sandbox/policy/features.cc.orig	2025-12-10 15:04:57 UTC
+--- sandbox/policy/features.cc.orig	2026-01-16 14:21:21 UTC
 +++ sandbox/policy/features.cc
-@@ -17,7 +17,11 @@ namespace sandbox::policy::features {
- #if !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_FUCHSIA)
- // Enables network service sandbox.
- // (Only causes an effect when feature kNetworkServiceInProcess is disabled.)
-+#if BUILDFLAG(IS_BSD)
-+BASE_FEATURE(kNetworkServiceSandbox, base::FEATURE_ENABLED_BY_DEFAULT);
-+#else
- BASE_FEATURE(kNetworkServiceSandbox, base::FEATURE_DISABLED_BY_DEFAULT);
-+#endif
+@@ -154,7 +154,7 @@ bool IsNetworkSandboxSupported() {
+ #endif  // BUILDFLAG(IS_WIN)
  
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
- // Enables a fine-grained seccomp-BPF syscall filter for the network service.
+ bool IsNetworkSandboxEnabled() {
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+   return true;
+ #else
+ #if BUILDFLAG(IS_WIN)

@@ -1,6 +1,6 @@
---- chrome/browser/devtools/remote_debugging_server.h.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/devtools/remote_debugging_server.h.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/devtools/remote_debugging_server.h
-@@ -33,7 +33,7 @@ class RemoteDebuggingServer {
+@@ -43,7 +43,7 @@ class RemoteDebuggingServer {
  
    static void EnableTetheringForDebug();
  

@@ -1,4 +1,4 @@
---- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2025-12-10 15:04:57 UTC
+--- ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc.orig	2026-01-16 14:21:21 UTC
 +++ ui/base/accelerators/global_accelerator_listener/global_accelerator_listener_ozone.cc
 @@ -12,7 +12,7 @@
  #include "ui/base/accelerators/accelerator.h"
@@ -9,16 +9,16 @@
  #include "base/environment.h"
  #include "base/feature_list.h"
  #include "base/nix/xdg_util.h"
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@
  using content::BrowserThread;
  
  namespace {
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_DBUS)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_DBUS)
  BASE_FEATURE(kGlobalShortcutsPortal, base::FEATURE_ENABLED_BY_DEFAULT);
- constexpr char kChannelEnvVar[] = "CHROME_VERSION_EXTRA";
  
-@@ -73,7 +73,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
+ constexpr char kSessionSuffix[] = "_global_shortcuts";
+@@ -49,7 +49,7 @@ GlobalAcceleratorListener* GlobalAcceleratorListener::
      return instance->get();
    }
  

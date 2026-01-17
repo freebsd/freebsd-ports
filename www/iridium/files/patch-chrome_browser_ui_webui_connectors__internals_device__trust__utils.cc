@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
 @@ -8,7 +8,7 @@
  #include "components/enterprise/buildflags/buildflags.h"
@@ -18,7 +18,7 @@
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -182,7 +182,7 @@ connectors_internals::mojom::CertificateMetadataPtr Co
+@@ -181,7 +181,7 @@ connectors_internals::mojom::CertificateMetadataPtr Co
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
