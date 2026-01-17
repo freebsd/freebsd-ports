@@ -3022,6 +3022,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/dist/utils/MsalFrameStatsUtils.mjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/msal-custom-auth.cjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/msal-custom-auth.cjs.map
+%%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/msal-custom-auth.js
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/app/IPublicClientApplication.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/app/PublicClientApplication.d.ts.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-browser/lib/custom-auth-path/types/app/PublicClientNext.d.ts.map
@@ -3761,7 +3762,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/dist/utils/UrlUtils.mjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-browser.cjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-browser.cjs.map
-%%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node-4Jss3kYh.js
+%%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node-C6O_wJLi.js
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node.cjs
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index-node.cjs.map
 %%DATADIR%%/resources/app/node_modules/@azure/msal-common/lib/index.cjs
