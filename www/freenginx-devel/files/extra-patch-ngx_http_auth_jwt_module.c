@@ -1,5 +1,5 @@
---- ../ngx-http-auth-jwt-module-2.3.1/src/ngx_http_auth_jwt_module.c.orig	2025-02-04 20:24:57.122767000 -0500
-+++ ../ngx-http-auth-jwt-module-2.3.1/src/ngx_http_auth_jwt_module.c	2025-02-04 20:25:14.922658000 -0500
+--- ../ngx-http-auth-jwt-module-2.4.0/src/ngx_http_auth_jwt_module.c.orig	2025-02-04 20:24:57.122767000 -0500
++++ ../ngx-http-auth-jwt-module-2.4.0/src/ngx_http_auth_jwt_module.c	2025-02-04 20:25:14.922658000 -0500
 @@ -866,17 +866,10 @@
      jwt_location.data += strlen(COOKIE_PREFIX);
      jwt_location.len -= strlen(COOKIE_PREFIX);

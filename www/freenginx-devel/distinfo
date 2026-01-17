@@ -1,4 +1,4 @@
-TIMESTAMP = 1768675460
+TIMESTAMP = 1768681605
 SHA256 (freenginx-1.29.4.tar.gz) = 51a596451e334b51ce8cef1291b576ed601ed557e1b500e6c1a77a469d603e27
 SIZE (freenginx-1.29.4.tar.gz) = 1249883
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -35,8 +35,8 @@ SHA256 (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = a58feb576f
 SIZE (dvershinin-nginx_accept_language_module-5683967_GH0.tar.gz) = 3425
 SHA256 (atomx-nginx-http-auth-digest-ac91c88_GH0.tar.gz) = 31b2a737d3d5d118a286a0b8a6e2637eda313dba07a9a5824e4c6e33ea6e2b80
 SIZE (atomx-nginx-http-auth-digest-ac91c88_GH0.tar.gz) = 17890
-SHA256 (TeslaGov-ngx-http-auth-jwt-module-2.3.1_GH0.tar.gz) = a3865859a1476bd5e8a1468d9dee23d46c716b6b932649fde04238748eafe6d5
-SIZE (TeslaGov-ngx-http-auth-jwt-module-2.3.1_GH0.tar.gz) = 32459
+SHA256 (TeslaGov-ngx-http-auth-jwt-module-2.4.0_GH0.tar.gz) = c98c4aa7ea33061f474060041666e4e5b9d188b43bb923fc4c8786e4a04463ba
+SIZE (TeslaGov-ngx-http-auth-jwt-module-2.4.0_GH0.tar.gz) = 31288
 SHA256 (stnoonan-spnego-http-auth-nginx-module-v1.1.3_GH0.tar.gz) = 0e1e54f8ab7d76f922881f13d870edf8b820ef645b19013774c825110d011640
 SIZE (stnoonan-spnego-http-auth-nginx-module-v1.1.3_GH0.tar.gz) = 32975
 SHA256 (kvspb-nginx-auth-ldap-241200e_GH0.tar.gz) = d3aa3a5ead311b34059d6ab1b6d2cf3ac8269c47a87b768523c07381229db470
