@@ -1,6 +1,5 @@
 PORTNAME=	Clipper2
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/AngusJohnson/${PORTNAME}/releases/download/${PORTNAME}_${DISTVERSION}/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
@@ -10,12 +9,16 @@ COMMENT=	A Polygon Clipping and Offsetting library (in C++, C\# & Delphi)
 WWW=		https://github.com/AngusJohnson/Clipper2
 
 LICENSE=	BSL
-LICENSE_FILE=	${WRKSRC}/../License.txt
 
-USES=	cmake compiler:c++17-lang dos2unix zip
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-WRKSRC_SUBDIR=	CPP
+USES=		cmake:testing compiler:c++17-lang dos2unix pathfix zip
+
 NO_WRKSUBDIR=	yes
+WRKSRC_SUBDIR=	CPP
+
+CMAKE_TESTING_ON=	USE_EXTERNAL_GTEST \
+			CLIPPER2_TESTS
 
 CMAKE_OFF=	CLIPPER2_EXAMPLES \
 		CLIPPER2_TESTS 
