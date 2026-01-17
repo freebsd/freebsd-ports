@@ -1,6 +1,7 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.31.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
 		https://Lindera.dev/:dic_upstream \
@@ -34,12 +35,13 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	libgit2>=0:devel/libgit2
-LIB_DEPENDS=	libzstd.so:archivers/zstd \
-		libonig.so:devel/oniguruma
+LIB_DEPENDS=	libonig.so:devel/oniguruma \
+		libzstd.so:archivers/zstd
 
 BROKEN_i386=	fails to build
 USES=		cargo pkgconfig
 USE_GITHUB=	yes
+USE_RC_SUBR=	${PORTNAME}
 
 #GH_TUPLE=		meilisearch:lmdb:6a01c0a:lmdb/../lmdb-rs-501aa34a1ab7f092e3ff54a6c22ff6c55931a2d8/lmdb-sys/lmdb
 DASHBOARD_VERSION=	0.2.22
