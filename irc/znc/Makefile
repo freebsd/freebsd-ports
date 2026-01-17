@@ -1,9 +1,12 @@
 PORTNAME=	znc
 DISTVERSION=	1.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	https://znc.in/releases/ \
 		https://znc.in/releases/archive/
+
+PATCH_SITES=	https://github.com/znc/znc/commit/
+PATCHFILES=	49af1c8d53031e83877d3a378682dee9b834123b.patch:-p1
 
 MAINTAINER=	dbaio@FreeBSD.org
 COMMENT=	Advanced IRC bouncer
