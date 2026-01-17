@@ -7550,6 +7550,7 @@
     SUBDIR += rubygem-hashdiff
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
+    SUBDIR += rubygem-hashie-gitlab
     SUBDIR += rubygem-hashie-forbidden_attributes
     SUBDIR += rubygem-health_check
     SUBDIR += rubygem-health_check-rails-gitlab
@@ -8067,6 +8068,7 @@
     SUBDIR += rubygem-slow_enumerator_tools
     SUBDIR += rubygem-smart_properties
     SUBDIR += rubygem-snaky_hash
+    SUBDIR += rubygem-snaky_hash-gitlab
     SUBDIR += rubygem-snowplow-tracker
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-solve

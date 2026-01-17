@@ -110,7 +110,7 @@ MY_DEPENDS=	gitaly>=${GITLAB_VERSION}:devel/gitaly \
 	rubygem-graphql>=2.5.11<2.6:devel/rubygem-graphql \
 	rubygem-apollo_upload_server>=2.1.6<2.2:net/rubygem-apollo_upload_server \
 	rubygem-ffaker>=2.25.0<3:devel/rubygem-ffaker \
-	rubygem-hashie>=5.0.0<5.1:devel/rubygem-hashie \
+	rubygem-hashie-gitlab>=5.0.0<5.1:devel/rubygem-hashie-gitlab \
 	rubygem-kaminari-rails-gitlab>=1.2.2<1.3:www/rubygem-kaminari-rails-gitlab \
 	rubygem-hamlit-gitlab>=3.0.3<3.1:www/rubygem-hamlit-gitlab \
 	rubygem-carrierwave-gitlab>=1.3.4<2.0:www/rubygem-carrierwave-gitlab \
