@@ -1,13 +1,15 @@
 PORTNAME=	wordgrinder
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors
 
 MAINTAINER=	vmagerya@gmail.com
 COMMENT=	Simple Unicode-aware console and X11-based word processor
 WWW=		https://cowlark.com/wordgrinder/
 
-BROKEN_FreeBSD_14=	Fails to build with llvm16 use of undeclared identifier 'KEY_EVENT'
+BROKEN=		Fails to build with llvm16 use of undeclared identifier 'KEY_EVENT'
+DEPRECATED=	broken since 2023, maintainer AWOL
+EXPIRATION_DATE=	2026-03-31
 
 RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR}
 
