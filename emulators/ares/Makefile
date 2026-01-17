@@ -1,6 +1,7 @@
 PORTNAME=	ares
 DISTVERSIONPREFIX=	v
 DISTVERSION=	147
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://github.com/${PORTNAME}-emulator/${PORTNAME}/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	${PORTNAME}-source
@@ -17,6 +18,10 @@ WWW=		https://ares-emu.net
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+# Needs resolution by upstream, see also
+# https://github.com/ares-emulator/ares/issues/2350
+BROKEN_i386=	unsigned long long to size_type narrowing conversion issue introduced in version 147
 
 BUILD_DEPENDS=	librashader>0:devel/librashader
 
