@@ -12,6 +12,7 @@ lib/ocp/autoload/95-playit.so
 lib/ocp/autoload/95-playmp2.so
 lib/ocp/autoload/95-playogg.so
 lib/ocp/autoload/95-playopl.so
+lib/ocp/autoload/95-playqoa.so
 lib/ocp/autoload/95-playsid.so
 lib/ocp/autoload/95-playtimidity.so
 lib/ocp/autoload/95-playwav.so
@@ -21,6 +22,7 @@ lib/ocp/autoload/freverb.so
 lib/ocp/autoload/ireverb.so
 lib/ocp/libocp.so
 share/man/man1/ocp.1.gz
+share/mime/audio/qoa.xml
 share/mime/audio/x-a2m.xml
 share/mime/audio/x-adl.xml
 share/mime/audio/x-adlib-midi.xml

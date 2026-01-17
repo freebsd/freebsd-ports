@@ -1,6 +1,5 @@
 PORTNAME=	ocp
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
 
-BUILD_DEPENDS=	xa65:devel/xa65
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		xa65:devel/xa65
 LIB_DEPENDS=	libancient.so:archivers/ancient \
 		libcjson.so:devel/libcjson \
 		libdiscid.so:audio/libdiscid \
@@ -98,6 +98,9 @@ TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 .if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|sed|gsed|g' ${WRKSRC}/stuff/Makefile
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp
