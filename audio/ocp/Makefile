@@ -1,5 +1,5 @@
 PORTNAME=	ocp
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
@@ -98,9 +98,6 @@ TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 .if ${COMPILER_TYPE} == clang
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|sed|gsed|g' ${WRKSRC}/stuff/Makefile
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp
