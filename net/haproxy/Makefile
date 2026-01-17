@@ -1,5 +1,6 @@
 PORTNAME=	haproxy
 DISTVERSION=	3.2.10
+PORTREVISION=	1
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/3.2/src/
 
@@ -77,7 +78,7 @@ OPTIONS_DEFAULT+=	OPENSSL
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:M*quictls}
+.if ${SSL_DEFAULT:Mlibressl*} || ${SSL_DEFAULT:M*quictls} || (${SSL_DEFAULT:Mbase} && ${OSVERSION} >= 1500000)
 OPENSSL_MAKE_ARGS+=	USE_QUIC=1
 .else
 OPENSSL_MAKE_ARGS+=	USE_QUIC=1 USE_QUIC_OPENSSL_COMPAT=1
