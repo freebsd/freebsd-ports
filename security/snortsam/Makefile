@@ -1,6 +1,6 @@
 PORTNAME=	snortsam
 PORTVERSION=	2.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snortsam.net/files/snortsam/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -13,6 +13,12 @@ OPTIONS_DEFINE=	IPFW SAMTOOL DEBUG DOCS
 OPTIONS_DEFAULT=	IPFW SAMTOOL
 IPFW_DESC=	checks if configured tables are available
 SAMTOOL_DESC=	install samtool
+
+# https://reviews.freebsd.org/D41651
+BROKEN_FreeBSD_15=	requires no longer supported ioctl(DIOCGETSTATUS)
+
+DEPRECATED=    dead upstream, broken on FreeBSD 15
+EXPIRATION_DATE=       2026-03-31
 
 .include <bsd.port.pre.mk>
 
