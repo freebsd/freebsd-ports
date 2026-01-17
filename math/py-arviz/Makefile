@@ -1,6 +1,6 @@
 PORTNAME=	arviz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0
+DISTVERSION=	0.23.1
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # missing test files
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dm-tree>=0.1.8:devel/py-dm-tree@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pandas>=2.1.0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.11.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h5netcdf>=1.0.2:science/py-h5netcdf@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.1.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray>=2023.7.0:devel/py-xarray@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xarray-einstats>=0.3:devel/py-xarray-einstats@${PY_FLAVOR}
@@ -42,6 +43,6 @@ TEST_ENV=	${MAKE_ENV} \
 		DISPLAY=${DISPLAY} \
 		XAUTHORITY=${XAUTHORITY}
 
-# tests as of 0.22.0: 2930 passed, 30 skipped, 128 warnings, 613 errors in 1228.57s (0:20:28), see https://github.com/arviz-devs/arviz/issues/2462
+# tests as of 0.23.1: 2932 passed, 30 skipped, 147 warnings, 614 errors in 48.34s
 
 .include <bsd.port.mk>
