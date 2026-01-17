@@ -125,6 +125,7 @@
     SUBDIR += ufs_copy
     SUBDIR += unionfs
     SUBDIR += unreliablefs
+    SUBDIR += versitygw
     SUBDIR += webdavfs
     SUBDIR += wimlib
     SUBDIR += xfsm

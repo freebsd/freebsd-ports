@@ -1,0 +1,20 @@
+[
+{ type: install
+  message: <<EOM
+Versitygw requires at minimum a secret key and an access key to be specified,
+either on the command line to run in the foreground, or as rc variables:
+
+/usr/local/bin/versitygw \
+	--access easy \
+	--secret squirrel \
+	--readonly \
+	--port localhost:7070 \
+	posix /var/empty
+
+There are many additional parameters that can be specified, see the wiki at
+https://github.com/versity/versitygw/wiki/ and --help output for details,
+and add them to versitygw-options in your rc.conf.
+
+EOM
+}
+]
