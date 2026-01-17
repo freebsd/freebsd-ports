@@ -1,11 +1,23 @@
---- CMakeLists.txt.orig	2025-11-30 01:30:39 UTC
+--- CMakeLists.txt.orig	2025-11-15 08:41:27 UTC
 +++ CMakeLists.txt
-@@ -53,7 +53,7 @@ option(
-   "Force optimized build, even with debugging enabled"
-   OFF
- )
--option(MANIFOLD_TEST "Enable testing suite" ON)
-+option(MANIFOLD_TEST "Enable testing suite" OFF)
- option(MANIFOLD_PYBIND "Build python bindings" OFF)
- # MANIFOLD_CBIND is only available when MANIFOLD_CROSS_SECTION is enabled
- cmake_dependent_option(
+@@ -171,13 +171,13 @@ else()
+     endif()
+   endif()
+   list(APPEND MANIFOLD_FLAGS ${WARNING_FLAGS})
+-  if(
+-    MANIFOLD_OPTIMIZED
+-    OR "${CMAKE_BUILD_TYPE}" STREQUAL "Release"
+-    OR "${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"
+-  )
+-    list(APPEND MANIFOLD_FLAGS -O3)
+-  endif()
++#  if(
++#    MANIFOLD_OPTIMIZED
++#    OR "${CMAKE_BUILD_TYPE}" STREQUAL "Release"
++#    OR "${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo"
++#  )
++#    list(APPEND MANIFOLD_FLAGS -O3)
++#  endif()
+   if("${CMAKE_BUILD_TYPE}" STREQUAL "RelWithDebInfo")
+     list(APPEND MANIFOLD_FLAGS -fno-omit-frame-pointer)
+   endif()
