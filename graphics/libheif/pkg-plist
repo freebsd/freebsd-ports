@@ -24,6 +24,7 @@ include/libheif/heif_regions.h
 include/libheif/heif_security.h
 include/libheif/heif_sequences.h
 include/libheif/heif_tai_timestamps.h
+include/libheif/heif_text.h
 include/libheif/heif_tiling.h
 include/libheif/heif_uncompressed.h
 include/libheif/heif_version.h

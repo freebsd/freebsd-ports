@@ -1,5 +1,5 @@
 PORTNAME=	libheif
-DISTVERSION=	1.20.1
+DISTVERSION=	1.21.2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libsharpyuv.so:graphics/webp
 
-USES=		cmake:testing compiler:c++11-lang cpe gettext-runtime gnome \
+USES=		cmake:testing compiler:c++20-lang cpe gettext-runtime gnome \
 		localbase:ldflags pathfix pkgconfig
 CPE_VENDOR=	struktur
 USE_GNOME=	gdkpixbuf glib20
