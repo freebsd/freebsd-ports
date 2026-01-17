@@ -1,6 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	26.2.5.16
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
@@ -169,6 +170,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/erl_call
 	${LN} -sf ../lib/${_ERLANG_LIB}/lib/snmp-${_SNMP_VSN}/bin/snmpc \
 		${STAGEDIR}${PREFIX}/bin/snmpc
+	# avoid conflict with very common binary from other ports
+	${MV} ${STAGEDIR}${PREFIX}/bin/typer ${STAGEDIR}${PREFIX}/bin/erl_typer
 
 post-install-CORBA-on:
 	cd ${WRKSRC_corba} && \
