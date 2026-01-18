@@ -1,6 +1,5 @@
 PORTNAME=	tt-rss
-DISTVERSION=	g20251222
-PORTREVISION=	4
+DISTVERSION=	g20260117
 PORTEPOCH=	2
 CATEGORIES=	www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -16,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 USES=		gettext-tools php:cli,web,flavors shebangfix
 
 USE_GITHUB=	yes
-GH_TAGNAME=	adf7677041f22c6fd69bbcb8aaf779a170f80d81
+GH_TAGNAME=	b3a89920a0ca903e52795c333e5d6834ea87c987
 # phe json/openssl extension is required but it's statically linked in default php
 USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring pcntl pdo \
 		pdo_pgsql phar posix session simplexml sockets sodium tokenizer \
