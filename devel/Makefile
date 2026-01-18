@@ -5311,6 +5311,7 @@
     SUBDIR += py-moreorless
     SUBDIR += py-moto
     SUBDIR += py-mox
+    SUBDIR += py-mpremote
     SUBDIR += py-mrkd
     SUBDIR += py-msal
     SUBDIR += py-msal-extensions

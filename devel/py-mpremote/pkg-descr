@@ -1,0 +1,3 @@
+mpremote is a tool for interacting remotely with MicroPython devices
+This CLI tool provides an integrated set of utilities to remotely
+interact with and automate a MicroPython device over a serial connection.
