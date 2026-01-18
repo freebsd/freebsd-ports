@@ -1,15 +1,14 @@
-Once released in October 2023, the long-term support version of TYPO3 13 will
-receive bug fixes until April 2026, and we will provide security updates until
-October 2027.
-Frontend rendering presets
+This is the stable version with long-term support (LTS). We provide free
+maintenance bug fixes until June 2026 and security updates until December 2027.
+* Frontend rendering presets
 * Content blocks
 * Improved search, redirects and workspaces
 * Simplified external system integration
 * Top-modern image rendering
 
 System requirements
-* PHP 8.2, 8.3
-* MariaDB 10.4+ / MySQL 8.0+ / PostgreSQL 10.0+ / SQLite 3.8.3+
+* PHP 8.2, 8.3, 8.4, 8.5
+* MariaDB 10.4.3+ / MySQL 8.0.17+ / PostgreSQL 10.0+ / SQLite 3.8.3+
 * Modern Browsers
 * Detailed list of requirements:
-  https://get.typo3.org/version/12#system-requirements
+  https://get.typo3.org/version/13#system-requirements
