@@ -1,0 +1,4 @@
+Perl XS interface to the SipHash algorithm.
+
+This module does only one thing - calculates the SipHash value
+of the given string.
