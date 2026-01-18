@@ -29,6 +29,7 @@ PLIST_FILES=	bin/gurk \
 # avoid address space exhaustion on armv7
 .if ${ARCH:Marmv?}
 LTO_UNSAFE=	yes
+CARGO_PROFILE_RELEASE_LTO=	"false"
 .endif
 
 post-patch:
