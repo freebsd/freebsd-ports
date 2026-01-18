@@ -1,3 +1,3 @@
-TIMESTAMP = 1767884447
-SHA256 (dbus-python-1.3.2.tar.gz) = ad67819308618b5069537be237f8e68ca1c7fcc95ee4a121fe6845b1418248f8
-SIZE (dbus-python-1.3.2.tar.gz) = 605495
+TIMESTAMP = 1766488062
+SHA256 (dbus-python-1.4.0.tar.xz) = c36b28f10ffcc8f1f798aca973bcc132f91f33eb9b6b8904381b4077766043d5
+SIZE (dbus-python-1.4.0.tar.xz) = 168268

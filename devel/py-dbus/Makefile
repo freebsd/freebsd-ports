@@ -1,59 +1,51 @@
 PORTNAME=	dbus
-DISTVERSION=	1.3.2
-PORTREVISION=	1
+DISTVERSION=	1.4.0
 CATEGORIES=	devel gnome python
-MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
+MASTER_SITES=	https://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	dbus-python-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	Python bindings for the D-BUS messaging system
-WWW=		https://dbus.freedesktop.org/doc/dbus-python/
+WWW=		https://gitlab.freedesktop.org/dbus/dbus-python
 
-LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygobject>0:devel/py-pygobject@${PY_FLAVOR}
+LICENSE=	MIT
 
-USES=		gettext gmake libtool pathfix pkgconfig python
+LIB_DEPENDS=	libdbus-1.so:devel/dbus
+TEST_DEPENDS=	bash:shells/bash
 
+USES=		gnome meson pkgconfig python shebangfix tar:xz
+USE_GNOME=	glib20 pygobject3
 USE_PYTHON=	flavors
+SHEBANG_FILES=	test/run-test.sh \
+		test/*.py
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
-		--disable-api-docs
-INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+MESON_ARGS=	-Dtests=enabled \
+		-Dpython.bytecompile=1
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/dbus-python
+EXAMPLESDIR=	${PREFIX}/share/examples/dbus-python
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	DOCS HTMLDOCS EXAMPLES
 
-HTMLDOCS_IMPLIES=		DOCS
-HTMLDOCS_DESC=			Build and install HTML documentation (requires Sphinx)
-HTMLDOCS_CONFIGURE_ENABLE=	documentation
-HTMLDOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx \
+DOCS_DESC=			Build and install HTML documentation (requires Sphinx)
+DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx \
 				${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
+DOCS_MESON_ENABLED=		doc
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/bin/bash|/bin/sh|' ${WRKSRC}/test/TestSuitePythonService.service.in
 
-post-patch-DOCS-on:
-	@${REINPLACE_CMD} -e 's|HEADERS install-dist_docDATA|HEADERS|g ; \
-		s|PYTHON install-nodist_docDATA|PYTHON|g' \
-			${WRKSRC}/Makefile.in
-
-post-install:
-	@${RM} -r ${STAGEDIR}${DOCSDIR}/_sources
-
-	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
-		${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR} && \
-		${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
-
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} && \
 		${INSTALL_DATA} ${WRKSRC}/examples/*.py ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-DOCS-on:
+	@${RM} -Rf ${STAGEDIR}${DOCSDIR}/html/.doctrees/
+	@${RM} -Rf ${STAGEDIR}${DOCSDIR}/html/_sources/
+	@${RM} ${STAGEDIR}${DOCSDIR}/html/.buildinfo
 
 .include <bsd.port.mk>
