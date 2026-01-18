@@ -7,6 +7,8 @@ MASTER_SITES=	LOCAL/cy
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The traditional 4.4BSD /bin/csh C-shell
 
+BROKEN_aarch64=	ld: error: undefined symbol: sbrk
+
 EXTRACT_DEPENDS=	rcs:devel/rcs57
 
 USES=		tar:bzip2
