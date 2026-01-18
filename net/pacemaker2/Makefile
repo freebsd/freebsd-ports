@@ -16,7 +16,8 @@ LIB_DEPENDS+=		libffi.so:devel/libffi \
 	libp11-kit.so:security/p11-kit \
 	libpcre.so:devel/pcre \
 	libtasn1.so:security/libtasn1 \
-	libunistring.so:devel/libunistring
+	libunistring.so:devel/libunistring \
+	libxml2.so:textproc/libxml2
 
 USES+=	gettext
 
