@@ -1,0 +1,3 @@
+Himitsu is a secure secret storage system for Unix-like systems. It provides an
+arbitrary key/value store (where values may be secret) and a query language for
+manipulating the key store.

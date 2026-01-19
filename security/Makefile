@@ -223,6 +223,7 @@
     SUBDIR += hexl
     SUBDIR += hidden-lake
     SUBDIR += highwayhash
+    SUBDIR += himitsu
     SUBDIR += hitch
     SUBDIR += hockeypuck
     SUBDIR += honeytrap
