@@ -4,10 +4,10 @@ CATEGORIES=	games
 MASTER_SITES=	http://offload1.icculus.org/quake2/files/:retex \
 		http://www.icculus.org/quake2/files/:retex \
 		http://www-personal.umich.edu/~jimw/q2/files/:retex2 \
-		http://www-personal.umich.edu/~jimw/q2/aq2_install/:models
+		LOCAL/danfe:models
 PKGNAMEPREFIX=	${Q2PKGNAMEPREFIX}
 DISTFILES=	#
-DIST_SUBDIR=	${PKGBASE}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME} # ${PKGBASE}
 EXTRACT_ONLY=	#
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -33,7 +33,6 @@ SKINS_DESC=		Install high quality skins
 
 .if ${PORT_OPTIONS:MRETEXTURE_FULL} || ${PORT_OPTIONS:MSKINS}
 BUILD_DEPENDS+=	nwreckdum:archivers/nwreckdum
-PLIST_FILES+=	%%Q2DIR%%/baseq2/pak20.pak
 .endif
 
 .if ${PORT_OPTIONS:MRETEXTURE} && ! ${PORT_OPTIONS:MRETEXTURE_FULL}
