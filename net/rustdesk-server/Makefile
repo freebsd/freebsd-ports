@@ -1,6 +1,5 @@
 PORTNAME=	rustdesk-server
-DISTVERSION=	1.1.14
-PORTREVISION=	9
+DISTVERSION=	1.1.15
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org
@@ -10,12 +9,12 @@ WWW=		https://rustdesk.com/server/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo
+USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rustdesk
 GH_PROJECT=	hbb_common:common
 GH_SUBDIR=	libs/hbb_common:common
-GH_TAGNAME=	49c6b24:common
+GH_TAGNAME=	073403e:common
 USE_RC_SUBR=	rustdesk-hbbr rustdesk-hbbs
 
 USERS=		rustdesk
