@@ -6,11 +6,14 @@ MASTER_SITES=	http://www.dengh.com/missey/
 MASTER_SITES+=	LOCAL/delphij
 DISTNAME=	mps.${PORTVERSION}
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure small and high performance POP3 server
 WWW=		http://dengh.com/missey/index.html
 
 USES=	tar:bzip2
+
+DEPRECATED=		mail/missey has been abandoned for many years
+EXPIRATION_DATE=	2026-03-31
 
 MAKE_ENV+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" WRKSRC="${WRKSRC}" \
 		INSTALL_DATA="${INSTALL_DATA}" MKDIR="${MKDIR}"
