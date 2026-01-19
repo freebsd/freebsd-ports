@@ -1,7 +1,6 @@
 PORTNAME=	galera
 DISTVERSIONPREFIX=	mariadb-
-DISTVERSION=	26.4.22
-PORTREVISION=	2
+DISTVERSION=	26.4.25
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
 
@@ -31,7 +30,7 @@ USES=		cmake compiler:c++11-lang python:build ssl
 
 USE_GITHUB=	yes
 GH_TUPLE?=	mariadb:galera:${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX} \
-		codership:wsrep-API:65608d3f503ba9f4c170fc4e01c539be9fafd46c:dummy/wsrep/src
+		codership:wsrep-API:e8313df29e9329521dced03a4cc558d0cf7d8032:dummy/wsrep/src
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	garb.sh
 
