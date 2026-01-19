@@ -261,6 +261,7 @@ include/thrift/lib/cpp2/async/ServerGeneratorStreamBridge.h
 include/thrift/lib/cpp2/async/ServerPublisherStream.h
 include/thrift/lib/cpp2/async/ServerRequestData.h
 include/thrift/lib/cpp2/async/ServerSinkBridge.h
+include/thrift/lib/cpp2/async/ServerSinkFactory.h
 include/thrift/lib/cpp2/async/ServerStream-inl.h
 include/thrift/lib/cpp2/async/ServerStream.h
 include/thrift/lib/cpp2/async/ServerStreamDetail.h
@@ -318,6 +319,7 @@ include/thrift/lib/cpp2/dynamic/Binary.h
 include/thrift/lib/cpp2/dynamic/DynamicValue.h
 include/thrift/lib/cpp2/dynamic/List.h
 include/thrift/lib/cpp2/dynamic/Map.h
+include/thrift/lib/cpp2/dynamic/Path.h
 include/thrift/lib/cpp2/dynamic/SerializableRecord.h
 include/thrift/lib/cpp2/dynamic/SerializableTypeSystemBuilder.h
 include/thrift/lib/cpp2/dynamic/Serialization.h
@@ -476,7 +478,6 @@ include/thrift/lib/cpp2/protocol/detail/protocol_methods.h
 include/thrift/lib/cpp2/reflection/gmock_matching.h
 include/thrift/lib/cpp2/reflection/helpers.h
 include/thrift/lib/cpp2/reflection/indenter.h
-include/thrift/lib/cpp2/reflection/internal/helpers-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection-inl-post.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection-inl-pre.h
 include/thrift/lib/cpp2/reflection/internal/legacy_reflection_type_id.h
