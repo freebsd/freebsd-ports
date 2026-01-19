@@ -65,7 +65,6 @@
     SUBDIR += jmf
     SUBDIR += jode
     SUBDIR += jrosetta
-    SUBDIR += jta
     SUBDIR += jtiger
     SUBDIR += jump
     SUBDIR += junit
