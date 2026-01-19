@@ -1,4 +1,5 @@
 include/quic/QuicConstants.h
+include/quic/QuicEnum.h
 include/quic/QuicException.h
 include/quic/QuicTLSException.h
 include/quic/QuicTypealiases.h
@@ -58,9 +59,10 @@ include/quic/common/CircularDeque.h
 include/quic/common/ContiguousCursor.h
 include/quic/common/EnumArray.h
 include/quic/common/Expected.h
-include/quic/common/FunctionLooper.h
+include/quic/common/FunctionRef.h
 include/quic/common/IntervalSet-inl.h
 include/quic/common/IntervalSet.h
+include/quic/common/MvfstCheck.h
 include/quic/common/MvfstLogging.h
 include/quic/common/NetworkData.h
 include/quic/common/Optional.h
@@ -128,6 +130,7 @@ include/quic/fizz/handshake/FizzRetryIntegrityTagGenerator.h
 include/quic/fizz/handshake/FizzTransportParameters.h
 include/quic/fizz/handshake/QuicFizzFactory.h
 include/quic/flowcontrol/QuicFlowController.h
+include/quic/folly_utils/BufConv.h
 include/quic/folly_utils/Utils.h
 include/quic/handshake/Aead.h
 include/quic/handshake/CryptoFactory.h
@@ -183,6 +186,7 @@ include/quic/state/AckStates.h
 include/quic/state/AckedPacketIterator.h
 include/quic/state/ClonedPacketIdentifier.h
 include/quic/state/DatagramHandlers.h
+include/quic/state/EarlyDataAppParamsHandler.h
 include/quic/state/LossState.h
 include/quic/state/OutstandingPacket.h
 include/quic/state/QuicAckFrequencyFunctions.h
@@ -191,7 +195,6 @@ include/quic/state/QuicPacingFunctions.h
 include/quic/state/QuicPathManager.h
 include/quic/state/QuicStateFunctions.h
 include/quic/state/QuicStreamFunctions.h
-include/quic/state/QuicStreamGroupRetransmissionPolicy.h
 include/quic/state/QuicStreamManager.h
 include/quic/state/QuicStreamUtilities.h
 include/quic/state/QuicTransportStatsCallback.h
