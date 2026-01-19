@@ -1,9 +1,9 @@
 PORTNAME=	mixlib-shellout
-PORTVERSION=	3.2.5
+PORTVERSION=	3.3.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	nickdewing@gmail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Shell interface that also collects stdout and stderr
 WWW=		https://www.chef.io/
 
