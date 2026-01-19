@@ -864,7 +864,7 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0008_auto_20210516_0940.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0009_alter_mailrule_action_alter_mailrule_folder.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0009_mailrule_assign_tags.py
-%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0010_auto_20220%%PYTHON_SUFFIX%%_1602.py
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0010_auto_20220311_1602.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0011_remove_mailrule_assign_tag.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0011_remove_mailrule_assign_tag_squashed_0024_alter_mailrule_name_and_more.py
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/0012_alter_mailrule_assign_tags.py
@@ -908,8 +908,8 @@ bin/paperless
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0009_alter_mailrule_action_alter_mailrule_folder%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0009_mailrule_assign_tags%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0009_mailrule_assign_tags%%PYTHON_TAG%%.pyc
-%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220%%PYTHON_SUFFIX%%_1602%%PYTHON_TAG%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220%%PYTHON_SUFFIX%%_1602%%PYTHON_TAG%%.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220311_1602%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0010_auto_20220311_1602%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag%%PYTHON_TAG%%.pyc
 %%PYTHON_SITELIBDIR%%/paperless/paperless_mail/migrations/__pycache__/0011_remove_mailrule_assign_tag_squashed_0024_alter_mailrule_name_and_more%%PYTHON_TAG%%.opt-1.pyc
