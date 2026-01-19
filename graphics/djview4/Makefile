@@ -1,38 +1,31 @@
 PORTNAME=	djview
-PORTVERSION=	4.12
-PORTREVISION=	4
+DISTVERSION=	4.12.3
 CATEGORIES=	graphics
-MASTER_SITES=	SF/djvu/DjView/${PORTVERSION}
+MASTER_SITES=	SF/djvu/DjView/${DISTVERSION:R}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Standalone Djvu viewer and plugin based on Qt toolkit
-WWW=		https://djvu.sourceforge.net/
+WWW=		https://djvu.sourceforge.net/djview4.html
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_riscv64=		fails to build: ./npsdk/prcpucfg.h:751:2: Unknown CPU architecture
+BROKEN_riscv64=	fails to build: ./nsdejavu/npsdk/prcpucfg.h:751:2: Unknown CPU architecture
 
 LIB_DEPENDS=	libdjvulibre.so:graphics/djvulibre \
 		libtiff.so:graphics/tiff
 
 USES=		autoreconf desktop-file-utils gettext-runtime gl gmake gnome \
-		libtool localbase pkgconfig qt:5 webplugin:native xorg
-USE_GL=		gl
+		libtool localbase pkgconfig qt:6 xorg
+USE_GL=		opengl
 USE_GNOME=	glib20
-USE_QT=		core gui network opengl printsupport widgets \
-		buildtools:build linguisttools:build qmake:build
-USE_XORG=	sm ice xext xt
+USE_QT=		5compat base tools:build
+USE_XORG=	xext xorgproto xt
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ENV=	LRELEASE="${LRELEASE}" LUPDATE="${LUPDATE}"
 
 INSTALL_TARGET=	install-strip
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}-${PORTVERSION}
-
-WEBPLUGIN_DIR=		${PREFIX}/lib/djview4/plugins
-WEBPLUGIN_FILES=	nsdejavu.so
 
 BINARY_ALIAS=	qmake=${QMAKE}
 
@@ -54,8 +47,8 @@ post-patch:
 		${WRKSRC}/nsdejavu/Makefile.am
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/djview
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/djview
 # Create a symbolic link to match desktop file exec name
-	${LN} -sf djview ${STAGEDIR}${PREFIX}/bin/djview4
+	${RLN} djview ${STAGEDIR}${PREFIX}/bin/djview4
 
 .include <bsd.port.mk>
