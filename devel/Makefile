@@ -8437,8 +8437,7 @@
     SUBDIR += tcl-mmap
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
-    SUBDIR += tcl8-thread
-    SUBDIR += tcl9-thread
+    SUBDIR += tcl-thread
     SUBDIR += tclap
     SUBDIR += tclap12
     SUBDIR += tclbsd

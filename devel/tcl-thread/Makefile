@@ -1,18 +1,18 @@
 PORTNAME=	thread
-PORTVERSION=	3.0.2
+PORTVERSION=	3.0.4
 CATEGORIES=	devel
-MASTER_SITES=	SF/tcl/Tcl/9.0.2
-PKGNAMEPREFIX=	tcl9-
+MASTER_SITES=	SF/tcl/Tcl/9.0.3
+PKGNAMEPREFIX=	tcl-
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tcltk@FreeBSD.org
-COMMENT=	Scripting level thread extension for Tcl 9
+COMMENT=	Scripting level thread extension for Tcl
 WWW=		https://wiki.tcl.tk/2770
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms
 
-USES=		tcl:90,tea
+USES=		tcl:tea
 
 DOCSDIR=	${PREFIX}/share/doc/${TCL_PKG}
 USE_LDCONFIG=	${PREFIX}/lib/${TCL_PKG}
