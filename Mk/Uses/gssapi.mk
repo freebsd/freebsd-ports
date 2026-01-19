@@ -128,7 +128,7 @@ GSSAPICPPFLAGS=	-I"${GSSAPIINCDIR}"
 GSSAPILIBS=	-lkrb5 -lgssapi
 GSSAPILDFLAGS=	-L"${GSSAPILIBDIR}"
 _RPATH=		${GSSAPILIBDIR}
-.    elif ${_local} == "mit" -o ${_local} == "mit-devel"
+.    elif ${_local} == "mit" || ${_local} == "mit-devel"
 	# MIT KRB5 port selected
 KRB5_HOME?=	${LOCALBASE}
 GSSAPIBASEDIR=	${KRB5_HOME}
