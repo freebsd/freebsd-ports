@@ -6,9 +6,12 @@ MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/jsl/ \
 		http://www.javascriptlint.com/download/
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	delphij@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyzes JavaScript code looking for bugs and signs of poor quality
 WWW=		https://www.javascriptlint.com/
+
+DEPRECATED=	No more upstream, use JSLint instead
+EXPIRATION_DATE=	2026-03-31
 
 PLIST_FILES=	bin/jsl
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
