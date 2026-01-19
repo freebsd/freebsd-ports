@@ -13,7 +13,6 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
-		flex:textproc/flex \
 		spectra>0:math/spectra
 LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libblas.so:math/blas \
@@ -51,7 +50,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libsz.so:science/libaec \
 		libtbb.so:devel/onetbb
 
-USES=		bison blaslapack:openblas cmake eigen:3 gnome jpeg llvm:18 localbase:ldflags pkgconfig sqlite xorg # compiler:c++17-lang
+USES=		blaslapack:openblas cmake eigen:3 gnome jpeg llvm:18 localbase:ldflags pkgconfig sqlite xorg # compiler:c++17-lang
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 USE_XORG=	ice sm x11 xau xcb xdmcp xext
