@@ -1,12 +1,12 @@
 PORTNAME=	dionysus
-PORTVERSION=	g20210521
-PORTREVISION=	1
+PORTVERSION=	2.1.8
 CATEGORIES=	math
 PKGNAMESUFFIX=	-topology-library
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Library for computing persistent homology
-WWW=		https://mrzv.org/software/dionysus2/
+WWW=		https://mrzv.org/software/dionysus2/ \
+		https://github.com/mrzv/dionysus
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
@@ -18,7 +18,6 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrzv
-GH_TAGNAME=	ae27bb1
 
 CMAKE_OFF=	build_examples build_python_bindings
 
