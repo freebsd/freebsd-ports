@@ -1,5 +1,5 @@
 PORTNAME=	langgraph-checkpoint
-DISTVERSION=	3.0.1
+DISTVERSION=	4.0.0
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}langchain-core>=0.2.38:misc/py-langchain-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ormsgpack>=1.10.0:devel/py-ormsgpack@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}ormsgpack>=1.12.0:devel/py-ormsgpack@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dataclasses-json>0:devel/py-dataclasses-json@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pandas-stubs>=2.2.2.240807:math/py-pandas-stubs@${PY_FLAVOR} \
