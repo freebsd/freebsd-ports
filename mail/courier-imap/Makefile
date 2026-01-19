@@ -1,5 +1,6 @@
 PORTNAME=	courier-imap
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -71,8 +72,6 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_USES=		pkgconfig
 
-INOTIFY_LIB_DEPENDS=	libinotify.so:devel/libinotify
-
 IPV6_CONFIGURE_OFF=	--without-ipv6
 
 TRASHQUOTA_CONFIGURE_ON=--with-trashquota
@@ -96,6 +95,10 @@ CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
 .endif
 .endif
 
+.if ${PORT_OPTIONS:MINOTIFY} && ${OSVERSION} < 1500500
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+.endif
+
 EXTRA_DOCS=	AUTHORS INSTALL NEWS \
 		libs/imap/ChangeLog \
 		libs/imap/README.proxy \
@@ -113,9 +116,11 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-patch-INOTIFY-on:
+.if ${OSVERSION} < 1500500
 	@${REINPLACE_CMD} -e 's|LIBS = @LIBS@|& -L${LOCALBASE}/lib -linotify -lpthread|' \
 		${WRKSRC}/libs/maildir/Makefile.in \
 		${WRKSRC}/libs/imap/Makefile.in
+.endif
 
 post-configure-INOTIFY-on:
 	@${ECHO_CMD} '#define HAVE_INOTIFY_INIT 1' >>${WRKSRC}/libs/maildir/config.h
