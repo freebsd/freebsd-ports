@@ -220,9 +220,8 @@ LINK_VARS=		DSO_EXTMODS+=link
 MEMC_GH_TUPLE=		openresty:memc-nginx-module:v0.20:memc
 MEMC_VARS=		DSO_EXTMODS+=memc
 
-MODSECURITY3_GH_TUPLE=		owasp-modsecurity:ModSecurity-nginx:fd28e6a:modsecurity3
+MODSECURITY3_GH_TUPLE=		owasp-modsecurity:ModSecurity-nginx:b94f2d3:modsecurity3
 MODSECURITY3_IMPLIES=		HTTP_ADDITION HTTP_IMAGE_FILTER HTTP_GUNZIP_FILTER HTTP_XSLT
-MODSECURITY3_LDFLAGS=		-lpcre
 MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3 \
 				libpcre.so:devel/pcre
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
