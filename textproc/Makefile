@@ -1839,6 +1839,7 @@
     SUBDIR += rubygem-commonmarker
     SUBDIR += rubygem-commonmarker0
     SUBDIR += rubygem-creole
+    SUBDIR += rubygem-cronex
     SUBDIR += rubygem-css_parser
     SUBDIR += rubygem-cssmin
     SUBDIR += rubygem-cucumber-gherkin
