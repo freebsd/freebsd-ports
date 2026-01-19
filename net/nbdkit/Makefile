@@ -1,5 +1,5 @@
 PORTNAME=	nbdkit
-PORTVERSION=	1.46.0
+PORTVERSION=	1.46.1
 CATEGORIES=	net
 # XXX Although nbdkit uses github for its homepage, the release tarballs served
 # by github haven't been through autoconf.  So we must download the sources
