@@ -1,6 +1,5 @@
 PORTNAME=	sidekiq-cron
-PORTVERSION=	1.12.0
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails-gitlab
@@ -12,9 +11,10 @@ WWW=		https://github.com/sidekiq-cron/sidekiq-cron
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-fugit-gitlab>=1.8<2:devel/rubygem-fugit-gitlab \
+RUN_DEPENDS=	rubygem-cronex>=0.13.0:textproc/rubygem-cronex \
+		rubygem-fugit-gitlab>=1.11.1<2:devel/rubygem-fugit-gitlab \
 		rubygem-globalid-rails-gitlab>=1.0.1:databases/rubygem-globalid-rails-gitlab \
-		rubygem-sidekiq-gitlab>=6:devel/rubygem-sidekiq-gitlab
+		rubygem-sidekiq-gitlab>=6.5.0:devel/rubygem-sidekiq-gitlab
 
 USES=		gem
 
