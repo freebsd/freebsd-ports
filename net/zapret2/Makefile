@@ -1,6 +1,7 @@
 PORTNAME=	zapret2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +18,7 @@ GH_ACCOUNT=	bol-van
 
 PLIST_FILES=	${EXES:S/^/bin\//}
 
-EXES=		dvtws2 ip2net mdig
+EXES=		dvtws2 ip2net
 
 do-install:
 .for exe in ${EXES}
