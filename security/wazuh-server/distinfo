@@ -5,5 +5,5 @@ SHA256 (wazuh-4.14.2/logstash-wazuh-4.14.2.conf) = 36fb7455a50379e58ef0f63940dcd
 SIZE (wazuh-4.14.2/logstash-wazuh-4.14.2.conf) = 3112
 SHA256 (wazuh-4.14.2/wazuh-filebeat-0.5.tar.gz) = 7a8c67c47b22f89ab271b7e35f108f18b2215b7aa411cdd23c9994393070d38d
 SIZE (wazuh-4.14.2/wazuh-filebeat-0.5.tar.gz) = 1808
-SHA256 (wazuh-4.14.2/wazuh-template.json) = 31a60d5812fb0b5cd7c2d58556b88f57f7fc2f2221dd7b6b32f2256b13ea2886
-SIZE (wazuh-4.14.2/wazuh-template.json) = 84241
+SHA256 (wazuh-4.14.2/wazuh-template.json) = c6e30822c67c10f7e777cb51926e261d8b2c3a941c4ffcf83325f700c1c8802f
+SIZE (wazuh-4.14.2/wazuh-template.json) = 84275
