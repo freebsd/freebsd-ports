@@ -1,6 +1,7 @@
 PORTNAME=	extruct
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.18.0
+PORTREVISION=	1
 CATEGORIES=	www python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml-html-clean>=0:devel/py-lxml-html-clean@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rdflib>=6.0.0:textproc/py-rdflib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyRdfa3>0:textproc/py-pyRdfa3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyrdfa3>0:textproc/py-pyrdfa3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mf2py>0:textproc/py-mf2py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}w3lib>0:www/py-w3lib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}html-text>=0.5.1:textproc/py-html-text@${PY_FLAVOR} \
