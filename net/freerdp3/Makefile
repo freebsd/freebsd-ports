@@ -1,5 +1,5 @@
 PORTNAME=	freerdp
-DISTVERSION=	3.20.2
+DISTVERSION=	3.21.0
 CATEGORIES=	net comms
 MASTER_SITES+=	https://pub.freerdp.com/releases/:freerdp \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/:freerdp
