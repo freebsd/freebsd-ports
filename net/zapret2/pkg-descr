@@ -1,0 +1,3 @@
+zapret2 is a stand-alone (without 3rd party servers) DPI circumvention tool.
+May allow to bypass http(s) website blocking or speed shaping, resist signature
+tcp/udp protocol discovery.
