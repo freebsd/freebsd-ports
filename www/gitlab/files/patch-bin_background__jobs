@@ -1,10 +1,8 @@
---- bin/background_jobs.orig	2025-10-21 19:12:22 UTC
+--- bin/background_jobs.orig	2026-01-14 08:40:57 UTC
 +++ bin/background_jobs
-@@ -49,19 +49,14 @@ start_sidekiq()
- start_sidekiq()
- {
+@@ -51,17 +51,13 @@ start_sidekiq()
    cmd="exec"
--  chpst=$(command -v chpst)
+   chpst=$(command -v chpst || true)
  
 -  if [ -n "$chpst" ]; then
 -    cmd="${cmd} ${chpst} -P"
