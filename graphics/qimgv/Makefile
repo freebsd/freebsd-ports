@@ -1,6 +1,5 @@
 PORTNAME=	qimgv
-PORTVERSION=	1.03.g20250905
-PORTREVISION=	2
+PORTVERSION=	1.03.g20260119
 CATEGORIES=	graphics
 
 MAINTAINER=	kenrap@kennethraplee.com
@@ -15,7 +14,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils \
 		localbase:ldflags
 USE_GITHUB=	yes
 GH_ACCOUNT=	easymodo
-GH_TAGNAME=	6bdfad1f47be2cd5eb54c6da45073f8eee55963f
+GH_TAGNAME=	3127a2d211b124ad4fcf853d01e6df9323bdfdc3
 
 LDFLAGS+=	-linotify
 
@@ -50,7 +49,5 @@ VIDEO_CMAKE_BOOL=	VIDEO_SUPPORT
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/qimgv/settings.cpp
-	@${REINPLACE_CMD} -e 's|^Exec=|Exec=QT_SCALE_FACTOR_ROUNDING_POLICY=RoundPreferFloor |' \
-		${WRKSRC}/qimgv/distrib/qimgv.desktop
 
 .include <bsd.port.mk>
