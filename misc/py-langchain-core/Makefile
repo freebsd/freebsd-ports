@@ -1,5 +1,5 @@
 PORTNAME=	langchain-core
-DISTVERSION=	1.2.6
+DISTVERSION=	1.2.7
 CATEGORIES=	misc python # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonpatch>=1.33:devel/py-jsonpatch@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}pydantic2>=2.7.4:devel/py-pydantic2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyyaml>=5.3:devel/py-pyyaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tenacity>=8.4.0<10.0.0>=8.1.0:devel/py-tenacity@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.7:devel/py-typing-extensions@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.7:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}uuid-utils>=0.12.0:misc/py-uuid-utils@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blockbuster>=1.5.18:devel/py-blockbuster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=1.2.2:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}grandalf>=0.8:math/py-grandalf@${PY_FLAVOR} \
