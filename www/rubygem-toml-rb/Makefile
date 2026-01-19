@@ -1,5 +1,5 @@
 PORTNAME=	toml-rb
-PORTVERSION=	2.2.0
+PORTVERSION=	4.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/emancu/toml-rb
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-citrus>=3.0<4:textproc/rubygem-citrus
+RUN_DEPENDS=	rubygem-citrus>=3.0<4:textproc/rubygem-citrus \
+		rubygem-racc>=1.7<2:devel/rubygem-racc
 
 USES=		gem
 
