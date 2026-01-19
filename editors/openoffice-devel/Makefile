@@ -61,6 +61,7 @@ BUILD_DEPENDS=								\
 		imake:devel/imake					\
 		libunwind>=20211201_1:devel/libunwind			\
 		gpatch:devel/patch					\
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
 		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/junit.jar:java/junit			\
