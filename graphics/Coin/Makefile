@@ -1,10 +1,7 @@
 PORTNAME=	Coin
-PORTVERSION=	4.0.6
+PORTVERSION=	4.0.7
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
-
-PATCH_SITES+=	https://github.com/coin3d/coin/commit/
-PATCHFILES+=	1bba57bd0d9f41666d72857f75263068aeeeefcb.diff:-p1
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	C++ 3D graphics library based on the Open Inventor API
