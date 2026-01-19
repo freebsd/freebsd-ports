@@ -378,7 +378,6 @@ include/OGRE/RTShaderSystem/OgreShaderSubRenderState.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLContext.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLCopyingRenderTexture.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLDepthBufferCommon.h
-%%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLFBOMultiRenderTarget.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLFBORenderTexture.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLFrameBufferObject.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLGpuNvparseProgram.h
@@ -389,6 +388,7 @@ include/OGRE/RTShaderSystem/OgreShaderSubRenderState.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLHardwareOcclusionQuery.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLHardwarePixelBuffer.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLHardwarePixelBufferCommon.h
+%%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLMultiRenderTarget.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLNativeSupport.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLPBRenderTexture.h
 %%OPENGL%%include/OGRE/RenderSystems/GL/OgreGLPBuffer.h
@@ -436,7 +436,6 @@ include/OGRE/RTShaderSystem/OgreShaderSubRenderState.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/GL/gl3w.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/GL/glcorearb.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGL3PlusExports.h
-%%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGL3PlusFBOMultiRenderTarget.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGL3PlusFBORenderTexture.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGL3PlusFrameBufferObject.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGL3PlusHardwareBuffer.h
@@ -455,6 +454,7 @@ include/OGRE/RTShaderSystem/OgreShaderSubRenderState.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGLContext.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGLDepthBufferCommon.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGLHardwarePixelBufferCommon.h
+%%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGLMultiRenderTarget.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGLNativeSupport.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGLPBuffer.h
 %%OPENGL%%include/OGRE/RenderSystems/GL3Plus/OgreGLRenderSystemCommon.h
@@ -486,7 +486,6 @@ include/OGRE/RTShaderSystem/OgreShaderSubRenderState.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLDepthBufferCommon.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2Config.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2Exports.h
-%%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2FBOMultiRenderTarget.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2FBORenderTexture.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2FrameBufferObject.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2HardwareBuffer.h
@@ -504,6 +503,7 @@ include/OGRE/RTShaderSystem/OgreShaderSubRenderState.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2Texture.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLES2TextureManager.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLHardwarePixelBufferCommon.h
+%%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLMultiRenderTarget.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLNativeSupport.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLPBuffer.h
 %%OPENGL%%include/OGRE/RenderSystems/GLES2/OgreGLRenderSystemCommon.h
@@ -742,6 +742,7 @@ share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/FFPLib_AlphaTest.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/FFPLib_Fog.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/FFPLib_Texturing.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/FFPLib_Transform.glsl
+share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_Colour.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_IBL.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_LTC.glsl
 share/OGRE-%%LIBVERSION%%/Media/RTShaderLib/RTSLib_Lighting.glsl
@@ -761,8 +762,6 @@ share/OGRE-%%LIBVERSION%%/Media/Terrain/TerrainSurface.glsl
 share/OGRE-%%LIBVERSION%%/Media/Terrain/TerrainTransforms.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/Cg/Example_Projection.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/Cg/HeatVision.cg
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/Cg/NightVisionFP.cg
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/Cg/OldTV.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/Cg/ParticleGS.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/Cg/PassthroughFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/Cg/PassthroughFP_sm4.cg
@@ -786,10 +785,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/DitherFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/DoF_Blend.frag
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/DoF_Gaussian3x3.frag
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/EmbossedFp.glsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_BumpMappingFp.glsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_BumpMappingShadowRcvFp.glsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_BumpMappingShadowRcvVp.glsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_BumpMappingVp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_FresnelFp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_FresnelVp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_TextureArrayVS.glsl
@@ -825,8 +820,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/ShowUV.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/ShowUVdir3D.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/StdQuad_Tex2_vp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/StdQuad_Tex2a_vp.glsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/StdQuad_Tex3_vp.glsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/StdQuad_Tex4_vp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/StdQuad_vp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/TilingFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/gsplat.frag
@@ -899,7 +892,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/HeatVision.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/Island.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/IslandCommon.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/NoTessellation.hlsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/OldTV.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/ParticleGS.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/PassthroughFP_sm4.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/Radial_Blur_FP.hlsl
@@ -910,9 +902,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/TerrainTessellationINois
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/Tessellation.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/adaptivePNTriangles_tessellation.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/adaptive_tessellation.hlsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/hdr.hlsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/hdrfp4.hlsl
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/hdrutils.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/isosurf.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL/simple_tessellation.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/ASCIIFP.cg
@@ -927,7 +916,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Common.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/DitherFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/DualQuaternionSkinning_Shadow.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Example_Basic.cg
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Example_BumpMapping.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Example_CelShading.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/GlassFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Grass.cg
@@ -938,9 +926,11 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/InstancingVertexInter
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Instancing_ps.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/InvertFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/LaplaceFP.cg
+share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/NightVisionFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Ocean2HLSL_Cg.frag
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Ocean2HLSL_Cg.vert
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/OldMovieFP.cg
+share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/OldTV.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/PosterizeFP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/Radial_Blur_FP.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/HLSL_Cg/SGXLib_TextureAtlas.cg
@@ -1013,11 +1003,9 @@ share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/GBuffer.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/GaussianBlurXFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/GaussianBlurYFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HemisphereMC.cg
-share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HemisphereMC.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HemisphereMC.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HemisphereMCFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HorizonBased.cg
-share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HorizonBased.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HorizonBased.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/HorizonBasedFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/Modulate.material
@@ -1039,7 +1027,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/UnsharpMask.cg
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/UnsharpMask.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/UnsharpMaskFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/Volumetric.cg
-share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/Volumetric.hlsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/Volumetric.material
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/SSAO/VolumetricFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/scripts/ShaderInstancing.material
