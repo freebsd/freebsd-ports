@@ -64,4 +64,6 @@ X11_CONFIGURE_OFF=	--disable-x11 --disable-x11-shm --disable-x11-xv
 XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_OFF=	--use-xvid=no
 
+CFLAGS_powerpc64le=	-fPIC
+
 .include <bsd.port.mk>
