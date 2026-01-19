@@ -1,7 +1,6 @@
 PORTNAME=	libosmium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.22.0
-PORTREVISION=	2
+DISTVERSION=	2.23.0
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,7 +18,7 @@ BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
 		liblz4>=0:archivers/liblz4 \
 		geos>=0:graphics/geos
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++14-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	osmcode
 CMAKE_ON=	BUILD_HEADERS
