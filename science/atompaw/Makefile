@@ -8,6 +8,10 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for projector augmented wave functions for molecular simulations
 WWW=		https://users.wfu.edu/natalie/papers/pwpaw/
 
+BROKEN=		fails to build, interpolation_mod.F90:19:8: Fatal Error: Cannot open module file 'io_tools.mod' for reading at (1): No such file or directory
+DEPRECATED=	fails to build, interpolation_mod.F90:19:8: Fatal Error: Cannot open module file 'io_tools.mod' for reading at (1): No such file or directory
+EXPIRATION_DATE=2026-03-19
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
