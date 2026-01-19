@@ -1,6 +1,6 @@
 PORTNAME=	functionalplus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.26
+DISTVERSION=	0.2.27
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,6 +27,6 @@ do-test: # according to INSTALL.md tests are in a separate sub-project, build of
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
 
-# tests as of 0.2.26: 100% tests passed, 0 tests failed out of 423
+# tests as of 0.2.27: 100% tests passed, 0 tests failed out of 423
 
 .include <bsd.port.mk>
