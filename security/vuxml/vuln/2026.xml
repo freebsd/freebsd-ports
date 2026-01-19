@@ -1,3 +1,31 @@
+  <vuln vid="fb561db9-0fc1-4d92-81a2-ee01839c9119">
+    <topic>oauth2-proxy -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>oauth2-proxy</name>
+	<range><lt>7.14.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Within HostnameError.Error(), when constructing an error string, there is no limit to the number of hosts that will be printed out. Furthermore, the error string is constructed by repeated string concatenation, leading to quadratic runtime. Therefore, a certificate provided by a malicious actor can result in excessive resource consumption.</p>
+	<p>A flaw was found in the crypto/x509 package in the Go standard library. This vulnerability allows a certificate validation bypass via an excluded subdomain constraint in a certificated chain as it does not restrict the usage of wildcard SANs in the leaf certificate.</p>
+	<p>SSH Agent servers do not validate the size of messages when processing new identity requests, which may cause the program to panic if the message is malformed due to an out of bounds read.</p>
+	<p>SSH servers parsing GSSAPI authentication requests do not validate the number of mechanisms specified in the request, allowing an attacker to cause unbounded memory consumption.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-61729</cvename>
+      <cvename>CVE-2025-61727</cvename>
+      <cvename>CVE-2025-47914</cvename>
+      <cvename>CVE-2025-58181</cvename>
+    </references>
+    <dates>
+      <discovery>2026-01-16</discovery>
+      <entry>2026-01-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff20d3a3-f211-11f0-9ca3-b42e991fc52e">
     <topic>Mozilla -- multiple vulnerabilities</topic>
     <affects>
