@@ -12,6 +12,7 @@ include/fizz/backend/openssl/certificate/OpenSSLPeerCertImpl-inl.h
 include/fizz/backend/openssl/certificate/OpenSSLPeerCertImpl.h
 include/fizz/backend/openssl/certificate/OpenSSLSelfCertImpl-inl.h
 include/fizz/backend/openssl/certificate/OpenSSLSelfCertImpl.h
+include/fizz/backend/openssl/certificate/X509ChainWithPkey.h
 include/fizz/backend/openssl/crypto/ECCurve.h
 include/fizz/backend/openssl/crypto/OpenSSL.h
 include/fizz/backend/openssl/crypto/OpenSSLKeyUtils.h
@@ -110,7 +111,7 @@ include/fizz/extensions/tokenbinding/Validator.h
 include/fizz/fizz-config.h
 include/fizz/protocol/Actions.h
 include/fizz/protocol/AsyncFizzBase.h
-include/fizz/protocol/CertManagerBase.h
+include/fizz/protocol/CertMatch.h
 include/fizz/protocol/Certificate.h
 include/fizz/protocol/CertificateVerifier.h
 include/fizz/protocol/DefaultCertificateVerifier.h
@@ -166,6 +167,7 @@ include/fizz/server/AsyncSelfCert.h
 include/fizz/server/CertManager.h
 include/fizz/server/CookieCipher.h
 include/fizz/server/CookieTypes.h
+include/fizz/server/DefaultCertManager.h
 include/fizz/server/DualTicketCipher.h
 include/fizz/server/FizzServer-inl.h
 include/fizz/server/FizzServer.h
