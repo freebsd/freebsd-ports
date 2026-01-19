@@ -1,3 +1,34 @@
+  <vuln vid="01f34a27-f560-11f0-bbdc-10ffe07f9334">
+    <topic>mail/mailpit -- multiple vulnerabilities</topic>
+    <affects>
+<package>
+<name>mailpit</name>
+<range><lt>1.28.3</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mailpit author reports:</p>
+	<blockquote cite="https://github.com/axllent/mailpit/releases/tag/v1.28.3">
+	  <p>Ensure SMTP TO &amp; FROM addresses are RFC 5322
+	  compliant and prevent header injection (GHSA-54wq-72mp-cq7c)</p>
+	  <p>Prevent Server-Side Request Forgery (SSRF) via HTML
+	  Check API (GHSA-6jxm-fv7w-rw5j)</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-23829</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-54wq-72mp-cq7c</url>
+      <cvename>CVE-2026-23845</cvename>
+      <url>https://github.com/axllent/mailpit/security/advisories/GHSA-6jxm-fv7w-rw5j</url>
+    </references>
+    <dates>
+      <discovery>2026-01-18</discovery>
+      <entry>2026-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fb561db9-0fc1-4d92-81a2-ee01839c9119">
     <topic>oauth2-proxy -- multiple vulnerabilities</topic>
     <affects>
