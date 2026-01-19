@@ -60,7 +60,7 @@ PIE_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	wine
 
-BINARY_ALIAS+=	clang=${LOCALBASE}/bin/clang${LLVM_VERSION} \
+BINARY_ALIAS=	clang=${LOCALBASE}/bin/clang${LLVM_VERSION} \
 		lld-link=${LOCALBASE}/bin/lld-link${LLVM_VERSION}
 
 SUB_FILES=	pkg-message
@@ -150,7 +150,7 @@ post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
 
 .else
-EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-tools-winebuild-res32
+EXTRA_PATCHES=		${PATCHDIR}/extra-patch-tools-winebuild-res32
 PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
 
