@@ -35,7 +35,7 @@ CPE_VENDOR=	golang
 NO_SHLIB_REQUIRES_GLOB=	*
 
 .ifndef MASTERDIR
-DEPRECATED=	Old version of go--Use a versioned go package (ex. go124) instead
+DEPRECATED=	Old version of Go. Use the go package (lang/go) instead.
 EXPIRATION_DATE=2026-03-01
 
 USE_GITHUB=	yes
