@@ -17,7 +17,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	xcb-proto>=1.9:x11/xcb-proto
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libinotify.so:devel/libinotify \
 		libuv.so:devel/libuv \
 		libxcb-ewmh.so:x11/xcb-util-wm \
 		libxcb-icccm.so:x11/xcb-util-wm \
@@ -86,6 +85,14 @@ ETCFIX =	include/utils/command.hpp \
 		doc/man/polybar.1.rst \
 		doc/man/polybar.5.rst \
 		CHANGELOG.md
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500050
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+.else
+CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_LibInotify
+.endif
 
 post-patch:
 .for f in ${ETCFIX}
