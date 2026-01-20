@@ -12,9 +12,6 @@ WWW=		https://dotenv-linter.github.io \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/dotenv-linter/dotenv-linter/issues/742
-BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/dotenv-linter/dotenv-linter/issues/742
-
 USES=		cargo
 
 USE_GITHUB=	yes
