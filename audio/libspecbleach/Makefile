@@ -1,6 +1,6 @@
 PORTNAME=	libspecbleach
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.6
+DISTVERSION=	0.2.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,8 @@ GH_ACCOUNT=	lucianodato
 PLIST_FILES=	include/specbleach_adenoiser.h \
 		include/specbleach_denoiser.h \
 		lib/libspecbleach.so \
+		lib/libspecbleach.so.0 \
+		lib/libspecbleach.so.0.2.0 \
 		libdata/pkgconfig/libspecbleach.pc
 
 .include <bsd.port.mk>
