@@ -11,8 +11,6 @@ WWW=		https://github.com/getcord/spr
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc64le=	compilation failure: called `Option::unwrap()` on a `None` value in ring-0.16.20/build.rs: # see https://github.com/getcord/spr/issues/185
-
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		cargo
