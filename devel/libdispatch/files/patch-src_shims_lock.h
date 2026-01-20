@@ -1,10 +1,14 @@
---- src/shims/lock.h.orig	2021-09-17 04:54:52 UTC
+--- src/shims/lock.h.orig	2025-03-07 00:50:44 UTC
 +++ src/shims/lock.h
-@@ -100,6 +100,25 @@ _dispatch_lock_owner(dispatch_lock lock_value)
+@@ -100,6 +100,29 @@ _dispatch_lock_owner(dispatch_lock lock_value)
  	return lock_value & DLOCK_OWNER_MASK;
  }
  
 +#elif defined(__FreeBSD__)
++
++#include <sys/types.h>
++#include <sys/umtx.h>
++#include <sched.h>
 +
 +typedef uint32_t dispatch_tid;
 +typedef uint32_t dispatch_lock;
@@ -26,7 +30,7 @@
  #else
  #  error define _dispatch_lock encoding scheme for your platform here
  #endif
-@@ -167,10 +186,15 @@ _dispatch_lock_has_failed_trylock(dispatch_lock lock_v
+@@ -167,10 +190,15 @@ _dispatch_lock_has_failed_trylock(dispatch_lock lock_v
  #endif
  
  #ifndef HAVE_FUTEX

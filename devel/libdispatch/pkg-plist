@@ -20,6 +20,7 @@ include/os/object.h
 lib/libdispatch.so
 lib/libdispatch.so.1
 lib/libdispatch.so.1.3
+libdata/pkgconfig/libdispatch.pc
 share/man/man3/dispatch.3.gz
 share/man/man3/dispatch_after.3.gz
 share/man/man3/dispatch_api.3.gz
