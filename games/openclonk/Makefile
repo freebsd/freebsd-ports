@@ -13,8 +13,6 @@ LICENSE=	ISCL CC0-1.0
 LICENSE_COMB=	multi
 LICENSE_FILE_ISCL=	${WRKSRC}/COPYING
 
-BROKEN_powerpc64=	fails to compile: C4Texture.cpp:260:13: error: 'stoul' is not a member of 'std'
-
 LIB_DEPENDS=	libalut.so:audio/freealut \
 		libfreetype.so:print/freetype2 \
 		libminiupnpc.so:net/miniupnpc \
@@ -30,7 +28,6 @@ USE_GL=		gl glew glu
 USE_SDL=	sdl2
 USE_XORG=	x11 xpm
 CMAKE_ARGS=	-DAudio_TK:STRING="OpenAL"
-CFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 LDFLAGS_i386=	-Wl,-znotext
 WRKSRC=		${WRKDIR}/openclonk-release-${PORTVERSION}-src
 
