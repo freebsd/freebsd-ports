@@ -1,4 +1,4 @@
---- src/lj_prng.c.orig	2024-10-02 11:59:42 UTC
+--- src/lj_prng.c.orig	2026-01-09 17:46:32 UTC
 +++ src/lj_prng.c
 @@ -113,6 +113,7 @@ static PRGR libfunc_rgr;
  #include <sys/syscall.h>
@@ -14,5 +14,5 @@
  #define LJ_TARGET_HAS_GETENTROPY	1
 +#endif
  #endif
- #elif (LJ_TARGET_BSD && !defined(__NetBSD__)) || LJ_TARGET_SOLARIS || LJ_TARGET_CYGWIN || LJ_TARGET_QNX
+ #elif (LJ_TARGET_BSD && !defined(__NetBSD__)) || LJ_TARGET_SOLARIS || LJ_TARGET_CYGWIN || LJ_TARGET_QNX || LJ_TARGET_HURD
  #define LJ_TARGET_HAS_GETENTROPY	1
