@@ -1,7 +1,6 @@
 PORTNAME=	osmium-tool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.16.0
-PORTREVISION=	5
+DISTVERSION=	1.19.0
 CATEGORIES=	astro geography
 
 MAINTAINER=	ianthetechie@gmail.com
@@ -11,10 +10,10 @@ WWW=		https://osmcode.org/osmium-tool/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
-		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
-		${LOCALBASE}/include/rapidjson/stringbuffer.h:devel/rapidjson \
-		hs-pandoc>0:textproc/hs-pandoc
+BUILD_DEPENDS=	hs-pandoc>0:textproc/hs-pandoc \
+		nlohmann-json>=3.0.0:devel/nlohmann-json \
+		protozero>=1.6.3:devel/protozero \
+		libosmium>=2.20:astro/libosmium
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 
