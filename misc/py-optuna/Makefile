@@ -1,5 +1,5 @@
 PORTNAME=	optuna
-DISTVERSION=	4.3.0
+DISTVERSION=	4.7.0
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,6 +49,6 @@ NO_ARCH=	yes
 
 TEST_ENV=	${MAKE_ENV} PATH=${STAGEDIR}${PREFIX}/bin:${PATH} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-# tests as of 4.3.0: 670 failed, 4925 passed, 119 skipped, 16 warnings, 4 errors in 879.29s (0:14:39), many tests failed due to missing kaleido module + somother failures
+# tests as of 4.7.0: 567 failed, 5266 passed, 164 skipped, 892 warnings, 152 errors in 387.83s (0:06:27), many tests failed due to missing kaleido module + somother failures
 
 .include <bsd.port.mk>
