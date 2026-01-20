@@ -1,7 +1,7 @@
-TIMESTAMP = 1763581687
-SHA256 (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.15.0_GH0/ntfy-v2.15.0.frontend.tar.gz) = 2ce47be2c1273a970b697b1ae8806336bf48acb48299d7e3818a9da4f72f24fa
-SIZE (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.15.0_GH0/ntfy-v2.15.0.frontend.tar.gz) = 2323268
-SHA256 (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.15.0_GH0/go.mod) = d15190263e718c8dba56e2124ec8f89a7ae0fa6b3215ea9d14999b4bd0e676ed
-SIZE (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.15.0_GH0/go.mod) = 4754
-SHA256 (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.15.0_GH0/binwiederhier-ntfy-v2.15.0_GH0.tar.gz) = 7c0a5d641de4f7833dfa65d1f59753faa9af991f109db28d6c0ea8b24f36f954
-SIZE (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.15.0_GH0/binwiederhier-ntfy-v2.15.0_GH0.tar.gz) = 13964889
+TIMESTAMP = 1768931101
+SHA256 (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.16.0_GH0/ntfy-v2.16.0.frontend.tar.gz) = 02269e57390dbfb9c545dcd16ba7e193d124ff75c3ae6e655e2b6e8c30295379
+SIZE (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.16.0_GH0/ntfy-v2.16.0.frontend.tar.gz) = 2331906
+SHA256 (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.16.0_GH0/go.mod) = 8621c17f8e808d5ae9b003a2a2b721df313879ecc759487be3474891486e6bfc
+SIZE (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.16.0_GH0/go.mod) = 4743
+SHA256 (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.16.0_GH0/binwiederhier-ntfy-v2.16.0_GH0.tar.gz) = b564e16166711a319a21cb5711e2d000ba0332454c2af8aaa168b2b5e77ea8de
+SIZE (go/sysutils_go-ntfy/binwiederhier-ntfy-v2.16.0_GH0/binwiederhier-ntfy-v2.16.0_GH0.tar.gz) = 14155417
