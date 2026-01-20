@@ -600,6 +600,7 @@
     SUBDIR += octave-forge-ident
     SUBDIR += octave-forge-image
     SUBDIR += octave-forge-informationtheory
+    SUBDIR += octave-forge-instrument-control
     SUBDIR += octave-forge-integration
     SUBDIR += octave-forge-internal-fluid-flow
     SUBDIR += octave-forge-interval
