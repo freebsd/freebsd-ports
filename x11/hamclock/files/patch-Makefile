@@ -6,7 +6,7 @@
  # build flags common to all options and architectures
 -CXXFLAGS = -IArduinoLib -IwsServer/include -Izlib-hc -I. -g -O2 -Wall -pthread -std=c++17
 +CXXFLAGS ?= -g -O2 -Wall
-+CXXFLAGS += -IArduinoLib -I. -DARDUINO=100 -std=c++0x
++CXXFLAGS += -IArduinoLib -IwsServer/include -Izlib-hc -I. -std=c++17
  # CXXFLAGS += -Wextra -pedantic -Werror -Wno-attributes -Wno-unknown-pragmas
  
  # add explicit framebuffer depth as _FB_DEPTH if defined

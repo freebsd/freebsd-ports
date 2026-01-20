@@ -1,5 +1,5 @@
 PORTNAME=	hamclock
-DISTVERSION=	4.21
+DISTVERSION=	4.22
 CATEGORIES=	x11 hamradio
 MASTER_SITES=	https://www.clearskyinstitute.com/ham/HamClock/
 DISTNAME=	ESPHamClock
@@ -11,10 +11,8 @@ WWW=		https://www.clearskyinstitute.com/ham/HamClock/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
-
-USES=		desktop-file-utils gmake xorg zip
-USE_XORG=	x11
+USES=		gmake xorg zip desktop-file-utils
+USE_XORG=	x11 xorgproto
 
 PLIST_FILES=	bin/hamclock \
 		share/applications/hamclock.desktop \
@@ -33,14 +31,10 @@ SIZE2_ALL_TARGET=	hamclock-1600x960
 SIZE3_ALL_TARGET=	hamclock-2400x1440
 SIZE4_ALL_TARGET=	hamclock-3200x1920
 
-post-patch:
-	${REINPLACE_CMD} -e 's|CXX =|CXX ?=|g' ${WRKSRC}/ArduinoLib/Makefile
-	${REINPLACE_CMD} -e 's|/home/pi/.hamclock/||g' ${WRKSRC}/${PORTNAME}.desktop
-
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps
 	${INSTALL_PROGRAM} ${WRKSRC}/${ALL_TARGET} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
 
 .include <bsd.port.mk>
