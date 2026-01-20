@@ -1,6 +1,5 @@
 PORTNAME=	ibus-rime
-DISTVERSION=	1.5.0
-PORTREVISION=	1
+DISTVERSION=	1.6.0
 CATEGORIES=	chinese
 
 MAINTAINER=	eric@camachat.org
