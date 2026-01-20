@@ -1,12 +1,12 @@
---- pyproject.toml.orig	2025-03-16 21:56:26 UTC
+--- pyproject.toml.orig	2026-01-18 14:51:17 UTC
 +++ pyproject.toml
 @@ -1,7 +1,7 @@ requires = [
  [build-system]
  requires = [
--  "setuptools ~= 75.8",
--  "wheel ~= 0.45",
+-  "setuptools >= 80.0",
+-  "wheel ~= 0.45.0",
 +  "setuptools",
 +  "wheel",
-   "pyTooling ~= 8.2"
+   "pyTooling ~= 8.10"
  ]
  build-backend = "setuptools.build_meta"
