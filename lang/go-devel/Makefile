@@ -35,6 +35,8 @@ CPE_VENDOR=	golang
 NO_SHLIB_REQUIRES_GLOB=	*
 
 .ifndef MASTERDIR
+DEPRECATED=	Old version of go--Use a versioned go1* package instead
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
 # go1.22
