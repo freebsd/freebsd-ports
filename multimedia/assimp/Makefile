@@ -1,6 +1,6 @@
 PORTNAME=	assimp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.0.2
+DISTVERSION=	6.0.3
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,6 @@ post-test:
 	@cd ${BUILD_WRKSRC} && \
 		${BUILD_WRKSRC}/bin/unit
 
-# tests as of 6.0.1: 591 tests from 117 test suites ran. (18189 ms total)
+# tests as of 6.0.1: 584 tests from 114 test suites ran. (2506 ms total)
 
 .include <bsd.port.mk>
