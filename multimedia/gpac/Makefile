@@ -1,6 +1,7 @@
 PORTNAME=		gpac
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.4.0
+PORTREVISION=		1
 CATEGORIES=		multimedia
 
 MAINTAINER=		olivier@FreeBSD.org
@@ -19,7 +20,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--prefix="${PREFIX}" --cc="${CC}" \
-			--X11-path="${LOCALBASE}" \
+			--X11-path="${LOCALBASE}" --enable-pic \
 			--extra-cflags="${CFLAGS}" --extra-ldflags="${LDFLAGS}"
 MAKE_ENV+=		VERSION=${DISTVERSION}
 USE_LDCONFIG=		yes
@@ -63,7 +64,5 @@ X11_USE=		XORG=x11,xv,xext
 X11_CONFIGURE_OFF=	--disable-x11 --disable-x11-shm --disable-x11-xv
 XVID_LIB_DEPENDS=	libxvidcore.so:multimedia/xvid
 XVID_CONFIGURE_OFF=	--use-xvid=no
-
-CFLAGS_powerpc64le=	-fPIC
 
 .include <bsd.port.mk>
