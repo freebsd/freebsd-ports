@@ -1,7 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	18.10.0
-PORTREVISION=	2
+DISTVERSION=	18.11.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,15 +44,16 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		atoi-2.0.0 \
 		atomic-waker-1.1.2 \
 		autocfg-1.5.0 \
+		aws-lc-rs-1.15.0 \
+		aws-lc-sys-0.33.0 \
 		axum-0.7.9 \
 		axum-core-0.4.5 \
 		axum-server-0.7.2 \
 		backtrace-0.3.75 \
-		base64-0.21.7 \
 		base64-0.22.1 \
 		base64ct-1.8.0 \
 		beef-0.5.2 \
-		bitflags-1.3.2 \
+		bindgen-0.72.1 \
 		bitflags-2.9.4 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
@@ -66,11 +66,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		cassowary-0.3.0 \
 		castaway-0.2.4 \
 		cc-1.2.38 \
+		cexpr-0.6.0 \
 		cfg-if-1.0.3 \
 		cfg_aliases-0.2.1 \
 		chacha20-0.9.1 \
 		chrono-0.4.42 \
 		cipher-0.4.4 \
+		clang-sys-1.8.1 \
 		clap-4.5.48 \
 		clap_builder-4.5.48 \
 		clap_complete-4.5.58 \
@@ -78,6 +80,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		clap_derive-4.5.47 \
 		clap_lex-0.7.5 \
 		clipboard-win-5.4.1 \
+		cmake-0.1.54 \
 		colorchoice-1.0.4 \
 		colored-2.2.0 \
 		compact_str-0.8.1 \
@@ -86,7 +89,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		config-0.15.16 \
 		console-0.16.1 \
 		const-oid-0.9.6 \
-		core-foundation-0.9.4 \
+		core-foundation-0.10.1 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
 		crc-3.3.0 \
@@ -114,9 +117,8 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		deranged-0.5.3 \
 		diff-0.1.13 \
 		digest-0.10.7 \
-		directories-5.0.1 \
+		directories-6.0.0 \
 		dirs-6.0.0 \
-		dirs-sys-0.4.1 \
 		dirs-sys-0.5.0 \
 		dispatch2-0.3.0 \
 		displaydoc-0.2.5 \
@@ -124,12 +126,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		divan-macros-0.1.21 \
 		dotenvy-0.15.7 \
 		downcast-rs-1.2.1 \
+		dunce-1.0.5 \
 		dyn-clone-1.0.20 \
 		ed25519-2.2.3 \
 		ed25519-dalek-2.2.0 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
-		encoding_rs-0.8.35 \
 		equivalent-1.0.2 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
@@ -152,6 +154,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		foldhash-0.1.5 \
 		form_urlencoded-1.2.2 \
 		fs-err-3.1.2 \
+		fs_extra-1.3.0 \
 		futures-0.3.31 \
 		futures-channel-0.3.31 \
 		futures-core-0.3.31 \
@@ -168,32 +171,26 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		getrandom-0.2.16 \
 		getrandom-0.3.3 \
 		gimli-0.31.1 \
-		h2-0.3.27 \
+		glob-0.3.3 \
 		h2-0.4.12 \
 		half-2.6.0 \
 		hashbrown-0.12.3 \
-		hashbrown-0.13.1 \
 		hashbrown-0.14.5 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.0 \
 		hashlink-0.10.0 \
 		heck-0.5.0 \
-		hermit-abi-0.5.2 \
 		hex-0.4.3 \
 		hkdf-0.12.4 \
 		hmac-0.12.1 \
 		home-0.5.11 \
-		http-0.2.12 \
 		http-1.3.1 \
-		http-body-0.4.6 \
 		http-body-1.0.1 \
 		http-body-util-0.1.3 \
 		httparse-1.10.1 \
 		httpdate-1.0.3 \
 		humantime-2.3.0 \
-		hyper-0.14.32 \
 		hyper-1.7.0 \
-		hyper-rustls-0.24.2 \
 		hyper-rustls-0.27.7 \
 		hyper-timeout-0.5.2 \
 		hyper-util-0.1.17 \
@@ -226,9 +223,11 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		itertools-0.13.0 \
 		itertools-0.14.0 \
 		itoa-1.0.15 \
+		jobserver-0.1.34 \
 		js-sys-0.3.80 \
 		lazy_static-1.5.0 \
 		libc-0.2.176 \
+		libloading-0.8.9 \
 		libm-0.2.15 \
 		libredox-0.1.10 \
 		libsqlite3-sys-0.30.1 \
@@ -243,15 +242,13 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		logos-derive-0.15.1 \
 		lru-0.12.5 \
 		lru-slab-0.1.2 \
-		mach2-0.4.3 \
 		matchers-0.2.0 \
 		matchit-0.7.3 \
 		md-5-0.10.6 \
 		memchr-2.7.5 \
-		metrics-0.21.1 \
-		metrics-exporter-prometheus-0.12.2 \
-		metrics-macros-0.7.1 \
-		metrics-util-0.15.1 \
+		metrics-0.24.2 \
+		metrics-exporter-prometheus-0.17.2 \
+		metrics-util-0.20.0 \
 		miette-7.6.0 \
 		miette-derive-7.6.0 \
 		mime-0.3.17 \
@@ -272,7 +269,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		num-integer-0.1.46 \
 		num-iter-0.1.45 \
 		num-traits-0.2.19 \
-		num_cpus-1.17.0 \
 		num_threads-0.1.7 \
 		objc2-0.6.2 \
 		objc2-app-kit-0.3.1 \
@@ -330,7 +326,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		protox-0.8.0 \
 		protox-parse-0.8.0 \
 		pxfm-0.1.24 \
-		quanta-0.11.1 \
+		quanta-0.12.6 \
 		quick-error-2.0.1 \
 		quick-xml-0.37.5 \
 		quinn-0.11.9 \
@@ -344,12 +340,12 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
 		rand_core-0.9.3 \
+		rand_xoshiro-0.7.0 \
 		ratatui-0.29.0 \
-		raw-cpuid-10.7.0 \
+		raw-cpuid-11.6.0 \
 		rayon-1.11.0 \
 		rayon-core-1.13.0 \
 		redox_syscall-0.5.17 \
-		redox_users-0.4.6 \
 		redox_users-0.5.2 \
 		ref-cast-1.0.24 \
 		ref-cast-impl-1.0.24 \
@@ -357,7 +353,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		regex-automata-0.4.10 \
 		regex-lite-0.1.7 \
 		regex-syntax-0.8.6 \
-		reqwest-0.11.27 \
 		reqwest-0.12.23 \
 		ring-0.17.14 \
 		rmp-0.8.14 \
@@ -371,13 +366,10 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
 		rustix-1.1.2 \
-		rustls-0.21.12 \
 		rustls-0.23.32 \
-		rustls-native-certs-0.6.3 \
-		rustls-pemfile-1.0.4 \
+		rustls-native-certs-0.8.2 \
 		rustls-pemfile-2.2.0 \
 		rustls-pki-types-1.12.0 \
-		rustls-webpki-0.101.7 \
 		rustls-webpki-0.103.6 \
 		rustversion-1.0.22 \
 		rusty_paserk-0.5.0 \
@@ -388,8 +380,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		schemars-0.9.0 \
 		schemars-1.0.4 \
 		scopeguard-1.2.0 \
-		sct-0.7.1 \
-		security-framework-2.11.1 \
+		security-framework-3.5.1 \
 		security-framework-sys-2.15.0 \
 		semver-1.0.27 \
 		serde-1.0.226 \
@@ -413,7 +404,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		signature-2.2.0 \
 		simd-adler32-0.3.7 \
 		siphasher-1.0.1 \
-		sketches-ddsketch-0.2.2 \
+		sketches-ddsketch-0.3.0 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
 		socket2-0.5.10 \
@@ -436,12 +427,9 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		strum_macros-0.26.4 \
 		subtle-2.6.1 \
 		syn-2.0.106 \
-		sync_wrapper-0.1.2 \
 		sync_wrapper-1.0.2 \
 		synstructure-0.13.2 \
 		sysinfo-0.30.13 \
-		system-configuration-0.5.1 \
-		system-configuration-sys-0.5.0 \
 		tempfile-3.23.0 \
 		terminal_size-0.4.3 \
 		testing_logger-0.1.1 \
@@ -460,7 +448,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.47.1 \
 		tokio-macros-2.5.0 \
-		tokio-rustls-0.24.1 \
 		tokio-rustls-0.26.3 \
 		tokio-stream-0.1.17 \
 		tokio-util-0.7.16 \
@@ -574,7 +561,6 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		windows_x86_64_msvc-0.52.6 \
 		windows_x86_64_msvc-0.53.0 \
 		winnow-0.7.13 \
-		winreg-0.50.0 \
 		wit-bindgen-0.46.0 \
 		wl-clipboard-rs-0.9.2 \
 		writeable-0.6.1 \
