@@ -5085,3 +5085,4 @@ textproc/py-pyRdfa3|textproc/py-pyrdfa3|2026-01-18|Rename to match upstream nami
 devel/tcl8-thread|devel/tcl-thread|2026-01-19|The new tcl-thread port supports both Tcl8 and Tcl9
 devel/tcl9-thread|devel/tcl-thread|2026-01-19|The new tcl-thread port supports both Tcl8 and Tcl9
 java/jta||2026-01-19|Has expired: manual download, no users in the ports tree, newer version is at https://github.com/jakartaee/transactions
+multimedia/ccextractor-gui||2026-01-20|Superseeded by flutter GUI, which we do not support
