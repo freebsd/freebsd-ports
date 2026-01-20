@@ -1,6 +1,5 @@
 PORTNAME=	rime-double-pinyin
-DISTVERSION=	g20190120
-PORTREVISION=	1
+DISTVERSION=	g20250923
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	eric@camachat.org
