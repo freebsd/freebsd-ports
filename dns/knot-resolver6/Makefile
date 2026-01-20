@@ -1,5 +1,5 @@
 PORTNAME=	knot-resolver
-DISTVERSION=	6.0.17
+DISTVERSION=	6.1.0
 CATEGORIES=	dns
 MASTER_SITES=	https://knot-resolver.nic.cz/release/ \
 		https://dns.company/downloads/knot-resolver/
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		flake8:devel/py-flake8@${PY_FLAVOR} \
-		lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51 \
+		${LUA_FLAVOR}-cqueues>=20200726_1:devel/lua-cqueues@${LUA_FLAVOR} \
 		luacheck:devel/lua-luacheck
 LIB_DEPENDS=	libdnssec.so:dns/knot3 \
 		libgnutls.so:security/gnutls \
@@ -23,10 +23,10 @@ LIB_DEPENDS=	libdnssec.so:dns/knot3 \
 		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv \
 		libzscanner.so:dns/knot3
-RUN_DEPENDS=	lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51
+RUN_DEPENDS=	${LUA_FLAVOR}-cqueues>=20200726_1:devel/lua-cqueues@${LUA_FLAVOR}
 
-USES=		cmake:indirect compiler:c11 luajit meson ncurses ninja \
-		pkgconfig python:build tar:xz
+USES=		cmake:indirect compiler:c11 lua:build,run luajit meson ncurses \
+		ninja pkgconfig python:build tar:xz
 USE_CXXSTD=	c++11
 USE_RC_SUBR=	krescachegc kresd
 
@@ -38,6 +38,7 @@ MESON_ARGS=	--buildtype=release \
 		--libdir=${PREFIX}/lib \
 		--pkg-config-path=${PREFIX}/libdata/pkgconfig \
 		--prefix=${LOCALBASE} \
+		--strip \
 		-Dgroup=${GROUPS} \
 		-Dinstall_kresd_conf=enabled \
 		-Dkeyfile_default=${ETCDIR}/root.keys \
@@ -45,8 +46,6 @@ MESON_ARGS=	--buildtype=release \
 		-Droot_hints=${ETCDIR}/root.hints \
 		-Duser=${USERS} \
 		-Dutils=enabled
-
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFLICTS=	knot-resolver-[0-5].*
 
@@ -87,32 +86,11 @@ DNSTAP_PLIST_FILES=	lib/knot-resolver/kres_modules/dnstap.so
 TESTUNIT_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
 TESTUNIT_MESON_ON=	-Dunit_tests=enabled
 TESTUNIT_MESON_OFF=	-Dunit_tests=disabled
-
-STRIP_TARGETS=	sbin/kres-cache-gc \
-		sbin/kresc \
-		sbin/kresd \
-		lib/knot-resolver/ahocorasick.so \
-		lib/knot-resolver/debug_opensslkeylog.so \
-		lib/knot-resolver/kres_modules/bogus_log.so \
-		lib/knot-resolver/kres_modules/dnstap.so \
-		lib/knot-resolver/kres_modules/edns_keepalive.so \
-		lib/knot-resolver/kres_modules/extended_error.so \
-		lib/knot-resolver/kres_modules/hints.so \
-		lib/knot-resolver/kres_modules/nsid.so \
-		lib/knot-resolver/kres_modules/refuse_nord.so \
-		lib/knot-resolver/kres_modules/stats.so
-
-pre-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${MKDIR} ${STAGEDIR}${RUNDIR}
+TESTUNIT_LDFLAGS=	-pthread
 
 post-install:
+	${MKDIR} ${STAGEDIR}${RUNDIR}
 	${MV} ${STAGEDIR}${ETCDIR}/kresd.conf ${STAGEDIR}${ETCDIR}/kresd.conf.sample
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-.for STRIP_TGT in ${STRIP_TARGETS}
-	if [ -f ${STAGEDIR}${PREFIX}/${STRIP_TGT} ]; then \
-	  ${STRIP_CMD} ${STAGEDIR}${PREFIX}/${STRIP_TGT}; \
-	fi
-.endfor
 
 .include <bsd.port.mk>
