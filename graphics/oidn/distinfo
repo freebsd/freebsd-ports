@@ -1,8 +1,8 @@
-TIMESTAMP = 1743828824
+TIMESTAMP = 1768922284
 SHA256 (oidn-weights-28883d1769d5930e13cf7f1676dd852bd81ed9e7.tar.gz) = 90726b544f6e8b86a8bc4756e7c0b3da7530d4bab9dd671f2689001b4f9801f7
 SIZE (oidn-weights-28883d1769d5930e13cf7f1676dd852bd81ed9e7.tar.gz) = 46880514
-SHA256 (RenderKit-oidn-v2.3.3_GH0.tar.gz) = 2b32bd506b819ec0bd0137858af15186d83b760d457b0ac12bd02e0a8544381a
-SIZE (RenderKit-oidn-v2.3.3_GH0.tar.gz) = 3644273
+SHA256 (RenderKit-oidn-v2.4.1_GH0.tar.gz) = bab9197187a8754cdc0293475a00b7be6a0e967a0da73d6cc86697969cfb0a7e
+SIZE (RenderKit-oidn-v2.4.1_GH0.tar.gz) = 3633448
 SHA256 (OpenImageDenoise-mkl-dnn-9bea36e_GH0.tar.gz) = b4626c0cf65e64ec16d93f8af7941bccd62385da5ea16fd81de5d26b7cb10f71
 SIZE (OpenImageDenoise-mkl-dnn-9bea36e_GH0.tar.gz) = 7191010
 SHA256 (ROCmSoftwarePlatform-composable_kernel-c79bf11_GH0.tar.gz) = 11e0685c33e802f9d02d8afc43becc750ca25207c4b2cf2c9c656ff0035ebbaa
