@@ -1,0 +1,56 @@
+--- bozohttpd.8.orig	2024-02-04 05:55:04 UTC
++++ bozohttpd.8
+@@ -475,21 +489,21 @@ It may require linking with the crypt library, using
+ on the compiler command line to enable this support.
+ It may require linking with the crypt library, using
+ .Dq -lcrypt .
+-.Ss BLOCKLIST SUPPORT
++.Ss BLACKLIST SUPPORT
+ On
+-.Nx ,
++.Fx ,
+ .Nm
+ supports
+-.Xr blocklistd 8
++.Xr blacklistd 8
+ by default.
+ The support can be disabled with the
+-.Dq -DNO_BLOCKLIST_SUPPORT
++.Dq -DNO_BLACKLIST_SUPPORT
+ compilation option.
+ .Pp
+ Upon occurrence,
+ .Nm
+ reports two HTTP status codes to
+-.Xr blocklistd 8
++.Xr blacklistd 8
+ as failures:
+ .Em 401
+ (``Unauthorized'')
+@@ -501,7 +515,7 @@ A successful authorization decreases the counter kept 
+ is the one received upon authorization failure with the
+ HTTP Basic Authorization mechanism.
+ A successful authorization decreases the counter kept by
+-.Xr blocklistd 8 .
++.Xr blacklistd 8 .
+ .Pp
+ Note that the implementation of the HTTP Basic Authorization mechanism
+ uses a redirection; a status code
+@@ -510,7 +524,7 @@ is reported as two failures to
+ Therefore, a single authorization failure of
+ .Pa .htpasswd
+ is reported as two failures to
+-.Xr blocklistd 8 ,
++.Xr blacklistd 8 ,
+ but no failures are recorded upon successful authorization
+ due to the decrease of the failure counter.
+ .Ss SSL SUPPORT
+@@ -821,7 +835,7 @@ provided support for
+ .An Jukka Ruohonen
+ .Aq Mt jruoho@NetBSD.org
+ provided support for
+-.Xr blocklistd 8
++.Xr blacklistd 8
+ .It
+ .An Thor Lancelot Simon
+ .Aq Mt tls@NetBSD.org

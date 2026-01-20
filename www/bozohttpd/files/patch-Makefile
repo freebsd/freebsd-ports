@@ -1,14 +1,5 @@
 --- Makefile.orig	2024-02-04 05:55:04 UTC
 +++ Makefile
-@@ -14,7 +14,7 @@
- #	NO_SSL_SUPPORT		/* don't support ssl (https) */
- #	DO_HTPASSWD		/* support .htpasswd files */
- #	NO_LUA_SUPPORT		/* don't support Lua for dynamic content */
--#	NO_BLOCKLIST_SUPPORT	/* don't support blocklist */
-+#	NO_BLACKLIST_SUPPORT	/* don't support blocklist */
- #
- # other system specific defines:
- #	HAVE_NBUTIL_H		/* netbsd compat is in <nbutil.h>
 @@ -24,22 +24,19 @@
  # for setting CFLAGS relevant to your make, eg
  #   % make COPTS="-DDO_HTPASSWD"

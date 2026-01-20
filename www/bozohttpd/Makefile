@@ -1,5 +1,6 @@
 PORTNAME=	bozohttpd
 DISTVERSION=	20240126
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://eterna23.net/bozohttpd/
 
@@ -18,12 +19,12 @@ MAKE_ARGS=	LDADD="${LIBS}"
 PLIST_FILES=	bin/bozohttpd \
 		share/man/man8/bozohttpd.8.gz
 
-OPTIONS_DEFINE=		BLACKLIST CGI DAEMON DEBUG DIRINDEX\
+OPTIONS_DEFINE=		BLOCKLIST CGI DAEMON DEBUG DIRINDEX\
 			DYNAMIC HTPASSWD LUA SSL USER
-OPTIONS_DEFAULT=	BLACKLIST CGI DAEMON DEBUG DIRINDEX\
+OPTIONS_DEFAULT=	BLOCKLIST CGI DAEMON DEBUG DIRINDEX\
 			DYNAMIC HTPASSWD LUA SSL USER
 
-BLACKLIST_DESC=		Report Unauthorized and Forbidden accesses to blacklistd
+BLOCKLIST_DESC=		Report Unauthorized and Forbidden accesses to blocklistd
 CGI_DESC=		Common Gateway Interface (CGI) support (-C, -c, -E, -e)
 DAEMON_DESC=		Optional daemon mode (-b)
 DEBUG_DESC=		Debug support (-d)
@@ -34,8 +35,8 @@ LUA_DESC=		Lua scripts for dynamic content (-L)
 SSL_DESC=		SSL/TLS for HTTPS requests (-Z, -z)
 USER_DESC=		Optional /~user transformation (-e, -p, -u)
 
-BLACKLIST_CFLAGS_OFF=	-DNO_BLACKLIST_SUPPORT
-BLACKLIST_LIBS=		-lblacklist
+BLOCKLIST_CFLAGS_OFF=	-DNO_BLOCKLIST_SUPPORT
+BLOCKLIST_LIBS=		-lblocklist
 CGI_CFLAGS_OFF=		-DNO_CGIBIN_SUPPORT
 DAEMON_CFLAGS_OFF=	-DNO_DAEMON_MODE
 DEBUG_CFLAGS_OFF=	-DNO_DEBUG
@@ -56,6 +57,12 @@ SSL_LIBS=		-lcrypto -lssl
 USER_CFLAGS_OFF=	-DNO_USER_SUPPORT
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
+BLOCKLIST_CFLAGS_OFF=	-DNO_BLACKLIST_SUPPORT
+BLOCKLIST_LIBS=		-lblacklist
+EXTRA_PATCHES=		${FILESDIR}/blacklist-patches
+.endif
 
 .if ${OPSYS} == FreeBSD
 CFLAGS+=	-Wno-error=unused-but-set-variable
