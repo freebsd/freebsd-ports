@@ -1,31 +1,4 @@
 DISTVERSION=	1.24.12
-# Always set PORTREVISION explicitly as otherwise they are inherited from lang/go-devel
-PORTREVISION=	0
-MASTER_SITES=	https://go.dev/dl/
-DISTFILES=	go${DISTVERSION}.src.tar.gz \
-		go1.23.12.${OPSYS:tl}-${GOARCH_${ARCH}}.tar.gz
-EXTRACT_ONLY=	${DISTFILES:[1]}
+BOOTSTRAP_VER=	1.23.12
 
-# Avoid conflicting patch files
-PATCHFILES=
-
-COMMENT=	Go programming language
-
-SHEBANG_FILES=	lib/wasm/go_js_wasm_exec lib/wasm/go_wasip1_wasm_exec
-
-MASTERDIR=	${.CURDIR}/../go-devel
-PATCHDIR=	${.CURDIR}/files
-
-WRKSRC=		${WRKDIR}/go
-
-DISTINFO_FILE=	${.CURDIR}/distinfo
-
-BOOTSTRAP_WRKSRC=	${WRKDIR}/go-${OPSYS:tl}-${GOARCH_${ARCH}}${GOARM_${ARCH}}-bootstrap
-
-pre-extract:
-	${MKDIR} ${BOOTSTRAP_WRKSRC}
-	cd ${BOOTSTRAP_WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/${DISTFILES:[2]} \
-		--strip-components 1 ${EXTRACT_AFTER_ARGS}
-
-.include "${MASTERDIR}/Makefile"
+.include "${.CURDIR}/../go/bsd.go.mk"
