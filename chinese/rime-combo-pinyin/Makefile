@@ -1,5 +1,5 @@
 PORTNAME=	rime-combo-pinyin
-DISTVERSION=	g20250926
+DISTVERSION=	g20251122
 CATEGORIES=	chinese textproc
 
 MAINTAINER=	eric@camachat.org
