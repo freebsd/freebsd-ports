@@ -601,7 +601,7 @@ share/ART/languages/Portugues (Brasil)
 share/ART/languages/README
 share/ART/languages/default
 share/ART/luts/sigmoid.ctl
-share/ART/metainfo/us.pixls.art.ART.metainfo.xml
+share/metainfo/us.pixls.art.ART.metainfo.xml
 share/ART/options
 share/ART/profiles/Auto-Matched Curve.arp
 share/ART/profiles/Noise Reduction High.arp
