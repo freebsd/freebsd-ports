@@ -76,6 +76,7 @@ include/dns/rdataset.h
 include/dns/rdatasetiter.h
 include/dns/rdataslab.h
 include/dns/rdatatype.h
+include/dns/rdatavec.h
 include/dns/remote.h
 include/dns/request.h
 include/dns/resolver.h
@@ -185,6 +186,7 @@ include/isc/serial.h
 include/isc/sieve.h
 include/isc/signal.h
 include/isc/siphash.h
+include/isc/slist.h
 include/isc/sockaddr.h
 include/isc/spinlock.h
 include/isc/stats.h
@@ -237,11 +239,11 @@ include/ns/xfrout.h
 lib/bind/filter-a.so
 lib/bind/filter-aaaa.so
 lib/bind/synthrecord.so
-lib/libdns-9.21.16.so
-lib/libisc-9.21.16.so
-lib/libisccc-9.21.16.so
-lib/libisccfg-9.21.16.so
-lib/libns-9.21.16.so
+lib/libdns-9.21.17.so
+lib/libisc-9.21.17.so
+lib/libisccc-9.21.17.so
+lib/libisccfg-9.21.17.so
+lib/libns-9.21.17.so
 @comment share/man/man1/arpaname.1.gz
 @comment share/man/man1/delv.1.gz
 @comment share/man/man1/dig.1.gz
