@@ -1,6 +1,6 @@
-TIMESTAMP = 1752958382
-SHA256 (emersion-hydroxide-v0.2.30_GH0.tar.gz) = 752c88bdedd1d35a66f7dccb37ba7a392469f6570788d4ef70ecf7ca87a6bbd2
-SIZE (emersion-hydroxide-v0.2.30_GH0.tar.gz) = 45458
+TIMESTAMP = 1768992813
+SHA256 (emersion-hydroxide-v0.2.31_GH0.tar.gz) = b4948ba32a3bebca1857b78aabd356a261d1f34b72ab0b36b11e2ce03a748184
+SIZE (emersion-hydroxide-v0.2.31_GH0.tar.gz) = 45486
 SHA256 (ProtonMail-go-crypto-v1.3.0_GH0.tar.gz) = 05f38ede69b73f91a57697c2807f90699542b079937312a52485ff8cf3c6ce9b
 SIZE (ProtonMail-go-crypto-v1.3.0_GH0.tar.gz) = 513597
 SHA256 (cloudflare-circl-v1.6.1_GH0.tar.gz) = d9e31594460124cf6f98a4580853ccfc9781c730c2f0058f4fcf2b4e23130a9c
