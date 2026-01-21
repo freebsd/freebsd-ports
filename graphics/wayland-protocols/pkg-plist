@@ -55,7 +55,9 @@ include/wayland-protocols/xdg-toplevel-icon-v1-enum.h
 include/wayland-protocols/xdg-toplevel-tag-v1-enum.h
 include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h
 include/wayland-protocols/xwayland-shell-v1-enum.h
+include/wayland-protocols/xx-input-method-v2-enum.h
 include/wayland-protocols/xx-session-management-v1-enum.h
+include/wayland-protocols/xx-text-input-v3-enum.h
 share/pkgconfig/wayland-protocols.pc
 %%DATADIR%%/stable/linux-dmabuf/linux-dmabuf-v1.xml
 %%DATADIR%%/stable/presentation-time/presentation-time.xml
