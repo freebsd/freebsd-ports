@@ -1,3 +1,40 @@
+  <vuln vid="61dc7f67-f6e5-11f0-b051-2cf05da270f3">
+    <topic>Gitlab -- vulnerabilities</topic>
+    <affects>
+<package>
+<name>gitlab-ce</name>
+<name>gitlab-ee</name>
+<range><ge>18.8.0</ge><lt>18.8.2</lt></range>
+<range><ge>18.7.0</ge><lt>18.7.2</lt></range>
+<range><ge>11.9.0</ge><lt>18.6.4</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2026/01/21/patch-release-gitlab-18-8-2-released/">
+	  <p>Denial of Service issue in Jira Connect integration impacts GitLab CE/EE</p>
+	  <p>Incorrect Authorization issue in Releases API impacts GitLab CE/EE</p>
+	  <p>Unchecked Return Value issue in authentication services impacts GitLab CE/EE</p>
+	  <p>Infinite Loop issue in Wiki redirects impacts GitLab CE/EE</p>
+	  <p>Denial of Service issue in API endpoint impacts GitLab CE/EE</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-13927</cvename>
+      <cvename>CVE-2025-13928</cvename>
+      <cvename>CVE-2026-0723</cvename>
+      <cvename>CVE-2025-13335</cvename>
+      <cvename>CVE-2026-1102</cvename>
+      <url>https://about.gitlab.com/releases/2026/01/21/patch-release-gitlab-18-8-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2026-01-21</discovery>
+      <entry>2026-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="01f34a27-f560-11f0-bbdc-10ffe07f9334">
     <topic>mail/mailpit -- multiple vulnerabilities</topic>
     <affects>
