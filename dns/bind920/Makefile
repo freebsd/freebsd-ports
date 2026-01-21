@@ -207,6 +207,20 @@ post-patch:
 .endfor
 
 .if !defined(BIND_TOOLS_SLAVE)
+regen-patches:
+	cd ${.CURDIR} ; \
+		make clean ; \
+		mv files/extrapatch-no-bind-tools files/patch-no-bind-tools ; \
+		mv files/extrapatch-bind-min-override-ttl files/patch-bind-min-override-ttl ; \
+		make extract do-patch makepatch BATCH= NO_IGNORE= PATCH_DEBUG=yes EXTRA_PATCHES= || : ; \
+		mv files/patch-no-bind-tools files/extrapatch-no-bind-tools ; \
+		mv files/patch-bind-min-override-ttl files/extrapatch-bind-min-override-ttl
+	cd ${.CURDIR} ; \
+		mv files/extrapatch-bind-tools files/patch-bind-tools ; \
+		(cd ../bind-tools ; \
+		make clean extract do-patch makepatch BATCH= NO_IGNORE= PATCH_DEBUG=yes EXTRA_PATCHES= MASTERDIR=$$PWD/../bind920 || :) ; \
+		mv files/patch-bind-tools files/extrapatch-bind-tools
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree
 	${MKDIR} ${STAGEDIR}${ETCDIR}
