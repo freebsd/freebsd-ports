@@ -1,27 +1,30 @@
 PORTNAME=	kodi
-DISTVERSION=	21.3
+DISTVERSION=	22.0a2
 CATEGORIES=	multimedia java
 MASTER_SITES=	https://mirrors.kodi.tv/build-deps/sources/
 DISTFILES=	apache-groovy-binary-${GROOVY_VERSION}.zip \
 		commons-lang3-${COMMONS_LANG_VERSION}-bin.tar.gz \
-		commons-text-${COMMONS_TEXT_VERSION}-bin.tar.gz
+		commons-text-${COMMONS_TEXT_VERSION}-bin.tar.gz \
+		json-${NLOHMANN_JSON_VERSION}.tar.xz
 DIST_SUBDIR=	${PORTNAME}
 # do not forget to fix devel/kodi-platform when updating kodi
+
+PATCH_SITES=	https://github.com/xbmc/xbmc/commit/
+PATCHFILES=	03b192aac8f49f613dade58c5359ec0d0e35d92a.patch:-p1 \
+		620e4011cbf5b2bfe531bc37d916a90787e3ca2d.patch:-p1
 
 MAINTAINER=	yzrh@noema.org
 COMMENT=	Award winning media center application
 WWW=		https://kodi.tv/
-
-BROKEN=		Does not build with ffmpeg > 6
 
 LICENSE=	GPLv2+
 
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	flatbuffers>0:devel/flatbuffers \
-		rapidjson>0:devel/rapidjson \
 		swig>0:devel/swig
-LIB_DEPENDS=	libass.so:multimedia/libass \
+LIB_DEPENDS=	libaacs.so:multimedia/libaacs \
+		libass.so:multimedia/libass \
 		libavcodec.so:multimedia/ffmpeg \
 		libavfilter.so:multimedia/ffmpeg \
 		libavformat.so:multimedia/ffmpeg \
@@ -29,6 +32,8 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libcdio.so:sysutils/libcdio \
 		libcrossguid.so:devel/libcrossguid \
 		libcurl.so:ftp/curl \
+		libbdplus.so:multimedia/libbdplus \
+		libexiv2.so:graphics/exiv2 \
 		libexpat.so:textproc/expat2 \
 		libfmt.so:devel/libfmt \
 		libfreetype.so:print/freetype2 \
@@ -37,9 +42,8 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 		libgif.so:graphics/giflib \
 		libharfbuzz.so:print/harfbuzz \
 		liblzo2.so:archivers/lzo2 \
-		libpcre.so:devel/pcre \
+		libpcre2-8.so:devel/pcre2 \
 		libpng.so:graphics/png \
-		libpostproc.so:multimedia/ffmpeg \
 		libspdlog.so:devel/spdlog \
 		libswresample.so:multimedia/ffmpeg \
 		libswscale.so:multimedia/ffmpeg \
@@ -53,14 +57,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 USES=		autoreconf:build cmake:noninja compiler:c++17-lang cpe \
 		desktop-file-utils gettext gmake gnome iconv java:build jpeg libtool \
 		pkgconfig python sqlite ssl
+USE_RC_SUBR=	kodi
 
-KODI_CODENAME=		Omega
+KODI_CODENAME=		Piers
 LIBDVDCSS_VERSION=	1.4.3-Next-Nexus-Alpha2-2
 LIBDVDNAV_VERSION=	6.1.1-Next-Nexus-Alpha2-2
 LIBDVDREAD_VERSION=	6.1.3-Next-Nexus-Alpha2-2
-GROOVY_VERSION=		4.0.16
-COMMONS_LANG_VERSION=	3.14.0
-COMMONS_TEXT_VERSION=	1.11.0
+GROOVY_VERSION=		4.0.26
+COMMONS_LANG_VERSION=	3.17.0
+COMMONS_TEXT_VERSION=	1.13.0
+# TODO: make it a new port
+NLOHMANN_JSON_VERSION=	3.12.0
 
 USE_GITHUB=	yes
 GH_TUPLE=	xbmc:xbmc:${DISTVERSION}-${KODI_CODENAME} \
@@ -85,6 +92,7 @@ CMAKE_ARGS=	-DGIT_VERSION="${DISTVERSION}-${KODI_CODENAME}" \
 		-DLIBDVDCSS_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdcss-${LIBDVDCSS_VERSION}_GH0.tar.gz" \
 		-DLIBDVDNAV_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdnav-${LIBDVDNAV_VERSION}_GH0.tar.gz" \
 		-DLIBDVDREAD_URL="${DISTDIR}/${PORTNAME}/xbmc-libdvdread-${LIBDVDREAD_VERSION}_GH0.tar.gz" \
+		-DNLOHMANN_JSON_URL="${DISTDIR}/${PORTNAME}/json-${NLOHMANN_JSON_VERSION}.tar.xz" \
 		-Dgroovy_SOURCE_DIR="${WRKSRC}/tools/depends/share/groovy" \
 		-Dapache-commons-lang_SOURCE_DIR="${WRKSRC}/tools/depends/share/java/lang" \
 		-Dapache-commons-text_SOURCE_DIR="${WRKSRC}/tools/depends/share/java/text" \
@@ -92,6 +100,8 @@ CMAKE_ARGS=	-DGIT_VERSION="${DISTVERSION}-${KODI_CODENAME}" \
 		-DCORE_PLATFORM_NAME:STRING="${KODI_PLATFORM}" \
 		-DCMAKE_VERBOSE_MAKEFILE=ON
 CMAKE_OFF=	ENABLE_INTERNAL_CROSSGUID
+CMAKE_ON=	ENABLE_INTERNAL_NLOHMANNJSON \
+		VERBOSE_FIND
 CONFIGURE_ENV=	_CPU_FEATURE="${CPU_FEATURE}"
 
 OPTIONS_SUB=		yes
@@ -149,7 +159,8 @@ AVAHI_CMAKE_BOOL=	ENABLE_AVAHI
 LIBBLURAY_LIB_DEPENDS=	libbluray.so:multimedia/libbluray
 LIBBLURAY_CMAKE_BOOL=	ENABLE_BLURAY
 
-CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec
+CEC_LIB_DEPENDS=	libcec.so:multimedia/libcec \
+			libp8-platform.so:devel/p8-platform
 CEC_CMAKE_BOOL=		ENABLE_CEC
 
 DAV1D_LIB_DEPENDS=	libdav1d.so:multimedia/dav1d
@@ -303,7 +314,7 @@ post-patch:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/manpages/kodi.bin.1 ${STAGEDIR}${PREFIX}/share/man/man1
 	cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${LN} -s kodi.bin.1.gz kodi.1.gz
-	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} kodi-TexturePacker TexturePacker
+	cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} kodi-TexturePacker
 	${FIND} ${STAGEDIR}${PREFIX}/lib/kodi -type f -name '*.so' -print0 | ${XARGS} -0 ${STRIP_CMD}
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/firewalld
 
