@@ -80,6 +80,7 @@ shebangonefile() {
 	/usr/sbin/dtrace) ;;
 	/usr/bin/make) ;;
 	/usr/libexec/atf-sh) ;;
+	/usr/libexec/flua) ;;
 	*)
 		badinterp="${interp}"
 		;;
