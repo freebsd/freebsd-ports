@@ -3,6 +3,8 @@
 %%MANPAGES%%share/man/man1/glab-alias-set.1.gz
 %%MANPAGES%%share/man/man1/glab-alias.1.gz
 %%MANPAGES%%share/man/man1/glab-api.1.gz
+%%MANPAGES%%share/man/man1/glab-attestation-verify.1.gz
+%%MANPAGES%%share/man/man1/glab-attestation.1.gz
 %%MANPAGES%%share/man/man1/glab-auth-configure-docker.1.gz
 %%MANPAGES%%share/man/man1/glab-auth-docker-helper.1.gz
 %%MANPAGES%%share/man/man1/glab-auth-dpop-gen.1.gz
