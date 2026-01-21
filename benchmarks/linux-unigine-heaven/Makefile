@@ -31,7 +31,7 @@ DESKTOP_ENTRIES="Unigine Heaven" "${COMMENT}" "${DATADIR}/data/launcher/icon.png
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAIL} -n 1097642 ${DISTDIR}/${DISTFILES} | ${TAR} xzf - -C ${WRKSRC}
+	@${TAIL} -n 1098258 ${DISTDIR}/${DISTFILES} | ${TAR} xzf - -C ${WRKSRC}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh \
