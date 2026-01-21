@@ -1,5 +1,5 @@
-TIMESTAMP = 1768585073
-SHA256 (go/security_netbird/netbird-v0.63.0/v0.63.0.mod) = 9001cd4f3e976bc343c652b5dd2b2d3471ab5b59aa037b64ec061fdd3a929d34
-SIZE (go/security_netbird/netbird-v0.63.0/v0.63.0.mod) = 13891
-SHA256 (go/security_netbird/netbird-v0.63.0/v0.63.0.zip) = 68abf6adfa815e1093377757e0a8a790b1fe48bfa18f8e32fc01ad19bb5f09b0
-SIZE (go/security_netbird/netbird-v0.63.0/v0.63.0.zip) = 3714200
+TIMESTAMP = 1768932331
+SHA256 (go/security_netbird/netbird-v0.64.0/v0.64.0.mod) = f214926bb39e12cb02f212300d4101786e23cec604c617f57fc1ce8327fbbd80
+SIZE (go/security_netbird/netbird-v0.64.0/v0.64.0.mod) = 13986
+SHA256 (go/security_netbird/netbird-v0.64.0/v0.64.0.zip) = 71cf02afd075a3e9bde08cff5310902806a1f8f3a00b67fa1b39f3ecefb45aee
+SIZE (go/security_netbird/netbird-v0.64.0/v0.64.0.zip) = 3740808
