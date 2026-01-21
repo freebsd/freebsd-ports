@@ -1,7 +1,6 @@
 PORTNAME=	git-cliff
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
-PORTREVISION=	1
+DISTVERSION=	2.12.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -61,7 +60,7 @@ CARGO_CRATES=	addr2line-0.24.2 \
 		bumpalo-3.19.0 \
 		bytemuck-1.23.2 \
 		bytes-1.11.0 \
-		cacache-13.0.0 \
+		cacache-13.1.0 \
 		cc-1.2.49 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
