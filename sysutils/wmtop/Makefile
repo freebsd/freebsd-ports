@@ -1,30 +1,33 @@
 PORTNAME=	wmtop
-PORTVERSION=	0.84
-PORTREVISION=	4
+DISTVERSION=	0.85
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	https://www.dockapps.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp to display top three CPU consuming processes
-WWW=		https://wmtop.sourceforge.net/
+WWW=		https://www.dockapps.net/wmtop
 
 LICENSE=	GPLv2
 
-USES=		gmake xorg		# gmake is needed for -jX builds
-USE_XORG=	xpm x11
-USE_CSTD=	gnu89
-ALL_TARGET=	freebsd
-CFLAGS+=	-fcommon  # clang11/gcc10
+LIB_DEPENDS=	libdockapp.so:x11-wm/libdockapp
 
-PORTDOCS=	BUGS CHANGES README TODO
+USES=		autoreconf pkgconfig xorg
+USE_CSTD=	gnu89
+USE_XORG=	x11 xext xpm
+
+GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/dockapps-be3f170
+
 PLIST_FILES=	bin/wmtop \
 		share/man/man1/wmtop.1.gz
+PORTDOCS=	BUGS ChangeLog README TODO
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/^\(LIBS.*\)/\1 -lkvm/ ; \
-		s/^\(FLAGS.*\)/\1 -DNO_PROCFS/' ${WRKSRC}/Makefile
+		s/^\(AM_CFLAGS.*\)/\1 -DNO_PROCFS/' ${WRKSRC}/Makefile.am
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmtop ${STAGEDIR}${PREFIX}/bin

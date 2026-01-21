@@ -1,6 +1,6 @@
---- wmtop.c.orig	Wed Mar  7 05:30:56 2001
-+++ wmtop.c	Fri Feb 25 22:34:36 2005
-@@ -70,6 +70,13 @@
+--- wmtop.c.orig	2016-02-09 01:13:19 UTC
++++ wmtop.c
+@@ -72,6 +72,13 @@
  #include "xpm/wmtop-neon2.xpm"
  #include "xpm/wmtop-rainbow.xpm"
  
@@ -14,8 +14,8 @@
  /******************************************/
  /* Defines                                */
  /******************************************/
-@@ -191,6 +198,9 @@
-     int rss;
+@@ -191,6 +198,9 @@ struct process {
+     long rss;
      int time_stamp;
      int counted;
 +#ifdef NO_PROCFS
@@ -24,7 +24,7 @@
  };
  
  /******************************************/
-@@ -455,17 +465,19 @@
+@@ -455,17 +465,19 @@ int process_parse_procfs(struct process *process) {
   * Anyone hoping to port wmtop should look here first.
   */
  int process_parse_procfs(struct process *process) {
@@ -32,10 +32,10 @@
      char line[WMTOP_BUFLENGTH],filename[WMTOP_BUFLENGTH],procname[WMTOP_BUFLENGTH];
      int ps;
      struct stat sbuf;
--    int user_time,kernel_time;
+-    unsigned long user_time,kernel_time;
      int rc;
 +#endif
-+    int user_time,kernel_time;
++    unsigned long user_time,kernel_time;
  #if defined(LINUX)
      char *r,*q;
      char deparenthesised_name[WMTOP_BUFLENGTH];
@@ -43,10 +43,10 @@
  #endif /* defined(LINUX) */
 -#if defined(FREEBSD)
 +#if defined(FREEBSD) && !defined(NO_PROCFS)
+     /* TODO: needs analysis. Probably needs same data type fix as LINUX (use
+      * long types). Need to check FreeBSD docs and test.  -wbk		     */
      int us,um,ks,km;
- #endif /* defined(FREEBSD) */
- 
-@@ -473,6 +485,15 @@
+@@ -475,6 +487,15 @@ int process_parse_procfs(struct process *process) {
      assert(process->id==0x0badfeed);
  #endif /* defined(PARANOID) */
  
@@ -62,15 +62,15 @@
      sprintf(filename,PROCFS_TEMPLATE,process->pid);
  
      /*
-@@ -582,6 +603,7 @@
+@@ -588,6 +609,7 @@ int process_parse_procfs(struct process *process) {
      process->user_time = us*1000+um/1000;
      process->kernel_time = ks*1000+km/1000;
  #endif /* defined(FREEBSD) */
 +#endif /* defined(NO_PROCFS) */
  
-     process->rss *= getpagesize();
- 
-@@ -607,6 +629,39 @@
+     /* not portable (especially unsuitable for redistributable executables.
+      * On some systems, getpagesize() is a preprocessor macro).
+@@ -616,6 +638,39 @@ int update_process_table() {
  /******************************************/
  
  int update_process_table() {
@@ -110,7 +110,7 @@
      DIR *dir;
      struct dirent *entry;
  
-@@ -640,6 +695,7 @@
+@@ -649,6 +704,7 @@ int update_process_table() {
      closedir(dir);
  
      return 0;
