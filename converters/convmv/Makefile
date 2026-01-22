@@ -1,11 +1,10 @@
 PORTNAME=	convmv
-PORTVERSION=	2.05
-PORTREVISION=	1
+DISTVERSION=	2.06
 CATEGORIES=	converters perl5
 MASTER_SITES=	http://www.j3e.de/linux/convmv/ \
 		http://www.sfr-fresh.com/unix/privat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jishanalam9128@gmail.com
 COMMENT=	Convert filenames from one encoding to another
 WWW=		https://j3e.de/linux/convmv/man/
 
