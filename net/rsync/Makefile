@@ -1,6 +1,6 @@
 PORTNAME=	rsync
 DISTVERSION=	3.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	https://www.mirrorservice.org/sites/rsync.samba.org/src/ \
 		http://rsync.mirror.garr.it/src/ \
@@ -19,12 +19,25 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libxxhash.so:devel/xxhash \
 		libzstd.so:archivers/zstd
 
+FLAVORS=	default python
+FLAVOR?=	${FLAVORS:[1]}
+FLAVORS_SUB=	yes
+python_PKGNAMESUFFIX=	-python
+
 USES=		autoreconf:build cpe ssl
+.if ${FLAVOR:U} == python
+USES+=	python:run shebangfix
+.endif
+
+CONFLICTS=	rsync rsync-python
+
 CPE_VENDOR=	samba
 CPE_PRODUCT=	rsync
 USE_RC_SUBR=	rsyncd
 
+.if ${FLAVOR:U} == python
 SHEBANG_FILES=	support/rrsync
+.endif
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
@@ -44,7 +57,7 @@ SUB_LIST=	NAME=rsyncd
 PORTDOCS=	NEWS.md README.md csprotocol.txt tech_report.tex
 
 # define options
-OPTIONS_DEFINE=		DOCS ICONV POPT_PORT PYTHON SSH ZLIB_BASE
+OPTIONS_DEFINE=		DOCS ICONV POPT_PORT SSH ZLIB_BASE
 OPTIONS_DEFAULT=	FLAGS ICONV SSH ZLIB_BASE
 OPTIONS_RADIO=		PTS
 OPTIONS_RADIO_PTS=	FLAGS RENAMED
@@ -53,7 +66,6 @@ OPTIONS_SUB=		yes
 # options provided upstream
 FLAGS_DESC=	File system flags support patch, adds --fileflags
 POPT_PORT_DESC=	Use popt from devel/popt instead of bundled one
-PYTHON_DESC=	Install Python scripts (rrsync)
 SSH_DESC=	Use SSH instead of RSH
 ZLIB_BASE_DESC=	Use zlib from base instead of bundled one
 
@@ -69,8 +81,6 @@ ICONV_CONFIGURE_ENABLE=	iconv iconv-open
 
 POPT_PORT_LIB_DEPENDS=		libpopt.so:devel/popt
 POPT_PORT_CONFIGURE_OFF=	--with-included-popt
-
-PYTHON_USES=	python:run shebangfix
 
 RENAMED_EXTRA_PATCHES=	${WRKSRC}/patches/detect-renamed.diff
 
@@ -109,14 +119,14 @@ pre-configure:
 post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${ETCDIR}/
-.if ${PORT_OPTIONS:MPYTHON}
+.if ${FLAVOR:U} == python
 	${INSTALL_SCRIPT} ${WRKSRC}/support/rrsync ${STAGEDIR}${PREFIX}/sbin
 .endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.if ${PORT_OPTIONS:MPYTHON}
+.if ${FLAVOR:U} == python
 	${INSTALL_DATA} ${WRKSRC}/support/rrsync.1.md ${STAGEDIR}${DOCSDIR}
 .endif
 
