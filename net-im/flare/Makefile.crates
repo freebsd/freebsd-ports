@@ -538,8 +538,8 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zvariant_derive-5.8.0 \
 		zvariant_utils-3.2.1 \
 		curve25519-dalek,curve25519-dalek-derive@git+https://github.com/signalapp/curve25519-dalek?tag=signal-curve25519-4.1.3\#7c6d34756355a3566a704da84dce7b1c039a6572 \
+		presage,presage-store-sqlite@git+https://github.com/Schmiddiii/presage?rev=211c9d56dcbbb14096271f36807117c38b6c9e9d\#211c9d56dcbbb14096271f36807117c38b6c9e9d \
 		blurhash@git+https://github.com/Schmiddiii/blurhash-rs?rev=a46af692e783f81f4ac752c91ef13847521c5352\#a46af692e783f81f4ac752c91ef13847521c5352 \
 		libsignal-account-keys,libsignal-core,libsignal-protocol,poksho,signal-crypto,zkcredential,zkgroup@git+https://github.com/signalapp/libsignal?tag=v0.86.6\#494495504f0855eb799d6abfac88568d250eed96 \
 		libsignal-service@git+https://github.com/Schmiddiii/libsignal-service-rs?rev=7fae2239b707f8ef391c083da90a6485455fdb24\#7fae2239b707f8ef391c083da90a6485455fdb24 \
-		spqr@git+https://github.com/signalapp/SparsePostQuantumRatchet.git?tag=v1.2.0\#99a759a3fd40cd9304459fb007fcf177db9ed207 \
-		presage,presage-store-sqlite@git+https://github.com/Schmiddiii/presage?rev=3fbaea8d9dc4384f1edda959039c1a918eb3dc08\#3fbaea8d9dc4384f1edda959039c1a918eb3dc08
+		spqr@git+https://github.com/signalapp/SparsePostQuantumRatchet.git?tag=v1.2.0\#99a759a3fd40cd9304459fb007fcf177db9ed207

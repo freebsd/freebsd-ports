@@ -1,4 +1,4 @@
-TIMESTAMP = 1768477642
+TIMESTAMP = 1769079631
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
 SIZE (rust/crates/adler2-2.0.1.crate) = 13366
 SHA256 (rust/crates/aead-0.5.2.crate) = d122413f284cf2d62fb1b7db97e02edb8cda96d769b16e443a4f6195e35662b0
@@ -1079,6 +1079,8 @@ SHA256 (rust/crates/zvariant_utils-3.2.1.crate) = c6949d142f89f6916deca2232cf26a
 SIZE (rust/crates/zvariant_utils-3.2.1.crate) = 14678
 SHA256 (signalapp-curve25519-dalek-signal-curve25519-4.1.3_GH0.tar.gz) = 8dd338dd7d558b7882310e8dc76ceca41ef448afd0532be208d4ff0f2924f334
 SIZE (signalapp-curve25519-dalek-signal-curve25519-4.1.3_GH0.tar.gz) = 808022
+SHA256 (Schmiddiii-presage-211c9d56dcbbb14096271f36807117c38b6c9e9d_GH0.tar.gz) = 63abc550954889f9209e32b857096fdfc59e1b7e8e1f555db2749c784c7183e9
+SIZE (Schmiddiii-presage-211c9d56dcbbb14096271f36807117c38b6c9e9d_GH0.tar.gz) = 104003
 SHA256 (Schmiddiii-blurhash-rs-a46af692e783f81f4ac752c91ef13847521c5352_GH0.tar.gz) = 80208d7587f96bc177ce95c92fd490b19c338f4bf19a3ca1536e054067dd6688
 SIZE (Schmiddiii-blurhash-rs-a46af692e783f81f4ac752c91ef13847521c5352_GH0.tar.gz) = 212202
 SHA256 (signalapp-libsignal-v0.86.6_GH0.tar.gz) = ddac31d2b06f4042be671759af4e8e6b45e49c014f5a2befe34954c715845a78
@@ -1087,7 +1089,5 @@ SHA256 (Schmiddiii-libsignal-service-rs-7fae2239b707f8ef391c083da90a6485455fdb24
 SIZE (Schmiddiii-libsignal-service-rs-7fae2239b707f8ef391c083da90a6485455fdb24_GH0.tar.gz) = 103280
 SHA256 (signalapp-SparsePostQuantumRatchet-v1.2.0_GH0.tar.gz) = e551333c1ff1a1e8fc19d4b47513b1b15b556f2d79ab37c10ffab3150b17d405
 SIZE (signalapp-SparsePostQuantumRatchet-v1.2.0_GH0.tar.gz) = 143737
-SHA256 (Schmiddiii-presage-3fbaea8d9dc4384f1edda959039c1a918eb3dc08_GH0.tar.gz) = 569ce6c31138fd8283393159c8688b04205b552257eb4d59b6692849472c25e2
-SIZE (Schmiddiii-presage-3fbaea8d9dc4384f1edda959039c1a918eb3dc08_GH0.tar.gz) = 103608
-SHA256 (flare-0.18.0.tar.bz2) = b4ef4a473a5f8c578f83a62d342f341d7d0c3c615a2fb29870cc15936b2149ff
-SIZE (flare-0.18.0.tar.bz2) = 491883
+SHA256 (flare-0.18.1.tar.bz2) = 56199cd421ad7f3435eea18c74ab96918af27337e4675b9329ff641549e14974
+SIZE (flare-0.18.1.tar.bz2) = 496570
