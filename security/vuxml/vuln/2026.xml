@@ -1,3 +1,36 @@
+  <vuln vid="f8560c1b-f772-11f0-85c5-a8a1599412c6">
+    <topic>chromium -- multiple security fixes</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.96</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.96</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_20.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[473851441] High CVE-2026-1220: Race in V8. Reported by @p1nky4745 on 2026-01-07</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1220</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_20.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-20</discovery>
+      <entry>2026-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="61dc7f67-f6e5-11f0-b051-2cf05da270f3">
     <topic>Gitlab -- vulnerabilities</topic>
     <affects>
