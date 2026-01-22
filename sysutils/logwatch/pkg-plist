@@ -71,6 +71,7 @@
 %%ETCDIR%%/defaults/services/autorpm.conf
 %%ETCDIR%%/defaults/services/barracuda.conf
 %%ETCDIR%%/defaults/services/bfd.conf
+%%ETCDIR%%/defaults/services/chronyd.conf
 %%ETCDIR%%/defaults/services/cisco.conf
 %%ETCDIR%%/defaults/services/citadel.conf
 %%ETCDIR%%/defaults/services/clam-update.conf
@@ -83,6 +84,7 @@
 %%ETCDIR%%/defaults/services/dirsrv.conf
 %%ETCDIR%%/defaults/services/dnf-automatic.conf
 %%ETCDIR%%/defaults/services/dnf-rpm.conf
+%%ETCDIR%%/defaults/services/dnf5.conf
 %%ETCDIR%%/defaults/services/dnssec.conf
 %%ETCDIR%%/defaults/services/dovecot.conf
 %%ETCDIR%%/defaults/services/dpkg.conf
@@ -204,6 +206,7 @@ libexec/logwatch/defaults/services/automount
 libexec/logwatch/defaults/services/autorpm
 libexec/logwatch/defaults/services/barracuda
 libexec/logwatch/defaults/services/bfd
+libexec/logwatch/defaults/services/chronyd
 libexec/logwatch/defaults/services/cisco
 libexec/logwatch/defaults/services/citadel
 libexec/logwatch/defaults/services/clam-update
@@ -216,6 +219,7 @@ libexec/logwatch/defaults/services/dhcpd
 libexec/logwatch/defaults/services/dirsrv
 libexec/logwatch/defaults/services/dnf-automatic
 libexec/logwatch/defaults/services/dnf-rpm
+libexec/logwatch/defaults/services/dnf5
 libexec/logwatch/defaults/services/dnssec
 libexec/logwatch/defaults/services/dovecot
 libexec/logwatch/defaults/services/dpkg
