@@ -1,4 +1,4 @@
-TIMESTAMP = 1757153410
+TIMESTAMP = 1769081711
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/ab_glyph-0.2.21.crate) = 5110f1c78cf582855d895ecd0746b653db010cec6d9f5575293f27934d980a39
@@ -1469,5 +1469,5 @@ SHA256 (lapce-lsp-types-feaa1e2ec80975c9dadd400a238ceacf071058e6_GH0.tar.gz) = 3
 SIZE (lapce-lsp-types-feaa1e2ec80975c9dadd400a238ceacf071058e6_GH0.tar.gz) = 68504
 SHA256 (lapce-locale_config-54c9fe6a247c3618c224ec57e6c3a747bc3a96e4_GH0.tar.gz) = 662e0079b9b2a666b47c8ee953c17f79c810a437ba7c9e4c5d60f924d4ace4ac
 SIZE (lapce-locale_config-54c9fe6a247c3618c224ec57e6c3a747bc3a96e4_GH0.tar.gz) = 22177
-SHA256 (lapce-lapce-v0.4.5_GH0.tar.gz) = e5e9df702c2f108da57b8a5232d797c582171c0523a0ac381947058ec667423c
-SIZE (lapce-lapce-v0.4.5_GH0.tar.gz) = 2868458
+SHA256 (lapce-lapce-v0.4.6_GH0.tar.gz) = c6790771ed0af5e242d2410d930197412af4c21c07a5a33ae5d6ac596ca7380a
+SIZE (lapce-lapce-v0.4.6_GH0.tar.gz) = 2869797
