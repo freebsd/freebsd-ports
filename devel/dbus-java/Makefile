@@ -17,6 +17,7 @@ LICENSE_PERMS_ACADEMIC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libunix-java.so:devel/libmatthew
 
 USES=		gettext gmake java
+JAVA_VERSION=	8
 
 MAKE_ARGS=	MANPREFIX=${PREFIX}/share/man/man1
 .if defined(WITH_DEBUG)
