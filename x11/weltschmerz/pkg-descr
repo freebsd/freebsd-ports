@@ -1,0 +1,8 @@
+weltschmerz is a small and simple terminal emulator built upon the Virtual
+Terminal Emulator widget. It’s written in Vala, supports clickable URLs and
+hyperlinks, can reload its configuration whilst running, and has basic search
+functionality.
+
+As a VTE app, weltschmerz supports practically every contemporary terminal
+emulator feature. It is built to be a stable and practical terminal emulator for
+daily use.

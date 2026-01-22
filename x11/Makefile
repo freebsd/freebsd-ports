@@ -530,6 +530,7 @@
     SUBDIR += wcm
     SUBDIR += wdisplays
     SUBDIR += wdm
+    SUBDIR += weltschmerz
     SUBDIR += wev
     SUBDIR += wezterm
     SUBDIR += wf-shell
