@@ -1,5 +1,5 @@
 PORTNAME=	angie-console-light
-DISTVERSION=	1.8.1
+DISTVERSION=	1.8.2
 CATEGORIES=	www
 MASTER_SITES=	https://download.angie.software/files/angie-console-light/
 
@@ -16,7 +16,6 @@ NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
 do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
