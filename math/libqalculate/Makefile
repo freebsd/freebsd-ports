@@ -1,10 +1,10 @@
 PORTNAME=	libqalculate
-PORTVERSION=	5.8.2
+PORTVERSION=	5.9.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
-COMMENT=	Multi-purpose desktop calculator (backend library)
+COMMENT=	Multi-purpose desktop calculator (library and CLI)
 WWW=		https://qalculate.github.io/
 
 LICENSE=	GPLv2+
@@ -15,9 +15,12 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
-USES=		compiler:c++14-lang gettext gmake gnome iconv libtool \
+USES=		compiler:c++17-lang gettext gmake gnome iconv libtool \
 		localbase ncurses pathfix pkgconfig readline
-USE_GNOME=	intltool libxml2
+# Project does not set a c++ dialect, but it's better to not leave this
+# undefined and left up to the whims of the compiler.
+USE_CXXSTD=	c++17
+USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
