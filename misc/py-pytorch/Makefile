@@ -95,10 +95,6 @@ VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD
-USES+=	llvm:max=15
-.endif
-
 post-patch:
 	@cd ${WRKSRC} && \
 		${RM} -r third_party/cpuinfo third_party/fbgemm/external/cpuinfo && \
