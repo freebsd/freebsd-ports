@@ -1,5 +1,5 @@
 PORTNAME=	qalculate-qt
-PORTVERSION=	5.8.2
+PORTVERSION=	5.9.0
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/Qalculate/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -14,6 +14,9 @@ LIB_DEPENDS=	libqalculate.so:math/libqalculate
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:c++17-lang gl pkgconfig qmake qt:6
+# Project does not set a c++ dialect, but it's better to not leave this
+# undefined and left up to the whims of the compiler.
+USE_CXXSTD=	c++17
 USE_GL=		opengl
 USE_QT=		base tools:build
 
