@@ -22,6 +22,7 @@ COMPILE_USES_OFF=	java
 COMPILE_USE=	LOCALE=en_US.UTF-8
 COMPILE_ALL_TARGET=	compile
 COMPILE_VARS_OFF=	NO_BUILD=yes
+COMPILE_MAKE_ARGS+=	-Dsrc.version=1.8 -Dtarget.version=1.8
 
 .include <bsd.port.options.mk>
 
