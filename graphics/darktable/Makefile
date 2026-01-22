@@ -42,8 +42,10 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 
-USES=		cmake desktop-file-utils gl gnome jpeg llvm:build lua perl5 \
-		pkgconfig sdl shebangfix sqlite tar:xz xorg
+# Note that compiler-related Uses are defined later in this Makefile, based on
+# the value of `${ARCH}`.
+USES=		cmake desktop-file-utils gl gnome jpeg lua perl5 pkgconfig sdl \
+		shebangfix sqlite tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -110,6 +112,12 @@ USES+=		compiler:gcc-c++11-lib
 .else
 USES+=		compiler:c++11-lib
 .endif
+# `llvm:build` must be added after `compiler:*` above. Otherwise it triggers
+# the following warning from Mk/compiler.mk:
+#
+#     make: .../Mk/Uses/compiler.mk:86: warning: Command "/usr/local/llvm19/bin/clang --version" exited with status 127
+#     make: .../Mk/Uses/compiler.mk:134: warning: Command "/usr/local/llvm19/bin/clang++ -### /dev/null 2>&1" exited with status 127
+USES+=		llvm:build
 
 .include <bsd.port.pre.mk>
 
