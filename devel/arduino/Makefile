@@ -1,6 +1,6 @@
 PORTNAME=	arduino
 PORTVERSION=	1.0.6
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	https://arduino.cc/download.php?f=/
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/RXTXcomm.jar:comms/rxtx \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		dos2unix java tar:tgz kmod
 DOS2UNIX_REGEX=	.*(\.(c|cpp|h|hex|txt)|Makefile|makefile)
-
+JAVA_VERSION=	8
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 
@@ -48,7 +48,7 @@ REINPLACE_ARGS=	-i ""
 
 DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
 			${PREFIX}/${PORTNAME}/logo.png \
-			"arduino" "Development;IDE;" false
+			"arduino" "Development;IDE;" ${FALSE}
 
 OPTIONS_DEFINE=		ATMEGA644P DOCS EXAMPLES UARDUNO
 OPTIONS_SUB=
