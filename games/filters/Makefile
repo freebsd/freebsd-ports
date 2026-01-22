@@ -1,7 +1,6 @@
 PORTNAME=	filters
-DISTVERSION=	2.55
+DISTVERSION=	2.56
 DISTVERSIONSUFFIX=	.orig
-PORTREVISION=	1
 CATEGORIES=	games perl5
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}${DISTVERSIONSUFFIX}
@@ -12,7 +11,7 @@ WWW=		https://joeyh.name/code/filters/
 
 LICENSE=	GPLv2
 
-USES=		gmake perl5 shebangfix
+USES=		gmake perl5 shebangfix tar:xz
 
 SHEBANG_FILES=	${PERLFILTERS}
 
@@ -20,7 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	chef kenny lolcat talkfilters
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PERLFILTERS=	b1ff censor chef eleet fudd jibberish kenny pirate rasterman \
 		spammer studly uniencode upside-down fanboy scottish LOLCAT
