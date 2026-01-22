@@ -1,3 +1,5 @@
-TIMESTAMP = 1767948273
+TIMESTAMP = 1769085693
 SHA256 (contour-terminal-contour-v0.6.2.8008_GH0.tar.gz) = 0018f111530ffb5fc669fdd9e400f730156c4d8cfd03ec9e06da555d6bc921e5
 SIZE (contour-terminal-contour-v0.6.2.8008_GH0.tar.gz) = 10374198
+SHA256 (c2d1ad278972278fb068e5f41ac82bed92c62193.patch) = 1d8b43393f6c20f43affabc3efcd7e7cea2cb8e2ab32d6739ef9d6ee37c76de0
+SIZE (c2d1ad278972278fb068e5f41ac82bed92c62193.patch) = 3534

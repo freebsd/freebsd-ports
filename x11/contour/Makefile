@@ -1,7 +1,11 @@
 PORTNAME=	contour
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.2.8008
+PORTREVISION=	1
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	c2d1ad278972278fb068e5f41ac82bed92c62193.patch:-p1
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Modern C++ terminal emulator
