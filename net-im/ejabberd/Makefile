@@ -1,6 +1,5 @@
 PORTNAME=	ejabberd
-PORTVERSION=	25.10
-PORTREVISION=	1
+PORTVERSION=	26.01
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -52,7 +51,8 @@ GH_TUPLE=	processone:p1_utils:${P1_UTILS_VER}:p1_utils/deps/p1_utils \
 		processone:yconf:${YCONF_VER}:yconf/deps/yconf \
 		processone:p1_acme:${P1_ACME_VER}:p1_acme/deps/p1_acme \
 		benoitc:erlang-idna:${IDNA_VER}:idna/deps/idna \
-		benoitc:unicode_util_compat:${UNICODE_UTIL_COMPAT_VER}:unicode_util_compat/deps/unicode_util_compat
+		benoitc:unicode_util_compat:${UNICODE_UTIL_COMPAT_VER}:unicode_util_compat/deps/unicode_util_compat \
+		sstrigler:erlydtl:${ERLYDTL_VER}:erlydtl/deps/erlydtl
 
 OPTIONS_DEFINE=	ODBC PAM DOCS LUA MYSQL PGSQL REDIS SIP SQLITE \
 		STUN FULLXML
@@ -86,7 +86,8 @@ SUBS=		PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}		\
 		SQLITE3_VER=${SQLITE3_VER}				\
 		STRINGPREP_VER=${STRINGPREP_VER} STUN_VER=${STUN_VER}	\
 		UNICODE_UTIL_COMPAT_VER=${UNICODE_UTIL_COMPAT_VER}	\
-		XMPP_VER=${XMPP_VER} YCONF_VER=${YCONF_VER}
+		XMPP_VER=${XMPP_VER} YCONF_VER=${YCONF_VER}		\
+		ERLYDTL_VER=${ERLYDTL_VER:C/-.*//1}
 
 SUB_FILES=	pkg-message pkg-install
 PLIST_SUB=	${SUBS}
@@ -111,18 +112,19 @@ JIFFY_VER=	1.1.1
 JOSE_VER=	1.11.10
 LUERL_VER=	1.2
 MQTREE_VER=	1.0.19
-P1_ACME_VER=	1.0.29
-P1_MYSQL_VER=	1.0.26
+P1_ACME_VER=	1.0.30
+P1_MYSQL_VER=	1.0.27
 P1_OAUTH2_VER=	0.6.14
-P1_PGSQL_VER=	1.1.36
+P1_PGSQL_VER=	1.1.38
 P1_UTILS_VER=	1.0.28
 PKIX_VER=	1.0.10
 SQLITE3_VER=	1.1.15
 STRINGPREP_VER=	1.0.33
 STUN_VER=	1.2.21
 UNICODE_UTIL_COMPAT_VER=	0.4.1
-XMPP_VER=	1.11.2
+XMPP_VER=	1.12.0
 YCONF_VER=	1.0.22
+ERLYDTL_VER=	0.14.0-fix.1
 
 OPTIONS_SUB=		yes
 SIP_DESC=	SIP support
