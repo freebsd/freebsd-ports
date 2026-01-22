@@ -1,7 +1,6 @@
 PORTNAME=	gitlogue
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0 # make patch cargo-crates
-PORTREVISION=	1
+DISTVERSION=	0.7.0 # make patch cargo-crates
 CATEGORIES=	misc
 
 MAINTAINER=	nxjoseph@protonmail.com
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
+RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji
 
 USES=		cargo localbase ssl
 USE_GITHUB=	yes
