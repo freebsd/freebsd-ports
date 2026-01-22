@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -72,7 +72,6 @@ BUILD_DEPENDS=								\
 		p5-libwww>=0:www/p5-libwww				\
 		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https
 LIB_DEPENDS=								\
-		libapr-1.so:devel/apr1					\
 		libnspr4.so:devel/nspr					\
 		libcurl.so:ftp/curl					\
 		libcairo.so:graphics/cairo				\
@@ -98,7 +97,6 @@ LIB_DEPENDS=								\
 		libtextcat.so:textproc/libtextcat			\
 		libmythes-1.2.so:textproc/mythes			\
 		librdf.so:textproc/redland				\
-		libserf-1.so:www/serf					\
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
@@ -129,8 +127,8 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m6\(Build:9825\)
-GITREVISION=	adfffba115
-TIMESTAMP=	1758052376
+GITREVISION=	a4e34e8bd2
+TIMESTAMP=	1768900765
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -289,8 +287,6 @@ CONFIGURE_ARGS+=							\
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-system-apache-commons=yes		\
 			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang3.jar \
-			--with-system-apr				\
-			--with-system-apr-util				\
 			--with-system-beanshell				\
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar	\
 			--enable-category-b				\
@@ -329,7 +325,6 @@ CONFIGURE_ARGS+=							\
 			--with-system-python				\
 			--with-system-redland				\
 			--with-system-sane				\
-			--with-system-serf				\
 			--with-system-stdlibs				\
 			--with-vendor="FreeBSD ports system"		\
 			--with-build-version="PKGNAME: ${PKGNAME:S/,/@/g}" \
