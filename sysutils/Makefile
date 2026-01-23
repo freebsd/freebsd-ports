@@ -719,6 +719,7 @@
     SUBDIR += mcron
     SUBDIR += mdcat
     SUBDIR += mdf2iso
+    SUBDIR += mdfried
     SUBDIR += megacli
     SUBDIR += megarc
     SUBDIR += memdump
