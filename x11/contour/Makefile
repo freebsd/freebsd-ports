@@ -26,7 +26,8 @@ LIB_DEPENDS=	libunicode.so:devel/libunicode-contour \
 		libfontconfig.so:x11-fonts/fontconfig
 TEST_DEPENDS=	${LOCALBASE}/lib/cmake/Catch2/Catch2Config.cmake:devel/catch2
 
-USES=		cmake:testing desktop-file-utils gl gnome pkgconfig qt:6 xorg
+USES=		cmake:testing compiler desktop-file-utils gl gnome pkgconfig \
+		qt:6 xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	contour-terminal
@@ -75,3 +76,9 @@ post-install-DOCS-on:
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
+
+# XXX COMPILER_TYPE is defined after USES was already parsed
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${_CCVERSION:M+assertions}
+llvm_ARGS=	build
+.include "${USESDIR}/llvm.mk"
+.endif
