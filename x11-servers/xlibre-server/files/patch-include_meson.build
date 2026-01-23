@@ -1,6 +1,6 @@
---- include/meson.build.orig
+--- include/meson.build.orig	2025-12-21 14:53:30 UTC
 +++ include/meson.build
-@@ -141,7 +141,7 @@ conf_data.set('HAVE_SYS_SYSMACROS_H', cc.has_header('sys/sysmacros.h') ? '1' : f
+@@ -139,7 +139,7 @@ conf_data.set('HAVE_CBRT', cc.has_function('cbrt') ? '
  conf_data.set('HAVE_ARC4RANDOM_BUF', cc.has_function('arc4random_buf', dependencies: libbsd_dep) ? '1' : false)
  conf_data.set('HAVE_BACKTRACE', cc.has_function('backtrace') ? '1' : false)
  conf_data.set('HAVE_CBRT', cc.has_function('cbrt') ? '1' : false)
@@ -9,11 +9,20 @@
  conf_data.set('HAVE_GETUID', cc.has_function('getuid') ? '1' : false)
  conf_data.set('HAVE_GETEUID', cc.has_function('geteuid') ? '1' : false)
  conf_data.set('HAVE_ISASTREAM', cc.has_function('isastream') ? '1' : false)
---- meson.build.orig
-+++ meson.build
-@@ -456,10 +456,8 @@ endif
+@@ -379,7 +379,7 @@ if host_machine.system() == 'freebsd' or host_machine.
+ xorg_data.set('HAVE_MODESETTING_DRIVER', build_modesetting ? '1' : false)
  
- if host_machine.system() in ['freebsd', 'openbsd']
+ if host_machine.system() == 'freebsd' or host_machine.system() == 'dragonfly'
+-    if host_machine.cpu_family() == 'x86' or host_machine.cpu_family() == 'x86_64' or host_machine.cpu_family() == 'aarch64'
++    if host_machine.cpu_family() == 'x86' or host_machine.cpu_family() == 'x86_64' or host_machine.cpu_family() == 'aarch64' or host_machine.cpu_family() == 'arm'
+         xorg_data.set('USE_DEV_IO', '1')
+     endif
+ elif host_machine.system() == 'netbsd' or host_machine.system() == 'openbsd'
+--- meson.build.orig	2025-12-21 14:53:30 UTC
++++ meson.build
+@@ -506,10 +506,8 @@ if host_machine.system() in ['freebsd', 'openbsd', 'dr
+ 
+ if host_machine.system() in ['freebsd', 'openbsd', 'dragonfly']
     epoll_dep = dependency('epoll-shim')
 -   epoll_inc = join_paths(epoll_dep.get_variable('prefix'), get_option('includedir'), 'libepoll-shim')
  else
@@ -22,7 +31,7 @@
  endif
  
  have_eventfd = cc.has_header('sys/eventfd.h', dependencies: epoll_dep)
-@@ -614,7 +612,6 @@ inc = include_directories(
+@@ -666,7 +664,6 @@ inc = include_directories(
      'randr',
      'render',
      'xfixes',
