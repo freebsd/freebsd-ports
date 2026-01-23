@@ -15,7 +15,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		bitflags-2.10.0 \
 		block-buffer-0.10.4 \
 		bumpalo-3.19.1 \
-		bytes-1.11.0 \
 		cairo-rs-0.20.12 \
 		cairo-rs-0.21.5 \
 		cairo-sys-rs-0.20.10 \
@@ -117,7 +116,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		libredox-0.1.12 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
-		lock_api-0.4.14 \
 		log-0.4.29 \
 		memchr-2.7.6 \
 		memoffset-0.9.1 \
@@ -134,8 +132,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		ordered-multimap-0.7.3 \
 		pango-0.20.12 \
 		pango-sys-0.20.10 \
-		parking_lot-0.12.5 \
-		parking_lot_core-0.9.12 \
 		pathdiff-0.2.3 \
 		pest-2.8.5 \
 		pest_derive-2.8.5 \
@@ -171,7 +167,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
-		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
@@ -183,7 +178,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		rustix-1.1.3 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
-		scopeguard-1.2.0 \
 		semver-1.0.27 \
 		serde-1.0.228 \
 		serde-untagged-0.1.9 \
@@ -193,11 +187,9 @@ CARGO_CRATES=	ahash-0.8.12 \
 		serde_spanned-1.0.4 \
 		sha2-0.10.9 \
 		shlex-1.3.0 \
-		signal-hook-registry-1.4.8 \
 		siphasher-1.0.1 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
-		socket2-0.6.1 \
 		strsim-0.11.1 \
 		syn-2.0.113 \
 		system-deps-7.0.7 \
@@ -208,8 +200,6 @@ CARGO_CRATES=	ahash-0.8.12 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.17 \
 		tiny-keccak-2.0.2 \
-		tokio-1.49.0 \
-		tokio-macros-2.6.0 \
 		toml-0.9.10+spec-1.1.0 \
 		toml_datetime-0.7.5+spec-1.1.0 \
 		toml_edit-0.23.10+spec-1.0.0 \
