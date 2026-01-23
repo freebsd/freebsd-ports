@@ -1,6 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.87.0
+DISTVERSION=	0.89.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -68,8 +68,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/core/tests/suite/user_notification.rs \
-		${BUILD_WRKSRC}/tui/src/exec_command.rs \
-		${BUILD_WRKSRC}/tui2/src/exec_command.rs
+		${BUILD_WRKSRC}/tui/src/exec_command.rs
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/codex_message_processor_flow.rs \
 		${BUILD_WRKSRC}/app-server/tests/suite/v2/turn_start.rs \
