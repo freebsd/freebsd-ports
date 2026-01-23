@@ -1,7 +1,6 @@
 PORTNAME=	elephant
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.18.2
-PORTREVISION=	1
+DISTVERSION=	2.19.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -24,12 +23,12 @@ PORTDOCS=	README.md
 
 OPTIONS_DEFINE=		DOCS
 # BITWARDEN: Runtime dependency rbw is not in ports tree yet
-OPTIONS_DEFAULT=	${OPTIONS_GROUP_PROVIDERS:NBITWARDEN:NNIRISESSIONS}
+OPTIONS_DEFAULT=	${OPTIONS_GROUP_PROVIDERS:NBITWARDEN:NNIRIACTIONS:NNIRISESSIONS}
 OPTIONS_GROUP=		PROVIDERS
 OPTIONS_GROUP_PROVIDERS=1PASSWORD BITWARDEN BOOKMARKS CALC CLIPBOARD \
-			DESKTOPAPPLICATIONS FILES MENUS NIRISESSIONS \
-			PROVIDERLIST RUNNER SNIPPETS SYMBOLS TODO UNICODE \
-			WEBSEARCH WINDOWS
+			DESKTOPAPPLICATIONS FILES MENUS NIRIACTIONS \
+			NIRISESSIONS PROVIDERLIST RUNNER SNIPPETS SYMBOLS TODO \
+			UNICODE WEBSEARCH WINDOWS
 
 PROVIDERS_DESC=		Enabled providers
 1PASSWORD_DESC=		Access your 1Password vaults
@@ -40,6 +39,7 @@ CLIPBOARD_DESC=		Store clipboard history
 DESKTOPAPPLICATIONS_DESC=Run installed desktop applications
 FILES_DESC=		Find files/folders
 MENUS_DESC=		Create custom menus
+NIRIACTIONS_DESC=	Search and execute Niri actions
 NIRISESSIONS_DESC=	Create predefined session layouts and open them
 PROVIDERLIST_DESC=	Lists all providers and configured menus
 RUNNER_DESC=		Execute everything installed in your PATH
@@ -68,6 +68,8 @@ DESKTOPAPPLICATIONS_PLIST_FILES=etc/xdg/elephant/providers/desktopapplications.s
 FILES_RUN_DEPENDS=	fd:sysutils/fd
 FILES_PLIST_FILES=	etc/xdg/elephant/providers/files.so
 MENUS_PLIST_FILES=	etc/xdg/elephant/providers/menus.so
+NIRIACTIONS_RUN_DEPENDS=niri:x11-wm/niri
+NIRIACTIONS_PLIST_FILES=etc/xdg/elephant/providers/niriactions.so
 NIRISESSIONS_RUN_DEPENDS=niri:x11-wm/niri
 NIRISESSIONS_PLIST_FILES=etc/xdg/elephant/providers/nirisessions.so
 PROVIDERLIST_PLIST_FILES=etc/xdg/elephant/providers/providerlist.so
