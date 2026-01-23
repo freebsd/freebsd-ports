@@ -1,6 +1,20 @@
---- layout.json.orig	2025-10-07 21:15:01 UTC
+--- layout.json.orig	2026-01-21 16:43:58 UTC
 +++ layout.json
-@@ -9,35 +9,35 @@
+@@ -4,11 +4,10 @@
+             "label": "lock",
+             "action": [
+                 {
+-                    "$DESKTOP_SESSION": "gnome",
+-                    "shell": "loginctl lock-session"
++                    "executable": "gtklock"
+                 },
+                 {
+-                    "executable": "gtklock"
++                    "executable": "hyprlock"
+                 },
+                 {
+                     "executable": "swaylock"
+@@ -20,7 +19,7 @@
          },
          {
              "label": "hibernate",
@@ -9,14 +23,19 @@
              "text": "Hibernate",
              "keybind": "h",
              "icon": "/usr/share/wleave/icons/hibernate.svg"
-         },
-         {
-             "label": "logout",
--            "action": "loginctl terminate-user $USER",
-+            "action": "kill -9 -1",
+@@ -44,7 +43,10 @@
+                     "$DESKTOP_SESSION": "gnome",
+                     "shell": "gnome-session-quit --no-prompt"
+                 },
+-                "loginctl terminate-user $USER"
++                {
++                    "$DESKTOP_SESSION": "hyprland",
++                    "shell": "hyprctl dispatch exit"
++                }
+             ],
              "text": "Logout",
              "keybind": "e",
-             "icon": "/usr/share/wleave/icons/logout.svg"
+@@ -52,21 +54,21 @@
          },
          {
              "label": "shutdown",
