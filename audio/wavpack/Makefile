@@ -1,20 +1,21 @@
 PORTNAME=	wavpack
-DISTVERSION=	5.8.1
+DISTVERSION=	5.9.0
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/dbry/WavPack/releases/download/${DISTVERSION}/ \
 		http://www.wavpack.com/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Audio codec for lossless, lossy, and hybrid compression
-WWW=		https://www.wavpack.com/
+WWW=		https://www.wavpack.com/ \
+		https://github.com/dbry/WavPack/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:testing cpe iconv pkgconfig tar:xz
+USES=		cmake cpe iconv pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
-CMAKE_OFF=	BUILD_TESTING WAVPACK_BUILD_DOCS
+CMAKE_OFF=	BUILD_TESTING
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 OPTIONS_DEFINE=	ASM
