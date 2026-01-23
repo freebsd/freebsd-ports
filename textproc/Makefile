@@ -89,6 +89,7 @@
     SUBDIR += bsd-spell
     SUBDIR += c2html
     SUBDIR += ca-aspell
+    SUBDIR += caps-log
     SUBDIR += cast2gif
     SUBDIR += castxml
     SUBDIR += catdoc

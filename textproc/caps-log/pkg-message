@@ -1,0 +1,16 @@
+[
+{ type: install
+  message: <<EOM
+Caps-log requires minimal setup before you can use it.
+
+$ mkdir ~/.caps-log/
+$ touch ~/.caps-log/config.ini
+$ caps-log
+
+For further usage, see the excellent README.md at
+
+https://github.com/NikolaDucak/caps-log
+
+EOM
+}
+]
