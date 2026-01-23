@@ -1,5 +1,6 @@
 PORTNAME=	fnc
 DISTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://fnc.bsdbox.org/tarball/${DISTVERSION}/ \
 		https://distfiles.pirateparty.in/ashish/
@@ -11,7 +12,9 @@ WWW=		https://fnc.bsdbox.org/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		ncurses
+LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+
+USES=		localbase:ldflags ncurses
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-Wno-error=gnu-statement-expression
@@ -21,6 +24,7 @@ PLIST_FILES=	bin/fnc \
 
 # For patch application
 post-extract:
+	${RM} ${WRKSRC}/lib/sqlite3.*
 	${REINPLACE_CMD} -e '/^VERSION/s/${DISTVERSION}$$/%%VERSION%%/' \
 		${WRKSRC}/fnc.bld.mk
 
