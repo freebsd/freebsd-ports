@@ -1,7 +1,7 @@
 PORTNAME=	xscreensaver
-DISTVERSION=	6.13
+DISTVERSION=	6.14
 CATEGORIES=	x11
-MASTER_SITES=	http://www.jwz.org/xscreensaver/
+MASTER_SITES=	${WWW}
 
 MAINTAINER=	vsasjason@gmail.com
 COMMENT=	Save your screen while you entertain your cat
@@ -9,15 +9,14 @@ WWW=		https://www.jwz.org/xscreensaver/
 
 LICENSE=	MIT
 
-EXTRACT_DEPENDS=	gtar:archivers/gtar
-LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
-			libfreetype.so:print/freetype2 \
-			libgle.so:graphics/gle \
-			libharfbuzz.so:print/harfbuzz
-RUN_DEPENDS=		giftopnm:graphics/netpbm \
-			p5-libwww>0:www/p5-libwww \
-			p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
-			unix-selfauth-helper>0:security/unix-selfauth-helper
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgle.so:graphics/gle \
+		libharfbuzz.so:print/harfbuzz
+RUN_DEPENDS=	giftopnm:graphics/netpbm \
+		p5-libwww>0:www/p5-libwww \
+		p5-LWP-Protocol-https>0:www/p5-LWP-Protocol-https \
+		unix-selfauth-helper>0:security/unix-selfauth-helper
 
 USES=		cpe gettext gl gmake gnome jpeg localbase:ldflags perl5 \
 		pkgconfig shebangfix xorg
@@ -26,7 +25,7 @@ USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf gtk30 intltool libxml2
 USE_XORG=	ice sm x11 xext xft xi xinerama xmu xrandr xrender xt xxf86vm
 
-SHEBANG_FILES=	hacks/check-configs.pl
+SHEBANG_FILES=	hacks/check-configs.pl hacks/glx/xshadertoy-compile.pl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-locking \
@@ -42,18 +41,15 @@ CONFIGURE_ARGS=	--enable-locking \
 		--with-pixbuf \
 		--with-randr-ext \
 		--with-xdbe-ext \
-		--with-xf86gamma-ext \
-		--with-xf86vmode-ext \
 		--with-xft \
 		--with-xinerama-ext \
 		--with-xshm-ext \
 		--without-kerberos \
 		--without-shadow
-CONFIGURE_ENV=	PERL="${PERL}"
+CONFIGURE_ENV=	PERL="${PERL}" INSTALL_PROGRAM="${INSTALL_SCRIPT}"
 
 MAKE_ARGS=	install_prefix=${STAGEDIR}
 
-EXTRACT_CMD=	gtar
 SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
 		xscreensaver-start.desktop xscreensaver-stop.desktop
 
@@ -105,5 +101,12 @@ post-install:
 	${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
 	${LN} -s ${LOCALBASE}/etc/pam.d/unix-selfauth \
 		${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
+	#XXX: Get rid of this after issue with trying to strip ShaderToy savers
+	# will be fixed. Those are shell scripts, not binaries.
+	${STRIP_CMD} ${xscreensaver xscreensaver-command xscreensaver-settings \
+		:L:S|^|${STAGEDIR}${PREFIX}/bin/|}
+	${FIND} ${STAGEDIR}${PREFIX}/bin/xscreensaver-hacks/ -type f -exec \
+		${AWK} 'RS="\0" FNR>1 {next} !/^#!( +)?\// {print FILENAME ; next}' {} + | \
+		${XARGS} ${STRIP_CMD}
 
 .include <bsd.port.mk>
