@@ -1,9 +1,10 @@
 PORTNAME=	packit
 DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Network auditing tool
+COMMENT=	Modern network auditing and packet crafting tool
 WWW=		https://github.com/Obsidian-Covenant/packit
 
 LICENSE=	GPLv2
