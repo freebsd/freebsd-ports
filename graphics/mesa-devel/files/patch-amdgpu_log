@@ -1,0 +1,13 @@
+https://gitlab.freedesktop.org/mesa/mesa/-/issues/14716
+
+--- src/gallium/winsys/amdgpu/drm/amdgpu_cs.cpp.orig	2026-01-21 23:15:42 UTC
++++ src/gallium/winsys/amdgpu/drm/amdgpu_cs.cpp
+@@ -1649,7 +1649,7 @@ static int amdgpu_cs_submit_ib_userq(struct amdgpu_use
+           * mapped to same address for all process/apps. Once uq_va is guess mapped to a
+           * given queue, cross process/queue fence dependency can be analyzed.
+           */
+-         mesa_logi("amdgpu: uq_log: %s:  num_wait_fences=%d  uq_va=%llx  job=%llx\n",
++         mesa_logi("amdgpu: uq_log: %s:  num_wait_fences=%d  uq_va=%" PRIx64 "  job=%" PRIx64 "\n",
+                    amdgpu_userq_str[acs->queue_index], userq_wait_data.num_fences, fence_info[i].va,
+                    fence_info[i].value);
+       }
