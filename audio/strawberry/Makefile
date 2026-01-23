@@ -1,5 +1,5 @@
 PORTNAME=	strawberry
-DISTVERSION=	1.2.16
+DISTVERSION=	1.2.17
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/strawberrymusicplayer/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -24,7 +24,7 @@ USES=		cmake:testing compiler:c++17-lang desktop-file-utils \
 USE_GL=		opengl
 USE_GNOME=	glib20
 USE_GSTREAMER=	faac faad flac lame libav mpg123 opus soup taglib vorbis
-USE_QT=		base sqldriver-sqlite:run
+USE_QT=		base imageformats:run sqldriver-sqlite:run
 USE_XORG=	ice sm x11 xcb xext
 
 CMAKE_OFF=		ENABLE_UDISKS2
