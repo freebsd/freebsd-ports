@@ -1,6 +1,6 @@
 PORTNAME=	netgen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.2.2505
+DISTVERSION=	6.2.2601
 CATEGORIES=	cad
 
 PATCH_SITES=	https://github.com/alexxy/netgen/commit/
@@ -31,7 +31,7 @@ PATCHFILES+=	8737bff2bfec303b4affd06be9f44acd4b13f34d.patch:-p1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NGSolve
-GH_TUPLE=	NGSolve:pybind11:v2.11.1:pybind11/external_dependencies/pybind11
+GH_TUPLE=	NGSolve:pybind11:v3.0.1:pybind11/external_dependencies/pybind11
 
 USE_GL=		gl glu
 USE_LDCONFIG=	yes
@@ -60,14 +60,8 @@ MPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 MPEG_CMAKE_BOOL=	USE_MPEG
 
 post-install:
-	(cd ${STAGEDIR}${PREFIX}/bin && \
-		${STRIP_CMD} netgen)
-	(cd ${STAGEDIR}${PREFIX}/lib && \
-		${STRIP_CMD} libngcore.so \
-		libnggui.so \
-		libnglib.so)
-	(cd ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME} && \
-		${STRIP_CMD} libngguipy.so \
-		libngpy.so)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/netgen
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/*.so
 
 .include <bsd.port.mk>
