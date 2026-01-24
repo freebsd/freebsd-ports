@@ -1,7 +1,6 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.3
-PORTREVISION=	2
+DISTVERSION=	2.3.6
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -23,54 +22,55 @@ GH_ACCOUNT=	diesel-rs
 CARGO_BUILD_ARGS=	--package=diesel_cli
 CARGO_INSTALL_PATH=	diesel_cli
 CARGO_CRATES=	accessory-2.1.0 \
-		aho-corasick-1.1.3 \
+		aho-corasick-1.1.4 \
 		android_system_properties-0.1.5 \
 		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.4 \
-		anstyle-wincon-3.0.10 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
 		argon2-0.5.3 \
-		assert_cmd-2.0.17 \
+		assert_cmd-2.1.2 \
 		assert_matches-1.5.0 \
+		async-trait-0.1.89 \
 		autocfg-1.5.0 \
-		base64ct-1.8.0 \
-		bigdecimal-0.4.9 \
+		base64ct-1.8.3 \
+		bigdecimal-0.4.10 \
 		bitflags-2.10.0 \
 		blake2-0.10.6 \
 		block-buffer-0.10.4 \
 		bstr-1.12.1 \
-		bumpalo-3.19.0 \
+		bumpalo-3.19.1 \
 		byteorder-1.5.0 \
-		camino-1.2.1 \
+		camino-1.2.2 \
 		cargo-platform-0.1.9 \
 		cargo_metadata-0.19.2 \
-		cc-1.2.43 \
+		cast-0.3.0 \
+		cc-1.2.54 \
 		cfg-if-1.0.4 \
-		chrono-0.4.42 \
-		clap-4.5.50 \
-		clap_builder-4.5.50 \
-		clap_complete-4.5.59 \
+		chrono-0.4.43 \
+		clap-4.5.54 \
+		clap_builder-4.5.54 \
+		clap_complete-4.5.65 \
 		clap_derive-4.5.49 \
-		clap_lex-0.7.6 \
-		cmake-0.1.54 \
+		clap_lex-0.7.7 \
+		cmake-0.1.57 \
 		colorchoice-1.0.4 \
 		console-0.15.11 \
 		core-foundation-sys-0.8.7 \
 		cpufeatures-0.2.17 \
-		crypto-common-0.1.6 \
+		crypto-common-0.1.7 \
 		darling-0.21.3 \
 		darling_core-0.21.3 \
 		darling_macro-0.21.3 \
 		delegate-display-3.0.0 \
 		deranged-0.5.5 \
-		derive_more-2.0.1 \
-		derive_more-impl-2.0.1 \
+		derive_more-2.1.1 \
+		derive_more-impl-2.1.1 \
 		difflib-0.4.0 \
 		diffy-0.4.2 \
 		digest-0.10.7 \
 		displaydoc-0.2.5 \
-		doc-comment-0.3.4 \
 		dotenvy-0.15.7 \
 		downcast-rs-2.0.2 \
 		dunce-1.0.5 \
@@ -81,68 +81,75 @@ CARGO_CRATES=	accessory-2.1.0 \
 		fancy_constructor-2.1.0 \
 		fastrand-2.3.0 \
 		fd-lock-4.0.4 \
-		find-msvc-tools-0.1.4 \
+		find-msvc-tools-0.1.8 \
 		fnv-1.0.7 \
+		foldhash-0.2.0 \
 		form_urlencoded-1.2.2 \
-		generic-array-0.14.9 \
-		getrandom-0.2.16 \
+		futures-core-0.3.31 \
+		futures-task-0.3.31 \
+		futures-util-0.3.31 \
+		generic-array-0.14.7 \
+		getrandom-0.2.17 \
 		getrandom-0.3.4 \
+		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		iana-time-zone-0.1.64 \
 		iana-time-zone-haiku-0.1.2 \
-		icu_collections-2.0.0 \
-		icu_locale_core-2.0.0 \
-		icu_normalizer-2.0.0 \
-		icu_normalizer_data-2.0.0 \
-		icu_properties-2.0.1 \
-		icu_properties_data-2.0.1 \
-		icu_provider-2.0.0 \
+		icu_collections-2.1.1 \
+		icu_locale_core-2.1.1 \
+		icu_normalizer-2.1.1 \
+		icu_normalizer_data-2.1.1 \
+		icu_properties-2.1.2 \
+		icu_properties_data-2.1.2 \
+		icu_provider-2.1.1 \
 		ident_case-1.0.1 \
 		idna-1.1.0 \
 		idna_adapter-1.2.1 \
 		impartial-ord-1.0.6 \
 		indexed_db_futures-0.6.4 \
 		indexed_db_futures_macros_internal-1.0.0 \
-		insta-1.43.2 \
+		insta-1.46.1 \
 		ipnet-2.11.0 \
 		ipnetwork-0.21.1 \
 		is_terminal_polyfill-1.70.2 \
-		itoa-1.0.15 \
-		js-sys-0.3.81 \
+		itoa-1.0.17 \
+		js-sys-0.3.85 \
 		lazy_static-1.5.0 \
-		libc-0.2.177 \
-		libm-0.2.15 \
+		libc-0.2.180 \
+		libm-0.2.16 \
 		libsqlite3-sys-0.35.0 \
 		link-cplusplus-1.0.12 \
 		linux-raw-sys-0.11.0 \
-		litemap-0.8.0 \
+		litemap-0.8.1 \
 		lock_api-0.4.14 \
-		log-0.4.28 \
+		log-0.4.29 \
 		macroific-2.0.0 \
 		macroific_attr_parse-2.0.0 \
 		macroific_core-2.0.0 \
 		macroific_macro-2.0.0 \
 		matchers-0.2.0 \
 		memchr-2.7.6 \
-		minicov-0.3.7 \
-		mysqlclient-src-0.1.4+9.3.0 \
-		mysqlclient-sys-0.4.7 \
+		minicov-0.3.8 \
+		mysqlclient-src-0.2.0+9.5.0 \
+		mysqlclient-sys-0.5.0 \
 		nu-ansi-term-0.50.3 \
 		num-bigint-0.4.6 \
-		num-conv-0.1.0 \
+		num-conv-0.2.0 \
 		num-integer-0.1.46 \
 		num-traits-0.2.19 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
+		oorandom-11.1.5 \
 		openssl-src-300.5.4+3.5.4 \
-		openssl-sys-0.9.110 \
+		openssl-sys-0.9.111 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		password-hash-0.5.0 \
 		percent-encoding-2.3.2 \
 		pin-project-lite-0.2.16 \
+		pin-utils-0.1.0 \
 		pkg-config-0.3.32 \
-		potential_utf-0.1.3 \
+		potential_utf-0.1.4 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		pq-src-0.3.10+libpq-18.0 \
@@ -151,23 +158,24 @@ CARGO_CRATES=	accessory-2.1.0 \
 		predicates-core-1.0.9 \
 		predicates-tree-1.0.12 \
 		prettyplease-0.2.37 \
-		proc-macro2-1.0.103 \
+		proc-macro2-1.0.106 \
 		quickcheck-1.0.3 \
-		quote-1.0.41 \
+		quote-1.0.44 \
 		r-efi-5.3.0 \
 		r2d2-0.8.10 \
 		rand-0.8.5 \
 		rand-0.9.2 \
 		rand_chacha-0.9.0 \
 		rand_core-0.6.4 \
-		rand_core-0.9.3 \
+		rand_core-0.9.5 \
 		redox_syscall-0.5.18 \
 		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.8 \
-		rustix-1.1.2 \
+		rsqlite-vfs-0.1.0 \
+		rustc_version-0.4.1 \
+		rustix-1.1.3 \
 		rustversion-1.0.22 \
-		ryu-1.0.20 \
 		same-file-1.0.6 \
 		scheduled-thread-pool-0.2.7 \
 		scopeguard-1.2.0 \
@@ -177,62 +185,64 @@ CARGO_CRATES=	accessory-2.1.0 \
 		serde-wasm-bindgen-0.6.5 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.145 \
+		serde_json-1.0.149 \
 		serde_regex-1.1.0 \
-		serde_spanned-1.0.3 \
+		serde_spanned-1.0.4 \
 		sharded-slab-0.1.7 \
 		shlex-1.3.0 \
 		similar-2.7.0 \
 		similar-asserts-1.7.0 \
+		slab-0.4.11 \
 		smallvec-1.15.1 \
-		sqlite-wasm-rs-0.4.6 \
+		sqlite-wasm-rs-0.5.2 \
+		sqlite-wasm-vfs-0.1.1 \
 		stable_deref_trait-1.2.1 \
 		strsim-0.11.1 \
 		subtle-2.6.1 \
-		syn-2.0.108 \
+		syn-2.0.114 \
 		synstructure-0.13.2 \
-		tempfile-3.23.0 \
+		tempfile-3.24.0 \
 		termtree-0.5.1 \
-		thiserror-2.0.17 \
-		thiserror-impl-2.0.17 \
+		thiserror-2.0.18 \
+		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
-		time-0.3.44 \
-		time-core-0.1.6 \
-		time-macros-0.2.24 \
-		tinystr-0.8.1 \
-		tokio-1.48.0 \
-		toml-0.9.8 \
-		toml_datetime-0.7.3 \
-		toml_parser-1.0.4 \
-		tracing-0.1.41 \
-		tracing-attributes-0.1.30 \
-		tracing-core-0.1.34 \
+		time-0.3.46 \
+		time-core-0.1.8 \
+		time-macros-0.2.26 \
+		tinystr-0.8.2 \
+		tokio-1.49.0 \
+		toml-0.9.11+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
+		tracing-0.1.44 \
+		tracing-attributes-0.1.31 \
+		tracing-core-0.1.36 \
 		tracing-log-0.2.0 \
-		tracing-subscriber-0.3.20 \
+		tracing-subscriber-0.3.22 \
 		typenum-1.19.0 \
-		unicode-ident-1.0.20 \
+		unicode-ident-1.0.22 \
 		unicode-segmentation-1.12.0 \
 		unicode-xid-0.2.6 \
-		url-2.5.7 \
+		url-2.5.8 \
 		utf8_iter-1.0.4 \
 		utf8parse-0.2.2 \
-		uuid-1.18.1 \
+		uuid-1.19.0 \
 		valuable-0.1.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.5 \
 		wait-timeout-0.2.1 \
 		walkdir-2.5.0 \
 		wasi-0.11.1+wasi-snapshot-preview1 \
-		wasip2-1.0.1+wasi-0.2.4 \
-		wasm-bindgen-0.2.104 \
-		wasm-bindgen-backend-0.2.104 \
-		wasm-bindgen-futures-0.4.54 \
-		wasm-bindgen-macro-0.2.104 \
-		wasm-bindgen-macro-support-0.2.104 \
-		wasm-bindgen-shared-0.2.104 \
-		wasm-bindgen-test-0.3.54 \
-		wasm-bindgen-test-macro-0.3.54 \
-		web-sys-0.3.81 \
+		wasip2-1.0.2+wasi-0.2.9 \
+		wasm-bindgen-0.2.108 \
+		wasm-bindgen-futures-0.4.58 \
+		wasm-bindgen-macro-0.2.108 \
+		wasm-bindgen-macro-support-0.2.108 \
+		wasm-bindgen-shared-0.2.108 \
+		wasm-bindgen-test-0.3.58 \
+		wasm-bindgen-test-macro-0.3.58 \
+		wasm-bindgen-test-shared-0.2.108 \
+		web-sys-0.3.85 \
 		winapi-util-0.1.11 \
 		windows-core-0.62.2 \
 		windows-implement-0.60.2 \
@@ -241,43 +251,34 @@ CARGO_CRATES=	accessory-2.1.0 \
 		windows-result-0.4.1 \
 		windows-strings-0.5.1 \
 		windows-sys-0.59.0 \
-		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
-		windows-targets-0.53.5 \
 		windows_aarch64_gnullvm-0.52.6 \
-		windows_aarch64_gnullvm-0.53.1 \
 		windows_aarch64_msvc-0.52.6 \
-		windows_aarch64_msvc-0.53.1 \
 		windows_i686_gnu-0.52.6 \
-		windows_i686_gnu-0.53.1 \
 		windows_i686_gnullvm-0.52.6 \
-		windows_i686_gnullvm-0.53.1 \
 		windows_i686_msvc-0.52.6 \
-		windows_i686_msvc-0.53.1 \
 		windows_x86_64_gnu-0.52.6 \
-		windows_x86_64_gnu-0.53.1 \
 		windows_x86_64_gnullvm-0.52.6 \
-		windows_x86_64_gnullvm-0.53.1 \
 		windows_x86_64_msvc-0.52.6 \
-		windows_x86_64_msvc-0.53.1 \
-		winnow-0.7.13 \
-		wit-bindgen-0.46.0 \
-		writeable-0.6.1 \
-		yoke-0.8.0 \
-		yoke-derive-0.8.0 \
-		zerocopy-0.8.27 \
-		zerocopy-derive-0.8.27 \
+		winnow-0.7.14 \
+		wit-bindgen-0.51.0 \
+		writeable-0.6.2 \
+		yoke-0.8.1 \
+		yoke-derive-0.8.1 \
+		zerocopy-0.8.33 \
+		zerocopy-derive-0.8.33 \
 		zerofrom-0.1.6 \
 		zerofrom-derive-0.1.6 \
-		zerotrie-0.2.2 \
-		zerovec-0.11.4 \
-		zerovec-derive-0.11.1
+		zerotrie-0.2.3 \
+		zerovec-0.11.5 \
+		zerovec-derive-0.11.2 \
+		zmij-1.0.16
 
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
 	${CP} ${FILESDIR}/bindings_8_0_35_powerpc64_freebsd.rs \
-		${WRKSRC}/cargo-crates/mysqlclient-sys-0.4.7/bindings/
+		${WRKSRC}/cargo-crates/mysqlclient-sys-0.5.0/bindings/
 
 .include <bsd.port.mk>
