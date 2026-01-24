@@ -1,29 +1,29 @@
-PORTNAME=	open-sans
-PORTVERSION=	20180831
+PORTNAME=	opensans
+DISTVERSION=	3.003
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://www.opensans.com/download/
-DISTFILES=	${PORTNAME}.zip \
-		${PORTNAME}-condensed.zip
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+PKGNAMESUFFIX=	-ttf
 
-MAINTAINER=	flo@snakeoilproductions.net
+MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Clean and modern sans-serif typeface
-WWW=		https://www.opensans.com
+WWW=		https://github.com/googlefonts/opensans/
 
-LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/Apache\ License.txt
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/OFL.txt
 
-USES=		fonts zip
+USES=		fonts
 
-BROKEN=		Unfetchable
-EXPIRATION_DATE=2026-01-31
+USE_GITHUB=	yes
+GH_ACCOUNT=	googlefonts
+GH_TAGNAME=	bd7e376 # v3.003
 
+EXTRACT_AFTER_ARGS=	--include ${WRKSRC:T}/OFL.txt \
+			--include ${WRKSRC:T}/fonts/ttf/*.ttf \
+			--no-same-owner --no-same-permissions
 NO_ARCH=	yes
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts/ttf/*.ttf ${STAGEDIR}${FONTSDIR}
 
 .include <bsd.port.mk>
