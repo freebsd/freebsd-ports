@@ -2,6 +2,7 @@
 
 PORTNAME=	bind
 DISTVERSION=	9.18.44
+PORTREVISION=	1
 CATEGORIES=	dns net
 MASTER_SITES=	ISC/bind9/${DISTVERSION}
 PKGNAMESUFFIX=	918
@@ -68,7 +69,7 @@ OPTIONS_SUB=	yes
 
 DNSTAP_DESC=		Provides fast passive logging of DNS messages
 FIXED_RRSET_DESC=	Enable fixed rrset ordering
-GSSAPI_BASE_DESC=	Using Heimdal in base (nsupdate is broken)
+GSSAPI_BASE_DESC=	Using ${${OSREL:R} < 15:?Heimdal in base (nsupdate is broken):MIT in base}
 GSSAPI_HEIMDAL_DESC=	Using security/heimdal (nsupdate is broken)
 GSSAPI_MIT_DESC=	Using security/krb5
 GSSAPI_NONE_DESC=	Disable
