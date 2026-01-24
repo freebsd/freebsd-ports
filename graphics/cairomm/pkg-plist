@@ -32,4 +32,4 @@ libdata/pkgconfig/cairomm-ps-1.0.pc
 libdata/pkgconfig/cairomm-svg-1.0.pc
 libdata/pkgconfig/cairomm-xlib-1.0.pc
 libdata/pkgconfig/cairomm-xlib-xrender-1.0.pc
-share/devhelp/books/cairomm-1.0/cairomm-1.0.devhelp2
+%%PORTDOCS%%share/devhelp/books/cairomm-1.0/cairomm-1.0.devhelp2
