@@ -38,7 +38,7 @@ ZIG_TMPDEPSDIR=	${WRKDIR}/zig-packages-tmp
 IGNORE?= USES=zig has invalid version number: ${zig_ARGS}
 .  endif
 
-ZIG_CPUTYPE_DEFAULT=	${ARCH:S/amd64/x86_64/}
+ZIG_CPUTYPE_DEFAULT=	${ARCH:S/amd64/x86_64/:S/aarch64/generic/}
 ZIG_CPUTYPE?=		${CPUTYPE:U${ZIG_CPUTYPE_DEFAULT}}
 
 _ZIG2TUPLE_CMD=	zig2tuple
