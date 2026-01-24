@@ -264,7 +264,7 @@
     SUBDIR += ohsnap
     SUBDIR += ohsnap-otb
     SUBDIR += oldschool-pc-fonts
-    SUBDIR += open-sans
+    SUBDIR += opensans-ttf
     SUBDIR += orbitron
     SUBDIR += otf2bdf
     SUBDIR += ots

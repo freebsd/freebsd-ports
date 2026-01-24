@@ -5086,3 +5086,4 @@ devel/tcl8-thread|devel/tcl-thread|2026-01-19|The new tcl-thread port supports b
 devel/tcl9-thread|devel/tcl-thread|2026-01-19|The new tcl-thread port supports both Tcl8 and Tcl9
 java/jta||2026-01-19|Has expired: manual download, no users in the ports tree, newer version is at https://github.com/jakartaee/transactions
 multimedia/ccextractor-gui||2026-01-20|Superseeded by flutter GUI, which we do not support
+x11-fonts/open-sans|x11-fonts/opensans-ttf|2026-01-24|Rename to match upstream naming
