@@ -1,4 +1,4 @@
-TIMESTAMP = 1765130690
+TIMESTAMP = 1769248394
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.1.crate) = 320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa
@@ -741,8 +741,8 @@ SHA256 (rust/crates/zlib-rs-0.5.1.crate) = 626bd9fa9734751fc50d6060752170984d705
 SIZE (rust/crates/zlib-rs-0.5.1.crate) = 193055
 SHA256 (rust/crates/zopfli-0.8.2.crate) = edfc5ee405f504cd4984ecc6f14d02d55cfda60fa4b689434ef4102aae150cd7
 SIZE (rust/crates/zopfli-0.8.2.crate) = 51842
-SHA256 (ElementsProject-lightning-v25.12_GH0.tar.gz) = cdb34dd68d51fa18dccdfb4be4438374ecb16c6388e817782c38005c205b8336
-SIZE (ElementsProject-lightning-v25.12_GH0.tar.gz) = 19324743
+SHA256 (ElementsProject-lightning-v25.12.1_GH0.tar.gz) = 3e041d50a76fac51a445f7c319985443809e51eee0d13a00475346d6c0c06f22
+SIZE (ElementsProject-lightning-v25.12.1_GH0.tar.gz) = 19330710
 SHA256 (ElementsProject-libwally-core-12f5ac4ccf0e2_GH0.tar.gz) = aa51d1c2304b8fc0196feea15dcdad50a35e8eb06a62cc6a748ac3a94c772b88
 SIZE (ElementsProject-libwally-core-12f5ac4ccf0e2_GH0.tar.gz) = 1287461
 SHA256 (BlockstreamResearch-secp256k1-zkp-615262261_GH0.tar.gz) = 5c992dd479502e5b5ad3e92dccf2fdf6853c74b1a0c547512f97382dc8fc0fdc
