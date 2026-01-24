@@ -1,6 +1,7 @@
 PORTNAME=	qmidiarp
 DISTVERSIONPREFIX=	qmidiarp-
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -49,7 +50,14 @@ LV2_CONFIGURE_OFF=	--disable-lv2plugins
 
 NLS_CONFIGURE_ON=	--enable-translations
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386
+pre-configure:
+	${REINPLACE_CMD} -e 's,-msse -msse2 -mfpmath=sse ,,' ${WRKSRC}/configure.ac
+.endif
+
 post-install-LV2-on:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/qmidiarp_[lsa][fer][oqp].lv2/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
