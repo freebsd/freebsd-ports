@@ -42,13 +42,6 @@ XXHASH_MESON_ENABLED=	xxhash_muxer
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
 .endif
 
-# https://github.com/llvm/llvm-project/issues/39981
-.if !empty(CFLAGS:M-flto*)
-MESON_ARGS+=	${MESON_ARGS_${CHOSEN_COMPILER_TYPE}_${ARCH}}
-MESON_ARGS_clang_amd64=	-Dstack_alignment=16
-MESON_ARGS_clang_i386=	-Dstack_alignment=4
-.endif
-
 post-build-TEST-on:
 # Ensure checkasm is built before tests are run
 	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC} meson-test-prereq
