@@ -1,0 +1,15 @@
+--- Source/Lib/CMakeLists.txt.orig	2026-01-24 02:39:01 UTC
++++ Source/Lib/CMakeLists.txt
+@@ -12,9 +12,9 @@
+ # Encoder Library directory CMakeLists.txt
+ 
+ # Shared Encoder Version
+-set(ENC_VERSION_MAJOR 3)
+-set(ENC_VERSION_MINOR 1)
+-set(ENC_VERSION_PATCH 2)
++set(ENC_VERSION_MAJOR 4)
++set(ENC_VERSION_MINOR 0)
++set(ENC_VERSION_PATCH 0)
+ set(ENC_VERSION ${ENC_VERSION_MAJOR}.${ENC_VERSION_MINOR}.${ENC_VERSION_PATCH})
+ 
+ add_library(common_lib INTERFACE)

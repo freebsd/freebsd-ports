@@ -1,7 +1,12 @@
 PORTNAME=	libheif
 DISTVERSION=	1.21.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
+
+PATCH_SITES=	https://github.com/strukturag/${PORTNAME}/commit/
+PATCHFILES+=	61923302d12f.patch:-p1 # https://github.com/strukturag/libheif/pull/1680
+PATCHFILES+=	f9919e348689.patch:-p1 # https://github.com/strukturag/libheif/pull/1680
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format de- and encoder

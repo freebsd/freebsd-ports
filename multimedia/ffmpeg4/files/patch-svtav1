@@ -19,6 +19,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/031f1561cd28
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/1c6fd7d756af
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/96748ac54f99
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe196fd29a67
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/a5d4c398b411
 
 --- configure.orig	2021-10-24 20:47:11 UTC
 +++ configure
@@ -132,7 +133,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe196fd29a67
  
      // allocate buffer for in and out
      svt_enc->in_buf           = av_mallocz(sizeof(*svt_enc->in_buf));
-@@ -151,11 +150,132 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -151,11 +150,136 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
  {
      SvtContext *svt_enc = avctx->priv_data;
      const AVPixFmtDescriptor *desc;
@@ -178,7 +179,11 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe196fd29a67
 +    } else if (svt_enc->qp > 0) {
 +        param->qp                   = svt_enc->qp;
 +        param->rate_control_mode    = 0;
++#if SVT_AV1_CHECK_VERSION(4, 0, 0)
++        param->aq_mode = 0;
++#else
 +        param->enable_adaptive_quantization = 0;
++#endif
 +    }
 +
 +    desc = av_pix_fmt_desc_get(avctx->pix_fmt);

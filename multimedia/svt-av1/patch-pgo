@@ -1,0 +1,18 @@
+--- CMakeLists.txt~	2022-01-22 00:28:35.000000000 +0000
++++ CMakeLists.txt	2022-01-22 19:45:27.784323311 +0000
+@@ -485,6 +485,7 @@ if(SVT_AV1_PGO)
+         COMMENT "Compiling with PGO generate"
+         DEPENDS SvtAv1EncApp SvtAv1DecApp)
+     add_custom_target(PGOCompileGenUse
++	llvm-profdata merge -o ${CMAKE_BINARY_DIR}/default.profdata ${CMAKE_BINARY_DIR}/default*.profraw;
+         ${CMAKE_COMMAND} ${CMAKE_BINARY_DIR} -DSVT_INTERNAL_PGO_GENERATE=ON -DSVT_INTERNAL_PGO_USE=ON
+         COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}
+         --clean-first
+@@ -493,6 +494,7 @@ if(SVT_AV1_PGO)
+         COMMENT "Compiling PGO gen+use"
+         DEPENDS SvtAv1EncApp SvtAv1DecApp)
+     add_custom_target(PGOCompileUse
++	llvm-profdata merge -o ${CMAKE_BINARY_DIR}/default.profdata ${CMAKE_BINARY_DIR}/default*.profraw;
+         ${CMAKE_COMMAND} ${CMAKE_BINARY_DIR} -DSVT_INTERNAL_PGO_GENERATE=OFF -DSVT_INTERNAL_PGO_USE=ON
+         COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR}
+         --clean-first
