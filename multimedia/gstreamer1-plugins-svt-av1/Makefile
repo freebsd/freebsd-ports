@@ -1,28 +1,16 @@
-PORTNAME=	svt-av1
-DISTVERSIONPREFIX=	v
-DISTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	multimedia
-PKGNAMEPREFIX=	gstreamer1-plugins-
 
-MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GStreamer (svt-av1) plugin
-WWW=		https://01.org/svt
-
-LICENSE=	LGPL21+ # based on SPDX header
-LICENSE_FILE=	${_LICENSE_STORE}/LGPL21
 
 LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1
 
-USES=		gnome gstreamer meson pkgconfig
-USE_GITLAB=	yes
-USE_GNOME=	glib20
-GL_ACCOUNT=	AOMediaCodec
-GL_PROJECT=	SVT-AV1
-WRKSRC_SUBDIR=	gstreamer-plugin
-PLIST_FILES=	lib/gstreamer-1.0/libgstsvtav1enc.so
+MASTERDIR=	${.CURDIR:H:H}/multimedia/gstreamer1-plugins
 
-post-patch:
-	@${REINPLACE_CMD} '/-O2/d' ${WRKSRC}/meson.build
+PLIST=		${.CURDIR}/pkg-plist
 
-.include <bsd.port.mk>
+DIST=		bad
+GST_PLUGIN=	svtav1
+
+.include "${MASTERDIR}/Makefile"
