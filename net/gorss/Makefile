@@ -1,7 +1,6 @@
 PORTNAME=	gorss
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	20
 CATEGORIES=	net www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/Lallassu/gorss
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.25+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	Lallassu
 
@@ -20,11 +19,8 @@ GH_ACCOUNT=	Lallassu
 GO_BUILDFLAGS=	-ldflags "-w -X github.com/${GH_ACCOUNT}/${GH_PROJECT}/internal.Version=${PORTVERSION}"
 GO_TARGET=	./cmd/${PORTNAME}
 
-PLIST_FILES=	bin/${PORTNAME} \
-		${DATADIR_REL}/gorss.conf \
-		${DATADIR_REL}/themes/default.theme \
-		${DATADIR_REL}/themes/irssi.theme \
-		${DATADIR_REL}/themes/night.theme
+post-extract:
+	@${LN} -sf ${FILESDIR}/modules.txt ${WRKSRC}/vendor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},' \
