@@ -1,3 +1,4 @@
+%%DATADIR%%/backupExecuter
 %%DATADIR%%/backupManager
 %%DATADIR%%/cgbackup
 %%DATADIR%%/cgmkdb
@@ -7,6 +8,7 @@
 %%DATADIR%%/startdb
 %%DATADIR%%/stopdb
 %%DATADIR%%/tsSpace
+%%DATADIR%%/traceLog
 bin/cego
 bin/cgadm
 bin/cgblow
@@ -29,6 +31,7 @@ include/cego/CegoAdminThreadPool.h
 include/cego/CegoAggregation.h
 include/cego/CegoAliasObject.h
 include/cego/CegoAlterDesc.h
+include/cego/CegoArchiveThread.h
 include/cego/CegoAttrAlias.h
 include/cego/CegoAttrComp.h
 include/cego/CegoAttrCond.h
@@ -38,8 +41,6 @@ include/cego/CegoBTreeManager.h
 include/cego/CegoBTreeNode.h
 include/cego/CegoBTreeObject.h
 include/cego/CegoBTreeValue.h
-include/cego/CegoBeatConnection.h
-include/cego/CegoBeatThread.h
 include/cego/CegoBlob.h
 include/cego/CegoBufferPage.h
 include/cego/CegoBufferPool.h
@@ -61,9 +62,6 @@ include/cego/CegoDbThread.h
 include/cego/CegoDbThreadPool.h
 include/cego/CegoDecodableObject.h
 include/cego/CegoDefs.h
-include/cego/CegoDistCursor.h
-include/cego/CegoDistDbHandler.h
-include/cego/CegoDistManager.h
 include/cego/CegoException.h
 include/cego/CegoExpOutStream.h
 include/cego/CegoExpr.h
@@ -80,12 +78,8 @@ include/cego/CegoJDBCInfo.h
 include/cego/CegoJoinObject.h
 include/cego/CegoKeyObject.h
 include/cego/CegoLockHandler.h
-include/cego/CegoLogHandler.h
 include/cego/CegoLogManager.h
 include/cego/CegoLogRecord.h
-include/cego/CegoLogThread.h
-include/cego/CegoLogThreadPool.h
-include/cego/CegoMediatorThread.h
 include/cego/CegoModule.h
 include/cego/CegoNet.h
 include/cego/CegoObject.h
@@ -116,13 +110,16 @@ include/cego/CegoProcWhileStmt.h
 include/cego/CegoProcedure.h
 include/cego/CegoQuery.h
 include/cego/CegoQueryCache.h
+include/cego/CegoQueryCursor.h
 include/cego/CegoQueryException.h
 include/cego/CegoQueryHelper.h
+include/cego/CegoQueryManager.h
 include/cego/CegoRecoveryManager.h
 include/cego/CegoReplacer.h
 include/cego/CegoReturnVar.h
 include/cego/CegoSelect.h
 include/cego/CegoSerial.h
+include/cego/CegoSigCatch.h
 include/cego/CegoSystemObject.h
 include/cego/CegoTableCache.h
 include/cego/CegoTableCursor.h
