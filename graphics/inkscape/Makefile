@@ -1,13 +1,7 @@
 PORTNAME=	inkscape
-DISTVERSION=	1.4.2
-PORTREVISION=	4
+DISTVERSION=	1.4.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
-
-PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/merge_requests/
-PATCHFILES=		7261.patch:-p1
-PATCHFILES+=	7449.patch:-p1
-PATCHFILES+=	7502.patch:-p1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Full featured open source SVG editor
@@ -58,7 +52,7 @@ USE_PYTHON=	cython
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-DATETAG=	2025-05-08_ebf0e940d0
+DATETAG=	2025-12-25_0d15f75042
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
