@@ -1,4 +1,5 @@
 bin/appid_detector_builder.sh
+bin/show_flows
 bin/snort
 bin/snort2lua
 bin/u2boat
@@ -32,6 +33,9 @@ include/snort/file_api/file_flows.h
 include/snort/file_api/file_lib.h
 include/snort/file_api/file_service.h
 include/snort/flow/deferred_trust.h
+include/snort/flow/dump_flows.h
+include/snort/flow/dump_flows_descriptor.h
+include/snort/flow/dump_flows_serializer.h
 include/snort/flow/expect_flow.h
 include/snort/flow/flow.h
 include/snort/flow/flow_data.h
@@ -277,6 +281,7 @@ include/snort/utils/util_unfold.h
 lib/snort/daq/daq_file.so
 lib/snort/daq/daq_hext.so
 libdata/pkgconfig/snort.pc
+%%PORTDOCS%%%%DOCSDIR%%/README.show_flows
 %%PORTDOCS%%%%DOCSDIR%%/README.u2boat
 %%PORTDOCS%%%%DOCSDIR%%/active.txt
 %%PORTDOCS%%%%DOCSDIR%%/appendix.txt
