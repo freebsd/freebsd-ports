@@ -8,9 +8,13 @@ include/libabigail/abg-comp-filter.h
 include/libabigail/abg-comparison.h
 include/libabigail/abg-config.h
 include/libabigail/abg-corpus.h
+include/libabigail/abg-ctf-reader.h
 include/libabigail/abg-cxx-compat.h
 include/libabigail/abg-diff-utils.h
 include/libabigail/abg-dwarf-reader.h
+include/libabigail/abg-elf-based-reader.h
+include/libabigail/abg-elf-reader.h
+include/libabigail/abg-fe-iface.h
 include/libabigail/abg-fwd.h
 include/libabigail/abg-hash.h
 include/libabigail/abg-ini.h
@@ -32,8 +36,8 @@ include/libabigail/abg-workers.h
 include/libabigail/abg-writer.h
 lib/libabigail.a
 lib/libabigail.so
-lib/libabigail.so.0
-lib/libabigail.so.0.0.0
+lib/libabigail.so.8
+lib/libabigail.so.8.0.0
 lib/libabigail/default.abignore
 libdata/pkgconfig/libabigail.pc
 share/aclocal/abigail.m4
