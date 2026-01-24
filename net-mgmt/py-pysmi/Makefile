@@ -1,5 +1,5 @@
 PORTNAME=	pysmi
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.3
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.11:devel/py-ply@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.26.0:www/py-requests@${PY_FLAVOR}
 
-# Officially: 3.9-3.13
+# Officially: >=3.9
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
