@@ -49,4 +49,7 @@ PGSQL_USES=		pgsql
 SQLITE3_CMAKE_BOOL=	WITH_SQLITE3
 SQLITE3_USES=		sqlite
 
+post-patch:
+	${REINPLACE_CMD} -e 's|-Werror||' ${WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
