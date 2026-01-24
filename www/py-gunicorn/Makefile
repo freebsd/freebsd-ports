@@ -1,6 +1,5 @@
 PORTNAME=	gunicorn
-DISTVERSION=	23.0.0
-PORTREVISION=	3
+DISTVERSION=	24.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -42,6 +41,10 @@ EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.24.1:net/py-eventlet@${
 GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=1.4.0:devel/py-gevent@${PY_FLAVOR}
 PROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
 TORNADO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=0.2:www/py-tornado@${PY_FLAVOR}
+
+post-patch:
+	@${REINPLACE_CMD} '/license-files/d; s|^license = "MIT"|license = { text = "MIT" }|' \
+		${WRKSRC}/pyproject.toml
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
