@@ -1,7 +1,6 @@
 PORTNAME=	consul
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.2
-PORTREVISION=	1
+DISTVERSION=	1.22.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \
@@ -18,7 +17,7 @@ WWW=		https://www.consul.io/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:modules
+USES=		cpe go:1.25+,modules
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
@@ -44,7 +43,7 @@ CONSUL_USER?=	consul
 CONSUL_GROUP?=	consul
 CONSUL_DBDIR?=	/var/db/${PORTNAME}
 
-GITID=		71f21bf
+GITID=		cc9bcd6
 
 # Bring DISTINFO_FILE into scope so we can get the timestamp.
 .include <bsd.port.pre.mk>
