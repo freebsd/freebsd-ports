@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.0
+DISTVERSION=	1.6.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -60,6 +60,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		color-spantrace-0.3.0 \
 		colorchoice-1.0.4 \
 		compact_str-0.9.0 \
+		console-0.15.11 \
 		convert_case-0.10.0 \
 		cpufeatures-0.2.17 \
 		crossbeam-channel-0.5.15 \
@@ -88,6 +89,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		doctest-file-1.0.0 \
 		document-features-0.2.12 \
 		either-1.15.0 \
+		encode_unicode-1.0.0 \
 		env_filter-0.1.4 \
 		env_home-0.1.0 \
 		env_logger-0.11.8 \
@@ -122,6 +124,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		indenter-0.3.4 \
 		indexmap-2.13.0 \
 		indoc-2.0.7 \
+		insta-1.46.1 \
 		instability-0.3.11 \
 		interprocess-2.2.3 \
 		is_terminal_polyfill-1.70.2 \
@@ -180,9 +183,9 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		portable-atomic-util-0.2.4 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
-		proc-macro2-1.0.105 \
+		proc-macro2-1.0.106 \
 		pulldown-cmark-0.13.0 \
-		quote-1.0.43 \
+		quote-1.0.44 \
 		r-efi-5.3.0 \
 		rand-0.8.5 \
 		rand-0.9.2 \
@@ -222,10 +225,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.8 \
 		simdutf8-0.1.5 \
+		similar-2.7.0 \
 		siphasher-1.0.1 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
-		socket2-0.6.1 \
+		socket2-0.6.2 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.27.2 \
@@ -285,6 +289,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-link-0.2.1 \
 		windows-sys-0.52.0 \
+		windows-sys-0.59.0 \
 		windows-sys-0.60.2 \
 		windows-sys-0.61.2 \
 		windows-targets-0.52.6 \
