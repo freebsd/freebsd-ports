@@ -1,5 +1,5 @@
 PORTNAME=	datovka
-DISTVERSION=	4.27.0
+DISTVERSION=	4.28.0
 CATEGORIES=	mail
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/${DISTVERSION}/
 
