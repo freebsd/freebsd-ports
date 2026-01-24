@@ -6,6 +6,7 @@ MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	System dedicated to the visualization of huge graphs
+WWW=		https://tulip.labri.fr/
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
