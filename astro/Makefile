@@ -3,6 +3,7 @@
     SUBDIR += accrete
     SUBDIR += astrometry
     SUBDIR += astroterm
+    SUBDIR += calceph
     SUBDIR += calcmysky
     SUBDIR += celestia
     SUBDIR += celestia-gtk
