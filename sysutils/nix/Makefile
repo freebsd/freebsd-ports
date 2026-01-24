@@ -42,6 +42,9 @@ MESON_ARGS=	-Dbenchmarks=false \
 		-Dbindings=false \
 		-Dunit-tests=false
 LDFLAGS+=	-L${LOCALBASE}/lib
+
+# file names are platform-dependent!
+PORTDOCS=	manual
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 SUB_FILES=	pkg-message
