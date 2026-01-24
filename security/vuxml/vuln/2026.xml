@@ -1,3 +1,51 @@
+  <vuln vid="ab01cb11-f911-11f0-b194-8447094a420f">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql80-server</name>
+	<range><lt>8.0.45</lt></range>
+      </package>
+      <package>
+	<name>mysql84-server</name>
+	<range><lt>8.4.8</lt></range>
+      </package>
+      <package>
+	<name>mysql91-server</name>
+	<range><lt>9.1.3</lt></range>
+      </package>
+      <package>
+	<name>mysql94-server</name>
+	<range><lt>9.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujan2026.html#AppendixMSQL">
+	  <p>Oracle reports multiple vulnerabilities in its MySQL server products.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-21949</cvename>
+      <cvename>CVE-2026-21950</cvename>
+      <cvename>CVE-2026-21968</cvename>
+      <cvename>CVE-2026-21929</cvename>
+      <cvename>CVE-2026-21936</cvename>
+      <cvename>CVE-2026-21937</cvename>
+      <cvename>CVE-2026-21941</cvename>
+      <cvename>CVE-2026-21948</cvename>
+      <cvename>CVE-2026-21952</cvename>
+      <cvename>CVE-2026-21964</cvename>
+      <cvename>CVE-2026-21965</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujan2026.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2026-01-20</discovery>
+      <entry>2026-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="65439aa0-f77d-11f0-9821-b0416f0c4c67">
     <topic>wheel -- CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')</topic>
     <affects>
