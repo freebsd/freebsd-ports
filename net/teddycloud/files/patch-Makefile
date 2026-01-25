@@ -1,0 +1,163 @@
+--- Makefile.orig	2026-01-11 11:47:28 UTC
++++ Makefile
+@@ -142,7 +142,7 @@ else
+ 	SEP         = \$(strip)
+ else
+ 	MKDIR       = mkdir -p
+-	ECHO        = echo -e
++	ECHO        = echo
+ 	RM          = rm -f
+ 	RM_R        = rm -rf
+ 	CP          = cp
+@@ -199,7 +199,7 @@ CFLAGS_linux += -DFFMPEG_DECODING
+ endif
+ CFLAGS_linux += -ggdb
+ CFLAGS_linux += -DFFMPEG_DECODING
+-LFLAGS_linux += -pthread -lm
++LFLAGS_linux += -pthread -lm -lcjson -logg -lopus
+ 
+ ifeq ($(NO_SANITIZERS),2)
+ # Workaround for broken libasan (disable it for now)
+@@ -242,30 +242,17 @@ INCLUDES = \
+ 	-Icyclone/cyclone_crypto/pkix \
+ 	-Icyclone/cyclone_crypto/pkc \
+ 	-Icyclone/cyclone_crypto/rng \
+-	-IcJSON \
+-	-Ifat/source \
+-	-Iogg/include \
+-	-Iogg/src \
+-	-Iopus/include \
+-	-Iopus/celt \
+-	-Iopus/silk \
+-	-Iopus/silk/float
++	-Ifat/source
+ 
+ SOURCES = \
+ 	$(wildcard $(SRC_DIR)/*.c) \
+ 	$(wildcard $(SRC_DIR)/proto/*.c) \
+ 	$(CYCLONE_SOURCES) \
+-	$(LIBOPUS_SOURCES) \
+-	$(LIBOGG_SOURCES) \
+-	$(CJSON_SOURCES) \
+ 	$(FAT_SOURCES)
+ 
+ HEADERS = \
+ 	$(wildcard include/*.h) \
+ 	$(CYCLONE_HEADERS) \
+-	$(LIBOPUS_HEADERS) \
+-	$(LIBOGG_HEADERS) \
+-	$(CJSON_HEADERS) \
+ 	$(FAT_HEADERS)
+ 
+ 
+@@ -286,45 +273,6 @@ FAT_HEADERS =\
+ FAT_HEADERS =\
+ 	fat/source/ff.h
+ 
+-CJSON_SOURCES = \
+-	cJSON/cJSON.c \
+-	cJSON/cJSON_Utils.c
+-
+-CJSON_HEADERS = \
+-	cJSON/cJSON.h \
+-	cJSON/cJSON_Utils.h 
+-
+-LIBOGG_SOURCES = \
+-	ogg/src/framing.c \
+-	ogg/src/bitwise.c \
+-
+-include opus/silk_sources.mk
+-include opus/celt_sources.mk
+-include opus/opus_sources.mk
+-include opus/silk_headers.mk
+-include opus/celt_headers.mk
+-include opus/opus_headers.mk
+-
+-LIBOPUS_SOURCES = \
+-	$(addprefix opus/,$(SILK_SOURCES)) \
+-	$(addprefix opus/,$(SILK_SOURCES_FLOAT)) \
+-	$(addprefix opus/,$(CELT_SOURCES)) \
+-	$(addprefix opus/,$(OPUS_SOURCES)) \
+-	$(addprefix opus/,$(OPUS_SOURCES_FLOAT)) 
+-
+-LIBOPUS_SOURCES := \
+-	$(filter-out \
+-	opus/src/repacketizer.c \
+-	, $(LIBOPUS_SOURCES))
+-
+-LIBOPUS_SOURCES += \
+-	src/opus/src/repacketizer.c
+-
+-LIBOPUS_HEADERS = \
+-	$(addprefix opus/,$(SILK_HEAD)) \
+-	$(addprefix opus/,$(CELT_HEAD)) \
+-	$(addprefix opus/,$(OPUS_HEAD)) \
+-
+ CYCLONE_SOURCES = \
+ 	cyclone/common/cpu_endian.c \
+ 	cyclone/common/date_time.c \
+@@ -446,10 +394,6 @@ CFLAGS += $(INCLUDES)
+ CFLAGS += ${CFLAGS_VERSION}
+ CFLAGS += $(INCLUDES)
+ 
+-# for opus encoder
+-CFLAGS += -DUSE_ALLOCA -DOPUS_BUILD
+-CFLAGS_linux += -Wno-error=stringop-overflow= -Wno-error=stringop-overread
+-
+ THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
+ 
+ # Location of your .proto files
+@@ -476,19 +420,11 @@ CLEAN_FILES += $(OBJECTS) $(LINK_LO_FILE)
+ OBJECTS = $(foreach C,$(SOURCES),$(addprefix $(OBJ_DIR)/,$(C:.c=$(OBJ_EXT))))
+ CLEAN_FILES += $(OBJECTS) $(LINK_LO_FILE)
+ 
+-ifeq ($(OS),Windows_NT)
+-	CYAN=
+-	RED=
+-	YELLOW=
+-	GREEN=
+-	NC=
+-else
+-	CYAN=\033[0;36m
+-	RED=\033[0;31m
+-	YELLOW=\033[0;33m
+-	GREEN=\033[0;32m
+-	NC=\033[0m
+-endif
++CYAN=
++RED=
++YELLOW=
++GREEN=
++NC=
+ 
+ ifeq ($(VERBOSE),1)
+ 	QUIET=
+@@ -560,26 +496,17 @@ TAF_ENCODER_SOURCES = \
+ 	wasm/taf_encoder_minimal.c \
+ 	wasm/sha1_standalone.c \
+ 	src/proto/proto/toniebox.pb.taf-header.pb-c.c \
+-	src/proto/protobuf-c.c \
+-	$(LIBOPUS_SOURCES) \
+-	$(LIBOGG_SOURCES)
++	src/proto/protobuf-c.c
+ 
+ # Common include paths for TAF encoder
+ TAF_ENCODER_INCLUDES = \
+ 	-Isrc/proto \
+ 	-Iinclude/protobuf-c \
+ 	-Iwasm/include \
+-	-Iinclude \
+-	-Iogg/include \
+-	-Iogg/src \
+-	-Iopus/include \
+-	-Iopus/celt \
+-	-Iopus/silk \
+-	-Iopus/silk/float
++	-Iinclude
+ 
+ # Common compiler flags for TAF encoder
+ TAF_ENCODER_CFLAGS = \
+-	-DOPUS_BUILD \
+ 	-DHAVE_LRINT \
+ 	-DHAVE_LRINTF \
+ 	-DFLOATING_POINT \
