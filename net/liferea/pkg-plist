@@ -1,5 +1,6 @@
 bin/liferea
 bin/liferea-add-feed
+lib/girepository-1.0/Liferea-3.0.typelib
 lib/liferea/girepository-1.0/Liferea-3.0.typelib
 lib/liferea/plugins/add-bookmark-site.plugin
 lib/liferea/plugins/add-bookmark-site.py
