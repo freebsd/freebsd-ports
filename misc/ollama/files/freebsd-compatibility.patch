@@ -132,9 +132,9 @@ diff -ruN a/go.mod b/go.mod
  require (
  	github.com/apache/arrow/go/arrow v0.0.0-20211112161151-bc219186db40 // indirect
 +	github.com/blabber/go-freebsd-sysctl v0.0.0-20201130114544-503969f39d8f // indirect
+ 	github.com/bahlo/generic-list-go v0.2.0 // indirect
+ 	github.com/buger/jsonparser v1.1.1 // indirect
  	github.com/bytedance/sonic/loader v0.1.1 // indirect
- 	github.com/chewxy/hm v1.0.0 // indirect
- 	github.com/chewxy/math32 v1.11.0 // indirect
 diff -ruN a/go.sum b/go.sum
 --- a/go.sum	2026-01-04 13:08:38.572637000 -0800
 +++ b/go.sum	2026-01-04 13:08:45.221946000 -0800
@@ -144,9 +144,9 @@ diff -ruN a/go.sum b/go.sum
  github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0/go.mod h1:t2tdKJDJF9BV14lnkjHmOQgcvEKgtqs5a1N3LNdJhGE=
 +github.com/blabber/go-freebsd-sysctl v0.0.0-20201130114544-503969f39d8f h1:gMH+lz/KRpSqdoL+IQjgd91bP1LB8vrVEfNxr47GYC8=
 +github.com/blabber/go-freebsd-sysctl v0.0.0-20201130114544-503969f39d8f/go.mod h1:cTRyHktEaXkKTTEyZ0hAgS7H4V0AVoKhB8Dx0tVr/tY=
+ github.com/bahlo/generic-list-go v0.2.0 h1:5sz/EEAK+ls5wF+NeqDpk5+iNdMDXrh3z3nPnH1Wvgk=
+ github.com/bahlo/generic-list-go v0.2.0/go.mod h1:2KvAjgMlE5NNynlg/5iLrrCCZ2+5xWbdbCW3pNTGyYg=
  github.com/boombuler/barcode v1.0.0/go.mod h1:paBWMcWSl3LHKBqUq+rly7CNSldXjb2rDl3JlRe0mD8=
- github.com/bytedance/sonic v1.11.6 h1:oUp34TzMlL+OY1OUWxHqsdkgC/Zfc85zGqw9siXjrc0=
- github.com/bytedance/sonic v1.11.6/go.mod h1:LysEHSvpvDySVdC2f87zGWf6CIKJcAvqab1ZaiQtds4=
 diff -ruN a/llm/llm_freebsd.go b/llm/llm_freebsd.go
 --- a/llm/llm_freebsd.go	1969-12-31 16:00:00.000000000 -0800
 +++ b/llm/llm_freebsd.go	2026-01-04 13:08:45.214499000 -0800
