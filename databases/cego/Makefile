@@ -1,5 +1,5 @@
 PORTNAME=	cego
-PORTVERSION=	2.54.1
+PORTVERSION=	2.54.2
 
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
@@ -16,8 +16,10 @@ LIB_DEPENDS=	liblfcbase.so:devel/lfcbase \
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		libtool localbase ncurses readline shebangfix sudo
-SHEBANG_FILES=	tools/cgbackup tools/cgrecover tools/cgsimload \
-		tools/logManager tools/backupManager
+SHEBANG_FILES=	tools/backupExecuter tools/backupManager \
+		tools/cgbackup tools/cgrecover tools/cgsimload \
+		tools/logManager \
+		tools/traceLog tools/tsSpace
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 TEST_TARGET=	check
