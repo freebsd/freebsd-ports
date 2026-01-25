@@ -1,6 +1,5 @@
 PORTNAME=	webcamoid
-DISTVERSION=	9.1.1
-PORTREVISION=	2
+DISTVERSION=	9.3.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,38 +10,34 @@ WWW=		https://webcamoid.github.io \
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN=		Does not build with ffmpeg > 6
-
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+LIB_DEPENDS=	libSvtAv1Enc.so:multimedia/svt-av1 \
+		libaom.so:multimedia/aom \
+		libasound.so:audio/alsa-lib \
 		libavcodec.so:multimedia/ffmpeg \
 		libjack.so:audio/jack \
+		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libportaudio.so:audio/portaudio \
 		libpulse.so:audio/pulseaudio \
 		libuvc.so:multimedia/libuvc \
 		libv4l2.so:multimedia/libv4l \
-		libvlc.so:multimedia/vlc
+		libvlc.so:multimedia/vlc \
+		libvorbisenc.so:audio/libvorbis \
+		libvpx.so:multimedia/libvpx \
+		libx264.so:multimedia/libx264
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gl gnome gstreamer pkgconfig qt:5 sdl xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils gl gnome gstreamer pkgconfig qt:6 sdl xorg
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 USE_GL=		gl
-USE_QT=		concurrent core dbus declarative gui multimedia network opengl quickcontrols2 svg widgets xml \
-		buildtools:build qmake:build quickcontrols:run
+USE_QT=		base declarative multimedia svg
 USE_SDL=	sdl2
+USE_X11=	x11 xext xfixes xrandr
 USE_LDCONFIG=	yes
 
-MAKE_ENV=	NOOSS=1 # NOOSS is because the OSS module attempts to use kevent on OSS devices, which is broken in the base
 QMAKE_ARGS=	INSTALLQMLDIR=${QT_QMLDIR} \
 		LIBDIR=${PREFIX}/lib \
 		MANDIR=${PREFIX}/man
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-# Workaround for Bug#224137: devel/qt5-qmake: Doesn't use the right compiler in case USE_GCC is selected
-BINARY_ALIAS=	g++=${CXX}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- libAvKys/Plugins/VideoCapture/src/capture/v4l2sys/src/capturev4l2.cpp.orig	2023-04-04 08:06:27 UTC
+--- libAvKys/Plugins/VideoCapture/src/capture/v4l2sys/src/capturev4l2.cpp.orig	2025-07-29 01:36:55 UTC
 +++ libAvKys/Plugins/VideoCapture/src/capture/v4l2sys/src/capturev4l2.cpp
-@@ -910,6 +910,7 @@ void CaptureV4L2::reset()
+@@ -941,6 +941,7 @@ CaptureV4L2Private::CaptureV4L2Private(CaptureV4L2 *se
  CaptureV4L2Private::CaptureV4L2Private(CaptureV4L2 *self):
      self(self)
  {
@@ -8,7 +8,7 @@
      this->m_fsWatcher = new QFileSystemWatcher({"/dev"}, self);
      QObject::connect(this->m_fsWatcher,
                       &QFileSystemWatcher::directoryChanged,
-@@ -917,12 +918,15 @@ CaptureV4L2Private::CaptureV4L2Private(CaptureV4L2 *se
+@@ -948,12 +949,15 @@ CaptureV4L2Private::CaptureV4L2Private(CaptureV4L2 *se
                       [this] () {
          this->updateDevices();
      });
@@ -24,7 +24,7 @@
  }
  
  int CaptureV4L2Private::planesCount(const v4l2_format &format) const
-@@ -1765,11 +1769,13 @@ void CaptureV4L2Private::updateDevices()
+@@ -1809,11 +1813,13 @@ void CaptureV4L2Private::updateDevices()
      this->m_devicesCaps = devicesCaps;
  
      if (this->m_devices != devices) {
