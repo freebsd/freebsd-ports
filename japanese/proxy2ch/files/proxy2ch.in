@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# PROVIDE: proxy2ch
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=proxy2ch
+rcvar=${name}_enable
+
+pidfile=/var/run/${name}.pid
+command="/usr/sbin/daemon"
+command_args="-frP ${pidfile} %%PREFIX%%/sbin/${name} -c -s ${proxy2ch_flags}"
+
+load_rc_config ${name}
+: ${proxy2ch_enable:=NO}
+: ${proxy2ch_svcj_options:="net_basic"}
+
+run_rc_command "$1"

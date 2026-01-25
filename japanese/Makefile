@@ -221,6 +221,7 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += prn-ps
+    SUBDIR += proxy2ch
     SUBDIR += py-SudachiPy
     SUBDIR += py-fugashi
     SUBDIR += py-ipadic

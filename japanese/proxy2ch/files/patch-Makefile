@@ -1,0 +1,31 @@
+--- Makefile.orig	2025-06-04 17:25:57 UTC
++++ Makefile
+@@ -3,26 +3,8 @@ OBJS := $(OBJS:.c=.o)
+ OBJS = $(SOURCES:.cpp=.o)
+ OBJS := $(OBJS:.c=.o)
+ 
+-CFLAGS = -O2
+-LDFLAGS = -lcurl -lpthread
+-
+-UNAME := $(shell uname)
+-HAVE_GNUTLS := $(shell pkg-config --libs gnutls >/dev/null 2>&1; echo $$?)
+-NOT_GLIBC := $(shell $(CC) -E -dM stringEncodingConverter.c | grep __GNU_LIBRARY__; echo $$?)
+-
+-ifneq ($(UNAME), Darwin)
+-	ifeq ($(NOT_GLIBC), 1)
+-		LDFLAGS += -liconv
+-	endif
+-	ifeq ($(HAVE_GNUTLS), 0)
+-		CFLAGS += -DUSE_GNUTLS
+-		LDFLAGS += -lgnutls
+-	else
+-		LDFLAGS += -lcrypto
+-	endif
+-else
+-	LDFLAGS += -framework CoreFoundation
+-endif
++CFLAGS += -flto
++LDFLAGS += -lcurl -lpthread -liconv -lcrypto
+ 
+ .PHONY: all
+ all : $(TARGET)
