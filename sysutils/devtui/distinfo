@@ -1,5 +1,5 @@
-TIMESTAMP = 1768469291
-SHA256 (go/sysutils_devtui/skatkov-devtui-v0.33.2_GH0/go.mod) = 0a832270bd2e235a0f37f0322b97c29e6c46626fa937c4765356a7530777e254
-SIZE (go/sysutils_devtui/skatkov-devtui-v0.33.2_GH0/go.mod) = 4494
-SHA256 (go/sysutils_devtui/skatkov-devtui-v0.33.2_GH0/skatkov-devtui-v0.33.2_GH0.tar.gz) = d45fc81354f624d86282ff733ad752b2478c15c36190739cb4a260832e90b433
-SIZE (go/sysutils_devtui/skatkov-devtui-v0.33.2_GH0/skatkov-devtui-v0.33.2_GH0.tar.gz) = 755187
+TIMESTAMP = 1769332618
+SHA256 (go/sysutils_devtui/skatkov-devtui-v0.34.0_GH0/go.mod) = d8d290e92d7ddaa0b12b1ed13a6a16cfc3967c816c0e3f6689bb8bd979175c51
+SIZE (go/sysutils_devtui/skatkov-devtui-v0.34.0_GH0/go.mod) = 5103
+SHA256 (go/sysutils_devtui/skatkov-devtui-v0.34.0_GH0/skatkov-devtui-v0.34.0_GH0.tar.gz) = 512dd63a88273f466293bcc96bc4d907b2013ea642d685b2d04c16e562bee105
+SIZE (go/sysutils_devtui/skatkov-devtui-v0.34.0_GH0/skatkov-devtui-v0.34.0_GH0.tar.gz) = 765515
