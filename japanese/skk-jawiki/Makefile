@@ -1,5 +1,5 @@
 PORTNAME=	jawiki
-DISTVERSION=	g20250609
+DISTVERSION=	g20260117
 CATEGORIES=	japanese
 PKGNAMEPREFIX?=	ja-skk-
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 USE_GITHUB=	yes
 GH_ACCOUNT=	tokuhirom
 GH_PROJECT=	jawiki-kana-kanji-dict
-GH_TAGNAME=	2a6cfdf
+GH_TAGNAME=	3dcaae2
 NO_ARCH=	yes
 
 .if defined(MECAB)	# japanese/mecab-jawiki
@@ -37,6 +37,8 @@ UTF8_BUILD_DEPENDS=	ja-mecab-ipadic-utf8>0:japanese/mecab-ipadic-utf8
 EUCJP_VARS=		CSET=euc-jp
 SHIFTJIS_VARS=		CSET=shiftjis
 UTF8_VARS=		CSET=utf-8
+
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mecab-userdic.csv
 
 do-build:
 	${LOCALBASE}/libexec/mecab/mecab-dict-index \
