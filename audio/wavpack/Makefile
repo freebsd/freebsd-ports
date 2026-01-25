@@ -12,7 +12,7 @@ WWW=		https://www.wavpack.com/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe iconv pkgconfig tar:xz
+USES=		cmake:testing cpe iconv pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	BUILD_TESTING
@@ -22,5 +22,8 @@ OPTIONS_DEFINE=	ASM
 OPTIONS_DEFAULT=ASM
 
 ASM_CMAKE_BOOL=	WAVPACK_ENABLE_ASM
+
+pre-test:
+	@${ECHO_CMD} "====>  NOTE: Test may take 8 minutes or longer to complete"
 
 .include <bsd.port.mk>
