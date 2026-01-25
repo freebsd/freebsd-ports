@@ -733,6 +733,7 @@
     SUBDIR += freebsd-gcc12
     SUBDIR += freebsd-gcc13
     SUBDIR += freebsd-gcc14
+    SUBDIR += freebsd-gcc15
     SUBDIR += freebsd-git-devtools
     SUBDIR += freebsd-nvme-shim
     SUBDIR += freebsd-sysroot
