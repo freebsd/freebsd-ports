@@ -5,8 +5,8 @@
  
  const string HOMEDIR("/home/aprsd2");
 -const string CONFPATH("");
-+const string LOGPATH("/var/log/aprsd/");
-+const string CONFPATH("/usr/local/etc/aprsd/");
++const string LOGPATH("%%LOGPATH%%");
++const string CONFPATH("%%CONFPATH%%");
  const string CONFFILE("aprsd.conf");
  const string MAINLOG("aprsd.log");
  const string STSMLOG("thirdparty.log");
