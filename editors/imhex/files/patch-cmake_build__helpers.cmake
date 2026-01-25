@@ -1,6 +1,6 @@
---- cmake/build_helpers.cmake.orig	2025-12-06 21:24:07 UTC
+--- cmake/build_helpers.cmake.orig	2025-12-21 15:04:44 UTC
 +++ cmake/build_helpers.cmake
-@@ -651,8 +651,12 @@ function(downloadImHexPatternsFiles dest)
+@@ -657,8 +657,12 @@ function(downloadImHexPatternsFiles dest)
  
          # Maybe patterns are cloned to a subdirectory
          if (NOT EXISTS ${imhex_patterns_SOURCE_DIR})
@@ -15,7 +15,7 @@
  
          # Or a sibling directory
          if (NOT EXISTS ${imhex_patterns_SOURCE_DIR})
-@@ -683,7 +687,11 @@ function(downloadImHexPatternsFiles dest)
+@@ -689,7 +693,11 @@ function(downloadImHexPatternsFiles dest)
          if (NOT (imhex_patterns_SOURCE_DIR STREQUAL ""))
              set(PATTERNS_FOLDERS_TO_INSTALL constants encodings includes patterns magic nodes)
              foreach (FOLDER ${PATTERNS_FOLDERS_TO_INSTALL})
@@ -28,7 +28,7 @@
              endforeach ()
          endif()
      endif ()
-@@ -1006,13 +1014,13 @@ function(generateSDKDirectory)
+@@ -1012,13 +1020,13 @@ function(generateSDKDirectory)
      install(TARGETS libimhex ARCHIVE DESTINATION "${SDK_PATH}/lib")
      install(TARGETS tracing ARCHIVE DESTINATION "${SDK_PATH}/lib")
  
