@@ -1,7 +1,6 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.4
-PORTREVISION=	1
+DISTVERSION=	2.8.5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/:netdata \
 		https://raw.githubusercontent.com/netdata/netdata/refs/tags/v${DISTVERSION}/src/go/:goplugin \
@@ -61,7 +60,8 @@ CFLAGS+=	-D_WANT_VMMETER
 EXTRACT_AFTER_ARGS=	--exclude ml/dlib \
 	--exclude collectors/python.d.plugin/python_modules/pyyaml2 \
 	--exclude collectors/python.d.plugin/python_modules/pyyaml3 \
-	--exclude collectors/python.d.plugin/python_modules/urllib3
+	--exclude collectors/python.d.plugin/python_modules/urllib3 \
+	--no-same-owner --no-same-permissions
 
 SUB_FILES=	${PORTNAME}.conf.sample
 SUB_LIST=	NETDATA_CACHE=${NETDATA_CACHE} \
@@ -76,7 +76,7 @@ NETDATA_CACHE=	/var/cache/${PORTNAME}
 NETDATA_LOG=	/var/log/${PORTNAME}
 NETDATA_PERST=	/var/db/${PORTNAME}
 NETDATA_RUN=	/var/run/${PORTNAME}
-NETDATA_DASHBOARD_VERSION=	20251215
+NETDATA_DASHBOARD_VERSION=	20260115
 
 PLIST_SUB=	NETDATA_CACHE=${NETDATA_CACHE} \
 		NETDATA_LOG=${NETDATA_LOG} \
@@ -162,6 +162,7 @@ post-install:
 		 ${STAGEDIR}${NETDATA_PERST}
 	${INSTALL_DATA} ${WRKDIR}/netdata.conf.sample ${STAGEDIR}${ETCDIR}/netdata.conf.sample
 	${INSTALL_DATA} ${FILESDIR}/netdata.newsyslog.conf.sample ${STAGEDIR}${ETCDIR}/netdata.newsyslog.conf.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/netdata_required.sample ${STAGEDIR}${PREFIX}/etc/rc.d
 	${TOUCH} ${STAGEDIR}${ETCDIR}/.opt-out-from-anonymous-statistics
 	${RM} -r ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}/netdata-updater.sh \
 		 ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/conf.d/netdata-updater.conf \
