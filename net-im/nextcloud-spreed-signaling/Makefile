@@ -1,6 +1,7 @@
 PORTNAME=	nextcloud-spreed-signaling
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	jsm@FreeBSD.org
@@ -11,7 +12,6 @@ LICENSE=	AGPLv3
 
 BUILD_DEPENDS=	protoc:devel/protobuf \
 		bash:shells/bash
-
 
 USES=		gmake go:no_targets
 USERS=		signaling

@@ -1,7 +1,7 @@
 PORTNAME=	gitea
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.24.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/go-gitea/gitea/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/ \
 		https://dl.gitea.io/gitea/${DISTVERSION}/

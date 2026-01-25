@@ -1,6 +1,6 @@
 PORTNAME=	nncp
 DISTVERSION=	8.13.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://www.nncpgo.org/download/
 
