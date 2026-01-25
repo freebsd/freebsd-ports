@@ -16,7 +16,7 @@ echo "RUST_BOOTSTRAP_VERSION=${RUST_BOOTSTRAP_VERSION}" | portedit merge -i .
 
 fetch -qo /tmp/llvm.rs https://raw.githubusercontent.com/rust-lang/rust/${new_commit}/src/bootstrap/src/core/build_steps/llvm.rs
 LLVM_VERSION=$(grep "bad LLVM version" /tmp/llvm.rs | sed "s/[^0-9]//g")
-echo "LLVM_VERSION=${LLVM_VERSION}" | portedit merge -i .
+echo "_LLVM_VERSION=${LLVM_VERSION}" | portedit merge -i .
 
 cat <<EOF | sed -i '' -E -f - ../../Mk/Uses/cargo.mk ../../Mk/bsd.gecko.mk
 1,/\\$\\{RUST_DEFAULT\\}>=/ {
