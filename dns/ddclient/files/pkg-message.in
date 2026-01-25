@@ -3,7 +3,7 @@
   message: <<EOM
 To configure ddclient, edit the following file:
 
-	%%PREFIX%%/etc/ddclient.conf
+	%%ETCDIR%%/ddclient.conf
 
 If you would like to run ddclient as a daemon add the
 following line to /etc/rc.conf

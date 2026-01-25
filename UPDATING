@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260125:
+  AFFECTS: users of dns/ddclient
+  AUTHOR: mjl@luckie.org.nz
+
+  dns/ddclient has been updated to v4.0.0.
+
+  This release moves the default configuration file location from
+  /usr/local/etc/ to /usr/local/etc/ddclient/.  Please move your
+  existing ddclient.conf to the new location before restarting ddclient.
+
+  See details at https://github.com/ddclient/ddclient/releases/tag/v4.0.0
+
 20260115:
   AFFECTS: users of lang/cython* and USE_PYTHON=cython*
   AUTHOR: sunpoet@FreeBSD.org

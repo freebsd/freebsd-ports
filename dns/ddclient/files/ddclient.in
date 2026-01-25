@@ -18,7 +18,7 @@ name="ddclient"
 rcvar=ddclient_enable
 
 command="%%PREFIX%%/sbin/${name}"
-required_files="%%PREFIX%%/etc/${name}.conf"
+required_files="%%ETCDIR%%/${name}.conf"
 
 load_rc_config ${name}
 
