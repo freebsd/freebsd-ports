@@ -17,9 +17,6 @@ WWW=		https://github.com/WerWolv/ImHex
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NOT_FOR_ARCHS=	i386 powerpc
-NOT_FOR_ARCHS_REASON=	__uint128_t and __int128_t are not supported
-
 BUILD_DEPENDS=	glm>0:math/glm
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libglfw.so:graphics/glfw \
