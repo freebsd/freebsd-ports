@@ -1,5 +1,5 @@
 PORTNAME=	github-copilot-cli
-DISTVERSION=	0.0.377
+DISTVERSION=	0.0.394
 CATEGORIES=	misc # machine-learning
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${NODE_HEADERS}${EXTRACT_SUFX}
@@ -92,6 +92,12 @@ post-extract:
 	@${MV} \
 		${WRKDIR}/${dep_node_addon_api_npm_name}-${dep_node_addon_api_version}/node_modules/${dep_node_addon_api_npm_name} \
 		${WRKDIR}/${dep_sharp_npm_name}-${dep_sharp_version}/node_modules/${dep_sharp_npm_name}/node_modules/node-addon-api
+
+post-patch:
+	# set version
+	${REINPLACE_CMD} -i '' \
+		-e 's|qg.default.createElement(U,{color:e.MUTED},"v",t)|qg.default.createElement(U,{color:e.MUTED},"v","${PORTVERSION}")|g' \
+		${WRKSRC}/node_modules/@github/copilot/index.js
 
 do-build:
 	# Create directory for FreeBSD prebuilds

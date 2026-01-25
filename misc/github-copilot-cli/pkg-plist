@@ -1,12 +1,12 @@
 bin/copilot
 lib/node_modules/.bin/copilot
+lib/node_modules/@github/copilot/changelog.json
 lib/node_modules/@github/copilot/clipboard/index.js
 lib/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/LICENSE
 lib/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/index.d.ts
 lib/node_modules/@github/copilot/clipboard/node_modules/@teddyzhu/clipboard/index.js
 lib/node_modules/@github/copilot/definitions/code-review.agent.yaml
 lib/node_modules/@github/copilot/definitions/explore.agent.yaml
-lib/node_modules/@github/copilot/definitions/plan.agent.yaml
 lib/node_modules/@github/copilot/definitions/task.agent.yaml
 lib/node_modules/@github/copilot/index.js
 lib/node_modules/@github/copilot/npm-loader.js
