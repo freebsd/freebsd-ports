@@ -5204,6 +5204,7 @@
     SUBDIR += py-klepto
     SUBDIR += py-knack
     SUBDIR += py-l18n
+    SUBDIR += py-lap
     SUBDIR += py-lark
     SUBDIR += py-launchpadlib
     SUBDIR += py-lazr.config
