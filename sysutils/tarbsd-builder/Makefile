@@ -1,5 +1,5 @@
 PORTNAME=	tarbsd-builder
-DISTVERSION=	25.09.28
+DISTVERSION=	26.01.25
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DIST_SUBDIR=	${DISTNAME}-${DISTVERSION}
@@ -24,20 +24,20 @@ USE_PHP=	ctype filter mbstring pcntl phar zlib
 
 NO_ARCH=	yes
 
-_TARBSD_COMPILE_ARGS=	--ports --version-tag=${PORTVERSION} --np-iconv
+_TARBSD_COMPILE_ARGS=	--ports --version-tag=${PORTVERSION} \
+			--prefix=${LOCALBASE}
 
 PLIST_FILES=	bin/tarbsd
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=		INTL QEMU_TOOLS ZOPFLI
-OPTIONS_DEFAULT=	ZOPFLI
+OPTIONS_DEFINE=		EXAMPLES PIGZ QEMU_TOOLS
+OPTIONS_DEFAULT=	EXAMPLES PIGZ
 
-INTL_DESC=		Intl extension instead of a polyfill
+PIGZ_DESC=		Better kernel compression
 QEMU_TOOLS_DESC=	Export image to hypervisor formats
-ZOPFLI_DESC=		Better kernel compression
 
-INTL_USE=		PHP=intl
+PIGZ_RUN_DEPENDS=	pigz:archivers/pigz
 QEMU_TOOLS_RUN_DEPENDS=	qemu-img:emulators/qemu@tools
-ZOPFLI_RUN_DEPENDS=	zopfli:archivers/zopfli
 
 do-build:
 	${LOCALBASE}/bin/php -d phar.readonly=0 ${WRKSRC}/stubs/compile.php \
@@ -46,5 +46,10 @@ do-build:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/out/tarbsd \
 		${STAGEDIR}${PREFIX}/bin/
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
