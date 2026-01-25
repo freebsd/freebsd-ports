@@ -1,6 +1,6 @@
---- Makefile.orig	2025-06-04 17:25:57 UTC
+--- Makefile.orig	2025-06-14 10:42:42 UTC
 +++ Makefile
-@@ -3,26 +3,8 @@ OBJS := $(OBJS:.c=.o)
+@@ -3,26 +3,7 @@ OBJS := $(OBJS:.c=.o)
  OBJS = $(SOURCES:.cpp=.o)
  OBJS := $(OBJS:.c=.o)
  
@@ -24,7 +24,6 @@
 -else
 -	LDFLAGS += -framework CoreFoundation
 -endif
-+CFLAGS += -flto
 +LDFLAGS += -lcurl -lpthread -liconv -lcrypto
  
  .PHONY: all
