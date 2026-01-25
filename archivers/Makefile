@@ -31,6 +31,7 @@
     SUBDIR += draco
     SUBDIR += dzip
     SUBDIR += engrampa
+    SUBDIR += extract-xiso
     SUBDIR += fastjar
     SUBDIR += file-roller
     SUBDIR += gcab
