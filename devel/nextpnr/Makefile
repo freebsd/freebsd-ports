@@ -1,7 +1,7 @@
 PORTNAME=	nextpnr
 DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -22,8 +22,8 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libboost_program_options.so:devel/boost-libs \
 		${PY_BOOST}
 
-USES=		compiler:c++17-lang cmake llvm:min=20 qt:6 eigen:3 python gl
-USE_QT=		base
+USES=		compiler:c++17-lang cmake llvm:min=20 qt:5 eigen:3 python gl
+USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
@@ -42,9 +42,9 @@ PLIST_FILES=	bin/nextpnr-ecp5 \
 MAKE_ENV=	PYTHONDONTWRITEBYTECODE=1
 
 .if exists(/usr/include/omp.h)
-CMAKE_ON=	USE_OPENMP
+CMAKE_ON+=	USE_OPENMP
 .else
-CMAKE_OFF=	USE_OPENMP
+CMAKE_OFF+=	USE_OPENMP
 .endif
 
 .include <bsd.port.mk>
