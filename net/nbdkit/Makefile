@@ -42,6 +42,9 @@ CONFIGURE_ARGS+=	--disable-golang \
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
+# Workaround for "fetch: transfer timed out" due to Hetzner's IPv6
+FETCH_ARGS+=	--ipv4-only
+
 OPTIONS_DEFINE=	CURL GNUTLS LIBVIRT LZMA MANPAGES PERL PYTHON RUBY SSH ZLIB \
 		ZSTD
 
