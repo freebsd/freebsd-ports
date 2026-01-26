@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 USES=		java:ant,run
 USE_GITHUB=	yes
 GH_ACCOUNT=	jgraph
+JAVA_VERSION=  8 # math/scilab needs java 8 compatible classes
 
 NO_ARCH=	yes
 

@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		java:ant,run
+JAVA_VERSION=  8 # math/scilab needs java 8 compatible classes
 
 ALL_TARGET=	dist
 NO_ARCH=	yes
