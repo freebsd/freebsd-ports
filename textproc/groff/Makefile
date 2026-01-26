@@ -1,6 +1,6 @@
 PORTNAME=	groff
-PORTVERSION=	1.23.0
-PORTREVISION=   5
+DISTVERSION=	1.23.0
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -12,14 +12,13 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gsfonts>=0:print/gsfonts \
 		psselect:print/psutils
-RUN_DEPENDS:=	psselect:print/psutils
+RUN_DEPENDS=	psselect:print/psutils
 
 USES=		cpe gmake iconv:wchar_t makeinfo perl5
 CPE_VENDOR=	gnu
 USE_CXXSTD=	gnu++98
 
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk \
 			--with-urw-fonts-dir=${LOCALBASE}/share/ghostscript/fonts/ \
 			--without-gs \
@@ -42,8 +41,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	heirloom-doctools ja-groff
 
-DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+DATADIR=	${PREFIX}/share/${PORTNAME}/${DISTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${DISTVERSION}
 EXAMPLESDIR=	${DOCSDIR}/examples
 
 INFO=		groff
