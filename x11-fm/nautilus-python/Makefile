@@ -1,5 +1,5 @@
 PORTNAME=	nautilus-python
-DISTVERSION=	4.0.1
+DISTVERSION=	4.1.0
 CATEGORIES=	x11-fm gnome python
 MASTER_SITES=	GNOME
 
@@ -20,6 +20,6 @@ OPTIONS_SUB=	yes
 
 GTKDOC_MESON_ENABLED=		docs
 GTKDOC_DESC=			Build documentation
-GTKDOC_BUILD_DEPENDS=		gtkdocize:textproc/gtk-doc
+GTKDOC_BUILD_DEPENDS=		gtkdoc-scan:textproc/gtk-doc
 
 .include <bsd.port.mk>
