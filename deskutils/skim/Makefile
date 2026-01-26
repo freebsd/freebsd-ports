@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.2
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -156,7 +156,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		nix-0.30.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
-		num-conv-0.1.0 \
+		num-conv-0.2.0 \
 		num-derive-0.4.2 \
 		num-traits-0.2.19 \
 		num_threads-0.1.7 \
@@ -247,8 +247,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thiserror-impl-1.0.69 \
 		thiserror-impl-2.0.18 \
 		thread_local-1.1.9 \
-		time-0.3.45 \
-		time-core-0.1.7 \
+		time-0.3.46 \
+		time-core-0.1.8 \
 		tokio-1.49.0 \
 		tokio-macros-2.6.0 \
 		tokio-util-0.7.18 \
@@ -260,12 +260,13 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		typenum-1.19.0 \
 		ucd-trie-0.1.7 \
 		unicase-2.9.0 \
+		unicode-display-width-0.3.0 \
 		unicode-ident-1.0.22 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-2.0.1 \
 		unicode-width-0.2.2 \
 		utf8parse-0.2.2 \
-		uuid-1.19.0 \
+		uuid-1.20.0 \
 		valuable-0.1.1 \
 		version_check-0.9.5 \
 		vte-0.15.0 \
