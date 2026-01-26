@@ -8,7 +8,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME visual diff and merge tool
 WWW=		https://meld.app/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	itstool:textproc/itstool
