@@ -1,6 +1,5 @@
 PORTNAME=	prosody
-DISTVERSION=	13.0.3
-PORTREVISION=	1
+DISTVERSION=	13.0.4
 CATEGORIES=	net-im
 MASTER_SITES=	https://prosody.im/downloads/source/
 
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lfs.so:devel/luafilesystem@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/socket/core.so:net/lua-luasocket@${LUA_FLAVOR} \
 		${LUA_REFMODLIBDIR}/ssl.so:security/luasec@${LUA_FLAVOR}
 
-USES=		cpe gmake lua:54 shebangfix ssl
+USES=		cpe gmake lua:54,build,run shebangfix ssl
 USE_RC_SUBR=	prosody
 SHEBANG_FILES=	prosody prosodyctl tools/migration/prosody-migrator.lua
 
