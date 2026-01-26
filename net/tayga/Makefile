@@ -9,6 +9,9 @@ WWW=		https://github.com/apalrd/tayga/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	64-bit time_t is required
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	apalrd
