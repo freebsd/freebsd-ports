@@ -1,5 +1,5 @@
 PORTNAME=	accerciser
-PORTVERSION=	3.46.2
+PORTVERSION=	3.48.0
 CATEGORIES=	accessibility gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -18,15 +18,15 @@ RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		${PYTHON_PKGNAMEPREFIX}atspi>0:accessibility/py-atspi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR}
 
-NO_ARCH=	yes
-USES=		desktop-file-utils gettext gnome localbase:ldflags meson \
-		pkgconfig python shebangfix tar:xz
-USE_GNOME=	atk gdkpixbuf glib20 gtk30 pygobject3
-SHEBANG_FILES=	plugins/ipython_view.py
-USE_PYTHON=	py3kplist
-BINARY_ALIAS=	python3=${PYTHON_CMD}
-
+USES=		desktop-file-utils gettext-tools gnome localbase:ldflags \
+		meson pkgconfig python shebangfix tar:xz
+USE_GNOME=	gtk30 pygobject3
 GLIB_SCHEMAS=	org.a11y.Accerciser.gschema.xml
+USE_PYTHON=	py3kplist
+
+SHEBANG_FILES=	plugins/ipython_view.py
+BINARY_ALIAS=	python3=${PYTHON_CMD}
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@PYTHON@|${PYTHON_CMD}|' \
