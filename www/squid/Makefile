@@ -1,6 +1,5 @@
 PORTNAME=	squid
-DISTVERSION=	7.3
-PORTREVISION=	2
+DISTVERSION=	7.4
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}-cache/${PORTNAME}/releases/download/${PORTNAME:tu}_${DISTVERSION:S|.|_|g}/
 
@@ -135,25 +134,25 @@ FS_DISKD_VARS=			DISKIO_MODULES+=DiskDaemon \
 				STORAGE_SCHEMES+=diskd
 FS_ROCK_VARS=			STORAGE_SCHEMES+=rock
 GSSAPI_BASE_USES=		gssapi
-GSSAPI_BASE_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
-				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
 .if exists(/usr/libdata/pkgconfig/mit-krb5.pc)
-GSSAPI_BASE_CONFIGURE_ON+=	--with-mit-krb5=${GSSAPIBASEDIR}
+GSSAPI_BASE_CONFIGURE_ON=	--with-mit-krb5=${GSSAPIBASEDIR} \
+				--without-heimdal-krb5
+GSSAPI_BASE_CONFIGURE_ENV=	LIBMIT_KRB5_CFLAGS="${GSSAPICPPFLAGS}" \
+				LIBMIT_KRB5_LIBS="${GSSAPILIBS}"
 .else
-GSSAPI_BASE_CONFIGURE_ON+=	--with-heimdal-krb5=${GSSAPIBASEDIR} \
+GSSAPI_BASE_CONFIGURE_ON=	--with-heimdal-krb5=${GSSAPIBASEDIR} \
 				--without-mit-krb5
+GSSAPI_BASE_CONFIGURE_ENV=	LIBHEIMDAL_KRB5_CFLAGS="${GSSAPICPPFLAGS}" \
+				LIBHEIMDAL_KRB5_LIBS="${GSSAPILIBS}"
 .endif
 GSSAPI_BASE_PLIST_SUB=		AUTH_KERB=""
 GSSAPI_HEIMDAL_USES=		gssapi:heimdal
-GSSAPI_HEIMDAL_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
-				--with-heimdal-krb5=${GSSAPIBASEDIR} \
-				--without-mit-krb5 \
-				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
+GSSAPI_HEIMDAL_CONFIGURE_ON=	--with-heimdal-krb5=yes \
+				--without-mit-krb5
 GSSAPI_HEIMDAL_PLIST_SUB=	AUTH_KERB=""
 GSSAPI_MIT_USES=		gssapi:mit
-GSSAPI_MIT_CONFIGURE_ON=	${GSSAPI_CONFIGURE_ARGS} \
-				--with-mit-krb5=${GSSAPIBASEDIR} \
-				krb5_config=${GSSAPIBASEDIR}/bin/krb5-config
+GSSAPI_MIT_CONFIGURE_ON=	--with-mit-krb5=yes \
+				--without-heimdal-krb5
 GSSAPI_MIT_PLIST_SUB=		AUTH_KERB=""
 GSSAPI_NONE_CONFIGURE_ON=	--without-gss \
 				--without-heimdal-krb5 \
@@ -267,13 +266,17 @@ post-patch-IPV6-off:
 		${WRKSRC}/src/cf.data.pre
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly \
-		  ${STAGEDIR}${EXAMPLESDIR} \
-		  ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/weekly
 	${INSTALL_SCRIPT} ${WRKDIR}/900.squid-rotate-log \
 		${STAGEDIR}${PREFIX}/etc/periodic/weekly
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/auth/basic/DB/passwd.sql \
 		${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${MYDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- configure.orig	2025-10-28 20:25:31 UTC
+--- configure.orig	2026-01-20 21:46:17 UTC
 +++ configure
-@@ -29214,7 +29214,14 @@ fi
+@@ -29211,7 +29211,14 @@ fi
  
  fi
  
@@ -16,26 +16,26 @@
  #if HAVE_SYS_TYPES_H
  #include <sys/types.h>
  #endif
-@@ -32420,15 +32427,15 @@ then :
+@@ -32417,15 +32424,15 @@ then :
        with_mit_krb5=yes
        if test -d "$withval/lib64"
  then :
--  LIB_KRB5_PATH+="-L$withval/lib64"
-+  LIBMIT_KRB5_LIBS="$LIBMIT_KRB5_LIBS -L$withval/lib64"
+-  LIBMIT_KRB5_PATH+="-L$withval/lib64"
++  LIBMIT_KRB5_PATH="$LIBMIT_KRB5_PATH -L$withval/lib64"
  fi
        if test -d "$withval/lib"
  then :
--  LIB_KRB5_PATH+="-L$withval/lib"
-+  LIBMIT_KRB5_LIBS="$LIBMIT_KRB5_LIBS -L$withval/lib"
+-  LIBMIT_KRB5_PATH+="-L$withval/lib"
++  LIBMIT_KRB5_PATH="$LIBMIT_KRB5_PATH -L$withval/lib"
  fi
        if test -d "$withval/include"
  then :
--  LIB_KRB5_CFLAGS+="-I$withval/include"
+-  LIBMIT_KRB5_CFLAGS+="-I$withval/include"
 +  LIBMIT_KRB5_CFLAGS="$LIBMIT_KRB5_CFLAGS -I$withval/include"
  fi
       ;;
  esac
-@@ -33791,9 +33798,6 @@ else $as_nop
+@@ -33669,9 +33676,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -45,7 +45,7 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -33871,9 +33875,6 @@ else $as_nop
+@@ -33749,9 +33753,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -55,7 +55,7 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -35197,9 +35198,6 @@ else $as_nop
+@@ -35075,9 +35076,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -65,7 +65,7 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -35277,9 +35275,6 @@ else $as_nop
+@@ -35155,9 +35153,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -75,17 +75,17 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -35530,15 +35525,15 @@ then :
+@@ -35408,15 +35403,15 @@ then :
        with_heimdal_krb5=yes
        if test -d "$withval/lib64"
  then :
 -  LIBHEIMDAL_KRB5_PATH+="-L$withval/lib64"
-+  LIBHEIMDAL_KRB5_LIBS="$LIBHEIMDAL_KRB5_LIBS -L$withval/lib64"
++  LIBHEIMDAL_KRB5_PATH="$LIBHEIMDAL_KRB5_PATH -L$withval/lib64"
  fi
        if test -d "$withval/lib"
  then :
 -  LIBHEIMDAL_KRB5_PATH+="-L$withval/lib"
-+  LIBHEIMDAL_KRB5_LIBS="$LIBHEIMDAL_KRB5_LIBS -L$withval/lib"
++  LIBHEIMDAL_KRB5_PATH="$LIBHEIMDAL_KRB5_PATH -L$withval/lib"
  fi
        if test -d "$withval/include"
  then :
@@ -94,7 +94,7 @@
  fi
       ;;
  esac
-@@ -36777,9 +36772,6 @@ else $as_nop
+@@ -36680,9 +36675,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -104,7 +104,7 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -36857,9 +36849,6 @@ else $as_nop
+@@ -36760,9 +36752,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -114,7 +114,7 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -37250,9 +37239,6 @@ else $as_nop
+@@ -37153,9 +37142,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -124,7 +124,7 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -37329,9 +37315,6 @@ else $as_nop
+@@ -37232,9 +37218,6 @@ else $as_nop
  #elif HAVE_GSSAPI_H
  #include <gssapi.h>
  #endif
@@ -134,7 +134,7 @@
  #if HAVE_GSSAPI_GSSAPI_GENERIC_H
  #include <gssapi/gssapi_generic.h>
  #endif
-@@ -40801,7 +40784,7 @@ BUILD_HELPER="NIS"
+@@ -40704,7 +40687,7 @@ BUILD_HELPER="NIS"
  ##
  
  BUILD_HELPER="NIS"
@@ -143,7 +143,7 @@
  do :
    as_ac_Header=`printf "%s\n" "ac_cv_header_$ac_header" | $as_tr_sh`
  ac_fn_cxx_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "
-@@ -47289,6 +47272,7 @@ ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type
+@@ -47192,6 +47175,7 @@ ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type
  
  ac_fn_cxx_check_type "$LINENO" "cpu_set_t" "ac_cv_type_cpu_set_t" "
  #if HAVE_SCHED_H
@@ -151,7 +151,7 @@
  #include <sched.h>
  #endif
  
-@@ -49806,6 +49790,7 @@ else $as_nop
+@@ -49709,6 +49693,7 @@ else $as_nop
  #       include <sys/ioccom.h>
  #       include <netinet/in.h>
  #undef minor_t
