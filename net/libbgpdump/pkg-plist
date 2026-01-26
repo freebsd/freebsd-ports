@@ -1,8 +1,10 @@
 bin/bgpdump
 lib/libbgpdump.a
 lib/libbgpdump.so
+lib/libbgpdump.so.%%SOVER%%
 include/bgpdump_attr.h
 include/bgpdump_formats.h
 include/bgpdump_lib.h
+include/bgpdump_mstream.h
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.c
