@@ -515,4 +515,4 @@ share/locale/zh_CN/LC_MESSAGES/file-roller.mo
 share/locale/zh_HK/LC_MESSAGES/file-roller.mo
 share/locale/zh_TW/LC_MESSAGES/file-roller.mo
 share/locale/zu/LC_MESSAGES/file-roller.mo
-share/metainfo/org.gnome.FileRoller.appdata.xml
+share/metainfo/org.gnome.FileRoller.metainfo.xml
