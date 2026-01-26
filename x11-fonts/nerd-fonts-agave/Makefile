@@ -1,0 +1,9 @@
+PORTREVISION=	0
+DISTNAME=	Agave
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

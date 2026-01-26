@@ -1,0 +1,9 @@
+PORTREVISION=	0
+DISTNAME=	IosevkaTerm
+
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

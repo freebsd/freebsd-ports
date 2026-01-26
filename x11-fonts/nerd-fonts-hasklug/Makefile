@@ -1,0 +1,11 @@
+_NAME=		Hasklug
+
+PORTREVISION=	0
+DISTNAME=	Hasklig
+
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

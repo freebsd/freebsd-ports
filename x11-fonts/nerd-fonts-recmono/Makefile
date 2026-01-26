@@ -1,0 +1,11 @@
+_NAME=		RecMono
+
+PORTREVISION=	0
+DISTNAME=	Recursive
+
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

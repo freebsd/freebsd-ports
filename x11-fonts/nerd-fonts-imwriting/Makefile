@@ -1,0 +1,11 @@
+_NAME=		iMWriting
+
+PORTREVISION=	0
+DISTNAME=	iA-Writer
+
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"

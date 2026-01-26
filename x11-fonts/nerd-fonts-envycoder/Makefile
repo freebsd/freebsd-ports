@@ -1,0 +1,9 @@
+PORTREVISION=	0
+DISTNAME=	EnvyCodeR
+
+LICENSE=	OFL11
+LICENSE_FILE=	${WRKSRC}/LICENCE.md
+
+MASTERDIR=	${.CURDIR}/../nerd-fonts
+
+.include "${MASTERDIR}/Makefile"
