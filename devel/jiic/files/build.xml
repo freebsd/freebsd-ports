@@ -15,7 +15,7 @@
 	</target>
 	
 	<target name="compile" depends="prepare">
-		<javac destdir="${build}/classes" includeantruntime="true" debug="on">
+		<javac destdir="${build}/classes" encoding="utf8" includeantruntime="true" debug="on">
 		    <src path="${src}"/>
 		</javac>
 	</target>
