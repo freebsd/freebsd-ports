@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # PROVIDE: victoria_logs
-# REQUIRE: NETWORK
+# REQUIRE: NETWORKING
 # BEFORE: DAEMON
 
 . /etc/rc.subr
