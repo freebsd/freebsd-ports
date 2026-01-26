@@ -127,7 +127,7 @@ _WX_VERS_LISTS=		WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 _WX_PORT_wx_3.0=	x11-toolkits/wxgtk30@${_GTKFLAVOR}
 _WX_LIB_wx_3.0=		wx_baseu-3.0
 
-_WX_PORT_python_3.2=	x11-toolkits/py-wxPython4@${PY_FLAVOR}
+_WX_PORT_python_3.2=	x11-toolkits/py-wxpython@${PY_FLAVOR}
 _WX_FILE_python_3.2=	${PYTHON_SITELIBDIR}/wx/__init__.py
 
 # wxgtk 3.2

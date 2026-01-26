@@ -1,0 +1,5 @@
+TIMESTAMP = 1769400596
+SHA256 (python/wxpython-4.2.4.tar.gz) = 2eb123979c87bcb329e8a2452269d60ff8f9f651e9bf25c67579e53c4ebbae3c
+SIZE (python/wxpython-4.2.4.tar.gz) = 58583054
+SHA256 (python/afddb14f78b08a576930babd4dc645d8f3f94701.patch) = 5f799a5507b56892e5a2160dd4f704e9606e6497392d93937e68637e7b51bf83
+SIZE (python/afddb14f78b08a576930babd4dc645d8f3f94701.patch) = 4990
