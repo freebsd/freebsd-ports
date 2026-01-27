@@ -1,6 +1,5 @@
 PORTNAME=	veloren
-PORTVERSION=	s20260123
-PORTREVISION=	1
+PORTVERSION=	s20260128
 CATEGORIES=	games wayland
 PKGNAMESUFFIX=	-weekly
 
@@ -26,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_TAGNAME=	v0.18.0-0-g1d12f35edd # git describe --long --match='v[0-9]*' weekly
+GL_TAGNAME=	v0.18.0-24-g2cc1712251 # git describe --long --match='v[0-9]*' weekly
 GL_DATE=	$$(${AWK} '/TIMESTAMP/ { print $$3 }' ${DISTINFO_FILE})
 CARGO_ENV=	VELOREN_GIT_VERSION=${GL_TAGNAME:C,(.*)-.*-g(.{8}).*,\1/\2,}/${GL_DATE} \
 		VELOREN_USERDATA_STRATEGY=system \
