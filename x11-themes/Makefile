@@ -170,6 +170,7 @@
     SUBDIR += wallpapers-freebsd-kde
     SUBDIR += win98se-icon-theme
     SUBDIR += wpgtk
+    SUBDIR += xapp-symbolic-icons
     SUBDIR += xcursor-themes
     SUBDIR += xfce-icons-elementary
     SUBDIR += yaru-gtk-themes
