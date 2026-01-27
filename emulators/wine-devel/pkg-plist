@@ -211,6 +211,7 @@ include/wine/windows/comcat.idl
 include/wine/windows/commctrl.h
 include/wine/windows/commctrl.rh
 include/wine/windows/commdlg.h
+include/wine/windows/common.ver
 include/wine/windows/commoncontrols.h
 include/wine/windows/commoncontrols.idl
 include/wine/windows/compobj.h
@@ -746,6 +747,7 @@ include/wine/windows/msdasc.h
 include/wine/windows/msdasc.idl
 include/wine/windows/msdasql.h
 include/wine/windows/msdelta.h
+include/wine/windows/msdshape.h
 include/wine/windows/mshtmcid.h
 include/wine/windows/mshtmdid.h
 include/wine/windows/mshtmhst.h
@@ -818,6 +820,7 @@ include/wine/windows/ntsecapi.h
 include/wine/windows/ntsecpkg.h
 include/wine/windows/ntstatus.h
 include/wine/windows/ntuser.h
+include/wine/windows/ntverp.h
 include/wine/windows/oaidl.h
 include/wine/windows/oaidl.idl
 include/wine/windows/objbase.h
@@ -857,6 +860,8 @@ include/wine/windows/patchapi.h
 include/wine/windows/pathcch.h
 include/wine/windows/pdh.h
 include/wine/windows/pdhmsg.h
+include/wine/windows/peninputpanel.h
+include/wine/windows/peninputpanel.idl
 include/wine/windows/perflib.h
 include/wine/windows/perhist.h
 include/wine/windows/perhist.idl
@@ -1707,6 +1712,7 @@ lib/wine/%%WINEARCH%%-unix/winedmo.so
 %%GSTREAMER%%lib/wine/%%WINEARCH%%-unix/winegstreamer.so
 %%OSS%%lib/wine/%%WINEARCH%%-unix/wineoss.so
 lib/wine/%%WINEARCH%%-unix/wineps.so
+%%PULSEAUDIO%%lib/wine/%%WINEARCH%%-unix/winepulse.so
 lib/wine/%%WINEARCH%%-unix/winevulkan.so
 %%WAYLAND%%lib/wine/%%WINEARCH%%-unix/winewayland.so
 %%X11%%lib/wine/%%WINEARCH%%-unix/winex11.so
@@ -1755,6 +1761,7 @@ lib/wine/%%WINEARCH%%-windows/cards.dll
 lib/wine/%%WINEARCH%%-windows/cdosys.dll
 lib/wine/%%WINEARCH%%-windows/certutil.exe
 lib/wine/%%WINEARCH%%-windows/cfgmgr32.dll
+lib/wine/%%WINEARCH%%-windows/chakra.dll
 lib/wine/%%WINEARCH%%-windows/chcp.com
 lib/wine/%%WINEARCH%%-windows/clock.exe
 lib/wine/%%WINEARCH%%-windows/clusapi.dll
@@ -2683,6 +2690,7 @@ lib/wine/%%WINEARCH%%-windows/winemsibuilder.exe
 lib/wine/%%WINEARCH%%-windows/winepath.exe
 lib/wine/%%WINEARCH%%-windows/wineps.drv
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/wineps16.drv16
+%%PULSEAUDIO%%lib/wine/%%WINEARCH%%-windows/winepulse.drv
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/winevdm.exe
 lib/wine/%%WINEARCH%%-windows/winevulkan.dll
 %%WAYLAND%%lib/wine/%%WINEARCH%%-windows/winewayland.drv
