@@ -1,7 +1,6 @@
 PORTNAME=	gleam
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
-PORTREVISION=	5
+DISTVERSION=	1.14.0
 CATEGORIES=	lang
 
 MAINTAINER=	dch@FreeBSD.org
@@ -19,7 +18,8 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	gleam-lang
 
-RUSTFLAGS+=	--cap-lints=warn
+CARGO_UPDATE_ARGS=	--frozen
+RUSTFLAGS+=		--cap-lints=warn
 
 PORTSCOUT=	limit:[0-9.]+
 
