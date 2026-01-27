@@ -1,29 +1,31 @@
 PORTNAME=	abook
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.6.2
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://abook.sourceforge.net/devel/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Addressbook program with mutt mail client support
 WWW=		http://abook.sourceforge.net/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
-USES=		ncurses readline gettext-tools autoreconf localbase
+USES=		autoreconf gettext-tools localbase ncurses readline
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
-PORTDOCS=	ANNOUNCE AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README \
-		THANKS TODO
+WRKSRC=		${WRKDIR}
 
-OPTIONS_DEFINE=	NLS DOCS
+PORTDOCS=	ANNOUNCE AUTHORS BUGS ChangeLog FAQ INSTALL NEWS README THANKS \
+		TODO
+
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-post-install:
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
