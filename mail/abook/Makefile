@@ -2,11 +2,11 @@ PORTNAME=	abook
 PORTVERSION=	0.6.2
 PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	http://abook.sourceforge.net/devel/
+MASTER_SITES=	https://abook.sourceforge.io/devel/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Addressbook program with mutt mail client support
-WWW=		http://abook.sourceforge.net/
+WWW=		https://abook.sourceforge.io/
 
 LICENSE=	GPLv3
 
