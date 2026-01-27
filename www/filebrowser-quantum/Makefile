@@ -14,6 +14,8 @@ WWW=		https://filebrowserquantum.com \
 
 LICENSE=	APACHE20
 
+BROKEN_i386=	cannot use int64(off) (value of type int64) as int32 value in assignment
+
 USES=		go:1.25+,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	gtsteffaniak
