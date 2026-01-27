@@ -1,6 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.5
+DISTVERSION=	0.11.6
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -27,11 +27,11 @@ USES=		cmake cpe gettext iconv lua:51,build luajit \
 
 USE_GITHUB=	yes
 GH_TUPLE=	tree-sitter:tree-sitter-c:v0.24.1:treesitter_c \
-		tree-sitter-grammars:tree-sitter-lua:v0.4.0:treesitter_lua \
-		tree-sitter-grammars:tree-sitter-markdown:v0.5.1:treesitter_markdown \
-		tree-sitter-grammars:tree-sitter-query:v0.7.0:treesitter_query \
-		tree-sitter-grammars:tree-sitter-vim:v0.7.0:treesitter_vim \
-		neovim:tree-sitter-vimdoc:v4.0.0:treesitter_vimdoc
+		tree-sitter-grammars:tree-sitter-lua:v0.4.1:treesitter_lua \
+		tree-sitter-grammars:tree-sitter-markdown:v0.5.2:treesitter_markdown \
+		tree-sitter-grammars:tree-sitter-query:v0.8.0:treesitter_query \
+		tree-sitter-grammars:tree-sitter-vim:v0.8.0:treesitter_vim \
+		neovim:tree-sitter-vimdoc:v4.1.0:treesitter_vimdoc
 
 CMAKE_ARGS=	-DLUA_PRG:FILEPATH="${LUA_CMD}" \
 		-DCMAKE_INSTALL_MANDIR:PATH="${PREFIX}/share/man" \
