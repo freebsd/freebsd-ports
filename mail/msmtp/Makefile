@@ -1,6 +1,6 @@
 PORTNAME=	msmtp
 DISTVERSION=	1.8.32
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	https://marlam.de/msmtp/releases/
 
@@ -44,10 +44,10 @@ MSMTPQ_RUN_DEPENDS=	bash:shells/bash
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
-GNUTLS_CONFIGURE_WITH=	tls=gnutls
+GNUTLS_CONFIGURE_ON=	--with-tls=gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_WITH=	tls=openssl
+OPENSSL_CONFIGURE_ON=	--with-tls=openssl
 OPENSSL_CONFIGURE_ENV=	libssl_CFLAGS="-I${OPENSSLINC}" \
 			libssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
 
