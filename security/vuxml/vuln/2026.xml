@@ -1,3 +1,69 @@
+  <vuln vid="4b824428-fb93-11f0-b194-8447094a420f">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.19,1</lt></range>
+      </package>
+      <package>
+	<name>openssl33</name>
+	<range><lt>3.3.6</lt></range>
+      </package>
+      <package>
+	<name>openssl34</name>
+	<range><lt>3.4.4</lt></range>
+      </package>
+      <package>
+	<name>openssl35</name>
+	<range><lt>3.5.5</lt></range>
+      </package>
+      <package>
+	<name>openssl36</name>
+	<range><lt>3.6.1</lt></range>
+      </package>
+      <package>
+	<name>openssl</name>
+	<range><lt>3.0.19</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://openssl-library.org/news/secadv/20260127.txt">
+	  <ul>
+	    <li>Improper validation of PBMAC1 parameters in PKCS#12 MAC verification (CVE-2025-11187)</li>
+	    <li>Stack buffer overflow in CMS AuthEnvelopedData parsing (CVE-2025-15467)</li>
+	    <li>NULL dereference in SSL_CIPHER_find() function on unknown cipher ID (CVE-2025-15468)</li>
+	    <li>"openssl dgst" one-shot codepath silently truncates inputs >16MB (CVE-2025-15469)</li>
+	    <li>TLS 1.3 CompressedCertificate excessive memory allocation (CVE-2025-66199)</li>
+	    <li>Heap out-of-bounds write in BIO_f_linebuffer on short writes (CVE-2025-68160)</li>
+	    <li>Unauthenticated/unencrypted trailing bytes with low-level OCB function calls (CVE-2025-69418)</li>
+	    <li>Out of bounds write in PKCS12_get_friendlyname() UTF-8 conversion (CVE-2025-69419)</li>
+	    <li>Missing ASN1_TYPE validation in TS_RESP_verify_response() function (CVE-2025-69420)</li>
+	    <li>NULL Pointer Dereference in PKCS12_item_decrypt_d2i_ex function (CVE-2025-69421)</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-11187</cvename>
+      <cvename>CVE-2025-15467</cvename>
+      <cvename>CVE-2025-15468</cvename>
+      <cvename>CVE-2025-15469</cvename>
+      <cvename>CVE-2025-66199</cvename>
+      <cvename>CVE-2025-68160</cvename>
+      <cvename>CVE-2025-69418</cvename>
+      <cvename>CVE-2025-69419</cvename>
+      <cvename>CVE-2025-69420</cvename>
+      <cvename>CVE-2025-69421</cvename>
+      <url>https://openssl-library.org/news/secadv/20260127.txt</url>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab01cb11-f911-11f0-b194-8447094a420f">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
