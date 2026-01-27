@@ -1,5 +1,5 @@
-TIMESTAMP = 1768048479
-SHA256 (go/net_amneziawg-go/amneziawg-go-0.2.12/v0.2.12.mod) = f325a77b233ea2ac7bb6e1fdf656d1497468a47f1233ed94f39efb6f8365573b
-SIZE (go/net_amneziawg-go/amneziawg-go-0.2.12/v0.2.12.mod) = 420
-SHA256 (go/net_amneziawg-go/amneziawg-go-0.2.12/v0.2.12.zip) = d74b0bb0b86f7119050761031df2b5d0f0c2c242dfdf18941129d4b7c19ac58f
-SIZE (go/net_amneziawg-go/amneziawg-go-0.2.12/v0.2.12.zip) = 173823
+TIMESTAMP = 1769448404
+SHA256 (go/net_amneziawg-go/amneziawg-go-0.2.16/v0.2.16.mod) = 80a5e495344779ddb7d7f72b5ad357487e2156cc268fb89e002afe63fb32a26c
+SIZE (go/net_amneziawg-go/amneziawg-go-0.2.16/v0.2.16.mod) = 641
+SHA256 (go/net_amneziawg-go/amneziawg-go-0.2.16/v0.2.16.zip) = a5b00adf59a433a03c43bf956998fd3eee5379f6574866f4e7d4c422650c59e3
+SIZE (go/net_amneziawg-go/amneziawg-go-0.2.16/v0.2.16.zip) = 181833
