@@ -1,6 +1,6 @@
 PORTNAME=	webkit
 DISTVERSION=	2.46.6
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk_${FLAVOR}
@@ -86,6 +86,8 @@ USE_GNOME+=	gtk30
 CMAKE_OFF+=	USE_GTK4
 .endif
 .if ${FLAVOR:M40}
+DEPRECATED=	libsoup 2 support scheduled for removal in 2.52: https://webkitgtk.org/2025/10/07/webkitgtk-soup2-deprecation.html
+
 LIB_DEPENDS+=	libsoup-2.4.so:devel/libsoup
 
 CMAKE_ON+=	USE_SOUP2
