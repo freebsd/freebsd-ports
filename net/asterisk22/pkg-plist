@@ -29,6 +29,7 @@
 @sample %%ETCDIR%%/cel_tds.conf.sample
 @sample %%ETCDIR%%/chan_dahdi.conf.sample
 @sample %%ETCDIR%%/chan_mobile.conf.sample
+@sample %%ETCDIR%%/chan_websocket.conf.sample
 @sample %%ETCDIR%%/cli.conf.sample
 @sample %%ETCDIR%%/cli_aliases.conf.sample
 @sample %%ETCDIR%%/cli_permissions.conf.sample
@@ -261,6 +262,7 @@ include/asterisk/res_pjsip_cli.h
 include/asterisk/res_pjsip_outbound_publish.h
 include/asterisk/res_pjsip_presence_xml.h
 include/asterisk/res_pjsip_pubsub.h
+include/asterisk/res_pjsip_redirect.h
 include/asterisk/res_pjsip_session.h
 include/asterisk/res_pjsip_session_caps.h
 include/asterisk/res_prometheus.h
