@@ -264,7 +264,6 @@ include/proxygen/lib/http/session/TTLBAStats.h
 include/proxygen/lib/http/session/TransactionByteEvents.h
 include/proxygen/lib/http/session/WebTransportFilter.h
 include/proxygen/lib/http/sink/FlowControlInfo.h
-include/proxygen/lib/http/sink/HTTPConnectSink.h
 include/proxygen/lib/http/sink/HTTPSink.h
 include/proxygen/lib/http/sink/HTTPTransactionSink.h
 include/proxygen/lib/http/sink/HTTPTunnelSink.h
