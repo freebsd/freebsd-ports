@@ -1,5 +1,6 @@
 PORTNAME=	sonarr
 DISTVERSION=	4.0.16.2944
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Sonarr/Sonarr/releases/download/v${DISTVERSION}/
 DISTNAME=	Sonarr.main.${DISTVERSION}.freebsd-x64
@@ -48,5 +49,7 @@ do-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/package_info ${STAGEDIR}/${DATADIR}/
+	@${ECHO_CMD} "e_sqlite3.so libsqlite3.so" \
+		>${STAGEDIR}${PREFIX}/etc/libmap.d/Sonarr.conf
 
 .include <bsd.port.mk>
