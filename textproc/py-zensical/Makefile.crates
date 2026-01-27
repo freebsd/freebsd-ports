@@ -84,16 +84,16 @@ CARGO_CRATES=	ahash-0.8.12 \
 		rand_core-0.9.3 \
 		ref-cast-1.0.25 \
 		ref-cast-impl-1.0.25 \
+		regex-1.12.2 \
 		regex-automata-0.4.13 \
 		regex-syntax-0.8.8 \
 		rustversion-1.0.22 \
-		ryu-1.0.21 \
 		same-file-1.0.6 \
 		self_cell-1.2.1 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.145 \
+		serde_json-1.0.149 \
 		sha1_smol-1.0.1 \
 		sharded-slab-0.1.7 \
 		slab-0.4.11 \
@@ -164,12 +164,13 @@ CARGO_CRATES=	ahash-0.8.12 \
 		zerotrie-0.2.3 \
 		zerovec-0.11.5 \
 		zerovec-derive-0.11.2 \
-		zrx-0.0.5 \
+		zmij-1.0.16 \
+		zrx-0.0.9 \
 		zrx-diagnostic-0.0.1 \
 		zrx-executor-0.0.1 \
-		zrx-graph-0.0.2 \
-		zrx-id-0.0.3 \
+		zrx-graph-0.0.4 \
+		zrx-id-0.0.6 \
 		zrx-path-0.0.1 \
-		zrx-scheduler-0.0.2 \
-		zrx-store-0.0.1 \
-		zrx-stream-0.0.2
+		zrx-scheduler-0.0.6 \
+		zrx-store-0.0.2 \
+		zrx-stream-0.0.6
