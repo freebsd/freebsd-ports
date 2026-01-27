@@ -386,6 +386,7 @@ include/simgear/timing/timezone.h
 include/simgear/timing/zonedetect.h
 include/simgear/version.h
 include/simgear/xml/easyxml.hxx
+lib/cmake/SimGear/CreateFFmpegImportedTargets.cmake
 lib/cmake/SimGear/CreateOSGImportedTargets.cmake
 lib/cmake/SimGear/SimGearConfig.cmake
 lib/cmake/SimGear/SimGearConfigVersion.cmake
