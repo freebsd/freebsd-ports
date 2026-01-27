@@ -12,9 +12,7 @@ WWW=		https://fnc.bsdbox.org/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
-
-USES=		localbase:ldflags ncurses
+USES=		localbase:ldflags ncurses sqlite:3
 MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-Wno-error=gnu-statement-expression
