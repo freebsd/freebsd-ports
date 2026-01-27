@@ -1,5 +1,5 @@
 PORTNAME=	amnezia
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net net-vpn
 PKGNAMESUFFIX=	-kmod
@@ -10,8 +10,6 @@ WWW=		https://docs.amnezia.org/documentation/amnezia-wg
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_FreeBSD_13=	depends on kernel sources of recent FreeBSD 14 or newer
 
 USES=		kmod uidfix
 USE_GITHUB=	yes
