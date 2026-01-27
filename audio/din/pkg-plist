@@ -6,12 +6,16 @@ share/applications/din.desktop
 %%DATADIR%%/factory/CDGB
 %%DATADIR%%/factory/Makefile.am
 %%DATADIR%%/factory/Sine_Mixer
+%%DATADIR%%/factory/accent.crv
 %%DATADIR%%/factory/all_notes
 %%DATADIR%%/factory/am.crv
 %%DATADIR%%/factory/attack.crv
 %%DATADIR%%/factory/attack.ed
 %%DATADIR%%/factory/attack.lib
 %%DATADIR%%/factory/audio_prefs
+%%DATADIR%%/factory/beat-patterns.lib
+%%DATADIR%%/factory/beater.crv
+%%DATADIR%%/factory/beater.ed
 %%DATADIR%%/factory/binaural-drone.help.tcl
 %%DATADIR%%/factory/binaural-drones-waveform.crv
 %%DATADIR%%/factory/binaural-drones-waveform.ed
@@ -22,6 +26,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/blues.drone
 %%DATADIR%%/factory/blues.intervals
 %%DATADIR%%/factory/blues.ranges
+%%DATADIR%%/factory/bpmtools
 %%DATADIR%%/factory/changer.help.tcl
 %%DATADIR%%/factory/changer.patch.tcl
 %%DATADIR%%/factory/chord.help.tcl
@@ -295,6 +300,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/d_circler
 %%DATADIR%%/factory/d_countries
 %%DATADIR%%/factory/d_curve_picker
+%%DATADIR%%/factory/d_delaylevels
 %%DATADIR%%/factory/d_dotter
 %%DATADIR%%/factory/d_dpeu
 %%DATADIR%%/factory/d_fft
@@ -308,10 +314,12 @@ share/applications/din.desktop
 %%DATADIR%%/factory/d_parameters
 %%DATADIR%%/factory/d_plugin_browser
 %%DATADIR%%/factory/d_point_modulator
+%%DATADIR%%/factory/d_polyrhythm
 %%DATADIR%%/factory/d_rose_milker
 %%DATADIR%%/factory/d_sine_mixer
 %%DATADIR%%/factory/d_spiraler
 %%DATADIR%%/factory/d_starrer
+%%DATADIR%%/factory/d_subdiv
 %%DATADIR%%/factory/d_superformula
 %%DATADIR%%/factory/d_warper
 %%DATADIR%%/factory/dash.crv
@@ -320,7 +328,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/decay.lib
 %%DATADIR%%/factory/delay.ed
 %%DATADIR%%/factory/din.hlp
-%%DATADIR%%/factory/din.osc
 %%DATADIR%%/factory/din_info
 %%DATADIR%%/factory/dot.crv
 %%DATADIR%%/factory/dp_bpm.crv
@@ -343,9 +350,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/fm.crv
 %%DATADIR%%/factory/font.ed
 %%DATADIR%%/factory/font.hlp
-%%DATADIR%%/factory/gater-patterns.lib
-%%DATADIR%%/factory/gater.crv
-%%DATADIR%%/factory/gater.ed
 %%DATADIR%%/factory/get-beat.help.tcl
 %%DATADIR%%/factory/get-bpm.help.tcl
 %%DATADIR%%/factory/get-curve-editor.help.tcl
@@ -422,6 +426,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/phases
 %%DATADIR%%/factory/pitch-vol.ed
 %%DATADIR%%/factory/pitch.crv
+%%DATADIR%%/factory/pitch.lib
 %%DATADIR%%/factory/point-modulation.ed
 %%DATADIR%%/factory/pomo-x.crv
 %%DATADIR%%/factory/pomo-y.crv
@@ -467,7 +472,6 @@ share/applications/din.desktop
 %%DATADIR%%/factory/sin.lib
 %%DATADIR%%/factory/sine_mixer_sin.crv
 %%DATADIR%%/factory/sine_mixer_sin.ed
-%%DATADIR%%/factory/sounding-board.osc
 %%DATADIR%%/factory/spinners
 %%DATADIR%%/factory/spiraler.scr
 %%DATADIR%%/factory/spiraler_cos.crv
@@ -479,6 +483,7 @@ share/applications/din.desktop
 %%DATADIR%%/factory/spiraler_sin.ed
 %%DATADIR%%/factory/start-end.help.tcl
 %%DATADIR%%/factory/start-end.patch.tcl
+%%DATADIR%%/factory/swing.crv
 %%DATADIR%%/factory/tuning.help.tcl
 %%DATADIR%%/factory/velocity.crv
 %%DATADIR%%/factory/velocity.ed

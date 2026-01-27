@@ -1,6 +1,5 @@
 PORTNAME=	din
-PORTVERSION=	59
-PORTREVISION=	3
+PORTVERSION=	60
 CATEGORIES=	audio
 MASTER_SITES=	https://dinisnoise.org/files/
 
