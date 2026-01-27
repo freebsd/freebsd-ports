@@ -1,5 +1,5 @@
 PORTNAME=	xapp
-DISTVERSION=	3.2.0
+DISTVERSION=	3.2.2
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -11,7 +11,8 @@ LICENSE=	LGPL3
 LICENSE_FILE?=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
-RUN_DEPENDS=	bash:shells/bash
+RUN_DEPENDS=	bash:shells/bash \
+		xapp-symbolic-icons>0:x11-themes/xapp-symbolic-icons
 
 USES=		gettext-tools gnome meson pkgconfig python shebangfix xorg
 USE_GITHUB=	yes
