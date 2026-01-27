@@ -1,0 +1,15 @@
+bin/graffer
+%%ETCDIR%%/conf.d.sample/10-cpu-mem.conf
+%%ETCDIR%%/conf.d.sample/20-disk-proc.conf
+%%ETCDIR%%/conf.d.sample/30-states.conf
+%%ETCDIR%%/conf.d.sample/40-source-conn.conf
+%%ETCDIR%%/conf.d.sample/50-tcp-udp.conf
+%%ETCDIR%%/conf.d.sample/60-net.conf
+@sample %%ETCDIR%%/graffer.conf.sample
+%%ETCDIR%%/scripts.sample/README
+%%ETCDIR%%/scripts.sample/freebsd/cpu.sh
+%%ETCDIR%%/scripts.sample/freebsd/disk.sh
+%%ETCDIR%%/scripts.sample/freebsd/netstat.sh
+%%ETCDIR%%/scripts.sample/freebsd/swap.sh
+%%ETCDIR%%/scripts.sample/setup.sh
+share/man/man8/graffer.8.gz
