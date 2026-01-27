@@ -1,6 +1,6 @@
 PORTNAME=	mutt
-DISTVERSION=	2.2.16
-CATEGORIES+=	mail
+DISTVERSION=	2.3.0
+CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/
 DIST_SUBDIR=	mutt
@@ -182,8 +182,8 @@ post-install:
 
 # Undo some dist. installed files
 post-stage:
-	@${MV} ${STAGEDIR}/${LOCALBASE}/etc/Muttrc.dist \
-		${STAGEDIR}/${LOCALBASE}/etc/Muttrc.sample
-	@${RM} ${STAGEDIR}/${LOCALBASE}/etc/mime.types*
+	@${MV}  ${STAGEDIR}/${PREFIX}/etc/Muttrc.dist \
+		${STAGEDIR}/${PREFIX}/etc/Muttrc.sample
+	@${RM}  ${STAGEDIR}/${PREFIX}/etc/mime.types*
 
 .include <bsd.port.mk>
