@@ -431,7 +431,6 @@
     SUBDIR += libxml++26
     SUBDIR += libxml++30
     SUBDIR += libxml2
-    SUBDIR += libxml2-core
     SUBDIR += libxml2-python
     SUBDIR += libxmlb
     SUBDIR += libxmlbird
