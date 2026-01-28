@@ -1,5 +1,5 @@
 PORTNAME=	vroom
-DISTVERSION=	1.6.7
+DISTVERSION=	1.7.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,8 +17,8 @@ CRAN_DEPENDS=	R-cran-bit64>0:devel/R-cran-bit64 \
 		R-cran-glue>0:devel/R-cran-glue \
 		R-cran-hms>0:devel/R-cran-hms \
 		R-cran-lifecycle>=1.0.3:devel/R-cran-lifecycle \
-		R-cran-progress>=1.2.1:devel/R-cran-progress \
-		R-cran-rlang>=0.4.2:devel/R-cran-rlang \
+		R-cran-progress>=1.2.3:devel/R-cran-progress \
+		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
 		R-cran-tibble>=2.0.0:devel/R-cran-tibble \
 		R-cran-tidyselect>0:devel/R-cran-tidyselect \
 		R-cran-tzdb>=0.1.1:devel/R-cran-tzdb \
@@ -36,6 +36,8 @@ TEST_DEPENDS=	R-cran-dplyr>0:math/R-cran-dplyr \
 USES=		compiler:c++11-lang cran:auto-plist,compiles shebangfix
 
 SHEBANG_FILES=	inst/bench/*.sh
+
+TESTING_UNSAFE=	https://github.com/tidyverse/vroom/issues/611
 
 pre-test:
 
