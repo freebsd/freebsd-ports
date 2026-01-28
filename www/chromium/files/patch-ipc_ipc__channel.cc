@@ -1,4 +1,4 @@
---- ipc/ipc_channel.cc.orig	2025-12-05 10:12:50 UTC
+--- ipc/ipc_channel.cc.orig	2026-01-14 08:33:23 UTC
 +++ ipc/ipc_channel.cc
 @@ -41,7 +41,7 @@ namespace {
  // Global atomic used to guarantee channel IDs are unique.
@@ -18,7 +18,7 @@
    if (int global_pid = Channel::GetGlobalPid()) {
      return global_pid;
    }
-@@ -123,7 +123,7 @@ std::string Channel::GenerateUniqueRandomChannelID() {
+@@ -120,7 +120,7 @@ std::string Channel::GenerateUniqueRandomChannelID() {
        base::RandInt(0, std::numeric_limits<int32_t>::max()));
  }
  

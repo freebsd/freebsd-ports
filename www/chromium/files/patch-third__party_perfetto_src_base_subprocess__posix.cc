@@ -1,6 +1,6 @@
---- third_party/perfetto/src/base/subprocess_posix.cc.orig	2025-02-19 07:43:18 UTC
+--- third_party/perfetto/src/base/subprocess_posix.cc.orig	2026-01-14 08:33:23 UTC
 +++ third_party/perfetto/src/base/subprocess_posix.cc
-@@ -35,7 +35,8 @@
+@@ -36,7 +36,8 @@
  #include <thread>
  #include <tuple>
  
@@ -10,7 +10,7 @@
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
  #include <sys/prctl.h>
  #endif
-@@ -64,7 +65,8 @@ struct ChildProcessArgs {
+@@ -65,7 +66,8 @@ struct ChildProcessArgs {
  // Don't add any dynamic allocation in this function. This will be invoked
  // under a fork(), potentially in a state where the allocator lock is held.
  void __attribute__((noreturn)) ChildProcess(ChildProcessArgs* args) {

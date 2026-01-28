@@ -1,6 +1,6 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2025-10-30 15:44:36 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2026-01-14 08:33:23 UTC
 +++ chrome/browser/ui/chrome_pages.cc
-@@ -86,12 +86,12 @@
+@@ -87,12 +87,12 @@
  #include "components/signin/public/identity_manager/identity_manager.h"
  #endif
  
@@ -15,7 +15,7 @@
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -253,7 +253,7 @@ bool SiteGURLIsValid(const GURL& url) {
+@@ -254,7 +254,7 @@ bool SiteGURLIsValid(const GURL& url) {
    return !site_origin.opaque() && (url.SchemeIsHTTPOrHTTPS() ||
                                     url.SchemeIs(extensions::kExtensionScheme)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -24,7 +24,7 @@
                                     || url.SchemeIs(webapps::kIsolatedAppScheme)
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -415,7 +415,7 @@ void ShowChromeTips(Browser* browser) {
+@@ -416,7 +416,7 @@ void ShowChromeTips(Browser* browser) {
    ShowSingletonTab(browser, GURL(kChromeTipsURL));
  }
  
@@ -33,7 +33,7 @@
  void ShowChromeWhatsNew(Browser* browser) {
    ShowSingletonTab(browser, GURL(kChromeUIWhatsNewURL));
  }
-@@ -744,7 +744,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -760,7 +760,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  }
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

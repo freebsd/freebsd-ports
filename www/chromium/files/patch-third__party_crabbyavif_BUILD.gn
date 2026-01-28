@@ -1,6 +1,6 @@
---- third_party/crabbyavif/BUILD.gn.orig	2025-12-05 10:12:50 UTC
+--- third_party/crabbyavif/BUILD.gn.orig	2026-01-14 08:33:23 UTC
 +++ third_party/crabbyavif/BUILD.gn
-@@ -198,12 +198,11 @@ rust_static_library("crabbyavif") {
+@@ -199,12 +199,11 @@ rust_static_library("crabbyavif") {
      "dav1d",
      "libyuv",
      "capi",

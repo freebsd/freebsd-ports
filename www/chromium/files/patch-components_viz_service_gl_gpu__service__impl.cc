@@ -1,6 +1,6 @@
---- components/viz/service/gl/gpu_service_impl.cc.orig	2025-12-05 10:12:50 UTC
+--- components/viz/service/gl/gpu_service_impl.cc.orig	2026-01-14 08:33:23 UTC
 +++ components/viz/service/gl/gpu_service_impl.cc
-@@ -460,7 +460,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
+@@ -464,7 +464,7 @@ void GpuServiceImpl::InitializeWithHostInternal(
  
    mojo::Remote<mojom::GpuHost> gpu_host(std::move(pending_gpu_host));
  
@@ -9,7 +9,7 @@
    gpu_extra_info_.is_gmb_nv12_supported = IsGMBNV12Supported();
  #endif
  
-@@ -1223,7 +1223,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
+@@ -1228,7 +1228,7 @@ bool GpuServiceImpl::OnBeginFrameDerivedImpl(const Beg
    return true;
  }
  

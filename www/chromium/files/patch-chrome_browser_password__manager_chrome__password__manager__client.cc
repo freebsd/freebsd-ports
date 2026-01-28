@@ -1,6 +1,6 @@
---- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2025-12-05 10:12:50 UTC
+--- chrome/browser/password_manager/chrome_password_manager_client.cc.orig	2026-01-14 08:33:23 UTC
 +++ chrome/browser/password_manager/chrome_password_manager_client.cc
-@@ -694,7 +694,7 @@ void ChromePasswordManagerClient::ContinueShowKeyboard
+@@ -701,7 +701,7 @@ void ChromePasswordManagerClient::ContinueShowKeyboard
  bool ChromePasswordManagerClient::IsReauthBeforeFillingRequired(
      device_reauth::DeviceAuthenticator* authenticator) {
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    if (!GetLocalStatePrefs() || !GetPrefs() || !authenticator) {
      return false;
    }
-@@ -988,7 +988,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
+@@ -993,7 +993,7 @@ void ChromePasswordManagerClient::NotifyUserCredential
  }
  
  void ChromePasswordManagerClient::NotifyKeychainError() {
@@ -18,7 +18,7 @@
    PasswordsClientUIDelegate* manage_passwords_ui_controller =
        PasswordsClientUIDelegateFromWebContents(web_contents());
    if (manage_passwords_ui_controller) {
-@@ -2016,7 +2016,7 @@ void ChromePasswordManagerClient::HideFillingUI() {
+@@ -2028,7 +2028,7 @@ void ChromePasswordManagerClient::HideFillingUI() {
  bool ChromePasswordManagerClient::IsPasswordManagementEnabledForCurrentPage(
      const GURL& url) const {
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
    if (IsPasswordManagerForUrlDisallowedByPolicy(url)) {
      return false;
    }
-@@ -2055,7 +2055,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
+@@ -2067,7 +2067,7 @@ bool ChromePasswordManagerClient::IsPasswordManagement
  }
  
  #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || \

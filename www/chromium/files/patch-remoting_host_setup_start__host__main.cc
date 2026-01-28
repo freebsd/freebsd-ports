@@ -1,6 +1,6 @@
---- remoting/host/setup/start_host_main.cc.orig	2025-07-02 06:08:04 UTC
+--- remoting/host/setup/start_host_main.cc.orig	2026-01-14 08:33:23 UTC
 +++ remoting/host/setup/start_host_main.cc
-@@ -44,7 +44,7 @@
+@@ -41,7 +41,7 @@
  #include <unistd.h>
  #endif  // BUILDFLAG(IS_POSIX)
  
@@ -27,7 +27,7 @@
    if (command_line->HasSwitch("no-start")) {
      // On Linux, registering the host with systemd and starting it is the only
      // reason start_host requires root. The --no-start options skips that final
-@@ -445,7 +445,7 @@ int StartHostMain(int argc, char** argv) {
+@@ -446,7 +446,7 @@ int StartHostMain(int argc, char** argv) {
    // We don't have a config file yet so we can't use IsUsageStatsAllowed(),
    // instead we can just check the command line parameter.
    if (params.enable_crash_reporting) {

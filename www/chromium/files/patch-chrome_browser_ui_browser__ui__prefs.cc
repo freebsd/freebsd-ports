@@ -1,4 +1,4 @@
---- chrome/browser/ui/browser_ui_prefs.cc.orig	2025-12-05 10:12:50 UTC
+--- chrome/browser/ui/browser_ui_prefs.cc.orig	2026-01-14 08:33:23 UTC
 +++ chrome/browser/ui/browser_ui_prefs.cc
 @@ -85,7 +85,7 @@ void RegisterBrowserPrefs(PrefRegistrySimple* registry
    registry->RegisterTimePref(prefs::kPinInfoBarLastShown, base::Time());
@@ -18,7 +18,7 @@
    registry->RegisterIntegerPref(prefs::kSessionRestoreInfoBarTimesShown, 0);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
  
-@@ -219,7 +219,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
+@@ -223,7 +223,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistry
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeFallbacks);
    registry->RegisterDictionaryPref(prefs::kHttpsUpgradeNavigations);
    registry->RegisterBooleanPref(prefs::kHttpsOnlyModeAutoEnabled, false);

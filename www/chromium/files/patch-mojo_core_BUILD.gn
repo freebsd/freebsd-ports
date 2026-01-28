@@ -1,6 +1,6 @@
---- mojo/core/BUILD.gn.orig	2025-09-06 10:01:20 UTC
+--- mojo/core/BUILD.gn.orig	2026-01-14 08:33:23 UTC
 +++ mojo/core/BUILD.gn
-@@ -161,7 +161,7 @@ source_set("impl_for_embedder") {
+@@ -163,7 +163,7 @@ source_set("impl_for_embedder") {
        "channel_posix.h",
      ]
  

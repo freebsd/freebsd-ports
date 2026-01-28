@@ -1,4 +1,4 @@
---- third_party/angle/BUILD.gn.orig	2025-09-06 10:01:20 UTC
+--- third_party/angle/BUILD.gn.orig	2026-01-14 08:33:23 UTC
 +++ third_party/angle/BUILD.gn
 @@ -367,7 +367,6 @@ config("extra_warnings") {
        "-Wtautological-type-limit-compare",
@@ -8,7 +8,7 @@
        "-Wsuggest-destructor-override",
        "-Wsuggest-override",
  
-@@ -544,7 +543,7 @@ template("angle_common_lib") {
+@@ -552,7 +551,7 @@ template("angle_common_lib") {
        all_dependent_configs = [ ":angle_disable_pool_alloc" ]
      }
  
@@ -17,7 +17,7 @@
        libs = [ "dl" ]
      }
  
-@@ -707,6 +706,9 @@ angle_static_library("angle_gpu_info_util") {
+@@ -715,6 +714,9 @@ angle_static_library("angle_gpu_info_util") {
          "Xi",
          "Xext",
        ]

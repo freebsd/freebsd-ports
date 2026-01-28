@@ -1,6 +1,6 @@
---- build/rust/allocator/lib.rs.orig	2025-12-06 09:30:09 UTC
+--- build/rust/allocator/lib.rs.orig	2026-01-14 08:33:23 UTC
 +++ build/rust/allocator/lib.rs
-@@ -96,6 +96,12 @@ mod both_allocators {
+@@ -108,6 +108,12 @@ mod both_allocators {
          0
      }
  
