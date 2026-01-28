@@ -2,6 +2,12 @@
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
       <package>
+	<name>FreeBSD</name>
+	<range><ge>15.0</ge><lt>15.0_2</lt></range>
+	<range><ge>14.3</ge><lt>14.3_8</lt></range>
+	<range><ge>13.5</ge><lt>13.5_9</lt></range>
+      </package>
+      <package>
 	<name>openssl</name>
 	<range><lt>3.0.19,1</lt></range>
       </package>
@@ -57,10 +63,12 @@
       <cvename>CVE-2025-69420</cvename>
       <cvename>CVE-2025-69421</cvename>
       <url>https://openssl-library.org/news/secadv/20260127.txt</url>
+      <freebsdsa>SA-26:01.openssl</freebsdsa>
     </references>
     <dates>
       <discovery>2026-01-27</discovery>
       <entry>2026-01-27</entry>
+      <modified>2026-01-28</modified>
     </dates>
   </vuln>
 
