@@ -83,8 +83,8 @@ lib/baresip/modules/vumeter.so
 %%WEBRTC_AEC%%lib/baresip/modules/webrtc_aec.so
 %%X11%%lib/baresip/modules/x11.so
 lib/libbaresip.so
-lib/libbaresip.so.24
-lib/libbaresip.so.24.4.0
+lib/libbaresip.so.25
+lib/libbaresip.so.25.5.0
 libdata/pkgconfig/libbaresip.pc
 share/applications/com.github.baresip.desktop
 %%DATADIR%%/autoanswer.wav
