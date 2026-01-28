@@ -1,5 +1,6 @@
 PORTNAME=	dify
 DISTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default

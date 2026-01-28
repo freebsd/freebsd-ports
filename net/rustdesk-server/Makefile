@@ -1,5 +1,6 @@
 PORTNAME=	rustdesk-server
 DISTVERSION=	1.1.15
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	madpilot@FreeBSD.org

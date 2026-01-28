@@ -1,6 +1,6 @@
 PORTNAME=	sequoia-sq
 DISTVERSION=	1.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default

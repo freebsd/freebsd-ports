@@ -1,6 +1,6 @@
 PORTNAME=	rustpython
 DISTVERSION=	0.4.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
