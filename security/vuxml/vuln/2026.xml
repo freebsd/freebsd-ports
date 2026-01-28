@@ -31,6 +31,35 @@
     </dates>
   </vuln>
 
+  <vuln vid="9dac4f05-fc65-11f0-96db-b42e991fc52e">
+    <topic>Firefox -- Multiple vulnerabilities</topic>
+    <affects>
+    <package>
+	<name>firefox</name>
+	<range><lt>147.0.2,2</lt></range>
+    </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>https://bugzilla.mozilla.org/show_bug.cgi?id=2007302 reports:</p>
+	<blockquote cite="https://bugzilla.mozilla.org/show_bug.cgi?id=2007302">
+	  <p>Mitigation bypass in the Privacy: Anti-Tracking component.</p>
+	  <p>Use-after-free in the Layout: Scrolling and Overflow component.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-24868</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-24868</url>
+      <cvename>CVE-2026-24869</cvename>
+      <url>https://cveawg.mitre.org/api/cve/CVE-2026-24869</url>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90071333-fbe5-11f0-a13f-bc241121aa0a">
     <topic>FreeBSD -- Jail escape by a privileged user via nullfs</topic>
     <affects>
