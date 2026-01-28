@@ -11,8 +11,8 @@ WWW=		https://w1.fi/wpa_supplicant/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	hostap
-GH_TAGNAME=	46e71c4104
-COMMIT_DATE=	2026.01.26
+GH_TAGNAME=	4651763561
+COMMIT_DATE=	2026.02.26
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/README
@@ -129,6 +129,10 @@ DBUS_PLIST_FILES=	share/dbus-1/system-services/fi.w1.wpa_supplicant1.service \
 			etc/dbus-1/system.d/dbus-wpa_supplicant.conf
 
 .include <bsd.port.pre.mk>
+
+.if ! ${PORT_OPTIONS:MPASN}
+BROKEN=	PASN is now a hard requirement
+.endif
 
 .if ${PORT_OPTIONS:MNDIS} && ${PORT_OPTIONS:MPRIVSEP}
 BROKEN=	Fails to compile with both NDIS and PRIVSEP
