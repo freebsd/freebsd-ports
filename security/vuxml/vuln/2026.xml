@@ -1,3 +1,37 @@
+  <vuln vid="90071333-fbe5-11f0-a13f-bc241121aa0a">
+    <topic>FreeBSD -- Jail escape by a privileged user via nullfs</topic>
+    <affects>
+      <package>
+	<name>FreeBSD-kernel</name>
+	<range><ge>14.3</ge><lt>14.3_8</lt></range>
+	<range><ge>13.5</ge><lt>13.5_9</lt></range>
+      </package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<h1>Problem Description:</h1>
+	  <p>By default, jailed processes cannot mount filesystems, including
+	  nullfs(4).  However, the allow.mount.nullfs option enables mounting
+	  nullfs filesystems, subject to privilege checks.</p>
+	  <p>If a privileged user within a jail is able to nullfs-mount directories,
+	  a limitation of the kernel's path lookup logic allows that user to
+	  escape the jail's chroot, yielding access to the full filesystem
+	  of the host or parent jail.</p>
+	<h1>Impact:</h1>
+	  <p>In a jail configured to allow nullfs(4) mounts from within the
+	  jail, the jailed root user can escape the jail's filesystem root.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2025-15547</cvename>
+      <freebsdsa>SA-26:02.jail</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b824428-fb93-11f0-b194-8447094a420f">
     <topic>OpenSSL -- Multiple vulnerabilities</topic>
     <affects>
