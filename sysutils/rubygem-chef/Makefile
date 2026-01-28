@@ -1,6 +1,6 @@
 PORTNAME=	chef
 PORTVERSION=	18.8.54
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -36,7 +36,7 @@ RUN_DEPENDS=	rubygem-activesupport71>=4.2.7.1<7.1.5.2_99:devel/rubygem-activesup
 		rubygem-mixlib-shellout>=3.1.1<4.0:devel/rubygem-mixlib-shellout \
 		rubygem-net-ftp>=0:ftp/rubygem-net-ftp \
 		rubygem-net-sftp>=2.1.2<5.0:security/rubygem-net-sftp \
-		rubygem-ohai>=18.0<19:sysutils/rubygem-ohai \
+		rubygem-ohai18>=18.0<19:sysutils/rubygem-ohai18 \
 		rubygem-plist>=3.2<4:devel/rubygem-plist \
 		rubygem-proxifier2>=1.1<2:net/rubygem-proxifier2 \
 		rubygem-syslog-logger>=1.6<2:sysutils/rubygem-syslog-logger \
