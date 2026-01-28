@@ -7392,6 +7392,7 @@
     SUBDIR += rubygem-fcntl
     SUBDIR += rubygem-ffaker
     SUBDIR += rubygem-ffi
+    SUBDIR += rubygem-ffi16
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-libarchive
     SUBDIR += rubygem-ffi-win32-extensions
