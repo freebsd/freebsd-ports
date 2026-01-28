@@ -1,3 +1,36 @@
+  <vuln vid="409d70ab-fc23-11f0-85c5-a8a1599412c6">
+    <topic>chromium -- security fix</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>144.0.7559.109</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>144.0.7559.109</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_27.html">
+	 <p>This update includes 1 security fix:</p>
+	 <ul>
+	    <li>[474435504] High CVE-2026-1504: Inappropriate implementation in Background Fetch API. Reported by Luan Herrera (@lbherrera_) on 2026-01-09</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1504</cvename>
+      <url>https://chromereleases.googleblog.com/2026/01/stable-channel-update-for-desktop_27.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-27</discovery>
+      <entry>2026-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90071333-fbe5-11f0-a13f-bc241121aa0a">
     <topic>FreeBSD -- Jail escape by a privileged user via nullfs</topic>
     <affects>
