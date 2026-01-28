@@ -1,5 +1,5 @@
---- cargo-crates/v8-137.2.1/v8/src/diagnostics/perf-jit.cc.orig
-+++ cargo-crates/v8-137.2.1/v8/src/diagnostics/perf-jit.cc
+--- cargo-crates/v8-142.2.0/v8/src/diagnostics/perf-jit.cc.orig
++++ cargo-crates/v8-142.2.0/v8/src/diagnostics/perf-jit.cc
 @@ -30,8 +30,7 @@
  #include "src/common/assert-scope.h"
  #include "src/flags/flags.h"

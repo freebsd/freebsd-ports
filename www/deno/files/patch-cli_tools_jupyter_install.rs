@@ -21,7 +21,7 @@ Index: cli/tools/jupyter/install.rs
    // https://jupyter-client.readthedocs.io/en/stable/kernels.html#kernel-specs
    let json_data = json!({
 -      "argv": [current_exe_path, "jupyter", "--kernel", "--conn", "{connection_file}"],
-+      "argv": ["PREFIX/bin/deno", "jupyter", "--kernel", "--conn", "{connection_file}"],
++      "argv": ["${PREFIX}/bin/deno", "jupyter", "--kernel", "--conn", "{connection_file}"],
        "display_name": display_name,
        "language": "typescript",
    });

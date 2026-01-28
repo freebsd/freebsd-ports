@@ -1,5 +1,5 @@
---- cargo-crates/v8-137.2.1/v8/src/diagnostics/perf-jit.h.orig
-+++ cargo-crates/v8-137.2.1/v8/src/diagnostics/perf-jit.h
+--- cargo-crates/v8-142.2.0/v8/src/diagnostics/perf-jit.h.orig
++++ cargo-crates/v8-142.2.0/v8/src/diagnostics/perf-jit.h
 @@ -30,8 +30,7 @@
  
  #include "include/v8config.h"
