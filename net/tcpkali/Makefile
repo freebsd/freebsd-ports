@@ -1,6 +1,6 @@
 PORTNAME=	tcpkali
 PORTVERSION=	1.1.1.20180104
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -11,15 +11,21 @@ WWW=		https://github.com/satori-com/tcpkali
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-GNU_CONFIGURE=	yes
-USES=		autoreconf compiler:c11 libtool gmake ncurses
+LIB_DEPENDS=	libev.so:devel/libev
 
+GNU_CONFIGURE=	yes
+USES=		autoreconf compiler:c11 libtool gmake ncurses localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	machinezone
 GH_TAGNAME=	3c3175e417366c7ccafba56454903690fede501a
 
+LIBS=		-lpthread -lev
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
+
+post-extract:
+	${RM} -r ${WRKSRC}/deps/libev
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

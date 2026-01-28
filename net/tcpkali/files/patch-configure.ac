@@ -1,11 +1,18 @@
---- configure.ac.orig	2016-09-30 05:30:34 UTC
+--- configure.ac.orig	2026-01-28 00:52:04 UTC
 +++ configure.ac
-@@ -18,7 +18,7 @@ AX_PTHREAD([])
- dnl Global CFLAGS, for tcpkali and its third-party dependencies.
+@@ -27,7 +27,6 @@ dnl Third-party dependencies.
+     Install 'bison' package first.])])
  
- CC="${PTHREAD_CC}"
--LIBS="${PTHREAD_LIBS} ${LIBS}"
-+LIBS="-lpthread ${LIBS}"
- CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
+ dnl Third-party dependencies.
+-m4_include([deps/libev/libev.m4])
+ m4_include([deps/libstatsd/libstatsd.m4])
  
- AC_CHECK_PROGS([YACC], ['bison -y' byacc])
+ dnl Import locally defined macros.
+@@ -155,7 +154,6 @@ AC_CONFIG_FILES([Makefile
+                  src/Makefile
+                  doc/Makefile
+                  deps/Makefile
+-                 deps/libev/Makefile
+                  deps/libcows/Makefile
+                  deps/libstatsd/Makefile
+                  deps/libstatsd/man/Makefile
