@@ -1,5 +1,6 @@
 PORTNAME=	omnibus
 PORTVERSION=	9.0.24
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-s3>=1.116.0<2:devel/rubygem-aws-sdk-s3 \
 		rubygem-license_scout>=1.0:sysutils/rubygem-license_scout \
 		rubygem-mixlib-shellout>=2.0<4.0:devel/rubygem-mixlib-shellout \
 		rubygem-mixlib-versioning>=0:devel/rubygem-mixlib-versioning \
-		rubygem-ohai>=16<19:sysutils/rubygem-ohai \
+		rubygem-ohai18>=16<19:sysutils/rubygem-ohai18 \
 		rubygem-pedump>=0:devel/rubygem-pedump \
 		rubygem-rexml>=3.2<4:textproc/rubygem-rexml \
 		rubygem-ruby-progressbar>=1.7<2:devel/rubygem-ruby-progressbar \
