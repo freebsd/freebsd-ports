@@ -1134,6 +1134,7 @@
     SUBDIR += tkrzw-python
     SUBDIR += tokyocabinet
     SUBDIR += tokyotyrant
+    SUBDIR += tredis
     SUBDIR += trilogy
     SUBDIR += tuning-primer
     SUBDIR += twemproxy
