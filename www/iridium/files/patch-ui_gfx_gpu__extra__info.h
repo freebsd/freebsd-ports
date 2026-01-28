@@ -1,8 +1,8 @@
---- ui/gfx/gpu_extra_info.h.orig	2025-12-10 15:04:57 UTC
+--- ui/gfx/gpu_extra_info.h.orig	2026-01-16 14:21:21 UTC
 +++ ui/gfx/gpu_extra_info.h
-@@ -51,7 +51,7 @@ struct COMPONENT_EXPORT(GFX) GpuExtraInfo {
-   std::vector<gfx::BufferUsageAndFormat> gpu_memory_buffer_support_x11;
- #endif  // BUILDFLAG(IS_OZONE_X11)
+@@ -47,7 +47,7 @@ struct COMPONENT_EXPORT(GFX) GpuExtraInfo {
+   // applicable.
+   ANGLEFeatures angle_features;
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

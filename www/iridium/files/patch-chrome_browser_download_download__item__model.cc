@@ -1,4 +1,4 @@
---- chrome/browser/download/download_item_model.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/download/download_item_model.cc.orig	2026-01-16 14:21:21 UTC
 +++ chrome/browser/download/download_item_model.cc
 @@ -724,7 +724,7 @@ bool DownloadItemModel::IsCommandChecked(
               download_crx_util::IsExtensionDownload(*download_);
@@ -18,7 +18,7 @@
        if (download_commands->CanOpenPdfInSystemViewer()) {
          prefs->SetShouldOpenPdfInSystemReader(!is_checked);
          SetShouldPreferOpeningInBrowser(is_checked);
-@@ -1175,7 +1175,7 @@ void DownloadItemModel::DetermineAndSetShouldPreferOpe
+@@ -1177,7 +1177,7 @@ void DownloadItemModel::DetermineAndSetShouldPreferOpe
      return;
    }
  

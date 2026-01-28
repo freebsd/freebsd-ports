@@ -1,4 +1,4 @@
---- content/browser/service_host/utility_sandbox_delegate.cc.orig	2025-12-10 15:04:57 UTC
+--- content/browser/service_host/utility_sandbox_delegate.cc.orig	2026-01-16 14:21:21 UTC
 +++ content/browser/service_host/utility_sandbox_delegate.cc
 @@ -24,7 +24,7 @@
  #include "sandbox/policy/sandbox_type.h"
@@ -31,8 +31,8 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kScreenAI ||
        sandbox_type_ == sandbox::mojom::Sandbox::kPrintBackend ||
  #endif
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
  #endif
        sandbox_type_ == sandbox::mojom::Sandbox::kAudio ||
@@ -50,8 +50,8 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kPrintBackend ||
        sandbox_type_ == sandbox::mojom::Sandbox::kScreenAI ||
  #endif
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
        sandbox_type_ == sandbox::mojom::Sandbox::kOnDeviceTranslation ||
- #endif  // BUILDFLAG(IS_LINUX)
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
        sandbox_type_ == sandbox::mojom::Sandbox::kSpeechRecognition) {

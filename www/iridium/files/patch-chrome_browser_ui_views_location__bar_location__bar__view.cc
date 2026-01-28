@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	2025-12-10 15:04:57 UTC
+--- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	2026-01-28 09:33:48 UTC
 +++ chrome/browser/ui/views/location_bar/location_bar_view.cc
-@@ -1768,7 +1768,7 @@ void LocationBarView::OnPopupStateChanged(OmniboxPopup
+@@ -1777,7 +1777,7 @@ void LocationBarView::OnPopupStateChanged(OmniboxPopup
                       weak_factory_.GetWeakPtr()),
        base::Milliseconds(100));
  

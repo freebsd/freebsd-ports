@@ -1,6 +1,6 @@
---- services/on_device_model/ml/on_device_model_executor.cc.orig	2025-12-10 15:04:57 UTC
+--- services/on_device_model/ml/on_device_model_executor.cc.orig	2026-01-16 14:21:21 UTC
 +++ services/on_device_model/ml/on_device_model_executor.cc
-@@ -34,6 +34,7 @@
+@@ -35,6 +35,7 @@
  #include "services/on_device_model/public/mojom/on_device_model.mojom.h"
  #include "services/on_device_model/public/mojom/on_device_model_service.mojom.h"
  

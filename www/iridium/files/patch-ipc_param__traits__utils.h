@@ -1,6 +1,6 @@
---- ipc/param_traits_utils.h.orig	2025-12-10 15:04:57 UTC
+--- ipc/param_traits_utils.h.orig	2026-01-16 14:21:21 UTC
 +++ ipc/param_traits_utils.h
-@@ -177,7 +177,7 @@ struct ParamTraits<unsigned int> {
+@@ -173,7 +173,7 @@ struct ParamTraits<unsigned int> {
  // Since we want to support Android 32<>64 bit IPC, as long as we don't have
  // these traits for 32 bit ARM then that'll catch any errors.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

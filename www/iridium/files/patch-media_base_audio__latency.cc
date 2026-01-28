@@ -1,6 +1,6 @@
---- media/base/audio_latency.cc.orig	2025-12-10 15:04:57 UTC
+--- media/base/audio_latency.cc.orig	2026-01-16 14:21:21 UTC
 +++ media/base/audio_latency.cc
-@@ -143,7 +143,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
+@@ -110,7 +110,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
    }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \

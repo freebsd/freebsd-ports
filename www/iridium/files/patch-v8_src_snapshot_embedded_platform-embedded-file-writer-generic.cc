@@ -1,4 +1,4 @@
---- v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2025-12-10 15:04:57 UTC
+--- v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2026-01-16 14:21:21 UTC
 +++ v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc
 @@ -9,6 +9,10 @@
  
@@ -28,10 +28,10 @@
  #endif
 +#elif defined(V8_OS_OPENBSD) && !defined(V8_TARGET_ARCH_IA32)
 +  fprintf(fp_, ".balign %d\n", PAGE_SIZE);
- #elif V8_TARGET_ARCH_X64
-   // On x64 use 64-bytes code alignment to allow 64-bytes loop header alignment.
-   static_assert(64 >= kCodeAlignment);
-@@ -102,6 +112,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToPageSiz
+ #else
+   fprintf(fp_, ".balign %d\n", static_cast<int>(kCodeAlignment));
+ #endif
+@@ -92,6 +102,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToPageSiz
  #else
    fprintf(fp_, ".balign 4096\n");
  #endif
