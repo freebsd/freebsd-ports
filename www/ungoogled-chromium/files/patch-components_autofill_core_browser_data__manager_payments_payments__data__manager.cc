@@ -1,6 +1,6 @@
---- components/autofill/core/browser/data_manager/payments/payments_data_manager.cc.orig	2026-01-07 14:40:58 UTC
+--- components/autofill/core/browser/data_manager/payments/payments_data_manager.cc.orig	2026-01-16 13:40:34 UTC
 +++ components/autofill/core/browser/data_manager/payments/payments_data_manager.cc
-@@ -479,7 +479,7 @@ void PaymentsDataManager::OnWebDataServiceRequestDone(
+@@ -480,7 +480,7 @@ void PaymentsDataManager::OnWebDataServiceRequestDone(
  
  bool PaymentsDataManager::ShouldShowBnplSettings() const {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
    // Check `kAutofillEnableBuyNowPayLater` only if the user has seen a BNPL
    // suggestion before, or there are already linked issuers present, to avoid
    // unnecessary feature flag checks. The linked issuer check is due to the fact
-@@ -1014,7 +1014,7 @@ void PaymentsDataManager::SetPrefService(PrefService* 
+@@ -1015,7 +1015,7 @@ void PaymentsDataManager::SetPrefService(PrefService* 
            &PaymentsDataManager::OnAutofillPaymentsCardBenefitsPrefChange,
            base::Unretained(this)));
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
    pref_registrar_.Add(
        prefs::kAutofillBnplEnabled,
        base::BindRepeating(&PaymentsDataManager::OnBnplEnabledPrefChange,
-@@ -1088,7 +1088,7 @@ void PaymentsDataManager::SetAutofillHasSeenIban() {
+@@ -1089,7 +1089,7 @@ void PaymentsDataManager::SetAutofillHasSeenIban() {
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -33,10 +33,10 @@
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
-   return (app_locale_ == "en-US" || app_locale_ == "en-GB" ||
-           app_locale_ == "en-CA") &&
-          GetCountryCodeForExperimentGroup() == "US" &&
-@@ -2174,7 +2174,7 @@ void PaymentsDataManager::ClearAllCreditCardBenefits()
+   return app_locale_ == "en-US" &&
+          (GetCountryCodeForExperimentGroup() == "US" ||
+           base::FeatureList::IsEnabled(
+@@ -2175,7 +2175,7 @@ void PaymentsDataManager::ClearAllCreditCardBenefits()
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,15 +1,15 @@
---- printing/printing_features.cc.orig	2025-11-01 06:40:37 UTC
+--- printing/printing_features.cc.orig	2026-01-16 13:40:34 UTC
 +++ printing/printing_features.cc
-@@ -22,7 +22,7 @@ BASE_FEATURE(kAddPrinterViaPrintscanmgr, base::FEATURE
- BASE_FEATURE(kApiPrintingMarginsAndScale, base::FEATURE_DISABLED_BY_DEFAULT);
- #endif  // BUILDFLAG(IS_CHROMEOS)
+@@ -26,7 +26,7 @@ BASE_FEATURE(kApiPrintingMarginsAndScale, base::FEATUR
+ BASE_FEATURE(kAlignPdfDefaultPrintSettingsWithHTML,
+              base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Use the CUPS IPP printing backend instead of the original CUPS backend that
  // calls the deprecated PPD API.
  BASE_FEATURE(kCupsIppPrintingBackend, base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -54,7 +54,7 @@ BASE_FEATURE(kUseXpsForPrintingFromPdf, base::FEATURE_
+@@ -58,7 +58,7 @@ BASE_FEATURE(kUseXpsForPrintingFromPdf, base::FEATURE_
  // Enables printing interactions with the operating system to be performed
  // out-of-process.
  BASE_FEATURE(kEnableOopPrintDrivers,

@@ -1,4 +1,4 @@
---- net/base/features.cc.orig	2025-12-06 13:30:52 UTC
+--- net/base/features.cc.orig	2026-01-16 13:40:34 UTC
 +++ net/base/features.cc
 @@ -31,7 +31,7 @@ BASE_FEATURE(kCapReferrerToOriginOnCrossOrigin,
  
@@ -9,7 +9,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -521,7 +521,7 @@ inline constexpr auto kMigrateSessionsOnNetworkChangeV
+@@ -453,7 +453,7 @@ inline constexpr auto kMigrateSessionsOnNetworkChangeV
  BASE_FEATURE(kMigrateSessionsOnNetworkChangeV2,
               kMigrateSessionsOnNetworkChangeV2Default);
  
@@ -18,7 +18,7 @@
  BASE_FEATURE(kAddressTrackerLinuxIsProxied, base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -629,7 +629,7 @@ BASE_FEATURE(kReportingApiEnableEnterpriseCookieIssues
+@@ -556,7 +556,7 @@ BASE_FEATURE(kReportingApiEnableEnterpriseCookieIssues
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  BASE_FEATURE(kSimdutfBase64Support,
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -714,7 +714,7 @@ BASE_FEATURE(kHttpCacheMappedFileFlushWin, base::FEATU
+@@ -646,7 +646,7 @@ BASE_FEATURE(kHttpCacheMappedFileFlushWin, base::FEATU
  
  BASE_FEATURE(kHttpCacheNoVarySearch,
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

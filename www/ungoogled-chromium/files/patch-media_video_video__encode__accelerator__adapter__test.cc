@@ -1,6 +1,6 @@
---- media/video/video_encode_accelerator_adapter_test.cc.orig	2025-10-21 16:57:35 UTC
+--- media/video/video_encode_accelerator_adapter_test.cc.orig	2026-01-16 13:40:34 UTC
 +++ media/video/video_encode_accelerator_adapter_test.cc
-@@ -260,7 +260,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest, InitializeAf
+@@ -259,7 +259,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest, InitializeAf
        });
  
    VideoPixelFormat expected_input_format = PIXEL_FORMAT_I420;
@@ -9,7 +9,7 @@
    expected_input_format = PIXEL_FORMAT_NV12;
  #endif
    vea()->SetEncodingCallback(base::BindLambdaForTesting(
-@@ -369,7 +369,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest, FlushDuringI
+@@ -368,7 +368,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest, FlushDuringI
        });
  
    VideoPixelFormat expected_input_format = PIXEL_FORMAT_I420;
@@ -18,7 +18,7 @@
    expected_input_format = PIXEL_FORMAT_NV12;
  #endif
  
-@@ -467,7 +467,7 @@ TEST_P(VideoEncodeAcceleratorAdapterTest, TwoFramesRes
+@@ -466,7 +466,7 @@ TEST_P(VideoEncodeAcceleratorAdapterTest, TwoFramesRes
        CreateGreenFrame(large_size, pixel_format, base::Milliseconds(2));
  
    VideoPixelFormat expected_input_format = PIXEL_FORMAT_I420;
@@ -27,7 +27,7 @@
      expected_input_format = PIXEL_FORMAT_NV12;
  #endif
    const gfx::ColorSpace expected_color_space =
-@@ -714,7 +714,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest,
+@@ -713,7 +713,7 @@ TEST_F(VideoEncodeAcceleratorAdapterTest,
        });
  
    VideoPixelFormat expected_input_format = PIXEL_FORMAT_I420;

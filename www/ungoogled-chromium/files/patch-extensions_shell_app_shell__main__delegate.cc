@@ -1,6 +1,6 @@
---- extensions/shell/app/shell_main_delegate.cc.orig	2025-09-10 13:22:16 UTC
+--- extensions/shell/app/shell_main_delegate.cc.orig	2026-01-16 13:40:34 UTC
 +++ extensions/shell/app/shell_main_delegate.cc
-@@ -31,7 +31,7 @@
+@@ -32,7 +32,7 @@
  #if BUILDFLAG(IS_WIN)
  #include "base/base_paths_win.h"
  #include "base/process/process_info.h"
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #elif BUILDFLAG(IS_MAC)
  #include "base/base_paths_mac.h"
-@@ -51,7 +51,7 @@ base::FilePath GetDataPath() {
+@@ -52,7 +52,7 @@ base::FilePath GetDataPath() {
    }
  
    base::FilePath data_dir;

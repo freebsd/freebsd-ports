@@ -1,6 +1,6 @@
---- components/signin/public/base/signin_switches.cc.orig	2025-12-06 13:30:52 UTC
+--- components/signin/public/base/signin_switches.cc.orig	2026-01-16 13:40:34 UTC
 +++ components/signin/public/base/signin_switches.cc
-@@ -106,7 +106,7 @@ BASE_FEATURE(kChromeAndroidIdentitySurveyBookmarkPromo
+@@ -107,7 +107,7 @@ BASE_FEATURE(kChromeAndroidIdentitySurveyBookmarkPromo
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -9,7 +9,7 @@
  BASE_FEATURE(kChromeIdentitySurveyAddressBubbleSignin,
               base::FEATURE_DISABLED_BY_DEFAULT);
  BASE_FEATURE(kChromeIdentitySurveyDiceWebSigninAccepted,
-@@ -133,7 +133,7 @@ BASE_FEATURE(kChromeIdentitySurveySwitchProfileFromPro
+@@ -134,7 +134,7 @@ BASE_FEATURE(kChromeIdentitySurveySwitchProfileFromPro
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
@@ -18,16 +18,25 @@
  BASE_FEATURE(kChromeIdentitySurveyLaunchWithDelay,
               base::FEATURE_ENABLED_BY_DEFAULT);
  BASE_FEATURE_PARAM(base::TimeDelta,
-@@ -334,7 +334,7 @@ BASE_FEATURE_PARAM(base::TimeDelta,
+@@ -347,7 +347,7 @@ BASE_FEATURE_PARAM(base::TimeDelta,
                     base::Days(7));
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kOpenAllProfilesFromProfilePickerExperiment,
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ const base::FeatureParam<int>
+@@ -356,7 +356,7 @@ const base::FeatureParam<int>
+         "max_profiles_count_to_show_open_all_button_in_profile_picker", 5};
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kProfileCreationDeclineSigninCTAExperiment,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
-@@ -363,12 +363,12 @@ BASE_FEATURE(kProfilesReordering, base::FEATURE_DISABL
+@@ -394,7 +394,7 @@ BASE_FEATURE(kProfilesReordering, base::FEATURE_DISABL
  BASE_FEATURE(kRollbackDiceMigration, base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  
@@ -36,6 +45,9 @@
  BASE_FEATURE(kShowProfilePickerToAllUsersExperiment,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+@@ -409,7 +409,7 @@ const base::FeatureParam<int> kContextualSigninPromoDi
+     "contextual_signin_promo_dismissed_threshold",
+     2);
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

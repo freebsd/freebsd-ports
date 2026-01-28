@@ -1,4 +1,4 @@
---- device/fido/features.cc.orig	2025-12-06 13:30:52 UTC
+--- device/fido/features.cc.orig	2026-01-16 13:40:34 UTC
 +++ device/fido/features.cc
 @@ -37,7 +37,7 @@ namespace device {
  // comment.
@@ -7,5 +7,5 @@
 -    BUILDFLAG(IS_CHROMEOS)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  // Not yet enabled by default.
- BASE_FEATURE(kPasskeyUnlockErrorUi, base::FEATURE_DISABLED_BY_DEFAULT);
- #endif
+ BASE_FEATURE(kPasskeyUnlockManager, base::FEATURE_DISABLED_BY_DEFAULT);
+ 

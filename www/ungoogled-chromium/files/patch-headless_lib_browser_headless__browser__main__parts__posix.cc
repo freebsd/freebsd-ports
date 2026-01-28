@@ -1,6 +1,6 @@
---- headless/lib/browser/headless_browser_main_parts_posix.cc.orig	2025-10-21 16:57:35 UTC
+--- headless/lib/browser/headless_browser_main_parts_posix.cc.orig	2026-01-16 13:40:34 UTC
 +++ headless/lib/browser/headless_browser_main_parts_posix.cc
-@@ -26,7 +26,7 @@
+@@ -22,7 +22,7 @@
  #include "content/public/browser/browser_thread.h"
  #include "headless/lib/browser/headless_browser_impl.h"
  
@@ -9,7 +9,7 @@
  #include "base/command_line.h"
  #include "components/os_crypt/sync/key_storage_config_linux.h"
  #include "components/os_crypt/sync/os_crypt.h"
-@@ -168,7 +168,7 @@ class BrowserShutdownHandler {
+@@ -164,7 +164,7 @@ class BrowserShutdownHandler {
  
  }  // namespace
  
@@ -18,7 +18,7 @@
  constexpr char kProductName[] = "HeadlessChrome";
  #endif
  
-@@ -176,9 +176,9 @@ void HeadlessBrowserMainParts::PostCreateMainMessageLo
+@@ -172,9 +172,9 @@ void HeadlessBrowserMainParts::PostCreateMainMessageLo
    BrowserShutdownHandler::Install(base::BindOnce(
        &HeadlessBrowserImpl::ShutdownWithExitCode, browser_->GetWeakPtr()));
  

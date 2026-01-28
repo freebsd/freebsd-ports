@@ -1,4 +1,4 @@
---- content/public/common/content_switches.cc.orig	2025-12-06 13:30:52 UTC
+--- content/public/common/content_switches.cc.orig	2026-01-22 08:55:06 UTC
 +++ content/public/common/content_switches.cc
 @@ -347,6 +347,8 @@ const char kEnableIsolatedWebAppsInRenderer[] =
  // builds.
@@ -9,7 +9,7 @@
  // Enables the type, downlinkMax attributes of the NetInfo API. Also, enables
  // triggering of change attribute of the NetInfo API when there is a change in
  // the connection type.
-@@ -946,7 +948,7 @@ const char kPreventResizingContentsForTesting[] =
+@@ -940,7 +942,7 @@ const char kPreventResizingContentsForTesting[] =
      "prevent-resizing-contents-for-testing";
  #endif
  

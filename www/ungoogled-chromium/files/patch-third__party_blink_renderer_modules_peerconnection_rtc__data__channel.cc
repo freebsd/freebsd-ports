@@ -1,6 +1,6 @@
---- third_party/blink/renderer/modules/peerconnection/rtc_data_channel.cc.orig	2025-09-10 13:22:16 UTC
+--- third_party/blink/renderer/modules/peerconnection/rtc_data_channel.cc.orig	2026-01-16 13:40:34 UTC
 +++ third_party/blink/renderer/modules/peerconnection/rtc_data_channel.cc
-@@ -538,6 +538,7 @@ void RTCDataChannel::send(Blob* data, ExceptionState& 
+@@ -531,6 +531,7 @@ void RTCDataChannel::send(Blob* data, ExceptionState& 
    pending_messages_.push_back(message);
  }
  

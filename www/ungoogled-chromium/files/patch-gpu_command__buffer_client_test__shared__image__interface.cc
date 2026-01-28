@@ -1,6 +1,6 @@
---- gpu/command_buffer/client/test_shared_image_interface.cc.orig	2025-12-06 13:30:52 UTC
+--- gpu/command_buffer/client/test_shared_image_interface.cc.orig	2026-01-16 13:40:34 UTC
 +++ gpu/command_buffer/client/test_shared_image_interface.cc
-@@ -29,7 +29,7 @@
+@@ -24,7 +24,7 @@
  #include "ui/gfx/gpu_fence.h"
  #include "ui/gfx/gpu_memory_buffer_handle.h"
  
@@ -9,12 +9,12 @@
  #include <fcntl.h>
  #endif
  
-@@ -154,7 +154,7 @@ TestSharedImageInterface::TestSharedImageInterface() {
- TestSharedImageInterface::~TestSharedImageInterface() = default;
+@@ -418,7 +418,7 @@ TestSharedImageInterface::CreateSharedImageWithAsyncMa
+   return image;
+ }
  
- // static
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- gfx::GpuMemoryBufferHandle TestSharedImageInterface::CreatePixmapHandle(
-     const gfx::Size& size,
-     viz::SharedImageFormat format) {
+ scoped_refptr<ClientSharedImage>
+ TestSharedImageInterface::CreateNativePixmapBackedSharedImage(
+     const SharedImageInfo& si_info,

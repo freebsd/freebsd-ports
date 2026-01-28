@@ -1,4 +1,4 @@
---- third_party/perfetto/include/perfetto/base/thread_utils.h.orig	2025-02-20 09:59:21 UTC
+--- third_party/perfetto/include/perfetto/base/thread_utils.h.orig	2026-01-16 13:40:34 UTC
 +++ third_party/perfetto/include/perfetto/base/thread_utils.h
 @@ -37,6 +37,7 @@ __declspec(dllimport) unsigned long __stdcall GetCurre
  #include <sys/syscall.h>
@@ -8,7 +8,7 @@
  #else
  #include <pthread.h>
  #endif
-@@ -49,6 +50,11 @@ namespace base {
+@@ -52,6 +53,11 @@ namespace base {
  using PlatformThreadId = pid_t;
  inline PlatformThreadId GetThreadId() {
    return gettid();

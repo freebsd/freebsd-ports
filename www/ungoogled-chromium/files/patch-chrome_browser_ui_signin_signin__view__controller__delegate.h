@@ -1,4 +1,4 @@
---- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2025-11-01 06:40:37 UTC
+--- chrome/browser/ui/signin/signin_view_controller_delegate.h.orig	2026-01-16 13:40:34 UTC
 +++ chrome/browser/ui/signin/signin_view_controller_delegate.h
 @@ -50,7 +50,7 @@ class SigninViewControllerDelegate {
        SyncConfirmationStyle style,
@@ -9,7 +9,7 @@
    // Returns a platform-specific SigninViewControllerDelegate instance that
    // displays the modal history sync opt in dialog. The returned object should
    // delete itself when the window it's managing is closed.
-@@ -91,7 +91,7 @@ class SigninViewControllerDelegate {
+@@ -93,7 +93,7 @@ class SigninViewControllerDelegate {
        SignoutConfirmationCallback callback);
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT)
  

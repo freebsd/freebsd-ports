@@ -1,4 +1,4 @@
---- base/posix/unix_domain_socket_unittest.cc.orig	2024-06-22 08:49:42 UTC
+--- base/posix/unix_domain_socket_unittest.cc.orig	2026-01-16 13:40:34 UTC
 +++ base/posix/unix_domain_socket_unittest.cc
 @@ -15,6 +15,8 @@
  #include <sys/types.h>
@@ -6,6 +6,6 @@
  
 +#include <signal.h>
 +
- #include "base/files/file_util.h"
  #include "base/files/scoped_file.h"
  #include "base/functional/bind.h"
+ #include "base/functional/callback_helpers.h"
