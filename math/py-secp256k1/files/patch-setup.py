@@ -1,7 +1,7 @@
---- setup.py.orig	2016-09-16 14:22:47 UTC
+--- setup.py.orig	2021-11-06 01:31:13 UTC
 +++ setup.py
-@@ -263,7 +263,7 @@ setup(
-     author_email='lud@tutanota.com',
+@@ -276,7 +276,7 @@ setup(
+     maintainer_email='rusty@rustcorp.com.au',
      license='MIT',
  
 -    setup_requires=['cffi>=1.3.0', 'pytest-runner==2.6.2'],
