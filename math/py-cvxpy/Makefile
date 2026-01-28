@@ -35,4 +35,6 @@ post-install:
 			${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cvxcore${PYTHON_TAG}.so \
 			${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/_cvxpy_sparsecholesky${PYTHON_TAG}.so
 
+# tests as of 1.6.4: 4 failed, 1308 passed, 216 skipped, 534 warnings in 610.43s (0:10:10)
+
 .include <bsd.port.mk>
