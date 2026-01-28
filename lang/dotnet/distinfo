@@ -1,4 +1,4 @@
-TIMESTAMP = 1760626696
+TIMESTAMP = 1769620707
 SHA256 (dotnet/Private.SourceBuilt.Artifacts.9.0.110-servicing.25421.1.freebsd.13-arm64.tar.gz) = 4599ae777acd3a58919ceeeaa07b74668e1a53661c3ebf24b99f877e3c5ebe0e
 SIZE (dotnet/Private.SourceBuilt.Artifacts.9.0.110-servicing.25421.1.freebsd.13-arm64.tar.gz) = 828079589
 SHA256 (dotnet/dotnet-sdk-9.0.110-freebsd-arm64.tar.gz) = 05f3c223c70fa3096a97350cf485eaffdee1ddb2796a71984cbf4760009f40dc
@@ -7,7 +7,7 @@ SHA256 (dotnet/Private.SourceBuilt.Artifacts.9.0.110-servicing.25421.1.freebsd.1
 SIZE (dotnet/Private.SourceBuilt.Artifacts.9.0.110-servicing.25421.1.freebsd.13-x64.tar.gz) = 837969817
 SHA256 (dotnet/dotnet-sdk-9.0.110-freebsd-x64.tar.gz) = eb8d675d1a0edc27f4a8b12455dbb13545809b95d80a23536dfea4c94e7a23d2
 SIZE (dotnet/dotnet-sdk-9.0.110-freebsd-x64.tar.gz) = 514661886
-SHA256 (dotnet/release.json-9.0.10) = 429d63f3d9d6d10921b6e0784f3343fe7a0676b888e726b1e4a20ff2ae9bbbf5
-SIZE (dotnet/release.json-9.0.10) = 278
-SHA256 (dotnet/dotnet-dotnet-9.0.10-v9.0.111_GH0.tar.gz) = a18cbf9a48e58a516c1da3c58f0e46f66dcf1c5e7ef028e87101b1dc246e536a
-SIZE (dotnet/dotnet-dotnet-9.0.10-v9.0.111_GH0.tar.gz) = 495176418
+SHA256 (dotnet/release.json-9.0.12) = 353c6da35b2077af72c64366cee13a64f3e58afa20825ce7dbe9f5880bbdb1c0
+SIZE (dotnet/release.json-9.0.12) = 278
+SHA256 (dotnet/dotnet-dotnet-9.0.12-v9.0.113_GH0.tar.gz) = 24863f0953af24b22624f6c413bca9ce53a987f0b7ad44f4ee18a2cb42dbad4b
+SIZE (dotnet/dotnet-dotnet-9.0.12-v9.0.113_GH0.tar.gz) = 495247424
