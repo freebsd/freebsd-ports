@@ -1,7 +1,6 @@
 PORTNAME=	otree
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.3
-PORTREVISION=	2
+DISTVERSION=	0.6.4
 CATEGORIES=	textproc
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -15,40 +14,45 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	fioncat
 
-CARGO_CRATES=	aho-corasick-1.1.3 \
+CARGO_CRATES=	aho-corasick-1.1.4 \
 		allocator-api2-0.2.21 \
 		anstream-0.6.21 \
 		anstyle-1.0.13 \
 		anstyle-parse-0.2.7 \
-		anstyle-query-1.1.4 \
-		anstyle-wincon-3.0.10 \
+		anstyle-query-1.1.5 \
+		anstyle-wincon-3.0.11 \
 		anyhow-1.0.100 \
 		bitflags-1.3.2 \
-		bitflags-2.9.4 \
+		bitflags-2.10.0 \
 		camino-1.2.1 \
 		cargo-platform-0.1.9 \
 		cargo_metadata-0.19.2 \
 		cassowary-0.3.0 \
 		castaway-0.2.4 \
 		cfg-if-1.0.4 \
-		clap-4.5.49 \
-		clap_builder-4.5.49 \
+		clap-4.5.53 \
+		clap_builder-4.5.53 \
 		clap_derive-4.5.49 \
 		clap_lex-0.7.6 \
 		colorchoice-1.0.4 \
 		compact_str-0.8.1 \
-		console-0.16.1 \
+		console-0.16.2 \
+		convert_case-0.7.1 \
 		crossterm-0.28.1 \
+		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
 		darling-0.20.11 \
 		darling_core-0.20.11 \
 		darling_macro-0.20.11 \
-		deranged-0.5.4 \
+		deranged-0.5.5 \
 		derive_builder-0.20.2 \
 		derive_builder_core-0.20.2 \
 		derive_builder_macro-0.20.2 \
+		derive_more-2.0.1 \
+		derive_more-impl-2.0.1 \
 		dirs-6.0.0 \
 		dirs-sys-0.5.0 \
+		document-features-0.2.12 \
 		either-1.15.0 \
 		encode_unicode-1.0.0 \
 		equivalent-1.0.2 \
@@ -59,19 +63,19 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.16 \
 		hashbrown-0.15.5 \
-		hashbrown-0.16.0 \
+		hashbrown-0.16.1 \
 		hcl-edit-0.9.3 \
 		hcl-primitives-0.1.11 \
 		hcl-rs-0.19.4 \
 		heck-0.5.0 \
 		humansize-2.1.3 \
 		ident_case-1.0.1 \
-		indexmap-2.11.4 \
-		indoc-2.0.6 \
+		indexmap-2.12.1 \
+		indoc-2.0.7 \
 		inotify-0.11.0 \
 		inotify-sys-0.1.5 \
 		instability-0.3.9 \
-		is_terminal_polyfill-1.70.1 \
+		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
 		itoa-1.0.15 \
 		kqueue-1.1.1 \
@@ -82,11 +86,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		libredox-0.1.10 \
 		libyml-0.0.5 \
 		linux-raw-sys-0.4.15 \
+		linux-raw-sys-0.11.0 \
+		litrs-1.0.0 \
 		lock_api-0.4.14 \
 		log-0.4.28 \
 		lru-0.12.5 \
 		memchr-2.7.6 \
-		mio-1.0.4 \
+		mio-1.1.0 \
 		notify-8.2.0 \
 		notify-types-2.0.0 \
 		ntapi-0.4.1 \
@@ -94,16 +100,16 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		num_threads-0.1.7 \
 		objc2-core-foundation-0.3.2 \
 		once_cell-1.21.3 \
-		once_cell_polyfill-1.70.1 \
+		once_cell_polyfill-1.70.2 \
 		option-ext-0.2.0 \
 		parking_lot-0.12.5 \
 		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		powerfmt-0.2.0 \
 		pratt-0.4.0 \
-		proc-macro2-1.0.101 \
-		quick-xml-0.38.3 \
-		quote-1.0.41 \
+		proc-macro2-1.0.103 \
+		quick-xml-0.38.4 \
+		quote-1.0.42 \
 		ratatui-0.29.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.5.2 \
@@ -112,6 +118,7 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		regex-syntax-0.8.8 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
+		rustix-1.1.2 \
 		rustversion-1.0.22 \
 		ryu-1.0.20 \
 		same-file-1.0.6 \
@@ -121,18 +128,20 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
 		serde_json-1.0.145 \
-		serde_spanned-1.0.3 \
+		serde_spanned-1.0.4 \
 		serde_yml-0.0.12 \
 		signal-hook-0.3.18 \
-		signal-hook-mio-0.2.4 \
+		signal-hook-mio-0.2.5 \
 		signal-hook-registry-1.4.6 \
 		simple-error-0.3.2 \
 		smallvec-1.15.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
+		strum-0.27.2 \
 		strum_macros-0.26.4 \
-		syn-2.0.106 \
+		strum_macros-0.27.2 \
+		syn-2.0.110 \
 		sysinfo-0.34.2 \
 		thiserror-1.0.69 \
 		thiserror-2.0.17 \
@@ -141,13 +150,13 @@ CARGO_CRATES=	aho-corasick-1.1.3 \
 		time-0.3.44 \
 		time-core-0.1.6 \
 		time-macros-0.2.24 \
-		toml-0.9.8 \
-		toml_datetime-0.7.3 \
-		toml_parser-1.0.4 \
-		toml_writer-1.0.4 \
+		toml-0.9.10+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
+		toml_writer-1.0.6+spec-1.1.0 \
 		tui-textarea-0.7.0 \
 		tui-tree-widget-0.23.1 \
-		unicode-ident-1.0.19 \
+		unicode-ident-1.0.22 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-1.1.0 \
 		unicode-width-0.1.14 \
