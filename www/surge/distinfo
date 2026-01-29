@@ -1,5 +1,5 @@
-TIMESTAMP = 1769595636
-SHA256 (go/www_surge/surge-v0.3.0/v0.3.0.mod) = f6005ab5ff9525459a4f3d1197d00a57423fd5eb965edb0d1f944a0d8a8c17d4
-SIZE (go/www_surge/surge-v0.3.0/v0.3.0.mod) = 2246
-SHA256 (go/www_surge/surge-v0.3.0/v0.3.0.zip) = f859f47e33e2fcdd82210d58b8842a3d61228242bbeef3ca60949cc60fda9e99
-SIZE (go/www_surge/surge-v0.3.0/v0.3.0.zip) = 4902983
+TIMESTAMP = 1769681211
+SHA256 (go/www_surge/surge-v0.3.1/v0.3.1.mod) = f6005ab5ff9525459a4f3d1197d00a57423fd5eb965edb0d1f944a0d8a8c17d4
+SIZE (go/www_surge/surge-v0.3.1/v0.3.1.mod) = 2246
+SHA256 (go/www_surge/surge-v0.3.1/v0.3.1.zip) = 03beb2be94d240d04e0aa9cda9235bca0074d15ef8c60dbbd3140a370b9711c0
+SIZE (go/www_surge/surge-v0.3.1/v0.3.1.zip) = 4914340
