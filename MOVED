@@ -5090,3 +5090,7 @@ x11-fonts/open-sans|x11-fonts/opensans-ttf|2026-01-24|Rename to match upstream n
 x11-toolkits/py-wxPython4|x11-toolkits/py-wxpython|2026-01-26|Normalise and match Python package name
 math/p5-Alien-GSL|math/p5-Math-GSL-Alien|2026-01-29|Leaf port not used in the ports tree. Use math/p5-Math-GSL-Alien
 math/rubygem-rb-gsl||2026-01-29|Upstream repo archived, does not support GSL 2.8
+www/bareos22-webui||2026-01-29|Has expired: not supported upstream
+sysutils/bareos22-client||2026-01-29|Has expired: not supported upstream
+sysutils/bareos22-traymonitor||2026-01-29|Has expired: not supported upstream
+sysutils/bareos22-server||2026-01-29|Has expired: not supported upstream
