@@ -1,5 +1,5 @@
 PORTNAME=	gargle
-DISTVERSION=	1.6.0
+DISTVERSION=	1.6.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	R-cran-cli>=3.0.1:devel/R-cran-cli \
 		R-cran-glue>=1.3.0:devel/R-cran-glue \
 		R-cran-httr>=1.4.5:www/R-cran-httr \
 		R-cran-jsonlite>0:converters/R-cran-jsonlite \
-		R-cran-lifecycle>0:devel/R-cran-lifecycle \
+		R-cran-lifecycle>=0.2.0:devel/R-cran-lifecycle \
 		R-cran-openssl>0:security/R-cran-openssl \
 		R-cran-rappdirs>0:devel/R-cran-rappdirs \
 		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
