@@ -297,6 +297,7 @@
     SUBDIR += htmltolatex
     SUBDIR += humanzip
     SUBDIR += hunspell
+    SUBDIR += hus-aspell
     SUBDIR += hy-aspell
     SUBDIR += hyperestraier
     SUBDIR += hyphen
