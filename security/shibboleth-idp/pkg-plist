@@ -6,9 +6,9 @@ sbin/shibboleth-idp.sh
 @comment %%DATADIR%%/bin/lib/.gitkeep
 %%DATADIR%%/bin/lib/ant-1.10.14.jar
 %%DATADIR%%/bin/lib/ant-launcher-1.10.14.jar
-%%DATADIR%%/bin/lib/bcpg-jdk18on-1.77.jar
+%%DATADIR%%/bin/lib/bcpg-jdk18on-1.78.1.jar
 %%DATADIR%%/bin/lib/commons-compress-1.26.2.jar
-%%DATADIR%%/bin/lib/commons-io-2.15.1.jar
+%%DATADIR%%/bin/lib/commons-io-2.16.1.jar
 %%DATADIR%%/bin/lib/idp-cli-%%PORTVERSION%%.jar
 %%DATADIR%%/bin/lib/idp-installer-%%PORTVERSION%%.jar
 %%DATADIR%%/bin/lib/jcommander-1.81.jar
@@ -27,16 +27,17 @@ sbin/shibboleth-idp.sh
 %%DATADIR%%/webapp/WEB-INF/jsp/metadata.jsp
 %%DATADIR%%/webapp/WEB-INF/jsp/status.jsp
 %%DATADIR%%/webapp/WEB-INF/lib/annotations-17.0.0.jar
-%%DATADIR%%/webapp/WEB-INF/lib/bcpkix-jdk18on-1.77.jar
-%%DATADIR%%/webapp/WEB-INF/lib/bcprov-jdk18on-1.77.jar
-%%DATADIR%%/webapp/WEB-INF/lib/bcutil-jdk18on-1.77.jar
+%%DATADIR%%/webapp/WEB-INF/lib/bcpkix-jdk18on-1.82.jar
+%%DATADIR%%/webapp/WEB-INF/lib/bcprov-jdk18on-1.82.jar
+%%DATADIR%%/webapp/WEB-INF/lib/bcutil-jdk18on-1.82.jar
 %%DATADIR%%/webapp/WEB-INF/lib/checker-qual-3.41.0.jar
 %%DATADIR%%/webapp/WEB-INF/lib/commons-codec-1.16.1.jar
 %%DATADIR%%/webapp/WEB-INF/lib/commons-compiler-3.1.12.jar
 %%DATADIR%%/webapp/WEB-INF/lib/commons-dbcp2-2.9.0.jar
 %%DATADIR%%/webapp/WEB-INF/lib/commons-lang3-3.14.0.jar
+%%DATADIR%%/webapp/WEB-INF/lib/commons-logging-1.3.5.jar
 %%DATADIR%%/webapp/WEB-INF/lib/commons-pool2-2.10.0.jar
-%%DATADIR%%/webapp/WEB-INF/lib/cryptacular-1.2.6.jar
+%%DATADIR%%/webapp/WEB-INF/lib/cryptacular-1.3.0.jar
 %%DATADIR%%/webapp/WEB-INF/lib/error_prone_annotations-2.23.0.jar
 %%DATADIR%%/webapp/WEB-INF/lib/failureaccess-1.0.2.jar
 %%DATADIR%%/webapp/WEB-INF/lib/guava-33.0.0-jre.jar
@@ -73,9 +74,10 @@ sbin/shibboleth-idp.sh
 %%DATADIR%%/webapp/WEB-INF/lib/jakarta.mail-2.0.1.jar
 %%DATADIR%%/webapp/WEB-INF/lib/janino-3.1.12.jar
 %%DATADIR%%/webapp/WEB-INF/lib/jsonapi-converter-0.13.jar
+%%DATADIR%%/webapp/WEB-INF/lib/jspecify-1.0.0.jar
 %%DATADIR%%/webapp/WEB-INF/lib/jsr305-3.0.2.jar
 %%DATADIR%%/webapp/WEB-INF/lib/jul-to-slf4j-2.0.13.jar
-%%DATADIR%%/webapp/WEB-INF/lib/ldaptive-2.3.2.jar
+%%DATADIR%%/webapp/WEB-INF/lib/ldaptive-2.5.0.jar
 %%DATADIR%%/webapp/WEB-INF/lib/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
 %%DATADIR%%/webapp/WEB-INF/lib/log4j-over-slf4j-2.0.13.jar
 %%DATADIR%%/webapp/WEB-INF/lib/logback-classic-%%LOGBACKVER%%.jar
@@ -85,19 +87,19 @@ sbin/shibboleth-idp.sh
 %%DATADIR%%/webapp/WEB-INF/lib/metrics-jvm-4.2.26.jar
 %%DATADIR%%/webapp/WEB-INF/lib/micrometer-commons-%%MMVER%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/micrometer-observation-%%MMVER%%.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-buffer-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-codec-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-common-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-handler-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-resolver-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-classes-epoll-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-classes-kqueue-4.1.108.Final.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.108.Final-linux-aarch_64.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.108.Final-linux-x86_64.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-kqueue-4.1.108.Final-osx-aarch_64.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-kqueue-4.1.108.Final-osx-x86_64.jar
-%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.108.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-buffer-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-codec-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-common-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-handler-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-resolver-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-classes-epoll-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-classes-kqueue-4.1.128.Final.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.128.Final-linux-aarch_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-epoll-4.1.128.Final-linux-x86_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-kqueue-4.1.128.Final-osx-aarch_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-kqueue-4.1.128.Final-osx-x86_64.jar
+%%DATADIR%%/webapp/WEB-INF/lib/netty-transport-native-unix-common-4.1.128.Final.jar
 %%DATADIR%%/webapp/WEB-INF/lib/opensaml-core-api-%%PORTVERSION%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/opensaml-core-impl-%%PORTVERSION%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/opensaml-messaging-api-%%PORTVERSION%%.jar
@@ -147,13 +149,12 @@ sbin/shibboleth-idp.sh
 %%DATADIR%%/webapp/WEB-INF/lib/spring-context-%%SPRINGVER1%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/spring-core-%%SPRINGVER1%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/spring-expression-%%SPRINGVER1%%.jar
-%%DATADIR%%/webapp/WEB-INF/lib/spring-jcl-%%SPRINGVER1%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/spring-web-%%SPRINGVER1%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/spring-webflow-%%SPRINGVER2%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/spring-webmvc-%%SPRINGVER1%%.jar
 %%DATADIR%%/webapp/WEB-INF/lib/spymemcached-2.12.3.jar
 %%DATADIR%%/webapp/WEB-INF/lib/velocity-engine-core-2.3.jar
-%%DATADIR%%/webapp/WEB-INF/lib/xmlsec-3.0.5.jar
+%%DATADIR%%/webapp/WEB-INF/lib/xmlsec-3.0.6.jar
 %%DATADIR%%/webapp/WEB-INF/spring.tld
 %%DATADIR%%/webapp/WEB-INF/web.xml
 %%DATADIR%%/webapp/css/logout.css
@@ -162,7 +163,7 @@ sbin/shibboleth-idp.sh
 %%DATADIR%%/webapp/images/placeholder-logo.png
 %%DATADIR%%/webapp/images/success-32x32.png
 %%DATADIR%%/webapp/index.jsp
-%%DATADIR%%/webapp/js/jquery-3.6.0.min.js
+%%DATADIR%%/webapp/js/jquery-3.7.1.min.js
 @dir %%DATADIR%%/webapp/WEB-INF/classes
 @dir %%ETCDIR%%
 @sample %%EXAMPLESDIR%%/etc/jetty-requestlog.xml %%WWWDIR%%/etc/jetty-requestlog.xml
