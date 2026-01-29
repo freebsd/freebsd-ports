@@ -1,5 +1,5 @@
 PORTNAME=	tomcat-native
-DISTVERSION=	2.0.7
+DISTVERSION=	2.0.12
 CATEGORIES=	www java
 MASTER_SITES=	https://archive.apache.org/dist/tomcat/tomcat-connectors/native/${PORTVERSION}/source/
 PKGNAMESUFFIX=	2
@@ -11,6 +11,8 @@ WWW=		https://tomcat.apache.org/native-doc/
 
 LICENSE=	APACHE20
 
+IGNORE_FreeBSD_13=		Does not build on FreeBSD 13.x due to OpenSSL 1.1.1
+
 LIB_DEPENDS=	libapr-1.so:devel/apr1
 
 USES=		java libtool ssl
@@ -20,7 +22,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-java-home=${JAVA_HOME} \
 		--with-ssl=${OPENSSLBASE} \
-		--disable-openssl-version-check
 
 WRKSRC=	${WRKDIR}/${DISTNAME}/native
 
