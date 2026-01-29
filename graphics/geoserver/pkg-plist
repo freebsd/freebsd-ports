@@ -616,7 +616,7 @@
 %%G%%/webapps/%%G%%/WEB-INF/lib/commons-dbcp-1.4.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/commons-fileupload-1.6.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/commons-io-2.19.0.jar
-%%G%%/webapps/%%G%%/WEB-INF/lib/commons-jxpath-1.3.jar
+%%G%%/webapps/%%G%%/WEB-INF/lib/commons-jxpath-1.4.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/commons-lang-2.6.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/commons-lang3-3.18.0.jar
 %%G%%/webapps/%%G%%/WEB-INF/lib/commons-logging-1.3.5.jar
