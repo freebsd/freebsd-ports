@@ -37,8 +37,6 @@ USES=		compiler:c++11-lang cran:auto-plist,compiles shebangfix
 
 SHEBANG_FILES=	inst/bench/*.sh
 
-TESTING_UNSAFE=	https://github.com/tidyverse/vroom/issues/611
-
 pre-test:
 
 # Test depends not ported yet
@@ -46,5 +44,14 @@ pre-test:
 	@${LOCALBASE}/bin/Rscript -e 'install.packages("${pkg}", \
 		repos = "https://cloud.r-project.org")'
 .endfor
+
+# Tests are supposed to be run with unprivileged user. Running as root, tests fail.
+# See also: https://github.com/tidyverse/vroom/issues/611
+do-test:
+	@${MKDIR} ${WRKDIR}/tmp
+	@${CHMOD} 777 ${WRKDIR}/tmp
+	@cd ${WRKSRC} && \
+		${SETENV} ${TEST_ENV} TMPDIR=${WRKDIR}/tmp _R_CHECK_FORCE_SUGGESTS_=false \
+		su -m nobody -c "${LOCALBASE}/bin/R CMD check --no-manual --no-build-vignettes ."
 
 .include <bsd.port.mk>
