@@ -1,5 +1,6 @@
 PORTNAME=	helfem
 DISTVERSION=	g20251026
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org

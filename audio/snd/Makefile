@@ -1,5 +1,6 @@
 PORTNAME=	snd
 DISTVERSION=	25.7
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://ccrma.stanford.edu/software/snd/ \
 		SF

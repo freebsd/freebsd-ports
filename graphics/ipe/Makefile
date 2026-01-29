@@ -1,6 +1,7 @@
 PORTNAME=	ipe
 DISTVERSION=	7.2.27
 DISTVERSIONSUFFIX=	-src
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/otfried/ipe/releases/download/v${DISTVERSION}/
 

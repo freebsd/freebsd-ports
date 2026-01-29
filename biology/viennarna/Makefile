@@ -1,6 +1,6 @@
 PORTNAME=	viennarna
 DISTVERSION=	2.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_7_x/
 DISTNAME=	ViennaRNA-${DISTVERSION}

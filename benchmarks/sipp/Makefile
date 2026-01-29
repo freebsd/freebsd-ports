@@ -1,6 +1,6 @@
 PORTNAME=	sipp
 PORTVERSION=	3.5.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	benchmarks net
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 
