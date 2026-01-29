@@ -1,6 +1,5 @@
 PORTNAME=	Math-GSL
-PORTVERSION=	0.43
-PORTREVISION=	1
+PORTVERSION=	0.49
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +12,7 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-PkgConfig>=0.07720:devel/p5-PkgConfig \
-	        p5-Alien-GSL>=1.01:math/p5-Alien-GSL
+	        p5-Math-GSL-Alien>=1.03:math/p5-Math-GSL-Alien
 LIB_DEPENDS=	libgsl.so:math/gsl
 TEST_DEPENDS=	p5-Test-Class>=0.12:devel/p5-Test-Class \
 		p5-Test-Exception>=0.21:devel/p5-Test-Exception \
