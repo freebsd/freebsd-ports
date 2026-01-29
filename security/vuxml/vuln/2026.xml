@@ -143,6 +143,8 @@
 	    <li>Out of bounds write in PKCS12_get_friendlyname() UTF-8 conversion (CVE-2025-69419)</li>
 	    <li>Missing ASN1_TYPE validation in TS_RESP_verify_response() function (CVE-2025-69420)</li>
 	    <li>NULL Pointer Dereference in PKCS12_item_decrypt_d2i_ex function (CVE-2025-69421)</li>
+	    <li>Missing ASN1_TYPE validation in PKCS#12 parsing (CVE-2026-22795)</li>
+	    <li>ASN1_TYPE Type Confusion in the PKCS7_digest_from_attributes() function (CVE-2026-22796)</li>
 	  </ul>
 	</blockquote>
 	</body>
@@ -158,6 +160,8 @@
       <cvename>CVE-2025-69419</cvename>
       <cvename>CVE-2025-69420</cvename>
       <cvename>CVE-2025-69421</cvename>
+      <cvename>CVE-2026-22795</cvename>
+      <cvename>CVE-2026-22796</cvename>
       <url>https://openssl-library.org/news/secadv/20260127.txt</url>
       <freebsdsa>SA-26:01.openssl</freebsdsa>
     </references>
