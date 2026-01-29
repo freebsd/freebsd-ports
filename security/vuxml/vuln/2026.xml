@@ -1,3 +1,31 @@
+  <vuln vid="8173e68a-88f3-4862-882c-6e58779d98e7">
+    <topic>zeek -- potential DoS vulnerability</topic>
+    <affects>
+<package>
+<name></name>
+<range><lt>8.0.6</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v8.0.6">
+	  <p>Zeek's HTTP analyzer can be tricked into interpreting
+	  Transfer-Encoding or Content-Length headers set in MIME
+	  entities within HTTP bodies and change the analyzer
+	  behavior.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v8.0.6</url>
+    </references>
+    <dates>
+      <discovery>2026-01-29</discovery>
+      <entry>2026-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="409d70ab-fc23-11f0-85c5-a8a1599412c6">
     <topic>chromium -- security fix</topic>
     <affects>
