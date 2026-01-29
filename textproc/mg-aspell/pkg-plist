@@ -1,0 +1,4 @@
+lib/aspell-%%VER%%/mg.dat
+share/aspell/malagasy.alias
+share/aspell/mg.multi
+share/aspell/mg.rws

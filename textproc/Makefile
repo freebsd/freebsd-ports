@@ -487,6 +487,7 @@
     SUBDIR += meilisearch
     SUBDIR += meld
     SUBDIR += metauml
+    SUBDIR += mg-aspell
     SUBDIR += mgdiff
     SUBDIR += mi-aspell
     SUBDIR += miller
