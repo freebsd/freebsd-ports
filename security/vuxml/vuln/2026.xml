@@ -2,7 +2,7 @@
     <topic>zeek -- potential DoS vulnerability</topic>
     <affects>
 <package>
-<name></name>
+<name>zeek</name>
 <range><lt>8.0.6</lt></range>
 </package>
     </affects>
