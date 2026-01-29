@@ -49,9 +49,11 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/aenetworks.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/aeonco.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/afreecatv.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/agalega.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/agora.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/airtv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/aitube.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/alibaba.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/aliexpress.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/aljazeera.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/allocine.py
@@ -119,6 +121,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bilibili.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/biobiochiletv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bitchute.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bitmovin.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/blackboardcollaborate.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/bleacherreport.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/blerp.py
@@ -203,6 +206,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/cpac.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/cracked.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/craftsy.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/croatianfilm.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/crooksandliars.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/crowdbunker.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/crtvg.py
@@ -288,6 +292,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fc2.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fczenit.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fifa.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/filmarchiv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/filmon.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/filmweb.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/firsttv.py
@@ -311,6 +316,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/freespeech.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/freetv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/frontendmasters.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/frontro.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/fujitv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/funk.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/funker530.py
@@ -482,7 +488,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mailru.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mainstreaming.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mangomolo.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/manoto.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/manyvids.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/maoritv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/markiza.py
@@ -537,6 +542,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/museai.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/musescore.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/musicdex.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mux.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mx3.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mxplayer.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/myspace.py
@@ -545,6 +551,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/myvidster.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/mzaalo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/n1.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nascar.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nate.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nationalgeographic.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/naver.py
@@ -556,13 +563,13 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nekohacker.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nerdcubed.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nest.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/netapp.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/neteasemusic.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/netverse.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/netzkino.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/newgrounds.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/newspicks.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/newsy.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nextmedia.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nexx.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nfb.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nfhsnetwork.py
@@ -586,6 +593,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nosnl.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nova.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/novaplay.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nowcanal.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/nowness.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/noz.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/npo.py
@@ -626,6 +634,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/owncloud.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/packtpub.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/palcomp3.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/pandatv.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/panopto.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/parler.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/parlview.py
@@ -757,7 +766,6 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/screenrec.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/scrippsnetworks.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/scrolller.py
-%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/scte.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sejmpl.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sen.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/senalcolombia.py
@@ -830,6 +838,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/sztvhu.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/tagesschau.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/taptap.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/tarangplus.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/tass.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/tbs.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/tbsjp.py
@@ -1023,6 +1032,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/yandexvideo.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/yapfiles.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/yappy.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/yfanefa.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/yle_areena.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youjizz.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youku.py
@@ -1037,6 +1047,18 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/_search.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/_tab.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/_video.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/__init__.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/__init__.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/bun.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/deno.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/ejs.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/node.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/quickjs.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/vendor/__init__.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_builtin/vendor/_info.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_director.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/_registry.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/jsc/provider.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/pot/__init__.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/pot/_builtin/__init__.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/extractor/youtube/pot/_builtin/memory_cache.py
@@ -1088,6 +1110,7 @@ bin/yt-dlp-devel
 %%PYTHON_SITELIBDIR%%/yt_dlp/update.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/utils/__init__.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/utils/_deprecated.py
+%%PYTHON_SITELIBDIR%%/yt_dlp/utils/_jsruntime.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/utils/_legacy.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/utils/_utils.py
 %%PYTHON_SITELIBDIR%%/yt_dlp/utils/jslib/__init__.py
