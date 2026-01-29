@@ -23,6 +23,7 @@ BUILD_WRKSRC=	${WRKSRC}/wpa_supplicant
 INSTALL_WRKSRC=	${WRKSRC}/src
 CPPFLAGS+=	-Wno-incompatible-function-pointer-types
 CFLAGS+=	${CPPFLAGS} # USES=readline only augments CPPFLAGS and LDFLAGS
+CFLAGS+=	-Wno-undefined-internal
 CFLAGS+=	-I${OPENSSLINC}
 CFLAGS+=	-Wno-deprecated-declarations
 LDFLAGS+=	-L${OPENSSLLIB} -lutil
@@ -133,10 +134,6 @@ DBUS_PLIST_FILES=	share/dbus-1/system-services/fi.w1.wpa_supplicant1.service \
 BROKEN=	Fails to compile with both NDIS and PRIVSEP
 .endif
 
-.if ${PORT_OPTIONS:MIEEE80211AC} && ${PORT_OPTIONS:MIEEE80211N}
-BROKEN=	Fails to compile with both IEEE80211AC and IEEE80211N
-.endif
-
 .if ${PORT_OPTIONS:MSIM} || ${PORT_OPTIONS:MAKA} || ${PORT_OPTIONS:MAKA_PRIME}
 LIB_DEPENDS+=	libpcsclite.so:devel/pcsc-lite
 CFLAGS+=	-I${LOCALBASE}/include/PCSC
@@ -176,6 +173,13 @@ post-patch:
 	PASN TDLS WNM MBO RSN_PREAUTH
 .  if ${PORT_OPTIONS:M${simple}}
 	@${ECHO_CMD} CONFIG_${simple}=y >> ${CFG}
+.	if ${simple} == "IEEE80211N"
+		@${ECHO_CMD} CONFIG_IEEE80211BE=y >> ${CFG}
+		@${ECHO_CMD} CONFIG_IEEE80211AX=y >> ${CFG}
+		@${ECHO_CMD} CONFIG_IEEE80211AC=y >> ${CFG}
+		@${ECHO_CMD} CONFIG_AP=y >> ${CFG}
+		@${ECHO_CMD} NEED_AP_MLME=y >> ${CFG}
+.	endif
 .  endif
 .endfor
 .for item in READLINE PEERKEY
