@@ -9,6 +9,7 @@
 %%CGI%%%%WWWDIR%%/header.html
 %%CGI%%%%WWWDIR%%/index.html
 %%CGI%%%%WWWDIR%%/nut-banner.png
+%%CGI%%%%WWWDIR%%/nut-logo.png
 %%ETCDIR%%/cmdvartab
 %%ETCDIR%%/driver.list
 @sample %%ETCDIR%%/nut.conf.sample
@@ -61,6 +62,7 @@ lib/libnutscan.so.4.0.0
 %%DEV%%libexec/sockdebug
 %%SERIAL%%libexec/nut/al175
 %%SERIAL%%libexec/nut/apcupsd-ups
+%%SERIAL%%libexec/nut/meanwell_ntu
 %%USB%%libexec/nut/nutdrv_atcl_usb
 %%USB%%libexec/nut/nutdrv_qx
 %%SERIAL%%libexec/nut/riello_ser
@@ -124,6 +126,7 @@ lib/libnutscan.so.4.0.0
 %%MODBUS%%libexec/nut/apc_modbus
 %%MODBUS%%libexec/nut/generic_modbus
 %%MODBUS%%libexec/nut/huawei-ups2000
+%%MODBUS%%libexec/nut/must_ep2000pro
 %%MODBUS%%libexec/nut/phoenixcontact_modbus
 %%MODBUS%%libexec/nut/socomec_jbus
 %%SERIAL%%libexec/nut/ve-direct
@@ -226,6 +229,7 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%%%SERIAL%%share/man/man8/apcupsd-ups.8.gz
 %%MANPAGES%%%%SERIAL%%share/man/man8/blazer_ser.8.gz
 %%MANPAGES%%%%USB%%share/man/man8/blazer_usb.8.gz
+%%MANPAGES%%%%SERIAL%%share/man/man8/meanwell_ntu.8.gz
 %%MANPAGES%%%%NEON%%share/man/man8/netxml-ups.8.gz
 %%MANPAGES%%share/man/man8/nut-recorder.8.gz
 %%MANPAGES%%share/man/man8/nut-scanner.8.gz
@@ -242,6 +246,7 @@ lib/libnutscan.so.4.0.0
 %%MANPAGES%%%%MODBUS%%share/man/man8/adelsystem_cbi.8.gz
 %%MANPAGES%%%%MODBUS%%share/man/man8/generic_modbus.8.gz
 %%MANPAGES%%%%MODBUS%%share/man/man8/huawei-ups2000.8.gz
+%%MANPAGES%%%%MODBUS%%share/man/man8/must_ep2000pro.8.gz
 %%MANPAGES%%%%MODBUS%%share/man/man8/phoenixcontact_modbus.8.gz
 %%MANPAGES%%%%MODBUS%%share/man/man8/socomec_jbus.8.gz
 %%MANPAGES%%share/man/man8/upsc.8.gz
