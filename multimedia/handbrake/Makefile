@@ -1,6 +1,6 @@
 PORTNAME=	handbrake
 DISTVERSION=	1.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/HandBrake/HandBrake/releases/download/${DISTVERSION}/
 MASTER_SITES+=	https://github.com/HandBrake/HandBrake-contribs/releases/download/contribs/:contrib

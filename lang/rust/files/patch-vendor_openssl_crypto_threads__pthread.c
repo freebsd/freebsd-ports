@@ -14,8 +14,8 @@
  
  # if defined(OPENSSL_SYS_UNIX)
 
---- vendor/openssl-src-300.5.3+3.5.4/openssl/crypto/threads_pthread.c.orig	2025-05-09 22:37:37.000000000 +0200
-+++ vendor/openssl-src-300.5.3+3.5.4/openssl/crypto/threads_pthread.c	2025-05-21 14:44:18.563852000 +0200
+--- vendor/openssl-src-300.5.4+3.5.4/openssl/crypto/threads_pthread.c.orig	2025-05-09 22:37:37.000000000 +0200
++++ vendor/openssl-src-300.5.4+3.5.4/openssl/crypto/threads_pthread.c	2025-05-21 14:44:18.563852000 +0200
 @@ -50,6 +50,10 @@ __tsan_mutex_post_lock((x), 0, 0)
  # define BROKEN_CLANG_ATOMICS
  #endif

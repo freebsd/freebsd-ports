@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.2
+DISTVERSION=	1.11.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -49,11 +49,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		castaway-0.2.4 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.54 \
-		clap_builder-4.5.54 \
+		clap-4.5.55 \
+		clap_builder-4.5.55 \
 		clap_complete-4.5.65 \
 		clap_complete_nushell-4.5.10 \
-		clap_derive-4.5.49 \
+		clap_derive-4.5.55 \
 		clap_lex-0.7.7 \
 		clap_mangen-0.2.31 \
 		color-eyre-0.6.5 \
@@ -153,7 +153,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		multiversion-0.8.0 \
 		multiversion-macros-0.8.0 \
 		nix-0.29.0 \
-		nix-0.30.1 \
+		nix-0.31.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		num-conv-0.2.0 \
@@ -226,7 +226,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		signal-hook-registry-1.4.8 \
 		simdutf8-0.1.5 \
 		similar-2.7.0 \
-		siphasher-1.0.1 \
+		siphasher-1.0.2 \
 		slab-0.4.11 \
 		smallvec-1.15.1 \
 		socket2-0.6.2 \
@@ -249,6 +249,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		thread_local-1.1.9 \
 		time-0.3.46 \
 		time-core-0.1.8 \
+		tinyvec-1.10.0 \
+		tinyvec_macros-0.1.1 \
 		tokio-1.49.0 \
 		tokio-macros-2.6.0 \
 		tokio-util-0.7.18 \
@@ -262,9 +264,11 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		unicase-2.9.0 \
 		unicode-display-width-0.3.0 \
 		unicode-ident-1.0.22 \
+		unicode-normalization-0.1.25 \
 		unicode-segmentation-1.12.0 \
 		unicode-truncate-2.0.1 \
 		unicode-width-0.2.2 \
+		unicode-xid-0.2.6 \
 		utf8parse-0.2.2 \
 		uuid-1.20.0 \
 		valuable-0.1.1 \
@@ -313,8 +317,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows_x86_64_msvc-0.53.1 \
 		winsafe-0.0.19 \
 		wit-bindgen-0.51.0 \
-		zerocopy-0.8.33 \
-		zerocopy-derive-0.8.33
+		zerocopy-0.8.34 \
+		zerocopy-derive-0.8.34
 
 PLIST_FILES=	bin/sk
 

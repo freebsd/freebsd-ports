@@ -1,6 +1,7 @@
 PORTNAME=	cargo-mutants
 DISTVERSIONPREFIX=	cargo-mutants-v
 DISTVERSION=	26.1.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

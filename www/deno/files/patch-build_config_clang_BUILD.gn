@@ -1,9 +1,23 @@
---- cargo-crates/v8-137.2.1/build/config/clang/BUILD.gn.orig	2024-07-30 11:12:21 UTC
-+++ cargo-crates/v8-137.2.1/build/config/clang/BUILD.gn
-@@ -224,7 +224,7 @@ clang_lib("compiler_builtins") {
-       libname = "ios"
+--- cargo-crates/v8-142.2.0/build/config/clang/BUILD.gn.orig	2024-07-30 11:12:21 UTC
++++ cargo-crates/v8-142.2.0/build/config/clang/BUILD.gn
+@@ -224,7 +224,12 @@ template("clang_lib") {
+ 
+ # Adds a dependency on the Clang runtime library clang_rt.builtins.
+ clang_lib("compiler_builtins") {
+-  if (is_mac) {
++  if (is_bsd) {
++    # Since there's no Rust in the toolchain, there's no concern that we'll use
++    # the Rust stdlib's intrinsics here.
++    #
++    # Don't define libname which makes this target do nothing.
++  } else if (is_mac) {
+     libname = "osx"
+   } else if (is_ios) {
+     if (target_platform == "iphoneos") {
+@@ -249,7 +254,7 @@ clang_lib("compiler_builtins") {
+       assert(false, "unsupported target_platform=$target_platform")
      }
-   } else {
+   } else if (current_cpu != "ppc64" && current_cpu != "s390x") {
 -    libname = "builtins"
 +    #libname = "builtins"
    }

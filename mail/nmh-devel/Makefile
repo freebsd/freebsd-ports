@@ -1,6 +1,5 @@
 PORTNAME=	nmh
 PORTVERSION=	${NMH_COMMIT_DATE}
-PORTREVISION=	1
 MASTER_SITES=	#
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-devel
@@ -10,8 +9,8 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Cleaned up MH mailer suite
 WWW=		https://savannah.nongnu.org/projects/nmh/
 
-GIT_TAGNAME=	a58964e
-NMH_COMMIT_DATE=	2025.08.24
+GIT_TAGNAME=	9ce1475
+NMH_COMMIT_DATE=	2026.01.20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GIT_TAGNAME}
 
@@ -106,7 +105,7 @@ CONFLICTS_INSTALL=	ali ja-mh pixie p5-Dist-Joseki nmh-1.*
 do-fetch:
 	@cd ${DISTDIR} && \
 	if [ ! -f ${DISTNAME}${EXTRACT_SUFX} ]; then \
-		fetch -o ${DISTNAME}${EXTRACT_SUFX} \
+		fetch -6 -o ${DISTNAME}${EXTRACT_SUFX} \
 		    "https://git.savannah.gnu.org/gitweb/?p=nmh.git;a=snapshot;h=${GIT_TAGNAME};sf=tgz"; \
 	fi
 

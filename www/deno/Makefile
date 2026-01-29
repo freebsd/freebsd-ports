@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.5
-PORTREVISION=	3
+DISTVERSION=	2.6.6
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		liblcms2.so:graphics/lcms2 \
 		libzstd.so:archivers/zstd
 
-USES=		cargo cpe gmake gnome llvm:min=16,build ninja:build pkgconfig:build python:build
+USES=		cargo cpe gmake gnome llvm:min=21,build ninja:build pkgconfig:build python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
@@ -31,21 +30,25 @@ GH_TUPLE=	denoland:deno_lsp_benchdata:a787434:denolsp/cli/bench/testdata/lsp_ben
 
 USE_GNOME=	glib20
 
-CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO="false" \
-		CLANG_BASE_PATH=/usr \
+CARGO_ENV+=	V8_FROM_SOURCE=1 \
 		GN=${PREFIX}/bin/gn \
+		NINJA=${NINJA_CMD} \
+		CLANG_BASE_PATH=/usr \
 		LCMS2_INCLUDE_DIR="${LOCALBASE}/include" \
 		LCMS2_LIB_DIR="${LOCALBASE}/lib" \
-		NINJA=${NINJA_CMD} \
-		RUSTC_BOOTSTRAP=yes \
-		V8_FROM_SOURCE=1 \
+		CARGO_PROFILE_RELEASE_LTO="false" \
 		GN_ARGS="clang_use_chrome_plugins=false \
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\" \
 		fatal_linker_warnings=false \
 		is_clang=true \
-		use_custom_libcxx=false \
+		use_custom_libcxx=true \
+		use_custom_libunwind=true \
+		use_libcxx_modules=false \
+		use_udev=true \
 		use_sysroot=false \
-		use_udev=false \
-		use_glib=false"
+		use_glib=false \
+		v8_enable_cet_ibt=true"
 
 RUSTFLAGS+=	"-L${LOCALBASE}/lib"
 
@@ -55,7 +58,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 DENO_CORE_ICUDATA_V=	0.74.0
-V8_CARGO_V=		137.2.1
+V8_CARGO_V=		142.2.0
 
 V8_DISTDIR=	${CARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR=	${V8_DISTDIR}/v8/tools/builtins-pgo
@@ -65,7 +68,7 @@ CARGO_INSTALL=	no
 WITHOUT_LTO=	yes
 
 post-patch:
-	${REINPLACE_CMD} "s|PREFIX|${PREFIX}|" \
+	${REINPLACE_CMD} "s|${PREFIX}|${PREFIX}|" \
 		${WRKSRC}/cli/task_runner.rs \
 		${WRKSRC}/cli/tools/jupyter/install.rs \
 		${WRKSRC}/ext/os/lib.rs \

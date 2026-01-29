@@ -1,5 +1,5 @@
---- cargo-crates/v8-137.2.1/build/config/sysroot.gni.orig
-+++ cargo-crates/v8-137.2.1/build/config/sysroot.gni
+--- cargo-crates/v8-142.2.0/build/config/sysroot.gni.orig
++++ cargo-crates/v8-142.2.0/build/config/sysroot.gni
 @@ -20,9 +20,11 @@ declare_args() {
    # Controls default is_linux sysroot. If set to true, and sysroot
    # is empty, default sysroot is calculated.
@@ -7,7 +7,7 @@
 +      !is_bsd && (
        current_cpu == "x86" || current_cpu == "x64" || current_cpu == "arm" ||
        current_cpu == "arm64" || current_cpu == "mipsel" ||
-       current_cpu == "mips64el" || (current_cpu == "riscv64" && is_android)
+       current_cpu == "mips64el" || current_cpu == "riscv64"
 +      )
  }
  

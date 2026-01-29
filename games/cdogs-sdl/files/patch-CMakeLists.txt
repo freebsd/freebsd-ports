@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2021-08-28 06:07:16 UTC
+--- CMakeLists.txt.orig	2026-01-26 02:53:43 UTC
 +++ CMakeLists.txt
-@@ -126,7 +126,7 @@ else()
+@@ -131,7 +131,7 @@ else()
  		endif()
  	endif()
  	if(NOT BEOS AND NOT HAIKU)
@@ -9,7 +9,7 @@
  		set(EXTRA_LIBRARIES "m")
  	endif()
  endif()
-@@ -141,6 +141,9 @@ if(NOT DEFINED CDOGS_DATA_DIR)
+@@ -146,6 +146,9 @@ message("Data dir is ${CDOGS_DATA_DIR}")
  	endif()
  endif()
  message("Data dir is ${CDOGS_DATA_DIR}")
@@ -19,7 +19,7 @@
  if(WIN32)
  	set(CDOGS_CFG_DIR "C-Dogs SDL/")
  else()
-@@ -193,7 +196,6 @@ elseif(APPLE)
+@@ -198,7 +201,6 @@ else()
  	set(INSTALL_PREFIX "cdogs-sdl")
  else()
  	set(LIB_EXTENSION ".so")

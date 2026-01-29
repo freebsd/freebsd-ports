@@ -1,0 +1,16 @@
+Revert 
+https://github.com/denoland/rusty_v8/commit/1bc16604555847e020945abe39b8d4b2fec5dd9e#diff-b2b1f3ec619c03c5bba2f171beab1301d960e1dcac6a17a99ce02326ce9c49b4
+
+--- cargo-crates/v8-142.2.0/.gn.orig
++++ cargo-crates/v8-142.2.0/.gn
+@@ -87,9 +87,7 @@ default_args = {
+   # TODO: third_party/compiler-rt missing?
+   use_llvm_libatomic = false
+ 
+-  enable_rust = true
+-  enable_rust_cxx = true
+-  v8_enable_temporal_support = true
++  v8_enable_temporal_support = false
+ 
+   # prevent hashdos
+   v8_use_default_hasher_secret = false

@@ -1,7 +1,7 @@
 PORTNAME=	kanidm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 
 # implicit-approval+: dtxdf

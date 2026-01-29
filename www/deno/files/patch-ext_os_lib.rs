@@ -1,20 +1,20 @@
 --- ext/os/lib.rs.orig	2023-01-13 13:12:37 UTC
 +++ ext/os/lib.rs
-@@ -4,6 +4,7 @@ use std::env;
- use std::collections::HashMap;
- use std::collections::HashSet;
+@@ -5,6 +5,7 @@ use std::collections::HashMap;
  use std::env;
+ use std::ffi::OsString;
+ use std::ops::ControlFlow;
 +use std::path::PathBuf;
  use std::sync::Arc;
  use std::sync::atomic::AtomicI32;
  use std::sync::atomic::Ordering;
-@@ -112,7 +113,8 @@ fn op_exec_path() -> Result<String, OsError> {
+@@ -112,7 +113,8 @@ pub enum OsError {
  #[op2]
  #[string]
  fn op_exec_path() -> Result<String, OsError> {
 -  let current_exe = env::current_exe().unwrap();
 +  let current_exe =
-+    env::current_exe().unwrap_or_else(|_| PathBuf::from("PREFIX/bin/deno"));
++    env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
    // normalize path so it doesn't include '.' or '..' components
    let path = normalize_path(Cow::Owned(current_exe));
  

@@ -1,7 +1,7 @@
 PORTNAME=	eza
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.23.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/eza-community/${PORTNAME}/releases/download/v${DISTVERSION}/man-${DISTVERSION}.tar.gz?dummy=/:man
 DISTFILES=	${PORTNAME}-man-${DISTVERSION}.tar.gz:man

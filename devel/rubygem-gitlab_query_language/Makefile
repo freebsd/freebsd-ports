@@ -1,5 +1,6 @@
 PORTNAME=	gitlab_query_language
 PORTVERSION=	0.20.11
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

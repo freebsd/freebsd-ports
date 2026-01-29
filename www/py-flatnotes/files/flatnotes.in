@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# PROVIDE: flatnotes
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for flatnotes in /etc/rc.conf
+#
+# flatnotes_enable (bool):        Enable flatnotes. (default=NO)
+# flatnotes_runas (str):          User to run Flatnotes as. (default=%%USER%%)
+# flatnotes_host (str):           Address to listen on. (default=127.0.0.1)
+# flatnotes_port (int):           Port to listen on. (default=8080)
+# flatnotes_env (str):            Environment variables used by flatnotes.
+#                                 (default=FLATNOTES_AUTH_TYPE=none)
+# flatnotes_flags (str):          Additional flags used by uvicorn.
+#                                 (default=--proxy-headers --forwarded-allow-ips '*')
+#
+
+. /etc/rc.subr
+
+name=flatnotes
+desc="Note taking web app"
+rcvar="${name}_enable"
+
+load_rc_config $name
+
+: ${flatnotes_enable:="NO"}
+: ${flatnotes_runas:="www"}
+: ${flatnotes_host:="127.0.0.1"}
+: ${flatnotes_port:="8080"}
+: ${flatnotes_env:="FLATNOTES_AUTH_TYPE=none"}
+: ${flatnotes_flags:="--proxy-headers --forwarded-allow-ips '*'"}
+
+pidfile="/var/run/${name}.pid"
+start_cmd="${name}_start"
+procname="%%PREFIX%%/bin/python%%PYTHON_VER%%"
+
+flatnotes_start()
+{
+	startmsg -n "Starting ${name}"
+	cd "%%WWWDIR%%"
+	env "FLATNOTES_PATH=/var/db/${name}" /usr/sbin/daemon -u "${flatnotes_runas}" -p "${pidfile}" -S \
+		/usr/local/bin/uvicorn main:app \
+			--host "${flatnotes_host}" \
+			--port "${flatnotes_port}" \
+			${flatnotes_flags}
+	startmsg "."
+}
+
+run_rc_command "$1"

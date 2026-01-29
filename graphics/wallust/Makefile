@@ -1,5 +1,6 @@
 PORTNAME=	wallust
 DISTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://codeberg.org/explosion-mental/${PORTNAME}/archive/${DISTVERSION}${EXTRACT_SUFX}?dummy=/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

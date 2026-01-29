@@ -1,6 +1,6 @@
 PORTNAME=	baresip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.0
+DISTVERSION=	4.5.0
 PORTREVISION=	1
 CATEGORIES=	audio
 
@@ -20,7 +20,6 @@ nox11_CONFLICTS_INSTALL=	baresip
 
 USES=		cmake localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
-GH_ACCOUNT=	baresip
 GH_TUPLE=	baresip:baresip-apps:v4.3.0:e/baresip-apps
 PORTDOCS=	CONTRIBUTING.md ChangeLog THANKS
 

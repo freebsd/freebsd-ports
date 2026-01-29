@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 DISTVERSION=	6.1.50
-PORTREVISION?=	16
+PORTREVISION?=	17
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
 		LOCAL/bofh/emulators/virtualbox-ose:docs
