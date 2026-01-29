@@ -12,9 +12,15 @@ bin/startlxqtwayland
 %%LXQT_SHAREDIR%%/wayland/labwc/themerc-override
 %%LXQT_SHAREDIR%%/wayland/lxqt-hyprland.conf
 %%LXQT_SHAREDIR%%/wayland/lxqt-niri.kdl
+%%LXQT_SHAREDIR%%/wayland/lxqt-niri.kdl.full
 %%LXQT_SHAREDIR%%/wayland/lxqt-river-init
 %%LXQT_SHAREDIR%%/wayland/lxqt-sway.config
 %%LXQT_SHAREDIR%%/wayland/lxqt-wayfire.ini
+%%LXQT_SHAREDIR%%/wayland/niri/input.kdl
+%%LXQT_SHAREDIR%%/wayland/niri/keybinds.kdl
+%%LXQT_SHAREDIR%%/wayland/niri/outputs.kdl
+%%LXQT_SHAREDIR%%/wayland/niri/visual.kdl
+%%LXQT_SHAREDIR%%/wayland/niri/window-rules.kdl
 share/man/man1/lxqt-wayland-session.1.gz
 share/man/man1/startlxqtwayland.1.gz
 share/themes/Vent-dark/openbox-3/close.xbm
