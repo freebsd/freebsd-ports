@@ -1,6 +1,6 @@
 PORTNAME=	gilt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.4
+DISTVERSION=	2.2.5
 PORTREVISION=	6
 CATEGORIES=	devel
 
@@ -11,7 +11,7 @@ WWW=		https://retr0h.github.io/gilt/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.25+,modules
 GO_MODULE=	github.com/retr0h/gilt/v2
 
 PLIST_FILES=	bin/gilt
