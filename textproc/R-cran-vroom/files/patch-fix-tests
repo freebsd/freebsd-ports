@@ -1,0 +1,35 @@
+From cd07f44dc51ddcb0795ccda84c814c8af75668df Mon Sep 17 00:00:00 2001
+From: Jenny Bryan <jenny.f.bryan@gmail.com>
+Date: Thu, 29 Jan 2026 15:10:37 -0800
+Subject: [PATCH] Improve this test
+
+Closes #611
+---
+ tests/testthat/test-connection.R | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+diff --git tests/testthat/test-connection.R tests/testthat/test-connection.R
+index 22b23b37..86aecc4e 100644
+--- tests/testthat/test-connection.R
++++ tests/testthat/test-connection.R
+@@ -116,12 +116,16 @@ test_that("vroom_fwf() doesn't leak a connection when opening fails (permission
+   Sys.chmod(tfile, mode = "000") # Remove all permissions
+   connections_before <- showConnections(all = TRUE)
+ 
+-  # Not using snapshots, because not our error or warning
+-  expect_error(
+-    expect_warning(
++  # It is conceivable that this vroom_fwf() will succeed if, for example, tests
++  # are being run by root?
++  # See https://github.com/tidyverse/vroom/issues/611
++  # Therefore, we don't state a hard expectation around error or warning.
++  # We just care that connections don't leak.
++  try(
++    suppressWarnings(
+       vroom_fwf(file(tfile), fwf_widths(c(6, 6, 6)), show_col_types = FALSE)
+     ),
+-    "cannot open"
++    silent = TRUE
+   )
+ 
+   connections_after <- showConnections(all = TRUE)
