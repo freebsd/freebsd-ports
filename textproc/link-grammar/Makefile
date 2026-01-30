@@ -1,5 +1,5 @@
 PORTNAME=	link-grammar
-DISTVERSION=	5.12.6
+DISTVERSION=	5.13.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.gnucash.org/${PORTNAME}/downloads/${PORTVERSION}/
 
