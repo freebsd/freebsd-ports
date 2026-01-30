@@ -1,4 +1,4 @@
-TIMESTAMP = 1768855877
+TIMESTAMP = 1769798898
 SHA256 (freenginx-1.29.4.tar.gz) = 51a596451e334b51ce8cef1291b576ed601ed557e1b500e6c1a77a469d603e27
 SIZE (freenginx-1.29.4.tar.gz) = 1249883
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -141,7 +141,7 @@ SHA256 (vozlt-nginx-module-vts-37d319f_GH0.tar.gz) = 9ffe9ac5cd3716bb12832926bb7
 SIZE (vozlt-nginx-module-vts-37d319f_GH0.tar.gz) = 185334
 SHA256 (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = aca454bffcee2476dc92682ebfb8c0378a271fda178be7e945d648419d220758
 SIZE (tg123-websockify-nginx-module-c11bc9a_GH0.tar.gz) = 14646
-SHA256 (openresty-xss-nginx-module-de2d87a_GH0.tar.gz) = f830c9300d751046e2592c74d09f39ac4b4b4567078c96c24951de5554861b5e
-SIZE (openresty-xss-nginx-module-de2d87a_GH0.tar.gz) = 12779
+SHA256 (openresty-xss-nginx-module-0e77f38_GH0.tar.gz) = 837d403885d90a3456d25b72ebd3ce40ec93dd8208ac482b587aa05703cb425f
+SIZE (openresty-xss-nginx-module-0e77f38_GH0.tar.gz) = 12923
 SHA256 (tokers-zstd-nginx-module-f4ba115_GH0.tar.gz) = 20045e8ac80e2cc9fd3659573153cb1f22d98a653a10fe939a4be0e90160826a
 SIZE (tokers-zstd-nginx-module-f4ba115_GH0.tar.gz) = 55848
