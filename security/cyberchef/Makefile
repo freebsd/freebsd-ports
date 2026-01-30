@@ -1,5 +1,5 @@
 PORTNAME=	cyberchef
-PORTVERSION=	10.19.4
+PORTVERSION=	10.20.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${GH_TAGNAME}/
