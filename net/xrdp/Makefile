@@ -1,6 +1,5 @@
 PORTNAME=	xrdp
-DISTVERSION=	0.10.4.1
-PORTREVISION=	3
+DISTVERSION=	0.10.5
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/neutrinolabs/${PORTNAME}/releases/download/v${DISTVERSION}/
