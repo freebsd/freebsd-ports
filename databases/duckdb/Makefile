@@ -1,6 +1,9 @@
 PORTNAME=	duckdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.4
+PORTREVISION=	1
+MASTER_SITES=	https://github.com/postgres/postgres/archive/refs/tags/:postgres_sources
+DISTFILES=	REL_15_13.tar.gz:postgres_sources
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,6 +24,8 @@ GH_TUPLE=	\
 		duckdb:duckdb-fts:39376623630a968154bef4e6930d12ad0b59d7fb:fts/extension/fts \
 		duckdb:duckdb-httpfs:13f8a814d41a978c3f19eb1dc76069489652ea6f:httpfs/extension/httpfs \
 		duckdb:duckdb-inet:fe7f60bb60245197680fb07ecd1629a1dc3d91c8:inet/extension/inet \
+		duckdb:duckdb-postgres:b9fce43bc5d36bc6db70844f28b7b146e756eb22:postgres/extension/postgres_scanner \
+		duckdb:duckdb-mysql:35d1b2cd51800096271802cfedf68e13bf7fa8cb:mysql/extension/mysql_scanner \
 		duckdb:duckdb-spatial:f129b24b4ddd4d98cfc18f88be5a344a79040e7b:spatial/extension/spatial \
 		duckdb:duckdb-sqlite:0c93d610af1e1f66292559fcf0f01a93597a98b6:sqlite/extension/sqlite_scanner \
 		duckdb:duckdb-sqlsmith:e6e6750ceb91e1869b2c736abb70d818bac73e9a:sqlsmith/extension/sqlsmith \
@@ -45,9 +50,11 @@ OPTIONS_GROUP=			EXTENSIONS
 OPTIONS_GROUP_EXTENSIONS=	AUTOCOMPLETE DELTA ICU JSON PARQUET TPCDS TPCH # in-tree extensions (in extension/)
 OPTIONS_GROUP_EXTENSIONS+=	${GH_TUPLE:C/.*extension\///:tu} # out-of-tree extensions (from GH_TUPLE)
 
-DELTA_BROKEN=	Fetches from git during build
-SPATIAL_BROKEN=	Build requires unofficial-sqlite3 dependency
-EXCEL_BROKEN=	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=292757
+DELTA_BROKEN=			Fetches from git during build
+SPATIAL_BROKEN=			Build requires unofficial-sqlite3 dependency
+EXCEL_BROKEN=			https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=292757
+MYSQL_SCANNER_BROKEN=		https://github.com/duckdb/duckdb-mysql/issues/207
+POSTGRES_SCANNER_BROKEN=	https://github.com/duckdb/duckdb-postgres/issues/401
 
 EXTENSIONS_DESC=		Extensions:
 
@@ -70,14 +77,20 @@ CMAKE_ARGS+=	-DSKIP_EXTENSIONS=jemalloc # temporary? see https://github.com/duck
 SQLITE_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/sqlite_scanner/src/include # workaround for the header not being found
 ENCODINGS_CXXFLAGS=		-I${WRKSRC}/extension/encodings/src/include # workaround for the header not being found
 HTTPFS_CXXFLAGS=		-I${WRKSRC}/extension/httpfs/src/include # workaround for the header not being found
+POSTGRES_SCANNER_USES=		localbase
+POSTGRES_SCANNER_CXXFLAGS=	-I${WRKSRC}/extension/postgres_scanner/src/include # workaround for the header not being found
+MYSQL_SCANNER_USES=		mysql:client
 
 TPCE_DESC=			Enable building of the TPC-E tool
 TPCE_CMAKE_BOOL=		BUILD_TPCE
 
 VSS_CXXFLAGS=			-I${WRKSRC}/extension/vss/src/include # workaround for the header not being found
 
-post-extract: # remove the jemalloc extension directory just in case
+post-extract:
+	# remove the jemalloc extension directory just in case
 	@${RM} -r ${WRKSRC}/extension/jemalloc
+	# create symlink to Postgres sources for the postgres_scanner extension
+	@${LN} -s ${WRKDIR}/postgres-REL_15_13 ${WRKSRC}/extension/postgres_scanner/postgres
 
 post-patch: # remove cmake files of out-of-tree extensions to build them like in-tree extensions (avoid fetching from git)
 	@${RM} ${WRKSRC}/.github/config/extensions/*.cmake

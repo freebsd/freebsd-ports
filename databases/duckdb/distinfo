@@ -1,4 +1,6 @@
-TIMESTAMP = 1769491985
+TIMESTAMP = 1769753638
+SHA256 (REL_15_13.tar.gz) = e6d02d9da913ae9a4c528a5cfcbb2f29a5666b65ef4c06c533ce7ee77c5dd5ac
+SIZE (REL_15_13.tar.gz) = 25439632
 SHA256 (duckdb-duckdb-v1.4.4_GH0.tar.gz) = 43645e15419c6539bae6915ba397de6569e4a7ca0d502be95d653a78fdb0bece
 SIZE (duckdb-duckdb-v1.4.4_GH0.tar.gz) = 98344585
 SHA256 (duckdb-duckdb-encodings-b5a547ec74fad87698ed3142033d7b9cf86e0b2f_GH0.tar.gz) = cc331c6336c3ec95f3ed97040c89407dc7c2f68f7a02a3e679606dfe97dcf66e
@@ -11,6 +13,10 @@ SHA256 (duckdb-duckdb-httpfs-13f8a814d41a978c3f19eb1dc76069489652ea6f_GH0.tar.gz
 SIZE (duckdb-duckdb-httpfs-13f8a814d41a978c3f19eb1dc76069489652ea6f_GH0.tar.gz) = 105955
 SHA256 (duckdb-duckdb-inet-fe7f60bb60245197680fb07ecd1629a1dc3d91c8_GH0.tar.gz) = 7da5ce401ccfd9ff9809d14b4664c8c59d4e8c0adae5f2b47ee251dd70adf832
 SIZE (duckdb-duckdb-inet-fe7f60bb60245197680fb07ecd1629a1dc3d91c8_GH0.tar.gz) = 63831
+SHA256 (duckdb-duckdb-postgres-b9fce43bc5d36bc6db70844f28b7b146e756eb22_GH0.tar.gz) = 6a454405b93b6c9e1472c751f72585be7276197614495a8a3989cb8e60ffdbbe
+SIZE (duckdb-duckdb-postgres-b9fce43bc5d36bc6db70844f28b7b146e756eb22_GH0.tar.gz) = 259079
+SHA256 (duckdb-duckdb-mysql-35d1b2cd51800096271802cfedf68e13bf7fa8cb_GH0.tar.gz) = 942a3fcf3242155ac30509699778359a5c11c50c5e533b123b65e5e8631b399e
+SIZE (duckdb-duckdb-mysql-35d1b2cd51800096271802cfedf68e13bf7fa8cb_GH0.tar.gz) = 2130737
 SHA256 (duckdb-duckdb-spatial-f129b24b4ddd4d98cfc18f88be5a344a79040e7b_GH0.tar.gz) = cdeb3b4c5c88242cf0a93a06eb86ba2115ee7ef577d0738a90d6e6ef0f1b7117
 SIZE (duckdb-duckdb-spatial-f129b24b4ddd4d98cfc18f88be5a344a79040e7b_GH0.tar.gz) = 44439078
 SHA256 (duckdb-duckdb-sqlite-0c93d610af1e1f66292559fcf0f01a93597a98b6_GH0.tar.gz) = 9ee19b82d3bb931ba96c5afaab4d2bae9ca0e07717ada3bdd99be2225effdd70
