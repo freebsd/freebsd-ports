@@ -1,3 +1,29 @@
+  <vuln vid="232e16cc-fd83-11f0-981a-98b78501ef2a">
+    <topic>xrdp -- remote code execution</topic>
+    <affects>
+<package>
+<name>xrdp</name>
+<range><lt>0.10.5</lt></range>
+</package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Denis Skvortsov, Security Researcher at Kaspersky reports:</p>
+	<blockquote cite="https://github.com/neutrinolabs/xrdp/security/advisories/GHSA-rwvg-gp87-gh6f">
+	  <p>xrdp before v0.10.5 contains an unauthenticated stack-based buffer overflow vulnerability. The issue stems from improper bounds checking when processing user domain information during the connection sequence. If exploited, the vulnerability could allow remote attackers to execute arbitrary code on the target system.</p>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2025-68670</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2025-68670</url>
+    </references>
+    <dates>
+      <discovery>2025-12-06</discovery>
+      <entry>2026-01-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8173e68a-88f3-4862-882c-6e58779d98e7">
     <topic>zeek -- potential DoS vulnerability</topic>
     <affects>
