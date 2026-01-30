@@ -277,11 +277,10 @@ POSTGRES_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_postgres-config
 POSTGRES_USES=		pgsql
 POSTGRES_VARS=		DSO_EXTMODS+=postgres
 
-RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:6a90686:rdscsv
-RDS_CSV_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-rds-csv-nginx-module-config
+RDS_CSV_GH_TUPLE=	openresty:rds-csv-nginx-module:761b0e2:rdscsv
 RDS_CSV_VARS=		DSO_EXTMODS+=rdscsv
 
-RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:e6517b9:rdsjson
+RDS_JSON_GH_TUPLE=	openresty:rds-json-nginx-module:8af0517:rdsjson
 RDS_JSON_VARS=		DSO_EXTMODS+=rdsjson
 
 REDIS2_GH_TUPLE=	openresty:redis2-nginx-module:454c223:redis2
