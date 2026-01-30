@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.0
+DISTVERSION=	1.11.2
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -49,8 +49,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		castaway-0.2.4 \
 		cfg-if-1.0.4 \
 		cfg_aliases-0.2.1 \
-		clap-4.5.55 \
-		clap_builder-4.5.55 \
+		clap-4.5.56 \
+		clap_builder-4.5.56 \
 		clap_complete-4.5.65 \
 		clap_complete_nushell-4.5.10 \
 		clap_derive-4.5.55 \
@@ -317,8 +317,8 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		windows_x86_64_msvc-0.53.1 \
 		winsafe-0.0.19 \
 		wit-bindgen-0.51.0 \
-		zerocopy-0.8.34 \
-		zerocopy-derive-0.8.34
+		zerocopy-0.8.35 \
+		zerocopy-derive-0.8.35
 
 PLIST_FILES=	bin/sk
 
