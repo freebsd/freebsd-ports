@@ -19,7 +19,7 @@ GH_PROJECT=	octave-llms
 
 CXXFLAGS+=	-mpclmul -msse4.1
 
-BROKEN_arm64=	does not build
+IGNORE_arm64=	does not build
 
 OCTAVE_SRC=	${GH_PROJECT}-release-${DISTVERSION}
 
