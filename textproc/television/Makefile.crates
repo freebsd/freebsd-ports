@@ -153,8 +153,6 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		nom-7.1.3 \
 		nom-8.0.0 \
 		nu-ansi-term-0.50.3 \
-		nucleo-0.5.0 \
-		nucleo-matcher-0.3.1 \
 		num-conv-0.1.0 \
 		num-derive-0.4.2 \
 		num-traits-0.2.19 \
@@ -368,4 +366,5 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		wit-bindgen-0.46.0 \
 		zerocopy-0.8.30 \
 		zerocopy-derive-0.8.30 \
-		zeroize-1.8.2
+		zeroize-1.8.2 \
+		nucleo,nucleo-matcher@git+https://github.com/alexpasmantier/nucleo.git?branch=television\#4a5b53c7fa7abb8d777c49dc5850033ae108683e
