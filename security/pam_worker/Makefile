@@ -1,5 +1,6 @@
 PORTNAME=	pam_worker
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://fossil.nours.eu/${PORTNAME}/tarball/?r=${DISTVERSION}&name=./
 
@@ -9,7 +10,7 @@ WWW=		https://fossil.nours.eu/pam_worker
 
 LICENSE=	BSD2CLAUSE
 
-PLIST_FILES=	bin/${PORTNAME} \
+PLIST_FILES=	"@(root,wheel,2755) bin/${PORTNAME}" \
 		share/man/man8/${PORTNAME}.8.gz
 
 do-install:
