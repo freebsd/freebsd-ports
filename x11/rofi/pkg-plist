@@ -44,6 +44,7 @@ share/icons/hicolor/scalable/apps/rofi.svg
 %%DATADIR%%/themes/sidebar.rasi
 %%DATADIR%%/themes/solarized.rasi
 %%DATADIR%%/themes/solarized_alternate.rasi
+%%MANPAGES%%share/man/man5/rofi-actions.5.gz
 %%MANPAGES%%share/man/man1/rofi-sensible-terminal.1.gz
 %%MANPAGES%%share/man/man1/rofi-theme-selector.1.gz
 %%MANPAGES%%share/man/man1/rofi.1.gz
