@@ -1,9 +1,10 @@
 PORTNAME=	wireguard-tools
-PORTVERSION=	1.0.20250521
+DISTVERSION=	1.0.20250521
+PORTREVISION=	1
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-tools/snapshot/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	juhani@krekela.fi
 COMMENT=	Fast, modern and secure VPN Tunnel
 WWW=		https://git.zx2c4.com/wireguard-tools/about/
 
@@ -15,31 +16,25 @@ lite_PKGNAMESUFFIX=	-lite
 
 USES=		gmake tar:xz
 
+MAKE_ARGS+=	DEBUG=no WITH_BASHCOMPLETION=yes WITH_SYSTEMDUNITS=no
+MAKE_ENV+=	SYSCONFDIR="${PREFIX}/etc"
+
 WRKSRC_SUBDIR=	src
 
-MAKE_ARGS+=	DEBUG=no WITH_BASHCOMPLETION=yes WITH_SYSTEMDUNITS=no
-MAKE_ENV+=	MANDIR="${PREFIX}/share/man" \
-		SYSCONFDIR="${PREFIX}/etc"
-
-OPTIONS_DEFINE=	WGQUICK
-OPTIONS_DEFAULT=WGQUICK
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		WGQUICK
+OPTIONS_DEFAULT=	WGQUICK
+OPTIONS_SUB=		yes
 
 WGQUICK_DESC=		wg-quick(8) userland utility
 WGQUICK_RUN_DEPENDS=	bash:shells/bash
 WGQUICK_MAKE_ARGS=	WITH_WGQUICK=yes
 WGQUICK_MAKE_ARGS_OFF=	WITH_WGQUICK=no
+WGQUICK_VARS=		USE_RC_SUBR=wireguard_wgquick
 
 .if ${FLAVOR:U} == lite
-USE_RC_SUBR=	wireguard_lite
-OPTIONS_EXCLUDE=WGQUICK
-COMMENT+=	(lite flavor)
-.endif
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MWGQUICK}
-USE_RC_SUBR=	wireguard_wgquick
+COMMENT+=		(lite flavor)
+USE_RC_SUBR=		wireguard_lite
+OPTIONS_EXCLUDE=	WGQUICK
 .endif
 
 post-patch:
@@ -55,5 +50,8 @@ install-rc-script:
 		${INSTALL_SCRIPT} ${WRKDIR}/$${i} ${STAGEDIR}$${_prefix}/etc/rc.d/wireguard; \
 		${ECHO_CMD} "@(root,wheel,0755) $${_prefix}/etc/rc.d/wireguard" >> ${TMPPLIST}; \
 	done
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wg
 
 .include <bsd.port.mk>
