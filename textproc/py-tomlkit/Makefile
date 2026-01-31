@@ -1,5 +1,5 @@
 PORTNAME=	tomlkit
-PORTVERSION=	0.13.3
+PORTVERSION=	0.14.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/sdispater/tomlkit/releases/download/${PORTVERSION}/
