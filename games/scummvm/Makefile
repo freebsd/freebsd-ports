@@ -1,8 +1,7 @@
 PORTNAME=	scummvm
-DISTVERSION=	2.9.1
-PORTREVISION=	2
+DISTVERSION=	2026.1.0
 CATEGORIES=	games emulators
-MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Interpreter for several adventure games
@@ -32,6 +31,7 @@ CONFIGURE_ARGS=	--disable-alsa \
 		--disable-debug \
 		--disable-fluidlite \
 		--disable-gtk \
+		--disable-mpcdec \
 		--disable-nasm \
 		--disable-seq-midi \
 		--disable-tremor \
