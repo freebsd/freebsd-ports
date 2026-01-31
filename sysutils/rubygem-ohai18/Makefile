@@ -30,4 +30,6 @@ NO_ARCH=	yes
 
 PLIST_FILES=	bin/ohai
 
+PORTSCOUT=	limit:^18\.
+
 .include <bsd.port.mk>
