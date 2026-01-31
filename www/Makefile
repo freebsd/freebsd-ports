@@ -1876,6 +1876,7 @@
     SUBDIR += py-priority
     SUBDIR += py-priority1
     SUBDIR += py-protego
+    SUBDIR += py-proxy.py
     SUBDIR += py-proxy_tools
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
