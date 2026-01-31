@@ -1,0 +1,5 @@
+Apache DataFusion is an extensible query execution framework, written in Rust,
+that uses Apache Arrow as its in-memory format.
+
+DataFusion CLI (datafusion-cli) is a small command line utility that runs SQL
+queries using the DataFusion engine.
