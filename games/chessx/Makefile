@@ -1,5 +1,5 @@
 PORTNAME=	chessx
-DISTVERSION=	1.6.2
+DISTVERSION=	1.6.8
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -35,12 +35,6 @@ STOCKFISH_RUN_DEPENDS=	stockfish:games/stockfish
 
 post-extract:
 	@${MV} ${WRKDIR}/chessx-master ${WRKSRC}
-
-post-patch:
-.if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
-		${WRKSRC}/src/database/polyglotdatabase.cpp
-.endif
 
 post-configure:
 	( cd ${BUILD_WRKSRC} && ${LRELEASE} ${WRKSRC}/${PORTNAME}.pro )
