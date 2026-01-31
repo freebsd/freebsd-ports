@@ -1,6 +1,5 @@
 PORTNAME=	obs-studio
-DISTVERSION=	32.0.2
-PORTREVISION=	3
+DISTVERSION=	32.0.4
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/obsproject/obs-studio/releases/download/${DISTVERSION}/
 DISTFILES=	OBS-Studio-${DISTVERSION}-Sources${EXTRACT_SUFX}
@@ -65,6 +64,7 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DOBS_VERSION_OVERRIDE:STRING="${PORTVERSION}" \
 		-DQT_VERSION=6 \
 		-DPython_EXECUTABLE="${PYTHON_CMD}"
+CMAKE_OFF=	CMAKE_COMPILE_WARNING_AS_ERROR # no -Werror
 
 CFLAGS+=	-Wno-error=attribute-warning
 CFLAGS_powerpc64=	-Wno-error=deprecated-altivec-src-compat -Wno-error=pass-failed
