@@ -6252,6 +6252,7 @@
     SUBDIR += py-vulture
     SUBDIR += py-wadler-lindig
     SUBDIR += py-wadllib
+    SUBDIR += py-wait-for-it
     SUBDIR += py-wait-for2
     SUBDIR += py-warlock
     SUBDIR += py-watchdog
