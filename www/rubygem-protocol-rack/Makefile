@@ -1,5 +1,5 @@
 PORTNAME=	protocol-rack
-PORTVERSION=	0.19.0
+PORTVERSION=	0.21.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
 RUN_DEPENDS=	rubygem-io-stream>=0.10:devel/rubygem-io-stream \
-		rubygem-protocol-http>=0.43<1:www/rubygem-protocol-http \
+		rubygem-protocol-http>=0.58<1:www/rubygem-protocol-http \
 		rubygem-rack>=1.0,3:www/rubygem-rack
 
 USES=		gem
