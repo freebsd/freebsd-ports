@@ -17,7 +17,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	pr0m1th3as
 GH_PROJECT=	octave-llms
 
-CXXFLAGS+=	-mpclmul -msse4.1
+CXXFLAGS_amd64=	-mpclmul -msse4.1
+CXXFLAGS_i386=	-mpclmul -msse4.1
 
 IGNORE_arm64=	does not build
 
