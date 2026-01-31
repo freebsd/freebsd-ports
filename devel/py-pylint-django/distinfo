@@ -1,3 +1,3 @@
-TIMESTAMP = 1728922908
-SHA256 (pylint-django-2.6.1.tar.gz) = 19e8c85a8573a04e3de7be2ba91e9a7c818ebf05e1b617be2bbae67a906b725f
-SIZE (pylint-django-2.6.1.tar.gz) = 31970
+TIMESTAMP = 1768625691
+SHA256 (pylint-dev-pylint-django-v2.7.0_GH0.tar.gz) = c5834c555d18000a3542ac63aadbd0c2da46ceaf2a72069d674ffee19937ec7a
+SIZE (pylint-dev-pylint-django-v2.7.0_GH0.tar.gz) = 53629
