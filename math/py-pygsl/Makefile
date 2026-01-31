@@ -12,13 +12,13 @@ WWW=		https://github.com/pygsl/pygsl
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}meson-python>=0.17.1:devel/meson-python@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meson-python>=0:devel/meson-python@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		swig:devel/swig
 LIB_DEPENDS=	libgsl.so:math/gsl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		cmake:indirect python pkgconfig
+USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent pep517
 
 post-install:
