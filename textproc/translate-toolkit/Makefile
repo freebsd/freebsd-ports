@@ -1,6 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.17.5
-PORTREVISION=	1
+PORTVERSION=	3.18.1
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -23,7 +22,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unicode-segmentation-rs>=0.2.0<0.3:textproc/py-unicode-segmentation-rs@${PY_FLAVOR}
 
-USES=		gettext python shebangfix
+USES=		gettext python:3.11+ shebangfix
 USE_PYTHON=	autoplist noflavors pep517
 
 NO_ARCH=	yes
@@ -62,12 +61,12 @@ MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.4.0<1.6.0:textproc/py-
 MARKDOWN_VARS=		MANPAGES+="md2po po2md"
 PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.6<1.3:devel/py-phply@${PY_FLAVOR}
 PHP_VARS=		MANPAGES+="php2po po2php"
-RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0:devel/py-pyparsing@${PY_FLAVOR}
+RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.2.0<3.4:devel/py-pyparsing@${PY_FLAVOR}
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.3.0:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.14.1<1.16:textproc/py-aeidon@${PY_FLAVOR}
 TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=11.1.2:www/py-cheroot@${PY_FLAVOR}
-TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.14.0:textproc/py-tomlkit@${PY_FLAVOR}
+TOML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomlkit>=0.13.0<0.15.0:textproc/py-tomlkit@${PY_FLAVOR}
 TOML_VARS=		MANPAGES+="toml2po po2toml"
 TRADOS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.13.0:www/py-beautifulsoup@${PY_FLAVOR}
 YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.18.0<0.20.0:devel/py-ruamel.yaml@${PY_FLAVOR}
