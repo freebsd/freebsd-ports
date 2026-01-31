@@ -17,6 +17,9 @@ CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl111 openssl3
 
 BROKEN_i386=	ld: error: undefined symbol: __atomic_is_lock_free
 
+DEPRECATED=	Upstream project has been archived, use security/quictls
+EXPIRATION_DATE=2025-12-31
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
 CONFIGURE_ENV=	PERL="${PERL}"
@@ -34,8 +37,6 @@ LDFLAGS_i386=	-Wl,-znotext
 
 MAKE_ARGS+=	WHOLE_ARCHIVE_FLAG=--whole-archive CNF_LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	LIBRPATH="${PREFIX}/lib" GREP_OPTIONS=
-
-EXTRA_PATCHES+=	${.CURDIR}/../openssl/files/patch-crypto_async_arch_async__posix.h
 
 OPTIONS_GROUP=		CIPHERS HASHES MODULES OPTIMIZE PROTOCOLS
 OPTIONS_GROUP_CIPHERS=	ARIA DES GOST IDEA SM4 RC2 RC4 RC5 WEAK-SSL-CIPHERS
