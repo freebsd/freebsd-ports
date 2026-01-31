@@ -1,5 +1,5 @@
 PORTNAME=	gettext_i18n_rails_js
-PORTVERSION=	3.0.0
+PORTVERSION=	3.1.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails52
@@ -21,6 +21,7 @@ USES=		gem
 NO_ARCH=	yes
 
 post-patch:
+# Clean up bundled libraries
 	@${RM} -r ${WRKSRC}/vendor/bundle/
 
 .include <bsd.port.mk>
