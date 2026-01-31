@@ -4801,6 +4801,7 @@
     SUBDIR += py-datrie
     SUBDIR += py-dbt-extractor
     SUBDIR += py-dbus
+    SUBDIR += py-dbus-deviation
     SUBDIR += py-ddsketch
     SUBDIR += py-ddt
     SUBDIR += py-ddtrace

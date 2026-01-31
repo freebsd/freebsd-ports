@@ -1,0 +1,7 @@
+dbus-deviation is a project for parsing D-Bus introspection XML and processing
+it in various ways. Its main tool is dbus-interface-diff, which calculates the
+difference between two D-Bus APIs for the purpose of checking for API breaks.
+This functionality is also available as a Python module, dbusdeviation.
+
+A second Python module, dbusapi, is provided for parsing D-Bus introspection XML
+to produce an AST representing a D-Bus interface.
