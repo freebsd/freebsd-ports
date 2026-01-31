@@ -1,7 +1,7 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	Compose
 
-COMMENT?=	AppStream Compose application and library
+COMMENT=	AppStream Compose application and library
 
 LIB_DEPENDS=	libappstream.so:devel/appstream \
 		libfyaml.so:textproc/libfyaml

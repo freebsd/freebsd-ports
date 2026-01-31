@@ -1,7 +1,7 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	Qt6
 
-COMMENT?=	Qt bindings to AppStream
+COMMENT=	Qt bindings to AppStream
 
 LIB_DEPENDS=	libappstream.so:devel/appstream
 

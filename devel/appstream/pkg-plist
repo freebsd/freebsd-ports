@@ -41,10 +41,11 @@ include/appstream/as-version.h
 include/appstream/as-video.h
 lib/girepository-1.0/AppStream-1.0.typelib
 lib/libappstream.so
-lib/libappstream.so.1.1.1
+lib/libappstream.so.1.1.2
 lib/libappstream.so.5
 libdata/pkgconfig/appstream.pc
 share/appstream/appstream.conf
+share/bash-completion/completions/appstreamcli
 share/gettext/its/metainfo.its
 share/gettext/its/metainfo.loc
 share/gir-1.0/AppStream-1.0.gir
@@ -78,6 +79,7 @@ share/locale/it/LC_MESSAGES/appstream.mo
 share/locale/ja/LC_MESSAGES/appstream.mo
 share/locale/ka/LC_MESSAGES/appstream.mo
 share/locale/ko/LC_MESSAGES/appstream.mo
+share/locale/kw/LC_MESSAGES/appstream.mo
 share/locale/lt/LC_MESSAGES/appstream.mo
 share/locale/nb/LC_MESSAGES/appstream.mo
 share/locale/nl/LC_MESSAGES/appstream.mo
