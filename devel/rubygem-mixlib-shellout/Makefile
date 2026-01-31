@@ -4,8 +4,9 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Shell interface that also collects stdout and stderr
-WWW=		https://www.chef.io/
+COMMENT=	Run external commands on Unix or Windows
+WWW=		https://www.chef.io/ \
+		https://github.com/chef/mixlib-shellout
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
