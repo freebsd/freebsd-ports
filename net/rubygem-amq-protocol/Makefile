@@ -1,5 +1,5 @@
 PORTNAME=	amq-protocol
-PORTVERSION=	2.3.4
+PORTVERSION=	2.5.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gem python:env shebangfix
 
 NO_ARCH=	yes
+
+PLIST_FILES=	${GEM_LIB_DIR}/CLAUDE.md \
+		${GEM_LIB_DIR}/GEMINI.md
 
 SHEBANG_FILES=	codegen/codegen.py
 
