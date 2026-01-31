@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=		Upstream EOL reaches on 2025-04-15, use emulators/virtualbox-ose${PKGNAMESUFFIX:S|0|2|} instead
 EXPIRATION_DATE=	2026-12-31
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	yasm:devel/yasm \
 		kmk:devel/kBuild \
@@ -111,6 +111,7 @@ post-patch:
 .if ${COMPILER_TYPE} == clang
 	@${REINPLACE_CMD} -e 's| -finline-limit=8000||' \
 	    -e 's| -fno-merge-constants||' \
+	    -e 's| -mno-align-long-strings||' \
 	    -e 's| -mpreferred-stack-boundary=2||' ${WRKSRC}/Config.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
