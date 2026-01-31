@@ -5094,3 +5094,4 @@ www/bareos22-webui||2026-01-29|Has expired: not supported upstream
 sysutils/bareos22-client||2026-01-29|Has expired: not supported upstream
 sysutils/bareos22-traymonitor||2026-01-29|Has expired: not supported upstream
 sysutils/bareos22-server||2026-01-29|Has expired: not supported upstream
+multimedia/decord||2026-01-31|Doesn't build with ffmpeg>6; upstream is inactive for 4 years
