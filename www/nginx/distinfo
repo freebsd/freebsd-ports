@@ -1,4 +1,4 @@
-TIMESTAMP = 1767729194
+TIMESTAMP = 1769849746
 SHA256 (nginx-1.28.0.tar.gz) = c6b5c6b086c0df9d3ca3ff5e084c1d0ef909e6038279c71c1c3e985f576ff76a
 SIZE (nginx-1.28.0.tar.gz) = 1280111
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -103,8 +103,8 @@ SHA256 (wargio-naxsi-1.6_GH0.tar.gz) = e5920fdd09cae155b89eb21a94a21c029ebfdb056
 SIZE (wargio-naxsi-1.6_GH0.tar.gz) = 1116227
 SHA256 (libinjection-libinjection-4aa3894_GH0.tar.gz) = ededea133e89e238ef2e60d0d62ef7ef9e741449eed8c5d856007132505bcd5b
 SIZE (libinjection-libinjection-4aa3894_GH0.tar.gz) = 2218294
-SHA256 (nginx-njs-0.9.4_GH0.tar.gz) = 7b3a9f14b0f09311d9031c2a252cb0e23c06baac2e586a7d12c75aa6cba4ca0e
-SIZE (nginx-njs-0.9.4_GH0.tar.gz) = 939082
+SHA256 (nginx-njs-0.9.5_GH0.tar.gz) = 351a857abfd48c1e5e9c5d01bea046f3cbd2aa1c8ba956703920a5d57e046d7a
+SIZE (nginx-njs-0.9.5_GH0.tar.gz) = 947532
 SHA256 (osokin-nginx-otel-51273ec_GH0.tar.gz) = a2107ba0be94c8561ae50773163c7946a58e508be46920f588d05a347c867d9c
 SIZE (osokin-nginx-otel-51273ec_GH0.tar.gz) = 28076
 SHA256 (konstruxi-ngx_postgres-8aa7359_GH0.tar.gz) = c69ad4495de7c7883ebc23e1e6c4cc83a4ac6a7fddd4d5c12e49d33b65f7c50b
