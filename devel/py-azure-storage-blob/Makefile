@@ -1,21 +1,27 @@
 PORTNAME=	azure-storage-blob
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	12.28.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	azure_storage_blob-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Microsoft Azure Storage Blob Client Library for Python
-WWW=		https://pypi.org/project/azure-storage-blob/
+COMMENT=	Microsoft Azure Blob Storage Client Library for Python
+WWW=		https://azure.github.io/azure-sdk-for-python/ \
+		https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/storage/azure-storage-blob \
+		https://github.com/Azure/azure-sdk-for-python
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=1.1.5:www/py-azure-common@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-storage-common>=2.1:devel/py-azure-storage-common@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.30.0:devel/py-azure-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}isodate>=0.6.1:devel/py-isodate@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.6.0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		azurepy python
-USE_PYTHON=	autoplist concurrent distutils
+USES=		python
+USE_PYTHON=	autoplist concurrent cryptography pep517
 
 NO_ARCH=	yes
 
