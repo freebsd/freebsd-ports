@@ -1,6 +1,6 @@
-TIMESTAMP = 1769511997
-SHA256 (zensical-0.0.19.tar.gz) = c42410fa3f6738e22238637c74cba00880f59db46e3e9394f544e887c72ee4b6
-SIZE (zensical-0.0.19.tar.gz) = 3819713
+TIMESTAMP = 1769786532
+SHA256 (zensical-0.0.20.tar.gz) = 95e9e974a68b4eea96a365b3547f399ad22f6906848796e5667288c14bb62549
+SIZE (zensical-0.0.20.tar.gz) = 3819740
 SHA256 (rust/crates/ahash-0.8.12.crate) = 5a15f179cd60c4584b8a8c596927aadc462e27f2ca70c04e0071964a73ba7a75
 SIZE (rust/crates/ahash-0.8.12.crate) = 43413
 SHA256 (rust/crates/aho-corasick-1.1.4.crate) = ddd31a130427c27518df266943a5308ed92d4b226cc639f5a8f1002816174301
