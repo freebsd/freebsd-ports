@@ -1,5 +1,5 @@
 PORTNAME=	actionview
-PORTVERSION=	7.2.2.2
+PORTVERSION=	7.2.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	72
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-activesupport72>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport72 \
 		rubygem-builder>=3.1<4:devel/rubygem-builder \
+		rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-erubi>=1.11<2:www/rubygem-erubi \
 		rubygem-rails-dom-testing-rails72>=2.2<3:textproc/rubygem-rails-dom-testing-rails72 \
 		rubygem-rails-html-sanitizer>=1.6<2:textproc/rubygem-rails-html-sanitizer
