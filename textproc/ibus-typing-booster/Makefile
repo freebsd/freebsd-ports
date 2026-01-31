@@ -1,5 +1,5 @@
 PORTNAME=	ibus-typing-booster
-PORTVERSION=	2.29.0
+PORTVERSION=	2.30.2
 CATEGORIES=	textproc
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -53,6 +53,7 @@ GLIB_SCHEMAS=	org.freedesktop.ibus.engine.typing-booster.gschema.xml
 TEST_TARGET=	check
 TEST_ENV=	${MAKE_ENV} \
 		IBUS_TYPING_BOOSTER_DEBUG_LEVEL=1
+TESTING_UNSAFE=	yes
 
 OPTIONS_DEFINE=	HUNSPELL
 OPTIONS_DEFAULT=HUNSPELL
