@@ -1,7 +1,8 @@
 PORTNAME=	flatbuffers
-PORTVERSION=	25.9.23
+PORTVERSION=	25.12.19
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,8 +20,12 @@ USES=		cpe python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+WRKSRC_SUBDIR=	python
 
 CPE_VENDOR=	google
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	google
 
 OPTIONS_DEFINE=	NUMPY
 NUMPY_DESC=	Support scalar vectors as numpy arrays
