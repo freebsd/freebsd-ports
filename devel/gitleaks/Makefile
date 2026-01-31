@@ -1,7 +1,7 @@
 PORTNAME=	gitleaks
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.30.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ GH_TUPLE=	golang:sys:v0.6.0:sys
 
 GO_MODULE=	github.com/zricethezav/gitleaks/v8
 GO_TARGET=	.
-GO_BUILDFLAGS=	-ldflags="-X github.com/zricethezav/gitleaks/v8/cmd.Version=${DISTVERSION}"
+GO_BUILDFLAGS=	-ldflags "-X github.com/zricethezav/gitleaks/v8/version.Version=v${DISTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
