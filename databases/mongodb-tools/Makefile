@@ -1,6 +1,5 @@
 PORTNAME=	mongodb-tools
-DISTVERSION=	100.13.0
-PORTREVISION=	3
+DISTVERSION=	100.14.1
 CATEGORIES=	databases
 
 MAINTAINER=	ronald@FreeBSD.org
@@ -22,8 +21,6 @@ GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 # MAKE_ENV instead of TEST_ENV in the do-test target.
 # https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=284387
 MAKE_ENV+=		TOOLS_TESTING_UNIT=true
-
-NO_TEST=	yes # tests fail when go.mod does not match go pkg version
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	BSONDUMP MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \
