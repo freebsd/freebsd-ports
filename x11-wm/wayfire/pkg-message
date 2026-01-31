@@ -1,6 +1,14 @@
 [
 { type: install
   message: <<EOM
+Default Wayfire configuration expects packages below to be installed.
+However, they can be replaced with your preferred apps:
+- alacritty (default terminal)
+- wofi (app launcher)
+- swaylock (screen locker)
+- wlogout (for logging out)
+- grim & slurp (for screenshots)
+
 Additional packages recommended for new users:
 - wf-shell (default background/launcher/panel)
 - wcm (GUI settings)
