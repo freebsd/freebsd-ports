@@ -1,0 +1,12 @@
+--- pyproject.toml.orig	2025-12-13 14:11:05 UTC
++++ pyproject.toml
+@@ -11,8 +11,7 @@ requires-python = ">=3.10"
+ description = "A lightweight template library"
+ readme = { file = "README.md", content-type = "text/markdown" }
+ requires-python = ">=3.10"
+-license = "MIT"
+-license-files = ["LICENSE"]
++license = { text = "MIT" }
+ authors = [
+   { name = "Andriy Kornatskyy", email = "andriy.kornatskyy@live.com" },
+ ]

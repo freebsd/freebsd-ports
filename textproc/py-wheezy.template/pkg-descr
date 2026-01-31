@@ -1,0 +1,14 @@
+wheezy.template is a python package written in pure Python code. It is a
+lightweight template library. The design goals achieved:
+- Compact, Expressive, Clean: Minimizes the number of keystrokes required to
+  build a template. Enables fast and well read coding. You do not need to
+  explicitly denote statement blocks within HTML (unlike other template
+  systems), the parser is smart enough to understand your code. This enables a
+  compact and expressive syntax which is really clean and just pleasure to type.
+- Intuitive, No time to Learn: Basic Python programming skills plus HTML markup.
+  You are productive just from start. Use full power of Python with minimal
+  markup required to denote python statements.
+- Do Not Repeat Yourself: Master layout templates for inheritance; include and
+  import directives for maximum reuse.
+- Blazingly Fast: Maximum rendering performance: ultimate speed and context
+  preprocessor features.
