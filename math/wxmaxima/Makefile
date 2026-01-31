@@ -1,6 +1,7 @@
 PORTNAME=	wxmaxima
 DISTVERSIONPREFIX=	Version-
 DISTVERSION=	25.04.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	math
 
@@ -17,7 +18,7 @@ USES=		cmake compiler:c++14-lang desktop-file-utils shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	wxMaxima-Developers
 
-USE_WX=		3.0
+USE_WX=		3.2
 WX_COMPS=	wx
 WX_CONF_ARGS=	absolute
 
