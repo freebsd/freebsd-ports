@@ -1,4 +1,4 @@
---- pyproject.toml.orig	2025-11-27 06:34:00 UTC
+--- pyproject.toml.orig	2026-01-13 17:09:13 UTC
 +++ pyproject.toml
 @@ -1,6 +1,6 @@
  [build-system]
@@ -8,10 +8,10 @@
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -60,7 +60,7 @@ There are also [optional extras available](https://hyp
+@@ -12,7 +12,7 @@ description = "The property-based testing library for 
+ ]
+ description = "The property-based testing library for Python"
  
- There are also [optional extras available](https://hypothesis.readthedocs.io/en/latest/extras.html).
- """, "content-type" = "text/markdown"}
 -license = "MPL-2.0"
 +license = { text = "MPL-2.0" }
  requires-python = ">= 3.10"
