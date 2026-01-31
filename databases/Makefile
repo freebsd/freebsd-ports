@@ -891,6 +891,7 @@
     SUBDIR += qt5-sqldrivers-tds
     SUBDIR += qt6-base_sqldriver
     SUBDIR += quake
+    SUBDIR += rainfrog
     SUBDIR += recutils
     SUBDIR += redis
     SUBDIR += redis-devel
