@@ -5094,3 +5094,4 @@ sysutils/bareos22-traymonitor||2026-01-29|Has expired: not supported upstream
 sysutils/bareos22-server||2026-01-29|Has expired: not supported upstream
 multimedia/decord||2026-01-31|Doesn't build with ffmpeg>6; upstream is inactive for 4 years
 x11/rofi-wayland|x11/rofi|2026-01-31|Wayland bits are now part of the main port
+multimedia/py-decord||2026-01-31|Python bindings of multimedia/decord that was removed

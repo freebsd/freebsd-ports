@@ -298,7 +298,6 @@
     SUBDIR += pwcview
     SUBDIR += py-av
     SUBDIR += py-cec
-    SUBDIR += py-decord
     SUBDIR += py-enzyme
     SUBDIR += py-gstreamer1
     SUBDIR += py-guessit
