@@ -122,6 +122,7 @@ sbin/auto-ldap-client-setup
 sbin/auto-ldap-lookup
 sbin/auto-lock-local-pw
 sbin/auto-lock-user
+sbin/auto-ly-enable
 sbin/auto-mark-install-from-source
 sbin/auto-mark-package-critical
 sbin/auto-mount-any
