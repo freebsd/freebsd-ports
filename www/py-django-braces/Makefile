@@ -1,13 +1,14 @@
 PORTNAME=	django-braces
-PORTVERSION=	1.15.0
-PORTREVISION=	3
+PORTVERSION=	1.17.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_braces-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reusable, generic mixins for Django
-WWW=		https://github.com/brack3t/django-braces
+WWW=		https://django-braces.readthedocs.io/en/latest/ \
+		https://github.com/brack3t/django-braces
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
