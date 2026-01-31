@@ -67,7 +67,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.1 \
 		cfg_aliases-0.2.1 \
-		chrono-0.4.42 \
+		chrono-0.4.43 \
 		ciborium-0.2.2 \
 		ciborium-io-0.2.2 \
 		ciborium-ll-0.2.2 \
@@ -258,7 +258,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		ident_case-1.0.1 \
 		idna-1.0.3 \
 		idna_adapter-1.2.1 \
-		indexmap-2.12.1 \
+		indexmap-2.13.0 \
 		ipnet-2.11.0 \
 		iri-string-0.7.8 \
 		is-docker-0.2.0 \
@@ -416,6 +416,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		rustls-pki-types-1.13.0 \
 		rustls-webpki-0.103.8 \
 		rustversion-1.0.21 \
+		ruzstd-0.8.2 \
 		ryu-1.0.20 \
 		safetensors-0.4.5 \
 		safetensors-0.6.2 \
@@ -429,7 +430,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		serde_bytes-0.11.19 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_json-1.0.148 \
+		serde_json-1.0.149 \
 		serde_repr-0.1.20 \
 		serde_spanned-0.6.9 \
 		serde_spanned-1.0.0 \
@@ -462,6 +463,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		sysctl-0.5.5 \
 		sysctl-0.6.0 \
 		sysinfo-0.36.1 \
+		sysinfo-0.37.2 \
 		tar-0.4.44 \
 		tempfile-3.20.0 \
 		tendril-0.4.3 \
@@ -469,9 +471,9 @@ CARGO_CRATES=	adler2-2.0.1 \
 		text_placeholder-0.5.1 \
 		thin-vec-0.2.14 \
 		thiserror-1.0.69 \
-		thiserror-2.0.17 \
+		thiserror-2.0.18 \
 		thiserror-impl-1.0.69 \
-		thiserror-impl-2.0.17 \
+		thiserror-impl-2.0.18 \
 		thread-tree-0.3.3 \
 		thread_local-1.1.9 \
 		time-0.3.41 \
@@ -542,12 +544,13 @@ CARGO_CRATES=	adler2-2.0.1 \
 		tree-sitter-typescript-0.23.2 \
 		trie-rs-0.4.2 \
 		try-lock-0.2.5 \
+		twox-hash-2.1.2 \
 		type-map-0.5.1 \
 		typed-arena-2.0.2 \
 		typenum-1.19.0 \
-		typst-syntax-0.13.1 \
-		typst-timing-0.13.1 \
-		typst-utils-0.13.1 \
+		typst-syntax-0.14.2 \
+		typst-timing-0.14.2 \
+		typst-utils-0.14.2 \
 		ug-0.4.0 \
 		unicase-2.8.1 \
 		unicode-blocks-0.1.9 \
@@ -656,4 +659,7 @@ CARGO_CRATES=	adler2-2.0.1 \
 		zerovec-0.11.2 \
 		zerovec-derive-0.11.1 \
 		zip-1.1.4 \
-		zmij-1.0.2
+		zmij-1.0.2 \
+		zstd-0.13.3 \
+		zstd-safe-7.2.4 \
+		zstd-sys-2.0.16+zstd.1.5.7
