@@ -288,4 +288,4 @@ share/locale/uk/LC_MESSAGES/lollypop.mo
 share/locale/zh_CN/LC_MESSAGES/lollypop.mo
 share/locale/zh_Hant/LC_MESSAGES/lollypop.mo
 %%DATADIR%%/lollypop.gresource
-share/metainfo/org.gnome.Lollypop.appdata.xml
+share/metainfo/org.gnome.Lollypop.metainfo.xml
