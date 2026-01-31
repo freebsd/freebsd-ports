@@ -1,5 +1,6 @@
 PORTNAME=	gemini-cli
 DISTVERSION=	0.25.2
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,6 +13,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	npm:www/npm
 FETCH_DEPENDS=	npm:www/npm
+RUN_DEPENDS=	bash:shells/bash
 
 USES=		nodejs:build,run python:build
 
