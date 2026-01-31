@@ -7394,11 +7394,11 @@
     SUBDIR += rubygem-fcntl
     SUBDIR += rubygem-ffaker
     SUBDIR += rubygem-ffi
-    SUBDIR += rubygem-ffi16
     SUBDIR += rubygem-ffi-compiler
     SUBDIR += rubygem-ffi-libarchive
     SUBDIR += rubygem-ffi-win32-extensions
     SUBDIR += rubygem-ffi-yajl
+    SUBDIR += rubygem-ffi16
     SUBDIR += rubygem-fiber-annotation
     SUBDIR += rubygem-fiber-local
     SUBDIR += rubygem-fiber-storage
@@ -7556,8 +7556,8 @@
     SUBDIR += rubygem-hashdiff
     SUBDIR += rubygem-hashery
     SUBDIR += rubygem-hashie
-    SUBDIR += rubygem-hashie-gitlab
     SUBDIR += rubygem-hashie-forbidden_attributes
+    SUBDIR += rubygem-hashie-gitlab
     SUBDIR += rubygem-health_check
     SUBDIR += rubygem-health_check-rails-gitlab
     SUBDIR += rubygem-health_check-rails70
@@ -8441,8 +8441,8 @@
     SUBDIR += tcl-memchan
     SUBDIR += tcl-mmap
     SUBDIR += tcl-signal
-    SUBDIR += tcl-trf
     SUBDIR += tcl-thread
+    SUBDIR += tcl-trf
     SUBDIR += tclap
     SUBDIR += tclap12
     SUBDIR += tclbsd
