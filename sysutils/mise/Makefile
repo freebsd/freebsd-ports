@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_armv7=	compilation fails: LLVM ERROR: out of memory
 
-BUILD_DEPENDS=	rust-nightly>0:lang/rust-nightly # because feature `edition2024` is required
 BUILD_DEPENDS+=	${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/libclang.so:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2 \
@@ -25,7 +24,6 @@ USES=		cargo localbase:ldflags pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdx
 
-CARGO_BUILDDEP=	no
 CARGO_CRATES=	addr2line-0.25.1 \
 		adler2-2.0.1 \
 		aead-0.5.2 \
