@@ -1,5 +1,5 @@
 PORTNAME=	xdg
-PORTVERSION=	9.5.0
+PORTVERSION=	10.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,7 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror
 
 BROKEN_RUBY32=	yes
 BROKEN_RUBY33=	yes
+BROKEN_RUBY34=	yes
 
 USES=		gem
 
