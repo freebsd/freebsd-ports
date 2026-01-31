@@ -1,6 +1,7 @@
 PORTNAME=	powershell
 DISTVERSIONPREFIX=v
 DISTVERSION=	7.5.4
+PORTREVISION=	1
 CATEGORIES=	shells
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -187,6 +188,7 @@ do-build:
 do-install:
 	${CP} -r ${WRKSRC}/src/powershell-unix/bin/publish \
 		${STAGEDIR}${PREFIX}/lib/powershell
+	${RLN} ${STAGEDIR}${PREFIX}/lib/powershell ${STAGEDIR}${PREFIX}/lib/powershell/ref
 	${LN} -s ../lib/powershell/pwsh ${STAGEDIR}${PREFIX}/bin
 
 post-install:
