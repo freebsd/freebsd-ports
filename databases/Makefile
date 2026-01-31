@@ -778,6 +778,7 @@
     SUBDIR += py-gdbm
     SUBDIR += py-geoalchemy2
     SUBDIR += py-harlequin
+    SUBDIR += py-harlequin-mysql
     SUBDIR += py-hiredis
     SUBDIR += py-influxdb
     SUBDIR += py-kyotocabinet
