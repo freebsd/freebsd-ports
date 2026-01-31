@@ -1,6 +1,5 @@
 PORTNAME=	chef
-PORTVERSION=	18.8.54
-PORTREVISION=	3
+PORTVERSION=	18.9.4
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -12,14 +11,13 @@ WWW=		https://www.chef.io/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport71>=4.2.7.1<7.1.5.2_99:devel/rubygem-activesupport71 \
-		rubygem-addressable>=0:www/rubygem-addressable \
+RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-aws-sdk-s3>=1.91<2:devel/rubygem-aws-sdk-s3 \
 		rubygem-aws-sdk-secretsmanager>=1.46<2:devel/rubygem-aws-sdk-secretsmanager \
 		rubygem-chef-config>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-config \
 		rubygem-chef-utils>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils \
 		rubygem-chef-vault>=0:sysutils/rubygem-chef-vault \
-		rubygem-chef-zero>=15.0.21:sysutils/rubygem-chef-zero \
+		rubygem-chef-zero>=15.0.21<15.2:sysutils/rubygem-chef-zero \
 		rubygem-corefoundation>=0.3.4<0.4:devel/rubygem-corefoundation \
 		rubygem-diff-lcs>=1.2.4:textproc/rubygem-diff-lcs \
 		rubygem-erubis>=2.7<3:www/rubygem-erubis \
