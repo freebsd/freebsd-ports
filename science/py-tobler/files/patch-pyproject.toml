@@ -1,0 +1,23 @@
+--- pyproject.toml.orig	2026-01-03 22:57:33 UTC
++++ pyproject.toml
+@@ -33,11 +33,11 @@ dependencies = [
+     "geopandas>=1.0",
+     "joblib>=1.4",
+     "libpysal>=4.10",
+-    "numpy>=2.0",
++    "numpy>=0",
+     "pandas>=2.2",
+     "rasterio>=1.4",
+     "rasterstats>=0.20",
+-    "scipy>=1.13",
++    "scipy>=1.11",
+     "statsmodels>=0.14",
+     "tqdm>=4.67",
+ ]
+@@ -124,4 +124,4 @@ filterwarnings = [
+     "ignore:The 'shapely.geos' module is deprecated*:DeprecationWarning",
+     # thrown in testing and can be ignored -- user's responsibility to ensure CRS
+     "ignore:Geometry is in a geographic CRS*:UserWarning",
+-]
+\ No newline at end of file
++]
