@@ -1,5 +1,5 @@
 PORTNAME=	harfbuzz
-DISTVERSION=	12.3.0
+DISTVERSION=	12.3.2
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
@@ -25,7 +25,7 @@ MESON_ARGS=	-Dgraphite2=enabled \
 		-Dchafa=disabled \
 		-Dtests=disabled
 
-PLIST_SUB+=	LIBVER=0.61230.0
+PLIST_SUB+=	LIBVER=0.61232.0
 
 HARFBUZZ_SLAVE?=	no
 
