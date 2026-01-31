@@ -1,6 +1,5 @@
 PORTNAME=	libfyaml
-DISTVERSION=	0.9
-PORTREVISION=	1
+DISTVERSION=	0.9.3
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/pantoniou/libfyaml/releases/download/v${DISTVERSION}/
 
@@ -20,13 +19,12 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	test/testemitter.test
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 INSTALL_TARGET=	install-strip
 
-TEST_TARGET=	check # one test fails, see https://github.com/pantoniou/libfyaml/issues/103
+TEST_TARGET=	check
 
 post-patch:
-	@${GREP} -rl "#include <alloca\\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -E "s|#include <alloca\\.h>|#include <stdlib.h>|"
+	${GREP} -rl "#include <alloca\\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -E "s|#include <alloca\\.h>|#include <stdlib.h>|"
 
 .include <bsd.port.mk>
