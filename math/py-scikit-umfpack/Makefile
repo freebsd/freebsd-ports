@@ -1,6 +1,5 @@
 PORTNAME=	scikit-umfpack
-DISTVERSION=	0.4.1
-PORTREVISION=	4
+DISTVERSION=	0.4.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,12 +25,11 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
 USES=		fortran localbase:ldflags python
-USE_PYTHON=	pep517 cython autoplist pytest # tests fail, see https://github.com/scikit-umfpack/scikit-umfpack/issues/77
+USE_PYTHON=	pep517 cython3 autoplist pytest
+PEP517_BUILD_CONFIG_SETTING=	"-Cbuild-dir=_build"
 
 CFLAGS+=	-I/usr/local/include/suitesparse
 CXXFLAGS+=	-I/usr/local/include/suitesparse
-
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -39,6 +37,9 @@ post-patch:
 		${WRKSRC}/scikits/umfpack/meson.build
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/scikits/umfpack/__umfpack${PYTHON_TAG}.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/scikits/umfpack/__umfpack${PYTHON_SOABI}.so
+
+pre-test:
+	${CP} -a ${WRKSRC}/_build/ ${WRKSRC}
 
 .include <bsd.port.mk>
