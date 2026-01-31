@@ -1,6 +1,6 @@
 PORTNAME=	lizzie
 DISTVERSION=	0.6-105
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONSUFFIX=	-gd0e7040
 CATEGORIES=	games java
 
@@ -17,6 +17,7 @@ RUN_DEPENDS=	leelaz:games/leela-zero
 USES=		java
 USE_GITHUB=	yes
 GH_ACCOUNT=	featurecat
+JAVA_VERSION=	8 # because of Bug 292662 - games/lizzie: does not build with jdk11+
 
 NO_ARCH=	yes
 
