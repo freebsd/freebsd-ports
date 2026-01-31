@@ -280,6 +280,7 @@ lib/virtualbox/VBoxTraceLogDecoders.so
 lib/virtualbox/VBoxVMM.so
 lib/virtualbox/VBoxVMMArm.so
 lib/virtualbox/VBoxVMMPreload.so
+lib/virtualbox/VBoxVRDP.so
 lib/virtualbox/VBoxXPCOM.so
 lib/virtualbox/VBoxXPCOMC.so
 lib/virtualbox/VBoxXPCOMIPCD.so

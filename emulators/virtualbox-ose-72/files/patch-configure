@@ -1,6 +1,6 @@
---- configure.orig	2025-08-13 19:37:05 UTC
+--- configure.orig	2026-01-27 12:44:16 UTC
 +++ configure
-@@ -155,10 +155,14 @@ if [ "$OS" = "freebsd" ]; then
+@@ -156,10 +156,14 @@ if [ "$OS" = "freebsd" ]; then
  if [ "$OS" = "freebsd" ]; then
    INCCURL="-I/usr/local/include"
    LIBCURL="-L/usr/local/lib -lcurl"
@@ -15,17 +15,17 @@
  else
    INCCURL=""
    LIBCURL="-lcurl"
-@@ -1171,6 +1175,9 @@ extern "C" int main(int argc, char** argv)
+@@ -1172,6 +1176,9 @@ extern "C" int main(int argc, char** argv)
    printf("found version %d.%d.%d",
           SDL_MAJOR_VERSION, SDL_MINOR_VERSION, SDL_PATCHLEVEL);
- #if SDL_VERSION_ATLEAST(1,2,7)
+ #if SDL_VERSION_ATLEAST(1,2,15)
 +#if !defined(SDL_VIDEO_DRIVER_X11)
 +#error SDL must be compiled with X11 support
 +#endif
    printf(", OK.\n");
    return 0;
  #else
-@@ -1255,7 +1262,7 @@ EOF
+@@ -1256,7 +1263,7 @@ EOF
  #endif
  }
  EOF
@@ -34,7 +34,7 @@
      test_execute
    fi
  }
-@@ -1559,6 +1566,7 @@ EOF
+@@ -1560,6 +1567,7 @@ EOF
          SDKQT6=$PATH_SDK_QT6
        fi
        FLGQT6="-framework QtCore -std=c++17 -Wl,-rpath,`L_to_PATH "$LIBQT6"`"
@@ -42,7 +42,7 @@
      else
        log_failure "Qt6 framework not found (can be disabled using --disable-qt)"
        fail
-@@ -2125,8 +2133,8 @@ EOF
+@@ -2127,8 +2135,8 @@ EOF
          echo "compiling the following source file:" >> $LOG
          cat $ODIR.tmp_src.cc >> $LOG
          echo "using the following command line:" >> $LOG
@@ -53,7 +53,7 @@
          if [ $? -eq 0 ]; then
            found=1
            break
-@@ -2246,7 +2254,7 @@ check_gsoap()
+@@ -2262,7 +2270,7 @@ check_gsoap()
          else
            cnf_append "VBOX_GSOAP_CXX_SOURCES" ""
          fi
@@ -62,7 +62,7 @@
          gsoap_version=`pkg-config gsoapssl++ --modversion`
          log_success "found version $gsoap_version"
          return
-@@ -2619,7 +2627,7 @@ for option in "$@"; do
+@@ -2637,7 +2645,7 @@ for option in "$@"; do
      --with-openssl-dir=*)
        OPENSSLDIR=`echo $option | cut -d'=' -f2`
        INCCRYPTO="-I${OPENSSLDIR}/include"
@@ -71,8 +71,8 @@
        # On Darwin (at least for macports) static OpenSSL also needs zlib.
        [ "$OS" = "darwin" ] && LIBCRYPTO="$LIBCRYPTO ${OPENSSLDIR}/lib/libz.a"
        # On Linux static OpenSSL typically needs a few additional libraries.
-@@ -2978,12 +2986,22 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
-   [ $WITH_JAVA   -eq 1 ] && check_java
+@@ -3000,12 +3008,22 @@ if [ $ONLY_ADDITIONS -eq 0 ]; then
+   [ $WITH_DXVK   -eq 1 ] && check_dxvk
  
    # PulseAudio
 -  if [ $WITH_PULSE -eq 1 ]; then
@@ -100,7 +100,7 @@
    fi
  fi
  
-@@ -2999,14 +3017,6 @@ if [ "$OS" = "linux" ]; then
+@@ -3021,14 +3039,6 @@ if [ "$OS" = "linux" ]; then
      cnf_append "VBOX_WITHOUT_LINUX_TEST_BUILDS" "1"
    fi
    if [ $ONLY_ADDITIONS -eq 0 ]; then
@@ -112,6 +112,6 @@
 -    if [ $WITH_DBUS -eq 0 ]; then
 -      cnf_append "VBOX_WITH_DBUS" ""
 -    fi
-     if [ $WITH_DEVMAPPER -eq 1 ]; then
-       check_libdevmapper
-     else
+     if [ $WITH_DXVK -eq 0 ]; then
+       cnf_append "VBOX_WITH_DXVK" ""
+     fi

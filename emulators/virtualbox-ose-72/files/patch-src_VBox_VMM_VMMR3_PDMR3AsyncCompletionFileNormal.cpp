@@ -1,5 +1,5 @@
---- src/VBox/VMM/VMMR3/PDMAsyncCompletionFileNormal.cpp.orig	2025-08-13 19:52:13 UTC
-+++ src/VBox/VMM/VMMR3/PDMAsyncCompletionFileNormal.cpp
+--- src/VBox/VMM/VMMR3/PDMR3AsyncCompletionFileNormal.cpp.orig	2026-01-27 12:58:32 UTC
++++ src/VBox/VMM/VMMR3/PDMR3AsyncCompletionFileNormal.cpp
 @@ -37,6 +37,13 @@
  #include <iprt/string.h>
  #include <iprt/assert.h>

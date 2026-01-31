@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-DISTVERSION=	7.2.4
+DISTVERSION=	7.2.6
 PORTREVISION?=	0
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVERSION}/:src \
@@ -25,7 +25,11 @@ BUILD_DEPENDS=	gtar:archivers/gtar \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libogg.so:audio/libogg \
+		libvorbis.so:audio/libvorbis \
+		libvorbisenc.so:audio/libvorbis \
+		libvpx.so:multimedia/libvpx
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod-72
 
 USES=		compiler:c++17-lang cpe gnome iconv pkgconfig ssl tar:bzip2
@@ -33,12 +37,12 @@ CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
 USE_BINUTILS=	yes
 USE_GNOME=	libxml2
-#USE_QT=		tools:build
 USE_RC_SUBR=	vboxheadless vboxwatchdog
 
 HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-java --passive-mesa --disable-docs
-CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
+CONFIGURE_ARGS+=	--disable-docs --disable-java \
+			--enable-libogg --enable-libvorbis --passive-mesa \
+			--with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-legacy \
 			virtualbox-ose-nox11-legacy \
@@ -79,9 +83,9 @@ PLIST_SUB=	GUEST_VER=${DISTVERSION} \
 
 SLAVE_PORT?=	no
 
-OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OGG \
+OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS \
 			PULSEAUDIO PYTHON QT6 R0LOGGING TPM UDPTUNNEL VBOXIMG \
-			VDE VNC VORBIS VPX WEBSERVICE X11
+			VDE VNC WEBSERVICE X11
 OPTIONS_DEFAULT=	AIO DBUS QT6 TPM UDPTUNNEL VNC WEBSERVICE X11
 .if ${SLAVE_PORT} == no
 OPTIONS_DEFAULT+=	PYTHON
@@ -95,7 +99,6 @@ AIO_DESC=		Enable Asyncronous IO support (check pkg-message)
 DEBUG_DESC=		Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
 NLS_DESC=		Native language support (requires QT6)
-OGG_DESC=		Use libogg from audio/libogg instead of bundled one
 QT6_DESC=		Build with Qt6 frontend (requires X11)
 R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
 TPM_DESC=		Enable TPM device emulation using sysutils/libtpms
@@ -103,8 +106,6 @@ UDPTUNNEL_DESC=		Build with UDP tunnel support
 VBOXIMG_DESC=		Build vboximg-mount (requires fuse-libs)
 VDE_DESC=		Build with VDE support
 VNC_DESC=		Build with VNC support
-VORBIS_DESC=		Use libvorbis from audio/libvorbis instead of bundled one
-VPX_DESC=		Use libvpx for video recording
 WEBSERVICE_DESC=	Build Webservice
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -113,8 +114,6 @@ DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DEBUG_CONFIGURE_ON=	--build-debug
 NLS_IMPLIES=		QT6
-OGG_LIB_DEPENDS=	libogg.so:audio/libogg
-OGG_CONFIGURE_ON=	--enable-libogg
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PYTHON_USES=		python
@@ -136,11 +135,6 @@ VDE_RUN_DEPENDS=	vde_switch:net/vde2
 VDE_CONFIGURE_ON=	--enable-vde
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VNC_CONFIGURE_ON=	--enable-vnc
-VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
-			libvorbisenc.so:audio/libvorbis
-VORBIS_CONFIGURE_ON=	--enable-libvorbis
-VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
-VPX_CONFIGURE_OFF=	--disable-libvpx
 WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
 X11_USES=		sdl xorg
 X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
