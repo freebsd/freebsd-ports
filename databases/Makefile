@@ -777,6 +777,7 @@
     SUBDIR += py-flask-sqlalchemy30
     SUBDIR += py-gdbm
     SUBDIR += py-geoalchemy2
+    SUBDIR += py-harlequin
     SUBDIR += py-hiredis
     SUBDIR += py-influxdb
     SUBDIR += py-kyotocabinet
