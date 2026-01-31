@@ -1,9 +1,13 @@
 PORTNAME=	google-auth-oauthlib
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	google_auth_oauthlib-${PORTVERSION}
+
+PATCH_SITES=	https://github.com/googleapis/google-auth-library-python-oauthlib/commit/
+PATCHFILES=	088a597cfa50c90d11e9a6993f2115a0eded3422.patch:-p1
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Authentication Library
@@ -14,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.15.0<2.42.0:security/py-google-auth@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-auth>=2.15.0<3.0.0:security/py-google-auth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0:www/py-requests-oauthlib@${PY_FLAVOR}
 
 USES=		python
