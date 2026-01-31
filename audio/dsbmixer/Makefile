@@ -1,5 +1,6 @@
 PORTNAME=	dsbmixer
-PORTVERSION=	2.0
+DISTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	mk@nic-nac-project.org
@@ -11,18 +12,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	dsbwrtsysctl:sysutils/dsbwrtsysctl
 
-USES=		cmake compiler:c++11-lang gl kde:5 qmake qt:5 tar:tgz
+USES=		cmake compiler:c++11-lang gl kde:6 qmake qt:6 tar:tgz
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr
 GH_PROJECT=	DSBMixer
 
 USE_GL=		gl
-USE_KDE=	notifications
-USE_QT=		core dbus gui widgets buildtools:build linguisttools:build \
-		qmake:build
+USE_KDE=	statusnotifieritem
+USE_QT=		base tools:build
 
-CMAKE_ON=	PORTS
+CMAKE_ON=	PORTS \
+		USE_QT6
 
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
 
