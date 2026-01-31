@@ -31,8 +31,8 @@ GO_TARGET=	.
 GO_BUILDFLAGS=	-tags fs_embed \
 		-ldflags="-X github.com/thomiceli/opengist/internal/config.OpengistVersion=v${DISTVERSION}"
 
-GROUP=		opengist
-USER=		opengist
+GROUPS=		opengist
+USERS=		opengist
 
 post-extract:
 	@${RLN} ${WRKDIR}/node_modules ${WRKSRC}/node_modules
@@ -54,7 +54,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/config.yml \
 		${STAGEDIR}${PREFIX}/etc/${PORTNAME}/config.yml.sample
 	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
+	${CHOWN} opengist:opengist ${STAGEDIR}/var/db/${PORTNAME}
 	${MKDIR} ${STAGEDIR}/var/run/${PORTNAME}
+	${CHOWN} opengist:opengist ${STAGEDIR}/var/run/${PORTNAME}
 	${MKDIR} ${STAGEDIR}${WWWDIR}/assets
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} public/assets/* \

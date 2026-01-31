@@ -52,7 +52,6 @@ fi
 pidfile=/var/run/opengist/${name}.pid
 procname="%%PREFIX%%/bin/${name}"
 
-start_cmd="${name}_start"
 start_precmd="${name}_precmd"
 
 opengist_precmd()
@@ -63,13 +62,10 @@ opengist_precmd()
 	fi
 }
 
-opengist_start() {
-	echo "Starting opengist."
-	/usr/sbin/daemon -f ${opengist_syslog_output_flags} -p ${pidfile} \
-		/usr/bin/env -i \
-		"PATH=%%PREFIX%%/bin:${PATH}" \
-		${procname} -c ${opengist_config_file}
-}
+command="/usr/sbin/daemon"
+command_args="-f ${opengist_syslog_output_flags} -p ${pidfile} \
+    /usr/bin/env -i \"PATH=%%PREFIX%%/bin:${PATH}\" \
+    ${procname} -c ${opengist_config_file}"
 
 cd ${opengist_home}
 
