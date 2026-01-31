@@ -49,14 +49,6 @@ include/taskflow/cuda/cuda_meta.hpp
 include/taskflow/cuda/cuda_optimizer.hpp
 include/taskflow/cuda/cuda_stream.hpp
 include/taskflow/cuda/cudaflow.hpp
-include/taskflow/dsl/connection.hpp
-include/taskflow/dsl/dsl.hpp
-include/taskflow/dsl/meta_macro.hpp
-include/taskflow/dsl/task_analyzer.hpp
-include/taskflow/dsl/task_dsl.hpp
-include/taskflow/dsl/task_trait.hpp
-include/taskflow/dsl/tuple_utils.hpp
-include/taskflow/dsl/type_list.hpp
 include/taskflow/taskflow.hpp
 include/taskflow/utility/iterator.hpp
 include/taskflow/utility/lazy_string.hpp
