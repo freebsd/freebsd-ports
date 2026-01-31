@@ -1,5 +1,5 @@
 PORTNAME=	graphemeu
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		https://github.com/timendum/grapheme/releases/download/v${PORTVERSION}/
