@@ -6,7 +6,8 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Tool for detecting hardcoded secrets in git repositories
-WWW=		https://github.com/gitleaks/gitleaks
+WWW=		https://gitleaks.io/ \
+		https://github.com/gitleaks/gitleaks
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
