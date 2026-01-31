@@ -1,8 +1,9 @@
 PORTNAME=	django-annoying
-PORTVERSION=	0.10.7
+PORTVERSION=	0.10.8
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_annoying-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Eliminate annoying things in the Django framework
