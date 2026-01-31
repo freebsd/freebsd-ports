@@ -1,6 +1,6 @@
---- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2025-10-17 08:52:40 UTC
+--- src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp.orig	2026-01-27 12:48:12 UTC
 +++ src/VBox/Additions/common/VBoxService/VBoxServiceVMInfo.cpp
-@@ -77,8 +77,8 @@
+@@ -116,8 +116,8 @@
  # include <net/if.h>
  # include <pwd.h> /* getpwuid */
  # include <unistd.h>
@@ -11,77 +11,67 @@
  # endif
  # ifdef RT_OS_OS2
  #  include <net/if_dl.h>
-@@ -573,7 +573,7 @@ static void vgsvcVMInfoWriteFixedProperties(void)
+@@ -795,7 +795,7 @@ void VGSvcVMInfoAddUserToList(PVBOXSERVICEVMINFOUSERLI
  }
  
  
--#if defined(VBOX_WITH_DBUS) && defined(RT_OS_LINUX) /* Not yet for Solaris/FreeBSB. */
-+#if defined(VBOX_WITH_DBUS) && (defined(RT_OS_LINUX) || defined(RT_OS_FREEBSD)) /* Not yet for Solaris. */
- /*
-  * Simple wrappers to work around compiler-specific va_list madness.
-  */
-@@ -702,12 +702,6 @@ static int vgsvcVMInfoWriteUsers(void)
- #ifdef RT_OS_WINDOWS
-     rc = VGSvcVMInfoWinWriteUsers(&g_VMInfoPropCache, &pszUserList, &cUsersInList);
- 
--#elif defined(RT_OS_FREEBSD)
--    /** @todo FreeBSD: Port logged on user info retrieval.
--     *                 However, FreeBSD 9 supports utmpx, so we could use the code
--     *                 block below (?). */
--    rc = VERR_NOT_IMPLEMENTED;
--
- #elif defined(RT_OS_HAIKU)
-     /** @todo Haiku: Port logged on user info retrieval. */
-     rc = VERR_NOT_IMPLEMENTED;
-@@ -733,7 +727,7 @@ static int vgsvcVMInfoWriteUsers(void)
-     while (   (ut_user = getutxent())
-            && RT_SUCCESS(rc))
+-#if !defined(RT_OS_WINDOWS) && !defined(RT_OS_OS2) && !defined(RT_OS_HAIKU) && !defined(RT_OS_FREEBSD)
++#if !defined(RT_OS_WINDOWS) && !defined(RT_OS_OS2) && !defined(RT_OS_HAIKU)
+ /**
+  * Worker for vgsvcVMInfoWriteUsers that uses the utmpx.h interface to gather
+  * users that are logged in.
+@@ -806,7 +806,7 @@ static void vgsvcVMInfoAddUsersFromUTmpX(PVBOXSERVICEV
+     utmpx *ut_user;
+     while ((ut_user = getutxent()) != NULL)
      {
 -# ifdef RT_OS_DARWIN /* No ut_user->ut_session on Darwin */
 +# if defined(RT_OS_DARWIN) || defined(RT_OS_FREEBSD) /* No ut_user->ut_session on Darwin/FreeBSD */
          VGSvcVerbose(4, "Found entry '%s' (type: %d, PID: %RU32)\n", ut_user->ut_user, ut_user->ut_type, ut_user->ut_pid);
  # else
          VGSvcVerbose(4, "Found entry '%s' (type: %d, PID: %RU32, session: %RU32)\n",
-@@ -749,7 +743,7 @@ static int vgsvcVMInfoWriteUsers(void)
-     }
+@@ -822,7 +822,7 @@ static void vgsvcVMInfoAddUsersFromUTmpX(PVBOXSERVICEV
+ }
+ #endif
  
- # ifdef VBOX_WITH_DBUS
--#  if defined(RT_OS_LINUX) /* Not yet for Solaris/FreeBSB. */
-+#  if defined(RT_OS_LINUX) || defined(RT_OS_FREEBSD) /* Not yet for Solaris. */
-     DBusError dbErr;
-     DBusConnection *pConnection = NULL;
-     int rc2 = RTDBusLoadLib();
-@@ -1074,7 +1068,7 @@ static int vgsvcVMInfoWriteUsers(void)
-     if (   fHaveLibDbus
-         && dbus_error_is_set(&dbErr))
-         dbus_error_free(&dbErr);
--#  endif /* RT_OS_LINUX */
-+#  endif /* RT_OS_LINUX || RT_OS_FREEBSD */
- # endif /* VBOX_WITH_DBUS */
+-#if defined(VBOX_WITH_DBUS) && defined(RT_OS_LINUX) /* Not yet for Solaris or FreeBSD. */
++#if defined(VBOX_WITH_DBUS) && (defined(RT_OS_LINUX) || defined(RT_OS_FREEBSD)) /* Not yet for Solaris. */
  
-     /* Calc the string length. */
-@@ -1109,7 +1103,7 @@ static int vgsvcVMInfoWriteUsers(void)
-     RTMemFree(papszUsers);
+ /** @name Simple wrappers to work around compiler-specific va_list madness.
+  * @{
+@@ -1274,12 +1274,6 @@ static int vgsvcVMInfoWriteUsers(void)
+        doesn't technically need them). */
+     int rc = VGSvcVMInfoWinQueryUserListAndUpdateInfo(&UserGatherer, &g_VMInfoPropCache);
  
-     endutxent(); /* Close utmpx file. */
+-#elif defined(RT_OS_FREEBSD)
+-    /** @todo FreeBSD: Port logged on user info retrieval.
+-     *                 However, FreeBSD 9 supports utmpx, so we could use the code
+-     *                 block below (?). */
+-    int rc = VERR_NOT_IMPLEMENTED;
+-
+ #elif defined(RT_OS_HAIKU)
+     /** @todo Haiku: Port logged on user info retrieval. */
+     int rc = VERR_NOT_IMPLEMENTED;
+@@ -1294,12 +1288,12 @@ static int vgsvcVMInfoWriteUsers(void)
+     /* Gather using setutxent & getutxent to source the utmp file. */
+     vgsvcVMInfoAddUsersFromUTmpX(&UserGatherer);
+ 
+-# if defined(VBOX_WITH_DBUS) && defined(RT_OS_LINUX) /* Not yet for Solaris/FreeBSD. */
++# if defined(VBOX_WITH_DBUS) && (defined(RT_OS_LINUX) || defined(RT_OS_FREEBSD)) /* Not yet for Solaris. */
+     /* Gather using various DBus interface. */
+     vgsvcVMInfoDBusAddToUserList(&UserGatherer);
+ # endif
+ 
 -#endif /* !RT_OS_WINDOWS && !RT_OS_FREEBSD && !RT_OS_HAIKU && !RT_OS_OS2 */
 +#endif /* !RT_OS_WINDOWS && !RT_OS_HAIKU && !RT_OS_OS2 */
  
-     Assert(RT_FAILURE(rc) || cUsersInList == 0 || (pszUserList && *pszUserList));
- 
-@@ -1403,6 +1397,15 @@ static int vgsvcVMInfoWriteNetwork(void)
- 
-             RTStrPrintf(szPropPath, sizeof(szPropPath), "/VirtualBox/GuestInfo/Net/%RU32/Status", cIfsReported);
-             VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, pIfCurr->ifa_flags & IFF_UP ? "Up" : "Down");
-+
-+# ifdef RT_OS_FREEBSD /** @todo Check the other guests. */
-+            RTStrPrintf(szPropPath, sizeof(szPropPath), "/VirtualBox/GuestInfo/Net/%RU32/Name", cIfsReported);
-+            int rc2 = RTStrValidateEncoding(pIfCurr->ifa_name);
-+            if (RT_SUCCESS(rc2))
-+                VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, "%s", pIfCurr->ifa_name);
-+            else
-+                VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, NULL);
-+# endif
- 
-             cIfsReported++;
-         }
+     if (RT_SUCCESS(rc))
+         g_cVMInfoLoggedInUsers = UserGatherer.cUsersInList;
+@@ -1583,7 +1577,7 @@ static int vgsvcVMInfoWriteNetwork(void)
+             RTStrPrintf(szPropPath, sizeof(szPropPath), "/VirtualBox/GuestInfo/Net/%RU32/Name", cIfsReported);
+             int rc2 = RTStrValidateEncoding(pIfCurr->ifa_name);
+             if (RT_SUCCESS(rc2))
+-                VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, "%s", pIfCurr->ifa_name);
++                VGSvcPropCacheUpdateF(&g_VMInfoPropCache, szPropPath, "%s", pIfCurr->ifa_name);
+             else
+                 VGSvcPropCacheUpdate(&g_VMInfoPropCache, szPropPath, NULL);
+ # endif
