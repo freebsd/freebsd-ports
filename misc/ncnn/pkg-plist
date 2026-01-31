@@ -6,7 +6,6 @@ bin/ncnn2mem
 bin/ncnn2table
 bin/ncnnmerge
 bin/ncnnoptimize
-bin/onnx2ncnn
 include/ncnn/allocator.h
 include/ncnn/benchmark.h
 include/ncnn/blob.h
@@ -39,5 +38,6 @@ include/ncnn/vulkan_header_fix.h
 lib/cmake/ncnn/ncnn-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ncnn/ncnn.cmake
 lib/cmake/ncnn/ncnnConfig.cmake
+lib/cmake/ncnn/ncnnConfigVersion.cmake
 lib/libncnn.a
 libdata/pkgconfig/ncnn.pc
