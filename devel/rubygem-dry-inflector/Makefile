@@ -1,5 +1,5 @@
 PORTNAME=	dry-inflector
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
