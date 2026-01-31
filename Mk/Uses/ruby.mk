@@ -162,7 +162,7 @@ RUBY_DISTVERSION=	3.4.8
 #
 # Ruby 4.0
 #
-RUBY_DISTVERSION=	4.0.0
+RUBY_DISTVERSION=	4.0.1
 
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.

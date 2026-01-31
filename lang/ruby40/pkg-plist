@@ -411,6 +411,7 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/prism/ffi.rb
 %%RUBY_LIBDIR%%/prism/inspect_visitor.rb
 %%RUBY_LIBDIR%%/prism/lex_compat.rb
+%%RUBY_LIBDIR%%/prism/lex_ripper.rb
 %%RUBY_LIBDIR%%/prism/mutation_compiler.rb
 %%RUBY_LIBDIR%%/prism/node.rb
 %%RUBY_LIBDIR%%/prism/node_ext.rb
@@ -434,13 +435,10 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/prism/translation/parser/builder.rb
 %%RUBY_LIBDIR%%/prism/translation/parser/compiler.rb
 %%RUBY_LIBDIR%%/prism/translation/parser/lexer.rb
-%%RUBY_LIBDIR%%/prism/translation/parser33.rb
-%%RUBY_LIBDIR%%/prism/translation/parser34.rb
-%%RUBY_LIBDIR%%/prism/translation/parser35.rb
-%%RUBY_LIBDIR%%/prism/translation/parser40.rb
-%%RUBY_LIBDIR%%/prism/translation/parser41.rb
 %%RUBY_LIBDIR%%/prism/translation/parser_current.rb
+%%RUBY_LIBDIR%%/prism/translation/parser_versions.rb
 %%RUBY_LIBDIR%%/prism/translation/ripper.rb
+%%RUBY_LIBDIR%%/prism/translation/ripper/lexer.rb
 %%RUBY_LIBDIR%%/prism/translation/ripper/sexp.rb
 %%RUBY_LIBDIR%%/prism/translation/ripper/shim.rb
 %%RUBY_LIBDIR%%/prism/translation/ruby_parser.rb
@@ -7429,6 +7427,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasGlobalVariableNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasGlobalVariableNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasGlobalVariableNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/AliasGlobalVariableNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasGlobalVariableNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasGlobalVariableNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasGlobalVariableNode/keyword_loc-i.ri
@@ -7447,6 +7446,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasMethodNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasMethodNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasMethodNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/AliasMethodNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasMethodNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasMethodNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AliasMethodNode/keyword_loc-i.ri
@@ -7465,6 +7465,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AlternationPatternNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AlternationPatternNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AlternationPatternNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/AlternationPatternNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AlternationPatternNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AlternationPatternNode/left-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AlternationPatternNode/new-c.ri
@@ -7483,6 +7484,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AndNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AndNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AndNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/AndNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AndNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AndNode/left-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AndNode/new-c.ri
@@ -7507,6 +7509,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArgumentsNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArgumentsNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArgumentsNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ArgumentsNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArgumentsNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArgumentsNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArgumentsNode/type-c.ri
@@ -7524,6 +7527,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayNode/elements-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayNode/new-c.ri
@@ -7546,6 +7550,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayPatternNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayPatternNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayPatternNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayPatternNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayPatternNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayPatternNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ArrayPatternNode/opening-i.ri
@@ -7566,6 +7571,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/AssocNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocNode/key-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocNode/new-c.ri
@@ -7584,6 +7590,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocSplatNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocSplatNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocSplatNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/AssocSplatNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocSplatNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocSplatNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/AssocSplatNode/operator-i.ri
@@ -7601,6 +7608,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BackReferenceReadNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BackReferenceReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BackReferenceReadNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BackReferenceReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BackReferenceReadNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BackReferenceReadNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BackReferenceReadNode/new-c.ri
@@ -7621,6 +7629,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BeginNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BeginNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BeginNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BeginNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BeginNode/else_clause-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BeginNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BeginNode/end_keyword_loc-i.ri
@@ -7642,6 +7651,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockArgumentNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockArgumentNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockArgumentNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BlockArgumentNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockArgumentNode/expression-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockArgumentNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockArgumentNode/new-c.ri
@@ -7659,6 +7669,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockLocalVariableNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockLocalVariableNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockLocalVariableNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BlockLocalVariableNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockLocalVariableNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockLocalVariableNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockLocalVariableNode/new-c.ri
@@ -7677,6 +7688,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BlockNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockNode/locals-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockNode/new-c.ri
@@ -7696,6 +7708,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParameterNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParameterNode/name_loc-i.ri
@@ -7718,6 +7731,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParametersNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParametersNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParametersNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParametersNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParametersNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParametersNode/locals-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BlockParametersNode/new-c.ri
@@ -7738,6 +7752,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BreakNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BreakNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BreakNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/BreakNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BreakNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BreakNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/BreakNode/keyword_loc-i.ri
@@ -7757,6 +7772,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallAndWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallAndWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CallAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallAndWriteNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallAndWriteNode/message-i.ri
@@ -7791,6 +7807,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CallNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallNode/equal-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallNode/equal_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallNode/full_message_loc-i.ri
@@ -7827,6 +7844,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOperatorWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOperatorWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CallOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOperatorWriteNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOperatorWriteNode/message-i.ri
@@ -7857,6 +7875,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOrWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOrWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CallOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOrWriteNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallOrWriteNode/message-i.ri
@@ -7887,6 +7906,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallTargetNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallTargetNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CallTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallTargetNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallTargetNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CallTargetNode/message-i.ri
@@ -7909,6 +7929,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CapturePatternNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CapturePatternNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CapturePatternNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CapturePatternNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CapturePatternNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CapturePatternNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CapturePatternNode/operator-i.ri
@@ -7931,6 +7952,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseMatchNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseMatchNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseMatchNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CaseMatchNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseMatchNode/else_clause-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseMatchNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseMatchNode/end_keyword_loc-i.ri
@@ -7954,6 +7976,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/CaseNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseNode/else_clause-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/CaseNode/end_keyword_loc-i.ri
@@ -7977,6 +8000,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ClassNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassNode/end_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassNode/inheritance_operator-i.ri
@@ -8000,6 +8024,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableAndWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableAndWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableAndWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableAndWriteNode/name_loc-i.ri
@@ -8022,6 +8047,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOperatorWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOperatorWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOperatorWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOperatorWriteNode/name_loc-i.ri
@@ -8042,6 +8068,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOrWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOrWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOrWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableOrWriteNode/name_loc-i.ri
@@ -8062,6 +8089,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableReadNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableReadNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableReadNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableReadNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableReadNode/new-c.ri
@@ -8076,6 +8104,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableTargetNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableTargetNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableTargetNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableTargetNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableTargetNode/new-c.ri
@@ -8090,6 +8119,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ClassVariableWriteNode/name_loc-i.ri
@@ -8273,6 +8303,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantAndWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantAndWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantAndWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantAndWriteNode/name_loc-i.ri
@@ -8295,6 +8326,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOperatorWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOperatorWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOperatorWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOperatorWriteNode/name_loc-i.ri
@@ -8315,6 +8347,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOrWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOrWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOrWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantOrWriteNode/name_loc-i.ri
@@ -8335,6 +8368,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathAndWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathAndWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathAndWriteNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathAndWriteNode/operator-i.ri
@@ -8358,6 +8392,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathNode/delimiter-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathNode/delimiter_loc-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathNode/full_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathNode/full_name_parts-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathNode/inspect-i.ri
@@ -8380,6 +8415,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOperatorWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOperatorWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOperatorWriteNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOperatorWriteNode/operator-i.ri
@@ -8398,6 +8434,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOrWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOrWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOrWriteNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathOrWriteNode/operator-i.ri
@@ -8419,6 +8456,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathTargetNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathTargetNode/delimiter-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathTargetNode/delimiter_loc-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathTargetNode/full_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathTargetNode/full_name_parts-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathTargetNode/inspect-i.ri
@@ -8439,6 +8477,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathWriteNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantPathWriteNode/operator-i.ri
@@ -8457,6 +8496,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantReadNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantReadNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantReadNode/full_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantReadNode/full_name_parts-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantReadNode/inspect-i.ri
@@ -8473,6 +8513,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantTargetNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantTargetNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantTargetNode/full_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantTargetNode/full_name_parts-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantTargetNode/inspect-i.ri
@@ -8489,6 +8530,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantWriteNode/full_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantWriteNode/full_name_parts-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ConstantWriteNode/inspect-i.ri
@@ -8688,6 +8730,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefNode/def_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefNode/def_keyword_loc-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/DefNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefNode/end_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefNode/equal-i.ri
@@ -8723,6 +8766,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefinedNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefinedNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefinedNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/DefinedNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefinedNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefinedNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/DefinedNode/keyword_loc-i.ri
@@ -9092,6 +9136,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ElseNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ElseNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ElseNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ElseNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ElseNode/else_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ElseNode/else_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ElseNode/end_keyword-i.ri
@@ -9117,6 +9162,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedStatementsNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedStatementsNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedStatementsNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedStatementsNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedStatementsNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedStatementsNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedStatementsNode/opening-i.ri
@@ -9135,6 +9181,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedVariableNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedVariableNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedVariableNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedVariableNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedVariableNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedVariableNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EmbeddedVariableNode/operator-i.ri
@@ -9153,6 +9200,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EnsureNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EnsureNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EnsureNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/EnsureNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EnsureNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EnsureNode/end_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/EnsureNode/ensure_keyword-i.ri
@@ -9173,6 +9221,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FalseNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FalseNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FalseNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/FalseNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FalseNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FalseNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FalseNode/type-c.ri
@@ -9189,6 +9238,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FindPatternNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FindPatternNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FindPatternNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/FindPatternNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FindPatternNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FindPatternNode/left-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FindPatternNode/new-c.ri
@@ -9209,6 +9259,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FlipFlopNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FlipFlopNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FlipFlopNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/FlipFlopNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FlipFlopNode/exclude_end%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FlipFlopNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FlipFlopNode/left-i.ri
@@ -9228,6 +9279,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FloatNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FloatNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FloatNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/FloatNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FloatNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FloatNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/FloatNode/type-c.ri
@@ -9245,6 +9297,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForNode/do_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForNode/do_keyword_loc-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ForNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForNode/end_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForNode/for_keyword-i.ri
@@ -9270,6 +9323,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingArgumentsNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingArgumentsNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingArgumentsNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingArgumentsNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingArgumentsNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingArgumentsNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingArgumentsNode/type-c.ri
@@ -9283,6 +9337,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingParameterNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingParameterNode/type-c.ri
@@ -9297,6 +9352,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingSuperNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingSuperNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingSuperNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingSuperNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingSuperNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingSuperNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ForwardingSuperNode/type-c.ri
@@ -9310,6 +9366,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableAndWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableAndWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableAndWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableAndWriteNode/name_loc-i.ri
@@ -9332,6 +9389,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOperatorWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOperatorWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOperatorWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOperatorWriteNode/name_loc-i.ri
@@ -9352,6 +9410,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOrWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOrWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOrWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableOrWriteNode/name_loc-i.ri
@@ -9372,6 +9431,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableReadNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableReadNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableReadNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableReadNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableReadNode/new-c.ri
@@ -9386,6 +9446,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableTargetNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableTargetNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableTargetNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableTargetNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableTargetNode/new-c.ri
@@ -9400,6 +9461,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/GlobalVariableWriteNode/name_loc-i.ri
@@ -9422,6 +9484,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/HashNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashNode/elements-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashNode/new-c.ri
@@ -9443,6 +9506,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashPatternNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashPatternNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashPatternNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/HashPatternNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashPatternNode/elements-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashPatternNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/HashPatternNode/new-c.ri
@@ -9463,6 +9527,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IfNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IfNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IfNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/IfNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IfNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IfNode/end_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IfNode/if_keyword-i.ri
@@ -9488,6 +9553,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImaginaryNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImaginaryNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImaginaryNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ImaginaryNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImaginaryNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImaginaryNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImaginaryNode/numeric-i.ri
@@ -9503,6 +9569,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitNode/type-c.ri
@@ -9517,6 +9584,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitRestNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitRestNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitRestNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitRestNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitRestNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitRestNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ImplicitRestNode/type-c.ri
@@ -9530,6 +9598,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InNode/in-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InNode/in_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InNode/inspect-i.ri
@@ -9558,6 +9627,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexAndWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexAndWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/IndexAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexAndWriteNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexAndWriteNode/new-c.ri
@@ -9593,6 +9663,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOperatorWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOperatorWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOperatorWriteNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOperatorWriteNode/new-c.ri
@@ -9626,6 +9697,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOrWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOrWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOrWriteNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexOrWriteNode/new-c.ri
@@ -9657,6 +9729,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexTargetNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexTargetNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/IndexTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexTargetNode/ignore_visibility%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexTargetNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IndexTargetNode/new-c.ri
@@ -9840,6 +9913,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableAndWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableAndWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableAndWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableAndWriteNode/name_loc-i.ri
@@ -9862,6 +9936,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOperatorWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOperatorWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOperatorWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOperatorWriteNode/name_loc-i.ri
@@ -9882,6 +9957,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOrWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOrWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOrWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableOrWriteNode/name_loc-i.ri
@@ -9902,6 +9978,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableReadNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableReadNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableReadNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableReadNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableReadNode/new-c.ri
@@ -9916,6 +9993,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableTargetNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableTargetNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableTargetNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableTargetNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableTargetNode/new-c.ri
@@ -9930,6 +10008,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InstanceVariableWriteNode/name_loc-i.ri
@@ -9953,6 +10032,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IntegerNode/decimal%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IntegerNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IntegerNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/IntegerNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IntegerNode/hexadecimal%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IntegerNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/IntegerNode/new-c.ri
@@ -9972,6 +10052,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedMatchLastLineNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedMatchLastLineNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedMatchLastLineNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedMatchLastLineNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedMatchLastLineNode/euc_jp%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedMatchLastLineNode/extended%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedMatchLastLineNode/forced_binary_encoding%3f-i.ri
@@ -10003,6 +10084,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedRegularExpressionNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedRegularExpressionNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedRegularExpressionNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedRegularExpressionNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedRegularExpressionNode/euc_jp%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedRegularExpressionNode/extended%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedRegularExpressionNode/forced_binary_encoding%3f-i.ri
@@ -10033,6 +10115,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedStringNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedStringNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedStringNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedStringNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedStringNode/frozen%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedStringNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedStringNode/mutable%3f-i.ri
@@ -10056,6 +10139,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedSymbolNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedSymbolNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedSymbolNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedSymbolNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedSymbolNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedSymbolNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedSymbolNode/opening-i.ri
@@ -10076,6 +10160,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedXStringNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedXStringNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedXStringNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedXStringNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedXStringNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedXStringNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/InterpolatedXStringNode/opening-i.ri
@@ -10094,6 +10179,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItLocalVariableReadNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItLocalVariableReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItLocalVariableReadNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ItLocalVariableReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItLocalVariableReadNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItLocalVariableReadNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItLocalVariableReadNode/type-c.ri
@@ -10107,6 +10193,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItParametersNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItParametersNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItParametersNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ItParametersNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItParametersNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItParametersNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ItParametersNode/type-c.ri
@@ -10120,6 +10207,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordHashNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordHashNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordHashNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordHashNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordHashNode/elements-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordHashNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordHashNode/new-c.ri
@@ -10136,6 +10224,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordRestParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordRestParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordRestParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordRestParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordRestParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordRestParameterNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/KeywordRestParameterNode/name_loc-i.ri
@@ -10159,6 +10248,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LambdaNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LambdaNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LambdaNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/LambdaNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LambdaNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LambdaNode/locals-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LambdaNode/new-c.ri
@@ -10201,6 +10291,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableAndWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableAndWriteNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableAndWriteNode/depth-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableAndWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableAndWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableAndWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableAndWriteNode/name_loc-i.ri
@@ -10224,6 +10315,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOperatorWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOperatorWriteNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOperatorWriteNode/depth-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOperatorWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOperatorWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOperatorWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOperatorWriteNode/name_loc-i.ri
@@ -10245,6 +10337,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOrWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOrWriteNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOrWriteNode/depth-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOrWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOrWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOrWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableOrWriteNode/name_loc-i.ri
@@ -10266,6 +10359,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableReadNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableReadNode/depth-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableReadNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableReadNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableReadNode/new-c.ri
@@ -10281,6 +10375,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableTargetNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableTargetNode/depth-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableTargetNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableTargetNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableTargetNode/new-c.ri
@@ -10296,6 +10391,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableWriteNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableWriteNode/depth-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableWriteNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/LocalVariableWriteNode/name_loc-i.ri
@@ -10369,6 +10465,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchLastLineNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchLastLineNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchLastLineNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/MatchLastLineNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchLastLineNode/euc_jp%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchLastLineNode/extended%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchLastLineNode/forced_binary_encoding%3f-i.ri
@@ -10398,6 +10495,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchPredicateNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchPredicateNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchPredicateNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/MatchPredicateNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchPredicateNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchPredicateNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchPredicateNode/operator-i.ri
@@ -10416,6 +10514,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchRequiredNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchRequiredNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchRequiredNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/MatchRequiredNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchRequiredNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchRequiredNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchRequiredNode/operator-i.ri
@@ -10435,6 +10534,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/MatchWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchWriteNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MatchWriteNode/targets-i.ri
@@ -10449,6 +10549,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MissingNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MissingNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MissingNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/MissingNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MissingNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MissingNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MissingNode/type-c.ri
@@ -10464,6 +10565,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ModuleNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ModuleNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ModuleNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ModuleNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ModuleNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ModuleNode/end_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ModuleNode/inspect-i.ri
@@ -10485,6 +10587,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiTargetNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiTargetNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiTargetNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/MultiTargetNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiTargetNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiTargetNode/lefts-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiTargetNode/lparen-i.ri
@@ -10507,6 +10610,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiWriteNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiWriteNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiWriteNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/MultiWriteNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiWriteNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiWriteNode/lefts-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/MultiWriteNode/lparen-i.ri
@@ -10686,6 +10790,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NextNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NextNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NextNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/NextNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NextNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NextNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NextNode/keyword_loc-i.ri
@@ -10702,6 +10807,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NilNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NilNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NilNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/NilNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NilNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NilNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NilNode/type-c.ri
@@ -10715,6 +10821,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NoKeywordsParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NoKeywordsParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NoKeywordsParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/NoKeywordsParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NoKeywordsParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NoKeywordsParameterNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NoKeywordsParameterNode/keyword_loc-i.ri
@@ -10737,6 +10844,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Node/comments-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Node/compact_child_nodes-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Node/deconstruct-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/Node/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Node/end_character_column-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Node/end_character_offset-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Node/end_column-i.ri
@@ -10778,6 +10886,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedParametersNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedParametersNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedParametersNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedParametersNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedParametersNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedParametersNode/maximum-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedParametersNode/new-c.ri
@@ -10792,6 +10901,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedReferenceReadNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedReferenceReadNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedReferenceReadNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedReferenceReadNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedReferenceReadNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedReferenceReadNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/NumberedReferenceReadNode/number-i.ri
@@ -10806,6 +10916,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalKeywordParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalKeywordParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalKeywordParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalKeywordParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalKeywordParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalKeywordParameterNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalKeywordParameterNode/name_loc-i.ri
@@ -10824,6 +10935,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalParameterNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OptionalParameterNode/name_loc-i.ri
@@ -10845,6 +10957,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OrNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OrNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OrNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/OrNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OrNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OrNode/left-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/OrNode/new-c.ri
@@ -10883,6 +10996,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParametersNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParametersNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParametersNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ParametersNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParametersNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParametersNode/keyword_rest-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParametersNode/keywords-i.ri
@@ -10906,6 +11020,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParenthesesNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParenthesesNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParenthesesNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ParenthesesNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParenthesesNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParenthesesNode/multiple_statements%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ParenthesesNode/new-c.ri
@@ -10989,6 +11104,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedExpressionNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedExpressionNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedExpressionNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedExpressionNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedExpressionNode/expression-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedExpressionNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedExpressionNode/lparen-i.ri
@@ -11012,6 +11128,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedVariableNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedVariableNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedVariableNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedVariableNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedVariableNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedVariableNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PinnedVariableNode/operator-i.ri
@@ -11031,6 +11148,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PostExecutionNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PostExecutionNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PostExecutionNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/PostExecutionNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PostExecutionNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PostExecutionNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PostExecutionNode/keyword_loc-i.ri
@@ -11054,6 +11172,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PreExecutionNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PreExecutionNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PreExecutionNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/PreExecutionNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PreExecutionNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PreExecutionNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/PreExecutionNode/keyword_loc-i.ri
@@ -11075,6 +11194,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ProgramNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ProgramNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ProgramNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ProgramNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ProgramNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ProgramNode/locals-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ProgramNode/new-c.ri
@@ -11091,6 +11211,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RangeNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RangeNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RangeNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RangeNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RangeNode/exclude_end%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RangeNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RangeNode/left-i.ri
@@ -11113,6 +11234,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RationalNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RationalNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RationalNode/denominator-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RationalNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RationalNode/hexadecimal%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RationalNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RationalNode/new-c.ri
@@ -11131,6 +11253,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RedoNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RedoNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RedoNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RedoNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RedoNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RedoNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RedoNode/type-c.ri
@@ -11169,6 +11292,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RegularExpressionNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RegularExpressionNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RegularExpressionNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RegularExpressionNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RegularExpressionNode/euc_jp%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RegularExpressionNode/extended%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RegularExpressionNode/forced_binary_encoding%3f-i.ri
@@ -11287,6 +11411,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredKeywordParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredKeywordParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredKeywordParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredKeywordParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredKeywordParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredKeywordParameterNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredKeywordParameterNode/name_loc-i.ri
@@ -11304,6 +11429,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredParameterNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RequiredParameterNode/new-c.ri
@@ -11319,6 +11445,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueModifierNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueModifierNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueModifierNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RescueModifierNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueModifierNode/expression-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueModifierNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueModifierNode/keyword-i.ri
@@ -11338,6 +11465,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RescueNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueNode/exceptions-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RescueNode/keyword-i.ri
@@ -11364,6 +11492,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RestParameterNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RestParameterNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RestParameterNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RestParameterNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RestParameterNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RestParameterNode/name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RestParameterNode/name_loc-i.ri
@@ -11397,6 +11526,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RetryNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RetryNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RetryNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/RetryNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RetryNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RetryNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/RetryNode/type-c.ri
@@ -11411,6 +11541,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ReturnNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ReturnNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ReturnNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ReturnNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ReturnNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ReturnNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ReturnNode/keyword_loc-i.ri
@@ -11431,6 +11562,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SelfNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SelfNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SelfNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SelfNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SelfNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SelfNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SelfNode/type-c.ri
@@ -11449,6 +11581,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ShareableConstantNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ShareableConstantNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ShareableConstantNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/ShareableConstantNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ShareableConstantNode/experimental_copy%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ShareableConstantNode/experimental_everything%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/ShareableConstantNode/inspect-i.ri
@@ -11470,6 +11603,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SingletonClassNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SingletonClassNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SingletonClassNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SingletonClassNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SingletonClassNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SingletonClassNode/end_keyword_loc-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SingletonClassNode/expression-i.ri
@@ -11514,6 +11648,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceEncodingNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceEncodingNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceEncodingNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SourceEncodingNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceEncodingNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceEncodingNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceEncodingNode/type-c.ri
@@ -11527,6 +11662,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceFileNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceFileNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceFileNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SourceFileNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceFileNode/filepath-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceFileNode/forced_binary_encoding%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceFileNode/forced_utf8_encoding%3f-i.ri
@@ -11545,6 +11681,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceLineNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceLineNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceLineNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SourceLineNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceLineNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceLineNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SourceLineNode/type-c.ri
@@ -11558,6 +11695,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SplatNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SplatNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SplatNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SplatNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SplatNode/expression-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SplatNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SplatNode/new-c.ri
@@ -11576,6 +11714,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StatementsNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StatementsNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StatementsNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/StatementsNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StatementsNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StatementsNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StatementsNode/type-c.ri
@@ -11594,6 +11733,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StringNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StringNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StringNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/StringNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StringNode/forced_binary_encoding%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StringNode/forced_utf8_encoding%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/StringNode/frozen%3f-i.ri
@@ -11630,6 +11770,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SuperNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SuperNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SuperNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SuperNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SuperNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SuperNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SuperNode/keyword_loc-i.ri
@@ -11655,6 +11796,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SymbolNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SymbolNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SymbolNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/SymbolNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SymbolNode/forced_binary_encoding%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SymbolNode/forced_us_ascii_encoding%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/SymbolNode/forced_utf8_encoding%3f-i.ri
@@ -11909,6 +12051,8 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/Parser40/cdesc-Parser40.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/Parser41/cdesc-Parser41.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/ParserCurrent/cdesc-ParserCurrent.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/Ripper/Lexer/State/cdesc-State.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/Ripper/Lexer/cdesc-Lexer.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/Ripper/SexpBuilder/cdesc-SexpBuilder.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/Ripper/SexpBuilderPP/cdesc-SexpBuilderPP.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/Translation/Ripper/bounds-i.ri
@@ -12286,6 +12430,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/TrueNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/TrueNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/TrueNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/TrueNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/TrueNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/TrueNode/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/TrueNode/type-c.ri
@@ -12299,6 +12444,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UndefNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UndefNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UndefNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/UndefNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UndefNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UndefNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UndefNode/keyword_loc-i.ri
@@ -12317,6 +12463,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UnlessNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UnlessNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UnlessNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/UnlessNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UnlessNode/else_clause-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UnlessNode/end_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UnlessNode/end_keyword_loc-i.ri
@@ -12347,6 +12494,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UntilNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UntilNode/do_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UntilNode/do_keyword_loc-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/UntilNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UntilNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UntilNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/UntilNode/keyword_loc-i.ri
@@ -12520,6 +12668,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhenNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhenNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhenNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/WhenNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhenNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhenNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhenNode/keyword_loc-i.ri
@@ -12545,6 +12694,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhileNode/deconstruct_keys-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhileNode/do_keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhileNode/do_keyword_loc-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/WhileNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhileNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhileNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/WhileNode/keyword_loc-i.ri
@@ -12569,6 +12719,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/XStringNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/XStringNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/XStringNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/XStringNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/XStringNode/forced_binary_encoding%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/XStringNode/forced_utf8_encoding%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/XStringNode/inspect-i.ri
@@ -12592,6 +12743,7 @@ share/man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Prism/YieldNode/copy-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/YieldNode/deconstruct-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/YieldNode/deconstruct_keys-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Prism/YieldNode/each_child_node-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/YieldNode/inspect-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/YieldNode/keyword-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Prism/YieldNode/keyword_loc-i.ri
