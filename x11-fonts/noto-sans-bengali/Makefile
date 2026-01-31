@@ -1,10 +1,10 @@
 PORTNAME=	noto
-PORTVERSION=	3.010
+PORTVERSION=	3.011
 CATEGORIES=	x11-fonts
 #MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/NotoSansBengali-v${PORTVERSION}/ \
 #		https://github.com/notofonts/notofonts.github.io/raw/NotoSansBengali-v${PORTVERSION}/fonts/NotoSansBengali/hinted/ttf/:fonts
-MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/5f2354f2686464e3a8418351464c7845ed16a322/ \
-		https://github.com/notofonts/notofonts.github.io/raw/5f2354f2686464e3a8418351464c7845ed16a322/fonts/NotoSansBengali/hinted/ttf/:fonts
+MASTER_SITES=	https://github.com/notofonts/notofonts.github.io/raw/274d461a2c2d50d33c0bdc210ee0f99963ea1b7a/ \
+		https://github.com/notofonts/notofonts.github.io/raw/274d461a2c2d50d33c0bdc210ee0f99963ea1b7a/fonts/NotoSansBengali/hinted/ttf/:fonts
 PKGNAMESUFFIX=	-sans-bengali
 DISTFILES=	LICENSE \
 		${FONTS:S|$|:fonts|}
