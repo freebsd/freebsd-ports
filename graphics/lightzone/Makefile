@@ -1,7 +1,7 @@
 PORTNAME=	lightzone
 DISTVERSION=	4.1.8-3
 DISTVERSIONSUFFIX=	-g36e87773
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics java
 DIST_SUBDIR=	${PORTNAME}
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	liblcms2.so:graphics/lcms2 \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	jhindexer:java/javahelp
 
-BROKEN_aarch64=		fails to link: /usr/local/bin/ld: LC_JNIUtils.o: relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol
+#BROKEN_aarch64=		fails to link: /usr/local/bin/ld: LC_JNIUtils.o: relocation R_AARCH64_ADR_PREL_PG_HI21 against symbol
 BROKEN_armv6=		fails to compile: build.xml: exec returned: 1
 BROKEN_armv7=		fails to compile: build.xml: exec returned: 1
 
@@ -36,6 +36,7 @@ USES=		desktop-file-utils gmake gnome java:ant,run jpeg pkgconfig xorg
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_XORG=	x11
+JAVA_VERSION=	8 # because of Bug 292671 - graphics/lightzone: does not build with jdk11+
 JAVA_VENDOR=	openjdk
 
 PATCH_WRKSRC=	${WRKSRC:H}
