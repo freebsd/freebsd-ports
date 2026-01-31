@@ -1,5 +1,5 @@
 PORTNAME=	protocol-http1
-PORTVERSION=	0.35.2
+PORTVERSION=	0.36.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ WWW=		https://socketry.github.io/protocol-http1/ \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-protocol-http>=0.22<1:www/rubygem-protocol-http
+RUN_DEPENDS=	rubygem-protocol-http>=0.58<1:www/rubygem-protocol-http
 
 USES=		gem
 
