@@ -1,13 +1,14 @@
 PORTNAME=	django-model-utils
-PORTVERSION=	4.5.0
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	django_model_utils-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Django model mixins and utilities
-WWW=		https://github.com/jazzband/django-model-utils
+WWW=		https://django-model-utils.readthedocs.io/en/latest/ \
+		https://github.com/jazzband/django-model-utils
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
