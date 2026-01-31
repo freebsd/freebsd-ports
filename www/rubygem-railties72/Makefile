@@ -1,5 +1,5 @@
 PORTNAME=	railties
-PORTVERSION=	7.2.2.2
+PORTVERSION=	7.2.3
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	72
@@ -14,10 +14,12 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-actionpack72>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-actionpack72 \
 		rubygem-activesupport72>=${PORTVERSION}<${PORTVERSION}_99:devel/rubygem-activesupport72 \
+		rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-irb>=1.13<2:devel/rubygem-irb \
 		rubygem-rackup>=1.0.0:www/rubygem-rackup \
 		rubygem-rake>=12.2:devel/rubygem-rake \
 		rubygem-thor>=1.2.2<2:devel/rubygem-thor \
+		rubygem-tsort>=0.2:devel/rubygem-tsort \
 		rubygem-zeitwerk>=2.6<3:devel/rubygem-zeitwerk
 
 USES=		gem shebangfix
