@@ -1,5 +1,5 @@
---- src/components/other/desktop-tools/DesktopTools.hpp.orig	2022-07-05 13:20:17 UTC
-+++ src/components/other/desktop-tools/DesktopTools.hpp
+--- linphone-app/src/components/other/desktop-tools/DesktopTools.hpp.orig	2025-11-12 12:55:13 UTC
++++ linphone-app/src/components/other/desktop-tools/DesktopTools.hpp
 @@ -23,7 +23,7 @@
  
  #include <QtGlobal>

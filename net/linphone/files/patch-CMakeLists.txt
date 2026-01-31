@@ -1,19 +1,23 @@
---- CMakeLists.txt.orig	2023-06-16 13:29:33 UTC
+--- CMakeLists.txt.orig	2025-11-12 12:55:13 UTC
 +++ CMakeLists.txt
-@@ -20,6 +20,7 @@ cmake_minimum_required(VERSION 3.1)
- #
- ################################################################################
- cmake_minimum_required(VERSION 3.1)
-+project(linphoneqt)
+@@ -228,13 +228,13 @@ if(NOT APPLE OR MONO_ARCH)
+ 					set(CMAKE_POLICY_DEFAULT_CMP0077 NEW) # Prevent project from overriding the options we just set here
+ 					add_subdirectory("linphone-sdk")
+ 			endfunction()
+-			add_linphone_sdk()
++			# add_linphone_sdk()
  
- find_package(bctoolbox CONFIG)
- set(FULL_VERSION )
-@@ -556,7 +557,7 @@ else()
- 		set(MSPLUGINS_DIR "Frameworks/mediastreamer2.framework/Versions/A/Libraries")
- 	endif()
+ 			if(ENABLE_QT_KEYCHAIN)
+ 					function(add_linphone_keychain)
+ 						add_subdirectory("external/qtkeychain")
+ 					endfunction()
+-					add_linphone_keychain()
++					# add_linphone_keychain()
+ 			endif()
+ 			if(NOT APPLE AND NOT WIN32)
+ 				function(add_linphone_ispell)
+@@ -276,4 +276,3 @@ endif()
  else()
--	set(MSPLUGINS_DIR "plugins/mediastreamer")
-+	set(MSPLUGINS_DIR "lib/mediastreamer/plugins")
+     include(cmake/TasksMacos.cmake)
  endif()
- configure_file("${CMAKE_CURRENT_SOURCE_DIR}/src/config.h.cmake" "${CMAKE_CURRENT_BINARY_DIR}/config.h")
- # ------------------------------------------------------------------------------
+-
