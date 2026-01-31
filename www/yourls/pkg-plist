@@ -394,7 +394,6 @@
 %%WWWDIR%%/includes/vendor/composer/ca-bundle/src/CaBundle.php
 %%WWWDIR%%/includes/vendor/composer/installed.json
 %%WWWDIR%%/includes/vendor/composer/installed.php
-%%WWWDIR%%/includes/vendor/composer/platform_check.php
 %%WWWDIR%%/includes/vendor/geoip2/geoip2/README.md
 %%WWWDIR%%/includes/vendor/geoip2/geoip2/src/Database/Reader.php
 %%WWWDIR%%/includes/vendor/geoip2/geoip2/src/Exception/AddressNotFoundException.php
