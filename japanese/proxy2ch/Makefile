@@ -3,8 +3,6 @@ DISTVERSION=	20250614
 PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	https://codeberg.org/NanashiNoGombe/${PORTNAME}/archive/v${DISTVERSION}${EXTRACT_SUFX}?dummy=/
-DISTNAME=	v${DISTVERSION}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	mew14930xvi@inbox.lv
 COMMENT=	Proxy server for 5ch.net, bbspink.com and talk.jp
@@ -17,8 +15,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake iconv:wchar_t localbase:ldflags ssl
 USE_RC_SUBR=	${PORTNAME}
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PLIST_FILES=	${DOCSDIR_REL}/README.md sbin/${PORTNAME}
 
