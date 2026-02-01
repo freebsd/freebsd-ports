@@ -1365,7 +1365,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.jailxx17.json
 %%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.jailxx18.json
 %%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan1.json
-%%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan2.json
+%%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan2.parkobj
 %%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan3.json
 %%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.majoroak.json
 %%DATADIR%%/object/rct2tt/scenery_large/rct2tt.scenery_large.mcastl01.json
@@ -2571,6 +2571,7 @@ share/mime/packages/openrct2.xml
 %%DATADIR%%/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind04.json
 %%DATADIR%%/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind05.json
 %%DATADIR%%/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind06.json
+%%DATADIR%%/palettes.dat
 %%DATADIR%%/scenario_patches/0153987.parkpatch
 %%DATADIR%%/scenario_patches/020ed74.parkpatch
 %%DATADIR%%/scenario_patches/081feb1.parkpatch
