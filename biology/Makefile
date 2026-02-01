@@ -228,7 +228,6 @@
     SUBDIR += sigviewer
     SUBDIR += slclust
     SUBDIR += smithwaterman
-    SUBDIR += snpeff
     SUBDIR += spoa
     SUBDIR += sra-tools
     SUBDIR += stacks
