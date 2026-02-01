@@ -1,5 +1,5 @@
 PORTNAME=	irlba
-PORTVERSION=	2.3.5.1
+PORTVERSION=	2.3.7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/irlba/
 
 LICENSE=	GPLv3
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
