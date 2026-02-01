@@ -307,7 +307,6 @@
     SUBDIR += jose
     SUBDIR += jotta-cli
     SUBDIR += jrdesktop
-    SUBDIR += jsch
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += k6
