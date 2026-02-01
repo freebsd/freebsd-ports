@@ -25,8 +25,7 @@ USES=		desktop-file-utils gettext gnome gstreamer localbase:ldflags meson \
 USE_GNOME=	cairo gdkpixbuf glib20 gtk30 introspection libxml2
 USE_XORG=	ice x11 xorgproto
 USE_GSTREAMER=	cdparanoia faad flac lame libav ogg opus ugly vorbis wavpack
-MESON_ARGS=	-Dgudev=disabled \
-		-Dtests=disabled
+MESON_ARGS=	-Dtests=disabled
 USE_LDCONFIG=	yes
 
 GLIB_SCHEMAS=	org.gnome.rhythmbox.gschema.xml
@@ -51,8 +50,9 @@ IPOD_LIB_DEPENDS=	libgpod.so:audio/libgpod \
 			libimobiledevice-1.0.so:comms/libimobiledevice
 LIRC_MESON_ENABLED=	lirc
 LIRC_LIB_DEPENDS=	liblirc_client.so:comms/lirc
-MTP_MESON_ENABLED=	mtp
-MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp
+MTP_MESON_ENABLED=	mtp gudev
+MTP_LIB_DEPENDS=	libmtp.so:multimedia/libmtp \
+			libgudev-1.0.so:devel/libgudev
 NOTIFY_MESON_ENABLED=	libnotify
 NOTIFY_LIB_DEPENDS=	libnotify.so:devel/libnotify
 PYTHON_MESON_ENABLED=	plugins_python
