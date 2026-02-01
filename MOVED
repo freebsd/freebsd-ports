@@ -5102,3 +5102,4 @@ archivers/py-brotlipy|archivers/py-brotlicffi|2026-02-01|Has expired: This proje
 x11-fonts/symbola||2026-02-01|Has expired: Unfetchable
 biology/snpeff||2026-02-01|Has expired: Unfetchable
 games/freeminer-default||2026-02-01|Has expired: depends on deprecated games/freeminer
+games/freeminer||2026-02-01|Has expired: dead upstream
