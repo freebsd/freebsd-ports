@@ -1,7 +1,6 @@
 PORTNAME=	rclone
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.71.2
-PORTREVISION=	3
+DISTVERSION=	1.73.0
 CATEGORIES=	net
 
 MAINTAINER=	tremere@cainites.net
@@ -20,9 +19,11 @@ GO_MODULE=	github.com/rclone/rclone
 GO_BUILDFLAGS=	-ldflags -s -tags cmount
 
 PLIST_FILES=	bin/rclone \
+		bin/rclonefs \
 		share/man/man1/rclone.1.gz
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/rclone.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${RLN} ${STAGEDIR}${PREFIX}/bin/rclone ${STAGEDIR}${PREFIX}/bin/rclonefs
 
 .include <bsd.port.mk>
