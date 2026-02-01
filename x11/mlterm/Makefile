@@ -50,7 +50,8 @@ UIM_DESC=	uim support
 FCITX4_CONFIGURE_ON=	--enable-fcitx
 FCITX4_LIB_DEPENDS=	libfcitx-gclient.so:chinese/fcitx
 FCITX5_CONFIGURE_ON=	--enable-fcitx
-FCITX5_LIB_DEPENDS=	libFcitx5GClient.so:textproc/fcitx5-gtk
+FCITX5_LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
+			libFcitx5GClient.so:textproc/fcitx5-gtk
 
 FRIBIDI_CONFIGURE_ENABLE=	fribidi
 FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
