@@ -800,6 +800,7 @@
     SUBDIR += pagedgeometry
     SUBDIR += panoglview
     SUBDIR += panomatic
+    SUBDIR += papers
     SUBDIR += partio
     SUBDIR += pastel
     SUBDIR += pcdtojpeg
