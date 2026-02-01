@@ -323,7 +323,6 @@
     SUBDIR += stix-fonts
     SUBDIR += sudo-font
     SUBDIR += suxus
-    SUBDIR += symbola
     SUBDIR += tamsyn
     SUBDIR += tamzen
     SUBDIR += terminus-font

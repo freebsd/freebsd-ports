@@ -5099,3 +5099,4 @@ sysutils/wiimms||2026-02-01|Has expired: sysutils/wiimms has been abandoned for 
 sysutils/burp-devel|sysutils/burp|2026-02-01|Has expired: 3.2.0 is the new stable version based on 3.1.4. Use sysutils/burp instead
 sysutils/stressdisk||2026-02-01|Has expired: dead upstream
 archivers/py-brotlipy|archivers/py-brotlicffi|2026-02-01|Has expired: This project has been archived. The maintainers of this project have marked this project as archived. No new releases are expected. Use archivers/py-brotlicffi instead
+x11-fonts/symbola||2026-02-01|Has expired: Unfetchable
