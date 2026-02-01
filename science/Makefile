@@ -83,7 +83,6 @@
     SUBDIR += dynare
     SUBDIR += eccodes
     SUBDIR += elk
-    SUBDIR += elmerfem
     SUBDIR += epte
     SUBDIR += erd
     SUBDIR += ergo
