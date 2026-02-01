@@ -1,5 +1,5 @@
 PORTNAME=	cssselect
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,13 @@ WWW=		https://github.com/scrapy/cssselect
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.28.0:devel/py-hatchling@${PY_FLAVOR}
+# tests: 24 passed 10 warnings
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml-stubs>=0.5.1:devel/py-lxml-stubs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruff>=0.14.10_1:devel/py-ruff@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517 pytest
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 NO_ARCH=	yes
