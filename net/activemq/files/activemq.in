@@ -30,7 +30,7 @@
 #               Set the timeout in seconds to shutdown.
 #
 # activemq_java_home (path): Set the path to the jvm to use.
-#		Set to openJDK18 by default.
+#		Set to %%JAVA_HOME%%/bin/java by default.
 #
 # activemq_debug_precmd (bool): Give java command line that
 #		will be run, when started for debugging outside
@@ -63,7 +63,7 @@ load_rc_config $name
 : ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
 : ${activemq_stop_timeout:="10"}
 : ${activemq_hostname:=`/bin/hostname`}
-: ${activemq_java_home:='%%LOCALBASE%%/openjdk18/bin/java'}
+: ${activemq_java_home:='%%JAVA_HOME%%/bin/java'}
 : ${activemq_debug_precmd:=NO}
 : ${activemq_audit_log:=YES}
 
