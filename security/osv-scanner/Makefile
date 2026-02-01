@@ -1,7 +1,6 @@
 PORTNAME=	osv-scanner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.1
-PORTREVISION=	1
+DISTVERSION=	2.3.2
 CATEGORIES=	security
 
 MAINTAINER=	dutra@FreeBSD.org
@@ -16,7 +15,7 @@ USES=		go:1.25+,modules,run
 NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	d037742
+_BUILD_COMMIT=	e2a5d93
 _BUILD_DATE=	$$(date +%Y-%m-%d)
 
 GO_MODULE=	github.com/google/${PORTNAME}/v2
