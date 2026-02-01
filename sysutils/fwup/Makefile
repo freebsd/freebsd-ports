@@ -1,7 +1,6 @@
 PORTNAME=	fwup
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.0
-PORTREVISION=	1
+DISTVERSION=	1.15.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	dch@FreeBSD.org
@@ -16,10 +15,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/autogen:devel/autogen \
 		${LOCALBASE}/bin/help2man:misc/help2man \
 		${LOCALBASE}/bin/mdir:filesystems/mtools \
 		${LOCALBASE}/bin/zip:archivers/zip
-LIB_DEPENDS=	libconfuse.so:devel/libconfuse \
-		libsodium.so:security/libsodium
+LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
-USES=		autoreconf libarchive libtool pkgconfig shebangfix
+USES=		autoreconf gettext-runtime libarchive libtool pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	fhunleth
 
