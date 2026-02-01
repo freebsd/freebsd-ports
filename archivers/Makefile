@@ -191,7 +191,6 @@
     SUBDIR += py-borgbackup
     SUBDIR += py-brotli
     SUBDIR += py-brotlicffi
-    SUBDIR += py-brotlipy
     SUBDIR += py-bup
     SUBDIR += py-bz2file
     SUBDIR += py-comicapi
