@@ -269,6 +269,7 @@
     SUBDIR += wlroots017
     SUBDIR += wlroots018
     SUBDIR += wlroots019
+    SUBDIR += wlroots020
     SUBDIR += wmapp
     SUBDIR += wxgtk30
     SUBDIR += wxgtk32
