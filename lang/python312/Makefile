@@ -40,7 +40,8 @@ INSTALL_TARGET=		altinstall					# Don't want cloberring of unprefixed files
 TEST_TARGET=		buildbottest
 TEST_ARGS=		TESTOPTS=-j${MAKE_JOBS_NUMBER}
 
-MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
+MAKE_ARGS+=		COMPILEALL_OPTS=-j${MAKE_JOBS_NUMBER} \
+			INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 
 SUB_FILES=		pkg-message
 SUB_LIST=		PYTHON_SUFFIX=${PYTHON_SUFFIX}
