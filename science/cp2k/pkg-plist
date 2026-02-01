@@ -3,6 +3,7 @@ bin/dbm_miniapp%%SUFFIX%%
 bin/dbt_tas_unittest%%SUFFIX%%
 bin/dbt_unittest%%SUFFIX%%
 bin/dumpdcd%%SUFFIX%%
+bin/gemm_square_unittest%%SUFFIX%%
 bin/graph%%SUFFIX%%
 bin/grid_miniapp%%SUFFIX%%
 bin/grid_unittest%%SUFFIX%%
@@ -285,6 +286,7 @@ include/cp2k/mod_files/embed_main.mod
 include/cp2k/mod_files/embed_types.mod
 include/cp2k/mod_files/energy_corrections.mod
 include/cp2k/mod_files/environment.mod
+include/cp2k/mod_files/erf_complex.mod
 include/cp2k/mod_files/eri_mme_error_control.mod
 include/cp2k/mod_files/eri_mme_gaussian.mod
 include/cp2k/mod_files/eri_mme_integrate.mod
@@ -381,7 +383,6 @@ include/cp2k/mod_files/group_dist_types.mod
 include/cp2k/mod_files/grrm_utils.mod
 include/cp2k/mod_files/gw_communication.mod
 include/cp2k/mod_files/gw_integrals.mod
-include/cp2k/mod_files/gw_kp_to_real_space_and_back.mod
 include/cp2k/mod_files/gw_large_cell_gamma.mod
 include/cp2k/mod_files/gw_main.mod
 include/cp2k/mod_files/gw_small_cell_full_kp.mod
@@ -508,6 +509,7 @@ include/cp2k/mod_files/kg_vertex_coloring_methods.mod
 include/cp2k/mod_files/kinds.mod
 include/cp2k/mod_files/kpoint_coulomb_2c.mod
 include/cp2k/mod_files/kpoint_io.mod
+include/cp2k/mod_files/kpoint_k_r_trafo_simple.mod
 include/cp2k/mod_files/kpoint_methods.mod
 include/cp2k/mod_files/kpoint_transitional.mod
 include/cp2k/mod_files/kpoint_types.mod
@@ -515,6 +517,7 @@ include/cp2k/mod_files/kpsym.mod
 include/cp2k/mod_files/lazy.mod
 include/cp2k/mod_files/lebedev.mod
 include/cp2k/mod_files/libcp2k.mod
+include/cp2k/mod_files/libgrpp.mod
 include/cp2k/mod_files/libgrpp_integrals.mod
 include/cp2k/mod_files/libint_2c_3c.mod
 include/cp2k/mod_files/libint_wrapper.mod
@@ -547,13 +550,11 @@ include/cp2k/mod_files/manybody_gal.mod
 include/cp2k/mod_files/manybody_gal21.mod
 include/cp2k/mod_files/manybody_nequip.mod
 include/cp2k/mod_files/manybody_potential.mod
-include/cp2k/mod_files/manybody_quip.mod
 include/cp2k/mod_files/manybody_siepmann.mod
 include/cp2k/mod_files/manybody_tersoff.mod
 include/cp2k/mod_files/mao_basis.mod
 include/cp2k/mod_files/mao_methods.mod
 include/cp2k/mod_files/mao_optimizer.mod
-include/cp2k/mod_files/mao_types.mod
 include/cp2k/mod_files/mao_wfn_analysis.mod
 include/cp2k/mod_files/mathconstants.mod
 include/cp2k/mod_files/mathlib.mod
@@ -569,6 +570,8 @@ include/cp2k/mod_files/mc_move_control.mod
 include/cp2k/mod_files/mc_moves.mod
 include/cp2k/mod_files/mc_run.mod
 include/cp2k/mod_files/mc_types.mod
+include/cp2k/mod_files/mcl_api.mod
+include/cp2k/mod_files/mcl_requests.mod
 include/cp2k/mod_files/md_conserved_quantities.mod
 include/cp2k/mod_files/md_ener_types.mod
 include/cp2k/mod_files/md_energies.mod
@@ -583,6 +586,8 @@ include/cp2k/mod_files/message_passing.mod
 include/cp2k/mod_files/metadynamics.mod
 include/cp2k/mod_files/metadynamics_types.mod
 include/cp2k/mod_files/metadynamics_utils.mod
+include/cp2k/mod_files/mimic_communicator.mod
+include/cp2k/mod_files/mimic_loop.mod
 include/cp2k/mod_files/min_basis_set.mod
 include/cp2k/mod_files/minbas_methods.mod
 include/cp2k/mod_files/minbas_wfn_analysis.mod
@@ -655,6 +660,7 @@ include/cp2k/mod_files/negf_green_methods.mod
 include/cp2k/mod_files/negf_integr_cc.mod
 include/cp2k/mod_files/negf_integr_simpson.mod
 include/cp2k/mod_files/negf_integr_utils.mod
+include/cp2k/mod_files/negf_io.mod
 include/cp2k/mod_files/negf_matrix_utils.mod
 include/cp2k/mod_files/negf_methods.mod
 include/cp2k/mod_files/negf_subgroup_types.mod
@@ -812,11 +818,16 @@ include/cp2k/mod_files/qs_cdft_utils.mod
 include/cp2k/mod_files/qs_charge_mixing.mod
 include/cp2k/mod_files/qs_chargemol.mod
 include/cp2k/mod_files/qs_charges_types.mod
+include/cp2k/mod_files/qs_cneo_ggrid.mod
+include/cp2k/mod_files/qs_cneo_methods.mod
+include/cp2k/mod_files/qs_cneo_types.mod
+include/cp2k/mod_files/qs_cneo_utils.mod
 include/cp2k/mod_files/qs_collocate_density.mod
 include/cp2k/mod_files/qs_commutators.mod
 include/cp2k/mod_files/qs_condnum.mod
 include/cp2k/mod_files/qs_core_energies.mod
 include/cp2k/mod_files/qs_core_hamiltonian.mod
+include/cp2k/mod_files/qs_core_matrices.mod
 include/cp2k/mod_files/qs_dcdr.mod
 include/cp2k/mod_files/qs_dcdr_ao.mod
 include/cp2k/mod_files/qs_dcdr_utils.mod
@@ -990,6 +1001,7 @@ include/cp2k/mod_files/qs_spin_orbit.mod
 include/cp2k/mod_files/qs_subsys_methods.mod
 include/cp2k/mod_files/qs_subsys_types.mod
 include/cp2k/mod_files/qs_tddfpt2_assign.mod
+include/cp2k/mod_files/qs_tddfpt2_bse_utils.mod
 include/cp2k/mod_files/qs_tddfpt2_densities.mod
 include/cp2k/mod_files/qs_tddfpt2_eigensolver.mod
 include/cp2k/mod_files/qs_tddfpt2_fhxc.mod
@@ -1062,6 +1074,7 @@ include/cp2k/mod_files/rt_make_propagators.mod
 include/cp2k/mod_files/rt_projection_mo_utils.mod
 include/cp2k/mod_files/rt_propagation.mod
 include/cp2k/mod_files/rt_propagation_forces.mod
+include/cp2k/mod_files/rt_propagation_ft.mod
 include/cp2k/mod_files/rt_propagation_methods.mod
 include/cp2k/mod_files/rt_propagation_output.mod
 include/cp2k/mod_files/rt_propagation_types.mod
@@ -1304,6 +1317,7 @@ lib/cmake/cp2k/modules/FindLibVORI.cmake
 lib/cmake/cp2k/modules/FindLibXSMM.cmake
 lib/cmake/cp2k/modules/FindLibint2.cmake
 lib/cmake/cp2k/modules/FindMKL.cmake
+lib/cmake/cp2k/modules/FindMiMiC.cmake
 lib/cmake/cp2k/modules/FindNVHPCBlas.cmake
 lib/cmake/cp2k/modules/FindOpenBLAS.cmake
 lib/cmake/cp2k/modules/FindPlumed.cmake
@@ -1314,7 +1328,7 @@ lib/cmake/cp2k/modules/Findlibsmeagol.cmake
 lib/cmake/cp2k/modules/Finducc.cmake
 lib/cmake/cp2k/modules/cp2k_utils.cmake
 lib/libcp2k.so
-lib/libcp2k.so.2025.2
+lib/libcp2k.so.2026.1
 libdata/pkgconfig/libcp2k.pc
 %%DATADIR%%/data/ALL_BASIS_SETS
 %%DATADIR%%/data/ALL_POTENTIALS
@@ -1326,6 +1340,7 @@ libdata/pkgconfig/libcp2k.pc
 %%DATADIR%%/data/BASIS_ADMM_MOLOPT
 %%DATADIR%%/data/BASIS_ADMM_UZH
 %%DATADIR%%/data/BASIS_ADMM_ae
+%%DATADIR%%/data/BASIS_AUG_MOLOPT
 %%DATADIR%%/data/BASIS_LRIGPW_AUXMOLOPT
 %%DATADIR%%/data/BASIS_MINBAS
 %%DATADIR%%/data/BASIS_MINIX
@@ -1338,6 +1353,7 @@ libdata/pkgconfig/libcp2k.pc
 %%DATADIR%%/data/BASIS_MOLOPT_UCL
 %%DATADIR%%/data/BASIS_MOLOPT_UZH
 %%DATADIR%%/data/BASIS_PERIODIC_GW
+%%DATADIR%%/data/BASIS_RI_AUG_MOLOPT
 %%DATADIR%%/data/BASIS_RI_MOLOPT
 %%DATADIR%%/data/BASIS_RI_cc-TZ
 %%DATADIR%%/data/BASIS_SET
@@ -1516,6 +1532,7 @@ libdata/pkgconfig/libcp2k.pc
 %%DATADIR%%/data/NNP/protH2Ocluster-jctc2020-nnp/scaling.data
 %%DATADIR%%/data/NNP/protH2Ocluster-jctc2020-nnp/weights.001.data
 %%DATADIR%%/data/NNP/protH2Ocluster-jctc2020-nnp/weights.008.data
+%%DATADIR%%/data/NUCLEAR_BASIS_SETS
 %%DATADIR%%/data/NequIP/water-deployed-neq060dp.pth
 %%DATADIR%%/data/NequIP/water-deployed-neq060sp.pth
 %%DATADIR%%/data/POTENTIAL

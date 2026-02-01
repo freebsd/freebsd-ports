@@ -1,6 +1,6 @@
---- cmake/CompilerConfiguration.cmake.orig	2025-07-23 08:02:03 UTC
+--- cmake/CompilerConfiguration.cmake.orig	2026-01-06 09:31:20 UTC
 +++ cmake/CompilerConfiguration.cmake
-@@ -53,9 +53,9 @@ add_compile_options(
+@@ -51,9 +51,9 @@ add_compile_options(
  
  # Release
  add_compile_options(
@@ -13,20 +13,20 @@
  )
  
  # Generic
-@@ -67,9 +67,9 @@ add_compile_options(
+@@ -65,9 +65,9 @@ add_compile_options(
  
  # Debug
  add_compile_options(
 -  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-O1;-march=native;-mtune=native>"
 -  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:CXX,GNU>>:-O1;-march=native;-mtune=native>"
--  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:C,GNU>>:-O1;-march=native;-mtune=native>"
+-  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:C,GNU>>:-O1;-march=native;-mtune=native;-Wall;-Wextra;-Werror>"
 +  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-O1>"
 +  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:CXX,GNU>>:-O1>"
 +  "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:C,GNU>>:-O1>"
  )
  add_compile_options(
    "$<$<AND:$<CONFIG:DEBUG>,$<COMPILE_LANG_AND_ID:Fortran,GNU>>:-fsanitize=leak;-Werror=realloc-lhs>"
-@@ -100,7 +100,7 @@ add_compile_options(
+@@ -107,7 +107,7 @@ add_compile_options(
  
  # Address Sanitizer
  add_compile_options(
