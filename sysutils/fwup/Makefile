@@ -17,12 +17,13 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/autogen:devel/autogen \
 		${LOCALBASE}/bin/zip:archivers/zip
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 
-USES=		autoreconf gettext-runtime libarchive libtool pkgconfig shebangfix
+USES=		autoreconf gettext-runtime libarchive libtool pkgconfig \
+		shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	fhunleth
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
+GNU_CONFIGURE_MANPREFIX=	${PREFIX}/share
 
 SHEBANG_FILES=	img2fwup scripts/*.sh
 
@@ -36,10 +37,12 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 pre-configure:
-	@(cd ${WRKSRC} && ./autogen.sh)
+	@(cd ${WRKSRC} && \
+		./autogen.sh)
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
