@@ -1,5 +1,5 @@
 PORTNAME=	plank
-DISTVERSION=	0.11.159
+DISTVERSION=	0.11.161
 CATEGORIES=	x11
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,13 +25,8 @@ USE_XORG=	x11 xfixes xi
 
 MESON_ARGS=	-Dproduction-release=true \
 		-Denable-apport=false \
+		-Denable-dbusmenu=no \
 		-Denable-barriers=yes
-
-OPTIONS_DEFINE=	DBUSMENU
-OPTIONS_SUB=	yes
-DBUSMENU_DESC=	DBusMenu protocol
-DBUSMENU_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
-DBUSMENU_MESON_YES=	enable-dbusmenu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
