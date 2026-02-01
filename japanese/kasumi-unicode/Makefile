@@ -1,5 +1,6 @@
 PORTNAME=	kasumi-unicode
 DISTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	japanese
 
 MAINTAINER=	mew14930xvi@inbox.lv
