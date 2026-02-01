@@ -1597,7 +1597,6 @@
     SUBDIR += wemux
     SUBDIR += whatpix
     SUBDIR += whowatch
-    SUBDIR += wiimms
     SUBDIR += wiper
     SUBDIR += witr
     SUBDIR += wmapmload
