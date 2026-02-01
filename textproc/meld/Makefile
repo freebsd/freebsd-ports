@@ -11,6 +11,8 @@ WWW=		https://meld.app/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+PORTSCOUT=	limitw:1,even
+
 BUILD_DEPENDS=	itstool:textproc/itstool
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
