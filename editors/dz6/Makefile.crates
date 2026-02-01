@@ -5,15 +5,16 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
+		anyhow-1.0.100 \
 		arboard-3.6.1 \
 		bitflags-2.10.0 \
 		cassowary-0.3.0 \
 		castaway-0.2.4 \
 		cfg-if-1.0.4 \
-		clap-4.5.53 \
-		clap_builder-4.5.53 \
-		clap_derive-4.5.49 \
-		clap_lex-0.7.6 \
+		clap-4.5.55 \
+		clap_builder-4.5.55 \
+		clap_derive-4.5.55 \
+		clap_lex-0.7.7 \
 		clipboard-win-5.4.1 \
 		colorchoice-1.0.4 \
 		compact_str-0.8.1 \
@@ -21,11 +22,11 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		crossterm-0.28.1 \
 		crossterm-0.29.0 \
 		crossterm_winapi-0.9.1 \
-		darling-0.20.11 \
-		darling_core-0.20.11 \
-		darling_macro-0.20.11 \
-		derive_more-2.1.0 \
-		derive_more-impl-2.1.0 \
+		darling-0.23.0 \
+		darling_core-0.23.0 \
+		darling_macro-0.23.0 \
+		derive_more-2.1.1 \
+		derive_more-impl-2.1.1 \
 		directories-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
 		dispatch2-0.3.0 \
@@ -36,23 +37,22 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		errno-0.3.14 \
 		error-code-3.3.2 \
 		evalexpr-12.0.3 \
-		fnv-1.0.7 \
 		foldhash-0.1.5 \
 		gethostname-1.1.0 \
-		getrandom-0.2.16 \
+		getrandom-0.2.17 \
 		hashbrown-0.15.5 \
 		hashbrown-0.16.1 \
 		heck-0.5.0 \
 		hex-0.4.3 \
 		ident_case-1.0.1 \
-		indexmap-2.12.1 \
+		indexmap-2.13.0 \
 		indoc-2.0.7 \
-		instability-0.3.10 \
+		instability-0.3.11 \
 		is_terminal_polyfill-1.70.2 \
 		itertools-0.13.0 \
-		itoa-1.0.15 \
-		libc-0.2.178 \
-		libredox-0.1.10 \
+		itoa-1.0.17 \
+		libc-0.2.180 \
+		libredox-0.1.12 \
 		linux-raw-sys-0.4.15 \
 		linux-raw-sys-0.11.0 \
 		litrs-1.0.0 \
@@ -60,7 +60,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		log-0.4.29 \
 		lru-0.12.5 \
 		memchr-2.7.6 \
+		memmap2-0.7.1 \
 		mio-1.1.1 \
+		mmap-io-0.9.4 \
 		objc2-0.6.3 \
 		objc2-app-kit-0.3.2 \
 		objc2-core-foundation-0.3.2 \
@@ -73,8 +75,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		parking_lot_core-0.9.12 \
 		paste-1.0.15 \
 		percent-encoding-2.3.2 \
-		proc-macro2-1.0.103 \
-		quote-1.0.42 \
+		proc-macro2-1.0.106 \
+		quote-1.0.44 \
 		ratatui-0.29.0 \
 		redox_syscall-0.5.18 \
 		redox_users-0.4.6 \
@@ -83,31 +85,31 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		regex-syntax-0.8.8 \
 		rustc_version-0.4.1 \
 		rustix-0.38.44 \
-		rustix-1.1.2 \
+		rustix-1.1.3 \
 		rustversion-1.0.22 \
-		ryu-1.0.20 \
+		ryu-1.0.22 \
 		scopeguard-1.2.0 \
 		semver-1.0.27 \
 		serde-1.0.228 \
 		serde_core-1.0.228 \
 		serde_derive-1.0.228 \
-		serde_spanned-1.0.3 \
-		shell-words-1.1.0 \
+		serde_spanned-1.0.4 \
+		shell-words-1.1.1 \
 		signal-hook-0.3.18 \
 		signal-hook-mio-0.2.5 \
-		signal-hook-registry-1.4.7 \
+		signal-hook-registry-1.4.8 \
 		smallvec-1.15.1 \
 		static_assertions-1.1.0 \
 		strsim-0.11.1 \
 		strum-0.26.3 \
 		strum_macros-0.26.4 \
-		syn-2.0.111 \
+		syn-2.0.114 \
 		thiserror-1.0.69 \
 		thiserror-impl-1.0.69 \
-		toml-0.9.8 \
-		toml_datetime-0.7.3 \
-		toml_parser-1.0.4 \
-		toml_writer-1.0.4 \
+		toml-0.9.11+spec-1.1.0 \
+		toml_datetime-0.7.5+spec-1.1.0 \
+		toml_parser-1.0.6+spec-1.1.0 \
+		toml_writer-1.0.6+spec-1.1.0 \
 		tui-input-0.14.0 \
 		unicode-ident-1.0.22 \
 		unicode-segmentation-1.12.0 \
