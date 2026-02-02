@@ -1,6 +1,6 @@
-TIMESTAMP = 1768743812
-SHA256 (radicle-1.6.0.tar.gz) = 50cb683ae03ac121596876ddeb45396e7a5de22f7c8df87dabd789afa4e8912b
-SIZE (radicle-1.6.0.tar.gz) = 1155936
+TIMESTAMP = 1770027487
+SHA256 (radicle-1.6.1.tar.gz) = b00d9fcaf3154ff939d11a4532ba2fd627075f6bb4c81979c40effdd48fdafe6
+SIZE (radicle-1.6.1.tar.gz) = 1158350
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
 SIZE (rust/crates/addr2line-0.24.2.crate) = 39015
 SHA256 (rust/crates/adler2-2.0.0.crate) = 512761e0bb2578dd7380c6baaa0f4ce03e84f95e960231d1dec8bf4d7d6e2627
