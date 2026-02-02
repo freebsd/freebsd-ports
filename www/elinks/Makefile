@@ -1,6 +1,6 @@
 PORTNAME=	elinks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.19.0
 CATEGORIES=	www
 
 MAINTAINER=	jailbird@fdf.net
@@ -13,15 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xmlto:textproc/xmlto
 LIB_DEPENDS=	libidn2.so:dns/libidn2
 
-USES=		bison:alias cpe gettext-runtime:build gmake iconv localbase \
+USES=		bison:alias cpe gettext-runtime gmake iconv localbase:ldflags \
 		meson perl5 pkgconfig python:build shebangfix ssl
-TEST_USES=	gettext-tools:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkd77
 
-LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lintl
-TEST_TARGET=	test
-SHEBANG_FILES=	doc/tools/help2xml doc/tools/asciidoc/asciidoc.py \
+SHEBANG_FILES=	doc/tools/asciidoc/asciidoc.py doc/tools/help2xml \
 		src/protocol/ftp/test-ftp-parser
 MESON_ARGS=	-D256-colors=true \
 		-D88-colors=true \
@@ -44,6 +41,10 @@ MESON_ARGS=	-D256-colors=true \
 		-Dtest=true \
 		-Dtrue-color=true
 
+TEST_TARGET=	test
+
+LDFLAGS+=	-lexecinfo -lintl
+
 OPTIONS_DEFINE=		BROTLI CSS CURL EXMODE GUILE HIGHLIGHT LIBEVENT \
 			LOCAL_CGI LUA MUJS NLS NOROOT PYTHON SIXEL SMB \
 			SPIDERMONKEY TRE XBELMARKS ZSTD
@@ -65,11 +66,11 @@ XBELMARKS_DESC=		XBEL bookmarks (via expat)
 BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
 BROTLI_MESON_TRUE=	brotli
 
+CSS_IMPLIES=		HIGHLIGHT
 CSS_LIB_DEPENDS=	libcss.so:textproc/libcss \
 			libdom.so:www/libdom \
 			libwapcaplet.so:textproc/libwapcaplet
 CSS_MESON_TRUE=		libcss
-CSS_IMPLIES=		HIGHLIGHT
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_MESON_TRUE=	libcurl
@@ -93,8 +94,8 @@ LUA_MESON_ON=	-Dluapkg=lua-${LUA_VER}
 MUJS_LIB_DEPENDS=	libmujs.so:lang/mujs
 MUJS_MESON_TRUE=	mujs
 
-NLS_USES=		gettext-tools
 NLS_BUILD_DEPENDS=	xxd:sysutils/xxd
+NLS_USES=		gettext
 NLS_MESON_TRUE=		gettext nls
 
 NOROOT_MESON_TRUE=	no-root
@@ -108,14 +109,14 @@ SIXEL_MESON_TRUE=	libsixel
 SMB_USES=	samba # smbclient
 SMB_MESON_TRUE=	smb
 
-SPIDERMONKEY_USES=		compiler:c++17-lang sqlite
+SPIDERMONKEY_IMPLIES=		CSS CURL HIGHLIGHT
 SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libmozjs-128.so:lang/spidermonkey128
 SPIDERMONKEY_LIB_DEPENDS=	libmozjs-128.so:lang/spidermonkey128
+SPIDERMONKEY_USES=		compiler:c++17-lang sqlite
+SPIDERMONKEY_MESON_TRUE=	sm-scripting spidermonkey
 SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/js-128
 SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/js-128
-SPIDERMONKEY_LDFLAGS=		-lpthread -lm
-SPIDERMONKEY_MESON_TRUE=	sm-scripting spidermonkey
-SPIDERMONKEY_IMPLIES=		CSS CURL HIGHLIGHT
+SPIDERMONKEY_LDFLAGS=		-lm -lpthread
 
 TRE_LIB_DEPENDS=	libtre.so:textproc/libtre
 TRE_MESON_TRUE=		tre

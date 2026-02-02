@@ -1,6 +1,6 @@
---- src/document/renderer.c.orig	2024-12-26 11:02:09 UTC
+--- src/document/renderer.c.orig	2025-12-25 11:06:07 UTC
 +++ src/document/renderer.c
-@@ -415,11 +415,11 @@ struct conv_table *
+@@ -657,12 +657,12 @@ struct conv_table *
  }
  
  struct conv_table *
@@ -9,6 +9,7 @@
  		  int default_cp, int *from_cp,
  		  enum cp_status *cp_status, int ignore_server_cp)
  {
+ 	ELOG
 -	char *part = head;
 +	const char *part = head;
  	int cp_index = -1;
