@@ -1,8 +1,8 @@
 PORTNAME=	ghidra
-DISTVERSION=	11.4.2
+DISTVERSION=	12.0.2
 CATEGORIES=	devel security java
 MASTER_SITES=	https://github.com/NationalSecurityAgency/${PORTNAME}/releases/download/Ghidra_${DISTVERSION}_build/
-DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20250826
+DISTNAME=	${PORTNAME}_${DISTVERSION}_PUBLIC_20260129
 
 MAINTAINER=	tiga@FreeBSD.org
 COMMENT=	Software reverse engineering (SRE) framework
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
-		gradle>=8.12:devel/gradle
+		gradle>=9.3:devel/gradle
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		compiler:gcc-c++11-lib cpe java python shebangfix zip
