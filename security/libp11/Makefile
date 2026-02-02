@@ -1,5 +1,5 @@
 PORTNAME=	libp11
-DISTVERSION=	0.4.16
+DISTVERSION=	0.4.17
 CATEGORIES=	security devel
 MASTER_SITES=	https://github.com/OpenSC/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -8,8 +8,6 @@ COMMENT=	Small layer on top of PKCS\#11 API
 WWW=		https://github.com/OpenSC/libp11/wiki
 
 LICENSE=	LGPL21
-
-LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		cpe libtool pathfix pkgconfig ssl
 CPE_VENDOR=	opensc_project

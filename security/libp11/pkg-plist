@@ -7,7 +7,7 @@ lib/engines/pkcs11.so
 lib/libp11.a
 lib/libp11.so
 lib/libp11.so.3
-lib/libp11.so.3.7.2
+lib/libp11.so.3.7.3
 lib/libpkcs11.a
 lib/libpkcs11.so
 lib/libpkcs11.so.0
@@ -18,6 +18,8 @@ libdata/pkgconfig/libp11.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/decrypt.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eckeygen.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ed25519keygen.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ed448keygen.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getrandom.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/listkeys.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/listkeys_ext.c
