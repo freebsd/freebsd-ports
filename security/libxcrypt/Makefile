@@ -1,5 +1,6 @@
 PORTNAME=	libxcrypt
 DISTVERSION=	4.5.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/besser82/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -20,6 +21,8 @@ CFLAGS+=	-Wno-gnu-statement-expression
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
-CONFIGURE_ARGS=	--disable-static
+CONFIGURE_ARGS=	--disable-static \
+		--disable-xcrypt-compat-files \
+		--enable-obsolete-api=no
 
 .include <bsd.port.mk>
