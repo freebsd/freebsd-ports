@@ -30,11 +30,11 @@ NO_BUILD=	yes
 SUB_FILES=	wrapper.sh
 
 DESKTOP_ENTRIES="Unigine Superposition" "${COMMENT}" "Superposition" \
-		"${PKGNAMEPREFIX}${PORTNAME}" "Launcher;Benchmark;" false
+		"${PKGNAMEPREFIX}${PORTNAME}" "Game;" false
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAIL} -n 5406267 ${DISTDIR}/${DISTFILES} | ${TAR} xzf - -C ${WRKSRC}
+	@${TAIL} -n 5401121 ${DISTDIR}/${DISTFILES} | ${TAR} xzf - -C ${WRKSRC}
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "bin data docs" ${STAGEDIR}${DATADIR}
