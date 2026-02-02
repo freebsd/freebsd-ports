@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 IGNORE_DragonFly=	requires linuxulator to register rpms
 
-ONLY_FOR_ARCHS=	amd64 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	requires linuxulator to register rpms
 
 post-extract:
