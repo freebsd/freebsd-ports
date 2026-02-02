@@ -1,25 +1,37 @@
 PORTNAME=	xwinwrap
-PORTVERSION=	0.3
-PORTREVISION=	4
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9
 CATEGORIES=	x11
-MASTER_SITES=	LOCAL/vg
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	XWinWrap replace a desktop background with a movie or screensaver
-WWW=		http://tech.shantanugoel.com/projects/linux/shantz-xwinwrap
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	NOVELL
+LICENSE_NAME=	Novell License
+LICENSE_FILE=	${WRKSRC}/xwinwrap.c
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-ONLY_FOR_ARCHS=	amd64 i386
-USES=		tar:bzip2 xorg
+USES=		localbase:ldflags shebangfix xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	mmhobi7
 USE_XORG=	x11 xorgproto xrender xext
-PLIST_FILES=	bin/${PORTNAME}
-MAKE_ARGS+=	PREFIX=${PREFIX}
 
-.include <bsd.port.pre.mk>
+SHEBANG_FILES=	examples/mint_auto_start_example.sh
+bash_CMD=	${SH}
 
-.if ${ARCH} == "amd64"
-MAKE_ARGS+=	ARCH=x86_64
-.endif
+LIBS+=		-lX11 -lXext -lXrender
 
-.include <bsd.port.post.mk>
+PLIST_FILES=	bin/${PORTNAME} \
+		${EXAMPLESDIR}/mint_auto_start_example.sh
+
+do-build:
+	${SETENVI} ${MAKE_ENV} ${CC} ${CFLAGS} ${CPPFLAGS} ${LDFLAGS} \
+		-o ${WRKDIR}/xwinwrap ${WRKSRC}/xwinwrap.c ${LIBS}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/xwinwrap ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/mint_auto_start_example.sh \
+		${STAGEDIR}${EXAMPLESDIR}/
+
+.include <bsd.port.mk>
