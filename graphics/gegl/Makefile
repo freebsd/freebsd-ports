@@ -1,5 +1,6 @@
 PORTNAME=	gegl
 DISTVERSION=	0.4.66
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
@@ -33,8 +34,9 @@ MESON_ARGS=	-Ddocs=false \
 		-Dmaxflow=disabled \
 		-Dmrg=disabled \
 		-Dpygobject=disabled \
-		-Dlua=disabled \
-		-Drelocatable=enabled
+		-Dlua=disabled
+# relocatable does not mean ELF relocation
+MESON_ARGS+=	-Drelocatable=disabled
 .if !exists(/usr/include/omp.h)
 MESON_ARGS+=	-Dopenmp=disabled
 .endif
