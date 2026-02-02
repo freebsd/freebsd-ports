@@ -6039,6 +6039,7 @@
     SUBDIR += py-sparse
     SUBDIR += py-speaklater
     SUBDIR += py-speg
+    SUBDIR += py-spin
     SUBDIR += py-spyder-kernels
     SUBDIR += py-sqids
     SUBDIR += py-sqlfluff
