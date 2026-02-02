@@ -126,6 +126,11 @@ share/applications/bluefish.desktop
 %%DATADIR%%/templates/PHP
 %%DATADIR%%/templates/XHTML_1.0
 %%DATADIR%%/ui/bluefish_menu_ui.xml
+%%DATADIR%%/ui_dev.png
+%%DATADIR%%/ui_everything.png
+%%DATADIR%%/ui_experienced.png
+%%DATADIR%%/ui_minimal.png
+%%DATADIR%%/ui_webdev.png
 %%PORTDOCS%%%%DOCSDIR%%/bflang/sample.bflang2
 share/icons/hicolor/128x128/apps/bluefish.png
 share/icons/hicolor/128x128/mimetypes/application-x-bluefish-project.png

@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260202:
+  AFFECTS: users of www/bluefish
+  AUTHOR: eduardo@FreeBSD.org
+
+  www/bluefish has been updated to 2.4.0.
+
+  Starting from 2.4 Bluefish will place config files no longer in
+  ~/.bluefish. On FreeBSD it will be ~/.config and ~/.local/
+
+  See details at https://sourceforge.net/p/bluefish/code/HEAD/tree/tags/bluefish_2_4_0/ChangeLog
+
 20260125:
   AFFECTS: users of dns/ddclient
   AUTHOR: mjl@luckie.org.nz
