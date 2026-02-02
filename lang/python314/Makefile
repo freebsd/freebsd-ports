@@ -43,7 +43,8 @@ TEST_TARGET=		test # that's the --fast-ci with tighter timeouts and using less r
 # TEST_ARGS: test_gdb requires debug symbols for the test_gdb.test_pretty_print test, so skip it unless defined(WITH_DEBUG)
 TEST_ARGS=		TESTOPTS="-j${MAKE_JOBS_NUMBER} ${WITH_DEBUG:U-x test_gdb}"
 
-MAKE_ARGS+=		INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
+MAKE_ARGS+=		COMPILEALL_OPTS=-j${MAKE_JOBS_NUMBER} \
+			INSTALL_SHARED="${INSTALL_LIB}"				# Strip shared library
 
 SUB_FILES=		pkg-message
 SUB_LIST=		PYTHON_SUFFIX=${PYTHON_SUFFIX}
