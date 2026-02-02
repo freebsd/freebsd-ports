@@ -237,6 +237,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/aliases.ini
 %%DATADIR%%/data/lexlib/reStructuredText.cuda-lexmap
 %%DATADIR%%/data/lexlib/reStructuredText.lcf
+%%DATADIR%%/data/lexliblite/Config-RC.cuda-litelexer
 %%DATADIR%%/data/lexliblite/Ini files.cuda-litelexer
 %%DATADIR%%/data/lexliblite/JSON.cuda-litelexer
 %%DATADIR%%/data/lexliblite/Log files.cuda-litelexer
@@ -664,6 +665,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-line-states_.png
 %%DATADIR%%/readme/wiki/cudatext-lsp-hover_.png
 %%DATADIR%%/readme/wiki/cudatext-lsp-refs.png
+%%DATADIR%%/readme/wiki/cudatext-lsp-stderr.png
 %%DATADIR%%/readme/wiki/cudatext-macro-border.png
 %%DATADIR%%/readme/wiki/cudatext-macro-menu.png
 %%DATADIR%%/readme/wiki/cudatext-markers-html.png
@@ -703,6 +705,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext_all_icons.png
 %%DATADIR%%/readme/wiki/cudatext_api.wiki
 %%DATADIR%%/readme/wiki/cudatext_files_formats.wiki
+%%DATADIR%%/readme/wiki/cudatext_lsp.wiki
 %%DATADIR%%/readme/wiki/cudatext_options_editor.png
 %%DATADIR%%/readme/wiki/cudatext_plugins.wiki
 %%DATADIR%%/readme/wiki/cudatext_snippets_menu.png
