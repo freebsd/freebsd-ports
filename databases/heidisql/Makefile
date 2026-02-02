@@ -1,5 +1,5 @@
 PORTNAME=	heidisql
-DISTVERSION=	12.14.1.1
+DISTVERSION=	12.15.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -17,7 +17,6 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	HeidiSQL
 GH_PROJECT=	HeidiSQL
-GH_TAGNAME=	2967ad28b4e3172e302cb8d487c0d3a5c752b3f
 
 LAZARUS_PROJECT_FILES+=	heidisql.lpi
 
@@ -35,19 +34,16 @@ USE_GNOME+=	${USE_GNOME_${FLAVOR}}
 SUB_FILES=	pkg-message
 
 post-patch:
-	${REINPLACE_CMD} -e 's|FPC_FULLVERSION<30204|FPC_FULLVERSION<30203|g' \
-		${WRKSRC}/source/main.pas ${WRKSRC}/source/usermanager.pas
-	${REINPLACE_CMD} -e 's|System.UITypes,||g' ${WRKSRC}/source/table_editor.pas \
-		${WRKSRC}/source/grideditlinks.pas
-	${REINPLACE_CMD} -e 's| \+ \[ofAllowMultiSelect\]||g' ${WRKSRC}/source/main.pas
-	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/source/apphelpers.pas
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/source/apphelpers.pas \
+		${WRKSRC}/source/about.pas
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/package-skeleton/usr/share/applications/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps
 	${INSTALL_DATA} ${WRKSRC}/res/deb-package-icon.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/${PORTNAME}.png
-	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
 	${INSTALL_DATA} ${WRKSRC}/extra/ini/*.ini ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/extra/locale/*.mo ${STAGEDIR}${DATADIR}/locale/
 
 .include <bsd.port.mk>
