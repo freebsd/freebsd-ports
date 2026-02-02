@@ -1,5 +1,6 @@
 PORTNAME=	freeipa-client
 DISTVERSION=	4.13.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://releases.pagure.org/freeipa/
 DISTNAME=	freeipa-${DISTVERSION}
@@ -26,7 +27,7 @@ LIB_DEPENDS=	libcmocka.so:sysutils/cmocka \
 		libxmlrpc.so:net/xmlrpc-c
 
 USES=		autoreconf gettext gmake gssapi:mit ldap libtool \
-		localbase:ldflags pkgconfig python
+		localbase:ldflags ssl pkgconfig python
 
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
@@ -50,5 +51,19 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION}
 # Make sample configuration file
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/ipa/epn.conf ${STAGEDIR}${PREFIX}/etc/ipa/epn.conf.sample
+
+post-stage:
+	${REINPLACE_CMD} -e 's|${STAGEDIR}||'   \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipaclient/install_files.txt
+	${REINPLACE_CMD} -e 's|${STAGEDIR}||'   \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipapython/install_files.txt
+	${REINPLACE_CMD} -e 's|${STAGEDIR}||'   \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipaplatform/install_files.txt
+	${REINPLACE_CMD} -e 's|${STAGEDIR}||'   \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipalib/install_files.txt
+	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipaclient/install_files.txt.bak
+	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipapython/install_files.txt.bak
+	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipaplatform/install_files.txt.bak
+	${RM} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ipalib/install_files.txt.bak
 
 .include <bsd.port.mk>
