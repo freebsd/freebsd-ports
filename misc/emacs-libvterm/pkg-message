@@ -1,0 +1,12 @@
+[
+{
+message: <<EOT
+Final emacs-libvterm setup instructions:
+
+Add (require 'vterm) to your Emacs configuration.
+
+M-x 'vterm' to open a new terminal.
+EOT
+  type: install
+}
+]
