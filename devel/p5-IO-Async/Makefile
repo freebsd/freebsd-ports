@@ -1,5 +1,5 @@
 PORTNAME=	IO-Async
-PORTVERSION=	0.804
+PORTVERSION=	0.805
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Future>=0.44:devel/p5-Future \
 		p5-Struct-Dumb>0:devel/p5-Struct-Dumb
-TEST_DEPENDS=	p5-Future-IO>=0:devel/p5-Future-IO \
+TEST_DEPENDS=	p5-Future-IO>=0.17:devel/p5-Future-IO \
 		p5-Test-Metrics-Any>=0:devel/p5-Test-Metrics-Any \
 		p5-Test-Pod>=1:devel/p5-Test-Pod \
 		p5-Test-Simple>=1.302200:devel/p5-Test-Simple
