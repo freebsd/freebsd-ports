@@ -32,7 +32,6 @@ bin/%%BINPREFIX%%false
 bin/%%BINPREFIX%%fmt
 bin/%%BINPREFIX%%fold
 bin/%%BINPREFIX%%groups
-bin/%%BINPREFIX%%hashsum
 bin/%%BINPREFIX%%head
 bin/%%BINPREFIX%%hostid
 bin/%%BINPREFIX%%hostname
