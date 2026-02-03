@@ -280,7 +280,6 @@ include/folly/coro/Invoke.h
 include/folly/coro/Merge-inl.h
 include/folly/coro/Merge.h
 include/folly/coro/Mutex.h
-include/folly/coro/Noexcept.h
 include/folly/coro/Nothrow.h
 include/folly/coro/Promise.h
 include/folly/coro/Result.h
@@ -305,6 +304,7 @@ include/folly/coro/Transform-inl.h
 include/folly/coro/Transform.h
 include/folly/coro/UnboundedQueue.h
 include/folly/coro/ValueOrError.h
+include/folly/coro/ValueOrFatal.h
 include/folly/coro/ViaIfAsync.h
 include/folly/coro/WithAsyncStack.h
 include/folly/coro/WithCancellation.h
@@ -920,6 +920,7 @@ include/folly/logging/StreamHandlerFactory.h
 include/folly/logging/xlog.h
 include/folly/memory/Arena-inl.h
 include/folly/memory/Arena.h
+include/folly/memory/IoUringArena.h
 include/folly/memory/JemallocHugePageAllocator.h
 include/folly/memory/JemallocNodumpAllocator.h
 include/folly/memory/MallctlHelper.h
@@ -1025,12 +1026,12 @@ include/folly/result/detail/result_or_unwind.h
 include/folly/result/detail/result_promise.h
 include/folly/result/detail/rich_error_common.h
 include/folly/result/detail/rich_exception_ptr_storage.h
-include/folly/result/enrich_non_value.h
+include/folly/result/epitaph.h
 include/folly/result/errc_rich_error.h
 include/folly/result/gtest_helpers.h
 include/folly/result/immortal_rich_error.h
 include/folly/result/nestable_coded_rich_error.h
-include/folly/result/or_unwind_rich.h
+include/folly/result/or_unwind_epitaph.h
 include/folly/result/result.h
 include/folly/result/rich_error.h
 include/folly/result/rich_error_base.h
