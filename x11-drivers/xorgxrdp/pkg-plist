@@ -1,10 +1,10 @@
 @dir /etc/X11/xrdp
 /etc/X11/xrdp/xorg.conf
-lib/xorg/modules/drivers/xrdpdev_drv.a
-lib/xorg/modules/drivers/xrdpdev_drv.so
-lib/xorg/modules/input/xrdpkeyb_drv.a
-lib/xorg/modules/input/xrdpkeyb_drv.so
-lib/xorg/modules/input/xrdpmouse_drv.a
-lib/xorg/modules/input/xrdpmouse_drv.so
-lib/xorg/modules/libxorgxrdp.a
-lib/xorg/modules/libxorgxrdp.so
+%%XMODDIR%%/drivers/xrdpdev_drv.a
+%%XMODDIR%%/drivers/xrdpdev_drv.so
+%%XMODDIR%%/input/xrdpkeyb_drv.a
+%%XMODDIR%%/input/xrdpkeyb_drv.so
+%%XMODDIR%%/input/xrdpmouse_drv.a
+%%XMODDIR%%/input/xrdpmouse_drv.so
+%%XMODDIR%%/libxorgxrdp.a
+%%XMODDIR%%/libxorgxrdp.so

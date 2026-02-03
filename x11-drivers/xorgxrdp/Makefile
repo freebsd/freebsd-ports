@@ -9,7 +9,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		xrdp-${XRDPVER}${EXTRACT_SUFX}:xrdp
 DIST_SUBDIR=	xrdp
 
-PATCH_SITES=	https://github.com/neutrinolabs/${GH_PROJECT}/commit/
+PATCH_SITES=	https://github.com/neutrinolabs/${PORTNAME}/commit/:commit \
+		https://github.com/neutrinolabs/${PORTNAME}/pull/:pull
+PATCHFILES+=	f5a07e9.patch:-p1:commit
+PATCHFILES+=	e1c82b4.patch:-p1:commit
+PATCHFILES+=	1c93081.patch:-p1:commit
+PATCHFILES+=	58e6a64.patch:-p1:commit
 
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	X.Org driver enabling use through an RDP session with xrdp
@@ -21,17 +26,38 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	nasm:devel/nasm
 RUN_DEPENDS=	xauth:x11/xauth
 
-USES=		autoreconf libtool:build localbase pkgconfig xorg
+FLAVORS=	xorg xlibre
+FLAVOR?=	${FLAVORS:[1]}
+
+USES=		autoreconf libtool:build localbase pkgconfig
 USE_LDCONFIG=	yes
-USE_XORG=	xorg-server xorgproto
+USE_XORG=	xorgproto
+
+.if ${FLAVOR} == xlibre
+PKGNAMEPREFIX=	xlibre-
+USES+=		xlibre
+USE_XLIBRE+=	xlibre-server
+_XLIBRE_MAJOR_VER=	25
+_XMODDIR=	lib/xorg/modules/xlibre-${_XLIBRE_MAJOR_VER}
+.else
+USE_XORG=	xorg-server
+USES+=		xorg
+_XMODDIR=	lib/xorg/modules
+.endif
 
 XRDPVER=		0.10.5
+# xorg:   /usr/local/lib/xorg/modules
+# xlibre: /usr/local/lib/xorg/modules/xlibre-25
+# This works but != should be avoided
+#_XMODDIR!=	pkgconf --variable moduledir xorg-server | sed -e "s|^${LOCALBASE}/||"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKDIR}/xrdp-${XRDPVER}/common
 INSTALL_TARGET=	install-strip
 
 CONFLICTS=	xorgxrdp-devel
+
+PLIST_SUB+=	XMODDIR=${_XMODDIR}
 
 OPTIONS_DEFINE=		DEBUG DRI3
 OPTIONS_DEFAULT=	DRI3
