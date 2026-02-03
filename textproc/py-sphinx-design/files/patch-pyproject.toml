@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2024-08-02 13:48:37 UTC
+--- pyproject.toml.orig	2026-01-19 13:12:43 UTC
 +++ pyproject.toml
-@@ -28,7 +28,7 @@ requires-python = ">=3.9"
+@@ -27,7 +27,7 @@ requires-python = ">=3.11"
  ]
  keywords = ["sphinx", "extension", "material design", "web components"]
- requires-python = ">=3.9"
--dependencies = ["sphinx>=6,<9"]
-+dependencies = ["sphinx>=5,<9"]
+ requires-python = ">=3.11"
+-dependencies = ["sphinx>=7,<10"]
++dependencies = ["sphinx>=5,<10"]
  
  [project.urls]
  Homepage = "https://github.com/executablebooks/sphinx-design"
