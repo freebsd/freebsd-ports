@@ -1,5 +1,5 @@
 PORTNAME=	devise
-PORTVERSION=	4.9.4
+PORTVERSION=	5.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails72
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-bcrypt>=3.0<4:security/rubygem-bcrypt \
 		rubygem-orm_adapter>=0.1<1:devel/rubygem-orm_adapter \
-		rubygem-railties72>=4.1.0:www/rubygem-railties72 \
+		rubygem-railties72>=7.0:www/rubygem-railties72 \
 		rubygem-responders-rails72>=0:www/rubygem-responders-rails72 \
 		rubygem-warden>=1.2.3<1.3:devel/rubygem-warden
 
