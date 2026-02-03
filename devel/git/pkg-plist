@@ -401,6 +401,7 @@ share/man/man5/gitprotocol-pack.5.gz
 share/man/man5/gitprotocol-v2.5.gz
 share/man/man5/gitrepository-layout.5.gz
 share/man/man5/gitweb.conf.5.gz
+share/man/man7/gitdatamodel.7.gz
 share/man/man7/gitcli.7.gz
 share/man/man7/gitcore-tutorial.7.gz
 share/man/man7/gitcredentials.7.gz
@@ -926,6 +927,7 @@ share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.51.1.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.51.2.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.52.0.adoc
+%%DOCS%%%%DOCSDIR%%/RelNotes/2.53.0.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.0.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.1.adoc
 %%DOCS%%%%DOCSDIR%%/RelNotes/2.5.2.adoc
@@ -982,6 +984,7 @@ share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/cmds-userinterfaces.adoc
 %%DOCS%%%%DOCSDIR%%/config.adoc
 %%DOCS%%%%DOCSDIR%%/date-formats.adoc
+%%DOCS%%%%DOCSDIR%%/diff-algorithm-option.adoc
 %%DOCS%%%%DOCSDIR%%/diff-context-options.adoc
 %%DOCS%%%%DOCSDIR%%/diff-format.adoc
 %%DOCS%%%%DOCSDIR%%/diff-generate-patch.adoc
@@ -1338,6 +1341,8 @@ share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/gitcredentials.html
 %%DOCS%%%%DOCSDIR%%/gitcvs-migration.adoc
 %%DOCS%%%%DOCSDIR%%/gitcvs-migration.html
+%%DOCS%%%%DOCSDIR%%/gitdatamodel.adoc
+%%DOCS%%%%DOCSDIR%%/gitdatamodel.html
 %%DOCS%%%%DOCSDIR%%/gitdiffcore.adoc
 %%DOCS%%%%DOCSDIR%%/gitdiffcore.html
 %%DOCS%%%%DOCSDIR%%/giteveryday.adoc
@@ -1525,6 +1530,8 @@ share/man/man7/gitworkflows.7.gz
 %%DOCS%%%%DOCSDIR%%/technical/sparse-index.html
 %%DOCS%%%%DOCSDIR%%/technical/trivial-merge.adoc
 %%DOCS%%%%DOCSDIR%%/technical/trivial-merge.html
+%%DOCS%%%%DOCSDIR%%/technical/unambiguous-types.adoc
+%%DOCS%%%%DOCSDIR%%/technical/unambiguous-types.html
 %%DOCS%%%%DOCSDIR%%/technical/unit-tests.adoc
 %%DOCS%%%%DOCSDIR%%/technical/unit-tests.html
 %%DOCS%%%%DOCSDIR%%/trace2-target-values.adoc
