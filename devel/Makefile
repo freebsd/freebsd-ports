@@ -7403,7 +7403,6 @@
     SUBDIR += rubygem-ffi-libarchive
     SUBDIR += rubygem-ffi-win32-extensions
     SUBDIR += rubygem-ffi-yajl
-    SUBDIR += rubygem-ffi16
     SUBDIR += rubygem-fiber-annotation
     SUBDIR += rubygem-fiber-local
     SUBDIR += rubygem-fiber-storage
