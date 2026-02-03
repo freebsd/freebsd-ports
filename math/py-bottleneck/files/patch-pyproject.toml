@@ -1,9 +1,11 @@
---- pyproject.toml.orig	2024-02-25 00:30:13 UTC
+--- pyproject.toml.orig	2025-09-08 16:21:25 UTC
 +++ pyproject.toml
-@@ -3,5 +3,5 @@ requires = [
-     "setuptools",
-     "versioneer", 
-     "wheel",
--    "oldest-supported-numpy"
-+    "numpy"
+@@ -12,7 +12,7 @@ requires = [
+     #      and disabling build isolation.
+     #   3. The <2.(N+3) upper bound is for matching the numpy deprecation policy,
+     #      it should not be loosened more than that.
+-    "numpy>=2,<2.6"
++    "numpy<2.6"
  ]
+ build-backend = "setuptools.build_meta"
+ 
