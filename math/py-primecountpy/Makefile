@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYDEPS}
 LIB_DEPENDS=	libprimecount.so:math/primecount
 RUN_DEPENDS=	${PYDEPS}
 
-USES=		localbase meson pkgconfig python
+USES=		cmake:indirect localbase meson pkgconfig python
 USE_PYTHON=	cython
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
