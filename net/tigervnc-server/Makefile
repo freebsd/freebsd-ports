@@ -1,4 +1,3 @@
-PORTREVISION=	1
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
@@ -31,11 +30,10 @@ OPTIONS_DEFINE=	DOCS GNUTLS PAM
 OPTIONS_DEFAULT=	GNUTLS PAM
 OPTIONS_SUB=	yes
 GNUTLS_CMAKE_BOOL=	ENABLE_GNUTLS
-GNUTLS_CONFIGURE_ARGS=	--enable-glx-tls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 PAM_CMAKE_BOOL=	ENABLE_PAM
 
-CONFIGURE_ARGS+=	\
+XORG_CONFIGURE_ARGS+=	\
 		--prefix=${PREFIX} --mandir=${PREFIX}/share/man \
 		--docdir=${PREFIX}/share/doc/${PORTNAME}/ --with-pic --without-dtrace \
 		--disable-static --disable-dri --disable-unit-tests \
@@ -60,7 +58,7 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/100dpi/ \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
-CONFIGURE_ARGS+=	--with-default-font-path="${DEFAULT_FONTPATH_LIST:ts,}"
+XORG_CONFIGURE_ARGS+=	--with-default-font-path="${DEFAULT_FONTPATH_LIST:ts,}"
 
 CFLAGS+=	-I${LOCALBASE}/include/libdrm
 
@@ -83,7 +81,7 @@ post-patch:
 
 post-configure:
 	cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv
-	cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${XORG_CONFIGURE_ARGS}
 
 post-build:
 	cd ${WRKSRC}/unix/xserver/ && \

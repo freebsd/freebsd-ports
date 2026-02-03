@@ -1,6 +1,6 @@
 PORTNAME=	tigervnc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
+DISTVERSION=	1.16.0
 CATEGORIES=	net x11-servers
 
 MAINTAINER?=	meta@FreeBSD.org
@@ -8,7 +8,7 @@ MAINTAINER?=	meta@FreeBSD.org
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
-USES+=		cmake:insource,noninja cpe
+USES+=		cmake:insource,noninja cpe gmake
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	TigerVNC
