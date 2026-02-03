@@ -250,8 +250,10 @@ include/thrift/lib/cpp2/async/RequestChannel.h
 include/thrift/lib/cpp2/async/ResponseChannel.h
 include/thrift/lib/cpp2/async/RetryingRequestChannel.h
 include/thrift/lib/cpp2/async/RocketClientChannel.h
+include/thrift/lib/cpp2/async/RocketClientChannelBase.h
 include/thrift/lib/cpp2/async/RpcOptions.h
 include/thrift/lib/cpp2/async/RpcTypes.h
+include/thrift/lib/cpp2/async/SecureRocketClientChannel.h
 include/thrift/lib/cpp2/async/ServerBiDiSinkBridge.h
 include/thrift/lib/cpp2/async/ServerBiDiStreamBridge.h
 include/thrift/lib/cpp2/async/ServerBiDiStreamFactory.h
@@ -538,6 +540,7 @@ include/thrift/lib/cpp2/server/ExecutorToThreadManagerAdaptor.h
 include/thrift/lib/cpp2/server/IOUringUtil.h
 include/thrift/lib/cpp2/server/IOWorkerContext.h
 include/thrift/lib/cpp2/server/IResourcePoolAcceptor.h
+include/thrift/lib/cpp2/server/LazyDynamicArguments.h
 include/thrift/lib/cpp2/server/LegacyHeaderRoutingHandler.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
 include/thrift/lib/cpp2/server/LoggingEventHelper.h
@@ -592,7 +595,6 @@ include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
 include/thrift/lib/cpp2/server/metrics/InterceptorMetricCallback.h
 include/thrift/lib/cpp2/server/metrics/PendingConnectionsMetrics.h
-include/thrift/lib/cpp2/server/metrics/StreamMetricCallback.h
 include/thrift/lib/cpp2/server/overload/ChainedOverloadChecker.h
 include/thrift/lib/cpp2/server/overload/CurrentlyOverloadedChecker.h
 include/thrift/lib/cpp2/server/overload/IOverloadChecker.h
@@ -658,9 +660,11 @@ include/thrift/lib/cpp2/transport/rocket/client/RequestContext.h
 include/thrift/lib/cpp2/transport/rocket/client/RequestContextQueue.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketBiDiServerCallback.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketClient.h
+include/thrift/lib/cpp2/transport/rocket/client/RocketClientLogger.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketSinkServerCallback.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketStreamServerCallback.h
 include/thrift/lib/cpp2/transport/rocket/client/RocketStreamServerCallbackWithChunkTimeout.h
+include/thrift/lib/cpp2/transport/rocket/client/SecureRocketClient.h
 include/thrift/lib/cpp2/transport/rocket/compression/CompressionAlgorithmSelector.h
 include/thrift/lib/cpp2/transport/rocket/compression/CompressionManager.h
 include/thrift/lib/cpp2/transport/rocket/compression/CustomCompressor.h
@@ -690,6 +694,7 @@ include/thrift/lib/cpp2/transport/rocket/payload/CustomCompressionPayloadSeriali
 include/thrift/lib/cpp2/transport/rocket/payload/DefaultPayloadSerializerStrategy.h
 include/thrift/lib/cpp2/transport/rocket/payload/PayloadSerializer.h
 include/thrift/lib/cpp2/transport/rocket/payload/PayloadSerializerStrategy.h
+include/thrift/lib/cpp2/transport/rocket/server/BidirectionalStreamState.h
 include/thrift/lib/cpp2/transport/rocket/server/IRocketServerConnection.h
 include/thrift/lib/cpp2/transport/rocket/server/InteractionOverload.h
 include/thrift/lib/cpp2/transport/rocket/server/RefactoredRocketServerConnection.h
@@ -720,6 +725,8 @@ include/thrift/lib/cpp2/transport/rocket/server/detail/RequestChannelHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestFnfHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestResponseHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/RequestStreamHandler.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RocketContextUtils.h
+include/thrift/lib/cpp2/transport/rocket/server/detail/RocketErrorHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/SetupFrameAcceptor.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/SinkCallbackManager.h
 include/thrift/lib/cpp2/transport/rocket/server/detail/StreamCallbackManager.h
@@ -1137,6 +1144,8 @@ lib/libserverdbginfo.so
 lib/libserverdbginfo.so.1.0.0
 lib/libthrift-core.so
 lib/libthrift-core.so.1.0.0
+lib/libthrift_dynamic_value.so
+lib/libthrift_dynamic_value.so.1.0.0
 lib/libthriftannotation.so
 lib/libthriftannotation.so.1.0.0
 lib/libthriftanyrep.so
