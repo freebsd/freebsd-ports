@@ -5104,5 +5104,4 @@ biology/snpeff||2026-02-01|Has expired: Unfetchable
 games/freeminer-default||2026-02-01|Has expired: depends on deprecated games/freeminer
 games/freeminer||2026-02-01|Has expired: dead upstream
 net/jsch||2026-02-01|Has expired: Upstream website does not exist. No ports depend on this. It does not compile on jdk21. See also: https://github.com/mwiede/jsch
-science/elmerfem||2026-02-01|Broken for more than 6 months
 devel/rubygem-ffi16|devel/rubygem-ffi|2026-02-03|Remove obsoleted port. Use devel/rubygem-ffi instead
