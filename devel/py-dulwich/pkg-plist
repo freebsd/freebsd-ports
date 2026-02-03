@@ -8,6 +8,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/remote.txt
 %%PORTDOCS%%%%DOCSDIR%%/repo.txt
 %%PORTDOCS%%%%DOCSDIR%%/tag.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/auth_callback.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clone.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/config.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/diff.py
