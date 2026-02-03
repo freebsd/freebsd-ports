@@ -1,0 +1,15 @@
+Obtained from:	https://github.com/python-social-auth/social-core/commit/58f5eafc5758dea40945b1c4ef71b4986dd3b6f1
+		https://github.com/python-social-auth/social-core/commit/283cadd057cfca463358c2c81b9cef484ca74de9
+		https://github.com/python-social-auth/social-core/commit/b6703f487259794871d914541b716dd14a3bcba3
+
+--- pyproject.toml.orig	2025-12-18 18:44:21 UTC
++++ pyproject.toml
+@@ -91,7 +90,7 @@ google-onetap = [
+   "types-requests==2.32.4.20250913"
+ ]
+ google-onetap = [
+-  "google-auth>=2.40.0,<2.46"
++  "google-auth>=2.40.0,<2.49"
+ ]
+ saml = [
+   "python3-saml>=1.16.0"

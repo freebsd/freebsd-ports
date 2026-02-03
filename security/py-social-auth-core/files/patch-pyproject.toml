@@ -21,12 +21,3 @@
  name = "social-auth-core"
  readme = "README.md"
  requires-python = ">=3.10"
-@@ -91,7 +90,7 @@ google-onetap = [
-   "types-requests==2.32.4.20250913"
- ]
- google-onetap = [
--  "google-auth>=2.40.0,<2.46"
-+  "google-auth>=2.40.0,<2.48"
- ]
- saml = [
-   "python3-saml>=1.16.0"
