@@ -18,6 +18,7 @@ share/icons/hicolor/scalable/apps/qdirstat.svg
 %%PORTDOCS%%%%DOCSDIR%%/Troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/Unpkg-View.md
 %%PORTDOCS%%%%DOCSDIR%%/cache-file-format.txt
+%%PORTDOCS%%%%DOCSDIR%%/cache-file-format-v10.txt
 %%PORTDOCS%%%%DOCSDIR%%/stats/Buckets-Table.md
 %%PORTDOCS%%%%DOCSDIR%%/stats/File-Size-Histogram.md
 %%PORTDOCS%%%%DOCSDIR%%/stats/Histogram-Options.md
