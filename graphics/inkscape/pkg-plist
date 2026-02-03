@@ -4365,6 +4365,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-advanced.it.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ja.svg
 %%DATADIR%%/tutorials/tutorial-advanced.ko.svg
+%%DATADIR%%/tutorials/tutorial-advanced.my.svg
 %%DATADIR%%/tutorials/tutorial-advanced.nl.svg
 %%DATADIR%%/tutorials/tutorial-advanced.pl.svg
 %%DATADIR%%/tutorials/tutorial-advanced.pt.svg
@@ -4373,6 +4374,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-advanced.sk.svg
 %%DATADIR%%/tutorials/tutorial-advanced.sl.svg
 %%DATADIR%%/tutorials/tutorial-advanced.sr.svg
+%%DATADIR%%/tutorials/tutorial-advanced.sv.svg
 %%DATADIR%%/tutorials/tutorial-advanced.svg
 %%DATADIR%%/tutorials/tutorial-advanced.uk.svg
 %%DATADIR%%/tutorials/tutorial-advanced.vi.svg
@@ -4389,11 +4391,13 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-basic.fa.svg
 %%DATADIR%%/tutorials/tutorial-basic.fr.svg
 %%DATADIR%%/tutorials/tutorial-basic.gl.svg
+%%DATADIR%%/tutorials/tutorial-basic.hr.svg
 %%DATADIR%%/tutorials/tutorial-basic.hu.svg
 %%DATADIR%%/tutorials/tutorial-basic.id.svg
 %%DATADIR%%/tutorials/tutorial-basic.it.svg
 %%DATADIR%%/tutorials/tutorial-basic.ja.svg
 %%DATADIR%%/tutorials/tutorial-basic.ko.svg
+%%DATADIR%%/tutorials/tutorial-basic.my.svg
 %%DATADIR%%/tutorials/tutorial-basic.nl.svg
 %%DATADIR%%/tutorials/tutorial-basic.nn.svg
 %%DATADIR%%/tutorials/tutorial-basic.pl.svg
@@ -4403,6 +4407,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-basic.sk.svg
 %%DATADIR%%/tutorials/tutorial-basic.sl.svg
 %%DATADIR%%/tutorials/tutorial-basic.sr.svg
+%%DATADIR%%/tutorials/tutorial-basic.sv.svg
 %%DATADIR%%/tutorials/tutorial-basic.svg
 %%DATADIR%%/tutorials/tutorial-basic.uk.svg
 %%DATADIR%%/tutorials/tutorial-basic.vi.svg
@@ -4420,6 +4425,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.id.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.ja.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.ko.svg
+%%DATADIR%%/tutorials/tutorial-calligraphy.my.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.nl.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.pl.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.pt.svg
@@ -4428,6 +4434,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.sk.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.sl.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.sr.svg
+%%DATADIR%%/tutorials/tutorial-calligraphy.sv.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.uk.svg
 %%DATADIR%%/tutorials/tutorial-calligraphy.vi.svg
@@ -4446,6 +4453,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-elements.it.svg
 %%DATADIR%%/tutorials/tutorial-elements.ja.svg
 %%DATADIR%%/tutorials/tutorial-elements.ko.svg
+%%DATADIR%%/tutorials/tutorial-elements.my.svg
 %%DATADIR%%/tutorials/tutorial-elements.nl.svg
 %%DATADIR%%/tutorials/tutorial-elements.pl.svg
 %%DATADIR%%/tutorials/tutorial-elements.pt.svg
@@ -4454,6 +4462,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-elements.sk.svg
 %%DATADIR%%/tutorials/tutorial-elements.sl.svg
 %%DATADIR%%/tutorials/tutorial-elements.sr.svg
+%%DATADIR%%/tutorials/tutorial-elements.sv.svg
 %%DATADIR%%/tutorials/tutorial-elements.svg
 %%DATADIR%%/tutorials/tutorial-elements.uk.svg
 %%DATADIR%%/tutorials/tutorial-elements.zh_CN.svg
@@ -4461,17 +4470,21 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.be.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.de.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.el.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.es.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.fr.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.gl.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.hu.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.ja.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.my.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.nl.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.pl.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.pt.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.ru.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.sk.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.sl.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.sr.svg
+%%DATADIR%%/tutorials/tutorial-interpolate.sv.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.uk.svg
 %%DATADIR%%/tutorials/tutorial-interpolate.vi.svg
@@ -4490,6 +4503,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-shapes.it.svg
 %%DATADIR%%/tutorials/tutorial-shapes.ja.svg
 %%DATADIR%%/tutorials/tutorial-shapes.ko.svg
+%%DATADIR%%/tutorials/tutorial-shapes.my.svg
 %%DATADIR%%/tutorials/tutorial-shapes.nl.svg
 %%DATADIR%%/tutorials/tutorial-shapes.pl.svg
 %%DATADIR%%/tutorials/tutorial-shapes.pt.svg
@@ -4498,6 +4512,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-shapes.sk.svg
 %%DATADIR%%/tutorials/tutorial-shapes.sl.svg
 %%DATADIR%%/tutorials/tutorial-shapes.sr.svg
+%%DATADIR%%/tutorials/tutorial-shapes.sv.svg
 %%DATADIR%%/tutorials/tutorial-shapes.svg
 %%DATADIR%%/tutorials/tutorial-shapes.uk.svg
 %%DATADIR%%/tutorials/tutorial-shapes.vi.svg
@@ -4516,6 +4531,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-tips.it.svg
 %%DATADIR%%/tutorials/tutorial-tips.ja.svg
 %%DATADIR%%/tutorials/tutorial-tips.ko.svg
+%%DATADIR%%/tutorials/tutorial-tips.my.svg
 %%DATADIR%%/tutorials/tutorial-tips.nl.svg
 %%DATADIR%%/tutorials/tutorial-tips.pl.svg
 %%DATADIR%%/tutorials/tutorial-tips.pt.svg
@@ -4524,6 +4540,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-tips.sk.svg
 %%DATADIR%%/tutorials/tutorial-tips.sl.svg
 %%DATADIR%%/tutorials/tutorial-tips.sr.svg
+%%DATADIR%%/tutorials/tutorial-tips.sv.svg
 %%DATADIR%%/tutorials/tutorial-tips.svg
 %%DATADIR%%/tutorials/tutorial-tips.uk.svg
 %%DATADIR%%/tutorials/tutorial-tips.vi.svg
@@ -4531,15 +4548,19 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-tips.zh_TW.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.de.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.el.svg
+%%DATADIR%%/tutorials/tutorial-tracing-pixelart.es.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.fr.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.hu.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.ko.svg
+%%DATADIR%%/tutorials/tutorial-tracing-pixelart.my.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.nl.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.pt.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.pt_BR.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.ru.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.sk.svg
+%%DATADIR%%/tutorials/tutorial-tracing-pixelart.sl.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.sr.svg
+%%DATADIR%%/tutorials/tutorial-tracing-pixelart.sv.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.uk.svg
 %%DATADIR%%/tutorials/tutorial-tracing-pixelart.zh_CN.svg
@@ -4556,6 +4577,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-tracing.id.svg
 %%DATADIR%%/tutorials/tutorial-tracing.ja.svg
 %%DATADIR%%/tutorials/tutorial-tracing.ko.svg
+%%DATADIR%%/tutorials/tutorial-tracing.my.svg
 %%DATADIR%%/tutorials/tutorial-tracing.nl.svg
 %%DATADIR%%/tutorials/tutorial-tracing.pl.svg
 %%DATADIR%%/tutorials/tutorial-tracing.pt.svg
@@ -4564,6 +4586,7 @@ share/icons/hicolor/symbolic/apps/org.inkscape.Inkscape-symbolic.svg
 %%DATADIR%%/tutorials/tutorial-tracing.sk.svg
 %%DATADIR%%/tutorials/tutorial-tracing.sl.svg
 %%DATADIR%%/tutorials/tutorial-tracing.sr.svg
+%%DATADIR%%/tutorials/tutorial-tracing.sv.svg
 %%DATADIR%%/tutorials/tutorial-tracing.svg
 %%DATADIR%%/tutorials/tutorial-tracing.uk.svg
 %%DATADIR%%/tutorials/tutorial-tracing.vi.svg
@@ -4771,7 +4794,11 @@ share/man/ko/man1/inkscape.1.gz
 share/man/ko/man1/inkview.1.gz
 share/man/man1/inkscape.1.gz
 share/man/man1/inkview.1.gz
+share/man/pt_BR/man1/inkscape.1.gz
 share/man/pt_BR/man1/inkview.1.gz
+share/man/sv/man1/inkscape.1.gz
+share/man/sv/man1/inkview.1.gz
 share/man/zh_TW/man1/inkscape.1.gz
 share/man/zh_TW/man1/inkview.1.gz
 share/metainfo/org.inkscape.Inkscape.appdata.xml
+@dir %%DATADIR%%/extensions/inkex/colors/spaces
