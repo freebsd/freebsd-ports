@@ -1,7 +1,7 @@
 PORTNAME=	bareos
 DISTVERSIONPREFIX=	Release/
 DISTVERSION=	24.0.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils
 PKGNAMEPREFIX?=	#
 PKGNAMESUFFIX?=	24-server
@@ -13,9 +13,7 @@ WWW=		https://www.bareos.org/
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
-BROKEN=		data type bugs, "core/src/stored/backends/chunked_device.cc:685:13: error: comparison of integers of different signs: 'ssize_t' (aka 'int') and 'uint32_t' (aka 'unsigned int')"
-
-CONFLICTS?=	bareos22-server bareos23-server bareos-server
+CONFLICTS?=	bareos23-server bareos-server
 
 BUILD_DEPENDS+=	utf8cpp>0:devel/utf8cpp \
 		microsoft-gsl>0:devel/microsoft-gsl \
@@ -55,6 +53,8 @@ NDMP_DESC=		Enable build of NDMP support
 SCSICRYPTO_DESC=	Build LTO AME crypto plugin
 
 .if ${PKGNAMESUFFIX} == "24-server"
+ONLY_FOR_ARCHS=		aarch64 amd64
+
 OPTIONS_DEFINE=		MTX PYTHON LMDB NDMP NLS SCSICRYPTO
 OPTIONS_DEFAULT+=	LMDB PGSQL SCSICRYPTO
 OPTIONS_SINGLE_DATABASE=	PGSQL
