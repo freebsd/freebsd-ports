@@ -1,7 +1,7 @@
 PORTNAME=	openjpeg
 PORTVERSION=	2.5.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/uclouvain/openjpeg/commit/

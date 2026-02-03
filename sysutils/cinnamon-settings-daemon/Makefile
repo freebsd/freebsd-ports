@@ -1,6 +1,6 @@
 PORTNAME=	cinnamon-settings-daemon
 DISTVERSION=	6.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 DIST_SUBDIR=	gnome
 

@@ -1,6 +1,6 @@
 PORTNAME=	rawtherapee
 PORTVERSION=	5.12
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/RawTherapee/RawTherapee/releases/download/${PORTVERSION}/ \
 		https://rawtherapee.com/shared/source/ \

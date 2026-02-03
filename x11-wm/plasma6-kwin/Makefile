@@ -1,6 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm kde kde-plasma
 PATCH_SITES=	https://invent.kde.org/plasma/kwin/-/commit/
 PATCHFILES=	f79af348ed9f18bc30417df4bfe539383fd9fa77.patch:-p1

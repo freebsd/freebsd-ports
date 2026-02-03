@@ -1,5 +1,6 @@
 PORTNAME=	nomacs
 DISTVERSION=	3.22.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	vidar@karlsen.tech
