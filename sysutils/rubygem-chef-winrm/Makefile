@@ -1,5 +1,5 @@
 PORTNAME=	chef-winrm
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,8 @@ RUN_DEPENDS=	rubygem-builder>=2.1.2:devel/rubygem-builder \
 		rubygem-gssapi>=1.2<2:security/rubygem-gssapi \
 		rubygem-httpclient>=2.2.0.2<3:www/rubygem-httpclient \
 		rubygem-logging>=1.6.1<3.0:devel/rubygem-logging \
-		rubygem-nori>=2.7.0:devel/rubygem-nori \
-		rubygem-rexml>=3.3<4:textproc/rubygem-rexml \
+		rubygem-nori>=2.7<3:devel/rubygem-nori \
+		rubygem-rexml>=3.4.2<4.0:textproc/rubygem-rexml \
 		rubygem-rubyntlm>=0.6.3<0.7:net/rubygem-rubyntlm
 
 USES=		gem
