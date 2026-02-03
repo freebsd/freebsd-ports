@@ -1,5 +1,5 @@
 PORTNAME=	sqlframe
-PORTVERSION=	3.44.1
+PORTVERSION=	3.45.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}more-itertools>=0:devel/py-more-itertools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prettytable>=0<4:devel/py-prettytable@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlglot>=28.0.0<28.6:databases/py-sqlglot@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlglot>=28.0.0<28.7:databases/py-sqlglot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python
