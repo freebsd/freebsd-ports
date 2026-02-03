@@ -1,5 +1,6 @@
 PORTNAME=	ohai
 PORTVERSION=	18.2.8
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	18
@@ -13,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-chef-config>=14.12<19:sysutils/rubygem-chef-config \
 		rubygem-chef-utils>=16.0<19:sysutils/rubygem-chef-utils \
-		rubygem-ffi16>=1.9<1.17:devel/rubygem-ffi16 \
+		rubygem-ffi>=1.9<2:devel/rubygem-ffi \
 		rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
 		rubygem-ipaddress>=0:net/rubygem-ipaddress \
 		rubygem-mixlib-cli>=1.7.0:devel/rubygem-mixlib-cli \
