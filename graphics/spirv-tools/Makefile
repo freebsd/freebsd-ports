@@ -1,6 +1,6 @@
 PORTNAME=	spirv-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2025.5 # please always bump all dependencies when updated because at least graphics/shaderc links in static libraries
+DISTVERSION=	2026.1 # please always bump all dependencies when updated because at least graphics/shaderc links in static libraries
 CATEGORIES=	graphics
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -18,7 +18,7 @@ GH_PROJECT=	SPIRV-Tools
 # for GH_TAGNAME in GH_TUPLE
 # git clone --quiet https://github.com/KhronosGroup/SPIRV-Headers.git && git -C SPIRV-Headers describe <COMMIT_HASH>
 # for COMMIT_HASH see ${WRKSRC}/DEPS
-GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-454-gb824a46:headers/external/spirv-headers
+GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-461-g04f10f6:headers/external/spirv-headers
 
 USE_LDCONFIG=	yes
 
