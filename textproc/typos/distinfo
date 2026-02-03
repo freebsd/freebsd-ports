@@ -1,4 +1,4 @@
-TIMESTAMP = 1768625601
+TIMESTAMP = 1769874238
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/addr2line-0.24.2.crate) = dfbe277e56a376000877090da837660b4427aad530e3028d44e0bffe4f89a1c1
@@ -409,5 +409,5 @@ SHA256 (rust/crates/zerocopy-derive-0.8.27.crate) = 88d2b8d9c68ad2b9e4340d783271
 SIZE (rust/crates/zerocopy-derive-0.8.27.crate) = 89827
 SHA256 (rust/crates/zmij-1.0.12.crate) = 2fc5a66a20078bf1251bde995aa2fdcc4b800c70b5d92dd2c62abc5c60f679f8
 SIZE (rust/crates/zmij-1.0.12.crate) = 22544
-SHA256 (crate-ci-typos-v1.42.0_GH0.tar.gz) = 9a82d8b8518eaaff52261b9d7a3eafb34772670f12d33fd03b3b2d40a64a1931
-SIZE (crate-ci-typos-v1.42.0_GH0.tar.gz) = 4563810
+SHA256 (crate-ci-typos-v1.42.3_GH0.tar.gz) = d1b5fcd3ddc49c279c1813086e80dabb6a524d9fb67befb4e3619d236ada5781
+SIZE (crate-ci-typos-v1.42.3_GH0.tar.gz) = 4563194
