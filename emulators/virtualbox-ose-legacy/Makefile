@@ -48,6 +48,8 @@ CONFLICTS_INSTALL=	virtualbox-ose \
 			virtualbox-ose-72 \
 			virtualbox-ose-nox11-72
 
+EXTRACT_AFTER_ARGS=	--exclude kBuild/bin \
+			--no-same-owner --no-same-permissions
 PORTSCOUT=	limit:^5\.
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \
 		VBOXGROUP=${VBOXGROUP} \
@@ -318,6 +320,8 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/generic/http-curl.cpp
 
 do-build:
+	@${ECHO_CMD} 'export PATH_KBUILD="${WRKSRC}/kBuild"' >> ${WRKSRC}/env.sh
+	@${ECHO_CMD} 'export PATH_DEVTOOLS="${WRKSRC}/tools"' >> ${WRKSRC}/env.sh
 	cd ${WRKSRC} && ${SH} -c '. ${WRKSRC}/env.sh && \
 	    ${SETENV} ${MAKE_ENV} ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
 .if ${PORT_OPTIONS:MPYTHON}

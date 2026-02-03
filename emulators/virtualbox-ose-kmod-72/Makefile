@@ -38,6 +38,8 @@ CONFLICTS_INSTALL=	virtualbox-ose-kmod-legacy \
 			virtualbox-ose-kmod-70
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}-72/files
+EXTRACT_AFTER_ARGS=	--exclude kBuild/bin \
+			--no-same-owner --no-same-permissions
 PORTSCOUT=		limit:^7\.2\.
 SUB_FILES=		pkg-message
 SUB_LIST=		OPSYS=${OPSYS} OSREL=${OSREL}

@@ -49,6 +49,8 @@ CONFLICTS_INSTALL=	virtualbox-ose-legacy \
 			virtualbox-ose-72 \
 			virtualbox-ose-nox11-72
 
+EXTRACT_AFTER_ARGS=	--exclude kBuild/bin \
+			--no-same-owner --no-same-permissions
 PORTSCOUT=	limit:^6\.
 SUB_FILES=	pkg-message
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \
@@ -339,6 +341,8 @@ post-patch-AIO-off:
 		${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 
 do-build:
+	@${ECHO_CMD} 'export PATH_KBUILD="${WRKSRC}/kBuild"' >> ${WRKSRC}/env.sh
+	@${ECHO_CMD} 'export PATH_DEVTOOLS="${WRKSRC}/tools"' >> ${WRKSRC}/env.sh
 	cd ${WRKSRC} && ${SH} -c '. ${WRKSRC}/env.sh && \
 	    ${SETENV} ${MAKE_ENV} ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
 .if ${PORT_OPTIONS:MPYTHON}

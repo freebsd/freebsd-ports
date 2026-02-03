@@ -50,7 +50,11 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
 			virtualbox-ose-additions-nox11-72
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}/files
-EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
+EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 \
+			--exclude tools/*.amd64 \
+			--exclude Firmware \
+			--exclude kBuild/bin \
+			--no-same-owner --no-same-permissions
 PORTSCOUT=		limit:^6\.
 
 WRKSRC=			${WRKDIR}/VirtualBox-${DISTVERSION}
@@ -141,6 +145,8 @@ post-patch-X11-on:
 	    ${WRKSRC}/LocalConfig.kmk
 
 pre-build:
+	@${ECHO_CMD} 'export PATH_KBUILD="${WRKSRC}/kBuild"' >> ${WRKSRC}/env.sh
+	@${ECHO_CMD} 'export PATH_DEVTOOLS="${WRKSRC}/tools"' >> ${WRKSRC}/env.sh
 	cd ${WRKSRC} && ${SH} -c \
 	    ". env.sh && ${KMK_CONFIG} ${LOCALBASE}/bin/kmk"
 

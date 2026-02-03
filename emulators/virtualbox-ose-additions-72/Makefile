@@ -47,7 +47,11 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-legacy \
 			virtualbox-ose-additions-nox11-71
 
 PATCHDIR=		${.CURDIR}/../${PORTNAME}-72/files
-EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 --exclude tools/*.amd64 --exclude Firmware
+EXTRACT_AFTER_ARGS=	--exclude tools/*.x86 \
+			--exclude tools/*.amd64 \
+			--exclude Firmware \
+			--exclude kBuild/bin \
+			--no-same-owner --no-same-permissions
 PORTSCOUT=		limit:^7\.2\.
 
 WRKSRC=			${WRKDIR}/VirtualBox-${DISTVERSION}

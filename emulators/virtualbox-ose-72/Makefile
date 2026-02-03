@@ -53,6 +53,8 @@ CONFLICTS_INSTALL=	virtualbox-ose-legacy \
 			virtualbox-ose-71 \
 			virtualbox-ose-nox11-71
 
+EXTRACT_AFTER_ARGS=	--exclude kBuild/bin \
+			--no-same-owner --no-same-permissions
 PORTSCOUT=	limit:^7\.2\.
 SUB_FILES=	pkg-message
 SUB_LIST=	VBOXDIR=${VBOX_DIR} \
