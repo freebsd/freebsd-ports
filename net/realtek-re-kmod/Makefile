@@ -16,13 +16,7 @@ USES=		kmod tar:tgz uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	alexdupre
 GH_PROJECT=	rtl_bsd_drv
-GH_TAGNAME=	11d49ee
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1500000)
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-if__re.c
-.endif
+GH_TAGNAME=	bff7ba4
 
 PLIST_FILES=	${KMODDIR}/if_re.ko
 
