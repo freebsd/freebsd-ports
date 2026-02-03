@@ -1,6 +1,6 @@
---- libdnet-stripped/configure.orig	2025-04-30 19:58:18 UTC
-+++ libdnet-stripped/configure
-@@ -650,6 +650,9 @@ ac_includes_default="\
+--- libdnet-stripped/configure.orig	2025-08-09 12:07:16.000000000 -0700
++++ libdnet-stripped/configure	2026-02-02 15:30:56.588281000 -0800
+@@ -643,6 +643,9 @@
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
  #endif
@@ -10,3 +10,17 @@
  #ifdef HAVE_UNISTD_H
  # include <unistd.h>
  #endif"
+@@ -15136,13 +15139,6 @@
+     if test ${ac_cv_dnet_bsd_bpf+y}
+ then :
+   printf %s "(cached) " >&6
+-else case e in #(
+-  e) if test -c /dev/bpf -o -c /dev/bpf0 ; then
+-        ac_cv_dnet_bsd_bpf=yes
+-    else
+-        ac_cv_dnet_bsd_bpf=no
+-    fi ;;
+-esac
+ fi
+ 
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_dnet_bsd_bpf" >&5

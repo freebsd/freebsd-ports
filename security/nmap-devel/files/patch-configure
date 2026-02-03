@@ -1,0 +1,56 @@
+--- configure.orig	2025-05-21 13:47:38.000000000 -0700
++++ configure	2026-02-02 15:27:39.745358000 -0800
+@@ -3103,7 +3103,7 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}gcc; ac_word=$2
++set dummy ${ac_tool_prefix}$CXX; ac_word=$2
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ printf %s "checking for $ac_word... " >&6; }
+ if test ${ac_cv_prog_CC+y}
+@@ -3124,7 +3124,7 @@
+   esac
+     for ac_exec_ext in '' $ac_executable_extensions; do
+   if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_CC="${ac_tool_prefix}gcc"
++    ac_cv_prog_CC="${ac_tool_prefix}$CXX"
+     printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+@@ -3169,7 +3169,7 @@
+   esac
+     for ac_exec_ext in '' $ac_executable_extensions; do
+   if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_ac_ct_CC="gcc"
++    ac_cv_prog_ac_ct_CC="$CXX"
+     printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+@@ -4135,7 +4135,7 @@
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
+-set dummy ${ac_tool_prefix}gcc; ac_word=$2
++set dummy ${ac_tool_prefix}$CXX; ac_word=$2
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+ printf %s "checking for $ac_word... " >&6; }
+ if test ${ac_cv_prog_CC+y}
+@@ -4156,7 +4156,7 @@
+   esac
+     for ac_exec_ext in '' $ac_executable_extensions; do
+   if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_CC="${ac_tool_prefix}gcc"
++    ac_cv_prog_CC="${ac_tool_prefix}$CXX"
+     printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
+@@ -4201,7 +4201,7 @@
+   esac
+     for ac_exec_ext in '' $ac_executable_extensions; do
+   if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
+-    ac_cv_prog_ac_ct_CC="gcc"
++    ac_cv_prog_ac_ct_CC="$CXX"
+     printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
+     break 2
+   fi
