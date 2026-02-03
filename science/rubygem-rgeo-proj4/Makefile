@@ -1,6 +1,6 @@
 PORTNAME=	rgeo-proj4
 PORTVERSION=	4.0.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libproj.so:graphics/proj
-RUN_DEPENDS=	rubygem-rgeo>=3.0.0<3.1:science/rubygem-rgeo
+RUN_DEPENDS=	rubygem-rgeo>=3.0.0<3.2:science/rubygem-rgeo
 
 USES=		gem
 
