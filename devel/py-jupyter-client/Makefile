@@ -31,4 +31,9 @@ USE_PYTHON=	autoplist concurrent pep517 pytest # 1 test fails, see https://githu
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	ORJSON
+ORJSON_DESC=	Faster pack/unpack via orjson
+
+ORJSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}orjson>=0:devel/py-orjson@${PY_FLAVOR}
+
 .include <bsd.port.mk>
