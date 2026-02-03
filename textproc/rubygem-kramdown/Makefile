@@ -1,5 +1,5 @@
 PORTNAME=	kramdown
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://kramdown.gettalong.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	rubygem-rexml>=3.3.9:textproc/rubygem-rexml
+RUN_DEPENDS=	rubygem-rexml>=3.4.4:textproc/rubygem-rexml
 
 USES=		cpe gem
 
