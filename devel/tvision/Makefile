@@ -1,5 +1,5 @@
 PORTNAME=	tvision
-PORTVERSION=	g20250515
+PORTVERSION=	g20260111
 CATEGORIES=	devel
 
 MAINTAINER=	tiga@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		cmake:testing localbase ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	magiblot
 GH_PROJECT=	tvision
-GH_TAGNAME=	df6424f
+GH_TAGNAME=	85aaeca
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	TV_BUILD_TESTS # several tests fail, see https://github.com/magiblot/tvision/issues/176
