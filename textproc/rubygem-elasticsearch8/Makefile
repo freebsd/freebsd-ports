@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch
-PORTVERSION=	8.19.2
+PORTVERSION=	8.19.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	8
@@ -12,7 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-elastic-transport>=8.3<9:textproc/rubygem-elastic-transport \
-		rubygem-elasticsearch-api8>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-api8
+		rubygem-elasticsearch-api8>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-api8 \
+		rubygem-ostruct>=0:devel/rubygem-ostruct
 
 USES=		gem
 
