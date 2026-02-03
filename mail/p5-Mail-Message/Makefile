@@ -1,5 +1,5 @@
 PORTNAME=	Mail-Message
-PORTVERSION=	4.01
+PORTVERSION=	4.03
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
@@ -13,7 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-IO-Stringy>=0:devel/p5-IO-Stringy \
+RUN_DEPENDS=	p5-Hash-Case>=1.050:devel/p5-Hash-Case \
+		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
 		p5-Log-Report>=1.42:devel/p5-Log-Report \
 		p5-MIME-Types>=1.004:mail/p5-MIME-Types \
 		p5-Mail-Tools>=2.17:mail/p5-Mail-Tools \
