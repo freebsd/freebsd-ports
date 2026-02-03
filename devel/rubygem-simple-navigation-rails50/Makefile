@@ -1,5 +1,5 @@
 PORTNAME=	simple-navigation
-PORTVERSION=	4.4.0
+PORTVERSION=	4.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -11,7 +11,8 @@ WWW=		https://github.com/codeplant/simple-navigation
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-activesupport50>=2.3.2:devel/rubygem-activesupport50
+RUN_DEPENDS=	rubygem-activesupport50>=2.3.2:devel/rubygem-activesupport50 \
+		rubygem-ostruct>=0:devel/rubygem-ostruct
 
 USES=		gem
 
