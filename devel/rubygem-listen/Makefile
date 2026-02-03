@@ -1,5 +1,5 @@
 PORTNAME=	listen
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/guard/listen
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-rb-fsevent>=0.10.3<1:devel/rubygem-rb-fsevent \
+RUN_DEPENDS=	rubygem-logger>=0:devel/rubygem-logger \
+		rubygem-rb-fsevent>=0.10.3<1:devel/rubygem-rb-fsevent \
 		rubygem-rb-inotify>=0.9.10<1:devel/rubygem-rb-inotify \
 		rubygem-rb-kqueue>=0.2:devel/rubygem-rb-kqueue
 
