@@ -1,6 +1,11 @@
 --- pyproject.toml.orig	2024-09-12 19:54:11 UTC
 +++ pyproject.toml
-@@ -5,9 +5,9 @@ requires = [
+@@ -1,13 +1,13 @@ requires = [
+ [build-system]
+ requires = [
+     "setuptools",
+-    "cython>=0.25,<3.0",
++    "cython>=3.0",
      "murmurhash>=1.0.2,<1.1.0",
      "cymem>=2.0.2,<2.1.0",
      "preshed>=3.0.2,<3.1.0",

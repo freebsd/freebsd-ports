@@ -1,6 +1,6 @@
 PORTNAME=	thinc
 PORTVERSION=	9.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/explosion/thinc/releases/download/release-v${PORTVERSION}/
@@ -35,7 +35,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blis>=1.0.0<1.4.0:math/py-blis@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}wasabi>=0.8.1<1.2.0:textproc/py-wasabi@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent cython0 pep517
+USE_PYTHON=	autoplist concurrent cython pep517
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
