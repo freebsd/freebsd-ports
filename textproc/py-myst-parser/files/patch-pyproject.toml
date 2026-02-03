@@ -1,15 +1,11 @@
---- pyproject.toml.orig	2025-02-12 10:52:59 UTC
+--- pyproject.toml.orig	2026-01-15 09:08:11 UTC
 +++ pyproject.toml
-@@ -36,10 +36,10 @@ dependencies = [
- dependencies = [
-     "docutils>=0.19,<0.22",
-     "jinja2", # required for substitutions, but let sphinx choose version
--    "markdown-it-py~=3.0",
-+    "markdown-it-py>=3.0,<5",
-     "mdit-py-plugins~=0.4,>=0.4.1",
+@@ -39,7 +39,7 @@ dependencies = [
+     "markdown-it-py~=4.0",
+     "mdit-py-plugins~=0.5",
      "pyyaml",
--    "sphinx>=7,<9",
-+    "sphinx>=5,<9",
+-    "sphinx>=8,<10",
++    "sphinx>=5,<10",
  ]
  
  [project.urls]
