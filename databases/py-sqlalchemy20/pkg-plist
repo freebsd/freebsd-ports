@@ -55,6 +55,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_modules/index.html
 %%PORTDOCS%%%%DOCSDIR%%/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/annotated.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/base-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/changelog.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/clipboard.min.js
@@ -68,6 +69,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/dragons.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/dragons_original.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/english-stemmer.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/init.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
