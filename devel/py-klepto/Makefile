@@ -1,5 +1,5 @@
 PORTNAME=	klepto
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.9:devel/py-dill@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pox>=0.3.6:devel/py-pox@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.4.1:devel/py-dill@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pox>=0.3.7:devel/py-pox@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
