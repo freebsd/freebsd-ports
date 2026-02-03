@@ -1,5 +1,5 @@
 PORTNAME=	localstack-core
-PORTVERSION=	4.12.0
+PORTVERSION=	4.13.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plux>=1.12:devel/py-plux@${PY_FLAVOR} \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>=1.5.1:devel/py-asn1crypto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cachetools>=5.0:devel/py-cachetools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.1.0:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dill>=0.3.6:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnslib>=0.9.10:dns/py-dnslib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=1.16.0,1:dns/py-dnspython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plux>=1.10:devel/py-plux@${PY_FLAVOR} \
