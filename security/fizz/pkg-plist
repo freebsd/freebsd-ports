@@ -147,6 +147,7 @@ include/fizz/protocol/test/Matchers.h
 include/fizz/protocol/test/Mocks.h
 include/fizz/protocol/test/ProtocolTest.h
 include/fizz/protocol/test/TestUtil.h
+include/fizz/record/Alerts.h
 include/fizz/record/BufAndPaddingPolicy.h
 include/fizz/record/EncryptedRecordLayer.h
 include/fizz/record/Extensions-inl.h
@@ -194,6 +195,7 @@ include/fizz/test/LocalTransport.h
 include/fizz/tool/CertificateVerifiers.h
 include/fizz/tool/Commands.h
 include/fizz/tool/FizzCommandCommon.h
+include/fizz/util/Exceptions.h
 include/fizz/util/FizzUtil.h
 include/fizz/util/KeyLogWriter.h
 include/fizz/util/Parse-inl.h
