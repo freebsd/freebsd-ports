@@ -1,6 +1,6 @@
 PORTNAME=	sdl12-compat
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.2.72
+DISTVERSION=	1.2.74
 CATEGORIES=	devel wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
