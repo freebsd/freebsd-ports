@@ -1,5 +1,5 @@
 PORTNAME=	pg_textsearch
-PORTVERSION=	0.4.2
+PORTVERSION=	0.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -15,5 +15,7 @@ WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	timescale
 GH_PROJECT=	pg_textsearch
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
