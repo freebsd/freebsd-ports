@@ -93,6 +93,10 @@ cbsd/etc/defaults/FreeBSD-base_in_pkg-15.0.conf
 cbsd/etc/defaults/FreeBSD-base_in_pkg.conf
 cbsd/etc/defaults/FreeBSD-bases.conf
 cbsd/etc/defaults/FreeBSD-baseupdate.conf
+cbsd/etc/defaults/FreeBSD-kernel-BHYVE-PXE-amd64-15.0
+cbsd/etc/defaults/FreeBSD-kernel-BHYVE-PXE-amd64-15.1
+cbsd/etc/defaults/FreeBSD-kernel-BHYVE-PXENFS-amd64-15.0
+cbsd/etc/defaults/FreeBSD-kernel-BHYVE-PXENFS-amd64-15.1
 cbsd/etc/defaults/FreeBSD-kernel-BHYVE-amd64-13.3
 cbsd/etc/defaults/FreeBSD-kernel-BHYVE-amd64-13.5
 cbsd/etc/defaults/FreeBSD-kernel-BHYVE-amd64-14.1
@@ -243,8 +247,8 @@ cbsd/etc/defaults/vm-freebsd-FreeBSD-from-jail-x86_64.conf
 cbsd/etc/defaults/vm-freebsd-GhostBSD-25-x86_64.conf
 cbsd/etc/defaults/vm-freebsd-HardenedBSD-15-STABLE-x86_64.conf
 cbsd/etc/defaults/vm-freebsd-HelloSystem-x86_64.conf
-cbsd/etc/defaults/vm-freebsd-MidnightBSD-3-x86_64.conf
-cbsd/etc/defaults/vm-freebsd-OPNsense-25-RELEASE-x86_64.conf
+cbsd/etc/defaults/vm-freebsd-MidnightBSD-4-x86_64.conf
+cbsd/etc/defaults/vm-freebsd-OPNsense-26-RELEASE-x86_64.conf
 cbsd/etc/defaults/vm-freebsd-RavynOS-25-x86_64.conf
 cbsd/etc/defaults/vm-freebsd-XigmaNAS-14-x86_64.conf
 cbsd/etc/defaults/vm-freebsd-ZVault-13-x86_64.conf
@@ -297,7 +301,7 @@ cbsd/etc/defaults/vm-linux-Fedora-Silverblue-42-x86_64.conf
 cbsd/etc/defaults/vm-linux-Fedora-Silverblue-43-x86_64.conf
 cbsd/etc/defaults/vm-linux-Fedora-server-42-x86_64.conf
 cbsd/etc/defaults/vm-linux-Fedora-server-43-x86_64.conf
-cbsd/etc/defaults/vm-linux-FnOS-0.9-x86_64.conf
+cbsd/etc/defaults/vm-linux-FnOS-1-x86_64.conf
 cbsd/etc/defaults/vm-linux-FreePBX-64bit-16-x86_64.conf
 cbsd/etc/defaults/vm-linux-FreePBX-64bit-17-x86_64.conf
 cbsd/etc/defaults/vm-linux-Gentoo-2025-x86_64.conf
@@ -306,7 +310,7 @@ cbsd/etc/defaults/vm-linux-Kubuntu-desktop-22-x86_64.conf
 cbsd/etc/defaults/vm-linux-Kubuntu-desktop-24-x86_64.conf
 cbsd/etc/defaults/vm-linux-Lubuntu-desktop-22-x86_64.conf
 cbsd/etc/defaults/vm-linux-Lubuntu-desktop-24-x86_64.conf
-cbsd/etc/defaults/vm-linux-Manjaro-2025-x86_64.conf
+cbsd/etc/defaults/vm-linux-Manjaro-2026-x86_64.conf
 cbsd/etc/defaults/vm-linux-MikoPBX-2024-x86_64.conf
 cbsd/etc/defaults/vm-linux-Mint-22-x86_64.conf
 cbsd/etc/defaults/vm-linux-NetBootXYZ-x86_64.conf
@@ -321,7 +325,7 @@ cbsd/etc/defaults/vm-linux-OracleLinux-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-OracleLinux-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-OviOS-5-x86_64.conf
-cbsd/etc/defaults/vm-linux-Parrot-security-6-x86_64.conf
+cbsd/etc/defaults/vm-linux-Parrot-security-7-x86_64.conf
 cbsd/etc/defaults/vm-linux-PetaSAN-4-x86_64.conf
 cbsd/etc/defaults/vm-linux-Proxmox-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-Proxmox-Backup-4.conf
@@ -334,6 +338,7 @@ cbsd/etc/defaults/vm-linux-Rosa-desktop-13-x86_64.conf
 cbsd/etc/defaults/vm-linux-Rosa-server-13-x86_64.conf
 cbsd/etc/defaults/vm-linux-RosaVirt-3-x86_64.conf
 cbsd/etc/defaults/vm-linux-RouterOS-7-x86_64.conf
+cbsd/etc/defaults/vm-linux-Security-Onion-2-x86_64.conf
 cbsd/etc/defaults/vm-linux-Slackware-15-x86_64.conf
 cbsd/etc/defaults/vm-linux-Starface-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-Starface-9-x86_64.conf
@@ -348,6 +353,7 @@ cbsd/etc/defaults/vm-linux-Ubuntuserver-24-x86_64.conf
 cbsd/etc/defaults/vm-linux-VoidLinux-2025-x86_64.conf
 cbsd/etc/defaults/vm-linux-Vyos-2025-x86_64.conf
 cbsd/etc/defaults/vm-linux-ZimaOS-x86_64.conf
+cbsd/etc/defaults/vm-linux-ZorinOS-Core-18-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-10.0-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-10.1-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Alma-9-x86_64.conf
@@ -368,6 +374,7 @@ cbsd/etc/defaults/vm-linux-cloud-Fedora-42-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-43-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-FreePBX-16-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-HomeAssistantOS-2024-x86_64.conf
+cbsd/etc/defaults/vm-linux-cloud-HomeAssistantOS-2026-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Kali-2024-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-OYOS-202503-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Oracle-10-x86_64.conf
@@ -417,6 +424,7 @@ cbsd/etc/modules.conf
 cbsd/etc/spice.conf
 cbsd/jailctl/j2prepare
 cbsd/jailctl/j2slave
+cbsd/jailctl/jailnic
 cbsd/jailctl/jailnic-tui
 cbsd/jailctl/jbackup
 cbsd/jailctl/jcleanup
@@ -476,6 +484,7 @@ cbsd/misc/conv2human
 cbsd/misc/daemon
 cbsd/misc/daemonize
 cbsd/misc/detect-emulation
+cbsd/misc/devtree
 cbsd/misc/disks-list
 cbsd/misc/dump_cpu_topology
 cbsd/misc/dump_iscsi_discovery
@@ -748,6 +757,8 @@ cbsd/share/FreeBSD-jail-vnet-skel/etc/spwd.db
 cbsd/share/FreeBSD-jail-vnet-skel/root/.bashrc
 cbsd/share/FreeBSD-jail-vnet-skel/root/.cshrc
 cbsd/share/FreeBSD-jail2iso-prunelist
+cbsd/share/FreeBSD-microbhyve-pxe.txt.xz
+cbsd/share/FreeBSD-microbhyve-pxenfs.txt.xz
 cbsd/share/FreeBSD-microbhyve.txt.xz
 cbsd/share/FreeBSD-microjail.txt.xz
 cbsd/share/HardenedBSD-filebases_11.txt.xz
@@ -1164,10 +1175,12 @@ cbsd/system/srcup
 cbsd/system/unregister_base
 cbsd/system/unregister_kernel
 cbsd/system/upgrade
+cbsd/system/volumes
 cbsd/system/world
 cbsd/tools/apply
 cbsd/tools/attachgeli
 cbsd/tools/attachzfs
+cbsd/tools/auditd
 cbsd/tools/bases
 cbsd/tools/baseupdate
 cbsd/tools/bhyve-controller
@@ -1264,6 +1277,7 @@ cbsd/tools/objls
 cbsd/tools/path2jail
 cbsd/tools/pkgbrowsecat
 cbsd/tools/pkgbrowser
+cbsd/tools/praudit
 cbsd/tools/pull
 cbsd/tools/rctlcounters
 cbsd/tools/replacewdir
@@ -1292,6 +1306,7 @@ cbsd/tools/unmountmd
 cbsd/tools/up
 cbsd/tools/valecfg
 cbsd/tools/valecfg-tui
+cbsd/tools/version
 cbsd/tools/vhidcfg
 cbsd/tools/vhidcfg-tui
 cbsd/tools/vm-cpu-topology
@@ -1470,6 +1485,9 @@ cbsd/upgrade/pre-patch-14.2.5.1
 cbsd/upgrade/pre-patch-14.2.6.0
 cbsd/upgrade/pre-patch-14.2.6.1
 cbsd/upgrade/pre-patch-15.0.0.0
+cbsd/upgrade/pre-patch-15.0.1.0
+cbsd/upgrade/pre-patch-15.0.1.1
+cbsd/upgrade/pre-patch-15.0.1.2
 cbsd/vboxctl/vconfig
 cbsd/vboxctl/vconstruct-tui
 cbsd/vboxctl/vcontrol-tui
