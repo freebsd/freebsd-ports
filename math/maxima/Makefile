@@ -1,6 +1,5 @@
 PORTNAME=	maxima
-DISTVERSION=	5.48.1
-PORTREVISION=	1
+DISTVERSION=	5.49.0
 CATEGORIES=	math lisp tk
 MASTER_SITES=	SF/maxima/Maxima-source/${PORTVERSION}-source
 
@@ -29,8 +28,8 @@ TEST_TARGET=	check
 
 BINARY_ALIAS=	expr=gexpr
 
-INFO=		imaxima maxima abs_integrate drawutils kovacicODE logic \
-		nelder_mead symplectic_ode
+INFO=		imaxima maxima abs_integrate drawutils guess kovacicODE logic \
+		mathml nelder_mead raddenest symplectic_ode
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 PORTDATA=	*
