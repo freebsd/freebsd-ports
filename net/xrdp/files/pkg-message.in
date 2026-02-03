@@ -1,22 +1,24 @@
 [
 { type: install
   message: <<EOM
-xrdp has been installed.
+The following step are required for a complete xrdp setup.
 
-There is an rc.d script, so the service can be enabled by adding this line
-in /etc/rc.conf:
+1) Edit the configuration files in "%%ETCDIR%%" and the
+   "%%ETCDIR%%/startwm.sh" script.
 
-xrdp_enable="YES"
-xrdp_sesman_enable="YES"
+2) Install either of the following packages depending on your needs:
+   - pkg install x11-drivers/xorgxrdp        (xorg flavor)
+   - pkg install x11-drivers/xorgxrdp@xlibre (xlibre flavor)
 
-Do not forget to edit the configuration files in "%%ETCDIR%%"
-and the "%%ETCDIR%%/startwm.sh" script.
+3) To enable audio redirection, install either of the following packages
+   according to your environment:
+   - pkg install audio/pipewire-module-xrdp
+   - pkg install audio/pulseaudio-module-xrdp
 
-To enable audio redirection, install the following ports/packages to meet
-your environment.
-
-- audio/pipewire-module-xrdp
-- audio/pulseaudio-module-xrdp
+4) Enable and start xrdp daemons:
+   - sysrc xrdp_enable="YES"
+   - sysrc xrdp_sesman_enable="YES"
+   - service xrdp allstart
 
 EOM
 }
