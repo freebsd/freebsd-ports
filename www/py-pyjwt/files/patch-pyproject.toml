@@ -1,11 +1,22 @@
---- pyproject.toml.orig	2024-11-28 03:40:50 UTC
+--- pyproject.toml.orig	2026-01-30 19:59:19 UTC
 +++ pyproject.toml
-@@ -35,7 +35,7 @@ keywords = [
+@@ -1,7 +1,7 @@ requires = [
+ [build-system]
+ build-backend = "setuptools.build_meta"
+ requires = [
+-    "setuptools>=77.0.3",
++    "setuptools>=61",
+ ]
+ 
+ [project]
+@@ -35,8 +35,8 @@ keywords = [
      "token",
      "web",
  ]
+-license = "MIT"
 -name = "PyJWT"
++license = { text = "MIT" }
 +name = "pyjwt"
  requires-python = ">=3.9"
  
- [project.license]
+ [project.optional-dependencies]
