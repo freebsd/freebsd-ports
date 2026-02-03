@@ -1,5 +1,5 @@
-TIMESTAMP = 1764578536
-SHA256 (google-shaderc-v2025.5_GH0.tar.gz) = fca5041b1fdea6daba167b63e04e55e5059fab40828342126169336643445447
-SIZE (google-shaderc-v2025.5_GH0.tar.gz) = 228956
-SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-454-gb824a46_GH0.tar.gz) = 15a0224e5c31245651a8a9fc9fc4a86d80c8589614c969861f9be343b3dc6af1
-SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-454-gb824a46_GH0.tar.gz) = 558851
+TIMESTAMP = 1770145546
+SHA256 (google-shaderc-v2026.1_GH0.tar.gz) = 245002feccbe7f8361b223545a5654cea69780745886872d7efff50a38d96c66
+SIZE (google-shaderc-v2026.1_GH0.tar.gz) = 229148
+SHA256 (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-461-g04f10f6_GH0.tar.gz) = e80ea5fb765506024dc9d7dbdd797acbdcd19ba2f6c2845d7b099a03282026a3
+SIZE (KhronosGroup-SPIRV-Headers-1.5.4.raytracing.fixed-461-g04f10f6_GH0.tar.gz) = 561518
