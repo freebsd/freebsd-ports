@@ -1,0 +1,13 @@
+Obtained from:	https://github.com/devise-two-factor/devise-two-factor/commit/e7b528a99a049bbd068d52fd16f54b1b6a852ce0
+
+--- devise-two-factor.gemspec.orig	2026-01-31 22:00:08 UTC
++++ devise-two-factor.gemspec
+@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
+ 
+   s.add_runtime_dependency(%q<railties>.freeze, [">= 7.0".freeze, "< 8.2".freeze])
+   s.add_runtime_dependency(%q<activesupport>.freeze, [">= 7.0".freeze, "< 8.2".freeze])
+-  s.add_runtime_dependency(%q<devise>.freeze, [">= 4.0".freeze, "< 5.0".freeze])
++  s.add_runtime_dependency(%q<devise>.freeze, [">= 4.0".freeze, "< 6.0".freeze])
+   s.add_runtime_dependency(%q<rotp>.freeze, ["~> 6.0".freeze])
+   s.add_development_dependency(%q<activemodel>.freeze, [">= 0".freeze])
+   s.add_development_dependency(%q<appraisal>.freeze, [">= 0".freeze])
