@@ -1,7 +1,9 @@
 PORTNAME=	libtorrent
 DISTVERSION=	0.16.6
+PORTREVISION=	1
 CATEGORIES=	net-p2p
-MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/rakshasa/rtorrent/releases/download/v0.16.5/
+DISTNAME=	${PORTNAME}-0.16.5
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
