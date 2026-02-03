@@ -1,8 +1,8 @@
---- libdnet-stripped/configure.orig	2017-08-02 18:48:27 UTC
-+++ libdnet-stripped/configure
-@@ -764,6 +764,9 @@ ac_includes_default="\
- #ifdef HAVE_STDINT_H
- # include <stdint.h>
+--- libdnet-stripped/configure.orig	2025-08-09 12:07:16.000000000 -0700
++++ libdnet-stripped/configure	2026-02-02 15:30:56.588281000 -0800
+@@ -643,6 +643,9 @@
+ #ifdef HAVE_SYS_STAT_H
+ # include <sys/stat.h>
  #endif
 +#ifdef HAVE_SYS_SOCKET_H
 +# include <sys/socket.h>
@@ -10,17 +10,17 @@
  #ifdef HAVE_UNISTD_H
  # include <unistd.h>
  #endif"
-@@ -11828,11 +11831,8 @@ $as_echo_n "checking for Berkeley Packet Filter... " >
-     if ${ac_cv_dnet_bsd_bpf+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
--  if test -c /dev/bpf0 ; then
--	    ac_cv_dnet_bsd_bpf=yes
--	else
--	    ac_cv_dnet_bsd_bpf=no
--	fi
-+# PR ports/154353 : support building in FreeBSD jail
-+    ac_cv_dnet_bsd_bpf=yes
+@@ -15136,13 +15139,6 @@
+     if test ${ac_cv_dnet_bsd_bpf+y}
+ then :
+   printf %s "(cached) " >&6
+-else case e in #(
+-  e) if test -c /dev/bpf -o -c /dev/bpf0 ; then
+-        ac_cv_dnet_bsd_bpf=yes
+-    else
+-        ac_cv_dnet_bsd_bpf=no
+-    fi ;;
+-esac
  fi
  
-     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_dnet_bsd_bpf" >&5
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_dnet_bsd_bpf" >&5
