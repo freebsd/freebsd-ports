@@ -1,6 +1,6 @@
 PORTNAME=	emacs-libvterm
-DISTVERSION=	0.0.2
-CATEGORIES=	misc elisp
+DISTVERSION=	g20251119
+CATEGORIES=	x11 elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
 MAINTAINER=	tslight@pm.me
@@ -15,7 +15,6 @@ USES=		cmake:noninja emacs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	akermu
-GH_PROJECT=	emacs-libvterm
 GH_TAGNAME=	a01a2894a1c1e81a39527835a9169e35b7ec5dec
 
 do-install:

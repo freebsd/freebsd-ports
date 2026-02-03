@@ -3,9 +3,9 @@
 message: <<EOT
 Final emacs-libvterm setup instructions:
 
-(require 'vterm) in your ~/.emacs.
+Add (require 'vterm) to your Emacs configuration.
 
-M-x 'vterm' to open a new terminal
+M-x 'vterm' to open a new terminal.
 EOT
   type: install
 }

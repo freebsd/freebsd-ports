@@ -77,6 +77,7 @@
     SUBDIR += eaglemode
     SUBDIR += editres
     SUBDIR += elementary-terminal
+    SUBDIR += emacs-libvterm
     SUBDIR += emprint
     SUBDIR += erun
     SUBDIR += evilvte
