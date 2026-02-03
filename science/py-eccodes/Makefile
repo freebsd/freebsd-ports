@@ -1,5 +1,5 @@
 PORTNAME=	eccodes
-PORTVERSION=	2.44.0
+PORTVERSION=	2.45.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+MAKE_ENV=	DEPEND_ON_ECCODESLIB=0
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
