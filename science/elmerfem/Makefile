@@ -1,6 +1,7 @@
 PORTNAME=	elmerfem
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	26.1
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -83,6 +84,13 @@ FCFLAGS+=	-fPIC
 FFLAGS+=	-fPIC
 .endif
 
+PDFS=	elmerice/Solvers/Documentation/m1qn3.pdf	\
+	elmerice/Solvers/Documentation/poroussolver.pdf	\
+	elmerice/Solvers/Documentation/siasolver.pdf	\
+	elmerice/UserFunctions/Documentation/usf_damage.pdf	\
+	fem/src/modules/contrib/ShellMultiSolver/ShellMutiSolverUserGuide.pdf
+PORTDOCS=	*
+
 .if ${GCC_DEFAULT} >= 10
 # workaround for Type mismatch between actual argument at (1) and actual argument at (2) (REAL(8)/COMPLEX(8)).
 # in theory, this should set FCFLAGS, but the port does not conform
@@ -111,6 +119,10 @@ post-install:
 	${LN} -sf libmatc.so ${_LIBSTAGEDIR}/libmatc.so.0
 	${LN} -sf libmpi_stubs.so ${_LIBSTAGEDIR}/libmpi_stubs.so.0
 	@${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/ElmerGrid
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PDFS:C|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 do-test:
 	@cd ${TEST_WRKSRC} && ctest -C ${CMAKE_BUILD_TYPE} ${_MAKE_JOBS}
