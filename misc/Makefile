@@ -109,6 +109,7 @@
     SUBDIR += edflib
     SUBDIR += elki
     SUBDIR += elscreen
+    SUBDIR += emacs-libvterm
     SUBDIR += estic
     SUBDIR += exercism
     SUBDIR += explosions
