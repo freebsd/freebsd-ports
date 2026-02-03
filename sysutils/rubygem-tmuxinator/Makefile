@@ -1,5 +1,6 @@
 PORTNAME=	tmuxinator
 PORTVERSION=	3.3.7
+PORTREVISION=	1
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/tmuxinator/tmuxinator
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-erubi>=1.13<2:www/rubygem-erubi \
-		rubygem-thor>=1.4.0<1.5:devel/rubygem-thor
+		rubygem-thor14>=1.4.0<1.5:devel/rubygem-thor14
 
 USES=		gem
 
