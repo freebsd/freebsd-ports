@@ -1,5 +1,5 @@
 PORTNAME=	amq-protocol
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,13 +10,8 @@ WWW=		https://github.com/ruby-amqp/amq-protocol
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gem python:env shebangfix
+USES=		gem
 
 NO_ARCH=	yes
-
-PLIST_FILES=	${GEM_LIB_DIR}/CLAUDE.md \
-		${GEM_LIB_DIR}/GEMINI.md
-
-SHEBANG_FILES=	codegen/codegen.py
 
 .include <bsd.port.mk>
