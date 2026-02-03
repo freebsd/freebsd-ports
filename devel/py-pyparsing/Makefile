@@ -1,5 +1,5 @@
 PORTNAME=	pyparsing
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/pyparsing/pyparsing/releases/download/${PORTVERSION}/
