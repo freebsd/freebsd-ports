@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libev.so:devel/libev
 
+FORBIDDEN=	possible backdoor issue
+
 GNU_CONFIGURE=	yes
 USES=		autoreconf compiler:c11 libtool gmake ncurses localbase
 USE_GITHUB=	yes
