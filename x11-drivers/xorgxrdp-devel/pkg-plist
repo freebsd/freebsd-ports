@@ -1,5 +1,6 @@
 @dir /etc/X11/xrdp
 /etc/X11/xrdp/xorg.conf
+/etc/X11/xrdp/xorg_nvidia.conf
 lib/xorg/modules/drivers/xrdpdev_drv.a
 lib/xorg/modules/drivers/xrdpdev_drv.so
 lib/xorg/modules/input/xrdpkeyb_drv.a
