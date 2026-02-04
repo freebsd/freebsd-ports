@@ -5708,6 +5708,7 @@
     SUBDIR += py-pyparsing2
     SUBDIR += py-pypemicro
     SUBDIR += py-pyperclip
+    SUBDIR += py-pyperclipimg
     SUBDIR += py-pyperf
     SUBDIR += py-pyperscan
     SUBDIR += py-pyplusplus
