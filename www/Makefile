@@ -2407,6 +2407,8 @@
     SUBDIR += rubygem-redis-rails-rails52
     SUBDIR += rubygem-redis-rails-rails60
     SUBDIR += rubygem-redis-rails-rails61
+    SUBDIR += rubygem-requestjs-rails
+    SUBDIR += rubygem-requestjs-rails-rails72
     SUBDIR += rubygem-responders
     SUBDIR += rubygem-responders-rails-gitlab
     SUBDIR += rubygem-responders-rails5

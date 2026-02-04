@@ -1,0 +1,13 @@
+requestjs-rails is a tiny Fetch API wrapper that allows you to make HTTP
+requests from Rails applications without the need to manually handle CSRF
+tokens on every request.
+
+This gem provides a simple JavaScript library that automatically includes
+Rails' CSRF token in AJAX requests, making it easier to build interactive
+web applications while maintaining security.
+
+Key features:
+- Automatic CSRF token handling
+- Simple Fetch API wrapper
+- Lightweight and easy to integrate
+- Designed specifically for Rails applications
