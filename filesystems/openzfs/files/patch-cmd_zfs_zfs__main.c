@@ -1,6 +1,6 @@
---- cmd/zfs/zfs_main.c.orig	2025-12-18 18:41:34.311311571 +0100
-+++ cmd/zfs/zfs_main.c	2025-12-29 11:32:45.050147000 +0100
-@@ -6884,17 +6884,28 @@
+--- cmd/zfs/zfs_main.c.orig	2025-12-18 17:41:34 UTC
++++ cmd/zfs/zfs_main.c
+@@ -6884,17 +6884,28 @@ print_holds(boolean_t scripted, int nwidth, int tagwid
  
  			if (scripted) {
  				if (parsable) {
