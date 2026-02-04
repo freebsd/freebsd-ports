@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260508:
+  AFFECTS: users of shells/bash-completion
+  AUTHOR: michaelo@FreeBSD.org
+
+  Port does not depend on shells/bash{,-static} anymore. Install the port
+  directly. See PR 292138 and 292501 for details.
+
 20260425:
   AFFECTS: Users of security/openssh-portable
   AUTHOR: bdrewery@FreeBSD.org
