@@ -10,6 +10,9 @@ WWW=		https://troglobit.com/projects/inadyn/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	As of October 2025, this project has been archived and is no longer maintained
+EXPIRATION_DATE	2027-02-04
+
 LIB_DEPENDS=	libconfuse.so:devel/libconfuse
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
