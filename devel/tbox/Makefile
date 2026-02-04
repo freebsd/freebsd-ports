@@ -1,11 +1,11 @@
 PORTNAME=	tbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.9
+DISTVERSION=	1.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Glib-like multi-platform c library
-WWW=		https://tboox.org/
+WWW=		https://tboox.top/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
