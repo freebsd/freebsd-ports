@@ -11,12 +11,6 @@
 @(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/timeperiods.cfg-sample
 @(,%%NAGIOSGROUP%%,) %%ETCDIR%%/objects/windows.cfg-sample
 @(,%%NAGIOSGROUP%%,) %%ETCDIR%%/resource.cfg-sample
-%%WWWDIR%%/angularjs/angular-1.3.9/angular.min.js
-%%WWWDIR%%/angularjs/angular-1.3.9/angular.min.js.map
-%%WWWDIR%%/angularjs/ui-bootstrap-tpls-0.14.3.min.js
-%%WWWDIR%%/angularjs/ui-utils-0.2.3/ui-utils.js
-%%WWWDIR%%/bootstrap-3.3.7/css/bootstrap-theme.min.css
-%%WWWDIR%%/bootstrap-3.3.7/css/bootstrap.min.css
 %%WWWDIR%%/cgi-bin/archivejson.cgi
 %%WWWDIR%%/cgi-bin/avail.cgi
 %%WWWDIR%%/cgi-bin/cmd.cgi
@@ -99,12 +93,16 @@
 %%WWWDIR%%/contexthelp/N5.html
 %%WWWDIR%%/contexthelp/N6.html
 %%WWWDIR%%/contexthelp/N7.html
-%%WWWDIR%%/d3/d3.min.js
-%%WWWDIR%%/graph-header.html
-%%WWWDIR%%/histogram-form.html
-%%WWWDIR%%/histogram-graph.html
-%%WWWDIR%%/histogram-links.html
-%%WWWDIR%%/histogram.html
+%%WWWDIR%%/fonts/Geist-Black.woff2
+%%WWWDIR%%/fonts/Geist-Bold.woff2
+%%WWWDIR%%/fonts/Geist-ExtraBold.woff2
+%%WWWDIR%%/fonts/Geist-ExtraLight.woff2
+%%WWWDIR%%/fonts/Geist-Light.woff2
+%%WWWDIR%%/fonts/Geist-Medium.woff2
+%%WWWDIR%%/fonts/Geist-Regular.woff2
+%%WWWDIR%%/fonts/Geist-SemiBold.woff2
+%%WWWDIR%%/fonts/Geist-Thin.woff2
+%%WWWDIR%%/fonts/Geist[wght].woff2
 %%WWWDIR%%/images/Nagios-clearbg.png
 %%WWWDIR%%/images/NagiosEnterprises-whitebg-112x46.png
 %%WWWDIR%%/images/ack.gif
@@ -121,6 +119,7 @@
 %%WWWDIR%%/images/contexthelp1.gif
 %%WWWDIR%%/images/contexthelp2.gif
 %%WWWDIR%%/images/critical.png
+%%WWWDIR%%/images/csp-dashboard.avif
 %%WWWDIR%%/images/delay.gif
 %%WWWDIR%%/images/delete.gif
 %%WWWDIR%%/images/detail.gif
@@ -184,6 +183,7 @@
 %%WWWDIR%%/images/logos/freebsd40.png
 %%WWWDIR%%/images/logos/globe.png
 %%WWWDIR%%/images/logos/graph.gif
+%%WWWDIR%%/images/logos/horizontal-nagios-full-logo.svg
 %%WWWDIR%%/images/logos/hp-printer40.gd2
 %%WWWDIR%%/images/logos/hp-printer40.gif
 %%WWWDIR%%/images/logos/hp-printer40.jpg
@@ -219,6 +219,7 @@
 %%WWWDIR%%/images/logos/mandrake.jpg
 %%WWWDIR%%/images/logos/mandrake.png
 %%WWWDIR%%/images/logos/monitor.png
+%%WWWDIR%%/images/logos/nagios-n-logo.svg
 %%WWWDIR%%/images/logos/nagios.gd2
 %%WWWDIR%%/images/logos/nagios.gif
 %%WWWDIR%%/images/logos/nagiosvrml.png
@@ -366,32 +367,13 @@
 %%WWWDIR%%/images/zoom2.gif
 %%WWWDIR%%/includes/utils.inc.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/infobox.html
-%%WWWDIR%%/js/histogram-events.js
-%%WWWDIR%%/js/histogram-form.js
-%%WWWDIR%%/js/histogram-graph.js
-%%WWWDIR%%/js/histogram.js
-%%WWWDIR%%/js/jquery-1.12.4.min.js
+%%WWWDIR%%/js/jquery-3.7.1.min.js
 %%WWWDIR%%/js/jsonquery.js
-%%WWWDIR%%/js/map-directive.js
-%%WWWDIR%%/js/map-form.js
-%%WWWDIR%%/js/map.js
 %%WWWDIR%%/js/nag_funcs.js
-%%WWWDIR%%/js/nagios-decorations.js
-%%WWWDIR%%/js/nagios-time.js
-%%WWWDIR%%/js/trends-form.js
-%%WWWDIR%%/js/trends-graph.js
-%%WWWDIR%%/js/trends.js
 %%WWWDIR%%/jsonquery.html
 %%WWWDIR%%/main.php
-%%WWWDIR%%/map-directive.html
-%%WWWDIR%%/map-form.html
-%%WWWDIR%%/map-links.html
-%%WWWDIR%%/map-popup.html
-%%WWWDIR%%/map.php
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/side.php
-%%WWWDIR%%/spin/spin.min.js
 %%WWWDIR%%/stylesheets/avail.css
 %%WWWDIR%%/stylesheets/checksanity.css
 %%WWWDIR%%/stylesheets/cmd.css
@@ -415,12 +397,6 @@
 %%WWWDIR%%/stylesheets/tac.css
 %%WWWDIR%%/stylesheets/trends.css
 %%WWWDIR%%/stylesheets/trendsgraph.css
-%%WWWDIR%%/trends-form.html
-%%WWWDIR%%/trends-graph.html
-%%WWWDIR%%/trends-host-yaxis.html
-%%WWWDIR%%/trends-links.html
-%%WWWDIR%%/trends-service-yaxis.html
-%%WWWDIR%%/trends.html
 @dir %%WWWDIR%%/ssi
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,775) %%NAGIOSDIR%%/archives
 @dir(%%NAGIOSUSER%%,%%NAGIOSGROUP%%,2775) %%NAGIOSDIR%%/checkresults
