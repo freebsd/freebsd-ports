@@ -19,6 +19,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	featurecat
 JAVA_VERSION=	8 # because of Bug 292662 - games/lizzie: does not build with jdk11+
 
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
+
 NO_ARCH=	yes
 
 # to rebuild the deps archive:

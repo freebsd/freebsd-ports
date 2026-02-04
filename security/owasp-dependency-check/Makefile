@@ -28,6 +28,8 @@ GH_ACCOUNT=	jeremylong
 GH_PROJECT=	DependencyCheck
 JAVA_VERSION=	8
 
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
+
 NO_ARCH=	yes
 SUB_FILES=	owasp-dependency-check
 SUB_LIST=	PORTVERSION=${PORTVERSION}

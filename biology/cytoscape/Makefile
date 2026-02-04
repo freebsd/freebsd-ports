@@ -30,6 +30,9 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}-parent:${DISTVERSION}:p/parent \
 		${PORTNAME}:${PORTNAME}-gui-distribution:${DISTVERSION}:g/gui-distribution \
 		${PORTNAME}:${PORTNAME}-app-template:${DISTVERSION}:d/app-developer
 JAVA_VERSION=	8 # Needs JAXB which is in included in jdk8 but not in jdk11+.
+
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
+
 NO_ARCH=	yes
 
 USER_WRKDIR=	~/.${PORTNAME}

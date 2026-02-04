@@ -31,7 +31,8 @@ NO_ARCH=	yes
 
 DEV_UPDATE_MODE=	no
 
-MAKE_ENV=	MAVEN_HOME=/usr/local/share/java/apache-maven-3.8 # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283883
+MAKE_ENV=	JAVA_HOME=${JAVA_HOME} \
+		MAVEN_HOME=/usr/local/share/java/apache-maven-3.8 # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=283883
 
 .if (${DEV_UPDATE_MODE} == "yes")
 post-build:

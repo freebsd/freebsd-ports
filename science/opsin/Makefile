@@ -16,6 +16,8 @@ BUILD_DEPENDS=	maven>0:devel/maven
 
 USES=		java
 
+MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
+
 NO_ARCH=	yes
 
 BB_ACCOUNT=	dan2097
