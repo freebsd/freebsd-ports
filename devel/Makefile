@@ -992,6 +992,7 @@
     SUBDIR += hs-darcs
     SUBDIR += hs-ghc-events
     SUBDIR += hs-ghcprofview
+    SUBDIR += hs-ghcup
     SUBDIR += hs-git-annex
     SUBDIR += hs-git-brunch
     SUBDIR += hs-hadolint
