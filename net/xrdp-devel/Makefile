@@ -1,7 +1,6 @@
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.80.b20241229
-PORTREVISION=	3
+DISTVERSION=	0.10.80.b20260203
 PORTEPOCH=	1
 CATEGORIES=	net
 PKGNAMESUFFIX=	-devel
@@ -26,9 +25,9 @@ USES=		autoreconf:build compiler:c11 cpe jpeg libtool localbase \
 CPE_VENDOR=	neutrinolabs
 USE_GITHUB=	yes
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	4e378c9
-GH_TUPLE=	neutrinolabs:librfxcodec:e8208bf:librfxcodec/librfxcodec \
-		neutrinolabs:libpainter:2255b38:libpainter/libpainter \
+GH_TAGNAME=	4d9dde8
+GH_TUPLE=	neutrinolabs:librfxcodec:962b3a3:librfxcodec/librfxcodec \
+		neutrinolabs:libpainter:379b8fb:libpainter/libpainter \
 		neutrinolabs:ulalaca-xrdp:f683d17:ulalaca/ulalaca
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_XORG=	ice pixman sm x11 xfixes xkbfile xrandr
@@ -114,7 +113,7 @@ post-stage:
 	@${RM} ${STAGEDIR}${ETCDIR}/rsakeys.ini
 	@${RM} ${STAGEDIR}${ETCDIR}/cert.pem
 	@${RM} ${STAGEDIR}${ETCDIR}/key.pem
-.for f in sesman.ini startwm.sh reconnectwm.sh xrdp.ini xrdp_keyboard.ini \
+.for f in sesman.ini startwm.sh reconnectwm.sh xrdp.ini xrdp_keyboard.toml \
 	gfx.toml
 	@${MV} ${STAGEDIR}${ETCDIR}/$f \
 		${STAGEDIR}${ETCDIR}/$f.sample

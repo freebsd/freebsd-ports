@@ -14,6 +14,7 @@ etc/rc.d/xrdp-sesman
 %%ETCDIR%%/km-0000040a.toml
 %%ETCDIR%%/km-0000040b.toml
 %%ETCDIR%%/km-0000040c.toml
+%%ETCDIR%%/km-0000040e.toml
 %%ETCDIR%%/km-00000410.toml
 %%ETCDIR%%/km-00000411.toml
 %%ETCDIR%%/km-00000412.toml
@@ -22,6 +23,10 @@ etc/rc.d/xrdp-sesman
 %%ETCDIR%%/km-00000416.toml
 %%ETCDIR%%/km-00000419.toml
 %%ETCDIR%%/km-0000041d.toml
+%%ETCDIR%%/km-00000424.toml
+%%ETCDIR%%/km-00000426.toml
+%%ETCDIR%%/km-00010426.toml
+%%ETCDIR%%/km-00020426.toml
 %%ETCDIR%%/km-00000807.toml
 %%ETCDIR%%/km-00000809.toml
 %%ETCDIR%%/km-0000080a.toml
@@ -37,7 +42,7 @@ etc/rc.d/xrdp-sesman
 @sample %%ETCDIR%%/reconnectwm.sh.sample
 @sample %%ETCDIR%%/sesman.ini.sample
 @sample %%ETCDIR%%/startwm.sh.sample
-@sample %%ETCDIR%%/xrdp_keyboard.ini.sample
+@sample %%ETCDIR%%/xrdp_keyboard.toml.sample
 @sample %%ETCDIR%%/xrdp.ini.sample
 include/ms-erref.h
 include/ms-fscc.h
@@ -58,6 +63,7 @@ include/xrdp_constants.h
 include/xrdp_rail.h
 include/xrdp_scancode_defs.h
 include/xrdp_sockets.h
+include/xup_client_info.h
 lib/libpainter.a
 lib/librfxencode.a
 lib/xrdp/libcommon.a
