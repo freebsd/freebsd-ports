@@ -1083,6 +1083,7 @@
     SUBDIR += py-mitogen
     SUBDIR += py-mqttwarn
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-nvitop
     SUBDIR += py-overlord
     SUBDIR += py-packet-python
     SUBDIR += py-pkginfo
