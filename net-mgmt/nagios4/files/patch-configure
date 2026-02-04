@@ -1,14 +1,14 @@
---- configure.orig	2018-06-25 21:25:22 UTC
+--- configure.orig	2026-01-14 16:37:00 UTC
 +++ configure
-@@ -6240,7 +6240,6 @@ cat >>confdefs.h <<_ACEOF
- #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
- _ACEOF
+@@ -7379,7 +7379,6 @@ printf "%s\n" "#define DEFAULT_NAGIOS_GROUP \"$nagios_
+ 
+ printf "%s\n" "#define DEFAULT_NAGIOS_GROUP \"$nagios_grp\"" >>confdefs.h
  
 -INSTALL_OPTS="-o $nagios_user -g $nagios_grp"
  
  
  
-@@ -6267,7 +6266,6 @@ fi
+@@ -7410,7 +7409,6 @@ fi
  
  
  
