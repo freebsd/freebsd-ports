@@ -1,7 +1,7 @@
---- xonsh/platform.py.orig	2018-09-05 14:16:47 UTC
+--- xonsh/platform.py.orig	2026-02-04 16:49:54 UTC
 +++ xonsh/platform.py
-@@ -571,7 +571,7 @@ def LIBC():
-         libc = ctypes.CDLL("msys-2.0.dll")
+@@ -576,7 +576,7 @@ def LIBC():
+             libc = None
      elif ON_BSD:
          try:
 -            libc = ctypes.CDLL("libc.so")
