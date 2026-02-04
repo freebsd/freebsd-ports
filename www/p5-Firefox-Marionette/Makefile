@@ -1,5 +1,5 @@
 PORTNAME=	Firefox-Marionette
-DISTVERSION=	1.68
+DISTVERSION=	1.70
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDICK
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	firefox>0:www/firefox \
 RUN_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Config-INI>=0:devel/p5-Config-INI \
 		p5-Crypt-URandom>=0:security/p5-Crypt-URandom \
+		p5-File-HomeDir>=0:devel/p5-File-HomeDir \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-Text-CSV_XS>=1.35:textproc/p5-Text-CSV_XS \
