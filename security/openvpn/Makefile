@@ -1,5 +1,5 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.6.16
+DISTVERSION=		2.6.19
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -15,6 +15,8 @@ LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
 BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka \
 			rst2man:textproc/py-docutils@${PY_FLAVOR}
+
+TEST_DEPENDS=		fping:net/fping
 
 USES=			cpe libtool localbase:ldflags pkgconfig python:build shebangfix ssl
 USE_RC_SUBR=		openvpn
@@ -54,7 +56,6 @@ SMALL_DESC=		Build a smaller executable with fewer features
 UNITTESTS_DESC=		Enable unit tests
 X509ALTUSERNAME_DESC=	Enable --x509-username-field
 
-ASYNC_PUSH_LIB_DEPENDS=	libinotify.so:devel/libinotify
 ASYNC_PUSH_CONFIGURE_ENABLE=	async-push
 
 DCO_CONFIGURE_ENABLE=	dco
@@ -93,6 +94,13 @@ IGNORE_SSL_REASON=OpenVPN does not have permission to include LZO with LibreSSL.
 
 .if ! ${PORT_OPTIONS:MLZ4} && ! ${PORT_OPTIONS:MLZO}
 CONFIGURE_ARGS+=	--enable-comp-stub
+.endif
+
+# FreeBSD 15 added Linux-compatible inotify support
+.if ${PORT_OPTIONS:MASYNC_PUSH}
+. if "${OPSYS}" != "FreeBSD" || ${OSVERSION} < 1500068
+LIB_DEPENDS+=	libinotify.so:devel/libinotify
+. endif
 .endif
 
 .include <bsd.port.pre.mk>

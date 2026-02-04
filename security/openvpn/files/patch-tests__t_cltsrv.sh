@@ -1,4 +1,4 @@
---- tests/t_cltsrv.sh.orig	2016-08-23 13:10:22 UTC
+--- tests/t_cltsrv.sh.orig	2026-02-04 16:27:00 UTC
 +++ tests/t_cltsrv.sh
 @@ -1,7 +1,7 @@
  #! /bin/sh
@@ -9,10 +9,10 @@
  #
  # This program is free software; you can redistribute it and/or
  # modify it under the terms of the GNU General Public License
-@@ -22,8 +22,9 @@ set -e
- srcdir="${srcdir:-.}"
+@@ -23,8 +23,9 @@ openvpn="${openvpn:-${top_builddir}/src/openvpn/openvp
  top_srcdir="${top_srcdir:-..}"
  top_builddir="${top_builddir:-..}"
+ openvpn="${openvpn:-${top_builddir}/src/openvpn/openvpn}"
 -trap "rm -f log.$$ log.$$.signal ; trap 0 ; exit 77" 1 2 15
 -trap "rm -f log.$$ log.$$.signal ; exit 1" 0 3
 +root="${top_srcdir}/sample"
@@ -21,7 +21,7 @@
  addopts=
  case `uname -s` in
      FreeBSD)
-@@ -45,18 +46,38 @@ esac
+@@ -46,18 +47,38 @@ downscript="../tests/t_cltsrv-down.sh"
  # make sure that the --down script is executable -- fail (rather than
  # skip) test if it isn't.
  downscript="../tests/t_cltsrv-down.sh"
@@ -50,13 +50,13 @@
  for i in 1 2 3 ; do
    set +e
    (
--  "${top_builddir}/src/openvpn/openvpn" --script-security 2 --cd "${root}" ${addopts} --setenv role srv --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-server" &
--  "${top_builddir}/src/openvpn/openvpn" --script-security 2 --cd "${top_srcdir}/sample" ${addopts} --setenv role clt --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-client"
-+  "${top_builddir}/src/openvpn/openvpn" --script-security 2 \
+-  "${openvpn}" --script-security 2 --cd "${root}" ${addopts} --setenv role srv --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-server" &
+-  "${openvpn}" --script-security 2 --cd "${top_srcdir}/sample" ${addopts} --setenv role clt --down "${downscript}" --tls-exit --ping-exit 180 --config "sample-config-files/loopback-client"
++  "${openvpn}" --script-security 2 \
 +      --cd "${root}" ${addopts} --setenv role srv \
 +      --down "${downscript}" --tls-exit --ping-exit 180 \
 +      --config "sample-config-files/loopback-server.test" &
-+  "${top_builddir}/src/openvpn/openvpn" --script-security 2 \
++  "${openvpn}" --script-security 2 \
 +      --cd "${top_srcdir}/sample" ${addopts} --setenv role clt \
 +      --down "${downscript}" --tls-exit --ping-exit 180 \
 +      --config "sample-config-files/loopback-client.test"
