@@ -76,6 +76,7 @@ sbin/auto-change-nfsd-count
 sbin/auto-change-ownership
 sbin/auto-change-primary-group
 sbin/auto-change-uid
+sbin/auto-chromium+widevine-install
 sbin/auto-clean-disk
 sbin/auto-clean-ports
 sbin/auto-clean-tmp
@@ -190,7 +191,9 @@ sbin/auto-xdm-toggle
 share/man/man8/auto-add-swap.8.gz
 share/man/man8/auto-admin.8.gz
 share/man/man8/auto-change-login-class.8.gz
+share/man/man8/auto-chromium+widevine-install.1.gz
 share/man/man8/auto-image2dev.8.gz
+share/man/man8/auto-install-linux_base.8.gz
 share/man/man8/auto-physmem.8.gz
 share/man/man8/auto-pkgsrc-non-removable.8.gz
 share/man/man8/auto-update-system.8.gz
