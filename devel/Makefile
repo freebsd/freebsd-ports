@@ -4784,6 +4784,7 @@
     SUBDIR += py-daemons
     SUBDIR += py-daiquiri
     SUBDIR += py-dal
+    SUBDIR += py-darkdetect
     SUBDIR += py-darts.util.lru
     SUBDIR += py-dask
     SUBDIR += py-dask-awkward

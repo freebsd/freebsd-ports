@@ -1,0 +1,6 @@
+The main application of this Python package is to detect the Dark mode from
+your GUI Python application (Tkinter/wx/pyqt/qt for python (pyside)/...) and
+apply the needed adjustments to your interface. Darkdetect is particularly
+useful if your GUI library does not provide a public API for this detection.
+In addition, this package does not depend on other modules or packages that are
+not already included in standard Python distributions.
