@@ -46,10 +46,6 @@ _XMODDIR=	lib/xorg/modules
 .endif
 
 XRDPVER=		0.10.5
-# xorg:   /usr/local/lib/xorg/modules
-# xlibre: /usr/local/lib/xorg/modules/xlibre-25
-# This works but != should be avoided
-#_XMODDIR!=	pkgconf --variable moduledir xorg-server | sed -e "s|^${LOCALBASE}/||"
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	XRDP_CFLAGS=-I${WRKDIR}/xrdp-${XRDPVER}/common
