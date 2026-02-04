@@ -1,0 +1,373 @@
+--- wp-admin/about.php.orig	2026-02-03 17:29:37 UTC
++++ wp-admin/about.php
+@@ -60,16 +60,81 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
+ 			<a href="contribute.php" class="nav-tab"><?php _e( 'Get Involved' ); ?></a>
+ 		</nav>
+ 
+-        <div class="about__section changelog has-subtle-background-color">
++		<div class="about__section changelog has-subtle-background-color">
+ 			<div class="column">
+-				<h2><?php _e( 'Maintenance and Security Release' ); ?></h2>
++				<h2><?php _e( 'Maintenance and Security Releases' ); ?></h2>
+ 				<p>
+ 					<?php
+ 					printf(
+-						 /* translators: 1: WordPress version number, 2: Plural number of bugs. */
+-						 _n(
++						/* translators: %s: WordPress version. */
++						__( '<strong>Version %s</strong> addressed some security issues.' ),
++						'6.9.4'
++					);
++					?>
++					<?php
++					printf(
++						/* translators: %s: HelpHub URL. */
++						__( 'For more information, see <a href="%s">the release notes</a>.' ),
++						sprintf(
++							/* translators: %s: WordPress version. */
++							esc_url( __( 'https://wordpress.org/support/wordpress-version/version-%s/' ) ),
++							sanitize_title( '6.9.4' )
++						)
++					);
++					?>
++				</p>
++				<p>
++					<?php
++					printf(
++						/* translators: %s: WordPress version. */
++						_n(
+ 							'<strong>Version %1$s</strong> addressed %2$s bug.',
+ 							'<strong>Version %1$s</strong> addressed %2$s bugs.',
++							1
++						),
++						'6.9.3',
++						1
++					);
++					?>
++					<?php
++					printf(
++						/* translators: %s: HelpHub URL. */
++						__( 'For more information, see <a href="%s">the release notes</a>.' ),
++						sprintf(
++							/* translators: %s: WordPress version. */
++							esc_url( __( 'https://wordpress.org/support/wordpress-version/version-%s/' ) ),
++							sanitize_title( '6.9.3' )
++						)
++					);
++					?>
++				</p>
++				<p>
++					<?php
++					printf(
++						/* translators: %s: WordPress version. */
++						__( '<strong>Version %s</strong> addressed some security issues.' ),
++						'6.9.2'
++					);
++					?>
++					<?php
++					printf(
++						/* translators: %s: HelpHub URL. */
++						__( 'For more information, see <a href="%s">the release notes</a>.' ),
++						sprintf(
++							/* translators: %s: WordPress version. */
++							esc_url( __( 'https://wordpress.org/support/wordpress-version/version-%s/' ) ),
++							sanitize_title( '6.9.2' )
++						)
++					);
++					?>
++				</p>
++				<p>
++					<?php
++					printf(
++						/* translators: 1: WordPress version number, 2: Plural number of bugs. */
++						_n(
++							'<strong>Version %1$s</strong> addressed %2$s bug.',
++							'<strong>Version %1$s</strong> addressed %2$s bugs.',
+ 							49
+ 						),
+ 						'6.9.1',
+@@ -78,9 +143,9 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
+ 					?>
+ 					<?php
+ 					printf(
+-						 /* translators: %s: HelpHub URL. */
+-						 __( 'For more information, see <a href="%s">the release notes</a>.' ),
+-						 sprintf(
++						/* translators: %s: HelpHub URL. */
++						__( 'For more information, see <a href="%s">the release notes</a>.' ),
++						sprintf(
+ 							/* translators: %s: WordPress version. */
+ 							esc_url( __( 'https://wordpress.org/support/wordpress-version/version-%s/' ) ),
+ 							sanitize_title( '6.9.1' )
+--- wp-admin/includes/class-walker-nav-menu-checklist.php.orig	2025-05-01 19:26:29 UTC
++++ wp-admin/includes/class-walker-nav-menu-checklist.php
+@@ -116,11 +116,11 @@ class Walker_Nav_Menu_Checklist extends Walker_Nav_Men
+ 		$output .= '<input type="hidden" class="menu-item-object" name="menu-item[' . $possible_object_id . '][menu-item-object]" value="' . esc_attr( $menu_item->object ) . '" />';
+ 		$output .= '<input type="hidden" class="menu-item-parent-id" name="menu-item[' . $possible_object_id . '][menu-item-parent-id]" value="' . esc_attr( $menu_item->menu_item_parent ) . '" />';
+ 		$output .= '<input type="hidden" class="menu-item-type" name="menu-item[' . $possible_object_id . '][menu-item-type]" value="' . esc_attr( $menu_item->type ) . '" />';
+-		$output .= '<input type="hidden" class="menu-item-title" name="menu-item[' . $possible_object_id . '][menu-item-title]" value="' . esc_attr( $menu_item->title ) . '" />';
++		$output .= '<input type="hidden" class="menu-item-title" name="menu-item[' . $possible_object_id . '][menu-item-title]" value="' . htmlspecialchars( $menu_item->title, ENT_QUOTES ) . '" />';
+ 		$output .= '<input type="hidden" class="menu-item-url" name="menu-item[' . $possible_object_id . '][menu-item-url]" value="' . esc_url( $menu_item->url ) . '" />';
+ 		$output .= '<input type="hidden" class="menu-item-target" name="menu-item[' . $possible_object_id . '][menu-item-target]" value="' . esc_attr( $menu_item->target ) . '" />';
+-		$output .= '<input type="hidden" class="menu-item-attr-title" name="menu-item[' . $possible_object_id . '][menu-item-attr-title]" value="' . esc_attr( $menu_item->attr_title ) . '" />';
+-		$output .= '<input type="hidden" class="menu-item-classes" name="menu-item[' . $possible_object_id . '][menu-item-classes]" value="' . esc_attr( implode( ' ', $menu_item->classes ) ) . '" />';
+-		$output .= '<input type="hidden" class="menu-item-xfn" name="menu-item[' . $possible_object_id . '][menu-item-xfn]" value="' . esc_attr( $menu_item->xfn ) . '" />';
++		$output .= '<input type="hidden" class="menu-item-attr-title" name="menu-item[' . $possible_object_id . '][menu-item-attr-title]" value="' . htmlspecialchars( $menu_item->attr_title, ENT_QUOTES ) . '" />';
++		$output .= '<input type="hidden" class="menu-item-classes" name="menu-item[' . $possible_object_id . '][menu-item-classes]" value="' . htmlspecialchars( implode( ' ', $menu_item->classes ), ENT_QUOTES ) . '" />';
++		$output .= '<input type="hidden" class="menu-item-xfn" name="menu-item[' . $possible_object_id . '][menu-item-xfn]" value="' . htmlspecialchars( $menu_item->xfn, ENT_QUOTES ) . '" />';
+ 	}
+ }
+--- wp-admin/includes/class-walker-nav-menu-edit.php.orig	2025-05-01 19:26:29 UTC
++++ wp-admin/includes/class-walker-nav-menu-edit.php
+@@ -203,13 +203,13 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
+ 				<p class="description description-wide">
+ 					<label for="edit-menu-item-title-<?php echo $item_id; ?>">
+ 						<?php _e( 'Navigation Label' ); ?><br />
+-						<input type="text" id="edit-menu-item-title-<?php echo $item_id; ?>" class="widefat edit-menu-item-title" name="menu-item-title[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $menu_item->title ); ?>" />
++						<input type="text" id="edit-menu-item-title-<?php echo $item_id; ?>" class="widefat edit-menu-item-title" name="menu-item-title[<?php echo $item_id; ?>]" value="<?php echo htmlspecialchars( $menu_item->title, ENT_QUOTES ); ?>" />
+ 					</label>
+ 				</p>
+ 				<p class="field-title-attribute field-attr-title description description-wide">
+ 					<label for="edit-menu-item-attr-title-<?php echo $item_id; ?>">
+ 						<?php _e( 'Title Attribute' ); ?><br />
+-						<input type="text" id="edit-menu-item-attr-title-<?php echo $item_id; ?>" class="widefat edit-menu-item-attr-title" name="menu-item-attr-title[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $menu_item->post_excerpt ); ?>" />
++						<input type="text" id="edit-menu-item-attr-title-<?php echo $item_id; ?>" class="widefat edit-menu-item-attr-title" name="menu-item-attr-title[<?php echo $item_id; ?>]" value="<?php echo htmlspecialchars( $menu_item->post_excerpt, ENT_QUOTES ); ?>" />
+ 					</label>
+ 				</p>
+ 				<p class="field-link-target description">
+@@ -222,20 +222,20 @@ class Walker_Nav_Menu_Edit extends Walker_Nav_Menu {
+ 					<p class="field-css-classes description description-thin">
+ 						<label for="edit-menu-item-classes-<?php echo $item_id; ?>">
+ 							<?php _e( 'CSS Classes (optional)' ); ?><br />
+-							<input type="text" id="edit-menu-item-classes-<?php echo $item_id; ?>" class="widefat code edit-menu-item-classes" name="menu-item-classes[<?php echo $item_id; ?>]" value="<?php echo esc_attr( implode( ' ', $menu_item->classes ) ); ?>" />
++							<input type="text" id="edit-menu-item-classes-<?php echo $item_id; ?>" class="widefat code edit-menu-item-classes" name="menu-item-classes[<?php echo $item_id; ?>]" value="<?php echo htmlspecialchars( implode( ' ', $menu_item->classes ), ENT_QUOTES ); ?>" />
+ 						</label>
+ 					</p>
+ 					<p class="field-xfn description description-thin">
+ 						<label for="edit-menu-item-xfn-<?php echo $item_id; ?>">
+ 							<?php _e( 'Link Relationship (XFN)' ); ?><br />
+-							<input type="text" id="edit-menu-item-xfn-<?php echo $item_id; ?>" class="widefat code edit-menu-item-xfn" name="menu-item-xfn[<?php echo $item_id; ?>]" value="<?php echo esc_attr( $menu_item->xfn ); ?>" />
++							<input type="text" id="edit-menu-item-xfn-<?php echo $item_id; ?>" class="widefat code edit-menu-item-xfn" name="menu-item-xfn[<?php echo $item_id; ?>]" value="<?php echo htmlspecialchars( $menu_item->xfn, ENT_QUOTES ); ?>" />
+ 						</label>
+ 					</p>
+ 				</div>
+ 				<p class="field-description description description-wide">
+ 					<label for="edit-menu-item-description-<?php echo $item_id; ?>">
+ 						<?php _e( 'Description' ); ?><br />
+-						<textarea id="edit-menu-item-description-<?php echo $item_id; ?>" class="widefat edit-menu-item-description" rows="3" cols="20" name="menu-item-description[<?php echo $item_id; ?>]"><?php echo esc_html( $menu_item->description ); // textarea_escaped ?></textarea>
++						<textarea id="edit-menu-item-description-<?php echo $item_id; ?>" class="widefat edit-menu-item-description" rows="3" cols="20" name="menu-item-description[<?php echo $item_id; ?>]"><?php echo esc_textarea( $menu_item->description ); // textarea_escaped ?></textarea>
+ 						<span class="description"><?php _e( 'The description will be displayed in the menu if the active theme supports it.' ); ?></span>
+ 					</label>
+ 				</p>
+--- wp-admin/includes/file.php.orig	2025-06-14 05:04:28 UTC
++++ wp-admin/includes/file.php
+@@ -1901,6 +1901,11 @@ function _unzip_file_pclzip( $file, $to, $needed_dirs 
+ 			continue;
+ 		}
+ 
++		// Don't extract invalid files:
++		if ( 0 !== validate_file( $file['filename'] ) ) {
++			continue;
++		}
++
+ 		$uncompressed_size += $file['size'];
+ 
+ 		$needed_dirs[] = $to . untrailingslashit( $file['folder'] ? $file['filename'] : dirname( $file['filename'] ) );
+--- wp-includes/ID3/getid3.lib.php.orig	2025-11-24 18:38:31 UTC
++++ wp-includes/ID3/getid3.lib.php
+@@ -13,9 +13,9 @@ if (!defined('GETID3_LIBXML_OPTIONS') && defined('LIBX
+ 
+ if (!defined('GETID3_LIBXML_OPTIONS') && defined('LIBXML_VERSION')) {
+ 	if (LIBXML_VERSION >= 20621) {
+-		define('GETID3_LIBXML_OPTIONS', LIBXML_NOENT | LIBXML_NONET | LIBXML_NOWARNING | LIBXML_COMPACT);
++		define('GETID3_LIBXML_OPTIONS', LIBXML_NONET | LIBXML_NOWARNING | LIBXML_COMPACT);
+ 	} else {
+-		define('GETID3_LIBXML_OPTIONS', LIBXML_NOENT | LIBXML_NONET | LIBXML_NOWARNING);
++		define('GETID3_LIBXML_OPTIONS', LIBXML_NONET | LIBXML_NOWARNING);
+ 	}
+ }
+ 
+--- wp-includes/class-wp-block-patterns-registry.php.orig	2025-10-06 11:31:33 UTC
++++ wp-includes/class-wp-block-patterns-registry.php
+@@ -173,12 +173,23 @@ final class WP_Block_Patterns_Registry {
+ 		} else {
+ 			$patterns = &$this->registered_patterns;
+ 		}
+-		if ( ! isset( $patterns[ $pattern_name ]['content'] ) && isset( $patterns[ $pattern_name ]['filePath'] ) ) {
++
++		$file_path    = $patterns[ $pattern_name ]['filePath'] ?? '';
++		$is_stringy   = is_string( $file_path ) || ( is_object( $file_path ) && method_exists( $file_path, '__toString' ) );
++		$pattern_path = $is_stringy ? realpath( (string) $file_path ) : null;
++		if (
++			! isset( $patterns[ $pattern_name ]['content'] ) &&
++			is_string( $pattern_path ) &&
++			( str_ends_with( $pattern_path, '.php' ) || str_ends_with( $pattern_path, '.html' ) ) &&
++			is_file( $pattern_path ) &&
++			is_readable( $pattern_path )
++		) {
+ 			ob_start();
+ 			include $patterns[ $pattern_name ]['filePath'];
+ 			$patterns[ $pattern_name ]['content'] = ob_get_clean();
+ 			unset( $patterns[ $pattern_name ]['filePath'] );
+ 		}
++
+ 		return $patterns[ $pattern_name ]['content'];
+ 	}
+ 
+--- wp-includes/class-wp-http-ixr-client.php.orig	2022-09-12 15:47:14 UTC
++++ wp-includes/class-wp-http-ixr-client.php
+@@ -89,7 +89,7 @@ class WP_HTTP_IXR_Client extends IXR_Client {
+ 			echo '<pre class="ixr_request">' . htmlspecialchars( $xml ) . "\n</pre>\n\n";
+ 		}
+ 
+-		$response = wp_remote_post( $url, $args );
++		$response = wp_safe_remote_post( $url, $args );
+ 
+ 		if ( is_wp_error( $response ) ) {
+ 			$errno       = $response->get_error_code();
+--- wp-includes/html-api/class-wp-html-tag-processor.php.orig	2025-12-04 07:58:36 UTC
++++ wp-includes/html-api/class-wp-html-tag-processor.php
+@@ -4680,4 +4680,13 @@ class WP_HTML_Tag_Processor {
+ 	 * @since 6.7.0
+ 	 */
+ 	const TEXT_IS_WHITESPACE = 'TEXT_IS_WHITESPACE';
++
++	/**
++	 * Wakeup magic method.
++	 *
++	 * @since 6.9.2
++	 */
++	public function __wakeup() {
++		throw new \LogicException( __CLASS__ . ' should never be unserialized' );
++	}
+ }
+--- wp-includes/interactivity-api/class-wp-interactivity-api.php.orig	2025-11-10 22:24:34 UTC
++++ wp-includes/interactivity-api/class-wp-interactivity-api.php
+@@ -1032,6 +1032,20 @@ final class WP_Interactivity_API {
+ 						return;
+ 				}
+ 
++				// Skip if the suffix is an event handler.
++				if ( str_starts_with( $entry['suffix'], 'on' ) ) {
++					_doing_it_wrong(
++						__METHOD__,
++						sprintf(
++							/* translators: %s: The directive, e.g. data-wp-on--click. */
++							__( 'Binding event handler attributes is not supported. Please use "%s" instead.' ),
++							esc_attr( 'data-wp-on--' . substr( $entry['suffix'], 2 ) )
++						),
++						'6.9.2'
++					);
++					continue;
++				}
++
+ 				$result = $this->evaluate( $entry );
+ 
+ 				if (
+--- wp-includes/js/wp-util.js.orig	2022-09-20 03:52:10 UTC
++++ wp-includes/js/wp-util.js
+@@ -36,10 +36,11 @@ window.wp = window.wp || {};
+ 			};
+ 
+ 		return function ( data ) {
+-			if ( ! document.getElementById( 'tmpl-' + id ) ) {
++			var el = document.querySelector( 'script#tmpl-' + id );
++			if ( ! el ) {
+ 				throw new Error( 'Template not found: ' + '#tmpl-' + id );
+ 			}
+-			compiled = compiled || _.template( $( '#tmpl-' + id ).html(),  options );
++			compiled = compiled || _.template( $( el ).html(), options );
+ 			return compiled( data );
+ 		};
+ 	});
+--- wp-includes/js/wp-util.min.js.orig	2025-02-06 17:27:26 UTC
++++ wp-includes/js/wp-util.min.js
+@@ -1,2 +1,2 @@
+ /*! This file is auto-generated */
+-window.wp=window.wp||{},function(s){var t="undefined"==typeof _wpUtilSettings?{}:_wpUtilSettings;wp.template=_.memoize(function(e){var n,a={evaluate:/<#([\s\S]+?)#>/g,interpolate:/\{\{\{([\s\S]+?)\}\}\}/g,escape:/\{\{([^\}]+?)\}\}(?!\})/g,variable:"data"};return function(t){if(document.getElementById("tmpl-"+e))return(n=n||_.template(s("#tmpl-"+e).html(),a))(t);throw new Error("Template not found: #tmpl-"+e)}}),wp.ajax={settings:t.ajax||{},post:function(t,e){return wp.ajax.send({data:_.isObject(t)?t:_.extend(e||{},{action:t})})},send:function(a,t){var e,n;return _.isObject(a)?t=a:(t=t||{}).data=_.extend(t.data||{},{action:a}),t=_.defaults(t||{},{type:"POST",url:wp.ajax.settings.url,context:this}),(e=(n=s.Deferred(function(n){t.success&&n.done(t.success),t.error&&n.fail(t.error),delete t.success,delete t.error,n.jqXHR=s.ajax(t).done(function(t){var e;"1"!==t&&1!==t||(t={success:!0}),_.isObject(t)&&!_.isUndefined(t.success)?(e=this,n.done(function(){a&&a.data&&"query-attachments"===a.data.action&&n.jqXHR.hasOwnProperty("getResponseHeader")&&n.jqXHR.getResponseHeader("X-WP-Total")?e.totalAttachments=parseInt(n.jqXHR.getResponseHeader("X-WP-Total"),10):e.totalAttachments=0}),n[t.success?"resolveWith":"rejectWith"](this,[t.data])):n.rejectWith(this,[t])}).fail(function(){n.rejectWith(this,arguments)})})).promise()).abort=function(){return n.jqXHR.abort(),this},e}}}(jQuery);
+\ No newline at end of file
++window.wp=window.wp||{},function(r){var t="undefined"==typeof _wpUtilSettings?{}:_wpUtilSettings;wp.template=_.memoize(function(a){var n,s={evaluate:/<#([\s\S]+?)#>/g,interpolate:/\{\{\{([\s\S]+?)\}\}\}/g,escape:/\{\{([^\}]+?)\}\}(?!\})/g,variable:"data"};return function(t){var e=document.querySelector("script#tmpl-"+a);if(e)return(n=n||_.template(r(e).html(),s))(t);throw new Error("Template not found: #tmpl-"+a)}}),wp.ajax={settings:t.ajax||{},post:function(t,e){return wp.ajax.send({data:_.isObject(t)?t:_.extend(e||{},{action:t})})},send:function(n,t){var e,a;return _.isObject(n)?t=n:(t=t||{}).data=_.extend(t.data||{},{action:n}),t=_.defaults(t||{},{type:"POST",url:wp.ajax.settings.url,context:this}),(e=(a=r.Deferred(function(a){t.success&&a.done(t.success),t.error&&a.fail(t.error),delete t.success,delete t.error,a.jqXHR=r.ajax(t).done(function(t){var e;"1"!==t&&1!==t||(t={success:!0}),_.isObject(t)&&!_.isUndefined(t.success)?(e=this,a.done(function(){n&&n.data&&"query-attachments"===n.data.action&&a.jqXHR.hasOwnProperty("getResponseHeader")&&a.jqXHR.getResponseHeader("X-WP-Total")?e.totalAttachments=parseInt(a.jqXHR.getResponseHeader("X-WP-Total"),10):e.totalAttachments=0}),a[t.success?"resolveWith":"rejectWith"](this,[t.data])):a.rejectWith(this,[t])}).fail(function(){a.rejectWith(this,arguments)})})).promise()).abort=function(){return a.jqXHR.abort(),this},e}}}(jQuery);
+\ No newline at end of file
+--- wp-includes/kses.php.orig	2025-10-22 21:02:35 UTC
++++ wp-includes/kses.php
+@@ -2201,8 +2201,8 @@ function wp_kses_normalize_entities( $content, $contex
+ 	 *
+ 	 * Here, each input is normalized to an appropriate output.
+ 	 */
+-	$content = preg_replace_callback( '/&amp;#(0*[0-9]{1,7});/', 'wp_kses_normalize_entities2', $content );
+-	$content = preg_replace_callback( '/&amp;#[Xx](0*[0-9A-Fa-f]{1,6});/', 'wp_kses_normalize_entities3', $content );
++	$content = preg_replace_callback( '/&amp;#(0*[1-9][0-9]{0,6});/', 'wp_kses_normalize_entities2', $content );
++	$content = preg_replace_callback( '/&amp;#[Xx](0*[1-9A-Fa-f][0-9A-Fa-f]{0,5});/', 'wp_kses_normalize_entities3', $content );
+ 	if ( 'xml' === $context ) {
+ 		$content = preg_replace_callback( '/&amp;([A-Za-z]{2,8}[0-9]{0,2});/', 'wp_kses_xml_named_entities', $content );
+ 	} else {
+--- wp-includes/media.php.orig	2025-12-01 14:29:25 UTC
++++ wp-includes/media.php
+@@ -4570,7 +4570,7 @@ function wp_prepare_attachment_for_js( $attachment ) {
+ 
+ 	if ( $attachment->post_parent ) {
+ 		$post_parent = get_post( $attachment->post_parent );
+-		if ( $post_parent ) {
++		if ( $post_parent && current_user_can( 'read_post', $attachment->post_parent ) ) {
+ 			$response['uploadedToTitle'] = $post_parent->post_title ? $post_parent->post_title : __( '(no title)' );
+ 			$response['uploadedToLink']  = get_edit_post_link( $attachment->post_parent, 'raw' );
+ 		}
+--- wp-includes/nav-menu.php.orig	2024-08-05 19:00:19 UTC
++++ wp-includes/nav-menu.php
+@@ -514,7 +514,7 @@ function wp_update_nav_menu_item( $menu_id = 0, $menu_
+ 			}
+ 		}
+ 
+-		if ( wp_unslash( $args['menu-item-title'] ) === wp_specialchars_decode( $original_title ) ) {
++		if ( wp_unslash( $args['menu-item-title'] ) === $original_title ) {
+ 			$args['menu-item-title'] = '';
+ 		}
+ 
+--- wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php.orig	2025-11-25 01:22:32 UTC
++++ wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php
+@@ -560,6 +560,14 @@ class WP_REST_Comments_Controller extends WP_REST_Cont
+ 			}
+ 		}
+ 
++		if ( $is_note && ! empty( $request['post'] ) && ! current_user_can( 'edit_post', (int) $request['post'] ) ) {
++			return new WP_Error(
++				'rest_cannot_create_note',
++				__( 'Sorry, you are not allowed to create notes for this post.' ),
++				array( 'status' => rest_authorization_required_code() )
++			);
++		}
++
+ 		$edit_cap = $is_note ? array( 'edit_post', (int) $request['post'] ) : array( 'moderate_comments' );
+ 		if ( isset( $request['status'] ) && ! current_user_can( ...$edit_cap ) ) {
+ 			return new WP_Error(
+--- wp-includes/template-loader.php.orig	2025-10-15 17:14:39 UTC
++++ wp-includes/template-loader.php
+@@ -111,8 +111,15 @@ if ( wp_using_themes() ) {
+ 	 *
+ 	 * @param string $template The path of the template to include.
+ 	 */
+-	$template = apply_filters( 'template_include', $template );
+-	if ( $template ) {
++	$template   = apply_filters( 'template_include', $template );
++	$is_stringy = is_string( $template ) || ( is_object( $template ) && method_exists( $template, '__toString' ) );
++	$template   = $is_stringy ? realpath( (string) $template ) : null;
++	if (
++		is_string( $template ) &&
++		( str_ends_with( $template, '.php' ) || str_ends_with( $template, '.html' ) ) &&
++		is_file( $template ) &&
++		is_readable( $template )
++	) {
+ 		/**
+ 		 * Fires immediately before including the template.
+ 		 *
+--- wp-includes/version.php.orig	2026-02-03 17:29:37 UTC
++++ wp-includes/version.php
+@@ -16,7 +16,7 @@
+  *
+  * @global string $wp_version
+  */
+-$wp_version = '6.9.1';
++$wp_version = '6.9.4';
+ 
+ /**
+  * Holds the WordPress DB revision, increments when changes are made to the WordPress DB schema.
