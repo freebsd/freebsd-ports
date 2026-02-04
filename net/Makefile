@@ -577,6 +577,7 @@
     SUBDIR += open-isns
     SUBDIR += openbgpd7
     SUBDIR += openbgpd8
+    SUBDIR += openbgpd9
     SUBDIR += openldap25-client
     SUBDIR += openldap25-server
     SUBDIR += openldap26-client

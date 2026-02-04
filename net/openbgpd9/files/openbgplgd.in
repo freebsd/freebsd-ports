@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: bgplgd
+# REQUIRE: LOGIN abi
+# BEFORE:  securelevel
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable openbgpd:
+#
+# openbgplgd_enable="YES"
+# openbgplgd_flags="<set as needed>"
+#
+# See bgplgd(8) for openbgplgd_flags
+
+. /etc/rc.subr
+
+name=openbgpdlgd
+rcvar=openbgplgd_enable
+
+extra_commands=reload
+command="%%PREFIX%%/sbin/bgplgd"
+
+: ${openbgplgd_enable=NO}
+
+check_process()
+{
+	/bin/pgrep -j none -U 0 -f %%PREFIX%%/sbin/bgplgd
+}
+
+load_rc_config $name
+run_rc_command "$1"
