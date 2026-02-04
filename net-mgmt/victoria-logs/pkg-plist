@@ -47,4 +47,9 @@ bin/vlogscli
 %%PORTDOCS%%%%DOCSDIR%%/integrations/perses-time-panel.webp
 %%PORTDOCS%%%%DOCSDIR%%/integrations/perses-variable.webp
 %%PORTDOCS%%%%DOCSDIR%%/integrations/perses.md
+%%PORTDOCS%%%%DOCSDIR%%/querying/vlogscli_common_flags.md
+%%PORTDOCS%%%%DOCSDIR%%/victoria_logs_common_flags.md
+%%PORTDOCS%%%%DOCSDIR%%/victoria_logs_enterprise_flags.md
+%%PORTDOCS%%%%DOCSDIR%%/vlagent_common_flags.md
+%%PORTDOCS%%%%DOCSDIR%%/vlagent_enterprise_flags.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%
