@@ -1,4 +1,4 @@
-TIMESTAMP = 1769092584
+TIMESTAMP = 1770195350
 SHA256 (angie-1.11.2.tar.gz) = 3abea91bb94c973b394a2425e4a617c8d5623ba7fcd8fb562e32184570ecbc47
 SIZE (angie-1.11.2.tar.gz) = 1881931
 SHA256 (61131-nginx-http-auth-totp-1.1.0_GH0.tar.gz) = d36d2b75a3b239e63ec060ef9ccfa6b89acbceb74b7c93e47550c1f75ac4857e
@@ -23,8 +23,8 @@ SHA256 (leev-ngx_http_geoip2_module-3.4_GH0.tar.gz) = ad72fc23348d715a3309949845
 SIZE (leev-ngx_http_geoip2_module-3.4_GH0.tar.gz) = 8877
 SHA256 (openresty-headers-more-nginx-module-v0.39_GH0.tar.gz) = dde68d3fa2a9fc7f52e436d2edc53c6d703dcd911283965d889102d3a877c778
 SIZE (openresty-headers-more-nginx-module-v0.39_GH0.tar.gz) = 29616
-SHA256 (max-lt-nginx-jwt-module-v3.4.3_GH0.tar.gz) = 35d2a6bc957105ee5b4fc0b360d36ddb0e5be05f2f391b27405751a2587dd82b
-SIZE (max-lt-nginx-jwt-module-v3.4.3_GH0.tar.gz) = 16452
+SHA256 (max-lt-nginx-jwt-module-v3.4.4_GH0.tar.gz) = 7c3effa96936d87c3a8a0e07ff91d2d341a7f78f8bb3d6c9085b06f398684242
+SIZE (max-lt-nginx-jwt-module-v3.4.4_GH0.tar.gz) = 17300
 SHA256 (kjdev-nginx-keyval-0.3.0_GH0.tar.gz) = c4e5d2a03ead32cfccb9f04f01a8cdf664f5deca3f677c13b1509bff832cf2c7
 SIZE (kjdev-nginx-keyval-0.3.0_GH0.tar.gz) = 24150
 SHA256 (openresty-lua-nginx-module-v0.10.29_GH0.tar.gz) = ca2c2122b909529bf9d1a89e9a5763835a2bd2629def8cb279c550f638f0a78f
