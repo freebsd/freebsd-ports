@@ -1,6 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.53.1
+DISTVERSION=	0.53.3
 CATEGORIES=	x11-wm wayland
 MASTER_SITES=	https://github.com/hyprwm/Hyprland/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	source-${DISTVERSIONFULL}
@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
-		glaze>0:devel/glaze \
+		glaze>=7.0.0<8.0.0:devel/glaze \
 		hyprwayland-scanner>=0.3.10:devel/hyprwayland-scanner \
 		hyprland-protocols>=0.6.4:graphics/hyprland-protocols \
 		wayland-protocols>=1.45:graphics/wayland-protocols
