@@ -1,6 +1,6 @@
---- crates/gpui/src/gpui.rs.orig	2026-01-14 15:30:09 UTC
+--- crates/gpui/src/gpui.rs.orig	2026-01-29 22:37:26 UTC
 +++ crates/gpui/src/gpui.rs
-@@ -31,7 +31,7 @@ mod profiler;
+@@ -33,7 +33,7 @@ mod profiler;
  mod platform;
  pub mod prelude;
  mod profiler;
@@ -9,7 +9,7 @@
  mod queue;
  mod scene;
  mod shared_string;
-@@ -91,7 +91,7 @@ pub use profiler::*;
+@@ -93,7 +93,7 @@ pub use profiler::*;
  pub use path_builder::*;
  pub use platform::*;
  pub use profiler::*;

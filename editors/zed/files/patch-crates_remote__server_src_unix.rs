@@ -1,14 +1,14 @@
---- crates/remote_server/src/unix.rs.orig	2026-01-08 00:39:18 UTC
+--- crates/remote_server/src/unix.rs.orig	2026-01-29 22:37:26 UTC
 +++ crates/remote_server/src/unix.rs
-@@ -358,6 +358,7 @@ pub fn execute_run(
- 
+@@ -380,6 +380,7 @@ pub fn execute_run(
      let app = gpui::Application::headless();
-     let id = std::process::id().to_string();
+     let pid = std::process::id();
+     let id = pid.to_string();
 +    #[cfg(not(target_os = "freebsd"))]
      app.background_executor()
          .spawn(crashes::init(crashes::InitCrashHandler {
              session_id: id,
-@@ -585,6 +586,7 @@ pub(crate) fn execute_proxy(
+@@ -629,6 +630,7 @@ pub(crate) fn execute_proxy(
      let server_paths = ServerPaths::new(&identifier)?;
  
      let id = std::process::id().to_string();

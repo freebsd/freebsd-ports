@@ -1,6 +1,6 @@
---- crates/remote/src/transport.rs.orig	2026-01-14 15:30:09 UTC
+--- crates/remote/src/transport.rs.orig	2026-01-29 22:37:26 UTC
 +++ crates/remote/src/transport.rs
-@@ -28,6 +28,7 @@ fn parse_platform(output: &str) -> Result<RemotePlatfo
+@@ -30,6 +30,7 @@ fn parse_platform(output: &str) -> Result<RemotePlatfo
      let os = match os {
          "Darwin" => RemoteOs::MacOs,
          "Linux" => RemoteOs::Linux,
@@ -8,7 +8,7 @@
          _ => anyhow::bail!(
              "Prebuilt remote servers are not yet available for {os:?}. See https://zed.dev/docs/remote-development"
          ),
-@@ -40,7 +41,7 @@ fn parse_platform(output: &str) -> Result<RemotePlatfo
+@@ -42,7 +43,7 @@ fn parse_platform(output: &str) -> Result<RemotePlatfo
          || arch.starts_with("aarch64")
      {
          RemoteArch::Aarch64
