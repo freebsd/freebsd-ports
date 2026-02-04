@@ -9,7 +9,7 @@ PATCHFILES=	patch-src_cmd_connect_c
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Interactive tool for querying Sybase database servers
-WWW=		https://sourceforge.net/projects/sqsh
+WWW=		https://sourceforge.net/projects/sqsh/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
