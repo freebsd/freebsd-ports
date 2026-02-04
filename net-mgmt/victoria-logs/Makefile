@@ -1,5 +1,6 @@
 PORTNAME=	victoria-logs
 PORTVERSION=	1.44.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
@@ -20,7 +21,7 @@ GH_PROJECT=	VictoriaLogs
 GO_MODULE=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_MOD_DIST=	github
 
-USE_RC_SUBR?=	${PORTNAME}
+USE_RC_SUBR?=	victoria_logs
 
 MAKE_ENV=	PKG_TAG=v${PORTVERSION} GOOS=${OPSYS:tl} \
 		BUILDINFO_TAG=tags-v${PORTVERSION}-victorialogs \
