@@ -1,4 +1,5 @@
 PKGNAMESUFFIX=	-server
+PORTREVISION=	1
 
 COMMENT=	TigerVNC Server
 WWW=		https://tigervnc.org/
@@ -12,7 +13,8 @@ LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
 		libnettle.so:security/nettle \
 		libgmp.so:math/gmp \
 		libavcodec.so:multimedia/ffmpeg \
-		libxcvt.so:x11/libxcvt
+		libxcvt.so:x11/libxcvt \
+		libpwquality.so:security/libpwquality
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
@@ -62,10 +64,14 @@ XORG_CONFIGURE_ARGS+=	--with-default-font-path="${DEFAULT_FONTPATH_LIST:ts,}"
 
 CFLAGS+=	-I${LOCALBASE}/include/libdrm
 
-# This is server port, disabling some features
+# This is server port, enabling/disabling some features explicitly
 # - disable vncviewer
-# - server is not internationalized
+# - disable NLS, server is not internationalized
 CMAKE_ARGS+=	-DBUILD_VIEWER:BOOL=false -DENABLE_NLS:BOOL=false
+# - disable w0vncserver at the moment
+CMAKE_ARGS+=	-DENABLE_WAYLAND:STRING=OFF
+# - enable password quality check
+CMAKE_ARGS+=	-DENABLE_PWQUALITY:STRING=ON
 
 # TIGERVNC_XOG_PATCH_VER will be 21 when xorg-server 21.1.13
 TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${.CURDIR}/../../x11-servers/xorg-server" -V PORTVERSION:R:R
