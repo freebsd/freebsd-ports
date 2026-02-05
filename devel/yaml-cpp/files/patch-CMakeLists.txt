@@ -1,6 +1,15 @@
---- CMakeLists.txt.orig	2023-08-10 19:27:56 UTC
+--- CMakeLists.txt.orig	2026-02-04 20:26:25 UTC
 +++ CMakeLists.txt
-@@ -139,11 +139,11 @@ set_target_properties(yaml-cpp PROPERTIES
+@@ -36,7 +36,7 @@ cmake_dependent_option(YAML_MSVC_SHARED_RT
+ cmake_dependent_option(YAML_MSVC_SHARED_RT
+   "MSVC: Build yaml-cpp with shared runtime libs (/MD)" ON
+   "CMAKE_SYSTEM_NAME MATCHES Windows" OFF)
+-set(YAML_CPP_INSTALL_CMAKEDIR "${CMAKE_INSTALL_LIBDIR}/cmake/yaml-cpp"
++set(YAML_CPP_INSTALL_CMAKEDIR "lib/cmake/yaml-cpp"
+   CACHE STRING "Path to install the CMake package to")
+  
+ if (YAML_CPP_FORMAT_SOURCE)
+@@ -146,7 +146,7 @@ set_target_properties(yaml-cpp PROPERTIES
  
  set_target_properties(yaml-cpp PROPERTIES
    VERSION "${PROJECT_VERSION}"
@@ -9,17 +18,12 @@
    PROJECT_LABEL "yaml-cpp ${yaml-cpp-label-postfix}"
    DEBUG_POSTFIX "${CMAKE_DEBUG_POSTFIX}")
  
--set(CONFIG_EXPORT_DIR "${CMAKE_INSTALL_LIBDIR}/cmake/yaml-cpp")
-+set(CONFIG_EXPORT_DIR "lib/cmake/yaml-cpp")
- set(EXPORT_TARGETS yaml-cpp)
- configure_package_config_file(
-   "${PROJECT_SOURCE_DIR}/yaml-cpp-config.cmake.in"
-@@ -175,7 +175,7 @@ if (YAML_CPP_INSTALL)
+@@ -181,7 +181,7 @@ if (YAML_CPP_INSTALL)
        "${PROJECT_BINARY_DIR}/yaml-cpp-config-version.cmake"
-     DESTINATION "${CONFIG_EXPORT_DIR}")
+     DESTINATION "${YAML_CPP_INSTALL_CMAKEDIR}")
    install(FILES "${PROJECT_BINARY_DIR}/yaml-cpp.pc"
 -    DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
 +    DESTINATION libdata/pkgconfig)
  endif()
- unset(CONFIG_EXPORT_DIR)
  
+ if(YAML_CPP_BUILD_TESTS)
