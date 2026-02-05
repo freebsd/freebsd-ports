@@ -36,7 +36,7 @@ _VERS!=		${MAKE} -V _PYTHON_VERSIONS:O
 .endif
 
 all_python_versions:
-.for v in ${_VERS}
+.for v in ${_VERS:S/t$//:u}
 	@${MAKE} -C ${PORTSDIR}/lang/python${v:S/.//} -V PYTHON_DISTVERSION
 .endfor
 
