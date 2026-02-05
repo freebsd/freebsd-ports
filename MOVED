@@ -4295,7 +4295,7 @@ ports-mgmt/genplist||2025-04-04|Has expired: Unmaintained, obsoleted by "make ma
 databases/rubygem-scenic61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
 devel/py-blist||2025-04-04|Has expired: Abandoned project, no consumers, no modern python support
 textproc/rubygem-case_transform61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
-lang/python-doc-pdf-letter|lang/python-doc-pdf-a4|2025-04-09|Letter-size PDF no longer provided since 3.12
+lang/python-doc-pdf-letter||2025-04-09|Letter-size PDF no longer provided since 3.12
 net-im/py-punjab||2025-04-13|Has expired: Abandoned project, not compatible with decent python/twisted
 devel/linux-rl9-libsigsegv|emulators/linux_base-rl9|2025-04-15|Integrated into linux_base-rl9
 devel/linux-rl9-libatomic|devel/linux-rl9-devtools|2025-04-15|Integrated into linux-rl9-devtools
@@ -5106,3 +5106,4 @@ games/freeminer||2026-02-01|Has expired: dead upstream
 net/jsch||2026-02-01|Has expired: Upstream website does not exist. No ports depend on this. It does not compile on jdk21. See also: https://github.com/mwiede/jsch
 devel/rubygem-ffi16|devel/rubygem-ffi|2026-02-03|Remove obsoleted port. Use devel/rubygem-ffi instead
 devel/hs-spago|devel/spago|2026-02-03|Dropped the "hs-" prefix, the software is now written in Purescript
+lang/python-doc-pdf-a4||2026-02-05|A4-size PDF no longer provided since 3.13
