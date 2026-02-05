@@ -1,7 +1,6 @@
 PORTNAME=	xournalpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.8
-PORTREVISION=	1
+DISTVERSION=	1.3.2
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,6 +19,7 @@ LIB_DEPENDS=	libgtksourceview-4.so:x11-toolkits/gtksourceview4 \
 		libharfbuzz.so:print/harfbuzz \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libportaudio.so:audio/portaudio \
+		libqpdf.so:print/qpdf \
 		libsndfile.so:audio/libsndfile \
 		libzip.so:archivers/libzip
 
