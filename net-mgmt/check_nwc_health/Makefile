@@ -1,5 +1,5 @@
 PORTNAME=	check_nwc_health
-PORTVERSION=	11.2.4
+PORTVERSION=	12.10.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://labs.consol.de/assets/downloads/nagios/
 
