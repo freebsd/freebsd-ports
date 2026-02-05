@@ -1671,6 +1671,7 @@
     SUBDIR += mergify
     SUBDIR += meson
     SUBDIR += meson-python
+    SUBDIR += mfc-candidates
     SUBDIR += microsoft-gsl
     SUBDIR += mill
     SUBDIR += mimalloc
