@@ -1,7 +1,7 @@
 PORTNAME=	minecraft-server
-DISTVERSION=	1.21.10
+DISTVERSION=	1.21.11
 CATEGORIES=	games java
-MASTER_SITES=	https://piston-data.mojang.com/v1/objects/95495a7f485eedd84ce928cef5e223b757d2f764/
+MASTER_SITES=	https://piston-data.mojang.com/v1/objects/64bb6d763bed0a9f1d632ec347938594144943ed/
 DISTNAME=	server
 EXTRACT_SUFX=	.jar
 DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
@@ -17,7 +17,7 @@ LICENSE_TEXT=	The license can be viewed at: https://account.mojang.com/documents
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell
 
 USES=		java
-JAVA_VERSION=	21
+JAVA_VERSION=	21+
 
 NO_ARCH=	yes
 NO_BUILD=	yes
