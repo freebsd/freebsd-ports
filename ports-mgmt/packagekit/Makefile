@@ -1,6 +1,5 @@
 PORTNAME=	PackageKit
-PORTVERSION=	1.3.2
-PORTREVISION=	1
+PORTVERSION=	1.3.4
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
 
@@ -15,6 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docb
 		vapigen:lang/vala \
 		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libjansson.so:devel/jansson \
 		libpolkit-gobject-1.so:sysutils/polkit \
 		libpkg.so:${PKG_ORIGIN}
 RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit2
@@ -40,6 +40,12 @@ OPTIONS_DEFINE=	LOCAL_CHECKOUT
 LOCAL_CHECKOUT_DESC=		Support running tests (not for production use)
 LOCAL_CHECKOUT_TEST_DEPENDS=	bash:shells/bash
 LOCAL_CHECKOUT_MESON_TRUE=	local_checkout
+
+post-patch:
+	${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl-ns/current/|${LOCALBASE}/share/xsl/docbook/|g' \
+		${WRKSRC}/client/meson.build
+	${REINPLACE_CMD} -e 's|http://docbook.sourceforge.net/release/xsl/current/|${LOCALBASE}/share/xsl/docbook/|g' \
+		${WRKSRC}/client/pkcon/meson.build
 
 post-install:
 	${MV} ${STAGEDIR}/var/lib/PackageKit/transactions.db ${STAGEDIR}/var/lib/PackageKit/transactions.db.sample
