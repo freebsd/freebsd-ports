@@ -2686,10 +2686,14 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/__init__%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/__init__%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/module_docs%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/module_docs%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/module_docs%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/topics%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/topics%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/__pycache__/topics%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/_pydoc.css
+%%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/module_docs.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/pydoc_data/topics.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/queue.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/quopri.py
@@ -2767,6 +2771,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/tabnanny.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/tarfile.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/tempfile.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/NormalizationTest-3.2.0.txt
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__init__.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__main__.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/__init__%%PYTHON_TAG%%.opt-1.pyc
@@ -2853,9 +2858,15 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mp_preload_main%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mp_preload_main%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mp_preload_main%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mp_preload_sysargv%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mp_preload_sysargv%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/mp_preload_sysargv%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/multibytecodec_support%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/multibytecodec_support%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/multibytecodec_support%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/picklecommon%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/picklecommon%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/picklecommon%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/pickletester%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/pickletester%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/pickletester%%PYTHON_TAG%%.pyc
@@ -4044,6 +4055,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xmlrpc%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xmlrpc%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xmlrpc%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xpickle%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xpickle%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xpickle%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xxlimited%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xxlimited%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/test_xxlimited%%PYTHON_TAG%%.pyc
@@ -4080,6 +4094,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xmltests%%PYTHON_TAG%%.opt-1.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xmltests%%PYTHON_TAG%%.opt-2.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xmltests%%PYTHON_TAG%%.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xpickle_worker%%PYTHON_TAG%%.opt-1.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xpickle_worker%%PYTHON_TAG%%.opt-2.pyc
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/__pycache__/xpickle_worker%%PYTHON_TAG%%.pyc
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/_test_atexit.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/_test_eintr.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/_test_embed_set_config.py
@@ -4512,7 +4529,9 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mp_preload.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mp_preload_flush.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/mp_preload_main.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/mp_preload_sysargv.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/multibytecodec_support.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/picklecommon.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/pickletester.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/profilee.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/pstats.pck
@@ -7255,6 +7274,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_xml_etree.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_xml_etree_c.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_xmlrpc.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_xpickle.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_xxlimited.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_xxtestfuzz.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/test_yield_from.py
@@ -7483,6 +7503,7 @@ lib/libpython%%PYTHON_BASEVER%%%%THREAD%%%%ABI%%.so.1.0-gdb.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/xmltestdata/test.xml
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/xmltestdata/test.xml.out
 %%PYTHON_BASELIBDIR%%%%THREAD%%/test/xmltests.py
+%%PYTHON_BASELIBDIR%%%%THREAD%%/test/xpickle_worker.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/textwrap.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/this.py
 %%PYTHON_BASELIBDIR%%%%THREAD%%/threading.py
