@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-auth-totp
 MODULE_VERSION=	1.1.0
-MODULE_PORTREVISION=	1
+MODULE_PORTREVISION=	2
 GH_TUPLE=	61131:nginx-http-auth-totp:${MODULE_VERSION}:module
 
 COMMENT=	Angie auth-totp dynamic module

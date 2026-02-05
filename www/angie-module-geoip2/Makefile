@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-geoip2
 MODULE_VERSION=	3.4
-MODULE_PORTREVISION=	1
+MODULE_PORTREVISION=	2
 GH_TUPLE=	leev:ngx_http_geoip2_module:${MODULE_VERSION}:module
 
 COMMENT=	Angie GeoIP2 dynamic module

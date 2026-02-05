@@ -1,6 +1,6 @@
 PORTNAME?=	angie
 ANGIE_VERSION=	1.11.2
-ANGIE_PORTREVISION=	0
+ANGIE_PORTREVISION=	1
 CATEGORIES+=	www
 MASTER_SITES+=	https://download.angie.software/files/:angie
 DISTNAME=	angie-${ANGIE_VERSION}
@@ -23,6 +23,7 @@ SUB_FILES=	angie.conf.sample \
 		default.conf.sample \
 		example.conf.sample \
 		pkg-message
+
 .else
 .  if defined(MODULE_VERSION)
 DISTVERSION=	${MODULE_VERSION}
@@ -34,7 +35,14 @@ PORTREVISION=	${ANGIE_PORTREVISION}
 .  endif
 LICENSE_FILE?=	${WRKSRC_module}/LICENSE
 BUILD_DEPENDS+=	pcre2>=0:devel/pcre2
-RUN_DEPENDS+=	angie>=${ANGIE_VERSION}:www/angie
+# The following makes sure module ports are rebuild if angie gets updated.
+# However, pkg does not obey RUN_DEPENDS on updates, therefore we need to
+# also bump MODULE_PORTREVISION for every single www/angie-module* port.
+.  if defined(ANGIE_PORTREVISION)
+RUN_DEPENDS+=	angie==${ANGIE_VERSION}_${ANGIE_PORTREVISION}:www/angie
+.  else
+RUN_DEPENDS+=	angie==${ANGIE_VERSION}:www/angie
+.  endif
 ALL_TARGET?=	modules
 CONFIGURE_ADD?=	--add-dynamic-module=${WRKSRC_module}
 .endif

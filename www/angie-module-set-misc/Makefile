@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-set-misc
 MODULE_VERSION=	0.3.4
-MODULE_PORTREVISION=	1
+MODULE_PORTREVISION=	2
 GH_TUPLE=	vision5:ngx_devel_kit:v${MODULE_VERSION}:ndk
 GH_TUPLE+=	openresty:set-misc-nginx-module:v0.33:module
 
