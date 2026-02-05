@@ -1,8 +1,8 @@
 Companion change to patch-src_plugins_shellintegration_xdg-shell_qwaylandxdgshell__p.h
 
---- src/plugins/platforms/wayland/plugins/shellintegration/xdg-shell/qwaylandxdgshell_p.h.orig	2025-05-14 09:43:58 UTC
+--- src/plugins/platforms/wayland/plugins/shellintegration/xdg-shell/qwaylandxdgshell_p.h.orig	2026-01-13 10:18:17 UTC
 +++ src/plugins/platforms/wayland/plugins/shellintegration/xdg-shell/qwaylandxdgshell_p.h
-@@ -74,7 +74,7 @@ class Q_WAYLANDCLIENT_EXPORT QWaylandXdgSurface : publ
+@@ -62,7 +62,7 @@ class Q_WAYLANDCLIENT_EXPORT QWaylandXdgSurface : publ
  
      void setSizeHints();
  

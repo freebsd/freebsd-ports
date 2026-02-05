@@ -14,7 +14,7 @@ PORTNAME?=	webengine
 DISTVERSION=	${QT6_VERSION}
 # This is the parent port of print/qt6-pdf. Please always keep 'PORTREVISION?='
 # and reset the value to '0' only after increasing QT6_VERSION in Mk/Uses/qt.mk.
-PORTREVISION?=	4
+PORTREVISION?=	0
 CATEGORIES?=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -33,14 +33,15 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 USES=		cmake compiler:c++20-lang gl localbase:ldflags ninja:build \
 		pkgconfig python:build qt-dist:6,webengine
 USE_GL=		opengl
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 USE_QT=		base declarative tools
 USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
 		xrandr xrender xscrnsaver xshmfence xtst
 
+CONFIGURE_ENV=	NODEJS_EXECUTABLE="${LOCALBASE}/bin/node"
+
 CMAKE_ON=	QT_FEATURE_webengine_system_ffmpeg \
 		QT_FEATURE_webengine_proprietary_codecs
-
-USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .if defined(BUILD_QTPDF)
 CMAKE_ON+=	QT_FEATURE_qtpdf_build

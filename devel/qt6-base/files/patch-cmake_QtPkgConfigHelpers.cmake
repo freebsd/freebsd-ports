@@ -1,6 +1,6 @@
---- cmake/QtPkgConfigHelpers.cmake.orig	2025-02-19 13:05:34 UTC
+--- cmake/QtPkgConfigHelpers.cmake.orig	2026-01-13 10:18:17 UTC
 +++ cmake/QtPkgConfigHelpers.cmake
-@@ -174,6 +174,6 @@ function(qt_internal_generate_pkg_config_file module)
+@@ -175,6 +175,6 @@ function(qt_internal_generate_pkg_config_file module)
          # This is inspired by https://gitlab.kitware.com/cmake/cmake/-/issues/20842
          target_sources(${module} PRIVATE "${final_pc_path}")
  

@@ -2093,6 +2093,7 @@ bin/qmake6
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qtwaylandclient-config_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qtwaylandclientglobal_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-appmenu.h
+%%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-color-management-v1.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-cursor-shape-v1.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-fractional-scale-v1.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-hardware-integration.h
@@ -2113,7 +2114,6 @@ bin/qmake6
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-shell.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-system-bell-v1.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xdg-toplevel-drag-v1.h
-%%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwayland-xx-color-management-v4.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandabstractdecoration_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandappmenu_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandbuffer_p.h
@@ -2134,7 +2134,6 @@ bin/qmake6
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylanddecorationplugin_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylanddisplay_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylanddnd_p.h
-%%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandeventdispatcher_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandfractionalscale_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandhardwareintegration_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandinputcontext_p.h
@@ -2175,6 +2174,7 @@ bin/qmake6
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandwindow_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/qwaylandwindowmanagerintegration_p.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-appmenu-client-protocol.h
+%%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-color-management-v1-client-protocol.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-cursor-shape-v1-client-protocol.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-fractional-scale-v1-client-protocol.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-hardware-integration-client-protocol.h
@@ -2195,7 +2195,6 @@ bin/qmake6
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-shell-client-protocol.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-system-bell-v1-client-protocol.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xdg-toplevel-drag-v1-client-protocol.h
-%%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/%%FULLVER%%/QtWaylandClient/private/wayland-xx-color-management-v4-client-protocol.h
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtension
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/QWaylandClientExtensionTemplate
 %%WAYLAND%%%%QT_INCDIR%%/QtWaylandClient/QtWaylandClient
@@ -2318,6 +2317,7 @@ bin/qmake6
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtoolbarextension_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtoolbarlayout_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtoolbarseparator_p.h
+%%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtooltip_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtreeview_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtreewidget_p.h
 %%QT_INCDIR%%/QtWidgets/%%FULLVER%%/QtWidgets/private/qtreewidgetitemiterator_p.h
@@ -2863,9 +2863,13 @@ lib/cmake/Qt6/QtPublicGitHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers.cmake
 lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake
 lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake
@@ -4136,6 +4140,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_TOOLDIR%%/qt-internal-configure-examples
 %%QT_TOOLDIR%%/qt-internal-configure-tests
 %%QT_TOOLDIR%%/qt-testrunner.py
+%%QT_TOOLDIR%%/qt_cyclonedx_generator.py
 %%QT_TOOLDIR%%/qvkgen
 %%WAYLAND%%%%QT_TOOLDIR%%/qtwaylandscanner
 %%QT_TOOLDIR%%/rcc
@@ -4333,8 +4338,8 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DATADIR%%/wayland/protocols/appmenu/appmenu.xml
 %%QT_DATADIR%%/wayland/protocols/appmenu/qt_attribution.json
 %%QT_DATADIR%%/wayland/protocols/color-management/REUSE.toml
+%%QT_DATADIR%%/wayland/protocols/color-management/color-management-v1.xml
 %%QT_DATADIR%%/wayland/protocols/color-management/qt_attribution.json
-%%QT_DATADIR%%/wayland/protocols/color-management/xx-color-management-v4.xml
 %%QT_DATADIR%%/wayland/protocols/cursor-shape/REUSE.toml
 %%QT_DATADIR%%/wayland/protocols/cursor-shape/cursor-shape-v1.xml
 %%QT_DATADIR%%/wayland/protocols/fractional-scale/REUSE.toml

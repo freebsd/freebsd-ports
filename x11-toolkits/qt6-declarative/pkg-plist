@@ -4192,6 +4192,7 @@ lib/cmake/Qt6QuickWidgetsPrivate/Qt6QuickWidgetsPrivateVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick/Controls/Imagine/ScrollBar.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Imagine/ScrollIndicator.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Imagine/ScrollView.qml
+%%QT_QMLDIR%%/QtQuick/Controls/Imagine/SearchField.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Imagine/SelectionRectangle.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Imagine/Slider.qml
 %%QT_QMLDIR%%/QtQuick/Controls/Imagine/SpinBox.qml

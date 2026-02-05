@@ -14,7 +14,13 @@ LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 USES=		cmake compiler:c++17-lang gl pkgconfig \
 		qt-dist:6
 USE_GL=		opengl egl
-USE_QT=		base declarative svg
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
+USE_QT=		base declarative svg
+
+pre-configure:
+	@(if [ ! -e ${QT_LIBDIR}/libQt6WaylandClient.so ] ; then \
+	${ECHO_MSG} "Error: this module requires devel/qt6-base to be built with the WAYLAND option enabled." ; \
+	exit 1; \
+	fi)
 
 .include <bsd.port.mk>

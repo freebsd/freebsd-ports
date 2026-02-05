@@ -27,6 +27,7 @@
 %%QT_DOCDIR%%/qtcmake/style/offline-dark.css
 %%QT_DOCDIR%%/qtcmake/style/offline-simple.css
 %%QT_DOCDIR%%/qtcmake/style/offline.css
+%%QT_DOCDIR%%/qtcmake/style/tech_preview.svg
 %%QT_DOCDIR%%/qtdoc.qch
 %%QT_DOCDIR%%/qtdoc/accessibility.html
 %%QT_DOCDIR%%/qtdoc/accessible-qtquick.html
@@ -156,7 +157,6 @@
 %%QT_DOCDIR%%/qtdoc/images/logo.png
 %%QT_DOCDIR%%/qtdoc/images/lottietoqmlexample.png
 %%QT_DOCDIR%%/qtdoc/images/macos.webp
-%%QT_DOCDIR%%/qtdoc/images/mainscreen.png
 %%QT_DOCDIR%%/qtdoc/images/maintenancetool.png
 %%QT_DOCDIR%%/qtdoc/images/mediaplayerapp.png
 %%QT_DOCDIR%%/qtdoc/images/mobile_dark.png
@@ -200,8 +200,10 @@
 %%QT_DOCDIR%%/qtdoc/images/qthangman-example.png
 %%QT_DOCDIR%%/qtdoc/images/qthangman-store-example.png
 %%QT_DOCDIR%%/qtdoc/images/qtinstallercomponents.png
+%%QT_DOCDIR%%/qtdoc/images/qtjenny-callback-extended-class.drawio.svg
+%%QT_DOCDIR%%/qtdoc/images/qtjenny-callback-interface.drawio.svg
 %%QT_DOCDIR%%/qtdoc/images/qtjenny-sequence.drawio.svg
-%%QT_DOCDIR%%/qtdoc/images/qtjennydemo_overview.png
+%%QT_DOCDIR%%/qtdoc/images/qtjennydemo_overview.webp
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-calqlatr.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-clocks-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-graphs-csv.png
@@ -368,11 +370,13 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-windowembedding-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-xr-physicsbase-teleportation-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-toc.html
+%%QT_DOCDIR%%/qtdoc/qtdoc-tutorials-alarms-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc.index
 %%QT_DOCDIR%%/qtdoc/qtdoc.qhp
 %%QT_DOCDIR%%/qtdoc/qtentrypoint.html
 %%QT_DOCDIR%%/qtdoc/qtexamples.html
 %%QT_DOCDIR%%/qtdoc/qtexamplesandtutorials.html
+%%QT_DOCDIR%%/qtdoc/qtjenny-callbacks.html
 %%QT_DOCDIR%%/qtdoc/qtjenny-concepts.html
 %%QT_DOCDIR%%/qtdoc/qtjenny-configuration.html
 %%QT_DOCDIR%%/qtdoc/qtjenny-installation.html
@@ -386,7 +390,6 @@
 %%QT_DOCDIR%%/qtdoc/qtpurchasing-baseclasses.html
 %%QT_DOCDIR%%/qtdoc/qtpurchasing-googleplay.html
 %%QT_DOCDIR%%/qtdoc/qtpurchasing-iosclasses.html
-%%QT_DOCDIR%%/qtdoc/qtquick-tutorial-alarms.html
 %%QT_DOCDIR%%/qtdoc/qundo.html
 %%QT_DOCDIR%%/qtdoc/rcc.html
 %%QT_DOCDIR%%/qtdoc/reference-overview.html
@@ -401,6 +404,7 @@
 %%QT_DOCDIR%%/qtdoc/style/offline-dark.css
 %%QT_DOCDIR%%/qtdoc/style/offline-simple.css
 %%QT_DOCDIR%%/qtdoc/style/offline.css
+%%QT_DOCDIR%%/qtdoc/style/tech_preview.svg
 %%QT_DOCDIR%%/qtdoc/style/tree_config.xml
 %%QT_DOCDIR%%/qtdoc/supported-platforms.html
 %%QT_DOCDIR%%/qtdoc/testing-and-debugging.html
@@ -471,3 +475,4 @@
 %%QT_DOCDIR%%/qtplatformintegration/style/offline-dark.css
 %%QT_DOCDIR%%/qtplatformintegration/style/offline-simple.css
 %%QT_DOCDIR%%/qtplatformintegration/style/offline.css
+%%QT_DOCDIR%%/qtplatformintegration/style/tech_preview.svg

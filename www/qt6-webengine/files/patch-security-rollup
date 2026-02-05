@@ -1,0 +1,1261 @@
+Post-release chromium security patches for www/qt6-webengine 6.10.2 up to and including:
+https://github.com/qt/qtwebengine-chromium/commit/c28e0738ad7858b1d8dd0acf0c8f05391026ec47
+
+2026-02-05
+https://github.com/qt/qtwebengine-chromium/compare/c971c6841dd6beab9f54aeaf9a53be413273039e..134-based.patch
+
+iOS-only be9814170358ac5c0cda4aca8ac33c7c8f190bab redacted.
+
+From cf510ebd4e870eb24fb5bc1d1ddcc5442247672d Mon Sep 17 00:00:00 2001
+From: Moss Heim <moss.heim@qt.io>
+Date: Tue, 16 Dec 2025 15:05:30 +0100
+Subject: [PATCH 01/11] [fixup][gnc] Build devtools modules with system nodejs
+
+This method of finding was brittle and led to difficult to diagnose
+issues. We can instead pass from CMake the exact path to the executable
+that was found during configuration.
+
+Now that esbuild uses the same approach, we can remove the `which`
+implementations in these files. Also allow devtools_paths.py to redirect
+to the script in //third_party/node as it did before.
+
+Change-Id: I2c7dc92134aab97c4b007d4e6f441aaad3ee5c3c
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/703785
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+(cherry picked from commit aab0f6f0928e7e4f73832abba9a00b7946b7e459)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/706108
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ .../src/scripts/devtools_paths.py             | 18 ---------------
+ chromium/third_party/node/node.py             | 23 ++++---------------
+ 2 files changed, 4 insertions(+), 37 deletions(-)
+
+diff --git a/chromium/third_party/devtools-frontend/src/scripts/devtools_paths.py b/chromium/third_party/devtools-frontend/src/scripts/devtools_paths.py
+index 24a7f5d4ed0..a95862317d3 100644
+--- src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/devtools_paths.py
++++ src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/devtools_paths.py
+@@ -36,26 +36,8 @@ def root_path():
+ def third_party_path():
+     return path.join(root_path(), 'third_party')
+ 
+-def which(cmd):
+-    pathenv = os.getenv('PATH')
+-    for p in pathenv.split(path.pathsep):
+-        p = path.join(p, cmd)
+-        if path.exists(p) and os.access(p, os.X_OK):
+-            return p
+-    return None
+-
+ # This points to the node binary downloaded as part of the checkout.
+ def node_path():
+-    # Qt WebEngine: Expect node.js to be installed in path.
+-    if sys.platform == 'win32':
+-        return 'node.exe'
+-    else:
+-        nodejs = which('nodejs')
+-        if nodejs:
+-            return nodejs
+-        nodejs = which('node')
+-        if nodejs:
+-            return nodejs
+     try:
+         old_sys_path = sys.path[:]
+         sys.path.append(path.join(third_party_path(), 'node'))
+diff --git a/chromium/third_party/node/node.py b/chromium/third_party/node/node.py
+index 4f483f616d4..d4842e4a223 100755
+--- src/3rdparty/chromium/third_party/node/node.py
++++ src/3rdparty/chromium/third_party/node/node.py
+@@ -10,26 +10,11 @@
+ import sys
+ import os
+ 
+-def which(cmd):
+-    pathenv = os.getenv('PATH')
+-    for p in pathenv.split(os_path.pathsep):
+-        p = os_path.join(p, cmd)
+-        if os_path.exists(p) and os.access(p, os.X_OK):
+-            return p
+-    return None
+-
+ def GetBinaryPath():
+-  if sys.platform == 'win32':
+-    nodejs = which('node.exe')
+-    if nodejs:
+-      return nodejs
+-  else:
+-    nodejs = which('nodejs')
+-    if nodejs:
+-      return nodejs
+-    nodejs = which('node')
+-    if nodejs:
+-      return nodejs
++  # qtwebengine: This is set with cmake -E env when calling ninja.
++  node_path = os.getenv('NODEJS_EXECUTABLE')
++  assert node_path, "NODEJS_EXECUTABLE must be set to the nodejs executable"
++  return node_path
+ 
+   if platform.machine() == 'arm64':
+     darwin_path = 'mac_arm64'
+
+From b9e1861b9a8c39da4ba8cc63b05b02b8d3ae0121 Mon Sep 17 00:00:00 2001
+From: Moss Heim <moss.heim@qt.io>
+Date: Fri, 23 Jan 2026 13:17:41 +0100
+Subject: [PATCH 02/11] Fix clang + bfd/gold linker build
+
+The previous attempt at fixing QTBUG-141153 in
+d92dcbb8a8a36f77c4c242243905a95114853900 mistakenly affected the
+clang+gold build and was reverted in
+f9d3b37ece2aafffdcca7d029b83c787f68961c6, leaving the original bug
+unfixed. Tweak the logic a bit to leave gold alone.
+
+Fixes: QTBUG-141153
+Change-Id: I2ad8eb304d3af6e998d99ad17bad4da11adb973d
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/706737
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+(cherry picked from commit d7ef0664d42c87fcf45c21c0971117eb963755f7)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/707166
+---
+ chromium/build/config/compiler/BUILD.gn | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chromium/build/config/compiler/BUILD.gn b/chromium/build/config/compiler/BUILD.gn
+index 0fe042f57b3..52a894d2182 100644
+--- src/3rdparty/chromium/build/config/compiler/BUILD.gn
++++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
+@@ -2536,7 +2536,7 @@ config("export_dynamic") {
+ # 2. Remove the thin_archive config, so that the .a file actually contains all
+ #    .o files, instead of just references to .o files in the build directoy
+ config("thin_archive") {
+-  if ((is_apple && use_lld) || (is_linux && !is_clang)) {
++  if ((is_apple && use_lld) || (is_linux && !use_lld && !use_mold)) {
+     # The macOS and iOS linker ld64.ldd doesn't support thin archive without
+     # symbol table, gcc on linux also throws the error `archive has no index`.
+     arflags = [
+
+From d01003734ccf371ae75ecfb127437c4a3dadbb68 Mon Sep 17 00:00:00 2001
+From: Kaloyan Chehlarski <kaloyan.chehlarski@qt.io>
+Date: Fri, 30 Jan 2026 10:57:07 +0100
+Subject: [PATCH 03/11] [fixup] Fix QtWebEngine build on Windows
+
+Several functions in rule_invalidation_data_visitor.cc had
+changes in their definitions, but pur inlined copies weren't
+updated, leading to broken CSS selector behavior.
+
+Task-number: QTBUG-143720
+Change-Id: Ibb4454ac77c514d4b6b20c5dd68b6b87d760b5ff
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/708631
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+ .../rule_invalidation_data_visitor.cc         | 542 +++++++++---------
+ .../rule_invalidation_data_visitor.h          | 116 +++-
+ 2 files changed, 371 insertions(+), 287 deletions(-)
+
+diff --git a/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.cc b/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.cc
+index 17ec52d65c2..73621943622 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.cc
+@@ -1590,264 +1590,266 @@ void RuleInvalidationDataVisitor<VisitorType>::
+   }
+ }
+ #if !defined(COIN_WORKAROUND)
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetForSimpleSelector(
+-    const CSSSelector& selector,
+-    InvalidationType type,
+-    PositionType position,
+-    bool in_nth_child) {
+-  if (selector.Match() == CSSSelector::kClass) {
+-    if (type == InvalidationType::kInvalidateDescendants &&
+-        position == kSubject && !in_nth_child &&
+-        InsertIntoSelfInvalidationBloomFilter(
+-            selector.Value(), RuleInvalidationData::kClassSalt)) {
+-      // Do not insert self-invalidation sets for classes;
+-      // see comment on class_invalidation_sets_.
+-      return nullptr;
+-    }
+-    return EnsureClassInvalidationSet(selector.Value(), type, position,
+-                                      in_nth_child);
+-  }
+-  if (selector.IsAttributeSelector()) {
+-    return EnsureAttributeInvalidationSet(selector.Attribute().LocalName(),
+-                                          type, position, in_nth_child);
+-  }
+-  if (selector.Match() == CSSSelector::kId) {
+-    if (type == InvalidationType::kInvalidateDescendants &&
+-        position == kSubject &&
+-        InsertIntoSelfInvalidationBloomFilter(selector.Value(),
+-                                              RuleInvalidationData::kIdSalt)) {
+-      // Do not insert self-invalidation sets for IDs;
+-      // see comment on class_invalidation_sets_.
+-      return nullptr;
+-    }
+-    return EnsureIdInvalidationSet(selector.Value(), type, position,
+-                                   in_nth_child);
+-  }
+-  if (selector.Match() == CSSSelector::kPseudoClass) {
+-    switch (selector.GetPseudoType()) {
+-      case CSSSelector::kPseudoEmpty:
+-      case CSSSelector::kPseudoFirstChild:
+-      case CSSSelector::kPseudoLastChild:
+-      case CSSSelector::kPseudoOnlyChild:
+-      case CSSSelector::kPseudoLink:
+-      case CSSSelector::kPseudoVisited:
+-      case CSSSelector::kPseudoWebkitAnyLink:
+-      case CSSSelector::kPseudoAnyLink:
+-      case CSSSelector::kPseudoAutofill:
+-      case CSSSelector::kPseudoWebKitAutofill:
+-      case CSSSelector::kPseudoAutofillPreviewed:
+-      case CSSSelector::kPseudoAutofillSelected:
+-      case CSSSelector::kPseudoHover:
+-      case CSSSelector::kPseudoDrag:
+-      case CSSSelector::kPseudoFocus:
+-      case CSSSelector::kPseudoFocusVisible:
+-      case CSSSelector::kPseudoFocusWithin:
+-      case CSSSelector::kPseudoActive:
+-      case CSSSelector::kPseudoChecked:
+-      case CSSSelector::kPseudoEnabled:
+-      case CSSSelector::kPseudoDefault:
+-      case CSSSelector::kPseudoDisabled:
+-      case CSSSelector::kPseudoOptional:
+-      case CSSSelector::kPseudoPlaceholderShown:
+-      case CSSSelector::kPseudoRequired:
+-      case CSSSelector::kPseudoReadOnly:
+-      case CSSSelector::kPseudoReadWrite:
+-      case CSSSelector::kPseudoState:
+-      case CSSSelector::kPseudoUserInvalid:
+-      case CSSSelector::kPseudoUserValid:
+-      case CSSSelector::kPseudoValid:
+-      case CSSSelector::kPseudoInvalid:
+-      case CSSSelector::kPseudoIndeterminate:
+-      case CSSSelector::kPseudoTarget:
+-      case CSSSelector::kPseudoTargetCurrent:
+-      case CSSSelector::kPseudoLang:
+-      case CSSSelector::kPseudoDir:
+-      case CSSSelector::kPseudoFullScreen:
+-      case CSSSelector::kPseudoFullScreenAncestor:
+-      case CSSSelector::kPseudoFullscreen:
+-      case CSSSelector::kPseudoPaused:
+-      case CSSSelector::kPseudoPermissionElementInvalidStyle:
+-      case CSSSelector::kPseudoPermissionElementOccluded:
+-      case CSSSelector::kPseudoPermissionGranted:
+-      case CSSSelector::kPseudoPictureInPicture:
+-      case CSSSelector::kPseudoPlaying:
+-      case CSSSelector::kPseudoInRange:
+-      case CSSSelector::kPseudoOutOfRange:
+-      case CSSSelector::kPseudoDefined:
+-      case CSSSelector::kPseudoOpen:
+-      case CSSSelector::kPseudoPopoverOpen:
+-      case CSSSelector::kPseudoVideoPersistent:
+-      case CSSSelector::kPseudoVideoPersistentAncestor:
+-      case CSSSelector::kPseudoXrOverlay:
+-      case CSSSelector::kPseudoHasDatalist:
+-      case CSSSelector::kPseudoMultiSelectFocus:
+-      case CSSSelector::kPseudoModal:
+-      case CSSSelector::kPseudoSelectorFragmentAnchor:
+-      case CSSSelector::kPseudoActiveViewTransition:
+-      case CSSSelector::kPseudoActiveViewTransitionType:
+-      case CSSSelector::kPseudoHasSlotted:
+-        return EnsurePseudoInvalidationSet(selector.GetPseudoType(), type,
+-                                           position, in_nth_child);
+-      case CSSSelector::kPseudoFirstOfType:
+-      case CSSSelector::kPseudoLastOfType:
+-      case CSSSelector::kPseudoOnlyOfType:
+-      case CSSSelector::kPseudoNthChild:
+-      case CSSSelector::kPseudoNthOfType:
+-      case CSSSelector::kPseudoNthLastChild:
+-      case CSSSelector::kPseudoNthLastOfType:
+-        return EnsureNthInvalidationSet();
+-      case CSSSelector::kPseudoHas:
+-        return position == kAncestor
+-                   ? EnsurePseudoInvalidationSet(selector.GetPseudoType(), type,
+-                                                 position, in_nth_child)
+-                   : nullptr;
+-      case CSSSelector::kPseudoPart:
+-      default:
+-        break;
+-    }
+-  }
+-  return nullptr;
+-}
+-
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::EnsureClassInvalidationSet(
+-    const AtomicString& class_name,
+-    InvalidationType type,
+-    PositionType position,
+-    bool in_nth_child) {
+-  CHECK(!class_name.empty());
+-  return EnsureInvalidationSet(rule_invalidation_data_.class_invalidation_sets,
+-                               class_name, type, position, in_nth_child);
+-}
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::EnsureAttributeInvalidationSet(
+-    const AtomicString& attribute_name,
+-    InvalidationType type,
+-    PositionType position,
+-    bool in_nth_child) {
+-  CHECK(!attribute_name.empty());
+-  return EnsureInvalidationSet(
+-      rule_invalidation_data_.attribute_invalidation_sets, attribute_name, type,
+-      position, in_nth_child);
+-}
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::EnsureIdInvalidationSet(
+-    const AtomicString& id,
+-    InvalidationType type,
+-    PositionType position,
+-    bool in_nth_child) {
+-  CHECK(!id.empty());
+-  return EnsureInvalidationSet(rule_invalidation_data_.id_invalidation_sets, id,
+-                               type, position, in_nth_child);
+-}
+-
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::EnsurePseudoInvalidationSet(
+-    CSSSelector::PseudoType pseudo_type,
+-    InvalidationType type,
+-    PositionType position,
+-    bool in_nth_child) {
+-  CHECK_NE(pseudo_type, CSSSelector::kPseudoUnknown);
+-  return EnsureInvalidationSet(rule_invalidation_data_.pseudo_invalidation_sets,
+-                               pseudo_type, type, position, in_nth_child);
+-}
+-
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::EnsureInvalidationSet(
+-    InvalidationSetMapType& map,
+-    const AtomicString& key,
+-    InvalidationType type,
+-    PositionType position,
+-    bool in_nth_child) {
+-  if constexpr (is_builder()) {
+-    scoped_refptr<InvalidationSet>& invalidation_set =
+-        map.insert(key, nullptr).stored_value->value;
+-    return &EnsureMutableInvalidationSet(type, position, in_nth_child,
+-                                         invalidation_set);
+-  } else {
+-    auto it = map.find(key);
+-    if (it != map.end()) {
+-      const InvalidationSet* invalidation_set = it->value.get();
+-      if (invalidation_set->GetType() == type) {
+-        return invalidation_set;
+-      } else if (type == InvalidationType::kInvalidateDescendants) {
+-        // The caller wanted descendant and we found sibling+descendant.
+-        return To<SiblingInvalidationSet>(invalidation_set)->Descendants();
+-      }
+-    }
+-    // It is possible for the Tracer not to find an InvalidationSet we expect to
+-    // be there. One case where this can happen is when, at the time we run the
+-    // Tracer, a rule has been added to a stylesheet but not yet indexed. In
+-    // such a case, we'll pick up information about the new rule as it gets
+-    // indexed on the next document lifecycle update.
+-    return nullptr;
+-  }
+-}
+-
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::EnsureInvalidationSet(
+-    PseudoTypeInvalidationSetMapType& map,
+-    CSSSelector::PseudoType key,
+-    InvalidationType type,
+-    PositionType position,
+-    bool in_nth_child) {
+-  if constexpr (is_builder()) {
+-    scoped_refptr<InvalidationSet>& invalidation_set =
+-        map.insert(key, nullptr).stored_value->value;
+-    return &EnsureMutableInvalidationSet(type, position, in_nth_child,
+-                                         invalidation_set);
+-  } else {
+-    auto it = map.find(key);
+-    if (it != map.end()) {
+-      const InvalidationSet* invalidation_set = it->value.get();
+-      if (invalidation_set->GetType() == type) {
+-        return invalidation_set;
+-      } else if (type == InvalidationType::kInvalidateDescendants) {
+-        // The caller wanted descendant and we found sibling+descendant.
+-        return To<SiblingInvalidationSet>(invalidation_set)->Descendants();
+-      }
+-    }
+-    // It is possible for the Tracer not to find an InvalidationSet we expect to
+-    // be there. One case where this can happen is when, at the time we run the
+-    // Tracer, a rule has been added to a stylesheet but not yet indexed. In
+-    // such a case, we'll pick up information about the new rule as it gets
+-    // indexed on the next document lifecycle update.
+-    return nullptr;
+-  }
+-}
+-
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::SiblingInvalidationSetType*
+-RuleInvalidationDataVisitor<
+-    VisitorType>::EnsureUniversalSiblingInvalidationSet() {
+-  if constexpr (is_builder()) {
+-    if (!rule_invalidation_data_.universal_sibling_invalidation_set) {
+-      rule_invalidation_data_.universal_sibling_invalidation_set =
+-          SiblingInvalidationSet::Create(nullptr);
+-    }
+-  }
+-  return rule_invalidation_data_.universal_sibling_invalidation_set.get();
+-}
+-
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::SiblingInvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::EnsureNthInvalidationSet() {
+-  if constexpr (is_builder()) {
+-    if (!rule_invalidation_data_.nth_invalidation_set) {
+-      rule_invalidation_data_.nth_invalidation_set =
+-          NthSiblingInvalidationSet::Create();
+-    }
+-  }
+-  return rule_invalidation_data_.nth_invalidation_set.get();
+-}
++// FIXME: If the following lines cause a merge conflict, make sure to update the
++// inline copies in rule_invalidation_data_visitor.h
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetForSimpleSelector(
++/**/    const CSSSelector& selector,
++/**/    InvalidationType type,
++/**/    PositionType position,
++/**/    bool in_nth_child) {
++/**/  if (selector.Match() == CSSSelector::kClass) {
++/**/    if (type == InvalidationType::kInvalidateDescendants &&
++/**/        position == kSubject && !in_nth_child &&
++/**/        InsertIntoSelfInvalidationBloomFilter(
++/**/            selector.Value(), RuleInvalidationData::kClassSalt)) {
++/**/      // Do not insert self-invalidation sets for classes;
++/**/      // see comment on class_invalidation_sets_.
++/**/      return nullptr;
++/**/    }
++/**/    return EnsureClassInvalidationSet(selector.Value(), type, position,
++/**/                                      in_nth_child);
++/**/  }
++/**/  if (selector.IsAttributeSelector()) {
++/**/    return EnsureAttributeInvalidationSet(selector.Attribute().LocalName(),
++/**/                                          type, position, in_nth_child);
++/**/  }
++/**/  if (selector.Match() == CSSSelector::kId) {
++/**/    if (type == InvalidationType::kInvalidateDescendants &&
++/**/        position == kSubject &&
++/**/        InsertIntoSelfInvalidationBloomFilter(selector.Value(),
++/**/                                              RuleInvalidationData::kIdSalt)) {
++/**/      // Do not insert self-invalidation sets for IDs;
++/**/      // see comment on class_invalidation_sets_.
++/**/      return nullptr;
++/**/    }
++/**/    return EnsureIdInvalidationSet(selector.Value(), type, position,
++/**/                                   in_nth_child);
++/**/  }
++/**/  if (selector.Match() == CSSSelector::kPseudoClass) {
++/**/    switch (selector.GetPseudoType()) {
++/**/      case CSSSelector::kPseudoEmpty:
++/**/      case CSSSelector::kPseudoFirstChild:
++/**/      case CSSSelector::kPseudoLastChild:
++/**/      case CSSSelector::kPseudoOnlyChild:
++/**/      case CSSSelector::kPseudoLink:
++/**/      case CSSSelector::kPseudoVisited:
++/**/      case CSSSelector::kPseudoWebkitAnyLink:
++/**/      case CSSSelector::kPseudoAnyLink:
++/**/      case CSSSelector::kPseudoAutofill:
++/**/      case CSSSelector::kPseudoWebKitAutofill:
++/**/      case CSSSelector::kPseudoAutofillPreviewed:
++/**/      case CSSSelector::kPseudoAutofillSelected:
++/**/      case CSSSelector::kPseudoHover:
++/**/      case CSSSelector::kPseudoDrag:
++/**/      case CSSSelector::kPseudoFocus:
++/**/      case CSSSelector::kPseudoFocusVisible:
++/**/      case CSSSelector::kPseudoFocusWithin:
++/**/      case CSSSelector::kPseudoActive:
++/**/      case CSSSelector::kPseudoChecked:
++/**/      case CSSSelector::kPseudoEnabled:
++/**/      case CSSSelector::kPseudoDefault:
++/**/      case CSSSelector::kPseudoDisabled:
++/**/      case CSSSelector::kPseudoOptional:
++/**/      case CSSSelector::kPseudoPlaceholderShown:
++/**/      case CSSSelector::kPseudoRequired:
++/**/      case CSSSelector::kPseudoReadOnly:
++/**/      case CSSSelector::kPseudoReadWrite:
++/**/      case CSSSelector::kPseudoState:
++/**/      case CSSSelector::kPseudoUserInvalid:
++/**/      case CSSSelector::kPseudoUserValid:
++/**/      case CSSSelector::kPseudoValid:
++/**/      case CSSSelector::kPseudoInvalid:
++/**/      case CSSSelector::kPseudoIndeterminate:
++/**/      case CSSSelector::kPseudoTarget:
++/**/      case CSSSelector::kPseudoTargetCurrent:
++/**/      case CSSSelector::kPseudoLang:
++/**/      case CSSSelector::kPseudoDir:
++/**/      case CSSSelector::kPseudoFullScreen:
++/**/      case CSSSelector::kPseudoFullScreenAncestor:
++/**/      case CSSSelector::kPseudoFullscreen:
++/**/      case CSSSelector::kPseudoPaused:
++/**/      case CSSSelector::kPseudoPermissionElementInvalidStyle:
++/**/      case CSSSelector::kPseudoPermissionElementOccluded:
++/**/      case CSSSelector::kPseudoPermissionGranted:
++/**/      case CSSSelector::kPseudoPictureInPicture:
++/**/      case CSSSelector::kPseudoPlaying:
++/**/      case CSSSelector::kPseudoInRange:
++/**/      case CSSSelector::kPseudoOutOfRange:
++/**/      case CSSSelector::kPseudoDefined:
++/**/      case CSSSelector::kPseudoOpen:
++/**/      case CSSSelector::kPseudoPopoverOpen:
++/**/      case CSSSelector::kPseudoVideoPersistent:
++/**/      case CSSSelector::kPseudoVideoPersistentAncestor:
++/**/      case CSSSelector::kPseudoXrOverlay:
++/**/      case CSSSelector::kPseudoHasDatalist:
++/**/      case CSSSelector::kPseudoMultiSelectFocus:
++/**/      case CSSSelector::kPseudoModal:
++/**/      case CSSSelector::kPseudoSelectorFragmentAnchor:
++/**/      case CSSSelector::kPseudoActiveViewTransition:
++/**/      case CSSSelector::kPseudoActiveViewTransitionType:
++/**/      case CSSSelector::kPseudoHasSlotted:
++/**/        return EnsurePseudoInvalidationSet(selector.GetPseudoType(), type,
++/**/                                           position, in_nth_child);
++/**/      case CSSSelector::kPseudoFirstOfType:
++/**/      case CSSSelector::kPseudoLastOfType:
++/**/      case CSSSelector::kPseudoOnlyOfType:
++/**/      case CSSSelector::kPseudoNthChild:
++/**/      case CSSSelector::kPseudoNthOfType:
++/**/      case CSSSelector::kPseudoNthLastChild:
++/**/      case CSSSelector::kPseudoNthLastOfType:
++/**/        return EnsureNthInvalidationSet();
++/**/      case CSSSelector::kPseudoHas:
++/**/        return position == kAncestor
++/**/                   ? EnsurePseudoInvalidationSet(selector.GetPseudoType(), type,
++/**/                                                 position, in_nth_child)
++/**/                   : nullptr;
++/**/      case CSSSelector::kPseudoPart:
++/**/      default:
++/**/        break;
++/**/    }
++/**/  }
++/**/  return nullptr;
++/**/}
++/**/
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::EnsureClassInvalidationSet(
++/**/    const AtomicString& class_name,
++/**/    InvalidationType type,
++/**/    PositionType position,
++/**/    bool in_nth_child) {
++/**/  CHECK(!class_name.empty());
++/**/  return EnsureInvalidationSet(rule_invalidation_data_.class_invalidation_sets,
++/**/                               class_name, type, position, in_nth_child);
++/**/}
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::EnsureAttributeInvalidationSet(
++/**/    const AtomicString& attribute_name,
++/**/    InvalidationType type,
++/**/    PositionType position,
++/**/    bool in_nth_child) {
++/**/  CHECK(!attribute_name.empty());
++/**/  return EnsureInvalidationSet(
++/**/      rule_invalidation_data_.attribute_invalidation_sets, attribute_name, type,
++/**/      position, in_nth_child);
++/**/}
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::EnsureIdInvalidationSet(
++/**/    const AtomicString& id,
++/**/    InvalidationType type,
++/**/    PositionType position,
++/**/    bool in_nth_child) {
++/**/  CHECK(!id.empty());
++/**/  return EnsureInvalidationSet(rule_invalidation_data_.id_invalidation_sets, id,
++/**/                               type, position, in_nth_child);
++/**/}
++/**/
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::EnsurePseudoInvalidationSet(
++/**/    CSSSelector::PseudoType pseudo_type,
++/**/    InvalidationType type,
++/**/    PositionType position,
++/**/    bool in_nth_child) {
++/**/  CHECK_NE(pseudo_type, CSSSelector::kPseudoUnknown);
++/**/  return EnsureInvalidationSet(rule_invalidation_data_.pseudo_invalidation_sets,
++/**/                               pseudo_type, type, position, in_nth_child);
++/**/}
++/**/
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::EnsureInvalidationSet(
++/**/    InvalidationSetMapType& map,
++/**/    const AtomicString& key,
++/**/    InvalidationType type,
++/**/    PositionType position,
++/**/    bool in_nth_child) {
++/**/  if constexpr (is_builder()) {
++/**/    scoped_refptr<InvalidationSet>& invalidation_set =
++/**/        map.insert(key, nullptr).stored_value->value;
++/**/    return &EnsureMutableInvalidationSet(type, position, in_nth_child,
++/**/                                         invalidation_set);
++/**/  } else {
++/**/    auto it = map.find(key);
++/**/    if (it != map.end()) {
++/**/      const InvalidationSet* invalidation_set = it->value.get();
++/**/      if (invalidation_set->GetType() == type) {
++/**/        return invalidation_set;
++/**/      } else if (type == InvalidationType::kInvalidateDescendants) {
++/**/        // The caller wanted descendant and we found sibling+descendant.
++/**/        return To<SiblingInvalidationSet>(invalidation_set)->Descendants();
++/**/      }
++/**/    }
++/**/    // It is possible for the Tracer not to find an InvalidationSet we expect to
++/**/    // be there. One case where this can happen is when, at the time we run the
++/**/    // Tracer, a rule has been added to a stylesheet but not yet indexed. In
++/**/    // such a case, we'll pick up information about the new rule as it gets
++/**/    // indexed on the next document lifecycle update.
++/**/    return nullptr;
++/**/  }
++/**/}
++/**/
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::EnsureInvalidationSet(
++/**/    PseudoTypeInvalidationSetMapType& map,
++/**/    CSSSelector::PseudoType key,
++/**/    InvalidationType type,
++/**/    PositionType position,
++/**/    bool in_nth_child) {
++/**/  if constexpr (is_builder()) {
++/**/    scoped_refptr<InvalidationSet>& invalidation_set =
++/**/        map.insert(key, nullptr).stored_value->value;
++/**/    return &EnsureMutableInvalidationSet(type, position, in_nth_child,
++/**/                                         invalidation_set);
++/**/  } else {
++/**/    auto it = map.find(key);
++/**/    if (it != map.end()) {
++/**/      const InvalidationSet* invalidation_set = it->value.get();
++/**/      if (invalidation_set->GetType() == type) {
++/**/        return invalidation_set;
++/**/      } else if (type == InvalidationType::kInvalidateDescendants) {
++/**/        // The caller wanted descendant and we found sibling+descendant.
++/**/        return To<SiblingInvalidationSet>(invalidation_set)->Descendants();
++/**/      }
++/**/    }
++/**/    // It is possible for the Tracer not to find an InvalidationSet we expect to
++/**/    // be there. One case where this can happen is when, at the time we run the
++/**/    // Tracer, a rule has been added to a stylesheet but not yet indexed. In
++/**/    // such a case, we'll pick up information about the new rule as it gets
++/**/    // indexed on the next document lifecycle update.
++/**/    return nullptr;
++/**/  }
++/**/}
++/**/
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::SiblingInvalidationSetType*
++/**/RuleInvalidationDataVisitor<
++/**/    VisitorType>::EnsureUniversalSiblingInvalidationSet() {
++/**/  if constexpr (is_builder()) {
++/**/    if (!rule_invalidation_data_.universal_sibling_invalidation_set) {
++/**/      rule_invalidation_data_.universal_sibling_invalidation_set =
++/**/          SiblingInvalidationSet::Create(nullptr);
++/**/    }
++/**/  }
++/**/  return rule_invalidation_data_.universal_sibling_invalidation_set.get();
++/**/}
++/**/
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::SiblingInvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::EnsureNthInvalidationSet() {
++/**/  if constexpr (is_builder()) {
++/**/    if (!rule_invalidation_data_.nth_invalidation_set) {
++/**/      rule_invalidation_data_.nth_invalidation_set =
++/**/          NthSiblingInvalidationSet::Create();
++/**/    }
++/**/  }
++/**/  return rule_invalidation_data_.nth_invalidation_set.get();
++/**/}
+ #endif
+ // Add features extracted from the rightmost compound selector to descendant
+ // invalidation sets for features found in other compound selectors.
+@@ -2002,17 +2004,19 @@ bool RuleInvalidationDataVisitor<VisitorType>::
+   }
+ }
+ #if !defined(COIN_WORKAROUND)
+-template <RuleInvalidationDataVisitorType VisitorType>
+-RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
+-RuleInvalidationDataVisitor<VisitorType>::
+-    EnsureSiblingDescendantInvalidationSet(
+-        SiblingInvalidationSetType* invalidation_set) {
+-  if constexpr (is_builder()) {
+-    return &invalidation_set->EnsureSiblingDescendants();
+-  } else {
+-    return invalidation_set->SiblingDescendants();
+-  }
+-}
++// FIXME: If the following lines cause a merge conflict, make sure to update the
++// inline copies in rule_invalidation_data_visitor.h
++/**/template <RuleInvalidationDataVisitorType VisitorType>
++/**/RuleInvalidationDataVisitor<VisitorType>::InvalidationSetType*
++/**/RuleInvalidationDataVisitor<VisitorType>::
++/**/    EnsureSiblingDescendantInvalidationSet(
++/**/        SiblingInvalidationSetType* invalidation_set) {
++/**/  if constexpr (is_builder()) {
++/**/    return &invalidation_set->EnsureSiblingDescendants();
++/**/  } else {
++/**/    return invalidation_set->SiblingDescendants();
++/**/  }
++/**/}
+ #endif
+ template <RuleInvalidationDataVisitorType VisitorType>
+ InvalidationSet&
+diff --git a/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.h b/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.h
+index 15cd5980fa9..6e19aa0eae7 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.h
++++ src/3rdparty/chromium/third_party/blink/renderer/core/css/invalidation/rule_invalidation_data_visitor.h
+@@ -589,16 +589,98 @@ class RuleInvalidationDataVisitor {
+     if (selector.Match() == CSSSelector::kId) {
+       if (type == InvalidationType::kInvalidateDescendants &&
+           position == kSubject &&
+-          InsertIntoSelfInvalidationBloomFilter(
+-              selector.Value(), RuleInvalidationData::kIdSalt)) {
++          InsertIntoSelfInvalidationBloomFilter(selector.Value(),
++                                                RuleInvalidationData::kIdSalt)) {
+         // Do not insert self-invalidation sets for IDs;
+         // see comment on class_invalidation_sets_.
+         return nullptr;
+       }
+       return EnsureIdInvalidationSet(selector.Value(), type, position,
+-                                     in_nth_child);
++                                    in_nth_child);
++    }
++    if (selector.Match() == CSSSelector::kPseudoClass) {
++      switch (selector.GetPseudoType()) {
++        case CSSSelector::kPseudoEmpty:
++        case CSSSelector::kPseudoFirstChild:
++        case CSSSelector::kPseudoLastChild:
++        case CSSSelector::kPseudoOnlyChild:
++        case CSSSelector::kPseudoLink:
++        case CSSSelector::kPseudoVisited:
++        case CSSSelector::kPseudoWebkitAnyLink:
++        case CSSSelector::kPseudoAnyLink:
++        case CSSSelector::kPseudoAutofill:
++        case CSSSelector::kPseudoWebKitAutofill:
++        case CSSSelector::kPseudoAutofillPreviewed:
++        case CSSSelector::kPseudoAutofillSelected:
++        case CSSSelector::kPseudoHover:
++        case CSSSelector::kPseudoDrag:
++        case CSSSelector::kPseudoFocus:
++        case CSSSelector::kPseudoFocusVisible:
++        case CSSSelector::kPseudoFocusWithin:
++        case CSSSelector::kPseudoActive:
++        case CSSSelector::kPseudoChecked:
++        case CSSSelector::kPseudoEnabled:
++        case CSSSelector::kPseudoDefault:
++        case CSSSelector::kPseudoDisabled:
++        case CSSSelector::kPseudoOptional:
++        case CSSSelector::kPseudoPlaceholderShown:
++        case CSSSelector::kPseudoRequired:
++        case CSSSelector::kPseudoReadOnly:
++        case CSSSelector::kPseudoReadWrite:
++        case CSSSelector::kPseudoState:
++        case CSSSelector::kPseudoUserInvalid:
++        case CSSSelector::kPseudoUserValid:
++        case CSSSelector::kPseudoValid:
++        case CSSSelector::kPseudoInvalid:
++        case CSSSelector::kPseudoIndeterminate:
++        case CSSSelector::kPseudoTarget:
++        case CSSSelector::kPseudoTargetCurrent:
++        case CSSSelector::kPseudoLang:
++        case CSSSelector::kPseudoDir:
++        case CSSSelector::kPseudoFullScreen:
++        case CSSSelector::kPseudoFullScreenAncestor:
++        case CSSSelector::kPseudoFullscreen:
++        case CSSSelector::kPseudoPaused:
++        case CSSSelector::kPseudoPermissionElementInvalidStyle:
++        case CSSSelector::kPseudoPermissionElementOccluded:
++        case CSSSelector::kPseudoPermissionGranted:
++        case CSSSelector::kPseudoPictureInPicture:
++        case CSSSelector::kPseudoPlaying:
++        case CSSSelector::kPseudoInRange:
++        case CSSSelector::kPseudoOutOfRange:
++        case CSSSelector::kPseudoDefined:
++        case CSSSelector::kPseudoOpen:
++        case CSSSelector::kPseudoPopoverOpen:
++        case CSSSelector::kPseudoVideoPersistent:
++        case CSSSelector::kPseudoVideoPersistentAncestor:
++        case CSSSelector::kPseudoXrOverlay:
++        case CSSSelector::kPseudoHasDatalist:
++        case CSSSelector::kPseudoMultiSelectFocus:
++        case CSSSelector::kPseudoModal:
++        case CSSSelector::kPseudoSelectorFragmentAnchor:
++        case CSSSelector::kPseudoActiveViewTransition:
++        case CSSSelector::kPseudoActiveViewTransitionType:
++        case CSSSelector::kPseudoHasSlotted:
++          return EnsurePseudoInvalidationSet(selector.GetPseudoType(), type,
++                                            position, in_nth_child);
++        case CSSSelector::kPseudoFirstOfType:
++        case CSSSelector::kPseudoLastOfType:
++        case CSSSelector::kPseudoOnlyOfType:
++        case CSSSelector::kPseudoNthChild:
++        case CSSSelector::kPseudoNthOfType:
++        case CSSSelector::kPseudoNthLastChild:
++        case CSSSelector::kPseudoNthLastOfType:
++          return EnsureNthInvalidationSet();
++        case CSSSelector::kPseudoHas:
++          return position == kAncestor
++                    ? EnsurePseudoInvalidationSet(selector.GetPseudoType(), type,
++                                                  position, in_nth_child)
++                    : nullptr;
++        case CSSSelector::kPseudoPart:
++        default:
++          break;
++      }
+     }
+-
+     return nullptr;
+   }
+   InvalidationSetType* EnsureClassInvalidationSet(
+@@ -650,23 +732,22 @@ class RuleInvalidationDataVisitor {
+       scoped_refptr<InvalidationSet>& invalidation_set =
+           map.insert(key, nullptr).stored_value->value;
+       return &EnsureMutableInvalidationSet(type, position, in_nth_child,
+-                                           invalidation_set);
++                                          invalidation_set);
+     } else {
+       auto it = map.find(key);
+       if (it != map.end()) {
+         const InvalidationSet* invalidation_set = it->value.get();
+         if (invalidation_set->GetType() == type) {
+           return invalidation_set;
+-        } else {
++        } else if (type == InvalidationType::kInvalidateDescendants) {
+           // The caller wanted descendant and we found sibling+descendant.
+-          CHECK(type == InvalidationType::kInvalidateDescendants);
+           return To<SiblingInvalidationSet>(invalidation_set)->Descendants();
+         }
+       }
+-      // It is possible for the Tracer not to find an InvalidationSet we expect
+-      // to be there. One case where this can happen is when, at the time we run
+-      // the Tracer, a rule has been added to a stylesheet but not yet indexed.
+-      // In such a case, we'll pick up information about the new rule as it gets
++      // It is possible for the Tracer not to find an InvalidationSet we expect to
++      // be there. One case where this can happen is when, at the time we run the
++      // Tracer, a rule has been added to a stylesheet but not yet indexed. In
++      // such a case, we'll pick up information about the new rule as it gets
+       // indexed on the next document lifecycle update.
+       return nullptr;
+     }
+@@ -682,23 +763,22 @@ class RuleInvalidationDataVisitor {
+       scoped_refptr<InvalidationSet>& invalidation_set =
+           map.insert(key, nullptr).stored_value->value;
+       return &EnsureMutableInvalidationSet(type, position, in_nth_child,
+-                                           invalidation_set);
++                                          invalidation_set);
+     } else {
+       auto it = map.find(key);
+       if (it != map.end()) {
+         const InvalidationSet* invalidation_set = it->value.get();
+         if (invalidation_set->GetType() == type) {
+           return invalidation_set;
+-        } else {
++        } else if (type == InvalidationType::kInvalidateDescendants) {
+           // The caller wanted descendant and we found sibling+descendant.
+-          CHECK(type == InvalidationType::kInvalidateDescendants);
+           return To<SiblingInvalidationSet>(invalidation_set)->Descendants();
+         }
+       }
+-      // It is possible for the Tracer not to find an InvalidationSet we expect
+-      // to be there. One case where this can happen is when, at the time we run
+-      // the Tracer, a rule has been added to a stylesheet but not yet indexed.
+-      // In such a case, we'll pick up information about the new rule as it gets
++      // It is possible for the Tracer not to find an InvalidationSet we expect to
++      // be there. One case where this can happen is when, at the time we run the
++      // Tracer, a rule has been added to a stylesheet but not yet indexed. In
++      // such a case, we'll pick up information about the new rule as it gets
+       // indexed on the next document lifecycle update.
+       return nullptr;
+     }
+
+From bd2eed64786b620b4bc4f0fc89dc25bd5077a955 Mon Sep 17 00:00:00 2001
+From: Kelvin Jiang <kelvinjiang@chromium.org>
+Date: Mon, 5 Jan 2026 15:20:51 -0800
+Subject: [PATCH 04/11] [backport] CVE-2026-0628
+
+Do not apply DNR rules for Webview requests
+
+Extensions should not be able to apply DNR rules to requests originating
+from WebViews.
+
+(cherry picked from commit 28628907f24e27fff20d26471482f377047db3c8)
+
+Bug: 463155954
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/7354432
+Change-Id: I83031218fdf75171a224fddf8a5cf2f0ff18a6a0
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/708715
+Reviewed-by: Moss Heim <moss.heim@qt.io>
+---
+ .../browser/api/declarative_net_request/ruleset_manager.cc  | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/chromium/extensions/browser/api/declarative_net_request/ruleset_manager.cc b/chromium/extensions/browser/api/declarative_net_request/ruleset_manager.cc
+index c851ec8a552..9a736a85c93 100644
+--- src/3rdparty/chromium/extensions/browser/api/declarative_net_request/ruleset_manager.cc
++++ src/3rdparty/chromium/extensions/browser/api/declarative_net_request/ruleset_manager.cc
+@@ -506,6 +506,12 @@ bool RulesetManager::ShouldEvaluateRequest(
+     return false;
+   }
+ 
++  // Declarative Net Request rules should not be matched against requests
++  // originating from WebViews.
++  if (request.is_web_view) {
++    return false;
++  }
++
+   return true;
+ }
+ 
+
+From a944a13c3dc41c4788995e0d3e85cda51580c16a Mon Sep 17 00:00:00 2001
+From: Yoshisato Yanagisawa <yyanagisawa@chromium.org>
+Date: Wed, 14 Jan 2026 19:28:36 -0800
+Subject: [PATCH 05/11] [backport] CVE-2026-1504
+
+Block opaque 416 responses to non-range requests
+
+Extend the security check for opaque 206 responses to also cover
+416 responses when the request does not contain a Range header. This
+makes the handling of these responses symmetric.
+
+This change is controlled by the 'kBlockPartialResponseWithoutRange'
+feature flag.
+
+See: https://github.com/whatwg/fetch/issues/1906
+
+Bug: 474435504
+Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/7453440
+Change-Id: I288e2af79ced229079725ea70462405f0cf588c0
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/708980
+Reviewed-by: Moss Heim <moss.heim@qt.io>
+---
+ chromium/third_party/blink/common/features.cc |  4 ++
+ .../blink/public/common/features.h            |  4 ++
+ .../platform/loader/fetch/resource_loader.cc  |  6 ++-
+ .../loader/fetch/resource_loader_test.cc      | 48 +++++++++++++++++++
+ 4 files changed, 61 insertions(+), 1 deletion(-)
+
+diff --git a/chromium/third_party/blink/common/features.cc b/chromium/third_party/blink/common/features.cc
+index d3737211ba2..6539f0ad877 100644
+--- src/3rdparty/chromium/third_party/blink/common/features.cc
++++ src/3rdparty/chromium/third_party/blink/common/features.cc
+@@ -918,6 +918,10 @@ BASE_FEATURE_PARAM(std::string,
+                    "FledgeBiddingAndAuctionKeyConfig",
+                    "");
+ 
++BASE_FEATURE(kBlockPartialResponseWithoutRange,
++             "BlockPartialResponseWithoutRange",
++             base::FEATURE_ENABLED_BY_DEFAULT);
++
+ // See in the header.
+ BASE_FEATURE(kFledgeConsiderKAnonymity,
+              "FledgeConsiderKAnonymity",
+diff --git a/chromium/third_party/blink/public/common/features.h b/chromium/third_party/blink/public/common/features.h
+index 360512748cb..5aeeefc82bf 100644
+--- src/3rdparty/chromium/third_party/blink/public/common/features.h
++++ src/3rdparty/chromium/third_party/blink/public/common/features.h
+@@ -510,6 +510,10 @@ BLINK_COMMON_EXPORT BASE_DECLARE_FEATURE_PARAM(std::string,
+ BLINK_COMMON_EXPORT BASE_DECLARE_FEATURE_PARAM(
+     std::string,
+     kFledgeBiddingAndAuctionKeyConfig);
++
++// Block partial responses (206, 416) for requests without a Range header.
++BLINK_COMMON_EXPORT BASE_DECLARE_FEATURE(kBlockPartialResponseWithoutRange);
++
+ // Configures FLEDGE to consider k-anonymity. If both
+ // kFledgeConsiderKAnonymity and kFledgeEnforceKAnonymity are on it will be
+ // enforced; if only kFledgeConsiderKAnonymity is on it will be simulated.
+diff --git a/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader.cc b/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader.cc
+index 592ed4470a6..6fa72a8a25f 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader.cc
+@@ -1000,7 +1000,11 @@ void ResourceLoader::DidReceiveResponseInternal(
+   // A response should not serve partial content if it was not requested via a
+   // Range header: https://fetch.spec.whatwg.org/#main-fetch
+   if (response.GetType() == network::mojom::FetchResponseType::kOpaque &&
+-      response.HttpStatusCode() == 206 && response.HasRangeRequested() &&
++      (response.HttpStatusCode() == 206 ||
++       (base::FeatureList::IsEnabled(
++            features::kBlockPartialResponseWithoutRange) &&
++        response.HttpStatusCode() == 416)) &&
++      response.HasRangeRequested() &&
+       !initial_request.HttpHeaderFields().Contains(http_names::kRange)) {
+     HandleError(ResourceError::CancelledDueToAccessCheckError(
+         response.CurrentRequestUrl(), ResourceRequestBlockedReason::kOther));
+diff --git a/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader_test.cc b/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader_test.cc
+index 0e9566e0650..15e8006d33c 100644
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader_test.cc
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/loader/fetch/resource_loader_test.cc
+@@ -815,4 +815,52 @@ TEST_F(ResourceLoaderSubresourceFilterCnameAliasTest,
+   ExpectCnameAliasInfoMatching(info, loader);
+ }
+ 
++class ResourceLoaderBlockPartialResponseWithoutRangeTest
++    : public ResourceLoaderTest,
++      public testing::WithParamInterface<bool> {
++ public:
++  ResourceLoaderBlockPartialResponseWithoutRangeTest() {
++    scoped_feature_list_.InitWithFeatureState(
++        features::kBlockPartialResponseWithoutRange, GetParam());
++  }
++
++ private:
++  base::test::ScopedFeatureList scoped_feature_list_;
++};
++
++TEST_P(ResourceLoaderBlockPartialResponseWithoutRangeTest,
++       BlockOpaque416ResponseToNonRangeRequest) {
++  auto* properties = MakeGarbageCollected<TestResourceFetcherProperties>();
++  FetchContext* context = MakeGarbageCollected<MockFetchContext>();
++  auto* fetcher = MakeResourceFetcher(properties, context);
++
++  KURL url("https://www.example.com/");
++  ResourceRequest request(url);
++  request.SetRequestContext(mojom::blink::RequestContextType::FETCH);
++  ASSERT_FALSE(request.HttpHeaderFields().Contains(http_names::kRange));
++
++  FetchParameters params = FetchParameters::CreateForTest(std::move(request));
++  Resource* resource = RawResource::Fetch(params, fetcher, nullptr);
++  ResourceLoader* loader = resource->Loader();
++
++  ResourceResponse response(url);
++  response.SetHttpStatusCode(416);
++  response.SetType(network::mojom::FetchResponseType::kOpaque);
++  response.SetHasRangeRequested(true);
++
++  loader->DidReceiveResponse(WrappedResourceResponse(response),
++                             mojo::ScopedDataPipeConsumerHandle(),
++                             /*cached_metadata=*/std::nullopt);
++
++  if (GetParam()) {
++    EXPECT_EQ(resource->GetStatus(), ResourceStatus::kLoadError);
++  } else {
++    EXPECT_EQ(resource->GetStatus(), ResourceStatus::kPending);
++  }
++}
++
++INSTANTIATE_TEST_SUITE_P(All,
++                         ResourceLoaderBlockPartialResponseWithoutRangeTest,
++                         testing::Bool());
++
+ }  // namespace blink
+
+From e672c31ee11d88a04d5776ac4d5c0c1c664a5e05 Mon Sep 17 00:00:00 2001
+From: Moss Heim <moss.heim@qt.io>
+Date: Mon, 2 Feb 2026 16:35:51 +0100
+Subject: [PATCH 06/11] [fixup] Update bundled libavif to version 1.3.0
+
+We should update the version number in README.chromium as well.
+
+Change-Id: Ie71c0158160fa77973484aa445058a5c1cfe659e
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709091
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+(cherry picked from commit 68811a26b7d5764db23276092a77276d724c50db)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709372
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ chromium/third_party/libavif/README.chromium | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/chromium/third_party/libavif/README.chromium b/chromium/third_party/libavif/README.chromium
+index 81904b69c35..aab6707fe7e 100644
+--- src/3rdparty/chromium/third_party/libavif/README.chromium
++++ src/3rdparty/chromium/third_party/libavif/README.chromium
+@@ -1,8 +1,7 @@
+ Name: libavif - Library for encoding and decoding .avif files
+ Short Name: libavif
+ URL: https://github.com/AOMediaCodec/libavif
+-Version: N/A
+-Revision: DEPS
++Version: 1.3.0
+ License: BSD-2-Clause, MIT
+ License File: src/LICENSE
+ Security Critical: yes
+
+From 3b4a68d315e6295746ff878c5764047e6a9ed6b9 Mon Sep 17 00:00:00 2001
+From: Moss Heim <moss.heim@qt.io>
+Date: Mon, 2 Feb 2026 16:36:06 +0100
+Subject: [PATCH 07/11] [fixup] Update bundled libpng to version 1.6.53
+
+We should update the version number in README.chromium as well.
+
+Change-Id: Idc095f6a894ca51b8e1a41d1d89707981b935cf8
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709092
+Reviewed-by: Michal Klocek <michal.klocek@qt.io>
+(cherry picked from commit 21a3856b76d68231780b29fef9a6594760f7af85)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709368
+Reviewed-by: Moss Heim <moss.heim@qt.io>
+---
+ chromium/third_party/libpng/README.chromium | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/third_party/libpng/README.chromium b/chromium/third_party/libpng/README.chromium
+index ba44b17fce9..efbda068dae 100644
+--- src/3rdparty/chromium/third_party/libpng/README.chromium
++++ src/3rdparty/chromium/third_party/libpng/README.chromium
+@@ -1,7 +1,7 @@
+ Name: libpng
+ URL: http://libpng.org/
+-Version: 1.6.43
+-CPEPrefix: cpe:/a:libpng:libpng:1.6.43
++Version: 1.6.53
++CPEPrefix: cpe:/a:libpng:libpng:1.6.53
+ Security Critical: yes
+ Shipped: yes
+ License: Libpng-2.0, Libpng
+
+From 13db433aada53eafd537fe09dd664e86ede43f61 Mon Sep 17 00:00:00 2001
+From: Moss Heim <moss.heim@qt.io>
+Date: Mon, 2 Feb 2026 16:13:43 +0100
+Subject: [PATCH 08/11] [sbom] Fix duplicate dependency name handling
+
+Some dependencies exist twice in different directories. We were
+previously mistakenly de-duplicating these as part of code which
+de-duplicated packages that were dependencies of multiple top level
+targets (e.g. third_party/icu needed for both convert_dict_tool and
+QtWebEngineCore).
+
+Instead, use the dependency directory + lower-cased package name as the
+de-duplication key. This is unique enough for our use case, and also
+prevents case-difference from causing errors like BlackDuck reports in
+QTBUG-142659. spdx_writer.py already contains logic in _get_package_id()
+which adds a unique suffix to distinguish packages, so we don't need to
+do anything extra to get that.
+
+A local test shows we now correctly show duplicates of packages named:
+cityhash, icu, lit, bitflags, and inspector-protocol.
+
+Fixes: QTBUG-142659
+Change-Id: I640c8e906776a03c07a06a4942c1d7f4453d3077
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709087
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+(cherry picked from commit d20012e843d4a8b34f683cde8fe77e5365208ef0)
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709392
+Reviewed-by: Moss Heim <moss.heim@qt.io>
+Reviewed-by: Qt Cherry-pick Bot <cherrypick_bot@qt-project.org>
+---
+ chromium/tools/licenses/sbom.py | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/chromium/tools/licenses/sbom.py b/chromium/tools/licenses/sbom.py
+index 490e45f9dbb..b367e2e6691 100644
+--- src/3rdparty/chromium/tools/licenses/sbom.py
++++ src/3rdparty/chromium/tools/licenses/sbom.py
+@@ -36,7 +36,7 @@
+ 
+ # Packages that have bad homepages that don't start with CANONICAL_HOMEPAGE_STRING
+ PACKAGES_TO_CLEAN_BAD_URL = [
+-    'PSM (Private Set Membership) client side',
++    'psm (private set membership) client side',
+ ]
+ 
+ # Some packages don't have a license file, but their license is a known SPDX
+@@ -229,6 +229,7 @@ def GetTargetMetadatas(gn_binary: str, gn_out_dir: str, gn_target: str):
+         # be quite long.
+         if 'Short Name' in dep_metadata:
+           dep_metadata['Name'] = dep_metadata['Short Name']
++        dep_metadata['Name'] = dep_metadata['Name'].lower()
+         if dep_metadata['Name'] in PACKAGES_TO_CLEAN_BAD_URL or CANONICAL_HOMEPAGE_STRING in dep_metadata['URL']:
+           logger.info("Cleaning bad URL from package: %s" % dep_metadata['Name'])
+           del dep_metadata['URL']
+@@ -271,10 +272,11 @@ def make_pkg_name(s):
+           continue
+ 
+         child_pkg_name = make_pkg_name(dep_metadata.pop('Name'))
+-        if child_pkg_name not in already_added_packages:
++        child_pkg_key = directory + ':' + child_pkg_name
++        if child_pkg_key not in already_added_packages:
+           child_pkg_id = writer.add_package(ExtendedPackage(child_pkg_name, license_file, dep_metadata))
+-          already_added_packages[child_pkg_name] = child_pkg_id
+-        writer.add_dependency(top_level_pkg_id, already_added_packages[child_pkg_name])
++          already_added_packages[child_pkg_key] = child_pkg_id
++        writer.add_dependency(top_level_pkg_id, already_added_packages[child_pkg_key])
+ 
+ 
+   # Manually add GN package
+
+From 3fd7f5b7e530888dae7ad1752594420b38714e15 Mon Sep 17 00:00:00 2001
+From: Michal Klocek <michal.klocek@qt.io>
+Date: Wed, 4 Feb 2026 11:44:01 +0100
+Subject: [PATCH 10/11] [fixup][Backport] CVE-2025-12432: Race in V8
+
+Fix wrong macro wrapping.
+
+Note this is really CVE-2025-12036
+
+This amends 720e9a95b33a60e0165c7faa079b2ebc6af4cbeb
+
+Change-Id: Idb27fef5ced33a430dbe588eb474b39503d500ea
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709893
+Reviewed-by: Moss Heim <moss.heim@qt.io>
+---
+ chromium/v8/src/json/json-parser.cc | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+
+diff --git a/chromium/v8/src/json/json-parser.cc b/chromium/v8/src/json/json-parser.cc
+index 811066a7211..a7b41e9413e 100644
+--- src/3rdparty/chromium/v8/src/json/json-parser.cc
++++ src/3rdparty/chromium/v8/src/json/json-parser.cc
+@@ -1882,8 +1882,9 @@ MaybeHandle<Object> JsonParser<Char>::ParseJsonValue() {
+             }
+           }
+           value = BuildJsonObject<should_track_json_source>(cont, feedback);
+-          EXPECT_NEXT_RETURN_ON_ERROR(JsonToken::RBRACE,
+-                 MessageTemplate::kJsonParseExpectedCommaOrRBrace, {});
++          EXPECT_RETURN_ON_ERROR(
++              JsonToken::RBRACE,
++              MessageTemplate::kJsonParseExpectedCommaOrRBrace, {});
+           // Return the object.
+           if constexpr (should_track_json_source) {
+             size_t start = cont.index;
+
+From c28e0738ad7858b1d8dd0acf0c8f05391026ec47 Mon Sep 17 00:00:00 2001
+From: Moss Heim <moss.heim@qt.io>
+Date: Wed, 4 Feb 2026 14:35:22 +0100
+Subject: [PATCH 11/11] [fixup][gcc-10] Fix compilation issue with gcc-10
+
+Manual cherry-pick of
+https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709981
+
+The memcpy here was wrong because it copied from backing_store() (data
+rather than address) instead of the address of backing_store(). Replace
+with a simple static_cast since DataPtr() returns void*
+
+Fixes crash on account.proton.me in simdutf::scalar::(anonymous
+namespace)::base64::tail_encode_base64() coming from
+v8::internal::Builtin_Uint8ArrayPrototypeToBase64()
+
+Change-Id: I147b7f2201d892335cb880f6d0d31a92cfd034f4
+Reviewed-on: https://codereview.qt-project.org/c/qt/qtwebengine-chromium/+/709983
+Reviewed-by: Allan Sandfeld Jensen <allan.jensen@qt.io>
+---
+ chromium/v8/src/builtins/builtins-typed-array.cc | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/chromium/v8/src/builtins/builtins-typed-array.cc b/chromium/v8/src/builtins/builtins-typed-array.cc
+index b36b8d3f68c..cc72be7f13d 100644
+--- src/3rdparty/chromium/v8/src/builtins/builtins-typed-array.cc
++++ src/3rdparty/chromium/v8/src/builtins/builtins-typed-array.cc
+@@ -673,10 +673,8 @@ BUILTIN(Uint8ArrayToBase64) {
+ 
+     // TODO(rezvan): Make sure to add a path for SharedArrayBuffers when
+     // simdutf library got updated. Also, add a test for it.
+-    const char* backing_store;
+-    std::memcpy(&backing_store, uint8array->GetBuffer()->backing_store(), sizeof(backing_store));
+     size_t simd_result_size = simdutf::binary_to_base64(
+-        backing_store,
++        static_cast<const char*>(uint8array->GetBuffer()->backing_store()),
+         uint8array->byte_length(),
+         reinterpret_cast<char*>(output->GetChars(no_gc)), alphabet);
+     DCHECK_EQ(simd_result_size, output_length);
