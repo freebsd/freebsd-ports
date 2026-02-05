@@ -20,7 +20,7 @@ NO_BUILD=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_VERSION}
 PLIST=		${WRKDIR}/pkg-plist.${DOCFORMAT}
 
-DOCFORMATS=	html pdf-a4 text
+DOCFORMATS=	html text
 DOCFORMAT?=	html
 
 .if empty(DOCFORMATS:M${DOCFORMAT})

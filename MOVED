@@ -4296,7 +4296,7 @@ ports-mgmt/genplist||2025-04-04|Has expired: Unmaintained, obsoleted by "make ma
 databases/rubygem-scenic61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
 devel/py-blist||2025-04-04|Has expired: Abandoned project, no consumers, no modern python support
 textproc/rubygem-case_transform61||2025-04-04|Has expired: Uses EOL version 6.1.X of Rails
-lang/python-doc-pdf-letter|lang/python-doc-pdf-a4|2025-04-09|Letter-size PDF no longer provided since 3.12
+lang/python-doc-pdf-letter||2025-04-09|Letter-size PDF no longer provided since 3.12
 net-im/py-punjab||2025-04-13|Has expired: Abandoned project, not compatible with decent python/twisted
 devel/linux-rl9-libsigsegv|emulators/linux_base-rl9|2025-04-15|Integrated into linux_base-rl9
 devel/linux-rl9-libatomic|devel/linux-rl9-devtools|2025-04-15|Integrated into linux-rl9-devtools
@@ -5073,3 +5073,4 @@ multimedia/mlt7-qt@qt5||2026-01-08|Qt5 support has been dropped by upstream
 multimedia/mlt7-qt@qt6|multimedia/mlt7-qt|2026-01-08|Unflavorize; only Qt6 is supported
 devel/pydbus-common|devel/py-dbus|2026-01-09|Merged into devel/py-dbus
 devel/fam||2026-01-11|Remove obsolete and unmaintained port
+lang/python-doc-pdf-a4||2026-02-05|A4-size PDF no longer provided since 3.13
