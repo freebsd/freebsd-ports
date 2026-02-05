@@ -1,9 +1,8 @@
   <vuln vid="bfe9adc8-0224-11f1-8790-c5fb948922ad">
     <topic>python -- several security vulnerabilities</topic>
-    <affects> <!-- versions 310...313 need research and fixing -->
-      <package><name>python39</name> <range><ge>0</ge></range></package>
+    <affects>
       <package><name>python310</name> <range><ge>0</ge></range></package>
-      <package><name>python311</name> <range><ge>0</ge></range></package>
+      <package><name>python311</name> <range><lt>3.11.14_2</lt></range></package>
       <package><name>python312</name> <range><ge>0</ge></range></package>
       <package><name>python313</name> <range><lt>3.13.12</lt></range></package>
       <package><name>python313t</name> <range><lt>3.13.12</lt></range></package>
