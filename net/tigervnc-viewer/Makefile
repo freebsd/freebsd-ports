@@ -1,4 +1,5 @@
 PKGNAMESUFFIX=	-viewer
+PORTREVISION=	1
 CATEGORIES=	net
 
 COMMENT=	TigerVNC Viewer
@@ -11,7 +12,10 @@ LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libfltk.so:x11-toolkits/fltk \
 		libnettle.so:security/nettle \
 	 	libgmp.so:math/gmp \
-		libavcodec.so:multimedia/ffmpeg
+		libavcodec.so:multimedia/ffmpeg \
+
+# TigerVNC only supports H.264 decoder
+CMAKE_ARGS+=	-DENABLE_H264:STRING=ON
 
 OPTIONS_DEFINE=	DOCS GNUTLS NLS
 OPTIONS_DEFAULT=	GNUTLS
