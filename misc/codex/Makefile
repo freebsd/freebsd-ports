@@ -1,7 +1,6 @@
 PORTNAME=	codex
 DISTVERSIONPREFIX=	rust-v
-DISTVERSION=	0.89.0
-PORTREVISION=	1
+DISTVERSION=	0.96.0
 CATEGORIES=	misc devel
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -11,6 +10,8 @@ WWW=		https://openai.com/codex \
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN_i386=	fails to build: rustc-LLVM ERROR: out of memory
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libdbus-1.so:devel/dbus \
@@ -24,14 +25,15 @@ USES=		cargo python:test shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	openai
 
-SHEBANG_FILES=	codex-rs/core/src/skills/assets/samples/skill-creator/scripts/init_skill.py \
-		codex-rs/core/src/skills/assets/samples/skill-creator/scripts/package_skill.py \
+SHEBANG_FILES=	codex-rs/core/src/skills/assets/samples/skill-creator/scripts/generate_openai_yaml.py \
+		codex-rs/core/src/skills/assets/samples/skill-creator/scripts/init_skill.py \
 		codex-rs/core/src/skills/assets/samples/skill-creator/scripts/quick_validate.py \
 		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/github_utils.py \
 		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/install-skill-from-github.py \
-		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-curated-skills.py \
-		codex-rs/mcp-types/check_lib_rs.py \
-		codex-rs/mcp-types/generate_mcp_types.py
+		codex-rs/core/src/skills/assets/samples/skill-installer/scripts/list-skills.py \
+		codex-rs/vendor/bubblewrap/demos/userns-block-fd.py \
+		codex-rs/vendor/bubblewrap/tests/test-seccomp.py \
+		codex-rs/vendor/bubblewrap/tests/use-as-subproject/assert-correct-rpath.py
 
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 CARGO_CARGOLOCK=	${BUILD_WRKSRC}/Cargo.lock
@@ -55,6 +57,8 @@ COMPLETIONS_PLIST_FILES=etc/bash_completion.d/${PORTNAME} \
 			share/zsh/site-functions/_${PORTNAME}
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|ssh://git@github.com/JakkuSakura/tungstenite-rs.git|https://github.com/JakkuSakura/tungstenite-rs|' \
+		${WRKSRC_crate_tokio-tungstenite}/Cargo.toml
 	@${REINPLACE_CMD} -e 's|0\.0\.0|${DISTVERSION}|' \
 		${BUILD_WRKSRC}/app-server/tests/suite/user_agent.rs
 	@${REINPLACE_CMD} -e 's|/bin/bash|${LOCALBASE}&|' \
@@ -79,6 +83,7 @@ post-patch:
 		${BUILD_WRKSRC}/core/tests/suite/tools.rs \
 		${BUILD_WRKSRC}/core/tests/suite/unified_exec.rs \
 		${BUILD_WRKSRC}/exec/tests/suite/sandbox.rs \
+		${BUILD_WRKSRC}/execpolicy/tests/basic.rs \
 		${BUILD_WRKSRC}/mcp-server/tests/suite/codex_tool.rs \
 		${BUILD_WRKSRC}/utils/pty/src/tests.rs
 
