@@ -1,7 +1,7 @@
 PORTNAME=	vagrant
 PORTVERSION=	2.4.9
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils rubygems devel
 PKGNAMESUFFIX=	-gitlab
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-hashicorp-checkpoint>=0.1.5<0.2:www/rubygem-hashicorp-checkpoint \
 		rubygem-i18n>=1.12,2<2,2:devel/rubygem-i18n \
 		rubygem-ipaddr>=1.2.4:net/rubygem-ipaddr \
-		rubygem-listen>=3.7<4:devel/rubygem-listen \
+		rubygem-listen-gitlab>=3.7<4:devel/rubygem-listen-gitlab \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
 		rubygem-logger-gitlab>=1.0<2:devel/rubygem-logger-gitlab \
 		rubygem-mime-types-gitlab>=3.3<4:misc/rubygem-mime-types-gitlab \
