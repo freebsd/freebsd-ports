@@ -1,6 +1,6 @@
 PORTNAME=	ispc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.29.1
+DISTVERSION=	1.30.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -79,6 +79,10 @@ run-examples: build
 	./${e}
 .endfor
 
-# tests as of 1.28.2: PASSRATE (1568/1568) = 100%
+# tests as of 1.30.0:
+# 752 / 759 tests PASSED
+# 0 / 759 tests FAILED compilation
+# 0 / 759 tests FAILED execution
+# 7 / 759 tests SKIPPED
 
 .include <bsd.port.mk>

@@ -6,6 +6,7 @@ include/ispc/ispc.h
 include/ispcrt/ispcrt.h
 include/ispcrt/ispcrt.hpp
 include/ispcrt/ispcrt.isph
+include/stdlib/amx.isph
 include/stdlib/short_vec.isph
 lib/cmake/ispc/ispcConfig.cmake
 lib/cmake/ispc/ispcConfigVersion.cmake
