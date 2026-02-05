@@ -1,6 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.1
+DISTVERSION=	2.0.2
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -126,7 +126,7 @@ CARGO_CRATES=	addr2line-0.25.1 \
 		indenter-0.3.4 \
 		indexmap-2.13.0 \
 		indoc-2.0.7 \
-		insta-1.46.2 \
+		insta-1.46.3 \
 		instability-0.3.11 \
 		interprocess-2.2.3 \
 		is_terminal_polyfill-1.70.2 \
