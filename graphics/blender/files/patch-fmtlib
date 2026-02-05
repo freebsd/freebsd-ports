@@ -1,0 +1,3256 @@
+--- extern/binreloc/CMakeLists.txt.orig	2025-10-08 10:41:55 UTC
++++ extern/binreloc/CMakeLists.txt
+@@ -7,7 +7,7 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
++  PUBLIC include
+ )
+ 
+ set(SRC
+@@ -23,3 +23,4 @@ blender_add_lib(extern_binreloc "${SRC}" "${INC}" "${I
+ 
+ 
+ blender_add_lib(extern_binreloc "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
++add_library(bf::extern::binreloc ALIAS extern_binreloc)
+--- extern/CMakeLists.txt.orig	2025-10-08 10:41:55 UTC
++++ extern/CMakeLists.txt
+@@ -4,7 +4,9 @@ add_subdirectory(curve_fit_nd)
+ 
+ # Libs that adhere to strict flags
+ add_subdirectory(curve_fit_nd)
++add_subdirectory(fast_float)
+ add_subdirectory(fmtlib)
++add_subdirectory(json)
+ if(WITH_IO_FBX)
+   add_subdirectory(ufbx)
+ endif()
+--- extern/fast_float/CMakeLists.txt.orig	2025-12-23 01:40:52 UTC
++++ extern/fast_float/CMakeLists.txt
+@@ -0,0 +1,7 @@
++# SPDX-FileCopyrightText: 2023 Blender Foundation
++#
++# SPDX-License-Identifier: GPL-2.0-or-later
++
++add_library(extern_fast_float INTERFACE)
++target_include_directories(extern_fast_float SYSTEM INTERFACE ".")
++add_library(bf::extern::fast_float ALIAS extern_fast_float)
+--- extern/json/CMakeLists.txt.orig	2025-12-23 01:40:52 UTC
++++ extern/json/CMakeLists.txt
+@@ -0,0 +1,7 @@
++# SPDX-FileCopyrightText: 2023 Blender Foundation
++#
++# SPDX-License-Identifier: GPL-2.0-or-later
++
++add_library(extern_json INTERFACE)
++target_include_directories(extern_json SYSTEM INTERFACE "include")
++add_library(bf::extern::json ALIAS extern_json)
+--- extern/mantaflow/CMakeLists.txt.orig	2025-10-08 10:41:55 UTC
++++ extern/mantaflow/CMakeLists.txt
+@@ -68,8 +68,6 @@ set(INC_SYS
+ endif()
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+-  ${ZLIB_INCLUDE_DIRS}
+ )
+ 
+ if(WITH_MANTA_NUMPY AND WITH_PYTHON_NUMPY)
+@@ -229,8 +227,8 @@ set(LIB
+ set(LIB
+   PRIVATE bf::dependencies::optional::openvdb
+   PRIVATE bf::dependencies::optional::tbb
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
++  PRIVATE bf::dependencies::optional::python
++  PRIVATE bf::dependencies::zlib
+ )
+ 
+ blender_add_lib(extern_mantaflow "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- extern/vulkan_memory_allocator/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ extern/vulkan_memory_allocator/CMakeLists.txt
+@@ -3,7 +3,7 @@ set(INC
+ # SPDX-License-Identifier: GPL-2.0-or-later
+ 
+ set(INC
+-  .
++  PUBLIC .
+ )
+ 
+ set(INC_SYS
+@@ -20,6 +20,7 @@ blender_add_lib(extern_vulkan_memory_allocator "${SRC}
+ )
+ 
+ blender_add_lib(extern_vulkan_memory_allocator "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
++add_library(bf::extern::vulkan_memory_allocator ALIAS extern_vulkan_memory_allocator)
+ 
+ if(CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MATCHES "Clang")
+   target_compile_options(extern_vulkan_memory_allocator
+--- extern/wcwidth/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ extern/wcwidth/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-# SPDX-FileCopyrightText: 2013 Blender Foundation
++# SPDX-FileCopyrightText: 2023 Blender Foundation
+ #
+ # SPDX-License-Identifier: GPL-2.0-or-later
+ 
+@@ -7,7 +7,7 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
++  PUBLIC .
+ )
+ 
+ set(SRC
+@@ -20,3 +20,4 @@ blender_add_lib(extern_wcwidth "${SRC}" "${INC}" "${IN
+ )
+ 
+ blender_add_lib(extern_wcwidth "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
++add_library(bf::extern::wcwidth ALIAS extern_wcwidth)
+--- intern/cycles/app/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/cycles/app/CMakeLists.txt
+@@ -35,10 +35,12 @@ if(WITH_CYCLES_STANDALONE AND WITH_CYCLES_STANDALONE_G
+ 
+ if(WITH_CYCLES_STANDALONE AND WITH_CYCLES_STANDALONE_GUI)
+   list(APPEND INC_SYS
+-    ${Epoxy_INCLUDE_DIRS}
+     ${SDL2_INCLUDE_DIRS}
+   )
+-  list(APPEND LIB ${Epoxy_LIBRARIES} ${SDL2_LIBRARIES})
++  list(APPEND LIB
++    bf::dependencies::optional::epoxy
++    ${SDL2_LIBRARIES}
++  )
+ endif()
+ 
+ if(WITH_USD)
+@@ -47,13 +49,9 @@ if(WITH_USD)
+     -D__TBB_show_deprecation_message_atomic_H
+     -D__TBB_show_deprecation_message_task_H
+   )
+-
+-  list(APPEND INC_SYS
+-    ${USD_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+     cycles_hydra
+-    ${USD_LIBRARIES}
++    bf::dependencies::optional::usd
+   )
+ endif()
+ 
+--- intern/cycles/blender/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/cycles/blender/CMakeLists.txt
+@@ -9,8 +9,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${Epoxy_INCLUDE_DIRS}
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -70,9 +68,10 @@ set(LIB
+   cycles_subd
+   cycles_util
+ 
+-  ${Epoxy_LIBRARIES}
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
++  bf::dependencies::optional::epoxy
++  bf::dependencies::optional::python
++  bf::dependencies::optional::openimagedenoise
++  bf::dependencies::optional::openvdb
+ )
+ 
+ set(ADDON_FILES
+@@ -101,22 +100,6 @@ if(WITH_TBB)
+ 
+ if(WITH_TBB)
+   add_definitions(-DWITH_TBB)
+-endif()
+-
+-if(WITH_OPENVDB)
+-  list(APPEND INC
+-    ../../openvdb
+-  )
+-  list(APPEND LIB
+-    ${OPENVDB_LIBRARIES}
+-  )
+-endif()
+-
+-if(WITH_OPENIMAGEDENOISE)
+-  add_definitions(-DWITH_OPENIMAGEDENOISE)
+-  list(APPEND INC_SYS
+-    ${OPENIMAGEDENOISE_INCLUDE_DIRS}
+-  )
+ endif()
+ 
+ if(WITH_CYCLES_OSL)
+--- intern/cycles/device/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/cycles/device/CMakeLists.txt
+@@ -6,7 +6,8 @@ set(INC
+   ..
+ )
+ 
+-set(INC_SYS )
++set(INC_SYS
++)
+ 
+ if(WITH_CYCLES_DEVICE_OPTIX OR WITH_CYCLES_DEVICE_CUDA)
+   if(NOT WITH_CUDA_DYNLOAD)
+--- intern/cycles/hydra/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/cycles/hydra/CMakeLists.txt
+@@ -10,16 +10,13 @@ set(INC_SYS
+   ..
+ )
+ set(INC_SYS
+-  ${USD_INCLUDE_DIRS}
+-  ${Epoxy_INCLUDE_DIRS}
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ set(LIB
+   cycles_scene
+   cycles_session
+   cycles_graph
+-  ${Epoxy_LIBRARIES}
++  bf::dependencies::optional::epoxy
+   ${BOOST_PYTHON_LIBRARIES}
+ )
+ cycles_external_libraries_append(LIB)
+@@ -105,7 +102,8 @@ target_link_libraries(cycles_hydra
+ 
+ target_link_libraries(cycles_hydra
+   PUBLIC
+-  ${USD_LIBRARIES}
++  bf::dependencies::optional::usd
++  bf::dependencies::optional::python
+   PRIVATE
+   ${LIB}
+ )
+--- intern/cycles/kernel/CMakeLists.txt.orig	2025-10-27 12:26:33 UTC
++++ intern/cycles/kernel/CMakeLists.txt
+@@ -439,12 +439,9 @@ add_executable(zstd_compress ../cmake/zstd_compress.cp
+ 
+ # `Zstd` compressor for kernels.
+ add_executable(zstd_compress ../cmake/zstd_compress.cpp)
+-target_include_directories(zstd_compress SYSTEM PRIVATE ${ZSTD_INCLUDE_DIRS})
+ 
+-target_link_libraries(zstd_compress ${ZSTD_LIBRARIES})
+-if(DEFINED PTHREADS_LIBRARIES)
+-  target_link_libraries(zstd_compress ${PTHREADS_LIBRARIES})
+-endif()
++target_link_libraries(zstd_compress PRIVATE bf::dependencies::zstd)
++target_link_libraries(zstd_compress PRIVATE bf::dependencies::pthreads)
+ 
+ if(NOT WITH_BLENDER)
+   # For the Cycles standalone put libraries next to the Cycles application.
+--- intern/cycles/scene/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/cycles/scene/CMakeLists.txt
+@@ -112,11 +112,8 @@ if(WITH_OPENCOLORIO)
+ 
+ if(WITH_OPENCOLORIO)
+   add_definitions(-DWITH_OCIO)
+-  list(APPEND INC_SYS
+-    ${OPENCOLORIO_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+-    ${OPENCOLORIO_LIBRARIES}
++    bf::dependencies::optional::opencolorio
+   )
+   if(WIN32 AND NOT USD_OVERRIDE_OPENCOLORIO)
+     add_definitions(-DOpenColorIO_SKIP_IMPORTS)
+@@ -125,7 +122,7 @@ if(WITH_OPENVDB)
+ 
+ if(WITH_OPENVDB)
+   list(APPEND LIB
+-    ${OPENVDB_LIBRARIES}
++    bf::dependencies::optional::openvdb
+   )
+ endif()
+ 
+--- intern/cycles/test/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/cycles/test/CMakeLists.txt
+@@ -60,6 +60,6 @@ if(WITH_GTESTS)
+ endif()
+ 
+ if(WITH_GTESTS)
+-  set(INC_SYS )
++  set(INC_SYS)
+   blender_add_test_suite_executable(cycles "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+ endif()
+--- intern/ghost/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/ghost/CMakeLists.txt
+@@ -80,11 +80,8 @@ if(WITH_OPENGL_BACKEND)
+ endif()
+ 
+ if(WITH_OPENGL_BACKEND)
+-  list(APPEND INC_SYS
+-    ${Epoxy_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+-    ${Epoxy_LIBRARIES}
++    bf::dependencies::optional::epoxy
+   )
+   add_definitions(-DWITH_OPENGL_BACKEND)
+ endif()
+@@ -95,15 +92,9 @@ if(WITH_VULKAN_BACKEND)
+ 
+     intern/GHOST_ContextVK.hh
+   )
+-  list(APPEND INC
+-    ../../extern/vulkan_memory_allocator/
+-  )
+-  list(APPEND INC_SYS
+-    PUBLIC ${VULKAN_INCLUDE_DIRS}
+-  )
+-
+   list(APPEND LIB
+-    ${VULKAN_LIBRARIES}
++    PUBLIC bf::dependencies::optional::vulkan
++    bf::extern::vulkan_memory_allocator
+   )
+ 
+   add_definitions(-DWITH_VULKAN_BACKEND)
+@@ -160,11 +151,8 @@ elseif(WITH_GHOST_SDL)
+   )
+   add_definitions(-DWITH_GHOST_SDL)
+ 
+-  list(APPEND INC_SYS
+-    ${SDL_INCLUDE_DIR}
+-  )
+   list(APPEND LIB
+-    ${SDL_LIBRARY}
++    bf::dependencies::optional::sdl
+   )
+ elseif(APPLE AND NOT WITH_GHOST_X11)
+   list(APPEND SRC
+--- intern/guardedalloc/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/guardedalloc/CMakeLists.txt
+@@ -40,18 +40,8 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::intern::atomic
++  PRIVATE bf::dependencies::pthreads
+ )
+-
+-if(WIN32 AND NOT UNIX)
+-  list(APPEND INC_SYS
+-    ${PTHREADS_INC}
+-  )
+-  if(DEFINED PTHREADS_LIBRARIES)
+-    list(APPEND LIB
+-      ${PTHREADS_LIBRARIES}
+-    )
+-  endif()
+-endif()
+ 
+ if(WITH_MEM_JEMALLOC)
+   add_definitions(-DWITH_MEM_JEMALLOC)
+--- intern/libmv/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/libmv/CMakeLists.txt
+@@ -31,8 +31,6 @@ if(WITH_LIBMV)
+   if(WIN32)
+     add_definitions(-D_USE_MATH_DEFINES)
+   endif()
+-  add_definitions(${GFLAGS_DEFINES})
+-  add_definitions(${GLOG_DEFINES})
+   add_definitions(-DLIBMV_GFLAGS_NAMESPACE=${GFLAGS_NAMESPACE})
+ 
+   if(WITH_TBB)
+@@ -46,8 +44,6 @@ if(WITH_LIBMV)
+   list(APPEND INC_SYS
+     ${GFLAGS_INCLUDE_DIRS}
+     ${GLOG_INCLUDE_DIRS}
+-    ${PNG_INCLUDE_DIRS}
+-    ${ZLIB_INCLUDE_DIRS}
+     ../../extern/ceres/include
+     ../../extern/ceres/config
+   )
+@@ -55,12 +51,12 @@ if(WITH_LIBMV)
+   list(APPEND LIB
+     extern_ceres
+     PUBLIC bf::dependencies::optional::tbb
++    PRIVATE bf::dependencies::zlib
+ 
+-    ${GLOG_LIBRARIES}
+-    ${GFLAGS_LIBRARIES}
+-    ${PNG_LIBRARIES}
+-
+     PRIVATE bf::dependencies::eigen
++    PRIVATE bf::dependencies::gflags
++    PRIVATE bf::dependencies::glog
++    PRIVATE bf::dependencies::png
+   )
+ 
+   add_definitions(
+--- intern/mantaflow/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/mantaflow/CMakeLists.txt
+@@ -34,8 +34,6 @@ set(INC_SYS
+   ../../extern/mantaflow/helper/util
+   ../../extern/mantaflow/helper/pwrapper
+   ../../extern/mantaflow/preprocessed
+-  ${PYTHON_INCLUDE_DIRS}
+-  ${ZLIB_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -58,10 +56,8 @@ set(LIB
+   PRIVATE bf::dependencies::optional::openvdb
+   PRIVATE bf::dependencies::optional::tbb
+   extern_mantaflow
+-
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
+-  ${ZLIB_LIBRARIES}
++  PRIVATE bf::dependencies::optional::python
++  PRIVATE bf::dependencies::zlib
+ )
+ 
+ blender_add_lib(bf_intern_mantaflow "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- intern/opensubdiv/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ intern/opensubdiv/CMakeLists.txt
+@@ -32,11 +32,6 @@ if(WITH_OPENSUBDIV)
+     endif()
+   endmacro()
+ 
+-  list(APPEND INC_SYS
+-    ${OPENSUBDIV_INCLUDE_DIRS}
+-    ${Epoxy_INCLUDE_DIRS}
+-  )
+-
+   list(APPEND SRC
+     # Base.
+     internal/base/memory.h
+@@ -76,8 +71,8 @@ if(WITH_OPENSUBDIV)
+   )
+ 
+   list(APPEND LIB
+-    ${OPENSUBDIV_LIBRARIES}
+-    ${Epoxy_LIBRARIES}
++    bf::dependencies::optional::opensubdiv
++    bf::dependencies::optional::epoxy
+   )
+ 
+   if(WIN32)
+@@ -137,9 +132,6 @@ if(WITH_GTESTS AND WITH_OPENSUBDIV)
+ # Tests.
+ 
+ if(WITH_GTESTS AND WITH_OPENSUBDIV)
+-  add_definitions(${GFLAGS_DEFINES})
+-  add_definitions(${GLOG_DEFINES})
+-
+   set(TEST_SRC
+     internal/topology/mesh_topology_test.cc
+   )
+--- source/blender/animrig/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ source/blender/animrig/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../extern/fmtlib/include
+ )
+ 
+ set(SRC
+@@ -62,6 +61,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   bf::blenlib
+   PRIVATE bf::blenloader
+--- source/blender/blendthumb/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ source/blender/blendthumb/CMakeLists.txt
+@@ -103,7 +103,5 @@ elseif(UNIX)
+   setup_platform_linker_flags(blender-thumbnailer)
+   setup_platform_linker_libs(blender-thumbnailer)
+   target_link_libraries(blender-thumbnailer PRIVATE bf_blenlib bf_blenloader_core)
+-  if(DEFINED PTHREADS_LIBRARIES)
+-    target_link_libraries(blender-thumbnailer PRIVATE ${PTHREADS_LIBRARIES})
+-  endif()
++  target_link_libraries(blender-thumbnailer PRIVATE bf::dependencies::pthreads)
+ endif()
+--- source/blender/blenfont/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ source/blender/blenfont/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${FREETYPE_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -33,7 +32,7 @@ set(LIB
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+-  ${FREETYPE_LIBRARIES} ${BROTLI_LIBRARIES}
++  PRIVATE bf::dependencies::freetype
+ )
+ 
+ if(WIN32)
+--- source/blender/blenkernel/CMakeLists.txt.orig	2025-10-15 13:26:30 UTC
++++ source/blender/blenkernel/CMakeLists.txt
+@@ -25,11 +25,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${ZLIB_INCLUDE_DIRS}
+-  ${ZSTD_INCLUDE_DIRS}
+-
+-  # For `vfontdata_freetype.cc`.
+-  ${FREETYPE_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -563,6 +558,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::animrig
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
+@@ -593,19 +589,19 @@ set(LIB
+   PRIVATE bf::sequencer
+   bf_shader_fx
+   bf_simulation
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::extern::xxhash
+   PRIVATE bf::intern::atomic
+-  # For `vfontdata_freetype.c`.
+-  ${FREETYPE_LIBRARIES} ${BROTLI_LIBRARIES}
++  PRIVATE bf::dependencies::zlib
++  PRIVATE bf::dependencies::zstd
++  PRIVATE bf::dependencies::freetype  # For `vfontdata_freetype.c`.
++  PRIVATE bf::dependencies::optional::fftw3
++  PRIVATE bf::dependencies::optional::opensubdiv
++  PRIVATE bf::dependencies::optional::audaspace
+ )
+ 
+ if(WITH_BINRELOC)
+-  list(APPEND INC_SYS
+-    ${BINRELOC_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+-    extern_binreloc
++    bf::extern::binreloc
+   )
+   add_definitions(-DWITH_BINRELOC)
+ endif()
+@@ -618,35 +614,19 @@ if(WITH_AUDASPACE)
+ endif()
+ 
+ if(WITH_AUDASPACE)
+-  list(APPEND INC_SYS
+-    ${AUDASPACE_C_INCLUDE_DIRS}
+-  )
+-  if(WITH_SYSTEM_AUDASPACE)
+-    list(APPEND LIB
+-      ${AUDASPACE_C_LIBRARIES}
+-      ${AUDASPACE_PY_LIBRARIES}
+-    )
+-  endif()
+-  add_definitions(-DWITH_AUDASPACE)
+-
+   if(WITH_RUBBERBAND)
+     add_definitions(-DWITH_RUBBERBAND)
+   endif()
+ endif()
+ 
+ if(WITH_BULLET)
+-  list(APPEND INC_SYS
+-    ${BULLET_INCLUDE_DIRS}
+-  )
+   list(APPEND INC
+     ../../../intern/rigidbody
+   )
+   list(APPEND LIB
+     bf_intern_rigidbody
+-
+-    ${BULLET_LIBRARIES}
++    bf::dependencies::optional::bullet
+   )
+-  add_definitions(-DWITH_BULLET)
+ endif()
+ 
+ if(WITH_IMAGE_OPENEXR)
+@@ -718,16 +698,6 @@ endif()
+   add_definitions(-DWITH_LIBMV)
+ endif()
+ 
+-if(WITH_FFTW3)
+-  list(APPEND INC_SYS
+-    ${FFTW3_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${FFTW3_LIBRARIES}
+-  )
+-  add_definitions(-DFFTW3=1)
+-endif()
+-
+ if(WITH_FREESTYLE)
+   add_definitions(-DWITH_FREESTYLE)
+ endif()
+@@ -744,16 +714,6 @@ if(WITH_USD)
+     ../io/usd
+   )
+   add_definitions(-DWITH_USD)
+-endif()
+-
+-if(WITH_OPENSUBDIV)
+-  list(APPEND INC_SYS
+-    ${OPENSUBDIV_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${OPENSUBDIV_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_OPENSUBDIV)
+ endif()
+ 
+ if(WITH_QUADRIFLOW)
+--- source/blender/blenlib/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ source/blender/blenlib/CMakeLists.txt
+@@ -12,11 +12,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../extern/wcwidth
+-  ../../../extern/json/include
+-
+-  ${ZLIB_INCLUDE_DIRS}
+-  ${ZSTD_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -424,16 +419,19 @@ set(LIB
+ set(LIB
+   PUBLIC bf::dna
+   PRIVATE bf::extern::fmtlib
++  PRIVATE bf::extern::json
+   PRIVATE bf::extern::xxhash
+   bf_intern_eigen
+   PRIVATE bf::intern::guardedalloc
+-  extern_wcwidth
++  PRIVATE bf::extern::wcwidth
+   PRIVATE bf::intern::atomic
+-  PRIVATE extern_fmtlib
+-  PUBLIC bf::dependencies::optional::tbb
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::dependencies::eigen
+-  ${ZLIB_LIBRARIES}
+-  ${ZSTD_LIBRARIES}
++  PUBLIC bf::dependencies::optional::tbb
++  PRIVATE bf::dependencies::zlib
++  PRIVATE bf::dependencies::zstd
++  PRIVATE bf::dependencies::optional::gmp
++  PRIVATE bf::dependencies::optional::fftw3
+ )
+ 
+ if(NOT WITH_PYTHON_MODULE)
+@@ -446,28 +444,6 @@ if(WITH_MEM_VALGRIND)
+ 
+ if(WITH_MEM_VALGRIND)
+   add_definitions(-DWITH_MEM_VALGRIND)
+-endif()
+-
+-if(WITH_GMP)
+-  add_definitions(-DWITH_GMP)
+-
+-  list(APPEND INC_SYS
+-    ${GMP_INCLUDE_DIRS}
+-  )
+-
+-  list(APPEND LIB
+-    ${GMP_LIBRARIES}
+-  )
+-endif()
+-
+-if(WITH_FFTW3)
+-  list(APPEND INC_SYS
+-    ${FFTW3_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${FFTW3_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_FFTW3)
+ endif()
+ 
+ if(WIN32)
+--- source/blender/blenloader/CMakeLists.txt.orig	2025-10-08 10:42:36 UTC
++++ source/blender/blenloader/CMakeLists.txt
+@@ -12,7 +12,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${ZSTD_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -55,6 +54,7 @@ set(LIB
+ set(LIB
+   PRIVATE bf::animrig
+   PRIVATE bf::asset_system
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PUBLIC bf::blenloader_core
+@@ -68,13 +68,13 @@ set(LIB
+   PRIVATE bf::imbuf::movie
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::intern::memutil
+   PRIVATE bf::nodes
+   PRIVATE bf::render
+   PRIVATE bf::sequencer
+   PRIVATE bf::windowmanager
+   PRIVATE bf::extern::xxhash
++  PRIVATE bf::dependencies::zstd
+ )
+ 
+ if(WITH_BUILDINFO)
+@@ -115,14 +115,14 @@ if(WITH_GTESTS)
+   )
+   set(TEST_UTIL_INC_SYS
+     ${INC_SYS}
+-    ${GFLAGS_INCLUDE_DIRS}
+-    ${GLOG_INCLUDE_DIRS}
+     ${CMAKE_SOURCE_DIR}/extern/gtest/include
+   )
+   set(TEST_UTIL_LIB
+     ${LIB}
+     PRIVATE bf::blenfont
+     bf_blenloader
++    PRIVATE bf::dependencies::gflags
++    PRIVATE bf::dependencies::glog
+   )
+   blender_add_lib(bf_blenloader_test_util "${TEST_UTIL_SRC}" "${TEST_UTIL_INC}" "${TEST_UTIL_INC_SYS}" "${TEST_UTIL_LIB}")
+ 
+--- source/blender/blentranslation/msgfmt/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ source/blender/blentranslation/msgfmt/CMakeLists.txt
+@@ -20,7 +20,7 @@ set(LIB
+ set(LIB
+   PRIVATE PRIVATE bf::blenlib
+   PRIVATE bf::intern::guardedalloc
+-  ${ZLIB_LIBRARIES}
++  PRIVATE bf::dependencies::zlib
+   ${PLATFORM_LINKLIBS})
+ 
+ add_cc_flags_custom_test(msgfmt)
+--- source/blender/bmesh/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ source/blender/bmesh/CMakeLists.txt
+@@ -9,7 +9,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+@@ -173,35 +172,21 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   extern_rangetree
+   PRIVATE bf::intern::atomic
++  PRIVATE bf::dependencies::optional::gmp
++  PRIVATE bf::dependencies::optional::tbb
++  PRIVATE bf::dependencies::optional::bullet
+ )
+ 
+ if(WITH_BULLET)
+-  list(APPEND INC_SYS
+-    ${BULLET_INCLUDE_DIRS}
++  list(APPEND INC
+     ../../../intern/rigidbody
+   )
+-  list(APPEND LIB
+-    ${BULLET_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_BULLET)
+ endif()
+ 
+ if(WITH_FREESTYLE)
+   add_definitions(-DWITH_FREESTYLE)
+ endif()
+ 
+-if(WITH_GMP)
+-  add_definitions(-DWITH_GMP)
+-
+-  list(APPEND INC_SYS
+-    ${GMP_INCLUDE_DIRS}
+-  )
+-
+-  list(APPEND LIB
+-    ${GMP_LIBRARIES}
+-  )
+-endif()
+-
+ if(WITH_TBB)
+   if(WIN32)
+     # TBB includes Windows.h which will define min/max macros
+@@ -209,6 +194,7 @@ endif()
+     add_definitions(-DNOMINMAX)
+   endif()
+ endif()
++
+ 
+ blender_add_lib(bf_bmesh "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+ add_library(bf::bmesh ALIAS bf_bmesh)
+--- source/blender/compositor/CMakeLists.txt.orig	2025-10-08 10:41:56 UTC
++++ source/blender/compositor/CMakeLists.txt
+@@ -15,7 +15,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+@@ -151,9 +150,9 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blentranslation
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+@@ -164,6 +163,9 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::intern::clog
+   PRIVATE bf::dependencies::optional::opencolorio
++  PRIVATE bf::dependencies::optional::tbb
++  PRIVATE bf::dependencies::optional::fftw3
++  PRIVATE bf::dependencies::optional::openimagedenoise
+ )
+ 
+ set(GLSL_SRC
+@@ -415,29 +417,6 @@ if(WITH_TBB)
+     # that will collide with the STL versions.
+     add_definitions(-DNOMINMAX)
+   endif()
+-endif()
+-
+-if(WITH_OPENIMAGEDENOISE)
+-  add_definitions(-DWITH_OPENIMAGEDENOISE)
+-  add_definitions(-DOIDN_STATIC_LIB)
+-  list(APPEND INC_SYS
+-    ${OPENIMAGEDENOISE_INCLUDE_DIRS}
+-    ${TBB_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${OPENIMAGEDENOISE_LIBRARIES}
+-    ${TBB_LIBRARIES}
+-  )
+-endif()
+-
+-if(WITH_FFTW3)
+-  list(APPEND INC_SYS
+-    ${FFTW3_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${FFTW3_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_FFTW3)
+ endif()
+ 
+ blender_add_lib(bf_compositor "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/draw/CMakeLists.txt.orig	2025-10-08 18:16:31 UTC
++++ source/blender/draw/CMakeLists.txt
+@@ -292,6 +292,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -309,7 +310,7 @@ set(LIB
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
+   PRIVATE bf::intern::atomic
+-  PRIVATE bf::extern::fmtlib
++  PRIVATE bf::dependencies::optional::opensubdiv
+ )
+ 
+ set(GLSL_SRC
+@@ -865,13 +866,6 @@ endif()
+   add_definitions(-DWITH_DRAW_DEBUG)
+ endif()
+ 
+-if(WITH_OPENSUBDIV)
+-  add_definitions(-DWITH_OPENSUBDIV)
+-  list(APPEND INC_SYS
+-    ${OPENSUBDIV_INCLUDE_DIRS}
+-  )
+-endif()
+-
+ if(WITH_MOD_FLUID)
+   list(APPEND INC
+     ../../../intern/mantaflow/extern
+@@ -898,8 +892,8 @@ if(WITH_GTESTS)
+     endif()
+     if(WITH_VULKAN_BACKEND)
+       add_definitions(-DWITH_VULKAN_BACKEND)
+-      list(APPEND INC_SYS
+-        PUBLIC ${VULKAN_INCLUDE_DIRS}
++      list(APPEND LIB
++        bf::dependencies::optional::vulkan
+       )
+     endif()
+   endif()
+--- source/blender/editors/animation/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/animation/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fmtlib/include
+ )
+ 
+ set(SRC
+@@ -42,6 +41,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::animrig
+   PRIVATE bf::blenlib
+--- source/blender/editors/armature/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/armature/CMakeLists.txt
+@@ -40,13 +40,13 @@ set(LIB
+   PRIVATE bf::animrig
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+   PRIVATE bf::blentranslation
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::gpu
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+--- source/blender/editors/datafiles/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/datafiles/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ # Part of the `blender` binary (sources for data-files are appended).
+--- source/blender/editors/geometry/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/geometry/CMakeLists.txt
+@@ -24,6 +24,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::asset_system
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+@@ -31,7 +32,6 @@ set(LIB
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+   bf_editor_object
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::nodes
+--- source/blender/editors/grease_pencil/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/grease_pencil/CMakeLists.txt
+@@ -42,6 +42,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::animrig
+   PRIVATE bf::blenlib
+@@ -56,8 +57,7 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::intern::clog
+   PRIVATE bf::windowmanager
+-  extern_curve_fit_nd
+-  extern_fmtlib
++  bf::extern::curve_fit_nd
+ )
+ 
+ blender_add_lib(bf_editor_grease_pencil "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/editors/interface/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/interface/CMakeLists.txt
+@@ -115,6 +115,7 @@ set(LIB
+ set(LIB
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -125,7 +126,6 @@ set(LIB
+   PRIVATE bf::draw
+   bf_editor_datafiles
+   bf_editor_id_management
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+--- source/blender/editors/io/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/io/CMakeLists.txt
+@@ -17,7 +17,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+@@ -47,13 +46,13 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+   PRIVATE bf::bmesh
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::intern::clog
+   PRIVATE bf::windowmanager
+@@ -102,11 +101,9 @@ if(WITH_USD)
+ endif()
+ 
+ if(WITH_USD)
+-  list(APPEND INC_SYS
+-    ${USD_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+     bf_io_usd
++    bf::dependencies::optional::usd
+   )
+   add_definitions(-DWITH_USD)
+ endif()
+--- source/blender/editors/lattice/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/lattice/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+--- source/blender/editors/mesh/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/mesh/CMakeLists.txt
+@@ -54,6 +54,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+@@ -61,7 +62,6 @@ set(LIB
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+   PRIVATE bf::draw
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::geometry
+   PRIVATE bf::gpu
+--- source/blender/editors/metaball/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/metaball/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+--- source/blender/editors/object/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/object/CMakeLists.txt
+@@ -57,6 +57,7 @@ set(LIB
+   PRIVATE bf::animrig
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+@@ -66,7 +67,6 @@ set(LIB
+   bf_editor_mesh
+   bf_editor_metaball
+   bf_editor_grease_pencil
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::geometry
+   PRIVATE bf::gpu
+--- source/blender/editors/scene/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/scene/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+--- source/blender/editors/screen/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/screen/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fmtlib/include
+ )
+ 
+ set(SRC
+@@ -39,6 +38,7 @@ set(LIB
+   PRIVATE bf::animrig
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -51,7 +51,6 @@ set(LIB
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::sequencer
+   PRIVATE bf::windowmanager
+ )
+--- source/blender/editors/sculpt_paint/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/sculpt_paint/CMakeLists.txt
+@@ -16,7 +16,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${ZSTD_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -170,6 +169,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::asset_system
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::animrig
+   PRIVATE bf::blenlib
+@@ -179,7 +179,6 @@ set(LIB
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+   PRIVATE bf::draw
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::geometry
+   PRIVATE bf::gpu
+@@ -190,17 +189,9 @@ set(LIB
+   PRIVATE bf::nodes
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
++  PRIVATE bf::dependencies::zstd
++  PRIVATE bf::dependencies::optional::potrace
+ )
+-
+-if(WITH_POTRACE)
+-  list(APPEND INC
+-    ${POTRACE_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${POTRACE_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_POTRACE)
+-endif()
+ 
+ if(WIN32)
+   add_definitions(-DNOMINMAX)
+--- source/blender/editors/sound/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/sound/CMakeLists.txt
+@@ -10,7 +10,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+--- source/blender/editors/space_api/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_api/CMakeLists.txt
+@@ -9,7 +9,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+--- source/blender/editors/space_file/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_file/CMakeLists.txt
+@@ -41,6 +41,7 @@ set(LIB
+ set(LIB
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -51,7 +52,6 @@ set(LIB
+   PRIVATE bf::imbuf::movie
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::intern::atomic
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
+--- source/blender/editors/space_graph/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_graph/CMakeLists.txt
+@@ -30,35 +30,18 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+   PRIVATE bf::blentranslation
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::gpu
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::animrig
+   PRIVATE bf::windowmanager
+ )
+-
+-if(WITH_AUDASPACE)
+-  list(APPEND LIB
+-    bf_intern_audaspace
+-  )
+-  list(APPEND INC_SYS
+-    ${AUDASPACE_C_INCLUDE_DIRS}
+-  )
+-  if(WITH_SYSTEM_AUDASPACE)
+-    list(APPEND LIB
+-      ${AUDASPACE_C_LIBRARIES}
+-      ${AUDASPACE_PY_LIBRARIES}
+-    )
+-  endif()
+-  add_definitions(-DWITH_AUDASPACE)
+-endif()
+-
+ 
+ blender_add_lib(bf_editor_space_graph "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+ 
+--- source/blender/editors/space_info/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_info/CMakeLists.txt
+@@ -27,6 +27,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -37,7 +38,6 @@ set(LIB
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::windowmanager
+ )
+ 
+--- source/blender/editors/space_node/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_node/CMakeLists.txt
+@@ -54,6 +54,7 @@ set(LIB
+   PRIVATE bf::animrig
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -68,7 +69,6 @@ set(LIB
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+   bf_compositor
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::nodes
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
+--- source/blender/editors/space_outliner/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_outliner/CMakeLists.txt
+@@ -11,7 +11,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fmtlib/include
+ )
+ 
+ set(SRC
+@@ -130,6 +129,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::animrig
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -145,7 +145,6 @@ set(LIB
+   PRIVATE bf::nodes
+   PRIVATE bf::sequencer
+   PRIVATE bf::windowmanager
+-  extern_fmtlib
+ )
+ 
+ 
+--- source/blender/editors/space_sequencer/CMakeLists.txt.orig	2025-10-21 09:50:31 UTC
++++ source/blender/editors/space_sequencer/CMakeLists.txt
+@@ -48,6 +48,7 @@ set(LIB
+ set(LIB
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -62,25 +63,11 @@ set(LIB
+   PRIVATE bf::imbuf::movie
+   PRIVATE bf::intern::atomic
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::animrig
+   PRIVATE bf::sequencer
+   PRIVATE bf::windowmanager
++  PRIVATE bf::dependencies::optional::audaspace
+ )
+-
+-if(WITH_AUDASPACE)
+-  list(APPEND INC_SYS
+-    ${AUDASPACE_C_INCLUDE_DIRS}
+-  )
+-  if(WITH_SYSTEM_AUDASPACE)
+-    list(APPEND LIB
+-      ${AUDASPACE_C_LIBRARIES}
+-      ${AUDASPACE_PY_LIBRARIES}
+-    )
+-  endif()
+-  add_definitions(-DWITH_AUDASPACE)
+-endif()
+-
+ 
+ blender_add_lib(bf_editor_space_sequencer "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+ 
+--- source/blender/editors/space_spreadsheet/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_spreadsheet/CMakeLists.txt
+@@ -42,6 +42,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -49,7 +50,6 @@ set(LIB
+   PRIVATE bf::bmesh
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::gpu
+   PRIVATE bf::intern::guardedalloc
+--- source/blender/editors/space_userpref/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_userpref/CMakeLists.txt
+@@ -11,7 +11,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+@@ -23,12 +22,12 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::asset_system
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+   PRIVATE bf::blentranslation
+   PRIVATE bf::dna
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::windowmanager
+ )
+--- source/blender/editors/space_view3d/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/space_view3d/CMakeLists.txt
+@@ -74,6 +74,7 @@ set(LIB
+   PRIVATE bf::animrig
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -85,7 +86,6 @@ set(LIB
+   bf_editor_curves
+   bf_editor_lattice
+   bf_editor_mesh
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::functions
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+--- source/blender/editors/uvedit/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/editors/uvedit/CMakeLists.txt
+@@ -31,13 +31,13 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+   PRIVATE bf::bmesh
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::geometry
+   PRIVATE bf::gpu
+   PRIVATE bf::intern::guardedalloc
+--- source/blender/freestyle/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/freestyle/CMakeLists.txt
+@@ -538,10 +538,8 @@ set(LIB
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+   bf_python_mathutils
+-
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
+   PRIVATE bf::render
++  PRIVATE bf::dependencies::optional::python
+ )
+ 
+ set(INC
+@@ -556,7 +554,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ add_definitions(-DWITH_FREESTYLE)
+@@ -568,12 +565,6 @@ if(WITH_PYTHON_SAFETY)
+ if(WITH_PYTHON_SAFETY)
+   # For bpy_rna.hh access.
+   add_definitions(-DWITH_PYTHON_SAFETY)
+-endif()
+-
+-if(WIN32)
+-  list(APPEND INC_SYS
+-    ${PTHREADS_INC}
+-  )
+ endif()
+ 
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+--- source/blender/geometry/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/geometry/CMakeLists.txt
+@@ -104,6 +104,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+@@ -112,9 +113,9 @@ set(LIB
+   PRIVATE bf::functions
+   PRIVATE bf::intern::atomic
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::extern::curve_fit_nd
+   PRIVATE bf::dependencies::optional::manifold
++  PRIVATE bf::dependencies::optional::gmp
+ )
+ 
+ if(WITH_UV_SLIM)
+@@ -122,18 +123,6 @@ if(WITH_UV_SLIM)
+     ../../../intern/slim
+   )
+   add_definitions(-DWITH_UV_SLIM)
+-endif()
+-
+-if(WITH_GMP)
+-  add_definitions(-DWITH_GMP)
+-
+-  list(APPEND INC_SYS
+-    ${GMP_INCLUDE_DIRS}
+-  )
+-
+-  list(APPEND LIB
+-    ${GMP_LIBRARIES}
+-  )
+ endif()
+ 
+ if(WITH_MANIFOLD)
+--- source/blender/gpu/CMakeLists.txt.orig	2025-10-08 18:16:31 UTC
++++ source/blender/gpu/CMakeLists.txt
+@@ -390,6 +390,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::bmesh
+@@ -399,21 +400,17 @@ set(LIB
+   PRIVATE bf::intern::atomic
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::nodes
+   PRIVATE bf::dependencies::optional::opencolorio
+ )
+ 
+ # Select Backend source based on availability
+ if(WITH_OPENGL_BACKEND)
+-  list(APPEND INC_SYS
+-    ${Epoxy_INCLUDE_DIRS}
+-  )
+   list(APPEND SRC
+     ${OPENGL_SRC}
+   )
+   list(APPEND LIB
+-    ${Epoxy_LIBRARIES}
++    bf::dependencies::optional::epoxy
+   )
+   add_definitions(-DWITH_OPENGL_BACKEND)
+ endif()
+@@ -424,25 +421,14 @@ if(WITH_VULKAN_BACKEND)
+ 
+ 
+ if(WITH_VULKAN_BACKEND)
+-  list(APPEND INC
+-    ../../../extern/vulkan_memory_allocator
+-  )
+-  list(APPEND INC_SYS
+-    ${VULKAN_INCLUDE_DIRS}
+-  )
+-
+-  list(APPEND INC_SYS
+-    ${SHADERC_INCLUDE_DIRS}
+-  )
+   list(APPEND SRC
+     ${VULKAN_SRC}
+   )
+-
+   list(APPEND LIB
+-    ${VULKAN_LIBRARIES}
+-    ${SHADERC_LIBRARIES}
+-    extern_vulkan_memory_allocator
++    PRIVATE bf::extern::vulkan_memory_allocator
+     PRIVATE bf::extern::xxhash
++    PRIVATE bf::dependencies::optional::vulkan
++    PRIVATE bf::dependencies::optional::shaderc
+   )
+ 
+   add_definitions(-DWITH_VULKAN_BACKEND)
+--- source/blender/ikplugin/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/ikplugin/CMakeLists.txt
+@@ -9,7 +9,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+@@ -46,8 +45,6 @@ if(WITH_IK_ITASC)
+   )
+   list(APPEND INC
+     ../../../intern/itasc
+-  )
+-  list(APPEND INC_SYS
+   )
+   list(APPEND SRC
+     intern/itasc_plugin.cc
+--- source/blender/imbuf/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/imbuf/CMakeLists.txt
+@@ -13,9 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${JPEG_INCLUDE_DIR}
+-  ${ZLIB_INCLUDE_DIRS}
+-  ${OPENIMAGEIO_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -84,8 +81,10 @@ set(LIB
+   PRIVATE bf::imbuf::opencolorio
+   PRIVATE bf::extern::nanosvg
+ 
+-  ${JPEG_LIBRARIES}
+   PRIVATE bf::sequencer
++  PRIVATE bf::dependencies::zlib
++  PRIVATE bf::dependencies::openimageio
++  PRIVATE bf::dependencies::jpeg
+ )
+ 
+ if(WITH_IMAGE_OPENEXR)
+@@ -99,27 +98,13 @@ endif()
+   )
+ endif()
+ 
+-# OpenImageIO headers include `Imath` headers when there is no SSE support for
+-# matrix operations. This depends on the specific architecture and compiler
+-# flags, most reliable is to always include the `Imath` headers if we have them.
+-if(DEFINED IMATH_INCLUDE_DIRS)
+-  list(APPEND INC_SYS
+-    ${IMATH_INCLUDE_DIRS}
+-  )
+-endif()
+-
+ if(WITH_IMAGE_OPENJPEG)
+-  list(APPEND INC_SYS
+-    ${OPENJPEG_INCLUDE_DIRS}
+-  )
+   list(APPEND SRC
+     intern/format_jp2.cc
+   )
+   list(APPEND LIB
+-    ${OPENJPEG_LIBRARIES}
++    bf::dependencies::optional::openjpeg
+   )
+-
+-  add_definitions(-DWITH_IMAGE_OPENJPEG ${OPENJPEG_DEFINES})
+ endif()
+ 
+ if(WITH_IMAGE_CINEON)
+@@ -136,13 +121,9 @@ if(WITH_IMAGE_WEBP)
+   list(APPEND SRC
+     intern/format_webp.cc
+   )
+-  list(APPEND INC_SYS
+-    ${WEBP_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+-    ${WEBP_LIBRARIES}
++    bf::dependencies::optional::webp
+   )
+-  add_definitions(-DWITH_IMAGE_WEBP)
+ endif()
+ 
+ if(WIN32)
+--- source/blender/imbuf/intern/cineon/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/imbuf/intern/cineon/CMakeLists.txt
+@@ -9,7 +9,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+--- source/blender/imbuf/intern/oiio/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/imbuf/intern/oiio/CMakeLists.txt
+@@ -10,7 +10,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${OPENIMAGEIO_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -22,36 +21,14 @@ set(LIB
+ )
+ 
+ set(LIB
+-  ${OPENIMAGEIO_LIBRARIES}
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::dna
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::intern::clog
++  PRIVATE bf::dependencies::openimageio
++  PRIVATE bf::dependencies::optional::openexr
++  PRIVATE bf::dependencies::optional::pugixml
+ )
+-
+-if(WITH_PUGIXML)
+-  list(APPEND LIB
+-    ${PUGIXML_LIBRARIES}
+-  )
+-endif()
+-
+-if(WITH_IMAGE_OPENEXR)
+-  list(APPEND INC_SYS
+-    ${OPENEXR_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${OPENEXR_LIBRARIES}
+-  )
+-endif()
+-
+-# OpenImageIO headers include `Imath` headers when there is no SSE support for
+-# matrix operations. This depends on the specific architecture and compiler
+-# flags, most reliable is to always include the `Imath` headers if we have them.
+-if(DEFINED IMATH_INCLUDE_DIRS)
+-  list(APPEND INC_SYS
+-    ${IMATH_INCLUDE_DIRS}
+-  )
+-endif()
+ 
+ blender_add_lib(bf_imbuf_openimageio "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/imbuf/intern/openexr/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/imbuf/intern/openexr/CMakeLists.txt
+@@ -10,7 +10,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+@@ -27,11 +26,8 @@ if(WITH_IMAGE_OPENEXR)
+ )
+ 
+ if(WITH_IMAGE_OPENEXR)
+-  list(APPEND INC_SYS
+-    ${OPENEXR_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+-    ${OPENEXR_LIBRARIES}
++    bf::dependencies::optional::openexr
+   )
+   add_definitions(-DWITH_IMAGE_OPENEXR)
+   if(WIN32)
+--- source/blender/imbuf/movie/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/imbuf/movie/CMakeLists.txt
+@@ -33,6 +33,8 @@ set(LIB
+   PUBLIC  bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::intern::clog
++  PRIVATE bf::dependencies::optional::ffmpeg
++  PRIVATE bf::dependencies::optional::audaspace
+ )
+ 
+ if(WITH_CODEC_FFMPEG)
+@@ -40,26 +42,6 @@ if(WITH_CODEC_FFMPEG)
+     intern/ffmpeg_swscale.cc
+     intern/ffmpeg_swscale.hh
+   )
+-  list(APPEND INC_SYS
+-    ${FFMPEG_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${FFMPEG_LIBRARIES}
+-    ${OPENJPEG_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_FFMPEG)
+-endif()
+-
+-if(WITH_AUDASPACE)
+-  list(APPEND INC_SYS
+-    ${AUDASPACE_C_INCLUDE_DIRS}
+-  )
+-  if(WITH_SYSTEM_AUDASPACE)
+-    list(APPEND LIB
+-      ${AUDASPACE_C_LIBRARIES}
+-    )
+-  endif()
+-  add_definitions(-DWITH_AUDASPACE)
+ endif()
+ 
+ blender_add_lib(bf_imbuf_movie "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/imbuf/opencolorio/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/imbuf/opencolorio/CMakeLists.txt
+@@ -76,6 +76,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::dna
+@@ -83,7 +84,6 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::intern::clog
+   PUBLIC bf::dependencies::optional::opencolorio
+-  PRIVATE bf::extern::fmtlib
+ )
+ 
+ blender_add_lib(bf_imbuf_opencolorio "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/io/alembic/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/alembic/CMakeLists.txt
+@@ -11,8 +11,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${ALEMBIC_INCLUDE_DIRS}
+-  ${OPENEXR_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -83,10 +81,10 @@ set(LIB
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+   bf_io_common
+-
+-  ${ALEMBIC_LIBRARIES}
+-  ${OPENEXR_LIBRARIES}
+   PRIVATE bf::windowmanager
++
++  PRIVATE bf::dependencies::optional::alembic
++  PRIVATE bf::dependencies::optional::openexr
+ )
+ 
+ blender_add_lib(bf_io_alembic "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/io/common/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/common/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fast_float
+ )
+ 
+ set(SRC
+@@ -33,13 +32,14 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
++  PRIVATE bf::extern::fast_float
+ )
+ 
+ blender_add_lib(bf_io_common "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/io/csv/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/csv/CMakeLists.txt
+@@ -10,7 +10,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fast_float
+ )
+ 
+ set(SRC
+@@ -27,6 +26,7 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   bf_io_common
+   PRIVATE bf::extern::fmtlib
++  PRIVATE bf::extern::fast_float
+ )
+ 
+ blender_add_lib(bf_io_csv "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/io/fbx/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/fbx/CMakeLists.txt
+@@ -33,6 +33,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::animrig
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+@@ -44,7 +45,6 @@ set(LIB
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+   bf_io_common
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::extern::ufbx
+ )
+ 
+--- source/blender/io/grease_pencil/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/grease_pencil/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fmtlib/include
+ )
+ 
+ set(SRC
+@@ -25,6 +24,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -37,7 +37,8 @@ set(LIB
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::windowmanager
+-  PRIVATE extern_fmtlib
++  PRIVATE bf::dependencies::optional::pugixml
++  PRIVATE bf::dependencies::optional::haru
+   bf_io_common
+ )
+ 
+--- source/blender/io/ply/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/ply/CMakeLists.txt
+@@ -12,7 +12,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fast_float
+ )
+ 
+ set(SRC
+@@ -46,6 +45,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::bmesh
+@@ -55,7 +55,7 @@ set(LIB
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+   bf_io_common
+-  PRIVATE bf::extern::fmtlib
++  PRIVATE bf::extern::fast_float
+   PRIVATE bf::windowmanager
+ )
+ 
+--- source/blender/io/stl/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/stl/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fast_float
+ )
+ 
+ set(SRC
+@@ -37,6 +36,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::bmesh
+@@ -45,7 +45,7 @@ set(LIB
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+   bf_io_common
+-  PRIVATE bf::extern::fmtlib
++  PRIVATE bf::extern::fast_float
+   PRIVATE bf::windowmanager
+ )
+ 
+--- source/blender/io/usd/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/usd/CMakeLists.txt
+@@ -53,11 +53,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${USD_INCLUDE_DIRS}
+-  ${BOOST_INCLUDE_DIR}
+-  ${TBB_INCLUDE_DIRS}
+-  ${PYTHON_INCLUDE_DIR}
+-
+ )
+ 
+ set(SRC
+@@ -198,6 +193,7 @@ set(LIB
+ endif()
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -210,16 +206,14 @@ set(LIB
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+   bf_io_common
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::nodes
+   PRIVATE bf::windowmanager
+ )
+ 
+ list(APPEND LIB
+-  ${BOOST_PYTHON_LIBRARIES}
+-  ${PYTHON_LIBRARIES}
+-  ${USD_LIBRARIES}
+-  ${TBB_LIBRARIES}
++  bf::dependencies::optional::python
++  bf::dependencies::optional::usd
++  bf::dependencies::optional::tbb
+ )
+ 
+ if(WITH_MATERIALX)
+--- source/blender/io/wavefront_obj/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/io/wavefront_obj/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fast_float
+ )
+ 
+ set(SRC
+@@ -47,6 +46,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::bmesh
+@@ -55,7 +55,7 @@ set(LIB
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
+   bf_io_common
+-  PRIVATE bf::extern::fmtlib
++  PRIVATE bf::extern::fast_float
+   PRIVATE bf::nodes
+   PRIVATE bf::windowmanager
+ )
+--- source/blender/makesdna/intern/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/makesdna/intern/CMakeLists.txt
+@@ -11,14 +11,13 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(LIB
+   PRIVATE bf::intern::atomic
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::dependencies::optional::tbb
+   PRIVATE bf::extern::fmtlib
++  PRIVATE bf::dependencies::optional::tbb
+ )
+ 
+ add_definitions(-DWITH_DNA_GHASH)
+@@ -90,13 +89,8 @@ target_link_libraries(makesdna ${LIB})
+ blender_target_include_dirs(makesdna ${INC})
+ blender_target_include_dirs_sys(makesdna ${INC_SYS})
+ target_link_libraries(makesdna ${LIB})
++target_link_libraries(makesdna PRIVATE bf::dependencies::pthreads)
+ 
+-if(WIN32 AND NOT UNIX)
+-  if(DEFINED PTHREADS_LIBRARIES)
+-    target_link_libraries(makesdna PRIVATE ${PTHREADS_LIBRARIES})
+-  endif()
+-endif()
+-
+ # Output dna.cc
+ add_custom_command(
+   OUTPUT
+@@ -153,7 +147,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+--- source/blender/makesrna/intern/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/makesrna/intern/CMakeLists.txt
+@@ -273,7 +273,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fmtlib/include
+ )
+ 
+ if(WITH_CYCLES)
+@@ -303,19 +302,6 @@ endif()
+   add_definitions(-DWITH_IMAGE_WEBP)
+ endif()
+ 
+-if(WITH_AUDASPACE)
+-  list(APPEND INC_SYS
+-    ${AUDASPACE_C_INCLUDE_DIRS}
+-  )
+-  if(WITH_SYSTEM_AUDASPACE)
+-    list(APPEND LIB
+-      ${AUDASPACE_C_LIBRARIES}
+-      ${AUDASPACE_PY_LIBRARIES}
+-    )
+-  endif()
+-  add_definitions(-DWITH_AUDASPACE)
+-endif()
+-
+ if(WITH_CODEC_FFMPEG)
+   add_definitions(-DWITH_FFMPEG)
+ endif()
+@@ -425,14 +411,10 @@ target_link_libraries(makesrna PRIVATE bf_dna_blenlib)
+ target_link_libraries(makesrna PRIVATE bf::intern::atomic)
+ target_link_libraries(makesrna PRIVATE bf::intern::guardedalloc)
+ target_link_libraries(makesrna PRIVATE bf_dna_blenlib)
++target_link_libraries(makesrna PRIVATE bf::extern::fmtlib)
+ target_link_libraries(makesrna PRIVATE bf::dependencies::optional::tbb)
++target_link_libraries(makesrna PRIVATE bf::dependencies::pthreads)
+ 
+-if(WIN32 AND NOT UNIX)
+-  if(DEFINED PTHREADS_LIBRARIES)
+-    target_link_libraries(makesrna PRIVATE ${PTHREADS_LIBRARIES})
+-  endif()
+-endif()
+-
+ # Output `rna_*_gen.cc`.
+ # NOTE: (Linux only): with crashes try add this after COMMAND:
+ # `valgrind --leak-check=full --track-origins=yes`
+@@ -462,9 +444,6 @@ set(LIB
+ set(LIB
+   PRIVATE bf::animrig
+   PRIVATE bf::dna
+-  PRIVATE bf::dependencies::optional::openvdb
+-  PRIVATE bf::dependencies::optional::tbb
+-  PRIVATE extern_fmtlib
+   bf_editor_space_api
+ 
+   bf_editor_animation
+@@ -486,6 +465,10 @@ set(LIB
+   bf_editor_transform
+   bf_editor_undo
+   PRIVATE bf::intern::guardedalloc
++  PRIVATE bf::extern::fmtlib
++  PRIVATE bf::dependencies::optional::openvdb
++  PRIVATE bf::dependencies::optional::tbb
++  PRIVATE bf::dependencies::optional::audaspace
+ )
+ 
+ blender_add_lib(bf_rna "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/modifiers/CMakeLists.txt.orig	2025-10-13 16:46:34 UTC
++++ source/blender/modifiers/CMakeLists.txt
+@@ -15,7 +15,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${ZLIB_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -132,6 +131,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -142,11 +142,13 @@ set(LIB
+   PRIVATE bf::functions
+   PRIVATE bf::geometry
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::extern::xxhash
+   PRIVATE bf::nodes
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
++  PRIVATE bf::dependencies::zlib
++  PRIVATE bf::dependencies::optional::gmp
++  PRIVATE bf::dependencies::optional::bullet
+ )
+ 
+ if(WITH_ALEMBIC)
+@@ -191,28 +193,9 @@ endif()
+   add_definitions(-DWITH_OPENSUBDIV)
+ endif()
+ 
+-if(WITH_BULLET)
+-  list(APPEND LIB
+-    ${BULLET_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_BULLET)
+-endif()
+-
+ # To disable adaptive subdivision test in subdivision-surface UI without cycles.
+ if(WITH_CYCLES)
+   add_definitions(-DWITH_CYCLES)
+-endif()
+-
+-if(WITH_GMP)
+-  add_definitions(-DWITH_GMP)
+-
+-  list(APPEND INC_SYS
+-    ${GMP_INCLUDE_DIRS}
+-  )
+-
+-  list(APPEND LIB
+-    ${GMP_LIBRARIES}
+-  )
+ endif()
+ 
+ if(WITH_TBB)
+--- source/blender/nodes/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/nodes/CMakeLists.txt
+@@ -167,6 +167,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -184,24 +185,14 @@ set(LIB
+   bf_nodes_geometry
+   bf_nodes_shader
+   bf_nodes_texture
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::extern::xxhash
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
+   PRIVATE bf::intern::clog
++  PRIVATE bf::dependencies::optional::gmp
++  PRIVATE bf::dependencies::optional::bullet
+ )
+ 
+-if(WITH_BULLET)
+-  list(APPEND INC_SYS
+-    ${BULLET_INCLUDE_DIRS}
+-    ../../../intern/rigidbody
+-  )
+-  list(APPEND LIB
+-    ${BULLET_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_BULLET)
+-endif()
+-
+ if(WITH_TBB)
+   if(WIN32)
+     # TBB includes Windows.h which will define min/max macros
+@@ -220,18 +211,6 @@ if(WITH_OPENSUBDIV)
+ 
+ if(WITH_OPENSUBDIV)
+   add_definitions(-DWITH_OPENSUBDIV)
+-endif()
+-
+-if(WITH_GMP)
+-  add_definitions(-DWITH_GMP)
+-
+-  list(APPEND INC_SYS
+-    ${GMP_INCLUDE_DIRS}
+-  )
+-
+-  list(APPEND LIB
+-    ${GMP_LIBRARIES}
+-  )
+ endif()
+ 
+ blender_add_lib(bf_nodes "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/nodes/composite/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/nodes/composite/CMakeLists.txt
+@@ -115,6 +115,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+@@ -125,12 +126,14 @@ set(LIB
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+-  PRIVATE bf::extern::fmtlib
+   bf_compositor
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
+-  PRIVATE bf::dependencies::optional::opencolorio
+   PRIVATE bf::sequencer
++  PRIVATE bf::dependencies::optional::opencolorio
++  PRIVATE bf::dependencies::optional::tbb
++  PRIVATE bf::dependencies::optional::openimagedenoise
++  PRIVATE bf::dependencies::optional::fftw3
+ )
+ 
+ add_node_discovery(
+@@ -146,30 +149,6 @@ if(WITH_IMAGE_OPENEXR)
+ 
+ if(WITH_IMAGE_OPENEXR)
+   add_definitions(-DWITH_IMAGE_OPENEXR)
+-endif()
+-
+-if(WITH_OPENIMAGEDENOISE)
+-  add_definitions(-DWITH_OPENIMAGEDENOISE)
+-  add_definitions(-DOIDN_STATIC_LIB)
+-  list(APPEND INC_SYS
+-    ${OPENIMAGEDENOISE_INCLUDE_DIRS}
+-    ${TBB_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${OPENIMAGEDENOISE_LIBRARIES}
+-    ${TBB_LIBRARIES}
+-  )
+-endif()
+-
+-
+-if(WITH_FFTW3)
+-  list(APPEND INC_SYS
+-    ${FFTW3_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${FFTW3_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_FFTW3)
+ endif()
+ 
+ blender_add_lib(bf_nodes_composite "${SRC}" "${INC}" "${INC_SYS}" "${LIB}")
+--- source/blender/nodes/function/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/nodes/function/CMakeLists.txt
+@@ -14,7 +14,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ../../../../extern/fast_float
+ )
+ 
+ set(SRC
+@@ -75,6 +74,7 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+@@ -84,7 +84,7 @@ set(LIB
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::windowmanager
+-  PRIVATE bf::extern::fmtlib
++  PRIVATE bf::extern::fast_float
+ )
+ 
+ add_node_discovery(
+--- source/blender/nodes/geometry/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/nodes/geometry/CMakeLists.txt
+@@ -287,6 +287,7 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -305,10 +306,11 @@ set(LIB
+   bf_io_common
+   bf_io_csv
+   PRIVATE bf::intern::atomic
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::extern::xxhash
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
++  PRIVATE bf::dependencies::optional::gmp
++  PRIVATE bf::dependencies::optional::bullet
+ )
+ 
+ if(WITH_IO_STL)
+@@ -336,14 +338,9 @@ if(WITH_BULLET)
+ endif()
+ 
+ if(WITH_BULLET)
+-  list(APPEND INC_SYS
+-    ${BULLET_INCLUDE_DIRS}
++  list(APPEND INC
+     ../../../../intern/rigidbody
+   )
+-  list(APPEND LIB
+-    ${BULLET_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_BULLET)
+ endif()
+ 
+ if(WITH_TBB)
+@@ -360,18 +357,6 @@ if(WITH_OPENSUBDIV)
+ 
+ if(WITH_OPENSUBDIV)
+   add_definitions(-DWITH_OPENSUBDIV)
+-endif()
+-
+-if(WITH_GMP)
+-  add_definitions(-DWITH_GMP)
+-
+-  list(APPEND INC_SYS
+-    ${GMP_INCLUDE_DIRS}
+-  )
+-
+-  list(APPEND LIB
+-    ${GMP_LIBRARIES}
+-  )
+ endif()
+ 
+ add_node_discovery(
+--- source/blender/nodes/shader/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/nodes/shader/CMakeLists.txt
+@@ -159,9 +159,8 @@ if(WITH_MATERIALX)
+ 
+   if(WITH_USD)
+     add_definitions(-DWITH_USD)
+-    list(APPEND INC_SYS
+-      ${USD_INCLUDE_DIRS}
+-      ${BOOST_INCLUDE_DIR}
++    list(APPEND LIB
++      bf::dependencies::optional::usd
+     )
+   endif()
+ endif()
+--- source/blender/python/bmesh/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/python/bmesh/CMakeLists.txt
+@@ -7,7 +7,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -41,8 +40,7 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   bf_python_mathutils
+ 
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
++  PRIVATE bf::dependencies::optional::python
+ )
+ 
+ if(WITH_FREESTYLE)
+--- source/blender/python/generic/CMakeLists.txt.orig	2025-10-10 07:14:29 UTC
++++ source/blender/python/generic/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -36,26 +35,15 @@ set(LIB
+ )
+ 
+ set(LIB
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::dna
+   PRIVATE bf::gpu
+   PRIVATE bf::intern::clog
+   PRIVATE bf::intern::guardedalloc
++  PRIVATE bf::dependencies::optional::python
++  PRIVATE bf::dependencies::optional::epoxy
+ )
+-
+-# NOTE: use irrespective of `WITH_OPENGL_BACKEND` as the `bgl` module uses this for constants.
+-list(APPEND INC_SYS
+-  ${Epoxy_INCLUDE_DIRS}
+-)
+-
+-if(WITH_OPENGL_BACKEND)
+-  list(APPEND LIB
+-    ${Epoxy_LIBRARIES}
+-  )
+-endif()
+ 
+ if(WITH_PYTHON_MODULE)
+   add_definitions(-DWITH_PYTHON_MODULE)
+--- source/blender/python/gpu/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/python/gpu/CMakeLists.txt
+@@ -8,7 +8,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -55,22 +54,18 @@ set(LIB
+ )
+ 
+ set(LIB
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::dna
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::intern::guardedalloc
++  PRIVATE bf::dependencies::optional::python
+ )
+ 
+ if(WITH_OPENGL_BACKEND)
+-  list(APPEND INC_SYS
+-    ${Epoxy_INCLUDE_DIRS}
+-  )
+   list(APPEND LIB
+-    ${Epoxy_LIBRARIES}
++    bf::dependencies::optional::epoxy
+   )
+ endif()
+ 
+--- source/blender/python/intern/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/python/intern/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -133,10 +132,11 @@ set(LIB
+   bf_python_gpu
+   PRIVATE bf::imbuf::opencolorio
+   PRIVATE bf::nodes
+-
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
+   PRIVATE bf::windowmanager
++
++  PRIVATE bf::dependencies::optional::python
++  PRIVATE bf::dependencies::optional::ffmpeg
++  PRIVATE bf::dependencies::optional::sdl
+ )
+ 
+ # Only to check if `buildinfo` is available.
+@@ -190,16 +190,6 @@ endif()
+   add_definitions(-DWITH_BULLET)
+ endif()
+ 
+-if(WITH_CODEC_FFMPEG)
+-  list(APPEND INC_SYS
+-    ${FFMPEG_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${FFMPEG_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_FFMPEG)
+-endif()
+-
+ if(WITH_CODEC_SNDFILE)
+   add_definitions(-DWITH_SNDFILE)
+ endif()
+@@ -259,16 +249,6 @@ if(WITH_OPENSUBDIV)
+ 
+ if(WITH_OPENSUBDIV)
+   add_definitions(-DWITH_OPENSUBDIV)
+-endif()
+-
+-if(WITH_SDL)
+-  list(APPEND INC_SYS
+-    ${SDL_INCLUDE_DIR}
+-  )
+-  list(APPEND LIB
+-    ${SDL_LIBRARY}
+-  )
+-  add_definitions(-DWITH_SDL)
+ endif()
+ 
+ if(WITH_JACK)
+--- source/blender/python/mathutils/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/python/mathutils/CMakeLists.txt
+@@ -7,7 +7,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -46,8 +45,7 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   bf_python_ext
+ 
+-  ${PYTHON_LINKFLAGS}
+-  ${PYTHON_LIBRARIES}
++  PRIVATE bf::dependencies::optional::python
+ )
+ 
+ 
+--- source/blender/render/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/render/CMakeLists.txt
+@@ -52,13 +52,13 @@ set(LIB
+ )
+ 
+ set(LIB
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blentranslation
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+   PRIVATE bf::draw
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::imbuf::movie
+--- source/blender/render/hydra/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/render/hydra/CMakeLists.txt
+@@ -41,6 +41,10 @@ endif()
+   endif()
+ endif()
+ 
++if(WITH_OPENGL_BACKEND)
++  add_definitions(-DWITH_OPENGL_BACKEND)
++endif()
++
+ set(INC
+   ../../../../intern/guardedalloc
+   ../../blenlib
+@@ -55,19 +59,9 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${PYTHON_INCLUDE_DIRS}
+-  ${Epoxy_INCLUDE_DIRS}
+-  ${USD_INCLUDE_DIRS}
+-  ${BOOST_INCLUDE_DIR}
+-  ${TBB_INCLUDE_DIRS}
+-  ${GFLAGS_INCLUDE_DIRS}
+ )
+ 
+ set(LIB
+-  ${Epoxy_LIBRARIES}
+-  ${PYTHON_LIBRARIES}
+-  ${USD_LIBRARIES}
+-  ${TBB_LIBRARIES}
+   PRIVATE bf::blenkernel
+   PRIVATE bf::depsgraph
+   PRIVATE bf::gpu
+@@ -75,6 +69,12 @@ set(LIB
+   PRIVATE bf::intern::clog
+   bf_io_usd
+   PRIVATE bf::nodes
++  PRIVATE bf::dependencies::optional::python
++  PRIVATE bf::dependencies::optional::usd
++  PRIVATE bf::dependencies::optional::tbb
++  PRIVATE bf::dependencies::optional::epoxy
++  PRIVATE bf::dependencies::eigen
++  PRIVATE bf::dependencies::gflags
+   PRIVATE bf::dependencies::eigen
+ )
+ 
+--- source/blender/sequencer/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/sequencer/CMakeLists.txt
+@@ -17,7 +17,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-
+ )
+ 
+ set(SRC
+@@ -110,13 +109,13 @@ set(LIB
+ 
+ set(LIB
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+   PRIVATE bf::blentranslation
+   PRIVATE bf::depsgraph
+   PRIVATE bf::dna
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::imbuf::movie
+@@ -127,20 +126,10 @@ set(LIB
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
+   bf_compositor
++  PRIVATE bf::dependencies::optional::audaspace
+ )
+ 
+ if(WITH_AUDASPACE)
+-  list(APPEND INC_SYS
+-    ${AUDASPACE_C_INCLUDE_DIRS}
+-  )
+-  if(WITH_SYSTEM_AUDASPACE)
+-    list(APPEND LIB
+-      ${AUDASPACE_C_LIBRARIES}
+-      ${AUDASPACE_PY_LIBRARIES}
+-    )
+-  endif()
+-  add_definitions(-DWITH_AUDASPACE)
+-
+   if(WITH_FFTW3)
+     add_definitions(-DWITH_CONVOLUTION)
+   endif()
+--- source/blender/shader_fx/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/shader_fx/CMakeLists.txt
+@@ -13,7 +13,6 @@ set(INC_SYS
+ )
+ 
+ set(INC_SYS
+-  ${ZLIB_INCLUDE_DIRS}
+ )
+ 
+ set(SRC
+@@ -46,6 +45,7 @@ set(LIB
+   PRIVATE bf::intern::guardedalloc
+   PRIVATE bf::render
+   PRIVATE bf::windowmanager
++  PRIVATE bf::dependencies::zlib
+ )
+ 
+ 
+--- source/blender/windowmanager/CMakeLists.txt.orig	2025-10-08 10:41:57 UTC
++++ source/blender/windowmanager/CMakeLists.txt
+@@ -90,6 +90,7 @@ set(LIB
+ set(LIB
+   PRIVATE bf::asset_system
+   PRIVATE bf::blenfont
++  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::blenkernel
+   PRIVATE bf::blenlib
+   PRIVATE bf::blenloader
+@@ -100,7 +101,6 @@ set(LIB
+   PRIVATE bf::draw
+   bf_editor_screen
+   bf_editor_undo
+-  PRIVATE bf::extern::fmtlib
+   PRIVATE bf::gpu
+   PRIVATE bf::imbuf
+   PRIVATE bf::imbuf::movie
+@@ -112,6 +112,8 @@ set(LIB
+   PRIVATE bf::sequencer
+   bf_intern_ghost
+   bf_compositor
++  PRIVATE bf::dependencies::optional::ffmpeg
++  PRIVATE bf::dependencies::optional::audaspace
+ )
+ 
+ if(WIN32)
+@@ -128,19 +130,6 @@ endif()
+   )
+ endif()
+ 
+-if(WITH_AUDASPACE)
+-  list(APPEND INC_SYS
+-    ${AUDASPACE_C_INCLUDE_DIRS}
+-  )
+-  if(WITH_SYSTEM_AUDASPACE)
+-    list(APPEND LIB
+-      ${AUDASPACE_C_LIBRARIES}
+-      ${AUDASPACE_PY_LIBRARIES}
+-    )
+-  endif()
+-  add_definitions(-DWITH_AUDASPACE)
+-endif()
+-
+ if(WITH_CYCLES)
+   add_definitions(-DWITH_CYCLES)
+ endif()
+@@ -151,16 +140,6 @@ if(WITH_VULKAN_BACKEND)
+ 
+ if(WITH_VULKAN_BACKEND)
+   add_definitions(-DWITH_VULKAN_BACKEND)
+-endif()
+-
+-if(WITH_CODEC_FFMPEG)
+-  list(APPEND INC_SYS
+-    ${FFMPEG_INCLUDE_DIRS}
+-  )
+-  list(APPEND LIB
+-    ${FFMPEG_LIBRARIES}
+-  )
+-  add_definitions(-DWITH_FFMPEG)
+ endif()
+ 
+ if(WITH_HEADLESS)
+--- build_files/cmake/macros.cmake.orig	2025-10-08 10:41:55 UTC
++++ build_files/cmake/macros.cmake
+@@ -378,6 +378,7 @@ function(blender_link_libraries
+   #
+   # Use: "optimized libfoo optimized libbar debug libfoo_d debug libbar_d"
+   # NOT: "optimized libfoo libbar debug libfoo_d libbar_d"
++  set(dependency_libraries)
+   if(NOT "${library_deps}" STREQUAL "")
+     set(next_library_mode "")
+     set(next_interface_mode "PRIVATE")
+@@ -392,16 +393,25 @@ function(blender_link_libraries
+         set(next_interface_mode "${library}")
+       else()
+         if("${next_library_mode}" STREQUAL "optimized")
+-          target_link_libraries(${target} ${next_interface_mode} optimized ${library})
++          set(link_library ${next_interface_mode} optimized ${library})
+         elseif("${next_library_mode}" STREQUAL "debug")
+-          target_link_libraries(${target} ${next_interface_mode} debug ${library})
++          set(link_library ${next_interface_mode} debug ${library})
+         else()
+-          target_link_libraries(${target} ${next_interface_mode} ${library})
++          set(link_library ${next_interface_mode} ${library})
+         endif()
+         set(next_library_mode "")
++        if(library MATCHES "^bf::dependencies")
++          list(APPEND dependency_libraries ${link_library})
++        else()
++          target_link_libraries(${target} ${link_library})
++        endif()
+       endif()
+     endforeach()
+   endif()
++
++  # Ensure external dependencies are last in the list of libraries, so that bf::extern include
++  # directories have priority over system library include directories that might conflict.
++  target_link_libraries(${target} ${dependency_libraries})
+ endfunction()
+ 
+ function(blender_add_lib__impl
+--- build_files/cmake/platform/dependency_targets.cmake.orig	2025-10-08 10:41:55 UTC
++++ build_files/cmake/platform/dependency_targets.cmake
+@@ -23,6 +23,9 @@ endif()
+   target_link_libraries(bf_deps_optional_tbb INTERFACE ${TBB_LIBRARIES})
+ endif()
+ 
++# -----------------------------------------------------------------------------
++# Configure Manifold
++
+ add_library(bf_deps_optional_manifold INTERFACE)
+ add_library(bf::dependencies::optional::manifold ALIAS bf_deps_optional_manifold)
+ if(WITH_MANIFOLD)
+@@ -61,7 +64,6 @@ endif()
+   )
+ endif()
+ 
+-
+ # -----------------------------------------------------------------------------
+ # Configure Eigen
+ 
+@@ -86,4 +88,346 @@ if(WITH_OPENCOLORIO)
+   target_compile_definitions(bf_deps_optional_opencolorio INTERFACE WITH_OPENCOLORIO)
+   target_include_directories(bf_deps_optional_opencolorio SYSTEM INTERFACE ${OPENCOLORIO_INCLUDE_DIRS})
+   target_link_libraries(bf_deps_optional_opencolorio INTERFACE ${OPENCOLORIO_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Zlib
++
++add_library(bf_deps_zlib INTERFACE)
++add_library(bf::dependencies::zlib ALIAS bf_deps_zlib)
++
++target_include_directories(bf_deps_zlib SYSTEM INTERFACE ${ZLIB_INCLUDE_DIRS})
++target_link_libraries(bf_deps_zlib INTERFACE ${ZLIB_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure ZSTD
++
++add_library(bf_deps_zstd INTERFACE)
++add_library(bf::dependencies::zstd ALIAS bf_deps_zstd)
++
++target_include_directories(bf_deps_zstd SYSTEM INTERFACE ${ZSTD_INCLUDE_DIRS})
++target_link_libraries(bf_deps_zstd INTERFACE ${ZSTD_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure Freetype
++
++add_library(bf_deps_freetype INTERFACE)
++add_library(bf::dependencies::freetype ALIAS bf_deps_freetype)
++
++target_include_directories(bf_deps_freetype SYSTEM INTERFACE ${FREETYPE_INCLUDE_DIRS})
++target_link_libraries(bf_deps_freetype INTERFACE ${FREETYPE_LIBRARIES} ${BROTLI_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure JPEG
++
++add_library(bf_deps_jpeg INTERFACE)
++add_library(bf::dependencies::jpeg ALIAS bf_deps_jpeg)
++
++target_include_directories(bf_deps_jpeg SYSTEM INTERFACE ${JPEG_INCLUDE_DIR})
++target_link_libraries(bf_deps_jpeg INTERFACE ${JPEG_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure PNG
++
++add_library(bf_deps_png INTERFACE)
++add_library(bf::dependencies::png ALIAS bf_deps_png)
++
++target_include_directories(bf_deps_png SYSTEM INTERFACE ${PNG_INCLUDE_DIRS})
++target_link_libraries(bf_deps_png INTERFACE ${PNG_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure OpenImageIO
++
++add_library(bf_deps_openimageio INTERFACE)
++add_library(bf::dependencies::openimageio ALIAS bf_deps_openimageio)
++
++target_include_directories(bf_deps_openimageio SYSTEM INTERFACE ${OPENIMAGEIO_INCLUDE_DIRS})
++target_link_libraries(bf_deps_openimageio INTERFACE ${OPENIMAGEIO_LIBRARIES})
++
++# OpenImageIO headers include `Imath` headers when there is no SSE support for
++# matrix operations. This depends on the specific architecture and compiler
++# flags, most reliable is to always include the `Imath` headers if we have them.
++if(DEFINED IMATH_INCLUDE_DIRS)
++  target_include_directories(bf_deps_openimageio SYSTEM INTERFACE ${IMATH_INCLUDE_DIRS})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure USD
++
++add_library(bf_deps_optional_usd INTERFACE)
++add_library(bf::dependencies::optional::usd ALIAS bf_deps_optional_usd)
++
++if(WITH_USD)
++  target_compile_definitions(bf_deps_optional_usd INTERFACE WITH_USD)
++  target_include_directories(bf_deps_optional_usd SYSTEM INTERFACE ${BOOST_INCLUDE_DIR} ${USD_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_usd INTERFACE ${USD_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Alembic
++
++add_library(bf_deps_optional_alembic INTERFACE)
++add_library(bf::dependencies::optional::alembic ALIAS bf_deps_optional_alembic)
++
++if(WITH_ALEMBIC)
++  target_compile_definitions(bf_deps_optional_alembic INTERFACE WITH_ALEMBIC)
++  target_include_directories(bf_deps_optional_alembic SYSTEM INTERFACE ${ALEMBIC_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_alembic INTERFACE ${ALEMBIC_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure OpenSubdiv
++
++add_library(bf_deps_optional_opensubdiv INTERFACE)
++add_library(bf::dependencies::optional::opensubdiv ALIAS bf_deps_optional_opensubdiv)
++
++if(WITH_OPENSUBDIV)
++  target_compile_definitions(bf_deps_optional_opensubdiv INTERFACE WITH_OPENSUBDIV)
++  target_include_directories(bf_deps_optional_opensubdiv SYSTEM INTERFACE ${OPENSUBDIV_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_opensubdiv INTERFACE ${OPENSUBDIV_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure OpenEXR
++
++add_library(bf_deps_optional_openexr INTERFACE)
++add_library(bf::dependencies::optional::openexr ALIAS bf_deps_optional_openexr)
++
++if(WITH_IMAGE_OPENEXR)
++  target_compile_definitions(bf_deps_optional_openexr INTERFACE WITH_IMAGE_OPENEXR)
++  target_include_directories(bf_deps_optional_openexr SYSTEM INTERFACE ${OPENEXR_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_openexr INTERFACE ${OPENEXR_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure WebP
++
++add_library(bf_deps_optional_webp INTERFACE)
++add_library(bf::dependencies::optional::webp ALIAS bf_deps_optional_webp)
++
++if(WITH_IMAGE_WEBP)
++  target_compile_definitions(bf_deps_optional_webp INTERFACE WITH_IMAGE_WEBP)
++  target_include_directories(bf_deps_optional_webp SYSTEM INTERFACE ${WEBP_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_webp INTERFACE ${WEBP_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure OpenJPEG
++
++add_library(bf_deps_optional_openjpeg INTERFACE)
++add_library(bf::dependencies::optional::openjpeg ALIAS bf_deps_optional_openjpeg)
++
++if(WITH_IMAGE_OPENJPEG)
++  target_compile_definitions(bf_deps_optional_openjpeg INTERFACE WITH_IMAGE_OPENJPEG)
++  target_compile_definitions(bf_deps_optional_openjpeg INTERFACE ${OPENJPEG_DEFINES})
++  target_include_directories(bf_deps_optional_openjpeg SYSTEM INTERFACE ${OPENJPEG_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_openjpeg INTERFACE ${OPENJPEG_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure SDL
++
++add_library(bf_deps_optional_sdl INTERFACE)
++add_library(bf::dependencies::optional::sdl ALIAS bf_deps_optional_sdl)
++
++if(WITH_SDL)
++  target_compile_definitions(bf_deps_optional_sdl INTERFACE WITH_SDL)
++  target_include_directories(bf_deps_optional_sdl SYSTEM INTERFACE ${SDL_INCLUDE_DIR})
++  target_link_libraries(bf_deps_optional_sdl INTERFACE ${SDL_LIBRARY})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure FFmpeg
++
++add_library(bf_deps_optional_ffmpeg INTERFACE)
++add_library(bf::dependencies::optional::ffmpeg ALIAS bf_deps_optional_ffmpeg)
++
++if(WITH_CODEC_FFMPEG)
++  target_compile_definitions(bf_deps_optional_ffmpeg INTERFACE WITH_FFMPEG)
++  target_include_directories(bf_deps_optional_ffmpeg SYSTEM INTERFACE ${FFMPEG_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_ffmpeg INTERFACE ${FFMPEG_LIBRARIES})
++  if(WITH_IMAGE_OPENJPEG)
++    target_link_libraries(bf_deps_optional_ffmpeg INTERFACE ${OPENJPEG_LIBRARIES})
++  endif()
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Python
++
++add_library(bf_deps_optional_python INTERFACE)
++add_library(bf::dependencies::optional::python ALIAS bf_deps_optional_python)
++
++if(WITH_PYTHON)
++  target_compile_definitions(bf_deps_optional_python INTERFACE WITH_PYTHON)
++  if(WITH_PYTHON_MODULE)
++    target_compile_definitions(bf_deps_optional_python INTERFACE WITH_PYTHON_MODULE)
++  endif()
++  target_include_directories(bf_deps_optional_python SYSTEM INTERFACE ${PYTHON_INCLUDE_DIR})
++  target_link_libraries(bf_deps_optional_python INTERFACE ${PYTHON_LINKFLAGS} ${PYTHON_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure GMP
++
++add_library(bf_deps_optional_gmp INTERFACE)
++add_library(bf::dependencies::optional::gmp ALIAS bf_deps_optional_gmp)
++
++if(WITH_GMP)
++  target_compile_definitions(bf_deps_optional_gmp INTERFACE WITH_GMP)
++  target_include_directories(bf_deps_optional_gmp SYSTEM INTERFACE ${GMP_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_gmp INTERFACE ${GMP_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure PugiXML
++
++add_library(bf_deps_optional_pugixml INTERFACE)
++add_library(bf::dependencies::optional::pugixml ALIAS bf_deps_optional_pugixml)
++
++if(WITH_PUGIXML)
++  target_compile_definitions(bf_deps_optional_pugixml INTERFACE WITH_PUGIXML)
++  target_include_directories(bf_deps_optional_pugixml SYSTEM INTERFACE ${PUGIXML_INCLUDE_DIR})
++  target_link_libraries(bf_deps_optional_pugixml INTERFACE ${PUGIXML_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Haru
++
++add_library(bf_deps_optional_haru INTERFACE)
++add_library(bf::dependencies::optional::haru ALIAS bf_deps_optional_haru)
++
++if(WITH_HARU)
++  target_compile_definitions(bf_deps_optional_haru INTERFACE WITH_HARU)
++  target_include_directories(bf_deps_optional_haru SYSTEM INTERFACE ${HARU_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_haru INTERFACE ${HARU_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Vulkan
++
++add_library(bf_deps_optional_vulkan INTERFACE)
++add_library(bf::dependencies::optional::vulkan ALIAS bf_deps_optional_vulkan)
++
++if(WITH_VULKAN_BACKEND)
++  target_include_directories(bf_deps_optional_vulkan SYSTEM INTERFACE ${VULKAN_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_vulkan INTERFACE ${VULKAN_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure ShaderC
++
++add_library(bf_deps_optional_shaderc INTERFACE)
++add_library(bf::dependencies::optional::shaderc ALIAS bf_deps_optional_shaderc)
++
++if(WITH_VULKAN_BACKEND)
++  target_include_directories(bf_deps_optional_shaderc SYSTEM INTERFACE ${SHADERC_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_shaderc INTERFACE ${SHADERC_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Epoxy
++
++add_library(bf_deps_optional_epoxy INTERFACE)
++add_library(bf::dependencies::optional::epoxy ALIAS bf_deps_optional_epoxy)
++
++target_include_directories(bf_deps_optional_epoxy SYSTEM INTERFACE ${Epoxy_INCLUDE_DIRS})
++target_link_libraries(bf_deps_optional_epoxy INTERFACE ${Epoxy_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure Gflags
++
++add_library(bf_deps_gflags INTERFACE)
++add_library(bf::dependencies::gflags ALIAS bf_deps_gflags)
++
++target_compile_definitions(bf_deps_gflags INTERFACE ${GFLAGS_DEFINES})
++target_include_directories(bf_deps_gflags SYSTEM INTERFACE ${GFLAGS_INCLUDE_DIRS})
++target_link_libraries(bf_deps_gflags INTERFACE ${GFLAGS_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure Glog
++
++add_library(bf_deps_glog INTERFACE)
++add_library(bf::dependencies::glog ALIAS bf_deps_glog)
++
++target_compile_definitions(bf_deps_glog INTERFACE ${GLOG_DEFINES})
++target_include_directories(bf_deps_glog SYSTEM INTERFACE ${GLOG_INCLUDE_DIRS})
++target_link_libraries(bf_deps_glog INTERFACE ${GLOG_LIBRARIES})
++
++# -----------------------------------------------------------------------------
++# Configure OpenImageDenoise
++
++add_library(bf_deps_optional_openimagedenoise INTERFACE)
++add_library(bf::dependencies::optional::openimagedenoise ALIAS bf_deps_optional_openimagedenoise)
++
++if(WITH_OPENIMAGEDENOISE)
++  target_compile_definitions(bf_deps_optional_openimagedenoise INTERFACE WITH_OPENIMAGEDENOISE)
++  target_compile_definitions(bf_deps_optional_openimagedenoise INTERFACE OIDN_STATIC_LIB)
++  target_include_directories(bf_deps_optional_openimagedenoise SYSTEM INTERFACE ${OPENIMAGEDENOISE_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_openimagedenoise INTERFACE ${OPENIMAGEDENOISE_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure FFTW3
++
++add_library(bf_deps_optional_fftw3 INTERFACE)
++add_library(bf::dependencies::optional::fftw3 ALIAS bf_deps_optional_fftw3)
++
++if(WITH_FFTW3)
++  target_compile_definitions(bf_deps_optional_fftw3 INTERFACE WITH_FFTW3)
++  target_include_directories(bf_deps_optional_fftw3 SYSTEM INTERFACE ${FFTW3_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_fftw3 INTERFACE ${FFTW3_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Bullet
++
++add_library(bf_deps_optional_bullet INTERFACE)
++add_library(bf::dependencies::optional::bullet ALIAS bf_deps_optional_bullet)
++
++if(WITH_BULLET)
++  target_compile_definitions(bf_deps_optional_bullet INTERFACE WITH_BULLET)
++  target_include_directories(bf_deps_optional_bullet SYSTEM INTERFACE ${BULLET_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_bullet INTERFACE ${BULLET_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Audaspace
++
++add_library(bf_deps_optional_audaspace INTERFACE)
++add_library(bf::dependencies::optional::audaspace ALIAS bf_deps_optional_audaspace)
++
++if(WITH_AUDASPACE)
++  target_compile_definitions(bf_deps_optional_audaspace INTERFACE WITH_AUDASPACE)
++  target_include_directories(bf_deps_optional_audaspace SYSTEM INTERFACE ${AUDASPACE_C_INCLUDE_DIRS} ${AUDASPACE_PY_INCLUDE_DIRS})
++  if(WITH_SYSTEM_AUDASPACE)
++    target_link_libraries(bf_deps_optional_audaspace INTERFACE ${AUDASPACE_C_LIBRARIES} ${AUDASPACE_PY_LIBRARIES})
++  else()
++    target_link_libraries(bf_deps_optional_audaspace INTERFACE audaspace audaspace-py)
++  endif()
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Potrace
++
++add_library(bf_deps_optional_potrace INTERFACE)
++add_library(bf::dependencies::optional::potrace ALIAS bf_deps_optional_potrace)
++
++if(WITH_POTRACE)
++  target_compile_definitions(bf_deps_optional_potrace INTERFACE WITH_POTRACE)
++  target_include_directories(bf_deps_optional_potrace SYSTEM INTERFACE ${POTRACE_INCLUDE_DIRS})
++  target_link_libraries(bf_deps_optional_potrace INTERFACE ${POTRACE_LIBRARIES})
++endif()
++
++# -----------------------------------------------------------------------------
++# Configure Pthreads
++#
++add_library(bf_deps_pthreads INTERFACE)
++add_library(bf::dependencies::pthreads ALIAS bf_deps_pthreads)
++
++# Include directories on non-Windows are handled globally.
++if(WIN32 AND NOT UNIX)
++  target_include_directories(bf_deps_pthreads SYSTEM INTERFACE ${PTHREADS_INC})
++endif()
++if(DEFINED PTHREADS_LIBRARIES)
++  target_link_libraries(bf_deps_pthreads INTERFACE ${PTHREADS_LIBRARIES})
+ endif()
+--- build_files/cmake/testing.cmake.orig	2025-10-08 10:41:55 UTC
++++ build_files/cmake/testing.cmake
+@@ -65,8 +65,6 @@ macro(blender_src_gtest_ex)
+       ${CMAKE_SOURCE_DIR}/tests/gtests
+     )
+     set(TEST_INC_SYS
+-      ${GLOG_INCLUDE_DIRS}
+-      ${GFLAGS_INCLUDE_DIRS}
+       ${CMAKE_SOURCE_DIR}/extern/gtest/include
+       ${CMAKE_SOURCE_DIR}/extern/gmock/include
+     )
+@@ -79,8 +77,6 @@ macro(blender_src_gtest_ex)
+ 
+     add_executable(${TARGET_NAME} ${ARG_SRC} ${MANIFEST})
+     setup_platform_linker_flags(${TARGET_NAME})
+-    target_compile_definitions(${TARGET_NAME} PRIVATE ${GFLAGS_DEFINES})
+-    target_compile_definitions(${TARGET_NAME} PRIVATE ${GLOG_DEFINES})
+     target_include_directories(${TARGET_NAME} PUBLIC "${TEST_INC}")
+     target_include_directories(${TARGET_NAME} SYSTEM PUBLIC "${TEST_INC_SYS}")
+     blender_link_libraries(${TARGET_NAME} "${ARG_EXTRA_LIBS};${PLATFORM_LINKLIBS}")
+@@ -100,21 +96,15 @@ macro(blender_src_gtest_ex)
+                           extern_gtest
+                           extern_gmock
+                           # Needed for GLOG.
+-                          ${GLOG_LIBRARIES}
+-                          ${GFLAGS_LIBRARIES})
++                          bf::dependencies::glog
++                          bf::dependencies::gflags
++                          bf::dependencies::pthreads
++                          bf::dependencies::optional::tbb
++                          bf::dependencies::optional::gmp)
+ 
+-    if(DEFINED PTHREADS_LIBRARIES) # Needed for GLOG.
+-      target_link_libraries(${TARGET_NAME} PRIVATE ${PTHREADS_LIBRARIES})
+-    endif()
+     if(UNIX AND NOT APPLE)
+       target_link_libraries(${TARGET_NAME} PRIVATE bf_intern_libc_compat)
+     endif()
+-    if(WITH_TBB)
+-      target_link_libraries(${TARGET_NAME} PRIVATE ${TBB_LIBRARIES})
+-    endif()
+-    if(WITH_GMP)
+-      target_link_libraries(${TARGET_NAME} PRIVATE ${GMP_LIBRARIES})
+-    endif()
+ 
+     get_blender_test_install_dir(TEST_INSTALL_DIR)
+     set_target_properties(${TARGET_NAME} PROPERTIES
+@@ -223,10 +213,12 @@ function(blender_add_test_suite_lib
+       ${CMAKE_SOURCE_DIR}/tests/gtests
+     )
+     list(APPEND includes_sys
+-      ${GLOG_INCLUDE_DIRS}
+-      ${GFLAGS_INCLUDE_DIRS}
+       ${CMAKE_SOURCE_DIR}/extern/gtest/include
+       ${CMAKE_SOURCE_DIR}/extern/gmock/include
++    )
++    list(APPEND library_deps
++      bf::dependencies::gflags
++      bf::dependencies::glog
+     )
+ 
+     blender_add_lib__impl(${name}_tests

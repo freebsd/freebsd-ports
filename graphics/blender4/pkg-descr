@@ -1,0 +1,7 @@
+Blender is a free and fully functional 3D
+modeling/rendering/animation/gaming package.
+
+This port provides v4.5 of blender for file compatibility with
+older versions. Some changes in file format can prevent v5.x from
+opening older files while this version can open both old and new.
+See https://developer.blender.org/docs/release_notes/5.0/core/ for more info.
