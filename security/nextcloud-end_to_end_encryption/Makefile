@@ -1,7 +1,6 @@
 PORTNAME=	end_to_end_encryption
-PORTVERSION=	1.18.0
+PORTVERSION=	1.18.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	security
 
 MAINTAINER=	brnrd@freebsd.org
