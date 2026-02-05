@@ -48,6 +48,7 @@
     SUBDIR += fileobj
     SUBDIR += flim
     SUBDIR += focuswriter
+    SUBDIR += fresh
     SUBDIR += fxite
     SUBDIR += gedit
     SUBDIR += gedit-plugins
