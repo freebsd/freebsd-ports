@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20260206:
+  AFFECTS: users of devel/freebsd-git-devtools
+  AUTHOR: jrm@FreeBSD.org
+
+  To improve discoverability with pkg search, devel/freebsd-git-devtools
+  has been split into devel/freebsd-git-arc and devel/mfc-candidates.
+
+  To remove the old package and install the new ones, use:
+
+  # pkg install freebsd-git-arc mfc-candidates
+
 20260202:
   AFFECTS: users of www/bluefish
   AUTHOR: eduardo@FreeBSD.org

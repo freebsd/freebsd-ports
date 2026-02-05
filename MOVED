@@ -5108,3 +5108,4 @@ devel/rubygem-ffi16|devel/rubygem-ffi|2026-02-03|Remove obsoleted port. Use deve
 devel/hs-spago|devel/spago|2026-02-03|Dropped the "hs-" prefix, the software is now written in Purescript
 lang/python-doc-pdf-a4||2026-02-05|A4-size PDF no longer provided since 3.13
 devel/rubygem-sidekiq-cron-rails70|devel/rubygem-sidekiq-cron-rails-gitlab|2026-02-05|Obsolete, please use devel/rubygem-sidekiq-cron-rails-gitlab instead
+devel/freebsd-git-devtools|devel/freebsd-git-arc|2026-02-06|Split into two separate ports: devel/freebsd-git-arc and devel/mfc-candidates to improve discoverability
