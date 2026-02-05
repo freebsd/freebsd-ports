@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-headers-more
 MODULE_VERSION=	0.39
-MODULE_PORTREVISION=	1
+MODULE_PORTREVISION=	2
 GH_TUPLE=	openresty:headers-more-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie headers-more dynamic module

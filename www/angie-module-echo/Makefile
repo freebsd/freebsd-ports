@@ -1,6 +1,6 @@
 PORTNAME=	angie-module-echo
 MODULE_VERSION=	0.64
-MODULE_PORTREVISION=	1
+MODULE_PORTREVISION=	2
 GH_TUPLE=	openresty:echo-nginx-module:v${MODULE_VERSION}:module
 
 COMMENT=	Angie echo dynamic module
