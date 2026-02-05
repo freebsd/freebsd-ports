@@ -1,7 +1,7 @@
---- config.mk.orig	2025-07-11 21:32:27 UTC
+--- config.mk.orig	2026-02-04 22:33:13 UTC
 +++ config.mk
-@@ -347,7 +347,7 @@ INSTALL?=install
- endif
+@@ -180,7 +180,7 @@ INSTALL?=install
+ ARCH:=$(shell uname -p)
  
  INSTALL?=install
 -prefix?=/usr/local
