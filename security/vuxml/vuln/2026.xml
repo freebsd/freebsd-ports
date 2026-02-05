@@ -1,3 +1,39 @@
+  <vuln vid="bfe9adc8-0224-11f1-8790-c5fb948922ad">
+    <topic>python -- several security vulnerabilities</topic>
+    <affects> <!-- versions 310...313 need research and fixing -->
+      <package><name>python39</name> <range><ge>0</ge></range></package>
+      <package><name>python310</name> <range><ge>0</ge></range></package>
+      <package><name>python311</name> <range><ge>0</ge></range></package>
+      <package><name>python312</name> <range><ge>0</ge></range></package>
+      <package><name>python313</name> <range><lt>3.13.12</lt></range></package>
+      <package><name>python313t</name> <range><lt>3.13.12</lt></range></package>
+      <package><name>python314</name> <range><lt>3.14.3</lt></range></package>
+    </affects>
+    <description>
+	<body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Python project announces a new release with several security fixes:</p>
+	<blockquote cite="https://docs.python.org/release/3.14.3/whatsnew/changelog.html">
+	  <ul>
+	    <li>CVE-2026-1299: gh-144125: BytesGenerator will now refuse to serialize (write) headers that are unsafely folded or delimited; see verify_generated_headers. (Contributed by Bas Bloemsaat and Petr Viktorin in gh-121650).</li>
+	    <li>gh-143935: Fixed a bug in the folding of comments when flattening an email message using a modern email policy. Comments consisting of a very long sequence of non-foldable characters could trigger a forced line wrap that omitted the required leading space on the continuation line, causing the remainder of the comment to be interpreted as a new header field. This enabled header injection with carefully crafted inputs.</li>
+	    <li>gh-143925: Reject control characters in data: URL media types.</li>
+	    <li>gh-143919: Reject control characters in http.cookies.Morsel fields and values.</li>
+	    <li>CVE-2026-0865: gh-143916: Reject C0 control characters within wsgiref.headers.Headers fields, values, and parameters.</li>
+	  </ul>
+	</blockquote>
+	</body>
+    </description>
+    <references>
+      <cvename>CVE-2026-1299</cvename>
+      <cvename>CVE-2026-0865</cvename>
+      <url>https://docs.python.org/release/3.14.3/whatsnew/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2026-01-16</discovery>
+      <entry>2026-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="232e16cc-fd83-11f0-981a-98b78501ef2a">
     <topic>xrdp -- remote code execution</topic>
     <affects>
