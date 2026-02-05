@@ -9,6 +9,8 @@ WWW=		https://joeyh.name/code/scroll/
 
 LICENSE=	GPLv2
 
+BROKEN_FreeBSD_16=	c2hs chokes on /usr/include/ncurses.h:523: The symbol `bool' does not fit here.
+
 BUILD_DEPENDS=	ghc-9.4.8:lang/ghc94
 
 USES=		cabal
