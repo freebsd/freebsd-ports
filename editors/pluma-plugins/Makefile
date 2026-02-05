@@ -26,8 +26,8 @@ RUN_DEPENDS=	pluma>=0:editors/pluma \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		compiler:c11 gettext gnome localbase gmake pkgconfig \
-		python shebangfix tar:xz
+USES=		compiler:c11 gettext gnome libtool:keepla localbase gmake \
+		pkgconfig python shebangfix tar:xz
 USE_GNOME=	cairo gdkpixbuf gtk30 gtksourceview4 intlhack introspection \
 		intltool vte3
 USE_CSTD=	c11
