@@ -1,6 +1,6 @@
 PORTNAME=	b2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.5.0
+DISTVERSION=	4.5.1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=3.5.2:devel/py-argcomplete@${PY
 		${PYTHON_PKGNAMEPREFIX}arrow>=1.0.2:devel/py-arrow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}b2sdk>=2.10.2:devel/py-b2sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}docutils>=0.18.1:textproc/py-docutils@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}phx-class-registry>=4.0:devel/py-phx-class-registry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=3.11.0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rst2ansi>=0.1.5:textproc/py-rst2ansi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.9.0:devel/py-tabulate@${PY_FLAVOR} \
