@@ -71,6 +71,9 @@ include/openssl/pki/verify_error.h
 include/openssl/poly1305.h
 include/openssl/pool.h
 include/openssl/posix_time.h
+include/openssl/prefix_symbols.h
+include/openssl/prefix_symbols_internal_S.h
+include/openssl/prefix_symbols_internal_c.h
 include/openssl/rand.h
 include/openssl/rc4.h
 include/openssl/ripemd.h
@@ -90,6 +93,7 @@ include/openssl/target.h
 include/openssl/thread.h
 include/openssl/time.h
 include/openssl/tls1.h
+include/openssl/tls_prf.h
 include/openssl/trust_token.h
 include/openssl/type_check.h
 include/openssl/x509.h
