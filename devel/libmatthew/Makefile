@@ -14,7 +14,7 @@ LICENSE_NAME=	Expat License
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake java localbase:ldconfig
+USES=		gmake java:build localbase:ldconfig
 USE_LDCONFIG=	yes
 
 MAKE_ENV=	JARDIR=${JAVAJARDIR} \
