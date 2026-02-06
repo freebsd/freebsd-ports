@@ -1,0 +1,16 @@
+Relax version requirements for py-uv-build.
+
+Obtained from:
+
+https://github.com/zostera/django-bootstrap3/commit/e02004187be369e33556d8d7e0fe89ede8ff5242
+
+--- pyproject.toml.orig	1970-01-01 00:00:00 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "uv_build"
+ [build-system]
+ build-backend = "uv_build"
+-requires = ["uv_build>=0.9.6,<0.10.0"]
++requires = ["uv_build>=0.9.6,<0.11.0"]
+ 
+ [project]
+ authors = [
