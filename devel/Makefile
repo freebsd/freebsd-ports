@@ -1007,7 +1007,6 @@
     SUBDIR += hs-ormolu
     SUBDIR += hs-profiteur
     SUBDIR += hs-shake
-    SUBDIR += hs-spago
     SUBDIR += hs-threadscope
     SUBDIR += htable
     SUBDIR += hub
@@ -8377,6 +8376,7 @@
     SUBDIR += sope
     SUBDIR += sope2
     SUBDIR += sord
+    SUBDIR += spago
     SUBDIR += spark
     SUBDIR += sparsebitset
     SUBDIR += sparsehash
