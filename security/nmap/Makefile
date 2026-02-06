@@ -30,9 +30,6 @@ EXTRACT_AFTER_ARGS=	--exclude ${DISTNAME}/mswin32 \
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
-
-LDFLAGS+=	-L${LOCALBASE}/lib -ldbus-1
 
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	DOCS NLS PCAP SSH2 SSL
@@ -44,6 +41,8 @@ SSH2_DESC=		SSH2 protocol support
 NLS_CONFIGURE_ENABLE=	nls
 PCAP_CONFIGURE_ON=	--with-libpcap=included
 PCAP_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+PCAP_USES=		localbase:ldflags
+PCAP_LDFLAGS=		-ldbus-1
 SSH2_CONFIGURE_ON=	--with-libssh2=included
 SSH2_CONFIGURE_OFF=	--without-libssh2
 SSH2_IMPLIES=		SSL
