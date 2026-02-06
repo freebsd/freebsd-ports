@@ -1,11 +1,9 @@
 PORTNAME=	check_mk_agent
-DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0p16
-PORTREVISION=	1
+PORTVERSION=	2.4.0p20
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/agents/:agent \
-		https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/doc/agents/:doc \
-		https://raw.githubusercontent.com/Checkmk/checkmk/${DISTVERSIONFULL}/:license
+MASTER_SITES=	https://raw.githubusercontent.com/Checkmk/checkmk/${_TAG}/agents/:agent \
+		https://raw.githubusercontent.com/Checkmk/checkmk/${_TAG}/doc/agents/:doc \
+		https://raw.githubusercontent.com/Checkmk/checkmk/${_TAG}/:license
 DISTFILES=	${_CHECKMK_AGENT}:agent \
 		README.FreeBSD:doc \
 		COPYING:license
@@ -23,7 +21,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		statgrab:devel/libstatgrab \
 		wget:ftp/wget
 
-USES=		perl5 python:3.4+,run shebangfix
+USES=		perl5 python:run shebangfix
 USE_PERL5=	run
 
 SHEBANG_FILES=	${_CHECKMK_AGENT}
@@ -51,6 +49,7 @@ _CHECKMK_AGENT=		${PORTNAME}.freebsd
 _CHECKMK_LIBDIR=	${PREFIX}/lib/check_mk_agent
 _CHECKMK_CONFDIR=	${PREFIX}/etc/check_mk
 _CHECKMK_VARDIR=	/var/db/check_mk_agent
+_TAG=			7e6a4f8
 
 post-patch:
 	@${REINPLACE_CMD} \
