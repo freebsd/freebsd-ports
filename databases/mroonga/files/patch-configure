@@ -1,6 +1,6 @@
---- configure.orig	2025-02-04 20:46:08 UTC
+--- configure.orig	2025-05-14 02:45:47 UTC
 +++ configure
-@@ -20583,28 +20583,6 @@ printf "%s\n" "$check_cxxflag" >&6; }
+@@ -20724,28 +20724,6 @@ printf "%s\n" "$check_cxxflag" >&6; }
      ;;
    esac
  
@@ -29,7 +29,7 @@
    case "$MYSQL_MAJOR_MINOR_VERSION" in
    10.4)
      :
-@@ -23877,5 +23855,3 @@ fi
+@@ -23991,5 +23969,3 @@ fi
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
  printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
  fi
