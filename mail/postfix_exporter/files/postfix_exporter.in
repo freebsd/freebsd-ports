@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# PROVIDE: postfix_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# postfix_exporter_enable (bool):           Set to NO by default.
+#                                           Set it to YES to enable postfix_exporter.
+# postfix_exporter_user (string):           Set user that postfix_exporter will
+#                                           run under
+#                                           Default is "postfix".
+# postfix_exporter_group (string):          Set group that postfix_exporter will
+#                                           run under
+#                                           Default is "nogroup".
+# postfix_exporter_listen_address (string): Set ip:port that postfix_exporter
+#                                           will listen on
+#                                           Default is ":9154".
+# postfix_exporter_showq_path (string):     Path at which Postfix places its
+#                                           showq socket
+#                                           Default is "/var/spool/postfix/public/showq"
+# postfix_exporter_logfile_path (string):   Path at which Postfix writes log 
+#                                           entries.
+#                                           Default is "/var/log/maillog".
+# postfix_exporter_args (string)            Additional command line parameters to
+#                                           be passed to postfix_exporter
+#                                           Default is ""
+
+. /etc/rc.subr
+
+name=postfix_exporter
+desc="Postfix exporter for use with prometheus"
+rcvar=postfix_exporter_enable
+
+load_rc_config $name
+
+: ${postfix_exporter_enable:=NO}
+: ${postfix_exporter_user:=postfix}
+: ${postfix_exporter_group:=nogroup}
+: ${postfix_exporter_listen_address=:9154}
+: ${postfix_exporter_showq_path=/var/spool/postfix/public/showq}
+: ${postfix_exporter_logfile_path=/var/log/maillog}
+
+pidfile=/var/run/postfix_exporter.pid
+command=/usr/sbin/daemon
+procname="%%PREFIX%%/bin/postfix_exporter"
+command_args="-p ${pidfile} /usr/bin/env ${procname} \
+    --web.listen-address=${postfix_exporter_listen_address} \
+    --postfix.showq_path=${postfix_exporter_showq_path} \
+    --postfix.logfile_path=${postfix_exporter_logfile_path} \
+    ${postfix_exporter_args}"
+
+start_precmd=postfix_exporter_startprecmd
+
+postfix_exporter_startprecmd()
+{
+    if [ ! -e ${pidfile} ]; then
+        install -o ${postfix_exporter_user} -g ${postfix_exporter_group} /dev/null ${pidfile}
+    else
+        chown ${postfix_exporter_user}:${postfix_exporter_group} ${pidfile}
+    fi
+}
+
+run_rc_command "$1"

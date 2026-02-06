@@ -1,0 +1,5 @@
+TIMESTAMP = 1794044552
+SHA256 (go/mail_postfix_exporter/postfix_exporter-v0.21.2/v0.21.2.mod) = 3000a5c44fd122089851d2e9f87562064473fac13cafc263a8b35e431207310a
+SIZE (go/mail_postfix_exporter/postfix_exporter-v0.21.2/v0.21.2.mod) = 4421
+SHA256 (go/mail_postfix_exporter/postfix_exporter-v0.21.2/v0.21.2.zip) = 4d7fba6937921d39c7c5aef5f3012383cbfbb58ad6c5e5d0c068434b57fa40f1
+SIZE (go/mail_postfix_exporter/postfix_exporter-v0.21.2/v0.21.2.zip) = 67458
