@@ -17,8 +17,7 @@ LICENSE_NAME=	Nmap Public Source License
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpcre2-16.so:devel/pcre2 \
-		libdbus-1.so:devel/dbus
+LIB_DEPENDS=	libpcre2-16.so:devel/pcre2
 
 .if !defined(MASTERDIR)
 
@@ -44,6 +43,7 @@ SSH2_DESC=		SSH2 protocol support
 
 NLS_CONFIGURE_ENABLE=	nls
 PCAP_CONFIGURE_ON=	--with-libpcap=included
+PCAP_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 SSH2_CONFIGURE_ON=	--with-libssh2=included
 SSH2_CONFIGURE_OFF=	--without-libssh2
 SSH2_IMPLIES=		SSL

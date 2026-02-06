@@ -19,8 +19,7 @@ LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell
 
 IGNORE_FreeBSD_13=	 Does not build on FreeBSD 13.x due to OpenSSL 1.1.1
 
-LIB_DEPENDS=	libpcre2-16.so:devel/pcre2 \
-		libdbus-1.so:devel/dbus
+LIB_DEPENDS=	libpcre2-16.so:devel/pcre2
 
 .if !defined(MASTERDIR)
 
@@ -55,6 +54,7 @@ SSH2_DESC=		SSH2 protocol support
 
 NLS_CONFIGURE_ENABLE=	nls
 PCAP_CONFIGURE_ON=	--with-libpcap=included
+PCAP_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 SSH2_IMPLIES=		SSL
 SSH2_CONFIGURE_ON=	--with-libssh2=included
 SSH2_CONFIGURE_OFF=	--without-libssh2
