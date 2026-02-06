@@ -1,5 +1,5 @@
 PORTNAME=	wt
-DISTVERSION=	4.12.1
+DISTVERSION=	4.12.2
 CATEGORIES=	www
 
 MAINTAINER=	info@babaei.net
@@ -76,8 +76,8 @@ STDANY_DESC=	Use std::any instead of bundled thelink2012::any
 STDFS_DESC=	Use std::filesystem instead of boost::filesystem
 THEMES_DESC=	Install the source files for Wt's themes
 UNWIND_DESC=	Build Wt with stacktrace support using libunwind
-WTHTTP_DESC=	Build Wt stand-alone httpd connector
 WTCPPIMPL_DESC=	Wt C++ Features Implementations
+WTHTTP_DESC=	Build Wt stand-alone httpd connector
 
 EXAMPLES_IMPLIES=	SQLITE3 WTHTTP
 EXAMPLES_CMAKE_BOOL=	BUILD_EXAMPLES INSTALL_EXAMPLES

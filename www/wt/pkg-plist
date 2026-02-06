@@ -331,6 +331,7 @@ include/Wt/WRectF.h
 include/Wt/WRegExpValidator.h
 include/Wt/WResource.h
 include/Wt/WSelectionBox.h
+include/Wt/WSelfDeletingResource.h
 include/Wt/WServer.h
 include/Wt/WServerGLWidget.h
 include/Wt/WShadow.h
