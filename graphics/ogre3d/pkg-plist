@@ -787,6 +787,7 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/DoF_Gaussian3x3.frag
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/EmbossedFp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_FresnelFp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_FresnelVp.glsl
+share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_TextureArrayPS.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/Example_TextureArrayVS.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/GlassFP.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/GrassFp.glsl
@@ -832,7 +833,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/hdr_finalToneMapping.gls
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/hdr_tonemap_util.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/pssmCasterFp.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL/wboit.frag
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL120/Example_TextureArrayPS.glsl
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL120/HW_VTFInstancing.vert
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL120/Instancing.frag
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSL120/VTFInstancing.vert
@@ -869,7 +869,6 @@ share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/Example_CelShadingFp.g
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/Example_CelShadingVp.glsles
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/Example_ProjectionFp.glsles
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/Example_ProjectionVp.glsles
-share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/Example_TextureArrayPS.glsles
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/HW_VTFInstancing.vert
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/HalftoneFP.glsles
 share/OGRE-%%LIBVERSION%%/Media/materials/programs/GLSLES/Instancing.frag
