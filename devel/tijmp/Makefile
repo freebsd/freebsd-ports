@@ -30,7 +30,11 @@ OPTIONS_DEFINE=	DOCS OPTIMIZED_CFLAGS
 OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
 post-patch:
-	@${REINPLACE_CMD} '/^jardir =/s|=.*|= ${JAVAJARDIR}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD}
+		-e '/^jardir =/s|=.*|= ${JAVAJARDIR}|' \
+		-e 's| -source 1.6 | |' \
+		${WRKSRC}/Makefile.in
 	@${SED} -i "" -e 's|/../share/java|${JAVAJARDIR}|' ${WRKSRC}/src/tijmp.c
+
 
 .include <bsd.port.mk>
