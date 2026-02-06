@@ -200,6 +200,13 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/vm_offset_t address;/s,vm_offset_t ,void *,' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
+# Fix build with clang 21 for nvidia-modeset.ko
+.if ${NVVERSION:R} >= 390
+	${REINPLACE_CMD} -e 's/format (printf, 3, 4)/format (__printf__, 3, 4)/' \
+		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-os-interface.h
+	${REINPLACE_CMD} -e 's/va_list ap);/va_list ap); __attribute__((format (__printf__, 3, 0)));/' \
+		${WRKSRC}/src/nvidia-modeset/nvidia-modeset-os-interface.h
+.endif
 # Fix a K&R prototype
 .if ${NVVERSION:R} >= 390
 	${REINPLACE_CMD} -e '/nvlink_allocLock/s,(),(void),' \
