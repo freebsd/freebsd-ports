@@ -1,5 +1,6 @@
 PORTNAME=	mujs
 DISTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	lang devel
 MASTER_SITES=	https://codeberg.org/ccxvii/mujs/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/ \
 		https://www.unicode.org/Public/16.0.0/ucd/:unicode
@@ -60,6 +61,7 @@ SANITIZED_MAKE_ARGS=	build=sanitize
 post-patch:
 	${REINPLACE_CMD} -e 's|https://www.unicode.org/Public/16.0.0/ucd/|file://${DISTDIR}/${DIST_SUBDIR}/|g' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|  VERSION = .*|  VERSION = ${DISTVERSION}|' ${WRKSRC}/Makefile
 
 post-install:
 	@${STRIP_CMD} \
