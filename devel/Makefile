@@ -1717,6 +1717,7 @@
     SUBDIR += newtonsoft-json
     SUBDIR += nextest
     SUBDIR += nextpnr
+    SUBDIR += nextpnr-devel
     SUBDIR += nexus2-oss
     SUBDIR += nimble
     SUBDIR += nini

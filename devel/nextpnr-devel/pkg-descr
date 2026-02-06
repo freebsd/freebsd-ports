@@ -1,0 +1,12 @@
+nextpnr aims to be a vendor neutral, timing driven,
+FOSS FPGA place and route tool.
+
+Currently nextpnr supports:
+  - Lattice iCE40 devices supported by Project IceStorm
+  - Lattice ECP5 devices supported by Project Trellis
+  - Lattice Nexus devices supported by Project Oxide
+  - Gowin LittleBee devices supported by Project Apicula
+  - NanoXplore NG-Ultra devices supported by Project Beyond
+  - (experimental) Cyclone V devices supported by Mistral
+  - (experimental) Lattice MachXO2 devices supported by Project Trellis
+  - (experimental) a "generic" back-end for user-defined architectures
