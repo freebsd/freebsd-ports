@@ -1,9 +1,6 @@
 PORTNAME=	gnulib
-PORTVERSION=	20140202
-PORTREVISION=	2
+PORTVERSION=	20260127
 CATEGORIES=	devel
-MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU portability library
@@ -12,43 +9,57 @@ WWW=		https://www.gnu.org/software/gnulib/
 LICENSE=	GPLv2+ GPLv3+ LGPL20+ LGPL3+ PD
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:print/texinfo
+BUILD_DEPENDS=	bash:shells/bash \
+		${LOCALBASE}/bin/makeinfo:print/texinfo
 
-USES=		cpe gmake perl5 shebangfix
-SHEBANG_FILES=	check-module lib/uniname/gen-uninames.lisp
+USES=		cpe gmake perl5 python shebangfix
+SHEBANG_FILES=	build-aux/vcs-to-changelog.py \
+		check-module \
+		lib/uniname/gen-uninames.lisp
 SHEBANG_LANG=	perl clisp
 clisp_OLD_CMD=	/usr/local/bin/clisp
 clisp_CMD=	${LOCALBASE}/bin/clisp
 CPE_VENDOR=	gnu
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	coreutils
+GH_TAGNAME=	dc9ad4ec31fb09d247036f6a031e4ec6efbaa26c
+
 NO_ARCH=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/doc
-ALL_TARGET=	info html
-PLIST_FILES=	bin/check-module bin/gnulib-tool
-INFO=		${PORTNAME}
-PORTDOCS=	gnulib.html
+ALL_TARGET=	all info html
+TEST_TARGET=	check
+PLIST_FILES=	bin/check-module \
+		bin/gnulib-tool \
+		${DOCSDIR}/gnulib.html \
+		share/info/gnulib.info \
+		${DATADIR}/.gnulib-tool.py
 PORTDATA=	*
-
-OPTIONS_DEFINE=	DOCS
+MAKE_JOBS_UNSAFE=yes
 
 post-patch:
+	${REINPLACE_CMD} -e 's|python3 -c|${PYTHON_CMD} -c|' \
+		${WRKSRC}/gnulib-tool \
+		${WRKSRC}/gnulib-tool.py
+	${REINPLACE_CMD} -e 's|exec python3|exec ${PYTHON_CMD}|' \
+		${WRKSRC}/gnulib-tool.py
 	@${REINPLACE_CMD} -e 's,date -u.*,stat -f %Sa -t "@set UPDATED %F %T" `${LS} -t $$^ | ${SED} 1q` > $$@,' \
 		-e 's: makeinfo$$: ${LOCALBASE}/bin/makeinfo:' \
 		${WRKSRC}/doc/Makefile
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${MKDIR} ${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${PREFIX}/${INFO_PATH} \
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/.gnulib-tool.py ${WRKSRC}/gnulib-tool.py \
+		${STAGEDIR}${DATADIR}
 .for p in check-module gnulib-tool
 	${INSTALL_SCRIPT} ${WRKSRC}/${p} ${STAGEDIR}${DATADIR}/
 	${LN} -s ../${DATADIR_REL}/${p} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${TAR} -cf - -C ${WRKSRC} build-aux config doc lib m4 modules \
+	${TAR} -cf - -C ${WRKSRC} build-aux config doc lib m4 modules pygnulib \
 		tests top | ${TAR} -xof - -C ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
-
-do-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
