@@ -7,6 +7,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/database/gizmo.txt
 %%DATADIR%%/dat/database/godname.txt
 %%DATADIR%%/dat/database/godspeak.txt
+%%DATADIR%%/dat/database/graffiti.txt
 %%DATADIR%%/dat/database/help.txt
 %%DATADIR%%/dat/database/insult.txt
 %%DATADIR%%/dat/database/miscast.txt
@@ -36,6 +37,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/database/zh/shout.txt
 %%DATADIR%%/dat/database/zh/wpnnoise.txt
 %%DATADIR%%/dat/defaults/autopickup_exceptions.txt
+%%DATADIR%%/dat/defaults/consumable_shortcuts.txt
 %%DATADIR%%/dat/defaults/glyph_colours.txt
 %%DATADIR%%/dat/defaults/menu_colours.txt
 %%DATADIR%%/dat/defaults/messages.txt
@@ -172,7 +174,6 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/tutorial/lesson5.des
 %%DATADIR%%/dat/des/variable/ambush.des
 %%DATADIR%%/dat/des/variable/arcadia.des
-%%DATADIR%%/dat/des/variable/cathedral_bats.des
 %%DATADIR%%/dat/des/variable/compat.des
 %%DATADIR%%/dat/des/variable/d_encompass.des
 %%DATADIR%%/dat/des/variable/float.des
@@ -187,6 +188,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/des/variable/polyominoes.des
 %%DATADIR%%/dat/des/variable/the_bubble.des
 %%DATADIR%%/dat/des/variable/the_grid.des
+%%DATADIR%%/dat/des/variable/wad_woods.des
 %%DATADIR%%/dat/des/variable/winding_woodlands.des
 %%DATADIR%%/dat/descript/ability.txt
 %%DATADIR%%/dat/descript/backgrounds.txt
@@ -238,6 +240,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/descript/de/tutorial.txt
 %%DATADIR%%/dat/descript/de/unident.txt
 %%DATADIR%%/dat/descript/de/unrand.txt
+%%DATADIR%%/dat/descript/egos.txt
 %%DATADIR%%/dat/descript/el/ability.txt
 %%DATADIR%%/dat/descript/el/backgrounds.txt
 %%DATADIR%%/dat/descript/el/branches.txt
@@ -256,7 +259,10 @@ bin/%%GAME%%
 %%DATADIR%%/dat/descript/es/features.txt
 %%DATADIR%%/dat/descript/es/gods.txt
 %%DATADIR%%/dat/descript/es/items.txt
+%%DATADIR%%/dat/descript/es/monstatus.txt
 %%DATADIR%%/dat/descript/es/monsters.txt
+%%DATADIR%%/dat/descript/es/mutations.txt
+%%DATADIR%%/dat/descript/es/passives.txt
 %%DATADIR%%/dat/descript/es/quotes.txt
 %%DATADIR%%/dat/descript/es/skills.txt
 %%DATADIR%%/dat/descript/es/species.txt
@@ -368,6 +374,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/descript/lv/unident.txt
 %%DATADIR%%/dat/descript/lv/unrand.txt
 %%DATADIR%%/dat/descript/monsters.txt
+%%DATADIR%%/dat/descript/monstatus.txt
 %%DATADIR%%/dat/descript/mutations.txt
 %%DATADIR%%/dat/descript/nl/ability.txt
 %%DATADIR%%/dat/descript/nl/tutorial.txt
@@ -581,6 +588,7 @@ bin/%%GAME%%
 %%DATADIR%%/docs/develop/keys.txt
 %%DATADIR%%/docs/develop/levels/advanced.txt
 %%DATADIR%%/docs/develop/levels/introduction.txt
+%%DATADIR%%/docs/develop/levels/reserved_monsters.txt
 %%DATADIR%%/docs/develop/levels/syntax.txt
 %%DATADIR%%/docs/develop/levels/triggerables.txt
 %%DATADIR%%/docs/develop/monster_creation.txt
@@ -659,6 +667,7 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_ignis_the_dying_flame.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_menkaure_prince_of_dust.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_king7artist_eustachio.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_lemurrobot_gozag_vaults.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_micah_c_ereshkigal.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_nibiki_octopode.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png
@@ -673,4 +682,5 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_SpinningBird_djinn_sears_gnolls.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_entering_the_dungeon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_grabbing_the_orb.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_ylam_formicid_shrikes.png
 %%SDL%%%%DATADIR%%/dat/tiles/wall.png

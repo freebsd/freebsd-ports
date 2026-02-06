@@ -1,6 +1,5 @@
 PORTNAME=	stonesoup
-DISTVERSION=	0.33.1
-PORTREVISION=	1
+DISTVERSION=	0.34.0
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -16,7 +15,7 @@ FLAVORS=	console sdl
 FLAVOR?=	${FLAVORS[1]}
 sdl_PKGNAMESUFFIX=	-sdl
 
-USES=		bison compiler:c++11-lib gmake lua:51 perl5 pkgconfig \
+USES=		bison compiler:c++11-lib gmake lua:54 perl5 pkgconfig \
 		python:build shebangfix sqlite tar:xz
 
 USE_GITHUB=	yes
@@ -44,7 +43,7 @@ MAKE_ARGS=	prefix=${PREFIX} \
 		FORCE_CXX=${CXX} \
 		GAME=${GAME} \
 		INSTALL_UGRP=root:games \
-		LUA_PACKAGE=lua-5.1 \
+		LUA_PACKAGE=lua-5.4 \
 		NO_AUTO_OPT=YesPlease \
 		NO_OPTIMIZE=YesPlease \
 		NO_TRY_GOLD=YesPlease \
