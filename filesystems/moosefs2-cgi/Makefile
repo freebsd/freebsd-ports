@@ -1,3 +1,4 @@
+PORTREVISION=	2
 PKGNAMESUFFIX=	-cgi
 
 COMMENT=	MooseFS CGI interface
