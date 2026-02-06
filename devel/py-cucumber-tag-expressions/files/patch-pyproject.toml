@@ -1,0 +1,10 @@
+--- pyproject.toml.orig	2026-02-06 06:36:45 UTC
++++ pyproject.toml
+@@ -1,6 +1,6 @@ build-backend = "uv_build"
+ [build-system]
+ build-backend = "uv_build"
+-requires = ["uv_build>=0.9.0,<0.10.0"]
++requires = ["uv_build>=0.9.0"]
+ 
+ [project]
+ name = "cucumber-tag-expressions"

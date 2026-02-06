@@ -12,7 +12,7 @@ WWW=		https://github.com/cucumber/tag-expressions
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.9.0<0.10.0:devel/py-uv-build@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uv-build>=0.9.0:devel/py-uv-build@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517
