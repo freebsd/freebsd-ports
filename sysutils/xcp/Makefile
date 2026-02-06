@@ -1,6 +1,6 @@
 PORTNAME=	xcp
 DISTVERSIONPREFIX=	xcp-v
-DISTVERSION=	0.24.3
+DISTVERSION=	0.24.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,15 +21,15 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		anstyle-parse-0.2.7 \
 		anstyle-query-1.1.5 \
 		anstyle-wincon-3.0.11 \
-		anyhow-1.0.100 \
+		anyhow-1.0.101 \
 		autocfg-1.5.0 \
 		bitflags-2.10.0 \
 		blocking-threadpool-1.0.3 \
 		bstr-1.12.1 \
 		bumpalo-3.19.1 \
 		cfg-if-1.0.4 \
-		clap-4.5.55 \
-		clap_builder-4.5.55 \
+		clap-4.5.57 \
+		clap_builder-4.5.57 \
 		clap_derive-4.5.55 \
 		clap_lex-0.7.7 \
 		colorchoice-1.0.4 \
@@ -67,7 +67,7 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		num_threads-0.1.7 \
 		once_cell-1.21.3 \
 		once_cell_polyfill-1.70.2 \
-		portable-atomic-1.13.0 \
+		portable-atomic-1.13.1 \
 		powerfmt-0.2.0 \
 		ppv-lite86-0.2.21 \
 		proc-macro2-1.0.106 \
@@ -78,9 +78,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		rand_core-0.9.5 \
 		rand_distr-0.5.1 \
 		rand_xorshift-0.4.0 \
-		regex-1.12.2 \
-		regex-automata-0.4.13 \
-		regex-syntax-0.8.8 \
+		regex-1.12.3 \
+		regex-automata-0.4.14 \
+		regex-syntax-0.8.9 \
 		rustix-1.1.3 \
 		rustversion-1.0.22 \
 		same-file-1.0.6 \
@@ -99,9 +99,9 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		test-case-macros-3.3.1 \
 		thiserror-2.0.18 \
 		thiserror-impl-2.0.18 \
-		time-0.3.46 \
+		time-0.3.47 \
 		time-core-0.1.8 \
-		time-macros-0.2.26 \
+		time-macros-0.2.27 \
 		unbytify-0.2.0 \
 		unicode-ident-1.0.22 \
 		unicode-width-0.2.2 \
@@ -133,8 +133,8 @@ CARGO_CRATES=	aho-corasick-1.1.4 \
 		windows_x86_64_msvc-0.53.1 \
 		wit-bindgen-0.51.0 \
 		xattr-1.6.1 \
-		zerocopy-0.8.35 \
-		zerocopy-derive-0.8.35
+		zerocopy-0.8.39 \
+		zerocopy-derive-0.8.39
 
 PLIST_FILES=	bin/${PORTNAME}
 
