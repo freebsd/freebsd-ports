@@ -1,6 +1,6 @@
 PORTNAME=	slim
 PORTVERSION=	1.3.6
-PORTREVISION=	26
+PORTREVISION=	27
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.berlios.de/pub/slim/ \
 		SF/slim.berlios
@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/slim.berlios/
 
 LICENSE=	GPLv2
 
+FLAVORS=	xorg xlibre
+FLAVOR?=	${FLAVORS:[1]}
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
@@ -18,8 +21,18 @@ RUN_DEPENDS=	dbus-daemon:devel/dbus
 
 USES=		cmake compiler:c++11-lang cpe jpeg pkgconfig xorg
 CPE_VENDOR=	berlios
-USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xorg-server xrandr \
-		xrender xt
+USE_XORG=	ice sm x11 xau xcb xdmcp xext xft xmu xrandr xrender xt
+
+.if ${FLAVOR} == xlibre
+PKGNAMEPREFIX=	xlibre-
+USES+=		xlibre
+USE_XLIBRE+=	xlibre-server
+CONFLICTS_BUILD+=	xorg-server
+.else
+USE_XORG+=	xorg-server
+CONFLICTS_BUILD+=	xlibre-server
+.endif
+
 USE_RC_SUBR=	slim
 USE_LDCONFIG=	yes
 
