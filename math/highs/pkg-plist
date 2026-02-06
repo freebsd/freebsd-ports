@@ -1,10 +1,6 @@
 bin/highs
 include/highs/HConfig.h
 include/highs/Highs.h
-include/highs/filereaderlp/builder.hpp
-include/highs/filereaderlp/def.hpp
-include/highs/filereaderlp/model.hpp
-include/highs/filereaderlp/reader.hpp
 include/highs/interfaces/highs_c_api.h
 include/highs/io/Filereader.h
 include/highs/io/FilereaderEms.h
@@ -14,6 +10,10 @@ include/highs/io/HMPSIO.h
 include/highs/io/HMpsFF.h
 include/highs/io/HighsIO.h
 include/highs/io/LoadOptions.h
+include/highs/io/filereaderlp/builder.hpp
+include/highs/io/filereaderlp/def.hpp
+include/highs/io/filereaderlp/model.hpp
+include/highs/io/filereaderlp/reader.hpp
 include/highs/ipm/IpxSolution.h
 include/highs/ipm/IpxWrapper.h
 include/highs/ipm/basiclu/basiclu.h
@@ -236,5 +236,5 @@ lib/cmake/highs/highs-targets.cmake
 lib/cmake/highs/highs-targets.cmake.bak
 lib/libhighs.so
 lib/libhighs.so.1
-lib/libhighs.so.1.12.0
+lib/libhighs.so.1.13.0
 libdata/pkgconfig/highs.pc
