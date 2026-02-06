@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-netdump
 
 COMMENT=	MooseFS network packet dump utility

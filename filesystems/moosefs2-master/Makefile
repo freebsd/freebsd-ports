@@ -1,6 +1,6 @@
 PORTNAME=		moosefs2
 PORTVERSION=		2.0.91
-PORTREVISION=	1
+PORTREVISION?=		2
 CATEGORIES=		filesystems sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
@@ -12,9 +12,11 @@ WWW=		https://moosefs.com/
 
 LICENSE=		GPLv2
 
+DEPRECATED=		2.x reached EoL 2017-12-31, use filesystems/moosefs-* 4.x instead
+EXPIRATION_DATE=	2026-03-31
+
 USES=			python:build
 GNU_CONFIGURE=		yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 WRKSRC=			${WRKDIR}/moosefs-${PORTVERSION}
 PLIST=			${.CURDIR}/pkg-plist
 DESCR=			${.CURDIR}/pkg-descr
