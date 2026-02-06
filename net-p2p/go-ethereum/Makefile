@@ -1,7 +1,6 @@
 PORTNAME=	go-ethereum
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.2
-PORTREVISION=	22
+DISTVERSION=	1.16.8
 CATEGORIES=	net-p2p
 
 MAINTAINER=	me@enriquefynn.com
@@ -11,7 +10,8 @@ WWW=		https://github.com/ethereum/go-ethereum
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libiconv.so:converters/libiconv
+LIB_DEPENDS=	libiconv.so:converters/libiconv \
+		libhidapi.so:comms/hidapi
 
 USES=		cpe go:modules
 CPE_VENDOR=	ethereum
@@ -27,7 +27,7 @@ OPTIONS_DEFINE=	DEVTOOLS
 OPTIONS_SUB=	yes
 DEVTOOLS_DESC=	Ethereum developer tools
 
+DEVTOOLS_VARS=		GO_TARGET="./cmd/geth ./cmd/abigen ./cmd/evm ./cmd/rlpdump ./cmd/clef"
 DEVTOOLS_VARS_OFF=	GO_TARGET=./cmd/geth
-DEVTOOLS_VARS=		GO_TARGET="./cmd/geth ./cmd/abigen ./cmd/bootnode ./cmd/evm ./cmd/rlpdump ./cmd/clef"
 
 .include <bsd.port.mk>
