@@ -1,5 +1,5 @@
 PORTNAME=	octave-forge-io
-PORTVERSION=	2.7.0
+PORTVERSION=	2.7.1
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
