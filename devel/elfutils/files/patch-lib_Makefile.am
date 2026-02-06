@@ -6,7 +6,7 @@
  		  crc32.c crc32_file.c \
 -		  color.c error.c printversion.c
 +		  color.c error.c printversion.c \
-+		  error.c obstack.c obstack_printf.c
++		  exitfail.c obstack.c obstack_printf.c
  
  noinst_HEADERS = fixedsizehash.h libeu.h system.h dynamicsizehash.h list.h \
  		 eu-config.h color.h printversion.h bpf.h \
