@@ -1,5 +1,6 @@
 PORTNAME=	xtide
 PORTVERSION=	2.16
+PORTREVISION=	1
 CATEGORIES=	astro geography
 MASTER_SITES=	https://flaterco.com/files/xtide/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -29,7 +30,7 @@ LDFLAGS+=	-L${WRKSRC_TCD}/.libs $$(libpng-config --L_opts)
 INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=		WVS X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFAULT=	WVS X11
 OPTIONS_SUB=		yes
 
 WVS_DESC=		Use world vector shoreline data (37MB)
