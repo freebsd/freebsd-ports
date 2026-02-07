@@ -11,7 +11,7 @@ desc="Fast and easy-to-use, open source logs solution"
 rcvar="victoria_logs_enable"
 pidfile="/var/run/${name}.pid"
 daemon_pidfile="/var/run/${name}-daemon.pid"
-logdir="/var/log/${name}"
+logdir="%%VICTORIA_LOGS%%"
 logfile="${logdir}/victoria_logs.log"
 command="%%PREFIX%%/bin/victoria-logs"
 victoria_logs_args=${victoria_logs_args-"--storageDataPath=%%VICTORIA_DATA%% --retentionPeriod=1 --httpListenAddr=:9428"}
