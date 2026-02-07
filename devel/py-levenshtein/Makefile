@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	matthew@wener.org
 COMMENT=	Fast computation of Levenshtein distance and string similarity
 WWW=		https://github.com/maxbachmann/Levenshtein
 
