@@ -1,6 +1,6 @@
---- electron/shell/common/electron_paths.h.orig	2022-08-03 15:31:32 UTC
+--- electron/shell/common/electron_paths.h.orig	2026-02-02 23:06:17 UTC
 +++ electron/shell/common/electron_paths.h
-@@ -30,7 +30,7 @@ enum {
+@@ -31,7 +31,7 @@ enum {
    DIR_RECENT,  // Directory where recent files live
  #endif
  
