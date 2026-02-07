@@ -1,9 +1,8 @@
 PORTNAME=	wine
-DISTVERSION=	10.0
-PORTREVISION=	3
+DISTVERSION=	11.0
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	https://dl.winehq.org/wine/source/10.0/
+MASTER_SITES=	https://dl.winehq.org/wine/source/11.0/
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	Microsoft Windows compatibility environment
@@ -16,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+LIB_DEPENDS=	libhwloc.so:devel/hwloc2
 
 # Only devel/llvm17 and later come with necessary include files - PR274542
 USES=		bison cpe desktop-file-utils gmake \
@@ -38,12 +38,12 @@ CONFIGURE_ARGS=	--verbose \
 		--without-gettext --without-gettextpo \
 		--without-gphoto \
 		--without-gssapi \
+		--with-hwloc \
 		--without-inotify \
 		--without-krb5 \
 		--with-mingw CROSSCC="clang" \
 		--without-netapi \
 		--without-opencl \
-		--without-osmesa \
 		--without-pcap \
 		--without-pcsclite \
 		--with-pthread \
@@ -61,12 +61,14 @@ CONFLICTS_INSTALL=	wine-devel
 
 BINARY_ALIAS=	clang=${LOCALBASE}/bin/clang${LLVM_VERSION} \
 		lld-link=${LOCALBASE}/bin/lld-link${LLVM_VERSION}
-PORTSCOUT=	limit:^10\.0
+PORTSCOUT=	limit:^11\.0
 
 SUB_FILES=	pkg-message
 
 PORTDATA=	wine.inf
 
+# GECKO and MONO are intentionally kept at the end; they just pull in
+# run-time dependencies on wine-gecko and wine-mono.
 OPTIONS_DEFINE=		CUPS DOCS DOSBOX FFMPEG GNUTLS V4L WAYLAND X11 GECKO MONO
 OPTIONS_DEFAULT=	ALSA GNUTLS WAYLAND X11
 OPTIONS_RADIO=		AUDIO
@@ -146,35 +148,23 @@ PLIST_SUB+=		WINE32="@comment " WINE64="" WINEARCH="x86_64"
 # FreeBSD yet.
 post-patch:
 	${REINPLACE_CMD} '/Exec/s|wine|wine64|g' ${WRKSRC}/loader/wine.desktop
-	${MV} ${WRKSRC}/loader/*.man.in ${WRKSRC}/tools/wine/
 
 .else
 EXTRA_PATCHES=		${PATCHDIR}/extra-patch-tools-winebuild-res32
 PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
-
-post-patch:
-	${MV} ${WRKSRC}/loader/*.man.in ${WRKSRC}/tools/wine/
 .endif
 
 pre-build:
 	cd ${WRKSRC} && ${SETENVI} ${WRK_ENV} ${MAKE_CMD} depend
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/man1
-	${INSTALL_MAN} ${WRKSRC}/tools/wine/wine.man	${STAGEDIR}${PREFIX}/share/man/man1/wine.1
-	${GZIP_CMD}					${STAGEDIR}${PREFIX}/share/man/man1/wine.1
-.for m in de.UTF-8 fr.UTF-8 pl.UTF-8
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/man/${m}/man1
-	${INSTALL_MAN} ${WRKSRC}/tools/wine/wine.${m}.man	${STAGEDIR}${PREFIX}/share/man/${m}/man1/wine.1
-	${GZIP_CMD}						${STAGEDIR}${PREFIX}/share/man/${m}/man1/wine.1
-.endfor
 .if ${ARCH} == i386
 	${MV} ${STAGEDIR}${PREFIX}/bin/wineserver	${STAGEDIR}${PREFIX}/bin/wineserver32
 	${MV} ${STAGEDIR}${PREFIX}/bin/wine		${STAGEDIR}${PREFIX}/bin/wine.bin
 	-${ELFCTL} -e +noaslr				${STAGEDIR}${PREFIX}/bin/wine.bin
 	${INSTALL_SCRIPT} ${FILESDIR}/wine.sh		${STAGEDIR}${PREFIX}/bin/wine
 .else
-	${MV} ${STAGEDIR}${PREFIX}/bin/wine64		${STAGEDIR}${PREFIX}/bin/wine64.bin
+	${MV} ${STAGEDIR}${PREFIX}/bin/wine		${STAGEDIR}${PREFIX}/bin/wine64.bin
 	-${ELFCTL} -e +noaslr				${STAGEDIR}${PREFIX}/bin/wine64.bin
 	${INSTALL_SCRIPT} ${FILESDIR}/wine.sh		${STAGEDIR}${PREFIX}/bin/wine64
 	${INSTALL_SCRIPT} ${FILESDIR}/wine-wow64.sh	${STAGEDIR}${PREFIX}/bin/wine
