@@ -1,6 +1,6 @@
 PORTNAME=	pgbackrest
 DISTVERSIONPREFIX=	release/
-DISTVERSION=	2.57.0
+DISTVERSION=	2.58.0
 CATEGORIES=	databases
 
 MAINTAINER=	schoutm@gmail.com
@@ -17,7 +17,7 @@ USES=		gnome meson pgsql pkgconfig python ssl
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
 
-MESON_ARGS+=	-Dconfigdir="${LOCALBASE}/etc/pgbackrest"
+MESON_ARGS+=	-Dconfigdir="${ETCDIR}"
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
@@ -34,6 +34,6 @@ ZSTD_MESON_ON=		-Dlibzstd=enabled
 ZSTD_MESON_OFF=		-Dlibzstd=disabled
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/pgbackrest
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>
