@@ -1,5 +1,6 @@
 PORTNAME=	obs-studio
 DISTVERSION=	32.0.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/obsproject/obs-studio/releases/download/${DISTVERSION}/
 DISTFILES=	OBS-Studio-${DISTVERSION}-Sources${EXTRACT_SUFX}
@@ -74,6 +75,8 @@ CXXFLAGS+=	-fPIC # otherwise we get: relocation R_X86_64_PC32 cannot be used aga
 LDFLAGS+=	-fPIC # pending https://github.com/obsproject/obs-studio/issues/3436
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-sources
+
+WITH_DEBUG=		yes # workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=292376#c6
 
 OPTIONS_DEFINE=		BROWSER PIPEWIRE VLC VST WAYLAND
 OPTIONS_DEFAULT=	PIPEWIRE VLC VST WAYLAND
