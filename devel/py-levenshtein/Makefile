@@ -1,5 +1,5 @@
-PORTNAME=	Levenshtein
-PORTVERSION=	0.25.1
+PORTNAME=	levenshtein
+PORTVERSION=	0.27.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,9 +9,10 @@ COMMENT=	Fast computation of Levenshtein distance and string similarity
 WWW=		https://github.com/maxbachmann/Levenshtein
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>=0.13:devel/py-scikit-build@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-build-core>=0:devel/py-scikit-build-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rapidfuzz>0:devel/py-rapidfuzz@${PY_FLAVOR}
 

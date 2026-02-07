@@ -1,5 +1,6 @@
 PORTNAME=	translate-toolkit
 PORTVERSION=	3.18.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI \
 		https://github.com/translate/translate/releases/download/${PORTVERSION}/
@@ -56,7 +57,7 @@ ICAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vobject>=0.9.6.1:deskutils/py-vobject@$
 ICAL_VARS=		MANPAGES+="ical2po po2ical"
 INI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}iniparse>=0.5:devel/py-iniparse@${PY_FLAVOR}
 INI_VARS=		MANPAGES+="ini2po po2ini"
-LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}Levenshtein>=0.21.0:devel/py-Levenshtein@${PY_FLAVOR}
+LEVENSHTEIN_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}levenshtein>=0.21.0:devel/py-levenshtein@${PY_FLAVOR}
 MARKDOWN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mistletoe>=1.4.0<1.6.0:textproc/py-mistletoe@${PY_FLAVOR}
 MARKDOWN_VARS=		MANPAGES+="md2po po2md"
 PHP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}phply>=1.2.6<1.3:devel/py-phply@${PY_FLAVOR}
