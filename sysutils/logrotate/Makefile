@@ -1,6 +1,6 @@
 PORTNAME=	logrotate
 PORTVERSION=	3.13.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	js@iksz.hu
@@ -16,7 +16,6 @@ PATCH_STRIP=		-p1
 USES=		autoreconf cpe gmake localbase
 CPE_VENDOR=	logrotate_project
 GNU_CONFIGURE=	yes
-GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--with-default-mail-command=/usr/bin/mailx \
 		--with-compress-command=/usr/bin/gzip \
 		--with-uncompress-command=/usr/bin/gunzip \
