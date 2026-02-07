@@ -1,3 +1,29 @@
+  <vuln vid="a6effa17-1fd4-4895-8471-d5c684d7807c">
+    <topic>navidrome -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>navidrome</name>
+	<range><lt>0.60.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An XSS vulnerability in the frontend allows a malicious attacker to inject code through the comment metadata of a song to exfiltrate user credentials.</p>
+	<p>Authenticated users can crash the Navidrome server by supplying an excessively large size parameter to /rest/getCoverArt or to a shared-image URL (/share/img/{token}). When processing such requests, the server attempts to create an extremely large resized image, causing uncontrolled memory growth. This triggers the Linux OOM killer, terminates the Navidrome process, and results in a full service outage.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2026-25578</cvename>
+      <url>https://github.com/navidrome/navidrome/security/advisories/GHSA-rh3r-8pxm-hg4w</url>
+      <cvename>CVE-2026-25579</cvename>
+      <url>https://github.com/navidrome/navidrome/security/advisories/GHSA-hrr4-3wgr-68x3</url>
+    </references>
+    <dates>
+      <discovery>2026-02-03</discovery>
+      <entry>2026-02-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a82bf18-0417-11f1-be6f-5404a68ad561">
     <topic>traefik -- ACME TLS-ALPN fast path potential DoS</topic>
     <affects>
